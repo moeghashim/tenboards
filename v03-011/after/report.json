@@ -1,0 +1,130 @@
+{
+  "baseURL": "http://localhost:3000/",
+  "hydrationDelayMs": 0,
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": true,
+  "interactions": true,
+  "results": [
+    {
+      "route": "/dashboard/profile",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_profile-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_profile-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "All six tabs keyboard reachable and captured; no page overflow",
+        "Neutral name, emails, initials and updater; coherent emergency contact",
+        "Header menu Escape restores focus; mail link matches demo identity",
+        "Document metadata/actions scroll locally; restricted state is explicitly demo-only"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/profile",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_profile-light-desktop-refresh-interactive.png",
+      "controlsFile": "_dashboard_profile-light-desktop-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "All six tabs keyboard reachable and captured; no page overflow",
+        "Neutral name, emails, initials and updater; coherent emergency contact",
+        "Header menu Escape restores focus; mail link matches demo identity",
+        "Document metadata/actions scroll locally; restricted state is explicitly demo-only"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/profile",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_profile-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_profile-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "All six tabs keyboard reachable and captured; no page overflow",
+        "Neutral name, emails, initials and updater; coherent emergency contact",
+        "Header menu Escape restores focus; mail link matches demo identity",
+        "Document metadata/actions scroll locally; restricted state is explicitly demo-only"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/profile",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_profile-light-mobile-refresh-interactive.png",
+      "controlsFile": "_dashboard_profile-light-mobile-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "All six tabs keyboard reachable and captured; no page overflow",
+        "Neutral name, emails, initials and updater; coherent emergency contact",
+        "Header menu Escape restores focus; mail link matches demo identity",
+        "Document metadata/actions scroll locally; restricted state is explicitly demo-only"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/profile",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_profile-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_profile-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "All six tabs keyboard reachable and captured; no page overflow",
+        "Neutral name, emails, initials and updater; coherent emergency contact",
+        "Header menu Escape restores focus; mail link matches demo identity",
+        "Document metadata/actions scroll locally; restricted state is explicitly demo-only"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/profile",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_profile-dark-desktop-refresh-interactive.png",
+      "controlsFile": "_dashboard_profile-dark-desktop-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "All six tabs keyboard reachable and captured; no page overflow",
+        "Neutral name, emails, initials and updater; coherent emergency contact",
+        "Header menu Escape restores focus; mail link matches demo identity",
+        "Document metadata/actions scroll locally; restricted state is explicitly demo-only"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/profile",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_profile-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_profile-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "All six tabs keyboard reachable and captured; no page overflow",
+        "Neutral name, emails, initials and updater; coherent emergency contact",
+        "Header menu Escape restores focus; mail link matches demo identity",
+        "Document metadata/actions scroll locally; restricted state is explicitly demo-only"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/profile",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_profile-dark-mobile-refresh-interactive.png",
+      "controlsFile": "_dashboard_profile-dark-mobile-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "All six tabs keyboard reachable and captured; no page overflow",
+        "Neutral name, emails, initials and updater; coherent emergency contact",
+        "Header menu Escape restores focus; mail link matches demo identity",
+        "Document metadata/actions scroll locally; restricted state is explicitly demo-only"
+      ],
+      "errors": []
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+
+> tenboards@0.2.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url https://6fa16c89-tenboards.mohanadgh.workers.dev --routes /dashboard/profile --reload --interactions --output /private/tmp/tenboards-v03-evidence/v03-011/workers
+
+PASS /dashboard/profile light/desktop direct
+PASS /dashboard/profile light/desktop refresh
+PASS /dashboard/profile light/mobile direct
+PASS /dashboard/profile light/mobile refresh
+PASS /dashboard/profile dark/desktop direct
+PASS /dashboard/profile dark/desktop refresh
+PASS /dashboard/profile dark/mobile direct
+PASS /dashboard/profile dark/mobile refresh
