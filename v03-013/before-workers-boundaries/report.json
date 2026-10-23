@@ -1,0 +1,183 @@
+{
+  "baseURL": "https://a9dd9c26-tenboards.mohanadgh.workers.dev/",
+  "hydrationDelayMs": 0,
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": false,
+  "interactions": false,
+  "results": [
+    {
+      "route": "/dashboard/default",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_default-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_default-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_default-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_default-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "qa:root-not-found",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "qa_root-not-found-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [
+        "Distinct system heading and no page overflow",
+        "Existing recovery link navigates by keyboard when provided"
+      ],
+      "expectedDiagnostics": [],
+      "errors": [
+        "console: Failed to load resource: the server responded with a status of 404 ()"
+      ]
+    },
+    {
+      "route": "qa:root-not-found",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "qa_root-not-found-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [
+        "Distinct system heading and no page overflow",
+        "Existing recovery link navigates by keyboard when provided"
+      ],
+      "expectedDiagnostics": [],
+      "errors": [
+        "console: Failed to load resource: the server responded with a status of 404 ()"
+      ]
+    },
+    {
+      "route": "qa:root-not-found",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "qa_root-not-found-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [
+        "Distinct system heading and no page overflow",
+        "Existing recovery link navigates by keyboard when provided"
+      ],
+      "expectedDiagnostics": [],
+      "errors": [
+        "console: Failed to load resource: the server responded with a status of 404 ()"
+      ]
+    },
+    {
+      "route": "qa:root-not-found",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "qa_root-not-found-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [
+        "Distinct system heading and no page overflow",
+        "Existing recovery link navigates by keyboard when provided"
+      ],
+      "expectedDiagnostics": [],
+      "errors": [
+        "console: Failed to load resource: the server responded with a status of 404 ()"
+      ]
+    },
+    {
+      "route": "qa:root-error",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "qa_root-error-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [
+        "Actual root boundary caught an ephemeral QA component fault; keyboard Try again restored dashboard",
+        "Expected QA exception isolated; production error text is generic; no app error trigger"
+      ],
+      "expectedDiagnostics": [
+        "console: Error: QA_ONLY_ROOT_ERROR\n    at target.options.component (eval at evaluate (:370:30), <anonymous>:10:15)\n    at Ko (https://a9dd9c26-tenboards.mohanadgh.workers.dev/assets/index-Cpz66KAm.js:9:49182)\n    at zc (https://a9dd9c26-tenboards.mohanadgh.workers.dev/assets/index-Cpz66KAm.js:9:71918)\n    at ol (https://a9dd9c26-tenboards.mohanadgh.workers.dev/assets/index-Cpz66KAm.js:9:82831)\n    at Yd (https://a9dd9c26-tenboards.mohanadgh.workers.dev/assets/index-Cpz66KAm.js:9:128170)\n    at Kd (https://a9dd9c26-tenboards.mohanadgh.workers.dev/assets/index-Cpz66KAm.js:9:127234)\n    at Gd (https://a9dd9c26-tenboards.mohanadgh.workers.dev/assets/index-Cpz66KAm.js:9:127071)\n    at Nd (https://a9dd9c26-tenboards.mohanadgh.workers.dev/assets/index-Cpz66KAm.js:9:123788)\n    at jf (https://a9dd9c26-tenboards.mohanadgh.workers.dev/assets/index-Cpz66KAm.js:9:136265)\n    at Ef (https://a9dd9c26-tenboards.mohanadgh.workers.dev/assets/index-Cpz66KAm.js:9:134821)"
+      ],
+      "errors": []
+    },
+    {
+      "route": "qa:root-error",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "qa_root-error-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [
+        "Actual root boundary caught an ephemeral QA component fault; keyboard Try again restored dashboard",
+        "Expected QA exception isolated; production error text is generic; no app error trigger"
+      ],
+      "expectedDiagnostics": [
+        "console: Error: QA_ONLY_ROOT_ERROR\n    at target.options.component (eval at evaluate (:370:30), <anonymous>:10:15)\n    at Ko (https://a9dd9c26-tenboards.mohanadgh.workers.dev/assets/index-Cpz66KAm.js:9:49182)\n    at zc (https://a9dd9c26-tenboards.mohanadgh.workers.dev/assets/index-Cpz66KAm.js:9:71918)\n    at ol (https://a9dd9c26-tenboards.mohanadgh.workers.dev/assets/index-Cpz66KAm.js:9:82831)\n    at Yd (https://a9dd9c26-tenboards.mohanadgh.workers.dev/assets/index-Cpz66KAm.js:9:128170)\n    at Kd (https://a9dd9c26-tenboards.mohanadgh.workers.dev/assets/index-Cpz66KAm.js:9:127234)\n    at Gd (https://a9dd9c26-tenboards.mohanadgh.workers.dev/assets/index-Cpz66KAm.js:9:127071)\n    at Nd (https://a9dd9c26-tenboards.mohanadgh.workers.dev/assets/index-Cpz66KAm.js:9:123788)\n    at jf (https://a9dd9c26-tenboards.mohanadgh.workers.dev/assets/index-Cpz66KAm.js:9:136265)\n    at Ef (https://a9dd9c26-tenboards.mohanadgh.workers.dev/assets/index-Cpz66KAm.js:9:134821)",
+        "console: Error: QA_ONLY_ROOT_ERROR\n    at target.options.component (eval at evaluate (:370:30), <anonymous>:10:15)\n    at Ko (https://a9dd9c26-tenboards.mohanadgh.workers.dev/assets/index-Cpz66KAm.js:9:49182)\n    at zc (https://a9dd9c26-tenboards.mohanadgh.workers.dev/assets/index-Cpz66KAm.js:9:71918)\n    at ol (https://a9dd9c26-tenboards.mohanadgh.workers.dev/assets/index-Cpz66KAm.js:9:82831)\n    at Yd (https://a9dd9c26-tenboards.mohanadgh.workers.dev/assets/index-Cpz66KAm.js:9:128170)\n    at Kd (https://a9dd9c26-tenboards.mohanadgh.workers.dev/assets/index-Cpz66KAm.js:9:127234)\n    at Gd (https://a9dd9c26-tenboards.mohanadgh.workers.dev/assets/index-Cpz66KAm.js:9:127071)\n    at Nd (https://a9dd9c26-tenboards.mohanadgh.workers.dev/assets/index-Cpz66KAm.js:9:123788)\n    at jf (https://a9dd9c26-tenboards.mohanadgh.workers.dev/assets/index-Cpz66KAm.js:9:136265)\n    at Ef (https://a9dd9c26-tenboards.mohanadgh.workers.dev/assets/index-Cpz66KAm.js:9:134821)"
+      ],
+      "errors": []
+    },
+    {
+      "route": "qa:root-error",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "qa_root-error-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [
+        "Actual root boundary caught an ephemeral QA component fault; keyboard Try again restored dashboard",
+        "Expected QA exception isolated; production error text is generic; no app error trigger"
+      ],
+      "expectedDiagnostics": [
+        "console: Error: QA_ONLY_ROOT_ERROR\n    at target.options.component (eval at evaluate (:370:30), <anonymous>:10:15)\n    at Ko (https://a9dd9c26-tenboards.mohanadgh.workers.dev/assets/index-Cpz66KAm.js:9:49182)\n    at zc (https://a9dd9c26-tenboards.mohanadgh.workers.dev/assets/index-Cpz66KAm.js:9:71918)\n    at ol (https://a9dd9c26-tenboards.mohanadgh.workers.dev/assets/index-Cpz66KAm.js:9:82831)\n    at Yd (https://a9dd9c26-tenboards.mohanadgh.workers.dev/assets/index-Cpz66KAm.js:9:128170)\n    at Kd (https://a9dd9c26-tenboards.mohanadgh.workers.dev/assets/index-Cpz66KAm.js:9:127234)\n    at Gd (https://a9dd9c26-tenboards.mohanadgh.workers.dev/assets/index-Cpz66KAm.js:9:127071)\n    at Nd (https://a9dd9c26-tenboards.mohanadgh.workers.dev/assets/index-Cpz66KAm.js:9:123788)\n    at jf (https://a9dd9c26-tenboards.mohanadgh.workers.dev/assets/index-Cpz66KAm.js:9:136265)\n    at Ef (https://a9dd9c26-tenboards.mohanadgh.workers.dev/assets/index-Cpz66KAm.js:9:134821)"
+      ],
+      "errors": []
+    },
+    {
+      "route": "qa:root-error",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "qa_root-error-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [
+        "Actual root boundary caught an ephemeral QA component fault; keyboard Try again restored dashboard",
+        "Expected QA exception isolated; production error text is generic; no app error trigger"
+      ],
+      "expectedDiagnostics": [
+        "console: Error: QA_ONLY_ROOT_ERROR\n    at target.options.component (eval at evaluate (:370:30), <anonymous>:10:15)\n    at Ko (https://a9dd9c26-tenboards.mohanadgh.workers.dev/assets/index-Cpz66KAm.js:9:49182)\n    at zc (https://a9dd9c26-tenboards.mohanadgh.workers.dev/assets/index-Cpz66KAm.js:9:71918)\n    at ol (https://a9dd9c26-tenboards.mohanadgh.workers.dev/assets/index-Cpz66KAm.js:9:82831)\n    at Yd (https://a9dd9c26-tenboards.mohanadgh.workers.dev/assets/index-Cpz66KAm.js:9:128170)\n    at Kd (https://a9dd9c26-tenboards.mohanadgh.workers.dev/assets/index-Cpz66KAm.js:9:127234)\n    at Gd (https://a9dd9c26-tenboards.mohanadgh.workers.dev/assets/index-Cpz66KAm.js:9:127071)\n    at Nd (https://a9dd9c26-tenboards.mohanadgh.workers.dev/assets/index-Cpz66KAm.js:9:123788)\n    at jf (https://a9dd9c26-tenboards.mohanadgh.workers.dev/assets/index-Cpz66KAm.js:9:136265)\n    at Ef (https://a9dd9c26-tenboards.mohanadgh.workers.dev/assets/index-Cpz66KAm.js:9:134821)"
+      ],
+      "errors": []
+    }
+  ]
+}

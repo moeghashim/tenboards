@@ -1,0 +1,20 @@
+
+> tenboards@0.2.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://localhost:3000 --routes /,/dashboard,/dashboard/,/dashboard/default --output /private/tmp/tenboards-v03-evidence/v03-013/redirects
+
+PASS /dashboard light/desktop direct
+PASS /dashboard light/mobile direct
+PASS /dashboard dark/desktop direct
+PASS /dashboard dark/mobile direct
+PASS / light/desktop direct
+PASS / light/mobile direct
+PASS / dark/desktop direct
+PASS / dark/mobile direct
+PASS /dashboard/default light/desktop direct
+PASS /dashboard/default light/mobile direct
+PASS /dashboard/default dark/desktop direct
+PASS /dashboard/default dark/mobile direct
+PASS /dashboard/ light/desktop direct
+PASS /dashboard/ light/mobile direct
+PASS /dashboard/ dark/desktop direct
+PASS /dashboard/ dark/mobile direct

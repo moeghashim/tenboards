@@ -1,0 +1,20 @@
+
+> tenboards@0.2.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://localhost:3000 --routes /dashboard/default --boundaries --output /private/tmp/tenboards-v03-evidence/v03-013/before-boundaries
+
+PASS /dashboard/default light/desktop direct
+PASS /dashboard/default light/mobile direct
+PASS /dashboard/default dark/desktop direct
+PASS /dashboard/default dark/mobile direct
+FAIL qa:root-not-found light/desktop direct
+console: Failed to load resource: the server responded with a status of 404 ()
+FAIL qa:root-not-found light/mobile direct
+console: Failed to load resource: the server responded with a status of 404 ()
+FAIL qa:root-not-found dark/desktop direct
+console: Failed to load resource: the server responded with a status of 404 ()
+FAIL qa:root-not-found dark/mobile direct
+console: Failed to load resource: the server responded with a status of 404 ()
+PASS qa:root-error light/desktop direct
+PASS qa:root-error light/mobile direct
+PASS qa:root-error dark/desktop direct
+PASS qa:root-error dark/mobile direct

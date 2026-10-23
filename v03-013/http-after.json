@@ -1,0 +1,62 @@
+[
+  {
+    "base": "http://localhost:3000",
+    "route": "/",
+    "headers": "HTTP/1.1 307 \nvary: sec-fetch-dest, accept\ndate: Fri, 23 Oct 2026 16:26:19 GMT\nlocation: /dashboard/default\nConnection: keep-alive\nKeep-Alive: timeout=5\nTransfer-Encoding: chunked\n\n",
+    "final": "200 http://localhost:3000/dashboard/default"
+  },
+  {
+    "base": "http://localhost:3000",
+    "route": "/dashboard",
+    "headers": "HTTP/1.1 307 \nvary: sec-fetch-dest, accept\ndate: Fri, 23 Oct 2026 16:26:19 GMT\nlocation: /dashboard/default\nConnection: keep-alive\nKeep-Alive: timeout=5\nTransfer-Encoding: chunked\n\n",
+    "final": "200 http://localhost:3000/dashboard/default"
+  },
+  {
+    "base": "http://localhost:3000",
+    "route": "/dashboard/",
+    "headers": "HTTP/1.1 307 \nvary: sec-fetch-dest, accept\ndate: Fri, 23 Oct 2026 16:26:19 GMT\nlocation: /dashboard\nConnection: keep-alive\nKeep-Alive: timeout=5\nTransfer-Encoding: chunked\n\n",
+    "final": "200 http://localhost:3000/dashboard/default"
+  },
+  {
+    "base": "http://localhost:3000",
+    "route": "/dashboard/capture-not-found",
+    "headers": "HTTP/1.1 200 \nvary: sec-fetch-dest, accept\ncontent-type: text/html; charset=utf-8\ndate: Fri, 23 Oct 2026 16:26:19 GMT\nConnection: keep-alive\nKeep-Alive: timeout=5\nTransfer-Encoding: chunked\n\n",
+    "final": "200 http://localhost:3000/dashboard/capture-not-found"
+  },
+  {
+    "base": "http://localhost:3000",
+    "route": "/capture-not-found",
+    "headers": "HTTP/1.1 404 \nvary: sec-fetch-dest, accept\ncontent-type: text/html; charset=utf-8\ndate: Fri, 23 Oct 2026 16:26:19 GMT\nConnection: keep-alive\nKeep-Alive: timeout=5\nTransfer-Encoding: chunked\n\n",
+    "final": "404 http://localhost:3000/capture-not-found"
+  },
+  {
+    "base": "https://bf4d3eef-tenboards.mohanadgh.workers.dev",
+    "route": "/",
+    "headers": "HTTP/2 307 \ndate: Fri, 23 Oct 2026 16:26:19 GMT\ncontent-length: 0\nlocation: /dashboard/default\nx-robots-tag: noindex\nreport-to: {\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=tgppmbvnmZq70unYp%2FPzhkxgN7mqCe899xMkg2MIMhps8Bj3EvyWQrW5Gcz6K8cane81VgtCjDuSVtzh3simJ1vMKN%2FELh6jECosQ6mz3d1U9PtotOSEg8%2BTOCRvvsnMgt8km6KKi4UtWJP4V4fpEhKwxjKDexihuvhoLte%2BMke3BsSHot2F\"}]}\nnel: {\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}\nserver: cloudflare\ncf-ray: a4f21a505ec0e5bb-DFW\nalt-svc: h3=\":443\"; ma=86400\n\n",
+    "final": "200 https://bf4d3eef-tenboards.mohanadgh.workers.dev/dashboard/default"
+  },
+  {
+    "base": "https://bf4d3eef-tenboards.mohanadgh.workers.dev",
+    "route": "/dashboard",
+    "headers": "HTTP/2 307 \ndate: Fri, 23 Oct 2026 16:26:20 GMT\ncontent-length: 0\nlocation: /dashboard/default\nx-robots-tag: noindex\nreport-to: {\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=yLH3mTLXDW%2FSdC6R5yLIyAxG3pHM6qE5SFHNB1Ac3a5n9Xu9EC0grCpJ16FfTLDjGpp02EBOKHWPlbZsx1n2HFqK8efTrOJvky%2BEKKt5hvR6ppWQP6I2tMP8Lf3svwcXkMLmV9tEs5QnuALOLUAJdMeoQuzZjRmXyoAgc07%2FTeejo%2BHAiVR0\"}]}\nnel: {\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}\nserver: cloudflare\ncf-ray: a4f21a560faf8e43-DFW\nalt-svc: h3=\":443\"; ma=86400\n\n",
+    "final": "200 https://bf4d3eef-tenboards.mohanadgh.workers.dev/dashboard/default"
+  },
+  {
+    "base": "https://bf4d3eef-tenboards.mohanadgh.workers.dev",
+    "route": "/dashboard/",
+    "headers": "HTTP/2 307 \ndate: Fri, 23 Oct 2026 16:26:21 GMT\ncontent-length: 0\nlocation: /dashboard\nx-robots-tag: noindex\nreport-to: {\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=gYWJpDBwvUnqD0poLQSB54EmjJn0%2FWFY4bskZlHAXJyikgACbrah2ed3Pg0xSj7SiPqW7kaJ%2BCD%2FxCCGR3OckxWYt%2BqExFds9DmVZaKn%2FbVeW1v6OTPPAk65U8fVHujVvHCd3MJ8xA5SPrZyccFdslKdEtDa8E9nB5WBz4sE%2Bh0aR5QmM%2Fy%2F\"}]}\nnel: {\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}\nserver: cloudflare\ncf-ray: a4f21a5a49a1f42e-DFW\nalt-svc: h3=\":443\"; ma=86400\n\n",
+    "final": "200 https://bf4d3eef-tenboards.mohanadgh.workers.dev/dashboard/default"
+  },
+  {
+    "base": "https://bf4d3eef-tenboards.mohanadgh.workers.dev",
+    "route": "/dashboard/capture-not-found",
+    "headers": "HTTP/2 200 \ndate: Fri, 23 Oct 2026 16:26:21 GMT\ncontent-type: text/html; charset=utf-8\nx-robots-tag: noindex\nreport-to: {\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=%2BlbhXZoGz06Y3rLKMIWdooYF1BWP%2F%2FH%2BR7Q6VYZ7l2cDlhd0HWdANpgizp16f8IPHzPVX6PfBaY6%2BXjmRWCnCA%2FvqbgvnyNtdfHY0ylRdG4MHZoftQAH1nR7EEviCUrrD5B5GHQp%2F1c8%2Fz3t%2BIYRhEaVwJ9pbm3t7l90n3MifKYdTMgZQv5A\"}]}\nnel: {\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}\nserver: cloudflare\ncf-ray: a4f21a5d6ee23168-DFW\nalt-svc: h3=\":443\"; ma=86400\n\n",
+    "final": "200 https://bf4d3eef-tenboards.mohanadgh.workers.dev/dashboard/capture-not-found"
+  },
+  {
+    "base": "https://bf4d3eef-tenboards.mohanadgh.workers.dev",
+    "route": "/capture-not-found",
+    "headers": "HTTP/2 404 \ndate: Fri, 23 Oct 2026 16:26:22 GMT\ncontent-type: text/html; charset=utf-8\nx-robots-tag: noindex\nreport-to: {\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=7B9cdfD8dqp1XXlR%2Fd1%2FgcfhupHS2751zrZ5tdfweB%2FT2lH0HzWZwjBY0v4K4qhoDVAOxojQx%2F5hKVd7R%2BBj1DdRFelRe11z1sFk%2BjoKsPLfzqFV%2BYmZ0RvDVvz4ZM6FDlJyonfiWNbHPll2MY4RfC%2FqqlabrR1MNzE42JJpu2wMCHgLWS9h\"}]}\nnel: {\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}\nserver: cloudflare\ncf-ray: a4f21a608a45a670-DFW\nalt-svc: h3=\":443\"; ma=86400\n\n",
+    "final": "404 https://bf4d3eef-tenboards.mohanadgh.workers.dev/capture-not-found"
+  }
+]
