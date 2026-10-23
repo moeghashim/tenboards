@@ -2,7 +2,7 @@
 
 An MIT-licensed dashboard template built with TanStack Start, React 19, TypeScript, Tailwind CSS v4, and shadcn/ui on Base UI.
 
-The full upstream screen catalog and mock data are retained. **v0.1 is merged, deployed and closed**: the design system and shell follow [PLAN.md](PLAN.md). **v0.2 (all 14 dashboards restyled) is merged, deployed and closed** per [the dashboard task breakdown](dev/milestones/v0.2-dashboards/README.md). **v0.3 is planned; implementation has not started** — [14 app-page tasks](dev/milestones/v0.3-app-pages/README.md) cover a small shared header foundation, standalone/embedded Mail and Chat, Calendar, Kanban, Tasks, Invoice, File Manager, Products, Users/Roles, Profile, Auth V1/V2, system states, and full-route acceptance. Current milestone/task status is tracked in [dev/milestones.json](dev/milestones.json). Current screens are demonstrations; database and authentication integrations are later milestones.
+The full upstream screen catalog and demo-data relationships are retained, with neutral demo identities. **v0.1 is merged, deployed and closed**: the design system and shell follow [PLAN.md](PLAN.md). **v0.2 (all 14 dashboards restyled) is merged, deployed and closed** per [the dashboard task breakdown](dev/milestones/v0.2-dashboards/README.md). **v0.3 app pages are complete pending merge** — [14 app-page tasks](dev/milestones/v0.3-app-pages/README.md) deliver a small shared header foundation, standalone/embedded Mail and Chat, Calendar, Kanban, Tasks, Invoice, File Manager, Products, Users/Roles, Profile, Auth V1/V2, system states, and full-route acceptance. Current milestone/task status is tracked in [dev/milestones.json](dev/milestones.json). Current screens are demonstrations; database and authentication integrations are later milestones.
 
 ## Run locally
 
@@ -46,7 +46,7 @@ The 14 dashboard routes are Default, CRM, Finance, Analytics, Productivity, E-co
 | Infrastructure | `/dashboard/infrastructure` | — |
 | Patient Monitoring | `/dashboard/patient-monitoring` | — |
 
-File manager, products, profile, mail, chat, calendar, kanban, tasks, invoice, users, roles, authentication layouts, coming-soon and error pages are retained for v0.3 restyling. Route-specific components remain colocated under `src/routes/`.
+File Manager, Products, Users, Roles, Profile, Mail, Chat, Calendar, Kanban, Tasks, Invoice, Auth V1/V2, Coming Soon and error/permission states now follow the v0.3 app-page design. Standalone `/mail` and `/chat` retain `/dashboard/mail` and `/dashboard/chat` iframe aliases. All four auth forms and the bare `/auth/v2` layout remain distinct; all screens remain demos. Route-specific components stay colocated under `src/routes/`. Tasks 001–007 are merged and deployed; tasks 008–014 are in review pending Claude’s authorized merges.
 
 ## Provenance and license
 
@@ -135,7 +135,7 @@ node --experimental-strip-types scripts/check-contrast.ts --presets default,grap
 
 Axe is not part of the existing tooling; the acceptance evidence identifies the semantic/keyboard checks actually run. [Task 012 evidence](https://github.com/moeghashim/tenboards/tree/pr-assets/012) holds the complete route matrix, logs, and smoke scripts. [Sidebar/reference comparison](https://github.com/moeghashim/tenboards/blob/pr-assets/008/sidebar-reference-comparison.png) records the locked reference comparison. Captures may contain inherited TanStack development-tool chrome.
 
-Current hydration status: Finance, Finance V1, Productivity and Patient Monitoring are resolved and verified on dev and Workers (shipped in v0.2). Calendar, Invoice and Auth V2 login/register retain the recorded v0.1 waiver and required v0.3 fixes; those pages have not been restyled. Historical failures and linked resolutions remain in [dev/open-questions.md](dev/open-questions.md).
+Current hydration status: all eight inherited findings are resolved and verified on dev and Workers. Finance, Finance V1, Productivity and Patient Monitoring shipped in v0.2; Calendar and Invoice shipped in v0.3 batch A; Auth V2 login/register are verified in the pending batch B stack. Calendar, Invoice and Auth use serialized request data; Patient Monitoring starts its real clock after hydration. Delayed JavaScript, refresh and differing timezone checks use real clocks. The final 1,216-case matrix covers all 38 routes across four presets, both themes and both viewports. Historical failures and linked resolutions remain in [dev/open-questions.md](dev/open-questions.md).
 
 
 ## Dashboard foundation (v0.2 / 001)
@@ -197,11 +197,11 @@ The full 14-route matrix is verified on dev and Workers in Default, Graphite, Pi
 All screens remain mock-data demos, including existing disabled and placeholder actions. No runtime dependencies, protected UI/calendar wrappers, shell preferences or v0.3 page designs change. All v0.2 tasks are merged, deployed and released as v0.2.0; production deployment remains the reviewer's responsibility.
 
 
-### Planned app pages (v0.3)
+### App pages (v0.3)
 
 The [app-page breakdown](dev/milestones/v0.3-app-pages/README.md) assigns all 38 current route-catalog entries plus root not-found/error states to page owners or final regression coverage. Mail and Chat each retain standalone and dashboard iframe routes; Auth includes four forms and the bare V2 layout. The external `/` remains a redirect to `/dashboard/default`, with no landing UI to restyle. Implementation progress is documented per task below.
 
-Calendar, Invoice, Auth V2 login and Auth V2 register own the remaining inherited hydration findings; scoped verification and resolution are documented in each page section and `dev/open-questions.md`. Owning tasks also replace remaining upstream-author demo identities; final acceptance scans all of `src/`, preserves legal attribution, checks every route across all four presets, and reconciles hydration history. Unchecked acceptance criteria are not claims of shipped behavior; task status and evidence track implementation separately from reviewer merge and deployment.
+Calendar, Invoice and both Auth V2 forms have passed their separate hydration gates. Page owners replaced the remaining upstream-author demo identities; the final whole-source scan has no matches, while legal attribution remains intact. Final acceptance checks every route across all four presets and reconciles hydration history. Implementation is complete pending merge; task status and evidence track it separately from reviewer approval, deployment and release.
 
 
 ### App-page foundation (v0.3 / 001)
@@ -279,3 +279,10 @@ Auth V1 and V2 retain separate login/register routes, validation, masked passwor
 ### System states (v0.3 / 013)
 
 Coming Soon describes planned content; the dashboard splat explains an unknown dashboard page. Root not-found, demo Unauthorized and RootError share a compact hierarchy with wrapping copy and keyboard recovery links. Production errors retain generic text; development can show the error message. `/`, `/dashboard` and `/dashboard/` still return 307 redirects to `/dashboard/default`; unknown root URLs return 404 and the explicit dashboard splat remains HTTP 200. `npm run screenshots -- --routes /dashboard/default --boundaries` adds four-state root not-found and real root-error/reset evidence. The CLI temporarily replaces a loaded browser route component, restores it and presses Try again; no error trigger or route is shipped. Expected injected exceptions and the exact unknown-document 404 diagnostic are recorded separately in report.json.
+
+
+### Complete app-page acceptance (v0.3 / 014)
+
+The integrated v0.3 stack passes all 38 catalog entries on dev and Workers with Default, Graphite, Pine and Iris × light/dark × desktop/mobile: 608 cases per environment, 1,216 total. The coverage manifest checks generated routes, duplicates, missing/unexpected cases and every error; original failures and explicit reruns remain in pr-assets/v03-014. Supplemental scenarios cover Mail/Chat iframe contents, File Manager grid/list, Kanban board/list/table and overlays, Roles and all six Profile tabs, product/directory/task filters and forms, four auth forms, Invoice print, live Calendar/Patient Monitoring behavior, root 404/error/reset, and shell focus/preferences/reduced motion. All eight historical hydration findings are resolved; the whole-src author scan returns no matches. Supported-token audits pass 280 comparisons per environment; scoped actual-surface evidence is linked, not represented as a complete accessibility certification. The app source is unchanged by this acceptance layer. Tasks 001–007 are merged/deployed; 008–014 and the milestone stay in review pending Claude’s merges and release. Package version remains 0.2.0 until the reviewer releases 0.3.0.
+
+Run `npm run screenshots -- --base-url <url> --preset <default|graphite|pine|iris> --output <root>/<dev|workers>/<preset>` for each environment/preset. `node --experimental-strip-types scripts/report-route-coverage.ts --root <root> --retries <manifest.json>` verifies complete coverage and retains original errors alongside explicitly mapped reruns. `--interactions` on `/dashboard/default` verifies shell focus, preference persistence and reduced motion; dialog evidence uses the existing viewport so screenshot resizing cannot disturb focus.

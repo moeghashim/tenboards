@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.3 — App pages (2026-10-23)
+
+- Restyle Mail, Chat, Calendar, Kanban, Tasks, Invoice, File Manager, Products, Users/Roles, Profile, Auth V1/V2 and system states with compact typography, neutral surfaces, semantic states and responsive content.
+- Preserve all 38 routes, standalone/iframe Mail and Chat, query views, six Profile tabs, directory tabs, forms, local demo actions and zero-config setup.
+- Resolve Calendar, Invoice and both Auth V2 hydration findings through serialized request data; verify real clocks, delayed JavaScript, refresh and differing timezones.
+- Replace remaining upstream-author fixtures with coherent neutral demo identities while preserving MIT attribution.
+- Improve keyboard menus, focus return, field feedback and local table scrolling; preserve shell preferences and reduced-motion support.
+- Verify 1,216 route/preset/theme/viewport cases on dev and Workers, plus iframe, query/tab/overlay/print, auth and real root-boundary recovery scenarios.
+- Preserve root/dashboard redirects, root 404 semantics, generic production errors and UI-only authentication. Add no runtime dependencies, backend integration or public error trigger.
+
+Released on merge of the approved v0.3 stack; the reviewer owns the version bump, release link, tag and production redeploy.
+
 ## v0.2 — Dashboards (2026-10-23)
 
 - Unify all ten current dashboards and four legacy variants with shared compact cards, semantic states, responsive charts, readable legends and preserved demo workflows.

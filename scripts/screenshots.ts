@@ -170,7 +170,7 @@ try {
                   });
                 await page.screenshot({
                   path: path.join(output, file.replace(".png", `-${variant}.png`)),
-                  fullPage: !variant.includes("drag"),
+                  fullPage: !variant.includes("drag") && !variant.startsWith("shell-"),
                   animations: variant.includes("drag") ? "allow" : "disabled",
                 });
               });

@@ -2,7 +2,7 @@
 id: "014"
 title: Verify complete v0.3 app and route acceptance
 milestone: v0.3-app-pages
-status: planned
+status: review
 category: qa
 files: ["README.md", "CHANGELOG.md", "dev/milestones/v0.3-app-pages/", "dev/milestones.json", "dev/open-questions.md", "scripts/ (only narrow QA support if needed)"]
 ---
@@ -25,19 +25,19 @@ Prefactor inspection: Review coverage/report gaps before adding helpers. Only na
 
 ## Acceptance criteria
 
-- [ ] All 38 current catalog entries pass on dev and Workers across four presets × light/dark × desktop/mobile, with coverage manifest, exact counts and no unexplained skips or unexpected console/page errors. All 14 dashboards remain covered.
-- [ ] Calendar, Invoice, Auth V2 login and Auth V2 register each have no React #418 hydration error in dev or Workers preview, light/dark × desktop/mobile; root-cause fixes verified with real clocks, refresh/delay/timezone evidence. No suppressHydrationWarning, no SSR disabling, no frozen clocks are used as fixes.
-- [ ] Whole-tree command `rg -n -i "arham|arhamkhnz" src` produces no matches (expected exit 1, not a scan failure); retain command/output evidence. This intentionally catches Arham Khan, arhamKhan, taskOwners.arham, emails and bio references. LICENSE, README and docs attribution stay intact.
-- [ ] Root not-found and controlled root-error/recovery pass supplemental dev/Workers cases with expected injected diagnostics isolated. Exercise Mail/Chat iframe contents; File Manager grid/list, Kanban board/list/table, Profile six tabs, Roles tabs, four auth forms, Invoice print and existing form/table/overlay states.
-- [ ] Document keyboard/name/focus/heading, mobile overflow, form errors, table scrolling, iframe/drawer/sheet focus and reduced-motion spot checks. Run supported-token contrast checks for all presets/themes and measure changed status/event/chart/selection pairs on actual surfaces; report scope honestly, not a complete accessibility certification.
-- [ ] CHANGELOG v0.3 entry, README screens/status/hydration information, milestone README/task boxes and milestones.json reflect evidence and actual review state. Every hydration open-question entry is reconciled as resolved; any independent blocker remains explicit.
+- [x] All 38 current catalog entries pass on dev and Workers across four presets × light/dark × desktop/mobile, with coverage manifest, exact counts and no unexplained skips or unexpected console/page errors. All 14 dashboards remain covered.
+- [x] Calendar, Invoice, Auth V2 login and Auth V2 register each have no React #418 hydration error in dev or Workers preview, light/dark × desktop/mobile; root-cause fixes verified with real clocks, refresh/delay/timezone evidence. No suppressHydrationWarning, no SSR disabling, no frozen clocks are used as fixes.
+- [x] Whole-tree command `rg -n -i "arham|arhamkhnz" src` produces no matches (expected exit 1, not a scan failure); retain command/output evidence. This intentionally catches Arham Khan, arhamKhan, taskOwners.arham, emails and bio references. LICENSE, README and docs attribution stay intact.
+- [x] Root not-found and controlled root-error/recovery pass supplemental dev/Workers cases with expected injected diagnostics isolated. Exercise Mail/Chat iframe contents; File Manager grid/list, Kanban board/list/table, Profile six tabs, Roles tabs, four auth forms, Invoice print and existing form/table/overlay states.
+- [x] Document keyboard/name/focus/heading, mobile overflow, form errors, table scrolling, iframe/drawer/sheet focus and reduced-motion spot checks. Run supported-token contrast checks for all presets/themes and measure changed status/event/chart/selection pairs on actual surfaces; report scope honestly, not a complete accessibility certification.
+- [x] CHANGELOG v0.3 entry, README screens/status/hydration information, milestone README/task boxes and milestones.json reflect evidence and actual review state. Every hydration open-question entry is reconciled as resolved; any independent blocker remains explicit.
 - [ ] Claude reviews each task and owns squash-merge, stack rebases, production redeploy and milestone release. Record in-review until authorized merges occur; do not mark this milestone done prematurely.
-- [ ] Capture and inspect before/after with `npm run screenshots` for every affected URL in light/dark × desktop (1440×900)/mobile (390×844); attach a four-state comparison table per route plus meaningful interaction/variant states. Store captures, reports and logs only on `pr-assets` or PR attachments, never main. For foundation/acceptance, compare their limited changes and integrated baseline explicitly; do not invent visual changes.
-- [ ] `npm run build`, `npm run check` and `npm run typecheck` pass. Report inherited warnings separately from failures; baseline failures are not a passing gate.
-- [ ] Dev `/dashboard/default` and every owned route smoke without console errors; repeat on the Workers version preview, including iframe contents and refresh where relevant. Existing errors on an owned page cannot be waived.
-- [ ] Upload with `npm run preview:deploy -- --preview-alias pr-NNN` (actual PR number); include the version-specific preview URL and reusable alias in the PR. Never run `npm run deploy`.
-- [ ] Update root README.md for verified screens/behavior/commands/status and state `README: updated (sections …)` in the PR. Tick this file and update `dev/milestones.json` only from evidence.
-- [ ] Preserve keyboard access, accessible names, visible focus, reduced motion and all four presets. Check relevant changed foreground/background, status and meaningful graphic pairs for WCAG AA; record measured contrast for token/preset changes. Keep font/preferences registries, v0.1 shell and `src/components/ui/` intact. Reuse shared dashboard primitives and chart theme where applicable, without adding decorative charts.
+- [x] Capture and inspect before/after with `npm run screenshots` for every affected URL in light/dark × desktop (1440×900)/mobile (390×844); attach a four-state comparison table per route plus meaningful interaction/variant states. Store captures, reports and logs only on `pr-assets` or PR attachments, never main. For foundation/acceptance, compare their limited changes and integrated baseline explicitly; do not invent visual changes.
+- [x] `npm run build`, `npm run check` and `npm run typecheck` pass. Report inherited warnings separately from failures; baseline failures are not a passing gate.
+- [x] Dev `/dashboard/default` and every owned route smoke without console errors; repeat on the Workers version preview, including iframe contents and refresh where relevant. Existing errors on an owned page cannot be waived.
+- [x] Upload with `npm run preview:deploy -- --preview-alias pr-NNN` (actual PR number); include the version-specific preview URL and reusable alias in the PR. Never run `npm run deploy`.
+- [x] Update root README.md for verified screens/behavior/commands/status and state `README: updated (sections …)` in the PR. Tick this file and update `dev/milestones.json` only from evidence.
+- [x] Preserve keyboard access, accessible names, visible focus, reduced motion and all four presets. Check relevant changed foreground/background, status and meaningful graphic pairs for WCAG AA; record measured contrast for token/preset changes. Keep font/preferences registries, v0.1 shell and `src/components/ui/` intact. Reuse shared dashboard primitives and chart theme where applicable, without adding decorative charts.
 
 ## Execution order and delivery
 

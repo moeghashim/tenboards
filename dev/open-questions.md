@@ -2,6 +2,8 @@
 
 ## 2026-10-23 — v0.1 / 012 full-matrix clock hydration blocker
 
+**Current status: resolved.** This historical finding is closed by the scoped v0.2/v0.3 fixes and the complete task 014 reconciliation below; original diagnosis and waiver history are retained.
+
 Task 009 long-title capture exposed an inherited `new Date()` in `src/routes/(main)/dashboard/patient-monitoring/route.tsx:19`. Direct SSR navigation can render different seconds on the server/client, causing hydration recovery. The failure predates this batch (the page file is unchanged from main). Exact output is retained with task 009 evidence in `pr-assets/009/009-inherited-failure.log`.
 
 Observed diff: client `04:55:30`, server `04:55:29`; a second smoke reproduced client `04:55:50`, server `04:55:49`. React reports: `Hydration failed because the server rendered text didn't match the client.`
@@ -9,6 +11,8 @@ Observed diff: client `04:55:30`, server `04:55:29`; a second smoke reproduced c
 Decision requested: authorize a narrow nonvisual clock hydration fix in 012, or leave the full-matrix acceptance criterion blocked. No page content edit made. Independent shell tasks continue; error-free full-route acceptance remains pending.
 
 ## 2026-10-23 — v0.1 / 012 Calendar Workers hydration blocker
+
+**Current status: resolved.** This historical finding is closed by the scoped v0.2/v0.3 fixes and the complete task 014 reconciliation below; original diagnosis and waiver history are retained.
 
 The complete task 012 Workers matrix reports a React HTML hydration mismatch on `/dashboard/calendar` in both themes at desktop/mobile. A separate four-state capture against the existing production deployment reproduces the same failure in all four cases, establishing that it predates this shell batch. Calendar source and primitives remain unchanged.
 
@@ -22,6 +26,8 @@ Finance and Invoice also reproduce React text hydration error #418 in all four p
 
 
 ## 2026-10-23 — v0.1 / 012 final acceptance status
+
+**Current status: resolved.** This historical finding is closed by the scoped v0.2/v0.3 fixes and the complete task 014 reconciliation below; original diagnosis and waiver history are retained.
 
 The final Workers matrix has 32 inherited hydration failures across eight routes: `/dashboard/calendar`, `/dashboard/finance`, `/dashboard/invoice`, `/dashboard/patient-monitoring`, `/dashboard/productivity`, `/dashboard/finance-v1`, `/auth/v2/login`, and `/auth/v2/register`. Each fails in light/dark at desktop/mobile and reproduces on the existing production deployment. Production logs and reports are retained in `pr-assets/012` under `production-calendar`, `production-baseline`, `production-productivity`, `production-finance-v1`, and `production-auth`. No page/auth/calendar implementation is changed.
 
@@ -81,3 +87,20 @@ Status: resolved. `/auth/v2/login` server HTML used `© 1970, tenboards.` while 
 ### v0.3 task 012 — Auth V2 register resolved
 
 Status: resolved. `/auth/v2/register` independently reproduced the same server 1970/client 2026 text diff and React #418. It consumes the same serialized request-year loader data through the shared V2 form frame. Both browser timezones and every delayed direct/refresh light/dark desktop/mobile case pass on [Workers version a9dd9c26](https://a9dd9c26-tenboards.mohanadgh.workers.dev/auth/v2/register), with matching dev coverage. [Evidence](https://github.com/moeghashim/tenboards/tree/pr-assets/v03-012) includes separate raw register SSR before/after, real browser observation and route-specific report rows. V1 forms and bare layout-only V2 also pass. Auth remains a UI-only demo; Better Auth is v0.5. Together with the linked v0.2 dashboard, v0.3 Calendar and Invoice resolutions above, all eight historically affected routes now have scoped fixes; task 014 repeats the integrated matrix.
+
+
+### v0.3 task 014 — complete hydration reconciliation
+
+Status: resolved for every historical hydration finding. The historical reports and v0.1 waiver above remain intact; all eight routes now have verified scoped resolutions:
+
+| Historical route | Root cause / resolution | Evidence |
+| --- | --- | --- |
+| Finance, Finance V1 | Module dates / explicit demo civil dates and UTC formatting | [v02-004](https://github.com/moeghashim/tenboards/tree/pr-assets/v02-004), [integrated v02-012](https://github.com/moeghashim/tenboards/tree/pr-assets/v02-012) |
+| Productivity | Runtime calendar/project/note dates / explicit demo fields | [v02-006](https://github.com/moeghashim/tenboards/tree/pr-assets/v02-006) |
+| Patient Monitoring | Render-time seconds / stable hydration placeholder then real UTC clock | [v02-011](https://github.com/moeghashim/tenboards/tree/pr-assets/v02-011) |
+| Calendar | Server/browser local-today mismatch / shared request timestamp and initial UTC, then live browser time | [v03-004](https://github.com/moeghashim/tenboards/tree/pr-assets/v03-004) |
+| Invoice | Independent module clocks / serialized request UTC civil defaults | [v03-007](https://github.com/moeghashim/tenboards/tree/pr-assets/v03-007) |
+| Auth V2 login | Worker module year 1970 versus browser 2026 / serialized request UTC copyright | [v03-012 login rows and raw SSR](https://github.com/moeghashim/tenboards/tree/pr-assets/v03-012) |
+| Auth V2 register | Independently reproduced same year mismatch / shared request loader | [v03-012 register rows and raw SSR](https://github.com/moeghashim/tenboards/tree/pr-assets/v03-012) |
+
+The [v0.3 final matrix](https://github.com/moeghashim/tenboards/tree/pr-assets/v03-014) verifies all 38 catalog routes across four presets, light/dark and desktop/mobile: 608 cases per environment, 1,216 total, with no remaining unexpected errors after documented retries. Supplemental real-clock delayed direct/refresh/timezone, boundary/reset and interaction checks pass. No warning suppression, frozen clocks or SSR disabling were introduced as fixes. Expected QA exceptions/404 diagnostics are isolated. No open product/access question remains; review and merge remain Claude's responsibility, and the milestone stays in review.
