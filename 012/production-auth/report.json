@@ -1,0 +1,78 @@
+{
+  "baseURL": "https://tenboards.mohanadgh.workers.dev/",
+  "preset": "default",
+  "results": [
+    {
+      "route": "/auth/v2/login",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_auth_v2_login-light-desktop.png",
+      "errors": [
+        "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ]
+    },
+    {
+      "route": "/auth/v2/login",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_auth_v2_login-light-mobile.png",
+      "errors": [
+        "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ]
+    },
+    {
+      "route": "/auth/v2/login",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_auth_v2_login-dark-desktop.png",
+      "errors": [
+        "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ]
+    },
+    {
+      "route": "/auth/v2/login",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_auth_v2_login-dark-mobile.png",
+      "errors": [
+        "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ]
+    },
+    {
+      "route": "/auth/v2/register",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_auth_v2_register-light-desktop.png",
+      "errors": [
+        "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ]
+    },
+    {
+      "route": "/auth/v2/register",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_auth_v2_register-light-mobile.png",
+      "errors": [
+        "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ]
+    },
+    {
+      "route": "/auth/v2/register",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_auth_v2_register-dark-desktop.png",
+      "errors": [
+        "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ]
+    },
+    {
+      "route": "/auth/v2/register",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_auth_v2_register-dark-mobile.png",
+      "errors": [
+        "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ]
+    }
+  ]
+}

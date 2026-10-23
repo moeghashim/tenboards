@@ -1,0 +1,34 @@
+{
+  "baseURL": "https://cdb9d22c-tenboards.mohanadgh.workers.dev/",
+  "preset": "default",
+  "results": [
+    {
+      "route": "/dashboard/crm",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_crm-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/crm",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_crm-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/crm",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_crm-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/crm",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_crm-dark-mobile.png",
+      "errors": []
+    }
+  ]
+}

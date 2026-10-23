@@ -1,0 +1,114 @@
+{
+  "baseURL": "https://tenboards.mohanadgh.workers.dev/",
+  "preset": "default",
+  "results": [
+    {
+      "route": "/dashboard/finance",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_finance-light-desktop.png",
+      "errors": [
+        "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ]
+    },
+    {
+      "route": "/dashboard/finance",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_finance-light-mobile.png",
+      "errors": [
+        "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ]
+    },
+    {
+      "route": "/dashboard/finance",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_finance-dark-desktop.png",
+      "errors": [
+        "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ]
+    },
+    {
+      "route": "/dashboard/finance",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_finance-dark-mobile.png",
+      "errors": [
+        "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ]
+    },
+    {
+      "route": "/dashboard/invoice",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_invoice-light-desktop.png",
+      "errors": [
+        "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ]
+    },
+    {
+      "route": "/dashboard/invoice",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_invoice-light-mobile.png",
+      "errors": [
+        "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ]
+    },
+    {
+      "route": "/dashboard/invoice",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_invoice-dark-desktop.png",
+      "errors": [
+        "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ]
+    },
+    {
+      "route": "/dashboard/invoice",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_invoice-dark-mobile.png",
+      "errors": [
+        "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ]
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_patient-monitoring-light-desktop.png",
+      "errors": [
+        "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ]
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_patient-monitoring-light-mobile.png",
+      "errors": [
+        "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ]
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_patient-monitoring-dark-desktop.png",
+      "errors": [
+        "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ]
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_patient-monitoring-dark-mobile.png",
+      "errors": [
+        "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ]
+    }
+  ]
+}

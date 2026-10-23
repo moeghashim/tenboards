@@ -1,0 +1,12 @@
+
+> tenboards@0.1.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url https://tenboards.mohanadgh.workers.dev --routes /dashboard/calendar --output screenshots/012-production-calendar
+
+FAIL /dashboard/calendar light/desktop
+page: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+FAIL /dashboard/calendar light/mobile
+page: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+FAIL /dashboard/calendar dark/desktop
+page: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+FAIL /dashboard/calendar dark/mobile
+page: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.

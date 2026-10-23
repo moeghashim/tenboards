@@ -1,0 +1,1090 @@
+{
+  "baseURL": "http://localhost:3001/",
+  "preset": "default",
+  "results": [
+    {
+      "route": "/chat",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_chat-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/chat",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_chat-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/chat",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_chat-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/chat",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_chat-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/mail",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_mail-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/mail",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_mail-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/mail",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_mail-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/mail",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_mail-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/unauthorized",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_unauthorized-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/unauthorized",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_unauthorized-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/unauthorized",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_unauthorized-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/unauthorized",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_unauthorized-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/auth/v2",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_auth_v2-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/auth/v2",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_auth_v2-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/auth/v2",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_auth_v2-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/auth/v2",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_auth_v2-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/academy",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_academy-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/academy",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_academy-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/academy",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_academy-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/academy",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_academy-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_analytics-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_analytics-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_analytics-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_analytics-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/calendar",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_calendar-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/calendar",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_calendar-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/calendar",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_calendar-dark-desktop.png",
+      "errors": [
+        "request: https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2 net::ERR_TIMED_OUT",
+        "console: Failed to load resource: net::ERR_TIMED_OUT",
+        "request: https://fonts.gstatic.com/s/notosans/v42/o-0bIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjc5a7du3mhPy0.woff2 net::ERR_TIMED_OUT",
+        "console: Failed to load resource: net::ERR_TIMED_OUT",
+        "request: https://fonts.gstatic.com/s/figtree/v9/_Xms-HUzqDCFdgfMm4S9DaRvzig.woff2 net::ERR_TIMED_OUT",
+        "console: Failed to load resource: net::ERR_TIMED_OUT",
+        "request: https://fonts.gstatic.com/s/dmsans/v17/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu0-K6z9mXg.woff2 net::ERR_TIMED_OUT",
+        "console: Failed to load resource: net::ERR_TIMED_OUT",
+        "request: https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJtEtqUYLknw.woff2 net::ERR_TIMED_OUT",
+        "console: Failed to load resource: net::ERR_TIMED_OUT",
+        "request: https://fonts.gstatic.com/s/raleway/v37/1Ptug8zYS_SKggPNyC0IT4ttDfA.woff2 net::ERR_TIMED_OUT",
+        "console: Failed to load resource: net::ERR_TIMED_OUT",
+        "page.waitForFunction: Timeout 30000ms exceeded."
+      ]
+    },
+    {
+      "route": "/dashboard/calendar",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_calendar-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/chat",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_chat-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/chat",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_chat-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/chat",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_chat-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/chat",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_chat-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/coming-soon",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_coming-soon-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/coming-soon",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_coming-soon-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/coming-soon",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_coming-soon-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/coming-soon",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_coming-soon-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/crm",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_crm-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/crm",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_crm-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/crm",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_crm-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/crm",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_crm-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_default-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_default-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_default-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_default-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/ecommerce",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_ecommerce-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/ecommerce",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_ecommerce-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/ecommerce",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_ecommerce-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/ecommerce",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_ecommerce-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/file-manager",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_file-manager-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/file-manager",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_file-manager-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/file-manager",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_file-manager-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/file-manager",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_file-manager-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/finance",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_finance-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/finance",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_finance-light-mobile.png",
+      "errors": [
+        "page.evaluate: TypeError: Cannot read properties of null (reading 'textContent')\n    at eval (eval at evaluate (:370:30), <anonymous>:2:52)\n    at UtilityScript.evaluate (<anonymous>:372:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"
+      ]
+    },
+    {
+      "route": "/dashboard/finance",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_finance-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/finance",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_finance-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/infrastructure",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_infrastructure-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/infrastructure",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_infrastructure-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/infrastructure",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_infrastructure-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/infrastructure",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_infrastructure-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/invoice",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_invoice-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/invoice",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_invoice-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/invoice",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_invoice-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/invoice",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_invoice-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/kanban",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_kanban-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/kanban",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_kanban-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/kanban",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_kanban-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/kanban",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_kanban-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/logistics",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_logistics-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/logistics",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_logistics-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/logistics",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_logistics-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/logistics",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_logistics-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/mail",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_mail-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/mail",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_mail-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/mail",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_mail-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/mail",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_mail-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_patient-monitoring-light-desktop.png",
+      "errors": [
+        "page: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <div data-slot=\"sidebar-wr...\" style={{...}} className=\"group/side...\" data-tsd-source=\"/src/route...\">\n      <AppSidebar>\n      <SidebarInset className={\"[html[da...\"} data-tsd-source=\"/src/route...\">\n        <main data-slot=\"sidebar-inset\" className={\"relative...\"} data-tsd-source=\"/src/route...\">\n          <ShellHeader>\n          <div className=\"min-h-0 mi...\" data-tsd-source=\"/src/route...\">\n            <OutletImpl data-tsd-source=\"/src/route...\">\n              <MatchImpl routeId=\"/(main)/da...\">\n                <MatchInnerImpl match={{id:\"/(main...\", ...}}>\n                  <Lazy>\n                    <Page>\n                      <div className=\"flex min-h...\" data-content-padding=\"false\" data-tsd-source=\"/src/route...\">\n                        <div className=\"grid min-h...\" data-tsd-source=\"/src/route...\">\n                          <div>\n                          <div>\n                          <div className=\"text-muted...\" data-tsd-source=\"/src/route...\">\n                            <span className=\"whitespace...\" data-tsd-source=\"/src/route...\">\n+                             05:20:42\n-                             05:20:41\n                            ...\n                        ...\n"
+      ]
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_patient-monitoring-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_patient-monitoring-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_patient-monitoring-dark-mobile.png",
+      "errors": [
+        "page: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <div data-slot=\"sidebar-wr...\" style={{...}} className=\"group/side...\" data-tsd-source=\"/src/route...\">\n      <AppSidebar>\n      <SidebarInset className={\"[html[da...\"} data-tsd-source=\"/src/route...\">\n        <main data-slot=\"sidebar-inset\" className={\"relative...\"} data-tsd-source=\"/src/route...\">\n          <ShellHeader>\n          <div className=\"min-h-0 mi...\" data-tsd-source=\"/src/route...\">\n            <OutletImpl data-tsd-source=\"/src/route...\">\n              <MatchImpl routeId=\"/(main)/da...\">\n                <MatchInnerImpl match={{id:\"/(main...\", ...}}>\n                  <Lazy>\n                    <Page>\n                      <div className=\"flex min-h...\" data-content-padding=\"false\" data-tsd-source=\"/src/route...\">\n                        <div className=\"grid min-h...\" data-tsd-source=\"/src/route...\">\n                          <div>\n                          <div>\n                          <div className=\"text-muted...\" data-tsd-source=\"/src/route...\">\n                            <span className=\"whitespace...\" data-tsd-source=\"/src/route...\">\n+                             05:20:55\n-                             05:20:54\n                            ...\n                        ...\n"
+      ]
+    },
+    {
+      "route": "/dashboard/productivity",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_productivity-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/productivity",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_productivity-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/productivity",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_productivity-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/productivity",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_productivity-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/products",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_products-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/products",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_products-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/products",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_products-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/products",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_products-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/profile",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_profile-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/profile",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_profile-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/profile",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_profile-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/profile",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_profile-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/roles",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_roles-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/roles",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_roles-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/roles",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_roles-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/roles",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_roles-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/tasks",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_tasks-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/tasks",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_tasks-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/tasks",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_tasks-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/tasks",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_tasks-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/users",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_users-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/users",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_users-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/users",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_users-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/users",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_users-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/$",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard__-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/$",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard__-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/$",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard__-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/$",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard__-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/auth/v1/login",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_auth_v1_login-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/auth/v1/login",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_auth_v1_login-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/auth/v1/login",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_auth_v1_login-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/auth/v1/login",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_auth_v1_login-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/auth/v1/register",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_auth_v1_register-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/auth/v1/register",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_auth_v1_register-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/auth/v1/register",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_auth_v1_register-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/auth/v1/register",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_auth_v1_register-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/auth/v2/login",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_auth_v2_login-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/auth/v2/login",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_auth_v2_login-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/auth/v2/login",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_auth_v2_login-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/auth/v2/login",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_auth_v2_login-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/auth/v2/register",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_auth_v2_register-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/auth/v2/register",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_auth_v2_register-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/auth/v2/register",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_auth_v2_register-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/auth/v2/register",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_auth_v2_register-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics-v1",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_analytics-v1-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics-v1",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_analytics-v1-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics-v1",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_analytics-v1-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics-v1",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_analytics-v1-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/crm-v1",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_crm-v1-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/crm-v1",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_crm-v1-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/crm-v1",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_crm-v1-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/crm-v1",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_crm-v1-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default-v1",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_default-v1-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default-v1",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_default-v1-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default-v1",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_default-v1-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default-v1",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_default-v1-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/finance-v1",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_finance-v1-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/finance-v1",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_finance-v1-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/finance-v1",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_finance-v1-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/finance-v1",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_finance-v1-dark-mobile.png",
+      "errors": []
+    }
+  ]
+}

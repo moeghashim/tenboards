@@ -1,0 +1,62 @@
+{
+  "baseURL": "http://localhost:3001/",
+  "preset": "default",
+  "results": [
+    {
+      "route": "/dashboard/calendar",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_calendar-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/calendar",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_calendar-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/calendar",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_calendar-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/calendar",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_calendar-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/finance",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_finance-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/finance",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_finance-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/finance",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_finance-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/finance",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_finance-dark-mobile.png",
+      "errors": []
+    }
+  ]
+}

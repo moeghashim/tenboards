@@ -1,0 +1,1136 @@
+{
+  "baseURL": "https://cdb9d22c-tenboards.mohanadgh.workers.dev",
+  "preset": "default",
+  "results": [
+    {
+      "route": "/chat",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_chat-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/chat",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_chat-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/chat",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_chat-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/chat",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_chat-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/mail",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_mail-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/mail",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_mail-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/mail",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_mail-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/mail",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_mail-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/academy",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_academy-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/academy",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_academy-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/academy",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_academy-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/academy",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_academy-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/calendar",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_calendar-light-desktop.png",
+      "errors": [
+        "page: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ]
+    },
+    {
+      "route": "/dashboard/calendar",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_calendar-light-mobile.png",
+      "errors": [
+        "page: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ]
+    },
+    {
+      "route": "/dashboard/calendar",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_calendar-dark-desktop.png",
+      "errors": [
+        "page: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ]
+    },
+    {
+      "route": "/dashboard/calendar",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_calendar-dark-mobile.png",
+      "errors": [
+        "page: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ]
+    },
+    {
+      "route": "/dashboard/coming-soon",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_coming-soon-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/coming-soon",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_coming-soon-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/coming-soon",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_coming-soon-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/coming-soon",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_coming-soon-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_default-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_default-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_default-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_default-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/file-manager",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_file-manager-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/file-manager",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_file-manager-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/file-manager",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_file-manager-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/file-manager",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_file-manager-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/infrastructure",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_infrastructure-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/infrastructure",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_infrastructure-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/infrastructure",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_infrastructure-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/infrastructure",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_infrastructure-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/kanban",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_kanban-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/kanban",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_kanban-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/kanban",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_kanban-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/kanban",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_kanban-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/mail",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_mail-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/mail",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_mail-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/mail",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_mail-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/mail",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_mail-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/productivity",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_productivity-light-desktop.png",
+      "errors": [
+        "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ]
+    },
+    {
+      "route": "/dashboard/productivity",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_productivity-light-mobile.png",
+      "errors": [
+        "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ]
+    },
+    {
+      "route": "/dashboard/productivity",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_productivity-dark-desktop.png",
+      "errors": [
+        "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ]
+    },
+    {
+      "route": "/dashboard/productivity",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_productivity-dark-mobile.png",
+      "errors": [
+        "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ]
+    },
+    {
+      "route": "/dashboard/profile",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_profile-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/profile",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_profile-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/profile",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_profile-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/profile",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_profile-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/tasks",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_tasks-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/tasks",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_tasks-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/tasks",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_tasks-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/tasks",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_tasks-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/$",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard__-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/$",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard__-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/$",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard__-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/$",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard__-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/auth/v1/login",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_auth_v1_login-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/auth/v1/login",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_auth_v1_login-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/auth/v1/login",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_auth_v1_login-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/auth/v1/login",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_auth_v1_login-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/auth/v2/login",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_auth_v2_login-light-desktop.png",
+      "errors": [
+        "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ]
+    },
+    {
+      "route": "/auth/v2/login",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_auth_v2_login-light-mobile.png",
+      "errors": [
+        "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ]
+    },
+    {
+      "route": "/auth/v2/login",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_auth_v2_login-dark-desktop.png",
+      "errors": [
+        "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ]
+    },
+    {
+      "route": "/auth/v2/login",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_auth_v2_login-dark-mobile.png",
+      "errors": [
+        "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ]
+    },
+    {
+      "route": "/dashboard/analytics-v1",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_analytics-v1-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics-v1",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_analytics-v1-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics-v1",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_analytics-v1-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics-v1",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_analytics-v1-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default-v1",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_default-v1-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default-v1",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_default-v1-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default-v1",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_default-v1-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default-v1",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_default-v1-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/unauthorized",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_unauthorized-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/unauthorized",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_unauthorized-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/unauthorized",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_unauthorized-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/unauthorized",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_unauthorized-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/auth/v2",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_auth_v2-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/auth/v2",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_auth_v2-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/auth/v2",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_auth_v2-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/auth/v2",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_auth_v2-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_analytics-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_analytics-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_analytics-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_analytics-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/chat",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_chat-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/chat",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_chat-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/chat",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_chat-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/chat",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_chat-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/crm",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_crm-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/crm",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_crm-light-mobile.png",
+      "errors": [
+        "page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://cdb9d22c-tenboards.mohanadgh.workers.dev/dashboard/crm\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/crm",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_crm-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/crm",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_crm-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/ecommerce",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_ecommerce-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/ecommerce",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_ecommerce-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/ecommerce",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_ecommerce-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/ecommerce",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_ecommerce-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/finance",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_finance-light-desktop.png",
+      "errors": [
+        "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ]
+    },
+    {
+      "route": "/dashboard/finance",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_finance-light-mobile.png",
+      "errors": [
+        "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ]
+    },
+    {
+      "route": "/dashboard/finance",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_finance-dark-desktop.png",
+      "errors": [
+        "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ]
+    },
+    {
+      "route": "/dashboard/finance",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_finance-dark-mobile.png",
+      "errors": [
+        "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ]
+    },
+    {
+      "route": "/dashboard/invoice",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_invoice-light-desktop.png",
+      "errors": [
+        "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ]
+    },
+    {
+      "route": "/dashboard/invoice",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_invoice-light-mobile.png",
+      "errors": [
+        "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ]
+    },
+    {
+      "route": "/dashboard/invoice",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_invoice-dark-desktop.png",
+      "errors": [
+        "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ]
+    },
+    {
+      "route": "/dashboard/invoice",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_invoice-dark-mobile.png",
+      "errors": [
+        "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ]
+    },
+    {
+      "route": "/dashboard/logistics",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_logistics-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/logistics",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_logistics-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/logistics",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_logistics-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/logistics",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_logistics-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_patient-monitoring-light-desktop.png",
+      "errors": [
+        "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ]
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_patient-monitoring-light-mobile.png",
+      "errors": [
+        "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ]
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_patient-monitoring-dark-desktop.png",
+      "errors": [
+        "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ]
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_patient-monitoring-dark-mobile.png",
+      "errors": [
+        "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ]
+    },
+    {
+      "route": "/dashboard/products",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_products-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/products",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_products-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/products",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_products-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/products",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_products-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/roles",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_roles-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/roles",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_roles-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/roles",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_roles-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/roles",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_roles-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/users",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_users-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/users",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_users-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/users",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_users-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/users",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_users-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/auth/v1/register",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_auth_v1_register-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/auth/v1/register",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_auth_v1_register-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/auth/v1/register",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_auth_v1_register-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/auth/v1/register",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_auth_v1_register-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/auth/v2/register",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_auth_v2_register-light-desktop.png",
+      "errors": [
+        "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ]
+    },
+    {
+      "route": "/auth/v2/register",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_auth_v2_register-light-mobile.png",
+      "errors": [
+        "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ]
+    },
+    {
+      "route": "/auth/v2/register",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_auth_v2_register-dark-desktop.png",
+      "errors": [
+        "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ]
+    },
+    {
+      "route": "/auth/v2/register",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_auth_v2_register-dark-mobile.png",
+      "errors": [
+        "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ]
+    },
+    {
+      "route": "/dashboard/crm-v1",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_crm-v1-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/crm-v1",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_crm-v1-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/crm-v1",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_crm-v1-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/crm-v1",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_crm-v1-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/finance-v1",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_finance-v1-light-desktop.png",
+      "errors": [
+        "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ]
+    },
+    {
+      "route": "/dashboard/finance-v1",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_finance-v1-light-mobile.png",
+      "errors": [
+        "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ]
+    },
+    {
+      "route": "/dashboard/finance-v1",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_finance-v1-dark-desktop.png",
+      "errors": [
+        "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ]
+    },
+    {
+      "route": "/dashboard/finance-v1",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_finance-v1-dark-mobile.png",
+      "errors": [
+        "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+      ]
+    }
+  ]
+}
