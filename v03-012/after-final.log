@@ -1,0 +1,44 @@
+
+> tenboards@0.2.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://localhost:3000 --routes /auth/v1/login,/auth/v1/register,/auth/v2,/auth/v2/login,/auth/v2/register --reload --interactions --hydration-delay-ms 1800 --timezone Pacific/Kiritimati --output /private/tmp/tenboards-v03-evidence/v03-012/after-final
+
+PASS /auth/v2 light/desktop direct
+PASS /auth/v2 light/desktop refresh
+PASS /auth/v2 light/mobile direct
+PASS /auth/v2 light/mobile refresh
+PASS /auth/v2 dark/desktop direct
+PASS /auth/v2 dark/desktop refresh
+PASS /auth/v2 dark/mobile direct
+PASS /auth/v2 dark/mobile refresh
+PASS /auth/v1/login light/desktop direct
+PASS /auth/v1/login light/desktop refresh
+PASS /auth/v1/login light/mobile direct
+PASS /auth/v1/login light/mobile refresh
+PASS /auth/v1/login dark/desktop direct
+PASS /auth/v1/login dark/desktop refresh
+PASS /auth/v1/login dark/mobile direct
+PASS /auth/v1/login dark/mobile refresh
+PASS /auth/v1/register light/desktop direct
+PASS /auth/v1/register light/desktop refresh
+PASS /auth/v1/register light/mobile direct
+PASS /auth/v1/register light/mobile refresh
+PASS /auth/v1/register dark/desktop direct
+PASS /auth/v1/register dark/desktop refresh
+PASS /auth/v1/register dark/mobile direct
+PASS /auth/v1/register dark/mobile refresh
+PASS /auth/v2/login light/desktop direct
+PASS /auth/v2/login light/desktop refresh
+PASS /auth/v2/login light/mobile direct
+PASS /auth/v2/login light/mobile refresh
+PASS /auth/v2/login dark/desktop direct
+PASS /auth/v2/login dark/desktop refresh
+PASS /auth/v2/login dark/mobile direct
+PASS /auth/v2/login dark/mobile refresh
+PASS /auth/v2/register light/desktop direct
+PASS /auth/v2/register light/desktop refresh
+PASS /auth/v2/register light/mobile direct
+PASS /auth/v2/register light/mobile refresh
+PASS /auth/v2/register dark/desktop direct
+PASS /auth/v2/register dark/desktop refresh
+PASS /auth/v2/register dark/mobile direct
+PASS /auth/v2/register dark/mobile refresh

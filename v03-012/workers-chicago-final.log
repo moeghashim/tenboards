@@ -1,0 +1,28 @@
+
+> tenboards@0.2.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url https://a9dd9c26-tenboards.mohanadgh.workers.dev --routes /auth/v2/login,/auth/v2/register,/dashboard/default --reload --hydration-delay-ms 1800 --timezone America/Chicago --output /private/tmp/tenboards-v03-evidence/v03-012/workers-chicago-final
+
+PASS /dashboard/default light/desktop direct
+PASS /dashboard/default light/desktop refresh
+PASS /dashboard/default light/mobile direct
+PASS /dashboard/default light/mobile refresh
+PASS /dashboard/default dark/desktop direct
+PASS /dashboard/default dark/desktop refresh
+PASS /dashboard/default dark/mobile direct
+PASS /dashboard/default dark/mobile refresh
+PASS /auth/v2/login light/desktop direct
+PASS /auth/v2/login light/desktop refresh
+PASS /auth/v2/login light/mobile direct
+PASS /auth/v2/login light/mobile refresh
+PASS /auth/v2/login dark/desktop direct
+PASS /auth/v2/login dark/desktop refresh
+PASS /auth/v2/login dark/mobile direct
+PASS /auth/v2/login dark/mobile refresh
+PASS /auth/v2/register light/desktop direct
+PASS /auth/v2/register light/desktop refresh
+PASS /auth/v2/register light/mobile direct
+PASS /auth/v2/register light/mobile refresh
+PASS /auth/v2/register dark/desktop direct
+PASS /auth/v2/register dark/desktop refresh
+PASS /auth/v2/register dark/mobile direct
+PASS /auth/v2/register dark/mobile refresh

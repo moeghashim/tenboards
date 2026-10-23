@@ -1,0 +1,40 @@
+{
+  "toolIcon": {
+    "_tag": "website",
+    "pageUrl": "https://a9dd9c26-tenboards.mohanadgh.workers.dev/auth/v2/register"
+  },
+  "value": [
+    {
+      "ratio": 16.185205530756512,
+      "text": "Create your account"
+    },
+    {
+      "ratio": 6.517531425861518,
+      "text": "Enter your details to explore the demo."
+    },
+    {
+      "ratio": 16.185205530756512,
+      "text": "GoogleContinue with Google"
+    },
+    {
+      "ratio": 8.722410784954462,
+      "text": "Register"
+    },
+    {
+      "ratio": 6.517531425861518,
+      "text": "© 2026, tenboards.ENG"
+    },
+    {
+      "ratio": 6.12187700260843,
+      "text": "Design. Build. Launch. Repeat."
+    },
+    {
+      "ratio": 6.12187700260843,
+      "text": "Clone the repo, install dependencies, and explore your dashboard."
+    },
+    {
+      "ratio": 6.12187700260843,
+      "text": "Check the docs or open an issue on GitHub for community support."
+    }
+  ]
+}

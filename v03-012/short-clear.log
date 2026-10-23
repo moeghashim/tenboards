@@ -1,0 +1,8 @@
+
+> tenboards@0.2.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url https://a9dd9c26-tenboards.mohanadgh.workers.dev --routes /auth/v2/register --interactions --output /private/tmp/tenboards-v03-evidence/v03-012/short-clear
+
+PASS /auth/v2/register light/desktop direct
+PASS /auth/v2/register light/mobile direct
+PASS /auth/v2/register dark/desktop direct
+PASS /auth/v2/register dark/mobile direct

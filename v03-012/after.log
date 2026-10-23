@@ -1,0 +1,194 @@
+
+> tenboards@0.2.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://localhost:3000 --routes /auth/v1/login,/auth/v1/register,/auth/v2,/auth/v2/login,/auth/v2/register --reload --interactions --hydration-delay-ms 1800 --timezone Pacific/Kiritimati --output /private/tmp/tenboards-v03-evidence/v03-012/after
+
+PASS /auth/v2 light/desktop direct
+PASS /auth/v2 light/desktop refresh
+PASS /auth/v2 light/mobile direct
+PASS /auth/v2 light/mobile refresh
+PASS /auth/v2 dark/desktop direct
+PASS /auth/v2 dark/desktop refresh
+PASS /auth/v2 dark/mobile direct
+PASS /auth/v2 dark/mobile refresh
+FAIL /auth/v1/login light/desktop direct
+console: In HTML, %s cannot be a descendant of <%s>.
+This will cause a hydration error.%s <pre> p 
+
+  ...
+    <ToastViewport>
+      <ToastViewport data-slot="toast-view..." className="pointer-ev...">
+        <div tabIndex={-1} role="region" aria-live="polite" aria-atomic={false} aria-relevant="additions ..." ...>
+          <ToastList>
+            <Toast toast={{title:"You...", ...}}>
+              <ToastRoot data-slot="toast" className={"group/to..."} toast={{title:"You...", ...}}>
+                <div data-starting-style="" role="dialog" tabIndex={0} aria-modal={false} aria-labelledby={undefined} ...>
+                  <ToastContent>
+                    <ToastContent data-slot="toast-content" className="flex h-ful...">
+                      <div data-slot="toast-content" ref={function} className="flex h-ful...">
+                        <ToastIcon>
+                        <div className="flex min-w...">
+                          <ToastTitle>
+                          <ToastDescription>
+                            <ToastDescription data-slot="toast-desc..." className="text-sm te...">
+>                             <p
+>                               data-slot="toast-description"
+>                               id="_r_1_"
+>                               ref={null}
+>                               className="text-sm text-muted-foreground"
+>                             >
+>                               <pre
+>                                 className="bg-muted text-foreground mt-2 max-w-full overflow-x-auto rounded-md p-3 t..."
+>                                 data-tsd-source="/src/routes/(main)/auth/-components/login-form.tsx:21:7"
+>                               >
+                        ...
+
+console: <%s> cannot contain a nested %s.
+See this log for the ancestor stack trace. p <pre>
+FAIL /auth/v1/login light/desktop refresh
+console: In HTML, %s cannot be a descendant of <%s>.
+This will cause a hydration error.%s <pre> p 
+
+  ...
+    <ToastViewport>
+      <ToastViewport data-slot="toast-view..." className="pointer-ev...">
+        <div tabIndex={-1} role="region" aria-live="polite" aria-atomic={false} aria-relevant="additions ..." ...>
+          <ToastList>
+            <Toast toast={{title:"You...", ...}}>
+              <ToastRoot data-slot="toast" className={"group/to..."} toast={{title:"You...", ...}}>
+                <div data-starting-style="" role="dialog" tabIndex={0} aria-modal={false} aria-labelledby={undefined} ...>
+                  <ToastContent>
+                    <ToastContent data-slot="toast-content" className="flex h-ful...">
+                      <div data-slot="toast-content" ref={function} className="flex h-ful...">
+                        <ToastIcon>
+                        <div className="flex min-w...">
+                          <ToastTitle>
+                          <ToastDescription>
+                            <ToastDescription data-slot="toast-desc..." className="text-sm te...">
+>                             <p
+>                               data-slot="toast-description"
+>                               id="_r_1_"
+>                               ref={null}
+>                               className="text-sm text-muted-foreground"
+>                             >
+>                               <pre
+>                                 className="bg-muted text-foreground mt-2 max-w-full overflow-x-auto rounded-md p-3 t..."
+>                                 data-tsd-source="/src/routes/(main)/auth/-components/login-form.tsx:21:7"
+>                               >
+                        ...
+
+console: <%s> cannot contain a nested %s.
+See this log for the ancestor stack trace. p <pre>
+FAIL /auth/v1/login light/mobile direct
+console: In HTML, %s cannot be a descendant of <%s>.
+This will cause a hydration error.%s <pre> p 
+
+  ...
+    <ToastViewport>
+      <ToastViewport data-slot="toast-view..." className="pointer-ev...">
+        <div tabIndex={-1} role="region" aria-live="polite" aria-atomic={false} aria-relevant="additions ..." ...>
+          <ToastList>
+            <Toast toast={{title:"You...", ...}}>
+              <ToastRoot data-slot="toast" className={"group/to..."} toast={{title:"You...", ...}}>
+                <div data-starting-style="" role="dialog" tabIndex={0} aria-modal={false} aria-labelledby={undefined} ...>
+                  <ToastContent>
+                    <ToastContent data-slot="toast-content" className="flex h-ful...">
+                      <div data-slot="toast-content" ref={function} className="flex h-ful...">
+                        <ToastIcon>
+                        <div className="flex min-w...">
+                          <ToastTitle>
+                          <ToastDescription>
+                            <ToastDescription data-slot="toast-desc..." className="text-sm te...">
+>                             <p
+>                               data-slot="toast-description"
+>                               id="_r_1_"
+>                               ref={null}
+>                               className="text-sm text-muted-foreground"
+>                             >
+>                               <pre
+>                                 className="bg-muted text-foreground mt-2 max-w-full overflow-x-auto rounded-md p-3 t..."
+>                                 data-tsd-source="/src/routes/(main)/auth/-components/login-form.tsx:21:7"
+>                               >
+                        ...
+
+console: <%s> cannot contain a nested %s.
+See this log for the ancestor stack trace. p <pre>
+FAIL /auth/v1/login light/mobile refresh
+console: In HTML, %s cannot be a descendant of <%s>.
+This will cause a hydration error.%s <pre> p 
+
+  ...
+    <ToastViewport>
+      <ToastViewport data-slot="toast-view..." className="pointer-ev...">
+        <div tabIndex={-1} role="region" aria-live="polite" aria-atomic={false} aria-relevant="additions ..." ...>
+          <ToastList>
+            <Toast toast={{title:"You...", ...}}>
+              <ToastRoot data-slot="toast" className={"group/to..."} toast={{title:"You...", ...}}>
+                <div data-starting-style="" role="dialog" tabIndex={0} aria-modal={false} aria-labelledby={undefined} ...>
+                  <ToastContent>
+                    <ToastContent data-slot="toast-content" className="flex h-ful...">
+                      <div data-slot="toast-content" ref={function} className="flex h-ful...">
+                        <ToastIcon>
+                        <div className="flex min-w...">
+                          <ToastTitle>
+                          <ToastDescription>
+                            <ToastDescription data-slot="toast-desc..." className="text-sm te...">
+>                             <p
+>                               data-slot="toast-description"
+>                               id="_r_1_"
+>                               ref={null}
+>                               className="text-sm text-muted-foreground"
+>                             >
+>                               <pre
+>                                 className="bg-muted text-foreground mt-2 max-w-full overflow-x-auto rounded-md p-3 t..."
+>                                 data-tsd-source="/src/routes/(main)/auth/-components/login-form.tsx:21:7"
+>                               >
+                        ...
+
+console: <%s> cannot contain a nested %s.
+See this log for the ancestor stack trace. p <pre>
+FAIL /auth/v1/login dark/desktop direct
+console: In HTML, %s cannot be a descendant of <%s>.
+This will cause a hydration error.%s <pre> p 
+
+  ...
+    <ToastViewport>
+      <ToastViewport data-slot="toast-view..." className="pointer-ev...">
+        <div tabIndex={-1} role="region" aria-live="polite" aria-atomic={false} aria-relevant="additions ..." ...>
+          <ToastList>
+            <Toast toast={{title:"You...", ...}}>
+              <ToastRoot data-slot="toast" className={"group/to..."} toast={{title:"You...", ...}}>
+                <div data-starting-style="" role="dialog" tabIndex={0} aria-modal={false} aria-labelledby={undefined} ...>
+                  <ToastContent>
+                    <ToastContent data-slot="toast-content" className="flex h-ful...">
+                      <div data-slot="toast-content" ref={function} className="flex h-ful...">
+                        <ToastIcon>
+                        <div className="flex min-w...">
+                          <ToastTitle>
+                          <ToastDescription>
+                            <ToastDescription data-slot="toast-desc..." className="text-sm te...">
+>                             <p
+>                               data-slot="toast-description"
+>                               id="_r_1_"
+>                               ref={null}
+>                               className="text-sm text-muted-foreground"
+>                             >
+>                               <pre
+>                                 className="bg-muted text-foreground mt-2 max-w-full overflow-x-auto rounded-md p-3 t..."
+>                                 data-tsd-source="/src/routes/(main)/auth/-components/login-form.tsx:21:7"
+>                               >
+                        ...
+
+console: <%s> cannot contain a nested %s.
+See this log for the ancestor stack trace. p <pre>
+FAIL /auth/v1/login dark/desktop refresh
+page.waitForFunction: Target page, context or browser has been closed
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+browser.newContext: Target page, context or browser has been closed
+    at async file:///Users/moeghashim/tenboards/scripts/screenshots.ts:70:27 {
+  log: []
+}
+
+Node.js v24.21.0

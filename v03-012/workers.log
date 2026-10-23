@@ -1,0 +1,24 @@
+
+> tenboards@0.2.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url https://bba5b9aa-tenboards.mohanadgh.workers.dev --routes /auth/v1/login,/auth/v1/register,/auth/v2,/auth/v2/login,/auth/v2/register --reload --interactions --hydration-delay-ms 1800 --timezone Pacific/Kiritimati --output /private/tmp/tenboards-v03-evidence/v03-012/workers
+
+PASS /auth/v2 light/desktop direct
+PASS /auth/v2 light/desktop refresh
+PASS /auth/v2 light/mobile direct
+PASS /auth/v2 light/mobile refresh
+PASS /auth/v2 dark/desktop direct
+PASS /auth/v2 dark/desktop refresh
+PASS /auth/v2 dark/mobile direct
+PASS /auth/v2 dark/mobile refresh
+FAIL /auth/v1/login light/desktop direct
+page.waitForFunction: Target page, context or browser has been closed
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+browser.newContext: Target page, context or browser has been closed
+    at async file:///Users/moeghashim/tenboards/scripts/screenshots.ts:70:27 {
+  log: []
+}
+
+Node.js v24.21.0

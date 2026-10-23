@@ -1,0 +1,118 @@
+{
+  "baseURL": "https://bba5b9aa-tenboards.mohanadgh.workers.dev/",
+  "hydrationDelayMs": 1800,
+  "preset": "default",
+  "timezone": "Pacific/Kiritimati",
+  "reload": true,
+  "interactions": true,
+  "results": [
+    {
+      "route": "/auth/v2",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_auth_v2-light-desktop-interactive.png",
+      "controlsFile": "_auth_v2-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Bare V2 retains its layout-only URL without a form or redirect"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/auth/v2",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_auth_v2-light-desktop-refresh-interactive.png",
+      "controlsFile": "_auth_v2-light-desktop-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Bare V2 retains its layout-only URL without a form or redirect"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/auth/v2",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_auth_v2-light-mobile-interactive.png",
+      "controlsFile": "_auth_v2-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Bare V2 retains its layout-only URL without a form or redirect"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/auth/v2",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_auth_v2-light-mobile-refresh-interactive.png",
+      "controlsFile": "_auth_v2-light-mobile-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Bare V2 retains its layout-only URL without a form or redirect"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/auth/v2",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_auth_v2-dark-desktop-interactive.png",
+      "controlsFile": "_auth_v2-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Bare V2 retains its layout-only URL without a form or redirect"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/auth/v2",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_auth_v2-dark-desktop-refresh-interactive.png",
+      "controlsFile": "_auth_v2-dark-desktop-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Bare V2 retains its layout-only URL without a form or redirect"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/auth/v2",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_auth_v2-dark-mobile-interactive.png",
+      "controlsFile": "_auth_v2-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Bare V2 retains its layout-only URL without a form or redirect"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/auth/v2",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_auth_v2-dark-mobile-refresh-interactive.png",
+      "controlsFile": "_auth_v2-dark-mobile-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Bare V2 retains its layout-only URL without a form or redirect"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/auth/v1/login",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_auth_v1_login-light-desktop-interactive.png",
+      "controlsFile": "_auth_v1_login-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": [
+        "page.waitForFunction: Target page, context or browser has been closed"
+      ]
+    }
+  ]
+}
