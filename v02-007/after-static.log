@@ -1,0 +1,12 @@
+
+> tenboards@0.1.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --routes /dashboard/default,/dashboard/ecommerce --output screenshots/v02-007/after-static
+
+PASS /dashboard/default light/desktop direct
+PASS /dashboard/default light/mobile direct
+PASS /dashboard/default dark/desktop direct
+PASS /dashboard/default dark/mobile direct
+PASS /dashboard/ecommerce light/desktop direct
+PASS /dashboard/ecommerce light/mobile direct
+PASS /dashboard/ecommerce dark/desktop direct
+PASS /dashboard/ecommerce dark/mobile direct

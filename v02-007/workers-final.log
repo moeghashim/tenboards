@@ -1,0 +1,12 @@
+
+> tenboards@0.1.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --routes /dashboard/ecommerce --base-url https://688c4202-tenboards.mohanadgh.workers.dev --reload --interactions --output screenshots/v02-007/workers-final
+
+PASS /dashboard/ecommerce light/desktop direct
+PASS /dashboard/ecommerce light/desktop refresh
+PASS /dashboard/ecommerce light/mobile direct
+PASS /dashboard/ecommerce light/mobile refresh
+PASS /dashboard/ecommerce dark/desktop direct
+PASS /dashboard/ecommerce dark/desktop refresh
+PASS /dashboard/ecommerce dark/mobile direct
+PASS /dashboard/ecommerce dark/mobile refresh

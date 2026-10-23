@@ -1,0 +1,290 @@
+src/routes/(main)/dashboard/ecommerce/-components/recent-orders.tsx:103:23 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    101 │         <div className="flex flex-wrap items-center justify-between gap-2 px-4">
+    102 │           <ToggleGroup
+  > 103 │             className="flex-wrap bg-muted text-muted-foreground **:data-[slot=toggle-group-item]:tex...
+        │                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    104 │             onValueChange={(value) => {
+    105 │               const filter = value[0] as OrderFilter | undefined;
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+    101 101 │           <div className="flex flex-wrap items-center justify-between gap-2 px-4">
+    102 102 │             <ToggleGroup
+    103     │ - ············className="flex-wrap·bg-muted·text-muted-foreground·**:data-[slot=toggle-group-item]:tex...
+        103 │ + ...oggle-group-item][data-pressed]]:bg-input/30·flex-wrap·p-0.75·**:data-[slot=toggle-group-item]:round...
+    104 104 │               onValueChange={(value) => {
+    105 105 │                 const filter = value[0] as OrderFilter | undefined;
+  
+
+src/routes/(main)/dashboard/ecommerce/-components/recent-orders.tsx:171:33 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    169 │           </p>
+    170 │ 
+  > 171 │           <Pagination className="mx-0 max-w-full w-auto justify-end">
+        │                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    172 │             <PaginationContent className="gap-1.5">
+    173 │               <PaginationItem>
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+    169 169 │             </p>
+    170 170 │   
+    171     │ - ··········<Pagination·className="mx-0·max-w-full·w-auto·justify-end">
+        171 │ + ··········<Pagination·className="mx-0·w-auto·max-w-full·justify-end">
+    172 172 │               <PaginationContent className="gap-1.5">
+    173 173 │                 <PaginationItem>
+  
+
+src/routes/(main)/dashboard/ecommerce/-components/store-traffic.tsx:144:5 lint/style/useTemplate  FIXABLE  ━━━━━━━━━━
+
+  i Template literals are preferred over string concatenation.
+  
+    142 │ function formatTrafficTooltipLabel(value: string) {
+    143 │   return (
+  > 144 │     new Intl.DateTimeFormat("en-US", {
+        │     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  > 145 │       month: "short",
+         ...
+  > 149 │       timeZone: "UTC",
+  > 150 │     }).format(new Date(value)) + " UTC"
+        │     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    151 │   );
+    152 │ }
+  
+  i Template literals are easier to read than a chain of + operators and quotes, and they avoid mistakes with spaces and escaped quotes.
+  
+  i Unsafe fix: Use a template literal.
+  
+    142 142 │   function formatTrafficTooltipLabel(value: string) {
+    143 143 │     return (
+    144     │ - ····new·Intl.DateTimeFormat("en-US",·{
+        144 │ + ····`${new·Intl.DateTimeFormat("en-US",·{
+    145 145 │         month: "short",
+    146 146 │         day: "numeric",
+    ······· │ 
+    148 148 │         minute: "2-digit",
+    149 149 │         timeZone: "UTC",
+    150     │ - ····}).format(new·Date(value))·+·"·UTC"
+        150 │ + ····}).format(new·Date(value))}·UTC`
+    151 151 │     );
+    152 152 │   }
+  
+
+src/routes/(main)/dashboard/ecommerce/-components/top-products.tsx:95:32 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    93 │             <div className="contents text-sm" key={product.name}>
+    94 │               <div className="min-w-0">
+  > 95 │                 <div className="wrap-break-word font-medium">{product.name}</div>
+       │                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    96 │                 <div className="text-muted-foreground text-xs">{product.category}</div>
+    97 │               </div>
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+     93  93 │               <div className="contents text-sm" key={product.name}>
+     94  94 │                 <div className="min-w-0">
+     95     │ - ················<div·className="wrap-break-word·font-medium">{product.name}</div>
+         95 │ + ················<div·className="font-medium·wrap-break-word">{product.name}</div>
+     96  96 │                   <div className="text-muted-foreground text-xs">{product.category}</div>
+     97  97 │                 </div>
+  
+
+src/routes/(main)/dashboard/ecommerce/route.tsx:41:25 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    39 │       <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+    40 │         <div className="flex flex-col gap-1">
+  > 41 │           <h1 className="text-2xl font-medium leading-tight tracking-tight">Store Overview</h1>
+       │                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    42 │           <p className="text-muted-foreground text-sm">Demo report · October 23, 2026 · UTC</p>
+    43 │         </div>
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+     39  39 │         <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+     40  40 │           <div className="flex flex-col gap-1">
+     41     │ - ··········<h1·className="text-2xl·font-medium·leading-tight·tracking-tight">Store·Overview</h1>
+         41 │ + ··········<h1·className="text-2xl·leading-tight·font-medium·tracking-tight">Store·Overview</h1>
+     42  42 │             <p className="text-muted-foreground text-sm">Demo report · October 23, 2026 · UTC</p>
+     43  43 │           </div>
+  
+
+src/routes/(main)/dashboard/ecommerce/-components/customer-reviews.tsx:1:33 lint/correctness/noUnusedImports  FIXABLE  ━━━━━━━━━━
+
+  ! Several of these imports are unused.
+  
+  > 1 │ import { ArrowLeft, ArrowRight, ArrowUpRight, Star } from "lucide-react";
+      │                                 ^^^^^^^^^^^^
+    2 │ 
+    3 │ import { Avatar, AvatarFallback, AvatarGroup, AvatarGroupCount } from "@/components/ui/avatar";
+  
+  i Unused imports might be the result of an incomplete refactoring.
+  
+  i Unsafe fix: Remove the unused imports.
+  
+    1 │ import·{·ArrowLeft,·ArrowRight,·ArrowUpRight,·Star·}·from·"lucide-react";
+      │                                 --------------                           
+
+src/routes/(main)/dashboard/ecommerce/-components/customer-reviews.tsx:5:10 lint/correctness/noUnusedImports  FIXABLE  ━━━━━━━━━━
+
+  ! Several of these imports are unused.
+  
+    3 │ import { Avatar, AvatarFallback, AvatarGroup, AvatarGroupCount } from "@/components/ui/avatar";
+    4 │ import { Button } from "@/components/ui/button";
+  > 5 │ import { CardAction, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+      │          ^^^^^^^^^^
+    6 │ 
+    7 │ import { DashboardCard as Card } from "../../-components/dashboard/cards";
+  
+  i Unused imports might be the result of an incomplete refactoring.
+  
+  i Unsafe fix: Remove the unused imports.
+  
+    5 │ import·{·CardAction,·CardContent,·CardDescription,·CardHeader,·CardTitle·}·from·"@/components/ui/card";
+      │          ------------                                                                                  
+
+src/routes/(main)/dashboard/ecommerce/-components/inventory.tsx:1:10 lint/correctness/noUnusedImports  FIXABLE  ━━━━━━━━━━
+
+  ! Several of these imports are unused.
+  
+  > 1 │ import { ArrowUpRight, PackageCheck, PackageX, TriangleAlert } from "lucide-react";
+      │          ^^^^^^^^^^^^
+    2 │ import { Label, Pie, PieChart } from "recharts";
+    3 │ 
+  
+  i Unused imports might be the result of an incomplete refactoring.
+  
+  i Unsafe fix: Remove the unused imports.
+  
+    1 │ import·{·ArrowUpRight,·PackageCheck,·PackageX,·TriangleAlert·}·from·"lucide-react";
+      │          --------------                                                            
+
+src/routes/(main)/dashboard/ecommerce/-components/inventory.tsx:4:10 lint/correctness/noUnusedImports  FIXABLE  ━━━━━━━━━━
+
+  ! Several of these imports are unused.
+  
+    2 │ import { Label, Pie, PieChart } from "recharts";
+    3 │ 
+  > 4 │ import { CardAction, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+      │          ^^^^^^^^^^
+    5 │ import type { ChartConfig } from "@/components/ui/chart";
+    6 │ import { Separator } from "@/components/ui/separator";
+  
+  i Unused imports might be the result of an incomplete refactoring.
+  
+  i Unsafe fix: Remove the unused imports.
+  
+    4 │ import·{·CardAction,·CardContent,·CardDescription,·CardHeader,·CardTitle·}·from·"@/components/ui/card";
+      │          ------------                                                                                  
+
+src/routes/(main)/dashboard/ecommerce/-components/store-traffic.tsx:4:8 lint/correctness/noUnusedImports  FIXABLE  ━━━━━━━━━━
+
+  ! This import is unused.
+  
+    3 │ import { subMinutes } from "date-fns";
+  > 4 │ import { ArrowUpRight } from "lucide-react";
+      │        ^^^^^^^^^^^^^^^^
+    5 │ import { Area, AreaChart, CartesianGrid, Line, XAxis, YAxis } from "recharts";
+    6 │ 
+  
+  i Unused imports might be the result of an incomplete refactoring.
+  
+  i Unsafe fix: Remove the unused imports.
+  
+      2   2 │   
+      3   3 │   import { subMinutes } from "date-fns";
+      4     │ - import·{·ArrowUpRight·}·from·"lucide-react";
+      5   4 │   import { Area, AreaChart, CartesianGrid, Line, XAxis, YAxis } from "recharts";
+      6   5 │   
+  
+
+src/routes/(main)/dashboard/ecommerce/-components/store-traffic.tsx:7:10 lint/correctness/noUnusedImports  FIXABLE  ━━━━━━━━━━
+
+  ! Several of these imports are unused.
+  
+    5 │ import { Area, AreaChart, CartesianGrid, Line, XAxis, YAxis } from "recharts";
+    6 │ 
+  > 7 │ import { CardAction, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+      │          ^^^^^^^^^^
+    8 │ import { type ChartConfig, ChartLegend, ChartTooltip } from "@/components/ui/chart";
+    9 │ import {
+  
+  i Unused imports might be the result of an incomplete refactoring.
+  
+  i Unsafe fix: Remove the unused imports.
+  
+    7 │ import·{·CardAction,·CardContent,·CardDescription,·CardHeader,·CardTitle·}·from·"@/components/ui/card";
+      │          ------------                                                                                  
+
+src/routes/(main)/dashboard/ecommerce/-components/top-products.tsx:1:8 lint/correctness/noUnusedImports  FIXABLE  ━━━━━━━━━━
+
+  ! This import is unused.
+  
+  > 1 │ import { ArrowUpRight } from "lucide-react";
+      │        ^^^^^^^^^^^^^^^^
+    2 │ 
+    3 │ import { CardAction, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+  
+  i Unused imports might be the result of an incomplete refactoring.
+  
+  i Unsafe fix: Remove the unused imports.
+  
+    1 │ import·{·ArrowUpRight·}·from·"lucide-react";
+      │ --------------------------------------------
+
+src/routes/(main)/dashboard/ecommerce/-components/top-products.tsx:3:10 lint/correctness/noUnusedImports  FIXABLE  ━━━━━━━━━━
+
+  ! Several of these imports are unused.
+  
+    1 │ import { ArrowUpRight } from "lucide-react";
+    2 │ 
+  > 3 │ import { CardAction, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+      │          ^^^^^^^^^^
+    4 │ import { Separator } from "@/components/ui/separator";
+    5 │ 
+  
+  i Unused imports might be the result of an incomplete refactoring.
+  
+  i Unsafe fix: Remove the unused imports.
+  
+    3 │ import·{·CardAction,·CardContent,·CardDescription,·CardHeader,·CardTitle·}·from·"@/components/ui/card";
+      │          ------------                                                                                  
+
+Skipped 27 suggested fixes.
+If you wish to apply the suggested (unsafe) fixes, use the command biome check --write --unsafe
+
+Checked 12 files in 484ms. Fixed 9 files.
+Found 8 warnings.
+Found 5 infos.

@@ -1,0 +1,129 @@
+{
+  "baseURL": "http://127.0.0.1:3000/",
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": true,
+  "interactions": true,
+  "results": [
+    {
+      "route": "/dashboard/ecommerce",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_ecommerce-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_ecommerce-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Last Month / Online Store selected",
+        "Returns filter, Space selects orders, Enter sorts dates",
+        "Order menu opens, Escape closes",
+        "No page-wide overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/ecommerce",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_ecommerce-light-desktop-refresh-interactive.png",
+      "controlsFile": "_dashboard_ecommerce-light-desktop-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Last Month / Online Store selected",
+        "Returns filter, Space selects orders, Enter sorts dates",
+        "Order menu opens, Escape closes",
+        "No page-wide overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/ecommerce",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_ecommerce-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_ecommerce-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Last Month / Online Store selected",
+        "Returns filter, Space selects orders, Enter sorts dates",
+        "Order menu opens, Escape closes",
+        "No page-wide overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/ecommerce",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_ecommerce-light-mobile-refresh-interactive.png",
+      "controlsFile": "_dashboard_ecommerce-light-mobile-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Last Month / Online Store selected",
+        "Returns filter, Space selects orders, Enter sorts dates",
+        "Order menu opens, Escape closes",
+        "No page-wide overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/ecommerce",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_ecommerce-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_ecommerce-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Last Month / Online Store selected",
+        "Returns filter, Space selects orders, Enter sorts dates",
+        "Order menu opens, Escape closes",
+        "No page-wide overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/ecommerce",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_ecommerce-dark-desktop-refresh-interactive.png",
+      "controlsFile": "_dashboard_ecommerce-dark-desktop-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Last Month / Online Store selected",
+        "Returns filter, Space selects orders, Enter sorts dates",
+        "Order menu opens, Escape closes",
+        "No page-wide overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/ecommerce",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_ecommerce-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_ecommerce-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Last Month / Online Store selected",
+        "Returns filter, Space selects orders, Enter sorts dates",
+        "Order menu opens, Escape closes",
+        "No page-wide overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/ecommerce",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_ecommerce-dark-mobile-refresh-interactive.png",
+      "controlsFile": "_dashboard_ecommerce-dark-mobile-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Last Month / Online Store selected",
+        "Returns filter, Space selects orders, Enter sorts dates",
+        "Order menu opens, Escape closes",
+        "No page-wide overflow"
+      ],
+      "errors": []
+    }
+  ]
+}
