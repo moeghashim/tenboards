@@ -2,6 +2,30 @@ import type { Page } from "playwright";
 
 // Opt-in interaction evidence for the dashboard batch. Never replace the runtime clock.
 export async function captureInteractions(page: Page, route: string): Promise<string[]> {
+  if (route === "/dashboard/academy") {
+    const student = page.getByRole("button", { name: "Olivia Davis", exact: true });
+    await page.keyboard.press("Tab");
+    await student.focus();
+    await page.keyboard.press("Tab");
+    await page.keyboard.press("Shift+Tab");
+    await page.locator('[data-slot="tooltip-content"]').filter({ hasText: "Top Performer" }).waitFor();
+    await page.keyboard.press("Escape");
+    await page.getByRole("button", { name: "Gradebook", exact: true }).press("Enter");
+    await page.getByText("Modern European History", { exact: true }).waitFor();
+    if (await page.evaluate(() => document.documentElement.scrollWidth > innerWidth))
+      throw new Error("Page-wide overflow");
+    await page.keyboard.press("Tab");
+    await student.focus();
+    await page.keyboard.press("Tab");
+    await page.keyboard.press("Shift+Tab");
+    await page.locator('[data-slot="tooltip-content"]').filter({ hasText: "Top Performer" }).waitFor();
+    return [
+      "Student achievement tooltip opens by keyboard focus",
+      "Escape dismisses tooltip",
+      "Gradebook demo action retains screen",
+      "Full course name and no page overflow",
+    ];
+  }
   if (route === "/dashboard/ecommerce") {
     await page.getByRole("combobox", { name: "Store period" }).click();
     await page.getByRole("option", { name: "Last Month", exact: true }).click();

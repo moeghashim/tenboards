@@ -159,3 +159,7 @@ For repeatable interaction evidence, run `npm run screenshots -- --routes /dashb
 ### E-commerce dashboard (v0.2 / 007)
 
 E-commerce uses shared compact KPIs, a labelled USD revenue/profit chart, readable traffic-source shares, semantic inventory/payment states and wrapping order controls. The demo reporting interval is explicitly October 23, 2026 UTC; sales buckets and traffic timestamps no longer depend on server startup or browser clocks. Existing period/channel selections, filters, selection, date sorting and pagination remain local. Order action menus now open correctly with Base UI group labels; review/settings/export actions retain their existing demo behavior. `npm run screenshots -- --routes /dashboard/ecommerce --reload --interactions` verifies the order workflow and direct/refresh rendering.
+
+### Academy dashboard (v0.2 / 008)
+
+Academy shares compact metrics and semantic schedule/assignment states. Full course names wrap; submission counts are available in a labelled table alongside the motion-aware chart. Performance windows retain their weekly positions and scores, with named student achievement tooltips outside the marks for mobile and keyboard access. Schedule and upcoming events use an explicit October 23, 2026 demo day, retaining their event offsets and times across server/browser timezones. Announcement, Gradebook and assignment controls retain their existing demo behavior. The Academy `--interactions` screenshot scenario checks keyboard achievement details and responsive layout.

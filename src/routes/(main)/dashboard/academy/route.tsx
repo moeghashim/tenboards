@@ -19,10 +19,8 @@ function Page() {
     <div className="flex flex-col gap-4">
       <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
         <div className="space-y-1">
-          <h1 className="text-3xl tracking-tight">Academy Dashboard</h1>
-          <p className="text-muted-foreground text-sm">
-            Good morning, Teacher. Here's a quick overview of today's activity.
-          </p>
+          <h1 className="text-2xl font-medium tracking-tight">Academy Dashboard</h1>
+          <p className="text-muted-foreground text-sm">Teaching overview · Demo day: October 23, 2026.</p>
         </div>
 
         <div className="flex flex-wrap items-center gap-2 lg:w-fit">
@@ -44,19 +42,19 @@ function Page() {
       <KpiCards />
 
       <div className="grid grid-cols-1 gap-4 xl:grid-cols-12">
-        <div className="xl:col-span-5">
+        <div className="min-w-0 xl:col-span-5">
           <ClassSchedule />
         </div>
-        <div className="xl:col-span-7">
+        <div className="min-w-0 xl:col-span-7">
           <AssignmentStatus />
         </div>
       </div>
 
       <div className="grid grid-cols-1 gap-4 xl:grid-cols-12">
-        <div className="xl:col-span-8">
+        <div className="min-w-0 xl:col-span-8">
           <PerformanceHighlights />
         </div>
-        <div className="xl:col-span-4">
+        <div className="min-w-0 xl:col-span-4">
           <UpcomingEvents />
         </div>
       </div>
