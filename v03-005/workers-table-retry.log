@@ -1,0 +1,12 @@
+
+> tenboards@0.2.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url https://ca3f6e06-tenboards.mohanadgh.workers.dev --routes /dashboard/kanban --search view=table --reload --output screenshots/v03-005/workers-table-retry
+
+PASS /dashboard/kanban light/desktop direct
+PASS /dashboard/kanban light/desktop refresh
+PASS /dashboard/kanban light/mobile direct
+PASS /dashboard/kanban light/mobile refresh
+PASS /dashboard/kanban dark/desktop direct
+PASS /dashboard/kanban dark/desktop refresh
+PASS /dashboard/kanban dark/mobile direct
+PASS /dashboard/kanban dark/mobile refresh
