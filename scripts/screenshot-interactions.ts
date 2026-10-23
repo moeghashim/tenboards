@@ -6,6 +6,164 @@ export async function captureInteractions(
   route: string,
   captureVariant: (name: string) => Promise<void>,
 ): Promise<string[]> {
+  if (route === "/dashboard/kanban") {
+    // dnd-kit commits sensor/overlay transitions on animation frames. Settle between gestures.
+    const settleDrag = () => page.waitForTimeout(250);
+    const choose = async (view: string) => {
+      await page.getByRole("tab", { name: view, exact: true }).press("Enter");
+      await page.waitForURL((url) => url.searchParams.get("view") === view.toLowerCase());
+      await page.getByRole("tab", { name: view, exact: true }).waitFor();
+    };
+    await choose("Board");
+    const task = page.locator('[data-task-id="tender-workflow-map"]').first();
+    await task.press("Space");
+    await settleDrag();
+    await page.keyboard.press("ArrowRight");
+    await settleDrag();
+    await page.locator('[data-column-id="planned"] [data-task-id="tender-workflow-map"]').waitFor();
+    await captureVariant("drag-overlay");
+    await settleDrag();
+    await page.keyboard.press("Escape");
+    await settleDrag();
+    await page
+      .locator('[data-column-id="ideas"] [data-task-id="tender-workflow-map"]')
+      .waitFor()
+      .catch(async () => {
+        throw new Error(
+          `Task return to Ideas failed: ${await page.evaluate(() => ({ columns: Array.from(document.querySelectorAll('[data-task-id="tender-workflow-map"]')).map((e) => e.closest("[data-column-id]")?.getAttribute("data-column-id")), live: Array.from(document.querySelectorAll("[aria-live]")).map((e) => e.textContent) })).then(JSON.stringify)}`,
+        );
+      });
+    await task.press("Space");
+    await settleDrag();
+    await page.keyboard.press("ArrowRight");
+    await settleDrag();
+    await page.locator('[data-column-id="planned"] [data-task-id="tender-workflow-map"]').waitFor();
+    await page.keyboard.press("Space");
+    await settleDrag();
+    const column = page.getByRole("button", { name: "Drag Ideas column", exact: true });
+    await column.scrollIntoViewIfNeeded();
+    await column.press("Space");
+    await settleDrag();
+    await page.keyboard.press("ArrowRight");
+    await settleDrag();
+    await page.waitForFunction(() =>
+      Array.from(document.querySelectorAll("[aria-live]")).some(
+        (node) => node.textContent?.includes("column:ideas") && node.textContent.includes("column:planned"),
+      ),
+    );
+    await page.keyboard.press("Space");
+    await settleDrag();
+    await page.waitForFunction(
+      () => document.querySelector("[data-column-id]")?.getAttribute("data-column-id") === "planned",
+    );
+    if ((page.viewportSize()?.width ?? 0) > 768) {
+      const moving = await page
+        .locator('[data-column-id="planned"] [data-task-id="tender-workflow-map"]')
+        .boundingBox();
+      const target = await page.locator('[data-column-id="ideas"] [data-task-id]').first().boundingBox();
+      if (!moving || !target) throw new Error("Pointer task targets missing");
+      await page.mouse.move(moving.x + moving.width / 2, moving.y + 20);
+      await page.mouse.down();
+      await page.mouse.move(moving.x + moving.width / 2 + 12, moving.y + 30, { steps: 4 });
+      await page.mouse.move(target.x + target.width / 2, target.y + 20, { steps: 15 });
+      await page
+        .locator('[data-column-id="ideas"] [data-task-id="tender-workflow-map"]')
+        .waitFor()
+        .catch(async () => {
+          throw new Error(
+            `Task return to Ideas failed: ${await page.evaluate(() => ({ columns: Array.from(document.querySelectorAll('[data-task-id="tender-workflow-map"]')).map((e) => e.closest("[data-column-id]")?.getAttribute("data-column-id")), live: Array.from(document.querySelectorAll("[aria-live]")).map((e) => e.textContent) })).then(JSON.stringify)}`,
+          );
+        });
+      await page.mouse.up();
+      await settleDrag();
+    }
+    await captureVariant("board");
+    await choose("List");
+    await page.reload();
+    await page.locator('[aria-roledescription="draggable"]').first().waitFor();
+    await page.getByRole("tab", { name: "List", exact: true }).waitFor();
+    const firstList = page.locator('[data-task-id="tender-workflow-map"]');
+    await firstList.press("Space");
+    await settleDrag();
+    await page.keyboard.press("ArrowDown");
+    await settleDrag();
+    await page.waitForFunction(
+      () => document.querySelector("[data-task-id]")?.getAttribute("data-task-id") === "license-strategy-research",
+    );
+    await page.keyboard.press("Escape");
+    await settleDrag();
+    await page.waitForFunction(
+      () => document.querySelector("[data-task-id]")?.getAttribute("data-task-id") === "tender-workflow-map",
+    );
+    await firstList.press("Space");
+    await settleDrag();
+    await page.keyboard.press("ArrowDown");
+    await settleDrag();
+    await page.waitForFunction(
+      () => document.querySelector("[data-task-id]")?.getAttribute("data-task-id") === "license-strategy-research",
+    );
+    await page.keyboard.press("Space");
+    await settleDrag();
+    await page.waitForFunction(
+      () => document.querySelector("[data-task-id]")?.getAttribute("data-task-id") === "license-strategy-research",
+    );
+    await captureVariant("list");
+    await choose("Table");
+    await page.reload();
+    await page.locator('[aria-roledescription="draggable"]').first().waitFor();
+    const drag = page.getByRole("button", { name: "Drag Tender workflow map", exact: true });
+    await drag.press("Space");
+    await settleDrag();
+    await page.keyboard.press("ArrowDown");
+    await settleDrag();
+    await page.waitForFunction(
+      () => document.querySelector("[data-task-id]")?.getAttribute("data-task-id") === "license-strategy-research",
+    );
+    await page.keyboard.press("Escape");
+    await settleDrag();
+    await page.waitForFunction(
+      () => document.querySelector("tbody [data-task-id]")?.getAttribute("data-task-id") === "tender-workflow-map",
+    );
+    await drag.press("Space");
+    await settleDrag();
+    await page.keyboard.press("ArrowDown");
+    await settleDrag();
+    await page.waitForFunction(
+      () => document.querySelector("[data-task-id]")?.getAttribute("data-task-id") === "license-strategy-research",
+    );
+    await page.keyboard.press("Space");
+    await settleDrag();
+    await page.waitForFunction(
+      () =>
+        document.querySelector("tbody [data-task-id]")?.getAttribute("data-task-id") === "license-strategy-research",
+    );
+    await page.getByRole("combobox", { name: "Change status for Tender workflow map", exact: true }).click();
+    await page.getByRole("option", { name: "QA", exact: true }).click();
+    await captureVariant("table");
+    await page.getByRole("combobox", { name: "Rows per page", exact: true }).click();
+    await page.getByRole("option", { name: "50", exact: true }).click();
+    const statusSelects = page.getByRole("combobox", { name: /^Change status for/ });
+    for (let index = 0; index < (await statusSelects.count()); index++) {
+      const select = statusSelects.nth(index);
+      if (((await select.textContent()) ?? "").trim().startsWith("QA")) {
+        await select.click();
+        await page.getByRole("option", { name: "Shipped", exact: true }).click();
+      }
+    }
+    await choose("Board");
+    await page.locator('[data-column-id="qa"]').getByText("No tasks", { exact: true }).waitFor();
+    await page.locator('[data-column-id="qa"]').scrollIntoViewIfNeeded();
+    await captureVariant("empty-column");
+    if (await page.evaluate(() => document.documentElement.scrollWidth > innerWidth))
+      throw new Error("Kanban document overflow");
+    return [
+      "Query Board/List/Table selections and list/table refresh",
+      "Keyboard task move and Escape rollback; desktop pointer move",
+      "Keyboard column and table ordering; list/table cancellation",
+      "Table status edit reflected in board; empty QA column",
+      "Local horizontal scrolling and neutral owner across all views",
+    ];
+  }
   if (route === "/dashboard/calendar") {
     const today = await page.evaluate(() => {
       const date = new Date();

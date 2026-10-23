@@ -30,7 +30,7 @@ export function KanbanList({ board, columns }: { board: BoardState; columns: rea
         return (
           <KanbanListDropGroup key={column.id} columnId={column.id}>
             <Collapsible defaultOpen className="border-b">
-              <div className="bg-muted/50 hover:bg-muted flex items-center gap-1 pr-3 lg:pr-4.5">
+              <div className="bg-muted hover:bg-muted flex items-center gap-1 pr-3 lg:pr-4.5">
                 <h2 className="min-w-0 flex-1">
                   <CollapsibleTrigger className="focus-visible:ring-ring flex min-h-10 w-full items-center gap-2 py-2 pr-3 pl-4 text-left text-sm font-medium outline-none focus-visible:ring-2 focus-visible:ring-inset lg:pl-6">
                     <StatusIcon className="text-muted-foreground size-3.5 shrink-0" aria-hidden="true" />
@@ -74,14 +74,17 @@ export function KanbanList({ board, columns }: { board: BoardState; columns: rea
                       <SortableListTask key={task.id} task={task} columnId={column.id} index={index}>
                         <Badge
                           variant={priority.variant}
-                          className={cn("size-5 rounded-sm p-0", priority.className)}
+                          className={cn("rounded-sm px-1.5 py-0.5", priority.className)}
                           title={`${task.priority} priority`}
                         >
                           <PriorityIcon aria-hidden="true" />
-                          <span className="sr-only">{task.priority} priority</span>
+                          <span>{task.priority}</span>
                         </Badge>
                         <div className="flex min-w-0 flex-1 flex-col items-start gap-2.5 sm:flex-row sm:items-center sm:gap-4">
-                          <span className="w-full truncate text-sm font-normal sm:w-auto sm:flex-1" title={task.title}>
+                          <span
+                            className="w-full text-sm font-normal break-words sm:w-auto sm:flex-1"
+                            title={task.title}
+                          >
                             {task.title}
                           </span>
                           <Badge variant="secondary" className={cn("shrink-0", tagTones[task.team])}>
@@ -113,7 +116,7 @@ export function KanbanList({ board, columns }: { board: BoardState; columns: rea
                         </span>
                         <div className="flex shrink-0 items-center gap-1.5" title={task.owner.name}>
                           <Avatar className={cn("size-6 after:rounded-sm", task.owner.tone)}>
-                            <AvatarFallback className="rounded-sm text-[11px]">
+                            <AvatarFallback className="rounded-sm text-xs">
                               <span aria-hidden="true">{getInitials(task.owner.name)}</span>
                               <span className="sr-only">Assigned to {task.owner.name}</span>
                             </AvatarFallback>

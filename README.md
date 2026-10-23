@@ -226,3 +226,10 @@ Calendar retains Month/Week/Day, Today/previous/next, demo calendar selection an
 A route-loader request timestamp is shared by SSR and hydration with an explicit initial UTC timezone; after hydration, the calendar adopts browser-local time and its real live clock. Civil-date demo events derive from that shared month instead of a module-startup clock. This fixes the demonstrated server/browser disagreement about today's cell without disabling SSR, suppressing warnings or freezing time. Calendar adapters remain intact. Add event and calendar filtering retain their existing placeholder behavior.
 
 `npm run screenshots -- --routes /dashboard/calendar --reload --interactions --timezone Pacific/Kiritimati --hydration-delay-ms 1800` verifies local Today, real now-marker positioning, views/navigation and crowded-day popovers. Interaction runs also save Week/Day/Month variant captures. Use `--base-url` to repeat on Workers.
+
+
+### Kanban page (v0.3 / 005)
+
+Kanban keeps query-addressable Board, List and Table views, local task/column/table ordering, cancellation rollback and table status edits. The compact toolbar, wrapping task content, textual priority badges and neutral team/owner treatments use semantic tokens; Jordan Lee replaces the author owner in every view and drag overlay. Board/table scrolling remains local on mobile, and empty columns show “No tasks.” Search/filter/sort/create controls retain their existing placeholder behavior.
+
+`npm run screenshots -- --routes /dashboard/kanban --search view=list --reload` captures a query-selected view (use `view=board` or `view=table` as needed). `--interactions` exercises keyboard moves/cancellation, desktop pointer movement, column/list/table ordering, status edits and empty-column states; it saves each view and the drag overlay. Active-drag captures preserve animation and viewport size so taking evidence does not end the gesture. Failed captures now also attempt a diagnostic PNG.

@@ -34,13 +34,13 @@ export function TaskCard({
   return (
     <article
       className={cn(
-        "bg-card text-card-foreground flex flex-col gap-3 rounded-xl border p-4 shadow-xs",
-        isOverlay && "w-68 rotate-1 shadow-lg",
+        "bg-card text-card-foreground flex flex-col gap-3 rounded-xl border p-3",
+        isOverlay && "w-80 shadow-lg",
       )}
     >
       <div className="min-w-0 space-y-1.5">
-        <div className="flex items-center justify-between gap-3">
-          <h3 className="min-w-0 truncate text-sm leading-none font-medium">{task.title}</h3>
+        <div className="flex items-start justify-between gap-3">
+          <h3 className="min-w-0 text-sm leading-5 font-medium break-words">{task.title}</h3>
           <Badge
             variant={priorityBadgeConfig[task.priority].variant}
             className={cn(
@@ -52,14 +52,14 @@ export function TaskCard({
             {task.priority}
           </Badge>
         </div>
-        <p className="text-muted-foreground line-clamp-2 text-sm leading-5">{task.description}</p>
+        <p className="text-muted-foreground text-sm leading-5 break-words">{task.description}</p>
       </div>
 
       {!showBuildingDetails ? (
-        <div className="flex items-center justify-between">
+        <div className="flex flex-wrap items-center justify-between gap-2">
           <div className="flex items-center gap-1.5">
             <Avatar className={cn("size-5 after:rounded-sm", owner.tone)}>
-              <AvatarFallback className="rounded-sm text-[10px]">{getInitials(owner.name)}</AvatarFallback>
+              <AvatarFallback className="rounded-sm text-xs">{getInitials(owner.name)}</AvatarFallback>
             </Avatar>
 
             <span className="text-muted-foreground text-sm">{owner.name}</span>
@@ -79,20 +79,20 @@ export function TaskCard({
               <span className="leading-none">Progress</span>
               <span className="leading-none tabular-nums">{task.progress}%</span>
             </div>
-            <Progress value={task.progress} />
+            <Progress value={task.progress} aria-label={`${task.title} progress`} />
           </div>
           <div className="flex flex-col gap-1.5">
-            <div className="flex items-center justify-between gap-3">
+            <div className="flex items-start justify-between gap-3">
               <span className="text-muted-foreground text-sm">Owner</span>
               <div className="flex items-center gap-1.5">
                 <span className="text-muted-foreground truncate text-sm">{owner.name}</span>
                 <Avatar className={cn("size-5 after:rounded-sm", owner.tone)}>
-                  <AvatarFallback className="rounded-sm text-[10px]">{getInitials(owner.name)}</AvatarFallback>
+                  <AvatarFallback className="rounded-sm text-xs">{getInitials(owner.name)}</AvatarFallback>
                 </Avatar>
               </div>
             </div>
 
-            <div className="flex items-center justify-between gap-3">
+            <div className="flex items-start justify-between gap-3">
               <span className="text-muted-foreground text-sm">Due date</span>
               <span className="text-muted-foreground flex items-center gap-1.5">
                 <span className="truncate text-sm">{task.dueDate}</span>
@@ -100,7 +100,7 @@ export function TaskCard({
               </span>
             </div>
 
-            <div className="flex items-center justify-between gap-3">
+            <div className="flex items-start justify-between gap-3">
               <span className="text-muted-foreground text-sm">Team</span>
               <Badge
                 variant="secondary"
@@ -117,7 +117,7 @@ export function TaskCard({
 
       <div>
         {isDone ? (
-          <div className="flex items-center gap-1 text-sm font-medium text-green-700 dark:text-green-600">
+          <div className="text-success flex items-center gap-1 text-sm font-medium">
             <BadgeCheck className="size-4" />
             Done
           </div>
@@ -132,6 +132,7 @@ export function TaskCard({
                 <span key={insight.label} className="flex items-center gap-1.5 text-sm">
                   <Icon className="size-3.5" />
                   {insight.count}
+                  <span className="sr-only"> {insight.label.toLowerCase()}</span>
                 </span>
               );
             })}

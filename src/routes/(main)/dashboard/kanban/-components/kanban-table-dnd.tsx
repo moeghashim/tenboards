@@ -62,12 +62,12 @@ export function SortableTaskTableRow({
   });
 
   return (
-    <TableRow ref={ref} className={cn("bg-background hover:bg-muted/40", isDragging && "opacity-40")}>
+    <TableRow ref={ref} data-task-id={row.id} className={cn("bg-card hover:bg-muted", isDragging && "opacity-40")}>
       {row.getVisibleCells().map((cell) => (
         <TableCell
           key={cell.id}
           className={cn(
-            "border-border/50 h-12 border-r border-b px-6 py-2 last:border-r-0",
+            "border-border h-12 border-r border-b px-6 py-2 last:border-r-0",
             cell.column.id === "drag" && "px-0 text-center",
           )}
         >

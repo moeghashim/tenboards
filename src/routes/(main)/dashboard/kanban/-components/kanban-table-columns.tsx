@@ -41,7 +41,7 @@ export function createTaskTableColumns(
       size: 360,
       cell: ({ row }) => (
         <div className="flex min-w-0 items-center gap-4">
-          <span className="min-w-0 flex-1 truncate" title={row.original.description}>
+          <span className="min-w-0 flex-1 break-words whitespace-normal" title={row.original.description}>
             {row.original.title}
           </span>
           <span className="text-muted-foreground flex shrink-0 items-center gap-2.5 text-xs tabular-nums">
@@ -136,11 +136,11 @@ export function createTaskTableColumns(
       cell: ({ row }) => (
         <span className="flex items-center gap-1.5">
           <Avatar className={cn("size-6 after:rounded-sm", row.original.owner.tone)}>
-            <AvatarFallback className="rounded-sm text-[11px]" aria-hidden="true">
+            <AvatarFallback className="rounded-sm text-xs" aria-hidden="true">
               {getInitials(row.original.owner.name)}
             </AvatarFallback>
           </Avatar>
-          <span className="text-muted-foreground truncate">{row.original.owner.name}</span>
+          <span className="text-muted-foreground break-words whitespace-normal">{row.original.owner.name}</span>
         </span>
       ),
     },

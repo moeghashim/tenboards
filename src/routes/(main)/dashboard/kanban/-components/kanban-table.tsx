@@ -80,7 +80,7 @@ export function KanbanTable({
   return (
     <div className="flex min-h-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto">
       <Table aria-label="Kanban tasks" className="min-w-280 table-fixed border-separate border-spacing-0">
-        <TableHeader className="bg-background sticky top-0 z-10">
+        <TableHeader className="bg-card sticky top-0 z-10">
           {table.getHeaderGroups().map((group) => (
             <TableRow key={group.id} className="hover:bg-transparent">
               {group.headers.map((header) => {
@@ -92,7 +92,7 @@ export function KanbanTable({
                     scope="col"
                     style={{ width: header.getSize() }}
                     className={cn(
-                      "border-border/50 bg-background h-10 border-r border-b px-6 font-normal last:border-r-0",
+                      "border-border bg-card h-10 border-r border-b px-6 font-normal last:border-r-0",
                       header.column.id === "drag" && "px-0",
                     )}
                   >
