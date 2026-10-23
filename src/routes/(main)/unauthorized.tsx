@@ -2,29 +2,27 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 
 import { Lock } from "lucide-react";
 
-export const Route = createFileRoute("/(main)/unauthorized")({
-  component: page,
-});
+import { Button } from "@/components/ui/button";
 
-function page() {
+export const Route = createFileRoute("/(main)/unauthorized")({ component: Page });
+
+function Page() {
   return (
-    <div className="bg-background flex min-h-dvh flex-col items-center justify-center px-4 py-12 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-md text-center">
-        <Lock className="text-primary mx-auto size-12" />
-        <h1 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">Unauthorized Access</h1>
-        <p className="text-muted-foreground mt-4">
-          You do not have permission to view the requested content. Please contact the site administrator if you believe
-          this is an error.
+    <main className="flex min-h-dvh flex-col items-center justify-center gap-6 px-6 py-12 text-center">
+      <div className="max-w-sm space-y-3">
+        <Lock aria-hidden="true" className="text-muted-foreground mx-auto size-6" />
+        <h1 className="text-2xl font-medium">Unauthorized Access</h1>
+        <p className="text-muted-foreground text-sm">
+          You do not have permission to view the requested content. Contact the site administrator if you believe this
+          is an error.
         </p>
-        <div className="mt-6">
-          <Link
-            to="/dashboard/default"
-            className="bg-primary text-primary-foreground hover:bg-primary/90 focus:ring-primary inline-flex items-center rounded-md px-4 py-2 text-sm font-medium shadow-xs transition-colors focus:ring-2 focus:ring-offset-2 focus:outline-hidden"
-          >
-            Go to Homepage
-          </Link>
-        </div>
+        <p className="text-muted-foreground text-xs">
+          This is a demo permission state. No access control is connected.
+        </p>
       </div>
-    </div>
+      <Button nativeButton={false} variant="outline" render={<Link to="/dashboard/default" />}>
+        Go to dashboard
+      </Button>
+    </main>
   );
 }

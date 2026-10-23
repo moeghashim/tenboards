@@ -2,7 +2,7 @@
 id: "013"
 title: Restyle system states and verify entry redirects
 milestone: v0.3-app-pages
-status: planned
+status: review
 category: ui
 files: ["src/routes/(main)/dashboard/coming-soon/route.tsx", "src/routes/(main)/dashboard/$.tsx", "src/routes/(main)/unauthorized.tsx", "src/routes/-components/not-found.tsx", "src/routes/-components/root-error.tsx", "scripts/ (scoped capture evidence support if needed)", "README.md", "dev/milestones.json"]
 ---
@@ -24,16 +24,16 @@ Prefactor inspection: Inspect the five small system components and existing capt
 
 ## Acceptance criteria
 
-- [ ] Coming Soon, dashboard not-found, root not-found, Unauthorized and RootError each have distinct appropriate copy and matching visual hierarchy; existing recovery links/reset work by keyboard.
-- [ ] Capture root not-found and a controlled real root error on dev and Workers preview, including reset/recovery. Record expected injected exception/HTTP diagnostics separately; no unexpected console errors or hydration recovery are accepted.
-- [ ] Verify root unknown-path HTTP semantics and unchanged `/`, `/dashboard`, `/dashboard/` destinations. Do not add an external landing page, redirect behavior or auth gate.
-- [ ] Supplemental four-state before/after evidence covers both non-route boundaries; ordinary route evidence alone cannot satisfy this task. Owned source has no upstream-author references.
-- [ ] Capture and inspect before/after with `npm run screenshots` for every affected URL in light/dark × desktop (1440×900)/mobile (390×844); attach a four-state comparison table per route plus meaningful interaction/variant states. Store captures, reports and logs only on `pr-assets` or PR attachments, never main. For foundation/acceptance, compare their limited changes and integrated baseline explicitly; do not invent visual changes.
-- [ ] `npm run build`, `npm run check` and `npm run typecheck` pass. Report inherited warnings separately from failures; baseline failures are not a passing gate.
-- [ ] Dev `/dashboard/default` and every owned route smoke without console errors; repeat on the Workers version preview, including iframe contents and refresh where relevant. Existing errors on an owned page cannot be waived.
-- [ ] Upload with `npm run preview:deploy -- --preview-alias pr-NNN` (actual PR number); include the version-specific preview URL and reusable alias in the PR. Never run `npm run deploy`.
-- [ ] Update root README.md for verified screens/behavior/commands/status and state `README: updated (sections …)` in the PR. Tick this file and update `dev/milestones.json` only from evidence.
-- [ ] Preserve keyboard access, accessible names, visible focus, reduced motion and all four presets. Check relevant changed foreground/background, status and meaningful graphic pairs for WCAG AA; record measured contrast for token/preset changes. Keep font/preferences registries, v0.1 shell and `src/components/ui/` intact. Reuse shared dashboard primitives and chart theme where applicable, without adding decorative charts.
+- [x] Coming Soon, dashboard not-found, root not-found, Unauthorized and RootError each have distinct appropriate copy and matching visual hierarchy; existing recovery links/reset work by keyboard.
+- [x] Capture root not-found and a controlled real root error on dev and Workers preview, including reset/recovery. Record expected injected exception/HTTP diagnostics separately; no unexpected console errors or hydration recovery are accepted.
+- [x] Verify root unknown-path HTTP semantics and unchanged `/`, `/dashboard`, `/dashboard/` destinations. Do not add an external landing page, redirect behavior or auth gate.
+- [x] Supplemental four-state before/after evidence covers both non-route boundaries; ordinary route evidence alone cannot satisfy this task. Owned source has no upstream-author references.
+- [x] Capture and inspect before/after with `npm run screenshots` for every affected URL in light/dark × desktop (1440×900)/mobile (390×844); attach a four-state comparison table per route plus meaningful interaction/variant states. Store captures, reports and logs only on `pr-assets` or PR attachments, never main. For foundation/acceptance, compare their limited changes and integrated baseline explicitly; do not invent visual changes.
+- [x] `npm run build`, `npm run check` and `npm run typecheck` pass. Report inherited warnings separately from failures; baseline failures are not a passing gate.
+- [x] Dev `/dashboard/default` and every owned route smoke without console errors; repeat on the Workers version preview, including iframe contents and refresh where relevant. Existing errors on an owned page cannot be waived.
+- [x] Upload with `npm run preview:deploy -- --preview-alias pr-NNN` (actual PR number); include the version-specific preview URL and reusable alias in the PR. Never run `npm run deploy`.
+- [x] Update root README.md for verified screens/behavior/commands/status and state `README: updated (sections …)` in the PR. Tick this file and update `dev/milestones.json` only from evidence.
+- [x] Preserve keyboard access, accessible names, visible focus, reduced motion and all four presets. Check relevant changed foreground/background, status and meaningful graphic pairs for WCAG AA; record measured contrast for token/preset changes. Keep font/preferences registries, v0.1 shell and `src/components/ui/` intact. Reuse shared dashboard primitives and chart theme where applicable, without adding decorative charts.
 
 ## Execution order and delivery
 

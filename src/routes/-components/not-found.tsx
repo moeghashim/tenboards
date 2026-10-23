@@ -4,12 +4,14 @@ import { Button } from "@/components/ui/button";
 
 export function NotFound() {
   return (
-    <div className="flex h-dvh flex-col items-center justify-center space-y-2 text-center">
-      <h1 className="text-2xl font-semibold">Page not found.</h1>
-      <p className="text-muted-foreground">The page you are looking for could not be found.</p>
+    <main className="flex min-h-dvh flex-col items-center justify-center gap-4 px-6 py-12 text-center">
+      <h1 className="text-2xl font-medium">Page not found.</h1>
+      <p className="text-muted-foreground max-w-sm text-sm">
+        This address does not match a page. Check the URL or return to the dashboard.
+      </p>
       <Button nativeButton={false} variant="outline" render={<Link to="/dashboard/default" replace />}>
-        Go back home
+        Go to dashboard
       </Button>
-    </div>
+    </main>
   );
 }
