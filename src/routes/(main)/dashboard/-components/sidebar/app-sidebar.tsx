@@ -1,23 +1,17 @@
 import { Link } from "@tanstack/react-router";
 
+import { BookOpen, CircleHelp, MessageCircle } from "lucide-react";
 import { useShallow } from "zustand/react/shallow";
 
 import { BrandMark, BrandWordmark } from "@/components/brand/brand";
-import {
-  Sidebar,
-  SidebarContent,
-  SidebarFooter,
-  SidebarHeader,
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
-} from "@/components/ui/sidebar";
-import { rootUser } from "@/data/users";
+import { Button } from "@/components/ui/button";
+import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarTrigger } from "@/components/ui/sidebar";
 import { sidebarItems } from "@/navigation/sidebar/sidebar-items";
 import { usePreferencesStore } from "@/stores/preferences/preferences-provider";
 
+import { LayoutControls } from "../header/layout-controls";
+import { SearchTrigger } from "../header/search-dialog";
 import { NavMain } from "./nav-main";
-import { NavUser } from "./nav-user";
 import { SupportCard } from "./support-card";
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
@@ -28,28 +22,61 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       isSynced: s.isSynced,
     })),
   );
-
-  const variant = isSynced ? sidebarVariant : props.variant;
-  const collapsible = isSynced ? sidebarCollapsible : props.collapsible;
-
   return (
-    <Sidebar {...props} variant={variant} collapsible={collapsible}>
-      <SidebarHeader>
-        <SidebarMenu>
-          <SidebarMenuItem>
-            <SidebarMenuButton render={<Link to="/dashboard/default" aria-label="tenboards home" />}>
-              <BrandMark />
-              <BrandWordmark className="text-base" />
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-        </SidebarMenu>
+    <Sidebar
+      {...props}
+      variant={isSynced ? sidebarVariant : props.variant}
+      collapsible={isSynced ? sidebarCollapsible : props.collapsible}
+    >
+      <SidebarHeader className="shell-sidebar-header gap-4 p-4">
+        <div className="flex items-center gap-2">
+          <Link
+            to="/dashboard/default"
+            aria-label="tenboards home"
+            className="flex min-w-0 flex-1 items-center gap-3 rounded-lg group-data-[collapsible=icon]:hidden"
+          >
+            <span className="bg-muted flex size-9 shrink-0 items-center justify-center rounded-xl">
+              <BrandMark className="size-5" />
+            </span>
+            <BrandWordmark className="text-base" />
+          </Link>
+          <SidebarTrigger className="shrink-0" />
+        </div>
+        <SearchTrigger sidebar />
       </SidebarHeader>
-      <SidebarContent>
-        <NavMain items={sidebarItems} />
+      <SidebarContent className="gap-1 px-3">
+        <nav aria-label="Main navigation">
+          <NavMain items={sidebarItems} />
+        </nav>
       </SidebarContent>
-      <SidebarFooter>
+      <SidebarFooter className="gap-3 p-3">
         <SupportCard />
-        <NavUser user={rootUser} />
+        <div className="flex items-center gap-1 group-data-[collapsible=icon]:flex-col">
+          <LayoutControls sidebar />
+          <div className="ml-auto flex group-data-[collapsible=icon]:hidden">
+            {[
+              { title: "Help", href: "https://github.com/moeghashim/tenboards/issues", icon: CircleHelp },
+              {
+                title: "Documentation",
+                href: "https://github.com/moeghashim/tenboards/blob/main/README.md",
+                icon: BookOpen,
+              },
+              { title: "Feedback", href: "https://github.com/moeghashim/tenboards/issues/new", icon: MessageCircle },
+            ].map(({ title, href, icon: Icon }) => (
+              <Button
+                key={title}
+                nativeButton={false}
+                variant="ghost"
+                size="icon-sm"
+                render={<a href={href} target="_blank" rel="noreferrer" />}
+                aria-label={title}
+                title={title}
+              >
+                <Icon />
+              </Button>
+            ))}
+          </div>
+        </div>
       </SidebarFooter>
     </Sidebar>
   );

@@ -75,6 +75,25 @@ function groupBy(items: SearchItem[]) {
   }));
 }
 
+export function SearchTrigger({ sidebar = false }: { sidebar?: boolean }) {
+  return (
+    <Button
+      aria-label="Search pages (Command or Control K)"
+      onClick={() => document.dispatchEvent(new Event("tenboards:search"))}
+      variant="ghost"
+      className={
+        sidebar
+          ? "shell-search text-muted-foreground w-full justify-start gap-2 rounded-full border"
+          : "text-muted-foreground font-normal"
+      }
+    >
+      <Search aria-hidden="true" />
+      <span className={sidebar ? "group-data-[collapsible=icon]:hidden" : ""}>Search</span>
+      <kbd className="bg-muted ml-auto rounded-md px-1.5 text-xs group-data-[collapsible=icon]:hidden">⌘K</kbd>
+    </Button>
+  );
+}
+
 export function SearchDialog() {
   const [open, setOpen] = React.useState(false);
   const [query, setQuery] = React.useState("");
@@ -82,13 +101,18 @@ export function SearchDialog() {
 
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
-      if (e.key === "j" && (e.metaKey || e.ctrlKey)) {
+      if (e.key.toLowerCase() === "k" && (e.metaKey || e.ctrlKey)) {
         e.preventDefault();
         setOpen((prev) => !prev);
       }
     };
+    const show = () => setOpen(true);
+    document.addEventListener("tenboards:search", show);
     document.addEventListener("keydown", down);
-    return () => document.removeEventListener("keydown", down);
+    return () => {
+      document.removeEventListener("tenboards:search", show);
+      document.removeEventListener("keydown", down);
+    };
   }, []);
 
   const handleOpenChange = (value: boolean) => {
@@ -129,27 +153,14 @@ export function SearchDialog() {
     ));
 
   return (
-    <>
-      <Button
-        onClick={() => handleOpenChange(true)}
-        variant="link"
-        className="text-muted-foreground px-0! font-normal hover:no-underline"
-      >
-        <Search data-icon="inline-start" />
-        Search
-        <kbd className="bg-muted inline-flex h-5 items-center gap-1 rounded border px-1.5 text-[10px] font-medium select-none">
-          <span className="text-xs">⌘</span>J
-        </kbd>
-      </Button>
-      <CommandDialog open={open} onOpenChange={handleOpenChange}>
-        <Command>
-          <CommandInput placeholder="Search dashboards, users, and more…" value={query} onValueChange={setQuery} />
-          <CommandList>
-            <CommandEmpty>No results found.</CommandEmpty>
-            {query ? renderGroups(searchItems) : renderGroups(recommendations)}
-          </CommandList>
-        </Command>
-      </CommandDialog>
-    </>
+    <CommandDialog open={open} onOpenChange={handleOpenChange}>
+      <Command>
+        <CommandInput placeholder="Search dashboards, users, and more…" value={query} onValueChange={setQuery} />
+        <CommandList>
+          <CommandEmpty>No results found.</CommandEmpty>
+          {query ? renderGroups(searchItems) : renderGroups(recommendations)}
+        </CommandList>
+      </Command>
+    </CommandDialog>
   );
 }

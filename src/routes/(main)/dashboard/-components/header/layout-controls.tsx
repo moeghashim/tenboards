@@ -11,7 +11,7 @@ import type { ContentLayout, NavbarStyle, SidebarCollapsible, SidebarVariant } f
 import { THEME_PRESET_OPTIONS, type ThemeMode, type ThemePreset } from "@/lib/preferences/theme";
 import { usePreferencesStore } from "@/stores/preferences/preferences-provider";
 
-export function LayoutControls() {
+export function LayoutControls({ sidebar = false }: { sidebar?: boolean }) {
   const { values, resolvedThemeMode, setPreference, resetPreferences } = usePreferencesStore(
     useShallow((state) => ({
       values: state.values,
@@ -61,8 +61,18 @@ export function LayoutControls() {
 
   return (
     <Popover>
-      <PopoverTrigger render={<Button size="icon" />}>
+      <PopoverTrigger
+        render={
+          <Button
+            variant="ghost"
+            size={sidebar ? "default" : "icon"}
+            aria-label="Layout settings"
+            className={sidebar ? "px-2 group-data-[collapsible=icon]:px-0" : ""}
+          />
+        }
+      >
         <Settings />
+        {sidebar && <span className="group-data-[collapsible=icon]:hidden">Settings</span>}
       </PopoverTrigger>
       <PopoverContent align="end">
         <div className="flex flex-col gap-5">

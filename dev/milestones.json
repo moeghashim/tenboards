@@ -20,11 +20,16 @@
       "taskStatuses": {
         "001-import-upstream": "merged",
         "002-workers-preview": "merged",
-        "003-impeccable-context": "in_review",
-        "004-visual-capture": "in_review",
-        "005-design-tokens": "in_review",
-        "006-brand-assets": "in_review",
-        "007-theme-presets": "in_review"
+        "003-impeccable-context": "merged",
+        "004-visual-capture": "merged",
+        "005-design-tokens": "merged",
+        "006-brand-assets": "merged",
+        "007-theme-presets": "merged",
+        "008-floating-sidebar": "in_review",
+        "009-shell-header": "pending",
+        "010-command-palette": "pending",
+        "011-layout-settings": "pending",
+        "012-shell-acceptance": "pending"
       }
     }
   ]

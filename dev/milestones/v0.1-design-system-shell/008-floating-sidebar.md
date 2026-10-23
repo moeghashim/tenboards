@@ -8,12 +8,12 @@ files: ["src/routes/(main)/dashboard/-components/sidebar/", "src/navigation/side
 ---
 
 ## Acceptance criteria
-- [ ] Match the floating rounded panel, inset canvas, hairline border, soft shadow, workspace row, and collapse control from the reference.
-- [ ] Add full-width search pill with ⌘K chip opening the existing palette; flat primary rows use outline icons and soft filled active/hover pills.
-- [ ] Map Dashboards and Pages to collapsible sections while retaining links to every screen.
-- [ ] Add bottom-pinned demo status/progress card and Settings/help/docs/feedback actions with truthful copy and working destinations.
-- [ ] Preserve icon collapse, mobile sheet, keyboard access, visible focus, and dark-mode visual language.
-- [ ] Build, check, typecheck, smoke, and screenshot matrix pass.
+- [x] Match the floating rounded panel, inset canvas, hairline border, soft shadow, workspace row, and collapse control from the reference.
+- [x] Add full-width search pill with ⌘K chip opening the existing palette; flat primary rows use outline icons and soft filled active/hover pills.
+- [x] Map Dashboards and Pages to collapsible sections while retaining links to every screen.
+- [x] Add bottom-pinned demo status/progress card and Settings/help/docs/feedback actions with truthful copy and working destinations.
+- [x] Preserve icon collapse, mobile sheet, keyboard access, visible focus, and dark-mode visual language.
+- [x] Build, check, typecheck, smoke, and screenshot matrix pass.
 
 ## Suggested approach
 Use the existing search dialog as a seam until task 010 expands it. Do not duplicate nav metadata or restyle dashboard content. Compare directly to docs/design-refs/sidebar-reference.png.

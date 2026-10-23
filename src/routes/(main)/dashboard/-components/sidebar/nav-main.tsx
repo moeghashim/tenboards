@@ -1,9 +1,10 @@
+import { useState } from "react";
+
 import { Link, useRouterState } from "@tanstack/react-router";
 
 import { cn } from "cn";
-import { ChevronRight, MailIcon, PlusCircleIcon } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import {
   DropdownMenu,
@@ -15,7 +16,6 @@ import {
 import {
   SidebarGroup,
   SidebarGroupContent,
-  SidebarGroupLabel,
   SidebarMenu,
   SidebarMenuBadge,
   SidebarMenuButton,
@@ -71,7 +71,7 @@ interface NavCollapsibleItemProps {
 
 function CollapsedIconFallback({ title }: { title: string }) {
   return (
-    <span className="flex size-4 shrink-0 items-center justify-center rounded-xs text-[10px] font-medium outline">
+    <span className="flex size-4 shrink-0 items-center justify-center rounded-xs text-xs font-medium outline">
       {title.slice(0, 1)}
     </span>
   );
@@ -80,6 +80,8 @@ function CollapsedIconFallback({ title }: { title: string }) {
 function hasSubItems(item: NavMainItem): item is NavMainParentItem {
   return Boolean(item.subItems?.length);
 }
+
+const primaryIds = new Set(["default", "email", "tasks", "calendar", "chat", "file-manager"]);
 
 export function NavMain({ items }: NavMainProps) {
   const path = useRouterState({ select: (state) => state.location.pathname });
@@ -102,52 +104,73 @@ export function NavMain({ items }: NavMainProps) {
 
   return (
     <>
-      <SidebarGroup>
-        <SidebarGroupContent className="flex flex-col gap-2">
-          <SidebarMenu>
-            <SidebarMenuItem className="flex items-center gap-2">
-              <SidebarMenuButton
-                tooltip="Quick Create"
-                className="bg-primary text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground active:bg-primary/90 active:text-primary-foreground min-w-8 duration-200 ease-linear"
-              >
-                <PlusCircleIcon />
-                <span>Quick Create</span>
-              </SidebarMenuButton>
-              <Button
-                size="icon"
-                className="h-9 w-9 shrink-0 group-data-[collapsible=icon]:opacity-0"
-                variant="outline"
-              >
-                <MailIcon />
-                <span className="sr-only">Inbox</span>
-              </Button>
-            </SidebarMenuItem>
-          </SidebarMenu>
-        </SidebarGroupContent>
+      <SidebarGroup className="p-0 pb-3">
+        <SidebarMenu>
+          {items
+            .flatMap((group) => group.items)
+            .filter((item) => primaryIds.has(item.id))
+            .map((item) => (
+              <NavItem
+                key={item.id}
+                item={item}
+                isItemActive={isItemActive}
+                isSubItemActive={isSubItemActive}
+                isSubmenuOpen={isSubmenuOpen}
+              />
+            ))}
+        </SidebarMenu>
       </SidebarGroup>
       {items.map((group) => (
-        <SidebarGroup key={group.id}>
-          {group.label && (
-            <SidebarGroupLabel className="group-data-[collapsible=icon]:pointer-events-none">
-              {group.label}
-            </SidebarGroupLabel>
-          )}
-          <SidebarGroupContent>
-            <SidebarMenu>
-              {group.items.map((item) => (
-                <NavItem
-                  key={item.id}
-                  item={item}
-                  isItemActive={isItemActive}
-                  isSubItemActive={isSubItemActive}
-                  isSubmenuOpen={isSubmenuOpen}
-                />
-              ))}
-            </SidebarMenu>
-          </SidebarGroupContent>
+        <SidebarGroup key={group.id} className="p-0 py-0.5">
+          <NavSection
+            key={`${group.id}-${path}`}
+            label={group.label ?? "More"}
+            defaultOpen={group.items.some(isItemActive)}
+          >
+            <SidebarGroupContent>
+              <SidebarMenu>
+                {group.items
+                  .filter((item) => !primaryIds.has(item.id))
+                  .map((item) => (
+                    <NavItem
+                      key={item.id}
+                      item={item}
+                      isItemActive={isItemActive}
+                      isSubItemActive={isSubItemActive}
+                      isSubmenuOpen={isSubmenuOpen}
+                    />
+                  ))}
+              </SidebarMenu>
+            </SidebarGroupContent>
+          </NavSection>
         </SidebarGroup>
       ))}
     </>
+  );
+}
+
+function NavSection({
+  label,
+  children,
+  defaultOpen,
+}: {
+  label: string;
+  children: React.ReactNode;
+  defaultOpen: boolean;
+}) {
+  const [open, setOpen] = useState(defaultOpen);
+  const { state, isMobile } = useSidebar();
+  const collapsed = state === "collapsed" && !isMobile;
+  return (
+    <Collapsible open={collapsed || open} onOpenChange={setOpen} className="group/nav-section">
+      {!collapsed && (
+        <CollapsibleTrigger className="text-muted-foreground flex h-9 w-full items-center gap-2 rounded-lg px-3 text-[13px]">
+          {label}
+          <ChevronRight className={cn("size-3 transition-transform", open && "rotate-90")} />
+        </CollapsibleTrigger>
+      )}
+      <CollapsibleContent>{children}</CollapsibleContent>
+    </Collapsible>
   );
 }
 
@@ -174,22 +197,27 @@ function NavItem({ item, isItemActive, isSubItemActive, isSubmenuOpen }: NavItem
 }
 
 function NavLinkItem({ item, isActive, showIconFallback }: NavLinkItemProps) {
+  const { isMobile, setOpenMobile } = useSidebar();
   return (
     <SidebarMenuItem>
       <SidebarMenuButton
         render={
           <Link
             to={item.url}
+            onClick={() => {
+              if (isMobile) setOpenMobile(false);
+            }}
             target={item.newTab ? "_blank" : undefined}
             rel={item.newTab ? "noreferrer" : undefined}
           />
         }
         aria-disabled={item.disabled}
+        aria-current={isActive ? "page" : undefined}
         tooltip={item.title}
         isActive={isActive}
       >
         <NavLinkIcon item={item} showFallback={showIconFallback} />
-        <span>{item.title}</span>
+        <span>{item.id === "default" ? "Home" : item.title}</span>
       </SidebarMenuButton>
       <NavItemBadge badge={item.badge} />
     </SidebarMenuItem>
@@ -220,7 +248,7 @@ function NavDropdownItem({ item, isActive, isSubItemActive }: NavDropdownItemPro
           render={<SidebarMenuButton tooltip={item.title} isActive={isActive} disabled={item.disabled} />}
         >
           {Icon ? <Icon /> : <CollapsedIconFallback title={item.title} />}
-          <span>{item.title}</span>
+          <span>{item.id === "default" ? "Home" : item.title}</span>
         </DropdownMenuTrigger>
 
         <DropdownMenuContent side="right" align="start" sideOffset={12} className="w-48">
@@ -267,7 +295,7 @@ function NavCollapsibleItem({ item, isActive, defaultOpen, isSubItemActive }: Na
         render={<SidebarMenuButton tooltip={item.title} isActive={isActive} disabled={item.disabled} />}
       >
         {Icon && <Icon />}
-        <span>{item.title}</span>
+        <span>{item.id === "default" ? "Home" : item.title}</span>
         <ChevronRight className="ml-auto transition-transform duration-200 group-data-panel-open/menu-button:rotate-90" />
       </CollapsibleTrigger>
       <NavItemBadge badge={item.badge} />
@@ -287,6 +315,7 @@ function NavCollapsibleItem({ item, isActive, defaultOpen, isSubItemActive }: Na
                       rel={subItem.newTab ? "noreferrer" : undefined}
                     />
                   }
+                  aria-current={isSubItemActive(subItem.url) ? "page" : undefined}
                   aria-disabled={subItem.disabled}
                   isActive={isSubItemActive(subItem.url)}
                 >
