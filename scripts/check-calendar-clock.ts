@@ -1,5 +1,6 @@
 import { chromium } from "playwright";
 
+import { cacheCaptureFonts } from "./screenshot-assets.ts";
 import assert from "node:assert/strict";
 
 const browser = await chromium.launch();
@@ -7,6 +8,7 @@ try {
   await Promise.all(
     process.argv.slice(2).map(async (baseURL) => {
       const page = await browser.newPage({ timezoneId: "America/Chicago", reducedMotion: "reduce" });
+      await cacheCaptureFonts(page.context());
       await page.goto(`${baseURL}/dashboard/calendar`);
       await page.waitForLoadState("networkidle");
       await page.getByRole("combobox", { name: "Calendar view", exact: true }).click();

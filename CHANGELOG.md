@@ -1,5 +1,18 @@
 # Changelog
 
+## v0.4 — Optional local data layer (in review, unreleased)
+
+- Route all data-bearing app pages and 14 dashboards through 22 typed GET reads with zero-config demo or actual local Docker Postgres 17.
+- Add normalized domain tables, ordered relationships, typed aggregate metrics, a linear Drizzle migration journal and repeatable transactional seeds.
+- Preserve separate fixture identities, numeric precision, civil dates, request-relative Calendar/Invoice/Mail definitions, local actions and existing SSR/hydration fixes.
+- Keep Patient Monitoring waveform/trend/tick simulation client-side while loading patient records, baselines, alarms and settings normally.
+- Fail configured DB errors visibly without silent fallback or credential leakage; support explicit forced demo and lazy server-only DB access.
+- Add exact read parity, source-fault/negative controls, runtime-boundary audit and full demo/DB/Workers capture coverage with explicit request references.
+- Document optional database onboarding, migrations, reseeding and adding domains. Production remains demo-only; authentication and hosted Neon/Hyperdrive are future milestones.
+
+All eight implementation tasks remain in review. No version bump, tag, release,
+merge or production deployment is performed by the implementer.
+
 ## v0.3 — App pages (2026-10-23)
 
 - Restyle Mail, Chat, Calendar, Kanban, Tasks, Invoice, File Manager, Products, Users/Roles, Profile, Auth V1/V2 and system states with compact typography, neutral surfaces, semantic states and responsive content.

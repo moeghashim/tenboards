@@ -9,8 +9,9 @@ import { AnalyticsOverview } from "./-components/analytics-overview";
 import { DataProvider } from "./-components/data-context";
 
 const loadData = createServerFn({ method: "GET" }).handler(async () => {
+  const { requestReference } = await import("@/server/request-reference.server");
   const { readAnalytics } = await import("@/server/data/analytics");
-  return readAnalytics({ variant: "v1", renderedAt: new Date().toISOString() });
+  return readAnalytics({ variant: "v1", renderedAt: requestReference() });
 });
 
 export const Route = createFileRoute("/(main)/dashboard/(legacy)/analytics-v1")({

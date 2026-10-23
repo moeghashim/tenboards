@@ -1,10 +1,23 @@
 import { asc, eq } from "drizzle-orm";
 import { z } from "zod";
 
-import { chatCounts, conversations, currentUser } from "../db/fixtures/chat.ts";
+import { chatCounts, chatDisplay, chatTabCounts, conversations, currentUser } from "../db/fixtures/chat.ts";
 import type { ChatData } from "./chat.types.ts";
+import { loadMetricCollections } from "./metric-collections.ts";
 import { readSource } from "./source.ts";
 
+function displayData(threadDate: string, counts: ChatData["display"]["counts"]): ChatData["display"] {
+  return {
+    threadDate,
+    counts,
+    threadDateLabel: new Intl.DateTimeFormat("en-US", {
+      month: "long",
+      day: "numeric",
+      year: "numeric",
+      timeZone: "UTC",
+    }).format(new Date(`${threadDate}T12:00:00Z`)),
+  };
+}
 const inputSchema = z.object({ id: z.number().int().optional() });
 type Input = z.infer<typeof inputSchema>;
 export async function demoChat(input: Input = {}): Promise<ChatData> {
@@ -13,6 +26,7 @@ export async function demoChat(input: Input = {}): Promise<ChatData> {
     conversations: conversations.filter((c) => id === undefined || c.id === id),
     currentUser,
     counts: chatCounts,
+    display: displayData(chatDisplay.threadDate, chatTabCounts[0]),
   });
 }
 export async function dbChat(input: Input = {}): Promise<ChatData> {
@@ -32,9 +46,14 @@ export async function dbChat(input: Input = {}): Promise<ChatData> {
   const counts = await db.select().from(s.chatCounts).orderBy(asc(s.chatCounts.position), asc(s.chatCounts.id));
   const users = await db.select().from(s.chatUsers).where(eq(s.chatUsers.id, "current"));
   const user = users[0];
+  const [display] = await db.select().from(s.chatDisplay).where(eq(s.chatDisplay.id, "default"));
+  const metrics = await loadMetricCollections("communication-chat");
+  const tabCounts = metrics.tabs?.[0] as ChatData["display"]["counts"] | undefined;
+  if (!display || !tabCounts) throw new Error("Missing chat display data");
   if (!user) throw new Error("Missing current chat user");
   return {
     currentUser: { name: user.name, email: user.email },
+    display: displayData(display.threadDate, tabCounts),
     counts: counts.map(({ position: _, ...c }) => c),
     conversations: rows.map(({ conversation, contact }) => {
       const { position: _, contactId, ...rest } = conversation;

@@ -65,7 +65,7 @@ export function ChatThread({
   className,
   inert,
 }: ChatThreadProps) {
-  const { currentUser } = useChatData();
+  const { currentUser, display } = useChatData();
   return (
     <div inert={inert} aria-hidden={inert} className={cn("bg-card flex h-full flex-col py-3", className)}>
       <div className="flex flex-col gap-3">
@@ -151,7 +151,7 @@ export function ChatThread({
           <MessageScrollerViewport>
             <MessageScrollerContent className="gap-4 px-3 py-4">
               <Marker variant="separator">
-                <MarkerContent>May 6, 2026</MarkerContent>
+                <MarkerContent>{display.threadDateLabel}</MarkerContent>
               </Marker>
 
               {messages.map((message) => {

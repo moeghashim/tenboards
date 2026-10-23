@@ -10,8 +10,9 @@ import { MailSidebar } from "./-components/mail-sidebar";
 import { MailProvider } from "./-components/use-mail";
 
 const loadData = createServerFn({ method: "GET" }).handler(async () => {
+  const { requestReference } = await import("@/server/request-reference.server");
   const { readMail } = await import("@/server/data/mail");
-  return readMail({ renderedAt: new Date().toISOString() });
+  return readMail({ renderedAt: requestReference() });
 });
 
 export const Route = createFileRoute("/(main)/mail")({

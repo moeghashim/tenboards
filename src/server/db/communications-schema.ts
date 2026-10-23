@@ -1,4 +1,4 @@
-import { boolean, integer, pgTable, primaryKey, text } from "drizzle-orm/pg-core";
+import { boolean, date, integer, pgTable, primaryKey, text } from "drizzle-orm/pg-core";
 
 import type { Conversation, Message } from "../../routes/(main)/chat/-components/data.ts";
 import type { Attachment, Mail } from "../../routes/(main)/mail/-components/data.tsx";
@@ -127,6 +127,10 @@ export const chatUsers = pgTable("chat_users", {
   id: text().primaryKey(),
   name: text().notNull(),
   email: text().notNull(),
+});
+export const chatDisplay = pgTable("chat_display", {
+  id: text().primaryKey(),
+  threadDate: date({ mode: "string" }).notNull(),
 });
 export const chatCounts = pgTable("chat_counts", {
   id: text().primaryKey(),

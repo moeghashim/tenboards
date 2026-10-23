@@ -8,8 +8,9 @@ import { OverviewCards } from "./-components/overview-cards";
 import { RecentLeadsTable } from "./-components/recent-leads-table/table";
 
 const loadData = createServerFn({ method: "GET" }).handler(async () => {
+  const { requestReference } = await import("@/server/request-reference.server");
   const { readCrm } = await import("@/server/data/crm");
-  return readCrm({ variant: "v1", renderedAt: new Date().toISOString() });
+  return readCrm({ variant: "v1", renderedAt: requestReference() });
 });
 
 export const Route = createFileRoute("/(main)/dashboard/(legacy)/crm-v1")({

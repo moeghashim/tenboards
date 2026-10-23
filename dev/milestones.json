@@ -121,7 +121,7 @@
         "005-communication-data": "review",
         "006-core-dashboard-data": "review",
         "007-operational-dashboard-data": "review",
-        "008-data-layer-acceptance": "todo"
+        "008-data-layer-acceptance": "review"
       }
     }
   ]

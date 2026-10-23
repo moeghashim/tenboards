@@ -7,8 +7,9 @@ import { ProposalSectionsTable } from "./-components/proposal-sections-table/tab
 import { SectionCards } from "./-components/section-cards";
 
 const loadData = createServerFn({ method: "GET" }).handler(async () => {
+  const { requestReference } = await import("@/server/request-reference.server");
   const { readDefault } = await import("@/server/data/default");
-  return readDefault({ variant: "v1", renderedAt: new Date().toISOString() });
+  return readDefault({ variant: "v1", renderedAt: requestReference() });
 });
 
 export const Route = createFileRoute("/(main)/dashboard/(legacy)/default-v1")({

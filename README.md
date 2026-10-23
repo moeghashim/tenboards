@@ -24,9 +24,14 @@ Open [the default dashboard](http://localhost:3000/dashboard/default).
 - `npm run preview` — preview the compiled Worker locally with Wrangler.
 - `npm run check` / `npm run check:fix` — Biome lint, imports, and formatting.
 - `npm run typecheck` — TypeScript (`tsc --noEmit`).
+- `npm run db:generate` — generate the next reviewed Drizzle migration; no DB required.
+- `npm run db:migrate` — apply committed migrations to an explicit local Postgres URL.
+- `npm run db:seed` — transactionally upsert canonical local demo records.
+- `npm run data:parity` — compare every demo/DB read against seeded local Postgres.
+- `npm run screenshots` — capture route/preset/theme/viewport evidence (optional `--reference` for identical request dates).
 - `npm run generate-routes` — regenerate file-based routes.
 - `npm run generate:presets` — regenerate the preset registry.
-- `npm run deploy` — build and deploy to the live Workers URL.
+- `npm run deploy` — reviewer-only build and production deployment after approved merges.
 - `npm run preview:deploy -- --preview-alias pr-NNN` — build and upload a version preview without changing live traffic.
 
 ## Included screens
@@ -106,7 +111,7 @@ npm run screenshots -- --list
 
 The default captures every retained route in light/dark at desktop 1440×900 and mobile 390×844. `src/navigation/route-catalog.ts` is the shared 38-route inventory, re-exported by `scripts/screenshot-routes.ts` and checked against generated route metadata; missing/stale routes and unknown subsets fail before launch. The dashboard splat uses `/dashboard/capture-not-found` to exercise its not-found state; there are no entity-ID routes needing demo records. Redirect entries are captured at their destination. `--preset` selects a valid preset for the same four-state matrix.
 
-Captures wait for React hydration, fonts, network idle, images, JS chart settling, and stable content. Reduced motion is emulated and screenshot animations are disabled. Console errors, page errors, failed requests, unexpected HTTP status, and capture failures are recorded in `report.json` and cause a nonzero exit. The hydration check uses React's DOM binding marker; revisit it if React's renderer changes. Date-dependent demo data is not frozen, so capture before/after close together and note changing data in reviews.
+Captures wait for React hydration, fonts, network idle, images, JS chart settling, and stable content. Reduced motion is emulated and screenshot animations are disabled. Console errors, page errors, failed requests, unexpected HTTP status, and capture failures are recorded in `report.json` and cause a nonzero exit. The hydration check uses React's DOM binding marker; revisit it if React's renderer changes. Application clocks are never frozen. For v0.4 comparisons, pass the same `--reference` ISO timestamp to serialize identical date inputs; the real monitoring clock can be narrowly masked with `--mask-live-clocks`.
 
 `screenshots/` is gitignored. Keep all PNGs and reports off main: create a separate worktree from `origin/pr-assets`, copy each task's `before/` and `after/` directories there, commit with the required co-author trailer, and push only that branch. Link images using `https://raw.githubusercontent.com/moeghashim/tenboards/pr-assets/NNN/before/<file>.png` and the corresponding `after/` URL in the PR table. Never add screenshots to an implementation branch. Inspect every submitted capture for blank, incomplete, or mislabeled output.
 
@@ -201,7 +206,7 @@ All screens remain mock-data demos, including existing disabled and placeholder 
 
 The [app-page breakdown](dev/milestones/v0.3-app-pages/README.md) assigns all 38 current route-catalog entries plus root not-found/error states to page owners or final regression coverage. Mail and Chat each retain standalone and dashboard iframe routes; Auth includes four forms and the bare V2 layout. The external `/` remains a redirect to `/dashboard/default`, with no landing UI to restyle. Implementation progress is documented per task below.
 
-Calendar, Invoice and both Auth V2 forms have passed their separate hydration gates. Page owners replaced the remaining upstream-author demo identities; the final whole-source scan has no matches, while legal attribution remains intact. Final acceptance checks every route across all four presets and reconciles hydration history. Implementation is complete pending merge; task status and evidence track it separately from reviewer approval, deployment and release.
+Calendar, Invoice and both Auth V2 forms have passed their separate hydration gates. Page owners replaced the remaining upstream-author demo identities; the final whole-source scan has no matches, while legal attribution remains intact. Final acceptance checks every route across all four presets and reconciles hydration history. All v0.3 tasks are merged, deployed and released; their evidence remains separate from the v0.4 implementation review.
 
 
 ### App-page foundation (v0.3 / 001)
@@ -283,12 +288,20 @@ Coming Soon describes planned content; the dashboard splat explains an unknown d
 
 ### Complete app-page acceptance (v0.3 / 014)
 
-The integrated v0.3 stack passes all 38 catalog entries on dev and Workers with Default, Graphite, Pine and Iris × light/dark × desktop/mobile: 608 cases per environment, 1,216 total. The coverage manifest checks generated routes, duplicates, missing/unexpected cases and every error; original failures and explicit reruns remain in pr-assets/v03-014. Supplemental scenarios cover Mail/Chat iframe contents, File Manager grid/list, Kanban board/list/table and overlays, Roles and all six Profile tabs, product/directory/task filters and forms, four auth forms, Invoice print, live Calendar/Patient Monitoring behavior, root 404/error/reset, and shell focus/preferences/reduced motion. All eight historical hydration findings are resolved; the whole-src author scan returns no matches. Supported-token audits pass 280 comparisons per environment; scoped actual-surface evidence is linked, not represented as a complete accessibility certification. The app source is unchanged by this acceptance layer. Tasks 001–007 are merged/deployed; 008–014 and the milestone stay in review pending Claude’s merges and release. Package version remains 0.2.0 until the reviewer releases 0.3.0.
+The integrated v0.3 stack passes all 38 catalog entries on dev and Workers with Default, Graphite, Pine and Iris × light/dark × desktop/mobile: 608 cases per environment, 1,216 total. The coverage manifest checks generated routes, duplicates, missing/unexpected cases and every error; original failures and explicit reruns remain in pr-assets/v03-014. Supplemental scenarios cover Mail/Chat iframe contents, File Manager grid/list, Kanban board/list/table and overlays, Roles and all six Profile tabs, product/directory/task filters and forms, four auth forms, Invoice print, live Calendar/Patient Monitoring behavior, root 404/error/reset, and shell focus/preferences/reduced motion. All eight historical hydration findings are resolved; the whole-src author scan returns no matches. Supported-token audits pass 280 comparisons per environment; scoped actual-surface evidence is linked, not represented as a complete accessibility certification. The app source is unchanged by this acceptance layer. All 14 v0.3 tasks are merged and deployed, and v0.3.0 is released. This paragraph records the historical v0.3 acceptance run; current v0.4 evidence is described below.
 
 Run `npm run screenshots -- --base-url <url> --preset <default|graphite|pine|iris> --output <root>/<dev|workers>/<preset>` for each environment/preset. `node --experimental-strip-types scripts/report-route-coverage.ts --root <root> --retries <manifest.json>` verifies complete coverage and retains original errors alongside explicitly mapped reruns. `--interactions` on `/dashboard/default` verifies shell focus, preference persistence and reduced motion; dialog evidence uses the existing viewport so screenshot resizing cannot disturb focus.
 
 
-### Optional local data (v0.4 / 001, in review)
+## Optional data layer (v0.4, in review)
+
+All data-bearing app pages and all 14 dashboards now use 22 typed reads. Demo is the
+zero-config default; local Postgres is optional. The [data-layer guide](docs/data-layer.md)
+covers source selection, schemas, dates, seeding, migrations, domain ownership and
+adding a read. The eight implementation layers remain in review; production stays
+demo-only and the package remains v0.3.0 until the reviewer owns a release.
+
+### Foundation (v0.4 / 001, in review)
 
 Users and Roles now load through typed GET server functions. With `DATABASE_URL` unset, install, development, builds and Workers previews use demo records without opening a database connection. `DATA_SOURCE=demo` explicitly forces demo; any other configured value is rejected. A configured empty, malformed, unreachable or unmigrated database produces a visible load error, never silent demo fallback. Actions remain local demonstrations, with no auth or writes.
 
@@ -390,3 +403,30 @@ belongs on `pr-assets`. `scripts/check-operational-state.ts` verifies loaded sel
 changes and empty states on the local dev server. Screenshot `--mask-live-clocks`
 masks only Patient Monitoring's explicitly marked live clock, never patient data;
 normal reduced-motion snapshots preserve deterministic signal geometry.
+
+### Whole-application acceptance (v0.4/008, in review)
+
+The final source audit checks every canonical fixture owner and traverses runtime
+imports to reject client fixture dependencies. Chat's remaining tab counts and
+thread date now belong to the Chat read; migration `0011_blushing_siren.sql` follows
+the operational migration. The cumulative registry has 22 reads / 130 scenarios.
+Fresh Postgres 17 and an upgrade beginning with the actual layer 001 schema/seed
+both pass, including repeated seeds and deliberate parity failures.
+
+The screenshot catalog remains 38 routes × four presets × two themes × two
+viewports: 608 cases per source. Run each source/preset with the same `--reference`
+ISO timestamp and `--mask-live-clocks`; neither option freezes the runtime clock.
+The reference becomes a validated, read-only request header for date-relative
+loaders. Without it, requests use real time. Invalid headers are ignored. Masks
+cover only the marked Patient Monitoring live clock; business values remain visible.
+
+```sh
+npm run screenshots -- --base-url <url> --preset <preset> --reference 2026-10-23T12:00:00.000Z --mask-live-clocks --output <evidence>/<dev|db|workers>/<preset>
+node --experimental-strip-types scripts/report-route-coverage.ts --root <evidence> --environments dev,db,workers --retries <retry-manifest.json>
+node --experimental-strip-types scripts/audit-data-layer.ts
+```
+
+The coverage validator reconciles the generated route inventory, all display cases,
+errors and explicit retries. Supplemental interaction, iframe, query/tab, print,
+root-boundary, delayed hydration and live-clock evidence accompanies the catalog.
+Store all logs/reports/images on `pr-assets` or PR attachments, never main.

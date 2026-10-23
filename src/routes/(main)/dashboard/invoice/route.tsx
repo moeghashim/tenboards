@@ -10,8 +10,9 @@ import { Invoice } from "./-components/invoice";
 import { InvoiceContext } from "./-components/invoice-context";
 
 const loadInvoice = createServerFn({ method: "GET" }).handler(async () => {
+  const { requestReference } = await import("@/server/request-reference.server");
   const { readInvoices } = await import("@/server/data/invoices");
-  const data = await readInvoices({ renderedAt: new Date().toISOString() });
+  const data = await readInvoices({ renderedAt: requestReference() });
   if (!data.defaultValues) throw new Error("Invoice draft is unavailable. Check the seed and retry.");
   return { ...data, defaultValues: data.defaultValues };
 });

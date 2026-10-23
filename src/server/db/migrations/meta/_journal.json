@@ -78,6 +78,13 @@
       "when": 1792790887110,
       "tag": "0010_plain_thunderball",
       "breakpoints": true
+    },
+    {
+      "idx": 11,
+      "version": "7",
+      "when": 1792792287398,
+      "tag": "0011_blushing_siren",
+      "breakpoints": true
     }
   ]
 }

@@ -2,11 +2,15 @@ import { eq } from "drizzle-orm";
 
 import type { getDatabase } from "./client.server.ts";
 import * as s from "./communications-schema.ts";
-import { chatCounts, conversations, currentUser } from "./fixtures/chat.ts";
+import { chatCounts, chatDisplay, chatTabCounts, conversations, currentUser } from "./fixtures/chat.ts";
 import { accounts, mailCounts, mailDefinitions } from "./fixtures/mail.ts";
+import { seedMetricCollection } from "./seed-metrics.ts";
 
 type Transaction = Parameters<Parameters<ReturnType<typeof getDatabase>["transaction"]>[0]>[0];
 export async function seedCommunications(tx: Transaction) {
+  await tx.insert(s.chatDisplay).values(chatDisplay).onConflictDoUpdate({ target: s.chatDisplay.id, set: chatDisplay });
+  await seedMetricCollection(tx, "communication-chat", "tabs", chatTabCounts);
+
   for (const [position, a] of accounts.entries()) {
     const row = { ...a, position };
     await tx.insert(s.mailAccounts).values(row).onConflictDoUpdate({ target: s.mailAccounts.id, set: row });

@@ -11,7 +11,7 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { getInitials } from "@/lib/utils";
 
 import type { Conversation } from "./data";
-import { useChat } from "./use-chat";
+import { useChat, useChatData } from "./use-chat";
 
 interface ChatConversationListProps {
   conversations: Conversation[];
@@ -27,6 +27,7 @@ export function ChatConversationList({
   inert,
 }: ChatConversationListProps) {
   const [chat, setChat] = useChat();
+  const { display } = useChatData();
   const { state, toggleSidebar } = useSidebar();
   const isCollapsed = state === "collapsed";
 
@@ -71,15 +72,15 @@ export function ChatConversationList({
         <TabsList variant="line" className="w-full border-b px-0 **:data-[slot=tabs-trigger]:border-x-0">
           <TabsTrigger value="all">
             All
-            <span className="text-muted-foreground text-xs">(24)</span>
+            <span className="text-muted-foreground text-xs">{`(${display.counts.all})`}</span>
           </TabsTrigger>
           <TabsTrigger value="open">
             Open
-            <span className="text-muted-foreground text-xs">(18)</span>
+            <span className="text-muted-foreground text-xs">{`(${display.counts.open})`}</span>
           </TabsTrigger>
           <TabsTrigger value="snoozed">
             Snoozed
-            <span className="text-muted-foreground text-xs">(2)</span>
+            <span className="text-muted-foreground text-xs">{`(${display.counts.snoozed})`}</span>
           </TabsTrigger>
           <TabsTrigger value="closed">Closed</TabsTrigger>
         </TabsList>
