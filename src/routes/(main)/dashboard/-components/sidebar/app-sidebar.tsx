@@ -1,8 +1,8 @@
 import { Link } from "@tanstack/react-router";
 
-import { Command } from "lucide-react";
 import { useShallow } from "zustand/react/shallow";
 
+import { BrandMark, BrandWordmark } from "@/components/brand/brand";
 import {
   Sidebar,
   SidebarContent,
@@ -12,7 +12,6 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
-import { APP_CONFIG } from "@/config/app-config";
 import { rootUser } from "@/data/users";
 import { sidebarItems } from "@/navigation/sidebar/sidebar-items";
 import { usePreferencesStore } from "@/stores/preferences/preferences-provider";
@@ -38,9 +37,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
-            <SidebarMenuButton render={<Link to="/dashboard/default" />}>
-              <Command />
-              <span className="text-base font-semibold">{APP_CONFIG.name}</span>
+            <SidebarMenuButton render={<Link to="/dashboard/default" aria-label="tenboards home" />}>
+              <BrandMark />
+              <BrandWordmark className="text-base" />
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>

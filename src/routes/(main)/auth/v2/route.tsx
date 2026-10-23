@@ -1,9 +1,7 @@
 import { createFileRoute, Outlet } from "@tanstack/react-router";
 
-import { Command } from "lucide-react";
-
+import { BrandMark, BrandWordmark } from "@/components/brand/brand";
 import { Separator } from "@/components/ui/separator";
-import { APP_CONFIG } from "@/config/app-config";
 
 export const Route = createFileRoute("/(main)/auth/v2")({
   component: Layout,
@@ -15,8 +13,10 @@ function Layout() {
       <div className="grid h-dvh justify-center p-2 lg:grid-cols-2">
         <div className="bg-primary relative order-2 hidden h-full rounded-3xl lg:flex">
           <div className="text-primary-foreground absolute top-10 space-y-1 px-10">
-            <Command className="size-10" />
-            <h1 className="text-2xl font-medium">{APP_CONFIG.name}</h1>
+            <BrandMark className="size-10" />
+            <h1 className="text-2xl">
+              <BrandWordmark />
+            </h1>
             <p className="text-sm">Design. Build. Launch. Repeat.</p>
           </div>
 

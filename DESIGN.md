@@ -87,6 +87,8 @@ Default control radius is 8px; shadcn aliases use 4/6/8/12/16/20/24px. Cards use
 
 ## Components
 
+The original tenboards identity uses a paired-board “10” silhouette and a Geist wordmark. In the app, the mark inherits currentColor and is decorative beside the wordmark or a named link; isolated SVG assets carry their own accessible name. Favicons use the tested white-on-blue primary pair. The SVG wordmark master is dark-on-light; use the inherited-color React wordmark in dark UI. Metadata assets and vector masters are documented in README.
+
 Use local Base UI-backed shadcn wrappers after inspecting their source. Button variants include primary, outline, secondary, ghost, destructive, and link; focus uses a border plus ring. Inputs have focus, invalid, disabled, and placeholder states. Cards use semantic card foreground/background with header/content/footer slots. Chips and navigation should share the semantic palette.
 
 The locked sidebar reference is [docs/design-refs/sidebar-reference.png](docs/design-refs/sidebar-reference.png), inspected for this document. Tasks 008–011 implement its inset floating rounded panel, workspace avatar/name and collapse control, search pill with ⌘K, regular-weight primary items with outline icons, soft gray active pills, secondary collapsible sections, pinned status card, and footer actions. Preserve icon-collapse and mobile sheet behavior. Do not implement this shell redesign in tasks 003–007.

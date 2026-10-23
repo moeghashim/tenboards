@@ -79,8 +79,8 @@ export const mails: Mail[] = [
     labels: ["meeting", "work", "important"],
     attachments: [
       {
-        id: "studio-admin-fig",
-        name: "studio-admin.fig",
+        id: "tenboards-fig",
+        name: "tenboards.fig",
         size: "21 MB",
         icon: siFigma,
       },

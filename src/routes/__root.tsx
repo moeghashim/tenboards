@@ -17,6 +17,16 @@ import { RootError } from "./-components/root-error";
 export const Route = createRootRoute({
   head: () => ({
     meta: [
+      { property: "og:type", content: "website" },
+      { property: "og:site_name", content: APP_CONFIG.name },
+      { property: "og:title", content: APP_CONFIG.meta.title },
+      { property: "og:description", content: APP_CONFIG.meta.description },
+      { property: "og:image", content: APP_CONFIG.meta.image },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: "tenboards — a complete admin dashboard starter" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: APP_CONFIG.meta.image },
       {
         charSet: "utf-8",
       },
@@ -33,6 +43,11 @@ export const Route = createRootRoute({
       },
     ],
     links: [
+      { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32.png" },
+      { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicon-16.png" },
+      { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
       {
         rel: "preconnect",
         href: "https://fonts.googleapis.com",
