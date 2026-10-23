@@ -1,83 +1,76 @@
 import { TrendingDown, TrendingUp } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
-import { Card, CardAction, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+
+import { StatCard } from "../../../-components/dashboard/cards";
 
 export function SectionCards() {
   return (
-    <div className="*:data-[slot=card]:from-primary/5 *:data-[slot=card]:to-card dark:*:data-[slot=card]:bg-card grid grid-cols-1 gap-4 *:data-[slot=card]:bg-linear-to-t *:data-[slot=card]:shadow-xs @xl/main:grid-cols-2 @5xl/main:grid-cols-4">
-      <Card className="@container/card">
-        <CardHeader>
-          <CardDescription>Total Revenue</CardDescription>
-          <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">$1,250.00</CardTitle>
-          <CardAction>
-            <Badge variant="outline">
-              <TrendingUp />
-              +12.5%
-            </Badge>
-          </CardAction>
-        </CardHeader>
-        <CardFooter className="flex-col items-start gap-1.5 text-sm">
-          <div className="line-clamp-1 flex gap-2 font-medium">
-            Trending up this month <TrendingUp className="size-4" />
-          </div>
-          <div className="text-muted-foreground">Visitors for the last 6 months</div>
-        </CardFooter>
-      </Card>
-      <Card className="@container/card">
-        <CardHeader>
-          <CardDescription>New Customers</CardDescription>
-          <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">1,234</CardTitle>
-          <CardAction>
-            <Badge variant="outline">
-              <TrendingDown />
-              -20%
-            </Badge>
-          </CardAction>
-        </CardHeader>
-        <CardFooter className="flex-col items-start gap-1.5 text-sm">
-          <div className="line-clamp-1 flex gap-2 font-medium">
-            Down 20% this period <TrendingDown className="size-4" />
-          </div>
-          <div className="text-muted-foreground">Acquisition needs attention</div>
-        </CardFooter>
-      </Card>
-      <Card className="@container/card">
-        <CardHeader>
-          <CardDescription>Active Accounts</CardDescription>
-          <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">45,678</CardTitle>
-          <CardAction>
-            <Badge variant="outline">
-              <TrendingUp />
-              +12.5%
-            </Badge>
-          </CardAction>
-        </CardHeader>
-        <CardFooter className="flex-col items-start gap-1.5 text-sm">
-          <div className="line-clamp-1 flex gap-2 font-medium">
-            Strong user retention <TrendingUp className="size-4" />
-          </div>
-          <div className="text-muted-foreground">Engagement exceed targets</div>
-        </CardFooter>
-      </Card>
-      <Card className="@container/card">
-        <CardHeader>
-          <CardDescription>Growth Rate</CardDescription>
-          <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">4.5%</CardTitle>
-          <CardAction>
-            <Badge variant="outline">
-              <TrendingUp />
-              +4.5%
-            </Badge>
-          </CardAction>
-        </CardHeader>
-        <CardFooter className="flex-col items-start gap-1.5 text-sm">
-          <div className="line-clamp-1 flex gap-2 font-medium">
-            Steady performance increase <TrendingUp className="size-4" />
-          </div>
-          <div className="text-muted-foreground">Meets growth projections</div>
-        </CardFooter>
-      </Card>
+    <div className="grid min-w-0 grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
+      <StatCard
+        label="Total Revenue"
+        value="$1,250.00"
+        trend={
+          <Badge variant="outline" className="text-success bg-success-surface border-transparent">
+            <TrendingUp />
+            +12.5%
+          </Badge>
+        }
+        help={
+          <>
+            <p className="text-foreground font-medium">Trending up this month</p>
+            <p>Visitors for the last 6 months</p>
+          </>
+        }
+      />
+      <StatCard
+        label="New Customers"
+        value="1,234"
+        trend={
+          <Badge variant="outline" className="text-danger bg-danger-surface border-transparent">
+            <TrendingDown />
+            -20%
+          </Badge>
+        }
+        help={
+          <>
+            <p className="text-foreground font-medium">Down 20% this period</p>
+            <p>Acquisition needs attention</p>
+          </>
+        }
+      />
+      <StatCard
+        label="Active Accounts"
+        value="45,678"
+        trend={
+          <Badge variant="outline" className="text-success bg-success-surface border-transparent">
+            <TrendingUp />
+            +12.5%
+          </Badge>
+        }
+        help={
+          <>
+            <p className="text-foreground font-medium">Strong user retention</p>
+            <p>Engagement exceed targets</p>
+          </>
+        }
+      />
+      <StatCard
+        label="Growth Rate"
+        value="4.5%"
+        trend={
+          <Badge variant="outline" className="text-success bg-success-surface border-transparent">
+            <TrendingUp />
+            +4.5%
+          </Badge>
+        }
+        help={
+          <>
+            <p className="text-foreground font-medium">Steady performance increase</p>
+            <p>Meets growth projections</p>
+          </>
+        }
+      />
     </div>
   );
 }

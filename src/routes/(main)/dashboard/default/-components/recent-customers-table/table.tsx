@@ -230,13 +230,13 @@ export function RecentCustomersTable({ data }: { data: RecentCustomerRow[] }) {
         </div>
       </div>
 
-      <div className="bg-card overflow-hidden rounded-lg border">
-        <Table>
+      <div className="bg-card min-w-0 overflow-hidden rounded-lg border">
+        <Table className="min-w-[760px]">
           <TableHeader className="bg-muted/15">
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => (
-                  <TableHead key={header.id} colSpan={header.colSpan} className="h-11 p-3 font-medium">
+                  <TableHead key={header.id} colSpan={header.colSpan} className="h-10 px-3 py-2 font-medium">
                     {header.isPlaceholder ? null : <table.FlexRender header={header} />}
                   </TableHead>
                 ))}
@@ -248,7 +248,7 @@ export function RecentCustomersTable({ data }: { data: RecentCustomerRow[] }) {
               table.getRowModel().rows.map((row) => (
                 <TableRow key={row.id} data-state={table.state.rowSelection[row.id] && "selected"}>
                   {row.getVisibleCells().map((cell) => (
-                    <TableCell key={cell.id} className="p-3 align-middle">
+                    <TableCell key={cell.id} className="px-3 py-2.5 align-middle">
                       <table.FlexRender cell={cell} />
                     </TableCell>
                   ))}

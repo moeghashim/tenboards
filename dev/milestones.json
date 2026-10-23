@@ -51,7 +51,7 @@
       ],
       "taskStatuses": {
         "001-dashboard-foundation": "in_review",
-        "002-default-dashboards": "planned",
+        "002-default-dashboards": "in_review",
         "003-crm-dashboards": "planned",
         "004-finance-dashboards": "planned",
         "005-analytics-dashboards": "planned",

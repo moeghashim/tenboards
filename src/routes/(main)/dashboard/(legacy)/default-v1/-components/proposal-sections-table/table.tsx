@@ -176,9 +176,9 @@ export function ProposalSectionsTable({ data: initialData }: { data: ProposalSec
         </div>
       </div>
       <TabsContent value="outline" className="relative flex flex-col gap-4 overflow-auto">
-        <div className="overflow-hidden rounded-lg border">
+        <div className="bg-card min-w-0 overflow-hidden rounded-lg border">
           <DragDropProvider onDragEnd={handleDragEnd}>
-            <Table>
+            <Table className="min-w-[960px]">
               <TableHeader className="bg-muted sticky top-0 z-10">
                 {table.getHeaderGroups().map((headerGroup) => (
                   <TableRow key={headerGroup.id}>

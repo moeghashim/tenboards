@@ -285,7 +285,7 @@ export function PerformanceOverview() {
       />
 
       <CardContent>
-        <DashboardChart config={chartConfig} className="aspect-auto h-80 w-full">
+        <DashboardChart config={chartConfig}>
           <ComposedChart data={chartData} margin={{ top: 0 }}>
             <defs>
               <linearGradient id="fillNewCustomers" x1="0" y1="0" x2="0" y2="1">
@@ -318,7 +318,11 @@ export function PerformanceOverview() {
                 />
               }
             />
-            <ChartLegend verticalAlign="top" content={<DashboardLegend config={chartConfig} className="mb-5" />} />
+            <ChartLegend
+              itemSorter={null}
+              verticalAlign="top"
+              content={<DashboardLegend config={chartConfig} className="mb-5" />}
+            />
 
             <Area
               {...motion}
