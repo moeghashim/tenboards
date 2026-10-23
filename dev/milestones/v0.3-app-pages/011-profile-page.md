@@ -2,7 +2,7 @@
 id: "011"
 title: Restyle Profile and neutralize its demo identity
 milestone: v0.3-app-pages
-status: planned
+status: review
 category: ui
 files: ["src/routes/(main)/dashboard/profile/", "README.md", "dev/milestones.json"]
 ---
@@ -23,15 +23,15 @@ Prefactor inspection: Inspect repeated label/value rows and profile header/sideb
 
 ## Acceptance criteria
 
-- [ ] Overview, Personal, Employment, Compensation, Time off and Documents remain reachable and readable; tab scrolling, document controls and header actions preserve current behavior.
-- [ ] Long names, bios, email addresses, date ranges and document names fit mobile without lost data; heading levels and restricted-state copy remain clear.
-- [ ] Every personal identity field, bio reference, updater, email and derived avatar matches the neutral demo person; no upstream-author reference remains in owned source.
-- [ ] Capture and inspect before/after with `npm run screenshots` for every affected URL in light/dark × desktop (1440×900)/mobile (390×844); attach a four-state comparison table per route plus meaningful interaction/variant states. Store captures, reports and logs only on `pr-assets` or PR attachments, never main. For foundation/acceptance, compare their limited changes and integrated baseline explicitly; do not invent visual changes.
-- [ ] `npm run build`, `npm run check` and `npm run typecheck` pass. Report inherited warnings separately from failures; baseline failures are not a passing gate.
-- [ ] Dev `/dashboard/default` and every owned route smoke without console errors; repeat on the Workers version preview, including iframe contents and refresh where relevant. Existing errors on an owned page cannot be waived.
-- [ ] Upload with `npm run preview:deploy -- --preview-alias pr-NNN` (actual PR number); include the version-specific preview URL and reusable alias in the PR. Never run `npm run deploy`.
-- [ ] Update root README.md for verified screens/behavior/commands/status and state `README: updated (sections …)` in the PR. Tick this file and update `dev/milestones.json` only from evidence.
-- [ ] Preserve keyboard access, accessible names, visible focus, reduced motion and all four presets. Check relevant changed foreground/background, status and meaningful graphic pairs for WCAG AA; record measured contrast for token/preset changes. Keep font/preferences registries, v0.1 shell and `src/components/ui/` intact. Reuse shared dashboard primitives and chart theme where applicable, without adding decorative charts.
+- [x] Overview, Personal, Employment, Compensation, Time off and Documents remain reachable and readable; tab scrolling, document controls and header actions preserve current behavior.
+- [x] Long names, bios, email addresses, date ranges and document names fit mobile without lost data; heading levels and restricted-state copy remain clear.
+- [x] Every personal identity field, bio reference, updater, email and derived avatar matches the neutral demo person; no upstream-author reference remains in owned source.
+- [x] Capture and inspect before/after with `npm run screenshots` for every affected URL in light/dark × desktop (1440×900)/mobile (390×844); attach a four-state comparison table per route plus meaningful interaction/variant states. Store captures, reports and logs only on `pr-assets` or PR attachments, never main. For foundation/acceptance, compare their limited changes and integrated baseline explicitly; do not invent visual changes.
+- [x] `npm run build`, `npm run check` and `npm run typecheck` pass. Report inherited warnings separately from failures; baseline failures are not a passing gate.
+- [x] Dev `/dashboard/default` and every owned route smoke without console errors; repeat on the Workers version preview, including iframe contents and refresh where relevant. Existing errors on an owned page cannot be waived.
+- [x] Upload with `npm run preview:deploy -- --preview-alias pr-NNN` (actual PR number); include the version-specific preview URL and reusable alias in the PR. Never run `npm run deploy`.
+- [x] Update root README.md for verified screens/behavior/commands/status and state `README: updated (sections …)` in the PR. Tick this file and update `dev/milestones.json` only from evidence.
+- [x] Preserve keyboard access, accessible names, visible focus, reduced motion and all four presets. Check relevant changed foreground/background, status and meaningful graphic pairs for WCAG AA; record measured contrast for token/preset changes. Keep font/preferences registries, v0.1 shell and `src/components/ui/` intact. Reuse shared dashboard primitives and chart theme where applicable, without adding decorative charts.
 
 ## Execution order and delivery
 

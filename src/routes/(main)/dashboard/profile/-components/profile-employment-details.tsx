@@ -1,44 +1,27 @@
 import { Separator } from "@/components/ui/separator";
 
 import type { ProfileRecord } from "./profile-data";
+import { ProfileField } from "./profile-field";
 
 export function EmploymentDetails({ profile }: { profile: ProfileRecord }) {
   return (
     <>
       <div className="flex flex-col gap-2">
         <h2 className="font-heading text-base font-medium">Role and organization</h2>
-        <dl className="grid gap-8 sm:grid-cols-2 xl:grid-cols-3 xl:gap-12">
-          <div className="flex flex-col gap-5">
-            <div className="flex flex-col gap-1">
-              <dt className="text-muted-foreground text-xs">Job title</dt>
-              <dd className="text-sm">{profile.jobTitle}</dd>
-            </div>
-            <div className="flex flex-col gap-1">
-              <dt className="text-muted-foreground text-xs">Team</dt>
-              <dd className="text-sm">{profile.team}</dd>
-            </div>
+        <dl className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+          <div className="flex min-w-0 flex-col gap-4">
+            <ProfileField label="Job title">{profile.jobTitle}</ProfileField>
+            <ProfileField label="Team">{profile.team}</ProfileField>
           </div>
 
-          <div className="flex flex-col gap-5">
-            <div className="flex flex-col gap-1">
-              <dt className="text-muted-foreground text-xs">Job level</dt>
-              <dd className="text-sm">{profile.jobLevel}</dd>
-            </div>
-            <div className="flex flex-col gap-1">
-              <dt className="text-muted-foreground text-xs">Manager</dt>
-              <dd className="text-sm">{profile.manager.name}</dd>
-            </div>
+          <div className="flex min-w-0 flex-col gap-4">
+            <ProfileField label="Job level">{profile.jobLevel}</ProfileField>
+            <ProfileField label="Manager">{profile.manager.name}</ProfileField>
           </div>
 
-          <div className="flex flex-col gap-5">
-            <div className="flex flex-col gap-1">
-              <dt className="text-muted-foreground text-xs">Department</dt>
-              <dd className="text-sm">{profile.department}</dd>
-            </div>
-            <div className="flex flex-col gap-1">
-              <dt className="text-muted-foreground text-xs">Current project</dt>
-              <dd className="text-sm">{profile.currentProject}</dd>
-            </div>
+          <div className="flex min-w-0 flex-col gap-4">
+            <ProfileField label="Department">{profile.department}</ProfileField>
+            <ProfileField label="Current project">{profile.currentProject}</ProfileField>
           </div>
         </dl>
       </div>
@@ -47,42 +30,21 @@ export function EmploymentDetails({ profile }: { profile: ProfileRecord }) {
 
       <div className="flex flex-col gap-2">
         <h2 className="font-heading text-base font-medium">Contract details</h2>
-        <dl className="grid gap-8 sm:grid-cols-2 xl:grid-cols-3 xl:gap-12">
-          <div className="flex flex-col gap-5">
-            <div className="flex flex-col gap-1">
-              <dt className="text-muted-foreground text-xs">Contractor ID</dt>
-              <dd className="text-sm">{profile.contractorId}</dd>
-            </div>
-            <div className="flex flex-col gap-1">
-              <dt className="text-muted-foreground text-xs">Engagement status</dt>
-              <dd className="text-sm">{profile.engagementStatus}</dd>
-            </div>
-            <div className="flex flex-col gap-1">
-              <dt className="text-muted-foreground text-xs">Employment type</dt>
-              <dd className="text-sm">{profile.employmentType}</dd>
-            </div>
+        <dl className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+          <div className="flex min-w-0 flex-col gap-4">
+            <ProfileField label="Contractor ID">{profile.contractorId}</ProfileField>
+            <ProfileField label="Engagement status">{profile.engagementStatus}</ProfileField>
+            <ProfileField label="Employment type">{profile.employmentType}</ProfileField>
           </div>
 
-          <div className="flex flex-col gap-5">
-            <div className="flex flex-col gap-1">
-              <dt className="text-muted-foreground text-xs">Contracting entity</dt>
-              <dd className="text-sm">{profile.contractingEntity}</dd>
-            </div>
-            <div className="flex flex-col gap-1">
-              <dt className="text-muted-foreground text-xs">Start date</dt>
-              <dd className="text-sm">{profile.startDate}</dd>
-            </div>
-            <div className="flex flex-col gap-1">
-              <dt className="text-muted-foreground text-xs">Last working day</dt>
-              <dd className="text-sm">{profile.lastWorkingDay}</dd>
-            </div>
+          <div className="flex min-w-0 flex-col gap-4">
+            <ProfileField label="Contracting entity">{profile.contractingEntity}</ProfileField>
+            <ProfileField label="Start date">{profile.startDate}</ProfileField>
+            <ProfileField label="Last working day">{profile.lastWorkingDay}</ProfileField>
           </div>
 
-          <div className="flex flex-col gap-5">
-            <div className="flex flex-col gap-1">
-              <dt className="text-muted-foreground text-xs">Notice period</dt>
-              <dd className="text-sm">{profile.noticePeriod}</dd>
-            </div>
+          <div className="flex min-w-0 flex-col gap-4">
+            <ProfileField label="Notice period">{profile.noticePeriod}</ProfileField>
           </div>
         </dl>
       </div>
@@ -91,30 +53,18 @@ export function EmploymentDetails({ profile }: { profile: ProfileRecord }) {
 
       <div className="flex flex-col gap-2">
         <h2 className="font-heading text-base font-medium">Work arrangement</h2>
-        <dl className="grid gap-8 sm:grid-cols-2 xl:grid-cols-3 xl:gap-12">
-          <div className="flex flex-col gap-5">
-            <div className="flex flex-col gap-1">
-              <dt className="text-muted-foreground text-xs">Workplace</dt>
-              <dd className="text-sm">{profile.workplace}</dd>
-            </div>
-            <div className="flex flex-col gap-1">
-              <dt className="text-muted-foreground text-xs">Time zone</dt>
-              <dd className="text-sm">{profile.timeZone}</dd>
-            </div>
+        <dl className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+          <div className="flex min-w-0 flex-col gap-4">
+            <ProfileField label="Workplace">{profile.workplace}</ProfileField>
+            <ProfileField label="Time zone">{profile.timeZone}</ProfileField>
           </div>
 
-          <div className="flex flex-col gap-5">
-            <div className="flex flex-col gap-1">
-              <dt className="text-muted-foreground text-xs">Weekly hours</dt>
-              <dd className="text-sm">{profile.weeklyHours}</dd>
-            </div>
+          <div className="flex min-w-0 flex-col gap-4">
+            <ProfileField label="Weekly hours">{profile.weeklyHours}</ProfileField>
           </div>
 
-          <div className="flex flex-col gap-5">
-            <div className="flex flex-col gap-1">
-              <dt className="text-muted-foreground text-xs">Schedule</dt>
-              <dd className="text-sm">{profile.schedule}</dd>
-            </div>
+          <div className="flex min-w-0 flex-col gap-4">
+            <ProfileField label="Schedule">{profile.schedule}</ProfileField>
           </div>
         </dl>
       </div>
