@@ -1,6 +1,6 @@
 
 > tenboards@0.1.0 screenshots
-> node --experimental-strip-types scripts/screenshots.ts --base-url https://24755d21-tenboards.mohanadgh.workers.dev --routes /dashboard/default --output screenshots/v02-001/workers
+> node --experimental-strip-types scripts/screenshots.ts --base-url https://b7a7fb88-tenboards.mohanadgh.workers.dev --routes /dashboard/default --output screenshots/v02-001/workers
 
 PASS /dashboard/default light/desktop
 PASS /dashboard/default light/mobile
