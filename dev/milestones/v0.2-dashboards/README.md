@@ -1,6 +1,6 @@
 # v0.2 — Dashboards
 
-Status: **planned; breakdown awaiting review**. v0.1 is merged, deployed and closed per `dev/milestones.json` and the resolved hydration decision. This planning PR starts no dashboard implementation. PLAN.md §7/§8 and its Decisions log remain authoritative; PRODUCT.md and DESIGN.md supply product facts and the established visual language.
+Status: **implementation verified; tasks 007–012 in review**. Tasks 001–006 (PRs #14–#19) are approved, merged and deployed; the remaining stack awaits Claude review/merge. v0.1 is closed. The integration gate passes 224/224 cases on dev and 224/224 on Workers, including 56/56 default-preset cases per environment. Two initial Workers Analytics navigation timeouts passed full four-state retries; original failures remain visible in the coverage report. Evidence: [v02-012](https://github.com/moeghashim/tenboards/tree/pr-assets/v02-012). PLAN.md and its Decisions log remain authoritative.
 
 ## Brief and boundaries
 
@@ -12,15 +12,15 @@ Out of scope (v0.3): Calendar, Chat, Mail, Kanban, Tasks, Invoice, File Manager,
 
 ## Definition of Done
 
-- [ ] Shared `src/lib/charts/` theme provides token-driven Recharts colors, axis/grid/tooltip/legend conventions, tabular numerals and SSR-safe reduced motion for Default, Graphite, Pine and Iris in light/dark.
-- [ ] Shared dashboard KPI/stat card, section header and card-density primitives live at the common route ancestor, with justified cross-dashboard reuse and no changes to protected UI wrappers.
-- [ ] All 14 routes below are restyled in the established product-UI language, retain their content and interactions, and remain available at their existing URLs.
-- [ ] Every route has before/after light/dark × desktop/mobile evidence; final default-preset route matrices pass 56/56 on dev and 56/56 on Workers preview. All-preset final matrices pass 224/224 per environment. Evidence stays on `pr-assets` or PR attachments, never main.
-- [ ] Finance, Finance V1, Productivity and Patient Monitoring each have **no React #418 hydration error in dev or Workers preview, light/dark × desktop/mobile**. The v0.1 waiver expires for those routes when their v0.2 tasks are accepted; do not hide errors or disable page SSR.
-- [ ] Every dashboard's mock-data identities are audited and upstream-author references replaced with neutral demo identities. LICENSE notices, archived provenance and README attribution remain intact.
-- [ ] Every task passes build/check/typecheck, dev `/dashboard/default` and affected-route smoke without console errors, plus Workers preview smoke; its PR includes version-specific and reusable preview URLs.
-- [ ] Supported token/graphic pairs have measured contrast evidence; keyboard access, names, visible focus, responsive tables/panes, legends/tooltips and reduced motion pass documented spot checks.
-- [ ] Each task updates README for verified behavior/screens/status. Final acceptance adds CHANGELOG v0.2, updates README screens/status, reconciles dashboard hydration entries and records accurate milestone status without claiming v0.3 is done.
+- [x] Shared `src/lib/charts/` theme provides token-driven Recharts colors, axis/grid/tooltip/legend conventions, tabular numerals and SSR-safe reduced motion for Default, Graphite, Pine and Iris in light/dark.
+- [x] Shared dashboard KPI/stat card, section header and card-density primitives live at the common route ancestor, with justified cross-dashboard reuse and no changes to protected UI wrappers.
+- [x] All 14 routes below are restyled in the established product-UI language, retain their content and interactions, and remain available at their existing URLs.
+- [x] Every route has before/after light/dark × desktop/mobile evidence; final default-preset route matrices pass 56/56 on dev and 56/56 on Workers preview. All-preset final matrices pass 224/224 per environment. Evidence stays on `pr-assets` or PR attachments, never main.
+- [x] Finance, Finance V1, Productivity and Patient Monitoring each have **no React #418 hydration error in dev or Workers preview, light/dark × desktop/mobile**. The v0.1 waiver expires for those routes when their v0.2 tasks are accepted; do not hide errors or disable page SSR.
+- [x] Every dashboard's mock-data identities are audited and upstream-author references replaced with neutral demo identities. LICENSE notices, archived provenance and README attribution remain intact.
+- [x] Every task passes build/check/typecheck, dev `/dashboard/default` and affected-route smoke without console errors, plus Workers preview smoke; its PR includes version-specific and reusable preview URLs.
+- [x] Supported token/graphic pairs have measured contrast evidence; keyboard access, names, visible focus, responsive tables/panes, legends/tooltips and reduced motion pass documented spot checks.
+- [x] Each task updates README for verified behavior/screens/status. Final acceptance adds CHANGELOG v0.2, updates README screens/status, reconciles dashboard hydration entries and records accurate milestone status without claiming v0.3 is done.
 - [ ] Claude Opus 5.5 reviews every task PR and exercises delegated squash-merge authority only after approval. The implementer never merges or deploys production. All acceptance boxes/statuses are evidence-backed.
 
 ## Route and ownership matrix
@@ -81,7 +81,7 @@ Finance/Finance V1/Productivity/Patient Monitoring have recorded Workers hydrati
 
 ## Workflow and evidence
 
-The user explicitly authorized this planning addition to `dev/**` on `docs/v0.2-breakdown`. All new task acceptance boxes remain unchecked and statuses planned. Approval of this breakdown is separate from permission to begin implementation.
+The user explicitly authorized this planning addition to `dev/**` on `docs/v0.2-breakdown`. That historical planning approval was followed by explicit batch implementation authorization. Current acceptance boxes and task statuses now reflect verified evidence; the remaining reviewer approval/merge gate is unchecked.
 
 For future tasks, follow root AGENTS.md's one-task/one-PR workflow. Its literal `feat/v0.1/NNN-slug` branch example is historical to v0.1; use the milestone equivalent `feat/v0.2/NNN-slug` for these tasks. Copy the root PR template with this milestone's task link. Use Conventional Commits with a blank line followed by `Co-Authored-By: GPT-6-Astra <noreply@openai.com>`. Every PR states `README: updated (sections …)` for its required README changes.
 
@@ -94,3 +94,10 @@ Preserve original failure logs and distinguish inherited warnings, newly introdu
 ## Open questions
 
 None blocking the breakdown. The existing hydration questions were answered by the locked decision assigning fixes to v0.2/v0.3; implementation must diagnose the remaining causes and provide the required evidence. No new approval or asset request is needed for planning.
+
+
+## Integrated acceptance evidence (task 012)
+
+The final [version preview](https://c87d1f88-tenboards.mohanadgh.workers.dev/dashboard/default) passes all 14 routes, four presets, two themes and two viewports. The [evidence directory](https://github.com/moeghashim/tenboards/tree/pr-assets/v02-012) retains matrices, logs, contrast measurements, interactive states, rendered/source identity audits and before/after comparisons. Finance comparison cards now share row bounds; the other 13 routes were checked for the same defect. No v0.3 surface or protected wrapper was changed.
+
+Finance, Finance V1, Productivity and Patient Monitoring are resolved on the integrated review preview. Patient Monitoring also passes delayed direct/refresh hydration and normal/reduced-motion tests in task 011. Calendar, Invoice and Auth V2 remain required v0.3 work. Production contains only merged tasks; these acceptance results do not claim that the pending stack is deployed.

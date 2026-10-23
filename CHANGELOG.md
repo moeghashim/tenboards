@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.2 — Dashboards (review candidate, 2026-10-23)
+
+- Unify all ten current dashboards and four legacy variants with shared compact cards, semantic states, responsive charts, readable legends and preserved demo workflows.
+- Replace upstream-author dashboard fixtures while retaining MIT notices and provenance.
+- Resolve Finance, Finance V1 and Productivity date hydration mismatches with explicit demo dates; start Patient Monitoring’s real UTC clock after hydration and retain deterministic realtime initial samples.
+- Pause continuous monitoring traces for reduced motion and preserve numeric readings, units and alarm semantics.
+- Improve E-commerce order menus, Academy keyboard achievements, Logistics mobile sheet focus, and Infrastructure mobile environment fields.
+- Align Finance comparison-row heights and verify all 14 routes across four presets, two themes and two viewports on dev and Workers.
+- Retain mock data, placeholder/disabled actions and the existing external Logistics basemap. No runtime dependency or backend/auth integration is added. Calendar, Invoice and Auth V2 hydration fixes and app-page restyles remain v0.3 work.
+
+Tasks 001–006 are merged and deployed; 007–012 await Claude review and authorized merge. This entry describes the review candidate, not a completed production release.
+
 ## v0.1 — Design system and shell (2026-10-23)
 
 - Preserve the full upstream route catalog and MIT attribution, with a public Cloudflare demo and per-PR version previews.

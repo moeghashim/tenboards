@@ -1,6 +1,6 @@
 # Open questions
 
-## 2026-10-23 — 012 full-matrix clock hydration blocker
+## 2026-10-23 — v0.1 / 012 full-matrix clock hydration blocker
 
 Task 009 long-title capture exposed an inherited `new Date()` in `src/routes/(main)/dashboard/patient-monitoring/route.tsx:19`. Direct SSR navigation can render different seconds on the server/client, causing hydration recovery. The failure predates this batch (the page file is unchanged from main). Exact output is retained with task 009 evidence in `pr-assets/009/009-inherited-failure.log`.
 
@@ -8,7 +8,7 @@ Observed diff: client `04:55:30`, server `04:55:29`; a second smoke reproduced c
 
 Decision requested: authorize a narrow nonvisual clock hydration fix in 012, or leave the full-matrix acceptance criterion blocked. No page content edit made. Independent shell tasks continue; error-free full-route acceptance remains pending.
 
-## 2026-10-23 — 012 Calendar Workers hydration blocker
+## 2026-10-23 — v0.1 / 012 Calendar Workers hydration blocker
 
 The complete task 012 Workers matrix reports a React HTML hydration mismatch on `/dashboard/calendar` in both themes at desktop/mobile. A separate four-state capture against the existing production deployment reproduces the same failure in all four cases, establishing that it predates this shell batch. Calendar source and primitives remain unchanged.
 
@@ -21,7 +21,7 @@ Other initial capture failures were an external Google font timeout on Calendar 
 Finance and Invoice also reproduce React text hydration error #418 in all four preview matrix cases and on the existing production deployment (see `pr-assets/012/012-production-baseline.log`). Their page content is unchanged in this batch. The same decision is required for these inherited non-shell SSR failures; no dashboard/app-page fix is included without authorization. Exact output is the Calendar message above with `args[]=text` instead of `args[]=HTML`.
 
 
-## 2026-10-23 — 012 final acceptance status
+## 2026-10-23 — v0.1 / 012 final acceptance status
 
 The final Workers matrix has 32 inherited hydration failures across eight routes: `/dashboard/calendar`, `/dashboard/finance`, `/dashboard/invoice`, `/dashboard/patient-monitoring`, `/dashboard/productivity`, `/dashboard/finance-v1`, `/auth/v2/login`, and `/auth/v2/register`. Each fails in light/dark at desktop/mobile and reproduces on the existing production deployment. Production logs and reports are retained in `pr-assets/012` under `production-calendar`, `production-baseline`, `production-productivity`, `production-finance-v1`, and `production-auth`. No page/auth/calendar implementation is changed.
 
@@ -45,4 +45,13 @@ The Productivity portion of the inherited hydration finding is resolved on versi
 
 GitHub's DCO app reports `ACTION_REQUIRED` on the stack: `There are 6 commits incorrectly signed off.` Each implementation layer lacks an author `Signed-off-by` trailer; the required GPT co-author trailer is present. Build, lint, typecheck, visual, interaction and owned-route hydration gates pass. Exact DCO output is retained at `pr-assets/v02-batch-001-006/dco.txt`.
 
-Status: open — author sign-off/remediation is needed before the DCO check can pass. Claude owns stack rebases and merges; the implementer has not rewritten the published stack or added author certification. Keep one commit per layer if remediation rewrites commit messages. PRs #14–#19 remain open with the DCO blocker identified; production is unchanged.
+Status: resolved — reviewer remediation completed; PRs #14–#19 are merged and deployed (verified GitHub merge state). The historical failure above is retained for provenance. Batch 007–012 commits use the authorized local author Signed-off-by trailer plus the required GPT co-author trailer; no DCO blocker remains on PRs #20–#24.
+
+
+### v0.2 tasks 011–012 — dashboard hydration resolved
+
+Status: resolved for all four v0.2 routes: `/dashboard/finance`, `/dashboard/finance-v1`, `/dashboard/productivity`, `/dashboard/patient-monitoring`. The integrated [task 012 preview](https://c87d1f88-tenboards.mohanadgh.workers.dev/dashboard/default) passes every one of these routes in all four presets, light/dark and desktop/mobile on dev and Workers, without React #418 or other console/page errors. [Full matrix evidence](https://github.com/moeghashim/tenboards/tree/pr-assets/v02-012).
+
+Patient Monitoring's render-time clock was the remaining root cause: SSR and the hydrating client now render the same placeholder; a client effect starts the real UTC clock. Realtime stores retain the stable server snapshot and pause continuous subscriptions for reduced motion. Task 011 passes 8/8 delayed direct/refresh cases per environment with a real 1800 ms JavaScript delay; assertions prove the clock advances, traces pause for reduced motion and resume with normal motion. Workers was tested in Pacific/Kiritimati and dev in America/Chicago. No frozen clock, suppressHydrationWarning or page SSR removal. [Task 011 evidence](https://github.com/moeghashim/tenboards/tree/pr-assets/v02-011).
+
+Calendar, Invoice and Auth V2 login/register remain assigned to v0.3 under the locked inherited-hydration decision. Their v0.1 waiver is historical and does not waive future v0.3 acceptance. No new blocker or scope question is open for v0.2; tasks 007–012 still await authorized review/merge and subsequent production deployment.

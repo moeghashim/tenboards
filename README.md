@@ -2,7 +2,7 @@
 
 An MIT-licensed dashboard template built with TanStack Start, React 19, TypeScript, Tailwind CSS v4, and shadcn/ui on Base UI.
 
-The full upstream screen catalog and mock data are retained. **v0.1 is merged, deployed and closed**: the design system and shell follow [PLAN.md](PLAN.md). **v0.2 implementation is underway** following [the approved dashboard task breakdown](dev/milestones/v0.2-dashboards/README.md). Current milestone/task status is tracked in [dev/milestones.json](dev/milestones.json). Current screens are demonstrations; database and authentication integrations are later milestones.
+The full upstream screen catalog and mock data are retained. **v0.1 is merged, deployed and closed**: the design system and shell follow [PLAN.md](PLAN.md). **v0.2 tasks 001–006 are merged and deployed; tasks 007–012 are implemented and awaiting review** following [the approved dashboard task breakdown](dev/milestones/v0.2-dashboards/README.md). Current milestone/task status is tracked in [dev/milestones.json](dev/milestones.json). Current screens are demonstrations; database and authentication integrations are later milestones.
 
 ## Run locally
 
@@ -31,7 +31,20 @@ Open [the default dashboard](http://localhost:3000/dashboard/default).
 
 ## Included screens
 
-The 14 dashboard routes are Default, CRM, Finance, Analytics, Productivity, E-commerce, Academy, Logistics, Infrastructure, Patient Monitoring, Default V1, CRM V1, Finance V1 and Analytics V1. Their shared foundation and route-by-route restyles are tracked in [dev/milestones.json](dev/milestones.json) for v0.2.
+The 14 dashboard routes are Default, CRM, Finance, Analytics, Productivity, E-commerce, Academy, Logistics, Infrastructure, Patient Monitoring, Default V1, CRM V1, Finance V1 and Analytics V1. All 14 share the v0.2 dashboard/chart presentation contract; legacy variants retain their distinct data and interactions. Review state is tracked in [dev/milestones.json](dev/milestones.json).
+
+| Current screen | Route | Legacy variant |
+| --- | --- | --- |
+| Default | `/dashboard/default` | `/dashboard/default-v1` |
+| CRM | `/dashboard/crm` | `/dashboard/crm-v1` |
+| Finance | `/dashboard/finance` | `/dashboard/finance-v1` |
+| Analytics | `/dashboard/analytics` | `/dashboard/analytics-v1` |
+| Productivity | `/dashboard/productivity` | — |
+| E-commerce | `/dashboard/ecommerce` | — |
+| Academy | `/dashboard/academy` | — |
+| Logistics | `/dashboard/logistics` | — |
+| Infrastructure | `/dashboard/infrastructure` | — |
+| Patient Monitoring | `/dashboard/patient-monitoring` | — |
 
 File manager, products, profile, mail, chat, calendar, kanban, tasks, invoice, users, roles, authentication layouts, coming-soon and error pages are retained for v0.3 restyling. Route-specific components remain colocated under `src/routes/`.
 
@@ -51,7 +64,7 @@ The unmodified import passed Biome with one existing `noArrayIndexKey` warning i
 
 **Live demo:** [tenboards.mohanadgh.workers.dev](https://tenboards.mohanadgh.workers.dev/dashboard/default).
 
-**Integrated shell preview:** [pr-012](https://pr-012-tenboards.mohanadgh.workers.dev/dashboard/default). The version-specific URL is recorded in the task 012 PR; this alias follows subsequent review uploads.
+**Integrated v0.2 review preview:** [v02-012](https://v02-012-tenboards.mohanadgh.workers.dev/dashboard/default). Its immutable version URL and full 14-route evidence are recorded in the task 012 PR. This preview includes unmerged tasks 007–012 and does not replace production.
 
 The Worker serves the existing mock-data demo. It has no database, authentication service, or secret bindings. Its only generated binding is `ASSETS` for static files. Production is redeployed from `main` by the reviewer after approved merges. Preview uploads do not change live traffic.
 
@@ -123,14 +136,14 @@ node --experimental-strip-types scripts/check-contrast.ts --presets default,grap
 
 Axe is not part of the existing tooling; the acceptance evidence identifies the semantic/keyboard checks actually run. [Task 012 evidence](https://github.com/moeghashim/tenboards/tree/pr-assets/012) holds the complete route matrix, logs, and smoke scripts. [Sidebar/reference comparison](https://github.com/moeghashim/tenboards/blob/pr-assets/008/sidebar-reference-comparison.png) records the locked reference comparison. Captures may contain inherited TanStack development-tool chrome.
 
-Known upstream limitations remain separate from shell acceptance. The existing production deployment reproduced Workers hydration mismatches on Calendar, Finance, Invoice, Productivity, Finance V1, Patient Monitoring and Auth V2 login/register. The task 004 and 006 version previews, recorded in their PRs and [open questions](dev/open-questions.md), resolve Finance/Finance V1 and Productivity; these fixes reach production only after reviewer merge and deployment. Calendar, Invoice, Patient Monitoring and Auth V2 retain their required fixes in their owning v0.2/v0.3 tasks under the locked decision in [open questions](dev/open-questions.md). Auth screens and account switching are demonstrations; there is no session/auth backend. Remaining dashboards and app layouts await their approved v0.2/v0.3 tasks. Full-route capture failures are recorded rather than omitted or suppressed. The retained optional font registry loads external Google font assets and may encounter network timeouts; the default Geist faces are self-hosted.
+Current hydration status: Finance, Finance V1, Productivity and Patient Monitoring are resolved and verified on dev and Workers in the v0.2 review stack. Calendar, Invoice and Auth V2 login/register retain the recorded v0.1 waiver and required v0.3 fixes; those pages have not been restyled. Historical failures and linked resolutions remain in [dev/open-questions.md](dev/open-questions.md).
 
 
 ## Dashboard foundation (v0.2 / 001)
 
 `src/lib/charts/theme.tsx` composes the existing chart wrappers with responsive sizing, token-based axes/grid/cursor/tooltips/legends, explicit en-US numeric formatters, and `useChartMotion`. The hook starts without animation on both SSR and initial hydration, then observes reduced-motion changes; pass its props to every animated Recharts series. `seriesConfig` selects chart-1, chart-2, chart-4 and chart-5, avoiding Default's duplicate chart-3 color. Pair series with labels and dash patterns from their keyed `seriesConfig` entries; color alone is insufficient.
 
-`dashboard/-components/dashboard/cards.tsx` provides `DashboardCard` (12px compact / 16px standard), `SectionHeader`, and `StatCard`. These presentation APIs accept domain values, help, trends and actions without owning data or state. Default's metrics and customer-activity chart are the first consumers; the full dashboard restyle follows in task 002. Other dashboards and the protected UI wrappers remain intact.
+`dashboard/-components/dashboard/cards.tsx` provides `DashboardCard` (12px compact / 16px standard), `SectionHeader`, and `StatCard`. These presentation APIs accept domain values, help, trends and actions without owning data or state. The primitives are reused throughout the 14 dashboard routes. Domain data and interactions remain route-local; protected UI wrappers remain intact.
 
 ## Default dashboards (v0.2 / 002)
 
@@ -177,3 +190,9 @@ Infrastructure retains project grouping, collapsible sections, every environment
 Patient Monitoring retains all simulated readings, units, patient selection, alarms and event/trend views. Compact cards, wrapping names/controls and labelled semantic waveforms remain readable across presets and narrow layouts. The live UTC clock starts after hydration from an identical server/client placeholder; realtime stores expose the same initial sample during SSR and hydration. Reduced motion pauses continuous traces and trends while keeping numeric readings and the real clock available; normal motion resumes the local simulation. Footer actions retain their existing demo behavior.
 
 `npm run screenshots -- --routes /dashboard/patient-monitoring --reload --interactions --hydration-delay-ms 1800` delays JavaScript delivery across a real second boundary, checks direct/refresh hydration, verifies the clock advances, and compares reduced/normal-motion waveform paths. It does not replace or freeze the runtime clock. Add `--base-url` for Workers and `--timezone Pacific/Kiritimati` for timezone coverage.
+
+### Integrated dashboard acceptance (v0.2 / 012)
+
+The full 14-route matrix is verified on dev and Workers in Default, Graphite, Pine and Iris, each in light/dark at desktop/mobile. Finance's Spending Overview and Account Allocation now share a row height; its wallet, bills and shortcut column also finish together. The other 13 routes were checked for the same row-gap regression. Supported-token contrast measurements and keyboard/tooltip/reduced-motion spot checks are retained with the PR evidence; these are scoped checks, not a claim of a complete accessibility audit.
+
+All screens remain mock-data demos, including existing disabled and placeholder actions. No runtime dependencies, protected UI/calendar wrappers, shell preferences or v0.3 page designs change. Tasks 007–012 remain in review until Claude approves and merges the stack; production deployment remains the reviewer's responsibility.
