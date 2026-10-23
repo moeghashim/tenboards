@@ -26,7 +26,9 @@ if (missing.length || stale.length) {
   throw new Error(`Route inventory mismatch: missing=${JSON.stringify(missing)}, stale=${JSON.stringify(stale)}`);
 }
 const requested = values.routes?.split(",");
-const selected = captureRoutes.filter((entry) => !requested || requested.includes(entry.route));
+const selected: Array<{ route: string; path: string; ready?: string; status?: number }> = captureRoutes.filter(
+  (entry) => !requested || requested.includes(entry.route),
+);
 const unknown = requested?.filter((route) => !captureRoutes.some((entry) => entry.route === route));
 if (unknown?.length || !selected.length) throw new Error(`Unknown/empty route subset: ${unknown?.join(",")}`);
 if (values.list) {

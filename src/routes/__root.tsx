@@ -2,6 +2,7 @@ import { TanStackDevtools } from "@tanstack/react-devtools";
 import { createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 
+import { CommandPalette } from "@/components/navigation/command-palette";
 import { Toaster } from "@/components/ui/toast";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { APP_CONFIG } from "@/config/app-config";
@@ -101,6 +102,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <TooltipProvider>
           <PreferencesStoreProvider initialValues={PREFERENCE_DEFAULTS}>
             {children}
+            <CommandPalette />
             <Toaster />
           </PreferencesStoreProvider>
         </TooltipProvider>

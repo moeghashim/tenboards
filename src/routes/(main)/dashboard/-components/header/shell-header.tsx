@@ -2,21 +2,19 @@ import { useRouterState } from "@tanstack/react-router";
 
 import { cn } from "cn";
 
+import { SearchTrigger } from "@/components/navigation/search-trigger";
 import { SidebarTrigger, useSidebar } from "@/components/ui/sidebar";
 import { users } from "@/data/users";
-import { sidebarItems } from "@/navigation/sidebar/sidebar-items";
+import { routeCatalog } from "@/navigation/route-catalog";
 
 import { AccountSwitcher } from "./account-switcher";
 import { GitHubRepositoriesMenu } from "./github-repositories-menu";
 import { LayoutControls } from "./layout-controls";
-import { SearchTrigger } from "./search-dialog";
 import { ThemeSwitcher } from "./theme-switcher";
-
-const routeLabels = sidebarItems.flatMap((group) => group.items.flatMap((item) => item.subItems ?? [item]));
 
 export function ShellHeader() {
   const path = useRouterState({ select: (state) => state.location.pathname });
-  const title = routeLabels.find((item) => item.url === path)?.title ?? "Page not found";
+  const title = routeCatalog.find((item) => item.path === path)?.label ?? "Page not found";
   const { open } = useSidebar();
   return (
     <header className="bg-background flex h-14 shrink-0 items-center gap-3 border-b px-4 md:px-6 [html[data-navbar-style=sticky]_&]:sticky [html[data-navbar-style=sticky]_&]:top-0 [html[data-navbar-style=sticky]_&]:z-20">

@@ -1,20 +1,32 @@
-import { Link } from "@tanstack/react-router";
+import { useEffect } from "react";
+
+import { Link, useRouter } from "@tanstack/react-router";
 
 import { BookOpen, CircleHelp, MessageCircle } from "lucide-react";
 import { useShallow } from "zustand/react/shallow";
 
 import { BrandMark, BrandWordmark } from "@/components/brand/brand";
+import { SearchTrigger } from "@/components/navigation/search-trigger";
 import { Button } from "@/components/ui/button";
-import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarTrigger } from "@/components/ui/sidebar";
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarFooter,
+  SidebarHeader,
+  SidebarTrigger,
+  useSidebar,
+} from "@/components/ui/sidebar";
 import { sidebarItems } from "@/navigation/sidebar/sidebar-items";
 import { usePreferencesStore } from "@/stores/preferences/preferences-provider";
 
 import { LayoutControls } from "../header/layout-controls";
-import { SearchTrigger } from "../header/search-dialog";
 import { NavMain } from "./nav-main";
 import { SupportCard } from "./support-card";
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  const router = useRouter();
+  const { setOpenMobile } = useSidebar();
+  useEffect(() => router.subscribe("onResolved", () => setOpenMobile(false)), [router, setOpenMobile]);
   const { sidebarVariant, sidebarCollapsible, isSynced } = usePreferencesStore(
     useShallow((s) => ({
       sidebarVariant: s.values.sidebar_variant,

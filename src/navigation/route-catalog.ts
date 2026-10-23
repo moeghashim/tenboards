@@ -1,0 +1,189 @@
+import { sidebarItems } from "./sidebar/sidebar-items.ts";
+
+// Explicit coverage contract. Compare against generated metadata on every capture run.
+// The only dynamic route is the dashboard splat: exercise its retained not-found UI.
+export const captureRoutes = [
+  {
+    route: "/chat",
+    path: "/chat",
+  },
+  {
+    route: "/dashboard",
+    path: "/dashboard",
+    ready: "Total Revenue",
+  },
+  {
+    route: "/mail",
+    path: "/mail",
+  },
+  {
+    route: "/unauthorized",
+    path: "/unauthorized",
+  },
+  {
+    route: "/",
+    path: "/",
+    ready: "Total Revenue",
+  },
+  {
+    route: "/auth/v2",
+    path: "/auth/v2",
+  },
+  {
+    route: "/dashboard/academy",
+    path: "/dashboard/academy",
+  },
+  {
+    route: "/dashboard/analytics",
+    path: "/dashboard/analytics",
+  },
+  {
+    route: "/dashboard/calendar",
+    path: "/dashboard/calendar",
+  },
+  {
+    route: "/dashboard/chat",
+    path: "/dashboard/chat",
+  },
+  {
+    route: "/dashboard/coming-soon",
+    path: "/dashboard/coming-soon",
+  },
+  {
+    route: "/dashboard/crm",
+    path: "/dashboard/crm",
+  },
+  {
+    route: "/dashboard/default",
+    path: "/dashboard/default",
+    ready: "Total Revenue",
+  },
+  {
+    route: "/dashboard/ecommerce",
+    path: "/dashboard/ecommerce",
+  },
+  {
+    route: "/dashboard/file-manager",
+    path: "/dashboard/file-manager",
+  },
+  {
+    route: "/dashboard/finance",
+    path: "/dashboard/finance",
+  },
+  {
+    route: "/dashboard/infrastructure",
+    path: "/dashboard/infrastructure",
+  },
+  {
+    route: "/dashboard/invoice",
+    path: "/dashboard/invoice",
+  },
+  {
+    route: "/dashboard/kanban",
+    path: "/dashboard/kanban",
+  },
+  {
+    route: "/dashboard/logistics",
+    path: "/dashboard/logistics",
+  },
+  {
+    route: "/dashboard/mail",
+    path: "/dashboard/mail",
+  },
+  {
+    route: "/dashboard/patient-monitoring",
+    path: "/dashboard/patient-monitoring",
+  },
+  {
+    route: "/dashboard/productivity",
+    path: "/dashboard/productivity",
+  },
+  {
+    route: "/dashboard/products",
+    path: "/dashboard/products",
+  },
+  {
+    route: "/dashboard/profile",
+    path: "/dashboard/profile",
+  },
+  {
+    route: "/dashboard/roles",
+    path: "/dashboard/roles",
+  },
+  {
+    route: "/dashboard/tasks",
+    path: "/dashboard/tasks",
+  },
+  {
+    route: "/dashboard/users",
+    path: "/dashboard/users",
+  },
+  {
+    route: "/dashboard/$",
+    path: "/dashboard/capture-not-found",
+  },
+  {
+    route: "/dashboard/",
+    path: "/dashboard/",
+    ready: "Total Revenue",
+  },
+  {
+    route: "/auth/v1/login",
+    path: "/auth/v1/login",
+  },
+  {
+    route: "/auth/v1/register",
+    path: "/auth/v1/register",
+  },
+  {
+    route: "/auth/v2/login",
+    path: "/auth/v2/login",
+  },
+  {
+    route: "/auth/v2/register",
+    path: "/auth/v2/register",
+  },
+  {
+    route: "/dashboard/analytics-v1",
+    path: "/dashboard/analytics-v1",
+  },
+  {
+    route: "/dashboard/crm-v1",
+    path: "/dashboard/crm-v1",
+  },
+  {
+    route: "/dashboard/default-v1",
+    path: "/dashboard/default-v1",
+  },
+  {
+    route: "/dashboard/finance-v1",
+    path: "/dashboard/finance-v1",
+  },
+] as const satisfies readonly { route: string; path: string; ready?: string; status?: number }[];
+
+const navRoutes = sidebarItems.flatMap((group) =>
+  group.items.flatMap((item) =>
+    (item.subItems ?? [item]).map((link) => ({ ...link, group: group.label ?? "Pages", icon: link.icon ?? item.icon })),
+  ),
+);
+const extraLabels: Record<string, string> = {
+  "/": "Home redirect",
+  "/dashboard": "Dashboard redirect",
+  "/dashboard/": "Dashboard index",
+  "/auth/v2": "Authentication layout",
+  "/chat": "Standalone Chat",
+  "/mail": "Standalone Mail",
+  "/unauthorized": "Unauthorized",
+  "/dashboard/$": "Page not found",
+  "/dashboard/coming-soon": "Coming soon",
+};
+
+export const routeCatalog = captureRoutes.map((entry) => {
+  const nav = navRoutes.find((item) => item.url === entry.route);
+  return {
+    ...entry,
+    label: extraLabels[entry.route] ?? nav?.title ?? entry.route,
+    group: nav?.group ?? "Other screens",
+    icon: nav?.icon,
+  };
+});
