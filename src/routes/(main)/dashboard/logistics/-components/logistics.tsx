@@ -7,14 +7,16 @@ import { ShipmentDetails } from "./shipment-details";
 import { ShipmentList } from "./shipment-list";
 
 export function Logistics() {
+  const selectedTrigger = React.useRef<HTMLButtonElement | null>(null);
   const [detailsOpen, setDetailsOpen] = React.useState(false);
   const [selectedShipmentId, setSelectedShipmentId] = React.useState<string | null>(shipments[0].id);
   const selectedShipment = shipments.find((shipment) => shipment.id === selectedShipmentId) ?? shipments[0];
 
-  function handleSelectShipment(shipmentId: string) {
+  function handleSelectShipment(shipmentId: string, trigger: HTMLButtonElement) {
+    selectedTrigger.current = trigger;
     setSelectedShipmentId(shipmentId);
 
-    if (window.innerWidth < 1024) {
+    if (!window.matchMedia("(min-width: 1024px)").matches) {
       setDetailsOpen(true);
     }
   }
@@ -23,7 +25,7 @@ export function Logistics() {
     <>
       <div
         data-content-padding="false"
-        className="grid h-[calc(100dvh-var(--dashboard-header-height))] overflow-hidden lg:grid-cols-[400px_minmax(0,1fr)] lg:divide-x"
+        className="grid h-[calc(100dvh-var(--dashboard-header-height))] min-w-0 overflow-hidden lg:grid-cols-[360px_minmax(0,1fr)] lg:divide-x"
       >
         <div className="h-full overflow-hidden">
           <ShipmentList
@@ -40,6 +42,7 @@ export function Logistics() {
       <Sheet open={detailsOpen} onOpenChange={setDetailsOpen}>
         <SheetContent
           side="right"
+          finalFocus={selectedTrigger}
           className="gap-0 p-0 data-[side=right]:w-full data-[side=right]:sm:max-w-none data-[side=right]:md:w-3/4"
         >
           <SheetHeader className="sr-only">

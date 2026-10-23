@@ -8,6 +8,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import type { Shipment } from "./shipment-data";
+import { statusText } from "./shipment-status";
 
 const modeIcons = {
   air: Plane,
@@ -15,72 +16,48 @@ const modeIcons = {
   sea: Ship,
 } as const;
 
-const progressRingClasses: Record<Shipment["status"], string> = {
-  Scheduled: "text-muted-foreground",
-  "In Transit": "text-primary",
-  "Out for Delivery": "text-primary",
-  Delivered: "text-green-600",
-  Delayed: "text-destructive",
-  "On Hold": "text-amber-500",
-  "Customs Hold": "text-amber-500",
-};
-
-function getProgressRingClass(status: Shipment["status"]) {
-  return cn(
-    "grid size-3 place-items-center rounded-full bg-[conic-gradient(currentColor_0deg_var(--angle),transparent_var(--angle)_360deg)] p-[0.5px]",
-    progressRingClasses[status],
-  );
-}
-
 type ShipmentCardProps = {
   active?: boolean;
-  onSelectShipment: (shipmentId: Shipment["id"]) => void;
+  onSelectShipment: (shipmentId: Shipment["id"], trigger: HTMLButtonElement) => void;
   shipment: Shipment;
 };
 
 type ShipmentListProps = {
-  onSelectShipment: (shipmentId: Shipment["id"]) => void;
+  onSelectShipment: (shipmentId: Shipment["id"], trigger: HTMLButtonElement) => void;
   selectedShipmentId: Shipment["id"] | null;
   shipments: Shipment[];
 };
 
 function ShipmentCard({ shipment, active, onSelectShipment }: ShipmentCardProps) {
-  const angle = (shipment.progress / 100) * 360;
   const Icon = modeIcons[shipment.mode];
 
   return (
     <button
       type="button"
       aria-pressed={active}
+      aria-label={`Select shipment ${shipment.id}`}
       onClick={(event) => {
-        event.currentTarget.blur();
-        onSelectShipment(shipment.id);
+        onSelectShipment(shipment.id, event.currentTarget);
       }}
       className={cn(
-        "flex w-full flex-col gap-5 rounded-xl border p-3 text-left transition-colors",
+        "flex w-full flex-col gap-3 rounded-lg border p-3 text-left transition-colors",
         "hover:bg-muted/50 focus-visible:ring-ring/50 focus-visible:ring-3 focus-visible:outline-none",
-        active && "border-primary bg-muted/50",
+        active && "border-primary bg-muted",
       )}
     >
-      <div className="flex items-center justify-between">
+      <div className="flex flex-wrap items-center justify-between gap-2">
         <div>#{shipment.id}</div>
 
         <div className="flex items-center gap-1">
-          <div
-            style={{ "--angle": `${angle}deg` } as React.CSSProperties}
-            className={getProgressRingClass(shipment.status)}
-          >
-            <div className="bg-card grid size-2 place-items-center rounded-full">
-              <div className="size-1 rounded-full bg-current" />
-            </div>
-          </div>
-          <div className="text-muted-foreground text-xs">{shipment.status}</div>
+          <span className={cn("text-xs font-medium", statusText[shipment.status])}>{shipment.status}</span>
         </div>
       </div>
 
-      <div className="flex items-center justify-between">
+      <div className="flex flex-wrap items-center justify-between gap-2">
         <div className="flex items-center gap-1.5">
-          <div className={cn(`flag:${shipment.origin.countryCode.toUpperCase()}`, "rounded-xs text-3xl outline")} />
+          <span className="text-muted-foreground rounded border px-1 py-0.5 text-xs">
+            {shipment.origin.countryCode.toUpperCase()}
+          </span>
           <div className="flex flex-col gap-0.5">
             <div className="text-xs leading-none font-medium">{shipment.origin.country},</div>
             <div className="text-muted-foreground text-xs">{shipment.origin.display}</div>
@@ -92,9 +69,9 @@ function ShipmentCard({ shipment, active, onSelectShipment }: ShipmentCardProps)
             <div className="text-xs leading-none font-medium">{shipment.destination.country},</div>
             <div className="text-muted-foreground text-xs">{shipment.destination.display}</div>
           </div>
-          <div
-            className={cn(`flag:${shipment.destination.countryCode.toUpperCase()}`, "rounded-xs text-3xl outline")}
-          />
+          <span className="text-muted-foreground rounded border px-1 py-0.5 text-xs">
+            {shipment.destination.countryCode.toUpperCase()}
+          </span>
         </div>
       </div>
 
@@ -110,10 +87,10 @@ function ShipmentCard({ shipment, active, onSelectShipment }: ShipmentCardProps)
         />
       </div>
 
-      <div className="flex items-center justify-between">
+      <div className="flex flex-wrap items-center justify-between gap-2">
         <div>
           <div className="text-muted-foreground text-xs leading-none">Cargo</div>
-          <div className="truncate text-sm tracking-tight">{shipment.cargo}</div>
+          <div className="text-sm tracking-tight wrap-break-word">{shipment.cargo}</div>
         </div>
         <div className="text-right">
           <div className="text-muted-foreground text-xs leading-none">ETA</div>
@@ -133,16 +110,16 @@ export function ShipmentList({ shipments, selectedShipmentId, onSelectShipment }
   return (
     <Card className="h-full rounded-none ring-0">
       <CardHeader>
-        <CardTitle className="text-xl font-normal">Shipments</CardTitle>
+        <CardTitle className="text-xl font-medium">Shipments</CardTitle>
         <CardAction>
-          <Button size="icon-sm" variant="ghost">
+          <Button aria-label="Shipment filters" size="icon-sm" variant="ghost">
             <SlidersHorizontal />
           </Button>
         </CardAction>
       </CardHeader>
       <CardContent className="flex flex-1 flex-col gap-4 overflow-hidden px-0">
         <Tabs defaultValue="all">
-          <TabsList className="w-full border-b px-4" variant="line">
+          <TabsList className="h-auto w-full flex-wrap border-b px-3" variant="line">
             <TabsTrigger className="text-xs" value="all">
               All (156)
             </TabsTrigger>
@@ -168,7 +145,7 @@ export function ShipmentList({ shipments, selectedShipmentId, onSelectShipment }
         </div>
 
         <ScrollArea className="h-0 flex-1">
-          <div className="flex flex-col gap-4 px-4">
+          <div className="flex flex-col gap-3 px-4 pb-4">
             {shipments.map((shipment) => (
               <ShipmentCard
                 active={shipment.id === selectedShipmentId}

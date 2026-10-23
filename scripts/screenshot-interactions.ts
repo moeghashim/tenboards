@@ -2,6 +2,36 @@ import type { Page } from "playwright";
 
 // Opt-in interaction evidence for the dashboard batch. Never replace the runtime clock.
 export async function captureInteractions(page: Page, route: string): Promise<string[]> {
+  if (route === "/dashboard/logistics") {
+    const shipment = page.getByRole("button", { name: "Select shipment SDA-02-2402", exact: true });
+    await shipment.focus();
+    await shipment.press("Enter");
+    const mobile = (page.viewportSize()?.width ?? 1440) < 1024;
+    const region = mobile
+      ? page.getByRole("dialog", { name: "Shipment SDA-02-2402", exact: true })
+      : page.locator("main");
+    await region.getByRole("heading", { name: "#SDA-02-2402", exact: true }).waitFor();
+    await region.getByRole("tab", { name: "Route", exact: true }).click();
+    await region.getByText("Route view coming soon.", { exact: true }).waitFor();
+    await region.getByRole("tab", { name: "Overview", exact: true }).click();
+    if (mobile) {
+      await page.keyboard.press("Escape");
+      await page.getByRole("dialog").waitFor({ state: "hidden" });
+      await page.waitForFunction(
+        () => document.activeElement?.getAttribute("aria-label") === "Select shipment SDA-02-2402",
+      );
+      await shipment.press("Enter");
+      await region.waitFor();
+    }
+    if (await page.evaluate(() => document.documentElement.scrollWidth > innerWidth))
+      throw new Error("Page-wide overflow");
+    return [
+      "Enter selects second shipment and correct details",
+      "Route placeholder and Overview tabs preserved",
+      mobile ? "Mobile sheet named; Escape closes and returns focus; Enter reopens" : "Desktop split pane updated",
+      "No page-wide overflow",
+    ];
+  }
   if (route === "/dashboard/academy") {
     const student = page.getByRole("button", { name: "Olivia Davis", exact: true });
     await page.keyboard.press("Tab");

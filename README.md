@@ -163,3 +163,7 @@ E-commerce uses shared compact KPIs, a labelled USD revenue/profit chart, readab
 ### Academy dashboard (v0.2 / 008)
 
 Academy shares compact metrics and semantic schedule/assignment states. Full course names wrap; submission counts are available in a labelled table alongside the motion-aware chart. Performance windows retain their weekly positions and scores, with named student achievement tooltips outside the marks for mobile and keyboard access. Schedule and upcoming events use an explicit October 23, 2026 demo day, retaining their event offsets and times across server/browser timezones. Announcement, Gradebook and assignment controls retain their existing demo behavior. The Academy `--interactions` screenshot scenario checks keyboard achievement details and responsive layout.
+
+### Logistics dashboard (v0.2 / 009)
+
+Logistics keeps its shipment list/map/detail split and mobile detail sheet. Shipment selection supports Enter; Escape closes the mobile sheet and restores focus to the selected row. Shared local status styles, country codes, explicit endpoint labels and different origin/destination marks clarify the route in every preset. Detail tabs, named controls and locally scrolling panes fit narrow screens. Search/filter, copy/contact and unimplemented detail-tab actions retain their existing demo behavior. The Logistics `--interactions` capture verifies selection, placeholder tabs and sheet focus return. The geographic basemap still loads the existing public world-atlas asset.
