@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { Card, CardAction, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { CardContent } from "@/components/ui/card";
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -32,6 +32,7 @@ import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectVa
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { dataTableFeatures } from "@/lib/data-table-features";
 
+import { DashboardCard as Card, SectionHeader } from "../../../../-components/dashboard/cards";
 import { recentLeadsColumns } from "./columns";
 import type { RecentLeadRow } from "./schema";
 
@@ -78,10 +79,10 @@ export function RecentLeadsTable({ data }: { data: RecentLeadRow[] }) {
 
   return (
     <Card>
-      <CardHeader>
-        <CardTitle>Recent Leads</CardTitle>
-        <CardDescription>Track and manage your latest leads and their status.</CardDescription>
-        <CardAction>
+      <SectionHeader
+        title="Recent Leads"
+        description="Track and manage your latest leads and their status."
+        actions={
           <div className="flex items-center gap-2">
             <DropdownMenu>
               <DropdownMenuTrigger render={<Button variant="outline" size="sm" />}>
@@ -107,16 +108,17 @@ export function RecentLeadsTable({ data }: { data: RecentLeadRow[] }) {
                 </DropdownMenuGroup>
               </DropdownMenuContent>
             </DropdownMenu>
-            <Button variant="outline" size="sm">
+            <Button aria-label="Export leads" variant="outline" size="sm">
               <Download data-icon="inline-start" />
               <span className="hidden lg:inline">Export</span>
             </Button>
           </div>
-        </CardAction>
-      </CardHeader>
+        }
+      />
+
       <CardContent className="flex flex-col gap-4">
-        <div className="overflow-hidden rounded-md border">
-          <Table>
+        <div className="min-w-0 overflow-hidden rounded-md border">
+          <Table className="min-w-[760px]">
             <TableHeader className="bg-muted">
               {table.getHeaderGroups().map((headerGroup) => (
                 <TableRow key={headerGroup.id}>

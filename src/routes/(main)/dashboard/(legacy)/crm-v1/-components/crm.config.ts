@@ -16,7 +16,7 @@ export const leadsChartConfig = {
   },
   disqualified: {
     label: "Disqualified",
-    color: "var(--chart-3)",
+    color: "var(--muted-foreground)",
   },
   background: {
     color: "var(--primary)",
@@ -83,7 +83,7 @@ export const leadsBySourceChartConfig = {
   },
   social: {
     label: "Social Media",
-    color: "var(--chart-3)",
+    color: "var(--muted-foreground)",
   },
   cold: {
     label: "Cold Outreach",
@@ -114,7 +114,7 @@ export const projectRevenueChartConfig = {
   },
   remaining: {
     label: "Remaining",
-    color: "var(--chart-2)",
+    color: "var(--muted)",
   },
   label: {
     color: "var(--primary-foreground)",
@@ -124,7 +124,7 @@ export const projectRevenueChartConfig = {
 export const salesPipelineChartData = [
   { stage: "Leads", value: 680, fill: "var(--chart-1)" },
   { stage: "Qualified", value: 480, fill: "var(--chart-2)" },
-  { stage: "Proposal Sent", value: 210, fill: "var(--chart-3)" },
+  { stage: "Proposal Sent", value: 210, fill: "var(--muted-foreground)" },
   { stage: "Negotiation", value: 120, fill: "var(--chart-4)" },
   { stage: "Won", value: 45, fill: "var(--chart-5)" },
 ];
@@ -184,7 +184,7 @@ export const actionItems = [
     desc: "Send onboarding documents and timeline",
     due: "Due today",
     priority: "High",
-    priorityColor: "bg-red-100 text-red-700",
+    priorityColor: "bg-danger-surface text-danger",
     checked: false,
   },
   {
@@ -193,7 +193,7 @@ export const actionItems = [
     desc: "Book Zoom call with client",
     due: "Due tomorrow",
     priority: "Medium",
-    priorityColor: "bg-yellow-100 text-yellow-700",
+    priorityColor: "bg-warning-surface text-warning",
     checked: true,
   },
   {
@@ -202,7 +202,7 @@ export const actionItems = [
     desc: "Add latest LLM project",
     due: "Due this week",
     priority: "Low",
-    priorityColor: "bg-green-100 text-green-700",
+    priorityColor: "bg-success-surface text-success",
     checked: false,
   },
 ];
@@ -266,8 +266,8 @@ export const recentLeadsData = [
   },
   {
     id: "L-1007",
-    name: "Arham Khan",
-    company: "Weblabs Studio",
+    name: "Jordan Lee",
+    company: "Northwind Studio",
     status: "Won",
     source: "Website",
     lastActivity: "6h ago",
@@ -298,7 +298,7 @@ export const recentLeadsData = [
   },
   {
     id: "L-1002",
-    name: "Ammar Khnz",
+    name: "Sam Rivera",
     company: "BE",
     status: "Contacted",
     source: "Referral",

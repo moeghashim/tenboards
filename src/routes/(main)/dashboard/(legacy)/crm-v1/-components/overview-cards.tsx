@@ -1,10 +1,12 @@
 import { format, subMonths } from "date-fns";
-import { BadgeDollarSign, Wallet } from "lucide-react";
 import { Area, AreaChart, Bar, BarChart, Line, LineChart, XAxis } from "recharts";
 
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
+import { Badge } from "@/components/ui/badge";
+import { CardContent, CardFooter } from "@/components/ui/card";
+import { ChartTooltip } from "@/components/ui/chart";
+import { chartAxis, DashboardChart, DashboardTooltip, useChartMotion } from "@/lib/charts/theme";
 
+import { DashboardCard as Card, SectionHeader, StatCard } from "../../../-components/dashboard/cards";
 import {
   leadsChartConfig,
   leadsChartData,
@@ -17,42 +19,55 @@ import {
 const lastMonth = format(subMonths(new Date(), 1), "LLLL");
 
 export function OverviewCards() {
+  const motion = useChartMotion();
   return (
-    <div className="grid grid-cols-1 gap-4 *:data-[slot=card]:shadow-xs sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
+    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
       <Card>
-        <CardHeader>
-          <CardTitle>New Leads</CardTitle>
-          <CardDescription>Last Month</CardDescription>
-        </CardHeader>
+        <SectionHeader title="New Leads" description="Last Month" />
         <CardContent className="size-full">
-          <ChartContainer className="size-full min-h-24" config={leadsChartConfig}>
+          <DashboardChart className="h-32 sm:h-32" config={leadsChartConfig}>
             <BarChart accessibilityLayer data={leadsChartData} barSize={8}>
-              <XAxis dataKey="date" tickLine={false} tickMargin={10} axisLine={false} hide />
-              <ChartTooltip content={<ChartTooltipContent labelFormatter={(label) => `${lastMonth}: ${label}`} />} />
+              <defs>
+                <pattern id="crm-disqualified" width="5" height="5" patternUnits="userSpaceOnUse">
+                  <rect width="5" height="5" fill="var(--card)" />
+                  <path d="M0 0L5 5M-1 4L1 6M4 -1L6 1" stroke="var(--muted-foreground)" strokeWidth="2" />
+                </pattern>
+              </defs>
+              <XAxis {...chartAxis} dataKey="date" tickLine={false} tickMargin={10} axisLine={false} hide />
+              <ChartTooltip
+                {...motion}
+                content={<DashboardTooltip labelFormatter={(label) => `${lastMonth}: ${label}`} />}
+              />
               <Bar
+                {...motion}
                 background={{ fill: "var(--color-background)", radius: 4, opacity: 0.07 }}
                 dataKey="newLeads"
                 stackId="a"
                 fill="var(--color-newLeads)"
                 radius={[0, 0, 0, 0]}
               />
-              <Bar dataKey="disqualified" stackId="a" fill="var(--color-disqualified)" radius={[4, 4, 0, 0]} />
+              <Bar
+                {...motion}
+                dataKey="disqualified"
+                stackId="a"
+                fill="url(#crm-disqualified)"
+                stroke="var(--muted-foreground)"
+                radius={[4, 4, 0, 0]}
+              />
             </BarChart>
-          </ChartContainer>
+          </DashboardChart>
         </CardContent>
-        <CardFooter className="flex items-center justify-between">
+        <p className="text-muted-foreground px-4 text-xs">Solid: new leads · Striped: disqualified</p>
+        <CardFooter className="flex flex-wrap items-center justify-between gap-2">
           <span className="text-xl font-semibold tabular-nums">635</span>
-          <span className="text-sm font-medium text-green-500">+54.6%</span>
+          <span className="text-success text-sm font-medium">+54.6%</span>
         </CardFooter>
       </Card>
 
       <Card className="overflow-hidden pb-0">
-        <CardHeader>
-          <CardTitle>Proposals Sent</CardTitle>
-          <CardDescription>Last Month</CardDescription>
-        </CardHeader>
+        <SectionHeader title="Proposals Sent" description="Last Month" />
         <CardContent className="flex-1 p-0">
-          <ChartContainer className="size-full min-h-24" config={proposalsChartConfig}>
+          <DashboardChart className="h-32 sm:h-32" config={proposalsChartConfig}>
             <AreaChart
               data={proposalsChartData}
               margin={{
@@ -61,62 +76,42 @@ export function OverviewCards() {
                 top: 5,
               }}
             >
-              <XAxis dataKey="date" tickLine={false} tickMargin={10} axisLine={false} hide />
+              <XAxis {...chartAxis} dataKey="date" tickLine={false} tickMargin={10} axisLine={false} hide />
               <ChartTooltip
-                content={<ChartTooltipContent labelFormatter={(label) => `${lastMonth}: ${label}`} hideIndicator />}
+                {...motion}
+                content={<DashboardTooltip labelFormatter={(label) => `${lastMonth}: ${label}`} hideIndicator />}
               />
               <Area
+                {...motion}
                 dataKey="proposalsSent"
                 fill="var(--color-proposalsSent)"
-                fillOpacity={0.05}
+                fillOpacity={0.08}
                 stroke="var(--color-proposalsSent)"
                 strokeWidth={2}
                 type="monotone"
               />
             </AreaChart>
-          </ChartContainer>
+          </DashboardChart>
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <div className="w-fit rounded-lg bg-green-500/10 p-2">
-            <Wallet className="size-5 text-green-500" />
-          </div>
-        </CardHeader>
-        <CardContent className="flex size-full flex-col justify-between">
-          <div className="space-y-1.5">
-            <CardTitle>Revenue</CardTitle>
-            <CardDescription>Last 6 Months</CardDescription>
-          </div>
-          <p className="text-2xl font-medium tabular-nums">$56,050</p>
-          <div className="w-fit rounded-md bg-green-500/10 px-2 py-1 text-xs font-medium text-green-500">+22.2%</div>
-        </CardContent>
-      </Card>
-
-      <Card>
-        <CardHeader>
-          <div className="bg-destructive/10 w-fit rounded-lg p-2">
-            <BadgeDollarSign className="text-destructive size-5" />
-          </div>
-        </CardHeader>
-        <CardContent className="flex size-full flex-col justify-between">
-          <div className="space-y-1.5">
-            <CardTitle>Projects Won</CardTitle>
-            <CardDescription>Last 6 Months</CardDescription>
-          </div>
-          <p className="text-2xl font-medium tabular-nums">136</p>
-          <div className="bg-destructive/10 text-destructive w-fit rounded-md px-2 py-1 text-xs font-medium">-2.5%</div>
-        </CardContent>
-      </Card>
+      <StatCard
+        label="Revenue"
+        value="$56,050"
+        help="Last 6 Months"
+        trend={<Badge className="bg-success-surface text-success">+22.2%</Badge>}
+      />
+      <StatCard
+        label="Projects Won"
+        value="136"
+        help="Last 6 Months"
+        trend={<Badge className="bg-danger-surface text-danger">-2.5%</Badge>}
+      />
 
       <Card className="col-span-1 xl:col-span-2">
-        <CardHeader>
-          <CardTitle>Revenue Growth</CardTitle>
-          <CardDescription>Year to Date (YTD)</CardDescription>
-        </CardHeader>
+        <SectionHeader title="Revenue Growth" description="Year to Date (YTD)" />
         <CardContent>
-          <ChartContainer config={revenueChartConfig} className="h-24 w-full">
+          <DashboardChart config={revenueChartConfig} className="h-32 w-full sm:h-32">
             <LineChart
               data={revenueChartData}
               margin={{
@@ -126,9 +121,10 @@ export function OverviewCards() {
                 bottom: 0,
               }}
             >
-              <XAxis dataKey="month" tickLine={false} tickMargin={10} axisLine={false} hide />
-              <ChartTooltip content={<ChartTooltipContent />} />
+              <XAxis {...chartAxis} dataKey="month" tickLine={false} tickMargin={10} axisLine={false} hide />
+              <ChartTooltip {...motion} content={<DashboardTooltip />} />
               <Line
+                {...motion}
                 type="monotone"
                 strokeWidth={2}
                 dataKey="revenue"
@@ -138,7 +134,7 @@ export function OverviewCards() {
                 }}
               />
             </LineChart>
-          </ChartContainer>
+          </DashboardChart>
         </CardContent>
         <CardFooter>
           <p className="text-muted-foreground text-sm">+35% growth since last year</p>

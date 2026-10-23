@@ -11,7 +11,7 @@ export const Route = createFileRoute("/(main)/dashboard/crm")({
 
 function Page() {
   return (
-    <div className="flex flex-col gap-4 md:gap-6">
+    <div className="flex min-w-0 flex-col gap-4 md:gap-6">
       <KpiCards />
       <PipelineActivity />
       <TaskReminders />

@@ -42,7 +42,7 @@ export const recentLeadsColumns: ColumnDef<DataTableFeatures, RecentLeadRow>[] =
             <Checkbox
               checked={checked}
               onCheckedChange={(value) => row.toggleSelected(value)}
-              aria-label="Select row"
+              aria-label={`Select ${row.original.name}`}
             />
           )}
         </Subscribe>
@@ -70,7 +70,14 @@ export const recentLeadsColumns: ColumnDef<DataTableFeatures, RecentLeadRow>[] =
   {
     accessorKey: "status",
     header: "Status",
-    cell: ({ row }) => <Badge variant="secondary">{row.original.status}</Badge>,
+    cell: ({ row }) => (
+      <Badge
+        variant="outline"
+        className={row.original.status === "Won" ? "bg-success-surface text-success" : "bg-muted text-foreground"}
+      >
+        {row.original.status}
+      </Badge>
+    ),
   },
   {
     accessorKey: "source",

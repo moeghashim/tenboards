@@ -12,7 +12,7 @@ export const Route = createFileRoute("/(main)/dashboard/(legacy)/crm-v1")({
 
 function Page() {
   return (
-    <div className="flex flex-col gap-4 md:gap-6">
+    <div className="flex min-w-0 flex-col gap-4 md:gap-6">
       <OverviewCards />
       <InsightCards />
       <OperationalCards />

@@ -1,7 +1,6 @@
 import type { ColumnDef } from "@tanstack/react-table";
 import { Subscribe } from "@tanstack/react-table";
 
-import { cn } from "cn";
 import { Pencil } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
@@ -11,25 +10,12 @@ import type { DataTableFeatures } from "@/lib/data-table-features";
 
 import type { OpportunityRow } from "./schema";
 
-const healthStripSlots = Array.from({ length: 18 }, (_, index) => ({
-  id: `strip-${index + 1}`,
-  threshold: index + 1,
-}));
-
-function getHealthScore(health: OpportunityRow["health"]) {
-  switch (health) {
-    case "On Track":
-      return 18;
-    case "Needs Review":
-      return 11;
-    case "At Risk":
-      return 7;
-    case "On Hold":
-      return 4;
-    default:
-      return 0;
-  }
-}
+const healthStyles: Record<OpportunityRow["health"], string> = {
+  "On Track": "bg-success-surface text-success",
+  "Needs Review": "bg-warning-surface text-warning",
+  "At Risk": "bg-danger-surface text-danger",
+  "On Hold": "bg-muted text-muted-foreground",
+};
 
 export const opportunitiesColumns: ColumnDef<DataTableFeatures, OpportunityRow>[] = [
   {
@@ -89,18 +75,9 @@ export const opportunitiesColumns: ColumnDef<DataTableFeatures, OpportunityRow>[
     accessorKey: "health",
     header: "Health",
     cell: ({ row }) => (
-      <div className="flex items-end gap-0.5" title={row.original.health}>
-        <span className="sr-only">{row.original.health}</span>
-        {healthStripSlots.map((slot) => (
-          <div
-            key={`${row.original.id}-${slot.id}`}
-            className={cn(
-              "h-5 w-1 rounded-full",
-              slot.threshold <= getHealthScore(row.original.health) ? "bg-green-500/85" : "bg-green-500/15",
-            )}
-          />
-        ))}
-      </div>
+      <Badge variant="outline" className={healthStyles[row.original.health]}>
+        {row.original.health}
+      </Badge>
     ),
     filterFn: "equalsString",
   },
