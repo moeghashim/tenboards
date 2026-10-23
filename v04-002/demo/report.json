@@ -1,0 +1,134 @@
+{
+  "baseURL": "http://127.0.0.1:3000/",
+  "hydrationDelayMs": 0,
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": false,
+  "interactions": true,
+  "results": [
+    {
+      "route": "/dashboard/default",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_default-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_default-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Sidebar expansion/names/visible 2px focus; palette arrows/Escape/focus return",
+        "Settings native radio/select keyboard access, focus trap/return; reduced motion <=1ms",
+        "Theme/preset/font state persists after refresh"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_default-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_default-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Sidebar expansion/names/visible 2px focus; palette arrows/Escape/focus return",
+        "Settings native radio/select keyboard access, focus trap/return; reduced motion <=1ms",
+        "Theme/preset/font state persists after refresh"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_default-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_default-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Sidebar expansion/names/visible 2px focus; palette arrows/Escape/focus return",
+        "Settings native radio/select keyboard access, focus trap/return; reduced motion <=1ms",
+        "Theme/preset/font state persists after refresh"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_default-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_default-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Sidebar expansion/names/visible 2px focus; palette arrows/Escape/focus return",
+        "Settings native radio/select keyboard access, focus trap/return; reduced motion <=1ms",
+        "Theme/preset/font state persists after refresh"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/profile",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_profile-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_profile-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "All six tabs keyboard reachable and captured; no page overflow",
+        "Neutral name, emails, initials and updater; coherent emergency contact",
+        "Header menu Escape restores focus; mail link matches demo identity",
+        "Document metadata/actions scroll locally; restricted state is explicitly demo-only"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/profile",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_profile-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_profile-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "All six tabs keyboard reachable and captured; no page overflow",
+        "Neutral name, emails, initials and updater; coherent emergency contact",
+        "Header menu Escape restores focus; mail link matches demo identity",
+        "Document metadata/actions scroll locally; restricted state is explicitly demo-only"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/profile",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_profile-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_profile-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "All six tabs keyboard reachable and captured; no page overflow",
+        "Neutral name, emails, initials and updater; coherent emergency contact",
+        "Header menu Escape restores focus; mail link matches demo identity",
+        "Document metadata/actions scroll locally; restricted state is explicitly demo-only"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/profile",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_profile-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_profile-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "All six tabs keyboard reachable and captured; no page overflow",
+        "Neutral name, emails, initials and updater; coherent emergency contact",
+        "Header menu Escape restores focus; mail link matches demo identity",
+        "Document metadata/actions scroll locally; restricted state is explicitly demo-only"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    }
+  ]
+}

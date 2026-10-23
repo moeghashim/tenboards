@@ -1,0 +1,382 @@
+[
+  {
+    "file": "_dashboard_profile-dark-desktop-interactive-employment.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-light-desktop-interactive-overview.png",
+    "mode": "demo",
+    "difference": [
+      300,
+      226,
+      352,
+      760
+    ]
+  },
+  {
+    "file": "_dashboard_profile-dark-mobile-interactive-employment.png",
+    "mode": "demo",
+    "difference": "size mismatch"
+  },
+  {
+    "file": "_dashboard_profile-light-mobile-interactive-employment.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-dark-desktop-interactive-overview.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-dark-mobile-interactive-compensation.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-light-mobile-interactive.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-light-mobile-interactive-documents.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-dark-mobile-interactive-document-actions.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-light-desktop-interactive-employment.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-dark-mobile-interactive.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-dark-mobile-interactive-personal.png",
+    "mode": "demo",
+    "difference": "size mismatch"
+  },
+  {
+    "file": "_dashboard_profile-light-mobile-interactive-compensation.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-dark-mobile-interactive-controls.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-dark-mobile-interactive-time-off.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-dark-mobile-interactive-documents.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-light-desktop-interactive-document-actions.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-light-mobile-interactive-overview.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-dark-desktop-interactive-personal.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-dark-desktop-interactive-document-actions.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-light-desktop-interactive-controls.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-light-mobile-interactive-document-actions.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-light-desktop-interactive-time-off.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-light-desktop-interactive-personal.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-light-desktop-interactive-compensation.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-dark-desktop-interactive-time-off.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-dark-desktop-interactive-controls.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-dark-desktop-interactive.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-light-desktop-interactive-documents.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-light-mobile-interactive-personal.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-light-mobile-interactive-controls.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-light-mobile-interactive-time-off.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-dark-mobile-interactive-overview.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-light-desktop-interactive.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-dark-desktop-interactive-compensation.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-dark-desktop-interactive-documents.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-dark-desktop-interactive-employment.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-light-desktop-interactive-overview.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-dark-mobile-interactive-employment.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-light-mobile-interactive-employment.png",
+    "mode": "db",
+    "difference": "size mismatch"
+  },
+  {
+    "file": "_dashboard_profile-dark-desktop-interactive-overview.png",
+    "mode": "db",
+    "difference": [
+      300,
+      226,
+      352,
+      760
+    ]
+  },
+  {
+    "file": "_dashboard_profile-dark-mobile-interactive-compensation.png",
+    "mode": "db",
+    "difference": "size mismatch"
+  },
+  {
+    "file": "_dashboard_profile-light-mobile-interactive.png",
+    "mode": "db",
+    "difference": [
+      12,
+      334,
+      15,
+      335
+    ]
+  },
+  {
+    "file": "_dashboard_profile-light-mobile-interactive-documents.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-dark-mobile-interactive-document-actions.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-light-desktop-interactive-employment.png",
+    "mode": "db",
+    "difference": "size mismatch"
+  },
+  {
+    "file": "_dashboard_profile-dark-mobile-interactive.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-dark-mobile-interactive-personal.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-light-mobile-interactive-compensation.png",
+    "mode": "db",
+    "difference": "size mismatch"
+  },
+  {
+    "file": "_dashboard_profile-dark-mobile-interactive-controls.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-dark-mobile-interactive-time-off.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-dark-mobile-interactive-documents.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-light-desktop-interactive-document-actions.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-light-mobile-interactive-overview.png",
+    "mode": "db",
+    "difference": [
+      12,
+      334,
+      15,
+      335
+    ]
+  },
+  {
+    "file": "_dashboard_profile-dark-desktop-interactive-personal.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-dark-desktop-interactive-document-actions.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-light-desktop-interactive-controls.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-light-mobile-interactive-document-actions.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-light-desktop-interactive-time-off.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-light-desktop-interactive-personal.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-light-desktop-interactive-compensation.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-dark-desktop-interactive-time-off.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-dark-desktop-interactive-controls.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-dark-desktop-interactive.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-light-desktop-interactive-documents.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-light-mobile-interactive-personal.png",
+    "mode": "db",
+    "difference": "size mismatch"
+  },
+  {
+    "file": "_dashboard_profile-light-mobile-interactive-controls.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-light-mobile-interactive-time-off.png",
+    "mode": "db",
+    "difference": "size mismatch"
+  },
+  {
+    "file": "_dashboard_profile-dark-mobile-interactive-overview.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-light-desktop-interactive.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-dark-desktop-interactive-compensation.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_profile-dark-desktop-interactive-documents.png",
+    "mode": "db",
+    "difference": null
+  }
+]

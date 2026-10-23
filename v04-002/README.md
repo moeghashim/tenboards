@@ -1,0 +1,9 @@
+# v0.4 task 002 evidence
+
+All six Profile tabs and document controls: before/ (4), demo/ (8 including default), db/ (8), workers/ (16 direct/refresh). No-Docker demo: no-docker/ (8). All reports have zero unexpected errors. Build output is in preview.log; check.log/typecheck.log pass. Fresh and incremental migrations/repeat seed: fresh.log, migrate.log, seed.log; parity.log has 4 reads/12 scenarios. Prior Users/Roles scenarios pass unchanged. Source matrix repeated in source-matrix.log.
+
+Account keyboard selection, Escape focus, local refresh reset and preference preservation: accounts-demo-final/, accounts-db-final/, accounts-workers-final/ (4 each). Early QA attempts failed because the script pressed Enter before hydration, interpreted absent light-theme class as an error, or captured before the old menu's close transition completed. Those harness-only failures and superseded captures are retained; final script waits for hydration/network-idle and menu closure and uses classList.contains. Final screenshots show the open loaded account menu.
+
+visual-comparison.json records 60/72 exact images. Inspected differences are tab focus/scroll positioning and empty full-page canvas left by prior taller tab capture, not changed domain content; no domain data masks. All fields and child ordering match exactly in real DB parity. Profile completion/verification and record-status text were found inline during the required inventory audit and explicitly assigned to task 002.
+
+No token/preset or auth changes. Same inherited lint/build/CLI warnings as task 001. No new dependency. The unused rootUser value export was removed; src/data/users.ts is type-only. Typed registry scenario closures are a narrow prefactor to compare heterogeneous DTOs and null results while retaining real implementations.

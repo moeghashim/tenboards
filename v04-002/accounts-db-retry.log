@@ -1,0 +1,8 @@
+file:///Users/moeghashim/tenboards/scripts/check-accounts.ts:48
+        throw new Error("Theme cookie changed");
+              ^
+
+Error: Theme cookie changed
+    at file:///Users/moeghashim/tenboards/scripts/check-accounts.ts:48:15
+
+Node.js v24.21.0

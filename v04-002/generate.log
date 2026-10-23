@@ -1,0 +1,46 @@
+
+> tenboards@0.3.0 db:generate
+> drizzle-kit generate
+
+No config path provided, using default 'drizzle.config.ts'
+Reading config file '/Users/moeghashim/tenboards/drizzle.config.ts'
+14 tables
+directory_users 8 columns 0 indexes 0 fks
+display_roles 8 columns 0 indexes 0 fks
+metric_dimensions 5 columns 0 indexes 1 fks
+metric_points 7 columns 0 indexes 0 fks
+role_permissions 3 columns 0 indexes 1 fks
+workspace_memberships 3 columns 0 indexes 2 fks
+workspaces 1 columns 0 indexes 0 fks
+demo_accounts 7 columns 0 indexes 0 fks
+profile_contacts 7 columns 0 indexes 1 fks
+profile_documents 8 columns 0 indexes 1 fks
+profile_employment 15 columns 0 indexes 1 fks
+profile_leave 11 columns 0 indexes 1 fks
+profile_people 4 columns 0 indexes 0 fks
+profiles 13 columns 0 indexes 1 fks
+
+[✓] Your SQL migration file ➜ src/server/db/migrations/0002_nice_gideon.sql 🚀
+
+> tenboards@0.3.0 db:generate
+> drizzle-kit generate
+
+No config path provided, using default 'drizzle.config.ts'
+Reading config file '/Users/moeghashim/tenboards/drizzle.config.ts'
+14 tables
+directory_users 8 columns 0 indexes 0 fks
+display_roles 8 columns 0 indexes 0 fks
+metric_dimensions 5 columns 0 indexes 1 fks
+metric_points 7 columns 0 indexes 0 fks
+role_permissions 3 columns 0 indexes 1 fks
+workspace_memberships 3 columns 0 indexes 2 fks
+workspaces 1 columns 0 indexes 0 fks
+demo_accounts 7 columns 0 indexes 0 fks
+profile_contacts 7 columns 0 indexes 1 fks
+profile_documents 8 columns 0 indexes 1 fks
+profile_employment 15 columns 0 indexes 1 fks
+profile_leave 11 columns 0 indexes 1 fks
+profile_people 4 columns 0 indexes 0 fks
+profiles 17 columns 0 indexes 1 fks
+
+[✓] Your SQL migration file ➜ src/server/db/migrations/0003_smiling_tombstone.sql 🚀

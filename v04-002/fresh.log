@@ -1,0 +1,37 @@
+CREATE DATABASE
+
+> tenboards@0.3.0 db:migrate
+> node --env-file-if-exists=.env --experimental-strip-types scripts/database.ts migrate
+
+.env not found. Continuing without it.
+Database migrate completed.
+
+> tenboards@0.3.0 db:seed
+> node --env-file-if-exists=.env --experimental-strip-types scripts/database.ts seed
+
+.env not found. Continuing without it.
+Database seed completed.
+
+> tenboards@0.3.0 db:seed
+> node --env-file-if-exists=.env --experimental-strip-types scripts/database.ts seed
+
+.env not found. Continuing without it.
+Database seed completed.
+
+> tenboards@0.3.0 data:parity
+> node --env-file-if-exists=.env --experimental-strip-types scripts/data-parity.ts
+
+.env not found. Continuing without it.
+PASS readUsers/all
+PASS readUsers/existing
+PASS readUsers/missing
+PASS readRoles/all
+PASS readRoles/existing
+PASS readRoles/missing
+PASS readAccounts/all
+PASS readAccounts/existing
+PASS readAccounts/missing
+PASS readProfile/default
+PASS readProfile/existing
+PASS readProfile/missing
+{"reads":4,"scenarios":12,"passing":true}

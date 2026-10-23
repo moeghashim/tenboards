@@ -1,0 +1,34 @@
+[
+  {
+    "theme": "light",
+    "size": "desktop",
+    "errors": [],
+    "selection": "local only; reset on refresh",
+    "focusReturn": true,
+    "preferences": "preserved"
+  },
+  {
+    "theme": "light",
+    "size": "mobile",
+    "errors": [],
+    "selection": "local only; reset on refresh",
+    "focusReturn": true,
+    "preferences": "preserved"
+  },
+  {
+    "theme": "dark",
+    "size": "desktop",
+    "errors": [],
+    "selection": "local only; reset on refresh",
+    "focusReturn": true,
+    "preferences": "preserved"
+  },
+  {
+    "theme": "dark",
+    "size": "mobile",
+    "errors": [],
+    "selection": "local only; reset on refresh",
+    "focusReturn": true,
+    "preferences": "preserved"
+  }
+]

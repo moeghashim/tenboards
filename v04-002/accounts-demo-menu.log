@@ -1,0 +1,4 @@
+PASS accounts light/desktop
+PASS accounts light/mobile
+PASS accounts dark/desktop
+PASS accounts dark/mobile

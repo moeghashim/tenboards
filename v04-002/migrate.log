@@ -1,0 +1,12 @@
+
+> tenboards@0.3.0 db:migrate
+> node --env-file-if-exists=.env --experimental-strip-types scripts/database.ts migrate
+
+.env not found. Continuing without it.
+Database migrate completed.
+
+> tenboards@0.3.0 db:migrate
+> node --env-file-if-exists=.env --experimental-strip-types scripts/database.ts migrate
+
+.env not found. Continuing without it.
+Database migrate completed.
