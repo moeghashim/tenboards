@@ -1,0 +1,90 @@
+{
+  "baseURL": "https://80a87017-tenboards.mohanadgh.workers.dev/",
+  "hydrationDelayMs": 0,
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": true,
+  "interactions": false,
+  "results": [
+    {
+      "route": "/dashboard/products",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_products-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/products",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_products-light-desktop-refresh.png",
+      "controlsFile": null,
+      "phase": "refresh",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/products",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_products-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/products",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_products-light-mobile-refresh.png",
+      "controlsFile": null,
+      "phase": "refresh",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/products",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_products-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/products",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_products-dark-desktop-refresh.png",
+      "controlsFile": null,
+      "phase": "refresh",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/products",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_products-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/products",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_products-dark-mobile-refresh.png",
+      "controlsFile": null,
+      "phase": "refresh",
+      "interactionNotes": [],
+      "errors": []
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+
+> tenboards@0.2.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://localhost:3000 --routes /dashboard/products --interactions --output /private/tmp/tenboards-v03-evidence/v03-009/after-keyboard
+
+PASS /dashboard/products light/desktop direct
+PASS /dashboard/products light/mobile direct
+PASS /dashboard/products dark/desktop direct
+PASS /dashboard/products dark/mobile direct

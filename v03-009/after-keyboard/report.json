@@ -1,0 +1,74 @@
+{
+  "baseURL": "http://localhost:3000/",
+  "hydrationDelayMs": 0,
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": false,
+  "interactions": true,
+  "results": [
+    {
+      "route": "/dashboard/products",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_products-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_products-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Search/status/category exact results; empty/clear, selection and pagination",
+        "Duplicate to draft and edit unique-SKU validation; zero price/stock saved",
+        "Edit Escape returns focus to product",
+        "Add validation-only at upper bounds; image preview/clear, Escape and focus return",
+        "Long name wraps; table scrolls locally without document overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/products",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_products-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_products-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Search/status/category exact results; empty/clear, selection and pagination",
+        "Duplicate to draft and edit unique-SKU validation; zero price/stock saved",
+        "Edit Escape returns focus to product",
+        "Add validation-only at upper bounds; image preview/clear, Escape and focus return",
+        "Long name wraps; table scrolls locally without document overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/products",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_products-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_products-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Search/status/category exact results; empty/clear, selection and pagination",
+        "Duplicate to draft and edit unique-SKU validation; zero price/stock saved",
+        "Edit Escape returns focus to product",
+        "Add validation-only at upper bounds; image preview/clear, Escape and focus return",
+        "Long name wraps; table scrolls locally without document overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/products",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_products-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_products-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Search/status/category exact results; empty/clear, selection and pagination",
+        "Duplicate to draft and edit unique-SKU validation; zero price/stock saved",
+        "Edit Escape returns focus to product",
+        "Add validation-only at upper bounds; image preview/clear, Escape and focus return",
+        "Long name wraps; table scrolls locally without document overflow"
+      ],
+      "errors": []
+    }
+  ]
+}

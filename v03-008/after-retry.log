@@ -27,3 +27,20 @@ locator.waitFor: Timeout 30000ms exceeded.
 Call log:
 [2m  - waiting for getByRole('button', { name: 'Star Product roadmap 2027.pdf', exact: true }) to be visible[22m
 
+FAIL /dashboard/file-manager dark/desktop refresh
+locator.waitFor: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('button', { name: 'Star Product roadmap 2027.pdf', exact: true }) to be visible[22m
+[2m    - waiting for "http://localhost:3000/dashboard/file-manager?view=grid" navigation to finish...[22m
+[2m    - navigated to "http://localhost:3000/dashboard/file-manager?view=grid"[22m
+
+FAIL /dashboard/file-manager dark/mobile direct
+locator.waitFor: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('button', { name: 'Star Product roadmap 2027.pdf', exact: true }) to be visible[22m
+
+FAIL /dashboard/file-manager dark/mobile refresh
+locator.waitFor: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('button', { name: 'Star Product roadmap 2027.pdf', exact: true }) to be visible[22m
+
