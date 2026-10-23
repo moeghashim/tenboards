@@ -55,7 +55,7 @@ const cryptoAssets = [
 
 export function Wallet() {
   return (
-    <Card>
+    <Card className="h-full">
       <SectionHeader title="Wallet" />
       <CardContent className="flex flex-col gap-4">
         <div className="flex flex-col gap-4">

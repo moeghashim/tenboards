@@ -81,7 +81,7 @@ const transactionPeriodItems = [
 export function TransactionsOverviewCard() {
   const motion = useChartMotion();
   return (
-    <Card>
+    <Card className="h-full">
       <SectionHeader
         title="Spending Overview"
         actions={
@@ -102,8 +102,8 @@ export function TransactionsOverviewCard() {
         }
       />
 
-      <CardContent>
-        <DashboardChart config={chartConfig}>
+      <CardContent className="flex min-h-0 flex-1">
+        <DashboardChart config={chartConfig} className="h-auto min-h-64 flex-1 sm:h-auto sm:min-h-80">
           <LineChart accessibilityLayer data={chartData} margin={{ bottom: 0, left: 0, right: 0, top: 0 }}>
             <Legend content={<DashboardLegend config={chartConfig} />} />
             <CartesianGrid {...chartGrid} />

@@ -2,7 +2,7 @@
 id: "002"
 title: Restyle Default and Default V1
 milestone: v0.2-dashboards
-status: in_review
+status: merged
 category: ui
 files: ["src/routes/(main)/dashboard/default/", "src/routes/(main)/dashboard/(legacy)/default-v1/", "README.md", "dev/milestones.json"]
 ---

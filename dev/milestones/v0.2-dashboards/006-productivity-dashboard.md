@@ -2,7 +2,7 @@
 id: "006"
 title: Restyle Productivity and fix hydration
 milestone: v0.2-dashboards
-status: in_review
+status: merged
 category: ui
 files: ["src/routes/(main)/dashboard/productivity/", "README.md", "dev/milestones.json"]
 ---

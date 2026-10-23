@@ -2,7 +2,7 @@
 id: "001"
 title: Establish shared chart theme and dashboard primitives
 milestone: v0.2-dashboards
-status: in_review
+status: merged
 category: ui
 files: ["src/lib/charts/", "src/routes/(main)/dashboard/-components/dashboard/", "src/routes/(main)/dashboard/default/-components/metric-cards.tsx", "src/routes/(main)/dashboard/default/-components/performance-overview.tsx", "DESIGN.md", "README.md", "dev/milestones.json"]
 ---

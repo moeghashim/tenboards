@@ -103,7 +103,7 @@ export function BalanceDistributionCard() {
   const [currency, setCurrency] = React.useState<Currency>("USD");
 
   return (
-    <Card>
+    <Card className="h-full">
       <SectionHeader
         title="Account Allocation"
         actions={

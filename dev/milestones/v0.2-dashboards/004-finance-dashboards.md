@@ -2,7 +2,7 @@
 id: "004"
 title: Restyle Finance and Finance V1 and fix hydration
 milestone: v0.2-dashboards
-status: in_review
+status: merged
 category: ui
 files: ["src/routes/(main)/dashboard/finance/", "src/routes/(main)/dashboard/(legacy)/finance-v1/", "README.md", "dev/milestones.json"]
 ---

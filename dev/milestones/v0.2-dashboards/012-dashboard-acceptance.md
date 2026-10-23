@@ -2,7 +2,7 @@
 id: "012"
 title: Verify v0.2 dashboard acceptance
 milestone: v0.2-dashboards
-status: planned
+status: in_review
 category: tooling
 files: ["CHANGELOG.md", "DESIGN.md", "dev/open-questions.md", "dev/milestones/v0.2-dashboards/README.md", "README.md", "dev/milestones.json"]
 ---
@@ -23,18 +23,18 @@ Prefactor inspection: Inspect integration failures before editing; favor narrow 
 
 ## Acceptance criteria
 
-- [ ] All 14 routes in the milestone route matrix pass direct dev and Workers preview navigation in light/dark × desktop/mobile (56 cases per environment), with no console/page errors, failed captures, removed routes or hidden failures.
-- [ ] Finance, Finance V1, Productivity and Patient Monitoring each satisfy: no React #418 hydration error in dev or Workers preview, light/dark × desktop/mobile. The v0.1 waiver does not apply to v0.2 completion.
-- [ ] Run the full 14-route screenshot matrix for Default, Graphite, Pine and Iris on dev and Workers preview (224 cases per environment); inspect all default-preset renders and spot-check every distinct chart/status treatment in the other presets.
-- [ ] Run contrast/a11y spot checks across all four presets and both themes: supported text pairs >=4.5:1, control/focus/meaningful graphic boundaries >=3:1 where applicable; verify chart labels/markers, keyboard tabs/menus/tables, visible focus, accessible names, tooltip/legend access and reduced motion. Record actual checks and measured pairs, not an unsupported blanket accessibility claim.
-- [ ] Search all in-scope dashboard fixtures/rendered demo identities for Arham Khan, Arham and arhamkhnz references; none remain. Upstream copyright, LICENSE and README provenance remain intact.
-- [ ] CHANGELOG.md contains a v0.2 entry; README.md lists all current and legacy dashboard screens and accurate milestone status; acceptance checkboxes and dev/milestones.json reflect evidence. Mark merged/done only after the authorized review/merge, never in advance.
-- [ ] Capture and inspect before/after screenshots with `npm run screenshots` for every affected route in light/dark × desktop (1440×900)/mobile (390×844); attach a four-state comparison table for each route. Store PNGs, reports and logs only on `pr-assets` or PR attachments, never main. Include meaningful interactive states beyond the initial capture.
-- [ ] `npm run build`, `npm run check` and `npm run typecheck` pass; report inherited warnings separately from failures.
-- [ ] Dev-server `/dashboard/default` smoke and all affected-route smoke checks pass without console errors; verify the same routes on the Workers version preview and retain diagnostics. Do not waive inherited errors on a route this task owns.
-- [ ] Upload with `npm run preview:deploy -- --preview-alias pr-NNN` (NNN is the actual PR number); include the version-specific preview URL and reusable alias in the PR. Never run `npm run deploy` or merge as implementer.
-- [ ] Update root README.md for the verified behavior/screens/usage/status delivered by this task; PR body states `README: updated (sections …)`. Update task acceptance and `dev/milestones.json` only from verification.
-- [ ] Preserve keyboard access, accessible names, visible focus and reduced motion. Verify all four presets in light/dark on affected content; record contrast evidence for changed chart/status/token pairings. Inspect existing Base UI wrappers; keep `src/components/ui/`, `src/components/calendar/`, shell/preferences and out-of-scope app pages intact.
+- [x] All 14 routes in the milestone route matrix pass direct dev and Workers preview navigation in light/dark × desktop/mobile (56 cases per environment), with no console/page errors, failed captures, removed routes or hidden failures.
+- [x] Finance, Finance V1, Productivity and Patient Monitoring each satisfy: no React #418 hydration error in dev or Workers preview, light/dark × desktop/mobile. The v0.1 waiver does not apply to v0.2 completion.
+- [x] Run the full 14-route screenshot matrix for Default, Graphite, Pine and Iris on dev and Workers preview (224 cases per environment); inspect all default-preset renders and spot-check every distinct chart/status treatment in the other presets.
+- [x] Run contrast/a11y spot checks across all four presets and both themes: supported text pairs >=4.5:1, control/focus/meaningful graphic boundaries >=3:1 where applicable; verify chart labels/markers, keyboard tabs/menus/tables, visible focus, accessible names, tooltip/legend access and reduced motion. Record actual checks and measured pairs, not an unsupported blanket accessibility claim.
+- [x] Search all in-scope dashboard fixtures/rendered demo identities for Arham Khan, Arham and arhamkhnz references; none remain. Upstream copyright, LICENSE and README provenance remain intact.
+- [x] CHANGELOG.md contains a v0.2 entry; README.md lists all current and legacy dashboard screens and accurate milestone status; acceptance checkboxes and dev/milestones.json reflect evidence. Mark merged/done only after the authorized review/merge, never in advance.
+- [x] Capture and inspect before/after screenshots with `npm run screenshots` for every affected route in light/dark × desktop (1440×900)/mobile (390×844); attach a four-state comparison table for each route. Store PNGs, reports and logs only on `pr-assets` or PR attachments, never main. Include meaningful interactive states beyond the initial capture.
+- [x] `npm run build`, `npm run check` and `npm run typecheck` pass; report inherited warnings separately from failures.
+- [x] Dev-server `/dashboard/default` smoke and all affected-route smoke checks pass without console errors; verify the same routes on the Workers version preview and retain diagnostics. Do not waive inherited errors on a route this task owns.
+- [x] Upload with `npm run preview:deploy -- --preview-alias pr-NNN` (NNN is the actual PR number); include the version-specific preview URL and reusable alias in the PR. Never run `npm run deploy` or merge as implementer.
+- [x] Update root README.md for the verified behavior/screens/usage/status delivered by this task; PR body states `README: updated (sections …)`. Update task acceptance and `dev/milestones.json` only from verification.
+- [x] Preserve keyboard access, accessible names, visible focus and reduced motion. Verify all four presets in light/dark on affected content; record contrast evidence for changed chart/status/token pairings. Inspect existing Base UI wrappers; keep `src/components/ui/`, `src/components/calendar/`, shell/preferences and out-of-scope app pages intact.
 
 ## Execution order
 

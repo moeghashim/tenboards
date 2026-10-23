@@ -34,7 +34,7 @@
     },
     {
       "id": "v0.2-dashboards",
-      "status": "in_progress",
+      "status": "in_review",
       "tasks": [
         "001-dashboard-foundation",
         "002-default-dashboards",
@@ -50,18 +50,18 @@
         "012-dashboard-acceptance"
       ],
       "taskStatuses": {
-        "001-dashboard-foundation": "in_review",
-        "002-default-dashboards": "in_review",
-        "003-crm-dashboards": "in_review",
-        "004-finance-dashboards": "in_review",
-        "005-analytics-dashboards": "in_review",
-        "006-productivity-dashboard": "in_review",
+        "001-dashboard-foundation": "merged",
+        "002-default-dashboards": "merged",
+        "003-crm-dashboards": "merged",
+        "004-finance-dashboards": "merged",
+        "005-analytics-dashboards": "merged",
+        "006-productivity-dashboard": "merged",
         "007-ecommerce-dashboard": "in_review",
         "008-academy-dashboard": "in_review",
         "009-logistics-dashboard": "in_review",
         "010-infrastructure-dashboard": "in_review",
         "011-patient-monitoring-dashboard": "in_review",
-        "012-dashboard-acceptance": "planned"
+        "012-dashboard-acceptance": "in_review"
       }
     }
   ]

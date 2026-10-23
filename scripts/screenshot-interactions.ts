@@ -2,6 +2,37 @@ import type { Page } from "playwright";
 
 // Opt-in interaction evidence for the dashboard batch. Never replace the runtime clock.
 export async function captureInteractions(page: Page, route: string): Promise<string[]> {
+  if (route === "/dashboard/finance") {
+    const period = page.getByRole("combobox", { name: "Spending period", exact: true });
+    await period.press("Enter");
+    await page.getByRole("option", { name: "Monthly", exact: true }).click();
+    await page.getByRole("tab", { name: "Accounts", exact: true }).click();
+    await page.getByText("Accounts view coming soon.", { exact: true }).waitFor();
+    await page.getByRole("tab", { name: "Dashboard", exact: true }).click();
+    await page.getByRole("textbox", { name: "Transfer amount in USD", exact: true }).fill("125.00");
+    await period.focus();
+    await page.keyboard.press("Tab");
+    await page.keyboard.press("Shift+Tab");
+    const geometry = await page.evaluate(() => {
+      const cards = Array.from(document.querySelectorAll('[data-slot="card"]'));
+      const rect = (title: string) =>
+        cards.find((card) => card.querySelector("h2,h3")?.textContent === title)?.getBoundingClientRect();
+      const spending = rect("Spending Overview");
+      const allocation = rect("Account Allocation");
+      return {
+        overflow: document.documentElement.scrollWidth > innerWidth,
+        aligned: innerWidth < 1280 || (spending && allocation && Math.abs(spending.bottom - allocation.bottom) < 1),
+        outline: document.activeElement ? getComputedStyle(document.activeElement).outlineStyle : "none",
+      };
+    });
+    if (geometry.overflow || !geometry.aligned || geometry.outline === "none")
+      throw new Error(`Finance layout/focus: ${JSON.stringify(geometry)}`);
+    return [
+      "Spending period keyboard menu; Accounts placeholder and Dashboard return",
+      "Transfer field editable; named select retains visible focus",
+      "Desktop Spending/Allocation bottoms aligned; no page overflow",
+    ];
+  }
   if (route === "/dashboard/patient-monitoring") {
     const clock = page.locator("[data-monitoring-clock]");
     const beforeClock = await clock.textContent();

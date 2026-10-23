@@ -31,7 +31,7 @@ const transactions = [
 
 export function UpcomingTransactions() {
   return (
-    <Card>
+    <Card className="h-full">
       <SectionHeader title="Upcoming Bills & Payments" />
       <CardContent className="flex flex-col gap-3">
         <div className="flex flex-col gap-3">

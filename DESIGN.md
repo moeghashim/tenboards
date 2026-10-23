@@ -53,7 +53,7 @@ components:
 
 **Creative North Star: "Refined product UI"** — the approved Linear/Vercel register in PLAN §7. Precision, scanability, and restraint serve dense administrative work. PLAN and its Decisions log win every conflict.
 
-The frontmatter records the implemented task 005 tokens. The default combines cool neutral surfaces with a deep blue action accent. Task 007 supplies token-only Graphite, Pine, and Iris alternatives. Shell tasks 008–011 apply these tokens at usage sites; dashboard and app-page content work remains deferred to v0.2/v0.3.
+The frontmatter records the implemented task 005 tokens. The default combines cool neutral surfaces with a deep blue action accent. Task 007 supplies token-only Graphite, Pine, and Iris alternatives. The v0.1 shell and v0.2 dashboard usages apply these tokens at usage sites; app-page content remains assigned to v0.3.
 
 **Key Characteristics:** neutral-first surfaces, one action accent, crisp borders, compact data, restrained depth, and consistent control states.
 
@@ -91,7 +91,7 @@ The app surfaces use **Operate** mode. Data density, scanability, native expecta
 
 ## Elevation & Depth
 
-Cards preserve their inherited thin border/ring structure. Low elevation uses two subtle offset layers; overlays use wider layered shadows. Shared durations are 150ms and 200ms with standard ease-out; Tailwind transitions default to 150ms. Reduced-motion media rules reduce all animations/transitions to near-instant and disable smooth scrolling. Dashboard composition and JS chart behavior remain outside this token layer.
+Cards preserve their inherited thin border/ring structure. Low elevation uses two subtle offset layers; overlays use wider layered shadows. Shared durations are 150ms and 200ms with standard ease-out; Tailwind transitions default to 150ms. Reduced-motion media rules reduce all animations/transitions to near-instant and disable smooth scrolling. Dashboard composition and JS chart behavior are handled by the shared presentation layer and route-local motion subscriptions.
 
 ## Shapes
 
@@ -123,8 +123,13 @@ Layout settings is a right-hand sheet capped at 28rem on desktop and full width 
 
 ## Dashboard presentation foundation
 
-The shared dashboard ancestor owns `DashboardCard`, `SectionHeader`, and `StatCard`. Compact/standard density maps to the existing 12/16px card spacing; headings are semantic h2/h3, labels wrap and metric values use tabular numerals. Optional help, trend and action slots retain route-owned data and behavior. Task 001 integrates only Default metrics and customer activity; its incumbent composition and metric decoration stay until task 002.
+The shared dashboard ancestor owns `DashboardCard`, `SectionHeader`, and `StatCard`. Compact/standard density maps to the existing 12/16px card spacing; headings are semantic h2/h3, labels wrap and metric values use tabular numerals. Optional help, trend and action slots retain route-owned data and behavior. The completed v0.2 implementation reuses these primitives across all 14 current/legacy dashboard routes; domain values and interactions stay local.
 
-`src/lib/charts/theme.tsx` composes protected chart exports. Use `DashboardChart` for bounded responsive height and visible keyboard focus, `chartAxis` for 12px muted ticks, `chartGrid` for decorative dashed separators, `chartCursor`, `DashboardTooltip`, and wrapping `DashboardLegend`. `seriesConfig` deliberately selects chart-1/2/4/5 (primary, text-muted, success, warning) rather than duplicate Default chart-3. Every line also needs a distinct dash/marker or labeled form; the initial chart uses solid/dashed/dotted series with matching line samples in its legend. Marks use opaque token strokes, with area fills only as supplementary cues. Numeric formatters use explicit en-US locale; route code owns time ranges and units.
+`src/lib/charts/theme.tsx` composes protected chart exports. Use `DashboardChart` for bounded responsive height and visible keyboard focus, `chartAxis` for 12px muted ticks, `chartGrid` for decorative dashed separators, `chartCursor`, `DashboardTooltip`, and wrapping `DashboardLegend`. `seriesConfig` deliberately selects chart-1/2/4/5 (primary, text-muted, success, warning) rather than duplicate Default chart-3. Every line also needs a distinct dash/marker or labeled form; multi-series charts use solid/dashed/dotted series with matching line samples, direct labels or accessible data tables. Marks use opaque token strokes, with area fills only as supplementary cues. Numeric formatters use explicit en-US locale; route code owns time ranges and units.
 
 Pass `useChartMotion()` to every animated series and tooltip. Its server snapshot and initial hydration disable animation, then a guarded media-query subscription observes changes and permits 200ms animation only when reduced motion is off. No global tokens, font/preset registry or protected wrappers change.
+
+
+The integrated dashboard layout uses equal-height cards within a common comparison row; stacked auxiliary columns align their outer bounds where they share that row. Independent work streams such as Productivity's main work and calendar/notes sidebar keep their content-driven heights. Tables scroll locally or reflow to labelled mobile fields; no data is hidden to fit.
+
+Patient Monitoring retains local simulation and signal identity: labelled ECG/success, Pleth/info, Resp/warning and ART/danger traces. Continuous subscriptions pause under reduced motion, while numeric readings and a post-hydration live UTC clock remain available. Static date-based dashboards explicitly identify their deterministic demo reporting dates; no hydration warning suppression or page SSR removal is used.

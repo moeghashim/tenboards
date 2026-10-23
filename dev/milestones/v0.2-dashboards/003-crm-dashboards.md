@@ -2,7 +2,7 @@
 id: "003"
 title: Restyle CRM and CRM V1
 milestone: v0.2-dashboards
-status: in_review
+status: merged
 category: ui
 files: ["src/routes/(main)/dashboard/crm/", "src/routes/(main)/dashboard/(legacy)/crm-v1/", "README.md", "dev/milestones.json"]
 ---

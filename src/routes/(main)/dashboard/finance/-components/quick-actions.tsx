@@ -38,7 +38,7 @@ const shortcuts = [
 
 export function QuickActions() {
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex h-full flex-col gap-4">
       <Card>
         <SectionHeader
           title="Quick Transfer"
@@ -71,7 +71,7 @@ export function QuickActions() {
         </CardContent>
       </Card>
 
-      <Card>
+      <Card className="flex-1">
         <SectionHeader title="Shortcuts" />
         <CardContent>
           <div className="grid grid-cols-4 gap-3">
