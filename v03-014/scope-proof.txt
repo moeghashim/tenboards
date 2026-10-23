@@ -1,0 +1,3 @@
+git diff feat/v0.3/013-system -- src package.json package-lock.json
+(no output)
+Source tree hashes match. Package version remains 0.2.0. No generated route, public fault trigger or runtime dependency change.

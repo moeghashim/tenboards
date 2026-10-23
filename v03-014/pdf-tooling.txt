@@ -1,0 +1,4 @@
+Poppler lookup failed:
+FileNotFoundError: [Errno 2] No such file or directory: 'pdfinfo'
+zsh:13: command not found: pdftoppm
+Used existing /private/tmp/render-invoice-pdf (Apple PDFKit) from task 007; no dependency installation. Initial strict text assertion failed because PDFKit split numeric glyphs with newlines (945.1\n8); whitespace-normalized total assertion passes, and rendered pages verify the unbroken total. JSON retains page sizes/text; PNGs retain rendered pages.

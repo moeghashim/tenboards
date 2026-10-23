@@ -1,0 +1,16 @@
+
+> tenboards@0.2.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://localhost:3000 --routes /dashboard/default --boundaries --output /private/tmp/tenboards-v03-evidence/v03-014/boundaries-dev
+
+PASS /dashboard/default light/desktop direct
+PASS /dashboard/default light/mobile direct
+PASS /dashboard/default dark/desktop direct
+PASS /dashboard/default dark/mobile direct
+PASS qa:root-not-found light/desktop direct
+PASS qa:root-not-found light/mobile direct
+PASS qa:root-not-found dark/desktop direct
+PASS qa:root-not-found dark/mobile direct
+PASS qa:root-error light/desktop direct
+PASS qa:root-error light/mobile direct
+PASS qa:root-error dark/desktop direct
+PASS qa:root-error dark/mobile direct

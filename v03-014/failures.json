@@ -1,0 +1,1170 @@
+[
+  {
+    "report": "v03-008/after-retry/report.json",
+    "baseURL": "http://localhost:3000/",
+    "preset": "default",
+    "failures": [
+      {
+        "route": "/dashboard/file-manager",
+        "theme": "light",
+        "viewport": "desktop",
+        "file": "_dashboard_file-manager-light-desktop-interactive.png",
+        "controlsFile": "_dashboard_file-manager-light-desktop-interactive-controls.png",
+        "phase": "direct",
+        "interactionNotes": [],
+        "errors": [
+          "locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Star Product roadmap 2027.pdf', exact: true }) to be visible\u001b[22m\n"
+        ]
+      },
+      {
+        "route": "/dashboard/file-manager",
+        "theme": "light",
+        "viewport": "desktop",
+        "file": "_dashboard_file-manager-light-desktop-refresh-interactive.png",
+        "controlsFile": "_dashboard_file-manager-light-desktop-refresh-interactive-controls.png",
+        "phase": "refresh",
+        "interactionNotes": [],
+        "errors": [
+          "locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Star Product roadmap 2027.pdf', exact: true }) to be visible\u001b[22m\n"
+        ]
+      },
+      {
+        "route": "/dashboard/file-manager",
+        "theme": "light",
+        "viewport": "mobile",
+        "file": "_dashboard_file-manager-light-mobile-interactive.png",
+        "controlsFile": "_dashboard_file-manager-light-mobile-interactive-controls.png",
+        "phase": "direct",
+        "interactionNotes": [],
+        "errors": [
+          "locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Star Product roadmap 2027.pdf', exact: true }) to be visible\u001b[22m\n"
+        ]
+      },
+      {
+        "route": "/dashboard/file-manager",
+        "theme": "light",
+        "viewport": "mobile",
+        "file": "_dashboard_file-manager-light-mobile-refresh-interactive.png",
+        "controlsFile": "_dashboard_file-manager-light-mobile-refresh-interactive-controls.png",
+        "phase": "refresh",
+        "interactionNotes": [],
+        "errors": [
+          "locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Star Product roadmap 2027.pdf', exact: true }) to be visible\u001b[22m\n"
+        ]
+      },
+      {
+        "route": "/dashboard/file-manager",
+        "theme": "dark",
+        "viewport": "desktop",
+        "file": "_dashboard_file-manager-dark-desktop-interactive.png",
+        "controlsFile": "_dashboard_file-manager-dark-desktop-interactive-controls.png",
+        "phase": "direct",
+        "interactionNotes": [],
+        "errors": [
+          "locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Star Product roadmap 2027.pdf', exact: true }) to be visible\u001b[22m\n"
+        ]
+      },
+      {
+        "route": "/dashboard/file-manager",
+        "theme": "dark",
+        "viewport": "desktop",
+        "file": "_dashboard_file-manager-dark-desktop-refresh-interactive.png",
+        "controlsFile": "_dashboard_file-manager-dark-desktop-refresh-interactive-controls.png",
+        "phase": "refresh",
+        "interactionNotes": [],
+        "errors": [
+          "locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Star Product roadmap 2027.pdf', exact: true }) to be visible\u001b[22m\n\u001b[2m    - waiting for \"http://localhost:3000/dashboard/file-manager?view=grid\" navigation to finish...\u001b[22m\n\u001b[2m    - navigated to \"http://localhost:3000/dashboard/file-manager?view=grid\"\u001b[22m\n"
+        ]
+      },
+      {
+        "route": "/dashboard/file-manager",
+        "theme": "dark",
+        "viewport": "mobile",
+        "file": "_dashboard_file-manager-dark-mobile-interactive.png",
+        "controlsFile": "_dashboard_file-manager-dark-mobile-interactive-controls.png",
+        "phase": "direct",
+        "interactionNotes": [],
+        "errors": [
+          "locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Star Product roadmap 2027.pdf', exact: true }) to be visible\u001b[22m\n"
+        ]
+      },
+      {
+        "route": "/dashboard/file-manager",
+        "theme": "dark",
+        "viewport": "mobile",
+        "file": "_dashboard_file-manager-dark-mobile-refresh-interactive.png",
+        "controlsFile": "_dashboard_file-manager-dark-mobile-refresh-interactive-controls.png",
+        "phase": "refresh",
+        "interactionNotes": [],
+        "errors": [
+          "locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Star Product roadmap 2027.pdf', exact: true }) to be visible\u001b[22m\n"
+        ]
+      }
+    ]
+  },
+  {
+    "report": "v03-008/before-grid/report.json",
+    "baseURL": "http://127.0.0.1:3000/",
+    "preset": "default",
+    "failures": [
+      {
+        "route": "/dashboard/file-manager",
+        "theme": "light",
+        "viewport": "desktop",
+        "file": "_dashboard_file-manager-light-desktop.png",
+        "controlsFile": null,
+        "phase": "direct",
+        "interactionNotes": [],
+        "errors": [
+          "request: http://127.0.0.1:3000/dashboard/file-manager net::ERR_CONNECTION_REFUSED",
+          "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/file-manager\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/file-manager\", waiting until \"domcontentloaded\"\u001b[22m\n"
+        ]
+      },
+      {
+        "route": "/dashboard/file-manager",
+        "theme": "light",
+        "viewport": "mobile",
+        "file": "_dashboard_file-manager-light-mobile.png",
+        "controlsFile": null,
+        "phase": "direct",
+        "interactionNotes": [],
+        "errors": [
+          "request: http://127.0.0.1:3000/dashboard/file-manager net::ERR_CONNECTION_REFUSED",
+          "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/file-manager\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/file-manager\", waiting until \"domcontentloaded\"\u001b[22m\n"
+        ]
+      },
+      {
+        "route": "/dashboard/file-manager",
+        "theme": "dark",
+        "viewport": "desktop",
+        "file": "_dashboard_file-manager-dark-desktop.png",
+        "controlsFile": null,
+        "phase": "direct",
+        "interactionNotes": [],
+        "errors": [
+          "request: http://127.0.0.1:3000/dashboard/file-manager net::ERR_CONNECTION_REFUSED",
+          "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/file-manager\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/file-manager\", waiting until \"domcontentloaded\"\u001b[22m\n"
+        ]
+      },
+      {
+        "route": "/dashboard/file-manager",
+        "theme": "dark",
+        "viewport": "mobile",
+        "file": "_dashboard_file-manager-dark-mobile.png",
+        "controlsFile": null,
+        "phase": "direct",
+        "interactionNotes": [],
+        "errors": [
+          "request: http://127.0.0.1:3000/dashboard/file-manager net::ERR_CONNECTION_REFUSED",
+          "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/file-manager\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/file-manager\", waiting until \"domcontentloaded\"\u001b[22m\n"
+        ]
+      }
+    ]
+  },
+  {
+    "report": "v03-009/after/report.json",
+    "baseURL": "http://localhost:3000/",
+    "preset": "default",
+    "failures": [
+      {
+        "route": "/dashboard/products",
+        "theme": "light",
+        "viewport": "desktop",
+        "file": "_dashboard_products-light-desktop-interactive.png",
+        "controlsFile": "_dashboard_products-light-desktop-interactive-controls.png",
+        "phase": "direct",
+        "interactionNotes": [],
+        "errors": [
+          "locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Next page', exact: true })\u001b[22m\n\u001b[2m    - locator resolved to <button tabindex=\"0\" type=\"button\" data-slot=\"button\" aria-label=\"Next page\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:186:11\" class=\"group/button inline-flex shrink-0 items-center justify-center border bg-clip-padding text-sm font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 \u2026>\u2026</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 \u00d7 waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <circle r=\"9\" cx=\"9\" cy=\"9\" fill-opacity=\"0.99\" fill=\"url(#tsd-trigger-mark-cl-0)\"></circle> from <div>\u2026</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 \u00d7 waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <circle r=\"9\" cx=\"9\" cy=\"9\" fill-opacity=\"0.99\" fill=\"url(#tsd-trigger-mark-cl-0)\"></circle> from <div>\u2026</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    58 \u00d7 waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <circle r=\"9\" cx=\"9\" cy=\"9\" fill-opacity=\"0.99\" fill=\"url(#tsd-trigger-mark-cl-0)\"></circle> from <div>\u2026</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n"
+        ]
+      },
+      {
+        "route": "/dashboard/products",
+        "theme": "dark",
+        "viewport": "desktop",
+        "file": "_dashboard_products-dark-desktop-interactive.png",
+        "controlsFile": "_dashboard_products-dark-desktop-interactive-controls.png",
+        "phase": "direct",
+        "interactionNotes": [],
+        "errors": [
+          "locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Next page', exact: true })\u001b[22m\n\u001b[2m    - locator resolved to <button tabindex=\"0\" type=\"button\" data-slot=\"button\" aria-label=\"Next page\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:186:11\" class=\"group/button inline-flex shrink-0 items-center justify-center border bg-clip-padding text-sm font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 \u2026>\u2026</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 \u00d7 waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <circle r=\"9\" cx=\"9\" cy=\"9\" fill-opacity=\"0.99\" fill=\"url(#tsd-trigger-mark-cl-0)\"></circle> from <div>\u2026</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 \u00d7 waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <circle r=\"9\" cx=\"9\" cy=\"9\" fill-opacity=\"0.99\" fill=\"url(#tsd-trigger-mark-cl-0)\"></circle> from <div>\u2026</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    58 \u00d7 waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <circle r=\"9\" cx=\"9\" cy=\"9\" fill-opacity=\"0.99\" fill=\"url(#tsd-trigger-mark-cl-0)\"></circle> from <div>\u2026</div> subtree intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n"
+        ]
+      }
+    ]
+  },
+  {
+    "report": "v03-010/after/report.json",
+    "baseURL": "http://localhost:3000/",
+    "preset": "default",
+    "failures": [
+      {
+        "route": "/dashboard/users",
+        "theme": "light",
+        "viewport": "desktop",
+        "file": "_dashboard_users-light-desktop-interactive.png",
+        "controlsFile": "_dashboard_users-light-desktop-interactive-controls.png",
+        "phase": "direct",
+        "interactionNotes": [],
+        "errors": [
+          "locator.check: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('checkbox', { name: 'Select Olivia Rhye', exact: true })\u001b[22m\n"
+        ]
+      },
+      {
+        "route": "/dashboard/users",
+        "theme": "light",
+        "viewport": "mobile",
+        "file": "_dashboard_users-light-mobile-interactive.png",
+        "controlsFile": "_dashboard_users-light-mobile-interactive-controls.png",
+        "phase": "direct",
+        "interactionNotes": [],
+        "errors": [
+          "locator.check: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('checkbox', { name: 'Select Olivia Rhye', exact: true })\u001b[22m\n"
+        ]
+      },
+      {
+        "route": "/dashboard/users",
+        "theme": "dark",
+        "viewport": "desktop",
+        "file": "_dashboard_users-dark-desktop-interactive.png",
+        "controlsFile": "_dashboard_users-dark-desktop-interactive-controls.png",
+        "phase": "direct",
+        "interactionNotes": [],
+        "errors": [
+          "locator.check: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('checkbox', { name: 'Select Olivia Rhye', exact: true })\u001b[22m\n"
+        ]
+      },
+      {
+        "route": "/dashboard/users",
+        "theme": "dark",
+        "viewport": "mobile",
+        "file": "_dashboard_users-dark-mobile-interactive.png",
+        "controlsFile": "_dashboard_users-dark-mobile-interactive-controls.png",
+        "phase": "direct",
+        "interactionNotes": [],
+        "errors": [
+          "locator.check: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('checkbox', { name: 'Select Olivia Rhye', exact: true })\u001b[22m\n"
+        ]
+      }
+    ]
+  },
+  {
+    "report": "v03-010/after-fixed/report.json",
+    "baseURL": "http://localhost:3000/",
+    "preset": "default",
+    "failures": [
+      {
+        "route": "/dashboard/users",
+        "theme": "light",
+        "viewport": "desktop",
+        "file": "_dashboard_users-light-desktop-interactive.png",
+        "controlsFile": "_dashboard_users-light-desktop-interactive-controls.png",
+        "phase": "direct",
+        "interactionNotes": [],
+        "errors": [
+          "locator.press: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'Go to next page', exact: true })\u001b[22m\n"
+        ]
+      },
+      {
+        "route": "/dashboard/users",
+        "theme": "light",
+        "viewport": "mobile",
+        "file": "_dashboard_users-light-mobile-interactive.png",
+        "controlsFile": "_dashboard_users-light-mobile-interactive-controls.png",
+        "phase": "direct",
+        "interactionNotes": [],
+        "errors": [
+          "locator.press: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'Go to next page', exact: true })\u001b[22m\n"
+        ]
+      },
+      {
+        "route": "/dashboard/users",
+        "theme": "dark",
+        "viewport": "desktop",
+        "file": "_dashboard_users-dark-desktop-interactive.png",
+        "controlsFile": "_dashboard_users-dark-desktop-interactive-controls.png",
+        "phase": "direct",
+        "interactionNotes": [],
+        "errors": [
+          "locator.press: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'Go to next page', exact: true })\u001b[22m\n"
+        ]
+      },
+      {
+        "route": "/dashboard/users",
+        "theme": "dark",
+        "viewport": "mobile",
+        "file": "_dashboard_users-dark-mobile-interactive.png",
+        "controlsFile": "_dashboard_users-dark-mobile-interactive-controls.png",
+        "phase": "direct",
+        "interactionNotes": [],
+        "errors": [
+          "locator.press: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'Go to next page', exact: true })\u001b[22m\n"
+        ]
+      }
+    ]
+  },
+  {
+    "report": "v03-010/workers/report.json",
+    "baseURL": "https://6e2ad1c7-tenboards.mohanadgh.workers.dev/",
+    "preset": "default",
+    "failures": [
+      {
+        "route": "/dashboard/roles",
+        "theme": "light",
+        "viewport": "desktop",
+        "file": "_dashboard_roles-light-desktop-interactive.png",
+        "controlsFile": "_dashboard_roles-light-desktop-interactive-controls.png",
+        "phase": "direct",
+        "interactionNotes": [],
+        "errors": [
+          "locator.press: Error: strict mode violation: getByRole('option', { name: 'System', exact: true }) resolved to 2 elements:\n    1) <div role=\"option\" tabindex=\"-1\" data-selected=\"\" data-highlighted=\"\" aria-selected=\"true\" data-slot=\"select-item\" class=\"relative flex w-full cursor-default items-center gap-1.5 rounded-md py-1 pr-8 pl-1.5 text-sm outline-hidden select-none focus:bg-accent focus:text-accent-foreground not-data-[variant=destructive]:focus:**:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 *:[span]:las\u2026>\u2026</div> aka locator('#base-ui-_R_1jaj9aq_-list').getByRole('option', { name: 'System' })\n    2) <div role=\"option\" tabindex=\"-1\" aria-selected=\"false\" data-slot=\"select-item\" class=\"relative flex w-full cursor-default items-center gap-1.5 rounded-md py-1 pr-8 pl-1.5 text-sm outline-hidden select-none focus:bg-accent focus:text-accent-foreground not-data-[variant=destructive]:focus:**:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 *:[span]:last:flex *:[span]:last:items-center *:\u2026>\u2026</div> aka locator('#base-ui-_R_2jaj9aq_-list').getByRole('option', { name: 'System' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('option', { name: 'System', exact: true })\u001b[22m\n"
+        ]
+      },
+      {
+        "route": "/dashboard/roles",
+        "theme": "light",
+        "viewport": "mobile",
+        "file": "_dashboard_roles-light-mobile-interactive.png",
+        "controlsFile": "_dashboard_roles-light-mobile-interactive-controls.png",
+        "phase": "direct",
+        "interactionNotes": [],
+        "errors": [
+          "locator.press: Error: strict mode violation: getByRole('option', { name: 'System', exact: true }) resolved to 2 elements:\n    1) <div role=\"option\" tabindex=\"-1\" data-selected=\"\" data-highlighted=\"\" aria-selected=\"true\" data-slot=\"select-item\" class=\"relative flex w-full cursor-default items-center gap-1.5 rounded-md py-1 pr-8 pl-1.5 text-sm outline-hidden select-none focus:bg-accent focus:text-accent-foreground not-data-[variant=destructive]:focus:**:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 *:[span]:las\u2026>\u2026</div> aka locator('#base-ui-_R_1jaj9aq_-list').getByRole('option', { name: 'System' })\n    2) <div role=\"option\" tabindex=\"-1\" aria-selected=\"false\" data-slot=\"select-item\" class=\"relative flex w-full cursor-default items-center gap-1.5 rounded-md py-1 pr-8 pl-1.5 text-sm outline-hidden select-none focus:bg-accent focus:text-accent-foreground not-data-[variant=destructive]:focus:**:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 *:[span]:last:flex *:[span]:last:items-center *:\u2026>\u2026</div> aka locator('#base-ui-_R_2jaj9aq_-list').getByRole('option', { name: 'System' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('option', { name: 'System', exact: true })\u001b[22m\n"
+        ]
+      },
+      {
+        "route": "/dashboard/roles",
+        "theme": "dark",
+        "viewport": "desktop",
+        "file": "_dashboard_roles-dark-desktop-interactive.png",
+        "controlsFile": "_dashboard_roles-dark-desktop-interactive-controls.png",
+        "phase": "direct",
+        "interactionNotes": [],
+        "errors": [
+          "locator.press: Error: strict mode violation: getByRole('option', { name: 'System', exact: true }) resolved to 2 elements:\n    1) <div role=\"option\" tabindex=\"-1\" data-selected=\"\" data-highlighted=\"\" aria-selected=\"true\" data-slot=\"select-item\" class=\"relative flex w-full cursor-default items-center gap-1.5 rounded-md py-1 pr-8 pl-1.5 text-sm outline-hidden select-none focus:bg-accent focus:text-accent-foreground not-data-[variant=destructive]:focus:**:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 *:[span]:las\u2026>\u2026</div> aka locator('#base-ui-_R_1jaj9aq_-list').getByRole('option', { name: 'System' })\n    2) <div role=\"option\" tabindex=\"-1\" aria-selected=\"false\" data-slot=\"select-item\" class=\"relative flex w-full cursor-default items-center gap-1.5 rounded-md py-1 pr-8 pl-1.5 text-sm outline-hidden select-none focus:bg-accent focus:text-accent-foreground not-data-[variant=destructive]:focus:**:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 *:[span]:last:flex *:[span]:last:items-center *:\u2026>\u2026</div> aka locator('#base-ui-_R_2jaj9aq_-list').getByRole('option', { name: 'System' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('option', { name: 'System', exact: true })\u001b[22m\n"
+        ]
+      },
+      {
+        "route": "/dashboard/roles",
+        "theme": "dark",
+        "viewport": "mobile",
+        "file": "_dashboard_roles-dark-mobile-interactive.png",
+        "controlsFile": "_dashboard_roles-dark-mobile-interactive-controls.png",
+        "phase": "direct",
+        "interactionNotes": [],
+        "errors": [
+          "locator.press: Error: strict mode violation: getByRole('option', { name: 'System', exact: true }) resolved to 2 elements:\n    1) <div role=\"option\" tabindex=\"-1\" data-selected=\"\" data-highlighted=\"\" aria-selected=\"true\" data-slot=\"select-item\" class=\"relative flex w-full cursor-default items-center gap-1.5 rounded-md py-1 pr-8 pl-1.5 text-sm outline-hidden select-none focus:bg-accent focus:text-accent-foreground not-data-[variant=destructive]:focus:**:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 *:[span]:las\u2026>\u2026</div> aka locator('#base-ui-_R_1jaj9aq_-list').getByRole('option', { name: 'System' })\n    2) <div role=\"option\" tabindex=\"-1\" aria-selected=\"false\" data-slot=\"select-item\" class=\"relative flex w-full cursor-default items-center gap-1.5 rounded-md py-1 pr-8 pl-1.5 text-sm outline-hidden select-none focus:bg-accent focus:text-accent-foreground not-data-[variant=destructive]:focus:**:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 *:[span]:last:flex *:[span]:last:items-center *:\u2026>\u2026</div> aka locator('#base-ui-_R_2jaj9aq_-list').getByRole('option', { name: 'System' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('option', { name: 'System', exact: true })\u001b[22m\n"
+        ]
+      },
+      {
+        "route": "/dashboard/users",
+        "theme": "light",
+        "viewport": "desktop",
+        "file": "_dashboard_users-light-desktop-interactive.png",
+        "controlsFile": "_dashboard_users-light-desktop-interactive-controls.png",
+        "phase": "direct",
+        "interactionNotes": [],
+        "errors": [
+          "locator.check: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('checkbox', { name: 'Select Olivia Rhye', exact: true })\u001b[22m\n"
+        ]
+      },
+      {
+        "route": "/dashboard/users",
+        "theme": "light",
+        "viewport": "mobile",
+        "file": "_dashboard_users-light-mobile-interactive.png",
+        "controlsFile": "_dashboard_users-light-mobile-interactive-controls.png",
+        "phase": "direct",
+        "interactionNotes": [],
+        "errors": [
+          "locator.check: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('checkbox', { name: 'Select Olivia Rhye', exact: true })\u001b[22m\n"
+        ]
+      },
+      {
+        "route": "/dashboard/users",
+        "theme": "dark",
+        "viewport": "desktop",
+        "file": "_dashboard_users-dark-desktop-interactive.png",
+        "controlsFile": "_dashboard_users-dark-desktop-interactive-controls.png",
+        "phase": "direct",
+        "interactionNotes": [],
+        "errors": [
+          "locator.check: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('checkbox', { name: 'Select Olivia Rhye', exact: true })\u001b[22m\n"
+        ]
+      },
+      {
+        "route": "/dashboard/users",
+        "theme": "dark",
+        "viewport": "mobile",
+        "file": "_dashboard_users-dark-mobile-interactive.png",
+        "controlsFile": "_dashboard_users-dark-mobile-interactive-controls.png",
+        "phase": "direct",
+        "interactionNotes": [],
+        "errors": [
+          "locator.check: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('checkbox', { name: 'Select Olivia Rhye', exact: true })\u001b[22m\n"
+        ]
+      }
+    ]
+  },
+  {
+    "report": "v03-010/workers-fixed/report.json",
+    "baseURL": "https://2ab2c7df-tenboards.mohanadgh.workers.dev/",
+    "preset": "default",
+    "failures": [
+      {
+        "route": "/dashboard/users",
+        "theme": "light",
+        "viewport": "desktop",
+        "file": "_dashboard_users-light-desktop-interactive.png",
+        "controlsFile": "_dashboard_users-light-desktop-interactive-controls.png",
+        "phase": "direct",
+        "interactionNotes": [],
+        "errors": [
+          "locator.press: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'Go to next page', exact: true })\u001b[22m\n"
+        ]
+      },
+      {
+        "route": "/dashboard/users",
+        "theme": "light",
+        "viewport": "mobile",
+        "file": "_dashboard_users-light-mobile-interactive.png",
+        "controlsFile": "_dashboard_users-light-mobile-interactive-controls.png",
+        "phase": "direct",
+        "interactionNotes": [],
+        "errors": [
+          "locator.press: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'Go to next page', exact: true })\u001b[22m\n"
+        ]
+      },
+      {
+        "route": "/dashboard/users",
+        "theme": "dark",
+        "viewport": "desktop",
+        "file": "_dashboard_users-dark-desktop-interactive.png",
+        "controlsFile": "_dashboard_users-dark-desktop-interactive-controls.png",
+        "phase": "direct",
+        "interactionNotes": [],
+        "errors": [
+          "locator.press: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'Go to next page', exact: true })\u001b[22m\n"
+        ]
+      },
+      {
+        "route": "/dashboard/users",
+        "theme": "dark",
+        "viewport": "mobile",
+        "file": "_dashboard_users-dark-mobile-interactive.png",
+        "controlsFile": "_dashboard_users-dark-mobile-interactive-controls.png",
+        "phase": "direct",
+        "interactionNotes": [],
+        "errors": [
+          "locator.press: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'Go to next page', exact: true })\u001b[22m\n"
+        ]
+      }
+    ]
+  },
+  {
+    "report": "v03-012/after/report.json",
+    "baseURL": "http://localhost:3000/",
+    "preset": "default",
+    "failures": [
+      {
+        "route": "/auth/v1/login",
+        "theme": "light",
+        "viewport": "desktop",
+        "file": "_auth_v1_login-light-desktop-interactive.png",
+        "controlsFile": "_auth_v1_login-light-desktop-interactive-controls.png",
+        "phase": "direct",
+        "interactionNotes": [
+          "Labels, masked passwords and email/current/new-password autofill verified",
+          "Empty and mismatched-password errors; error association and local demo submission verified",
+          "Google remains demo-only; keyboard crosslink works",
+          "360\u00d7500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+        ],
+        "errors": [
+          "console: In HTML, %s cannot be a descendant of <%s>.\nThis will cause a hydration error.%s <pre> p \n\n  ...\n    <ToastViewport>\n      <ToastViewport data-slot=\"toast-view...\" className=\"pointer-ev...\">\n        <div tabIndex={-1} role=\"region\" aria-live=\"polite\" aria-atomic={false} aria-relevant=\"additions ...\" ...>\n          <ToastList>\n            <Toast toast={{title:\"You...\", ...}}>\n              <ToastRoot data-slot=\"toast\" className={\"group/to...\"} toast={{title:\"You...\", ...}}>\n                <div data-starting-style=\"\" role=\"dialog\" tabIndex={0} aria-modal={false} aria-labelledby={undefined} ...>\n                  <ToastContent>\n                    <ToastContent data-slot=\"toast-content\" className=\"flex h-ful...\">\n                      <div data-slot=\"toast-content\" ref={function} className=\"flex h-ful...\">\n                        <ToastIcon>\n                        <div className=\"flex min-w...\">\n                          <ToastTitle>\n                          <ToastDescription>\n                            <ToastDescription data-slot=\"toast-desc...\" className=\"text-sm te...\">\n>                             <p\n>                               data-slot=\"toast-description\"\n>                               id=\"_r_1_\"\n>                               ref={null}\n>                               className=\"text-sm text-muted-foreground\"\n>                             >\n>                               <pre\n>                                 className=\"bg-muted text-foreground mt-2 max-w-full overflow-x-auto rounded-md p-3 t...\"\n>                                 data-tsd-source=\"/src/routes/(main)/auth/-components/login-form.tsx:21:7\"\n>                               >\n                        ...\n",
+          "console: <%s> cannot contain a nested %s.\nSee this log for the ancestor stack trace. p <pre>"
+        ]
+      },
+      {
+        "route": "/auth/v1/login",
+        "theme": "light",
+        "viewport": "desktop",
+        "file": "_auth_v1_login-light-desktop-refresh-interactive.png",
+        "controlsFile": "_auth_v1_login-light-desktop-refresh-interactive-controls.png",
+        "phase": "refresh",
+        "interactionNotes": [
+          "Labels, masked passwords and email/current/new-password autofill verified",
+          "Empty and mismatched-password errors; error association and local demo submission verified",
+          "Google remains demo-only; keyboard crosslink works",
+          "360\u00d7500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+        ],
+        "errors": [
+          "console: In HTML, %s cannot be a descendant of <%s>.\nThis will cause a hydration error.%s <pre> p \n\n  ...\n    <ToastViewport>\n      <ToastViewport data-slot=\"toast-view...\" className=\"pointer-ev...\">\n        <div tabIndex={-1} role=\"region\" aria-live=\"polite\" aria-atomic={false} aria-relevant=\"additions ...\" ...>\n          <ToastList>\n            <Toast toast={{title:\"You...\", ...}}>\n              <ToastRoot data-slot=\"toast\" className={\"group/to...\"} toast={{title:\"You...\", ...}}>\n                <div data-starting-style=\"\" role=\"dialog\" tabIndex={0} aria-modal={false} aria-labelledby={undefined} ...>\n                  <ToastContent>\n                    <ToastContent data-slot=\"toast-content\" className=\"flex h-ful...\">\n                      <div data-slot=\"toast-content\" ref={function} className=\"flex h-ful...\">\n                        <ToastIcon>\n                        <div className=\"flex min-w...\">\n                          <ToastTitle>\n                          <ToastDescription>\n                            <ToastDescription data-slot=\"toast-desc...\" className=\"text-sm te...\">\n>                             <p\n>                               data-slot=\"toast-description\"\n>                               id=\"_r_1_\"\n>                               ref={null}\n>                               className=\"text-sm text-muted-foreground\"\n>                             >\n>                               <pre\n>                                 className=\"bg-muted text-foreground mt-2 max-w-full overflow-x-auto rounded-md p-3 t...\"\n>                                 data-tsd-source=\"/src/routes/(main)/auth/-components/login-form.tsx:21:7\"\n>                               >\n                        ...\n",
+          "console: <%s> cannot contain a nested %s.\nSee this log for the ancestor stack trace. p <pre>"
+        ]
+      },
+      {
+        "route": "/auth/v1/login",
+        "theme": "light",
+        "viewport": "mobile",
+        "file": "_auth_v1_login-light-mobile-interactive.png",
+        "controlsFile": "_auth_v1_login-light-mobile-interactive-controls.png",
+        "phase": "direct",
+        "interactionNotes": [
+          "Labels, masked passwords and email/current/new-password autofill verified",
+          "Empty and mismatched-password errors; error association and local demo submission verified",
+          "Google remains demo-only; keyboard crosslink works",
+          "360\u00d7500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+        ],
+        "errors": [
+          "console: In HTML, %s cannot be a descendant of <%s>.\nThis will cause a hydration error.%s <pre> p \n\n  ...\n    <ToastViewport>\n      <ToastViewport data-slot=\"toast-view...\" className=\"pointer-ev...\">\n        <div tabIndex={-1} role=\"region\" aria-live=\"polite\" aria-atomic={false} aria-relevant=\"additions ...\" ...>\n          <ToastList>\n            <Toast toast={{title:\"You...\", ...}}>\n              <ToastRoot data-slot=\"toast\" className={\"group/to...\"} toast={{title:\"You...\", ...}}>\n                <div data-starting-style=\"\" role=\"dialog\" tabIndex={0} aria-modal={false} aria-labelledby={undefined} ...>\n                  <ToastContent>\n                    <ToastContent data-slot=\"toast-content\" className=\"flex h-ful...\">\n                      <div data-slot=\"toast-content\" ref={function} className=\"flex h-ful...\">\n                        <ToastIcon>\n                        <div className=\"flex min-w...\">\n                          <ToastTitle>\n                          <ToastDescription>\n                            <ToastDescription data-slot=\"toast-desc...\" className=\"text-sm te...\">\n>                             <p\n>                               data-slot=\"toast-description\"\n>                               id=\"_r_1_\"\n>                               ref={null}\n>                               className=\"text-sm text-muted-foreground\"\n>                             >\n>                               <pre\n>                                 className=\"bg-muted text-foreground mt-2 max-w-full overflow-x-auto rounded-md p-3 t...\"\n>                                 data-tsd-source=\"/src/routes/(main)/auth/-components/login-form.tsx:21:7\"\n>                               >\n                        ...\n",
+          "console: <%s> cannot contain a nested %s.\nSee this log for the ancestor stack trace. p <pre>"
+        ]
+      },
+      {
+        "route": "/auth/v1/login",
+        "theme": "light",
+        "viewport": "mobile",
+        "file": "_auth_v1_login-light-mobile-refresh-interactive.png",
+        "controlsFile": "_auth_v1_login-light-mobile-refresh-interactive-controls.png",
+        "phase": "refresh",
+        "interactionNotes": [
+          "Labels, masked passwords and email/current/new-password autofill verified",
+          "Empty and mismatched-password errors; error association and local demo submission verified",
+          "Google remains demo-only; keyboard crosslink works",
+          "360\u00d7500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+        ],
+        "errors": [
+          "console: In HTML, %s cannot be a descendant of <%s>.\nThis will cause a hydration error.%s <pre> p \n\n  ...\n    <ToastViewport>\n      <ToastViewport data-slot=\"toast-view...\" className=\"pointer-ev...\">\n        <div tabIndex={-1} role=\"region\" aria-live=\"polite\" aria-atomic={false} aria-relevant=\"additions ...\" ...>\n          <ToastList>\n            <Toast toast={{title:\"You...\", ...}}>\n              <ToastRoot data-slot=\"toast\" className={\"group/to...\"} toast={{title:\"You...\", ...}}>\n                <div data-starting-style=\"\" role=\"dialog\" tabIndex={0} aria-modal={false} aria-labelledby={undefined} ...>\n                  <ToastContent>\n                    <ToastContent data-slot=\"toast-content\" className=\"flex h-ful...\">\n                      <div data-slot=\"toast-content\" ref={function} className=\"flex h-ful...\">\n                        <ToastIcon>\n                        <div className=\"flex min-w...\">\n                          <ToastTitle>\n                          <ToastDescription>\n                            <ToastDescription data-slot=\"toast-desc...\" className=\"text-sm te...\">\n>                             <p\n>                               data-slot=\"toast-description\"\n>                               id=\"_r_1_\"\n>                               ref={null}\n>                               className=\"text-sm text-muted-foreground\"\n>                             >\n>                               <pre\n>                                 className=\"bg-muted text-foreground mt-2 max-w-full overflow-x-auto rounded-md p-3 t...\"\n>                                 data-tsd-source=\"/src/routes/(main)/auth/-components/login-form.tsx:21:7\"\n>                               >\n                        ...\n",
+          "console: <%s> cannot contain a nested %s.\nSee this log for the ancestor stack trace. p <pre>"
+        ]
+      },
+      {
+        "route": "/auth/v1/login",
+        "theme": "dark",
+        "viewport": "desktop",
+        "file": "_auth_v1_login-dark-desktop-interactive.png",
+        "controlsFile": "_auth_v1_login-dark-desktop-interactive-controls.png",
+        "phase": "direct",
+        "interactionNotes": [
+          "Labels, masked passwords and email/current/new-password autofill verified",
+          "Empty and mismatched-password errors; error association and local demo submission verified",
+          "Google remains demo-only; keyboard crosslink works",
+          "360\u00d7500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+        ],
+        "errors": [
+          "console: In HTML, %s cannot be a descendant of <%s>.\nThis will cause a hydration error.%s <pre> p \n\n  ...\n    <ToastViewport>\n      <ToastViewport data-slot=\"toast-view...\" className=\"pointer-ev...\">\n        <div tabIndex={-1} role=\"region\" aria-live=\"polite\" aria-atomic={false} aria-relevant=\"additions ...\" ...>\n          <ToastList>\n            <Toast toast={{title:\"You...\", ...}}>\n              <ToastRoot data-slot=\"toast\" className={\"group/to...\"} toast={{title:\"You...\", ...}}>\n                <div data-starting-style=\"\" role=\"dialog\" tabIndex={0} aria-modal={false} aria-labelledby={undefined} ...>\n                  <ToastContent>\n                    <ToastContent data-slot=\"toast-content\" className=\"flex h-ful...\">\n                      <div data-slot=\"toast-content\" ref={function} className=\"flex h-ful...\">\n                        <ToastIcon>\n                        <div className=\"flex min-w...\">\n                          <ToastTitle>\n                          <ToastDescription>\n                            <ToastDescription data-slot=\"toast-desc...\" className=\"text-sm te...\">\n>                             <p\n>                               data-slot=\"toast-description\"\n>                               id=\"_r_1_\"\n>                               ref={null}\n>                               className=\"text-sm text-muted-foreground\"\n>                             >\n>                               <pre\n>                                 className=\"bg-muted text-foreground mt-2 max-w-full overflow-x-auto rounded-md p-3 t...\"\n>                                 data-tsd-source=\"/src/routes/(main)/auth/-components/login-form.tsx:21:7\"\n>                               >\n                        ...\n",
+          "console: <%s> cannot contain a nested %s.\nSee this log for the ancestor stack trace. p <pre>"
+        ]
+      },
+      {
+        "route": "/auth/v1/login",
+        "theme": "dark",
+        "viewport": "desktop",
+        "file": "_auth_v1_login-dark-desktop-refresh-interactive.png",
+        "controlsFile": "_auth_v1_login-dark-desktop-refresh-interactive-controls.png",
+        "phase": "refresh",
+        "interactionNotes": [],
+        "errors": [
+          "page.waitForFunction: Target page, context or browser has been closed"
+        ]
+      }
+    ]
+  },
+  {
+    "report": "v03-012/before-workers/report.json",
+    "baseURL": "https://2ab2c7df-tenboards.mohanadgh.workers.dev/",
+    "preset": "default",
+    "failures": [
+      {
+        "route": "/auth/v2/login",
+        "theme": "light",
+        "viewport": "desktop",
+        "file": "_auth_v2_login-light-desktop.png",
+        "controlsFile": null,
+        "phase": "direct",
+        "interactionNotes": [],
+        "errors": [
+          "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+        ]
+      },
+      {
+        "route": "/auth/v2/login",
+        "theme": "light",
+        "viewport": "desktop",
+        "file": "_auth_v2_login-light-desktop-refresh.png",
+        "controlsFile": null,
+        "phase": "refresh",
+        "interactionNotes": [],
+        "errors": [
+          "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+          "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+        ]
+      },
+      {
+        "route": "/auth/v2/login",
+        "theme": "light",
+        "viewport": "mobile",
+        "file": "_auth_v2_login-light-mobile.png",
+        "controlsFile": null,
+        "phase": "direct",
+        "interactionNotes": [],
+        "errors": [
+          "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+        ]
+      },
+      {
+        "route": "/auth/v2/login",
+        "theme": "light",
+        "viewport": "mobile",
+        "file": "_auth_v2_login-light-mobile-refresh.png",
+        "controlsFile": null,
+        "phase": "refresh",
+        "interactionNotes": [],
+        "errors": [
+          "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+          "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+        ]
+      },
+      {
+        "route": "/auth/v2/login",
+        "theme": "dark",
+        "viewport": "desktop",
+        "file": "_auth_v2_login-dark-desktop.png",
+        "controlsFile": null,
+        "phase": "direct",
+        "interactionNotes": [],
+        "errors": [
+          "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+        ]
+      },
+      {
+        "route": "/auth/v2/login",
+        "theme": "dark",
+        "viewport": "desktop",
+        "file": "_auth_v2_login-dark-desktop-refresh.png",
+        "controlsFile": null,
+        "phase": "refresh",
+        "interactionNotes": [],
+        "errors": [
+          "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+          "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+        ]
+      },
+      {
+        "route": "/auth/v2/login",
+        "theme": "dark",
+        "viewport": "mobile",
+        "file": "_auth_v2_login-dark-mobile.png",
+        "controlsFile": null,
+        "phase": "direct",
+        "interactionNotes": [],
+        "errors": [
+          "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+        ]
+      },
+      {
+        "route": "/auth/v2/login",
+        "theme": "dark",
+        "viewport": "mobile",
+        "file": "_auth_v2_login-dark-mobile-refresh.png",
+        "controlsFile": null,
+        "phase": "refresh",
+        "interactionNotes": [],
+        "errors": [
+          "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+          "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+        ]
+      },
+      {
+        "route": "/auth/v2/register",
+        "theme": "light",
+        "viewport": "desktop",
+        "file": "_auth_v2_register-light-desktop.png",
+        "controlsFile": null,
+        "phase": "direct",
+        "interactionNotes": [],
+        "errors": [
+          "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+        ]
+      },
+      {
+        "route": "/auth/v2/register",
+        "theme": "light",
+        "viewport": "desktop",
+        "file": "_auth_v2_register-light-desktop-refresh.png",
+        "controlsFile": null,
+        "phase": "refresh",
+        "interactionNotes": [],
+        "errors": [
+          "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+          "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+        ]
+      },
+      {
+        "route": "/auth/v2/register",
+        "theme": "light",
+        "viewport": "mobile",
+        "file": "_auth_v2_register-light-mobile.png",
+        "controlsFile": null,
+        "phase": "direct",
+        "interactionNotes": [],
+        "errors": [
+          "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+        ]
+      },
+      {
+        "route": "/auth/v2/register",
+        "theme": "light",
+        "viewport": "mobile",
+        "file": "_auth_v2_register-light-mobile-refresh.png",
+        "controlsFile": null,
+        "phase": "refresh",
+        "interactionNotes": [],
+        "errors": [
+          "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+          "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+        ]
+      },
+      {
+        "route": "/auth/v2/register",
+        "theme": "dark",
+        "viewport": "desktop",
+        "file": "_auth_v2_register-dark-desktop.png",
+        "controlsFile": null,
+        "phase": "direct",
+        "interactionNotes": [],
+        "errors": [
+          "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+        ]
+      },
+      {
+        "route": "/auth/v2/register",
+        "theme": "dark",
+        "viewport": "desktop",
+        "file": "_auth_v2_register-dark-desktop-refresh.png",
+        "controlsFile": null,
+        "phase": "refresh",
+        "interactionNotes": [],
+        "errors": [
+          "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+          "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+        ]
+      },
+      {
+        "route": "/auth/v2/register",
+        "theme": "dark",
+        "viewport": "mobile",
+        "file": "_auth_v2_register-dark-mobile.png",
+        "controlsFile": null,
+        "phase": "direct",
+        "interactionNotes": [],
+        "errors": [
+          "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+        ]
+      },
+      {
+        "route": "/auth/v2/register",
+        "theme": "dark",
+        "viewport": "mobile",
+        "file": "_auth_v2_register-dark-mobile-refresh.png",
+        "controlsFile": null,
+        "phase": "refresh",
+        "interactionNotes": [],
+        "errors": [
+          "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.",
+          "page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+        ]
+      }
+    ]
+  },
+  {
+    "report": "v03-012/workers/report.json",
+    "baseURL": "https://bba5b9aa-tenboards.mohanadgh.workers.dev/",
+    "preset": "default",
+    "failures": [
+      {
+        "route": "/auth/v1/login",
+        "theme": "light",
+        "viewport": "desktop",
+        "file": "_auth_v1_login-light-desktop-interactive.png",
+        "controlsFile": "_auth_v1_login-light-desktop-interactive-controls.png",
+        "phase": "direct",
+        "interactionNotes": [],
+        "errors": [
+          "page.waitForFunction: Target page, context or browser has been closed"
+        ]
+      }
+    ]
+  },
+  {
+    "report": "v03-013/before-boundaries/report.json",
+    "baseURL": "http://localhost:3000/",
+    "preset": "default",
+    "failures": [
+      {
+        "route": "qa:root-not-found",
+        "theme": "light",
+        "viewport": "desktop",
+        "file": "qa_root-not-found-light-desktop.png",
+        "controlsFile": null,
+        "phase": "direct",
+        "interactionNotes": [
+          "Distinct system heading and no page overflow",
+          "Existing recovery link navigates by keyboard when provided"
+        ],
+        "expectedDiagnostics": [],
+        "errors": [
+          "console: Failed to load resource: the server responded with a status of 404 ()"
+        ]
+      },
+      {
+        "route": "qa:root-not-found",
+        "theme": "light",
+        "viewport": "mobile",
+        "file": "qa_root-not-found-light-mobile.png",
+        "controlsFile": null,
+        "phase": "direct",
+        "interactionNotes": [
+          "Distinct system heading and no page overflow",
+          "Existing recovery link navigates by keyboard when provided"
+        ],
+        "expectedDiagnostics": [],
+        "errors": [
+          "console: Failed to load resource: the server responded with a status of 404 ()"
+        ]
+      },
+      {
+        "route": "qa:root-not-found",
+        "theme": "dark",
+        "viewport": "desktop",
+        "file": "qa_root-not-found-dark-desktop.png",
+        "controlsFile": null,
+        "phase": "direct",
+        "interactionNotes": [
+          "Distinct system heading and no page overflow",
+          "Existing recovery link navigates by keyboard when provided"
+        ],
+        "expectedDiagnostics": [],
+        "errors": [
+          "console: Failed to load resource: the server responded with a status of 404 ()"
+        ]
+      },
+      {
+        "route": "qa:root-not-found",
+        "theme": "dark",
+        "viewport": "mobile",
+        "file": "qa_root-not-found-dark-mobile.png",
+        "controlsFile": null,
+        "phase": "direct",
+        "interactionNotes": [
+          "Distinct system heading and no page overflow",
+          "Existing recovery link navigates by keyboard when provided"
+        ],
+        "expectedDiagnostics": [],
+        "errors": [
+          "console: Failed to load resource: the server responded with a status of 404 ()"
+        ]
+      }
+    ]
+  },
+  {
+    "report": "v03-013/before-workers-boundaries/report.json",
+    "baseURL": "https://a9dd9c26-tenboards.mohanadgh.workers.dev/",
+    "preset": "default",
+    "failures": [
+      {
+        "route": "qa:root-not-found",
+        "theme": "light",
+        "viewport": "desktop",
+        "file": "qa_root-not-found-light-desktop.png",
+        "controlsFile": null,
+        "phase": "direct",
+        "interactionNotes": [
+          "Distinct system heading and no page overflow",
+          "Existing recovery link navigates by keyboard when provided"
+        ],
+        "expectedDiagnostics": [],
+        "errors": [
+          "console: Failed to load resource: the server responded with a status of 404 ()"
+        ]
+      },
+      {
+        "route": "qa:root-not-found",
+        "theme": "light",
+        "viewport": "mobile",
+        "file": "qa_root-not-found-light-mobile.png",
+        "controlsFile": null,
+        "phase": "direct",
+        "interactionNotes": [
+          "Distinct system heading and no page overflow",
+          "Existing recovery link navigates by keyboard when provided"
+        ],
+        "expectedDiagnostics": [],
+        "errors": [
+          "console: Failed to load resource: the server responded with a status of 404 ()"
+        ]
+      },
+      {
+        "route": "qa:root-not-found",
+        "theme": "dark",
+        "viewport": "desktop",
+        "file": "qa_root-not-found-dark-desktop.png",
+        "controlsFile": null,
+        "phase": "direct",
+        "interactionNotes": [
+          "Distinct system heading and no page overflow",
+          "Existing recovery link navigates by keyboard when provided"
+        ],
+        "expectedDiagnostics": [],
+        "errors": [
+          "console: Failed to load resource: the server responded with a status of 404 ()"
+        ]
+      },
+      {
+        "route": "qa:root-not-found",
+        "theme": "dark",
+        "viewport": "mobile",
+        "file": "qa_root-not-found-dark-mobile.png",
+        "controlsFile": null,
+        "phase": "direct",
+        "interactionNotes": [
+          "Distinct system heading and no page overflow",
+          "Existing recovery link navigates by keyboard when provided"
+        ],
+        "expectedDiagnostics": [],
+        "errors": [
+          "console: Failed to load resource: the server responded with a status of 404 ()"
+        ]
+      }
+    ]
+  },
+  {
+    "report": "v03-014/dev/iris/report.json",
+    "baseURL": "http://localhost:3000/",
+    "preset": "iris",
+    "failures": [
+      {
+        "route": "/",
+        "theme": "dark",
+        "viewport": "desktop",
+        "file": "_-dark-desktop.png",
+        "controlsFile": null,
+        "phase": "direct",
+        "interactionNotes": [],
+        "expectedDiagnostics": [],
+        "errors": [
+          "request: https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400..700&display=swap net::ERR_TIMED_OUT",
+          "console: Failed to load resource: net::ERR_TIMED_OUT",
+          "request: https://fonts.googleapis.com/css2?family=Merriweather:wght@400..700&display=swap net::ERR_TIMED_OUT",
+          "console: Failed to load resource: net::ERR_TIMED_OUT",
+          "request: https://fonts.googleapis.com/css2?family=Lora:wght@400..700&display=swap net::ERR_TIMED_OUT",
+          "console: Failed to load resource: net::ERR_TIMED_OUT",
+          "request: https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400..700&display=swap net::ERR_TIMED_OUT",
+          "console: Failed to load resource: net::ERR_TIMED_OUT",
+          "request: https://fonts.googleapis.com/css2?family=Inter:wght@400..700&display=swap net::ERR_TIMED_OUT",
+          "console: Failed to load resource: net::ERR_TIMED_OUT",
+          "request: https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400..700&display=swap net::ERR_TIMED_OUT",
+          "console: Failed to load resource: net::ERR_TIMED_OUT",
+          "page.waitForLoadState: Timeout 30000ms exceeded."
+        ]
+      }
+    ]
+  },
+  {
+    "report": "v03-014/dev/pine/report.json",
+    "baseURL": "http://localhost:3000/",
+    "preset": "pine",
+    "failures": [
+      {
+        "route": "/dashboard/users",
+        "theme": "dark",
+        "viewport": "mobile",
+        "file": "_dashboard_users-dark-mobile.png",
+        "controlsFile": null,
+        "phase": "direct",
+        "interactionNotes": [],
+        "expectedDiagnostics": [],
+        "errors": [
+          "request: https://fonts.gstatic.com/s/lora/v37/0QIvMX1D_JOuMwr7I_FMl_E.woff2 net::ERR_TIMED_OUT",
+          "console: Failed to load resource: net::ERR_TIMED_OUT",
+          "request: https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2 net::ERR_TIMED_OUT",
+          "console: Failed to load resource: net::ERR_TIMED_OUT",
+          "request: https://fonts.gstatic.com/s/notosans/v42/o-0bIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjc5a7du3mhPy0.woff2 net::ERR_TIMED_OUT",
+          "console: Failed to load resource: net::ERR_TIMED_OUT",
+          "request: https://fonts.gstatic.com/s/jetbrainsmono/v24/tDbv2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKwBNntkaToggR7BYRbKPxDcwgknk-4.woff2 net::ERR_TIMED_OUT",
+          "console: Failed to load resource: net::ERR_TIMED_OUT",
+          "request: https://fonts.gstatic.com/s/playfairdisplay/v40/nuFiD-vYSZviVYUb_rj3ij__anPXDTzYgEM86xQ.woff2 net::ERR_TIMED_OUT",
+          "console: Failed to load resource: net::ERR_TIMED_OUT",
+          "request: https://fonts.gstatic.com/s/robotoslab/v36/BngMUXZYTXPIvIBgJJSb6ufN5qWr4xCC.woff2 net::ERR_TIMED_OUT",
+          "console: Failed to load resource: net::ERR_TIMED_OUT",
+          "page.waitForFunction: Timeout 30000ms exceeded."
+        ]
+      }
+    ]
+  },
+  {
+    "report": "v03-014/live-workers/report.json",
+    "baseURL": "https://a0e873cb-tenboards.mohanadgh.workers.dev/",
+    "preset": "default",
+    "failures": [
+      {
+        "route": "/dashboard/invoice",
+        "theme": "light",
+        "viewport": "mobile",
+        "file": "_dashboard_invoice-light-mobile-interactive.png",
+        "controlsFile": "_dashboard_invoice-light-mobile-interactive-controls.png",
+        "phase": "direct",
+        "interactionNotes": [],
+        "expectedDiagnostics": [],
+        "errors": [
+          "locator.press: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-day=\"11/7/2026\"]')\u001b[22m\n"
+        ]
+      }
+    ]
+  },
+  {
+    "report": "v03-014/shell-dev-default/report.json",
+    "baseURL": "http://localhost:3000/",
+    "preset": "default",
+    "failures": [
+      {
+        "route": "/dashboard/default",
+        "theme": "light",
+        "viewport": "desktop",
+        "file": "_dashboard_default-light-desktop-interactive.png",
+        "controlsFile": "_dashboard_default-light-desktop-interactive-controls.png",
+        "phase": "direct",
+        "interactionNotes": [],
+        "expectedDiagnostics": [],
+        "errors": [
+          "Settings focus trap"
+        ]
+      },
+      {
+        "route": "/dashboard/default",
+        "theme": "dark",
+        "viewport": "desktop",
+        "file": "_dashboard_default-dark-desktop-interactive.png",
+        "controlsFile": "_dashboard_default-dark-desktop-interactive-controls.png",
+        "phase": "direct",
+        "interactionNotes": [],
+        "expectedDiagnostics": [],
+        "errors": [
+          "Palette focus return"
+        ]
+      },
+      {
+        "route": "/dashboard/default",
+        "theme": "dark",
+        "viewport": "mobile",
+        "file": "_dashboard_default-dark-mobile-interactive.png",
+        "controlsFile": "_dashboard_default-dark-mobile-interactive-controls.png",
+        "phase": "direct",
+        "interactionNotes": [],
+        "expectedDiagnostics": [],
+        "errors": [
+          "Settings focus trap"
+        ]
+      }
+    ]
+  },
+  {
+    "report": "v03-014/shell-dev-default-retry/report.json",
+    "baseURL": "http://localhost:3000/",
+    "preset": "default",
+    "failures": [
+      {
+        "route": "/dashboard/default",
+        "theme": "light",
+        "viewport": "desktop",
+        "file": "_dashboard_default-light-desktop-interactive.png",
+        "controlsFile": "_dashboard_default-light-desktop-interactive-controls.png",
+        "phase": "direct",
+        "interactionNotes": [],
+        "expectedDiagnostics": [],
+        "errors": [
+          "page.waitForFunction: Timeout 3000ms exceeded."
+        ]
+      },
+      {
+        "route": "/dashboard/default",
+        "theme": "light",
+        "viewport": "mobile",
+        "file": "_dashboard_default-light-mobile-interactive.png",
+        "controlsFile": "_dashboard_default-light-mobile-interactive-controls.png",
+        "phase": "direct",
+        "interactionNotes": [],
+        "expectedDiagnostics": [],
+        "errors": [
+          "Settings focus trap"
+        ]
+      },
+      {
+        "route": "/dashboard/default",
+        "theme": "dark",
+        "viewport": "desktop",
+        "file": "_dashboard_default-dark-desktop-interactive.png",
+        "controlsFile": "_dashboard_default-dark-desktop-interactive-controls.png",
+        "phase": "direct",
+        "interactionNotes": [],
+        "expectedDiagnostics": [],
+        "errors": [
+          "Settings focus trap"
+        ]
+      },
+      {
+        "route": "/dashboard/default",
+        "theme": "dark",
+        "viewport": "mobile",
+        "file": "_dashboard_default-dark-mobile-interactive.png",
+        "controlsFile": "_dashboard_default-dark-mobile-interactive-controls.png",
+        "phase": "direct",
+        "interactionNotes": [],
+        "expectedDiagnostics": [],
+        "errors": [
+          "Settings focus trap"
+        ]
+      }
+    ]
+  },
+  {
+    "report": "v03-014/shell-dev-default-synced/report.json",
+    "baseURL": "http://localhost:3000/",
+    "preset": "default",
+    "failures": [
+      {
+        "route": "/dashboard/default",
+        "theme": "dark",
+        "viewport": "desktop",
+        "file": "_dashboard_default-dark-desktop-interactive.png",
+        "controlsFile": "_dashboard_default-dark-desktop-interactive-controls.png",
+        "phase": "direct",
+        "interactionNotes": [],
+        "expectedDiagnostics": [],
+        "errors": [
+          "page.waitForFunction: Timeout 3000ms exceeded."
+        ]
+      }
+    ]
+  },
+  {
+    "report": "v03-014/workers/default/report.json",
+    "baseURL": "https://a0e873cb-tenboards.mohanadgh.workers.dev/",
+    "preset": "default",
+    "failures": [
+      {
+        "route": "/dashboard/tasks",
+        "theme": "light",
+        "viewport": "desktop",
+        "file": "_dashboard_tasks-light-desktop.png",
+        "controlsFile": null,
+        "phase": "direct",
+        "interactionNotes": [],
+        "expectedDiagnostics": [],
+        "errors": [
+          "request: https://a0e873cb-tenboards.mohanadgh.workers.dev/dashboard/tasks net::ERR_TIMED_OUT",
+          "page.goto: net::ERR_TIMED_OUT at https://a0e873cb-tenboards.mohanadgh.workers.dev/dashboard/tasks\nCall log:\n\u001b[2m  - navigating to \"https://a0e873cb-tenboards.mohanadgh.workers.dev/dashboard/tasks\", waiting until \"domcontentloaded\"\u001b[22m\n"
+        ]
+      }
+    ]
+  }
+]

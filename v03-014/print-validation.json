@@ -1,0 +1,186 @@
+[
+  {
+    "file": "live-dev/_dashboard_invoice-dark-desktop-interactive-print.pdf",
+    "pages": 1,
+    "neutralIssuer": true,
+    "expectedTotal": "945.18",
+    "width": 612,
+    "height": 792
+  },
+  {
+    "file": "live-dev/_dashboard_invoice-dark-desktop-refresh-interactive-print.pdf",
+    "pages": 1,
+    "neutralIssuer": true,
+    "expectedTotal": "945.18",
+    "width": 612,
+    "height": 792
+  },
+  {
+    "file": "live-dev/_dashboard_invoice-dark-mobile-interactive-print.pdf",
+    "pages": 1,
+    "neutralIssuer": true,
+    "expectedTotal": "945.18",
+    "width": 612,
+    "height": 792
+  },
+  {
+    "file": "live-dev/_dashboard_invoice-dark-mobile-refresh-interactive-print.pdf",
+    "pages": 1,
+    "neutralIssuer": true,
+    "expectedTotal": "945.18",
+    "width": 612,
+    "height": 792
+  },
+  {
+    "file": "live-dev/_dashboard_invoice-light-desktop-interactive-print.pdf",
+    "pages": 1,
+    "neutralIssuer": true,
+    "expectedTotal": "945.18",
+    "width": 612,
+    "height": 792
+  },
+  {
+    "file": "live-dev/_dashboard_invoice-light-desktop-refresh-interactive-print.pdf",
+    "pages": 1,
+    "neutralIssuer": true,
+    "expectedTotal": "945.18",
+    "width": 612,
+    "height": 792
+  },
+  {
+    "file": "live-dev/_dashboard_invoice-light-mobile-interactive-print.pdf",
+    "pages": 1,
+    "neutralIssuer": true,
+    "expectedTotal": "945.18",
+    "width": 612,
+    "height": 792
+  },
+  {
+    "file": "live-dev/_dashboard_invoice-light-mobile-refresh-interactive-print.pdf",
+    "pages": 1,
+    "neutralIssuer": true,
+    "expectedTotal": "945.18",
+    "width": 612,
+    "height": 792
+  },
+  {
+    "file": "live-workers/_dashboard_invoice-dark-desktop-interactive-print.pdf",
+    "pages": 1,
+    "neutralIssuer": true,
+    "expectedTotal": "945.18",
+    "width": 612,
+    "height": 792
+  },
+  {
+    "file": "live-workers/_dashboard_invoice-dark-desktop-refresh-interactive-print.pdf",
+    "pages": 1,
+    "neutralIssuer": true,
+    "expectedTotal": "945.18",
+    "width": 612,
+    "height": 792
+  },
+  {
+    "file": "live-workers/_dashboard_invoice-dark-mobile-interactive-print.pdf",
+    "pages": 1,
+    "neutralIssuer": true,
+    "expectedTotal": "945.18",
+    "width": 612,
+    "height": 792
+  },
+  {
+    "file": "live-workers/_dashboard_invoice-dark-mobile-refresh-interactive-print.pdf",
+    "pages": 1,
+    "neutralIssuer": true,
+    "expectedTotal": "945.18",
+    "width": 612,
+    "height": 792
+  },
+  {
+    "file": "live-workers/_dashboard_invoice-light-desktop-interactive-print.pdf",
+    "pages": 1,
+    "neutralIssuer": true,
+    "expectedTotal": "945.18",
+    "width": 612,
+    "height": 792
+  },
+  {
+    "file": "live-workers/_dashboard_invoice-light-desktop-refresh-interactive-print.pdf",
+    "pages": 1,
+    "neutralIssuer": true,
+    "expectedTotal": "945.18",
+    "width": 612,
+    "height": 792
+  },
+  {
+    "file": "live-workers/_dashboard_invoice-light-mobile-refresh-interactive-print.pdf",
+    "pages": 1,
+    "neutralIssuer": true,
+    "expectedTotal": "945.18",
+    "width": 612,
+    "height": 792
+  },
+  {
+    "file": "live-workers-invoice-retry/_dashboard_invoice-dark-desktop-interactive-print.pdf",
+    "pages": 1,
+    "neutralIssuer": true,
+    "expectedTotal": "945.18",
+    "width": 612,
+    "height": 792
+  },
+  {
+    "file": "live-workers-invoice-retry/_dashboard_invoice-dark-desktop-refresh-interactive-print.pdf",
+    "pages": 1,
+    "neutralIssuer": true,
+    "expectedTotal": "945.18",
+    "width": 612,
+    "height": 792
+  },
+  {
+    "file": "live-workers-invoice-retry/_dashboard_invoice-dark-mobile-interactive-print.pdf",
+    "pages": 1,
+    "neutralIssuer": true,
+    "expectedTotal": "945.18",
+    "width": 612,
+    "height": 792
+  },
+  {
+    "file": "live-workers-invoice-retry/_dashboard_invoice-dark-mobile-refresh-interactive-print.pdf",
+    "pages": 1,
+    "neutralIssuer": true,
+    "expectedTotal": "945.18",
+    "width": 612,
+    "height": 792
+  },
+  {
+    "file": "live-workers-invoice-retry/_dashboard_invoice-light-desktop-interactive-print.pdf",
+    "pages": 1,
+    "neutralIssuer": true,
+    "expectedTotal": "945.18",
+    "width": 612,
+    "height": 792
+  },
+  {
+    "file": "live-workers-invoice-retry/_dashboard_invoice-light-desktop-refresh-interactive-print.pdf",
+    "pages": 1,
+    "neutralIssuer": true,
+    "expectedTotal": "945.18",
+    "width": 612,
+    "height": 792
+  },
+  {
+    "file": "live-workers-invoice-retry/_dashboard_invoice-light-mobile-interactive-print.pdf",
+    "pages": 1,
+    "neutralIssuer": true,
+    "expectedTotal": "945.18",
+    "width": 612,
+    "height": 792
+  },
+  {
+    "file": "live-workers-invoice-retry/_dashboard_invoice-light-mobile-refresh-interactive-print.pdf",
+    "pages": 1,
+    "neutralIssuer": true,
+    "expectedTotal": "945.18",
+    "width": 612,
+    "height": 792
+  }
+]

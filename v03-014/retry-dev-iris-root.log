@@ -1,0 +1,8 @@
+
+> tenboards@0.2.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://localhost:3000 --routes / --preset iris --output /private/tmp/tenboards-v03-evidence/v03-014/retry-dev-iris-root
+
+PASS / light/desktop direct
+PASS / light/mobile direct
+PASS / dark/desktop direct
+PASS / dark/mobile direct

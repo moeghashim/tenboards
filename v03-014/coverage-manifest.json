@@ -1,0 +1,372 @@
+{
+  "catalogCount": 38,
+  "routes": [
+    {
+      "route": "/chat",
+      "path": "/chat"
+    },
+    {
+      "route": "/dashboard",
+      "path": "/dashboard",
+      "ready": "Total Revenue"
+    },
+    {
+      "route": "/mail",
+      "path": "/mail"
+    },
+    {
+      "route": "/unauthorized",
+      "path": "/unauthorized"
+    },
+    {
+      "route": "/",
+      "path": "/",
+      "ready": "Total Revenue"
+    },
+    {
+      "route": "/auth/v2",
+      "path": "/auth/v2"
+    },
+    {
+      "route": "/dashboard/academy",
+      "path": "/dashboard/academy"
+    },
+    {
+      "route": "/dashboard/analytics",
+      "path": "/dashboard/analytics"
+    },
+    {
+      "route": "/dashboard/calendar",
+      "path": "/dashboard/calendar"
+    },
+    {
+      "route": "/dashboard/chat",
+      "path": "/dashboard/chat"
+    },
+    {
+      "route": "/dashboard/coming-soon",
+      "path": "/dashboard/coming-soon"
+    },
+    {
+      "route": "/dashboard/crm",
+      "path": "/dashboard/crm"
+    },
+    {
+      "route": "/dashboard/default",
+      "path": "/dashboard/default",
+      "ready": "Total Revenue"
+    },
+    {
+      "route": "/dashboard/ecommerce",
+      "path": "/dashboard/ecommerce"
+    },
+    {
+      "route": "/dashboard/file-manager",
+      "path": "/dashboard/file-manager"
+    },
+    {
+      "route": "/dashboard/finance",
+      "path": "/dashboard/finance"
+    },
+    {
+      "route": "/dashboard/infrastructure",
+      "path": "/dashboard/infrastructure"
+    },
+    {
+      "route": "/dashboard/invoice",
+      "path": "/dashboard/invoice"
+    },
+    {
+      "route": "/dashboard/kanban",
+      "path": "/dashboard/kanban"
+    },
+    {
+      "route": "/dashboard/logistics",
+      "path": "/dashboard/logistics"
+    },
+    {
+      "route": "/dashboard/mail",
+      "path": "/dashboard/mail"
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "path": "/dashboard/patient-monitoring"
+    },
+    {
+      "route": "/dashboard/productivity",
+      "path": "/dashboard/productivity"
+    },
+    {
+      "route": "/dashboard/products",
+      "path": "/dashboard/products"
+    },
+    {
+      "route": "/dashboard/profile",
+      "path": "/dashboard/profile"
+    },
+    {
+      "route": "/dashboard/roles",
+      "path": "/dashboard/roles"
+    },
+    {
+      "route": "/dashboard/tasks",
+      "path": "/dashboard/tasks"
+    },
+    {
+      "route": "/dashboard/users",
+      "path": "/dashboard/users"
+    },
+    {
+      "route": "/dashboard/$",
+      "path": "/dashboard/capture-not-found"
+    },
+    {
+      "route": "/dashboard/",
+      "path": "/dashboard/",
+      "ready": "Total Revenue"
+    },
+    {
+      "route": "/auth/v1/login",
+      "path": "/auth/v1/login"
+    },
+    {
+      "route": "/auth/v1/register",
+      "path": "/auth/v1/register"
+    },
+    {
+      "route": "/auth/v2/login",
+      "path": "/auth/v2/login"
+    },
+    {
+      "route": "/auth/v2/register",
+      "path": "/auth/v2/register"
+    },
+    {
+      "route": "/dashboard/analytics-v1",
+      "path": "/dashboard/analytics-v1"
+    },
+    {
+      "route": "/dashboard/crm-v1",
+      "path": "/dashboard/crm-v1"
+    },
+    {
+      "route": "/dashboard/default-v1",
+      "path": "/dashboard/default-v1"
+    },
+    {
+      "route": "/dashboard/finance-v1",
+      "path": "/dashboard/finance-v1"
+    }
+  ],
+  "expectedPerEnvironment": 608,
+  "expectedTotal": 1216,
+  "actualTotal": 1216,
+  "pass": true,
+  "reports": [
+    {
+      "environment": "dev",
+      "preset": "default",
+      "baseURL": "http://localhost:3000/",
+      "file": "dev/default/report.json",
+      "expected": 152,
+      "actual": 152,
+      "pass": true,
+      "missing": [],
+      "unexpected": [],
+      "duplicates": [],
+      "originalErrors": [],
+      "retries": [],
+      "errors": []
+    },
+    {
+      "environment": "dev",
+      "preset": "graphite",
+      "baseURL": "http://localhost:3000/",
+      "file": "dev/graphite/report.json",
+      "expected": 152,
+      "actual": 152,
+      "pass": true,
+      "missing": [],
+      "unexpected": [],
+      "duplicates": [],
+      "originalErrors": [],
+      "retries": [],
+      "errors": []
+    },
+    {
+      "environment": "dev",
+      "preset": "pine",
+      "baseURL": "http://localhost:3000/",
+      "file": "dev/pine/report.json",
+      "expected": 152,
+      "actual": 152,
+      "pass": true,
+      "missing": [],
+      "unexpected": [],
+      "duplicates": [],
+      "originalErrors": [
+        {
+          "route": "/dashboard/users",
+          "theme": "dark",
+          "viewport": "mobile",
+          "file": "_dashboard_users-dark-mobile.png",
+          "controlsFile": null,
+          "phase": "direct",
+          "interactionNotes": [],
+          "expectedDiagnostics": [],
+          "errors": [
+            "request: https://fonts.gstatic.com/s/lora/v37/0QIvMX1D_JOuMwr7I_FMl_E.woff2 net::ERR_TIMED_OUT",
+            "console: Failed to load resource: net::ERR_TIMED_OUT",
+            "request: https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2 net::ERR_TIMED_OUT",
+            "console: Failed to load resource: net::ERR_TIMED_OUT",
+            "request: https://fonts.gstatic.com/s/notosans/v42/o-0bIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjc5a7du3mhPy0.woff2 net::ERR_TIMED_OUT",
+            "console: Failed to load resource: net::ERR_TIMED_OUT",
+            "request: https://fonts.gstatic.com/s/jetbrainsmono/v24/tDbv2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKwBNntkaToggR7BYRbKPxDcwgknk-4.woff2 net::ERR_TIMED_OUT",
+            "console: Failed to load resource: net::ERR_TIMED_OUT",
+            "request: https://fonts.gstatic.com/s/playfairdisplay/v40/nuFiD-vYSZviVYUb_rj3ij__anPXDTzYgEM86xQ.woff2 net::ERR_TIMED_OUT",
+            "console: Failed to load resource: net::ERR_TIMED_OUT",
+            "request: https://fonts.gstatic.com/s/robotoslab/v36/BngMUXZYTXPIvIBgJJSb6ufN5qWr4xCC.woff2 net::ERR_TIMED_OUT",
+            "console: Failed to load resource: net::ERR_TIMED_OUT",
+            "page.waitForFunction: Timeout 30000ms exceeded."
+          ]
+        }
+      ],
+      "retries": [
+        {
+          "report": "retry-dev-pine-users/report.json",
+          "cases": 4,
+          "errors": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "environment": "dev",
+      "preset": "iris",
+      "baseURL": "http://localhost:3000/",
+      "file": "dev/iris/report.json",
+      "expected": 152,
+      "actual": 152,
+      "pass": true,
+      "missing": [],
+      "unexpected": [],
+      "duplicates": [],
+      "originalErrors": [
+        {
+          "route": "/",
+          "theme": "dark",
+          "viewport": "desktop",
+          "file": "_-dark-desktop.png",
+          "controlsFile": null,
+          "phase": "direct",
+          "interactionNotes": [],
+          "expectedDiagnostics": [],
+          "errors": [
+            "request: https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400..700&display=swap net::ERR_TIMED_OUT",
+            "console: Failed to load resource: net::ERR_TIMED_OUT",
+            "request: https://fonts.googleapis.com/css2?family=Merriweather:wght@400..700&display=swap net::ERR_TIMED_OUT",
+            "console: Failed to load resource: net::ERR_TIMED_OUT",
+            "request: https://fonts.googleapis.com/css2?family=Lora:wght@400..700&display=swap net::ERR_TIMED_OUT",
+            "console: Failed to load resource: net::ERR_TIMED_OUT",
+            "request: https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400..700&display=swap net::ERR_TIMED_OUT",
+            "console: Failed to load resource: net::ERR_TIMED_OUT",
+            "request: https://fonts.googleapis.com/css2?family=Inter:wght@400..700&display=swap net::ERR_TIMED_OUT",
+            "console: Failed to load resource: net::ERR_TIMED_OUT",
+            "request: https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400..700&display=swap net::ERR_TIMED_OUT",
+            "console: Failed to load resource: net::ERR_TIMED_OUT",
+            "page.waitForLoadState: Timeout 30000ms exceeded."
+          ]
+        }
+      ],
+      "retries": [
+        {
+          "report": "retry-dev-iris-root/report.json",
+          "cases": 4,
+          "errors": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "environment": "workers",
+      "preset": "default",
+      "baseURL": "https://a0e873cb-tenboards.mohanadgh.workers.dev/",
+      "file": "workers/default/report.json",
+      "expected": 152,
+      "actual": 152,
+      "pass": true,
+      "missing": [],
+      "unexpected": [],
+      "duplicates": [],
+      "originalErrors": [
+        {
+          "route": "/dashboard/tasks",
+          "theme": "light",
+          "viewport": "desktop",
+          "file": "_dashboard_tasks-light-desktop.png",
+          "controlsFile": null,
+          "phase": "direct",
+          "interactionNotes": [],
+          "expectedDiagnostics": [],
+          "errors": [
+            "request: https://a0e873cb-tenboards.mohanadgh.workers.dev/dashboard/tasks net::ERR_TIMED_OUT",
+            "page.goto: net::ERR_TIMED_OUT at https://a0e873cb-tenboards.mohanadgh.workers.dev/dashboard/tasks\nCall log:\n\u001b[2m  - navigating to \"https://a0e873cb-tenboards.mohanadgh.workers.dev/dashboard/tasks\", waiting until \"domcontentloaded\"\u001b[22m\n"
+          ]
+        }
+      ],
+      "retries": [
+        {
+          "report": "retry-workers-default-tasks/report.json",
+          "cases": 4,
+          "errors": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "environment": "workers",
+      "preset": "graphite",
+      "baseURL": "https://a0e873cb-tenboards.mohanadgh.workers.dev/",
+      "file": "workers/graphite/report.json",
+      "expected": 152,
+      "actual": 152,
+      "pass": true,
+      "missing": [],
+      "unexpected": [],
+      "duplicates": [],
+      "originalErrors": [],
+      "retries": [],
+      "errors": []
+    },
+    {
+      "environment": "workers",
+      "preset": "pine",
+      "baseURL": "https://a0e873cb-tenboards.mohanadgh.workers.dev/",
+      "file": "workers/pine/report.json",
+      "expected": 152,
+      "actual": 152,
+      "pass": true,
+      "missing": [],
+      "unexpected": [],
+      "duplicates": [],
+      "originalErrors": [],
+      "retries": [],
+      "errors": []
+    },
+    {
+      "environment": "workers",
+      "preset": "iris",
+      "baseURL": "https://a0e873cb-tenboards.mohanadgh.workers.dev/",
+      "file": "workers/iris/report.json",
+      "expected": 152,
+      "actual": 152,
+      "pass": true,
+      "missing": [],
+      "unexpected": [],
+      "duplicates": [],
+      "originalErrors": [],
+      "retries": [],
+      "errors": []
+    }
+  ]
+}

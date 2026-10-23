@@ -1,0 +1,184 @@
+{
+  "baseURL": "https://a0e873cb-tenboards.mohanadgh.workers.dev/",
+  "hydrationDelayMs": 0,
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": false,
+  "interactions": false,
+  "results": [
+    {
+      "route": "/dashboard/default",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_default-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_default-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_default-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_default-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "qa:root-not-found",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "qa_root-not-found-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [
+        "Distinct system heading and no page overflow",
+        "Existing recovery link navigates by keyboard when provided"
+      ],
+      "expectedDiagnostics": [
+        "console: Failed to load resource: the server responded with a status of 404 ()"
+      ],
+      "errors": []
+    },
+    {
+      "route": "qa:root-not-found",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "qa_root-not-found-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [
+        "Distinct system heading and no page overflow",
+        "Existing recovery link navigates by keyboard when provided"
+      ],
+      "expectedDiagnostics": [
+        "console: Failed to load resource: the server responded with a status of 404 ()"
+      ],
+      "errors": []
+    },
+    {
+      "route": "qa:root-not-found",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "qa_root-not-found-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [
+        "Distinct system heading and no page overflow",
+        "Existing recovery link navigates by keyboard when provided"
+      ],
+      "expectedDiagnostics": [
+        "console: Failed to load resource: the server responded with a status of 404 ()"
+      ],
+      "errors": []
+    },
+    {
+      "route": "qa:root-not-found",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "qa_root-not-found-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [
+        "Distinct system heading and no page overflow",
+        "Existing recovery link navigates by keyboard when provided"
+      ],
+      "expectedDiagnostics": [
+        "console: Failed to load resource: the server responded with a status of 404 ()"
+      ],
+      "errors": []
+    },
+    {
+      "route": "qa:root-error",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "qa_root-error-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [
+        "Actual root boundary caught an ephemeral QA component fault; keyboard Try again restored dashboard",
+        "Expected QA exception isolated; production error text is generic; no app error trigger"
+      ],
+      "expectedDiagnostics": [
+        "console: Error: QA_ONLY_ROOT_ERROR\n    at target.options.component (eval at evaluate (:370:30), <anonymous>:10:15)\n    at qo (https://a0e873cb-tenboards.mohanadgh.workers.dev/assets/index-o6mTLkhL.js:9:49185)\n    at Bc (https://a0e873cb-tenboards.mohanadgh.workers.dev/assets/index-o6mTLkhL.js:9:71920)\n    at sl (https://a0e873cb-tenboards.mohanadgh.workers.dev/assets/index-o6mTLkhL.js:9:82833)\n    at Yd (https://a0e873cb-tenboards.mohanadgh.workers.dev/assets/index-o6mTLkhL.js:9:128133)\n    at Kd (https://a0e873cb-tenboards.mohanadgh.workers.dev/assets/index-o6mTLkhL.js:9:127198)\n    at Gd (https://a0e873cb-tenboards.mohanadgh.workers.dev/assets/index-o6mTLkhL.js:9:127035)\n    at Nd (https://a0e873cb-tenboards.mohanadgh.workers.dev/assets/index-o6mTLkhL.js:9:123755)\n    at jf (https://a0e873cb-tenboards.mohanadgh.workers.dev/assets/index-o6mTLkhL.js:9:136225)\n    at Ef (https://a0e873cb-tenboards.mohanadgh.workers.dev/assets/index-o6mTLkhL.js:9:134783)",
+        "console: Error: QA_ONLY_ROOT_ERROR\n    at target.options.component (eval at evaluate (:370:30), <anonymous>:10:15)\n    at qo (https://a0e873cb-tenboards.mohanadgh.workers.dev/assets/index-o6mTLkhL.js:9:49185)\n    at Bc (https://a0e873cb-tenboards.mohanadgh.workers.dev/assets/index-o6mTLkhL.js:9:71920)\n    at sl (https://a0e873cb-tenboards.mohanadgh.workers.dev/assets/index-o6mTLkhL.js:9:82833)\n    at Yd (https://a0e873cb-tenboards.mohanadgh.workers.dev/assets/index-o6mTLkhL.js:9:128133)\n    at Kd (https://a0e873cb-tenboards.mohanadgh.workers.dev/assets/index-o6mTLkhL.js:9:127198)\n    at Gd (https://a0e873cb-tenboards.mohanadgh.workers.dev/assets/index-o6mTLkhL.js:9:127035)\n    at Nd (https://a0e873cb-tenboards.mohanadgh.workers.dev/assets/index-o6mTLkhL.js:9:123755)\n    at jf (https://a0e873cb-tenboards.mohanadgh.workers.dev/assets/index-o6mTLkhL.js:9:136225)\n    at Ef (https://a0e873cb-tenboards.mohanadgh.workers.dev/assets/index-o6mTLkhL.js:9:134783)"
+      ],
+      "errors": []
+    },
+    {
+      "route": "qa:root-error",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "qa_root-error-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [
+        "Actual root boundary caught an ephemeral QA component fault; keyboard Try again restored dashboard",
+        "Expected QA exception isolated; production error text is generic; no app error trigger"
+      ],
+      "expectedDiagnostics": [
+        "console: Error: QA_ONLY_ROOT_ERROR\n    at target.options.component (eval at evaluate (:370:30), <anonymous>:10:15)\n    at qo (https://a0e873cb-tenboards.mohanadgh.workers.dev/assets/index-o6mTLkhL.js:9:49185)\n    at Bc (https://a0e873cb-tenboards.mohanadgh.workers.dev/assets/index-o6mTLkhL.js:9:71920)\n    at sl (https://a0e873cb-tenboards.mohanadgh.workers.dev/assets/index-o6mTLkhL.js:9:82833)\n    at Yd (https://a0e873cb-tenboards.mohanadgh.workers.dev/assets/index-o6mTLkhL.js:9:128133)\n    at Kd (https://a0e873cb-tenboards.mohanadgh.workers.dev/assets/index-o6mTLkhL.js:9:127198)\n    at Gd (https://a0e873cb-tenboards.mohanadgh.workers.dev/assets/index-o6mTLkhL.js:9:127035)\n    at Nd (https://a0e873cb-tenboards.mohanadgh.workers.dev/assets/index-o6mTLkhL.js:9:123755)\n    at jf (https://a0e873cb-tenboards.mohanadgh.workers.dev/assets/index-o6mTLkhL.js:9:136225)\n    at Ef (https://a0e873cb-tenboards.mohanadgh.workers.dev/assets/index-o6mTLkhL.js:9:134783)"
+      ],
+      "errors": []
+    },
+    {
+      "route": "qa:root-error",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "qa_root-error-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [
+        "Actual root boundary caught an ephemeral QA component fault; keyboard Try again restored dashboard",
+        "Expected QA exception isolated; production error text is generic; no app error trigger"
+      ],
+      "expectedDiagnostics": [
+        "console: Error: QA_ONLY_ROOT_ERROR\n    at target.options.component (eval at evaluate (:370:30), <anonymous>:10:15)\n    at qo (https://a0e873cb-tenboards.mohanadgh.workers.dev/assets/index-o6mTLkhL.js:9:49185)\n    at Bc (https://a0e873cb-tenboards.mohanadgh.workers.dev/assets/index-o6mTLkhL.js:9:71920)\n    at sl (https://a0e873cb-tenboards.mohanadgh.workers.dev/assets/index-o6mTLkhL.js:9:82833)\n    at Yd (https://a0e873cb-tenboards.mohanadgh.workers.dev/assets/index-o6mTLkhL.js:9:128133)\n    at Kd (https://a0e873cb-tenboards.mohanadgh.workers.dev/assets/index-o6mTLkhL.js:9:127198)\n    at Gd (https://a0e873cb-tenboards.mohanadgh.workers.dev/assets/index-o6mTLkhL.js:9:127035)\n    at Nd (https://a0e873cb-tenboards.mohanadgh.workers.dev/assets/index-o6mTLkhL.js:9:123755)\n    at jf (https://a0e873cb-tenboards.mohanadgh.workers.dev/assets/index-o6mTLkhL.js:9:136225)\n    at Ef (https://a0e873cb-tenboards.mohanadgh.workers.dev/assets/index-o6mTLkhL.js:9:134783)"
+      ],
+      "errors": []
+    },
+    {
+      "route": "qa:root-error",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "qa_root-error-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [
+        "Actual root boundary caught an ephemeral QA component fault; keyboard Try again restored dashboard",
+        "Expected QA exception isolated; production error text is generic; no app error trigger"
+      ],
+      "expectedDiagnostics": [
+        "console: Error: QA_ONLY_ROOT_ERROR\n    at target.options.component (eval at evaluate (:370:30), <anonymous>:10:15)\n    at qo (https://a0e873cb-tenboards.mohanadgh.workers.dev/assets/index-o6mTLkhL.js:9:49185)\n    at Bc (https://a0e873cb-tenboards.mohanadgh.workers.dev/assets/index-o6mTLkhL.js:9:71920)\n    at sl (https://a0e873cb-tenboards.mohanadgh.workers.dev/assets/index-o6mTLkhL.js:9:82833)\n    at Yd (https://a0e873cb-tenboards.mohanadgh.workers.dev/assets/index-o6mTLkhL.js:9:128133)\n    at Kd (https://a0e873cb-tenboards.mohanadgh.workers.dev/assets/index-o6mTLkhL.js:9:127198)\n    at Gd (https://a0e873cb-tenboards.mohanadgh.workers.dev/assets/index-o6mTLkhL.js:9:127035)\n    at Nd (https://a0e873cb-tenboards.mohanadgh.workers.dev/assets/index-o6mTLkhL.js:9:123755)\n    at jf (https://a0e873cb-tenboards.mohanadgh.workers.dev/assets/index-o6mTLkhL.js:9:136225)\n    at Ef (https://a0e873cb-tenboards.mohanadgh.workers.dev/assets/index-o6mTLkhL.js:9:134783)",
+        "console: Error: QA_ONLY_ROOT_ERROR\n    at target.options.component (eval at evaluate (:370:30), <anonymous>:10:15)\n    at qo (https://a0e873cb-tenboards.mohanadgh.workers.dev/assets/index-o6mTLkhL.js:9:49185)\n    at Bc (https://a0e873cb-tenboards.mohanadgh.workers.dev/assets/index-o6mTLkhL.js:9:71920)\n    at sl (https://a0e873cb-tenboards.mohanadgh.workers.dev/assets/index-o6mTLkhL.js:9:82833)\n    at Yd (https://a0e873cb-tenboards.mohanadgh.workers.dev/assets/index-o6mTLkhL.js:9:128133)\n    at Kd (https://a0e873cb-tenboards.mohanadgh.workers.dev/assets/index-o6mTLkhL.js:9:127198)\n    at Gd (https://a0e873cb-tenboards.mohanadgh.workers.dev/assets/index-o6mTLkhL.js:9:127035)\n    at Nd (https://a0e873cb-tenboards.mohanadgh.workers.dev/assets/index-o6mTLkhL.js:9:123755)\n    at jf (https://a0e873cb-tenboards.mohanadgh.workers.dev/assets/index-o6mTLkhL.js:9:136225)\n    at Ef (https://a0e873cb-tenboards.mohanadgh.workers.dev/assets/index-o6mTLkhL.js:9:134783)"
+      ],
+      "errors": []
+    }
+  ]
+}

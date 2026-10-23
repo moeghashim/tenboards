@@ -1,0 +1,582 @@
+{
+  "baseURL": "http://localhost:3000/",
+  "hydrationDelayMs": 0,
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": false,
+  "interactions": true,
+  "results": [
+    {
+      "route": "/dashboard/file-manager",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_file-manager-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_file-manager-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Long h1 wraps; keyboard view query survives refresh",
+        "Grid/list button and menu star actions work",
+        "All table metadata remains visible in local horizontal scroll; neutral initials",
+        "Existing folder/search/filter/upload placeholders preserved; no document overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/file-manager",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_file-manager-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_file-manager-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Long h1 wraps; keyboard view query survives refresh",
+        "Grid/list button and menu star actions work",
+        "All table metadata remains visible in local horizontal scroll; neutral initials",
+        "Existing folder/search/filter/upload placeholders preserved; no document overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/file-manager",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_file-manager-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_file-manager-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Long h1 wraps; keyboard view query survives refresh",
+        "Grid/list button and menu star actions work",
+        "All table metadata remains visible in local horizontal scroll; neutral initials",
+        "Existing folder/search/filter/upload placeholders preserved; no document overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/file-manager",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_file-manager-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_file-manager-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Long h1 wraps; keyboard view query survives refresh",
+        "Grid/list button and menu star actions work",
+        "All table metadata remains visible in local horizontal scroll; neutral initials",
+        "Existing folder/search/filter/upload placeholders preserved; no document overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/products",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_products-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_products-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Search/status/category exact results; empty/clear, selection and pagination",
+        "Duplicate to draft and edit unique-SKU validation; zero price/stock saved",
+        "Edit Escape returns focus to product",
+        "Add validation-only at upper bounds; image preview/clear, Escape and focus return",
+        "Long name wraps; table scrolls locally without document overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/products",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_products-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_products-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Search/status/category exact results; empty/clear, selection and pagination",
+        "Duplicate to draft and edit unique-SKU validation; zero price/stock saved",
+        "Edit Escape returns focus to product",
+        "Add validation-only at upper bounds; image preview/clear, Escape and focus return",
+        "Long name wraps; table scrolls locally without document overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/products",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_products-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_products-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Search/status/category exact results; empty/clear, selection and pagination",
+        "Duplicate to draft and edit unique-SKU validation; zero price/stock saved",
+        "Edit Escape returns focus to product",
+        "Add validation-only at upper bounds; image preview/clear, Escape and focus return",
+        "Long name wraps; table scrolls locally without document overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/products",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_products-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_products-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Search/status/category exact results; empty/clear, selection and pagination",
+        "Duplicate to draft and edit unique-SKU validation; zero price/stock saved",
+        "Edit Escape returns focus to product",
+        "Add validation-only at upper bounds; image preview/clear, Escape and focus return",
+        "Long name wraps; table scrolls locally without document overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/profile",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_profile-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_profile-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "All six tabs keyboard reachable and captured; no page overflow",
+        "Neutral name, emails, initials and updater; coherent emergency contact",
+        "Header menu Escape restores focus; mail link matches demo identity",
+        "Document metadata/actions scroll locally; restricted state is explicitly demo-only"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/profile",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_profile-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_profile-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "All six tabs keyboard reachable and captured; no page overflow",
+        "Neutral name, emails, initials and updater; coherent emergency contact",
+        "Header menu Escape restores focus; mail link matches demo identity",
+        "Document metadata/actions scroll locally; restricted state is explicitly demo-only"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/profile",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_profile-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_profile-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "All six tabs keyboard reachable and captured; no page overflow",
+        "Neutral name, emails, initials and updater; coherent emergency contact",
+        "Header menu Escape restores focus; mail link matches demo identity",
+        "Document metadata/actions scroll locally; restricted state is explicitly demo-only"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/profile",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_profile-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_profile-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "All six tabs keyboard reachable and captured; no page overflow",
+        "Neutral name, emails, initials and updater; coherent emergency contact",
+        "Header menu Escape restores focus; mail link matches demo identity",
+        "Document metadata/actions scroll locally; restricted state is explicitly demo-only"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/roles",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_roles-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_roles-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "System/owner/status/search exact counts; system actions remain disabled; all three tabs",
+        "Empty recovery, named keyboard menus and local table scroll; no document overflow",
+        "Existing admin actions remain placeholders; no permission/auth mutations"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/roles",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_roles-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_roles-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "System/owner/status/search exact counts; system actions remain disabled; all three tabs",
+        "Empty recovery, named keyboard menus and local table scroll; no document overflow",
+        "Existing admin actions remain placeholders; no permission/auth mutations"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/roles",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_roles-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_roles-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "System/owner/status/search exact counts; system actions remain disabled; all three tabs",
+        "Empty recovery, named keyboard menus and local table scroll; no document overflow",
+        "Existing admin actions remain placeholders; no permission/auth mutations"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/roles",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_roles-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_roles-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "System/owner/status/search exact counts; system actions remain disabled; all three tabs",
+        "Empty recovery, named keyboard menus and local table scroll; no document overflow",
+        "Existing admin actions remain placeholders; no permission/auth mutations"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/users",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_users-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_users-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Combined role/team/status/workspace/search exact result; selection, page size and pagination",
+        "Empty recovery, named keyboard menus and local table scroll; no document overflow",
+        "Existing admin actions remain placeholders; no permission/auth mutations"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/users",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_users-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_users-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Combined role/team/status/workspace/search exact result; selection, page size and pagination",
+        "Empty recovery, named keyboard menus and local table scroll; no document overflow",
+        "Existing admin actions remain placeholders; no permission/auth mutations"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/users",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_users-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_users-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Combined role/team/status/workspace/search exact result; selection, page size and pagination",
+        "Empty recovery, named keyboard menus and local table scroll; no document overflow",
+        "Existing admin actions remain placeholders; no permission/auth mutations"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/users",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_users-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_users-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Combined role/team/status/workspace/search exact result; selection, page size and pagination",
+        "Empty recovery, named keyboard menus and local table scroll; no document overflow",
+        "Existing admin actions remain placeholders; no permission/auth mutations"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v1/login",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_auth_v1_login-light-desktop-interactive.png",
+      "controlsFile": "_auth_v1_login-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Labels, masked passwords and email/current/new-password autofill verified",
+        "Empty and mismatched-password errors; error association and local demo submission verified",
+        "Google remains demo-only; keyboard crosslink works",
+        "360×500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v1/login",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_auth_v1_login-light-mobile-interactive.png",
+      "controlsFile": "_auth_v1_login-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Labels, masked passwords and email/current/new-password autofill verified",
+        "Empty and mismatched-password errors; error association and local demo submission verified",
+        "Google remains demo-only; keyboard crosslink works",
+        "360×500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v1/login",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_auth_v1_login-dark-desktop-interactive.png",
+      "controlsFile": "_auth_v1_login-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Labels, masked passwords and email/current/new-password autofill verified",
+        "Empty and mismatched-password errors; error association and local demo submission verified",
+        "Google remains demo-only; keyboard crosslink works",
+        "360×500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v1/login",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_auth_v1_login-dark-mobile-interactive.png",
+      "controlsFile": "_auth_v1_login-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Labels, masked passwords and email/current/new-password autofill verified",
+        "Empty and mismatched-password errors; error association and local demo submission verified",
+        "Google remains demo-only; keyboard crosslink works",
+        "360×500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v1/register",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_auth_v1_register-light-desktop-interactive.png",
+      "controlsFile": "_auth_v1_register-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Labels, masked passwords and email/current/new-password autofill verified",
+        "Empty and mismatched-password errors; error association and local demo submission verified",
+        "Google remains demo-only; keyboard crosslink works",
+        "360×500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v1/register",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_auth_v1_register-light-mobile-interactive.png",
+      "controlsFile": "_auth_v1_register-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Labels, masked passwords and email/current/new-password autofill verified",
+        "Empty and mismatched-password errors; error association and local demo submission verified",
+        "Google remains demo-only; keyboard crosslink works",
+        "360×500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v1/register",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_auth_v1_register-dark-desktop-interactive.png",
+      "controlsFile": "_auth_v1_register-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Labels, masked passwords and email/current/new-password autofill verified",
+        "Empty and mismatched-password errors; error association and local demo submission verified",
+        "Google remains demo-only; keyboard crosslink works",
+        "360×500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v1/register",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_auth_v1_register-dark-mobile-interactive.png",
+      "controlsFile": "_auth_v1_register-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Labels, masked passwords and email/current/new-password autofill verified",
+        "Empty and mismatched-password errors; error association and local demo submission verified",
+        "Google remains demo-only; keyboard crosslink works",
+        "360×500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v2/login",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_auth_v2_login-light-desktop-interactive.png",
+      "controlsFile": "_auth_v2_login-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Labels, masked passwords and email/current/new-password autofill verified",
+        "Empty and mismatched-password errors; error association and local demo submission verified",
+        "Google remains demo-only; keyboard crosslink works",
+        "360×500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v2/login",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_auth_v2_login-light-mobile-interactive.png",
+      "controlsFile": "_auth_v2_login-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Labels, masked passwords and email/current/new-password autofill verified",
+        "Empty and mismatched-password errors; error association and local demo submission verified",
+        "Google remains demo-only; keyboard crosslink works",
+        "360×500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v2/login",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_auth_v2_login-dark-desktop-interactive.png",
+      "controlsFile": "_auth_v2_login-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Labels, masked passwords and email/current/new-password autofill verified",
+        "Empty and mismatched-password errors; error association and local demo submission verified",
+        "Google remains demo-only; keyboard crosslink works",
+        "360×500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v2/login",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_auth_v2_login-dark-mobile-interactive.png",
+      "controlsFile": "_auth_v2_login-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Labels, masked passwords and email/current/new-password autofill verified",
+        "Empty and mismatched-password errors; error association and local demo submission verified",
+        "Google remains demo-only; keyboard crosslink works",
+        "360×500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v2/register",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_auth_v2_register-light-desktop-interactive.png",
+      "controlsFile": "_auth_v2_register-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Labels, masked passwords and email/current/new-password autofill verified",
+        "Empty and mismatched-password errors; error association and local demo submission verified",
+        "Google remains demo-only; keyboard crosslink works",
+        "360×500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v2/register",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_auth_v2_register-light-mobile-interactive.png",
+      "controlsFile": "_auth_v2_register-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Labels, masked passwords and email/current/new-password autofill verified",
+        "Empty and mismatched-password errors; error association and local demo submission verified",
+        "Google remains demo-only; keyboard crosslink works",
+        "360×500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v2/register",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_auth_v2_register-dark-desktop-interactive.png",
+      "controlsFile": "_auth_v2_register-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Labels, masked passwords and email/current/new-password autofill verified",
+        "Empty and mismatched-password errors; error association and local demo submission verified",
+        "Google remains demo-only; keyboard crosslink works",
+        "360×500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v2/register",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_auth_v2_register-dark-mobile-interactive.png",
+      "controlsFile": "_auth_v2_register-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Labels, masked passwords and email/current/new-password autofill verified",
+        "Empty and mismatched-password errors; error association and local demo submission verified",
+        "Google remains demo-only; keyboard crosslink works",
+        "360×500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    }
+  ]
+}

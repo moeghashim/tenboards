@@ -1,0 +1,47 @@
+{
+  "reason": "Normalize final co-author trailer placement and remove duplicate sign-off; same seven content trees and layer order. Original implementation commits used git commit -s. No merge/base rebase or source changes.",
+  "commits": [
+    {
+      "branch": "feat/v0.3/008-file-manager",
+      "old": "006d191f9e6b3fbc1ad6a391f21c1ec32d803a3e",
+      "new": "47ea918696a0427f00ebece4f3feba1609879af4",
+      "tree": "3a5b0113e7a091c40334f6355668c701fa78ce5d"
+    },
+    {
+      "branch": "feat/v0.3/009-products",
+      "old": "e0b14fd7a75a005d116f9c73c4336b9e6bf9823a",
+      "new": "a0e3d047748fec45d5f8f970194606d31120a11a",
+      "tree": "644f41dca9380bde2f738c49cd7388662e1867ed"
+    },
+    {
+      "branch": "feat/v0.3/010-users-roles",
+      "old": "12ce1a9ed5ca296d3ca8db3f5920c992e4339f9d",
+      "new": "3a67593d4789d6d3a3b036f988989d2eece24f77",
+      "tree": "5a273bddab77db7abaebd010bc22dc42696124b8"
+    },
+    {
+      "branch": "feat/v0.3/011-profile",
+      "old": "ad374cedaf6a1d4162f765757765a1acfaa2413e",
+      "new": "7ae4a900685462f206f19a9689d978f3440b0031",
+      "tree": "5adbde46e3020474d226213d63a768861cda6384"
+    },
+    {
+      "branch": "feat/v0.3/012-auth",
+      "old": "ee5636c49fd63439ca185d10817e3805ff55485f",
+      "new": "37530039805e27e71ba06d0c9fbad2ab9d89e462",
+      "tree": "f4c99d9c27f37f2a5027d677dbd9553fe48b2c0f"
+    },
+    {
+      "branch": "feat/v0.3/013-system",
+      "old": "415b385c66c55911d76e31b80ddd031239dd58c3",
+      "new": "ce8aa674c035e2581a400e6cfeae8799b89bf5ec",
+      "tree": "edcbbff3b02109dc9e6adf2f22341d1de058bf74"
+    },
+    {
+      "branch": "feat/v0.3/014-acceptance",
+      "old": "455d88dcec8ae7844f2776862beadb4af67b93bd",
+      "new": "ae0ce58df724e28cc5a4292d22abc8e66837bef6",
+      "tree": "0b40e1528b88d0f3ac476e2693d0c4f049f8a38b"
+    }
+  ]
+}

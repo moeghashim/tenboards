@@ -1,0 +1,12 @@
+
+> tenboards@0.2.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://localhost:3000 --routes /dashboard/default --interactions --output /private/tmp/tenboards-v03-evidence/v03-014/shell-dev-default-retry
+
+FAIL /dashboard/default light/desktop direct
+page.waitForFunction: Timeout 3000ms exceeded.
+FAIL /dashboard/default light/mobile direct
+Settings focus trap
+FAIL /dashboard/default dark/desktop direct
+Settings focus trap
+FAIL /dashboard/default dark/mobile direct
+Settings focus trap

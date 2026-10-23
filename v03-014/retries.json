@@ -1,0 +1,17 @@
+[
+  {
+    "environment": "dev",
+    "preset": "iris",
+    "report": "retry-dev-iris-root/report.json"
+  },
+  {
+    "environment": "dev",
+    "preset": "pine",
+    "report": "retry-dev-pine-users/report.json"
+  },
+  {
+    "environment": "workers",
+    "preset": "default",
+    "report": "retry-workers-default-tasks/report.json"
+  }
+]

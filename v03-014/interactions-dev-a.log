@@ -1,0 +1,28 @@
+
+> tenboards@0.2.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://localhost:3000 --routes /mail,/dashboard/mail,/chat,/dashboard/chat,/dashboard/kanban,/dashboard/tasks --interactions --output /private/tmp/tenboards-v03-evidence/v03-014/interactions-dev-a
+
+PASS /chat light/desktop direct
+PASS /chat light/mobile direct
+PASS /chat dark/desktop direct
+PASS /chat dark/mobile direct
+PASS /mail light/desktop direct
+PASS /mail light/mobile direct
+PASS /mail dark/desktop direct
+PASS /mail dark/mobile direct
+PASS /dashboard/chat light/desktop direct
+PASS /dashboard/chat light/mobile direct
+PASS /dashboard/chat dark/desktop direct
+PASS /dashboard/chat dark/mobile direct
+PASS /dashboard/kanban light/desktop direct
+PASS /dashboard/kanban light/mobile direct
+PASS /dashboard/kanban dark/desktop direct
+PASS /dashboard/kanban dark/mobile direct
+PASS /dashboard/mail light/desktop direct
+PASS /dashboard/mail light/mobile direct
+PASS /dashboard/mail dark/desktop direct
+PASS /dashboard/mail dark/mobile direct
+PASS /dashboard/tasks light/desktop direct
+PASS /dashboard/tasks light/mobile direct
+PASS /dashboard/tasks dark/desktop direct
+PASS /dashboard/tasks dark/mobile direct

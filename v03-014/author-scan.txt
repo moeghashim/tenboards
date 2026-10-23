@@ -1,0 +1,3 @@
+$ rg -n -i "arham|arhamkhnz" src
+Exit status: 1
+No matches.

@@ -1,0 +1,442 @@
+{
+  "baseURL": "http://localhost:3000/",
+  "hydrationDelayMs": 1800,
+  "preset": "default",
+  "timezone": "Pacific/Kiritimati",
+  "reload": true,
+  "interactions": true,
+  "results": [
+    {
+      "route": "/dashboard/calendar",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_calendar-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_calendar-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Browser-local Today 2026-10-24 after hydration",
+        "Previous/next, Month/Week/Day and Today via keyboard",
+        "Calendar selector retains demo selection",
+        "Live now marker matches real browser-local minute (within two-minute rendering tolerance)",
+        "Crowded-day popover contains long title and closes by keyboard",
+        "Calendar grid scrolls locally; no page overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/calendar",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_calendar-light-desktop-refresh-interactive.png",
+      "controlsFile": "_dashboard_calendar-light-desktop-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Browser-local Today 2026-10-24 after hydration",
+        "Previous/next, Month/Week/Day and Today via keyboard",
+        "Calendar selector retains demo selection",
+        "Live now marker matches real browser-local minute (within two-minute rendering tolerance)",
+        "Crowded-day popover contains long title and closes by keyboard",
+        "Calendar grid scrolls locally; no page overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/calendar",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_calendar-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_calendar-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Browser-local Today 2026-10-24 after hydration",
+        "Previous/next, Month/Week/Day and Today via keyboard",
+        "Calendar selector retains demo selection",
+        "Live now marker matches real browser-local minute (within two-minute rendering tolerance)",
+        "Crowded-day popover contains long title and closes by keyboard",
+        "Calendar grid scrolls locally; no page overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/calendar",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_calendar-light-mobile-refresh-interactive.png",
+      "controlsFile": "_dashboard_calendar-light-mobile-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Browser-local Today 2026-10-24 after hydration",
+        "Previous/next, Month/Week/Day and Today via keyboard",
+        "Calendar selector retains demo selection",
+        "Live now marker matches real browser-local minute (within two-minute rendering tolerance)",
+        "Crowded-day popover contains long title and closes by keyboard",
+        "Calendar grid scrolls locally; no page overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/calendar",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_calendar-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_calendar-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Browser-local Today 2026-10-24 after hydration",
+        "Previous/next, Month/Week/Day and Today via keyboard",
+        "Calendar selector retains demo selection",
+        "Live now marker matches real browser-local minute (within two-minute rendering tolerance)",
+        "Crowded-day popover contains long title and closes by keyboard",
+        "Calendar grid scrolls locally; no page overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/calendar",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_calendar-dark-desktop-refresh-interactive.png",
+      "controlsFile": "_dashboard_calendar-dark-desktop-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Browser-local Today 2026-10-24 after hydration",
+        "Previous/next, Month/Week/Day and Today via keyboard",
+        "Calendar selector retains demo selection",
+        "Live now marker matches real browser-local minute (within two-minute rendering tolerance)",
+        "Crowded-day popover contains long title and closes by keyboard",
+        "Calendar grid scrolls locally; no page overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/calendar",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_calendar-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_calendar-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Browser-local Today 2026-10-24 after hydration",
+        "Previous/next, Month/Week/Day and Today via keyboard",
+        "Calendar selector retains demo selection",
+        "Live now marker matches real browser-local minute (within two-minute rendering tolerance)",
+        "Crowded-day popover contains long title and closes by keyboard",
+        "Calendar grid scrolls locally; no page overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/calendar",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_calendar-dark-mobile-refresh-interactive.png",
+      "controlsFile": "_dashboard_calendar-dark-mobile-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Browser-local Today 2026-10-24 after hydration",
+        "Previous/next, Month/Week/Day and Today via keyboard",
+        "Calendar selector retains demo selection",
+        "Live now marker matches real browser-local minute (within two-minute rendering tolerance)",
+        "Crowded-day popover contains long title and closes by keyboard",
+        "Calendar grid scrolls locally; no page overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/invoice",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_invoice-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_invoice-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Date edited 2026-10-23 → 2026-10-24 as a civil date",
+        "Client changed; multiline description and quantity/price edits",
+        "Add/remove items, GST 18%, discount 10%; totals $2,538.18 → $945.18",
+        "Keyboard reorder and cancellation preserve values/totals",
+        "Preview/print content agrees; Jordan Lee issuer",
+        "Paper text contrast 19.80 / 7.81 / 18.16:1",
+        "Print PDF exported and screen portal hidden; no page overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/invoice",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_invoice-light-desktop-refresh-interactive.png",
+      "controlsFile": "_dashboard_invoice-light-desktop-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Date edited 2026-10-23 → 2026-10-24 as a civil date",
+        "Client changed; multiline description and quantity/price edits",
+        "Add/remove items, GST 18%, discount 10%; totals $2,538.18 → $945.18",
+        "Keyboard reorder and cancellation preserve values/totals",
+        "Preview/print content agrees; Jordan Lee issuer",
+        "Paper text contrast 19.80 / 7.81 / 18.16:1",
+        "Print PDF exported and screen portal hidden; no page overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/invoice",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_invoice-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_invoice-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Date edited 2026-10-23 → 2026-10-24 as a civil date",
+        "Client changed; multiline description and quantity/price edits",
+        "Add/remove items, GST 18%, discount 10%; totals $2,538.18 → $945.18",
+        "Keyboard reorder and cancellation preserve values/totals",
+        "Preview/print content agrees; Jordan Lee issuer",
+        "Paper text contrast 19.80 / 7.81 / 18.16:1",
+        "Print PDF exported and screen portal hidden; no page overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/invoice",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_invoice-light-mobile-refresh-interactive.png",
+      "controlsFile": "_dashboard_invoice-light-mobile-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Date edited 2026-10-23 → 2026-10-24 as a civil date",
+        "Client changed; multiline description and quantity/price edits",
+        "Add/remove items, GST 18%, discount 10%; totals $2,538.18 → $945.18",
+        "Keyboard reorder and cancellation preserve values/totals",
+        "Preview/print content agrees; Jordan Lee issuer",
+        "Paper text contrast 19.80 / 7.81 / 18.16:1",
+        "Print PDF exported and screen portal hidden; no page overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/invoice",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_invoice-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_invoice-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Date edited 2026-10-23 → 2026-10-24 as a civil date",
+        "Client changed; multiline description and quantity/price edits",
+        "Add/remove items, GST 18%, discount 10%; totals $2,538.18 → $945.18",
+        "Keyboard reorder and cancellation preserve values/totals",
+        "Preview/print content agrees; Jordan Lee issuer",
+        "Paper text contrast 19.80 / 7.81 / 18.16:1",
+        "Print PDF exported and screen portal hidden; no page overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/invoice",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_invoice-dark-desktop-refresh-interactive.png",
+      "controlsFile": "_dashboard_invoice-dark-desktop-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Date edited 2026-10-23 → 2026-10-24 as a civil date",
+        "Client changed; multiline description and quantity/price edits",
+        "Add/remove items, GST 18%, discount 10%; totals $2,538.18 → $945.18",
+        "Keyboard reorder and cancellation preserve values/totals",
+        "Preview/print content agrees; Jordan Lee issuer",
+        "Paper text contrast 19.80 / 7.81 / 18.16:1",
+        "Print PDF exported and screen portal hidden; no page overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/invoice",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_invoice-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_invoice-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Date edited 2026-10-23 → 2026-10-24 as a civil date",
+        "Client changed; multiline description and quantity/price edits",
+        "Add/remove items, GST 18%, discount 10%; totals $2,538.18 → $945.18",
+        "Keyboard reorder and cancellation preserve values/totals",
+        "Preview/print content agrees; Jordan Lee issuer",
+        "Paper text contrast 19.80 / 7.81 / 18.16:1",
+        "Print PDF exported and screen portal hidden; no page overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/invoice",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_invoice-dark-mobile-refresh-interactive.png",
+      "controlsFile": "_dashboard_invoice-dark-mobile-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Date edited 2026-10-23 → 2026-10-24 as a civil date",
+        "Client changed; multiline description and quantity/price edits",
+        "Add/remove items, GST 18%, discount 10%; totals $2,538.18 → $945.18",
+        "Keyboard reorder and cancellation preserve values/totals",
+        "Preview/print content agrees; Jordan Lee issuer",
+        "Paper text contrast 19.80 / 7.81 / 18.16:1",
+        "Print PDF exported and screen portal hidden; no page overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_patient-monitoring-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_patient-monitoring-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Real clock advances across second boundary",
+        "Reduced-motion trace stable",
+        "Normal-motion trace updates; runtime reduction pauses it",
+        "Keyboard acknowledgement persists; patient selection and event/trend tabs work",
+        "Footer keyboard focus and no page-wide overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_patient-monitoring-light-desktop-refresh-interactive.png",
+      "controlsFile": "_dashboard_patient-monitoring-light-desktop-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Real clock advances across second boundary",
+        "Reduced-motion trace stable",
+        "Normal-motion trace updates; runtime reduction pauses it",
+        "Keyboard acknowledgement persists; patient selection and event/trend tabs work",
+        "Footer keyboard focus and no page-wide overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_patient-monitoring-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_patient-monitoring-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Real clock advances across second boundary",
+        "Reduced-motion trace stable",
+        "Normal-motion trace updates; runtime reduction pauses it",
+        "Keyboard acknowledgement persists; patient selection and event/trend tabs work",
+        "Footer keyboard focus and no page-wide overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_patient-monitoring-light-mobile-refresh-interactive.png",
+      "controlsFile": "_dashboard_patient-monitoring-light-mobile-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Real clock advances across second boundary",
+        "Reduced-motion trace stable",
+        "Normal-motion trace updates; runtime reduction pauses it",
+        "Keyboard acknowledgement persists; patient selection and event/trend tabs work",
+        "Footer keyboard focus and no page-wide overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_patient-monitoring-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_patient-monitoring-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Real clock advances across second boundary",
+        "Reduced-motion trace stable",
+        "Normal-motion trace updates; runtime reduction pauses it",
+        "Keyboard acknowledgement persists; patient selection and event/trend tabs work",
+        "Footer keyboard focus and no page-wide overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_patient-monitoring-dark-desktop-refresh-interactive.png",
+      "controlsFile": "_dashboard_patient-monitoring-dark-desktop-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Real clock advances across second boundary",
+        "Reduced-motion trace stable",
+        "Normal-motion trace updates; runtime reduction pauses it",
+        "Keyboard acknowledgement persists; patient selection and event/trend tabs work",
+        "Footer keyboard focus and no page-wide overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_patient-monitoring-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_patient-monitoring-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Real clock advances across second boundary",
+        "Reduced-motion trace stable",
+        "Normal-motion trace updates; runtime reduction pauses it",
+        "Keyboard acknowledgement persists; patient selection and event/trend tabs work",
+        "Footer keyboard focus and no page-wide overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_patient-monitoring-dark-mobile-refresh-interactive.png",
+      "controlsFile": "_dashboard_patient-monitoring-dark-mobile-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Real clock advances across second boundary",
+        "Reduced-motion trace stable",
+        "Normal-motion trace updates; runtime reduction pauses it",
+        "Keyboard acknowledgement persists; patient selection and event/trend tabs work",
+        "Footer keyboard focus and no page-wide overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    }
+  ]
+}

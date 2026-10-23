@@ -1,0 +1,11 @@
+
+> tenboards@0.2.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://localhost:3000 --routes /dashboard/default --interactions --output /private/tmp/tenboards-v03-evidence/v03-014/shell-dev-default
+
+FAIL /dashboard/default light/desktop direct
+Settings focus trap
+PASS /dashboard/default light/mobile direct
+FAIL /dashboard/default dark/desktop direct
+Palette focus return
+FAIL /dashboard/default dark/mobile direct
+Settings focus trap

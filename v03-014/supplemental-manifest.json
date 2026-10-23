@@ -1,0 +1,167 @@
+{
+  "total": 224,
+  "perEnvironment": {
+    "dev": 112,
+    "workers": 112
+  },
+  "reports": [
+    {
+      "environment": "dev",
+      "report": "interactions-dev-a/report.json",
+      "count": 24,
+      "pass": true,
+      "originalErrors": [],
+      "retry": null,
+      "expectedDiagnostics": 0
+    },
+    {
+      "environment": "dev",
+      "report": "interactions-dev-b/report.json",
+      "count": 36,
+      "pass": true,
+      "originalErrors": [],
+      "retry": null,
+      "expectedDiagnostics": 0
+    },
+    {
+      "environment": "dev",
+      "report": "live-dev/report.json",
+      "count": 24,
+      "pass": true,
+      "originalErrors": [],
+      "retry": null,
+      "expectedDiagnostics": 0
+    },
+    {
+      "environment": "dev",
+      "report": "boundaries-dev/report.json",
+      "count": 12,
+      "pass": true,
+      "originalErrors": [],
+      "retry": null,
+      "expectedDiagnostics": 11
+    },
+    {
+      "environment": "dev",
+      "report": "shell-dev-default-viewport/report.json",
+      "count": 4,
+      "pass": true,
+      "originalErrors": [],
+      "retry": null,
+      "expectedDiagnostics": 0
+    },
+    {
+      "environment": "dev",
+      "report": "shell-dev-graphite/report.json",
+      "count": 4,
+      "pass": true,
+      "originalErrors": [],
+      "retry": null,
+      "expectedDiagnostics": 0
+    },
+    {
+      "environment": "dev",
+      "report": "shell-dev-pine/report.json",
+      "count": 4,
+      "pass": true,
+      "originalErrors": [],
+      "retry": null,
+      "expectedDiagnostics": 0
+    },
+    {
+      "environment": "dev",
+      "report": "shell-dev-iris/report.json",
+      "count": 4,
+      "pass": true,
+      "originalErrors": [],
+      "retry": null,
+      "expectedDiagnostics": 0
+    },
+    {
+      "environment": "workers",
+      "report": "interactions-workers-a/report.json",
+      "count": 24,
+      "pass": true,
+      "originalErrors": [],
+      "retry": null,
+      "expectedDiagnostics": 0
+    },
+    {
+      "environment": "workers",
+      "report": "interactions-workers-b/report.json",
+      "count": 36,
+      "pass": true,
+      "originalErrors": [],
+      "retry": null,
+      "expectedDiagnostics": 0
+    },
+    {
+      "environment": "workers",
+      "report": "live-workers/report.json",
+      "count": 24,
+      "pass": true,
+      "originalErrors": [
+        {
+          "route": "/dashboard/invoice",
+          "theme": "light",
+          "viewport": "mobile",
+          "file": "_dashboard_invoice-light-mobile-interactive.png",
+          "controlsFile": "_dashboard_invoice-light-mobile-interactive-controls.png",
+          "phase": "direct",
+          "interactionNotes": [],
+          "expectedDiagnostics": [],
+          "errors": [
+            "locator.press: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-day=\"11/7/2026\"]')\u001b[22m\n"
+          ]
+        }
+      ],
+      "retry": "live-workers-invoice-retry",
+      "expectedDiagnostics": 0
+    },
+    {
+      "environment": "workers",
+      "report": "boundaries-workers/report.json",
+      "count": 12,
+      "pass": true,
+      "originalErrors": [],
+      "retry": null,
+      "expectedDiagnostics": 10
+    },
+    {
+      "environment": "workers",
+      "report": "shell-workers-default/report.json",
+      "count": 4,
+      "pass": true,
+      "originalErrors": [],
+      "retry": null,
+      "expectedDiagnostics": 0
+    },
+    {
+      "environment": "workers",
+      "report": "shell-workers-graphite/report.json",
+      "count": 4,
+      "pass": true,
+      "originalErrors": [],
+      "retry": null,
+      "expectedDiagnostics": 0
+    },
+    {
+      "environment": "workers",
+      "report": "shell-workers-pine/report.json",
+      "count": 4,
+      "pass": true,
+      "originalErrors": [],
+      "retry": null,
+      "expectedDiagnostics": 0
+    },
+    {
+      "environment": "workers",
+      "report": "shell-workers-iris/report.json",
+      "count": 4,
+      "pass": true,
+      "originalErrors": [],
+      "retry": null,
+      "expectedDiagnostics": 0
+    }
+  ]
+}

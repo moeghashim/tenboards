@@ -1,0 +1,5 @@
+
+> tenboards@0.2.0 typecheck
+> tsc --noEmit
+
+scripts/report-route-coverage.ts(13,82): error TS2345: Argument of type 'string' is not assignable to parameter of type '"/dashboard/default" | "/" | "/dashboard" | "/dashboard/" | "/auth/v2" | "/chat" | "/mail" | "/unauthorized" | "/dashboard/academy" | "/dashboard/analytics" | "/dashboard/calendar" | ... 26 more ... | "/dashboard/finance-v1"'.

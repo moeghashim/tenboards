@@ -1,0 +1,12 @@
+{
+  "pageCount" : 1,
+  "pages" : [
+    {
+      "height" : 792,
+      "page" : 1,
+      "png" : "\/private\/tmp\/tenboards-v03-evidence\/v03-014\/live-workers-invoice-retry\/_dashboard_invoice-light-desktop-refresh-interactive-print-page-1.png",
+      "text" : "Invoice\nReference: NORTHWIND-D\nIssued:\n202\n6-10-24\nPayment due:\n202\n6-11-07\nMO-202\n6-012\n3\nE\nPayment account\nMercury Business\nRouting no. 08400951\n9\nFrom\nNorthwind Studio\n214 Pixel Avenue\nAustin, TX 78701\nTax ID: NW-102\n9384756\nBill to\nBright Enterprises\n450 Park Avenue South\nNew York, NY 1001\n6\nUnited States\nTax ID: US-EIN-84-2\n938475\nDescription Units Unit cost Line total\nTechnical support retainer 1 $400.00 $400.00\nImplementation and accessibility review\nDocumentation, handover and long-description coverage\nfor the demo invoice.\n2 $125.00 $250.00\nFollow-up review 3 $80.00 $240.00\nNet amount $890.00\nDiscount 10% $89.00\nGST1\n8% $144.1\n8\nBalance due $945.1\n8\nhello@northwind.example.com\n+1-512-555-01\n84\nnorthwind.example.com\nPrepared for prompt processing.\nIssued by Jordan Lee",
+      "width" : 612
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+
+> tenboards@0.2.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://localhost:3000 --routes /dashboard/file-manager,/dashboard/products,/dashboard/users,/dashboard/roles,/dashboard/profile,/auth/v1/login,/auth/v1/register,/auth/v2/login,/auth/v2/register --interactions --output /private/tmp/tenboards-v03-evidence/v03-014/interactions-dev-b
+
+PASS /dashboard/file-manager light/desktop direct
+PASS /dashboard/file-manager light/mobile direct
+PASS /dashboard/file-manager dark/desktop direct
+PASS /dashboard/file-manager dark/mobile direct
+PASS /dashboard/products light/desktop direct
+PASS /dashboard/products light/mobile direct
+PASS /dashboard/products dark/desktop direct
+PASS /dashboard/products dark/mobile direct
+PASS /dashboard/profile light/desktop direct
+PASS /dashboard/profile light/mobile direct
+PASS /dashboard/profile dark/desktop direct
+PASS /dashboard/profile dark/mobile direct
+PASS /dashboard/roles light/desktop direct
+PASS /dashboard/roles light/mobile direct
+PASS /dashboard/roles dark/desktop direct
+PASS /dashboard/roles dark/mobile direct
+PASS /dashboard/users light/desktop direct
+PASS /dashboard/users light/mobile direct
+PASS /dashboard/users dark/desktop direct
+PASS /dashboard/users dark/mobile direct
+PASS /auth/v1/login light/desktop direct
+PASS /auth/v1/login light/mobile direct
+PASS /auth/v1/login dark/desktop direct
+PASS /auth/v1/login dark/mobile direct
+PASS /auth/v1/register light/desktop direct
+PASS /auth/v1/register light/mobile direct
+PASS /auth/v1/register dark/desktop direct
+PASS /auth/v1/register dark/mobile direct
+PASS /auth/v2/login light/desktop direct
+PASS /auth/v2/login light/mobile direct
+PASS /auth/v2/login dark/desktop direct
+PASS /auth/v2/login dark/mobile direct
+PASS /auth/v2/register light/desktop direct
+PASS /auth/v2/register light/mobile direct
+PASS /auth/v2/register dark/desktop direct
+PASS /auth/v2/register dark/mobile direct

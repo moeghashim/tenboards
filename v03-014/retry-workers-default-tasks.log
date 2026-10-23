@@ -1,0 +1,8 @@
+
+> tenboards@0.2.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url https://a0e873cb-tenboards.mohanadgh.workers.dev --routes /dashboard/tasks --preset default --output /private/tmp/tenboards-v03-evidence/v03-014/retry-workers-default-tasks
+
+PASS /dashboard/tasks light/desktop direct
+PASS /dashboard/tasks light/mobile direct
+PASS /dashboard/tasks dark/desktop direct
+PASS /dashboard/tasks dark/mobile direct
