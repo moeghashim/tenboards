@@ -113,17 +113,19 @@ export function ChatSidebar() {
                 <EllipsisVertical className="ml-auto size-4" />
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-(--radix-dropdown-menu-trigger-width) min-w-56" side="top">
-                <DropdownMenuLabel className="p-0 font-normal">
-                  <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
-                    <Avatar>
-                      <AvatarFallback className="text-xs">{getInitials(currentUser.name)}</AvatarFallback>
-                    </Avatar>
-                    <div className="grid flex-1 text-left text-sm leading-tight">
-                      <span className="truncate font-medium">{currentUser.name}</span>
-                      <span className="text-muted-foreground truncate text-xs">{currentUser.email}</span>
+                <DropdownMenuGroup>
+                  <DropdownMenuLabel className="p-0 font-normal">
+                    <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
+                      <Avatar>
+                        <AvatarFallback className="text-xs">{getInitials(currentUser.name)}</AvatarFallback>
+                      </Avatar>
+                      <div className="grid flex-1 text-left text-sm leading-tight">
+                        <span className="truncate font-medium">{currentUser.name}</span>
+                        <span className="text-muted-foreground truncate text-xs">{currentUser.email}</span>
+                      </div>
                     </div>
-                  </div>
-                </DropdownMenuLabel>
+                  </DropdownMenuLabel>
+                </DropdownMenuGroup>
                 <DropdownMenuSeparator />
                 <DropdownMenuGroup>
                   <DropdownMenuItem>

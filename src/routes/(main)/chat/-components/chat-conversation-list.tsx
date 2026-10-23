@@ -17,9 +17,15 @@ interface ChatConversationListProps {
   conversations: Conversation[];
   onSelectConversation?: (conversation: Conversation) => void;
   className?: string;
+  inert?: boolean;
 }
 
-export function ChatConversationList({ conversations, onSelectConversation, className }: ChatConversationListProps) {
+export function ChatConversationList({
+  conversations,
+  onSelectConversation,
+  className,
+  inert,
+}: ChatConversationListProps) {
   const [chat, setChat] = useChat();
   const { state, toggleSidebar } = useSidebar();
   const isCollapsed = state === "collapsed";
@@ -37,22 +43,23 @@ export function ChatConversationList({ conversations, onSelectConversation, clas
   }, []);
 
   return (
-    <div className={cn("flex h-full flex-col gap-3 pt-3", className)}>
+    <div inert={inert} aria-hidden={inert} className={cn("bg-card flex h-full flex-col gap-3 pt-3", className)}>
       <div className="flex items-center justify-between gap-4 px-2 py-0.5">
         <div className="flex items-center gap-2">
           <Button
             variant="ghost"
             size="icon-sm"
+            aria-label="Toggle chat navigation"
             onClick={toggleSidebar}
-            className="[&_svg]:transition-transform [&_svg]:duration-300"
+            className="[&_svg]:transition-transform [&_svg]:duration-200"
           >
             {isCollapsed ? <PanelRightClose /> : <PanelRightOpen />}
           </Button>
           <Separator orientation="vertical" className="mr-1.5 h-4 data-vertical:self-center" />
-          <h1 className="text-xl leading-none font-medium">Inbox</h1>
+          <h2 className="text-xl leading-none font-medium">Inbox</h2>
         </div>
         <div className="flex items-center gap-2">
-          <Button variant="ghost" size="icon-sm">
+          <Button variant="ghost" size="icon-sm" aria-label="Filter conversations">
             <Filter />
           </Button>
         </div>
@@ -100,8 +107,9 @@ export function ChatConversationList({ conversations, onSelectConversation, clas
                             "w-full overflow-hidden rounded-lg px-2.5 py-2.5 text-left transition-colors ring-inset",
                             isSelected ? "bg-muted ring-border ring-1" : "hover:bg-muted/75",
                           )}
-                          onClick={(event) => {
-                            event.currentTarget.blur();
+                          data-conversation-id={conversation.id}
+                          aria-pressed={isSelected}
+                          onClick={() => {
                             setChat({ selected: conversation.id });
                             onSelectConversation?.(conversation);
                           }}
@@ -110,13 +118,17 @@ export function ChatConversationList({ conversations, onSelectConversation, clas
                             <Avatar className="shrink-0 **:data-[slot=avatar-badge]:size-2.5">
                               <AvatarFallback
                                 className={cn(
-                                  "text-foreground text-xs transition-colors duration-400",
+                                  "text-foreground text-xs transition-colors duration-200",
                                   isSelected && "bg-background/50",
                                 )}
                               >
                                 {getInitials(conversation.name)}
                               </AvatarFallback>
-                              {conversation.isOnline && <AvatarBadge className="bg-green-600 dark:bg-green-800" />}
+                              {conversation.isOnline && (
+                                <AvatarBadge className="bg-success">
+                                  <span className="sr-only">Online</span>
+                                </AvatarBadge>
+                              )}
                             </Avatar>
 
                             <div className="w-0 flex-1 overflow-hidden">
@@ -128,7 +140,7 @@ export function ChatConversationList({ conversations, onSelectConversation, clas
                               </div>
                               <div className="flex min-w-0 items-end gap-2">
                                 <div className="w-0 flex-1 overflow-hidden">
-                                  <div className="text-foreground/90 truncate text-xs leading-4 font-medium">
+                                  <div className="text-foreground truncate text-xs leading-4 font-medium">
                                     {conversation.subject}
                                   </div>
                                   <div className="text-muted-foreground truncate text-xs leading-4">
@@ -139,12 +151,13 @@ export function ChatConversationList({ conversations, onSelectConversation, clas
                                 <div className="flex items-center gap-1">
                                   {conversation.group === "Pinned" && (
                                     <div className="grid size-5 place-items-center">
-                                      <Pin className="size-3 fill-current opacity-70" />
+                                      <Pin className="size-3" aria-label="Pinned" />
                                     </div>
                                   )}
 
                                   {conversation.isUnread && (
-                                    <div className="bg-primary/90 text-primary-foreground grid size-5 place-items-center rounded-full text-xs">
+                                    <div className="bg-primary text-primary-foreground grid size-5 place-items-center rounded-full text-xs">
+                                      <span className="sr-only">Unread messages: </span>
                                       {conversation.unreadCount}
                                     </div>
                                   )}
