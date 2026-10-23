@@ -1,22 +1,22 @@
 # v0.1 — Design system and shell
 
-Status: in progress; breakdown awaiting review. Only tasks 001 and 002 are pre-approved for implementation.
+Status: tasks 001–007 merged and deployed. The user approved 008–012 for this batch. Tasks 008–011 are implemented in stacked PRs [#8](https://github.com/moeghashim/tenboards/pull/8), [#9](https://github.com/moeghashim/tenboards/pull/9), [#10](https://github.com/moeghashim/tenboards/pull/10), and [#11](https://github.com/moeghashim/tenboards/pull/11). Task 012 acceptance is blocked by 32 inherited hydration failures across eight routes; production reproduction and the required scope decision are recorded in [open questions](../../open-questions.md). No dashboard/app-page content restyles are included.
 
-- 001: implemented; [PR #1](https://github.com/moeghashim/tenboards/pull/1) open for Claude review and user merge.
-- 002: implemented and deployed; stacked on 001, awaiting PR review and user merge.
-- 003–012: planned only; do not start until breakdown approval.
+Authority status: PLAN's 2026-10-23 decision supersedes this breakdown's historical “only moeghashim merges” / “user merge” wording below. Claude reviews, squash-merges approved layers bottom-up, and rebases the stack. The implementer never merges or deploys production. The user retains authority to change that delegation.
+
 - Live: https://tenboards.mohanadgh.workers.dev
-- Task 002 version preview: https://9913d738-tenboards.mohanadgh.workers.dev
+- Integrated shell preview alias: https://pr-012-tenboards.mohanadgh.workers.dev
+- Evidence: https://github.com/moeghashim/tenboards/tree/pr-assets/012
 
 ## Definition of Done
 
-- [ ] Entire upstream screen catalog remains available, with MIT attribution and no upstream Git history or remote.
-- [ ] Demo runs without environment variables or a database and is live on Cloudflare Workers.
-- [ ] Impeccable PRODUCT.md, DESIGN.md, and root AGENTS.md reflect PLAN and mode Operate.
-- [ ] Accessible light/dark tokens, Geist defaults, tenboards identity, and rebuilt presets are integrated.
-- [ ] Sidebar matches the locked reference; header, global command palette, and settings panel work on desktop/mobile.
-- [ ] Repeatable all-route light/dark × desktop/mobile screenshot tooling exists; evidence stays off main.
-- [ ] Every PR passes build, Biome check, typecheck, and /dashboard/default console-error-free smoke.
+- [x] Entire upstream screen catalog remains available, with MIT attribution and no upstream Git history or remote.
+- [x] Demo runs without environment variables or a database and is live on Cloudflare Workers.
+- [x] Impeccable PRODUCT.md, DESIGN.md, and root AGENTS.md reflect PLAN and mode Operate.
+- [x] Accessible light/dark tokens, Geist defaults, tenboards identity, and rebuilt presets are integrated.
+- [x] Sidebar matches the locked reference; header, global command palette, and settings panel work on desktop/mobile.
+- [x] Repeatable all-route light/dark × desktop/mobile screenshot tooling exists; evidence stays off main.
+- [x] Every PR passes build, Biome check, typecheck, and /dashboard/default console-error-free smoke.
 - [ ] Each task has its own PR for Claude review; only moeghashim merges. No v0.2+ feature or restyling work.
 
 ## Execution order and rationale

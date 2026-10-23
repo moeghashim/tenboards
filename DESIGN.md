@@ -53,7 +53,7 @@ components:
 
 **Creative North Star: "Refined product UI"** — the approved Linear/Vercel register in PLAN §7. Precision, scanability, and restraint serve dense administrative work. PLAN and its Decisions log win every conflict.
 
-The frontmatter records the implemented task 005 tokens. The default combines cool neutral surfaces with a deep blue action accent. Task 007 supplies token-only Graphite, Pine, and Iris alternatives. Shell tasks 008–011 and screen work in v0.2/v0.3 remain separate.
+The frontmatter records the implemented task 005 tokens. The default combines cool neutral surfaces with a deep blue action accent. Task 007 supplies token-only Graphite, Pine, and Iris alternatives. Shell tasks 008–011 apply these tokens at usage sites; dashboard and app-page content work remains deferred to v0.2/v0.3.
 
 **Key Characteristics:** neutral-first surfaces, one action accent, crisp borders, compact data, restrained depth, and consistent control states.
 
@@ -95,7 +95,7 @@ Cards preserve their inherited thin border/ring structure. Low elevation uses tw
 
 ## Shapes
 
-Default control radius is 8px; shadcn aliases use 4/6/8/12/16/20/24px. Cards use the 12px step. Spacing primitives are 4/8/12/16/24/32px on the existing Tailwind rhythm. The future floating sidebar intentionally uses a larger radius than dense controls.
+Default control radius is 8px; shadcn aliases use 4/6/8/12/16/20/24px. Cards use the 12px step. Spacing primitives are 4/8/12/16/24/32px on the existing Tailwind rhythm. The floating sidebar uses the 24px radius step, larger than dense controls.
 
 ## Components
 
@@ -103,7 +103,13 @@ The original tenboards identity uses a paired-board “10” silhouette and a Ge
 
 Use local Base UI-backed shadcn wrappers after inspecting their source. Button variants include primary, outline, secondary, ghost, destructive, and link; focus uses a border plus ring. Inputs have focus, invalid, disabled, and placeholder states. Cards use semantic card foreground/background with header/content/footer slots. Chips and navigation should share the semantic palette.
 
-The locked sidebar reference is [docs/design-refs/sidebar-reference.png](docs/design-refs/sidebar-reference.png), inspected for this document. Tasks 008–011 implement its inset floating rounded panel, workspace avatar/name and collapse control, search pill with ⌘K, regular-weight primary items with outline icons, soft gray active pills, secondary collapsible sections, pinned status card, and footer actions. Preserve icon-collapse and mobile sheet behavior. Do not implement this shell redesign in tasks 003–007.
+The locked sidebar reference is [docs/design-refs/sidebar-reference.png](docs/design-refs/sidebar-reference.png), inspected for this document. The implemented shell uses its inset floating rounded panel, workspace avatar/name and collapse control, search pill with ⌘K, regular-weight primary items with outline icons, soft gray active pills, secondary collapsible sections, pinned status card, and footer actions. Expanded navigation is 18rem wide; icon-collapse is 4.5rem. The panel sits 12px from desktop viewport edges; on mobile the sheet panel itself is inset 8px from the viewport, with 40px rows, 18px icons, 12px active pills, and a sticky viewport-height wrapper. Six primary items (Home, File Manager, Email, Chat, Calendar, Tasks) precede Dashboards, Pages, Legacy, and Misc sections. The demo card counts visited enabled `/dashboard/*` sidebar pages (25 total) since the sidebar mounted; footer actions are Settings, Help, Documentation, and Feedback.
+
+The header is 56px tall, with a truncating current-page label, theme/settings/account controls, and a link to the tenboards repository. The Workspace prefix and repository link are hidden below 640px. The sidebar trigger appears on mobile and when desktop navigation is collapsed. Desktop search lives in the sidebar; below 768px the header gets a compact search trigger. The account menu uses clearly labeled demo identities with initials avatars.
+
+The root command palette uses the existing cmdk and dialog wrappers and the shared retained-route catalog. Search rows are at least 40px tall; the result list scrolls within a bounded viewport. The dialog has a title, description, explicit search label, empty state, and a touch close button. ⌘K/Ctrl+K toggles the palette, including inside text fields. Alt/Shift, key repeat, IME composition, already-handled events, and another visible dialog/menu/listbox suppress the shortcut (the mobile navigation sheet excepted). The search input group uses one opaque 2px focus outline with 2px offset and 8px corners; the inner input outline is suppressed. Keyboard selection, Escape, and focus return are part of the component contract.
+
+Layout settings is a right-hand sheet capped at 28rem on desktop and full width on mobile. Appearance and Layout sections group native labeled selects and fieldset radio choices. Controls are at least 40px tall; the body scrolls independently of its heading and reset footer. Selected choices use a neutral fill and 1px primary border; keyboard focus adds an opaque 2px outline with 2px offset. The Defaults footer derives all seven labels from the registry. Existing seven-day preference cookies and the separate sidebar-state cookie remain the only persistence contract; Reset also re-expands the sidebar. The visible variant/mobile explanations describe the supported sidebar adaptations.
 
 ## Do's and Don'ts
 
