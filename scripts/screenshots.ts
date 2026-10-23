@@ -1,5 +1,6 @@
 import { chromium } from "playwright";
 
+import { captureInteractions } from "./screenshot-interactions.ts";
 import { captureRoutes } from "./screenshot-routes.ts";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
@@ -14,6 +15,7 @@ const { values } = parseArgs({
     list: { type: "boolean", default: false },
     timezone: { type: "string", default: "America/Chicago" },
     reload: { type: "boolean", default: false },
+    interactions: { type: "boolean", default: false },
   },
 });
 const baseURL = new URL(values["base-url"]);
@@ -47,7 +49,9 @@ const results: Array<{
   theme: string;
   viewport: string;
   file: string;
+  controlsFile: string | null;
   phase: string;
+  interactionNotes: string[];
   errors: string[];
 }> = [];
 try {
@@ -72,6 +76,7 @@ try {
           ]);
           const page = await context.newPage();
           const errors: string[] = [];
+          let interactionNotes: string[] = [];
           page.on("console", (message) => {
             if (message.type() === "error") errors.push(`console: ${message.text()}`);
           });
@@ -81,7 +86,8 @@ try {
               errors.push(`request: ${request.url()} ${request.failure()?.errorText}`);
             }
           });
-          const file = `${entry.route.replaceAll(/[^a-z0-9-]/gi, "_") || "root"}-${theme}-${viewportName}${phase === "refresh" ? "-refresh" : ""}.png`;
+          const file = `${entry.route.replaceAll(/[^a-z0-9-]/gi, "_") || "root"}-${theme}-${viewportName}${phase === "refresh" ? "-refresh" : ""}${values.interactions ? "-interactive" : ""}.png`;
+          const controlsFile = values.interactions ? file.replace(".png", "-controls.png") : null;
           try {
             let response = await page.goto(new URL(entry.path, baseURL).href, { waitUntil: "domcontentloaded" });
             if (phase === "refresh") {
@@ -120,6 +126,7 @@ try {
               );
               window.scrollTo(0, 0);
             });
+            if (values.interactions) interactionNotes = await captureInteractions(page, entry.route);
             let previous = "";
             let stable = 0;
             for (let attempt = 0; attempt < 20 && stable < 3; attempt++) {
@@ -131,13 +138,24 @@ try {
               await page.waitForTimeout(150);
             }
             if (stable < 3) throw new Error("Content did not stabilize before capture.");
+            // Full-page capture can resize the viewport and dismiss anchored menus.
+            if (controlsFile) await page.screenshot({ path: path.join(output, controlsFile), animations: "disabled" });
             await page.screenshot({ path: path.join(output, file), fullPage: true, animations: "disabled" });
           } catch (error) {
             errors.push(error instanceof Error ? error.message : String(error));
           } finally {
             await context.close();
           }
-          results.push({ route: entry.route, theme, viewport: viewportName, file, phase, errors });
+          results.push({
+            route: entry.route,
+            theme,
+            viewport: viewportName,
+            file,
+            controlsFile,
+            phase,
+            interactionNotes,
+            errors,
+          });
           console.log(`${errors.length ? "FAIL" : "PASS"} ${entry.route} ${theme}/${viewportName} ${phase}`);
           if (errors.length) console.error(errors.join("\n"));
         }
@@ -148,7 +166,7 @@ try {
   await browser.close();
   await writeFile(
     path.join(output, "report.json"),
-    `${JSON.stringify({ baseURL, preset: values.preset, timezone: values.timezone, reload: values.reload, results }, null, 2)}\n`,
+    `${JSON.stringify({ baseURL, preset: values.preset, timezone: values.timezone, reload: values.reload, interactions: values.interactions, results }, null, 2)}\n`,
   );
 }
 if (results.some((result) => result.errors.length)) process.exitCode = 1;

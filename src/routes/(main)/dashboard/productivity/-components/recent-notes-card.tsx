@@ -1,14 +1,15 @@
-import { format, isToday, isYesterday, subDays } from "date-fns";
+import { format, subDays } from "date-fns";
 import { BookOpen, FileText } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { Card, CardAction, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { CardContent } from "@/components/ui/card";
 
-const today = new Date();
+import { DashboardCard as Card, SectionHeader } from "../../-components/dashboard/cards";
+import { createDemoDay } from "./demo-date";
+
+const today = createDemoDay();
 
 function formatNoteDate(date: Date) {
-  if (isToday(date)) return "Today";
-  if (isYesterday(date)) return "Yesterday";
   return format(date, "MMM d");
 }
 
@@ -21,21 +22,21 @@ const recentNotes = [
 
 export function RecentNotesCard() {
   return (
-    <Card className="shadow-xs">
-      <CardHeader>
-        <CardTitle>Recent Notes</CardTitle>
-        <CardAction>
+    <Card>
+      <SectionHeader
+        title="Recent Notes"
+        actions={
           <Button variant="ghost" size="sm" className="text-muted-foreground">
             View all
           </Button>
-        </CardAction>
-      </CardHeader>
+        }
+      />
       <CardContent className="flex flex-col gap-4">
         {recentNotes.map((note) => (
-          <div key={note.title} className="flex items-start gap-4">
-            <note.icon className="text-muted-foreground size-5" />
+          <div key={note.title} className="flex items-start gap-3">
+            <note.icon className="text-muted-foreground size-4 shrink-0" />
             <div className="min-w-0">
-              <div className="truncate text-sm leading-none font-medium">{note.title}</div>
+              <div className="text-sm leading-snug font-medium">{note.title}</div>
               <div className="text-muted-foreground text-xs">{note.date}</div>
             </div>
           </div>

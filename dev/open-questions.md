@@ -36,3 +36,13 @@ Task 012 is blocked, with the clean-captures acceptance box unchecked. Required 
 ### v0.2 task 004 verification
 
 The Finance and Finance V1 portion of the inherited hydration finding is resolved on the task 004 version preview. Explicit demo statement dates and UTC formatting remove module-clock and timezone differences. Direct/refresh light/dark desktop/mobile pass in dev (Kiritimati server vs Chicago browser) and Workers (Chicago and Kiritimati browser zones). Evidence: `pr-assets/v02-004/after-timezone`, `workers`, `workers-kiritimati`. Other inherited routes remain for their scoped tasks; this does not change production.
+
+### v0.2 task 006 verification
+
+The Productivity portion of the inherited hydration finding is resolved on version preview https://c2ec54fc-tenboards.mohanadgh.workers.dev/dashboard/productivity. Explicit demo calendar fields remove runtime/module-clock differences from the calendar, project dues and notes. Direct/refresh light/dark desktop/mobile pass with a Kiritimati dev server against Chicago browser and on Workers with Chicago and Kiritimati browsers. No frozen clock, SSR removal or warning suppression. Evidence: `pr-assets/v02-006/after-timezone`, `workers`, `workers-kiritimati`; keyboard scenarios pass in dev and Workers using a local focus-ref adapter, leaving protected calendar wrappers intact. Remaining inherited routes retain their assigned tasks; production is unchanged. Status: answered.
+
+### v0.2 tasks 001–006 — DCO sign-off check
+
+GitHub's DCO app reports `ACTION_REQUIRED` on the stack: `There are 6 commits incorrectly signed off.` Each implementation layer lacks an author `Signed-off-by` trailer; the required GPT co-author trailer is present. Build, lint, typecheck, visual, interaction and owned-route hydration gates pass. Exact DCO output is retained at `pr-assets/v02-batch-001-006/dco.txt`.
+
+Status: open — author sign-off/remediation is needed before the DCO check can pass. Claude owns stack rebases and merges; the implementer has not rewritten the published stack or added author certification. Keep one commit per layer if remediation rewrites commit messages. PRs #14–#19 remain open with the DCO blocker identified; production is unchanged.

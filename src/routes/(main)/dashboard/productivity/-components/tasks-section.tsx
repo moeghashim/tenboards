@@ -33,11 +33,11 @@ export function TasksSection() {
 
   return (
     <section className="flex flex-col gap-2">
-      <div className="flex items-center justify-between gap-4">
-        <h2 className="text-xl tracking-tight">Tasks</h2>
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <h2 className="text-base font-medium tracking-tight">Tasks</h2>
         <div className="flex items-center gap-2">
           <Select defaultValue="today" items={taskRangeItems}>
-            <SelectTrigger className="w-30">
+            <SelectTrigger aria-label="Task period" className="w-30">
               <SelectValue placeholder="Today" />
             </SelectTrigger>
             <SelectContent>
@@ -57,10 +57,10 @@ export function TasksSection() {
         </div>
       </div>
 
-      <div className="bg-background overflow-hidden rounded-xl border shadow-xs">
+      <div className="bg-card overflow-hidden rounded-xl border">
         <div className="divide-y">
           {items.map((task) => (
-            <div key={task.title} className="flex items-center gap-2 p-4">
+            <div key={task.title} className="flex items-center gap-3 p-3 sm:px-4">
               <Checkbox
                 checked={task.checked}
                 aria-label={task.title}
@@ -71,15 +71,17 @@ export function TasksSection() {
                 }}
               />
               <div className="min-w-0 flex-1">
-                <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
-                  <div className="flex min-w-0 flex-col gap-2 lg:flex-row lg:items-center lg:gap-4">
-                    <span className="truncate text-sm">{task.title}</span>
-                    <Badge variant="outline" className="px-3 py-1 font-normal">
+                <div className="flex flex-col gap-2 lg:flex-row lg:items-center lg:justify-between">
+                  <div className="flex min-w-0 flex-col gap-1.5 lg:flex-row lg:items-center lg:gap-4">
+                    <span className={task.checked ? "text-muted-foreground text-sm line-through" : "text-sm"}>
+                      {task.title}
+                    </span>
+                    <Badge variant="outline" className="w-fit px-2 py-0.5 text-xs font-normal">
                       {task.tag}
                     </Badge>
                   </div>
                   <div className="text-muted-foreground flex shrink-0 items-center gap-3 text-sm">
-                    <span>{task.time}</span>
+                    <span className="tabular-nums">{task.time}</span>
                     <Calendar1 className="size-4" />
                   </div>
                 </div>
