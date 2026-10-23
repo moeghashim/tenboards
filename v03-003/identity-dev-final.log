@@ -1,0 +1,20 @@
+
+> tenboards@0.2.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://localhost:3003 --routes /chat,/dashboard/chat,/dashboard/default --interactions --output screenshots/v03-003/identity-dev-final
+
+PASS /chat light/desktop direct
+PASS /chat light/mobile direct
+PASS /chat dark/desktop direct
+PASS /chat dark/mobile direct
+PASS /dashboard/chat light/desktop direct
+PASS /dashboard/chat light/mobile direct
+PASS /dashboard/chat dark/desktop direct
+PASS /dashboard/chat dark/mobile direct
+FAIL /dashboard/default light/desktop direct
+No interaction scenario for /dashboard/default. Use an explicit supported --routes subset.
+FAIL /dashboard/default light/mobile direct
+No interaction scenario for /dashboard/default. Use an explicit supported --routes subset.
+FAIL /dashboard/default dark/desktop direct
+No interaction scenario for /dashboard/default. Use an explicit supported --routes subset.
+FAIL /dashboard/default dark/mobile direct
+No interaction scenario for /dashboard/default. Use an explicit supported --routes subset.

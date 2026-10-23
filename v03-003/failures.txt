@@ -6,3 +6,110 @@ Before capture: external fonts.googleapis.com net::ERR_TIMED_OUT (Inter, Noto Sa
 One final dev iframe capture: page.waitForLoadState: Timeout 30000ms exceeded; four-state width-retry verifies route.
 
 Final Workers iframe light/mobile interaction retry: locator.click: Element is not attached to the DOM (View profile). Test reopened before closing sheet completed; explicit hidden-state wait added. workers-retry report passes 4/4. Dev width capture dark/desktop: page.waitForLoadState: Timeout 30000ms exceeded (networkidle); width-retry passes 4/4. Contact-sheet helper command initially failed: zsh:1: command not found: python; rerun with python3 passed.
+
+Final contact-domain audit rerun diagnostics (resolved):
+identity-dev /chat light/desktop
+request: http://127.0.0.1:3003/chat net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3003/chat
+Call log:
+[2m  - navigating to "http://127.0.0.1:3003/chat", waiting until "domcontentloaded"[22m
+
+identity-dev /chat light/mobile
+request: http://127.0.0.1:3003/chat net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3003/chat
+Call log:
+[2m  - navigating to "http://127.0.0.1:3003/chat", waiting until "domcontentloaded"[22m
+
+identity-dev /chat dark/desktop
+request: http://127.0.0.1:3003/chat net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3003/chat
+Call log:
+[2m  - navigating to "http://127.0.0.1:3003/chat", waiting until "domcontentloaded"[22m
+
+identity-dev /chat dark/mobile
+request: http://127.0.0.1:3003/chat net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3003/chat
+Call log:
+[2m  - navigating to "http://127.0.0.1:3003/chat", waiting until "domcontentloaded"[22m
+
+identity-dev /dashboard/chat light/desktop
+request: http://127.0.0.1:3003/dashboard/chat net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3003/dashboard/chat
+Call log:
+[2m  - navigating to "http://127.0.0.1:3003/dashboard/chat", waiting until "domcontentloaded"[22m
+
+identity-dev /dashboard/chat light/mobile
+request: http://127.0.0.1:3003/dashboard/chat net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3003/dashboard/chat
+Call log:
+[2m  - navigating to "http://127.0.0.1:3003/dashboard/chat", waiting until "domcontentloaded"[22m
+
+identity-dev /dashboard/chat dark/desktop
+request: http://127.0.0.1:3003/dashboard/chat net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3003/dashboard/chat
+Call log:
+[2m  - navigating to "http://127.0.0.1:3003/dashboard/chat", waiting until "domcontentloaded"[22m
+
+identity-dev /dashboard/chat dark/mobile
+request: http://127.0.0.1:3003/dashboard/chat net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3003/dashboard/chat
+Call log:
+[2m  - navigating to "http://127.0.0.1:3003/dashboard/chat", waiting until "domcontentloaded"[22m
+
+identity-dev /dashboard/default light/desktop
+request: http://127.0.0.1:3003/dashboard/default net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3003/dashboard/default
+Call log:
+[2m  - navigating to "http://127.0.0.1:3003/dashboard/default", waiting until "domcontentloaded"[22m
+
+identity-dev /dashboard/default light/mobile
+request: http://127.0.0.1:3003/dashboard/default net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3003/dashboard/default
+Call log:
+[2m  - navigating to "http://127.0.0.1:3003/dashboard/default", waiting until "domcontentloaded"[22m
+
+identity-dev /dashboard/default dark/desktop
+request: http://127.0.0.1:3003/dashboard/default net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3003/dashboard/default
+Call log:
+[2m  - navigating to "http://127.0.0.1:3003/dashboard/default", waiting until "domcontentloaded"[22m
+
+identity-dev /dashboard/default dark/mobile
+request: http://127.0.0.1:3003/dashboard/default net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3003/dashboard/default
+Call log:
+[2m  - navigating to "http://127.0.0.1:3003/dashboard/default", waiting until "domcontentloaded"[22m
+
+identity-dev-final /dashboard/default light/desktop
+No interaction scenario for /dashboard/default. Use an explicit supported --routes subset.
+identity-dev-final /dashboard/default light/mobile
+No interaction scenario for /dashboard/default. Use an explicit supported --routes subset.
+identity-dev-final /dashboard/default dark/desktop
+No interaction scenario for /dashboard/default. Use an explicit supported --routes subset.
+identity-dev-final /dashboard/default dark/mobile
+No interaction scenario for /dashboard/default. Use an explicit supported --routes subset.
+identity-workers /chat light/mobile
+locator.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('menuitem', { name: 'View profile', exact: true })[22m
+[2m    - locator resolved to <div tabindex="-1" role="menuitem" id="base-ui-_r_d_" data-variant="default" data-slot="dropdown-menu-item" class="group/dropdown-menu-item relative flex cursor-default items-center gap-1.5 rounded-md px-1.5 py-1 text-sm outline-hidden select-none focus:bg-accent focus:text-accent-foreground not-data-[variant=destructive]:focus:**:text-accent-foreground data-inset:pl-7 data-[variant=destructive]:text-destructive data-[variant=destructive]:focus:bg-destructive/10 data-[variant=destructive]:focus:tex…>…</div>[22m
+[2m  - attempting click action[22m
+[2m    - waiting for element to be visible, enabled and stable[22m
+[2m  - element was detached from the DOM, retrying[22m
+
+identity-workers /dashboard/chat light/mobile
+console: Failed to load resource: the server responded with a status of 500 ()
+Unexpected HTTP status 500
+identity-workers /dashboard/default light/desktop
+No interaction scenario for /dashboard/default. Use an explicit supported --routes subset.
+identity-workers /dashboard/default light/mobile
+No interaction scenario for /dashboard/default. Use an explicit supported --routes subset.
+identity-workers /dashboard/default dark/desktop
+No interaction scenario for /dashboard/default. Use an explicit supported --routes subset.
+identity-workers /dashboard/default dark/mobile
+No interaction scenario for /dashboard/default. Use an explicit supported --routes subset.
+Connection refusal used 127.0.0.1 against the localhost-only Vite listener; corrected URL. Default smoke was incorrectly requested with --interactions; rerun without it. Workers HTTP 500 retried on the same version.
+identity-workers-final /chat light/mobile
+console: Failed to load resource: the server responded with a status of 500 ()
+Unexpected HTTP status 500
+Final identity-workers-retry: 8/8; identity-workers-smoke: 4/4; dev contact scenarios 8/8 and default 4/4. urllib diagnostic was denied by the edge with HTTP 403 / error code 1010; browser checks above pass.

@@ -1,0 +1,76 @@
+
+> tenboards@0.2.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://127.0.0.1:3003 --routes /chat,/dashboard/chat,/dashboard/default --interactions --output screenshots/v03-003/identity-dev
+
+FAIL /chat light/desktop direct
+request: http://127.0.0.1:3003/chat net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3003/chat
+Call log:
+[2m  - navigating to "http://127.0.0.1:3003/chat", waiting until "domcontentloaded"[22m
+
+FAIL /chat light/mobile direct
+request: http://127.0.0.1:3003/chat net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3003/chat
+Call log:
+[2m  - navigating to "http://127.0.0.1:3003/chat", waiting until "domcontentloaded"[22m
+
+FAIL /chat dark/desktop direct
+request: http://127.0.0.1:3003/chat net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3003/chat
+Call log:
+[2m  - navigating to "http://127.0.0.1:3003/chat", waiting until "domcontentloaded"[22m
+
+FAIL /chat dark/mobile direct
+request: http://127.0.0.1:3003/chat net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3003/chat
+Call log:
+[2m  - navigating to "http://127.0.0.1:3003/chat", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/chat light/desktop direct
+request: http://127.0.0.1:3003/dashboard/chat net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3003/dashboard/chat
+Call log:
+[2m  - navigating to "http://127.0.0.1:3003/dashboard/chat", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/chat light/mobile direct
+request: http://127.0.0.1:3003/dashboard/chat net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3003/dashboard/chat
+Call log:
+[2m  - navigating to "http://127.0.0.1:3003/dashboard/chat", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/chat dark/desktop direct
+request: http://127.0.0.1:3003/dashboard/chat net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3003/dashboard/chat
+Call log:
+[2m  - navigating to "http://127.0.0.1:3003/dashboard/chat", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/chat dark/mobile direct
+request: http://127.0.0.1:3003/dashboard/chat net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3003/dashboard/chat
+Call log:
+[2m  - navigating to "http://127.0.0.1:3003/dashboard/chat", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/default light/desktop direct
+request: http://127.0.0.1:3003/dashboard/default net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3003/dashboard/default
+Call log:
+[2m  - navigating to "http://127.0.0.1:3003/dashboard/default", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/default light/mobile direct
+request: http://127.0.0.1:3003/dashboard/default net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3003/dashboard/default
+Call log:
+[2m  - navigating to "http://127.0.0.1:3003/dashboard/default", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/default dark/desktop direct
+request: http://127.0.0.1:3003/dashboard/default net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3003/dashboard/default
+Call log:
+[2m  - navigating to "http://127.0.0.1:3003/dashboard/default", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/default dark/mobile direct
+request: http://127.0.0.1:3003/dashboard/default net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3003/dashboard/default
+Call log:
+[2m  - navigating to "http://127.0.0.1:3003/dashboard/default", waiting until "domcontentloaded"[22m
+

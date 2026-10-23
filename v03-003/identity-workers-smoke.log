@@ -1,0 +1,8 @@
+
+> tenboards@0.2.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url https://695b2a45-tenboards.mohanadgh.workers.dev --routes /dashboard/default --output screenshots/v03-003/identity-workers-smoke
+
+PASS /dashboard/default light/desktop direct
+PASS /dashboard/default light/mobile direct
+PASS /dashboard/default dark/desktop direct
+PASS /dashboard/default dark/mobile direct

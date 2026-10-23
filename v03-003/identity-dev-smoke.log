@@ -1,0 +1,8 @@
+
+> tenboards@0.2.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://localhost:3003 --routes /dashboard/default --output screenshots/v03-003/identity-dev-smoke
+
+PASS /dashboard/default light/desktop direct
+PASS /dashboard/default light/mobile direct
+PASS /dashboard/default dark/desktop direct
+PASS /dashboard/default dark/mobile direct
