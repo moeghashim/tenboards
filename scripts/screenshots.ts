@@ -16,6 +16,7 @@ const { values } = parseArgs({
     list: { type: "boolean", default: false },
     timezone: { type: "string", default: "America/Chicago" },
     reload: { type: "boolean", default: false },
+    boundaries: { type: "boolean", default: false },
     interactions: { type: "boolean", default: false },
     "hydration-delay-ms": { type: "string", default: "0" },
   },
@@ -42,6 +43,11 @@ const selected: Array<{ route: string; path: string; ready?: string; status?: nu
 );
 const unknown = requested?.filter((route) => !captureRoutes.some((entry) => entry.route === route));
 if (unknown?.length || !selected.length) throw new Error(`Unknown/empty route subset: ${unknown?.join(",")}`);
+if (values.boundaries)
+  selected.push(
+    { route: "qa:root-not-found", path: "/capture-not-found", status: 404 },
+    { route: "qa:root-error", path: "/dashboard/default", ready: "Total Revenue" },
+  );
 if (values.list) {
   console.log(JSON.stringify(selected, null, 2));
   process.exit(0);
@@ -57,6 +63,7 @@ const results: Array<{
   controlsFile: string | null;
   phase: string;
   interactionNotes: string[];
+  expectedDiagnostics: string[];
   errors: string[];
 }> = [];
 try {
@@ -89,11 +96,22 @@ try {
           ]);
           const page = await context.newPage();
           const errors: string[] = [];
+          const expectedDiagnostics: string[] = [];
+          const recordError = (message: string, source?: string) => {
+            const expectedFault =
+              entry.route === "qa:root-error" &&
+              (message.includes("QA_ONLY_ROOT_ERROR") || message.includes("The above error occurred in the"));
+            const expected404 =
+              entry.route === "qa:root-not-found" &&
+              source === new URL(entry.path, baseURL).href &&
+              /status of 404 \(.*\)/.test(message);
+            (expectedFault || expected404 ? expectedDiagnostics : errors).push(message);
+          };
           let interactionNotes: string[] = [];
           page.on("console", (message) => {
-            if (message.type() === "error") errors.push(`console: ${message.text()}`);
+            if (message.type() === "error") recordError(`console: ${message.text()}`, message.location().url);
           });
-          page.on("pageerror", (error) => errors.push(`page: ${error.message}`));
+          page.on("pageerror", (error) => recordError(`page: ${error.message}`));
           page.on("requestfailed", (request) => {
             if (request.failure()?.errorText !== "net::ERR_ABORTED") {
               errors.push(`request: ${request.url()} ${request.failure()?.errorText}`);
@@ -142,7 +160,7 @@ try {
               );
               window.scrollTo(0, 0);
             });
-            if (values.interactions)
+            if (values.interactions || entry.route.startsWith("qa:"))
               interactionNotes = await captureInteractions(page, entry.route, async (variant) => {
                 if (variant === "print")
                   await page.pdf({
@@ -188,6 +206,7 @@ try {
             controlsFile,
             phase,
             interactionNotes,
+            expectedDiagnostics,
             errors,
           });
           console.log(`${errors.length ? "FAIL" : "PASS"} ${entry.route} ${theme}/${viewportName} ${phase}`);

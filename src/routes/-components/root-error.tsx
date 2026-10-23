@@ -4,14 +4,16 @@ import { Button } from "@/components/ui/button";
 
 export function RootError({ error, reset }: ErrorComponentProps) {
   return (
-    <main className="flex min-h-dvh flex-col items-center justify-center gap-4 px-4 text-center">
-      <div className="flex max-w-md flex-col gap-2">
-        <h1 className="text-2xl font-semibold">Something went wrong.</h1>
-        <p className="text-muted-foreground">
+    <main className="flex min-h-dvh flex-col items-center justify-center gap-6 px-6 py-12 text-center">
+      <div className="flex max-w-sm flex-col gap-2">
+        <h1 className="text-2xl font-medium">Something went wrong.</h1>
+        <p className="text-muted-foreground text-sm">
           An unexpected error occurred while loading this page. Try again or return to the dashboard.
         </p>
         {import.meta.env.DEV ? (
-          <p className="text-destructive text-sm">{error instanceof Error ? error.message : "Unknown error"}</p>
+          <p className="text-destructive text-sm wrap-anywhere">
+            {error instanceof Error ? error.message : "Unknown error"}
+          </p>
         ) : null}
       </div>
       <div className="flex flex-wrap justify-center gap-2">
