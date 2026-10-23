@@ -5,7 +5,7 @@ import { type ColumnFiltersState, type PaginationState, type SortingState, useTa
 import { ArrowUpDown, ArrowUpRight, Download, MoreHorizontal } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { Card, CardAction, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { CardAction, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Pagination,
   PaginationContent,
@@ -19,6 +19,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { dataTableFeatures } from "@/lib/data-table-features";
 
+import { DashboardCard as Card } from "../../-components/dashboard/cards";
 import { recentOrdersColumns } from "./recent-orders-table/columns";
 import recentOrdersData from "./recent-orders-table/data.json";
 import {
@@ -77,9 +78,9 @@ export function RecentOrders() {
   }, [currentPage, pageCount]);
 
   return (
-    <Card>
+    <Card className="h-full">
       <CardHeader>
-        <CardTitle className="text-muted-foreground text-sm font-normal">Recent Orders</CardTitle>
+        <CardTitle className="text-foreground text-sm font-medium">Recent Orders</CardTitle>
         <CardDescription className="text-foreground text-xl leading-none tracking-tight tabular-nums">
           {orderCountDescription}
         </CardDescription>
@@ -90,16 +91,16 @@ export function RecentOrders() {
           <Button aria-label="Download orders" size="icon-sm" variant="outline">
             <Download />
           </Button>
-          <Button size="icon-sm" variant="outline">
+          <Button aria-label="More order options" size="icon-sm" variant="outline">
             <MoreHorizontal />
           </Button>
         </CardAction>
       </CardHeader>
 
       <CardContent className="flex flex-col gap-4 px-0">
-        <div className="flex items-center justify-between px-4">
+        <div className="flex flex-wrap items-center justify-between gap-2 px-4">
           <ToggleGroup
-            className="bg-muted text-muted-foreground **:data-[slot=toggle-group-item]:text-foreground/60 **:data-[slot=toggle-group-item]:hover:text-foreground [&_[data-slot=toggle-group-item][data-pressed]]:bg-background [&_[data-slot=toggle-group-item][data-pressed]]:text-foreground dark:[&_[data-slot=toggle-group-item][data-pressed]]:border-input dark:[&_[data-slot=toggle-group-item][data-pressed]]:bg-input/30 p-0.75 **:data-[slot=toggle-group-item]:rounded-md **:data-[slot=toggle-group-item]:border **:data-[slot=toggle-group-item]:border-transparent [&_[data-slot=toggle-group-item][data-pressed]]:shadow-sm"
+            className="bg-muted text-muted-foreground **:data-[slot=toggle-group-item]:text-muted-foreground **:data-[slot=toggle-group-item]:hover:text-foreground [&_[data-slot=toggle-group-item][data-pressed]]:bg-background [&_[data-slot=toggle-group-item][data-pressed]]:text-foreground dark:[&_[data-slot=toggle-group-item][data-pressed]]:border-input dark:[&_[data-slot=toggle-group-item][data-pressed]]:bg-input/30 flex-wrap p-0.75 **:data-[slot=toggle-group-item]:rounded-md **:data-[slot=toggle-group-item]:border **:data-[slot=toggle-group-item]:border-transparent [&_[data-slot=toggle-group-item][data-pressed]]:shadow-sm"
             onValueChange={(value) => {
               const filter = value[0] as OrderFilter | undefined;
               if (!filter) return;
@@ -118,6 +119,7 @@ export function RecentOrders() {
           </ToggleGroup>
 
           <Button
+            aria-label="Sort orders by date"
             size="icon-sm"
             variant="outline"
             onClick={() => table.getColumn("date")?.toggleSorting(table.getColumn("date")?.getIsSorted() === "asc")}
@@ -161,12 +163,12 @@ export function RecentOrders() {
           </Table>
         </div>
 
-        <div className="flex items-center justify-between gap-4 px-4 pb-1">
+        <div className="flex flex-wrap items-center justify-between gap-3 px-4 pb-1">
           <p className="text-muted-foreground text-sm">
-            Viewing {visibleOrderCount} out of {orderCount.toLocaleString()} orders
+            Viewing {visibleOrderCount} out of {orderCount.toLocaleString("en-US")} orders
           </p>
 
-          <Pagination className="mx-0 w-auto justify-end">
+          <Pagination className="mx-0 w-auto max-w-full justify-end">
             <PaginationContent className="gap-1.5">
               <PaginationItem>
                 <PaginationPrevious
