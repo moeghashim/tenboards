@@ -1,0 +1,2151 @@
+screenshots/v03-001/interactions/report.json: /dashboard/file-manager light/desktop direct
+locator.press: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('radio', { name: 'List View', exact: true })[22m
+
+
+screenshots/v03-001/interactions/report.json: /dashboard/file-manager light/mobile direct
+locator.press: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('radio', { name: 'List View', exact: true })[22m
+
+
+screenshots/v03-001/interactions/report.json: /dashboard/file-manager dark/desktop direct
+locator.press: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('radio', { name: 'List View', exact: true })[22m
+
+
+screenshots/v03-001/interactions/report.json: /dashboard/file-manager dark/mobile direct
+locator.press: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('radio', { name: 'List View', exact: true })[22m
+
+
+screenshots/v03-001/interactions/report.json: /dashboard/products dark/mobile direct
+page.evaluate: Execution context was destroyed, most likely because of a navigation
+
+screenshots/v03-001/workers/report.json: /dashboard/default light/desktop direct
+No interaction scenario for /dashboard/default. Use an explicit supported --routes subset.
+
+screenshots/v03-001/workers/report.json: /dashboard/default light/mobile direct
+No interaction scenario for /dashboard/default. Use an explicit supported --routes subset.
+
+screenshots/v03-001/workers/report.json: /dashboard/default dark/desktop direct
+No interaction scenario for /dashboard/default. Use an explicit supported --routes subset.
+
+screenshots/v03-001/workers/report.json: /dashboard/default dark/mobile direct
+No interaction scenario for /dashboard/default. Use an explicit supported --routes subset.
+
+screenshots/v03-001/workers/report.json: /dashboard/file-manager light/desktop direct
+locator.press: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('radio', { name: 'List View', exact: true })[22m
+
+
+screenshots/v03-001/workers/report.json: /dashboard/file-manager light/mobile direct
+locator.press: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('radio', { name: 'List View', exact: true })[22m
+
+
+screenshots/v03-001/workers/report.json: /dashboard/file-manager dark/desktop direct
+locator.press: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('radio', { name: 'List View', exact: true })[22m
+
+
+screenshots/v03-001/workers/report.json: /dashboard/file-manager dark/mobile direct
+locator.press: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('radio', { name: 'List View', exact: true })[22m
+
+
+screenshots/v03-001/workers-verified/report.json: /dashboard/default light/desktop direct
+No interaction scenario for /dashboard/default. Use an explicit supported --routes subset.
+
+screenshots/v03-001/workers-verified/report.json: /dashboard/default light/mobile direct
+No interaction scenario for /dashboard/default. Use an explicit supported --routes subset.
+
+screenshots/v03-001/workers-verified/report.json: /dashboard/default dark/desktop direct
+No interaction scenario for /dashboard/default. Use an explicit supported --routes subset.
+
+screenshots/v03-001/workers-verified/report.json: /dashboard/default dark/mobile direct
+No interaction scenario for /dashboard/default. Use an explicit supported --routes subset.
+
+screenshots/v03-002/graphite/report.json: /mail light/desktop direct
+locator.evaluate: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('[data-panel-id="mail-message-list-panel"]')[22m
+
+
+screenshots/v03-002/graphite-verified/report.json: /mail light/desktop direct
+Keyboard resize did not change panel width
+
+screenshots/v03-002/graphite-verified/report.json: /mail dark/desktop direct
+Keyboard resize did not change panel width
+
+screenshots/v03-002/graphite-verified/report.json: /dashboard/mail light/desktop direct
+Keyboard resize did not change panel width
+
+screenshots/v03-002/graphite-verified/report.json: /dashboard/mail dark/desktop direct
+Keyboard resize did not change panel width
+
+screenshots/v03-002/iris/report.json: /mail light/desktop direct
+locator.evaluate: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('[data-panel-id="mail-message-list-panel"]')[22m
+
+
+screenshots/v03-002/iris-verified/report.json: /mail light/desktop direct
+Keyboard resize did not change panel width
+
+screenshots/v03-002/iris-verified/report.json: /mail dark/desktop direct
+Keyboard resize did not change panel width
+
+screenshots/v03-002/iris-verified/report.json: /dashboard/mail light/desktop direct
+Keyboard resize did not change panel width
+
+screenshots/v03-002/iris-verified/report.json: /dashboard/mail dark/desktop direct
+Keyboard resize did not change panel width
+
+screenshots/v03-002/pine/report.json: /mail light/desktop direct
+locator.evaluate: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('[data-panel-id="mail-message-list-panel"]')[22m
+
+
+screenshots/v03-002/pine-verified/report.json: /mail light/desktop direct
+Keyboard resize did not change panel width
+
+screenshots/v03-002/pine-verified/report.json: /mail dark/desktop direct
+Keyboard resize did not change panel width
+
+screenshots/v03-002/pine-verified/report.json: /dashboard/mail light/desktop direct
+Keyboard resize did not change panel width
+
+screenshots/v03-002/pine-verified/report.json: /dashboard/mail dark/desktop direct
+Keyboard resize did not change panel width
+
+screenshots/v03-002/workers/report.json: /dashboard/mail dark/desktop direct
+console: Failed to load resource: the server responded with a status of 502 ()
+
+screenshots/v03-003/before/report.json: /chat dark/mobile direct
+request: https://fonts.googleapis.com/css2?family=Inter:wght@400..700&display=swap net::ERR_TIMED_OUT
+console: Failed to load resource: net::ERR_TIMED_OUT
+request: https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400..700&display=swap net::ERR_TIMED_OUT
+console: Failed to load resource: net::ERR_TIMED_OUT
+request: https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400..700&display=swap net::ERR_TIMED_OUT
+console: Failed to load resource: net::ERR_TIMED_OUT
+request: https://fonts.googleapis.com/css2?family=Figtree:wght@400..700&display=swap net::ERR_TIMED_OUT
+console: Failed to load resource: net::ERR_TIMED_OUT
+request: https://fonts.googleapis.com/css2?family=Roboto:wght@400..700&display=swap net::ERR_TIMED_OUT
+console: Failed to load resource: net::ERR_TIMED_OUT
+request: https://fonts.googleapis.com/css2?family=Raleway:wght@400..700&display=swap net::ERR_TIMED_OUT
+console: Failed to load resource: net::ERR_TIMED_OUT
+page.waitForLoadState: Timeout 30000ms exceeded.
+
+screenshots/v03-003/identity-dev/report.json: /chat light/desktop direct
+request: http://127.0.0.1:3003/chat net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3003/chat
+Call log:
+[2m  - navigating to "http://127.0.0.1:3003/chat", waiting until "domcontentloaded"[22m
+
+
+screenshots/v03-003/identity-dev/report.json: /chat light/mobile direct
+request: http://127.0.0.1:3003/chat net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3003/chat
+Call log:
+[2m  - navigating to "http://127.0.0.1:3003/chat", waiting until "domcontentloaded"[22m
+
+
+screenshots/v03-003/identity-dev/report.json: /chat dark/desktop direct
+request: http://127.0.0.1:3003/chat net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3003/chat
+Call log:
+[2m  - navigating to "http://127.0.0.1:3003/chat", waiting until "domcontentloaded"[22m
+
+
+screenshots/v03-003/identity-dev/report.json: /chat dark/mobile direct
+request: http://127.0.0.1:3003/chat net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3003/chat
+Call log:
+[2m  - navigating to "http://127.0.0.1:3003/chat", waiting until "domcontentloaded"[22m
+
+
+screenshots/v03-003/identity-dev/report.json: /dashboard/chat light/desktop direct
+request: http://127.0.0.1:3003/dashboard/chat net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3003/dashboard/chat
+Call log:
+[2m  - navigating to "http://127.0.0.1:3003/dashboard/chat", waiting until "domcontentloaded"[22m
+
+
+screenshots/v03-003/identity-dev/report.json: /dashboard/chat light/mobile direct
+request: http://127.0.0.1:3003/dashboard/chat net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3003/dashboard/chat
+Call log:
+[2m  - navigating to "http://127.0.0.1:3003/dashboard/chat", waiting until "domcontentloaded"[22m
+
+
+screenshots/v03-003/identity-dev/report.json: /dashboard/chat dark/desktop direct
+request: http://127.0.0.1:3003/dashboard/chat net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3003/dashboard/chat
+Call log:
+[2m  - navigating to "http://127.0.0.1:3003/dashboard/chat", waiting until "domcontentloaded"[22m
+
+
+screenshots/v03-003/identity-dev/report.json: /dashboard/chat dark/mobile direct
+request: http://127.0.0.1:3003/dashboard/chat net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3003/dashboard/chat
+Call log:
+[2m  - navigating to "http://127.0.0.1:3003/dashboard/chat", waiting until "domcontentloaded"[22m
+
+
+screenshots/v03-003/identity-dev/report.json: /dashboard/default light/desktop direct
+request: http://127.0.0.1:3003/dashboard/default net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3003/dashboard/default
+Call log:
+[2m  - navigating to "http://127.0.0.1:3003/dashboard/default", waiting until "domcontentloaded"[22m
+
+
+screenshots/v03-003/identity-dev/report.json: /dashboard/default light/mobile direct
+request: http://127.0.0.1:3003/dashboard/default net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3003/dashboard/default
+Call log:
+[2m  - navigating to "http://127.0.0.1:3003/dashboard/default", waiting until "domcontentloaded"[22m
+
+
+screenshots/v03-003/identity-dev/report.json: /dashboard/default dark/desktop direct
+request: http://127.0.0.1:3003/dashboard/default net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3003/dashboard/default
+Call log:
+[2m  - navigating to "http://127.0.0.1:3003/dashboard/default", waiting until "domcontentloaded"[22m
+
+
+screenshots/v03-003/identity-dev/report.json: /dashboard/default dark/mobile direct
+request: http://127.0.0.1:3003/dashboard/default net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3003/dashboard/default
+Call log:
+[2m  - navigating to "http://127.0.0.1:3003/dashboard/default", waiting until "domcontentloaded"[22m
+
+
+screenshots/v03-003/identity-dev-final/report.json: /dashboard/default light/desktop direct
+No interaction scenario for /dashboard/default. Use an explicit supported --routes subset.
+
+screenshots/v03-003/identity-dev-final/report.json: /dashboard/default light/mobile direct
+No interaction scenario for /dashboard/default. Use an explicit supported --routes subset.
+
+screenshots/v03-003/identity-dev-final/report.json: /dashboard/default dark/desktop direct
+No interaction scenario for /dashboard/default. Use an explicit supported --routes subset.
+
+screenshots/v03-003/identity-dev-final/report.json: /dashboard/default dark/mobile direct
+No interaction scenario for /dashboard/default. Use an explicit supported --routes subset.
+
+screenshots/v03-003/identity-workers/report.json: /chat light/mobile direct
+locator.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('menuitem', { name: 'View profile', exact: true })[22m
+[2m    - locator resolved to <div tabindex="-1" role="menuitem" id="base-ui-_r_d_" data-variant="default" data-slot="dropdown-menu-item" class="group/dropdown-menu-item relative flex cursor-default items-center gap-1.5 rounded-md px-1.5 py-1 text-sm outline-hidden select-none focus:bg-accent focus:text-accent-foreground not-data-[variant=destructive]:focus:**:text-accent-foreground data-inset:pl-7 data-[variant=destructive]:text-destructive data-[variant=destructive]:focus:bg-destructive/10 data-[variant=destructive]:focus:tex…>…</div>[22m
+[2m  - attempting click action[22m
+[2m    - waiting for element to be visible, enabled and stable[22m
+[2m  - element was detached from the DOM, retrying[22m
+
+
+screenshots/v03-003/identity-workers/report.json: /dashboard/chat light/mobile direct
+console: Failed to load resource: the server responded with a status of 500 ()
+Unexpected HTTP status 500
+
+screenshots/v03-003/identity-workers/report.json: /dashboard/default light/desktop direct
+No interaction scenario for /dashboard/default. Use an explicit supported --routes subset.
+
+screenshots/v03-003/identity-workers/report.json: /dashboard/default light/mobile direct
+No interaction scenario for /dashboard/default. Use an explicit supported --routes subset.
+
+screenshots/v03-003/identity-workers/report.json: /dashboard/default dark/desktop direct
+No interaction scenario for /dashboard/default. Use an explicit supported --routes subset.
+
+screenshots/v03-003/identity-workers/report.json: /dashboard/default dark/mobile direct
+No interaction scenario for /dashboard/default. Use an explicit supported --routes subset.
+
+screenshots/v03-003/identity-workers-final/report.json: /chat light/mobile direct
+console: Failed to load resource: the server responded with a status of 500 ()
+Unexpected HTTP status 500
+
+screenshots/v03-003/interactions/report.json: /chat light/desktop direct
+locator.waitFor: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('button', { name: 'Close profile', exact: true }) to be visible[22m
+
+
+screenshots/v03-003/interactions/report.json: /chat light/mobile direct
+page.waitForFunction: Timeout 30000ms exceeded.
+
+screenshots/v03-003/interactions/report.json: /chat dark/mobile direct
+page.waitForFunction: Timeout 30000ms exceeded.
+
+screenshots/v03-003/interactions/report.json: /dashboard/chat light/mobile direct
+frame.waitForFunction: Timeout 30000ms exceeded.
+
+screenshots/v03-003/interactions/report.json: /dashboard/chat dark/mobile direct
+frame.waitForFunction: Timeout 30000ms exceeded.
+
+screenshots/v03-003/interactions-final/report.json: /chat light/mobile direct
+page.waitForFunction: Timeout 30000ms exceeded.
+
+screenshots/v03-003/interactions-final/report.json: /chat dark/mobile direct
+page.waitForFunction: Timeout 30000ms exceeded.
+
+screenshots/v03-003/interactions-final/report.json: /dashboard/chat light/mobile direct
+frame.waitForFunction: Timeout 30000ms exceeded.
+
+screenshots/v03-003/interactions-final/report.json: /dashboard/chat dark/mobile direct
+frame.waitForFunction: Timeout 30000ms exceeded.
+
+screenshots/v03-003/interactions-verified/report.json: /chat light/mobile direct
+page.waitForFunction: Timeout 30000ms exceeded.
+
+screenshots/v03-003/interactions-verified/report.json: /chat dark/mobile direct
+page.waitForFunction: Timeout 30000ms exceeded.
+
+screenshots/v03-003/interactions-verified/report.json: /dashboard/chat light/mobile direct
+frame.waitForFunction: Timeout 30000ms exceeded.
+
+screenshots/v03-003/interactions-verified/report.json: /dashboard/chat dark/mobile direct
+frame.waitForFunction: Timeout 30000ms exceeded.
+
+screenshots/v03-003/width-verified/report.json: /dashboard/chat dark/desktop direct
+page.waitForLoadState: Timeout 30000ms exceeded.
+
+screenshots/v03-003/workers-final/report.json: /dashboard/chat light/mobile direct
+locator.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('menuitem', { name: 'View profile', exact: true })[22m
+[2m    - locator resolved to <div tabindex="-1" role="menuitem" id="base-ui-_r_d_" data-variant="default" data-slot="dropdown-menu-item" class="group/dropdown-menu-item relative flex cursor-default items-center gap-1.5 rounded-md px-1.5 py-1 text-sm outline-hidden select-none focus:bg-accent focus:text-accent-foreground not-data-[variant=destructive]:focus:**:text-accent-foreground data-inset:pl-7 data-[variant=destructive]:text-destructive data-[variant=destructive]:focus:bg-destructive/10 data-[variant=destructive]:focus:tex…>…</div>[22m
+[2m  - attempting click action[22m
+[2m    - waiting for element to be visible, enabled and stable[22m
+[2m  - element was detached from the DOM, retrying[22m
+
+
+Additional task failure notes: screenshots/v03-003/failures.txt
+Initial app/test findings, corrected before final acceptance:
+Base UI profile item onSelect did not open profile: locator.waitFor: Timeout 30000ms exceeded (Close profile). Changed to onClick.
+Mobile focus with visibility transition: page.waitForFunction: Timeout 30000ms exceeded. Keep slide transform and inert; remove redundant visibility transition; focus after render with preventScroll.
+Initial onKeyDown div Biome: Unexpected event handler on static element. A role=group trial requested fieldset. Final uses a scoped native key listener with cleanup, preserving semantic DOM.
+Before capture: external fonts.googleapis.com net::ERR_TIMED_OUT (Inter, Noto Sans, Nunito Sans, Figtree, Roboto, Raleway); four-state pre-edit Workers retry passed.
+One final dev iframe capture: page.waitForLoadState: Timeout 30000ms exceeded; four-state width-retry verifies route.
+
+Final Workers iframe light/mobile interaction retry: locator.click: Element is not attached to the DOM (View profile). Test reopened before closing sheet completed; explicit hidden-state wait added. workers-retry report passes 4/4. Dev width capture dark/desktop: page.waitForLoadState: Timeout 30000ms exceeded (networkidle); width-retry passes 4/4. Contact-sheet helper command initially failed: zsh:1: command not found: python; rerun with python3 passed.
+
+Final contact-domain audit rerun diagnostics (resolved):
+identity-dev /chat light/desktop
+request: http://127.0.0.1:3003/chat net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3003/chat
+Call log:
+[2m  - navigating to "http://127.0.0.1:3003/chat", waiting until "domcontentloaded"[22m
+
+identity-dev /chat light/mobile
+request: http://127.0.0.1:3003/chat net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3003/chat
+Call log:
+[2m  - navigating to "http://127.0.0.1:3003/chat", waiting until "domcontentloaded"[22m
+
+identity-dev /chat dark/desktop
+request: http://127.0.0.1:3003/chat net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3003/chat
+Call log:
+[2m  - navigating to "http://127.0.0.1:3003/chat", waiting until "domcontentloaded"[22m
+
+identity-dev /chat dark/mobile
+request: http://127.0.0.1:3003/chat net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3003/chat
+Call log:
+[2m  - navigating to "http://127.0.0.1:3003/chat", waiting until "domcontentloaded"[22m
+
+identity-dev /dashboard/chat light/desktop
+request: http://127.0.0.1:3003/dashboard/chat net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3003/dashboard/chat
+Call log:
+[2m  - navigating to "http://127.0.0.1:3003/dashboard/chat", waiting until "domcontentloaded"[22m
+
+identity-dev /dashboard/chat light/mobile
+request: http://127.0.0.1:3003/dashboard/chat net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3003/dashboard/chat
+Call log:
+[2m  - navigating to "http://127.0.0.1:3003/dashboard/chat", waiting until "domcontentloaded"[22m
+
+identity-dev /dashboard/chat dark/desktop
+request: http://127.0.0.1:3003/dashboard/chat net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3003/dashboard/chat
+Call log:
+[2m  - navigating to "http://127.0.0.1:3003/dashboard/chat", waiting until "domcontentloaded"[22m
+
+identity-dev /dashboard/chat dark/mobile
+request: http://127.0.0.1:3003/dashboard/chat net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3003/dashboard/chat
+Call log:
+[2m  - navigating to "http://127.0.0.1:3003/dashboard/chat", waiting until "domcontentloaded"[22m
+
+identity-dev /dashboard/default light/desktop
+request: http://127.0.0.1:3003/dashboard/default net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3003/dashboard/default
+Call log:
+[2m  - navigating to "http://127.0.0.1:3003/dashboard/default", waiting until "domcontentloaded"[22m
+
+identity-dev /dashboard/default light/mobile
+request: http://127.0.0.1:3003/dashboard/default net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3003/dashboard/default
+Call log:
+[2m  - navigating to "http://127.0.0.1:3003/dashboard/default", waiting until "domcontentloaded"[22m
+
+identity-dev /dashboard/default dark/desktop
+request: http://127.0.0.1:3003/dashboard/default net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3003/dashboard/default
+Call log:
+[2m  - navigating to "http://127.0.0.1:3003/dashboard/default", waiting until "domcontentloaded"[22m
+
+identity-dev /dashboard/default dark/mobile
+request: http://127.0.0.1:3003/dashboard/default net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3003/dashboard/default
+Call log:
+[2m  - navigating to "http://127.0.0.1:3003/dashboard/default", waiting until "domcontentloaded"[22m
+
+identity-dev-final /dashboard/default light/desktop
+No interaction scenario for /dashboard/default. Use an explicit supported --routes subset.
+identity-dev-final /dashboard/default light/mobile
+No interaction scenario for /dashboard/default. Use an explicit supported --routes subset.
+identity-dev-final /dashboard/default dark/desktop
+No interaction scenario for /dashboard/default. Use an explicit supported --routes subset.
+identity-dev-final /dashboard/default dark/mobile
+No interaction scenario for /dashboard/default. Use an explicit supported --routes subset.
+identity-workers /chat light/mobile
+locator.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('menuitem', { name: 'View profile', exact: true })[22m
+[2m    - locator resolved to <div tabindex="-1" role="menuitem" id="base-ui-_r_d_" data-variant="default" data-slot="dropdown-menu-item" class="group/dropdown-menu-item relative flex cursor-default items-center gap-1.5 rounded-md px-1.5 py-1 text-sm outline-hidden select-none focus:bg-accent focus:text-accent-foreground not-data-[variant=destructive]:focus:**:text-accent-foreground data-inset:pl-7 data-[variant=destructive]:text-destructive data-[variant=destructive]:focus:bg-destructive/10 data-[variant=destructive]:focus:tex…>…</div>[22m
+[2m  - attempting click action[22m
+[2m    - waiting for element to be visible, enabled and stable[22m
+[2m  - element was detached from the DOM, retrying[22m
+
+identity-workers /dashboard/chat light/mobile
+console: Failed to load resource: the server responded with a status of 500 ()
+Unexpected HTTP status 500
+identity-workers /dashboard/default light/desktop
+No interaction scenario for /dashboard/default. Use an explicit supported --routes subset.
+identity-workers /dashboard/default light/mobile
+No interaction scenario for /dashboard/default. Use an explicit supported --routes subset.
+identity-workers /dashboard/default dark/desktop
+No interaction scenario for /dashboard/default. Use an explicit supported --routes subset.
+identity-workers /dashboard/default dark/mobile
+No interaction scenario for /dashboard/default. Use an explicit supported --routes subset.
+Connection refusal used 127.0.0.1 against the localhost-only Vite listener; corrected URL. Default smoke was incorrectly requested with --interactions; rerun without it. Workers HTTP 500 retried on the same version.
+identity-workers-final /chat light/mobile
+console: Failed to load resource: the server responded with a status of 500 ()
+Unexpected HTTP status 500
+Final identity-workers-retry: 8/8; identity-workers-smoke: 4/4; dev contact scenarios 8/8 and default 4/4. urllib diagnostic was denied by the edge with HTTP 403 / error code 1010; browser checks above pass.
+
+screenshots/v03-004/before/report.json: /dashboard/calendar light/desktop direct
+page: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <NowTimer unit="day">
+      <DayGridLayout labelId={undefined} labelStr="October 2026" dateProfile={{...}} todayRange={{start:Date, ...}} ...>
+        <ViewContainer viewSpec={{type:"dayG...", ...}} attrs={{role:"table", ...}} className="fc-9b fc-t...">
+          <ContentContainer elRef={undefined} tag="div" attrs={{role:"table", ...}} style={undefined} ...>
+            <div role="table" aria-rowcount={7} aria-colcount={7} aria-labelledby={undefined} aria-label="October 2026" ...>
+              <DayGridLayoutNormal labelId={undefined} labelStr="October 2026" dateProfile={{...}} ...>
+                <div>
+                <Scroller vertical={true} className="bg-backgro..." ref={function} clientWidthRef={function}>
+                  <div ref={function} className="bg-backgro..." style={{...}}>
+                    <DayGridRows dateProfile={{...}} todayRange={{start:Date, ...}} cellRows={[...]} forPrint={false} ...>
+                      <div role="rowgroup" className="fc-l7 fc-mU" style={{...}} ref={function}>
+                        <DayGridRow>
+                        <DayGridRow>
+                        <DayGridRow>
+                        <DayGridRow role="row" dateProfile={{...}} todayRange={{start:Date, ...}} cells={[...]} ...>
+                          <div role="row" aria-label="Week 43" className="border fc-..." style={{flexBasis:0}} ...>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell dateProfile={{...}} todayRange={{start:Date, ...}} date={Date} isMajor={false} ...>
+                              <ContentContainer tag="div" elRef={{current:null}} className="fc-qy fc-l..." ...>
+                                <div
+                                  role="cell"
+                                  data-date="2026-10-23"
+                                  ref={function}
+                                  className="border fc-qy fc-li fc-lE fc-OV fc-mU fc-Ru fc-yU fc-Ju"
+                                  style={{width:undefined}}
+-                                 aria-current="date"
+                                >
+                                  <div role="presentation" className="fc-Ru fc-S...">
+                                    <div>
+                                    <bound InnerContentInjector tag="div" attrs={{...}} className="flex flex-...">
+                                      <ContentInjector renderProps={{date:Date,dow:5, ...}} generatorName="dayCellTop..." ...>
+                                        <div
+                                          aria-hidden={true}
+                                          ref={function}
++                                         className="flex flex-row items-center my-1 h-6 text-sm rounded-s-sm whitespa..."
+-                                         className="flex flex-row items-center my-1 h-6 text-sm group outline-none mx-2"
+                                        >
++                                         23
+-                                         <span
+-                                           className="whitespace-pre rounded-full font-semibold flex flex-row items-c..."
+-                                           data-tsd-source="/src/components/calendar/event-calendar-views.tsx:291:17"
+-                                         >
+                                  ...
+                            ...
+                        ...
+                    ...
+                ...
+
+
+screenshots/v03-004/before/report.json: /dashboard/calendar light/desktop refresh
+page: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <NowTimer unit="day">
+      <DayGridLayout labelId={undefined} labelStr="October 2026" dateProfile={{...}} todayRange={{start:Date, ...}} ...>
+        <ViewContainer viewSpec={{type:"dayG...", ...}} attrs={{role:"table", ...}} className="fc-9b fc-t...">
+          <ContentContainer elRef={undefined} tag="div" attrs={{role:"table", ...}} style={undefined} ...>
+            <div role="table" aria-rowcount={7} aria-colcount={7} aria-labelledby={undefined} aria-label="October 2026" ...>
+              <DayGridLayoutNormal labelId={undefined} labelStr="October 2026" dateProfile={{...}} ...>
+                <div>
+                <Scroller vertical={true} className="bg-backgro..." ref={function} clientWidthRef={function}>
+                  <div ref={function} className="bg-backgro..." style={{...}}>
+                    <DayGridRows dateProfile={{...}} todayRange={{start:Date, ...}} cellRows={[...]} forPrint={false} ...>
+                      <div role="rowgroup" className="fc-l7 fc-mU" style={{...}} ref={function}>
+                        <DayGridRow>
+                        <DayGridRow>
+                        <DayGridRow>
+                        <DayGridRow role="row" dateProfile={{...}} todayRange={{start:Date, ...}} cells={[...]} ...>
+                          <div role="row" aria-label="Week 43" className="border fc-..." style={{flexBasis:0}} ...>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell dateProfile={{...}} todayRange={{start:Date, ...}} date={Date} isMajor={false} ...>
+                              <ContentContainer tag="div" elRef={{current:null}} className="fc-qy fc-l..." ...>
+                                <div
+                                  role="cell"
+                                  data-date="2026-10-23"
+                                  ref={function}
+                                  className="border fc-qy fc-li fc-lE fc-OV fc-mU fc-Ru fc-yU fc-Ju"
+                                  style={{width:undefined}}
+-                                 aria-current="date"
+                                >
+                                  <div role="presentation" className="fc-Ru fc-S...">
+                                    <div>
+                                    <bound InnerContentInjector tag="div" attrs={{...}} className="flex flex-...">
+                                      <ContentInjector renderProps={{date:Date,dow:5, ...}} generatorName="dayCellTop..." ...>
+                                        <div
+                                          aria-hidden={true}
+                                          ref={function}
++                                         className="flex flex-row items-center my-1 h-6 text-sm rounded-s-sm whitespa..."
+-                                         className="flex flex-row items-center my-1 h-6 text-sm group outline-none mx-2"
+                                        >
++                                         23
+-                                         <span
+-                                           className="whitespace-pre rounded-full font-semibold flex flex-row items-c..."
+-                                           data-tsd-source="/src/components/calendar/event-calendar-views.tsx:291:17"
+-                                         >
+                                  ...
+                            ...
+                        ...
+                    ...
+                ...
+
+page: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <NowTimer unit="day">
+      <DayGridLayout labelId={undefined} labelStr="October 2026" dateProfile={{...}} todayRange={{start:Date, ...}} ...>
+        <ViewContainer viewSpec={{type:"dayG...", ...}} attrs={{role:"table", ...}} className="fc-9b fc-t...">
+          <ContentContainer elRef={undefined} tag="div" attrs={{role:"table", ...}} style={undefined} ...>
+            <div role="table" aria-rowcount={7} aria-colcount={7} aria-labelledby={undefined} aria-label="October 2026" ...>
+              <DayGridLayoutNormal labelId={undefined} labelStr="October 2026" dateProfile={{...}} ...>
+                <div>
+                <Scroller vertical={true} className="bg-backgro..." ref={function} clientWidthRef={function}>
+                  <div ref={function} className="bg-backgro..." style={{...}}>
+                    <DayGridRows dateProfile={{...}} todayRange={{start:Date, ...}} cellRows={[...]} forPrint={false} ...>
+                      <div role="rowgroup" className="fc-l7 fc-mU" style={{...}} ref={function}>
+                        <DayGridRow>
+                        <DayGridRow>
+                        <DayGridRow>
+                        <DayGridRow role="row" dateProfile={{...}} todayRange={{start:Date, ...}} cells={[...]} ...>
+                          <div role="row" aria-label="Week 43" className="border fc-..." style={{flexBasis:0}} ...>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell dateProfile={{...}} todayRange={{start:Date, ...}} date={Date} isMajor={false} ...>
+                              <ContentContainer tag="div" elRef={{current:null}} className="fc-qy fc-l..." ...>
+                                <div
+                                  role="cell"
+                                  data-date="2026-10-23"
+                                  ref={function}
+                                  className="border fc-qy fc-li fc-lE fc-OV fc-mU fc-Ru fc-yU fc-Ju"
+                                  style={{width:undefined}}
+-                                 aria-current="date"
+                                >
+                                  <div role="presentation" className="fc-Ru fc-S...">
+                                    <div>
+                                    <bound InnerContentInjector tag="div" attrs={{...}} className="flex flex-...">
+                                      <ContentInjector renderProps={{date:Date,dow:5, ...}} generatorName="dayCellTop..." ...>
+                                        <div
+                                          aria-hidden={true}
+                                          ref={function}
++                                         className="flex flex-row items-center my-1 h-6 text-sm rounded-s-sm whitespa..."
+-                                         className="flex flex-row items-center my-1 h-6 text-sm group outline-none mx-2"
+                                        >
++                                         23
+-                                         <span
+-                                           className="whitespace-pre rounded-full font-semibold flex flex-row items-c..."
+-                                           data-tsd-source="/src/components/calendar/event-calendar-views.tsx:291:17"
+-                                         >
+                                  ...
+                            ...
+                        ...
+                    ...
+                ...
+
+
+screenshots/v03-004/before/report.json: /dashboard/calendar light/mobile direct
+page: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <NowTimer unit="day">
+      <DayGridLayout labelId={undefined} labelStr="October 2026" dateProfile={{...}} todayRange={{start:Date, ...}} ...>
+        <ViewContainer viewSpec={{type:"dayG...", ...}} attrs={{role:"table", ...}} className="fc-9b fc-t...">
+          <ContentContainer elRef={undefined} tag="div" attrs={{role:"table", ...}} style={undefined} ...>
+            <div role="table" aria-rowcount={7} aria-colcount={7} aria-labelledby={undefined} aria-label="October 2026" ...>
+              <DayGridLayoutNormal labelId={undefined} labelStr="October 2026" dateProfile={{...}} ...>
+                <div>
+                <Scroller vertical={true} className="bg-backgro..." ref={function} clientWidthRef={function}>
+                  <div ref={function} className="bg-backgro..." style={{...}}>
+                    <DayGridRows dateProfile={{...}} todayRange={{start:Date, ...}} cellRows={[...]} forPrint={false} ...>
+                      <div role="rowgroup" className="fc-l7 fc-mU" style={{...}} ref={function}>
+                        <DayGridRow>
+                        <DayGridRow>
+                        <DayGridRow>
+                        <DayGridRow role="row" dateProfile={{...}} todayRange={{start:Date, ...}} cells={[...]} ...>
+                          <div role="row" aria-label="Week 43" className="border fc-..." style={{flexBasis:0}} ...>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell dateProfile={{...}} todayRange={{start:Date, ...}} date={Date} isMajor={false} ...>
+                              <ContentContainer tag="div" elRef={{current:null}} className="fc-qy fc-l..." ...>
+                                <div
+                                  role="cell"
+                                  data-date="2026-10-23"
+                                  ref={function}
+                                  className="border fc-qy fc-li fc-lE fc-OV fc-mU fc-Ru fc-yU fc-Ju"
+                                  style={{width:undefined}}
+-                                 aria-current="date"
+                                >
+                                  <div role="presentation" className="fc-Ru fc-S...">
+                                    <div>
+                                    <bound InnerContentInjector tag="div" attrs={{...}} className="flex flex-...">
+                                      <ContentInjector renderProps={{date:Date,dow:5, ...}} generatorName="dayCellTop..." ...>
+                                        <div
+                                          aria-hidden={true}
+                                          ref={function}
++                                         className="flex flex-row items-center my-1 h-6 text-sm rounded-s-sm whitespa..."
+-                                         className="flex flex-row items-center my-1 h-6 text-sm group outline-none mx-2"
+                                        >
++                                         23
+-                                         <span
+-                                           className="whitespace-pre rounded-full font-semibold flex flex-row items-c..."
+-                                           data-tsd-source="/src/components/calendar/event-calendar-views.tsx:291:17"
+-                                         >
+                                  ...
+                            ...
+                        ...
+                    ...
+                ...
+
+
+screenshots/v03-004/before/report.json: /dashboard/calendar light/mobile refresh
+page: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <NowTimer unit="day">
+      <DayGridLayout labelId={undefined} labelStr="October 2026" dateProfile={{...}} todayRange={{start:Date, ...}} ...>
+        <ViewContainer viewSpec={{type:"dayG...", ...}} attrs={{role:"table", ...}} className="fc-9b fc-t...">
+          <ContentContainer elRef={undefined} tag="div" attrs={{role:"table", ...}} style={undefined} ...>
+            <div role="table" aria-rowcount={7} aria-colcount={7} aria-labelledby={undefined} aria-label="October 2026" ...>
+              <DayGridLayoutNormal labelId={undefined} labelStr="October 2026" dateProfile={{...}} ...>
+                <div>
+                <Scroller vertical={true} className="bg-backgro..." ref={function} clientWidthRef={function}>
+                  <div ref={function} className="bg-backgro..." style={{...}}>
+                    <DayGridRows dateProfile={{...}} todayRange={{start:Date, ...}} cellRows={[...]} forPrint={false} ...>
+                      <div role="rowgroup" className="fc-l7 fc-mU" style={{...}} ref={function}>
+                        <DayGridRow>
+                        <DayGridRow>
+                        <DayGridRow>
+                        <DayGridRow role="row" dateProfile={{...}} todayRange={{start:Date, ...}} cells={[...]} ...>
+                          <div role="row" aria-label="Week 43" className="border fc-..." style={{flexBasis:0}} ...>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell dateProfile={{...}} todayRange={{start:Date, ...}} date={Date} isMajor={false} ...>
+                              <ContentContainer tag="div" elRef={{current:null}} className="fc-qy fc-l..." ...>
+                                <div
+                                  role="cell"
+                                  data-date="2026-10-23"
+                                  ref={function}
+                                  className="border fc-qy fc-li fc-lE fc-OV fc-mU fc-Ru fc-yU fc-Ju"
+                                  style={{width:undefined}}
+-                                 aria-current="date"
+                                >
+                                  <div role="presentation" className="fc-Ru fc-S...">
+                                    <div>
+                                    <bound InnerContentInjector tag="div" attrs={{...}} className="flex flex-...">
+                                      <ContentInjector renderProps={{date:Date,dow:5, ...}} generatorName="dayCellTop..." ...>
+                                        <div
+                                          aria-hidden={true}
+                                          ref={function}
++                                         className="flex flex-row items-center my-1 h-6 text-sm rounded-s-sm whitespa..."
+-                                         className="flex flex-row items-center my-1 h-6 text-sm group outline-none mx-2"
+                                        >
++                                         23
+-                                         <span
+-                                           className="whitespace-pre rounded-full font-semibold flex flex-row items-c..."
+-                                           data-tsd-source="/src/components/calendar/event-calendar-views.tsx:291:17"
+-                                         >
+                                  ...
+                            ...
+                        ...
+                    ...
+                ...
+
+page: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <NowTimer unit="day">
+      <DayGridLayout labelId={undefined} labelStr="October 2026" dateProfile={{...}} todayRange={{start:Date, ...}} ...>
+        <ViewContainer viewSpec={{type:"dayG...", ...}} attrs={{role:"table", ...}} className="fc-9b fc-t...">
+          <ContentContainer elRef={undefined} tag="div" attrs={{role:"table", ...}} style={undefined} ...>
+            <div role="table" aria-rowcount={7} aria-colcount={7} aria-labelledby={undefined} aria-label="October 2026" ...>
+              <DayGridLayoutNormal labelId={undefined} labelStr="October 2026" dateProfile={{...}} ...>
+                <div>
+                <Scroller vertical={true} className="bg-backgro..." ref={function} clientWidthRef={function}>
+                  <div ref={function} className="bg-backgro..." style={{...}}>
+                    <DayGridRows dateProfile={{...}} todayRange={{start:Date, ...}} cellRows={[...]} forPrint={false} ...>
+                      <div role="rowgroup" className="fc-l7 fc-mU" style={{...}} ref={function}>
+                        <DayGridRow>
+                        <DayGridRow>
+                        <DayGridRow>
+                        <DayGridRow role="row" dateProfile={{...}} todayRange={{start:Date, ...}} cells={[...]} ...>
+                          <div role="row" aria-label="Week 43" className="border fc-..." style={{flexBasis:0}} ...>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell dateProfile={{...}} todayRange={{start:Date, ...}} date={Date} isMajor={false} ...>
+                              <ContentContainer tag="div" elRef={{current:null}} className="fc-qy fc-l..." ...>
+                                <div
+                                  role="cell"
+                                  data-date="2026-10-23"
+                                  ref={function}
+                                  className="border fc-qy fc-li fc-lE fc-OV fc-mU fc-Ru fc-yU fc-Ju"
+                                  style={{width:undefined}}
+-                                 aria-current="date"
+                                >
+                                  <div role="presentation" className="fc-Ru fc-S...">
+                                    <div>
+                                    <bound InnerContentInjector tag="div" attrs={{...}} className="flex flex-...">
+                                      <ContentInjector renderProps={{date:Date,dow:5, ...}} generatorName="dayCellTop..." ...>
+                                        <div
+                                          aria-hidden={true}
+                                          ref={function}
++                                         className="flex flex-row items-center my-1 h-6 text-sm rounded-s-sm whitespa..."
+-                                         className="flex flex-row items-center my-1 h-6 text-sm group outline-none mx-2"
+                                        >
++                                         23
+-                                         <span
+-                                           className="whitespace-pre rounded-full font-semibold flex flex-row items-c..."
+-                                           data-tsd-source="/src/components/calendar/event-calendar-views.tsx:291:17"
+-                                         >
+                                  ...
+                            ...
+                        ...
+                    ...
+                ...
+
+
+screenshots/v03-004/before/report.json: /dashboard/calendar dark/desktop direct
+page: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <NowTimer unit="day">
+      <DayGridLayout labelId={undefined} labelStr="October 2026" dateProfile={{...}} todayRange={{start:Date, ...}} ...>
+        <ViewContainer viewSpec={{type:"dayG...", ...}} attrs={{role:"table", ...}} className="fc-9b fc-t...">
+          <ContentContainer elRef={undefined} tag="div" attrs={{role:"table", ...}} style={undefined} ...>
+            <div role="table" aria-rowcount={7} aria-colcount={7} aria-labelledby={undefined} aria-label="October 2026" ...>
+              <DayGridLayoutNormal labelId={undefined} labelStr="October 2026" dateProfile={{...}} ...>
+                <div>
+                <Scroller vertical={true} className="bg-backgro..." ref={function} clientWidthRef={function}>
+                  <div ref={function} className="bg-backgro..." style={{...}}>
+                    <DayGridRows dateProfile={{...}} todayRange={{start:Date, ...}} cellRows={[...]} forPrint={false} ...>
+                      <div role="rowgroup" className="fc-l7 fc-mU" style={{...}} ref={function}>
+                        <DayGridRow>
+                        <DayGridRow>
+                        <DayGridRow>
+                        <DayGridRow role="row" dateProfile={{...}} todayRange={{start:Date, ...}} cells={[...]} ...>
+                          <div role="row" aria-label="Week 43" className="border fc-..." style={{flexBasis:0}} ...>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell dateProfile={{...}} todayRange={{start:Date, ...}} date={Date} isMajor={false} ...>
+                              <ContentContainer tag="div" elRef={{current:null}} className="fc-qy fc-l..." ...>
+                                <div
+                                  role="cell"
+                                  data-date="2026-10-23"
+                                  ref={function}
+                                  className="border fc-qy fc-li fc-lE fc-OV fc-mU fc-Ru fc-yU fc-Ju"
+                                  style={{width:undefined}}
+-                                 aria-current="date"
+                                >
+                                  <div role="presentation" className="fc-Ru fc-S...">
+                                    <div>
+                                    <bound InnerContentInjector tag="div" attrs={{...}} className="flex flex-...">
+                                      <ContentInjector renderProps={{date:Date,dow:5, ...}} generatorName="dayCellTop..." ...>
+                                        <div
+                                          aria-hidden={true}
+                                          ref={function}
++                                         className="flex flex-row items-center my-1 h-6 text-sm rounded-s-sm whitespa..."
+-                                         className="flex flex-row items-center my-1 h-6 text-sm group outline-none mx-2"
+                                        >
++                                         23
+-                                         <span
+-                                           className="whitespace-pre rounded-full font-semibold flex flex-row items-c..."
+-                                           data-tsd-source="/src/components/calendar/event-calendar-views.tsx:291:17"
+-                                         >
+                                  ...
+                            ...
+                        ...
+                    ...
+                ...
+
+
+screenshots/v03-004/before/report.json: /dashboard/calendar dark/desktop refresh
+page: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <NowTimer unit="day">
+      <DayGridLayout labelId={undefined} labelStr="October 2026" dateProfile={{...}} todayRange={{start:Date, ...}} ...>
+        <ViewContainer viewSpec={{type:"dayG...", ...}} attrs={{role:"table", ...}} className="fc-9b fc-t...">
+          <ContentContainer elRef={undefined} tag="div" attrs={{role:"table", ...}} style={undefined} ...>
+            <div role="table" aria-rowcount={7} aria-colcount={7} aria-labelledby={undefined} aria-label="October 2026" ...>
+              <DayGridLayoutNormal labelId={undefined} labelStr="October 2026" dateProfile={{...}} ...>
+                <div>
+                <Scroller vertical={true} className="bg-backgro..." ref={function} clientWidthRef={function}>
+                  <div ref={function} className="bg-backgro..." style={{...}}>
+                    <DayGridRows dateProfile={{...}} todayRange={{start:Date, ...}} cellRows={[...]} forPrint={false} ...>
+                      <div role="rowgroup" className="fc-l7 fc-mU" style={{...}} ref={function}>
+                        <DayGridRow>
+                        <DayGridRow>
+                        <DayGridRow>
+                        <DayGridRow role="row" dateProfile={{...}} todayRange={{start:Date, ...}} cells={[...]} ...>
+                          <div role="row" aria-label="Week 43" className="border fc-..." style={{flexBasis:0}} ...>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell dateProfile={{...}} todayRange={{start:Date, ...}} date={Date} isMajor={false} ...>
+                              <ContentContainer tag="div" elRef={{current:null}} className="fc-qy fc-l..." ...>
+                                <div
+                                  role="cell"
+                                  data-date="2026-10-23"
+                                  ref={function}
+                                  className="border fc-qy fc-li fc-lE fc-OV fc-mU fc-Ru fc-yU fc-Ju"
+                                  style={{width:undefined}}
+-                                 aria-current="date"
+                                >
+                                  <div role="presentation" className="fc-Ru fc-S...">
+                                    <div>
+                                    <bound InnerContentInjector tag="div" attrs={{...}} className="flex flex-...">
+                                      <ContentInjector renderProps={{date:Date,dow:5, ...}} generatorName="dayCellTop..." ...>
+                                        <div
+                                          aria-hidden={true}
+                                          ref={function}
++                                         className="flex flex-row items-center my-1 h-6 text-sm rounded-s-sm whitespa..."
+-                                         className="flex flex-row items-center my-1 h-6 text-sm group outline-none mx-2"
+                                        >
++                                         23
+-                                         <span
+-                                           className="whitespace-pre rounded-full font-semibold flex flex-row items-c..."
+-                                           data-tsd-source="/src/components/calendar/event-calendar-views.tsx:291:17"
+-                                         >
+                                  ...
+                            ...
+                        ...
+                    ...
+                ...
+
+page: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <NowTimer unit="day">
+      <DayGridLayout labelId={undefined} labelStr="October 2026" dateProfile={{...}} todayRange={{start:Date, ...}} ...>
+        <ViewContainer viewSpec={{type:"dayG...", ...}} attrs={{role:"table", ...}} className="fc-9b fc-t...">
+          <ContentContainer elRef={undefined} tag="div" attrs={{role:"table", ...}} style={undefined} ...>
+            <div role="table" aria-rowcount={7} aria-colcount={7} aria-labelledby={undefined} aria-label="October 2026" ...>
+              <DayGridLayoutNormal labelId={undefined} labelStr="October 2026" dateProfile={{...}} ...>
+                <div>
+                <Scroller vertical={true} className="bg-backgro..." ref={function} clientWidthRef={function}>
+                  <div ref={function} className="bg-backgro..." style={{...}}>
+                    <DayGridRows dateProfile={{...}} todayRange={{start:Date, ...}} cellRows={[...]} forPrint={false} ...>
+                      <div role="rowgroup" className="fc-l7 fc-mU" style={{...}} ref={function}>
+                        <DayGridRow>
+                        <DayGridRow>
+                        <DayGridRow>
+                        <DayGridRow role="row" dateProfile={{...}} todayRange={{start:Date, ...}} cells={[...]} ...>
+                          <div role="row" aria-label="Week 43" className="border fc-..." style={{flexBasis:0}} ...>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell dateProfile={{...}} todayRange={{start:Date, ...}} date={Date} isMajor={false} ...>
+                              <ContentContainer tag="div" elRef={{current:null}} className="fc-qy fc-l..." ...>
+                                <div
+                                  role="cell"
+                                  data-date="2026-10-23"
+                                  ref={function}
+                                  className="border fc-qy fc-li fc-lE fc-OV fc-mU fc-Ru fc-yU fc-Ju"
+                                  style={{width:undefined}}
+-                                 aria-current="date"
+                                >
+                                  <div role="presentation" className="fc-Ru fc-S...">
+                                    <div>
+                                    <bound InnerContentInjector tag="div" attrs={{...}} className="flex flex-...">
+                                      <ContentInjector renderProps={{date:Date,dow:5, ...}} generatorName="dayCellTop..." ...>
+                                        <div
+                                          aria-hidden={true}
+                                          ref={function}
++                                         className="flex flex-row items-center my-1 h-6 text-sm rounded-s-sm whitespa..."
+-                                         className="flex flex-row items-center my-1 h-6 text-sm group outline-none mx-2"
+                                        >
++                                         23
+-                                         <span
+-                                           className="whitespace-pre rounded-full font-semibold flex flex-row items-c..."
+-                                           data-tsd-source="/src/components/calendar/event-calendar-views.tsx:291:17"
+-                                         >
+                                  ...
+                            ...
+                        ...
+                    ...
+                ...
+
+
+screenshots/v03-004/before/report.json: /dashboard/calendar dark/mobile direct
+page: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <NowTimer unit="day">
+      <DayGridLayout labelId={undefined} labelStr="October 2026" dateProfile={{...}} todayRange={{start:Date, ...}} ...>
+        <ViewContainer viewSpec={{type:"dayG...", ...}} attrs={{role:"table", ...}} className="fc-9b fc-t...">
+          <ContentContainer elRef={undefined} tag="div" attrs={{role:"table", ...}} style={undefined} ...>
+            <div role="table" aria-rowcount={7} aria-colcount={7} aria-labelledby={undefined} aria-label="October 2026" ...>
+              <DayGridLayoutNormal labelId={undefined} labelStr="October 2026" dateProfile={{...}} ...>
+                <div>
+                <Scroller vertical={true} className="bg-backgro..." ref={function} clientWidthRef={function}>
+                  <div ref={function} className="bg-backgro..." style={{...}}>
+                    <DayGridRows dateProfile={{...}} todayRange={{start:Date, ...}} cellRows={[...]} forPrint={false} ...>
+                      <div role="rowgroup" className="fc-l7 fc-mU" style={{...}} ref={function}>
+                        <DayGridRow>
+                        <DayGridRow>
+                        <DayGridRow>
+                        <DayGridRow role="row" dateProfile={{...}} todayRange={{start:Date, ...}} cells={[...]} ...>
+                          <div role="row" aria-label="Week 43" className="border fc-..." style={{flexBasis:0}} ...>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell dateProfile={{...}} todayRange={{start:Date, ...}} date={Date} isMajor={false} ...>
+                              <ContentContainer tag="div" elRef={{current:null}} className="fc-qy fc-l..." ...>
+                                <div
+                                  role="cell"
+                                  data-date="2026-10-23"
+                                  ref={function}
+                                  className="border fc-qy fc-li fc-lE fc-OV fc-mU fc-Ru fc-yU fc-Ju"
+                                  style={{width:undefined}}
+-                                 aria-current="date"
+                                >
+                                  <div role="presentation" className="fc-Ru fc-S...">
+                                    <div>
+                                    <bound InnerContentInjector tag="div" attrs={{...}} className="flex flex-...">
+                                      <ContentInjector renderProps={{date:Date,dow:5, ...}} generatorName="dayCellTop..." ...>
+                                        <div
+                                          aria-hidden={true}
+                                          ref={function}
++                                         className="flex flex-row items-center my-1 h-6 text-sm rounded-s-sm whitespa..."
+-                                         className="flex flex-row items-center my-1 h-6 text-sm group outline-none mx-2"
+                                        >
++                                         23
+-                                         <span
+-                                           className="whitespace-pre rounded-full font-semibold flex flex-row items-c..."
+-                                           data-tsd-source="/src/components/calendar/event-calendar-views.tsx:291:17"
+-                                         >
+                                  ...
+                            ...
+                        ...
+                    ...
+                ...
+
+
+screenshots/v03-004/before/report.json: /dashboard/calendar dark/mobile refresh
+page: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <NowTimer unit="day">
+      <DayGridLayout labelId={undefined} labelStr="October 2026" dateProfile={{...}} todayRange={{start:Date, ...}} ...>
+        <ViewContainer viewSpec={{type:"dayG...", ...}} attrs={{role:"table", ...}} className="fc-9b fc-t...">
+          <ContentContainer elRef={undefined} tag="div" attrs={{role:"table", ...}} style={undefined} ...>
+            <div role="table" aria-rowcount={7} aria-colcount={7} aria-labelledby={undefined} aria-label="October 2026" ...>
+              <DayGridLayoutNormal labelId={undefined} labelStr="October 2026" dateProfile={{...}} ...>
+                <div>
+                <Scroller vertical={true} className="bg-backgro..." ref={function} clientWidthRef={function}>
+                  <div ref={function} className="bg-backgro..." style={{...}}>
+                    <DayGridRows dateProfile={{...}} todayRange={{start:Date, ...}} cellRows={[...]} forPrint={false} ...>
+                      <div role="rowgroup" className="fc-l7 fc-mU" style={{...}} ref={function}>
+                        <DayGridRow>
+                        <DayGridRow>
+                        <DayGridRow>
+                        <DayGridRow role="row" dateProfile={{...}} todayRange={{start:Date, ...}} cells={[...]} ...>
+                          <div role="row" aria-label="Week 43" className="border fc-..." style={{flexBasis:0}} ...>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell dateProfile={{...}} todayRange={{start:Date, ...}} date={Date} isMajor={false} ...>
+                              <ContentContainer tag="div" elRef={{current:null}} className="fc-qy fc-l..." ...>
+                                <div
+                                  role="cell"
+                                  data-date="2026-10-23"
+                                  ref={function}
+                                  className="border fc-qy fc-li fc-lE fc-OV fc-mU fc-Ru fc-yU fc-Ju"
+                                  style={{width:undefined}}
+-                                 aria-current="date"
+                                >
+                                  <div role="presentation" className="fc-Ru fc-S...">
+                                    <div>
+                                    <bound InnerContentInjector tag="div" attrs={{...}} className="flex flex-...">
+                                      <ContentInjector renderProps={{date:Date,dow:5, ...}} generatorName="dayCellTop..." ...>
+                                        <div
+                                          aria-hidden={true}
+                                          ref={function}
++                                         className="flex flex-row items-center my-1 h-6 text-sm rounded-s-sm whitespa..."
+-                                         className="flex flex-row items-center my-1 h-6 text-sm group outline-none mx-2"
+                                        >
++                                         23
+-                                         <span
+-                                           className="whitespace-pre rounded-full font-semibold flex flex-row items-c..."
+-                                           data-tsd-source="/src/components/calendar/event-calendar-views.tsx:291:17"
+-                                         >
+                                  ...
+                            ...
+                        ...
+                    ...
+                ...
+
+page: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <NowTimer unit="day">
+      <DayGridLayout labelId={undefined} labelStr="October 2026" dateProfile={{...}} todayRange={{start:Date, ...}} ...>
+        <ViewContainer viewSpec={{type:"dayG...", ...}} attrs={{role:"table", ...}} className="fc-9b fc-t...">
+          <ContentContainer elRef={undefined} tag="div" attrs={{role:"table", ...}} style={undefined} ...>
+            <div role="table" aria-rowcount={7} aria-colcount={7} aria-labelledby={undefined} aria-label="October 2026" ...>
+              <DayGridLayoutNormal labelId={undefined} labelStr="October 2026" dateProfile={{...}} ...>
+                <div>
+                <Scroller vertical={true} className="bg-backgro..." ref={function} clientWidthRef={function}>
+                  <div ref={function} className="bg-backgro..." style={{...}}>
+                    <DayGridRows dateProfile={{...}} todayRange={{start:Date, ...}} cellRows={[...]} forPrint={false} ...>
+                      <div role="rowgroup" className="fc-l7 fc-mU" style={{...}} ref={function}>
+                        <DayGridRow>
+                        <DayGridRow>
+                        <DayGridRow>
+                        <DayGridRow role="row" dateProfile={{...}} todayRange={{start:Date, ...}} cells={[...]} ...>
+                          <div role="row" aria-label="Week 43" className="border fc-..." style={{flexBasis:0}} ...>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell dateProfile={{...}} todayRange={{start:Date, ...}} date={Date} isMajor={false} ...>
+                              <ContentContainer tag="div" elRef={{current:null}} className="fc-qy fc-l..." ...>
+                                <div
+                                  role="cell"
+                                  data-date="2026-10-23"
+                                  ref={function}
+                                  className="border fc-qy fc-li fc-lE fc-OV fc-mU fc-Ru fc-yU fc-Ju"
+                                  style={{width:undefined}}
+-                                 aria-current="date"
+                                >
+                                  <div role="presentation" className="fc-Ru fc-S...">
+                                    <div>
+                                    <bound InnerContentInjector tag="div" attrs={{...}} className="flex flex-...">
+                                      <ContentInjector renderProps={{date:Date,dow:5, ...}} generatorName="dayCellTop..." ...>
+                                        <div
+                                          aria-hidden={true}
+                                          ref={function}
++                                         className="flex flex-row items-center my-1 h-6 text-sm rounded-s-sm whitespa..."
+-                                         className="flex flex-row items-center my-1 h-6 text-sm group outline-none mx-2"
+                                        >
++                                         23
+-                                         <span
+-                                           className="whitespace-pre rounded-full font-semibold flex flex-row items-c..."
+-                                           data-tsd-source="/src/components/calendar/event-calendar-views.tsx:291:17"
+-                                         >
+                                  ...
+                            ...
+                        ...
+                    ...
+                ...
+
+
+screenshots/v03-004/interactions/report.json: /dashboard/calendar light/desktop direct
+locator.press: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('button', { name: /more event/ }).first()[22m
+
+
+screenshots/v03-004/interactions/report.json: /dashboard/calendar light/mobile direct
+locator.press: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('button', { name: /more event/ }).first()[22m
+
+
+screenshots/v03-004/interactions/report.json: /dashboard/calendar dark/desktop direct
+locator.press: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('button', { name: /more event/ }).first()[22m
+
+
+screenshots/v03-004/interactions/report.json: /dashboard/calendar dark/mobile direct
+locator.press: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('button', { name: /more event/ }).first()[22m
+
+
+Additional task failure notes: screenshots/v03-004/failures.txt
+Baseline: Hydration failed because the server rendered HTML didn't match the client. Full exact React mismatch traces: before/report.json (8/8 failures). Fixed by request snapshot and initial timezone.
+Initial Biome: lint/a11y/useSemanticElements: The elements with this role can be changed to the following elements: <section>; lint/a11y/noNoninteractiveTabindex: The HTML element div is non-interactive. Do not use tabIndex. Fixed native section and removed explicit tabIndex. noUnnecessaryConditions warning fixed by explicit boolean ref type. See check.log and format-final.log.
+Initial interaction: locator.press: Timeout 30000ms exceeded. waiting for getByRole('button', { name: /more event/ }).first(). More trigger accessible text is +1 more; use observed title instead. interactions-fixed and subsequent reports pass.
+T3 snapshot failed twice; supported evaluate/click verified real marker (live-now.txt). Inherited warnings retained: Biome highlighter warning/six infos; bundle chunks; upstream use client directive ignored by Rollup; fs.Stats deprecation.
+
+screenshots/v03-005/graphite/report.json: /dashboard/kanban dark/mobile direct
+page.waitForFunction: Timeout 30000ms exceeded.
+
+screenshots/v03-005/interactions/report.json: /dashboard/kanban light/desktop direct
+page.waitForFunction: Timeout 30000ms exceeded.
+
+screenshots/v03-005/interactions/report.json: /dashboard/kanban light/mobile direct
+locator.waitFor: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('[data-column-id="planned"] [data-task-id="tender-workflow-map"]') to be visible[22m
+
+
+screenshots/v03-005/interactions/report.json: /dashboard/kanban dark/desktop direct
+locator.waitFor: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('[data-column-id="ideas"] [data-task-id="tender-workflow-map"]') to be visible[22m
+
+
+screenshots/v03-005/interactions/report.json: /dashboard/kanban dark/mobile direct
+page.waitForFunction: Timeout 30000ms exceeded.
+
+screenshots/v03-005/interactions-diagnostic/report.json: /dashboard/kanban light/desktop direct
+Task return to Ideas failed: {"columns":["planned"],"live":["","Draggable item tender-workflow-map was dropped over droppable target tender-workflow-map"]}
+
+screenshots/v03-005/interactions-diagnostic/report.json: /dashboard/kanban light/mobile direct
+Task return to Ideas failed: {"columns":["planned"],"live":["","Draggable item tender-workflow-map was dropped over droppable target tender-workflow-map"]}
+
+screenshots/v03-005/interactions-diagnostic/report.json: /dashboard/kanban dark/desktop direct
+Task return to Ideas failed: {"columns":["planned"],"live":["","Draggable item tender-workflow-map was dropped over droppable target tender-workflow-map"]}
+
+screenshots/v03-005/interactions-diagnostic/report.json: /dashboard/kanban dark/mobile direct
+Task return to Ideas failed: {"columns":["planned"],"live":["","Draggable item tender-workflow-map was dropped over droppable target tender-workflow-map"]}
+
+screenshots/v03-005/interactions-fixed/report.json: /dashboard/kanban light/desktop direct
+locator.waitFor: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('[data-column-id="ideas"] [data-task-id="tender-workflow-map"]') to be visible[22m
+
+
+screenshots/v03-005/interactions-fixed/report.json: /dashboard/kanban light/mobile direct
+locator.waitFor: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('[data-column-id="planned"] [data-task-id="tender-workflow-map"]') to be visible[22m
+
+
+screenshots/v03-005/interactions-fixed/report.json: /dashboard/kanban dark/desktop direct
+locator.waitFor: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('[data-column-id="ideas"] [data-task-id="tender-workflow-map"]') to be visible[22m
+
+
+screenshots/v03-005/interactions-fixed/report.json: /dashboard/kanban dark/mobile direct
+locator.waitFor: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('[data-column-id="ideas"] [data-task-id="tender-workflow-map"]') to be visible[22m
+
+
+screenshots/v03-005/interactions-settled/report.json: /dashboard/kanban light/desktop direct
+locator.waitFor: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('[data-column-id="ideas"] [data-task-id="tender-workflow-map"]') to be visible[22m
+
+
+screenshots/v03-005/interactions-settled/report.json: /dashboard/kanban light/mobile direct
+locator.waitFor: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('[data-column-id="ideas"] [data-task-id="tender-workflow-map"]') to be visible[22m
+
+
+screenshots/v03-005/interactions-settled/report.json: /dashboard/kanban dark/desktop direct
+locator.waitFor: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('[data-column-id="ideas"] [data-task-id="tender-workflow-map"]') to be visible[22m
+
+
+screenshots/v03-005/interactions-settled/report.json: /dashboard/kanban dark/mobile direct
+locator.waitFor: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('[data-column-id="ideas"] [data-task-id="tender-workflow-map"]') to be visible[22m
+
+
+screenshots/v03-005/iris/report.json: /dashboard/kanban dark/mobile direct
+page.waitForFunction: Timeout 30000ms exceeded.
+
+screenshots/v03-005/pine/report.json: /dashboard/kanban dark/mobile direct
+page.waitForFunction: Timeout 30000ms exceeded.
+
+screenshots/v03-005/workers-table/report.json: /dashboard/kanban dark/desktop refresh
+console: Failed to load resource: the server responded with a status of 502 ()
+console: Failed to load resource: the server responded with a status of 502 ()
+
+Additional task failure notes: screenshots/v03-005/failures.txt
+Initial Biome: lint/a11y/useAriaPropsSupportedByRole: The ARIA attribute aria-label is not supported by this element (sortable div and insight span). Removed redundant div label (engine provides button semantics) and used screen-reader text for insight labels. Screenshot helper initially triggered noEmptyBlockStatements; intentional capture-failure comment added. Final check passes with inherited highlighter warning/six infos.
+Initial drag scenarios: page.waitForFunction: Timeout 30000ms exceeded; locator.waitFor: Timeout 30000ms exceeded while waiting for task to return to Ideas. Diagnostic: Task return to Ideas failed: {"columns":["planned"],"live":["","Draggable item tender-workflow-map was dropped over droppable target tender-workflow-map"]}. Disabling animations/full-page resizing during drag capture ended the drag. Capture now preserves active animation and viewport. Default dev and Workers pass all four states.
+Initial concurrent preset scenarios each failed dark/mobile: page.waitForFunction: Timeout 30000ms exceeded. Column check now scrolls the handle into view and waits for the dnd-kit target announcement before dropping. Sequential retries retained alongside initial reports. No drag-engine changes.
+
+Workers table dark/desktop refresh: console: Failed to load resource: the server responded with a status of 502 () (twice). Full workers-table-retry passes 8/8. Finalization assertion correctly left acceptance unchecked until retry; the existing single implementation commit was amended with verified status afterward.
+
+screenshots/v03-006/interactions/report.json: /dashboard/tasks light/desktop direct
+locator.press: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Go to next page', exact: true })[22m
+
+
+screenshots/v03-006/interactions/report.json: /dashboard/tasks light/mobile direct
+locator.press: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Go to next page', exact: true })[22m
+
+
+screenshots/v03-006/interactions/report.json: /dashboard/tasks dark/desktop direct
+locator.press: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Go to next page', exact: true })[22m
+
+
+screenshots/v03-006/interactions/report.json: /dashboard/tasks dark/mobile direct
+locator.press: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Go to next page', exact: true })[22m
+
+
+Additional task failure notes: screenshots/v03-006/failures.txt
+Initial interaction: locator.press: Timeout 30000ms exceeded. waiting for getByRole(link, { name: Go to next page, exact: true }). Existing Base UI pagination renders anchors with role=button; corrected test locator. Final interaction reports pass. Visual inspection corrected mobile empty-state text centered outside the viewport; empty-fixed and Workers-final captures show readable recovery text. Inherited warnings: Biome highlighter warning/six infos; bundle-size/upstream directive notices; fs.Stats deprecation.
+
+screenshots/v03-007/before/report.json: /dashboard/invoice light/desktop direct
+page: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <div role="group" data-slot="field" data-orientation="vertical" className={"group/fi..."} ...>
+      <FieldLabel>
+      <DatePicker id="issued-date" value="2026-10-24" onChange={function} data-tsd-source="/src/route...">
+        <Popover open={false} onOpenChange={function bound dispatchSetState} data-tsd-source="/src/route...">
+          <PopoverRoot data-slot="popover" open={false} onOpenChange={function bound dispatchSetState} ...>
+            <FloatingTree>
+              <PopoverRootComponent props={{...}}>
+                <PopoverTrigger render={<Button>} data-tsd-source="/src/route...">
+                  <PopoverTrigger data-slot="popover-tr..." render={<Button>} data-tsd-source="/src/route...">
+                    <Button id="issued-date" variant="outline" data-empty={false} className="data-[empt..." ...>
+                      <Button data-slot="popover-tr..." className={"group/bu..."} id="issued-date" data-empty={false} ...>
+                        <button type="button" onClick={function} onMouseDown={function} onKeyDown={function} ...>
++                         October 24th, 2026
+-                         October 23rd, 2026
+                          ...
+                ...
+
+
+screenshots/v03-007/before/report.json: /dashboard/invoice light/desktop refresh
+page: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <div role="group" data-slot="field" data-orientation="vertical" className={"group/fi..."} ...>
+      <FieldLabel>
+      <DatePicker id="issued-date" value="2026-10-24" onChange={function} data-tsd-source="/src/route...">
+        <Popover open={false} onOpenChange={function bound dispatchSetState} data-tsd-source="/src/route...">
+          <PopoverRoot data-slot="popover" open={false} onOpenChange={function bound dispatchSetState} ...>
+            <FloatingTree>
+              <PopoverRootComponent props={{...}}>
+                <PopoverTrigger render={<Button>} data-tsd-source="/src/route...">
+                  <PopoverTrigger data-slot="popover-tr..." render={<Button>} data-tsd-source="/src/route...">
+                    <Button id="issued-date" variant="outline" data-empty={false} className="data-[empt..." ...>
+                      <Button data-slot="popover-tr..." className={"group/bu..."} id="issued-date" data-empty={false} ...>
+                        <button type="button" onClick={function} onMouseDown={function} onKeyDown={function} ...>
++                         October 24th, 2026
+-                         October 23rd, 2026
+                          ...
+                ...
+
+page: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <div role="group" data-slot="field" data-orientation="vertical" className={"group/fi..."} ...>
+      <FieldLabel>
+      <DatePicker id="issued-date" value="2026-10-24" onChange={function} data-tsd-source="/src/route...">
+        <Popover open={false} onOpenChange={function bound dispatchSetState} data-tsd-source="/src/route...">
+          <PopoverRoot data-slot="popover" open={false} onOpenChange={function bound dispatchSetState} ...>
+            <FloatingTree>
+              <PopoverRootComponent props={{...}}>
+                <PopoverTrigger render={<Button>} data-tsd-source="/src/route...">
+                  <PopoverTrigger data-slot="popover-tr..." render={<Button>} data-tsd-source="/src/route...">
+                    <Button id="issued-date" variant="outline" data-empty={false} className="data-[empt..." ...>
+                      <Button data-slot="popover-tr..." className={"group/bu..."} id="issued-date" data-empty={false} ...>
+                        <button type="button" onClick={function} onMouseDown={function} onKeyDown={function} ...>
++                         October 24th, 2026
+-                         October 23rd, 2026
+                          ...
+                ...
+
+
+screenshots/v03-007/before/report.json: /dashboard/invoice light/mobile direct
+page: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <div role="group" data-slot="field" data-orientation="vertical" className={"group/fi..."} ...>
+      <FieldLabel>
+      <DatePicker id="issued-date" value="2026-10-24" onChange={function} data-tsd-source="/src/route...">
+        <Popover open={false} onOpenChange={function bound dispatchSetState} data-tsd-source="/src/route...">
+          <PopoverRoot data-slot="popover" open={false} onOpenChange={function bound dispatchSetState} ...>
+            <FloatingTree>
+              <PopoverRootComponent props={{...}}>
+                <PopoverTrigger render={<Button>} data-tsd-source="/src/route...">
+                  <PopoverTrigger data-slot="popover-tr..." render={<Button>} data-tsd-source="/src/route...">
+                    <Button id="issued-date" variant="outline" data-empty={false} className="data-[empt..." ...>
+                      <Button data-slot="popover-tr..." className={"group/bu..."} id="issued-date" data-empty={false} ...>
+                        <button type="button" onClick={function} onMouseDown={function} onKeyDown={function} ...>
++                         October 24th, 2026
+-                         October 23rd, 2026
+                          ...
+                ...
+
+
+screenshots/v03-007/before/report.json: /dashboard/invoice light/mobile refresh
+page: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <div role="group" data-slot="field" data-orientation="vertical" className={"group/fi..."} ...>
+      <FieldLabel>
+      <DatePicker id="issued-date" value="2026-10-24" onChange={function} data-tsd-source="/src/route...">
+        <Popover open={false} onOpenChange={function bound dispatchSetState} data-tsd-source="/src/route...">
+          <PopoverRoot data-slot="popover" open={false} onOpenChange={function bound dispatchSetState} ...>
+            <FloatingTree>
+              <PopoverRootComponent props={{...}}>
+                <PopoverTrigger render={<Button>} data-tsd-source="/src/route...">
+                  <PopoverTrigger data-slot="popover-tr..." render={<Button>} data-tsd-source="/src/route...">
+                    <Button id="issued-date" variant="outline" data-empty={false} className="data-[empt..." ...>
+                      <Button data-slot="popover-tr..." className={"group/bu..."} id="issued-date" data-empty={false} ...>
+                        <button type="button" onClick={function} onMouseDown={function} onKeyDown={function} ...>
++                         October 24th, 2026
+-                         October 23rd, 2026
+                          ...
+                ...
+
+page: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <div role="group" data-slot="field" data-orientation="vertical" className={"group/fi..."} ...>
+      <FieldLabel>
+      <DatePicker id="issued-date" value="2026-10-24" onChange={function} data-tsd-source="/src/route...">
+        <Popover open={false} onOpenChange={function bound dispatchSetState} data-tsd-source="/src/route...">
+          <PopoverRoot data-slot="popover" open={false} onOpenChange={function bound dispatchSetState} ...>
+            <FloatingTree>
+              <PopoverRootComponent props={{...}}>
+                <PopoverTrigger render={<Button>} data-tsd-source="/src/route...">
+                  <PopoverTrigger data-slot="popover-tr..." render={<Button>} data-tsd-source="/src/route...">
+                    <Button id="issued-date" variant="outline" data-empty={false} className="data-[empt..." ...>
+                      <Button data-slot="popover-tr..." className={"group/bu..."} id="issued-date" data-empty={false} ...>
+                        <button type="button" onClick={function} onMouseDown={function} onKeyDown={function} ...>
++                         October 24th, 2026
+-                         October 23rd, 2026
+                          ...
+                ...
+
+
+screenshots/v03-007/before/report.json: /dashboard/invoice dark/desktop direct
+page: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <div role="group" data-slot="field" data-orientation="vertical" className={"group/fi..."} ...>
+      <FieldLabel>
+      <DatePicker id="issued-date" value="2026-10-24" onChange={function} data-tsd-source="/src/route...">
+        <Popover open={false} onOpenChange={function bound dispatchSetState} data-tsd-source="/src/route...">
+          <PopoverRoot data-slot="popover" open={false} onOpenChange={function bound dispatchSetState} ...>
+            <FloatingTree>
+              <PopoverRootComponent props={{...}}>
+                <PopoverTrigger render={<Button>} data-tsd-source="/src/route...">
+                  <PopoverTrigger data-slot="popover-tr..." render={<Button>} data-tsd-source="/src/route...">
+                    <Button id="issued-date" variant="outline" data-empty={false} className="data-[empt..." ...>
+                      <Button data-slot="popover-tr..." className={"group/bu..."} id="issued-date" data-empty={false} ...>
+                        <button type="button" onClick={function} onMouseDown={function} onKeyDown={function} ...>
++                         October 24th, 2026
+-                         October 23rd, 2026
+                          ...
+                ...
+
+
+screenshots/v03-007/before/report.json: /dashboard/invoice dark/desktop refresh
+page: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <div role="group" data-slot="field" data-orientation="vertical" className={"group/fi..."} ...>
+      <FieldLabel>
+      <DatePicker id="issued-date" value="2026-10-24" onChange={function} data-tsd-source="/src/route...">
+        <Popover open={false} onOpenChange={function bound dispatchSetState} data-tsd-source="/src/route...">
+          <PopoverRoot data-slot="popover" open={false} onOpenChange={function bound dispatchSetState} ...>
+            <FloatingTree>
+              <PopoverRootComponent props={{...}}>
+                <PopoverTrigger render={<Button>} data-tsd-source="/src/route...">
+                  <PopoverTrigger data-slot="popover-tr..." render={<Button>} data-tsd-source="/src/route...">
+                    <Button id="issued-date" variant="outline" data-empty={false} className="data-[empt..." ...>
+                      <Button data-slot="popover-tr..." className={"group/bu..."} id="issued-date" data-empty={false} ...>
+                        <button type="button" onClick={function} onMouseDown={function} onKeyDown={function} ...>
++                         October 24th, 2026
+-                         October 23rd, 2026
+                          ...
+                ...
+
+page: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <div role="group" data-slot="field" data-orientation="vertical" className={"group/fi..."} ...>
+      <FieldLabel>
+      <DatePicker id="issued-date" value="2026-10-24" onChange={function} data-tsd-source="/src/route...">
+        <Popover open={false} onOpenChange={function bound dispatchSetState} data-tsd-source="/src/route...">
+          <PopoverRoot data-slot="popover" open={false} onOpenChange={function bound dispatchSetState} ...>
+            <FloatingTree>
+              <PopoverRootComponent props={{...}}>
+                <PopoverTrigger render={<Button>} data-tsd-source="/src/route...">
+                  <PopoverTrigger data-slot="popover-tr..." render={<Button>} data-tsd-source="/src/route...">
+                    <Button id="issued-date" variant="outline" data-empty={false} className="data-[empt..." ...>
+                      <Button data-slot="popover-tr..." className={"group/bu..."} id="issued-date" data-empty={false} ...>
+                        <button type="button" onClick={function} onMouseDown={function} onKeyDown={function} ...>
++                         October 24th, 2026
+-                         October 23rd, 2026
+                          ...
+                ...
+
+
+screenshots/v03-007/before/report.json: /dashboard/invoice dark/mobile direct
+page: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <div role="group" data-slot="field" data-orientation="vertical" className={"group/fi..."} ...>
+      <FieldLabel>
+      <DatePicker id="issued-date" value="2026-10-24" onChange={function} data-tsd-source="/src/route...">
+        <Popover open={false} onOpenChange={function bound dispatchSetState} data-tsd-source="/src/route...">
+          <PopoverRoot data-slot="popover" open={false} onOpenChange={function bound dispatchSetState} ...>
+            <FloatingTree>
+              <PopoverRootComponent props={{...}}>
+                <PopoverTrigger render={<Button>} data-tsd-source="/src/route...">
+                  <PopoverTrigger data-slot="popover-tr..." render={<Button>} data-tsd-source="/src/route...">
+                    <Button id="issued-date" variant="outline" data-empty={false} className="data-[empt..." ...>
+                      <Button data-slot="popover-tr..." className={"group/bu..."} id="issued-date" data-empty={false} ...>
+                        <button type="button" onClick={function} onMouseDown={function} onKeyDown={function} ...>
++                         October 24th, 2026
+-                         October 23rd, 2026
+                          ...
+                ...
+
+
+screenshots/v03-007/before/report.json: /dashboard/invoice dark/mobile refresh
+page: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <div role="group" data-slot="field" data-orientation="vertical" className={"group/fi..."} ...>
+      <FieldLabel>
+      <DatePicker id="issued-date" value="2026-10-24" onChange={function} data-tsd-source="/src/route...">
+        <Popover open={false} onOpenChange={function bound dispatchSetState} data-tsd-source="/src/route...">
+          <PopoverRoot data-slot="popover" open={false} onOpenChange={function bound dispatchSetState} ...>
+            <FloatingTree>
+              <PopoverRootComponent props={{...}}>
+                <PopoverTrigger render={<Button>} data-tsd-source="/src/route...">
+                  <PopoverTrigger data-slot="popover-tr..." render={<Button>} data-tsd-source="/src/route...">
+                    <Button id="issued-date" variant="outline" data-empty={false} className="data-[empt..." ...>
+                      <Button data-slot="popover-tr..." className={"group/bu..."} id="issued-date" data-empty={false} ...>
+                        <button type="button" onClick={function} onMouseDown={function} onKeyDown={function} ...>
++                         October 24th, 2026
+-                         October 23rd, 2026
+                          ...
+                ...
+
+page: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <div role="group" data-slot="field" data-orientation="vertical" className={"group/fi..."} ...>
+      <FieldLabel>
+      <DatePicker id="issued-date" value="2026-10-24" onChange={function} data-tsd-source="/src/route...">
+        <Popover open={false} onOpenChange={function bound dispatchSetState} data-tsd-source="/src/route...">
+          <PopoverRoot data-slot="popover" open={false} onOpenChange={function bound dispatchSetState} ...>
+            <FloatingTree>
+              <PopoverRootComponent props={{...}}>
+                <PopoverTrigger render={<Button>} data-tsd-source="/src/route...">
+                  <PopoverTrigger data-slot="popover-tr..." render={<Button>} data-tsd-source="/src/route...">
+                    <Button id="issued-date" variant="outline" data-empty={false} className="data-[empt..." ...>
+                      <Button data-slot="popover-tr..." className={"group/bu..."} id="issued-date" data-empty={false} ...>
+                        <button type="button" onClick={function} onMouseDown={function} onKeyDown={function} ...>
++                         October 24th, 2026
+-                         October 23rd, 2026
+                          ...
+                ...
+
+
+Additional task failure notes: screenshots/v03-007/failures.txt
+before /dashboard/invoice light/desktop direct
+page: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <div role="group" data-slot="field" data-orientation="vertical" className={"group/fi..."} ...>
+      <FieldLabel>
+      <DatePicker id="issued-date" value="2026-10-24" onChange={function} data-tsd-source="/src/route...">
+        <Popover open={false} onOpenChange={function bound dispatchSetState} data-tsd-source="/src/route...">
+          <PopoverRoot data-slot="popover" open={false} onOpenChange={function bound dispatchSetState} ...>
+            <FloatingTree>
+              <PopoverRootComponent props={{...}}>
+                <PopoverTrigger render={<Button>} data-tsd-source="/src/route...">
+                  <PopoverTrigger data-slot="popover-tr..." render={<Button>} data-tsd-source="/src/route...">
+                    <Button id="issued-date" variant="outline" data-empty={false} className="data-[empt..." ...>
+                      <Button data-slot="popover-tr..." className={"group/bu..."} id="issued-date" data-empty={false} ...>
+                        <button type="button" onClick={function} onMouseDown={function} onKeyDown={function} ...>
++                         October 24th, 2026
+-                         October 23rd, 2026
+                          ...
+                ...
+
+
+before /dashboard/invoice light/desktop refresh
+page: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <div role="group" data-slot="field" data-orientation="vertical" className={"group/fi..."} ...>
+      <FieldLabel>
+      <DatePicker id="issued-date" value="2026-10-24" onChange={function} data-tsd-source="/src/route...">
+        <Popover open={false} onOpenChange={function bound dispatchSetState} data-tsd-source="/src/route...">
+          <PopoverRoot data-slot="popover" open={false} onOpenChange={function bound dispatchSetState} ...>
+            <FloatingTree>
+              <PopoverRootComponent props={{...}}>
+                <PopoverTrigger render={<Button>} data-tsd-source="/src/route...">
+                  <PopoverTrigger data-slot="popover-tr..." render={<Button>} data-tsd-source="/src/route...">
+                    <Button id="issued-date" variant="outline" data-empty={false} className="data-[empt..." ...>
+                      <Button data-slot="popover-tr..." className={"group/bu..."} id="issued-date" data-empty={false} ...>
+                        <button type="button" onClick={function} onMouseDown={function} onKeyDown={function} ...>
++                         October 24th, 2026
+-                         October 23rd, 2026
+                          ...
+                ...
+
+page: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <div role="group" data-slot="field" data-orientation="vertical" className={"group/fi..."} ...>
+      <FieldLabel>
+      <DatePicker id="issued-date" value="2026-10-24" onChange={function} data-tsd-source="/src/route...">
+        <Popover open={false} onOpenChange={function bound dispatchSetState} data-tsd-source="/src/route...">
+          <PopoverRoot data-slot="popover" open={false} onOpenChange={function bound dispatchSetState} ...>
+            <FloatingTree>
+              <PopoverRootComponent props={{...}}>
+                <PopoverTrigger render={<Button>} data-tsd-source="/src/route...">
+                  <PopoverTrigger data-slot="popover-tr..." render={<Button>} data-tsd-source="/src/route...">
+                    <Button id="issued-date" variant="outline" data-empty={false} className="data-[empt..." ...>
+                      <Button data-slot="popover-tr..." className={"group/bu..."} id="issued-date" data-empty={false} ...>
+                        <button type="button" onClick={function} onMouseDown={function} onKeyDown={function} ...>
++                         October 24th, 2026
+-                         October 23rd, 2026
+                          ...
+                ...
+
+
+before /dashboard/invoice light/mobile direct
+page: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <div role="group" data-slot="field" data-orientation="vertical" className={"group/fi..."} ...>
+      <FieldLabel>
+      <DatePicker id="issued-date" value="2026-10-24" onChange={function} data-tsd-source="/src/route...">
+        <Popover open={false} onOpenChange={function bound dispatchSetState} data-tsd-source="/src/route...">
+          <PopoverRoot data-slot="popover" open={false} onOpenChange={function bound dispatchSetState} ...>
+            <FloatingTree>
+              <PopoverRootComponent props={{...}}>
+                <PopoverTrigger render={<Button>} data-tsd-source="/src/route...">
+                  <PopoverTrigger data-slot="popover-tr..." render={<Button>} data-tsd-source="/src/route...">
+                    <Button id="issued-date" variant="outline" data-empty={false} className="data-[empt..." ...>
+                      <Button data-slot="popover-tr..." className={"group/bu..."} id="issued-date" data-empty={false} ...>
+                        <button type="button" onClick={function} onMouseDown={function} onKeyDown={function} ...>
++                         October 24th, 2026
+-                         October 23rd, 2026
+                          ...
+                ...
+
+
+before /dashboard/invoice light/mobile refresh
+page: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <div role="group" data-slot="field" data-orientation="vertical" className={"group/fi..."} ...>
+      <FieldLabel>
+      <DatePicker id="issued-date" value="2026-10-24" onChange={function} data-tsd-source="/src/route...">
+        <Popover open={false} onOpenChange={function bound dispatchSetState} data-tsd-source="/src/route...">
+          <PopoverRoot data-slot="popover" open={false} onOpenChange={function bound dispatchSetState} ...>
+            <FloatingTree>
+              <PopoverRootComponent props={{...}}>
+                <PopoverTrigger render={<Button>} data-tsd-source="/src/route...">
+                  <PopoverTrigger data-slot="popover-tr..." render={<Button>} data-tsd-source="/src/route...">
+                    <Button id="issued-date" variant="outline" data-empty={false} className="data-[empt..." ...>
+                      <Button data-slot="popover-tr..." className={"group/bu..."} id="issued-date" data-empty={false} ...>
+                        <button type="button" onClick={function} onMouseDown={function} onKeyDown={function} ...>
++                         October 24th, 2026
+-                         October 23rd, 2026
+                          ...
+                ...
+
+page: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <div role="group" data-slot="field" data-orientation="vertical" className={"group/fi..."} ...>
+      <FieldLabel>
+      <DatePicker id="issued-date" value="2026-10-24" onChange={function} data-tsd-source="/src/route...">
+        <Popover open={false} onOpenChange={function bound dispatchSetState} data-tsd-source="/src/route...">
+          <PopoverRoot data-slot="popover" open={false} onOpenChange={function bound dispatchSetState} ...>
+            <FloatingTree>
+              <PopoverRootComponent props={{...}}>
+                <PopoverTrigger render={<Button>} data-tsd-source="/src/route...">
+                  <PopoverTrigger data-slot="popover-tr..." render={<Button>} data-tsd-source="/src/route...">
+                    <Button id="issued-date" variant="outline" data-empty={false} className="data-[empt..." ...>
+                      <Button data-slot="popover-tr..." className={"group/bu..."} id="issued-date" data-empty={false} ...>
+                        <button type="button" onClick={function} onMouseDown={function} onKeyDown={function} ...>
++                         October 24th, 2026
+-                         October 23rd, 2026
+                          ...
+                ...
+
+
+before /dashboard/invoice dark/desktop direct
+page: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <div role="group" data-slot="field" data-orientation="vertical" className={"group/fi..."} ...>
+      <FieldLabel>
+      <DatePicker id="issued-date" value="2026-10-24" onChange={function} data-tsd-source="/src/route...">
+        <Popover open={false} onOpenChange={function bound dispatchSetState} data-tsd-source="/src/route...">
+          <PopoverRoot data-slot="popover" open={false} onOpenChange={function bound dispatchSetState} ...>
+            <FloatingTree>
+              <PopoverRootComponent props={{...}}>
+                <PopoverTrigger render={<Button>} data-tsd-source="/src/route...">
+                  <PopoverTrigger data-slot="popover-tr..." render={<Button>} data-tsd-source="/src/route...">
+                    <Button id="issued-date" variant="outline" data-empty={false} className="data-[empt..." ...>
+                      <Button data-slot="popover-tr..." className={"group/bu..."} id="issued-date" data-empty={false} ...>
+                        <button type="button" onClick={function} onMouseDown={function} onKeyDown={function} ...>
++                         October 24th, 2026
+-                         October 23rd, 2026
+                          ...
+                ...
+
+
+before /dashboard/invoice dark/desktop refresh
+page: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <div role="group" data-slot="field" data-orientation="vertical" className={"group/fi..."} ...>
+      <FieldLabel>
+      <DatePicker id="issued-date" value="2026-10-24" onChange={function} data-tsd-source="/src/route...">
+        <Popover open={false} onOpenChange={function bound dispatchSetState} data-tsd-source="/src/route...">
+          <PopoverRoot data-slot="popover" open={false} onOpenChange={function bound dispatchSetState} ...>
+            <FloatingTree>
+              <PopoverRootComponent props={{...}}>
+                <PopoverTrigger render={<Button>} data-tsd-source="/src/route...">
+                  <PopoverTrigger data-slot="popover-tr..." render={<Button>} data-tsd-source="/src/route...">
+                    <Button id="issued-date" variant="outline" data-empty={false} className="data-[empt..." ...>
+                      <Button data-slot="popover-tr..." className={"group/bu..."} id="issued-date" data-empty={false} ...>
+                        <button type="button" onClick={function} onMouseDown={function} onKeyDown={function} ...>
++                         October 24th, 2026
+-                         October 23rd, 2026
+                          ...
+                ...
+
+page: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <div role="group" data-slot="field" data-orientation="vertical" className={"group/fi..."} ...>
+      <FieldLabel>
+      <DatePicker id="issued-date" value="2026-10-24" onChange={function} data-tsd-source="/src/route...">
+        <Popover open={false} onOpenChange={function bound dispatchSetState} data-tsd-source="/src/route...">
+          <PopoverRoot data-slot="popover" open={false} onOpenChange={function bound dispatchSetState} ...>
+            <FloatingTree>
+              <PopoverRootComponent props={{...}}>
+                <PopoverTrigger render={<Button>} data-tsd-source="/src/route...">
+                  <PopoverTrigger data-slot="popover-tr..." render={<Button>} data-tsd-source="/src/route...">
+                    <Button id="issued-date" variant="outline" data-empty={false} className="data-[empt..." ...>
+                      <Button data-slot="popover-tr..." className={"group/bu..."} id="issued-date" data-empty={false} ...>
+                        <button type="button" onClick={function} onMouseDown={function} onKeyDown={function} ...>
++                         October 24th, 2026
+-                         October 23rd, 2026
+                          ...
+                ...
+
+
+before /dashboard/invoice dark/mobile direct
+page: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <div role="group" data-slot="field" data-orientation="vertical" className={"group/fi..."} ...>
+      <FieldLabel>
+      <DatePicker id="issued-date" value="2026-10-24" onChange={function} data-tsd-source="/src/route...">
+        <Popover open={false} onOpenChange={function bound dispatchSetState} data-tsd-source="/src/route...">
+          <PopoverRoot data-slot="popover" open={false} onOpenChange={function bound dispatchSetState} ...>
+            <FloatingTree>
+              <PopoverRootComponent props={{...}}>
+                <PopoverTrigger render={<Button>} data-tsd-source="/src/route...">
+                  <PopoverTrigger data-slot="popover-tr..." render={<Button>} data-tsd-source="/src/route...">
+                    <Button id="issued-date" variant="outline" data-empty={false} className="data-[empt..." ...>
+                      <Button data-slot="popover-tr..." className={"group/bu..."} id="issued-date" data-empty={false} ...>
+                        <button type="button" onClick={function} onMouseDown={function} onKeyDown={function} ...>
++                         October 24th, 2026
+-                         October 23rd, 2026
+                          ...
+                ...
+
+
+before /dashboard/invoice dark/mobile refresh
+page: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <div role="group" data-slot="field" data-orientation="vertical" className={"group/fi..."} ...>
+      <FieldLabel>
+      <DatePicker id="issued-date" value="2026-10-24" onChange={function} data-tsd-source="/src/route...">
+        <Popover open={false} onOpenChange={function bound dispatchSetState} data-tsd-source="/src/route...">
+          <PopoverRoot data-slot="popover" open={false} onOpenChange={function bound dispatchSetState} ...>
+            <FloatingTree>
+              <PopoverRootComponent props={{...}}>
+                <PopoverTrigger render={<Button>} data-tsd-source="/src/route...">
+                  <PopoverTrigger data-slot="popover-tr..." render={<Button>} data-tsd-source="/src/route...">
+                    <Button id="issued-date" variant="outline" data-empty={false} className="data-[empt..." ...>
+                      <Button data-slot="popover-tr..." className={"group/bu..."} id="issued-date" data-empty={false} ...>
+                        <button type="button" onClick={function} onMouseDown={function} onKeyDown={function} ...>
++                         October 24th, 2026
+-                         October 23rd, 2026
+                          ...
+                ...
+
+page: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <div role="group" data-slot="field" data-orientation="vertical" className={"group/fi..."} ...>
+      <FieldLabel>
+      <DatePicker id="issued-date" value="2026-10-24" onChange={function} data-tsd-source="/src/route...">
+        <Popover open={false} onOpenChange={function bound dispatchSetState} data-tsd-source="/src/route...">
+          <PopoverRoot data-slot="popover" open={false} onOpenChange={function bound dispatchSetState} ...>
+            <FloatingTree>
+              <PopoverRootComponent props={{...}}>
+                <PopoverTrigger render={<Button>} data-tsd-source="/src/route...">
+                  <PopoverTrigger data-slot="popover-tr..." render={<Button>} data-tsd-source="/src/route...">
+                    <Button id="issued-date" variant="outline" data-empty={false} className="data-[empt..." ...>
+                      <Button data-slot="popover-tr..." className={"group/bu..."} id="issued-date" data-empty={false} ...>
+                        <button type="button" onClick={function} onMouseDown={function} onKeyDown={function} ...>
++                         October 24th, 2026
+-                         October 23rd, 2026
+                          ...
+                ...
+
+
+Final reports contain no console/page/hydration failures. Baseline errors above were fixed through request-scoped civil date defaults.
+
