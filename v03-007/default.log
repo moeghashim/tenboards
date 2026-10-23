@@ -1,0 +1,8 @@
+
+> tenboards@0.2.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://localhost:3003 --routes /dashboard/invoice --interactions --timezone Pacific/Kiritimati --preset default --output screenshots/v03-007/default
+
+PASS /dashboard/invoice light/desktop direct
+PASS /dashboard/invoice light/mobile direct
+PASS /dashboard/invoice dark/desktop direct
+PASS /dashboard/invoice dark/mobile direct

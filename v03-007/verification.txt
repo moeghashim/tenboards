@@ -1,0 +1,13 @@
+Task 007 final version: https://0befc4c3-tenboards.mohanadgh.workers.dev
+Alias: v03-007
+Build via preview:deploy, check, typecheck pass.
+Dev Chicago server / Kiritimati browser: after 16/16 + after-final 8/8 delayed direct/refresh.
+Default, Graphite, Pine, Iris: 4/4 interactions each.
+Workers final Kiritimati: 8/8 delayed direct/refresh form interactions.
+Workers final Chicago: 16/16 Invoice/default delayed direct/refresh smoke.
+JavaScript delay 1800ms; real clock, no time freezing.
+Eight final Workers PDFs: one Letter page (612x792 pt) each, $945.18 total and Jordan Lee issuer; rendered and visually inspected. Four dev PDFs also verified.
+Both dates edit, client, multiline description/address, quantities/prices, fixed/percent discount, tax, item add/remove/reorder/cancel, preview-print equality pass.
+280/280 semantic contrasts; paper body/footer/header >4.5:1.
+Owned source identity audit: no arham/weblabs/arhamkhnz/Studio Chat matches in Mail/Chat/Calendar/Kanban/Tasks/Invoice.
+No protected UI/calendar changes or new dependencies. No production deploy/merge/tag/release. Task008 not started.

@@ -1,0 +1,377 @@
+before /dashboard/invoice light/desktop direct
+page: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <div role="group" data-slot="field" data-orientation="vertical" className={"group/fi..."} ...>
+      <FieldLabel>
+      <DatePicker id="issued-date" value="2026-10-24" onChange={function} data-tsd-source="/src/route...">
+        <Popover open={false} onOpenChange={function bound dispatchSetState} data-tsd-source="/src/route...">
+          <PopoverRoot data-slot="popover" open={false} onOpenChange={function bound dispatchSetState} ...>
+            <FloatingTree>
+              <PopoverRootComponent props={{...}}>
+                <PopoverTrigger render={<Button>} data-tsd-source="/src/route...">
+                  <PopoverTrigger data-slot="popover-tr..." render={<Button>} data-tsd-source="/src/route...">
+                    <Button id="issued-date" variant="outline" data-empty={false} className="data-[empt..." ...>
+                      <Button data-slot="popover-tr..." className={"group/bu..."} id="issued-date" data-empty={false} ...>
+                        <button type="button" onClick={function} onMouseDown={function} onKeyDown={function} ...>
++                         October 24th, 2026
+-                         October 23rd, 2026
+                          ...
+                ...
+
+
+before /dashboard/invoice light/desktop refresh
+page: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <div role="group" data-slot="field" data-orientation="vertical" className={"group/fi..."} ...>
+      <FieldLabel>
+      <DatePicker id="issued-date" value="2026-10-24" onChange={function} data-tsd-source="/src/route...">
+        <Popover open={false} onOpenChange={function bound dispatchSetState} data-tsd-source="/src/route...">
+          <PopoverRoot data-slot="popover" open={false} onOpenChange={function bound dispatchSetState} ...>
+            <FloatingTree>
+              <PopoverRootComponent props={{...}}>
+                <PopoverTrigger render={<Button>} data-tsd-source="/src/route...">
+                  <PopoverTrigger data-slot="popover-tr..." render={<Button>} data-tsd-source="/src/route...">
+                    <Button id="issued-date" variant="outline" data-empty={false} className="data-[empt..." ...>
+                      <Button data-slot="popover-tr..." className={"group/bu..."} id="issued-date" data-empty={false} ...>
+                        <button type="button" onClick={function} onMouseDown={function} onKeyDown={function} ...>
++                         October 24th, 2026
+-                         October 23rd, 2026
+                          ...
+                ...
+
+page: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <div role="group" data-slot="field" data-orientation="vertical" className={"group/fi..."} ...>
+      <FieldLabel>
+      <DatePicker id="issued-date" value="2026-10-24" onChange={function} data-tsd-source="/src/route...">
+        <Popover open={false} onOpenChange={function bound dispatchSetState} data-tsd-source="/src/route...">
+          <PopoverRoot data-slot="popover" open={false} onOpenChange={function bound dispatchSetState} ...>
+            <FloatingTree>
+              <PopoverRootComponent props={{...}}>
+                <PopoverTrigger render={<Button>} data-tsd-source="/src/route...">
+                  <PopoverTrigger data-slot="popover-tr..." render={<Button>} data-tsd-source="/src/route...">
+                    <Button id="issued-date" variant="outline" data-empty={false} className="data-[empt..." ...>
+                      <Button data-slot="popover-tr..." className={"group/bu..."} id="issued-date" data-empty={false} ...>
+                        <button type="button" onClick={function} onMouseDown={function} onKeyDown={function} ...>
++                         October 24th, 2026
+-                         October 23rd, 2026
+                          ...
+                ...
+
+
+before /dashboard/invoice light/mobile direct
+page: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <div role="group" data-slot="field" data-orientation="vertical" className={"group/fi..."} ...>
+      <FieldLabel>
+      <DatePicker id="issued-date" value="2026-10-24" onChange={function} data-tsd-source="/src/route...">
+        <Popover open={false} onOpenChange={function bound dispatchSetState} data-tsd-source="/src/route...">
+          <PopoverRoot data-slot="popover" open={false} onOpenChange={function bound dispatchSetState} ...>
+            <FloatingTree>
+              <PopoverRootComponent props={{...}}>
+                <PopoverTrigger render={<Button>} data-tsd-source="/src/route...">
+                  <PopoverTrigger data-slot="popover-tr..." render={<Button>} data-tsd-source="/src/route...">
+                    <Button id="issued-date" variant="outline" data-empty={false} className="data-[empt..." ...>
+                      <Button data-slot="popover-tr..." className={"group/bu..."} id="issued-date" data-empty={false} ...>
+                        <button type="button" onClick={function} onMouseDown={function} onKeyDown={function} ...>
++                         October 24th, 2026
+-                         October 23rd, 2026
+                          ...
+                ...
+
+
+before /dashboard/invoice light/mobile refresh
+page: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <div role="group" data-slot="field" data-orientation="vertical" className={"group/fi..."} ...>
+      <FieldLabel>
+      <DatePicker id="issued-date" value="2026-10-24" onChange={function} data-tsd-source="/src/route...">
+        <Popover open={false} onOpenChange={function bound dispatchSetState} data-tsd-source="/src/route...">
+          <PopoverRoot data-slot="popover" open={false} onOpenChange={function bound dispatchSetState} ...>
+            <FloatingTree>
+              <PopoverRootComponent props={{...}}>
+                <PopoverTrigger render={<Button>} data-tsd-source="/src/route...">
+                  <PopoverTrigger data-slot="popover-tr..." render={<Button>} data-tsd-source="/src/route...">
+                    <Button id="issued-date" variant="outline" data-empty={false} className="data-[empt..." ...>
+                      <Button data-slot="popover-tr..." className={"group/bu..."} id="issued-date" data-empty={false} ...>
+                        <button type="button" onClick={function} onMouseDown={function} onKeyDown={function} ...>
++                         October 24th, 2026
+-                         October 23rd, 2026
+                          ...
+                ...
+
+page: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <div role="group" data-slot="field" data-orientation="vertical" className={"group/fi..."} ...>
+      <FieldLabel>
+      <DatePicker id="issued-date" value="2026-10-24" onChange={function} data-tsd-source="/src/route...">
+        <Popover open={false} onOpenChange={function bound dispatchSetState} data-tsd-source="/src/route...">
+          <PopoverRoot data-slot="popover" open={false} onOpenChange={function bound dispatchSetState} ...>
+            <FloatingTree>
+              <PopoverRootComponent props={{...}}>
+                <PopoverTrigger render={<Button>} data-tsd-source="/src/route...">
+                  <PopoverTrigger data-slot="popover-tr..." render={<Button>} data-tsd-source="/src/route...">
+                    <Button id="issued-date" variant="outline" data-empty={false} className="data-[empt..." ...>
+                      <Button data-slot="popover-tr..." className={"group/bu..."} id="issued-date" data-empty={false} ...>
+                        <button type="button" onClick={function} onMouseDown={function} onKeyDown={function} ...>
++                         October 24th, 2026
+-                         October 23rd, 2026
+                          ...
+                ...
+
+
+before /dashboard/invoice dark/desktop direct
+page: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <div role="group" data-slot="field" data-orientation="vertical" className={"group/fi..."} ...>
+      <FieldLabel>
+      <DatePicker id="issued-date" value="2026-10-24" onChange={function} data-tsd-source="/src/route...">
+        <Popover open={false} onOpenChange={function bound dispatchSetState} data-tsd-source="/src/route...">
+          <PopoverRoot data-slot="popover" open={false} onOpenChange={function bound dispatchSetState} ...>
+            <FloatingTree>
+              <PopoverRootComponent props={{...}}>
+                <PopoverTrigger render={<Button>} data-tsd-source="/src/route...">
+                  <PopoverTrigger data-slot="popover-tr..." render={<Button>} data-tsd-source="/src/route...">
+                    <Button id="issued-date" variant="outline" data-empty={false} className="data-[empt..." ...>
+                      <Button data-slot="popover-tr..." className={"group/bu..."} id="issued-date" data-empty={false} ...>
+                        <button type="button" onClick={function} onMouseDown={function} onKeyDown={function} ...>
++                         October 24th, 2026
+-                         October 23rd, 2026
+                          ...
+                ...
+
+
+before /dashboard/invoice dark/desktop refresh
+page: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <div role="group" data-slot="field" data-orientation="vertical" className={"group/fi..."} ...>
+      <FieldLabel>
+      <DatePicker id="issued-date" value="2026-10-24" onChange={function} data-tsd-source="/src/route...">
+        <Popover open={false} onOpenChange={function bound dispatchSetState} data-tsd-source="/src/route...">
+          <PopoverRoot data-slot="popover" open={false} onOpenChange={function bound dispatchSetState} ...>
+            <FloatingTree>
+              <PopoverRootComponent props={{...}}>
+                <PopoverTrigger render={<Button>} data-tsd-source="/src/route...">
+                  <PopoverTrigger data-slot="popover-tr..." render={<Button>} data-tsd-source="/src/route...">
+                    <Button id="issued-date" variant="outline" data-empty={false} className="data-[empt..." ...>
+                      <Button data-slot="popover-tr..." className={"group/bu..."} id="issued-date" data-empty={false} ...>
+                        <button type="button" onClick={function} onMouseDown={function} onKeyDown={function} ...>
++                         October 24th, 2026
+-                         October 23rd, 2026
+                          ...
+                ...
+
+page: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <div role="group" data-slot="field" data-orientation="vertical" className={"group/fi..."} ...>
+      <FieldLabel>
+      <DatePicker id="issued-date" value="2026-10-24" onChange={function} data-tsd-source="/src/route...">
+        <Popover open={false} onOpenChange={function bound dispatchSetState} data-tsd-source="/src/route...">
+          <PopoverRoot data-slot="popover" open={false} onOpenChange={function bound dispatchSetState} ...>
+            <FloatingTree>
+              <PopoverRootComponent props={{...}}>
+                <PopoverTrigger render={<Button>} data-tsd-source="/src/route...">
+                  <PopoverTrigger data-slot="popover-tr..." render={<Button>} data-tsd-source="/src/route...">
+                    <Button id="issued-date" variant="outline" data-empty={false} className="data-[empt..." ...>
+                      <Button data-slot="popover-tr..." className={"group/bu..."} id="issued-date" data-empty={false} ...>
+                        <button type="button" onClick={function} onMouseDown={function} onKeyDown={function} ...>
++                         October 24th, 2026
+-                         October 23rd, 2026
+                          ...
+                ...
+
+
+before /dashboard/invoice dark/mobile direct
+page: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <div role="group" data-slot="field" data-orientation="vertical" className={"group/fi..."} ...>
+      <FieldLabel>
+      <DatePicker id="issued-date" value="2026-10-24" onChange={function} data-tsd-source="/src/route...">
+        <Popover open={false} onOpenChange={function bound dispatchSetState} data-tsd-source="/src/route...">
+          <PopoverRoot data-slot="popover" open={false} onOpenChange={function bound dispatchSetState} ...>
+            <FloatingTree>
+              <PopoverRootComponent props={{...}}>
+                <PopoverTrigger render={<Button>} data-tsd-source="/src/route...">
+                  <PopoverTrigger data-slot="popover-tr..." render={<Button>} data-tsd-source="/src/route...">
+                    <Button id="issued-date" variant="outline" data-empty={false} className="data-[empt..." ...>
+                      <Button data-slot="popover-tr..." className={"group/bu..."} id="issued-date" data-empty={false} ...>
+                        <button type="button" onClick={function} onMouseDown={function} onKeyDown={function} ...>
++                         October 24th, 2026
+-                         October 23rd, 2026
+                          ...
+                ...
+
+
+before /dashboard/invoice dark/mobile refresh
+page: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <div role="group" data-slot="field" data-orientation="vertical" className={"group/fi..."} ...>
+      <FieldLabel>
+      <DatePicker id="issued-date" value="2026-10-24" onChange={function} data-tsd-source="/src/route...">
+        <Popover open={false} onOpenChange={function bound dispatchSetState} data-tsd-source="/src/route...">
+          <PopoverRoot data-slot="popover" open={false} onOpenChange={function bound dispatchSetState} ...>
+            <FloatingTree>
+              <PopoverRootComponent props={{...}}>
+                <PopoverTrigger render={<Button>} data-tsd-source="/src/route...">
+                  <PopoverTrigger data-slot="popover-tr..." render={<Button>} data-tsd-source="/src/route...">
+                    <Button id="issued-date" variant="outline" data-empty={false} className="data-[empt..." ...>
+                      <Button data-slot="popover-tr..." className={"group/bu..."} id="issued-date" data-empty={false} ...>
+                        <button type="button" onClick={function} onMouseDown={function} onKeyDown={function} ...>
++                         October 24th, 2026
+-                         October 23rd, 2026
+                          ...
+                ...
+
+page: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <div role="group" data-slot="field" data-orientation="vertical" className={"group/fi..."} ...>
+      <FieldLabel>
+      <DatePicker id="issued-date" value="2026-10-24" onChange={function} data-tsd-source="/src/route...">
+        <Popover open={false} onOpenChange={function bound dispatchSetState} data-tsd-source="/src/route...">
+          <PopoverRoot data-slot="popover" open={false} onOpenChange={function bound dispatchSetState} ...>
+            <FloatingTree>
+              <PopoverRootComponent props={{...}}>
+                <PopoverTrigger render={<Button>} data-tsd-source="/src/route...">
+                  <PopoverTrigger data-slot="popover-tr..." render={<Button>} data-tsd-source="/src/route...">
+                    <Button id="issued-date" variant="outline" data-empty={false} className="data-[empt..." ...>
+                      <Button data-slot="popover-tr..." className={"group/bu..."} id="issued-date" data-empty={false} ...>
+                        <button type="button" onClick={function} onMouseDown={function} onKeyDown={function} ...>
++                         October 24th, 2026
+-                         October 23rd, 2026
+                          ...
+                ...
+
+
+Final reports contain no console/page/hydration failures. Baseline errors above were fixed through request-scoped civil date defaults.

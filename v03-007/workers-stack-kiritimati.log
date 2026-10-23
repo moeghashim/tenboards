@@ -1,0 +1,12 @@
+
+> tenboards@0.2.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url https://0befc4c3-tenboards.mohanadgh.workers.dev --routes /dashboard/invoice --reload --interactions --timezone Pacific/Kiritimati --hydration-delay-ms 1800 --output screenshots/v03-007/workers-stack-kiritimati
+
+PASS /dashboard/invoice light/desktop direct
+PASS /dashboard/invoice light/desktop refresh
+PASS /dashboard/invoice light/mobile direct
+PASS /dashboard/invoice light/mobile refresh
+PASS /dashboard/invoice dark/desktop direct
+PASS /dashboard/invoice dark/desktop refresh
+PASS /dashboard/invoice dark/mobile direct
+PASS /dashboard/invoice dark/mobile refresh

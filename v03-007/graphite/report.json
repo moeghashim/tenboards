@@ -1,0 +1,82 @@
+{
+  "baseURL": "http://localhost:3003/",
+  "hydrationDelayMs": 0,
+  "preset": "graphite",
+  "timezone": "Pacific/Kiritimati",
+  "reload": false,
+  "interactions": true,
+  "results": [
+    {
+      "route": "/dashboard/invoice",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_invoice-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_invoice-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Date edited 2026-10-23 → 2026-10-24 as a civil date",
+        "Client changed; multiline description and quantity/price edits",
+        "Add/remove items, GST 18%, discount 10%; totals $2,538.18 → $945.18",
+        "Keyboard reorder and cancellation preserve values/totals",
+        "Preview/print content agrees; Jordan Lee issuer",
+        "Paper text contrast 19.80 / 7.81 / 18.16:1",
+        "Print PDF exported and screen portal hidden; no page overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/invoice",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_invoice-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_invoice-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Date edited 2026-10-23 → 2026-10-24 as a civil date",
+        "Client changed; multiline description and quantity/price edits",
+        "Add/remove items, GST 18%, discount 10%; totals $2,538.18 → $945.18",
+        "Keyboard reorder and cancellation preserve values/totals",
+        "Preview/print content agrees; Jordan Lee issuer",
+        "Paper text contrast 19.80 / 7.81 / 18.16:1",
+        "Print PDF exported and screen portal hidden; no page overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/invoice",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_invoice-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_invoice-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Date edited 2026-10-23 → 2026-10-24 as a civil date",
+        "Client changed; multiline description and quantity/price edits",
+        "Add/remove items, GST 18%, discount 10%; totals $2,538.18 → $945.18",
+        "Keyboard reorder and cancellation preserve values/totals",
+        "Preview/print content agrees; Jordan Lee issuer",
+        "Paper text contrast 19.80 / 7.81 / 18.16:1",
+        "Print PDF exported and screen portal hidden; no page overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/invoice",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_invoice-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_invoice-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Date edited 2026-10-23 → 2026-10-24 as a civil date",
+        "Client changed; multiline description and quantity/price edits",
+        "Add/remove items, GST 18%, discount 10%; totals $2,538.18 → $945.18",
+        "Keyboard reorder and cancellation preserve values/totals",
+        "Preview/print content agrees; Jordan Lee issuer",
+        "Paper text contrast 19.80 / 7.81 / 18.16:1",
+        "Print PDF exported and screen portal hidden; no page overflow"
+      ],
+      "errors": []
+    }
+  ]
+}
