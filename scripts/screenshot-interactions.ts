@@ -2,6 +2,76 @@ import type { Page } from "playwright";
 
 // Opt-in interaction evidence for the dashboard batch. Never replace the runtime clock.
 export async function captureInteractions(page: Page, route: string): Promise<string[]> {
+  if (route === "/chat" || route === "/dashboard/chat") {
+    const embedded = route === "/dashboard/chat";
+    if (embedded)
+      await page
+        .frameLocator('iframe[title="Chat preview"]')
+        .getByRole("heading", { name: "tenboards Chat", exact: true })
+        .waitFor();
+    const surface = embedded ? page.frames().find((frame) => new URL(frame.url()).pathname === "/chat") : page;
+    if (!surface) throw new Error("Chat iframe missing");
+    const inner = await surface.evaluate(() => ({
+      width: innerWidth,
+      dark: document.documentElement.classList.contains("dark"),
+      preset: document.documentElement.dataset.themePreset,
+      overflow: document.documentElement.scrollWidth > innerWidth,
+    }));
+    const parent = await page.evaluate(() => ({
+      dark: document.documentElement.classList.contains("dark"),
+      preset: document.documentElement.dataset.themePreset,
+    }));
+    if (inner.dark !== parent.dark || inner.preset !== parent.preset || inner.overflow)
+      throw new Error(`Chat frame layout/theme: ${JSON.stringify(inner)}`);
+    const row = surface.locator("[data-conversation-id]").first();
+    await row.press("Enter");
+    if (inner.width < 768) {
+      await surface.waitForFunction(
+        () => document.activeElement?.getAttribute("aria-label") === "Back to conversations",
+      );
+      if (!(await row.evaluate((node) => !!node.closest("[inert]"))))
+        throw new Error("Offscreen list remains focusable");
+    }
+    await surface
+      .getByRole("textbox", { name: "Type your message...", exact: true })
+      .fill(
+        "A longer demo reply with averylongunbrokenmessagethatmustremaininsideitscomposer and multiple lines.\nSecond line.",
+      );
+    await surface.getByRole("tab", { name: "Internal note", exact: true }).press("Enter");
+    await surface.getByRole("textbox", { name: "Write an internal note...", exact: true }).fill("Internal demo note");
+    await surface.getByRole("tab", { name: "Reply", exact: true }).press("Enter");
+    await surface.getByRole("button", { name: "More actions", exact: true }).press("Enter");
+    await surface.getByRole("menuitem", { name: "View profile", exact: true }).click();
+    await surface.getByRole("button", { name: "Close profile", exact: true }).waitFor();
+    await surface.getByRole("button", { name: "Close profile", exact: true }).focus();
+    await page.keyboard.press("Escape");
+    await surface.getByRole("button", { name: "Close profile", exact: true }).waitFor({ state: "hidden" });
+    await surface
+      .waitForFunction(() => document.activeElement?.hasAttribute("data-contact-trigger"))
+      .catch(() => {
+        throw new Error("Profile focus return failed");
+      });
+    if (inner.width < 768) {
+      await surface.getByRole("button", { name: "Back to conversations", exact: true }).press("Enter");
+      await surface
+        .waitForFunction(() => document.activeElement?.hasAttribute("data-conversation-id"))
+        .catch(() => {
+          throw new Error("Mobile back focus return failed");
+        });
+      if (!(await surface.locator('[aria-label="Type your message..."]').evaluate((node) => !!node.closest("[inert]"))))
+        throw new Error("Offscreen thread remains focusable");
+      await row.press("Enter");
+    }
+    await surface.getByRole("button", { name: "More actions", exact: true }).press("Enter");
+    await surface.getByRole("menuitem", { name: "View profile", exact: true }).click();
+    return [
+      "Iframe preset/theme and no page overflow",
+      "Conversation selection, multiline composer and note tab",
+      "Profile Escape and trigger focus return",
+      "Mobile back returns row focus; hidden list/thread/contact panels inert",
+      "Existing sends/search/filter remain demo behavior",
+    ];
+  }
   if (route === "/mail" || route === "/dashboard/mail") {
     const embedded = route === "/dashboard/mail";
     if (embedded)

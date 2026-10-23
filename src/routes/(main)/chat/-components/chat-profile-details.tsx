@@ -31,18 +31,18 @@ interface ChatProfileDetailsProps {
 
 export function ChatProfileDetails({ contact, onClose }: ChatProfileDetailsProps) {
   return (
-    <div className="flex h-full min-h-0 flex-col gap-4 overflow-y-auto p-4">
+    <div className="bg-card flex h-full min-h-0 flex-col gap-4 overflow-y-auto p-4">
       <div className="flex items-start gap-3">
         <Avatar size="lg" className="shrink-0">
           <AvatarFallback className="bg-background">{getInitials(contact.name)}</AvatarFallback>
         </Avatar>
 
         <div className="min-w-0 flex-1">
-          <div className="truncate leading-5 font-medium">{contact.name}</div>
-          <div className="text-muted-foreground truncate text-xs">{contact.role}</div>
+          <div className="leading-5 font-medium wrap-break-word">{contact.name}</div>
+          <div className="text-muted-foreground text-xs wrap-break-word">{contact.role}</div>
         </div>
 
-        <Button variant="ghost" size="icon-sm" aria-label="Close profile" onClick={onClose}>
+        <Button variant="ghost" size="icon-sm" aria-label="Close profile" data-profile-close onClick={onClose}>
           <X />
         </Button>
       </div>
@@ -78,17 +78,17 @@ export function ChatProfileDetails({ contact, onClose }: ChatProfileDetailsProps
           <div className="flex items-center gap-2">
             <Mail className="text-muted-foreground size-4 shrink-0" />
             <span className="text-muted-foreground text-sm">Email</span>
-            <span className="ml-auto truncate text-sm">{contact.email}</span>
+            <span className="ml-auto min-w-0 text-right text-sm wrap-break-word">{contact.email}</span>
           </div>
           <div className="flex items-center gap-2">
             <Phone className="text-muted-foreground size-4 shrink-0" />
             <span className="text-muted-foreground text-sm">Phone</span>
-            <span className="ml-auto truncate text-sm">{contact.phone}</span>
+            <span className="ml-auto min-w-0 text-right text-sm wrap-break-word">{contact.phone}</span>
           </div>
           <div className="flex items-center gap-2">
             <Globe className="text-muted-foreground size-4 shrink-0" />
             <span className="text-muted-foreground text-sm">Website</span>
-            <span className="ml-auto truncate text-sm">{contact.website}</span>
+            <span className="ml-auto min-w-0 text-right text-sm wrap-break-word">{contact.website}</span>
           </div>
         </div>
 
@@ -98,12 +98,12 @@ export function ChatProfileDetails({ contact, onClose }: ChatProfileDetailsProps
           <div className="flex items-center gap-2">
             <Building2 className="text-muted-foreground size-4 shrink-0" />
             <span className="text-muted-foreground text-sm">Company</span>
-            <span className="ml-auto truncate text-sm">{contact.company}</span>
+            <span className="ml-auto min-w-0 text-right text-sm wrap-break-word">{contact.company}</span>
           </div>
           <div className="flex items-center gap-2">
             <UserRound className="text-muted-foreground size-4 shrink-0" />
             <span className="text-muted-foreground text-sm">Role</span>
-            <span className="ml-auto truncate text-sm">{contact.role}</span>
+            <span className="ml-auto min-w-0 text-right text-sm wrap-break-word">{contact.role}</span>
           </div>
           <div className="flex items-center gap-2">
             <CheckCircle2 className="text-muted-foreground size-4 shrink-0" />
@@ -115,12 +115,12 @@ export function ChatProfileDetails({ contact, onClose }: ChatProfileDetailsProps
           <div className="flex items-center gap-2">
             <Calendar className="text-muted-foreground size-4 shrink-0" />
             <span className="text-muted-foreground text-sm">Qualified since</span>
-            <span className="ml-auto truncate text-sm">{contact.qualifiedAt}</span>
+            <span className="ml-auto min-w-0 text-right text-sm wrap-break-word">{contact.qualifiedAt}</span>
           </div>
           <div className="flex items-center gap-2">
             <Monitor className="text-muted-foreground size-4 shrink-0" />
             <span className="text-muted-foreground text-sm">Timezone</span>
-            <span className="ml-auto truncate text-sm">{contact.timezone}</span>
+            <span className="ml-auto min-w-0 text-right text-sm wrap-break-word">{contact.timezone}</span>
           </div>
         </div>
 
@@ -130,7 +130,7 @@ export function ChatProfileDetails({ contact, onClose }: ChatProfileDetailsProps
           <div className="flex items-center gap-2">
             <MapPin className="text-muted-foreground size-4 shrink-0" />
             <span className="text-muted-foreground text-sm">Location</span>
-            <span className="ml-auto truncate text-sm">{contact.location}</span>
+            <span className="ml-auto min-w-0 text-right text-sm wrap-break-word">{contact.location}</span>
           </div>
           <div className="flex items-start gap-2">
             <Tag className="text-muted-foreground size-4 shrink-0" />

@@ -52,14 +52,23 @@ interface ChatThreadProps {
   onBack?: () => void;
   showBackButton?: boolean;
   className?: string;
+  inert?: boolean;
 }
 
-export function ChatThread({ contact, messages, onOpenContact, onBack, showBackButton, className }: ChatThreadProps) {
+export function ChatThread({
+  contact,
+  messages,
+  onOpenContact,
+  onBack,
+  showBackButton,
+  className,
+  inert,
+}: ChatThreadProps) {
   return (
-    <div className={cn("flex h-full flex-col py-3", className)}>
+    <div inert={inert} aria-hidden={inert} className={cn("bg-card flex h-full flex-col py-3", className)}>
       <div className="flex flex-col gap-3">
-        <div className="flex items-center justify-between gap-4 px-2">
-          <div className="flex items-center gap-3">
+        <div className="flex flex-wrap items-center justify-between gap-2 px-3">
+          <div className="flex min-w-0 flex-1 items-center gap-2">
             {showBackButton && (
               <Button
                 variant="ghost"
@@ -73,9 +82,11 @@ export function ChatThread({ contact, messages, onOpenContact, onBack, showBackB
             )}
             <Avatar className="size-8">
               <AvatarFallback className="bg-background text-foreground">{getInitials(contact.name)}</AvatarFallback>
-              <AvatarBadge className="bg-green-600 dark:bg-green-800" />
+              <AvatarBadge className="bg-success">
+                <span className="sr-only">Online</span>
+              </AvatarBadge>
             </Avatar>
-            <div>
+            <div className="min-w-0 wrap-break-word">
               <div className="text-sm font-medium">{contact.name}</div>
               <div className="text-muted-foreground text-xs leading-3">{contact.role}</div>
             </div>
@@ -101,12 +112,14 @@ export function ChatThread({ contact, messages, onOpenContact, onBack, showBackB
               <TooltipContent>Snooze</TooltipContent>
             </Tooltip>
             <DropdownMenu>
-              <DropdownMenuTrigger render={<Button variant="ghost" size="icon-sm" aria-label="More actions" />}>
+              <DropdownMenuTrigger
+                render={<Button variant="ghost" size="icon-sm" aria-label="More actions" data-contact-trigger />}
+              >
                 <MoreHorizontal />
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="w-44">
                 <DropdownMenuGroup>
-                  <DropdownMenuItem onSelect={onOpenContact}>
+                  <DropdownMenuItem onClick={onOpenContact}>
                     <UserRound />
                     View profile
                   </DropdownMenuItem>
@@ -134,7 +147,7 @@ export function ChatThread({ contact, messages, onOpenContact, onBack, showBackB
       <MessageScrollerProvider autoScroll>
         <MessageScroller className="min-h-0 flex-1">
           <MessageScrollerViewport>
-            <MessageScrollerContent className="gap-6 px-2 py-8">
+            <MessageScrollerContent className="gap-4 px-3 py-4">
               <Marker variant="separator">
                 <MarkerContent>May 6, 2026</MarkerContent>
               </Marker>
@@ -175,7 +188,9 @@ export function ChatThread({ contact, messages, onOpenContact, onBack, showBackB
                             ) : null}
                           </Bubble>
                         </BubbleGroup>
-                        <MessageFooter>{message.time}</MessageFooter>
+                        <MessageFooter>
+                          {senderName} · {message.time}
+                        </MessageFooter>
                       </MessageContent>
                     </Message>
                   </MessageScrollerItem>
@@ -223,6 +238,7 @@ function MessageComposer({ placeholder }: { placeholder: string }) {
     >
       <InputGroup className="border-0 bg-transparent shadow-none has-[[data-slot=input-group-control]:focus-visible]:border-0 has-[[data-slot=input-group-control]:focus-visible]:ring-0 has-[[data-slot][aria-invalid=true]]:border-0 has-[[data-slot][aria-invalid=true]]:ring-0 dark:bg-transparent dark:has-[[data-slot][aria-invalid=true]]:ring-0">
         <InputGroupTextarea
+          aria-label={placeholder}
           placeholder={placeholder}
           className="min-h-14 px-3 py-2.5 text-sm ring-0 focus-visible:ring-0 aria-invalid:ring-0 dark:aria-invalid:ring-0"
         />
