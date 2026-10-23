@@ -26,10 +26,7 @@ function formatOrderDate(date: string) {
 function PaymentBadge({ status }: { status: OrderRow["payment"] }) {
   if (status === "Paid") {
     return (
-      <Badge
-        className="border-green-700/25 text-green-700 dark:border-green-300/25 dark:text-green-300"
-        variant="outline"
-      >
+      <Badge className="border-success/30 bg-success-surface text-success" variant="outline">
         <span className="size-1.5 rounded-full bg-current" />
         Paid
       </Badge>
@@ -46,10 +43,7 @@ function PaymentBadge({ status }: { status: OrderRow["payment"] }) {
   }
 
   return (
-    <Badge
-      className="border-yellow-700/25 text-yellow-700 dark:border-yellow-300/25 dark:text-yellow-300"
-      variant="outline"
-    >
+    <Badge className="border-warning/30 bg-warning-surface text-warning" variant="outline">
       <span className="size-1.5 rounded-full bg-current" />
       Pending
     </Badge>
@@ -59,10 +53,7 @@ function PaymentBadge({ status }: { status: OrderRow["payment"] }) {
 function FulfillmentBadge({ status }: { status: OrderRow["fulfillment"] }) {
   if (status === "Fulfilled") {
     return (
-      <Badge
-        className="border-green-700/25 text-green-700 dark:border-green-300/25 dark:text-green-300"
-        variant="outline"
-      >
+      <Badge className="border-success/30 bg-success-surface text-success" variant="outline">
         <span className="size-1.5 rounded-full bg-current" />
         Fulfilled
       </Badge>
@@ -188,8 +179,8 @@ export const recentOrdersColumns: ColumnDef<DataTableFeatures, OrderRow>[] = [
             <MoreHorizontal />
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="w-40">
-            <DropdownMenuLabel>Order Actions</DropdownMenuLabel>
             <DropdownMenuGroup>
+              <DropdownMenuLabel>Order Actions</DropdownMenuLabel>
               <DropdownMenuItem>View order</DropdownMenuItem>
               <DropdownMenuItem>Contact customer</DropdownMenuItem>
               <DropdownMenuItem>Copy order ID</DropdownMenuItem>

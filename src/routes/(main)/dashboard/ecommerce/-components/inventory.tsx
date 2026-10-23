@@ -1,9 +1,12 @@
-import { ArrowUpRight, PackageCheck, PackageX, TriangleAlert } from "lucide-react";
+import { PackageCheck, PackageX, TriangleAlert } from "lucide-react";
 import { Label, Pie, PieChart } from "recharts";
 
-import { Card, CardAction, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { type ChartConfig, ChartContainer } from "@/components/ui/chart";
+import { CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import type { ChartConfig } from "@/components/ui/chart";
 import { Separator } from "@/components/ui/separator";
+import { DashboardChart, useChartMotion } from "@/lib/charts/theme";
+
+import { DashboardCard as Card } from "../../-components/dashboard/cards";
 
 const chartData = [{ month: "current", "in-stock": 760, "low-stock": 320, "out-of-stock": 160 }];
 const totalUnits = chartData[0]["in-stock"] + chartData[0]["low-stock"] + chartData[0]["out-of-stock"];
@@ -47,7 +50,7 @@ const inventorySummary = [
   },
   {
     icon: PackageX,
-    label: "Out",
+    label: "Out of stock",
     value: chartData[0]["out-of-stock"],
   },
 ] as const;
@@ -55,11 +58,11 @@ const inventorySummary = [
 const chartConfig = {
   "in-stock": {
     label: "In stock",
-    color: "var(--chart-2)",
+    color: "var(--success)",
   },
   "low-stock": {
     label: "Low stock",
-    color: "var(--chart-1)",
+    color: "var(--warning)",
   },
   "out-of-stock": {
     label: "Out of stock",
@@ -68,23 +71,22 @@ const chartConfig = {
 } satisfies ChartConfig;
 
 export function Inventory() {
+  const motion = useChartMotion();
   return (
     <Card className="h-full">
       <CardHeader>
-        <CardTitle className="text-muted-foreground text-sm font-normal">Inventory</CardTitle>
+        <CardTitle className="text-foreground text-sm font-medium">Inventory</CardTitle>
         <CardDescription className="text-foreground text-xl leading-none tracking-tight tabular-nums">
           {availablePercent}% available
         </CardDescription>
-        <CardAction>
-          <ArrowUpRight className="size-4" />
-        </CardAction>
       </CardHeader>
       <CardContent className="flex flex-col gap-4">
-        <ChartContainer config={chartConfig} className="mx-auto h-30 w-full">
+        <DashboardChart config={chartConfig} className="mx-auto h-40 w-full sm:h-40">
           <PieChart>
             <Pie
+              {...motion}
               cx="50%"
-              cy="100%"
+              cy="72%"
               cornerRadius={6}
               data={gaugeSegments}
               dataKey="value"
@@ -118,7 +120,7 @@ export function Inventory() {
               />
             </Pie>
           </PieChart>
-        </ChartContainer>
+        </DashboardChart>
         <Separator />
 
         <div className="grid grid-cols-3 divide-x">
@@ -129,7 +131,7 @@ export function Inventory() {
               </div>
               <div>
                 <div className="text-muted-foreground text-xs leading-none">{item.label}</div>
-                <div className="text-sm font-medium tabular-nums">{item.value.toLocaleString()}</div>
+                <div className="text-sm font-medium tabular-nums">{item.value.toLocaleString("en-US")}</div>
               </div>
             </div>
           ))}

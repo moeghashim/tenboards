@@ -2,6 +2,28 @@ import type { Page } from "playwright";
 
 // Opt-in interaction evidence for the dashboard batch. Never replace the runtime clock.
 export async function captureInteractions(page: Page, route: string): Promise<string[]> {
+  if (route === "/dashboard/ecommerce") {
+    await page.getByRole("combobox", { name: "Store period" }).click();
+    await page.getByRole("option", { name: "Last Month", exact: true }).click();
+    await page.getByRole("combobox", { name: "Sales channel" }).click();
+    await page.getByRole("option", { name: "Online Store", exact: true }).click();
+    await page.getByRole("button", { name: "Returns", exact: true }).click();
+    if ((await page.locator("tbody tr").count()) === 0) throw new Error("Returns filter removed all rows");
+    await page.getByRole("checkbox", { name: "Select all orders", exact: true }).press("Space");
+    await page.getByText(/orders selected/).waitFor();
+    await page.getByRole("button", { name: "Sort orders by date" }).press("Enter");
+    await page.getByRole("button", { name: "Open order actions" }).first().click();
+    await page.getByRole("menuitem", { name: "View order", exact: true }).waitFor();
+    await page.keyboard.press("Escape");
+    if (await page.evaluate(() => document.documentElement.scrollWidth > innerWidth))
+      throw new Error("Page-wide overflow");
+    return [
+      "Last Month / Online Store selected",
+      "Returns filter, Space selects orders, Enter sorts dates",
+      "Order menu opens, Escape closes",
+      "No page-wide overflow",
+    ];
+  }
   if (route === "/dashboard/productivity") {
     const task = page.getByRole("checkbox", { name: "Finalize Q2 roadmap" });
     await task.focus();

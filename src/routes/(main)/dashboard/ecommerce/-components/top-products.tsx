@@ -1,13 +1,13 @@
-import { ArrowUpRight } from "lucide-react";
-
-import { Card, CardAction, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+
+import { DashboardCard as Card } from "../../-components/dashboard/cards";
 
 const categories = [
   {
     name: "Apparel",
     share: 44,
-    color: "var(--chart-3)",
+    color: "var(--chart-1)",
   },
   {
     name: "Accessories",
@@ -17,7 +17,7 @@ const categories = [
   {
     name: "Home",
     share: 24,
-    color: "var(--chart-1)",
+    color: "var(--chart-4)",
   },
 ] as const;
 
@@ -46,13 +46,10 @@ export function TopProducts() {
   return (
     <Card className="h-full">
       <CardHeader>
-        <CardTitle className="text-muted-foreground text-sm font-normal">Top Products</CardTitle>
+        <CardTitle className="text-foreground text-sm font-medium">Top Products</CardTitle>
         <CardDescription className="text-foreground text-xl leading-none tracking-tight tabular-nums">
           73% of sales
         </CardDescription>
-        <CardAction>
-          <ArrowUpRight className="size-4" />
-        </CardAction>
       </CardHeader>
 
       <CardContent className="flex flex-col gap-4">
@@ -75,7 +72,9 @@ export function TopProducts() {
             {categories.map((category) => (
               <div className="flex items-center gap-1" key={category.name}>
                 <span aria-hidden="true" className="size-2 rounded-full" style={{ backgroundColor: category.color }} />
-                <span className="text-muted-foreground text-xs">{category.name}</span>
+                <span className="text-muted-foreground text-xs">
+                  {category.name} {category.share}%
+                </span>
               </div>
             ))}
           </div>
@@ -91,7 +90,7 @@ export function TopProducts() {
           {products.map((product) => (
             <div className="contents text-sm" key={product.name}>
               <div className="min-w-0">
-                <div className="truncate font-medium">{product.name}</div>
+                <div className="font-medium wrap-break-word">{product.name}</div>
                 <div className="text-muted-foreground text-xs">{product.category}</div>
               </div>
               <div className="text-muted-foreground self-center tabular-nums">{product.share}</div>

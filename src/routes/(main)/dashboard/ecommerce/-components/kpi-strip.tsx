@@ -1,12 +1,20 @@
-import { format, parse } from "date-fns";
-import { ArrowUpRight, DollarSign, PackageCheck, ReceiptText, RotateCcw, ShoppingBag, Users } from "lucide-react";
-import { Area, Bar, CartesianGrid, ComposedChart, XAxis, YAxis } from "recharts";
+import { Bar, CartesianGrid, ComposedChart, Line, XAxis, YAxis } from "recharts";
 
-import { Card, CardAction, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { type ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
+import { CardContent } from "@/components/ui/card";
+import { ChartLegend, ChartTooltip } from "@/components/ui/chart";
+import {
+  chartAxis,
+  chartCursor,
+  chartGrid,
+  DashboardChart,
+  DashboardLegend,
+  DashboardTooltip,
+  formatCurrency,
+  seriesConfig,
+  useChartMotion,
+} from "@/lib/charts/theme";
 
-const revenueBucketRanges = ["01-05", "06-10", "11-15", "16-20", "21-25", "26-31"] as const;
-const profitMultipliers = [0.24, 0.28, 0.26] as const;
+import { DashboardCard, SectionHeader, StatCard } from "../../-components/dashboard/cards";
 
 const revenueBucketValues = [
   [4820, 5150, 5060, 5520, 5990, 6880],
@@ -23,281 +31,70 @@ const revenueBucketValues = [
   [6900, 7400, 8100, 8600, 8200, 9360],
 ] as const;
 
-const monthFormatter = new Intl.DateTimeFormat("en-US", { month: "short" });
-
-function getRollingRevenueBuckets() {
-  const currentMonth = new Date();
-  currentMonth.setDate(1);
-
-  return revenueBucketValues.map((values, index) => {
-    const monthDate = new Date(currentMonth);
-    monthDate.setMonth(currentMonth.getMonth() - (revenueBucketValues.length - 1 - index));
-
-    return {
-      month: `${monthFormatter.format(monthDate)} ${String(monthDate.getFullYear()).slice(-2)}`,
-      values,
-    };
-  });
-}
-
-const revenueOverviewData = getRollingRevenueBuckets().flatMap(({ month, values }) =>
+// A dated demo interval, independent of Worker startup time and browser timezone.
+const monthFormatter = new Intl.DateTimeFormat("en-US", { month: "short", year: "2-digit", timeZone: "UTC" });
+const revenueBucketRanges = ["01–05", "06–10", "11–15", "16–20", "21–25", "26–end"];
+const profitMultipliers = [0.24, 0.28, 0.26];
+const revenueOverviewData = revenueBucketValues.flatMap((values, monthIndex) =>
   values.map((revenue, index) => ({
-    period: `${month} ${revenueBucketRanges[index]}`,
-    profit: Math.round(revenue * profitMultipliers[index % profitMultipliers.length]),
+    period: `${monthFormatter.format(new Date(Date.UTC(2025, 10 + monthIndex, 1)))} · ${revenueBucketRanges[index]}`,
     revenue,
+    profit: Math.round(revenue * profitMultipliers[index % profitMultipliers.length]),
   })),
 );
-
-const revenueOverviewConfig = {
-  revenue: {
-    label: "Revenue",
-    color: "var(--foreground)",
-  },
-  profit: {
-    label: "Profit",
-    color: "var(--muted-foreground)",
-  },
-} satisfies ChartConfig;
-
-function formatMonthTick(value: string) {
-  const parts = value.split(" ");
-  const range = parts.at(-1);
-  const month = parts.slice(0, -1).join(" ");
-
-  return range === "11-15" ? month : "";
-}
-
-function formatTooltipLabel(value: string) {
-  const parts = value.split(" ");
-  const range = parts.at(-1);
-  const month = parse(parts.slice(0, -1).join(" "), "MMM yy", new Date());
-  const [start, end] = String(range).split("-");
-  const lastDayOfMonth = new Date(month.getFullYear(), month.getMonth() + 1, 0).getDate();
-  const startDate = new Date(month.getFullYear(), month.getMonth(), Number(start));
-  const endDate = new Date(month.getFullYear(), month.getMonth(), Math.min(Number(end), lastDayOfMonth));
-
-  return `${format(month, "MMM")} ${format(startDate, "do")} - ${format(endDate, "do")}, ${format(month, "yyyy")}`;
-}
-
-function formatCurrencyTooltipValue(value: unknown) {
-  return typeof value === "number" ? `$${value.toLocaleString()}` : String(value ?? "");
-}
-
+const config = seriesConfig({ revenue: "Revenue", profit: "Profit" });
+const metrics = [
+  { label: "Total Sales", value: "$48,560.00", change: "+15.8%", help: "vs last week", positive: true },
+  { label: "Total Orders", value: "379", change: "+8.3%", help: "vs last week", positive: true },
+  { label: "Customer Growth", value: "820", change: "+12.5%", help: "vs last month", positive: true },
+  { label: "Average Order", value: "$128", change: "−$4.20", help: "vs last week", positive: false },
+  { label: "Return Requests", value: "18", change: "+0.6%", help: "vs last month", positive: false },
+  { label: "Stock Accuracy", value: "97%", change: "+2.4 pts", help: "vs last audit", positive: true },
+];
 export function KpiStrip() {
+  const motion = useChartMotion();
   return (
-    <div className="bg-card ring-foreground/10 h-full overflow-hidden rounded-xl ring-1 xl:col-span-12">
-      <div>
-        <div className="grid grid-cols-1 xl:grid-cols-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-3 xl:col-span-5 xl:border-r">
-            <Card className="border-border h-full rounded-none border-0 border-b ring-0 md:border-r">
-              <CardHeader>
-                <CardTitle className="text-sm font-normal">Total Sales</CardTitle>
-                <CardDescription className="text-foreground text-3xl leading-none tracking-tight tabular-nums">
-                  $48,560.00
-                </CardDescription>
-                <CardAction className="bg-muted grid size-6 place-items-center rounded-sm">
-                  <DollarSign className="text-foreground size-3" />
-                </CardAction>
-              </CardHeader>
-              <CardContent>
-                <div className="text-sm">
-                  <span className="text-green-700 dark:text-green-300">+15.8%</span>
-                  <span className="text-muted-foreground"> vs last week</span>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-border h-full rounded-none border-0 border-b ring-0">
-              <CardHeader>
-                <CardTitle className="text-sm font-normal">Total Orders</CardTitle>
-                <CardDescription className="text-foreground text-3xl leading-none tracking-tight tabular-nums">
-                  379
-                </CardDescription>
-                <CardAction className="bg-muted grid size-6 place-items-center rounded-sm">
-                  <ShoppingBag className="text-foreground size-3" />
-                </CardAction>
-              </CardHeader>
-              <CardContent>
-                <div className="text-sm">
-                  <span className="text-green-700 dark:text-green-300">+8.3%</span>
-                  <span className="text-muted-foreground"> vs last week</span>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-border h-full rounded-none border-0 border-b ring-0 md:border-r">
-              <CardHeader>
-                <CardTitle className="text-sm font-normal">Customer Growth</CardTitle>
-                <CardDescription className="text-foreground text-3xl leading-none tracking-tight tabular-nums">
-                  820
-                </CardDescription>
-                <CardAction className="bg-muted grid size-6 place-items-center rounded-sm">
-                  <Users className="text-foreground size-3" />
-                </CardAction>
-              </CardHeader>
-              <CardContent>
-                <div className="text-sm">
-                  <span className="text-green-700 dark:text-green-300">+12.5%</span>
-                  <span className="text-muted-foreground"> vs last month</span>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-border h-full rounded-none border-0 border-b ring-0">
-              <CardHeader>
-                <CardTitle className="text-sm font-normal">Average Order</CardTitle>
-                <CardDescription className="text-foreground text-3xl leading-none tracking-tight tabular-nums">
-                  $128
-                </CardDescription>
-                <CardAction className="bg-muted grid size-6 place-items-center rounded-sm">
-                  <ReceiptText className="text-foreground size-3" />
-                </CardAction>
-              </CardHeader>
-              <CardContent>
-                <div className="text-sm">
-                  <span className="text-destructive">-$4.20</span>
-                  <span className="text-muted-foreground"> vs last week</span>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-border h-full rounded-none border-0 border-b ring-0 md:border-r md:border-b-0">
-              <CardHeader>
-                <CardTitle className="text-sm font-normal">Return Requests</CardTitle>
-                <CardDescription className="text-foreground text-3xl leading-none tracking-tight tabular-nums">
-                  18
-                </CardDescription>
-                <CardAction className="bg-muted grid size-6 place-items-center rounded-sm">
-                  <RotateCcw className="text-foreground size-3" />
-                </CardAction>
-              </CardHeader>
-              <CardContent>
-                <div className="text-sm">
-                  <span className="text-destructive">+0.6%</span>
-                  <span className="text-muted-foreground"> vs last month</span>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="h-full rounded-none border-0 ring-0">
-              <CardHeader>
-                <CardTitle className="text-sm font-normal">Stock Accuracy</CardTitle>
-                <CardDescription className="text-foreground text-3xl leading-none tracking-tight tabular-nums">
-                  97%
-                </CardDescription>
-                <CardAction className="bg-muted grid size-6 place-items-center rounded-sm">
-                  <PackageCheck className="text-foreground size-3" />
-                </CardAction>
-              </CardHeader>
-              <CardContent>
-                <div className="text-sm">
-                  <span className="text-green-700 dark:text-green-300">+2.4 pts</span>
-                  <span className="text-muted-foreground"> vs last audit</span>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          <Card className="h-full rounded-none border-0 ring-0 xl:col-span-7">
-            <CardHeader>
-              <CardTitle className="font-normal">Sales Overview</CardTitle>
-              <CardAction>
-                <ArrowUpRight className="size-4" />
-              </CardAction>
-            </CardHeader>
-
-            <CardContent>
-              <ChartContainer config={revenueOverviewConfig} className="h-74 w-full">
-                <ComposedChart
-                  accessibilityLayer
-                  data={revenueOverviewData}
-                  margin={{ bottom: 0, left: 0, right: 0, top: 0 }}
-                >
-                  <defs>
-                    <filter id="sales-line-glow" x="-20%" y="-20%" width="140%" height="140%">
-                      <feGaussianBlur stdDeviation="4" result="blur" />
-                      <feFlood floodColor="var(--color-revenue)" floodOpacity="0.35" />
-                      <feComposite in2="blur" operator="in" />
-                      <feMerge>
-                        <feMergeNode />
-                        <feMergeNode in="SourceGraphic" />
-                      </feMerge>
-                    </filter>
-                  </defs>
-                  <CartesianGrid yAxisId="profit" vertical={false} />
-                  <XAxis
-                    dataKey="period"
-                    axisLine={false}
-                    height={30}
-                    interval={0}
-                    minTickGap={0}
-                    tick={{ fontSize: 10 }}
-                    tickLine={false}
-                    tickMargin={8}
-                    tickFormatter={(value) => formatMonthTick(String(value))}
-                  />
-                  <YAxis yAxisId="revenue" hide domain={[3000, 10_000]} />
-                  <YAxis yAxisId="profit" hide domain={[0, 6000]} />
-                  <ChartTooltip
-                    content={
-                      <ChartTooltipContent
-                        className="w-40"
-                        labelFormatter={(value) => formatTooltipLabel(String(value))}
-                        formatter={(value, name, item) => (
-                          <>
-                            <div
-                              className="size-2.5 shrink-0 rounded-[2px]"
-                              style={{
-                                backgroundColor: item.color,
-                              }}
-                            />
-                            <div className="flex flex-1 items-center justify-between leading-none">
-                              <span className="text-muted-foreground">{String(name ?? "")}</span>
-                              <span className="text-foreground font-mono font-medium tabular-nums">
-                                {formatCurrencyTooltipValue(value)}
-                              </span>
-                            </div>
-                          </>
-                        )}
-                      />
-                    }
-                    cursor={{
-                      stroke: "var(--border)",
-                      strokeDasharray: "4 4",
-                    }}
-                  />
-                  <Bar
-                    yAxisId="profit"
-                    barSize={4}
-                    dataKey="profit"
-                    fill="var(--color-profit)"
-                    name="Profit"
-                    opacity={0.18}
-                    radius={[6, 6, 0, 0]}
-                  />
-                  <Area
-                    yAxisId="revenue"
-                    dataKey="revenue"
-                    fill="none"
-                    filter="url(#sales-line-glow)"
-                    name="Revenue"
-                    stroke="var(--color-revenue)"
-                    strokeWidth={1.8}
-                    type="linear"
-                    activeDot={{
-                      r: 4,
-                      fill: "var(--background)",
-                      stroke: "var(--color-revenue)",
-                      strokeWidth: 2,
-                    }}
-                    dot={false}
-                  />
-                </ComposedChart>
-              </ChartContainer>
-            </CardContent>
-          </Card>
-        </div>
+    <div className="grid min-w-0 gap-4 xl:col-span-12 xl:grid-cols-12">
+      <div className="grid min-w-0 gap-4 sm:grid-cols-2 xl:col-span-5">
+        {metrics.map((metric) => (
+          <StatCard
+            key={metric.label}
+            density="compact"
+            label={metric.label}
+            value={metric.value}
+            help={
+              <>
+                <span className={metric.positive ? "text-success" : "text-danger"}>{metric.change}</span> {metric.help}
+              </>
+            }
+          />
+        ))}
       </div>
+      <DashboardCard className="h-full xl:col-span-7">
+        <SectionHeader title="Sales Overview" description="Revenue and profit · USD · Nov 2025–Oct 2026" />
+        <CardContent>
+          <DashboardChart config={config} className="h-72 sm:h-80">
+            <ComposedChart accessibilityLayer data={revenueOverviewData} margin={{ left: 0, right: 8, top: 8 }}>
+              <CartesianGrid {...chartGrid} />
+              <XAxis
+                {...chartAxis}
+                dataKey="period"
+                interval={17}
+                tickFormatter={(value: string) => value.split(" · ")[0]}
+              />
+              <YAxis {...chartAxis} width={46} tickFormatter={(value: number) => `$${value / 1000}k`} />
+              <ChartTooltip
+                {...motion}
+                cursor={chartCursor}
+                content={<DashboardTooltip formatter={(value) => formatCurrency(Number(value))} />}
+              />
+              <ChartLegend content={<DashboardLegend config={config} />} />
+              <Bar {...motion} dataKey="profit" fill="var(--color-profit)" radius={[2, 2, 0, 0]} />
+              <Line {...motion} dataKey="revenue" stroke="var(--color-revenue)" strokeWidth={2} dot={false} />
+            </ComposedChart>
+          </DashboardChart>
+        </CardContent>
+      </DashboardCard>
     </div>
   );
 }

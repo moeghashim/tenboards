@@ -1,8 +1,10 @@
-import { ArrowLeft, ArrowRight, ArrowUpRight, Star } from "lucide-react";
+import { ArrowLeft, ArrowRight, Star } from "lucide-react";
 
 import { Avatar, AvatarFallback, AvatarGroup, AvatarGroupCount } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import { Card, CardAction, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+
+import { DashboardCard as Card } from "../../-components/dashboard/cards";
 
 const customerInitials = ["EM", "OW", "NO", "MM"] as const;
 
@@ -10,13 +12,10 @@ export function CustomerReviews() {
   return (
     <Card className="h-full">
       <CardHeader>
-        <CardTitle className="text-muted-foreground text-sm font-normal">Reviews</CardTitle>
+        <CardTitle className="text-foreground text-sm font-medium">Reviews</CardTitle>
         <CardDescription className="text-foreground text-xl leading-none tracking-tight tabular-nums">
           4.6 average rating
         </CardDescription>
-        <CardAction>
-          <ArrowUpRight className="size-4" />
-        </CardAction>
       </CardHeader>
 
       <CardContent className="flex flex-col gap-4">
