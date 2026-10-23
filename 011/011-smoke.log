@@ -1,0 +1,6 @@
+PASS light/1440: immediate changes, persisted reload, all variants preserve panel, default reset + reload, radio keyboard, focus return, modal shortcut guard, mobile fit and nested sheet; zero console errors
+PASS light/390: immediate changes, persisted reload, all variants preserve panel, default reset + reload, radio keyboard, focus return, modal shortcut guard, mobile fit and nested sheet; zero console errors
+PASS light/320: immediate changes, persisted reload, all variants preserve panel, default reset + reload, radio keyboard, focus return, modal shortcut guard, mobile fit and nested sheet; zero console errors
+PASS dark/1440: immediate changes, persisted reload, all variants preserve panel, default reset + reload, radio keyboard, focus return, modal shortcut guard, mobile fit and nested sheet; zero console errors
+PASS dark/390: immediate changes, persisted reload, all variants preserve panel, default reset + reload, radio keyboard, focus return, modal shortcut guard, mobile fit and nested sheet; zero console errors
+PASS dark/320: immediate changes, persisted reload, all variants preserve panel, default reset + reload, radio keyboard, focus return, modal shortcut guard, mobile fit and nested sheet; zero console errors
