@@ -1,26 +1,39 @@
-import { create } from "zustand";
+import { createContext, createElement, type ReactNode, useContext, useState } from "react";
 
-import { type Conversation, conversations } from "./data";
+import { useStore } from "zustand";
+import { createStore, type StoreApi } from "zustand/vanilla";
 
-type Config = {
-  selected: Conversation["id"] | null;
-};
+import type { ChatData } from "@/server/data/chat.types";
 
-type ChatStore = {
-  chat: Config;
-  setChat: (chat: Config) => void;
-};
+import type { Conversation } from "./data";
 
-const useChatStore = create<ChatStore>((set) => ({
-  chat: {
-    selected: conversations[0].id,
-  },
-  setChat: (chat) => set({ chat }),
-}));
-
+type Config = { selected: Conversation["id"] | null };
+type Store = { selection: Config; setSelection: (selection: Config) => void };
+const StoreContext = createContext<StoreApi<Store> | null>(null);
+const DataContext = createContext<ChatData | null>(null);
+export function ChatProvider({ data, children }: { data: ChatData; children: ReactNode }) {
+  const [store] = useState(() =>
+    createStore<Store>((set) => ({
+      selection: { selected: data.conversations[0]?.id ?? null },
+      setSelection: (selection) => set({ selection }),
+    })),
+  );
+  return createElement(DataContext, { value: data }, createElement(StoreContext, { value: store }, children));
+}
+export function useChatData() {
+  const data = useContext(DataContext);
+  if (!data) throw new Error("Missing chat data");
+  return data;
+}
 export function useChat() {
-  const chat = useChatStore((state) => state.chat);
-  const setChat = useChatStore((state) => state.setChat);
-
-  return [chat, setChat] as const;
+  const store = useContext(StoreContext);
+  if (!store) throw new Error("Missing chat store");
+  const selection = useStore(store, (s) => s.selection);
+  const setSelection = useStore(store, (s) => s.setSelection);
+  const data = useChatData();
+  const safeSelection =
+    selection.selected === null || data.conversations.some((row) => row.id === selection.selected)
+      ? selection
+      : { selected: null };
+  return [safeSelection, setSelection] as const;
 }

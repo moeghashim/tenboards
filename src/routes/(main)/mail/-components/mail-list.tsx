@@ -1,13 +1,13 @@
 import { cn } from "cn";
 import { differenceInDays } from "date-fns/differenceInDays";
 import { format } from "date-fns/format";
-import { formatDistanceToNow } from "date-fns/formatDistanceToNow";
+import { formatDistance } from "date-fns/formatDistance";
 
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
 import type { Mail } from "./data";
-import { useMail } from "./use-mail";
+import { useMail, useMailData } from "./use-mail";
 
 type MailGroup = {
   id: string;
@@ -22,6 +22,7 @@ interface MailListProps {
 
 export function MailList({ groups, onSelectMail }: MailListProps) {
   const [mail, setMail] = useMail();
+  const { renderedAt } = useMailData();
 
   return (
     <ScrollArea className="**:data-[slot=scroll-area-viewport]:scroll-fade min-h-0 flex-1">
@@ -85,7 +86,7 @@ export function MailList({ groups, onSelectMail }: MailListProps) {
                             mail.selected === item.id && "text-foreground",
                           )}
                         >
-                          {formatMailDate(item.receivedAt)}
+                          {formatMailDate(item.receivedAt, renderedAt)}
                         </div>
                       </div>
 
@@ -102,11 +103,11 @@ export function MailList({ groups, onSelectMail }: MailListProps) {
   );
 }
 
-function formatMailDate(date: string) {
+function formatMailDate(date: string, renderedAt: string) {
   const mailDate = new Date(date);
 
-  if (differenceInDays(new Date(), mailDate) <= 3) {
-    return formatDistanceToNow(mailDate, { addSuffix: true });
+  if (differenceInDays(new Date(renderedAt), mailDate) <= 3) {
+    return formatDistance(mailDate, new Date(renderedAt), { addSuffix: true });
   }
 
   return format(mailDate, "d MMM yyyy");

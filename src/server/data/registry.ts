@@ -1,9 +1,11 @@
 import { dbAccounts, demoAccounts } from "./accounts.ts";
 import { dbCalendar, demoCalendar } from "./calendar.ts";
+import { dbChat, demoChat } from "./chat.ts";
 import { dbEcommerce, demoEcommerce } from "./ecommerce.ts";
 import { dbFiles, demoFiles } from "./files.ts";
 import { dbInvoices, demoInvoices } from "./invoices.ts";
 import { dbKanban, demoKanban } from "./kanban.ts";
+import { dbMail, demoMail } from "./mail.ts";
 import { dbProducts, demoProducts } from "./products.ts";
 import { dbProfile, demoProfile } from "./profile.ts";
 import { dbRoles, demoRoles } from "./roles.ts";
@@ -32,6 +34,31 @@ function defineRead<Input, Output>(entry: {
 }
 
 export const readRegistry = [
+  defineRead({
+    module: "mail",
+    read: "readMail",
+    demo: demoMail,
+    db: dbMail,
+    scenarios: [
+      ...["2026-10-23T12:00:00Z", "2028-01-01T00:01:00Z", "2028-02-29T23:59:59Z"].map((renderedAt) => ({
+        name: renderedAt,
+        input: { renderedAt },
+      })),
+      { name: "existing", input: { renderedAt: "2026-10-23T12:00:00Z", id: "6c84fb90-12c4-11e1-840d-7b25c5ee775a" } },
+      { name: "missing", input: { renderedAt: "2026-10-23T12:00:00Z", id: "missing" } },
+    ],
+  }),
+  defineRead({
+    module: "chat",
+    read: "readChat",
+    demo: demoChat,
+    db: dbChat,
+    scenarios: [
+      { name: "all", input: {} },
+      { name: "existing", input: { id: 1 } },
+      { name: "missing", input: { id: -1 } },
+    ],
+  }),
   defineRead({
     module: "kanban",
     read: "readKanban",

@@ -35,7 +35,7 @@ import { InputGroup, InputGroupAddon, InputGroupButton, InputGroupInput } from "
 import { Separator } from "@/components/ui/separator";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 
-import type { Mail } from "./data";
+import { attachmentIcons, type Mail } from "./data";
 import { useMail } from "./use-mail";
 
 interface MailDisplayProps {
@@ -216,7 +216,7 @@ export function MailView({ mail, onClose }: MailDisplayProps) {
                           className="h-auto max-w-full py-1 whitespace-normal"
                           key={attachment.id}
                         >
-                          <SimpleIcon icon={attachment.icon} className="size-3 fill-current" />
+                          <SimpleIcon icon={attachmentIcons[attachment.icon]} className="size-3 fill-current" />
                           <span className="min-w-0 font-normal wrap-break-word">{attachment.name}</span>
                           <span className="text-muted-foreground font-normal">{attachment.size}</span>
                         </Button>

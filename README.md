@@ -336,3 +336,14 @@ definitions, resolves one request timestamp for SSR, then adopts browser-local c
 time after hydration; Today and the now marker continue using the live clock.
 Migration `0005_abandoned_red_ghost.sql` extends the cumulative journal. Parity covers
 all workspace reads, empty/missing selections and month/year/leap-day timezone cases.
+
+### Communication reads (v0.4/005, in review)
+
+Mail and Chat use normalized read data for their standalone views and dashboard
+iframes, including accounts, counts, recipients, attachments, contacts and messages.
+Mail dates resolve stored minute offsets against one serialized request reference,
+so reseeding is not required to keep relative demo dates current. Attachment IDs map
+to icons in the UI. Selection stores belong to each mounted view, safely handle
+empty/removed records, and never represent authentication or persist messages.
+Migration `0006_useful_quentin_quire.sql` extends the journal; cumulative parity also
+checks later request dates against an unchanged seed.

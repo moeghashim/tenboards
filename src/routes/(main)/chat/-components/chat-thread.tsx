@@ -43,7 +43,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { getInitials } from "@/lib/utils";
 
-import { type Message as ChatMessage, type Contact, currentUser } from "./data";
+import type { Message as ChatMessage, Contact } from "./data";
+import { useChatData } from "./use-chat";
 
 interface ChatThreadProps {
   contact: Contact;
@@ -64,6 +65,7 @@ export function ChatThread({
   className,
   inert,
 }: ChatThreadProps) {
+  const { currentUser } = useChatData();
   return (
     <div inert={inert} aria-hidden={inert} className={cn("bg-card flex h-full flex-col py-3", className)}>
       <div className="flex flex-col gap-3">
