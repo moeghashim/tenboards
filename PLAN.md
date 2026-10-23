@@ -117,7 +117,7 @@ Upstream scripts kept (`dev`, `build`, `preview`, `check`, `check:fix`, `generat
 6. **Brand**: SVG mark + wordmark replaces all "Studio Admin".
 7. **Accessibility**: all token pairs WCAG AA in light & dark; `prefers-reduced-motion` respected.
 8. **Visual QA**: Playwright screenshot script in v0.1; every PR includes before/after screenshots (light/dark × desktop/mobile).
-9. **Workflow**: protected `main`, one PR per task, Conventional Commits, Claude review on every PR, user merges.
+9. **Workflow**: protected `main`, one PR per task, Conventional Commits, Claude review on every PR; Claude squash-merges after approval (delegated by user 2026-10-23).
 10. **Implementer**: GPT-6-Astra via Codex (reasoning: high). Planner/reviewer: Claude Opus 5.5.
 
 ## 10. Decisions log
@@ -139,6 +139,7 @@ Upstream scripts kept (`dev`, `build`, `preview`, `check`, `check:fix`, `generat
 | Sidebar style | Floating rounded panel per `docs/design-refs/sidebar-reference.png` (see §7) | Locked by user |
 | Design skill | Impeccable (global install) used for all UI work; mode Operate; PRODUCT.md + DESIGN.md at root | Locked by user |
 | Live preview | From v0.1: demo mode deployed to Cloudflare Workers (`tenboards.<account>.workers.dev`) via Nitro `cloudflare-module` preset + `wrangler deploy`; redeployed from `main` after each merge; per-PR preview via `wrangler versions upload` preview URL | Locked by user |
+| Merge authority | Delegated by user to Claude (reviewer) on 2026-10-23: Claude squash-merges approved PRs and rebases stacks; implementer still never merges | Locked by user |
 | Local checkout | `/Users/moeghashim/tenboards`, remote `origin` = moeghashim/tenboards | Locked by user |
 | Deferred | RBAC/multi-tenant, i18n/RTL, real CRUD, tests+CI — not before v0.6, each needs planning | Locked |
 | Defaults 1–10 | As listed in §9 | Locked by user ("lock all") |
