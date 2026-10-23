@@ -2,53 +2,19 @@ import { CardContent, CardDescription, CardHeader, CardTitle } from "@/component
 import { Separator } from "@/components/ui/separator";
 
 import { DashboardCard as Card } from "../../-components/dashboard/cards";
-
-const categories = [
-  {
-    name: "Apparel",
-    share: 44,
-    color: "var(--chart-1)",
-  },
-  {
-    name: "Accessories",
-    share: 32,
-    color: "var(--chart-2)",
-  },
-  {
-    name: "Home",
-    share: 24,
-    color: "var(--chart-4)",
-  },
-] as const;
-
-const products = [
-  {
-    name: "Linen Overshirt",
-    category: "Apparel",
-    share: "31%",
-    sales: "$14,820",
-  },
-  {
-    name: "Everyday Tote",
-    category: "Accessories",
-    share: "24%",
-    sales: "$11,460",
-  },
-  {
-    name: "Ceramic Planter",
-    category: "Home",
-    share: "18%",
-    sales: "$8,930",
-  },
-] as const;
+import { useEcommerce } from "./ecommerce-context";
 
 export function TopProducts() {
+  const data = useEcommerce();
+  const { products, summary } = data;
+  const colors = ["var(--chart-1)", "var(--chart-2)", "var(--chart-4)"];
+  const categories = data.categories.map((category, index) => ({ ...category, color: colors[index % colors.length] }));
   return (
     <Card className="h-full">
       <CardHeader>
         <CardTitle className="text-foreground text-sm font-medium">Top Products</CardTitle>
         <CardDescription className="text-foreground text-xl leading-none tracking-tight tabular-nums">
-          73% of sales
+          {`${summary.topSalesShare}% of sales`}
         </CardDescription>
       </CardHeader>
 

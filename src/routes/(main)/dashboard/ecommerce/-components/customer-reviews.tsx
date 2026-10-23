@@ -5,16 +5,16 @@ import { Button } from "@/components/ui/button";
 import { CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 import { DashboardCard as Card } from "../../-components/dashboard/cards";
-
-const customerInitials = ["EM", "OW", "NO", "MM"] as const;
+import { useEcommerce } from "./ecommerce-context";
 
 export function CustomerReviews() {
+  const { customerInitials, review, summary } = useEcommerce();
   return (
     <Card className="h-full">
       <CardHeader>
         <CardTitle className="text-foreground text-sm font-medium">Reviews</CardTitle>
         <CardDescription className="text-foreground text-xl leading-none tracking-tight tabular-nums">
-          4.6 average rating
+          {`${summary.reviewAverage} average rating`}
         </CardDescription>
       </CardHeader>
 
@@ -23,17 +23,15 @@ export function CustomerReviews() {
           <div className="flex items-start justify-between gap-3">
             <div className="flex flex-col gap-2">
               <div className="text-foreground flex gap-0.5">
-                <Star className="size-3.5 fill-current" />
-                <Star className="size-3.5 fill-current" />
-                <Star className="size-3.5 fill-current" />
-                <Star className="size-3.5 fill-current" />
-                <Star className="size-3.5 fill-current" />
+                {[1, 2, 3, 4, 5]
+                  .filter((star) => star <= review.rating)
+                  .map((star) => (
+                    <Star key={star} className="size-3.5 fill-current" />
+                  ))}
               </div>
               <div>
-                <div className="text-sm font-medium">Melody Macy</div>
-                <p className="text-muted-foreground mt-2 line-clamp-3 min-h-[4.5em] text-sm">
-                  The linen overshirt arrived faster than expected and the fit was exactly right.
-                </p>
+                <div className="text-sm font-medium">{review.author}</div>
+                <p className="text-muted-foreground mt-2 line-clamp-3 min-h-[4.5em] text-sm">{review.body}</p>
               </div>
             </div>
 
@@ -50,7 +48,7 @@ export function CustomerReviews() {
 
         <div className="flex items-center justify-between gap-4 rounded-lg border px-4 py-3">
           <div className="min-w-0">
-            <div className="text-sm font-medium">12.8K reviews</div>
+            <div className="text-sm font-medium">{`${summary.reviewCount / 1000}K reviews`}</div>
             <div className="text-muted-foreground line-clamp-2 min-h-[3em] text-xs">Customers reviewed this month</div>
           </div>
 
@@ -61,7 +59,7 @@ export function CustomerReviews() {
               </Avatar>
             ))}
 
-            <AvatarGroupCount>+42</AvatarGroupCount>
+            <AvatarGroupCount>{`+${summary.reviewExtra}`}</AvatarGroupCount>
           </AvatarGroup>
         </div>
       </CardContent>

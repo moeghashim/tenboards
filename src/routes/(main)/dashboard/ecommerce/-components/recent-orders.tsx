@@ -20,18 +20,17 @@ import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { dataTableFeatures } from "@/lib/data-table-features";
 
 import { DashboardCard as Card } from "../../-components/dashboard/cards";
+import { useEcommerce } from "./ecommerce-context";
 import { recentOrdersColumns } from "./recent-orders-table/columns";
-import recentOrdersData from "./recent-orders-table/data.json";
 import {
   formatOrderCount,
   formatSelectedOrderCount,
   preventPaginationNavigation,
 } from "./recent-orders-table/formatters";
-import { type OrderFilter, type OrderRow, orderFilters } from "./recent-orders-table/schema";
-
-const recentOrders = recentOrdersData as OrderRow[];
+import { type OrderFilter, orderFilters } from "./recent-orders-table/schema";
 
 export function RecentOrders() {
+  const { orders: recentOrders } = useEcommerce();
   const [rowSelection, setRowSelection] = React.useState({});
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>([]);

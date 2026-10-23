@@ -29,6 +29,13 @@
       "when": 1792785094343,
       "tag": "0003_smiling_tombstone",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1792785860774,
+      "tag": "0004_easy_la_nuit",
+      "breakpoints": true
     }
   ]
 }

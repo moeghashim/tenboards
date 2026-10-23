@@ -4,12 +4,8 @@ import { Field, FieldLabel } from "@/components/ui/field";
 import { InputGroup, InputGroupAddon, InputGroupInput } from "@/components/ui/input-group";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
-import { type InvoiceFormValues, invoiceTaxOptions } from "./data";
-
-const taxItems = invoiceTaxOptions.map((taxOption) => ({
-  value: taxOption.id,
-  label: `${taxOption.name} (${taxOption.rate}%)`,
-}));
+import type { InvoiceFormValues } from "./data";
+import { useInvoiceReferences } from "./invoice-context";
 
 const discountTypeItems = [
   { value: "fixed", label: "Fixed amount" },
@@ -17,6 +13,11 @@ const discountTypeItems = [
 ] as const;
 
 export function InvoiceAdjustments() {
+  const { invoiceTaxOptions } = useInvoiceReferences();
+  const taxItems = invoiceTaxOptions.map((taxOption) => ({
+    value: taxOption.id,
+    label: `${taxOption.name} (${taxOption.rate}%)`,
+  }));
   const { control, register } = useFormContext<InvoiceFormValues>();
   const discountType = useWatch({ control, name: "discountType" });
 

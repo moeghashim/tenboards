@@ -7,53 +7,7 @@ import { Separator } from "@/components/ui/separator";
 import { DashboardChart, useChartMotion } from "@/lib/charts/theme";
 
 import { DashboardCard as Card } from "../../-components/dashboard/cards";
-
-const chartData = [{ month: "current", "in-stock": 760, "low-stock": 320, "out-of-stock": 160 }];
-const totalUnits = chartData[0]["in-stock"] + chartData[0]["low-stock"] + chartData[0]["out-of-stock"];
-const availablePercent = Math.round((chartData[0]["in-stock"] / totalUnits) * 100);
-const gaugeSegmentCount = 32;
-const inStockSegments = Math.round((chartData[0]["in-stock"] / totalUnits) * gaugeSegmentCount);
-const lowStockSegments = Math.round((chartData[0]["low-stock"] / totalUnits) * gaugeSegmentCount);
-
-function getGaugeSegmentStatus(index: number) {
-  if (index < inStockSegments) {
-    return "in-stock";
-  }
-
-  if (index < inStockSegments + lowStockSegments) {
-    return "low-stock";
-  }
-
-  return "out-of-stock";
-}
-
-const gaugeSegments = Array.from({ length: gaugeSegmentCount }, (_, index) => {
-  const status = getGaugeSegmentStatus(index);
-  return {
-    fill: `var(--color-${status})`,
-    id: `segment-${index + 1}`,
-    status,
-    value: 1,
-  };
-});
-
-const inventorySummary = [
-  {
-    icon: PackageCheck,
-    label: "In stock",
-    value: chartData[0]["in-stock"],
-  },
-  {
-    icon: TriangleAlert,
-    label: "Low stock",
-    value: chartData[0]["low-stock"],
-  },
-  {
-    icon: PackageX,
-    label: "Out of stock",
-    value: chartData[0]["out-of-stock"],
-  },
-] as const;
+import { useEcommerce } from "./ecommerce-context";
 
 const chartConfig = {
   "in-stock": {
@@ -71,6 +25,53 @@ const chartConfig = {
 } satisfies ChartConfig;
 
 export function Inventory() {
+  const { chartData } = useEcommerce();
+  const totalUnits = chartData[0]["in-stock"] + chartData[0]["low-stock"] + chartData[0]["out-of-stock"];
+  const availablePercent = Math.round((chartData[0]["in-stock"] / totalUnits) * 100);
+  const gaugeSegmentCount = 32;
+  const inStockSegments = Math.round((chartData[0]["in-stock"] / totalUnits) * gaugeSegmentCount);
+  const lowStockSegments = Math.round((chartData[0]["low-stock"] / totalUnits) * gaugeSegmentCount);
+
+  function getGaugeSegmentStatus(index: number) {
+    if (index < inStockSegments) {
+      return "in-stock";
+    }
+
+    if (index < inStockSegments + lowStockSegments) {
+      return "low-stock";
+    }
+
+    return "out-of-stock";
+  }
+
+  const gaugeSegments = Array.from({ length: gaugeSegmentCount }, (_, index) => {
+    const status = getGaugeSegmentStatus(index);
+    return {
+      fill: `var(--color-${status})`,
+      id: `segment-${index + 1}`,
+      status,
+      value: 1,
+    };
+  });
+
+  const inventorySummary = [
+    {
+      icon: PackageCheck,
+      label: "In stock",
+      value: chartData[0]["in-stock"],
+    },
+    {
+      icon: TriangleAlert,
+      label: "Low stock",
+      value: chartData[0]["low-stock"],
+    },
+    {
+      icon: PackageX,
+      label: "Out of stock",
+      value: chartData[0]["out-of-stock"],
+    },
+  ] as const;
+
   const motion = useChartMotion();
   return (
     <Card className="h-full">
