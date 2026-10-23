@@ -1,0 +1,63 @@
+scripts/check-core-data.ts:8:14 lint/correctness/noUndeclaredVariables ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × The previousMonth variable is undeclared.
+  
+     6 │ import assert from "node:assert/strict";
+     7 │ 
+   > 8 │ assert.equal(previousMonth("2026-12-31T23:59:59Z"), "November");
+       │              ^^^^^^^^^^^^^
+     9 │ assert.equal(previousMonth("2027-03-31T23:59:59Z"), "February");
+    10 │ assert.equal(previousMonth("2028-03-31T23:59:59Z"), "February");
+  
+  i Using an undeclared variable at runtime can throw a ReferenceError. It often points to a typo or a missing import.
+  
+  i Declare or import the variable, or fix its name.
+  
+  i By default, Biome recognizes browser and Node.js globals.
+    You can ignore more globals using the javascript.globals configuration.
+  
+
+scripts/check-core-data.ts:9:14 lint/correctness/noUndeclaredVariables ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × The previousMonth variable is undeclared.
+  
+     8 │ assert.equal(previousMonth("2026-12-31T23:59:59Z"), "November");
+   > 9 │ assert.equal(previousMonth("2027-03-31T23:59:59Z"), "February");
+       │              ^^^^^^^^^^^^^
+    10 │ assert.equal(previousMonth("2028-03-31T23:59:59Z"), "February");
+    11 │ 
+  
+  i Using an undeclared variable at runtime can throw a ReferenceError. It often points to a typo or a missing import.
+  
+  i Declare or import the variable, or fix its name.
+  
+  i By default, Biome recognizes browser and Node.js globals.
+    You can ignore more globals using the javascript.globals configuration.
+  
+
+scripts/check-core-data.ts:10:14 lint/correctness/noUndeclaredVariables ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × The previousMonth variable is undeclared.
+  
+     8 │ assert.equal(previousMonth("2026-12-31T23:59:59Z"), "November");
+     9 │ assert.equal(previousMonth("2027-03-31T23:59:59Z"), "February");
+  > 10 │ assert.equal(previousMonth("2028-03-31T23:59:59Z"), "February");
+       │              ^^^^^^^^^^^^^
+    11 │ 
+    12 │ const renderedAt = "2028-02-29T23:59:59Z";
+  
+  i Using an undeclared variable at runtime can throw a ReferenceError. It often points to a typo or a missing import.
+  
+  i Declare or import the variable, or fix its name.
+  
+  i By default, Biome recognizes browser and Node.js globals.
+    You can ignore more globals using the javascript.globals configuration.
+  
+
+Checked 2 files in 548ms. No fixes applied.
+Found 3 errors.
+check ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Some errors were emitted while applying fixes.
+  
+

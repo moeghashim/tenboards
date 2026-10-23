@@ -1,0 +1,8 @@
+
+> tenboards@0.3.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://127.0.0.1:3001 --routes /dashboard/analytics-v1 --output screenshots/v04-006/db-final
+
+PASS /dashboard/analytics-v1 light/desktop direct
+PASS /dashboard/analytics-v1 light/mobile direct
+PASS /dashboard/analytics-v1 dark/desktop direct
+PASS /dashboard/analytics-v1 dark/mobile direct

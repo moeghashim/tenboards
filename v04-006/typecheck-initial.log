@@ -1,0 +1,27 @@
+
+> tenboards@0.3.0 typecheck
+> tsc --noEmit
+
+src/routes/(main)/dashboard/(legacy)/finance-v1/-components/card-overview.tsx(17,156): error TS1003: Identifier expected.
+src/routes/(main)/dashboard/(legacy)/finance-v1/-components/card-overview.tsx(17,183): error TS1005: ',' expected.
+src/routes/(main)/dashboard/(legacy)/finance-v1/-components/card-overview.tsx(17,184): error TS1135: Argument expression expected.
+src/routes/(main)/dashboard/(legacy)/finance-v1/-components/card-overview.tsx(17,185): error TS1128: Declaration or statement expected.
+src/routes/(main)/dashboard/(legacy)/finance-v1/-components/card-overview.tsx(17,186): error TS1128: Declaration or statement expected.
+src/routes/(main)/dashboard/(legacy)/finance-v1/-components/card-overview.tsx(123,1): error TS1128: Declaration or statement expected.
+src/routes/(main)/dashboard/finance/-components/upcoming-transactions.tsx(15,157): error TS1003: Identifier expected.
+src/routes/(main)/dashboard/finance/-components/upcoming-transactions.tsx(15,185): error TS1005: ',' expected.
+src/routes/(main)/dashboard/finance/-components/upcoming-transactions.tsx(15,186): error TS1135: Argument expression expected.
+src/routes/(main)/dashboard/finance/-components/upcoming-transactions.tsx(15,187): error TS1128: Declaration or statement expected.
+src/routes/(main)/dashboard/finance/-components/upcoming-transactions.tsx(15,188): error TS1128: Declaration or statement expected.
+src/routes/(main)/dashboard/finance/-components/upcoming-transactions.tsx(60,1): error TS1128: Declaration or statement expected.
+src/routes/(main)/dashboard/finance/-components/wallet.tsx(15,250): error TS1003: Identifier expected.
+src/routes/(main)/dashboard/finance/-components/wallet.tsx(15,279): error TS1005: ',' expected.
+src/routes/(main)/dashboard/finance/-components/wallet.tsx(15,280): error TS1135: Argument expression expected.
+src/routes/(main)/dashboard/finance/-components/wallet.tsx(15,281): error TS1128: Declaration or statement expected.
+src/routes/(main)/dashboard/finance/-components/wallet.tsx(15,282): error TS1128: Declaration or statement expected.
+src/routes/(main)/dashboard/finance/-components/wallet.tsx(16,137): error TS1003: Identifier expected.
+src/routes/(main)/dashboard/finance/-components/wallet.tsx(16,159): error TS1005: ',' expected.
+src/routes/(main)/dashboard/finance/-components/wallet.tsx(16,160): error TS1135: Argument expression expected.
+src/routes/(main)/dashboard/finance/-components/wallet.tsx(16,161): error TS1128: Declaration or statement expected.
+src/routes/(main)/dashboard/finance/-components/wallet.tsx(16,162): error TS1128: Declaration or statement expected.
+src/routes/(main)/dashboard/finance/-components/wallet.tsx(76,1): error TS1128: Declaration or statement expected.

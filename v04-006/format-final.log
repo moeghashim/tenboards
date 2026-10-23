@@ -1,0 +1,67 @@
+src/routes/(main)/dashboard/(legacy)/analytics-v1/-components/analytics-actions-risk-ledger.tsx:141:11 lint/complexity/noUselessFragments  FIXABLE  ━━━━━━━━━━
+
+  i This fragment is unnecessary.
+  
+    139 │         description="Accounts under pressure with blocker, next action, and owner responsibility."
+    140 │         actions={
+  > 141 │           <>
+        │           ^^
+  > 142 │             <Badge variant="outline" className="font-medium tabular-nums">
+  > 143 │               {LEDGER_ROWS.length} Accounts
+  > 144 │             </Badge>
+  > 145 │           </>
+        │           ^^^
+    146 │         }
+    147 │       />
+  
+  i A fragment is redundant if it contains only one child, or if it is the child of a html element, and is not a keyed fragment.
+  
+  i Unsafe fix: Remove the Fragment
+  
+    138 138 │           title="Revenue Risk Ledger"
+    139 139 │           description="Accounts under pressure with blocker, next action, and owner responsibility."
+    140     │ - ········actions={
+    141     │ - ··········<>
+    142     │ - ············<Badge·variant="outline"·className="font-medium·tabular-nums">
+        140 │ + ········actions={<Badge·variant="outline"·className="font-medium·tabular-nums">
+    143 141 │                 {LEDGER_ROWS.length} Accounts
+    144     │ - ············</Badge>
+    145     │ - ··········</>
+    146     │ - ········}
+        142 │ + ············</Badge>}
+    147 143 │         />
+    148 144 │   
+  
+
+src/routes/(main)/dashboard/(legacy)/analytics-v1/-components/analytics-overview.tsx:163:23 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    161 │       </div>
+    162 │ 
+  > 163 │       <Card className="min-w-0 py-4  xl:col-span-2">
+        │                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    164 │         <SectionHeader title="Risk summary" description="Core risk signals vs previous period" />
+    165 │         <CardContent className="grid grid-cols-1 gap-4 px-4 sm:grid-cols-2 xl:grid-cols-4 xl:gap-0 xl:divide-x xl:[&>div]:px-5 xl:[&>div:first-child]:pl-0 xl:[&>div:last-child]:pr-0">
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+    161 161 │         </div>
+    162 162 │   
+    163     │ - ······<Card·className="min-w-0·py-4··xl:col-span-2">
+        163 │ + ······<Card·className="min-w-0·py-4·xl:col-span-2">
+    164 164 │           <SectionHeader title="Risk summary" description="Core risk signals vs previous period" />
+    165 165 │           <CardContent className="grid grid-cols-1 gap-4 px-4 sm:grid-cols-2 xl:grid-cols-4 xl:gap-0 xl:divide-x xl:[&>div]:px-5 xl:[&>div:first-child]:pl-0 xl:[&>div:last-child]:pr-0">
+  
+
+Skipped 2 suggested fixes.
+If you wish to apply the suggested (unsafe) fixes, use the command biome check --write --unsafe
+
+Checked 92 files in 450ms. Fixed 19 files.
+Found 2 infos.

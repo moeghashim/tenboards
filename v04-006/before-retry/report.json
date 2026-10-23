@@ -1,0 +1,54 @@
+{
+  "baseURL": "http://127.0.0.1:3000/",
+  "hydrationDelayMs": 0,
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": false,
+  "interactions": false,
+  "results": [
+    {
+      "route": "/dashboard/default-v1",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_default-v1-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default-v1",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_default-v1-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default-v1",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_default-v1-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default-v1",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_default-v1-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    }
+  ]
+}

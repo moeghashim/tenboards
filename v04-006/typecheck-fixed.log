@@ -1,0 +1,10 @@
+
+> tenboards@0.3.0 typecheck
+> tsc --noEmit
+
+src/routes/(main)/dashboard/(legacy)/analytics-v1/route.tsx(9,24): error TS6133: 'useDashboardData' is declared but its value is never read.
+src/routes/(main)/dashboard/(legacy)/finance-v1/route.tsx(8,24): error TS6133: 'useDashboardData' is declared but its value is never read.
+src/routes/(main)/dashboard/crm/route.tsx(4,24): error TS6133: 'useDashboardData' is declared but its value is never read.
+src/routes/(main)/dashboard/default/route.tsx(4,24): error TS6133: 'useDashboardData' is declared but its value is never read.
+src/routes/(main)/dashboard/finance/-components/upcoming-transactions.tsx(7,1): error TS6133: 'formatDemoDate' is declared but its value is never read.
+src/server/data/default.ts(7,1): error TS6192: All imports in import declaration are unused.

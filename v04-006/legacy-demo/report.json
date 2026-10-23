@@ -1,0 +1,226 @@
+{
+  "baseURL": "http://127.0.0.1:3000/",
+  "hydrationDelayMs": 0,
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": false,
+  "interactions": true,
+  "results": [
+    {
+      "route": "/dashboard/analytics-v1",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_analytics-v1-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_analytics-v1-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Enterprise + Renewals filter count 2",
+        "Momentum selected",
+        "Risk ascending: Soylent Foods / 31 first"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics-v1",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_analytics-v1-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_analytics-v1-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Enterprise + Renewals filter count 2",
+        "Momentum selected",
+        "Risk ascending: Soylent Foods / 31 first"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics-v1",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_analytics-v1-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_analytics-v1-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Enterprise + Renewals filter count 2",
+        "Momentum selected",
+        "Risk ascending: Soylent Foods / 31 first"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics-v1",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_analytics-v1-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_analytics-v1-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Enterprise + Renewals filter count 2",
+        "Momentum selected",
+        "Risk ascending: Soylent Foods / 31 first"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/crm-v1",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_crm-v1-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_crm-v1-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Lead selection and column visibility"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/crm-v1",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_crm-v1-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_crm-v1-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Lead selection and column visibility"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/crm-v1",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_crm-v1-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_crm-v1-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Lead selection and column visibility"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/crm-v1",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_crm-v1-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_crm-v1-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Lead selection and column visibility"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default-v1",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_default-v1-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_default-v1-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Loaded visitors: 30d, 7d and 90d; proposal detail sheet"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default-v1",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_default-v1-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_default-v1-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Loaded visitors: 30d, 7d and 90d; proposal detail sheet"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default-v1",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_default-v1-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_default-v1-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Loaded visitors: 30d, 7d and 90d; proposal detail sheet"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default-v1",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_default-v1-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_default-v1-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Loaded visitors: 30d, 7d and 90d; proposal detail sheet"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/finance-v1",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_finance-v1-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_finance-v1-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Cash flow period selector preserves placeholder behavior"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/finance-v1",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_finance-v1-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_finance-v1-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Cash flow period selector preserves placeholder behavior"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/finance-v1",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_finance-v1-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_finance-v1-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Cash flow period selector preserves placeholder behavior"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/finance-v1",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_finance-v1-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_finance-v1-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Cash flow period selector preserves placeholder behavior"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    }
+  ]
+}

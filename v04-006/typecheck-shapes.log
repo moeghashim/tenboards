@@ -1,0 +1,35 @@
+
+> tenboards@0.3.0 typecheck
+> tsc --noEmit
+
+src/routes/(main)/dashboard/(legacy)/analytics-v1/-components/analytics-actions-risk-ledger.tsx(129,5): error TS2322: Type 'ColumnDef<{ columnFacetingFeature: TableFeature; columnFilteringFeature: TableFeature; columnSizingFeature: TableFeature; columnVisibilityFeature: TableFeature; ... 10 more ...; sortFns: { ...; }; }, LedgerRow>[]' is not assignable to type 'readonly ColumnDef<{ columnFacetingFeature: TableFeature; columnFilteringFeature: TableFeature; columnSizingFeature: TableFeature; columnVisibilityFeature: TableFeature; ... 10 more ...; sortFns: { ...; }; }, { ...; } | { ...; }, unknown>[]'.
+  Type 'ColumnDef<{ columnFacetingFeature: TableFeature; columnFilteringFeature: TableFeature; columnSizingFeature: TableFeature; columnVisibilityFeature: TableFeature; ... 10 more ...; sortFns: { ...; }; }, LedgerRow>' is not assignable to type 'ColumnDef<{ columnFacetingFeature: TableFeature; columnFilteringFeature: TableFeature; columnSizingFeature: TableFeature; columnVisibilityFeature: TableFeature; ... 10 more ...; sortFns: { ...; }; }, { ...; } | { ...; }, unknown>'.
+    Type 'ColumnDefBase_Core<{ columnFacetingFeature: TableFeature; columnFilteringFeature: TableFeature; columnSizingFeature: TableFeature; columnVisibilityFeature: TableFeature; ... 10 more ...; sortFns: { ...; }; }, LedgerRow, unknown> & ... 5 more ... & StringHeaderIdentifier' is not assignable to type 'ColumnDef<{ columnFacetingFeature: TableFeature; columnFilteringFeature: TableFeature; columnSizingFeature: TableFeature; columnVisibilityFeature: TableFeature; ... 10 more ...; sortFns: { ...; }; }, { ...; } | { ...; }, unknown>'.
+      Type 'ColumnDefBase_Core<{ columnFacetingFeature: TableFeature; columnFilteringFeature: TableFeature; columnSizingFeature: TableFeature; columnVisibilityFeature: TableFeature; ... 10 more ...; sortFns: { ...; }; }, LedgerRow, unknown> & ... 5 more ... & StringHeaderIdentifier' is not assignable to type 'ColumnDefBase_Core<{ columnFacetingFeature: TableFeature; columnFilteringFeature: TableFeature; columnSizingFeature: TableFeature; columnVisibilityFeature: TableFeature; ... 10 more ...; sortFns: { ...; }; }, { ...; } | { ...; }, unknown> & ... 6 more ... & IdIdentifier<...>'.
+        Type 'ColumnDefBase_Core<{ columnFacetingFeature: TableFeature; columnFilteringFeature: TableFeature; columnSizingFeature: TableFeature; columnVisibilityFeature: TableFeature; ... 10 more ...; sortFns: { ...; }; }, LedgerRow, unknown> & ... 5 more ... & StringHeaderIdentifier' is not assignable to type 'ColumnDefBase_Core<{ columnFacetingFeature: TableFeature; columnFilteringFeature: TableFeature; columnSizingFeature: TableFeature; columnVisibilityFeature: TableFeature; ... 10 more ...; sortFns: { ...; }; }, { ...; } | { ...; }, unknown>'.
+          Types of property 'getUniqueValues' are incompatible.
+            Type 'AccessorFn<LedgerRow, readonly unknown[]> | undefined' is not assignable to type 'AccessorFn<{ id: number; account: string; dealId: string; stage: string; blocker: string; owner: string; idleDays: number; closeVariance: string; priority: string; nextAction: string; riskScore: number; } | { ...; }, readonly unknown[]> | undefined'.
+              Type 'AccessorFn<LedgerRow, readonly unknown[]>' is not assignable to type 'AccessorFn<{ id: number; account: string; dealId: string; stage: string; blocker: string; owner: string; idleDays: number; closeVariance: string; priority: string; nextAction: string; riskScore: number; } | { ...; }, readonly unknown[]>'.
+                Type '{ id: number; account: string; dealId: string; stage: string; blocker: string; owner: string; idleDays: number; closeVariance: string; priority: string; nextAction: string; riskScore: number; } | { ...; }' is not assignable to type 'LedgerRow'.
+                  Type '{ id: number; account: string; dealId: string; stage: string; blocker: string; owner: string; idleDays: number; closeVariance: string; priority: string; nextAction: string; riskScore: number; }' is not assignable to type 'LedgerRow'.
+                    Types of property 'priority' are incompatible.
+                      Type 'string' is not assignable to type 'LedgerPriority'.
+src/routes/(main)/dashboard/(legacy)/analytics-v1/-components/analytics-drivers-forecast-target.tsx(25,6): error TS6196: 'TrendPoint' is declared but never used.
+src/routes/(main)/dashboard/(legacy)/analytics-v1/-components/analytics-overview.tsx(58,7): error TS6133: 'RISK_SUMMARY_METRICS' is declared but its value is never read.
+src/routes/(main)/dashboard/(legacy)/analytics-v1/-components/analytics-overview.tsx(180,12): error TS2304: Cannot find name 'RISK_SUMMARY_METRICS'.
+src/routes/(main)/dashboard/(legacy)/analytics-v1/-components/analytics-overview.tsx(180,38): error TS7006: Parameter 'item' implicitly has an 'any' type.
+src/routes/(main)/dashboard/(legacy)/analytics-v1/route.tsx(2,22): error TS6133: 'useDashboardData' is declared but its value is never read.
+src/routes/(main)/dashboard/(legacy)/crm-v1/-components/operational-cards.tsx(13,10): error TS2305: Module '"./crm.config"' has no exported member 'actionItems'.
+src/routes/(main)/dashboard/(legacy)/crm-v1/-components/operational-cards.tsx(13,10): error TS6133: 'actionItems' is declared but its value is never read.
+src/routes/(main)/dashboard/(legacy)/finance-v1/-components/card-overview.tsx(17,81): error TS6133: 'index' is declared but its value is never read.
+src/routes/(main)/dashboard/(legacy)/finance-v1/route.tsx(2,22): error TS6133: 'useDashboardData' is declared but its value is never read.
+src/routes/(main)/dashboard/analytics/-components/realtime-visitors.tsx(21,41): error TS2304: Cannot find name 'realtimeData'.
+src/routes/(main)/dashboard/analytics/route.tsx(2,22): error TS6133: 'useDashboardData' is declared but its value is never read.
+src/routes/(main)/dashboard/crm/route.tsx(2,22): error TS6133: 'useDashboardData' is declared but its value is never read.
+src/routes/(main)/dashboard/default/route.tsx(2,22): error TS6133: 'useDashboardData' is declared but its value is never read.
+src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx(73,25): error TS2345: Argument of type 'string' is not assignable to parameter of type 'BalanceKey'.
+src/routes/(main)/dashboard/finance/-components/upcoming-transactions.tsx(8,1): error TS6133: 'formatDemoDate' is declared but its value is never read.
+src/routes/(main)/dashboard/finance/-components/upcoming-transactions.tsx(15,81): error TS6133: 'index' is declared but its value is never read.
+src/routes/(main)/dashboard/finance/-components/wallet.tsx(16,67): error TS6133: 'index' is declared but its value is never read.
+src/routes/(main)/dashboard/finance/route.tsx(2,22): error TS6133: 'useDashboardData' is declared but its value is never read.
+src/server/data/default.ts(6,1): error TS6192: All imports in import declaration are unused.

@@ -1,0 +1,389 @@
+src/routes/(main)/dashboard/(legacy)/analytics-v1/-components/analytics-actions-risk-ledger.tsx:141:11 lint/complexity/noUselessFragments  FIXABLE  ━━━━━━━━━━
+
+  i This fragment is unnecessary.
+  
+    139 │         description="Accounts under pressure with blocker, next action, and owner responsibility."
+    140 │         actions={
+  > 141 │           <>
+        │           ^^
+  > 142 │             <Badge variant="outline" className="font-medium tabular-nums">
+  > 143 │               {LEDGER_ROWS.length} Accounts
+  > 144 │             </Badge>
+  > 145 │           </>
+        │           ^^^
+    146 │         }
+    147 │       />
+  
+  i A fragment is redundant if it contains only one child, or if it is the child of a html element, and is not a keyed fragment.
+  
+  i Unsafe fix: Remove the Fragment
+  
+    138 138 │           title="Revenue Risk Ledger"
+    139 139 │           description="Accounts under pressure with blocker, next action, and owner responsibility."
+    140     │ - ········actions={
+    141     │ - ··········<>
+    142     │ - ············<Badge·variant="outline"·className="font-medium·tabular-nums">
+        140 │ + ········actions={<Badge·variant="outline"·className="font-medium·tabular-nums">
+    143 141 │                 {LEDGER_ROWS.length} Accounts
+    144     │ - ············</Badge>
+    145     │ - ··········</>
+    146     │ - ········}
+        142 │ + ············</Badge>}
+    147 143 │         />
+    148 144 │   
+  
+
+src/routes/(main)/dashboard/(legacy)/analytics-v1/-components/analytics-overview.tsx:163:23 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    161 │       </div>
+    162 │ 
+  > 163 │       <Card className="min-w-0 py-4  xl:col-span-2">
+        │                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    164 │         <SectionHeader title="Risk summary" description="Core risk signals vs previous period" />
+    165 │         <CardContent className="grid grid-cols-1 gap-4 px-4 sm:grid-cols-2 xl:grid-cols-4 xl:gap-0 xl:divide-x xl:[&>div]:px-5 xl:[&>div:first-child]:pl-0 xl:[&>div:last-child]:pr-0">
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+    161 161 │         </div>
+    162 162 │   
+    163     │ - ······<Card·className="min-w-0·py-4··xl:col-span-2">
+        163 │ + ······<Card·className="min-w-0·py-4·xl:col-span-2">
+    164 164 │           <SectionHeader title="Risk summary" description="Core risk signals vs previous period" />
+    165 165 │           <CardContent className="grid grid-cols-1 gap-4 px-4 sm:grid-cols-2 xl:grid-cols-4 xl:gap-0 xl:divide-x xl:[&>div]:px-5 xl:[&>div:first-child]:pl-0 xl:[&>div:last-child]:pr-0">
+  
+
+src/routes/(main)/dashboard/analytics/-components/realtime-visitors.tsx:77:31 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    75 │           <div className="text-muted-foreground flex items-center gap-2 text-sm">
+    76 │             <span className="relative flex size-2">
+  > 77 │               <span className="relative inline-flex size-2 rounded-full bg-success" />
+       │                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    78 │             </span>
+    79 │             <span>Live</span>
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+     75  75 │             <div className="text-muted-foreground flex items-center gap-2 text-sm">
+     76  76 │               <span className="relative flex size-2">
+     77     │ - ··············<span·className="relative·inline-flex·size-2·rounded-full·bg-success"·/>
+         77 │ + ··············<span·className="bg-success·relative·inline-flex·size-2·rounded-full"·/>
+     78  78 │               </span>
+     79  79 │               <span>Live</span>
+  
+
+src/routes/(main)/dashboard/analytics/-components/realtime-visitors.tsx:91:26 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    89 │         </DashboardChart>
+    90 │         <div className="grid grid-cols-1 sm:grid-cols-2">
+  > 91 │           <div className="border-border/50 flex items-center gap-3 sm:border-r border-b pt-1 pr-5 pb-4">
+       │                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    92 │             <span
+    93 │               aria-hidden="true"
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+     89  89 │           </DashboardChart>
+     90  90 │           <div className="grid grid-cols-1 sm:grid-cols-2">
+     91     │ - ··········<div·className="border-border/50·flex·items-center·gap-3·sm:border-r·border-b·pt-1·pr-5·pb-4">
+         91 │ + ··········<div·className="border-border/50·flex·items-center·gap-3·border-b·pt-1·pr-5·pb-4·sm:border-r">
+     92  92 │               <span
+     93  93 │                 aria-hidden="true"
+  
+
+src/routes/(main)/dashboard/analytics/-components/realtime-visitors.tsx:111:26 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    109 │             <span className="text-sm tabular-nums">{summary.value3}</span>
+    110 │           </div>
+  > 111 │           <div className="border-border/50 flex items-center gap-3 sm:border-r pt-4 pr-5 pb-1">
+        │                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    112 │             <span
+    113 │               aria-hidden="true"
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+    109 109 │               <span className="text-sm tabular-nums">{summary.value3}</span>
+    110 110 │             </div>
+    111     │ - ··········<div·className="border-border/50·flex·items-center·gap-3·sm:border-r·pt-4·pr-5·pb-1">
+        111 │ + ··········<div·className="border-border/50·flex·items-center·gap-3·pt-4·pr-5·pb-1·sm:border-r">
+    112 112 │               <span
+    113 113 │                 aria-hidden="true"
+  
+
+src/routes/(main)/dashboard/analytics/route.tsx:41:31 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    39 │       <Tabs defaultValue="overview" className="flex min-w-0 flex-col gap-4">
+    40 │         <div className="flex flex-wrap items-center justify-between gap-3">
+  > 41 │           <TabsList className="group-data-horizontal/tabs:h-auto max-w-full flex-wrap justify-start gap-1 [&_[role=tab]]:h-7">
+       │                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    42 │             <TabsTrigger value="overview">Overview</TabsTrigger>
+    43 │             <TabsTrigger value="audience">Audience</TabsTrigger>
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+     39  39 │         <Tabs defaultValue="overview" className="flex min-w-0 flex-col gap-4">
+     40  40 │           <div className="flex flex-wrap items-center justify-between gap-3">
+     41     │ - ··········<TabsList·className="group-data-horizontal/tabs:h-auto·max-w-full·flex-wrap·justify-start·gap-1·[&_[role=tab]]:h-7">
+         41 │ + ··········<TabsList·className="max-w-full·flex-wrap·justify-start·gap-1·group-data-horizontal/tabs:h-auto·[&_[role=tab]]:h-7">
+     42  42 │               <TabsTrigger value="overview">Overview</TabsTrigger>
+     43  43 │               <TabsTrigger value="audience">Audience</TabsTrigger>
+  
+
+src/routes/(main)/dashboard/(legacy)/analytics-v1/route.tsx:9:24 lint/correctness/noUnusedImports  FIXABLE  ━━━━━━━━━━
+
+  ! Several of these imports are unused.
+  
+     7 │ import { DriversForecastTarget } from "./-components/analytics-drivers-forecast-target";
+     8 │ import { AnalyticsOverview } from "./-components/analytics-overview";
+   > 9 │ import { DataProvider, useDashboardData } from "./-components/data-context";
+       │                        ^^^^^^^^^^^^^^^^
+    10 │ 
+    11 │ const loadData = createServerFn({ method: "GET" }).handler(async () => {
+  
+  i Unused imports might be the result of an incomplete refactoring.
+  
+  i Unsafe fix: Remove the unused imports.
+  
+    9 │ import·{·DataProvider,·useDashboardData·}·from·"./-components/data-context";
+      │                        -----------------                                    
+
+src/routes/(main)/dashboard/(legacy)/finance-v1/route.tsx:8:24 lint/correctness/noUnusedImports  FIXABLE  ━━━━━━━━━━
+
+  ! Several of these imports are unused.
+  
+     6 │ import { CardOverview } from "./-components/card-overview";
+     7 │ import { CashFlowOverview } from "./-components/cash-flow-overview";
+   > 8 │ import { DataProvider, useDashboardData } from "./-components/data-context";
+       │                        ^^^^^^^^^^^^^^^^
+     9 │ import { IncomeReliability } from "./-components/income-reliability";
+    10 │ import { MonthlyCashFlow } from "./-components/kpis/monthly-cash-flow";
+  
+  i Unused imports might be the result of an incomplete refactoring.
+  
+  i Unsafe fix: Remove the unused imports.
+  
+    8 │ import·{·DataProvider,·useDashboardData·}·from·"./-components/data-context";
+      │                        -----------------                                    
+
+src/routes/(main)/dashboard/crm/route.tsx:4:24 lint/correctness/noUnusedImports  FIXABLE  ━━━━━━━━━━
+
+  ! Several of these imports are unused.
+  
+    2 │ import { createServerFn } from "@tanstack/react-start";
+    3 │ 
+  > 4 │ import { DataProvider, useDashboardData } from "./-components/data-context";
+      │                        ^^^^^^^^^^^^^^^^
+    5 │ import { KpiCards } from "./-components/kpi-cards";
+    6 │ import { OpportunitiesSection } from "./-components/opportunities-section";
+  
+  i Unused imports might be the result of an incomplete refactoring.
+  
+  i Unsafe fix: Remove the unused imports.
+  
+    4 │ import·{·DataProvider,·useDashboardData·}·from·"./-components/data-context";
+      │                        -----------------                                    
+
+src/routes/(main)/dashboard/default/route.tsx:4:24 lint/correctness/noUnusedImports  FIXABLE  ━━━━━━━━━━
+
+  ! Several of these imports are unused.
+  
+    2 │ import { createServerFn } from "@tanstack/react-start";
+    3 │ 
+  > 4 │ import { DataProvider, useDashboardData } from "./-components/data-context";
+      │                        ^^^^^^^^^^^^^^^^
+    5 │ import { MetricCards } from "./-components/metric-cards";
+    6 │ import { PerformanceOverview } from "./-components/performance-overview";
+  
+  i Unused imports might be the result of an incomplete refactoring.
+  
+  i Unsafe fix: Remove the unused imports.
+  
+    4 │ import·{·DataProvider,·useDashboardData·}·from·"./-components/data-context";
+      │                        -----------------                                    
+
+src/routes/(main)/dashboard/finance/-components/upcoming-transactions.tsx:7:8 lint/correctness/noUnusedImports  FIXABLE  ━━━━━━━━━━
+
+  ! This import is unused.
+  
+    5 │ import { CardContent } from "@/components/ui/card";
+    6 │ import { Item, ItemActions, ItemContent, ItemDescription, ItemGroup, ItemMedia, ItemTitle } from "@/components/ui/item";
+  > 7 │ import { formatDemoDate } from "@/routes/(main)/dashboard/-components/finance-demo-dates";
+      │        ^^^^^^^^^^^^^^^^^^
+    8 │ 
+    9 │ import { DashboardCard as Card, SectionHeader } from "../../-components/dashboard/cards";
+  
+  i Unused imports might be the result of an incomplete refactoring.
+  
+  i Unsafe fix: Remove the unused imports.
+  
+     5  5 │   import { CardContent } from "@/components/ui/card";
+     6  6 │   import { Item, ItemActions, ItemContent, ItemDescription, ItemGroup, ItemMedia, ItemTitle } from "@/components/ui/item";
+     7    │ - import·{·formatDemoDate·}·from·"@/routes/(main)/dashboard/-components/finance-demo-dates";
+     8  7 │   
+     9  8 │   import { DashboardCard as Card, SectionHeader } from "../../-components/dashboard/cards";
+  
+
+src/server/data/default.ts:7:8 lint/correctness/noUnusedImports  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! This import is unused.
+  
+    5 │ import type { DefaultData } from "./default.types.ts";
+    6 │ import { loadMetricCollections } from "./metric-collections.ts";
+  > 7 │ import { joinMetric, type MetricUnit } from "./metric-projection.ts";
+      │        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    8 │ import { readSource } from "./source.ts";
+    9 │ 
+  
+  i Unused imports might be the result of an incomplete refactoring.
+  
+  i Unsafe fix: Remove the unused imports.
+  
+      5  5 │   import type { DefaultData } from "./default.types.ts";
+      6  6 │   import { loadMetricCollections } from "./metric-collections.ts";
+      7    │ - import·{·joinMetric,·type·MetricUnit·}·from·"./metric-projection.ts";
+      8  7 │   import { readSource } from "./source.ts";
+      9  8 │   
+  
+
+src/server/data/metric-projection.ts:40:9 lint/style/noNestedTernary ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Do not nest ternary expressions.
+  
+    38 │     const actualUnit = prefix.includes("$")
+    39 │       ? "currency"
+  > 40 │       : /^%|^pp\b/.test(suffix)
+       │         ^^^^^^^^^^^^^^^^^^^^^^^
+  > 41 │         ? "percent"
+        ...
+  > 45 │             ? "duration"
+  > 46 │             : unit;
+       │             ^^^^^^
+    47 │     const amount = Number(digits.replaceAll(",", "")) * (prefix.includes("-") || prefix.includes("−") ? -1 : 1) * scale;
+    48 │     parts.push({
+  
+  i Nesting ternary expressions can make code more difficult to understand.
+  
+  i Convert nested ternary expression into if-else statements or separate the conditions to make the logic easier to understand.
+  
+
+src/server/data/metric-projection.ts:42:11 lint/style/noNestedTernary ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Do not nest ternary expressions.
+  
+    40 │       : /^%|^pp\b/.test(suffix)
+    41 │         ? "percent"
+  > 42 │         : /^x\b/.test(suffix)
+       │           ^^^^^^^^^^^^^^^^^^^
+  > 43 │           ? "ratio"
+  > 44 │           : /^\s*(days?|d\b|months?\b)/.test(suffix)
+  > 45 │             ? "duration"
+  > 46 │             : unit;
+       │             ^^^^^^
+    47 │     const amount = Number(digits.replaceAll(",", "")) * (prefix.includes("-") || prefix.includes("−") ? -1 : 1) * scale;
+    48 │     parts.push({
+  
+  i Nesting ternary expressions can make code more difficult to understand.
+  
+  i Convert nested ternary expression into if-else statements or separate the conditions to make the logic easier to understand.
+  
+
+src/server/data/metric-projection.ts:44:13 lint/style/noNestedTernary ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Do not nest ternary expressions.
+  
+    42 │         : /^x\b/.test(suffix)
+    43 │           ? "ratio"
+  > 44 │           : /^\s*(days?|d\b|months?\b)/.test(suffix)
+       │             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  > 45 │             ? "duration"
+  > 46 │             : unit;
+       │             ^^^^^^
+    47 │     const amount = Number(digits.replaceAll(",", "")) * (prefix.includes("-") || prefix.includes("−") ? -1 : 1) * scale;
+    48 │     parts.push({
+  
+  i Nesting ternary expressions can make code more difficult to understand.
+  
+  i Convert nested ternary expression into if-else statements or separate the conditions to make the logic easier to understand.
+  
+
+src/server/data/metric-collections.ts:29:19 lint/suspicious/noAssignInExpressions ━━━━━━━━━━━━━━━━━━
+
+  × The assignment should not be in an expression.
+  
+    27 │     const d = metadata.get(`${point.series}/${point.pointKey}`);
+    28 │     if (!d?.collection) continue;
+  > 29 │     const rows = (result[d.collection] ??= []);
+       │                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    30 │     const index = Number(d.row);
+    31 │     const row = (rows[index] ??= {});
+  
+  i The use of assignments in expressions is confusing.
+    Expressions are often considered as side-effect free.
+  
+
+src/server/data/metric-collections.ts:31:18 lint/suspicious/noAssignInExpressions ━━━━━━━━━━━━━━━━━━
+
+  × The assignment should not be in an expression.
+  
+    29 │     const rows = (result[d.collection] ??= []);
+    30 │     const index = Number(d.row);
+  > 31 │     const row = (rows[index] ??= {});
+       │                  ^^^^^^^^^^^^^^^^^^
+    32 │     for (const [key, value] of Object.entries(d)) {
+    33 │       const [type, field] = key.split(":");
+  
+  i The use of assignments in expressions is confusing.
+    Expressions are often considered as side-effect free.
+  
+
+Skipped 24 suggested fixes.
+If you wish to apply the suggested (unsafe) fixes, use the command biome check --write --unsafe
+
+Checked 107 files in 557ms. Fixed 77 files.
+Found 2 errors.
+Found 9 warnings.
+Found 6 infos.
+check ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Some errors were emitted while applying fixes.
+  
+

@@ -1,0 +1,56 @@
+
+> tenboards@0.3.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://127.0.0.1:3001 --routes /dashboard/default,/dashboard/default-v1,/dashboard/crm,/dashboard/crm-v1,/dashboard/finance,/dashboard/finance-v1,/dashboard/analytics,/dashboard/analytics-v1 --interactions --output screenshots/v04-006/interactions-db
+
+PASS /dashboard/analytics light/desktop direct
+PASS /dashboard/analytics light/mobile direct
+PASS /dashboard/analytics dark/desktop direct
+PASS /dashboard/analytics dark/mobile direct
+PASS /dashboard/crm light/desktop direct
+PASS /dashboard/crm light/mobile direct
+PASS /dashboard/crm dark/desktop direct
+PASS /dashboard/crm dark/mobile direct
+PASS /dashboard/default light/desktop direct
+PASS /dashboard/default light/mobile direct
+PASS /dashboard/default dark/desktop direct
+PASS /dashboard/default dark/mobile direct
+PASS /dashboard/finance light/desktop direct
+PASS /dashboard/finance light/mobile direct
+PASS /dashboard/finance dark/desktop direct
+PASS /dashboard/finance dark/mobile direct
+FAIL /dashboard/analytics-v1 light/desktop direct
+console: %o
+
+%s
+
+%s
+ TypeError: Cannot read properties of undefined (reading 'owner')
+    at DriversCoverageTriage (http://127.0.0.1:3001/src/routes/(main)/dashboard/(legacy)/analytics-v1/-components/analytics-drivers-coverage-triage.tsx?t=1792789146905:145:31)
+    at Object.react_stack_bottom_frame (http://127.0.0.1:3001/node_modules/.vite/deps/react-dom_client.js?v=c6173da2:14142:12)
+    at renderWithHooks (http://127.0.0.1:3001/node_modules/.vite/deps/react-dom_client.js?v=c6173da2:4400:19)
+    at updateFunctionComponent (http://127.0.0.1:3001/node_modules/.vite/deps/react-dom_client.js?v=c6173da2:5775:16)
+    at beginWork (http://127.0.0.1:3001/node_modules/.vite/deps/react-dom_client.js?v=c6173da2:6391:20)
+    at runWithFiberInDEV (http://127.0.0.1:3001/node_modules/.vite/deps/react-dom_client.js?v=c6173da2:944:66)
+    at performUnitOfWork (http://127.0.0.1:3001/node_modules/.vite/deps/react-dom_client.js?v=c6173da2:9148:92)
+    at workLoopSync (http://127.0.0.1:3001/node_modules/.vite/deps/react-dom_client.js?v=c6173da2:9044:37)
+    at renderRootSync (http://127.0.0.1:3001/node_modules/.vite/deps/react-dom_client.js?v=c6173da2:9028:6)
+    at performWorkOnRoot (http://127.0.0.1:3001/node_modules/.vite/deps/react-dom_client.js?v=c6173da2:8715:27) The above error occurred in the <DriversCoverageTriage> component. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.
+locator.textContent: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('button#date')[22m
+
+PASS /dashboard/analytics-v1 light/mobile direct
+PASS /dashboard/analytics-v1 dark/desktop direct
+PASS /dashboard/analytics-v1 dark/mobile direct
+PASS /dashboard/crm-v1 light/desktop direct
+PASS /dashboard/crm-v1 light/mobile direct
+PASS /dashboard/crm-v1 dark/desktop direct
+PASS /dashboard/crm-v1 dark/mobile direct
+PASS /dashboard/default-v1 light/desktop direct
+PASS /dashboard/default-v1 light/mobile direct
+PASS /dashboard/default-v1 dark/desktop direct
+PASS /dashboard/default-v1 dark/mobile direct
+PASS /dashboard/finance-v1 light/desktop direct
+PASS /dashboard/finance-v1 light/mobile direct
+PASS /dashboard/finance-v1 dark/desktop direct
+PASS /dashboard/finance-v1 dark/mobile direct

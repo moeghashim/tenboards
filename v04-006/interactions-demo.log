@@ -1,0 +1,28 @@
+
+> tenboards@0.3.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --routes /dashboard/default,/dashboard/default-v1,/dashboard/crm,/dashboard/crm-v1,/dashboard/finance,/dashboard/finance-v1,/dashboard/analytics,/dashboard/analytics-v1 --interactions --output screenshots/v04-006/interactions-demo
+
+PASS /dashboard/analytics light/desktop direct
+PASS /dashboard/analytics light/mobile direct
+PASS /dashboard/analytics dark/desktop direct
+PASS /dashboard/analytics dark/mobile direct
+FAIL /dashboard/crm light/desktop direct
+locator.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('menuitemradio', { name: 'Proposal', exact: true })[22m
+
+FAIL /dashboard/crm light/mobile direct
+locator.click: Target page, context or browser has been closed
+Call log:
+[2m  - waiting for getByRole('menuitemradio', { name: 'Proposal', exact: true })[22m
+
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+browser.newContext: Target page, context or browser has been closed
+    at async file:///Users/moeghashim/tenboards/scripts/screenshots.ts:77:27 {
+  log: []
+}
+
+Node.js v24.21.0

@@ -1,0 +1,457 @@
+{
+  "baseURL": "http://127.0.0.1:3001/",
+  "hydrationDelayMs": 0,
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": false,
+  "interactions": true,
+  "results": [
+    {
+      "route": "/dashboard/analytics",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_analytics-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_analytics-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Last 7 days selected",
+        "Campaigns displays Spring Launch / Newsletter / Retargeting / Brand Search / Partners"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_analytics-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_analytics-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Last 7 days selected",
+        "Campaigns displays Spring Launch / Newsletter / Retargeting / Brand Search / Partners"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_analytics-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_analytics-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Last 7 days selected",
+        "Campaigns displays Spring Launch / Newsletter / Retargeting / Brand Search / Partners"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_analytics-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_analytics-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Last 7 days selected",
+        "Campaigns displays Spring Launch / Newsletter / Retargeting / Brand Search / Partners"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/crm",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_crm-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_crm-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Opportunity search empty/reset; Proposal stage filter"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/crm",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_crm-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_crm-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Opportunity search empty/reset; Proposal stage filter"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/crm",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_crm-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_crm-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Opportunity search empty/reset; Proposal stage filter"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/crm",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_crm-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_crm-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Opportunity search empty/reset; Proposal stage filter"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_default-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_default-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Sidebar expansion/names/visible 2px focus; palette arrows/Escape/focus return",
+        "Settings native radio/select keyboard access, focus trap/return; reduced motion <=1ms",
+        "Theme/preset/font state persists after refresh",
+        "Customer search empty/reset; segment selector remains local"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_default-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_default-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Sidebar expansion/names/visible 2px focus; palette arrows/Escape/focus return",
+        "Settings native radio/select keyboard access, focus trap/return; reduced motion <=1ms",
+        "Theme/preset/font state persists after refresh",
+        "Customer search empty/reset; segment selector remains local"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_default-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_default-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Sidebar expansion/names/visible 2px focus; palette arrows/Escape/focus return",
+        "Settings native radio/select keyboard access, focus trap/return; reduced motion <=1ms",
+        "Theme/preset/font state persists after refresh",
+        "Customer search empty/reset; segment selector remains local"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_default-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_default-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Sidebar expansion/names/visible 2px focus; palette arrows/Escape/focus return",
+        "Settings native radio/select keyboard access, focus trap/return; reduced motion <=1ms",
+        "Theme/preset/font state persists after refresh",
+        "Customer search empty/reset; segment selector remains local"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/finance",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_finance-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_finance-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Spending period keyboard menu; Accounts placeholder and Dashboard return",
+        "Transfer field editable; named select retains visible focus",
+        "Desktop Spending/Allocation bottoms aligned; no page overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/finance",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_finance-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_finance-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Spending period keyboard menu; Accounts placeholder and Dashboard return",
+        "Transfer field editable; named select retains visible focus",
+        "Desktop Spending/Allocation bottoms aligned; no page overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/finance",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_finance-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_finance-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Spending period keyboard menu; Accounts placeholder and Dashboard return",
+        "Transfer field editable; named select retains visible focus",
+        "Desktop Spending/Allocation bottoms aligned; no page overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/finance",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_finance-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_finance-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Spending period keyboard menu; Accounts placeholder and Dashboard return",
+        "Transfer field editable; named select retains visible focus",
+        "Desktop Spending/Allocation bottoms aligned; no page overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics-v1",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_analytics-v1-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_analytics-v1-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": [
+        "console: %o\n\n%s\n\n%s\n TypeError: Cannot read properties of undefined (reading 'owner')\n    at DriversCoverageTriage (http://127.0.0.1:3001/src/routes/(main)/dashboard/(legacy)/analytics-v1/-components/analytics-drivers-coverage-triage.tsx?t=1792789146905:145:31)\n    at Object.react_stack_bottom_frame (http://127.0.0.1:3001/node_modules/.vite/deps/react-dom_client.js?v=c6173da2:14142:12)\n    at renderWithHooks (http://127.0.0.1:3001/node_modules/.vite/deps/react-dom_client.js?v=c6173da2:4400:19)\n    at updateFunctionComponent (http://127.0.0.1:3001/node_modules/.vite/deps/react-dom_client.js?v=c6173da2:5775:16)\n    at beginWork (http://127.0.0.1:3001/node_modules/.vite/deps/react-dom_client.js?v=c6173da2:6391:20)\n    at runWithFiberInDEV (http://127.0.0.1:3001/node_modules/.vite/deps/react-dom_client.js?v=c6173da2:944:66)\n    at performUnitOfWork (http://127.0.0.1:3001/node_modules/.vite/deps/react-dom_client.js?v=c6173da2:9148:92)\n    at workLoopSync (http://127.0.0.1:3001/node_modules/.vite/deps/react-dom_client.js?v=c6173da2:9044:37)\n    at renderRootSync (http://127.0.0.1:3001/node_modules/.vite/deps/react-dom_client.js?v=c6173da2:9028:6)\n    at performWorkOnRoot (http://127.0.0.1:3001/node_modules/.vite/deps/react-dom_client.js?v=c6173da2:8715:27) The above error occurred in the <DriversCoverageTriage> component. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.",
+        "locator.textContent: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button#date')\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/analytics-v1",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_analytics-v1-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_analytics-v1-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Enterprise + Renewals filter count 2",
+        "Momentum selected",
+        "Risk ascending: Soylent Foods / 31 first"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics-v1",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_analytics-v1-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_analytics-v1-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Enterprise + Renewals filter count 2",
+        "Momentum selected",
+        "Risk ascending: Soylent Foods / 31 first"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics-v1",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_analytics-v1-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_analytics-v1-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Enterprise + Renewals filter count 2",
+        "Momentum selected",
+        "Risk ascending: Soylent Foods / 31 first"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/crm-v1",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_crm-v1-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_crm-v1-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Lead selection and column visibility"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/crm-v1",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_crm-v1-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_crm-v1-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Lead selection and column visibility"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/crm-v1",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_crm-v1-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_crm-v1-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Lead selection and column visibility"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/crm-v1",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_crm-v1-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_crm-v1-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Lead selection and column visibility"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default-v1",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_default-v1-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_default-v1-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Loaded visitors: 30d, 7d and 90d; proposal detail sheet"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default-v1",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_default-v1-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_default-v1-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Loaded visitors: 30d, 7d and 90d; proposal detail sheet"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default-v1",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_default-v1-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_default-v1-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Loaded visitors: 30d, 7d and 90d; proposal detail sheet"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default-v1",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_default-v1-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_default-v1-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Loaded visitors: 30d, 7d and 90d; proposal detail sheet"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/finance-v1",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_finance-v1-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_finance-v1-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Cash flow period selector preserves placeholder behavior"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/finance-v1",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_finance-v1-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_finance-v1-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Cash flow period selector preserves placeholder behavior"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/finance-v1",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_finance-v1-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_finance-v1-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Cash flow period selector preserves placeholder behavior"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/finance-v1",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_finance-v1-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_finance-v1-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Cash flow period selector preserves placeholder behavior"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    }
+  ]
+}

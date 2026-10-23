@@ -1,0 +1,1106 @@
+src/server/data/analytics.ts:229:41 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Unnecessary nullish coalescing.
+  
+    227 │         analyticsDriversCoverageTriageLeverOptions: (metrics["v1.analyticsDriversCoverageTriageLeverOptions"] ??
+    228 │           []) as AnalyticsData["v1"]["analyticsDriversCoverageTriageLeverOptions"],
+  > 229 │         analyticsOverviewRevenueModel: (metrics["v1.analyticsOverviewRevenueModel"] ??
+        │                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    230 │           []) as AnalyticsData["v1"]["analyticsOverviewRevenueModel"],
+    231 │         analyticsOverviewDateRange: analyticsOverviewDateRange,
+  
+  i Drop ?? and the fallback expression.
+  
+    227 │         analyticsDriversCoverageTriageLeverOptions: (metrics["v1.analyticsDriversCoverageTriageLeverOptions"] ??
+    228 │           []) as AnalyticsData["v1"]["analyticsDriversCoverageTriageLeverOptions"],
+  > 229 │         analyticsOverviewRevenueModel: (metrics["v1.analyticsOverviewRevenueModel"] ??
+        │                                                                                     ^^
+    230 │           []) as AnalyticsData["v1"]["analyticsOverviewRevenueModel"],
+    231 │         analyticsOverviewDateRange: analyticsOverviewDateRange,
+  
+  i The left-hand side is guaranteed to be non-nullish, so the fallback is unreachable.
+  
+
+src/server/data/analytics.ts:196:36 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Unnecessary nullish coalescing.
+  
+    194 │       renderedAt,
+    195 │       current: {
+  > 196 │         analyticsKpiStripMetrics: (metrics["current.analyticsKpiStripMetrics"] ??
+        │                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    197 │           []) as AnalyticsData["current"]["analyticsKpiStripMetrics"],
+    198 │         realtimeVisitorsRealtimeData: (metrics["current.realtimeVisitorsRealtimeData"] ??
+  
+  i Drop ?? and the fallback expression.
+  
+    194 │       renderedAt,
+    195 │       current: {
+  > 196 │         analyticsKpiStripMetrics: (metrics["current.analyticsKpiStripMetrics"] ??
+        │                                                                                ^^
+    197 │           []) as AnalyticsData["current"]["analyticsKpiStripMetrics"],
+    198 │         realtimeVisitorsRealtimeData: (metrics["current.realtimeVisitorsRealtimeData"] ??
+  
+  i The left-hand side is guaranteed to be non-nullish, so the fallback is unreachable.
+  
+
+src/server/data/analytics.ts:198:40 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Unnecessary nullish coalescing.
+  
+    196 │         analyticsKpiStripMetrics: (metrics["current.analyticsKpiStripMetrics"] ??
+    197 │           []) as AnalyticsData["current"]["analyticsKpiStripMetrics"],
+  > 198 │         realtimeVisitorsRealtimeData: (metrics["current.realtimeVisitorsRealtimeData"] ??
+        │                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    199 │           []) as AnalyticsData["current"]["realtimeVisitorsRealtimeData"],
+    200 │         topPagesPages: topPagesPages,
+  
+  i Drop ?? and the fallback expression.
+  
+    196 │         analyticsKpiStripMetrics: (metrics["current.analyticsKpiStripMetrics"] ??
+    197 │           []) as AnalyticsData["current"]["analyticsKpiStripMetrics"],
+  > 198 │         realtimeVisitorsRealtimeData: (metrics["current.realtimeVisitorsRealtimeData"] ??
+        │                                                                                        ^^
+    199 │           []) as AnalyticsData["current"]["realtimeVisitorsRealtimeData"],
+    200 │         topPagesPages: topPagesPages,
+  
+  i The left-hand side is guaranteed to be non-nullish, so the fallback is unreachable.
+  
+
+src/server/data/analytics.ts:204:39 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Unnecessary nullish coalescing.
+  
+    202 │         topTrafficSourcesCampaignsData: topTrafficSourcesCampaignsData,
+    203 │         topTrafficSourcesReferrersData: topTrafficSourcesReferrersData,
+  > 204 │         trafficQualityQualitySeries: (metrics["current.trafficQualityQualitySeries"] ??
+        │                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    205 │           []) as AnalyticsData["current"]["trafficQualityQualitySeries"],
+    206 │         realtimeVisitorsSummary: (metrics["current.realtimeVisitorsSummary"] ??
+  
+  i Drop ?? and the fallback expression.
+  
+    202 │         topTrafficSourcesCampaignsData: topTrafficSourcesCampaignsData,
+    203 │         topTrafficSourcesReferrersData: topTrafficSourcesReferrersData,
+  > 204 │         trafficQualityQualitySeries: (metrics["current.trafficQualityQualitySeries"] ??
+        │                                                                                      ^^
+    205 │           []) as AnalyticsData["current"]["trafficQualityQualitySeries"],
+    206 │         realtimeVisitorsSummary: (metrics["current.realtimeVisitorsSummary"] ??
+  
+  i The left-hand side is guaranteed to be non-nullish, so the fallback is unreachable.
+  
+
+src/server/data/analytics.ts:206:35 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Unnecessary nullish coalescing.
+  
+    204 │         trafficQualityQualitySeries: (metrics["current.trafficQualityQualitySeries"] ??
+    205 │           []) as AnalyticsData["current"]["trafficQualityQualitySeries"],
+  > 206 │         realtimeVisitorsSummary: (metrics["current.realtimeVisitorsSummary"] ??
+        │                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    207 │           []) as AnalyticsData["current"]["realtimeVisitorsSummary"],
+    208 │         pageSummary: pageSummary,
+  
+  i Drop ?? and the fallback expression.
+  
+    204 │         trafficQualityQualitySeries: (metrics["current.trafficQualityQualitySeries"] ??
+    205 │           []) as AnalyticsData["current"]["trafficQualityQualitySeries"],
+  > 206 │         realtimeVisitorsSummary: (metrics["current.realtimeVisitorsSummary"] ??
+        │                                                                              ^^
+    207 │           []) as AnalyticsData["current"]["realtimeVisitorsSummary"],
+    208 │         pageSummary: pageSummary,
+  
+  i The left-hand side is guaranteed to be non-nullish, so the fallback is unreachable.
+  
+
+src/server/data/analytics.ts:211:47 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Unnecessary nullish coalescing.
+  
+    209 │       },
+    210 │       v1: {
+  > 211 │         analyticsOverviewRiskSummaryMetrics: (metrics["v1.analyticsOverviewRiskSummaryMetrics"] ??
+        │                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    212 │           []) as AnalyticsData["v1"]["analyticsOverviewRiskSummaryMetrics"],
+    213 │         analyticsDriversForecastTargetChartData: (metrics["v1.analyticsDriversForecastTargetChartData"] ??
+  
+  i Drop ?? and the fallback expression.
+  
+    209 │       },
+    210 │       v1: {
+  > 211 │         analyticsOverviewRiskSummaryMetrics: (metrics["v1.analyticsOverviewRiskSummaryMetrics"] ??
+        │                                                                                                 ^^
+    212 │           []) as AnalyticsData["v1"]["analyticsOverviewRiskSummaryMetrics"],
+    213 │         analyticsDriversForecastTargetChartData: (metrics["v1.analyticsDriversForecastTargetChartData"] ??
+  
+  i The left-hand side is guaranteed to be non-nullish, so the fallback is unreachable.
+  
+
+src/server/data/analytics.ts:213:51 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Unnecessary nullish coalescing.
+  
+    211 │         analyticsOverviewRiskSummaryMetrics: (metrics["v1.analyticsOverviewRiskSummaryMetrics"] ??
+    212 │           []) as AnalyticsData["v1"]["analyticsOverviewRiskSummaryMetrics"],
+  > 213 │         analyticsDriversForecastTargetChartData: (metrics["v1.analyticsDriversForecastTargetChartData"] ??
+        │                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    214 │           []) as AnalyticsData["v1"]["analyticsDriversForecastTargetChartData"],
+    215 │         analyticsActionsRiskLedgerLedgerRows: analyticsActionsRiskLedgerLedgerRows,
+  
+  i Drop ?? and the fallback expression.
+  
+    211 │         analyticsOverviewRiskSummaryMetrics: (metrics["v1.analyticsOverviewRiskSummaryMetrics"] ??
+    212 │           []) as AnalyticsData["v1"]["analyticsOverviewRiskSummaryMetrics"],
+  > 213 │         analyticsDriversForecastTargetChartData: (metrics["v1.analyticsDriversForecastTargetChartData"] ??
+        │                                                                                                         ^^
+    214 │           []) as AnalyticsData["v1"]["analyticsDriversForecastTargetChartData"],
+    215 │         analyticsActionsRiskLedgerLedgerRows: analyticsActionsRiskLedgerLedgerRows,
+  
+  i The left-hand side is guaranteed to be non-nullish, so the fallback is unreachable.
+  
+
+src/server/data/analytics.ts:217:47 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Unnecessary nullish coalescing.
+  
+    215 │         analyticsActionsRiskLedgerLedgerRows: analyticsActionsRiskLedgerLedgerRows,
+    216 │         analyticsActionsManagerQueueNextInterventions: analyticsActionsManagerQueueNextInterventions,
+  > 217 │         analyticsActionsManagerQueueSummary: (metrics["v1.analyticsActionsManagerQueueSummary"] ??
+        │                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    218 │           []) as AnalyticsData["v1"]["analyticsActionsManagerQueueSummary"],
+    219 │         analyticsActionsRiskLedgerSummary: (metrics["v1.analyticsActionsRiskLedgerSummary"] ??
+  
+  i Drop ?? and the fallback expression.
+  
+    215 │         analyticsActionsRiskLedgerLedgerRows: analyticsActionsRiskLedgerLedgerRows,
+    216 │         analyticsActionsManagerQueueNextInterventions: analyticsActionsManagerQueueNextInterventions,
+  > 217 │         analyticsActionsManagerQueueSummary: (metrics["v1.analyticsActionsManagerQueueSummary"] ??
+        │                                                                                                 ^^
+    218 │           []) as AnalyticsData["v1"]["analyticsActionsManagerQueueSummary"],
+    219 │         analyticsActionsRiskLedgerSummary: (metrics["v1.analyticsActionsRiskLedgerSummary"] ??
+  
+  i The left-hand side is guaranteed to be non-nullish, so the fallback is unreachable.
+  
+
+src/server/data/analytics.ts:219:45 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Unnecessary nullish coalescing.
+  
+    217 │         analyticsActionsManagerQueueSummary: (metrics["v1.analyticsActionsManagerQueueSummary"] ??
+    218 │           []) as AnalyticsData["v1"]["analyticsActionsManagerQueueSummary"],
+  > 219 │         analyticsActionsRiskLedgerSummary: (metrics["v1.analyticsActionsRiskLedgerSummary"] ??
+        │                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    220 │           []) as AnalyticsData["v1"]["analyticsActionsRiskLedgerSummary"],
+    221 │         analyticsDriversCoverageTriageSummary: (metrics["v1.analyticsDriversCoverageTriageSummary"] ??
+  
+  i Drop ?? and the fallback expression.
+  
+    217 │         analyticsActionsManagerQueueSummary: (metrics["v1.analyticsActionsManagerQueueSummary"] ??
+    218 │           []) as AnalyticsData["v1"]["analyticsActionsManagerQueueSummary"],
+  > 219 │         analyticsActionsRiskLedgerSummary: (metrics["v1.analyticsActionsRiskLedgerSummary"] ??
+        │                                                                                             ^^
+    220 │           []) as AnalyticsData["v1"]["analyticsActionsRiskLedgerSummary"],
+    221 │         analyticsDriversCoverageTriageSummary: (metrics["v1.analyticsDriversCoverageTriageSummary"] ??
+  
+  i The left-hand side is guaranteed to be non-nullish, so the fallback is unreachable.
+  
+
+src/server/data/analytics.ts:221:49 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Unnecessary nullish coalescing.
+  
+    219 │         analyticsActionsRiskLedgerSummary: (metrics["v1.analyticsActionsRiskLedgerSummary"] ??
+    220 │           []) as AnalyticsData["v1"]["analyticsActionsRiskLedgerSummary"],
+  > 221 │         analyticsDriversCoverageTriageSummary: (metrics["v1.analyticsDriversCoverageTriageSummary"] ??
+        │                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    222 │           []) as AnalyticsData["v1"]["analyticsDriversCoverageTriageSummary"],
+    223 │         analyticsDriversForecastTargetSummary: (metrics["v1.analyticsDriversForecastTargetSummary"] ??
+  
+  i Drop ?? and the fallback expression.
+  
+    219 │         analyticsActionsRiskLedgerSummary: (metrics["v1.analyticsActionsRiskLedgerSummary"] ??
+    220 │           []) as AnalyticsData["v1"]["analyticsActionsRiskLedgerSummary"],
+  > 221 │         analyticsDriversCoverageTriageSummary: (metrics["v1.analyticsDriversCoverageTriageSummary"] ??
+        │                                                                                                     ^^
+    222 │           []) as AnalyticsData["v1"]["analyticsDriversCoverageTriageSummary"],
+    223 │         analyticsDriversForecastTargetSummary: (metrics["v1.analyticsDriversForecastTargetSummary"] ??
+  
+  i The left-hand side is guaranteed to be non-nullish, so the fallback is unreachable.
+  
+
+src/server/data/analytics.ts:223:49 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Unnecessary nullish coalescing.
+  
+    221 │         analyticsDriversCoverageTriageSummary: (metrics["v1.analyticsDriversCoverageTriageSummary"] ??
+    222 │           []) as AnalyticsData["v1"]["analyticsDriversCoverageTriageSummary"],
+  > 223 │         analyticsDriversForecastTargetSummary: (metrics["v1.analyticsDriversForecastTargetSummary"] ??
+        │                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    224 │           []) as AnalyticsData["v1"]["analyticsDriversForecastTargetSummary"],
+    225 │         analyticsOverviewSummary: (metrics["v1.analyticsOverviewSummary"] ??
+  
+  i Drop ?? and the fallback expression.
+  
+    221 │         analyticsDriversCoverageTriageSummary: (metrics["v1.analyticsDriversCoverageTriageSummary"] ??
+    222 │           []) as AnalyticsData["v1"]["analyticsDriversCoverageTriageSummary"],
+  > 223 │         analyticsDriversForecastTargetSummary: (metrics["v1.analyticsDriversForecastTargetSummary"] ??
+        │                                                                                                     ^^
+    224 │           []) as AnalyticsData["v1"]["analyticsDriversForecastTargetSummary"],
+    225 │         analyticsOverviewSummary: (metrics["v1.analyticsOverviewSummary"] ??
+  
+  i The left-hand side is guaranteed to be non-nullish, so the fallback is unreachable.
+  
+
+src/server/data/analytics.ts:225:36 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Unnecessary nullish coalescing.
+  
+    223 │         analyticsDriversForecastTargetSummary: (metrics["v1.analyticsDriversForecastTargetSummary"] ??
+    224 │           []) as AnalyticsData["v1"]["analyticsDriversForecastTargetSummary"],
+  > 225 │         analyticsOverviewSummary: (metrics["v1.analyticsOverviewSummary"] ??
+        │                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    226 │           []) as AnalyticsData["v1"]["analyticsOverviewSummary"],
+    227 │         analyticsDriversCoverageTriageLeverOptions: (metrics["v1.analyticsDriversCoverageTriageLeverOptions"] ??
+  
+  i Drop ?? and the fallback expression.
+  
+    223 │         analyticsDriversForecastTargetSummary: (metrics["v1.analyticsDriversForecastTargetSummary"] ??
+    224 │           []) as AnalyticsData["v1"]["analyticsDriversForecastTargetSummary"],
+  > 225 │         analyticsOverviewSummary: (metrics["v1.analyticsOverviewSummary"] ??
+        │                                                                           ^^
+    226 │           []) as AnalyticsData["v1"]["analyticsOverviewSummary"],
+    227 │         analyticsDriversCoverageTriageLeverOptions: (metrics["v1.analyticsDriversCoverageTriageLeverOptions"] ??
+  
+  i The left-hand side is guaranteed to be non-nullish, so the fallback is unreachable.
+  
+
+src/server/data/analytics.ts:227:54 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Unnecessary nullish coalescing.
+  
+    225 │         analyticsOverviewSummary: (metrics["v1.analyticsOverviewSummary"] ??
+    226 │           []) as AnalyticsData["v1"]["analyticsOverviewSummary"],
+  > 227 │         analyticsDriversCoverageTriageLeverOptions: (metrics["v1.analyticsDriversCoverageTriageLeverOptions"] ??
+        │                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    228 │           []) as AnalyticsData["v1"]["analyticsDriversCoverageTriageLeverOptions"],
+    229 │         analyticsOverviewRevenueModel: (metrics["v1.analyticsOverviewRevenueModel"] ??
+  
+  i Drop ?? and the fallback expression.
+  
+    225 │         analyticsOverviewSummary: (metrics["v1.analyticsOverviewSummary"] ??
+    226 │           []) as AnalyticsData["v1"]["analyticsOverviewSummary"],
+  > 227 │         analyticsDriversCoverageTriageLeverOptions: (metrics["v1.analyticsDriversCoverageTriageLeverOptions"] ??
+        │                                                                                                               ^^
+    228 │           []) as AnalyticsData["v1"]["analyticsDriversCoverageTriageLeverOptions"],
+    229 │         analyticsOverviewRevenueModel: (metrics["v1.analyticsOverviewRevenueModel"] ??
+  
+  i The left-hand side is guaranteed to be non-nullish, so the fallback is unreachable.
+  
+
+src/server/data/crm.ts:132:27 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Unnecessary nullish coalescing.
+  
+    130 │       renderedAt,
+    131 │       current: {
+  > 132 │         kpiCardsMetrics: (metrics["current.kpiCardsMetrics"] ?? []) as CrmData["current"]["kpiCardsMetrics"],
+        │                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    133 │         pipelineActivityPipelineChartValues: (metrics["current.pipelineActivityPipelineChartValues"] ?? []).map((row) =>
+    134 │           Number(row.value),
+  
+  i Drop ?? and the fallback expression.
+  
+    130 │       renderedAt,
+    131 │       current: {
+  > 132 │         kpiCardsMetrics: (metrics["current.kpiCardsMetrics"] ?? []) as CrmData["current"]["kpiCardsMetrics"],
+        │                                                              ^^
+    133 │         pipelineActivityPipelineChartValues: (metrics["current.pipelineActivityPipelineChartValues"] ?? []).map((row) =>
+    134 │           Number(row.value),
+  
+  i The left-hand side is guaranteed to be non-nullish, so the fallback is unreachable.
+  
+
+src/server/data/crm.ts:133:47 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Unnecessary nullish coalescing.
+  
+    131 │       current: {
+    132 │         kpiCardsMetrics: (metrics["current.kpiCardsMetrics"] ?? []) as CrmData["current"]["kpiCardsMetrics"],
+  > 133 │         pipelineActivityPipelineChartValues: (metrics["current.pipelineActivityPipelineChartValues"] ?? []).map((row) =>
+        │                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    134 │           Number(row.value),
+    135 │         ) as CrmData["current"]["pipelineActivityPipelineChartValues"],
+  
+  i Drop ?? and the fallback expression.
+  
+    131 │       current: {
+    132 │         kpiCardsMetrics: (metrics["current.kpiCardsMetrics"] ?? []) as CrmData["current"]["kpiCardsMetrics"],
+  > 133 │         pipelineActivityPipelineChartValues: (metrics["current.pipelineActivityPipelineChartValues"] ?? []).map((row) =>
+        │                                                                                                      ^^
+    134 │           Number(row.value),
+    135 │         ) as CrmData["current"]["pipelineActivityPipelineChartValues"],
+  
+  i The left-hand side is guaranteed to be non-nullish, so the fallback is unreachable.
+  
+
+src/server/data/crm.ts:137:35 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Unnecessary nullish coalescing.
+  
+    135 │         ) as CrmData["current"]["pipelineActivityPipelineChartValues"],
+    136 │         recordsOpportunities: recordsOpportunities,
+  > 137 │         pipelineActivitySummary: (metrics["current.pipelineActivitySummary"] ??
+        │                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    138 │           []) as CrmData["current"]["pipelineActivitySummary"],
+    139 │         taskRemindersSummary: taskRemindersSummary,
+  
+  i Drop ?? and the fallback expression.
+  
+    135 │         ) as CrmData["current"]["pipelineActivityPipelineChartValues"],
+    136 │         recordsOpportunities: recordsOpportunities,
+  > 137 │         pipelineActivitySummary: (metrics["current.pipelineActivitySummary"] ??
+        │                                                                              ^^
+    138 │           []) as CrmData["current"]["pipelineActivitySummary"],
+    139 │         taskRemindersSummary: taskRemindersSummary,
+  
+  i The left-hand side is guaranteed to be non-nullish, so the fallback is unreachable.
+  
+
+src/server/data/crm.ts:140:34 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Unnecessary nullish coalescing.
+  
+    138 │           []) as CrmData["current"]["pipelineActivitySummary"],
+    139 │         taskRemindersSummary: taskRemindersSummary,
+  > 140 │         pipelineActivityTotals: (metrics["current.pipelineActivityTotals"] ??
+        │                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    141 │           []) as CrmData["current"]["pipelineActivityTotals"],
+    142 │         taskRemindersGoal: (metrics["current.taskRemindersGoal"] ?? []) as CrmData["current"]["taskRemindersGoal"],
+  
+  i Drop ?? and the fallback expression.
+  
+    138 │           []) as CrmData["current"]["pipelineActivitySummary"],
+    139 │         taskRemindersSummary: taskRemindersSummary,
+  > 140 │         pipelineActivityTotals: (metrics["current.pipelineActivityTotals"] ??
+        │                                                                            ^^
+    141 │           []) as CrmData["current"]["pipelineActivityTotals"],
+    142 │         taskRemindersGoal: (metrics["current.taskRemindersGoal"] ?? []) as CrmData["current"]["taskRemindersGoal"],
+  
+  i The left-hand side is guaranteed to be non-nullish, so the fallback is unreachable.
+  
+
+src/server/data/crm.ts:142:29 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Unnecessary nullish coalescing.
+  
+    140 │         pipelineActivityTotals: (metrics["current.pipelineActivityTotals"] ??
+    141 │           []) as CrmData["current"]["pipelineActivityTotals"],
+  > 142 │         taskRemindersGoal: (metrics["current.taskRemindersGoal"] ?? []) as CrmData["current"]["taskRemindersGoal"],
+        │                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    143 │       },
+    144 │       v1: {
+  
+  i Drop ?? and the fallback expression.
+  
+    140 │         pipelineActivityTotals: (metrics["current.pipelineActivityTotals"] ??
+    141 │           []) as CrmData["current"]["pipelineActivityTotals"],
+  > 142 │         taskRemindersGoal: (metrics["current.taskRemindersGoal"] ?? []) as CrmData["current"]["taskRemindersGoal"],
+        │                                                                  ^^
+    143 │       },
+    144 │       v1: {
+  
+  i The left-hand side is guaranteed to be non-nullish, so the fallback is unreachable.
+  
+
+src/server/data/crm.ts:145:35 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Unnecessary nullish coalescing.
+  
+    143 │       },
+    144 │       v1: {
+  > 145 │         crmConfigLeadsChartData: (metrics["v1.crmConfigLeadsChartData"] ??
+        │                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    146 │           []) as CrmData["v1"]["crmConfigLeadsChartData"],
+    147 │         crmConfigProposalsChartData: (metrics["v1.crmConfigProposalsChartData"] ??
+  
+  i Drop ?? and the fallback expression.
+  
+    143 │       },
+    144 │       v1: {
+  > 145 │         crmConfigLeadsChartData: (metrics["v1.crmConfigLeadsChartData"] ??
+        │                                                                         ^^
+    146 │           []) as CrmData["v1"]["crmConfigLeadsChartData"],
+    147 │         crmConfigProposalsChartData: (metrics["v1.crmConfigProposalsChartData"] ??
+  
+  i The left-hand side is guaranteed to be non-nullish, so the fallback is unreachable.
+  
+
+src/server/data/crm.ts:147:39 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Unnecessary nullish coalescing.
+  
+    145 │         crmConfigLeadsChartData: (metrics["v1.crmConfigLeadsChartData"] ??
+    146 │           []) as CrmData["v1"]["crmConfigLeadsChartData"],
+  > 147 │         crmConfigProposalsChartData: (metrics["v1.crmConfigProposalsChartData"] ??
+        │                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    148 │           []) as CrmData["v1"]["crmConfigProposalsChartData"],
+    149 │         crmConfigRevenueChartData: (metrics["v1.crmConfigRevenueChartData"] ??
+  
+  i Drop ?? and the fallback expression.
+  
+    145 │         crmConfigLeadsChartData: (metrics["v1.crmConfigLeadsChartData"] ??
+    146 │           []) as CrmData["v1"]["crmConfigLeadsChartData"],
+  > 147 │         crmConfigProposalsChartData: (metrics["v1.crmConfigProposalsChartData"] ??
+        │                                                                                 ^^
+    148 │           []) as CrmData["v1"]["crmConfigProposalsChartData"],
+    149 │         crmConfigRevenueChartData: (metrics["v1.crmConfigRevenueChartData"] ??
+  
+  i The left-hand side is guaranteed to be non-nullish, so the fallback is unreachable.
+  
+
+src/server/data/crm.ts:149:37 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Unnecessary nullish coalescing.
+  
+    147 │         crmConfigProposalsChartData: (metrics["v1.crmConfigProposalsChartData"] ??
+    148 │           []) as CrmData["v1"]["crmConfigProposalsChartData"],
+  > 149 │         crmConfigRevenueChartData: (metrics["v1.crmConfigRevenueChartData"] ??
+        │                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    150 │           []) as CrmData["v1"]["crmConfigRevenueChartData"],
+    151 │         crmConfigLeadsBySourceChartData: (metrics["v1.crmConfigLeadsBySourceChartData"] ??
+  
+  i Drop ?? and the fallback expression.
+  
+    147 │         crmConfigProposalsChartData: (metrics["v1.crmConfigProposalsChartData"] ??
+    148 │           []) as CrmData["v1"]["crmConfigProposalsChartData"],
+  > 149 │         crmConfigRevenueChartData: (metrics["v1.crmConfigRevenueChartData"] ??
+        │                                                                             ^^
+    150 │           []) as CrmData["v1"]["crmConfigRevenueChartData"],
+    151 │         crmConfigLeadsBySourceChartData: (metrics["v1.crmConfigLeadsBySourceChartData"] ??
+  
+  i The left-hand side is guaranteed to be non-nullish, so the fallback is unreachable.
+  
+
+src/server/data/crm.ts:151:43 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Unnecessary nullish coalescing.
+  
+    149 │         crmConfigRevenueChartData: (metrics["v1.crmConfigRevenueChartData"] ??
+    150 │           []) as CrmData["v1"]["crmConfigRevenueChartData"],
+  > 151 │         crmConfigLeadsBySourceChartData: (metrics["v1.crmConfigLeadsBySourceChartData"] ??
+        │                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    152 │           []) as CrmData["v1"]["crmConfigLeadsBySourceChartData"],
+    153 │         crmConfigProjectRevenueChartData: crmConfigProjectRevenueChartData,
+  
+  i Drop ?? and the fallback expression.
+  
+    149 │         crmConfigRevenueChartData: (metrics["v1.crmConfigRevenueChartData"] ??
+    150 │           []) as CrmData["v1"]["crmConfigRevenueChartData"],
+  > 151 │         crmConfigLeadsBySourceChartData: (metrics["v1.crmConfigLeadsBySourceChartData"] ??
+        │                                                                                         ^^
+    152 │           []) as CrmData["v1"]["crmConfigLeadsBySourceChartData"],
+    153 │         crmConfigProjectRevenueChartData: crmConfigProjectRevenueChartData,
+  
+  i The left-hand side is guaranteed to be non-nullish, so the fallback is unreachable.
+  
+
+src/server/data/crm.ts:154:43 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Unnecessary nullish coalescing.
+  
+    152 │           []) as CrmData["v1"]["crmConfigLeadsBySourceChartData"],
+    153 │         crmConfigProjectRevenueChartData: crmConfigProjectRevenueChartData,
+  > 154 │         crmConfigSalesPipelineChartData: (metrics["v1.crmConfigSalesPipelineChartData"] ??
+        │                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    155 │           []) as CrmData["v1"]["crmConfigSalesPipelineChartData"],
+    156 │         crmConfigRegionSalesData: crmConfigRegionSalesData,
+  
+  i Drop ?? and the fallback expression.
+  
+    152 │           []) as CrmData["v1"]["crmConfigLeadsBySourceChartData"],
+    153 │         crmConfigProjectRevenueChartData: crmConfigProjectRevenueChartData,
+  > 154 │         crmConfigSalesPipelineChartData: (metrics["v1.crmConfigSalesPipelineChartData"] ??
+        │                                                                                         ^^
+    155 │           []) as CrmData["v1"]["crmConfigSalesPipelineChartData"],
+    156 │         crmConfigRegionSalesData: crmConfigRegionSalesData,
+  
+  i The left-hand side is guaranteed to be non-nullish, so the fallback is unreachable.
+  
+
+src/server/data/crm.ts:159:31 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Unnecessary nullish coalescing.
+  
+    157 │         crmConfigActionItems: crmConfigActionItems,
+    158 │         crmConfigRecentLeadsData: crmConfigRecentLeadsData,
+  > 159 │         insightCardsSummary: (metrics["v1.insightCardsSummary"] ?? []) as CrmData["v1"]["insightCardsSummary"],
+        │                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    160 │         operationalCardsSummary: (metrics["v1.operationalCardsSummary"] ??
+    161 │           []) as CrmData["v1"]["operationalCardsSummary"],
+  
+  i Drop ?? and the fallback expression.
+  
+    157 │         crmConfigActionItems: crmConfigActionItems,
+    158 │         crmConfigRecentLeadsData: crmConfigRecentLeadsData,
+  > 159 │         insightCardsSummary: (metrics["v1.insightCardsSummary"] ?? []) as CrmData["v1"]["insightCardsSummary"],
+        │                                                                 ^^
+    160 │         operationalCardsSummary: (metrics["v1.operationalCardsSummary"] ??
+    161 │           []) as CrmData["v1"]["operationalCardsSummary"],
+  
+  i The left-hand side is guaranteed to be non-nullish, so the fallback is unreachable.
+  
+
+src/server/data/crm.ts:160:35 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Unnecessary nullish coalescing.
+  
+    158 │         crmConfigRecentLeadsData: crmConfigRecentLeadsData,
+    159 │         insightCardsSummary: (metrics["v1.insightCardsSummary"] ?? []) as CrmData["v1"]["insightCardsSummary"],
+  > 160 │         operationalCardsSummary: (metrics["v1.operationalCardsSummary"] ??
+        │                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    161 │           []) as CrmData["v1"]["operationalCardsSummary"],
+    162 │         overviewCardsSummary: (metrics["v1.overviewCardsSummary"] ?? []) as CrmData["v1"]["overviewCardsSummary"],
+  
+  i Drop ?? and the fallback expression.
+  
+    158 │         crmConfigRecentLeadsData: crmConfigRecentLeadsData,
+    159 │         insightCardsSummary: (metrics["v1.insightCardsSummary"] ?? []) as CrmData["v1"]["insightCardsSummary"],
+  > 160 │         operationalCardsSummary: (metrics["v1.operationalCardsSummary"] ??
+        │                                                                         ^^
+    161 │           []) as CrmData["v1"]["operationalCardsSummary"],
+    162 │         overviewCardsSummary: (metrics["v1.overviewCardsSummary"] ?? []) as CrmData["v1"]["overviewCardsSummary"],
+  
+  i The left-hand side is guaranteed to be non-nullish, so the fallback is unreachable.
+  
+
+src/server/data/crm.ts:162:32 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Unnecessary nullish coalescing.
+  
+    160 │         operationalCardsSummary: (metrics["v1.operationalCardsSummary"] ??
+    161 │           []) as CrmData["v1"]["operationalCardsSummary"],
+  > 162 │         overviewCardsSummary: (metrics["v1.overviewCardsSummary"] ?? []) as CrmData["v1"]["overviewCardsSummary"],
+        │                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    163 │       },
+    164 │     },
+  
+  i Drop ?? and the fallback expression.
+  
+    160 │         operationalCardsSummary: (metrics["v1.operationalCardsSummary"] ??
+    161 │           []) as CrmData["v1"]["operationalCardsSummary"],
+  > 162 │         overviewCardsSummary: (metrics["v1.overviewCardsSummary"] ?? []) as CrmData["v1"]["overviewCardsSummary"],
+        │                                                                   ^^
+    163 │       },
+    164 │     },
+  
+  i The left-hand side is guaranteed to be non-nullish, so the fallback is unreachable.
+  
+
+src/server/data/default.ts:75:42 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Unnecessary nullish coalescing.
+  
+    73 │       renderedAt,
+    74 │       current: {
+  > 75 │         performanceOverviewChartValues: (metrics["current.performanceOverviewChartValues"] ??
+       │                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    76 │           []) as DefaultData["current"]["performanceOverviewChartValues"],
+    77 │         recordsCustomers: recordsCustomers,
+  
+  i Drop ?? and the fallback expression.
+  
+    73 │       renderedAt,
+    74 │       current: {
+  > 75 │         performanceOverviewChartValues: (metrics["current.performanceOverviewChartValues"] ??
+       │                                                                                            ^^
+    76 │           []) as DefaultData["current"]["performanceOverviewChartValues"],
+    77 │         recordsCustomers: recordsCustomers,
+  
+  i The left-hand side is guaranteed to be non-nullish, so the fallback is unreachable.
+  
+
+src/server/data/default.ts:78:30 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Unnecessary nullish coalescing.
+  
+    76 │           []) as DefaultData["current"]["performanceOverviewChartValues"],
+    77 │         recordsCustomers: recordsCustomers,
+  > 78 │         metricCardsSummary: (metrics["current.metricCardsSummary"] ??
+       │                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    79 │           []) as DefaultData["current"]["metricCardsSummary"],
+    80 │         subscriberOverviewSummary: (metrics["current.subscriberOverviewSummary"] ??
+  
+  i Drop ?? and the fallback expression.
+  
+    76 │           []) as DefaultData["current"]["performanceOverviewChartValues"],
+    77 │         recordsCustomers: recordsCustomers,
+  > 78 │         metricCardsSummary: (metrics["current.metricCardsSummary"] ??
+       │                                                                    ^^
+    79 │           []) as DefaultData["current"]["metricCardsSummary"],
+    80 │         subscriberOverviewSummary: (metrics["current.subscriberOverviewSummary"] ??
+  
+  i The left-hand side is guaranteed to be non-nullish, so the fallback is unreachable.
+  
+
+src/server/data/default.ts:94:45 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Unnecessary nullish coalescing.
+  
+    92 │         proposalSectionsTableColumnsSummary: (metrics["v1.proposalSectionsTableColumnsSummary"] ??
+    93 │           []) as DefaultData["v1"]["proposalSectionsTableColumnsSummary"],
+  > 94 │         proposalSectionsTableTableSummary: (metrics["v1.proposalSectionsTableTableSummary"] ??
+       │                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    95 │           []) as DefaultData["v1"]["proposalSectionsTableTableSummary"],
+    96 │         sectionCardsSummary: (metrics["v1.sectionCardsSummary"] ?? []) as DefaultData["v1"]["sectionCardsSummary"],
+  
+  i Drop ?? and the fallback expression.
+  
+    92 │         proposalSectionsTableColumnsSummary: (metrics["v1.proposalSectionsTableColumnsSummary"] ??
+    93 │           []) as DefaultData["v1"]["proposalSectionsTableColumnsSummary"],
+  > 94 │         proposalSectionsTableTableSummary: (metrics["v1.proposalSectionsTableTableSummary"] ??
+       │                                                                                             ^^
+    95 │           []) as DefaultData["v1"]["proposalSectionsTableTableSummary"],
+    96 │         sectionCardsSummary: (metrics["v1.sectionCardsSummary"] ?? []) as DefaultData["v1"]["sectionCardsSummary"],
+  
+  i The left-hand side is guaranteed to be non-nullish, so the fallback is unreachable.
+  
+
+src/server/data/default.ts:96:31 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Unnecessary nullish coalescing.
+  
+    94 │         proposalSectionsTableTableSummary: (metrics["v1.proposalSectionsTableTableSummary"] ??
+    95 │           []) as DefaultData["v1"]["proposalSectionsTableTableSummary"],
+  > 96 │         sectionCardsSummary: (metrics["v1.sectionCardsSummary"] ?? []) as DefaultData["v1"]["sectionCardsSummary"],
+       │                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    97 │         chartAreaInteractiveReference: chartAreaInteractiveReference,
+    98 │       },
+  
+  i Drop ?? and the fallback expression.
+  
+    94 │         proposalSectionsTableTableSummary: (metrics["v1.proposalSectionsTableTableSummary"] ??
+    95 │           []) as DefaultData["v1"]["proposalSectionsTableTableSummary"],
+  > 96 │         sectionCardsSummary: (metrics["v1.sectionCardsSummary"] ?? []) as DefaultData["v1"]["sectionCardsSummary"],
+       │                                                                 ^^
+    97 │         chartAreaInteractiveReference: chartAreaInteractiveReference,
+    98 │       },
+  
+  i The left-hand side is guaranteed to be non-nullish, so the fallback is unreachable.
+  
+
+src/server/data/default.ts:80:37 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Unnecessary nullish coalescing.
+  
+    78 │         metricCardsSummary: (metrics["current.metricCardsSummary"] ??
+    79 │           []) as DefaultData["current"]["metricCardsSummary"],
+  > 80 │         subscriberOverviewSummary: (metrics["current.subscriberOverviewSummary"] ??
+       │                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    81 │           []) as DefaultData["current"]["subscriberOverviewSummary"],
+    82 │         performanceOverviewTiming: (metrics["current.performanceOverviewTiming"] ??
+  
+  i Drop ?? and the fallback expression.
+  
+    78 │         metricCardsSummary: (metrics["current.metricCardsSummary"] ??
+    79 │           []) as DefaultData["current"]["metricCardsSummary"],
+  > 80 │         subscriberOverviewSummary: (metrics["current.subscriberOverviewSummary"] ??
+       │                                                                                  ^^
+    81 │           []) as DefaultData["current"]["subscriberOverviewSummary"],
+    82 │         performanceOverviewTiming: (metrics["current.performanceOverviewTiming"] ??
+  
+  i The left-hand side is guaranteed to be non-nullish, so the fallback is unreachable.
+  
+
+src/server/data/default.ts:82:37 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Unnecessary nullish coalescing.
+  
+    80 │         subscriberOverviewSummary: (metrics["current.subscriberOverviewSummary"] ??
+    81 │           []) as DefaultData["current"]["subscriberOverviewSummary"],
+  > 82 │         performanceOverviewTiming: (metrics["current.performanceOverviewTiming"] ??
+       │                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    83 │           []) as DefaultData["current"]["performanceOverviewTiming"],
+    84 │       },
+  
+  i Drop ?? and the fallback expression.
+  
+    80 │         subscriberOverviewSummary: (metrics["current.subscriberOverviewSummary"] ??
+    81 │           []) as DefaultData["current"]["subscriberOverviewSummary"],
+  > 82 │         performanceOverviewTiming: (metrics["current.performanceOverviewTiming"] ??
+       │                                                                                  ^^
+    83 │           []) as DefaultData["current"]["performanceOverviewTiming"],
+    84 │       },
+  
+  i The left-hand side is guaranteed to be non-nullish, so the fallback is unreachable.
+  
+
+src/server/data/default.ts:87:41 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Unnecessary nullish coalescing.
+  
+    85 │       v1: {
+    86 │         reviewers,
+  > 87 │         chartAreaInteractiveChartData: (metrics["v1.chartAreaInteractiveChartData"] ??
+       │                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    88 │           []) as DefaultData["v1"]["chartAreaInteractiveChartData"],
+    89 │         proposalSectionsTableColumnsChartData: (metrics["v1.proposalSectionsTableColumnsChartData"] ??
+  
+  i Drop ?? and the fallback expression.
+  
+    85 │       v1: {
+    86 │         reviewers,
+  > 87 │         chartAreaInteractiveChartData: (metrics["v1.chartAreaInteractiveChartData"] ??
+       │                                                                                     ^^
+    88 │           []) as DefaultData["v1"]["chartAreaInteractiveChartData"],
+    89 │         proposalSectionsTableColumnsChartData: (metrics["v1.proposalSectionsTableColumnsChartData"] ??
+  
+  i The left-hand side is guaranteed to be non-nullish, so the fallback is unreachable.
+  
+
+src/server/data/default.ts:89:49 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Unnecessary nullish coalescing.
+  
+    87 │         chartAreaInteractiveChartData: (metrics["v1.chartAreaInteractiveChartData"] ??
+    88 │           []) as DefaultData["v1"]["chartAreaInteractiveChartData"],
+  > 89 │         proposalSectionsTableColumnsChartData: (metrics["v1.proposalSectionsTableColumnsChartData"] ??
+       │                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    90 │           []) as DefaultData["v1"]["proposalSectionsTableColumnsChartData"],
+    91 │         recordsProposals: recordsProposals,
+  
+  i Drop ?? and the fallback expression.
+  
+    87 │         chartAreaInteractiveChartData: (metrics["v1.chartAreaInteractiveChartData"] ??
+    88 │           []) as DefaultData["v1"]["chartAreaInteractiveChartData"],
+  > 89 │         proposalSectionsTableColumnsChartData: (metrics["v1.proposalSectionsTableColumnsChartData"] ??
+       │                                                                                                     ^^
+    90 │           []) as DefaultData["v1"]["proposalSectionsTableColumnsChartData"],
+    91 │         recordsProposals: recordsProposals,
+  
+  i The left-hand side is guaranteed to be non-nullish, so the fallback is unreachable.
+  
+
+src/server/data/default.ts:92:47 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Unnecessary nullish coalescing.
+  
+    90 │           []) as DefaultData["v1"]["proposalSectionsTableColumnsChartData"],
+    91 │         recordsProposals: recordsProposals,
+  > 92 │         proposalSectionsTableColumnsSummary: (metrics["v1.proposalSectionsTableColumnsSummary"] ??
+       │                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    93 │           []) as DefaultData["v1"]["proposalSectionsTableColumnsSummary"],
+    94 │         proposalSectionsTableTableSummary: (metrics["v1.proposalSectionsTableTableSummary"] ??
+  
+  i Drop ?? and the fallback expression.
+  
+    90 │           []) as DefaultData["v1"]["proposalSectionsTableColumnsChartData"],
+    91 │         recordsProposals: recordsProposals,
+  > 92 │         proposalSectionsTableColumnsSummary: (metrics["v1.proposalSectionsTableColumnsSummary"] ??
+       │                                                                                                 ^^
+    93 │           []) as DefaultData["v1"]["proposalSectionsTableColumnsSummary"],
+    94 │         proposalSectionsTableTableSummary: (metrics["v1.proposalSectionsTableTableSummary"] ??
+  
+  i The left-hand side is guaranteed to be non-nullish, so the fallback is unreachable.
+  
+
+src/server/data/finance.ts:189:31 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Unnecessary nullish coalescing.
+  
+    187 │       renderedAt,
+    188 │       current: {
+  > 189 │         overviewKpisMetrics: (metrics["current.overviewKpisMetrics"] ??
+        │                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    190 │           []) as FinanceData["current"]["overviewKpisMetrics"],
+    191 │         balanceDistributionCardBalanceData: balanceDistributionCardBalanceData,
+  
+  i Drop ?? and the fallback expression.
+  
+    187 │       renderedAt,
+    188 │       current: {
+  > 189 │         overviewKpisMetrics: (metrics["current.overviewKpisMetrics"] ??
+        │                                                                      ^^
+    190 │           []) as FinanceData["current"]["overviewKpisMetrics"],
+    191 │         balanceDistributionCardBalanceData: balanceDistributionCardBalanceData,
+  
+  i The left-hand side is guaranteed to be non-nullish, so the fallback is unreachable.
+  
+
+src/server/data/finance.ts:192:34 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Unnecessary nullish coalescing.
+  
+    190 │           []) as FinanceData["current"]["overviewKpisMetrics"],
+    191 │         balanceDistributionCardBalanceData: balanceDistributionCardBalanceData,
+  > 192 │         incomeBreakdownSources: (metrics["current.incomeBreakdownSources"] ??
+        │                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    193 │           []) as FinanceData["current"]["incomeBreakdownSources"],
+    194 │         transactionsOverviewCardChartData: (metrics["current.transactionsOverviewCardChartData"] ??
+  
+  i Drop ?? and the fallback expression.
+  
+    190 │           []) as FinanceData["current"]["overviewKpisMetrics"],
+    191 │         balanceDistributionCardBalanceData: balanceDistributionCardBalanceData,
+  > 192 │         incomeBreakdownSources: (metrics["current.incomeBreakdownSources"] ??
+        │                                                                            ^^
+    193 │           []) as FinanceData["current"]["incomeBreakdownSources"],
+    194 │         transactionsOverviewCardChartData: (metrics["current.transactionsOverviewCardChartData"] ??
+  
+  i The left-hand side is guaranteed to be non-nullish, so the fallback is unreachable.
+  
+
+src/server/data/finance.ts:194:45 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Unnecessary nullish coalescing.
+  
+    192 │         incomeBreakdownSources: (metrics["current.incomeBreakdownSources"] ??
+    193 │           []) as FinanceData["current"]["incomeBreakdownSources"],
+  > 194 │         transactionsOverviewCardChartData: (metrics["current.transactionsOverviewCardChartData"] ??
+        │                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    195 │           []) as FinanceData["current"]["transactionsOverviewCardChartData"],
+    196 │         upcomingTransactionsTransactions: upcomingTransactionsTransactions,
+  
+  i Drop ?? and the fallback expression.
+  
+    192 │         incomeBreakdownSources: (metrics["current.incomeBreakdownSources"] ??
+    193 │           []) as FinanceData["current"]["incomeBreakdownSources"],
+  > 194 │         transactionsOverviewCardChartData: (metrics["current.transactionsOverviewCardChartData"] ??
+        │                                                                                                  ^^
+    195 │           []) as FinanceData["current"]["transactionsOverviewCardChartData"],
+    196 │         upcomingTransactionsTransactions: upcomingTransactionsTransactions,
+  
+  i The left-hand side is guaranteed to be non-nullish, so the fallback is unreachable.
+  
+
+src/server/data/finance.ts:200:38 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Unnecessary nullish coalescing.
+  
+    198 │         walletCryptoAssets: walletCryptoAssets,
+    199 │         quickActionsContacts: quickActionsContacts,
+  > 200 │         financeNotificationSummary: (metrics["current.financeNotificationSummary"] ??
+        │                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    201 │           []) as FinanceData["current"]["financeNotificationSummary"],
+    202 │         upcomingTransactionsSummary: (metrics["current.upcomingTransactionsSummary"] ??
+  
+  i Drop ?? and the fallback expression.
+  
+    198 │         walletCryptoAssets: walletCryptoAssets,
+    199 │         quickActionsContacts: quickActionsContacts,
+  > 200 │         financeNotificationSummary: (metrics["current.financeNotificationSummary"] ??
+        │                                                                                    ^^
+    201 │           []) as FinanceData["current"]["financeNotificationSummary"],
+    202 │         upcomingTransactionsSummary: (metrics["current.upcomingTransactionsSummary"] ??
+  
+  i The left-hand side is guaranteed to be non-nullish, so the fallback is unreachable.
+  
+
+src/server/data/finance.ts:202:39 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Unnecessary nullish coalescing.
+  
+    200 │         financeNotificationSummary: (metrics["current.financeNotificationSummary"] ??
+    201 │           []) as FinanceData["current"]["financeNotificationSummary"],
+  > 202 │         upcomingTransactionsSummary: (metrics["current.upcomingTransactionsSummary"] ??
+        │                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    203 │           []) as FinanceData["current"]["upcomingTransactionsSummary"],
+    204 │         pageSummary: (metrics["current.pageSummary"] ?? []) as FinanceData["current"]["pageSummary"],
+  
+  i Drop ?? and the fallback expression.
+  
+    200 │         financeNotificationSummary: (metrics["current.financeNotificationSummary"] ??
+    201 │           []) as FinanceData["current"]["financeNotificationSummary"],
+  > 202 │         upcomingTransactionsSummary: (metrics["current.upcomingTransactionsSummary"] ??
+        │                                                                                      ^^
+    203 │           []) as FinanceData["current"]["upcomingTransactionsSummary"],
+    204 │         pageSummary: (metrics["current.pageSummary"] ?? []) as FinanceData["current"]["pageSummary"],
+  
+  i The left-hand side is guaranteed to be non-nullish, so the fallback is unreachable.
+  
+
+src/server/data/finance.ts:204:23 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Unnecessary nullish coalescing.
+  
+    202 │         upcomingTransactionsSummary: (metrics["current.upcomingTransactionsSummary"] ??
+    203 │           []) as FinanceData["current"]["upcomingTransactionsSummary"],
+  > 204 │         pageSummary: (metrics["current.pageSummary"] ?? []) as FinanceData["current"]["pageSummary"],
+        │                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    205 │         statementReference: statementReference,
+    206 │       },
+  
+  i Drop ?? and the fallback expression.
+  
+    202 │         upcomingTransactionsSummary: (metrics["current.upcomingTransactionsSummary"] ??
+    203 │           []) as FinanceData["current"]["upcomingTransactionsSummary"],
+  > 204 │         pageSummary: (metrics["current.pageSummary"] ?? []) as FinanceData["current"]["pageSummary"],
+        │                                                      ^^
+    205 │         statementReference: statementReference,
+    206 │       },
+  
+  i The left-hand side is guaranteed to be non-nullish, so the fallback is unreachable.
+  
+
+src/server/data/finance.ts:209:37 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Unnecessary nullish coalescing.
+  
+    207 │       v1: {
+    208 │         cardOverviewUpcomingPayments: cardOverviewUpcomingPayments,
+  > 209 │         cashFlowOverviewChartData: (metrics["v1.cashFlowOverviewChartData"] ??
+        │                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    210 │           []) as FinanceData["v1"]["cashFlowOverviewChartData"],
+    211 │         spendingBreakdownExpenses: (metrics["v1.spendingBreakdownExpenses"] ??
+  
+  i Drop ?? and the fallback expression.
+  
+    207 │       v1: {
+    208 │         cardOverviewUpcomingPayments: cardOverviewUpcomingPayments,
+  > 209 │         cashFlowOverviewChartData: (metrics["v1.cashFlowOverviewChartData"] ??
+        │                                                                             ^^
+    210 │           []) as FinanceData["v1"]["cashFlowOverviewChartData"],
+    211 │         spendingBreakdownExpenses: (metrics["v1.spendingBreakdownExpenses"] ??
+  
+  i The left-hand side is guaranteed to be non-nullish, so the fallback is unreachable.
+  
+
+src/server/data/finance.ts:211:37 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Unnecessary nullish coalescing.
+  
+    209 │         cashFlowOverviewChartData: (metrics["v1.cashFlowOverviewChartData"] ??
+    210 │           []) as FinanceData["v1"]["cashFlowOverviewChartData"],
+  > 211 │         spendingBreakdownExpenses: (metrics["v1.spendingBreakdownExpenses"] ??
+        │                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    212 │           []) as FinanceData["v1"]["spendingBreakdownExpenses"],
+    213 │         cardOverviewSummary: cardOverviewSummary,
+  
+  i Drop ?? and the fallback expression.
+  
+    209 │         cashFlowOverviewChartData: (metrics["v1.cashFlowOverviewChartData"] ??
+    210 │           []) as FinanceData["v1"]["cashFlowOverviewChartData"],
+  > 211 │         spendingBreakdownExpenses: (metrics["v1.spendingBreakdownExpenses"] ??
+        │                                                                             ^^
+    212 │           []) as FinanceData["v1"]["spendingBreakdownExpenses"],
+    213 │         cardOverviewSummary: cardOverviewSummary,
+  
+  i The left-hand side is guaranteed to be non-nullish, so the fallback is unreachable.
+  
+
+src/server/data/finance.ts:214:36 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Unnecessary nullish coalescing.
+  
+    212 │           []) as FinanceData["v1"]["spendingBreakdownExpenses"],
+    213 │         cardOverviewSummary: cardOverviewSummary,
+  > 214 │         incomeReliabilitySummary: (metrics["v1.incomeReliabilitySummary"] ??
+        │                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    215 │           []) as FinanceData["v1"]["incomeReliabilitySummary"],
+    216 │         kpisMonthlyCashFlowSummary: (metrics["v1.kpisMonthlyCashFlowSummary"] ??
+  
+  i Drop ?? and the fallback expression.
+  
+    212 │           []) as FinanceData["v1"]["spendingBreakdownExpenses"],
+    213 │         cardOverviewSummary: cardOverviewSummary,
+  > 214 │         incomeReliabilitySummary: (metrics["v1.incomeReliabilitySummary"] ??
+        │                                                                           ^^
+    215 │           []) as FinanceData["v1"]["incomeReliabilitySummary"],
+    216 │         kpisMonthlyCashFlowSummary: (metrics["v1.kpisMonthlyCashFlowSummary"] ??
+  
+  i The left-hand side is guaranteed to be non-nullish, so the fallback is unreachable.
+  
+
+src/server/data/finance.ts:216:38 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Unnecessary nullish coalescing.
+  
+    214 │         incomeReliabilitySummary: (metrics["v1.incomeReliabilitySummary"] ??
+    215 │           []) as FinanceData["v1"]["incomeReliabilitySummary"],
+  > 216 │         kpisMonthlyCashFlowSummary: (metrics["v1.kpisMonthlyCashFlowSummary"] ??
+        │                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    217 │           []) as FinanceData["v1"]["kpisMonthlyCashFlowSummary"],
+    218 │         kpisNetWorthSummary: (metrics["v1.kpisNetWorthSummary"] ?? []) as FinanceData["v1"]["kpisNetWorthSummary"],
+  
+  i Drop ?? and the fallback expression.
+  
+    214 │         incomeReliabilitySummary: (metrics["v1.incomeReliabilitySummary"] ??
+    215 │           []) as FinanceData["v1"]["incomeReliabilitySummary"],
+  > 216 │         kpisMonthlyCashFlowSummary: (metrics["v1.kpisMonthlyCashFlowSummary"] ??
+        │                                                                               ^^
+    217 │           []) as FinanceData["v1"]["kpisMonthlyCashFlowSummary"],
+    218 │         kpisNetWorthSummary: (metrics["v1.kpisNetWorthSummary"] ?? []) as FinanceData["v1"]["kpisNetWorthSummary"],
+  
+  i The left-hand side is guaranteed to be non-nullish, so the fallback is unreachable.
+  
+
+src/server/data/finance.ts:218:31 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Unnecessary nullish coalescing.
+  
+    216 │         kpisMonthlyCashFlowSummary: (metrics["v1.kpisMonthlyCashFlowSummary"] ??
+    217 │           []) as FinanceData["v1"]["kpisMonthlyCashFlowSummary"],
+  > 218 │         kpisNetWorthSummary: (metrics["v1.kpisNetWorthSummary"] ?? []) as FinanceData["v1"]["kpisNetWorthSummary"],
+        │                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    219 │         kpisPrimaryAccountSummary: (metrics["v1.kpisPrimaryAccountSummary"] ??
+    220 │           []) as FinanceData["v1"]["kpisPrimaryAccountSummary"],
+  
+  i Drop ?? and the fallback expression.
+  
+    216 │         kpisMonthlyCashFlowSummary: (metrics["v1.kpisMonthlyCashFlowSummary"] ??
+    217 │           []) as FinanceData["v1"]["kpisMonthlyCashFlowSummary"],
+  > 218 │         kpisNetWorthSummary: (metrics["v1.kpisNetWorthSummary"] ?? []) as FinanceData["v1"]["kpisNetWorthSummary"],
+        │                                                                 ^^
+    219 │         kpisPrimaryAccountSummary: (metrics["v1.kpisPrimaryAccountSummary"] ??
+    220 │           []) as FinanceData["v1"]["kpisPrimaryAccountSummary"],
+  
+  i The left-hand side is guaranteed to be non-nullish, so the fallback is unreachable.
+  
+
+src/server/data/finance.ts:219:37 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Unnecessary nullish coalescing.
+  
+    217 │           []) as FinanceData["v1"]["kpisMonthlyCashFlowSummary"],
+    218 │         kpisNetWorthSummary: (metrics["v1.kpisNetWorthSummary"] ?? []) as FinanceData["v1"]["kpisNetWorthSummary"],
+  > 219 │         kpisPrimaryAccountSummary: (metrics["v1.kpisPrimaryAccountSummary"] ??
+        │                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    220 │           []) as FinanceData["v1"]["kpisPrimaryAccountSummary"],
+    221 │         kpisSavingsRateSummary: (metrics["v1.kpisSavingsRateSummary"] ??
+  
+  i Drop ?? and the fallback expression.
+  
+    217 │           []) as FinanceData["v1"]["kpisMonthlyCashFlowSummary"],
+    218 │         kpisNetWorthSummary: (metrics["v1.kpisNetWorthSummary"] ?? []) as FinanceData["v1"]["kpisNetWorthSummary"],
+  > 219 │         kpisPrimaryAccountSummary: (metrics["v1.kpisPrimaryAccountSummary"] ??
+        │                                                                             ^^
+    220 │           []) as FinanceData["v1"]["kpisPrimaryAccountSummary"],
+    221 │         kpisSavingsRateSummary: (metrics["v1.kpisSavingsRateSummary"] ??
+  
+  i The left-hand side is guaranteed to be non-nullish, so the fallback is unreachable.
+  
+
+src/server/data/finance.ts:221:34 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Unnecessary nullish coalescing.
+  
+    219 │         kpisPrimaryAccountSummary: (metrics["v1.kpisPrimaryAccountSummary"] ??
+    220 │           []) as FinanceData["v1"]["kpisPrimaryAccountSummary"],
+  > 221 │         kpisSavingsRateSummary: (metrics["v1.kpisSavingsRateSummary"] ??
+        │                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    222 │           []) as FinanceData["v1"]["kpisSavingsRateSummary"],
+    223 │       },
+  
+  i Drop ?? and the fallback expression.
+  
+    219 │         kpisPrimaryAccountSummary: (metrics["v1.kpisPrimaryAccountSummary"] ??
+    220 │           []) as FinanceData["v1"]["kpisPrimaryAccountSummary"],
+  > 221 │         kpisSavingsRateSummary: (metrics["v1.kpisSavingsRateSummary"] ??
+        │                                                                       ^^
+    222 │           []) as FinanceData["v1"]["kpisSavingsRateSummary"],
+    223 │       },
+  
+  i The left-hand side is guaranteed to be non-nullish, so the fallback is unreachable.
+  
+
+Checked 74 files in 395ms. No fixes applied.
+Found 48 warnings.

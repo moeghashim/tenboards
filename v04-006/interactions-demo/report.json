@@ -1,0 +1,92 @@
+{
+  "baseURL": "http://127.0.0.1:3000/",
+  "hydrationDelayMs": 0,
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": false,
+  "interactions": true,
+  "results": [
+    {
+      "route": "/dashboard/analytics",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_analytics-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_analytics-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Last 7 days selected",
+        "Campaigns displays Spring Launch / Newsletter / Retargeting / Brand Search / Partners"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_analytics-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_analytics-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Last 7 days selected",
+        "Campaigns displays Spring Launch / Newsletter / Retargeting / Brand Search / Partners"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_analytics-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_analytics-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Last 7 days selected",
+        "Campaigns displays Spring Launch / Newsletter / Retargeting / Brand Search / Partners"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_analytics-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_analytics-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Last 7 days selected",
+        "Campaigns displays Spring Launch / Newsletter / Retargeting / Brand Search / Partners"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/crm",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_crm-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_crm-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": [
+        "locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('menuitemradio', { name: 'Proposal', exact: true })\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/crm",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_crm-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_crm-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": [
+        "locator.click: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - waiting for getByRole('menuitemradio', { name: 'Proposal', exact: true })\u001b[22m\n"
+      ]
+    }
+  ]
+}

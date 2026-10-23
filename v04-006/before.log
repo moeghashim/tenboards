@@ -1,0 +1,85 @@
+
+> tenboards@0.3.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --routes /dashboard/default,/dashboard/default-v1,/dashboard/crm,/dashboard/crm-v1,/dashboard/finance,/dashboard/finance-v1,/dashboard/analytics,/dashboard/analytics-v1 --interactions --output screenshots/v04-006/before
+
+PASS /dashboard/analytics light/desktop direct
+PASS /dashboard/analytics light/mobile direct
+PASS /dashboard/analytics dark/desktop direct
+PASS /dashboard/analytics dark/mobile direct
+FAIL /dashboard/crm light/desktop direct
+No interaction scenario for /dashboard/crm. Use an explicit supported --routes subset.
+FAIL /dashboard/crm light/mobile direct
+No interaction scenario for /dashboard/crm. Use an explicit supported --routes subset.
+FAIL /dashboard/crm dark/desktop direct
+console: %c[Server]%c color: #9333ea; font-weight: bold; color: inherit; Error in renderToReadableStream: {name: Error, message: Failed to load url /src/routes/(main)/chat/-compon…)/chat/-components/chat.tsx. Does the file exist?, stack: Error: Failed to load url /src/routes/(main)/chat/…e_modules/vite/dist/node/chunks/node.js:25373:13)} {componentStack: 
+    at Lazy (<anonymous>)
+    at MatchInnerImpl (…eact-start-server/dist/esm/StartServer.js:13:113)}
+console: %c[Server]%c color: #9333ea; font-weight: bold; color: inherit; Error in renderToReadableStream: {name: Error, message: Failed to load url /src/routes/(main)/chat/-compon…)/chat/-components/chat.tsx. Does the file exist?, stack: Error: Failed to load url /src/routes/(main)/chat/…e_modules/vite/dist/node/chunks/node.js:25373:13)} {componentStack: 
+    at Lazy (<anonymous>)
+    at MatchInnerImpl (…eact-start-server/dist/esm/StartServer.js:13:113)}
+console: %c[Server]%c color: #9333ea; font-weight: bold; color: inherit; Error in renderToReadableStream: {name: Error, message: Failed to load url /src/routes/(main)/chat/-compon…)/chat/-components/chat.tsx. Does the file exist?, stack: Error: Failed to load url /src/routes/(main)/chat/…e_modules/vite/dist/node/chunks/node.js:25373:13)} {componentStack: 
+    at Lazy (<anonymous>)
+    at MatchInnerImpl (…eact-start-server/dist/esm/StartServer.js:13:113)}
+No interaction scenario for /dashboard/crm. Use an explicit supported --routes subset.
+FAIL /dashboard/crm dark/mobile direct
+No interaction scenario for /dashboard/crm. Use an explicit supported --routes subset.
+PASS /dashboard/default light/desktop direct
+PASS /dashboard/default light/mobile direct
+PASS /dashboard/default dark/desktop direct
+PASS /dashboard/default dark/mobile direct
+PASS /dashboard/finance light/desktop direct
+FAIL /dashboard/finance light/mobile direct
+console: %c[Server]%c color: #9333ea; font-weight: bold; color: inherit; Error in renderToReadableStream: {name: Error, message: Failed to load url /src/routes/(main)/chat/-compon…)/chat/-components/chat.tsx. Does the file exist?, stack: Error: Failed to load url /src/routes/(main)/chat/…e_modules/vite/dist/node/chunks/node.js:25373:13)} {componentStack: 
+    at Lazy (<anonymous>)
+    at MatchInnerImpl (…eact-start-server/dist/esm/StartServer.js:13:113)}
+console: %c[Server]%c color: #9333ea; font-weight: bold; color: inherit; Error in renderToReadableStream: {name: Error, message: Failed to load url /src/routes/(main)/chat/-compon…)/chat/-components/chat.tsx. Does the file exist?, stack: Error: Failed to load url /src/routes/(main)/chat/…e_modules/vite/dist/node/chunks/node.js:25373:13)} {componentStack: 
+    at Lazy (<anonymous>)
+    at MatchInnerImpl (…eact-start-server/dist/esm/StartServer.js:13:113)}
+PASS /dashboard/finance dark/desktop direct
+PASS /dashboard/finance dark/mobile direct
+PASS /dashboard/analytics-v1 light/desktop direct
+PASS /dashboard/analytics-v1 light/mobile direct
+PASS /dashboard/analytics-v1 dark/desktop direct
+PASS /dashboard/analytics-v1 dark/mobile direct
+FAIL /dashboard/crm-v1 light/desktop direct
+No interaction scenario for /dashboard/crm-v1. Use an explicit supported --routes subset.
+FAIL /dashboard/crm-v1 light/mobile direct
+console: %c[Server]%c color: #9333ea; font-weight: bold; color: inherit; Error in renderToReadableStream: {name: Error, message: Failed to load url /src/routes/(main)/chat/-compon…)/chat/-components/chat.tsx. Does the file exist?, stack: Error: Failed to load url /src/routes/(main)/chat/…e_modules/vite/dist/node/chunks/node.js:25373:13)} {componentStack: 
+    at Lazy (<anonymous>)
+    at MatchInnerImpl (…eact-start-server/dist/esm/StartServer.js:13:113)}
+console: %c[Server]%c color: #9333ea; font-weight: bold; color: inherit; Error in renderToReadableStream: {name: Error, message: Failed to load url /src/routes/(main)/chat/-compon…)/chat/-components/chat.tsx. Does the file exist?, stack: Error: Failed to load url /src/routes/(main)/chat/…e_modules/vite/dist/node/chunks/node.js:25373:13)} {componentStack: 
+    at Lazy (<anonymous>)
+    at MatchInnerImpl (…eact-start-server/dist/esm/StartServer.js:13:113)}
+console: %c[Server]%c color: #9333ea; font-weight: bold; color: inherit; Error in renderToReadableStream: {name: Error, message: Failed to load url /src/routes/(main)/chat/-compon…)/chat/-components/chat.tsx. Does the file exist?, stack: Error: Failed to load url /src/routes/(main)/chat/…e_modules/vite/dist/node/chunks/node.js:25373:13)} {componentStack: 
+    at Lazy (<anonymous>)
+    at MatchInnerImpl (…eact-start-server/dist/esm/StartServer.js:13:113)}
+console: %c[Server]%c color: #9333ea; font-weight: bold; color: inherit; Error in renderToReadableStream: {name: Error, message: Failed to load url /src/routes/(main)/chat/-compon…)/chat/-components/chat.tsx. Does the file exist?, stack: Error: Failed to load url /src/routes/(main)/chat/…e_modules/vite/dist/node/chunks/node.js:25373:13)} {componentStack: 
+    at Lazy (<anonymous>)
+    at MatchInnerImpl (…eact-start-server/dist/esm/StartServer.js:13:113)}
+No interaction scenario for /dashboard/crm-v1. Use an explicit supported --routes subset.
+FAIL /dashboard/crm-v1 dark/desktop direct
+No interaction scenario for /dashboard/crm-v1. Use an explicit supported --routes subset.
+FAIL /dashboard/crm-v1 dark/mobile direct
+No interaction scenario for /dashboard/crm-v1. Use an explicit supported --routes subset.
+FAIL /dashboard/default-v1 light/desktop direct
+No interaction scenario for /dashboard/default-v1. Use an explicit supported --routes subset.
+FAIL /dashboard/default-v1 light/mobile direct
+No interaction scenario for /dashboard/default-v1. Use an explicit supported --routes subset.
+FAIL /dashboard/default-v1 dark/desktop direct
+No interaction scenario for /dashboard/default-v1. Use an explicit supported --routes subset.
+FAIL /dashboard/default-v1 dark/mobile direct
+No interaction scenario for /dashboard/default-v1. Use an explicit supported --routes subset.
+FAIL /dashboard/finance-v1 light/desktop direct
+No interaction scenario for /dashboard/finance-v1. Use an explicit supported --routes subset.
+FAIL /dashboard/finance-v1 light/mobile direct
+No interaction scenario for /dashboard/finance-v1. Use an explicit supported --routes subset.
+FAIL /dashboard/finance-v1 dark/desktop direct
+No interaction scenario for /dashboard/finance-v1. Use an explicit supported --routes subset.
+FAIL /dashboard/finance-v1 dark/mobile direct
+console: %c[Server]%c color: #9333ea; font-weight: bold; color: inherit; Error in renderToReadableStream: {name: Error, message: Failed to load url /src/routes/(main)/chat/-compon…)/chat/-components/chat.tsx. Does the file exist?, stack: Error: Failed to load url /src/routes/(main)/chat/…e_modules/vite/dist/node/chunks/node.js:25373:13)} {componentStack: 
+    at Lazy (<anonymous>)
+    at MatchInnerImpl (…eact-start-server/dist/esm/StartServer.js:13:113)}
+console: %c[Server]%c color: #9333ea; font-weight: bold; color: inherit; Error in renderToReadableStream: {name: Error, message: Failed to load url /src/routes/(main)/chat/-compon…)/chat/-components/chat.tsx. Does the file exist?, stack: Error: Failed to load url /src/routes/(main)/chat/…e_modules/vite/dist/node/chunks/node.js:25373:13)} {componentStack: 
+    at Lazy (<anonymous>)
+    at MatchInnerImpl (…eact-start-server/dist/esm/StartServer.js:13:113)}
+No interaction scenario for /dashboard/finance-v1. Use an explicit supported --routes subset.

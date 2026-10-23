@@ -1,0 +1,4 @@
+ Container tenboards-postgres-1 Stopping 
+ Container tenboards-postgres-1 Stopped 
+PASS zero environment: DATABASE_URL and DATA_SOURCE absent
+NAME      IMAGE     COMMAND   SERVICE   CREATED   STATUS    PORTS

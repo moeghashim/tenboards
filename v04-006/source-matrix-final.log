@@ -1,0 +1,39 @@
+PASS absent URL: read
+PASS configured database: read
+PASS forced demo: read
+PASS refused connection: Unable to load database data. Check the connection and migrations, then retry.
+PASS bad credentials: Unable to load database data. Check the connection and migrations, then retry.
+PASS missing schema: Unable to load database data. Check the connection and migrations, then retry.
+PASS empty configuration: Unable to load database data. Check the connection and migrations, then retry.
+PASS malformed configuration: Unable to load database data. Check the connection and migrations, then retry.
+PASS unsupported selector: Unsupported DATA_SOURCE. Use demo or leave it unset.
+PASS recovered database: read
+PASS negative --inject-mismatch: Parity failed: readDefault/current/all
++ actual - expected
+... Skipped lines
+
+  {
+    current: {
+      metricCardsSummary: [
+        {
+          value1: '$1,250.00',
+...
+    },
++   variant: 'QA_MISMATCH'
+-   variant: 'current'
+  }
+PASS negative --omit-registration: Parity failed: Every domain read must be registered exactly once
++ actual - expected
+
+  [
+    'accounts:readAccounts',
+    'analytics:readAnalytics',
+    'calendar:readCalendar',
+    'chat:readChat',
+    'crm:readCrm',
+-   'default:readDefault',
+    'ecommerce:readEcommerce',
+    'files:readFiles',
+    'finance:readFinance',
+    'invoices:readInvoices',
+    'kanban:readKanban',

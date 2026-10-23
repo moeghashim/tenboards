@@ -1,0 +1,32 @@
+[
+  {
+    "branch": "feat/v0.4/001-data-foundation",
+    "old": "16ea46d5cc9b2559563e6e94b844dd5b7a71b2cb",
+    "new": "55b6526377786f47b2988667134464cf650984a9"
+  },
+  {
+    "branch": "feat/v0.4/002-people-profile",
+    "old": "6062e8a2711848199a25e52cd717bb3d23cdfb61",
+    "new": "1781763ecca32990c42c465f10d68518c0d04235"
+  },
+  {
+    "branch": "feat/v0.4/003-commerce-data",
+    "old": "c7b8452fc7856dac185879511fbb50dcda2f14d1",
+    "new": "1cbdf6a3670ea6f0a8c8ac5cab978adccb71650c"
+  },
+  {
+    "branch": "feat/v0.4/004-workspace-data",
+    "old": "a542a01f960c21a4ed4762547052ead249eec0bb",
+    "new": "f3fc49c4b801b498fd8c0cf15ab379184731d6f1"
+  },
+  {
+    "branch": "feat/v0.4/005-communication-data",
+    "old": "f7b6937acc7d26b563c3cb36dd26a5ab65d3443d",
+    "new": "6f07e3c3cda65dc7e92350c807a68eb4f442f7c6"
+  },
+  {
+    "branch": "feat/v0.4/006-core-dashboard-data",
+    "old": "ce74c33fc3aafa0131c1149a62c4b86cd4163960",
+    "new": "474a29ee3c355668b165a2bc0ac63b20fb042bb4"
+  }
+]

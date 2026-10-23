@@ -1,0 +1,421 @@
+[
+  {
+    "before": "before-clean",
+    "after": "demo",
+    "file": "_dashboard_analytics-dark-desktop.png",
+    "bbox": null
+  },
+  {
+    "before": "before-clean",
+    "after": "demo",
+    "file": "_dashboard_analytics-dark-mobile.png",
+    "bbox": null
+  },
+  {
+    "before": "before-clean",
+    "after": "demo",
+    "file": "_dashboard_analytics-light-desktop.png",
+    "bbox": null
+  },
+  {
+    "before": "before-clean",
+    "after": "demo",
+    "file": "_dashboard_analytics-light-mobile.png",
+    "bbox": null
+  },
+  {
+    "before": "before-clean",
+    "after": "demo",
+    "file": "_dashboard_analytics-v1-dark-desktop.png",
+    "bbox": [
+      469,
+      1239,
+      586,
+      1251
+    ]
+  },
+  {
+    "before": "before-clean",
+    "after": "demo",
+    "file": "_dashboard_analytics-v1-dark-mobile.png",
+    "bbox": [
+      173,
+      2203,
+      290,
+      2215
+    ]
+  },
+  {
+    "before": "before-clean",
+    "after": "demo",
+    "file": "_dashboard_analytics-v1-light-desktop.png",
+    "bbox": [
+      469,
+      1239,
+      586,
+      1251
+    ]
+  },
+  {
+    "before": "before-clean",
+    "after": "demo",
+    "file": "_dashboard_analytics-v1-light-mobile.png",
+    "bbox": [
+      173,
+      2203,
+      290,
+      2215
+    ]
+  },
+  {
+    "before": "before-clean",
+    "after": "demo",
+    "file": "_dashboard_crm-dark-desktop.png",
+    "bbox": null
+  },
+  {
+    "before": "before-clean",
+    "after": "demo",
+    "file": "_dashboard_crm-dark-mobile.png",
+    "bbox": null
+  },
+  {
+    "before": "before-clean",
+    "after": "demo",
+    "file": "_dashboard_crm-light-desktop.png",
+    "bbox": null
+  },
+  {
+    "before": "before-clean",
+    "after": "demo",
+    "file": "_dashboard_crm-light-mobile.png",
+    "bbox": null
+  },
+  {
+    "before": "before-clean",
+    "after": "demo",
+    "file": "_dashboard_crm-v1-dark-desktop.png",
+    "bbox": null
+  },
+  {
+    "before": "before-clean",
+    "after": "demo",
+    "file": "_dashboard_crm-v1-dark-mobile.png",
+    "bbox": null
+  },
+  {
+    "before": "before-clean",
+    "after": "demo",
+    "file": "_dashboard_crm-v1-light-desktop.png",
+    "bbox": null
+  },
+  {
+    "before": "before-clean",
+    "after": "demo",
+    "file": "_dashboard_crm-v1-light-mobile.png",
+    "bbox": null
+  },
+  {
+    "before": "before-clean",
+    "after": "demo",
+    "file": "_dashboard_default-dark-desktop.png",
+    "bbox": null
+  },
+  {
+    "before": "before-clean",
+    "after": "demo",
+    "file": "_dashboard_default-dark-mobile.png",
+    "bbox": null
+  },
+  {
+    "before": "before-clean",
+    "after": "demo",
+    "file": "_dashboard_default-light-desktop.png",
+    "bbox": null
+  },
+  {
+    "before": "before-clean",
+    "after": "demo",
+    "file": "_dashboard_default-light-mobile.png",
+    "bbox": null
+  },
+  {
+    "before": "before-clean",
+    "after": "demo",
+    "file": "_dashboard_default-v1-dark-desktop.png",
+    "bbox": null
+  },
+  {
+    "before": "before-clean",
+    "after": "demo",
+    "file": "_dashboard_default-v1-dark-mobile.png",
+    "bbox": null
+  },
+  {
+    "before": "before-clean",
+    "after": "demo",
+    "file": "_dashboard_default-v1-light-desktop.png",
+    "bbox": null
+  },
+  {
+    "before": "before-clean",
+    "after": "demo",
+    "file": "_dashboard_default-v1-light-mobile.png",
+    "bbox": null
+  },
+  {
+    "before": "before-clean",
+    "after": "demo",
+    "file": "_dashboard_finance-dark-desktop.png",
+    "bbox": [
+      1352,
+      1055,
+      1380,
+      1083
+    ]
+  },
+  {
+    "before": "before-clean",
+    "after": "demo",
+    "file": "_dashboard_finance-dark-mobile.png",
+    "bbox": null
+  },
+  {
+    "before": "before-clean",
+    "after": "demo",
+    "file": "_dashboard_finance-light-desktop.png",
+    "bbox": null
+  },
+  {
+    "before": "before-clean",
+    "after": "demo",
+    "file": "_dashboard_finance-light-mobile.png",
+    "bbox": null
+  },
+  {
+    "before": "before-clean",
+    "after": "demo",
+    "file": "_dashboard_finance-v1-dark-desktop.png",
+    "bbox": null
+  },
+  {
+    "before": "before-clean",
+    "after": "demo",
+    "file": "_dashboard_finance-v1-dark-mobile.png",
+    "bbox": null
+  },
+  {
+    "before": "before-clean",
+    "after": "demo",
+    "file": "_dashboard_finance-v1-light-desktop.png",
+    "bbox": null
+  },
+  {
+    "before": "before-clean",
+    "after": "demo",
+    "file": "_dashboard_finance-v1-light-mobile.png",
+    "bbox": null
+  },
+  {
+    "before": "demo",
+    "after": "db",
+    "file": "_dashboard_analytics-dark-desktop.png",
+    "bbox": null
+  },
+  {
+    "before": "demo",
+    "after": "db",
+    "file": "_dashboard_analytics-dark-mobile.png",
+    "bbox": null
+  },
+  {
+    "before": "demo",
+    "after": "db",
+    "file": "_dashboard_analytics-light-desktop.png",
+    "bbox": null
+  },
+  {
+    "before": "demo",
+    "after": "db",
+    "file": "_dashboard_analytics-light-mobile.png",
+    "bbox": null
+  },
+  {
+    "before": "demo",
+    "after": "db",
+    "file": "_dashboard_analytics-v1-dark-desktop.png",
+    "bbox": null
+  },
+  {
+    "before": "demo",
+    "after": "db",
+    "file": "_dashboard_analytics-v1-dark-mobile.png",
+    "bbox": null
+  },
+  {
+    "before": "demo",
+    "after": "db",
+    "file": "_dashboard_analytics-v1-light-desktop.png",
+    "bbox": null
+  },
+  {
+    "before": "demo",
+    "after": "db",
+    "file": "_dashboard_analytics-v1-light-mobile.png",
+    "bbox": null
+  },
+  {
+    "before": "demo",
+    "after": "db",
+    "file": "_dashboard_crm-dark-desktop.png",
+    "bbox": null
+  },
+  {
+    "before": "demo",
+    "after": "db",
+    "file": "_dashboard_crm-dark-mobile.png",
+    "bbox": null
+  },
+  {
+    "before": "demo",
+    "after": "db",
+    "file": "_dashboard_crm-light-desktop.png",
+    "bbox": null
+  },
+  {
+    "before": "demo",
+    "after": "db",
+    "file": "_dashboard_crm-light-mobile.png",
+    "bbox": null
+  },
+  {
+    "before": "demo",
+    "after": "db",
+    "file": "_dashboard_crm-v1-dark-desktop.png",
+    "bbox": null
+  },
+  {
+    "before": "demo",
+    "after": "db",
+    "file": "_dashboard_crm-v1-dark-mobile.png",
+    "bbox": null
+  },
+  {
+    "before": "demo",
+    "after": "db",
+    "file": "_dashboard_crm-v1-light-desktop.png",
+    "bbox": null
+  },
+  {
+    "before": "demo",
+    "after": "db",
+    "file": "_dashboard_crm-v1-light-mobile.png",
+    "bbox": null
+  },
+  {
+    "before": "demo",
+    "after": "db",
+    "file": "_dashboard_default-dark-desktop.png",
+    "bbox": null
+  },
+  {
+    "before": "demo",
+    "after": "db",
+    "file": "_dashboard_default-dark-mobile.png",
+    "bbox": null
+  },
+  {
+    "before": "demo",
+    "after": "db",
+    "file": "_dashboard_default-light-desktop.png",
+    "bbox": null
+  },
+  {
+    "before": "demo",
+    "after": "db",
+    "file": "_dashboard_default-light-mobile.png",
+    "bbox": null
+  },
+  {
+    "before": "demo",
+    "after": "db",
+    "file": "_dashboard_default-v1-dark-desktop.png",
+    "bbox": null
+  },
+  {
+    "before": "demo",
+    "after": "db",
+    "file": "_dashboard_default-v1-dark-mobile.png",
+    "bbox": null
+  },
+  {
+    "before": "demo",
+    "after": "db",
+    "file": "_dashboard_default-v1-light-desktop.png",
+    "bbox": null
+  },
+  {
+    "before": "demo",
+    "after": "db",
+    "file": "_dashboard_default-v1-light-mobile.png",
+    "bbox": null
+  },
+  {
+    "before": "demo",
+    "after": "db",
+    "file": "_dashboard_finance-dark-desktop.png",
+    "bbox": [
+      1352,
+      1055,
+      1380,
+      1083
+    ]
+  },
+  {
+    "before": "demo",
+    "after": "db",
+    "file": "_dashboard_finance-dark-mobile.png",
+    "bbox": null
+  },
+  {
+    "before": "demo",
+    "after": "db",
+    "file": "_dashboard_finance-light-desktop.png",
+    "bbox": [
+      1352,
+      1063,
+      1380,
+      1074
+    ]
+  },
+  {
+    "before": "demo",
+    "after": "db",
+    "file": "_dashboard_finance-light-mobile.png",
+    "bbox": null
+  },
+  {
+    "before": "demo",
+    "after": "db",
+    "file": "_dashboard_finance-v1-dark-desktop.png",
+    "bbox": null
+  },
+  {
+    "before": "demo",
+    "after": "db",
+    "file": "_dashboard_finance-v1-dark-mobile.png",
+    "bbox": null
+  },
+  {
+    "before": "demo",
+    "after": "db",
+    "file": "_dashboard_finance-v1-light-desktop.png",
+    "bbox": null
+  },
+  {
+    "before": "demo",
+    "after": "db",
+    "file": "_dashboard_finance-v1-light-mobile.png",
+    "bbox": null
+  }
+]

@@ -1,0 +1,3 @@
+PASS month-end CRM labels preserve clamped December/March subtraction
+PASS demo: both variants return empty missing-ID records and reject invalid dates/ranges
+PASS db: both variants return empty missing-ID records and reject invalid dates/ranges
