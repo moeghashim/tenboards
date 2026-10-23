@@ -1,6 +1,6 @@
 
 > tenboards@0.1.0 screenshots
-> node --experimental-strip-types scripts/screenshots.ts --base-url http://localhost:3001 --routes /dashboard/default,/auth/v1/login,/chat,/dashboard/default-v1 --output screenshots/010-after
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://localhost:3002 --routes /dashboard/default,/auth/v1/login,/chat,/dashboard/default-v1 --output screenshots/010-final
 
 PASS /chat light/desktop
 PASS /chat light/mobile
