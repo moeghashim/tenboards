@@ -269,3 +269,8 @@ Users and Roles use compact tables, semantic statuses, named search/filter contr
 ### Profile (v0.3 / 011)
 
 Profile retains Overview, Personal, Employment, Compensation, Time off and Documents. Jordan Lee, matching JL initials, reserved example-domain emails, neutral manager/contact and updater attribution replace the upstream identity and remote author avatar. A route-local detail field keeps labels and long values consistent; the document table scrolls locally, and tab navigation remains horizontally scrollable. Restricted compensation copy explicitly identifies the demo state; header/document actions retain their existing behavior. The Profile `--interactions` capture checks all six tabs, identity fields, keyboard menu focus return and document controls.
+
+
+### Authentication demos (v0.3 / 012)
+
+Auth V1 and V2 retain separate login/register routes, validation, masked password fields, autofill attributes and local submission toasts. They remain UI-only demos; Google and remember-me do not connect an authentication service (Better Auth remains v0.5). V2 copyright derives from the real request UTC year, serialized through its parent loader; no module clock or browser timezone difference enters hydration. Bare `/auth/v2` stays layout-only. A shared V2 form frame keeps navigation and footer in document flow, including short screens. Validation messages are associated with their inputs, and demo toasts use valid paragraph-compatible markup. `npm run screenshots -- --interactions` supports all five auth URLs; `--reload --hydration-delay-ms 1800 --timezone Pacific/Kiritimati` exercises real delayed hydration.

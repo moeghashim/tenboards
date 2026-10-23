@@ -1,43 +1,41 @@
 import { createFileRoute, Outlet } from "@tanstack/react-router";
 
-import { BrandMark, BrandWordmark } from "@/components/brand/brand";
-import { Separator } from "@/components/ui/separator";
+import { Brand } from "@/components/brand/brand";
+import { APP_CONFIG } from "@/config/app-config";
 
 export const Route = createFileRoute("/(main)/auth/v2")({
+  // Workers module clocks may start at the epoch. Serialize the real request's UTC year
+  // so server and hydrating client share one value, independent of browser timezone.
+  loader: () => ({ copyright: APP_CONFIG.copyright(new Date().getUTCFullYear()) }),
   component: Layout,
 });
 
 function Layout() {
   return (
-    <main>
-      <div className="grid h-dvh justify-center p-2 lg:grid-cols-2">
-        <div className="bg-primary relative order-2 hidden h-full rounded-3xl lg:flex">
-          <div className="text-primary-foreground absolute top-10 space-y-1 px-10">
-            <BrandMark className="size-10" />
-            <h1 className="text-2xl">
-              <BrandWordmark />
-            </h1>
-            <p className="text-sm">Design. Build. Launch. Repeat.</p>
-          </div>
-
-          <div className="absolute bottom-10 flex w-full justify-between px-10">
-            <div className="text-primary-foreground flex-1 space-y-1">
-              <h2 className="font-medium">Ready to launch?</h2>
-              <p className="text-sm">Clone the repo, install dependencies, and your dashboard is live in minutes.</p>
-            </div>
-            <Separator orientation="vertical" className="mx-3 h-auto!" />
-            <div className="text-primary-foreground flex-1 space-y-1">
-              <h2 className="font-medium">Need help?</h2>
-              <p className="text-sm">
-                Check out the docs or open an issue on GitHub, community support is just a click away.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="relative order-1 flex h-full">
-          <Outlet />
-        </div>
+    <main className="grid min-h-dvh lg:grid-cols-2">
+      <div className="flex min-w-0 flex-col">
+        <Outlet />
       </div>
+      <aside className="bg-muted m-2 hidden flex-col justify-between gap-12 rounded-xl p-10 lg:flex">
+        <div className="space-y-3">
+          <Brand className="text-foreground text-2xl" />
+          <p className="text-muted-foreground text-sm">Design. Build. Launch. Repeat.</p>
+        </div>
+        <div className="grid gap-6 xl:grid-cols-2">
+          <div className="space-y-2">
+            <h2 className="font-medium">Ready to launch?</h2>
+            <p className="text-muted-foreground text-sm">
+              Clone the repo, install dependencies, and explore your dashboard.
+            </p>
+          </div>
+          <div className="space-y-2">
+            <h2 className="font-medium">Need help?</h2>
+            <p className="text-muted-foreground text-sm">
+              Check the docs or open an issue on GitHub for community support.
+            </p>
+          </div>
+        </div>
+      </aside>
     </main>
   );
 }

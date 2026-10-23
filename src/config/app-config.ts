@@ -1,11 +1,9 @@
 import packageJson from "../../package.json";
 
-const currentYear = new Date().getFullYear();
-
 export const APP_CONFIG = {
   name: "tenboards",
   version: packageJson.version,
-  copyright: `© ${currentYear}, tenboards.`,
+  copyright: (year: number) => `© ${year}, tenboards.`,
   meta: {
     image: "https://tenboards.mohanadgh.workers.dev/og.png",
     title: "tenboards - Modern TanStack Start Dashboard Starter Template",
