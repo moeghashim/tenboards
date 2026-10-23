@@ -3,44 +3,15 @@ import { ArrowRight } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { CardAction, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { civilDate } from "@/server/data/core-dates";
 
 import { DashboardCard as Card } from "../../-components/dashboard/cards";
-
-const upcomingEvents = [
-  {
-    dayOffset: 6,
-    title: "Science Exhibition",
-    time: "08:30 AM - 12:30 PM",
-    type: "On Campus",
-  },
-  {
-    dayOffset: 9,
-    title: "Parents' Evening",
-    time: "02:00 PM - 05:00 PM",
-    type: "Meeting",
-  },
-  {
-    dayOffset: 12,
-    title: "Inter-House Sports Day",
-    time: "09:00 AM - 04:00 PM",
-    type: "Sports",
-  },
-  {
-    dayOffset: 15,
-    title: "Grade 11 Mock Exam",
-    time: "09:00 AM - 12:00 PM",
-    type: "Exam",
-  },
-  {
-    dayOffset: 18,
-    title: "Department Planning",
-    time: "03:30 PM - 04:30 PM",
-    type: "Meeting",
-  },
-];
+import { useDashboardData } from "./data-context";
 
 export function UpcomingEvents() {
-  const today = new Date(2026, 9, 23, 12); // Local calendar fields: the explicit demo day.
+  const data = useDashboardData();
+  const upcomingEvents = data.events;
+  const today = civilDate(data.day.date);
 
   return (
     <Card className="h-full">

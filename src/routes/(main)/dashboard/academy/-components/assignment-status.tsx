@@ -5,14 +5,7 @@ import { ChartTooltip } from "@/components/ui/chart";
 import { chartAxis, chartGrid, DashboardChart, DashboardTooltip, useChartMotion } from "@/lib/charts/theme";
 
 import { DashboardCard, SectionHeader } from "../../-components/dashboard/cards";
-
-const chartData = [
-  { className: "G11A", submitted: 14, pending: 18, overdue: 2 },
-  { className: "G11B", submitted: 22, pending: 7, overdue: 3 },
-  { className: "G11C", submitted: 10, pending: 19, overdue: 5 },
-  { className: "G11D", submitted: 17, pending: 15, overdue: 6 },
-  { className: "G11E", submitted: 24, pending: 4, overdue: 2 },
-];
+import { useDashboardData } from "./data-context";
 
 const config = {
   submitted: { label: "Submitted", color: "var(--success)" },
@@ -20,6 +13,7 @@ const config = {
   overdue: { label: "Overdue", color: "var(--danger)" },
 };
 export function AssignmentStatus() {
+  const chartData = useDashboardData().assignments;
   const motion = useChartMotion();
   return (
     <DashboardCard className="h-full">

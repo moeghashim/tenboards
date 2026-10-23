@@ -1,3 +1,4 @@
+import { dbAcademy, demoAcademy } from "./academy.ts";
 import { dbAccounts, demoAccounts } from "./accounts.ts";
 import { dbAnalytics, demoAnalytics } from "./analytics.ts";
 import { dbCalendar, demoCalendar } from "./calendar.ts";
@@ -7,9 +8,13 @@ import { dbDefault, demoDefault } from "./default.ts";
 import { dbEcommerce, demoEcommerce } from "./ecommerce.ts";
 import { dbFiles, demoFiles } from "./files.ts";
 import { dbFinance, demoFinance } from "./finance.ts";
+import { dbInfrastructure, demoInfrastructure } from "./infrastructure.ts";
 import { dbInvoices, demoInvoices } from "./invoices.ts";
 import { dbKanban, demoKanban } from "./kanban.ts";
+import { dbLogistics, demoLogistics } from "./logistics.ts";
 import { dbMail, demoMail } from "./mail.ts";
+import { dbPatients, demoPatients } from "./patients.ts";
+import { dbProductivity, demoProductivity } from "./productivity.ts";
 import { dbProducts, demoProducts } from "./products.ts";
 import { dbProfile, demoProfile } from "./profile.ts";
 import { dbRoles, demoRoles } from "./roles.ts";
@@ -39,6 +44,69 @@ function defineRead<Input, Output>(entry: {
 }
 
 export const readRegistry = [
+  defineRead({
+    module: "productivity",
+    read: "readProductivity",
+    demo: demoProductivity,
+    db: dbProductivity,
+    scenarios: [
+      { name: "all", input: {} },
+      { name: "task", input: { taskId: "0" } },
+      { name: "missing-task", input: { taskId: "missing" } },
+      { name: "project", input: { projectId: "0" } },
+      { name: "missing-project", input: { projectId: "missing" } },
+    ],
+  }),
+  defineRead({
+    module: "academy",
+    read: "readAcademy",
+    demo: demoAcademy,
+    db: dbAcademy,
+    scenarios: [
+      { name: "all", input: {} },
+      { name: "class", input: { classId: "G11A" } },
+      { name: "empty-class-relations", input: { classId: "G11E" } },
+      { name: "missing-class", input: { classId: "missing" } },
+    ],
+  }),
+  defineRead({
+    module: "logistics",
+    read: "readLogistics",
+    demo: demoLogistics,
+    db: dbLogistics,
+    scenarios: [
+      { name: "all", input: {} },
+      { name: "shipment", input: { id: "SDA-01-2401" } },
+      { name: "missing-shipment", input: { id: "missing" } },
+      { name: "customer", input: { customerId: "SDA-1001-2401-01" } },
+      { name: "missing-customer", input: { customerId: "missing" } },
+    ],
+  }),
+  defineRead({
+    module: "infrastructure",
+    read: "readInfrastructure",
+    demo: demoInfrastructure,
+    db: dbInfrastructure,
+    scenarios: [
+      { name: "all", input: {} },
+      { name: "group", input: { groupId: "0" } },
+      { name: "empty-group", input: { groupId: "3" } },
+      { name: "missing-group", input: { groupId: "missing" } },
+    ],
+  }),
+  defineRead({
+    module: "patients",
+    read: "readPatients",
+    demo: demoPatients,
+    db: dbPatients,
+    scenarios: [
+      { name: "all", input: {} },
+      { name: "patient", input: { id: "cardiac-04" } },
+      { name: "missing-patient", input: { id: "missing" } },
+      { name: "alarm", input: { status: "alarm" } },
+      { name: "stable", input: { status: "stable" } },
+    ],
+  }),
   defineRead({
     module: "default",
     read: "readDefault",

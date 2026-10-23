@@ -2,15 +2,18 @@ import * as React from "react";
 
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 
-import { shipments } from "./shipment-data";
+import { useDashboardData } from "./data-context";
+import { presentShipments } from "./shipment-data";
 import { ShipmentDetails } from "./shipment-details";
 import { ShipmentList } from "./shipment-list";
 
 export function Logistics() {
+  const data = useDashboardData();
+  const shipments = React.useMemo(() => presentShipments(data.shipments), [data.shipments]);
   const selectedTrigger = React.useRef<HTMLButtonElement | null>(null);
   const [detailsOpen, setDetailsOpen] = React.useState(false);
-  const [selectedShipmentId, setSelectedShipmentId] = React.useState<string | null>(shipments[0].id);
-  const selectedShipment = shipments.find((shipment) => shipment.id === selectedShipmentId) ?? shipments[0];
+  const [selectedShipmentId, setSelectedShipmentId] = React.useState<string | null>(shipments[0]?.id ?? null);
+  const selectedShipment = shipments.find((shipment) => shipment.id === selectedShipmentId) ?? shipments[0] ?? null;
 
   function handleSelectShipment(shipmentId: string, trigger: HTMLButtonElement) {
     selectedTrigger.current = trigger;
@@ -30,7 +33,7 @@ export function Logistics() {
         <div className="h-full overflow-hidden">
           <ShipmentList
             shipments={shipments}
-            selectedShipmentId={selectedShipmentId}
+            selectedShipmentId={selectedShipment?.id ?? null}
             onSelectShipment={handleSelectShipment}
           />
         </div>

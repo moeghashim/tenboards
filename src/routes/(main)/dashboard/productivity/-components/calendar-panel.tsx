@@ -6,7 +6,8 @@ import { Calendar, CalendarDayButton } from "@/components/ui/calendar";
 import { CardContent } from "@/components/ui/card";
 
 import { DashboardCard as Card, SectionHeader } from "../../-components/dashboard/cards";
-import { createDemoDay, createDemoMonth, demoDayLabel } from "./demo-date";
+import { useDashboardData } from "./data-context";
+import { createDemoDay, createDemoMonth } from "./demo-date";
 
 // Keep the shared day styling while wiring DayPicker's keyboard focus at this usage site.
 function ProductivityDayButton(props: React.ComponentProps<typeof CalendarDayButton>) {
@@ -20,13 +21,14 @@ function ProductivityDayButton(props: React.ComponentProps<typeof CalendarDayBut
 }
 
 export function CalendarPanel() {
-  const today = createDemoDay();
+  const day = useDashboardData().day;
+  const today = createDemoDay(day.date);
   const [date, setDate] = React.useState<Date | undefined>(today);
-  const [currentMonth, setCurrentMonth] = React.useState<Date>(createDemoMonth);
+  const [currentMonth, setCurrentMonth] = React.useState<Date>(() => createDemoMonth(day.date));
 
   return (
     <Card className="w-full" density="compact">
-      <SectionHeader title="Calendar" description={`Demo day · ${demoDayLabel}`} />
+      <SectionHeader title="Calendar" description={`Demo day · ${day.label}`} />
       <CardContent>
         <Calendar
           today={today}

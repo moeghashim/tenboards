@@ -9,18 +9,22 @@ import { Separator } from "@/components/ui/separator";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import type { PatientRecord } from "./data";
+import { useDashboardData } from "./data-context";
 import { PatientCard } from "./patient-card";
 import { PatientDetail } from "./patient-detail";
 import { PatientTrends } from "./patient-trends";
 
 interface PatientMonitoringProps {
   patients: PatientRecord[];
+  initialPatientId: string;
 }
 
-export function PatientMonitoring({ patients }: PatientMonitoringProps) {
-  const [selectedPatientId, setSelectedPatientId] = useState("cardiac-04");
+export function PatientMonitoring({ patients, initialPatientId }: PatientMonitoringProps) {
+  const { settings } = useDashboardData();
+  const [selectedPatientId, setSelectedPatientId] = useState(initialPatientId);
   const [acknowledgedPatientIds, setAcknowledgedPatientIds] = useState<string[]>([]);
   const selectedPatient = patients.find((patient) => patient.id === selectedPatientId) ?? patients[0];
+  if (!selectedPatient) return <div className="text-muted-foreground p-4">No patients available.</div>;
   const acknowledged = acknowledgedPatientIds.includes(selectedPatient.id);
   const hasActiveAlarm = selectedPatient.status === "alarm" && !acknowledged;
 
@@ -133,9 +137,9 @@ export function PatientMonitoring({ patients }: PatientMonitoringProps) {
             className="m-0 flex flex-col items-center justify-center gap-1 px-4 text-center"
             value="disclosure"
           >
-            <p className="text-sm font-medium">Full disclosure recording is active</p>
+            <p className="text-sm font-medium">{`Full disclosure recording is ${settings.recordingActive ? "active" : "inactive"}`}</p>
             <p className="text-muted-foreground text-xs">
-              Continuous waveform history is available for the last 24 hours.
+              {`Continuous waveform history is available for the last ${settings.historyHours} hours.`}
             </p>
           </TabsContent>
         </Tabs>

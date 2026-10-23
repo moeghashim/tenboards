@@ -3,8 +3,10 @@ import { CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 
 import { DashboardCard as Card, SectionHeader } from "../../-components/dashboard/cards";
+import { useDashboardData } from "./data-context";
 
 export function WeeklySummaryCard() {
+  const goals = useDashboardData().goals;
   return (
     <Card>
       <SectionHeader
@@ -16,10 +18,10 @@ export function WeeklySummaryCard() {
         }
       />
       <CardContent className="flex flex-col gap-4">
-        <p className="text-muted-foreground">You’re doing great. Keep the momentum going.</p>
+        <p className="text-muted-foreground">{goals.encouragement}</p>
         <div className="flex flex-col gap-2">
-          <div className="font-medium">4 of 6 goals completed</div>
-          <Progress aria-label="Weekly goals completed" value={66} />
+          <div className="font-medium">{`${goals.completed} of ${goals.total} goals completed`}</div>
+          <Progress aria-label="Weekly goals completed" value={goals.progress} />
         </div>
       </CardContent>
     </Card>

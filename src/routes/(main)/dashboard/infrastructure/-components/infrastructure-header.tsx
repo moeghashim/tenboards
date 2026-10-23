@@ -4,7 +4,10 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { InputGroup, InputGroupAddon, InputGroupInput } from "@/components/ui/input-group";
 
+import { useDashboardData } from "./data-context";
+
 export function InfrastructureHeader() {
+  const header = useDashboardData().header;
   return (
     <div className="flex flex-col gap-4">
       <div className="flex flex-col gap-2">
@@ -30,19 +33,20 @@ export function InfrastructureHeader() {
         </div>
         <div className="flex flex-wrap gap-2">
           <Badge variant="outline" className="h-auto gap-1 rounded-sm px-1.5 py-0.5">
-            <Container />6 Projects
+            <Container />
+            {`${header.projects} Projects`}
           </Badge>
           <Badge variant="outline" className="h-auto gap-1 rounded-sm px-1.5 py-0.5">
             <Box />
-            16 Environments
+            {`${header.environments} Environments`}
           </Badge>
           <Badge variant="outline" className="h-auto gap-1 rounded-sm px-1.5 py-0.5">
             <Server />
-            36 Servers
+            {`${header.servers} Servers`}
           </Badge>
           <Badge variant="outline" className="h-auto gap-1 rounded-sm px-1.5 py-0.5">
             <span className="bg-success size-2 rounded-full" />
-            99.93% Global Uptime
+            {`${header.uptime} Global Uptime`}
           </Badge>
         </div>
       </div>

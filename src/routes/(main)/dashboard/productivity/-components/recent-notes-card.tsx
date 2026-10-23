@@ -1,26 +1,18 @@
-import { format, subDays } from "date-fns";
 import { BookOpen, FileText } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { CardContent } from "@/components/ui/card";
 
 import { DashboardCard as Card, SectionHeader } from "../../-components/dashboard/cards";
-import { createDemoDay } from "./demo-date";
+import { useDashboardData } from "./data-context";
 
-const today = createDemoDay();
-
-function formatNoteDate(date: Date) {
-  return format(date, "MMM d");
-}
-
-const recentNotes = [
-  { title: "Design principles that scale", date: formatNoteDate(today), icon: FileText },
-  { title: `Content ideas – ${format(today, "MMMM")}`, date: formatNoteDate(subDays(today, 1)), icon: FileText },
-  { title: "Lessons from the week", date: formatNoteDate(subDays(today, 4)), icon: FileText },
-  { title: "Books I’m Reading", date: formatNoteDate(subDays(today, 5)), icon: BookOpen },
-] as const;
-
+const noteIcons = { FileText, BookOpen };
 export function RecentNotesCard() {
+  const recentNotes = useDashboardData().notes.map((note) => ({
+    ...note,
+    date: note.dateLabel,
+    icon: noteIcons[note.icon as keyof typeof noteIcons],
+  }));
   return (
     <Card>
       <SectionHeader

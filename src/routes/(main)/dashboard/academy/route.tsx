@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { createServerFn } from "@tanstack/react-start";
 
 import { BookOpenCheck, Megaphone, Plus } from "lucide-react";
 
@@ -6,21 +7,35 @@ import { Button } from "@/components/ui/button";
 
 import { AssignmentStatus } from "./-components/assignment-status";
 import { ClassSchedule } from "./-components/class-schedule";
+import { DataProvider, useDashboardData } from "./-components/data-context";
 import { KpiCards } from "./-components/kpi-cards";
 import { PerformanceHighlights } from "./-components/performance-highlights";
 import { UpcomingEvents } from "./-components/upcoming-events";
 
+const loadData = createServerFn({ method: "GET" }).handler(async () => {
+  const { readAcademy } = await import("@/server/data/academy");
+  return readAcademy();
+});
 export const Route = createFileRoute("/(main)/dashboard/academy")({
+  loader: () => loadData(),
   component: Page,
 });
 
 function Page() {
   return (
+    <DataProvider data={Route.useLoaderData()}>
+      <PageContent />
+    </DataProvider>
+  );
+}
+function PageContent() {
+  const data = useDashboardData();
+  return (
     <div className="flex flex-col gap-4">
       <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
         <div className="space-y-1">
           <h1 className="text-2xl font-medium tracking-tight">Academy Dashboard</h1>
-          <p className="text-muted-foreground text-sm">Teaching overview · Demo day: October 23, 2026.</p>
+          <p className="text-muted-foreground text-sm">{`Teaching overview · Demo day: ${data.day.label}.`}</p>
         </div>
 
         <div className="flex flex-wrap items-center gap-2 lg:w-fit">

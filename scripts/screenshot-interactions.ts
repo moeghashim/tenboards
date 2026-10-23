@@ -733,7 +733,10 @@ export async function captureInteractions(
     if (await page.evaluate(() => document.documentElement.scrollWidth > innerWidth))
       throw new Error("Page-wide overflow");
     await page.getByRole("button", { name: "Project actions for Inbox", exact: true }).press("Enter");
-    await page.getByRole("menuitem", { name: "Project Settings", exact: true }).waitFor();
+    await page
+      .getByRole("menu", { name: "Project actions for Inbox", exact: true })
+      .getByRole("menuitem", { name: "Project Settings", exact: true })
+      .waitFor();
     return [
       "Enter collapses/reopens project",
       "Named project/environment action menus open; Escape closes",

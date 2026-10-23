@@ -27,88 +27,18 @@ export interface InfrastructureGroup {
   rows: InfrastructureEnvironment[];
 }
 
-export const infrastructureGroups: InfrastructureGroup[] = [
-  {
-    name: "Admin Console",
-    organization: "Weblabs Studio",
-    rows: [
-      {
-        domain: "workspace.example.com/dashboard",
-        platform: {
-          name: "Next.js",
-          icon: siNextdotjs,
-        },
-        environment: "Expired",
-        status: "Unhealthy",
-        latency: "86ms",
-        uptime: "8d 23h",
-        server: "Hetzner Cloud",
-        countryCode: "DE",
-        plan: "CX33, Falkenstein",
-        resources: { cpu: 60, ram: 73, disk: 41 },
-      },
-    ],
-  },
-  {
-    name: "Analytics",
-    organization: "Aiy Cap",
-    rows: [
-      {
-        domain: "workspace.example.com/analytics",
-        platform: {
-          name: "React",
-          icon: siReact,
-        },
-        environment: "Production",
-        status: "Online",
-        latency: "246ms",
-        uptime: "9d 23h",
-        server: "AWS",
-        countryCode: "NL",
-        plan: "eu-west-1, Amsterdam",
-        resources: { cpu: 49, ram: 42, disk: 44 },
-      },
-      {
-        domain: "workspace.example.com/reports",
-        platform: {
-          name: "Remix",
-          icon: siRemix,
-        },
-        environment: "Staging",
-        status: "Online",
-        latency: "110ms",
-        uptime: "9d 23h",
-        server: "Azure",
-        countryCode: "EE",
-        plan: "North Europe, Tallinn",
-        resources: { cpu: 37, ram: 46, disk: 64 },
-      },
-    ],
-  },
-  {
-    name: "Kanban",
-    organization: "Storeframe",
-    rows: [
-      {
-        domain: "workspace.example.com/kanban",
-        platform: {
-          name: "Node.js",
-          icon: siNodedotjs,
-        },
-        environment: "Production",
-        status: "Online",
-        latency: "25ms",
-        uptime: "10d 23h",
-        server: "Bare Metal / Custom",
-        countryCode: "DE",
-        plan: "EX101, Falkenstein",
-        resources: { cpu: 1, ram: 21, disk: 4 },
-      },
-    ],
-  },
-  {
-    name: "Inbox",
-    organization: "Acme Corp",
-    rows: [],
-  },
-];
+import type { InfrastructureData } from "@/server/data/infrastructure.types";
+
+const platformIcons = { siNextdotjs, siNodedotjs, siReact, siRemix };
+export function presentGroups(groups: InfrastructureData["groups"]): InfrastructureGroup[] {
+  return groups.map((group) => ({
+    ...group,
+    rows: group.rows.map(
+      (row) =>
+        ({
+          ...row,
+          platform: { name: row.platform.name, icon: platformIcons[row.platform.icon as keyof typeof platformIcons] },
+        }) as InfrastructureEnvironment,
+    ),
+  }));
+}
