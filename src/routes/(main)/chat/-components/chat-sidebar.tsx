@@ -26,7 +26,8 @@ import {
 } from "@/components/ui/sidebar";
 import { getInitials } from "@/lib/utils";
 
-import { channelItems, currentUser, navItems, viewItems } from "./data";
+import { channelItems as channels, type NavItem, navItems as nav, viewItems as views } from "./data";
+import { useChatData } from "./use-chat";
 
 const channelBrandIcons = {
   whatsapp: siWhatsapp,
@@ -35,6 +36,12 @@ const channelBrandIcons = {
 } as const;
 
 export function ChatSidebar() {
+  const { currentUser, counts } = useChatData();
+  const withCounts = (items: NavItem[]) =>
+    items.map((item) => ({ ...item, label: counts.find((c) => c.id === item.id)?.label }));
+  const channelItems = withCounts(channels),
+    navItems = withCounts(nav),
+    viewItems = withCounts(views);
   return (
     <Sidebar
       collapsible="offcanvas"

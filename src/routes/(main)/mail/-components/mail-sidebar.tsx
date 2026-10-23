@@ -32,12 +32,23 @@ import {
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { getInitials } from "@/lib/utils";
 
-import { accounts, type MailNavItem, mailNavigation } from "./data";
+import { type MailAccount, type MailNavItem, mailNavigation as navigation } from "./data";
+import { useMailData } from "./use-mail";
 
 export function MailSidebar() {
+  const { accounts, counts } = useMailData();
+  const mailNavigation = Object.fromEntries(
+    Object.entries(navigation).map(([key, items]) => [
+      key,
+      items.map((item) => ({ ...item, label: counts.find((c) => c.id === item.id)?.label })),
+    ]),
+  ) as typeof navigation;
   const { state } = useSidebar();
   const isCollapsed = state === "collapsed";
-  const [selectedAccount, setSelectedAccount] = React.useState(accounts[0]);
+  const [selectedId, setSelectedId] = React.useState(accounts[0]?.id);
+  const selectedAccount = accounts.find((a) => a.id === selectedId) ?? accounts[0];
+  const setSelectedAccount = (a: MailAccount) => setSelectedId(a.id);
+  if (!selectedAccount) return null;
 
   return (
     <Sidebar collapsible="icon" className="**:data-[sidebar=sidebar]:bg-muted absolute inset-y-0 h-full">
@@ -154,7 +165,7 @@ const accountTriggerClassName = cn(
   "aria-pressed:ring-primary aria-pressed:ring",
 );
 
-type Account = (typeof accounts)[number];
+type Account = MailAccount;
 
 function AccountMarker({ account, isSelected = false }: { account: Account; isSelected?: boolean }) {
   return (
@@ -182,6 +193,7 @@ function AccountMenuContent({
   onSelectAccount: (account: Account) => void;
   showAccounts?: boolean;
 } & Pick<React.ComponentProps<typeof DropdownMenuContent>, "align" | "side">) {
+  const { accounts } = useMailData();
   return (
     <DropdownMenuContent className="w-56" {...props}>
       {showAccounts && (

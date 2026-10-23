@@ -43,6 +43,13 @@
       "when": 1792786594954,
       "tag": "0005_abandoned_red_ghost",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1792786953489,
+      "tag": "0006_useful_quentin_quire",
+      "breakpoints": true
     }
   ]
 }
