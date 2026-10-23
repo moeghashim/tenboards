@@ -1,0 +1,73 @@
+{
+  "baseURL": "https://fdd1e5f5-tenboards.mohanadgh.workers.dev/",
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": false,
+  "interactions": true,
+  "results": [
+    {
+      "route": "/dashboard/infrastructure",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_infrastructure-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_infrastructure-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Enter collapses/reopens project",
+        "Named project/environment action menus open; Escape closes",
+        "All four fixture rows and empty project retained",
+        "Search remains a demo input; no page-wide overflow",
+        "Empty-project menu open"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/infrastructure",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_infrastructure-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_infrastructure-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Enter collapses/reopens project",
+        "Named project/environment action menus open; Escape closes",
+        "All four fixture rows and empty project retained",
+        "Search remains a demo input; no page-wide overflow",
+        "Empty-project menu open"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/infrastructure",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_infrastructure-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_infrastructure-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Enter collapses/reopens project",
+        "Named project/environment action menus open; Escape closes",
+        "All four fixture rows and empty project retained",
+        "Search remains a demo input; no page-wide overflow",
+        "Empty-project menu open"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/infrastructure",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_infrastructure-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_infrastructure-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Enter collapses/reopens project",
+        "Named project/environment action menus open; Escape closes",
+        "All four fixture rows and empty project retained",
+        "Search remains a demo input; no page-wide overflow",
+        "Empty-project menu open"
+      ],
+      "errors": []
+    }
+  ]
+}

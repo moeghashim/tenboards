@@ -1,0 +1,8 @@
+
+> tenboards@0.1.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://127.0.0.1:3010 --routes /dashboard/infrastructure --preset iris --output screenshots/v02-010/iris
+
+PASS /dashboard/infrastructure light/desktop direct
+PASS /dashboard/infrastructure light/mobile direct
+PASS /dashboard/infrastructure dark/desktop direct
+PASS /dashboard/infrastructure dark/mobile direct

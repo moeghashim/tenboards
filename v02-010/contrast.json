@@ -1,0 +1,1738 @@
+[
+  {
+    "preset": "default",
+    "mode": "light",
+    "minimumRatio": 3.409394790049497,
+    "checks": [
+      {
+        "pair": "text/bg",
+        "ratio": 16.185205530756512,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "text-muted/bg",
+        "ratio": 6.517531425861518,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary/bg",
+        "ratio": 8.279881915754094,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/bg",
+        "ratio": 6.768555954441135,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/bg",
+        "ratio": 6.503511535344987,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/bg",
+        "ratio": 7.032441410924055,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/bg",
+        "ratio": 8.279881915754094,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "ring/bg",
+        "ratio": 8.279881915754094,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "border-strong/bg",
+        "ratio": 3.629742590033775,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "text/surface",
+        "ratio": 17.050244522154845,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "text-muted/surface",
+        "ratio": 6.865869221159854,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary/surface",
+        "ratio": 8.722410784954462,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/surface",
+        "ratio": 7.130310076434003,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/surface",
+        "ratio": 6.8511000196797465,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/surface",
+        "ratio": 7.408299228337219,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/surface",
+        "ratio": 8.722410784954462,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "ring/surface",
+        "ratio": 8.722410784954462,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "border-strong/surface",
+        "ratio": 3.8237388209220224,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "text/surface-raised",
+        "ratio": 15.202663561861034,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "text-muted/surface-raised",
+        "ratio": 6.12187700260843,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary/surface-raised",
+        "ratio": 7.777241929856625,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/surface-raised",
+        "ratio": 6.357662791458547,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/surface-raised",
+        "ratio": 6.108708206061984,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/surface-raised",
+        "ratio": 6.605528770432645,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/surface-raised",
+        "ratio": 7.777241929856625,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "ring/surface-raised",
+        "ratio": 7.777241929856625,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "border-strong/surface-raised",
+        "ratio": 3.409394790049497,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary",
+        "ratio": 8.722410784954462,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/success-surface",
+        "ratio": 6.548381622030511,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/warning-surface",
+        "ratio": 6.4666537672150755,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/danger-surface",
+        "ratio": 6.697882142699773,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/info-surface",
+        "ratio": 7.91430763238414,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary hover on bg",
+        "ratio": 5.3918493799201235,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary hover on surface",
+        "ratio": 5.303151713579225,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary hover on surface-raised",
+        "ratio": 5.500366708981594,
+        "minimum": 4.5,
+        "pass": true
+      }
+    ]
+  },
+  {
+    "preset": "default",
+    "mode": "dark",
+    "minimumRatio": 3.702400190734947,
+    "checks": [
+      {
+        "pair": "text/bg",
+        "ratio": 17.02378039296968,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "text-muted/bg",
+        "ratio": 9.495843714212665,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary/bg",
+        "ratio": 10.483104350561602,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/bg",
+        "ratio": 13.233357544006848,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/bg",
+        "ratio": 14.920066118410336,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/bg",
+        "ratio": 9.826589037165848,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/bg",
+        "ratio": 10.483104350561602,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "ring/bg",
+        "ratio": 10.483104350561602,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "border-strong/bg",
+        "ratio": 4.8401719069470435,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "text/surface",
+        "ratio": 15.468636839952296,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "text-muted/surface",
+        "ratio": 8.628386557709579,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary/surface",
+        "ratio": 9.52545970465693,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/surface",
+        "ratio": 12.024473841663328,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/surface",
+        "ratio": 13.557099485909543,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/surface",
+        "ratio": 8.928917883253954,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/surface",
+        "ratio": 9.52545970465693,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "ring/surface",
+        "ratio": 9.52545970465693,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "border-strong/surface",
+        "ratio": 4.3980161716855,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "text/surface-raised",
+        "ratio": 13.022026693617267,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "text-muted/surface-raised",
+        "ratio": 7.26367043456229,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary/surface-raised",
+        "ratio": 8.018857241683147,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/surface-raised",
+        "ratio": 10.122612675114384,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/surface-raised",
+        "ratio": 11.412829276434381,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/surface-raised",
+        "ratio": 7.5166679665360965,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/surface-raised",
+        "ratio": 8.018857241683147,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "ring/surface-raised",
+        "ratio": 8.018857241683147,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "border-strong/surface-raised",
+        "ratio": 3.702400190734947,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary",
+        "ratio": 10.483104350561602,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/success-surface",
+        "ratio": 10.592214864729884,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/warning-surface",
+        "ratio": 11.799433976373361,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/danger-surface",
+        "ratio": 8.154615074484635,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/info-surface",
+        "ratio": 8.186373632165955,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary hover on bg",
+        "ratio": 7.051031980326441,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary hover on surface",
+        "ratio": 7.22116508546023,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary hover on surface-raised",
+        "ratio": 7.464241661617605,
+        "minimum": 4.5,
+        "pass": true
+      }
+    ]
+  },
+  {
+    "preset": "graphite",
+    "mode": "light",
+    "minimumRatio": 3.409394790049497,
+    "checks": [
+      {
+        "pair": "text/bg",
+        "ratio": 16.185205530756512,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "text-muted/bg",
+        "ratio": 6.517531425861518,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary/bg",
+        "ratio": 11.047128373430745,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/bg",
+        "ratio": 6.768555954441135,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/bg",
+        "ratio": 6.503511535344987,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/bg",
+        "ratio": 7.032441410924055,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/bg",
+        "ratio": 8.279881915754094,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "ring/bg",
+        "ratio": 11.047128373430745,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "border-strong/bg",
+        "ratio": 3.629742590033775,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "text/surface",
+        "ratio": 17.050244522154845,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "text-muted/surface",
+        "ratio": 6.865869221159854,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary/surface",
+        "ratio": 11.637556265609247,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/surface",
+        "ratio": 7.130310076434003,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/surface",
+        "ratio": 6.8511000196797465,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/surface",
+        "ratio": 7.408299228337219,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/surface",
+        "ratio": 8.722410784954462,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "ring/surface",
+        "ratio": 11.637556265609247,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "border-strong/surface",
+        "ratio": 3.8237388209220224,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "text/surface-raised",
+        "ratio": 15.202663561861034,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "text-muted/surface-raised",
+        "ratio": 6.12187700260843,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary/surface-raised",
+        "ratio": 10.376499431336338,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/surface-raised",
+        "ratio": 6.357662791458547,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/surface-raised",
+        "ratio": 6.108708206061984,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/surface-raised",
+        "ratio": 6.605528770432645,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/surface-raised",
+        "ratio": 7.777241929856625,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "ring/surface-raised",
+        "ratio": 10.376499431336338,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "border-strong/surface-raised",
+        "ratio": 3.409394790049497,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary",
+        "ratio": 11.637556265609247,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/success-surface",
+        "ratio": 6.548381622030511,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/warning-surface",
+        "ratio": 6.4666537672150755,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/danger-surface",
+        "ratio": 6.697882142699773,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/info-surface",
+        "ratio": 7.91430763238414,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary hover on bg",
+        "ratio": 6.398602934676907,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary hover on surface",
+        "ratio": 6.281830802529119,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary hover on surface-raised",
+        "ratio": 6.539603967006486,
+        "minimum": 4.5,
+        "pass": true
+      }
+    ]
+  },
+  {
+    "preset": "graphite",
+    "mode": "dark",
+    "minimumRatio": 3.702400190734947,
+    "checks": [
+      {
+        "pair": "text/bg",
+        "ratio": 17.02378039296968,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "text-muted/bg",
+        "ratio": 9.495843714212665,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary/bg",
+        "ratio": 12.965891420391417,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/bg",
+        "ratio": 13.233357544006848,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/bg",
+        "ratio": 14.920066118410336,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/bg",
+        "ratio": 9.826589037165848,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/bg",
+        "ratio": 10.483104350561602,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "ring/bg",
+        "ratio": 12.965891420391417,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "border-strong/bg",
+        "ratio": 4.8401719069470435,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "text/surface",
+        "ratio": 15.468636839952296,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "text-muted/surface",
+        "ratio": 8.628386557709579,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary/surface",
+        "ratio": 11.781441081742065,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/surface",
+        "ratio": 12.024473841663328,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/surface",
+        "ratio": 13.557099485909543,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/surface",
+        "ratio": 8.928917883253954,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/surface",
+        "ratio": 9.52545970465693,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "ring/surface",
+        "ratio": 11.781441081742065,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "border-strong/surface",
+        "ratio": 4.3980161716855,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "text/surface-raised",
+        "ratio": 13.022026693617267,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "text-muted/surface-raised",
+        "ratio": 7.26367043456229,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary/surface-raised",
+        "ratio": 9.918019399064088,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/surface-raised",
+        "ratio": 10.122612675114384,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/surface-raised",
+        "ratio": 11.412829276434381,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/surface-raised",
+        "ratio": 7.5166679665360965,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/surface-raised",
+        "ratio": 8.018857241683147,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "ring/surface-raised",
+        "ratio": 9.918019399064088,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "border-strong/surface-raised",
+        "ratio": 3.702400190734947,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary",
+        "ratio": 12.965891420391417,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/success-surface",
+        "ratio": 10.592214864729884,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/warning-surface",
+        "ratio": 11.799433976373361,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/danger-surface",
+        "ratio": 8.154615074484635,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/info-surface",
+        "ratio": 8.186373632165955,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary hover on bg",
+        "ratio": 8.58205002717905,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary hover on surface",
+        "ratio": 8.77429755454818,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary hover on surface-raised",
+        "ratio": 9.049517607937668,
+        "minimum": 4.5,
+        "pass": true
+      }
+    ]
+  },
+  {
+    "preset": "pine",
+    "mode": "light",
+    "minimumRatio": 3.409394790049497,
+    "checks": [
+      {
+        "pair": "text/bg",
+        "ratio": 16.185205530756512,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "text-muted/bg",
+        "ratio": 6.517531425861518,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary/bg",
+        "ratio": 7.198754910958553,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/bg",
+        "ratio": 6.768555954441135,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/bg",
+        "ratio": 6.503511535344987,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/bg",
+        "ratio": 7.032441410924055,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/bg",
+        "ratio": 8.279881915754094,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "ring/bg",
+        "ratio": 7.198754910958553,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "border-strong/bg",
+        "ratio": 3.629742590033775,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "text/surface",
+        "ratio": 17.050244522154845,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "text-muted/surface",
+        "ratio": 6.865869221159854,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary/surface",
+        "ratio": 7.583501565900062,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/surface",
+        "ratio": 7.130310076434003,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/surface",
+        "ratio": 6.8511000196797465,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/surface",
+        "ratio": 7.408299228337219,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/surface",
+        "ratio": 8.722410784954462,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "ring/surface",
+        "ratio": 7.583501565900062,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "border-strong/surface",
+        "ratio": 3.8237388209220224,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "text/surface-raised",
+        "ratio": 15.202663561861034,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "text-muted/surface-raised",
+        "ratio": 6.12187700260843,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary/surface-raised",
+        "ratio": 6.761746013520189,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/surface-raised",
+        "ratio": 6.357662791458547,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/surface-raised",
+        "ratio": 6.108708206061984,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/surface-raised",
+        "ratio": 6.605528770432645,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/surface-raised",
+        "ratio": 7.777241929856625,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "ring/surface-raised",
+        "ratio": 6.761746013520189,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "border-strong/surface-raised",
+        "ratio": 3.409394790049497,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary",
+        "ratio": 7.583501565900062,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/success-surface",
+        "ratio": 6.548381622030511,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/warning-surface",
+        "ratio": 6.4666537672150755,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/danger-surface",
+        "ratio": 6.697882142699773,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/info-surface",
+        "ratio": 7.91430763238414,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary hover on bg",
+        "ratio": 4.746641956846928,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary hover on surface",
+        "ratio": 4.668071472980808,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary hover on surface-raised",
+        "ratio": 4.841516309037626,
+        "minimum": 4.5,
+        "pass": true
+      }
+    ]
+  },
+  {
+    "preset": "pine",
+    "mode": "dark",
+    "minimumRatio": 3.702400190734947,
+    "checks": [
+      {
+        "pair": "text/bg",
+        "ratio": 17.02378039296968,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "text-muted/bg",
+        "ratio": 9.495843714212665,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary/bg",
+        "ratio": 12.560697975588349,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/bg",
+        "ratio": 13.233357544006848,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/bg",
+        "ratio": 14.920066118410336,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/bg",
+        "ratio": 9.826589037165848,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/bg",
+        "ratio": 10.483104350561602,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "ring/bg",
+        "ratio": 12.560697975588349,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "border-strong/bg",
+        "ratio": 4.8401719069470435,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "text/surface",
+        "ratio": 15.468636839952296,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "text-muted/surface",
+        "ratio": 8.628386557709579,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary/surface",
+        "ratio": 11.413262563052038,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/surface",
+        "ratio": 12.024473841663328,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/surface",
+        "ratio": 13.557099485909543,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/surface",
+        "ratio": 8.928917883253954,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/surface",
+        "ratio": 9.52545970465693,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "ring/surface",
+        "ratio": 11.413262563052038,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "border-strong/surface",
+        "ratio": 4.3980161716855,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "text/surface-raised",
+        "ratio": 13.022026693617267,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "text-muted/surface-raised",
+        "ratio": 7.26367043456229,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary/surface-raised",
+        "ratio": 9.608074149976916,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/surface-raised",
+        "ratio": 10.122612675114384,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/surface-raised",
+        "ratio": 11.412829276434381,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/surface-raised",
+        "ratio": 7.5166679665360965,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/surface-raised",
+        "ratio": 8.018857241683147,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "ring/surface-raised",
+        "ratio": 9.608074149976916,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "border-strong/surface-raised",
+        "ratio": 3.702400190734947,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary",
+        "ratio": 12.560697975588349,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/success-surface",
+        "ratio": 10.592214864729884,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/warning-surface",
+        "ratio": 11.799433976373361,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/danger-surface",
+        "ratio": 8.154615074484635,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/info-surface",
+        "ratio": 8.186373632165955,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary hover on bg",
+        "ratio": 8.313488039325,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary hover on surface",
+        "ratio": 8.499311309519713,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary hover on surface-raised",
+        "ratio": 8.763644866603512,
+        "minimum": 4.5,
+        "pass": true
+      }
+    ]
+  },
+  {
+    "preset": "iris",
+    "mode": "light",
+    "minimumRatio": 3.409394790049497,
+    "checks": [
+      {
+        "pair": "text/bg",
+        "ratio": 16.185205530756512,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "text-muted/bg",
+        "ratio": 6.517531425861518,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary/bg",
+        "ratio": 8.526875982841268,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/bg",
+        "ratio": 6.768555954441135,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/bg",
+        "ratio": 6.503511535344987,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/bg",
+        "ratio": 7.032441410924055,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/bg",
+        "ratio": 8.279881915754094,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "ring/bg",
+        "ratio": 8.526875982841268,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "border-strong/bg",
+        "ratio": 3.629742590033775,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "text/surface",
+        "ratio": 17.050244522154845,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "text-muted/surface",
+        "ratio": 6.865869221159854,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary/surface",
+        "ratio": 8.98260576557149,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/surface",
+        "ratio": 7.130310076434003,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/surface",
+        "ratio": 6.8511000196797465,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/surface",
+        "ratio": 7.408299228337219,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/surface",
+        "ratio": 8.722410784954462,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "ring/surface",
+        "ratio": 8.98260576557149,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "border-strong/surface",
+        "ratio": 3.8237388209220224,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "text/surface-raised",
+        "ratio": 15.202663561861034,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "text-muted/surface-raised",
+        "ratio": 6.12187700260843,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary/surface-raised",
+        "ratio": 8.009241931127324,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/surface-raised",
+        "ratio": 6.357662791458547,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/surface-raised",
+        "ratio": 6.108708206061984,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/surface-raised",
+        "ratio": 6.605528770432645,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/surface-raised",
+        "ratio": 7.777241929856625,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "ring/surface-raised",
+        "ratio": 8.009241931127324,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "border-strong/surface-raised",
+        "ratio": 3.409394790049497,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary",
+        "ratio": 8.98260576557149,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/success-surface",
+        "ratio": 6.548381622030511,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/warning-surface",
+        "ratio": 6.4666537672150755,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/danger-surface",
+        "ratio": 6.697882142699773,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/info-surface",
+        "ratio": 7.91430763238414,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary hover on bg",
+        "ratio": 5.72527159524391,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary hover on surface",
+        "ratio": 5.630930364596223,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary hover on surface-raised",
+        "ratio": 5.840590039584051,
+        "minimum": 4.5,
+        "pass": true
+      }
+    ]
+  },
+  {
+    "preset": "iris",
+    "mode": "dark",
+    "minimumRatio": 3.702400190734947,
+    "checks": [
+      {
+        "pair": "text/bg",
+        "ratio": 17.02378039296968,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "text-muted/bg",
+        "ratio": 9.495843714212665,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary/bg",
+        "ratio": 10.064897297152664,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/bg",
+        "ratio": 13.233357544006848,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/bg",
+        "ratio": 14.920066118410336,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/bg",
+        "ratio": 9.826589037165848,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/bg",
+        "ratio": 10.483104350561602,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "ring/bg",
+        "ratio": 10.064897297152664,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "border-strong/bg",
+        "ratio": 4.8401719069470435,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "text/surface",
+        "ratio": 15.468636839952296,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "text-muted/surface",
+        "ratio": 8.628386557709579,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary/surface",
+        "ratio": 9.145456386724037,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/surface",
+        "ratio": 12.024473841663328,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/surface",
+        "ratio": 13.557099485909543,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/surface",
+        "ratio": 8.928917883253954,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/surface",
+        "ratio": 9.52545970465693,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "ring/surface",
+        "ratio": 9.145456386724037,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "border-strong/surface",
+        "ratio": 4.3980161716855,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "text/surface-raised",
+        "ratio": 13.022026693617267,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "text-muted/surface-raised",
+        "ratio": 7.26367043456229,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary/surface-raised",
+        "ratio": 7.6989574728163435,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/surface-raised",
+        "ratio": 10.122612675114384,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/surface-raised",
+        "ratio": 11.412829276434381,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/surface-raised",
+        "ratio": 7.5166679665360965,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/surface-raised",
+        "ratio": 8.018857241683147,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "ring/surface-raised",
+        "ratio": 7.6989574728163435,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "border-strong/surface-raised",
+        "ratio": 3.702400190734947,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary",
+        "ratio": 10.064897297152664,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/success-surface",
+        "ratio": 10.592214864729884,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/warning-surface",
+        "ratio": 11.799433976373361,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/danger-surface",
+        "ratio": 8.154615074484635,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/info-surface",
+        "ratio": 8.186373632165955,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary hover on bg",
+        "ratio": 6.791445596412162,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary hover on surface",
+        "ratio": 6.9561605928565635,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary hover on surface-raised",
+        "ratio": 7.192122447738003,
+        "minimum": 4.5,
+        "pass": true
+      }
+    ]
+  }
+]
