@@ -1,0 +1,927 @@
+[
+  {
+    "file": "_dashboard_file-manager-light-desktop-interactive-list-metadata.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_file-manager-light-desktop-interactive-list-metadata.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_file-manager-dark-mobile-interactive-grid-starred.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_file-manager-dark-mobile-interactive-grid-starred.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_file-manager-dark-mobile-interactive.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_file-manager-dark-mobile-interactive.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_kanban-dark-desktop-interactive-controls.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_kanban-dark-desktop-interactive-controls.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_calendar-dark-desktop-interactive-controls.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_calendar-dark-desktop-interactive-controls.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_tasks-dark-desktop-interactive-empty.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_tasks-dark-desktop-interactive-empty.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_calendar-light-desktop-interactive-day.png",
+    "mode": "demo",
+    "difference": [
+      361,
+      840,
+      1406,
+      850
+    ]
+  },
+  {
+    "file": "_dashboard_calendar-light-desktop-interactive-day.png",
+    "mode": "db",
+    "difference": [
+      361,
+      840,
+      1406,
+      850
+    ]
+  },
+  {
+    "file": "_dashboard_calendar-dark-mobile-interactive-day.png",
+    "mode": "demo",
+    "difference": [
+      65,
+      921,
+      369,
+      930
+    ]
+  },
+  {
+    "file": "_dashboard_calendar-dark-mobile-interactive-day.png",
+    "mode": "db",
+    "difference": [
+      65,
+      921,
+      369,
+      930
+    ]
+  },
+  {
+    "file": "_dashboard_file-manager-light-mobile-interactive-list-metadata.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_file-manager-light-mobile-interactive-list-metadata.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_file-manager-light-mobile-interactive-grid-starred.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_file-manager-light-mobile-interactive-grid-starred.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_file-manager-dark-desktop-interactive.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_file-manager-dark-desktop-interactive.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_kanban-dark-desktop-interactive-table.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_kanban-dark-desktop-interactive-table.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_tasks-light-mobile-interactive-controls.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_tasks-light-mobile-interactive-controls.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_tasks-dark-desktop-interactive-filtered-selected.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_tasks-dark-desktop-interactive-filtered-selected.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_kanban-dark-mobile-interactive-table.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_kanban-dark-mobile-interactive-table.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_kanban-dark-mobile-interactive-drag-overlay.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_kanban-dark-mobile-interactive-drag-overlay.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_calendar-dark-desktop-interactive.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_calendar-dark-desktop-interactive.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_calendar-light-mobile-interactive-controls.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_calendar-light-mobile-interactive-controls.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_tasks-light-desktop-interactive-filtered-selected.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_tasks-light-desktop-interactive-filtered-selected.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_kanban-light-mobile-interactive-controls.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_kanban-light-mobile-interactive-controls.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_tasks-dark-mobile-interactive-empty.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_tasks-dark-mobile-interactive-empty.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_kanban-light-mobile-interactive-empty-column.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_kanban-light-mobile-interactive-empty-column.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_calendar-dark-mobile-interactive-week.png",
+    "mode": "demo",
+    "difference": [
+      32,
+      379,
+      373,
+      970
+    ]
+  },
+  {
+    "file": "_dashboard_calendar-dark-mobile-interactive-week.png",
+    "mode": "db",
+    "difference": [
+      32,
+      379,
+      373,
+      970
+    ]
+  },
+  {
+    "file": "_dashboard_kanban-dark-mobile-interactive-board.png",
+    "mode": "demo",
+    "difference": [
+      39,
+      291,
+      377,
+      838
+    ]
+  },
+  {
+    "file": "_dashboard_kanban-dark-mobile-interactive-board.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_tasks-dark-desktop-interactive.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_tasks-dark-desktop-interactive.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_kanban-light-mobile-interactive.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_kanban-light-mobile-interactive.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_kanban-light-desktop-interactive-list.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_kanban-light-desktop-interactive-list.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_calendar-dark-desktop-interactive-month.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_calendar-dark-desktop-interactive-month.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_calendar-dark-mobile-interactive-controls.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_calendar-dark-mobile-interactive-controls.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_file-manager-dark-mobile-interactive-list-metadata.png",
+    "mode": "demo",
+    "difference": [
+      321,
+      1088,
+      324,
+      1089
+    ]
+  },
+  {
+    "file": "_dashboard_file-manager-dark-mobile-interactive-list-metadata.png",
+    "mode": "db",
+    "difference": [
+      321,
+      1088,
+      324,
+      1089
+    ]
+  },
+  {
+    "file": "_dashboard_tasks-light-desktop-interactive.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_tasks-light-desktop-interactive.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_calendar-dark-mobile-interactive.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_calendar-dark-mobile-interactive.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_kanban-dark-desktop-interactive-drag-overlay.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_kanban-dark-desktop-interactive-drag-overlay.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_tasks-dark-desktop-interactive-controls.png",
+    "mode": "demo",
+    "difference": [
+      1367,
+      266,
+      1403,
+      330
+    ]
+  },
+  {
+    "file": "_dashboard_tasks-dark-desktop-interactive-controls.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_kanban-dark-desktop-interactive-board.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_kanban-dark-desktop-interactive-board.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_kanban-light-desktop-interactive-drag-overlay.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_kanban-light-desktop-interactive-drag-overlay.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_kanban-dark-mobile-interactive-list.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_kanban-dark-mobile-interactive-list.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_kanban-light-mobile-interactive-list.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_kanban-light-mobile-interactive-list.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_kanban-light-desktop-interactive-table.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_kanban-light-desktop-interactive-table.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_file-manager-dark-desktop-interactive-controls.png",
+    "mode": "demo",
+    "difference": [
+      535,
+      257,
+      571,
+      290
+    ]
+  },
+  {
+    "file": "_dashboard_file-manager-dark-desktop-interactive-controls.png",
+    "mode": "db",
+    "difference": [
+      535,
+      257,
+      571,
+      290
+    ]
+  },
+  {
+    "file": "_dashboard_kanban-dark-desktop-interactive.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_kanban-dark-desktop-interactive.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_tasks-dark-mobile-interactive-controls.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_tasks-dark-mobile-interactive-controls.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_tasks-light-mobile-interactive.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_tasks-light-mobile-interactive.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_calendar-light-mobile-interactive-month.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_calendar-light-mobile-interactive-month.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_calendar-dark-desktop-interactive-day.png",
+    "mode": "demo",
+    "difference": [
+      361,
+      841,
+      1406,
+      850
+    ]
+  },
+  {
+    "file": "_dashboard_calendar-dark-desktop-interactive-day.png",
+    "mode": "db",
+    "difference": [
+      361,
+      841,
+      1406,
+      850
+    ]
+  },
+  {
+    "file": "_dashboard_kanban-light-mobile-interactive-board.png",
+    "mode": "demo",
+    "difference": [
+      83,
+      291,
+      377,
+      828
+    ]
+  },
+  {
+    "file": "_dashboard_kanban-light-mobile-interactive-board.png",
+    "mode": "db",
+    "difference": [
+      39,
+      291,
+      377,
+      839
+    ]
+  },
+  {
+    "file": "_dashboard_file-manager-dark-desktop-interactive-grid-starred.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_file-manager-dark-desktop-interactive-grid-starred.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_calendar-light-desktop-interactive-week.png",
+    "mode": "demo",
+    "difference": [
+      1110,
+      847,
+      1124,
+      850
+    ]
+  },
+  {
+    "file": "_dashboard_calendar-light-desktop-interactive-week.png",
+    "mode": "db",
+    "difference": [
+      1110,
+      847,
+      1124,
+      850
+    ]
+  },
+  {
+    "file": "_dashboard_file-manager-dark-mobile-interactive-controls.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_file-manager-dark-mobile-interactive-controls.png",
+    "mode": "db",
+    "difference": [
+      330,
+      338,
+      362,
+      366
+    ]
+  },
+  {
+    "file": "_dashboard_tasks-light-mobile-interactive-filtered-selected.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_tasks-light-mobile-interactive-filtered-selected.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_file-manager-light-desktop-interactive-controls.png",
+    "mode": "demo",
+    "difference": [
+      535,
+      257,
+      571,
+      290
+    ]
+  },
+  {
+    "file": "_dashboard_file-manager-light-desktop-interactive-controls.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_kanban-dark-mobile-interactive.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_kanban-dark-mobile-interactive.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_calendar-light-mobile-interactive.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_calendar-light-mobile-interactive.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_kanban-dark-desktop-interactive-list.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_kanban-dark-desktop-interactive-list.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_calendar-dark-desktop-interactive-week.png",
+    "mode": "demo",
+    "difference": [
+      1111,
+      848,
+      1123,
+      850
+    ]
+  },
+  {
+    "file": "_dashboard_calendar-dark-desktop-interactive-week.png",
+    "mode": "db",
+    "difference": [
+      1111,
+      848,
+      1123,
+      850
+    ]
+  },
+  {
+    "file": "_dashboard_kanban-dark-desktop-interactive-empty-column.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_kanban-dark-desktop-interactive-empty-column.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_tasks-light-mobile-interactive-empty.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_tasks-light-mobile-interactive-empty.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_file-manager-light-desktop-interactive.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_file-manager-light-desktop-interactive.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_tasks-light-desktop-interactive-controls.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_tasks-light-desktop-interactive-controls.png",
+    "mode": "db",
+    "difference": [
+      330,
+      266,
+      1403,
+      338
+    ]
+  },
+  {
+    "file": "_dashboard_tasks-dark-mobile-interactive.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_tasks-dark-mobile-interactive.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_kanban-light-desktop-interactive-empty-column.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_kanban-light-desktop-interactive-empty-column.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_file-manager-light-mobile-interactive-controls.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_file-manager-light-mobile-interactive-controls.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_calendar-light-desktop-interactive-month.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_calendar-light-desktop-interactive-month.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_tasks-light-desktop-interactive-empty.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_tasks-light-desktop-interactive-empty.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_calendar-dark-mobile-interactive-month.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_calendar-dark-mobile-interactive-month.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_file-manager-light-mobile-interactive.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_file-manager-light-mobile-interactive.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_kanban-light-desktop-interactive-board.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_kanban-light-desktop-interactive-board.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_calendar-light-desktop-interactive-controls.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_calendar-light-desktop-interactive-controls.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_kanban-light-mobile-interactive-drag-overlay.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_kanban-light-mobile-interactive-drag-overlay.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_kanban-dark-mobile-interactive-controls.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_kanban-dark-mobile-interactive-controls.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_kanban-light-mobile-interactive-table.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_kanban-light-mobile-interactive-table.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_kanban-light-desktop-interactive-controls.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_kanban-light-desktop-interactive-controls.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_calendar-light-desktop-interactive.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_calendar-light-desktop-interactive.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_calendar-light-mobile-interactive-week.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_calendar-light-mobile-interactive-week.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_file-manager-dark-desktop-interactive-list-metadata.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_file-manager-dark-desktop-interactive-list-metadata.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_calendar-light-mobile-interactive-day.png",
+    "mode": "demo",
+    "difference": [
+      65,
+      921,
+      369,
+      930
+    ]
+  },
+  {
+    "file": "_dashboard_calendar-light-mobile-interactive-day.png",
+    "mode": "db",
+    "difference": [
+      65,
+      921,
+      369,
+      930
+    ]
+  },
+  {
+    "file": "_dashboard_kanban-dark-mobile-interactive-empty-column.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_kanban-dark-mobile-interactive-empty-column.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_kanban-light-desktop-interactive.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_kanban-light-desktop-interactive.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_file-manager-light-desktop-interactive-grid-starred.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_file-manager-light-desktop-interactive-grid-starred.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_tasks-dark-mobile-interactive-filtered-selected.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_tasks-dark-mobile-interactive-filtered-selected.png",
+    "mode": "db",
+    "difference": null
+  }
+]

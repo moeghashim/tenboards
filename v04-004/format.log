@@ -1,0 +1,188 @@
+src/routes/(main)/dashboard/file-manager/-components/file-grid-view.tsx:43:36 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    41 │             </CardContent>
+    42 │             <CardHeader>
+  > 43 │               <CardTitle className="min-w-0 break-words [overflow-wrap:anywhere]">{file.name}</CardTitle>
+       │                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    44 │               <CardDescription className="flex min-w-0 flex-col gap-1 text-xs">
+    45 │                 <span className="break-words">{file.owner}</span>
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+    41 41 │               </CardContent>
+    42 42 │               <CardHeader>
+    43    │ - ··············<CardTitle·className="min-w-0·break-words·[overflow-wrap:anywhere]">{file.name}</CardTitle>
+       43 │ + ··············<CardTitle·className="min-w-0·[overflow-wrap:anywhere]·break-words">{file.name}</CardTitle>
+    44 44 │                 <CardDescription className="flex min-w-0 flex-col gap-1 text-xs">
+    45 45 │                   <span className="break-words">{file.owner}</span>
+  
+
+src/routes/(main)/dashboard/file-manager/-components/file-list-view.tsx:20:20 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    19 │   return (
+  > 20 │     <div className="min-w-0 rounded-xl border bg-card p-3">
+       │                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    21 │       <Table className="min-w-180">
+    22 │         <TableHeader>
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+    18 18 │   
+    19 19 │     return (
+    20    │ - ····<div·className="min-w-0·rounded-xl·border·bg-card·p-3">
+       20 │ + ····<div·className="bg-card·min-w-0·rounded-xl·border·p-3">
+    21 21 │         <Table className="min-w-180">
+    22 22 │           <TableHeader>
+  
+
+src/routes/(main)/dashboard/file-manager/-components/file-list-view.tsx:46:39 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    44 │                       className="h-auto w-64 justify-start px-0 text-left whitespace-normal"
+    45 │                     >
+  > 46 │                       <span className="break-words [overflow-wrap:anywhere]">{file.name}</span>
+       │                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    47 │                     </Button>
+    48 │                     {file.shared && <Badge variant="outline">Shared</Badge>}
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+    44 44 │                         className="h-auto w-64 justify-start px-0 text-left whitespace-normal"
+    45 45 │                       >
+    46    │ - ······················<span·className="break-words·[overflow-wrap:anywhere]">{file.name}</span>
+       46 │ + ······················<span·className="[overflow-wrap:anywhere]·break-words">{file.name}</span>
+    47 47 │                       </Button>
+    48 48 │                       {file.shared && <Badge variant="outline">Shared</Badge>}
+  
+
+src/routes/(main)/dashboard/file-manager/-components/folders-section.tsx:35:42 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    33 │                   </div>
+    34 │                   <div className="flex min-w-0 flex-col gap-1">
+  > 35 │                     <CardTitle className="break-words leading-snug">{folder.name}</CardTitle>
+       │                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    36 │                     <CardDescription className="text-xs">{folder.fileCount} files</CardDescription>
+    37 │                   </div>
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+    33 33 │                     </div>
+    34 34 │                     <div className="flex min-w-0 flex-col gap-1">
+    35    │ - ····················<CardTitle·className="break-words·leading-snug">{folder.name}</CardTitle>
+       35 │ + ····················<CardTitle·className="leading-snug·break-words">{folder.name}</CardTitle>
+    36 36 │                       <CardDescription className="text-xs">{folder.fileCount} files</CardDescription>
+    37 37 │                     </div>
+  
+
+src/server/data/calendar.types.ts:25:16 lint/style/noNonNullAssertion  FIXABLE  ━━━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+  
+    23 │     new Date(renderedAt),
+    24 │   );
+  > 25 │   const year = parts.find((p) => p.type === "year")!.value;
+       │                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    26 │   const month = Number(parts.find((p) => p.type === "month")!.value);
+    27 │   const pad = (v: number) => String(v).padStart(2, "0");
+  
+  i A non-null assertion tells TypeScript to ignore a possible null or undefined value. If the value is missing at runtime, the code fails with an error that the compiler could not catch.
+  
+  i Check that the value is defined before using it, for example with an if statement or optional chaining, instead of asserting it.
+  
+  i Unsafe fix: Replace with optional chain operator ?. This operator includes runtime checks, so it is safer than the compile-only non-null assertion operator
+  
+    23 23 │       new Date(renderedAt),
+    24 24 │     );
+    25    │ - ··const·year·=·parts.find((p)·=>·p.type·===·"year")!.value;
+       25 │ + ··const·year·=·parts.find((p)·=>·p.type·===·"year")?.value;
+    26 26 │     const month = Number(parts.find((p) => p.type === "month")!.value);
+    27 27 │     const pad = (v: number) => String(v).padStart(2, "0");
+  
+
+src/server/data/calendar.types.ts:26:24 lint/style/noNonNullAssertion  FIXABLE  ━━━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+  
+    24 │   );
+    25 │   const year = parts.find((p) => p.type === "year")!.value;
+  > 26 │   const month = Number(parts.find((p) => p.type === "month")!.value);
+       │                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    27 │   const pad = (v: number) => String(v).padStart(2, "0");
+    28 │   return templates.map((t) => {
+  
+  i A non-null assertion tells TypeScript to ignore a possible null or undefined value. If the value is missing at runtime, the code fails with an error that the compiler could not catch.
+  
+  i Check that the value is defined before using it, for example with an if statement or optional chaining, instead of asserting it.
+  
+  i Unsafe fix: Replace with optional chain operator ?. This operator includes runtime checks, so it is safer than the compile-only non-null assertion operator
+  
+    24 24 │     );
+    25 25 │     const year = parts.find((p) => p.type === "year")!.value;
+    26    │ - ··const·month·=·Number(parts.find((p)·=>·p.type·===·"month")!.value);
+       26 │ + ··const·month·=·Number(parts.find((p)·=>·p.type·===·"month")?.value);
+    27 27 │     const pad = (v: number) => String(v).padStart(2, "0");
+    28 28 │     return templates.map((t) => {
+  
+
+src/server/db/seed-workspace.ts:28:18 lint/style/noNonNullAssertion  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+  
+    26 │         position,
+    27 │         columnId: column.id,
+  > 28 │         ownerId: Object.entries(taskOwners).find(([, value]) => value.name === owner.name)![0],
+       │                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    29 │       };
+    30 │       await tx.insert(s.boardTasks).values(row).onConflictDoUpdate({ target: s.boardTasks.id, set: row });
+  
+  i A non-null assertion tells TypeScript to ignore a possible null or undefined value. If the value is missing at runtime, the code fails with an error that the compiler could not catch.
+  
+  i Check that the value is defined before using it, for example with an if statement or optional chaining, instead of asserting it.
+  
+  i Unsafe fix: Replace with optional chain operator ?. This operator includes runtime checks, so it is safer than the compile-only non-null assertion operator
+  
+    26 26 │           position,
+    27 27 │           columnId: column.id,
+    28    │ - ········ownerId:·Object.entries(taskOwners).find(([,·value])·=>·value.name·===·owner.name)![0],
+       28 │ + ········ownerId:·Object.entries(taskOwners).find(([,·value])·=>·value.name·===·owner.name)?.[0],
+    29 29 │         };
+    30 30 │         await tx.insert(s.boardTasks).values(row).onConflictDoUpdate({ target: s.boardTasks.id, set: row });
+  
+
+Skipped 8 suggested fixes.
+If you wish to apply the suggested (unsafe) fixes, use the command biome check --write --unsafe
+
+Checked 52 files in 456ms. Fixed 25 files.
+Found 3 warnings.
+Found 4 infos.

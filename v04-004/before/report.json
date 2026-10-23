@@ -1,0 +1,286 @@
+{
+  "baseURL": "http://127.0.0.1:3000/",
+  "hydrationDelayMs": 0,
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": false,
+  "interactions": true,
+  "results": [
+    {
+      "route": "/dashboard/calendar",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_calendar-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_calendar-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Browser-local Today 2026-10-23 after hydration",
+        "Previous/next, Month/Week/Day and Today via keyboard",
+        "Calendar selector retains demo selection",
+        "Live now marker matches real browser-local minute (within two-minute rendering tolerance)",
+        "Crowded-day popover contains long title and closes by keyboard",
+        "Calendar grid scrolls locally; no page overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/calendar",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_calendar-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_calendar-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Browser-local Today 2026-10-23 after hydration",
+        "Previous/next, Month/Week/Day and Today via keyboard",
+        "Calendar selector retains demo selection",
+        "Live now marker matches real browser-local minute (within two-minute rendering tolerance)",
+        "Crowded-day popover contains long title and closes by keyboard",
+        "Calendar grid scrolls locally; no page overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/calendar",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_calendar-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_calendar-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Browser-local Today 2026-10-23 after hydration",
+        "Previous/next, Month/Week/Day and Today via keyboard",
+        "Calendar selector retains demo selection",
+        "Live now marker matches real browser-local minute (within two-minute rendering tolerance)",
+        "Crowded-day popover contains long title and closes by keyboard",
+        "Calendar grid scrolls locally; no page overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/calendar",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_calendar-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_calendar-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Browser-local Today 2026-10-23 after hydration",
+        "Previous/next, Month/Week/Day and Today via keyboard",
+        "Calendar selector retains demo selection",
+        "Live now marker matches real browser-local minute (within two-minute rendering tolerance)",
+        "Crowded-day popover contains long title and closes by keyboard",
+        "Calendar grid scrolls locally; no page overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/file-manager",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_file-manager-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_file-manager-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Long h1 wraps; keyboard view query survives refresh",
+        "Grid/list button and menu star actions work",
+        "All table metadata remains visible in local horizontal scroll; neutral initials",
+        "Existing folder/search/filter/upload placeholders preserved; no document overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/file-manager",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_file-manager-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_file-manager-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Long h1 wraps; keyboard view query survives refresh",
+        "Grid/list button and menu star actions work",
+        "All table metadata remains visible in local horizontal scroll; neutral initials",
+        "Existing folder/search/filter/upload placeholders preserved; no document overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/file-manager",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_file-manager-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_file-manager-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Long h1 wraps; keyboard view query survives refresh",
+        "Grid/list button and menu star actions work",
+        "All table metadata remains visible in local horizontal scroll; neutral initials",
+        "Existing folder/search/filter/upload placeholders preserved; no document overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/file-manager",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_file-manager-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_file-manager-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Long h1 wraps; keyboard view query survives refresh",
+        "Grid/list button and menu star actions work",
+        "All table metadata remains visible in local horizontal scroll; neutral initials",
+        "Existing folder/search/filter/upload placeholders preserved; no document overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/kanban",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_kanban-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_kanban-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Query Board/List/Table selections and list/table refresh",
+        "Keyboard task move and Escape rollback; desktop pointer move",
+        "Keyboard column and table ordering; list/table cancellation",
+        "Table status edit reflected in board; empty QA column",
+        "Local horizontal scrolling and neutral owner across all views"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/kanban",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_kanban-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_kanban-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Query Board/List/Table selections and list/table refresh",
+        "Keyboard task move and Escape rollback; desktop pointer move",
+        "Keyboard column and table ordering; list/table cancellation",
+        "Table status edit reflected in board; empty QA column",
+        "Local horizontal scrolling and neutral owner across all views"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/kanban",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_kanban-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_kanban-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Query Board/List/Table selections and list/table refresh",
+        "Keyboard task move and Escape rollback; desktop pointer move",
+        "Keyboard column and table ordering; list/table cancellation",
+        "Table status edit reflected in board; empty QA column",
+        "Local horizontal scrolling and neutral owner across all views"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/kanban",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_kanban-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_kanban-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Query Board/List/Table selections and list/table refresh",
+        "Keyboard task move and Escape rollback; desktop pointer move",
+        "Keyboard column and table ordering; list/table cancellation",
+        "Table status edit reflected in board; empty QA column",
+        "Local horizontal scrolling and neutral owner across all views"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/tasks",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_tasks-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_tasks-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Search + Todo + High returns TASK-7839; Space selects row",
+        "No results and Reset preserve selected count",
+        "Asc/Desc sorting and column visibility",
+        "Page size 20, next/previous and desktop first/last pages",
+        "Both filter Clear actions work; row action menu remains demo",
+        "No page overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/tasks",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_tasks-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_tasks-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Search + Todo + High returns TASK-7839; Space selects row",
+        "No results and Reset preserve selected count",
+        "Asc/Desc sorting and column visibility",
+        "Page size 20, next/previous and desktop first/last pages",
+        "Both filter Clear actions work; row action menu remains demo",
+        "No page overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/tasks",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_tasks-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_tasks-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Search + Todo + High returns TASK-7839; Space selects row",
+        "No results and Reset preserve selected count",
+        "Asc/Desc sorting and column visibility",
+        "Page size 20, next/previous and desktop first/last pages",
+        "Both filter Clear actions work; row action menu remains demo",
+        "No page overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/tasks",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_tasks-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_tasks-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Search + Todo + High returns TASK-7839; Space selects row",
+        "No results and Reset preserve selected count",
+        "Asc/Desc sorting and column visibility",
+        "Page size 20, next/previous and desktop first/last pages",
+        "Both filter Clear actions work; row action menu remains demo",
+        "No page overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    }
+  ]
+}

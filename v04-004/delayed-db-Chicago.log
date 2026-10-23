@@ -1,0 +1,12 @@
+
+> tenboards@0.3.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://127.0.0.1:3001 --routes /dashboard/calendar --interactions --reload --hydration-delay-ms 1800 --timezone America/Chicago --output screenshots/v04-004/delayed-db-Chicago
+
+PASS /dashboard/calendar light/desktop direct
+PASS /dashboard/calendar light/desktop refresh
+PASS /dashboard/calendar light/mobile direct
+PASS /dashboard/calendar light/mobile refresh
+PASS /dashboard/calendar dark/desktop direct
+PASS /dashboard/calendar dark/desktop refresh
+PASS /dashboard/calendar dark/mobile direct
+PASS /dashboard/calendar dark/mobile refresh

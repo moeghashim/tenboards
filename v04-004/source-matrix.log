@@ -1,0 +1,29 @@
+PASS absent URL: read
+PASS configured database: read
+PASS forced demo: read
+PASS refused connection: Unable to load database data. Check the connection and migrations, then retry.
+PASS bad credentials: Unable to load database data. Check the connection and migrations, then retry.
+PASS missing schema: Unable to load database data. Check the connection and migrations, then retry.
+PASS empty configuration: Unable to load database data. Check the connection and migrations, then retry.
+PASS malformed configuration: Unable to load database data. Check the connection and migrations, then retry.
+PASS unsupported selector: Unsupported DATA_SOURCE. Use demo or leave it unset.
+PASS recovered database: read
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: --inject-mismatch
+
+0 !== 1
+
+    at file:///Users/moeghashim/tenboards/scripts/data-source-check.ts:88:12
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 0,
+  expected: 1,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.21.0

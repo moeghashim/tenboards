@@ -1,0 +1,60 @@
+PASS absent URL: read
+PASS configured database: read
+PASS forced demo: read
+PASS refused connection: Unable to load database data. Check the connection and migrations, then retry.
+PASS bad credentials: Unable to load database data. Check the connection and migrations, then retry.
+PASS missing schema: Unable to load database data. Check the connection and migrations, then retry.
+PASS empty configuration: Unable to load database data. Check the connection and migrations, then retry.
+PASS malformed configuration: Unable to load database data. Check the connection and migrations, then retry.
+PASS unsupported selector: Unsupported DATA_SOURCE. Use demo or leave it unset.
+PASS recovered database: read
+PASS negative --inject-mismatch: Parity failed: readKanban/all
++ actual - expected
+... Skipped lines
+
+  {
+    board: {
+      building: [
+        {
+          description: 'Model parties, employees, tenders, work orders, salary imports, and documents.',
+...
+    },
++   columns: 'QA_MISMATCH'
+-   columns: [
+-     {
+-       id: 'ideas',
+-       title: 'Ideas'
+-     },
+-     {
+-       id: 'planned',
+-       title: 'Planned'
+-     },
+-     {
+-       id: 'building',
+-       title: 'Building'
+-     },
+-     {
+-       id: 'qa',
+-       title: 'QA'
+-     },
+-     {
+-       id: 'shipped',
+-       title: 'Shipped'
+-     }
+-   ]
+  }
+PASS negative --omit-registration: Parity failed: Every domain read must be registered exactly once
++ actual - expected
+
+  [
+    'accounts:readAccounts',
+    'calendar:readCalendar',
+    'ecommerce:readEcommerce',
+    'files:readFiles',
+    'invoices:readInvoices',
+-   'kanban:readKanban',
+    'products:readProducts',
+    'profile:readProfile',
+    'roles:readRoles',
+    'tasks:readTasks',
+    'users:readUsers'

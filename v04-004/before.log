@@ -1,0 +1,20 @@
+
+> tenboards@0.3.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --routes /dashboard/kanban,/dashboard/tasks,/dashboard/calendar,/dashboard/file-manager --interactions --output screenshots/v04-004/before
+
+PASS /dashboard/calendar light/desktop direct
+PASS /dashboard/calendar light/mobile direct
+PASS /dashboard/calendar dark/desktop direct
+PASS /dashboard/calendar dark/mobile direct
+PASS /dashboard/file-manager light/desktop direct
+PASS /dashboard/file-manager light/mobile direct
+PASS /dashboard/file-manager dark/desktop direct
+PASS /dashboard/file-manager dark/mobile direct
+PASS /dashboard/kanban light/desktop direct
+PASS /dashboard/kanban light/mobile direct
+PASS /dashboard/kanban dark/desktop direct
+PASS /dashboard/kanban dark/mobile direct
+PASS /dashboard/tasks light/desktop direct
+PASS /dashboard/tasks light/mobile direct
+PASS /dashboard/tasks dark/desktop direct
+PASS /dashboard/tasks dark/mobile direct
