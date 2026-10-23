@@ -15,6 +15,7 @@ const { values } = parseArgs({
     output: { type: "string", default: "screenshots" },
     preset: { type: "string", default: "default" },
     list: { type: "boolean", default: false },
+    reference: { type: "string" },
     timezone: { type: "string", default: "America/Chicago" },
     reload: { type: "boolean", default: false },
     boundaries: { type: "boolean", default: false },
@@ -23,6 +24,7 @@ const { values } = parseArgs({
     "hydration-delay-ms": { type: "string", default: "0" },
   },
 });
+const reference = values.reference === undefined ? undefined : new Date(values.reference).toISOString();
 const hydrationDelayMs = Number(values["hydration-delay-ms"]);
 if (!Number.isFinite(hydrationDelayMs) || hydrationDelayMs < 0 || hydrationDelayMs > 10000)
   throw new Error("Hydration delay must be 0–10000 ms");
@@ -84,12 +86,17 @@ try {
             timezoneId: values.timezone,
           });
           let scriptsMayLoadAt = Date.now() + hydrationDelayMs;
-          if (hydrationDelayMs > 0)
+          if (hydrationDelayMs > 0 || reference)
             await context.route("**/*", async (route) => {
               const remaining = scriptsMayLoadAt - Date.now();
               if (route.request().resourceType() === "script" && remaining > 0)
                 await new Promise((resolve) => setTimeout(resolve, remaining));
-              await route.continue();
+              const sameOrigin = new URL(route.request().url()).origin === baseURL.origin;
+              await route.continue(
+                reference && sameOrigin
+                  ? { headers: { ...route.request().headers(), "x-tenboards-qa-reference": reference } }
+                  : undefined,
+              );
             });
           await cacheCaptureFonts(context);
           await context.addCookies([
@@ -243,7 +250,7 @@ try {
   await browser.close();
   await writeFile(
     path.join(output, "report.json"),
-    `${JSON.stringify({ baseURL, fontAssets: "exact public responses cached between contexts", maskedLiveClocks: values["mask-live-clocks"], search: values.search, hydrationDelayMs, preset: values.preset, timezone: values.timezone, reload: values.reload, interactions: values.interactions, results }, null, 2)}\n`,
+    `${JSON.stringify({ baseURL, fontAssets: "exact public responses cached between contexts", maskedLiveClocks: values["mask-live-clocks"], reference, search: values.search, hydrationDelayMs, preset: values.preset, timezone: values.timezone, reload: values.reload, interactions: values.interactions, results }, null, 2)}\n`,
   );
 }
 if (results.some((result) => result.errors.length)) process.exitCode = 1;

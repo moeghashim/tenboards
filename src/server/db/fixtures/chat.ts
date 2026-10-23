@@ -1205,3 +1205,6 @@ export const chatCounts = [
   { id: "orders", label: "6" },
   { id: "feedback", label: "2" },
 ];
+
+export const chatDisplay = { id: "default", threadDate: "2026-05-06" };
+export const chatTabCounts = [{ all: 24, open: 18, snoozed: 2 }];

@@ -3,9 +3,8 @@ import { createRoot } from "react-dom/client";
 
 import { ChatProvider, useChat } from "../src/routes/(main)/chat/-components/use-chat";
 import { MailProvider, useMail } from "../src/routes/(main)/mail/-components/use-mail";
-import type { ChatData } from "../src/server/data/chat.types";
+import { demoChat } from "../src/server/data/chat";
 import type { MailData } from "../src/server/data/mail.types";
-import { chatCounts, conversations, currentUser } from "../src/server/db/fixtures/chat";
 import { accounts, mailCounts, mailDefinitions } from "../src/server/db/fixtures/mail";
 
 let setMail: ReturnType<typeof useMail>[1];
@@ -21,7 +20,7 @@ function ChatProbe() {
   return <output>{s.selected ?? "empty"}</output>;
 }
 
-export function runCommunicationStateProbe() {
+export async function runCommunicationStateProbe() {
   const mail: MailData = {
     renderedAt: "2026-10-23T12:00:00Z",
     accounts,
@@ -31,7 +30,7 @@ export function runCommunicationStateProbe() {
       receivedAt: new Date(Date.parse("2026-10-23T12:00:00Z") - minutesAgo * 60000).toISOString(),
     })),
   };
-  const chat: ChatData = { conversations, currentUser, counts: chatCounts };
+  const chat = await demoChat();
   const container = document.createElement("div");
   document.body.append(container);
   const root = createRoot(container);

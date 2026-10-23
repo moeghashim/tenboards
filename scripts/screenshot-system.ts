@@ -6,6 +6,23 @@ export async function captureSystem(
   route: string,
   capture: (name: string) => Promise<void>,
 ): Promise<string[]> {
+  if (["/", "/dashboard", "/dashboard/"].includes(route)) {
+    let target = new URL(route, page.url());
+    const hops = route === "/dashboard/" ? ["/dashboard", "/dashboard/default"] : ["/dashboard/default"];
+    for (const expected of hops) {
+      const response = await page.request.get(target.href, { maxRedirects: 0 });
+      const location = response.headers().location;
+      if (response.status() !== 307 || !location || new URL(location, target).pathname !== expected)
+        throw new Error(`Unexpected redirect for ${target.pathname}: ${response.status()} ${location}`);
+      target = new URL(location, target);
+    }
+    await page.waitForURL("**/dashboard/default");
+    await page.getByText("Total Revenue", { exact: true }).first().waitFor();
+    return [
+      "HTTP 307 preserves the default-dashboard destination",
+      "Redirect target hydrates and displays loaded dashboard data",
+    ];
+  }
   if (route === "qa:root-error") {
     await page.evaluate(() => {
       const win = window as unknown as {
@@ -21,7 +38,10 @@ export async function captureSystem(
       router.invalidate();
     });
     await page.getByRole("heading", { name: "Something went wrong.", exact: true }).waitFor();
-    if (!page.url().includes("localhost") && (await page.locator("main").textContent())?.includes("QA_ONLY_ROOT_ERROR"))
+    if (
+      !["localhost", "127.0.0.1", "[::1]"].includes(new URL(page.url()).hostname) &&
+      (await page.locator("main").textContent())?.includes("QA_ONLY_ROOT_ERROR")
+    )
       throw new Error("Production leaked error detail");
     await capture("boundary");
     await page.evaluate(() => {
@@ -33,7 +53,13 @@ export async function captureSystem(
       saved.route.options.component = saved.component;
       delete win.__QA_ROOT__;
     });
-    await page.getByRole("button", { name: "Try again", exact: true }).press("Enter");
+    const retry = page.getByRole("button", { name: "Try again", exact: true });
+    await retry.focus();
+    if (!(await retry.evaluate((button) => button === document.activeElement)))
+      throw new Error("Root recovery button did not receive keyboard focus");
+    // Reset synchronously unmounts this button. Send the key through the page so
+    // locator retries cannot mistake successful recovery for a detached target.
+    await page.keyboard.press("Enter");
     await page.getByText("Total Revenue", { exact: true }).first().waitFor();
     await capture("recovered");
     return [

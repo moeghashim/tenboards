@@ -14,6 +14,7 @@ export async function captureInteractions(
   route: string,
   captureVariant: (name: string) => Promise<void>,
 ): Promise<string[]> {
+  if (["/", "/dashboard", "/dashboard/"].includes(route)) return captureSystem(page, route, captureVariant);
   if (route === "/dashboard/default")
     return [...(await captureShell(page, captureVariant)), ...(await captureCore(page, route, captureVariant))];
   if (["/dashboard/default-v1", "/dashboard/crm", "/dashboard/crm-v1", "/dashboard/finance-v1"].includes(route))

@@ -18,8 +18,9 @@ import { UpcomingTransactions } from "./-components/upcoming-transactions";
 import { Wallet } from "./-components/wallet";
 
 const loadData = createServerFn({ method: "GET" }).handler(async () => {
+  const { requestReference } = await import("@/server/request-reference.server");
   const { readFinance } = await import("@/server/data/finance");
-  return readFinance({ variant: "current", renderedAt: new Date().toISOString() });
+  return readFinance({ variant: "current", renderedAt: requestReference() });
 });
 
 export const Route = createFileRoute("/(main)/dashboard/finance")({

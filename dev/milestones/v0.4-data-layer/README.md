@@ -1,6 +1,6 @@
 # v0.4 — Drizzle + Postgres data layer with demo-mode fallback
 
-Status: **planned; all eight tasks todo**. This breakdown is documentation only and does not authorize starting implementation before approval. Baseline: `origin/main` **a79ed1d**, 2026-10-23, package v0.3.0. PLAN.md is the canonical contract; its six v0.4 Decisions log rows override the older Neon wording in the roadmap/stack. Reference format: [v0.3 breakdown](../v0.3-app-pages/README.md), originally [PR #26](https://github.com/moeghashim/tenboards/pull/26).
+Status: **approved; all eight implementation tasks in review**. The milestone remains in progress pending reviewer merges and release. Planning approval was merged as PR #41; the implementation stack is PRs #42–#49, in task order. [Final acceptance evidence](https://github.com/moeghashim/tenboards/tree/pr-assets/v04-008). Baseline: `origin/main` **a79ed1d**, 2026-10-23, package v0.3.0. PLAN.md is the canonical contract; its six v0.4 Decisions log rows override the older Neon wording in the roadmap/stack. Reference format: [v0.3 breakdown](../v0.3-app-pages/README.md), originally [PR #26](https://github.com/moeghashim/tenboards/pull/26).
 
 ## Brief and boundaries
 
@@ -31,13 +31,13 @@ Task 001 documents invalid/empty configuration handling and sanitizes failure ou
 
 ## Definition of Done
 
-- [ ] Every fixture in the matrix has exactly one migration owner; every data-bearing app page and all 14 dashboards read through typed server functions/loaders. No runtime component/store fixture dependency or inline business dataset remains outside the documented client-signal exception.
-- [ ] Postgres 17 Compose setup, Drizzle/postgres.js server client, normalized schema, committed migrations, safe source selection, `db:generate`, `db:migrate`, `db:seed` and `data:parity` are implemented and documented.
-- [ ] Clean no-env/no-Docker install/dev/build/Workers demo still works. Actual DB reads, forced demo and visible configured-DB failures pass the source-selection matrix without secret leakage or silent fallback.
-- [ ] Fresh and incremental migrations plus repeat seeding pass on local Docker Postgres. Every registered read/variant passes demo ≡ DB parity, including date/ordering/money/empty/missing-result cases and a proven mismatch-fails check.
-- [ ] Every task preserves current visuals/interactions, SSR and hydration, keyboard access, accessible names, focus and reduced motion. Baseline → demo after → DB captures match in four states; no token or preset changes are planned.
-- [ ] Final local demo/DB and Workers demo evidence covers the whole catalog, all presets, query/tab/iframe/print states and controlled error/recovery cases. Pure live signals are synchronized only in the QA harness; separate evidence proves real clocks advance.
-- [ ] README optional DB onboarding/commands/status, `docs/data-layer.md`, CHANGELOG v0.4 and truthful acceptance/status/evidence are complete. No implementation claim is made in this planning PR.
+- [x] Every fixture in the matrix has exactly one migration owner; every data-bearing app page and all 14 dashboards read through typed server functions/loaders. No runtime component/store fixture dependency or inline business dataset remains outside the documented client-signal exception.
+- [x] Postgres 17 Compose setup, Drizzle/postgres.js server client, normalized schema, committed migrations, safe source selection, `db:generate`, `db:migrate`, `db:seed` and `data:parity` are implemented and documented.
+- [x] Clean no-env/no-Docker install/dev/build/Workers demo still works. Actual DB reads, forced demo and visible configured-DB failures pass the source-selection matrix without secret leakage or silent fallback.
+- [x] Fresh and incremental migrations plus repeat seeding pass on local Docker Postgres. Every registered read/variant passes demo ≡ DB parity, including date/ordering/money/empty/missing-result cases and a proven mismatch-fails check.
+- [x] Every task preserves current visuals/interactions, SSR and hydration, keyboard access, accessible names, focus and reduced motion. Baseline → demo after → DB captures match in four states; no token or preset changes are planned.
+- [x] Final local demo/DB and Workers demo evidence covers the whole catalog, all presets, query/tab/iframe/print states and controlled error/recovery cases. Pure live signals are synchronized only in the QA harness; separate evidence proves real clocks advance.
+- [x] README optional DB onboarding/commands/status, `docs/data-layer.md`, CHANGELOG v0.4 and truthful acceptance/status/evidence are complete. Verified implementation evidence is linked above.
 - [ ] Claude Opus 5.5 reviews and merges each approved task, then redeploys production from main and handles version/tag/release. GPT-6-Astra never merges or deploys production; task status stays in review until merged.
 
 ## Fixture and route ownership matrix
