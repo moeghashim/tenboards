@@ -8,11 +8,11 @@ files: ["src/routes/(main)/dashboard/-components/header/search-dialog.tsx", "src
 ---
 
 ## Acceptance criteria
-- [ ] Search retained routes from a shared route catalog, including standalone app and legacy routes.
-- [ ] Open from sidebar search and ⌘K/Ctrl+K across routes without duplicate event handlers.
-- [ ] Support keyboard navigation, Escape, focus return, empty results, and accessible labeling.
-- [ ] Navigate accurately, close after selection, and avoid capturing shortcuts while inappropriate modal interactions are active.
-- [ ] Build, check, typecheck, route-search smoke, and screenshot matrix pass.
+- [x] Search retained routes from a shared route catalog, including standalone app and legacy routes.
+- [x] Open from sidebar search and ⌘K/Ctrl+K across routes without duplicate event handlers.
+- [x] Support keyboard navigation, Escape, focus return, empty results, and accessible labeling.
+- [x] Navigate accurately, close after selection, and avoid capturing shortcuts while inappropriate modal interactions are active.
+- [x] Build, check, typecheck, route-search smoke, and screenshot matrix pass.
 
 ## Suggested approach
 Inspect the current search implementation and share catalog data with navigation/capture tooling where appropriate; avoid a new runtime dependency.
