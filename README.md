@@ -233,3 +233,10 @@ A route-loader request timestamp is shared by SSR and hydration with an explicit
 Kanban keeps query-addressable Board, List and Table views, local task/column/table ordering, cancellation rollback and table status edits. The compact toolbar, wrapping task content, textual priority badges and neutral team/owner treatments use semantic tokens; Jordan Lee replaces the author owner in every view and drag overlay. Board/table scrolling remains local on mobile, and empty columns show “No tasks.” Search/filter/sort/create controls retain their existing placeholder behavior.
 
 `npm run screenshots -- --routes /dashboard/kanban --search view=list --reload` captures a query-selected view (use `view=board` or `view=table` as needed). `--interactions` exercises keyboard moves/cancellation, desktop pointer movement, column/list/table ordering, status edits and empty-column states; it saves each view and the drag overlay. Active-drag captures preserve animation and viewport size so taking evidence does not end the gesture. Failed captures now also attempt a diagnostic PNG.
+
+
+### Tasks page (v0.3 / 006)
+
+Tasks uses the shared page heading and a compact table with wrapping titles, textual semantic status/priority badges, named selection/search controls and a visible mobile column menu. Search and combined filters retain local state; empty results explain how to recover, Reset is neutral, and selected-count feedback remains live. The inherited Base UI sorting/clear-filter callbacks and column-menu label grouping are corrected at their usage sites. Row actions remain demo placeholders; no task records or dependencies change.
+
+`npm run screenshots -- --routes /dashboard/tasks --interactions` checks the known search/status/priority result, row and page selection, empty/reset states, Asc/Desc ordering, column visibility, page sizes, pagination and both filter clear actions. It also captures selected and empty variants.

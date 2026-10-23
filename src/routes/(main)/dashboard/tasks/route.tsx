@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 
+import { PageHeader } from "../-components/app-pages/page-header";
 import { tasks } from "./-components/data";
 import { Tasks } from "./-components/tasks";
 
@@ -10,10 +11,7 @@ export const Route = createFileRoute("/(main)/dashboard/tasks")({
 function Page() {
   return (
     <div className="flex flex-col gap-4">
-      <div>
-        <h2 className="text-3xl tracking-tight">Welcome back!</h2>
-        <p className="text-muted-foreground">Here's a list of your tasks for this month!</p>
-      </div>
+      <PageHeader title="Tasks" description="Here's a list of your tasks for this month." />
       <Tasks data={tasks} />
     </div>
   );

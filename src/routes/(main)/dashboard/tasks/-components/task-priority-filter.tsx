@@ -59,7 +59,7 @@ export function TaskPriorityFilter<TData extends RowData>({ table }: TaskPriorit
         }
       >
         <ListFilter data-icon="inline-start" />
-        Priority
+        Priority{selectedValues.size > 0 && <span className="tabular-nums"> ({selectedValues.size})</span>}
       </DropdownMenuTrigger>
       <DropdownMenuContent align="start" className="w-50">
         <DropdownMenuGroup>
@@ -71,9 +71,9 @@ export function TaskPriorityFilter<TData extends RowData>({ table }: TaskPriorit
                 key={priority.value}
                 checked={isSelected}
                 onCheckedChange={() => updateFilter(priority.value)}
-                onSelect={(event) => event.preventDefault()}
+                closeOnClick={false}
               >
-                <priority.icon className="text-muted-foreground" />
+                <priority.icon className={cn("rounded-sm p-0.5", priority.className)} />
                 {priority.label}
               </DropdownMenuCheckboxItem>
             );
@@ -83,7 +83,7 @@ export function TaskPriorityFilter<TData extends RowData>({ table }: TaskPriorit
           <>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
-              <DropdownMenuItem onSelect={clearFilter} className="justify-center text-center">
+              <DropdownMenuItem onClick={clearFilter} className="justify-center text-center">
                 <X />
                 Clear filters
               </DropdownMenuItem>

@@ -6,6 +6,86 @@ export async function captureInteractions(
   route: string,
   captureVariant: (name: string) => Promise<void>,
 ): Promise<string[]> {
+  if (route === "/dashboard/tasks") {
+    const search = page.getByRole("textbox", { name: "Filter tasks", exact: true });
+    await search.fill("neural TCP");
+    await page.getByRole("button", { name: "Status", exact: true }).press("Enter");
+    await page.getByRole("menuitemcheckbox", { name: "Todo", exact: true }).click();
+    await page.keyboard.press("Escape");
+    await page.getByRole("button", { name: "Priority", exact: true }).press("Enter");
+    await page.getByRole("menuitemcheckbox", { name: "High", exact: true }).click();
+    await page.keyboard.press("Escape");
+    await page.locator('tbody [data-task-id="TASK-7839"]').waitFor();
+    if ((await page.locator("tbody [data-task-id]").count()) !== 1)
+      throw new Error("Combined task filters did not yield the known single task");
+    await page.getByRole("checkbox", { name: "Select TASK-7839", exact: true }).press("Space");
+    await page.getByText("1 of 1 row(s) selected.", { exact: true }).waitFor();
+    await captureVariant("filtered-selected");
+    await search.fill("no-matching-demo-task-xyz");
+    await page.getByText("No matching tasks", { exact: true }).waitFor();
+    await captureVariant("empty");
+    await page.getByRole("button", { name: "Reset", exact: true }).click();
+    await page.getByText("1 of 100 row(s) selected.", { exact: true }).waitFor();
+    await page.getByRole("checkbox", { name: "Select all", exact: true }).press("Space");
+    await page.getByText("10 of 100 row(s) selected.", { exact: true }).waitFor();
+    await page.getByRole("checkbox", { name: "Select all", exact: true }).press("Space");
+    await page.getByText("0 of 100 row(s) selected.", { exact: true }).waitFor();
+    await page.getByRole("checkbox", { name: "Select TASK-7839", exact: true }).press("Space");
+    await page.getByRole("button", { name: "Title", exact: true }).press("Enter");
+    await page.getByRole("menuitem", { name: "Asc", exact: true }).click();
+    await page.waitForFunction(
+      () => document.querySelector("tbody [data-task-id]")?.getAttribute("data-task-id") === "TASK-1075",
+    );
+    await page.getByRole("button", { name: "Title", exact: true }).press("Enter");
+    await page.getByRole("menuitem", { name: "Desc", exact: true }).click();
+    await page.waitForFunction(
+      () => document.querySelector("tbody [data-task-id]")?.getAttribute("data-task-id") === "TASK-3360",
+    );
+    await page.getByRole("button", { name: "Column visibility", exact: true }).press("Enter");
+    await page.getByRole("menuitemcheckbox", { name: "priority", exact: true }).click();
+    await page.keyboard.press("Escape");
+    await page.getByRole("columnheader", { name: "Priority", exact: true }).waitFor({ state: "hidden" });
+    await page.getByRole("button", { name: "Column visibility", exact: true }).click();
+    await page.getByRole("menuitemcheckbox", { name: "priority", exact: true }).click();
+    await page.keyboard.press("Escape");
+    await page.getByRole("columnheader", { name: "Priority", exact: true }).waitFor();
+    await page.getByRole("combobox", { name: "Rows per page", exact: true }).click();
+    await page.getByRole("option", { name: "20", exact: true }).click();
+    await page.getByText("Page 1 of 5", { exact: true }).waitFor();
+    await page.getByRole("button", { name: "Go to next page", exact: true }).press("Enter");
+    await page.getByText("Page 2 of 5", { exact: true }).waitFor();
+    await page.getByRole("button", { name: "Go to previous page", exact: true }).press("Enter");
+    if ((page.viewportSize()?.width ?? 0) >= 1024) {
+      await page.getByRole("button", { name: "Go to last page", exact: true }).press("Enter");
+      await page.getByText("Page 5 of 5", { exact: true }).waitFor();
+      await page.getByRole("button", { name: "Go to first page", exact: true }).press("Enter");
+    }
+    await page.getByRole("button", { name: /^Status/ }).click();
+    await page.getByRole("menuitemcheckbox", { name: "Done", exact: true }).click();
+    await page.getByRole("menuitem", { name: "Clear filters", exact: true }).click();
+    await page.keyboard.press("Escape");
+    await page.getByRole("button", { name: /^Priority/ }).click();
+    await page.getByRole("menuitemcheckbox", { name: "Low", exact: true }).click();
+    await page.getByRole("menuitem", { name: "Clear filters", exact: true }).click();
+    await page.keyboard.press("Escape");
+    await page.getByText("1 of 100 row(s) selected.", { exact: true }).waitFor();
+    if (await page.evaluate(() => document.documentElement.scrollWidth > innerWidth))
+      throw new Error("Tasks document overflow");
+    await page
+      .getByRole("button", { name: /^Actions for TASK-/ })
+      .first()
+      .click();
+    await page.getByRole("menuitem", { name: "Edit", exact: true }).waitFor();
+    await page.keyboard.press("Escape");
+    return [
+      "Search + Todo + High returns TASK-7839; Space selects row",
+      "No results and Reset preserve selected count",
+      "Asc/Desc sorting and column visibility",
+      "Page size 20, next/previous and desktop first/last pages",
+      "Both filter Clear actions work; row action menu remains demo",
+      "No page overflow",
+    ];
+  }
   if (route === "/dashboard/kanban") {
     // dnd-kit commits sensor/overlay transitions on animation frames. Settle between gestures.
     const settleDrag = () => page.waitForTimeout(250);

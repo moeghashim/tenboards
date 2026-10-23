@@ -84,11 +84,11 @@ export function Tasks({ data }: TasksProps) {
   const canNextPage = table.getCanNextPage();
 
   return (
-    <div className="border-border/70 bg-background overflow-hidden rounded-xl border">
+    <div className="bg-card min-w-0 overflow-hidden rounded-xl border">
       <div className="border-b px-4 py-4">
         <TasksToolbar table={table} />
       </div>
-      <Table className="**:data-[slot=table-cell]:px-4 **:data-[slot=table-head]:px-4">
+      <Table aria-label="Tasks" className="min-w-200 **:data-[slot=table-cell]:px-4 **:data-[slot=table-head]:px-4">
         <TableHeader>
           {table.getHeaderGroups().map((headerGroup) => (
             <TableRow key={headerGroup.id} className="hover:bg-transparent">
@@ -105,11 +105,12 @@ export function Tasks({ data }: TasksProps) {
             table.getRowModel().rows.map((row) => (
               <TableRow
                 key={row.id}
-                className="border-border/60 hover:bg-muted/20"
+                data-task-id={row.id}
+                className="border-border hover:bg-muted"
                 data-state={table.state.rowSelection[row.id] && "selected"}
               >
                 {row.getVisibleCells().map((cell) => (
-                  <TableCell key={cell.id} className="py-3 align-middle">
+                  <TableCell key={cell.id} className="py-2 align-middle">
                     <table.FlexRender cell={cell} />
                   </TableCell>
                 ))}
@@ -117,15 +118,18 @@ export function Tasks({ data }: TasksProps) {
             ))
           ) : (
             <TableRow>
-              <TableCell colSpan={table.getVisibleLeafColumns().length} className="h-24 text-center">
-                No results.
+              <TableCell colSpan={table.getVisibleLeafColumns().length} className="h-24 p-0">
+                <div className="sticky left-0 w-[calc(100vw-4rem)] px-4 py-6 text-center sm:w-auto">
+                  <p className="font-medium">No matching tasks</p>
+                  <p className="text-muted-foreground mt-1 text-sm">Change your search or reset the filters above.</p>
+                </div>
               </TableCell>
             </TableRow>
           )}
         </TableBody>
       </Table>
       <div className="flex flex-col gap-3 border-t px-4 py-4 md:flex-row md:items-center md:justify-between">
-        <div className="text-muted-foreground text-sm">
+        <div className="text-muted-foreground text-sm" role="status">
           {table.getFilteredSelectedRowModel().rows.length} of {table.getFilteredRowModel().rows.length} row(s)
           selected.
         </div>
@@ -138,7 +142,7 @@ export function Tasks({ data }: TasksProps) {
                 table.setPageSize(Number(value));
               }}
             >
-              <SelectTrigger className="h-8 w-18">
+              <SelectTrigger aria-label="Rows per page" className="h-8 w-18">
                 <SelectValue placeholder={table.state.pagination.pageSize} />
               </SelectTrigger>
               <SelectContent side="top">
