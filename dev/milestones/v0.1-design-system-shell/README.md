@@ -1,6 +1,12 @@
 # v0.1 — Design system and shell
 
-Status: planned; breakdown awaiting review. Only tasks 001 and 002 are pre-approved for implementation.
+Status: in progress; breakdown awaiting review. Only tasks 001 and 002 are pre-approved for implementation.
+
+- 001: implemented; [PR #1](https://github.com/moeghashim/tenboards/pull/1) open for Claude review and user merge.
+- 002: implemented and deployed; stacked on 001, awaiting PR review and user merge.
+- 003–012: planned only; do not start until breakdown approval.
+- Live: https://tenboards.mohanadgh.workers.dev
+- Task 002 version preview: https://9913d738-tenboards.mohanadgh.workers.dev
 
 ## Definition of Done
 

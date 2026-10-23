@@ -6,7 +6,7 @@ import viteReact from "@vitejs/plugin-react";
 import { nitro } from "nitro/vite";
 import { defineConfig } from "vite";
 
-const config = defineConfig({
+const config = defineConfig(({ command }) => ({
   resolve: { tsconfigPaths: true },
   plugins: [
     devtools({
@@ -19,9 +19,10 @@ const config = defineConfig({
     }),
     tailwindcss(),
     tanstackStart(),
-    nitro(),
+    // Preserve zero-config Node development; build and preview the Worker with Wrangler.
+    nitro({ preset: command === "build" ? "cloudflare-module" : undefined }),
     viteReact(),
   ],
-});
+}));
 
 export default config;

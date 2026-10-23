@@ -2,7 +2,7 @@
   "milestones": [
     {
       "id": "v0.1-design-system-shell",
-      "status": "planned",
+      "status": "in_progress",
       "tasks": [
         "001-import-upstream",
         "002-workers-preview",
