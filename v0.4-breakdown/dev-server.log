@@ -1,0 +1,17 @@
+
+> tenboards@0.3.0 dev
+> vite dev --port 3000
+
+
+  VITE v8.3.5  ready in 436 ms
+
+  ➜  Local:   http://localhost:3000/
+  ➜  Network: use --host to expose
+2:31:51 PM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+2:31:55 PM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+2:31:59 PM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+2:32:03 PM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
