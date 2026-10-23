@@ -207,3 +207,8 @@ Calendar, Invoice, Auth V2 login and Auth V2 register each require a root-cause 
 ### App-page foundation (v0.3 / 001)
 
 `dashboard/-components/app-pages/page-header.tsx` provides a presentation-only `PageHeader` with a required string `title`, optional string `description`, wrapping React `actions`, and optional layout `className`. It renders one semantic h1 at 24px, with wrapping titles and action groups. File Manager and Products use it while retaining query-driven file views and the product drawer; their grids and tables remain assigned to tasks 008/009. The upstream-author File Manager owner fixture is now Jordan Lee. Tasks and Invoice are intended later consumers. Existing dashboard cards, card-level headings and chart theme remain the shared APIs for their respective roles.
+
+
+### Mail pages (v0.3 / 002)
+
+Standalone Mail and its dashboard iframe use neutral panes, compact message rows, explicit unread labels and a selected pressed state. Long sender/recipient fields and attachments wrap; the reply composer has named controls. Jordan Lee and Northwind Studio replace author-linked accounts and recipient fixtures. Desktop panel resizing retains its layout cookie; mobile selection opens the existing message drawer and Escape restores row focus. Search, navigation/filter, send and other unimplemented actions retain their existing demo behavior. The iframe retains its title, full-screen new-tab link and cookie-based theme/preset initialization. `npm run screenshots -- --routes /mail,/dashboard/mail --interactions` covers the inner frame, keyboard selection, attachments, composer, resize cookie and mobile drawer.
