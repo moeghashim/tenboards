@@ -14,6 +14,10 @@ Inspect affected code for small, behavior-preserving prefactors that make the re
 - Use Conventional Commits. Every implementation commit ends with a blank line and `Co-Authored-By: GPT-6-Astra <noreply@openai.com>`.
 - Tick acceptance boxes only after verification; update dev/milestones.json status. Record blockers in dev/open-questions.md, finish independent work, and report.
 
+## README upkeep
+
+Every PR updates README.md in the same PR whenever it changes user-visible behavior, features/screens, commands, setup, deployment, URLs, or milestone status. State "README: updated (sections …)" or "README: no change needed (reason)" in the PR body. A stale README is a review blocker (PLAN Decisions log, README upkeep).
+
 ## Test floor
 
 Every task PR must pass npm run build, npm run check, npm run typecheck, and a dev-server /dashboard/default smoke without console errors. From task 004 onward, run npm run screenshots and attach before/after light/dark × desktop/mobile evidence for affected screens. Capture output is gitignored; upload only to pr-assets or PR attachments, never main. Report inherited warnings separately from failures. Include a version-preview URL in every PR.

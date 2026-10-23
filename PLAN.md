@@ -141,6 +141,7 @@ Upstream scripts kept (`dev`, `build`, `preview`, `check`, `check:fix`, `generat
 | Live preview | From v0.1: demo mode deployed to Cloudflare Workers (`tenboards.<account>.workers.dev`) via Nitro `cloudflare-module` preset + `wrangler deploy`; redeployed from `main` after each merge; per-PR preview via `wrangler versions upload` preview URL | Locked by user |
 | Merge authority | Delegated by user to Claude (reviewer) on 2026-10-23: Claude squash-merges approved PRs and rebases stacks; implementer still never merges | Locked by user |
 | Inherited hydration errors | Waived for v0.1; fixing React #418 on Calendar, Finance, Finance V1, Invoice, Patient Monitoring, Productivity, Auth V2 login/register is a required acceptance item in the v0.2/v0.3 task restyling each route | Locked by user |
+| README upkeep | Every PR that changes user-visible behavior, commands, routes, screens, setup, deploy, or status updates README.md in the same PR; reviewer blocks PRs that leave README stale | Locked by user |
 | Local checkout | `/Users/moeghashim/tenboards`, remote `origin` = moeghashim/tenboards | Locked by user |
 | Deferred | RBAC/multi-tenant, i18n/RTL, real CRUD, tests+CI — not before v0.6, each needs planning | Locked |
 | Defaults 1–10 | As listed in §9 | Locked by user ("lock all") |
