@@ -35,6 +35,7 @@ export function TasksToolbar<TData extends RowData>({ table }: TasksToolbarProps
     <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
       <div className="flex flex-1 flex-wrap items-center gap-2">
         <Input
+          aria-label="Filter tasks"
           placeholder="Filter tasks..."
           value={searchValue}
           onChange={(event) => {
@@ -47,7 +48,7 @@ export function TasksToolbar<TData extends RowData>({ table }: TasksToolbarProps
         <TaskPriorityFilter table={table} />
         {isFiltered && (
           <Button
-            variant="destructive"
+            variant="outline"
             onClick={() => {
               table.resetColumnFilters();
               table.setPageIndex(0);
@@ -63,9 +64,10 @@ export function TasksToolbar<TData extends RowData>({ table }: TasksToolbarProps
           <DropdownMenuTrigger
             render={
               <Button
+                aria-label="Column visibility"
                 variant="outline"
                 size="sm"
-                className={cn("ml-auto hidden lg:flex", hiddenColumns.length > 0 && "bg-muted text-foreground")}
+                className={cn("ml-auto flex", hiddenColumns.length > 0 && "bg-muted text-foreground")}
               />
             }
           >
@@ -73,9 +75,9 @@ export function TasksToolbar<TData extends RowData>({ table }: TasksToolbarProps
             View
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="w-38">
-            <DropdownMenuLabel>Toggle columns</DropdownMenuLabel>
-            <DropdownMenuSeparator />
             <DropdownMenuGroup>
+              <DropdownMenuLabel>Toggle columns</DropdownMenuLabel>
+              <DropdownMenuSeparator />
               {hideableColumns.map((column) => (
                 <DropdownMenuCheckboxItem
                   key={column.id}

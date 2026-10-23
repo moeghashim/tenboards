@@ -59,7 +59,7 @@ export function TaskStatusFilter<TData extends RowData>({ table }: TaskStatusFil
         }
       >
         <ListFilter data-icon="inline-start" />
-        Status
+        Status{selectedValues.size > 0 && <span className="tabular-nums"> ({selectedValues.size})</span>}
       </DropdownMenuTrigger>
       <DropdownMenuContent align="start" className="w-50">
         <DropdownMenuGroup>
@@ -71,9 +71,9 @@ export function TaskStatusFilter<TData extends RowData>({ table }: TaskStatusFil
                 key={status.value}
                 checked={isSelected}
                 onCheckedChange={() => updateFilter(status.value)}
-                onSelect={(event) => event.preventDefault()}
+                closeOnClick={false}
               >
-                <status.icon className="text-muted-foreground" />
+                <status.icon className={cn("rounded-sm p-0.5", status.className)} />
                 {status.label}
               </DropdownMenuCheckboxItem>
             );
@@ -83,7 +83,7 @@ export function TaskStatusFilter<TData extends RowData>({ table }: TaskStatusFil
           <>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
-              <DropdownMenuItem onSelect={clearFilter} className="justify-center text-center">
+              <DropdownMenuItem onClick={clearFilter} className="justify-center text-center">
                 <X />
                 Clear filters
               </DropdownMenuItem>

@@ -24,14 +24,6 @@ import type { DataTableFeatures } from "@/lib/data-table-features";
 
 import { labels, priorities, statuses, type Task } from "./data";
 
-const statusStyles: Record<string, string> = {
-  backlog: "border-muted-foreground/20 bg-muted text-muted-foreground",
-  todo: "border-sky-500/20 bg-sky-500/10 text-sky-700 dark:text-sky-300",
-  "in progress": "border-amber-500/20 bg-amber-500/10 text-amber-700 dark:text-amber-300",
-  done: "border-green-500/20 bg-green-500/10 text-green-700 dark:text-green-300",
-  canceled: "border-muted-foreground/20 bg-muted text-muted-foreground",
-};
-
 function SortIcon({ sortDirection }: { sortDirection: false | "asc" | "desc" }) {
   if (sortDirection === "desc") {
     return <ArrowDown data-icon="inline-end" />;
@@ -54,16 +46,16 @@ function TitleColumnHeader({ column }: { column: Column<DataTableFeatures, Task,
         <SortIcon sortDirection={column.getIsSorted()} />
       </DropdownMenuTrigger>
       <DropdownMenuContent align="start">
-        <DropdownMenuItem onSelect={() => column.toggleSorting(false)}>
+        <DropdownMenuItem onClick={() => column.toggleSorting(false)}>
           <ArrowUp />
           Asc
         </DropdownMenuItem>
-        <DropdownMenuItem onSelect={() => column.toggleSorting(true)}>
+        <DropdownMenuItem onClick={() => column.toggleSorting(true)}>
           <ArrowDown />
           Desc
         </DropdownMenuItem>
         <DropdownMenuSeparator />
-        <DropdownMenuItem onSelect={() => column.clearSorting()}>
+        <DropdownMenuItem onClick={() => column.clearSorting()}>
           <RotateCcw />
           Reset
         </DropdownMenuItem>
@@ -94,7 +86,7 @@ export const columns: ColumnDef<DataTableFeatures, Task>[] = [
           <Checkbox
             checked={checked}
             onCheckedChange={(value) => row.toggleSelected(value)}
-            aria-label="Select row"
+            aria-label={`Select ${row.id}`}
             className="translate-y-0.5"
           />
         )}
@@ -106,7 +98,7 @@ export const columns: ColumnDef<DataTableFeatures, Task>[] = [
   {
     accessorKey: "id",
     header: "Task",
-    cell: ({ row }) => <div className="text-muted-foreground w-20 font-mono text-sm">{row.getValue("id")}</div>,
+    cell: ({ row }) => <div className="text-muted-foreground w-20 text-sm tabular-nums">{row.getValue("id")}</div>,
     enableSorting: false,
     enableHiding: false,
   },
@@ -117,13 +109,13 @@ export const columns: ColumnDef<DataTableFeatures, Task>[] = [
       const label = labels.find((label) => label.value === row.original.label);
 
       return (
-        <div className="flex min-w-0 items-center gap-2">
+        <div className="flex min-w-80 items-start gap-2">
           {label && (
-            <Badge className="rounded-sm bg-transparent" variant="outline">
+            <Badge className="shrink-0 rounded-sm bg-transparent" variant="outline">
               {label.label}
             </Badge>
           )}
-          <span className="max-w-lg truncate text-sm font-medium">{row.getValue("title")}</span>
+          <span className="max-w-lg text-sm font-medium break-words whitespace-normal">{row.getValue("title")}</span>
         </div>
       );
     },
@@ -139,7 +131,7 @@ export const columns: ColumnDef<DataTableFeatures, Task>[] = [
       }
 
       return (
-        <Badge className={cn("gap-1.5 rounded-sm border font-medium", statusStyles[status.value])} variant="outline">
+        <Badge className={cn("gap-1.5 rounded-sm border-transparent font-medium", status.className)} variant="outline">
           {status.icon && <status.icon className="size-4" />}
           {status.label}
         </Badge>
@@ -160,10 +152,10 @@ export const columns: ColumnDef<DataTableFeatures, Task>[] = [
       }
 
       return (
-        <div className="flex items-center gap-2 text-sm">
-          {priority.icon && <priority.icon className="text-muted-foreground size-4" />}
+        <Badge variant="secondary" className={cn("gap-1.5 rounded-sm", priority.className)}>
+          <priority.icon className="size-4" />
           {priority.label}
-        </div>
+        </Badge>
       );
     },
     filterFn: (row, id, value) => {
@@ -184,7 +176,7 @@ export const columns: ColumnDef<DataTableFeatures, Task>[] = [
               }
             >
               <MoreHorizontal />
-              <span className="sr-only">Open menu</span>
+              <span className="sr-only">Actions for {task.id}</span>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="w-40">
               <DropdownMenuItem>Edit</DropdownMenuItem>
