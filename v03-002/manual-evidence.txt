@@ -1,0 +1,1 @@
+T3 Workers resize: 449.5390625px / [38,62] -> ArrowRight -> 508.6875px / [43,57] -> reload -> 508.6875px / [43,57].

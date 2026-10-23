@@ -1,0 +1,37 @@
+{
+  "baseURL": "http://localhost:3003/",
+  "hydrationDelayMs": 0,
+  "preset": "graphite",
+  "timezone": "America/Chicago",
+  "reload": false,
+  "interactions": true,
+  "results": [
+    {
+      "route": "/mail",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_mail-light-desktop-interactive.png",
+      "controlsFile": "_mail-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": [
+        "locator.evaluate: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-panel-id=\"mail-message-list-panel\"]')\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/mail",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_mail-light-mobile-interactive.png",
+      "controlsFile": "_mail-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Standalone/iframe theme and preset match; no page overflow",
+        "Keyboard selection, attachments and reply menu/composer",
+        "Mobile Escape restores row focus; drawer reopens",
+        "Existing search/filter/send actions remain demo placeholders"
+      ],
+      "errors": []
+    }
+  ]
+}

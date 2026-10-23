@@ -1,0 +1,21 @@
+
+> tenboards@0.2.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url https://7644b67c-tenboards.mohanadgh.workers.dev --routes /mail,/dashboard/mail --interactions --reload --output screenshots/v03-002/workers
+
+PASS /mail light/desktop direct
+PASS /mail light/desktop refresh
+PASS /mail light/mobile direct
+PASS /mail light/mobile refresh
+PASS /mail dark/desktop direct
+PASS /mail dark/desktop refresh
+PASS /mail dark/mobile direct
+PASS /mail dark/mobile refresh
+PASS /dashboard/mail light/desktop direct
+PASS /dashboard/mail light/desktop refresh
+PASS /dashboard/mail light/mobile direct
+PASS /dashboard/mail light/mobile refresh
+FAIL /dashboard/mail dark/desktop direct
+console: Failed to load resource: the server responded with a status of 502 ()
+PASS /dashboard/mail dark/desktop refresh
+PASS /dashboard/mail dark/mobile direct
+PASS /dashboard/mail dark/mobile refresh

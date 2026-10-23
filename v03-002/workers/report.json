@@ -1,0 +1,252 @@
+{
+  "baseURL": "https://7644b67c-tenboards.mohanadgh.workers.dev/",
+  "hydrationDelayMs": 0,
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": true,
+  "interactions": true,
+  "results": [
+    {
+      "route": "/mail",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_mail-light-desktop-interactive.png",
+      "controlsFile": "_mail-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Standalone/iframe theme and preset match; no page overflow",
+        "Keyboard selection, attachments and reply menu/composer",
+        "Resizable panels persist layout cookie; empty selection and reselection",
+        "Existing search/filter/send actions remain demo placeholders"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/mail",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_mail-light-desktop-refresh-interactive.png",
+      "controlsFile": "_mail-light-desktop-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Standalone/iframe theme and preset match; no page overflow",
+        "Keyboard selection, attachments and reply menu/composer",
+        "Resizable panels persist layout cookie; empty selection and reselection",
+        "Existing search/filter/send actions remain demo placeholders"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/mail",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_mail-light-mobile-interactive.png",
+      "controlsFile": "_mail-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Standalone/iframe theme and preset match; no page overflow",
+        "Keyboard selection, attachments and reply menu/composer",
+        "Mobile Escape restores row focus; drawer reopens",
+        "Existing search/filter/send actions remain demo placeholders"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/mail",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_mail-light-mobile-refresh-interactive.png",
+      "controlsFile": "_mail-light-mobile-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Standalone/iframe theme and preset match; no page overflow",
+        "Keyboard selection, attachments and reply menu/composer",
+        "Mobile Escape restores row focus; drawer reopens",
+        "Existing search/filter/send actions remain demo placeholders"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/mail",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_mail-dark-desktop-interactive.png",
+      "controlsFile": "_mail-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Standalone/iframe theme and preset match; no page overflow",
+        "Keyboard selection, attachments and reply menu/composer",
+        "Resizable panels persist layout cookie; empty selection and reselection",
+        "Existing search/filter/send actions remain demo placeholders"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/mail",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_mail-dark-desktop-refresh-interactive.png",
+      "controlsFile": "_mail-dark-desktop-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Standalone/iframe theme and preset match; no page overflow",
+        "Keyboard selection, attachments and reply menu/composer",
+        "Resizable panels persist layout cookie; empty selection and reselection",
+        "Existing search/filter/send actions remain demo placeholders"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/mail",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_mail-dark-mobile-interactive.png",
+      "controlsFile": "_mail-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Standalone/iframe theme and preset match; no page overflow",
+        "Keyboard selection, attachments and reply menu/composer",
+        "Mobile Escape restores row focus; drawer reopens",
+        "Existing search/filter/send actions remain demo placeholders"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/mail",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_mail-dark-mobile-refresh-interactive.png",
+      "controlsFile": "_mail-dark-mobile-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Standalone/iframe theme and preset match; no page overflow",
+        "Keyboard selection, attachments and reply menu/composer",
+        "Mobile Escape restores row focus; drawer reopens",
+        "Existing search/filter/send actions remain demo placeholders"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/mail",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_mail-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_mail-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Standalone/iframe theme and preset match; no page overflow",
+        "Keyboard selection, attachments and reply menu/composer",
+        "Resizable panels persist layout cookie; empty selection and reselection",
+        "Existing search/filter/send actions remain demo placeholders"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/mail",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_mail-light-desktop-refresh-interactive.png",
+      "controlsFile": "_dashboard_mail-light-desktop-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Standalone/iframe theme and preset match; no page overflow",
+        "Keyboard selection, attachments and reply menu/composer",
+        "Resizable panels persist layout cookie; empty selection and reselection",
+        "Existing search/filter/send actions remain demo placeholders"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/mail",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_mail-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_mail-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Standalone/iframe theme and preset match; no page overflow",
+        "Keyboard selection, attachments and reply menu/composer",
+        "Mobile Escape restores row focus; drawer reopens",
+        "Existing search/filter/send actions remain demo placeholders"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/mail",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_mail-light-mobile-refresh-interactive.png",
+      "controlsFile": "_dashboard_mail-light-mobile-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Standalone/iframe theme and preset match; no page overflow",
+        "Keyboard selection, attachments and reply menu/composer",
+        "Mobile Escape restores row focus; drawer reopens",
+        "Existing search/filter/send actions remain demo placeholders"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/mail",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_mail-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_mail-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Standalone/iframe theme and preset match; no page overflow",
+        "Keyboard selection, attachments and reply menu/composer",
+        "Resizable panels persist layout cookie; empty selection and reselection",
+        "Existing search/filter/send actions remain demo placeholders"
+      ],
+      "errors": [
+        "console: Failed to load resource: the server responded with a status of 502 ()"
+      ]
+    },
+    {
+      "route": "/dashboard/mail",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_mail-dark-desktop-refresh-interactive.png",
+      "controlsFile": "_dashboard_mail-dark-desktop-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Standalone/iframe theme and preset match; no page overflow",
+        "Keyboard selection, attachments and reply menu/composer",
+        "Resizable panels persist layout cookie; empty selection and reselection",
+        "Existing search/filter/send actions remain demo placeholders"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/mail",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_mail-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_mail-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Standalone/iframe theme and preset match; no page overflow",
+        "Keyboard selection, attachments and reply menu/composer",
+        "Mobile Escape restores row focus; drawer reopens",
+        "Existing search/filter/send actions remain demo placeholders"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/mail",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_mail-dark-mobile-refresh-interactive.png",
+      "controlsFile": "_dashboard_mail-dark-mobile-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Standalone/iframe theme and preset match; no page overflow",
+        "Keyboard selection, attachments and reply menu/composer",
+        "Mobile Escape restores row focus; drawer reopens",
+        "Existing search/filter/send actions remain demo placeholders"
+      ],
+      "errors": []
+    }
+  ]
+}

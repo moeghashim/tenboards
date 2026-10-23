@@ -1,0 +1,16 @@
+
+> tenboards@0.2.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url https://7644b67c-tenboards.mohanadgh.workers.dev --routes /mail,/dashboard/mail --interactions --preset pine --output screenshots/v03-002/pine-verified
+
+FAIL /mail light/desktop direct
+Keyboard resize did not change panel width
+PASS /mail light/mobile direct
+FAIL /mail dark/desktop direct
+Keyboard resize did not change panel width
+PASS /mail dark/mobile direct
+FAIL /dashboard/mail light/desktop direct
+Keyboard resize did not change panel width
+PASS /dashboard/mail light/mobile direct
+FAIL /dashboard/mail dark/desktop direct
+Keyboard resize did not change panel width
+PASS /dashboard/mail dark/mobile direct
