@@ -1,0 +1,20 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+'3px' !== '2px'
+
+    at file:///private/tmp/tenboards-qa/presets-check.mjs:38:11
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at process.processImmediate (node:internal/timers:541:9) {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: '3px',
+  expected: '2px',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.21.0

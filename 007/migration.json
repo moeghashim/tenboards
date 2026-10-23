@@ -1,0 +1,274 @@
+[
+  {
+    "preset": "brutalist",
+    "mode": "light",
+    "migratedTo": "default",
+    "ssrDefault": true,
+    "customizer": true,
+    "fontRegistry": 18,
+    "reloadPreserved": true,
+    "focus": {
+      "outline": "2px",
+      "visible": true,
+      "color": "rgb(17, 94, 89)",
+      "duration": "1e-05s"
+    },
+    "reducedMotion": true,
+    "errors": []
+  },
+  {
+    "preset": "brutalist",
+    "mode": "dark",
+    "migratedTo": "default",
+    "ssrDefault": true,
+    "customizer": true,
+    "fontRegistry": 18,
+    "reloadPreserved": true,
+    "focus": {
+      "outline": "2px",
+      "visible": true,
+      "color": "rgb(94, 234, 212)",
+      "duration": "1e-05s"
+    },
+    "reducedMotion": true,
+    "errors": []
+  },
+  {
+    "preset": "neo-brutalism",
+    "mode": "light",
+    "migratedTo": "default",
+    "ssrDefault": true,
+    "customizer": true,
+    "fontRegistry": 18,
+    "reloadPreserved": true,
+    "focus": {
+      "outline": "3px",
+      "visible": true,
+      "color": "oklab(0.436962 -0.0697797 -0.0100711 / 0.5)",
+      "duration": "1e-05s"
+    },
+    "reducedMotion": true,
+    "errors": []
+  },
+  {
+    "preset": "neo-brutalism",
+    "mode": "dark",
+    "migratedTo": "default",
+    "ssrDefault": true,
+    "customizer": true,
+    "fontRegistry": 18,
+    "reloadPreserved": true,
+    "focus": {
+      "outline": "2px",
+      "visible": true,
+      "color": "rgb(94, 234, 212)",
+      "duration": "1e-05s"
+    },
+    "reducedMotion": true,
+    "errors": []
+  },
+  {
+    "preset": "soft-pop",
+    "mode": "light",
+    "migratedTo": "default",
+    "ssrDefault": true,
+    "customizer": true,
+    "fontRegistry": 18,
+    "reloadPreserved": true,
+    "focus": {
+      "outline": "2px",
+      "visible": true,
+      "color": "rgb(17, 94, 89)",
+      "duration": "1e-05s"
+    },
+    "reducedMotion": true,
+    "errors": []
+  },
+  {
+    "preset": "soft-pop",
+    "mode": "dark",
+    "migratedTo": "default",
+    "ssrDefault": true,
+    "customizer": true,
+    "fontRegistry": 18,
+    "reloadPreserved": true,
+    "focus": {
+      "outline": "2px",
+      "visible": true,
+      "color": "rgb(94, 234, 212)",
+      "duration": "1e-05s"
+    },
+    "reducedMotion": true,
+    "errors": []
+  },
+  {
+    "preset": "tangerine",
+    "mode": "light",
+    "migratedTo": "default",
+    "ssrDefault": true,
+    "customizer": true,
+    "fontRegistry": 18,
+    "reloadPreserved": true,
+    "focus": {
+      "outline": "3px",
+      "visible": true,
+      "color": "oklab(0.436962 -0.0697797 -0.0100711 / 0.5)",
+      "duration": "1e-05s"
+    },
+    "reducedMotion": true,
+    "errors": []
+  },
+  {
+    "preset": "tangerine",
+    "mode": "dark",
+    "migratedTo": "default",
+    "ssrDefault": true,
+    "customizer": true,
+    "fontRegistry": 18,
+    "reloadPreserved": true,
+    "focus": {
+      "outline": "3px",
+      "visible": true,
+      "color": "oklab(0.854872 -0.125014 -0.00232285 / 0.5)",
+      "duration": "1e-05s"
+    },
+    "reducedMotion": true,
+    "errors": []
+  },
+  {
+    "preset": "default",
+    "mode": "light",
+    "migratedTo": "default",
+    "ssrDefault": true,
+    "customizer": true,
+    "fontRegistry": 18,
+    "reloadPreserved": true,
+    "focus": {
+      "outline": "3px",
+      "visible": true,
+      "color": "oklab(0.436962 -0.0697797 -0.0100711 / 0.5)",
+      "duration": "1e-05s"
+    },
+    "reducedMotion": true,
+    "errors": []
+  },
+  {
+    "preset": "default",
+    "mode": "dark",
+    "migratedTo": "default",
+    "ssrDefault": true,
+    "customizer": true,
+    "fontRegistry": 18,
+    "reloadPreserved": true,
+    "focus": {
+      "outline": "3px",
+      "visible": true,
+      "color": "oklab(0.854872 -0.125014 -0.00232285 / 0.5)",
+      "duration": "1e-05s"
+    },
+    "reducedMotion": true,
+    "errors": []
+  },
+  {
+    "preset": "graphite",
+    "mode": "light",
+    "migratedTo": "graphite",
+    "ssrDefault": true,
+    "customizer": true,
+    "fontRegistry": 18,
+    "reloadPreserved": true,
+    "focus": {
+      "outline": "2px",
+      "visible": true,
+      "color": "rgb(17, 94, 89)",
+      "duration": "1e-05s"
+    },
+    "reducedMotion": true,
+    "errors": []
+  },
+  {
+    "preset": "graphite",
+    "mode": "dark",
+    "migratedTo": "graphite",
+    "ssrDefault": true,
+    "customizer": true,
+    "fontRegistry": 18,
+    "reloadPreserved": true,
+    "focus": {
+      "outline": "3px",
+      "visible": true,
+      "color": "oklab(0.854872 -0.125014 -0.00232285 / 0.5)",
+      "duration": "1e-05s"
+    },
+    "reducedMotion": true,
+    "errors": []
+  },
+  {
+    "preset": "pine",
+    "mode": "light",
+    "migratedTo": "pine",
+    "ssrDefault": true,
+    "customizer": true,
+    "fontRegistry": 18,
+    "reloadPreserved": true,
+    "focus": {
+      "outline": "3px",
+      "visible": true,
+      "color": "oklab(0.436962 -0.0697797 -0.0100711 / 0.5)",
+      "duration": "1e-05s"
+    },
+    "reducedMotion": true,
+    "errors": []
+  },
+  {
+    "preset": "pine",
+    "mode": "dark",
+    "migratedTo": "pine",
+    "ssrDefault": true,
+    "customizer": true,
+    "fontRegistry": 18,
+    "reloadPreserved": true,
+    "focus": {
+      "outline": "2px",
+      "visible": true,
+      "color": "rgb(94, 234, 212)",
+      "duration": "1e-05s"
+    },
+    "reducedMotion": true,
+    "errors": []
+  },
+  {
+    "preset": "iris",
+    "mode": "light",
+    "migratedTo": "iris",
+    "ssrDefault": true,
+    "customizer": true,
+    "fontRegistry": 18,
+    "reloadPreserved": true,
+    "focus": {
+      "outline": "2px",
+      "visible": true,
+      "color": "rgb(17, 94, 89)",
+      "duration": "1e-05s"
+    },
+    "reducedMotion": true,
+    "errors": []
+  },
+  {
+    "preset": "iris",
+    "mode": "dark",
+    "migratedTo": "iris",
+    "ssrDefault": true,
+    "customizer": true,
+    "fontRegistry": 18,
+    "reloadPreserved": true,
+    "focus": {
+      "outline": "2px",
+      "visible": true,
+      "color": "rgb(94, 234, 212)",
+      "duration": "1e-05s"
+    },
+    "reducedMotion": true,
+    "errors": []
+  }
+]

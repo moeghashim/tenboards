@@ -1,0 +1,14 @@
+
+> tenboards@0.1.0 generate:presets
+> ts-node -P tsconfig.scripts.json src/scripts/generate-theme-presets.ts
+
+✅ theme.ts updated with new theme presets
+(node:12256) [DEP0180] DeprecationWarning: fs.Stats constructor is deprecated.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
+> tenboards@0.1.0 generate:presets
+> ts-node -P tsconfig.scripts.json src/scripts/generate-theme-presets.ts
+
+ℹ️  No changes in theme.ts
+(node:12276) [DEP0180] DeprecationWarning: fs.Stats constructor is deprecated.
+(Use `node --trace-deprecation ...` to show where the warning was created)
