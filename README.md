@@ -326,3 +326,13 @@ Products, Invoice and the entire E-commerce dashboard now use typed server reads
 Store orders/customers, review records, traffic-source metadata, category/product summaries and report metadata use normalized tables. Chart series, KPIs, traffic and inventory buckets use typed metric points with decimal values and explicit currency/units. Presentation icons/colors remain local. The store's illustrative totals, short order list and separate catalog are intentionally not reconciled or joined by similar names. Order customer identities are scoped to their source order because the fixture supplies names, not shared customer IDs.
 
 Cumulative parity covers seven reads and 26 scenarios, including product filters/missing records, order filtering, Invoice year/leap-day rollover and later requests after seeding. Upgrade with `db:migrate` and `db:seed`; no new dependency or write endpoint is added. `node --experimental-strip-types scripts/check-commerce-local.ts <base-url>...` verifies local edits reset after reload. Invoice's existing delayed-timezone/print interaction checks remain available through `npm run screenshots`.
+
+### Workspace reads (v0.4/004, in review)
+
+Kanban, Tasks, Calendar and File Manager now load through the optional data source.
+Their local drag, filter, selection and star controls remain session-only. Kanban
+and the Tasks ledger retain separate records. Calendar stores typed relative event
+definitions, resolves one request timestamp for SSR, then adopts browser-local civil
+time after hydration; Today and the now marker continue using the live clock.
+Migration `0005_abandoned_red_ghost.sql` extends the cumulative journal. Parity covers
+all workspace reads, empty/missing selections and month/year/leap-day timezone cases.

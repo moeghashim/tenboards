@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { getInitials } from "@/lib/utils";
 
-import { tagTones } from "./data";
+import { ownerTone, tagTones } from "./data";
 import { KanbanListDropGroup, SortableListTask } from "./kanban-list-dnd";
 import { priorityBadgeConfig } from "./task-priority";
 import { statusIcons } from "./task-status";
@@ -115,7 +115,7 @@ export function KanbanList({ board, columns }: { board: BoardState; columns: rea
                           {task.dueDate}
                         </span>
                         <div className="flex shrink-0 items-center gap-1.5" title={task.owner.name}>
-                          <Avatar className={cn("size-6 after:rounded-sm", task.owner.tone)}>
+                          <Avatar className={cn("size-6 after:rounded-sm", ownerTone)}>
                             <AvatarFallback className="rounded-sm text-xs">
                               <span aria-hidden="true">{getInitials(task.owner.name)}</span>
                               <span className="sr-only">Assigned to {task.owner.name}</span>

@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { createServerFn } from "@tanstack/react-start";
 
 import { FolderPlus, Grid2X2, List, Upload } from "lucide-react";
 
@@ -6,20 +7,27 @@ import { Button } from "@/components/ui/button";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 
 import { PageHeader } from "../-components/app-pages/page-header";
-import { type FileManagerView, files, folders } from "./-components/data";
+import type { FileManagerView } from "./-components/data";
 import { FileGridView } from "./-components/file-grid-view";
 import { FileListView } from "./-components/file-list-view";
 import { FileManagerToolbar } from "./-components/file-manager-toolbar";
 import { FoldersSection } from "./-components/folders-section";
 
+const loadData = createServerFn({ method: "GET" }).handler(async () => {
+  const { readFiles } = await import("@/server/data/files");
+  return readFiles();
+});
+
 export const Route = createFileRoute("/(main)/dashboard/file-manager")({
   validateSearch: (search: Record<string, unknown>): { view: FileManagerView } => ({
     view: search.view === "list" ? "list" : "grid",
   }),
+  loader: () => loadData(),
   component: Page,
 });
 
 function Page() {
+  const { files, folders } = Route.useLoaderData();
   const { view: activeView } = Route.useSearch();
 
   return (

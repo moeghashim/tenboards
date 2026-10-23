@@ -11,7 +11,6 @@ import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectVa
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { dataTableFeatures } from "@/lib/data-table-features";
 
-import { columnIds } from "./data";
 import { createTaskTableColumns } from "./kanban-table-columns";
 import { SortableTaskTableRow } from "./kanban-table-dnd";
 import type { BoardState, Column, ColumnId } from "./types";
@@ -39,7 +38,9 @@ export function KanbanTable({
   const changeStatus = useCallback(
     (taskId: string, status: ColumnId) => {
       setBoard((current) => {
-        const source = columnIds.find((id) => current[id].some((task) => task.id === taskId));
+        const source = (Object.keys(current) as ColumnId[]).find((id) =>
+          current[id].some((task) => task.id === taskId),
+        );
         if (!source || source === status) {
           return current;
         }

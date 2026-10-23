@@ -23,7 +23,11 @@ try {
     for (const scenario of entry.scenarios) {
       const demo = await scenario.demo();
       const db = await scenario.db();
-      if (process.argv.includes("--inject-mismatch") && scenarios === 0 && Array.isArray(db)) db.reverse();
+      if (process.argv.includes("--inject-mismatch") && scenarios === 0) {
+        assert.ok(db && typeof db === "object", "Negative control requires an object result");
+        if (Array.isArray(db)) db.reverse();
+        else Reflect.set(db, Object.keys(db)[0], "QA_MISMATCH");
+      }
       assert.deepEqual(db, demo, `${entry.read}/${scenario.name}`);
       // Caller mutations cannot contaminate future requests.
       if (Array.isArray(demo)) demo.splice(0);
