@@ -1,0 +1,105 @@
+{
+  "baseURL": "http://127.0.0.1:3000/",
+  "hydrationDelayMs": 0,
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": true,
+  "interactions": true,
+  "results": [
+    {
+      "route": "/chat",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_chat-light-desktop-interactive.png",
+      "controlsFile": "_chat-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": [
+        "console: Failed to load resource: the server responded with a status of 404 ()",
+        "page: Switched to client rendering because the server rendering errored:\n\nFailed to load url /src/routes/(main)/chat/-components/use-chat.ts (resolved id: /Users/moeghashim/tenboards/src/routes/(main)/chat/-components/use-chat.ts) in /Users/moeghashim/tenboards/src/routes/(main)/chat/-components/chat.tsx. Does the file exist?",
+        "console: %o\n\n%s\n\n%s\n TypeError: Failed to fetch dynamically imported module: http://127.0.0.1:3000/src/routes/(main)/chat/route.tsx?t=1792786930813&tsr-split=component The above error occurred in the <Lazy> component. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.",
+        "console: Failed to load resource: the server responded with a status of 404 ()",
+        "console: %o\n\n%s\n\n%s\n TypeError: Failed to fetch dynamically imported module: http://127.0.0.1:3000/src/routes/(main)/chat/route.tsx?t=1792786930813&tsr-split=component The above error occurred in the <Lazy> component. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.",
+        "locator.press: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-conversation-id]').first()\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/chat",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_chat-light-desktop-refresh-interactive.png",
+      "controlsFile": "_chat-light-desktop-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": [
+        "console: Failed to load resource: the server responded with a status of 404 ()",
+        "page: Switched to client rendering because the server rendering errored:\n\nFailed to load url /src/routes/(main)/chat/-components/use-chat.ts (resolved id: /Users/moeghashim/tenboards/src/routes/(main)/chat/-components/use-chat.ts) in /Users/moeghashim/tenboards/src/routes/(main)/chat/-components/chat.tsx. Does the file exist?",
+        "console: Failed to load resource: the server responded with a status of 404 ()",
+        "console: %o\n\n%s\n\n%s\n TypeError: Failed to fetch dynamically imported module: http://127.0.0.1:3000/src/routes/(main)/chat/route.tsx?t=1792786930813&tsr-split=component The above error occurred in the <Lazy> component. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.",
+        "console: Failed to load resource: the server responded with a status of 404 ()",
+        "console: %o\n\n%s\n\n%s\n TypeError: Failed to fetch dynamically imported module: http://127.0.0.1:3000/src/routes/(main)/chat/route.tsx?t=1792786930813&tsr-split=component The above error occurred in the <Lazy> component. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.",
+        "locator.press: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-conversation-id]').first()\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/chat",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_chat-light-mobile-interactive.png",
+      "controlsFile": "_chat-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": [
+        "console: Failed to load resource: the server responded with a status of 404 ()",
+        "page: Switched to client rendering because the server rendering errored:\n\nFailed to load url /src/routes/(main)/chat/-components/use-chat.ts (resolved id: /Users/moeghashim/tenboards/src/routes/(main)/chat/-components/use-chat.ts) in /Users/moeghashim/tenboards/src/routes/(main)/chat/-components/chat.tsx. Does the file exist?",
+        "console: %o\n\n%s\n\n%s\n TypeError: Failed to fetch dynamically imported module: http://127.0.0.1:3000/src/routes/(main)/chat/route.tsx?t=1792786930813&tsr-split=component The above error occurred in the <Lazy> component. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.",
+        "console: Failed to load resource: the server responded with a status of 404 ()",
+        "console: %o\n\n%s\n\n%s\n TypeError: Failed to fetch dynamically imported module: http://127.0.0.1:3000/src/routes/(main)/chat/route.tsx?t=1792786930813&tsr-split=component The above error occurred in the <Lazy> component. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.",
+        "locator.press: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-conversation-id]').first()\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/chat",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_chat-light-mobile-refresh-interactive.png",
+      "controlsFile": "_chat-light-mobile-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": [
+        "console: Failed to load resource: the server responded with a status of 404 ()",
+        "page: Switched to client rendering because the server rendering errored:\n\nFailed to load url /src/routes/(main)/chat/-components/use-chat.ts (resolved id: /Users/moeghashim/tenboards/src/routes/(main)/chat/-components/use-chat.ts) in /Users/moeghashim/tenboards/src/routes/(main)/chat/-components/chat.tsx. Does the file exist?",
+        "console: %o\n\n%s\n\n%s\n TypeError: Failed to fetch dynamically imported module: http://127.0.0.1:3000/src/routes/(main)/chat/route.tsx?t=1792786930813&tsr-split=component The above error occurred in the <Lazy> component. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.",
+        "console: Failed to load resource: the server responded with a status of 404 ()",
+        "console: %o\n\n%s\n\n%s\n TypeError: Failed to fetch dynamically imported module: http://127.0.0.1:3000/src/routes/(main)/chat/route.tsx?t=1792786930813&tsr-split=component The above error occurred in the <Lazy> component. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.",
+        "console: Failed to load resource: the server responded with a status of 404 ()",
+        "console: %o\n\n%s\n\n%s\n TypeError: Failed to fetch dynamically imported module: http://127.0.0.1:3000/src/routes/(main)/chat/route.tsx?t=1792786930813&tsr-split=component The above error occurred in the <Lazy> component. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.",
+        "console: %c[Server]%c color: #9333ea; font-weight: bold; color: inherit; Error in renderToReadableStream: {name: Error, message: Failed to load url /src/routes/(main)/chat/-compon…)/chat/-components/chat.tsx. Does the file exist?, stack: Error: Failed to load url /src/routes/(main)/chat/…e_modules/vite/dist/node/chunks/node.js:25373:13)} {componentStack: \n    at Lazy (<anonymous>)\n    at MatchInnerImpl (…eact-start-server/dist/esm/StartServer.js:13:113)}",
+        "console: %c[Server]%c color: #9333ea; font-weight: bold; color: inherit; Error in renderToReadableStream: {name: Error, message: Failed to load url /src/routes/(main)/chat/-compon…)/chat/-components/chat.tsx. Does the file exist?, stack: Error: Failed to load url /src/routes/(main)/chat/…e_modules/vite/dist/node/chunks/node.js:25373:13)} {componentStack: \n    at Lazy (<anonymous>)\n    at MatchInnerImpl (…eact-start-server/dist/esm/StartServer.js:13:113)}",
+        "locator.press: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-conversation-id]').first()\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/chat",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_chat-dark-desktop-interactive.png",
+      "controlsFile": "_chat-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": [
+        "console: Failed to load resource: the server responded with a status of 404 ()",
+        "page: Switched to client rendering because the server rendering errored:\n\nFailed to load url /src/routes/(main)/chat/-components/use-chat.ts (resolved id: /Users/moeghashim/tenboards/src/routes/(main)/chat/-components/use-chat.ts) in /Users/moeghashim/tenboards/src/routes/(main)/chat/-components/chat.tsx. Does the file exist?",
+        "console: %o\n\n%s\n\n%s\n TypeError: Failed to fetch dynamically imported module: http://127.0.0.1:3000/src/routes/(main)/chat/route.tsx?t=1792786930813&tsr-split=component The above error occurred in the <Lazy> component. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.",
+        "console: Failed to load resource: the server responded with a status of 404 ()",
+        "console: %o\n\n%s\n\n%s\n TypeError: Failed to fetch dynamically imported module: http://127.0.0.1:3000/src/routes/(main)/chat/route.tsx?t=1792786930813&tsr-split=component The above error occurred in the <Lazy> component. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.",
+        "page.waitForTimeout: Target page, context or browser has been closed"
+      ]
+    }
+  ]
+}

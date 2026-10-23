@@ -1,0 +1,18 @@
+src/server/db/seed-communications.ts:26:71 lint/style/noNestedTernary ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Do not nest ternary expressions.
+  
+    24 │     await tx.delete(s.mailRecipients).where(eq(s.mailRecipients.messageId, m.id));
+    25 │     for (const kind of ["from", "to", "cc"] as const)
+  > 26 │       for (const [position, recipient] of (kind === "from" ? [from] : kind === "to" ? to : (cc ?? [])).entries())
+       │                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    27 │         await tx.insert(s.mailRecipients).values({ ...recipient, messageId: m.id, kind, position });
+    28 │     await tx.delete(s.mailLabels).where(eq(s.mailLabels.messageId, m.id));
+  
+  i Nesting ternary expressions can make code more difficult to understand.
+  
+  i Convert nested ternary expression into if-else statements or separate the conditions to make the logic easier to understand.
+  
+
+Checked 43 files in 403ms. Fixed 21 files.
+Found 1 warning.

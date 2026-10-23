@@ -1,0 +1,8 @@
+
+> tenboards@0.3.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url https://e4971a27-tenboards.mohanadgh.workers.dev --routes /chat --output screenshots/v04-005/before-chat-render
+
+PASS /chat light/desktop direct
+PASS /chat light/mobile direct
+PASS /chat dark/desktop direct
+PASS /chat dark/mobile direct

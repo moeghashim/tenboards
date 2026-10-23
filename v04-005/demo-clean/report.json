@@ -1,0 +1,658 @@
+{
+  "baseURL": "http://127.0.0.1:3000/",
+  "hydrationDelayMs": 0,
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": true,
+  "interactions": true,
+  "results": [
+    {
+      "route": "/chat",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_chat-light-desktop-interactive.png",
+      "controlsFile": "_chat-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Iframe preset/theme and no page overflow",
+        "Conversation selection, multiline composer and note tab",
+        "Profile Escape and trigger focus return",
+        "Mobile back returns row focus; hidden list/thread/contact panels inert",
+        "Existing sends/search/filter remain demo behavior"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/chat",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_chat-light-desktop-refresh-interactive.png",
+      "controlsFile": "_chat-light-desktop-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Iframe preset/theme and no page overflow",
+        "Conversation selection, multiline composer and note tab",
+        "Profile Escape and trigger focus return",
+        "Mobile back returns row focus; hidden list/thread/contact panels inert",
+        "Existing sends/search/filter remain demo behavior"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/chat",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_chat-light-mobile-interactive.png",
+      "controlsFile": "_chat-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Iframe preset/theme and no page overflow",
+        "Conversation selection, multiline composer and note tab",
+        "Profile Escape and trigger focus return",
+        "Mobile back returns row focus; hidden list/thread/contact panels inert",
+        "Existing sends/search/filter remain demo behavior"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/chat",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_chat-light-mobile-refresh-interactive.png",
+      "controlsFile": "_chat-light-mobile-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Iframe preset/theme and no page overflow",
+        "Conversation selection, multiline composer and note tab",
+        "Profile Escape and trigger focus return",
+        "Mobile back returns row focus; hidden list/thread/contact panels inert",
+        "Existing sends/search/filter remain demo behavior"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/chat",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_chat-dark-desktop-interactive.png",
+      "controlsFile": "_chat-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Iframe preset/theme and no page overflow",
+        "Conversation selection, multiline composer and note tab",
+        "Profile Escape and trigger focus return",
+        "Mobile back returns row focus; hidden list/thread/contact panels inert",
+        "Existing sends/search/filter remain demo behavior"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/chat",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_chat-dark-desktop-refresh-interactive.png",
+      "controlsFile": "_chat-dark-desktop-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Iframe preset/theme and no page overflow",
+        "Conversation selection, multiline composer and note tab",
+        "Profile Escape and trigger focus return",
+        "Mobile back returns row focus; hidden list/thread/contact panels inert",
+        "Existing sends/search/filter remain demo behavior"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/chat",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_chat-dark-mobile-interactive.png",
+      "controlsFile": "_chat-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Iframe preset/theme and no page overflow",
+        "Conversation selection, multiline composer and note tab",
+        "Profile Escape and trigger focus return",
+        "Mobile back returns row focus; hidden list/thread/contact panels inert",
+        "Existing sends/search/filter remain demo behavior"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/chat",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_chat-dark-mobile-refresh-interactive.png",
+      "controlsFile": "_chat-dark-mobile-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Iframe preset/theme and no page overflow",
+        "Conversation selection, multiline composer and note tab",
+        "Profile Escape and trigger focus return",
+        "Mobile back returns row focus; hidden list/thread/contact panels inert",
+        "Existing sends/search/filter remain demo behavior"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/mail",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_mail-light-desktop-interactive.png",
+      "controlsFile": "_mail-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Standalone/iframe theme and preset match; no page overflow",
+        "Keyboard selection, attachments and reply menu/composer",
+        "Resizable panels persist layout cookie; empty selection and reselection",
+        "Existing search/filter/send actions remain demo placeholders"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/mail",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_mail-light-desktop-refresh-interactive.png",
+      "controlsFile": "_mail-light-desktop-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Standalone/iframe theme and preset match; no page overflow",
+        "Keyboard selection, attachments and reply menu/composer",
+        "Resizable panels persist layout cookie; empty selection and reselection",
+        "Existing search/filter/send actions remain demo placeholders"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/mail",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_mail-light-mobile-interactive.png",
+      "controlsFile": "_mail-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Standalone/iframe theme and preset match; no page overflow",
+        "Keyboard selection, attachments and reply menu/composer",
+        "Mobile Escape restores row focus; drawer reopens",
+        "Existing search/filter/send actions remain demo placeholders"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/mail",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_mail-light-mobile-refresh-interactive.png",
+      "controlsFile": "_mail-light-mobile-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Standalone/iframe theme and preset match; no page overflow",
+        "Keyboard selection, attachments and reply menu/composer",
+        "Mobile Escape restores row focus; drawer reopens",
+        "Existing search/filter/send actions remain demo placeholders"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/mail",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_mail-dark-desktop-interactive.png",
+      "controlsFile": "_mail-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Standalone/iframe theme and preset match; no page overflow",
+        "Keyboard selection, attachments and reply menu/composer",
+        "Resizable panels persist layout cookie; empty selection and reselection",
+        "Existing search/filter/send actions remain demo placeholders"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/mail",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_mail-dark-desktop-refresh-interactive.png",
+      "controlsFile": "_mail-dark-desktop-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Standalone/iframe theme and preset match; no page overflow",
+        "Keyboard selection, attachments and reply menu/composer",
+        "Resizable panels persist layout cookie; empty selection and reselection",
+        "Existing search/filter/send actions remain demo placeholders"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/mail",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_mail-dark-mobile-interactive.png",
+      "controlsFile": "_mail-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Standalone/iframe theme and preset match; no page overflow",
+        "Keyboard selection, attachments and reply menu/composer",
+        "Mobile Escape restores row focus; drawer reopens",
+        "Existing search/filter/send actions remain demo placeholders"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/mail",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_mail-dark-mobile-refresh-interactive.png",
+      "controlsFile": "_mail-dark-mobile-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Standalone/iframe theme and preset match; no page overflow",
+        "Keyboard selection, attachments and reply menu/composer",
+        "Mobile Escape restores row focus; drawer reopens",
+        "Existing search/filter/send actions remain demo placeholders"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/chat",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_chat-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_chat-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Iframe preset/theme and no page overflow",
+        "Conversation selection, multiline composer and note tab",
+        "Profile Escape and trigger focus return",
+        "Mobile back returns row focus; hidden list/thread/contact panels inert",
+        "Existing sends/search/filter remain demo behavior"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/chat",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_chat-light-desktop-refresh-interactive.png",
+      "controlsFile": "_dashboard_chat-light-desktop-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Iframe preset/theme and no page overflow",
+        "Conversation selection, multiline composer and note tab",
+        "Profile Escape and trigger focus return",
+        "Mobile back returns row focus; hidden list/thread/contact panels inert",
+        "Existing sends/search/filter remain demo behavior"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/chat",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_chat-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_chat-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Iframe preset/theme and no page overflow",
+        "Conversation selection, multiline composer and note tab",
+        "Profile Escape and trigger focus return",
+        "Mobile back returns row focus; hidden list/thread/contact panels inert",
+        "Existing sends/search/filter remain demo behavior"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/chat",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_chat-light-mobile-refresh-interactive.png",
+      "controlsFile": "_dashboard_chat-light-mobile-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Iframe preset/theme and no page overflow",
+        "Conversation selection, multiline composer and note tab",
+        "Profile Escape and trigger focus return",
+        "Mobile back returns row focus; hidden list/thread/contact panels inert",
+        "Existing sends/search/filter remain demo behavior"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/chat",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_chat-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_chat-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Iframe preset/theme and no page overflow",
+        "Conversation selection, multiline composer and note tab",
+        "Profile Escape and trigger focus return",
+        "Mobile back returns row focus; hidden list/thread/contact panels inert",
+        "Existing sends/search/filter remain demo behavior"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/chat",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_chat-dark-desktop-refresh-interactive.png",
+      "controlsFile": "_dashboard_chat-dark-desktop-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Iframe preset/theme and no page overflow",
+        "Conversation selection, multiline composer and note tab",
+        "Profile Escape and trigger focus return",
+        "Mobile back returns row focus; hidden list/thread/contact panels inert",
+        "Existing sends/search/filter remain demo behavior"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/chat",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_chat-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_chat-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Iframe preset/theme and no page overflow",
+        "Conversation selection, multiline composer and note tab",
+        "Profile Escape and trigger focus return",
+        "Mobile back returns row focus; hidden list/thread/contact panels inert",
+        "Existing sends/search/filter remain demo behavior"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/chat",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_chat-dark-mobile-refresh-interactive.png",
+      "controlsFile": "_dashboard_chat-dark-mobile-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Iframe preset/theme and no page overflow",
+        "Conversation selection, multiline composer and note tab",
+        "Profile Escape and trigger focus return",
+        "Mobile back returns row focus; hidden list/thread/contact panels inert",
+        "Existing sends/search/filter remain demo behavior"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_default-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_default-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Sidebar expansion/names/visible 2px focus; palette arrows/Escape/focus return",
+        "Settings native radio/select keyboard access, focus trap/return; reduced motion <=1ms",
+        "Theme/preset/font state persists after refresh"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_default-light-desktop-refresh-interactive.png",
+      "controlsFile": "_dashboard_default-light-desktop-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Sidebar expansion/names/visible 2px focus; palette arrows/Escape/focus return",
+        "Settings native radio/select keyboard access, focus trap/return; reduced motion <=1ms",
+        "Theme/preset/font state persists after refresh"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_default-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_default-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Sidebar expansion/names/visible 2px focus; palette arrows/Escape/focus return",
+        "Settings native radio/select keyboard access, focus trap/return; reduced motion <=1ms",
+        "Theme/preset/font state persists after refresh"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_default-light-mobile-refresh-interactive.png",
+      "controlsFile": "_dashboard_default-light-mobile-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Sidebar expansion/names/visible 2px focus; palette arrows/Escape/focus return",
+        "Settings native radio/select keyboard access, focus trap/return; reduced motion <=1ms",
+        "Theme/preset/font state persists after refresh"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_default-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_default-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Sidebar expansion/names/visible 2px focus; palette arrows/Escape/focus return",
+        "Settings native radio/select keyboard access, focus trap/return; reduced motion <=1ms",
+        "Theme/preset/font state persists after refresh"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_default-dark-desktop-refresh-interactive.png",
+      "controlsFile": "_dashboard_default-dark-desktop-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Sidebar expansion/names/visible 2px focus; palette arrows/Escape/focus return",
+        "Settings native radio/select keyboard access, focus trap/return; reduced motion <=1ms",
+        "Theme/preset/font state persists after refresh"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_default-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_default-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Sidebar expansion/names/visible 2px focus; palette arrows/Escape/focus return",
+        "Settings native radio/select keyboard access, focus trap/return; reduced motion <=1ms",
+        "Theme/preset/font state persists after refresh"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_default-dark-mobile-refresh-interactive.png",
+      "controlsFile": "_dashboard_default-dark-mobile-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Sidebar expansion/names/visible 2px focus; palette arrows/Escape/focus return",
+        "Settings native radio/select keyboard access, focus trap/return; reduced motion <=1ms",
+        "Theme/preset/font state persists after refresh"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/mail",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_mail-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_mail-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Standalone/iframe theme and preset match; no page overflow",
+        "Keyboard selection, attachments and reply menu/composer",
+        "Resizable panels persist layout cookie; empty selection and reselection",
+        "Existing search/filter/send actions remain demo placeholders"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/mail",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_mail-light-desktop-refresh-interactive.png",
+      "controlsFile": "_dashboard_mail-light-desktop-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Standalone/iframe theme and preset match; no page overflow",
+        "Keyboard selection, attachments and reply menu/composer",
+        "Resizable panels persist layout cookie; empty selection and reselection",
+        "Existing search/filter/send actions remain demo placeholders"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/mail",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_mail-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_mail-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Standalone/iframe theme and preset match; no page overflow",
+        "Keyboard selection, attachments and reply menu/composer",
+        "Mobile Escape restores row focus; drawer reopens",
+        "Existing search/filter/send actions remain demo placeholders"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/mail",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_mail-light-mobile-refresh-interactive.png",
+      "controlsFile": "_dashboard_mail-light-mobile-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Standalone/iframe theme and preset match; no page overflow",
+        "Keyboard selection, attachments and reply menu/composer",
+        "Mobile Escape restores row focus; drawer reopens",
+        "Existing search/filter/send actions remain demo placeholders"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/mail",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_mail-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_mail-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Standalone/iframe theme and preset match; no page overflow",
+        "Keyboard selection, attachments and reply menu/composer",
+        "Resizable panels persist layout cookie; empty selection and reselection",
+        "Existing search/filter/send actions remain demo placeholders"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/mail",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_mail-dark-desktop-refresh-interactive.png",
+      "controlsFile": "_dashboard_mail-dark-desktop-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Standalone/iframe theme and preset match; no page overflow",
+        "Keyboard selection, attachments and reply menu/composer",
+        "Resizable panels persist layout cookie; empty selection and reselection",
+        "Existing search/filter/send actions remain demo placeholders"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/mail",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_mail-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_mail-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Standalone/iframe theme and preset match; no page overflow",
+        "Keyboard selection, attachments and reply menu/composer",
+        "Mobile Escape restores row focus; drawer reopens",
+        "Existing search/filter/send actions remain demo placeholders"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/mail",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_mail-dark-mobile-refresh-interactive.png",
+      "controlsFile": "_dashboard_mail-dark-mobile-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Standalone/iframe theme and preset match; no page overflow",
+        "Keyboard selection, attachments and reply menu/composer",
+        "Mobile Escape restores row focus; drawer reopens",
+        "Existing search/filter/send actions remain demo placeholders"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    }
+  ]
+}

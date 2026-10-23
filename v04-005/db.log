@@ -1,0 +1,49 @@
+
+> tenboards@0.3.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://127.0.0.1:3001 --routes /dashboard/default,/mail,/chat,/dashboard/mail,/dashboard/chat --interactions --reload --output screenshots/v04-005/db
+
+PASS /chat light/desktop direct
+PASS /chat light/desktop refresh
+PASS /chat light/mobile direct
+PASS /chat light/mobile refresh
+PASS /chat dark/desktop direct
+PASS /chat dark/desktop refresh
+PASS /chat dark/mobile direct
+PASS /chat dark/mobile refresh
+FAIL /mail light/desktop direct
+console: Failed to load resource: the server responded with a status of 504 (Outdated Optimize Dep)
+console: [TanStack Devtools] Failed to load: TypeError: Failed to fetch dynamically imported module: http://127.0.0.1:3001/node_modules/.vite/deps/BRS44MK7-Bum2uiMV.js?v=cabfb136
+console: [TanStack Devtools] Failed to load: TypeError: Failed to fetch dynamically imported module: http://127.0.0.1:3001/node_modules/.vite/deps/BRS44MK7-Bum2uiMV.js?v=cabfb136
+PASS /mail light/desktop refresh
+PASS /mail light/mobile direct
+PASS /mail light/mobile refresh
+PASS /mail dark/desktop direct
+PASS /mail dark/desktop refresh
+PASS /mail dark/mobile direct
+PASS /mail dark/mobile refresh
+PASS /dashboard/chat light/desktop direct
+PASS /dashboard/chat light/desktop refresh
+PASS /dashboard/chat light/mobile direct
+PASS /dashboard/chat light/mobile refresh
+PASS /dashboard/chat dark/desktop direct
+PASS /dashboard/chat dark/desktop refresh
+PASS /dashboard/chat dark/mobile direct
+PASS /dashboard/chat dark/mobile refresh
+FAIL /dashboard/default light/desktop direct
+page.evaluate: Execution context was destroyed, most likely because of a navigation
+PASS /dashboard/default light/desktop refresh
+PASS /dashboard/default light/mobile direct
+PASS /dashboard/default light/mobile refresh
+PASS /dashboard/default dark/desktop direct
+PASS /dashboard/default dark/desktop refresh
+PASS /dashboard/default dark/mobile direct
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+browserContext.close: Target page, context or browser has been closed
+    at async file:///Users/moeghashim/tenboards/scripts/screenshots.ts:199:13 {
+  log: []
+}
+
+Node.js v24.21.0

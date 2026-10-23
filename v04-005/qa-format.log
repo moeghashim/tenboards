@@ -1,0 +1,59 @@
+scripts/communication-state-probe.tsx:31:21 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━
+
+  ! Unnecessary nullish coalescing.
+  
+    29 │     const [s, set] = useChat();
+    30 │     setChat = set;
+  > 31 │     return <output>{s.selected ?? "empty"}</output>;
+       │                     ^^^^^^^^^^
+    32 │   }
+    33 │   const container = document.createElement("div");
+  
+  i Drop ?? and the fallback expression.
+  
+    29 │     const [s, set] = useChat();
+    30 │     setChat = set;
+  > 31 │     return <output>{s.selected ?? "empty"}</output>;
+       │                                ^^
+    32 │   }
+    33 │   const container = document.createElement("div");
+  
+  i The left-hand side is guaranteed to be non-nullish, so the fallback is unreachable.
+  
+
+scripts/communication-state-probe.tsx:23:12 lint/correctness/noComponentHookFactories ━━━━━━━━━━━━━━
+
+  × Do not define component MailProbe inside a function.
+  
+    21 │   let setMail: ReturnType<typeof useMail>[1];
+    22 │   let setChat: ReturnType<typeof useChat>[1];
+  > 23 │   function MailProbe() {
+       │            ^^^^^^^^^
+    24 │     const [s, set] = useMail();
+    25 │     setMail = set;
+  
+  i React treats components defined inside functions as completely different on each call, destroying the entire subtree and losing all state. Move it to the module level.
+  
+
+scripts/communication-state-probe.tsx:28:12 lint/correctness/noComponentHookFactories ━━━━━━━━━━━━━━
+
+  × Do not define component ChatProbe inside a function.
+  
+    26 │     return <output>{s.selected ?? "empty"}</output>;
+    27 │   }
+  > 28 │   function ChatProbe() {
+       │            ^^^^^^^^^
+    29 │     const [s, set] = useChat();
+    30 │     setChat = set;
+  
+  i React treats components defined inside functions as completely different on each call, destroying the entire subtree and losing all state. Move it to the module level.
+  
+
+Checked 4 files in 922ms. Fixed 4 files.
+Found 2 errors.
+Found 1 warning.
+check ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Some errors were emitted while applying fixes.
+  
+

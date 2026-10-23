@@ -1,0 +1,532 @@
+[
+  {
+    "file": "_chat-dark-desktop-interactive.png",
+    "mode": "demo-clean",
+    "difference": [
+      284,
+      127,
+      1112,
+      891
+    ]
+  },
+  {
+    "file": "_chat-dark-desktop-interactive.png",
+    "mode": "db-clean",
+    "difference": [
+      624,
+      127,
+      1112,
+      888
+    ]
+  },
+  {
+    "file": "_dashboard_chat-light-desktop-interactive.png",
+    "mode": "demo-clean",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_chat-light-desktop-interactive.png",
+    "mode": "db-clean",
+    "difference": null
+  },
+  {
+    "file": "_mail-dark-desktop-interactive.png",
+    "mode": "demo-clean",
+    "difference": [
+      269,
+      93,
+      897,
+      873
+    ]
+  },
+  {
+    "file": "_mail-dark-desktop-interactive.png",
+    "mode": "db-clean",
+    "difference": [
+      269,
+      93,
+      897,
+      873
+    ]
+  },
+  {
+    "file": "_chat-light-desktop-interactive.png",
+    "mode": "demo-clean",
+    "difference": [
+      284,
+      221,
+      306,
+      891
+    ]
+  },
+  {
+    "file": "_chat-light-desktop-interactive.png",
+    "mode": "db-clean",
+    "difference": [
+      285,
+      171,
+      630,
+      750
+    ]
+  },
+  {
+    "file": "_dashboard_mail-dark-mobile-interactive.png",
+    "mode": "demo-clean",
+    "difference": [
+      123,
+      341,
+      148,
+      352
+    ]
+  },
+  {
+    "file": "_dashboard_mail-dark-mobile-interactive.png",
+    "mode": "db-clean",
+    "difference": [
+      123,
+      151,
+      373,
+      352
+    ]
+  },
+  {
+    "file": "_chat-light-desktop-interactive-controls.png",
+    "mode": "demo-clean",
+    "difference": [
+      284,
+      221,
+      306,
+      891
+    ]
+  },
+  {
+    "file": "_chat-light-desktop-interactive-controls.png",
+    "mode": "db-clean",
+    "difference": [
+      285,
+      171,
+      614,
+      739
+    ]
+  },
+  {
+    "file": "_dashboard_chat-light-desktop-interactive-controls.png",
+    "mode": "demo-clean",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_chat-light-desktop-interactive-controls.png",
+    "mode": "db-clean",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_chat-dark-desktop-interactive.png",
+    "mode": "demo-clean",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_chat-dark-desktop-interactive.png",
+    "mode": "db-clean",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_mail-dark-desktop-interactive.png",
+    "mode": "demo-clean",
+    "difference": [
+      313,
+      139,
+      1415,
+      875
+    ]
+  },
+  {
+    "file": "_dashboard_mail-dark-desktop-interactive.png",
+    "mode": "db-clean",
+    "difference": [
+      313,
+      139,
+      1415,
+      875
+    ]
+  },
+  {
+    "file": "_dashboard_mail-light-desktop-interactive.png",
+    "mode": "demo-clean",
+    "difference": [
+      1039,
+      232,
+      1057,
+      243
+    ]
+  },
+  {
+    "file": "_dashboard_mail-light-desktop-interactive.png",
+    "mode": "db-clean",
+    "difference": [
+      1039,
+      232,
+      1057,
+      243
+    ]
+  },
+  {
+    "file": "_mail-dark-mobile-interactive-controls.png",
+    "mode": "demo-clean",
+    "difference": [
+      106,
+      324,
+      131,
+      335
+    ]
+  },
+  {
+    "file": "_mail-dark-mobile-interactive-controls.png",
+    "mode": "db-clean",
+    "difference": [
+      106,
+      324,
+      131,
+      335
+    ]
+  },
+  {
+    "file": "_mail-light-desktop-interactive.png",
+    "mode": "demo-clean",
+    "difference": [
+      271,
+      93,
+      897,
+      872
+    ]
+  },
+  {
+    "file": "_mail-light-desktop-interactive.png",
+    "mode": "db-clean",
+    "difference": [
+      271,
+      93,
+      897,
+      872
+    ]
+  },
+  {
+    "file": "_dashboard_mail-light-mobile-interactive-controls.png",
+    "mode": "demo-clean",
+    "difference": [
+      123,
+      341,
+      141,
+      352
+    ]
+  },
+  {
+    "file": "_dashboard_mail-light-mobile-interactive-controls.png",
+    "mode": "db-clean",
+    "difference": [
+      123,
+      341,
+      141,
+      352
+    ]
+  },
+  {
+    "file": "_dashboard_chat-dark-mobile-interactive.png",
+    "mode": "demo-clean",
+    "difference": [
+      17,
+      267,
+      255,
+      763
+    ]
+  },
+  {
+    "file": "_dashboard_chat-dark-mobile-interactive.png",
+    "mode": "db-clean",
+    "difference": [
+      17,
+      267,
+      106,
+      763
+    ]
+  },
+  {
+    "file": "_dashboard_chat-light-mobile-interactive-controls.png",
+    "mode": "demo-clean",
+    "difference": [
+      22,
+      809,
+      33,
+      824
+    ]
+  },
+  {
+    "file": "_dashboard_chat-light-mobile-interactive-controls.png",
+    "mode": "db-clean",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_mail-dark-mobile-interactive-controls.png",
+    "mode": "demo-clean",
+    "difference": [
+      123,
+      341,
+      148,
+      352
+    ]
+  },
+  {
+    "file": "_dashboard_mail-dark-mobile-interactive-controls.png",
+    "mode": "db-clean",
+    "difference": [
+      123,
+      151,
+      373,
+      352
+    ]
+  },
+  {
+    "file": "_dashboard_mail-light-mobile-interactive.png",
+    "mode": "demo-clean",
+    "difference": [
+      123,
+      341,
+      141,
+      352
+    ]
+  },
+  {
+    "file": "_dashboard_mail-light-mobile-interactive.png",
+    "mode": "db-clean",
+    "difference": [
+      123,
+      341,
+      141,
+      352
+    ]
+  },
+  {
+    "file": "_dashboard_mail-light-desktop-interactive-controls.png",
+    "mode": "demo-clean",
+    "difference": [
+      1039,
+      232,
+      1057,
+      243
+    ]
+  },
+  {
+    "file": "_dashboard_mail-light-desktop-interactive-controls.png",
+    "mode": "db-clean",
+    "difference": [
+      945,
+      232,
+      1057,
+      856
+    ]
+  },
+  {
+    "file": "_chat-light-mobile-interactive-controls.png",
+    "mode": "demo-clean",
+    "difference": null
+  },
+  {
+    "file": "_chat-light-mobile-interactive-controls.png",
+    "mode": "db-clean",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_chat-light-mobile-interactive.png",
+    "mode": "demo-clean",
+    "difference": [
+      22,
+      809,
+      33,
+      824
+    ]
+  },
+  {
+    "file": "_dashboard_chat-light-mobile-interactive.png",
+    "mode": "db-clean",
+    "difference": null
+  },
+  {
+    "file": "_mail-light-mobile-interactive-controls.png",
+    "mode": "demo-clean",
+    "difference": [
+      106,
+      106,
+      390,
+      335
+    ]
+  },
+  {
+    "file": "_mail-light-mobile-interactive-controls.png",
+    "mode": "db-clean",
+    "difference": [
+      106,
+      324,
+      131,
+      335
+    ]
+  },
+  {
+    "file": "_mail-dark-mobile-interactive.png",
+    "mode": "demo-clean",
+    "difference": [
+      106,
+      324,
+      131,
+      335
+    ]
+  },
+  {
+    "file": "_mail-dark-mobile-interactive.png",
+    "mode": "db-clean",
+    "difference": [
+      106,
+      324,
+      131,
+      335
+    ]
+  },
+  {
+    "file": "_dashboard_chat-dark-desktop-interactive-controls.png",
+    "mode": "demo-clean",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_chat-dark-desktop-interactive-controls.png",
+    "mode": "db-clean",
+    "difference": null
+  },
+  {
+    "file": "_mail-light-desktop-interactive-controls.png",
+    "mode": "demo-clean",
+    "difference": [
+      271,
+      93,
+      897,
+      872
+    ]
+  },
+  {
+    "file": "_mail-light-desktop-interactive-controls.png",
+    "mode": "db-clean",
+    "difference": [
+      271,
+      93,
+      897,
+      872
+    ]
+  },
+  {
+    "file": "_dashboard_mail-dark-desktop-interactive-controls.png",
+    "mode": "demo-clean",
+    "difference": [
+      313,
+      139,
+      1415,
+      875
+    ]
+  },
+  {
+    "file": "_dashboard_mail-dark-desktop-interactive-controls.png",
+    "mode": "db-clean",
+    "difference": [
+      313,
+      139,
+      1415,
+      875
+    ]
+  },
+  {
+    "file": "_mail-dark-desktop-interactive-controls.png",
+    "mode": "demo-clean",
+    "difference": [
+      269,
+      93,
+      897,
+      873
+    ]
+  },
+  {
+    "file": "_mail-dark-desktop-interactive-controls.png",
+    "mode": "db-clean",
+    "difference": [
+      269,
+      93,
+      897,
+      873
+    ]
+  },
+  {
+    "file": "_chat-dark-desktop-interactive-controls.png",
+    "mode": "demo-clean",
+    "difference": [
+      284,
+      127,
+      1112,
+      891
+    ]
+  },
+  {
+    "file": "_chat-dark-desktop-interactive-controls.png",
+    "mode": "db-clean",
+    "difference": [
+      624,
+      127,
+      1112,
+      888
+    ]
+  },
+  {
+    "file": "_mail-light-mobile-interactive.png",
+    "mode": "demo-clean",
+    "difference": [
+      106,
+      106,
+      390,
+      335
+    ]
+  },
+  {
+    "file": "_mail-light-mobile-interactive.png",
+    "mode": "db-clean",
+    "difference": [
+      106,
+      324,
+      131,
+      335
+    ]
+  },
+  {
+    "file": "_dashboard_chat-dark-mobile-interactive-controls.png",
+    "mode": "demo-clean",
+    "difference": [
+      17,
+      267,
+      255,
+      763
+    ]
+  },
+  {
+    "file": "_dashboard_chat-dark-mobile-interactive-controls.png",
+    "mode": "db-clean",
+    "difference": [
+      17,
+      267,
+      106,
+      763
+    ]
+  },
+  {
+    "file": "_chat-light-mobile-interactive.png",
+    "mode": "demo-clean",
+    "difference": null
+  },
+  {
+    "file": "_chat-light-mobile-interactive.png",
+    "mode": "db-clean",
+    "difference": null
+  }
+]
