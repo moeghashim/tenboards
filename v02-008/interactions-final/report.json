@@ -1,0 +1,21 @@
+{
+  "baseURL": "http://127.0.0.1:3000/",
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": true,
+  "interactions": true,
+  "results": [
+    {
+      "route": "/dashboard/academy",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_academy-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_academy-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": [
+        "locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('tooltip').filter({ hasText: 'Top Performer' }) to be visible\u001b[22m\n"
+      ]
+    }
+  ]
+}

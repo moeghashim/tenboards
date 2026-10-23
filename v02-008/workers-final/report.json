@@ -1,0 +1,129 @@
+{
+  "baseURL": "https://d5d969fb-tenboards.mohanadgh.workers.dev/",
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": true,
+  "interactions": true,
+  "results": [
+    {
+      "route": "/dashboard/academy",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_academy-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_academy-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Student achievement tooltip opens by keyboard focus",
+        "Escape dismisses tooltip",
+        "Gradebook demo action retains screen",
+        "Full course name and no page overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/academy",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_academy-light-desktop-refresh-interactive.png",
+      "controlsFile": "_dashboard_academy-light-desktop-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Student achievement tooltip opens by keyboard focus",
+        "Escape dismisses tooltip",
+        "Gradebook demo action retains screen",
+        "Full course name and no page overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/academy",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_academy-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_academy-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Student achievement tooltip opens by keyboard focus",
+        "Escape dismisses tooltip",
+        "Gradebook demo action retains screen",
+        "Full course name and no page overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/academy",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_academy-light-mobile-refresh-interactive.png",
+      "controlsFile": "_dashboard_academy-light-mobile-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Student achievement tooltip opens by keyboard focus",
+        "Escape dismisses tooltip",
+        "Gradebook demo action retains screen",
+        "Full course name and no page overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/academy",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_academy-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_academy-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Student achievement tooltip opens by keyboard focus",
+        "Escape dismisses tooltip",
+        "Gradebook demo action retains screen",
+        "Full course name and no page overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/academy",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_academy-dark-desktop-refresh-interactive.png",
+      "controlsFile": "_dashboard_academy-dark-desktop-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Student achievement tooltip opens by keyboard focus",
+        "Escape dismisses tooltip",
+        "Gradebook demo action retains screen",
+        "Full course name and no page overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/academy",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_academy-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_academy-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Student achievement tooltip opens by keyboard focus",
+        "Escape dismisses tooltip",
+        "Gradebook demo action retains screen",
+        "Full course name and no page overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/academy",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_academy-dark-mobile-refresh-interactive.png",
+      "controlsFile": "_dashboard_academy-dark-mobile-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Student achievement tooltip opens by keyboard focus",
+        "Escape dismisses tooltip",
+        "Gradebook demo action retains screen",
+        "Full course name and no page overflow"
+      ],
+      "errors": []
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+
+> tenboards@0.1.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --routes /dashboard/academy --base-url https://d5d969fb-tenboards.mohanadgh.workers.dev --reload --interactions --output screenshots/v02-008/workers-final
+
+PASS /dashboard/academy light/desktop direct
+PASS /dashboard/academy light/desktop refresh
+PASS /dashboard/academy light/mobile direct
+PASS /dashboard/academy light/mobile refresh
+PASS /dashboard/academy dark/desktop direct
+PASS /dashboard/academy dark/desktop refresh
+PASS /dashboard/academy dark/mobile direct
+PASS /dashboard/academy dark/mobile refresh

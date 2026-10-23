@@ -1,0 +1,8 @@
+
+> tenboards@0.1.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --routes /dashboard/academy --preset pine --output screenshots/v02-008/pine
+
+PASS /dashboard/academy light/desktop direct
+PASS /dashboard/academy light/mobile direct
+PASS /dashboard/academy dark/desktop direct
+PASS /dashboard/academy dark/mobile direct

@@ -1,0 +1,14 @@
+
+> tenboards@0.1.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --routes /dashboard/academy --base-url https://cc17f70a-tenboards.mohanadgh.workers.dev --reload --interactions --output screenshots/v02-008/workers
+
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+browserContext.close: Target page, context or browser has been closed
+    at async file:///Users/moeghashim/tenboards/scripts/screenshots.ts:147:13 {
+  log: []
+}
+
+Node.js v24.21.0

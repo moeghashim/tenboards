@@ -1,0 +1,12 @@
+
+> tenboards@0.1.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --routes /dashboard/default,/dashboard/academy --output screenshots/v02-008/after-static
+
+PASS /dashboard/academy light/desktop direct
+PASS /dashboard/academy light/mobile direct
+PASS /dashboard/academy dark/desktop direct
+PASS /dashboard/academy dark/mobile direct
+PASS /dashboard/default light/desktop direct
+PASS /dashboard/default light/mobile direct
+PASS /dashboard/default dark/desktop direct
+PASS /dashboard/default dark/mobile direct

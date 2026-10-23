@@ -1,0 +1,8 @@
+{
+  "baseURL": "https://cc17f70a-tenboards.mohanadgh.workers.dev/",
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": true,
+  "interactions": true,
+  "results": []
+}
