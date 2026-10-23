@@ -1004,3 +1004,7 @@ Preview snapshot failed: Preview automation snapshot failed on client preview-3b
 PreviewAutomationExecutionError
 ```
 Resolved evidence gap through the user-required repository screenshot runner; the T3 endpoint itself was not repaired.
+
+## Outstanding merge check
+
+[Exact DCO output](dco.txt): ACTION_REQUIRED, missing author Signed-off-by trailers on all six commits. Unlike the corrected implementation failures above, this remains open.

@@ -33,3 +33,7 @@ The T3 collaborative snapshot endpoint repeatedly failed with `Preview snapshot 
 ## Deliberate retained behavior
 
 New task/project/note and Start focus actions remain demo placeholders. Summary Focus says 2 hours while the focus card retains its inherited 90-minute fixture; no timer semantics were added. Focus and This Week each occur in both summary and detail headings. Progress uses the existing 4px track with explicit names and percentages. Notes now show explicit dates instead of relative Today/Yesterday labels.
+
+## Outstanding GitHub merge check
+
+DCO reports ACTION_REQUIRED because the six author sign-offs are missing. This is separate from the passing implementation gates above. Exact DCO output: [dco.txt](../v02-batch-001-006/dco.txt). PRs #14–#19 identify this blocker; author certification and reviewer-owned stack remediation remain. Final006 commit: 174d980 (documentation-only amendment after verified runtime build).
