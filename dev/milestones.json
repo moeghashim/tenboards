@@ -20,7 +20,8 @@
       "taskStatuses": {
         "001-import-upstream": "merged",
         "002-workers-preview": "merged",
-        "003-impeccable-context": "in_review"
+        "003-impeccable-context": "in_review",
+        "004-visual-capture": "in_review"
       }
     }
   ]
