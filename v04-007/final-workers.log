@@ -1,0 +1,28 @@
+
+> tenboards@0.3.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url https://59c35fb2-tenboards.mohanadgh.workers.dev --routes /dashboard/default,/dashboard/academy,/dashboard/infrastructure,/dashboard/logistics,/dashboard/patient-monitoring,/dashboard/productivity --output screenshots/v04-007/final-workers --mask-live-clocks
+
+PASS /dashboard/academy light/desktop direct
+PASS /dashboard/academy light/mobile direct
+PASS /dashboard/academy dark/desktop direct
+PASS /dashboard/academy dark/mobile direct
+PASS /dashboard/default light/desktop direct
+PASS /dashboard/default light/mobile direct
+PASS /dashboard/default dark/desktop direct
+PASS /dashboard/default dark/mobile direct
+PASS /dashboard/infrastructure light/desktop direct
+PASS /dashboard/infrastructure light/mobile direct
+PASS /dashboard/infrastructure dark/desktop direct
+PASS /dashboard/infrastructure dark/mobile direct
+PASS /dashboard/logistics light/desktop direct
+PASS /dashboard/logistics light/mobile direct
+PASS /dashboard/logistics dark/desktop direct
+PASS /dashboard/logistics dark/mobile direct
+PASS /dashboard/patient-monitoring light/desktop direct
+PASS /dashboard/patient-monitoring light/mobile direct
+PASS /dashboard/patient-monitoring dark/desktop direct
+PASS /dashboard/patient-monitoring dark/mobile direct
+PASS /dashboard/productivity light/desktop direct
+PASS /dashboard/productivity light/mobile direct
+PASS /dashboard/productivity dark/desktop direct
+PASS /dashboard/productivity dark/mobile direct

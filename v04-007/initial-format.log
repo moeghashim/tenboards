@@ -1,0 +1,41 @@
+src/server/db/seed-operational.ts:9:10 lint/correctness/noUnusedImports  FIXABLE  ━━━━━━━━━━━━━━━━━━
+
+  ! Several of these imports are unused.
+  
+     7 │ import { metrics as academyMetrics, tables as academyTables } from "./fixtures/academy.ts";
+     8 │ import { metrics as infrastructureMetrics, tables as infrastructureTables } from "./fixtures/infrastructure.ts";
+   > 9 │ import { metrics as logisticsMetrics, tables as logisticsTables } from "./fixtures/logistics.ts";
+       │          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    10 │ import { metrics as patientsMetrics, tables as patientsTables } from "./fixtures/patients.ts";
+    11 │ import { metrics as productivityMetrics, tables as productivityTables } from "./fixtures/productivity.ts";
+  
+  i Unused imports might be the result of an incomplete refactoring.
+  
+  i Unsafe fix: Remove the unused imports.
+  
+    9 │ import·{·metrics·as·logisticsMetrics,·tables·as·logisticsTables·}·from·"./fixtures/logistics.ts";
+      │          -----------------------------                                                           
+
+src/server/db/seed-operational.ts:10:10 lint/correctness/noUnusedImports  FIXABLE  ━━━━━━━━━━━━━━━━━
+
+  ! Several of these imports are unused.
+  
+     8 │ import { metrics as infrastructureMetrics, tables as infrastructureTables } from "./fixtures/infrastructure.ts";
+     9 │ import { metrics as logisticsMetrics, tables as logisticsTables } from "./fixtures/logistics.ts";
+  > 10 │ import { metrics as patientsMetrics, tables as patientsTables } from "./fixtures/patients.ts";
+       │          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    11 │ import { metrics as productivityMetrics, tables as productivityTables } from "./fixtures/productivity.ts";
+    12 │ export async function seedOperational(tx: Transaction) {
+  
+  i Unused imports might be the result of an incomplete refactoring.
+  
+  i Unsafe fix: Remove the unused imports.
+  
+    10 │ import·{·metrics·as·patientsMetrics,·tables·as·patientsTables·}·from·"./fixtures/patients.ts";
+       │          ----------------------------                                                         
+
+Skipped 6 suggested fixes.
+If you wish to apply the suggested (unsafe) fixes, use the command biome check --write --unsafe
+
+Checked 93 files in 536ms. Fixed 20 files.
+Found 2 warnings.

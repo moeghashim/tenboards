@@ -1,0 +1,24 @@
+
+> tenboards@0.3.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://127.0.0.1:3000 --routes /dashboard/productivity,/dashboard/patient-monitoring --output screenshots/v04-007/hydration-demo-America-Chicago --reload --hydration-delay-ms 1500 --timezone America/Chicago --mask-live-clocks
+
+PASS /dashboard/patient-monitoring light/desktop direct
+PASS /dashboard/patient-monitoring light/desktop refresh
+PASS /dashboard/patient-monitoring light/mobile direct
+PASS /dashboard/patient-monitoring light/mobile refresh
+PASS /dashboard/patient-monitoring dark/desktop direct
+PASS /dashboard/patient-monitoring dark/desktop refresh
+PASS /dashboard/patient-monitoring dark/mobile direct
+PASS /dashboard/patient-monitoring dark/mobile refresh
+FAIL /dashboard/productivity light/desktop direct
+page.evaluate: TypeError: Cannot read properties of null (reading 'textContent')
+    at eval (eval at evaluate (:370:30), <anonymous>:2:54)
+    at UtilityScript.evaluate (<anonymous>:372:16)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+PASS /dashboard/productivity light/desktop refresh
+PASS /dashboard/productivity light/mobile direct
+PASS /dashboard/productivity light/mobile refresh
+PASS /dashboard/productivity dark/desktop direct
+PASS /dashboard/productivity dark/desktop refresh
+PASS /dashboard/productivity dark/mobile direct
+PASS /dashboard/productivity dark/mobile refresh

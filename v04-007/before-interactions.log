@@ -1,0 +1,38 @@
+
+> tenboards@0.3.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url https://f0c16789-tenboards.mohanadgh.workers.dev --routes /dashboard/productivity,/dashboard/academy,/dashboard/logistics,/dashboard/infrastructure,/dashboard/patient-monitoring --interactions --output screenshots/v04-007/before-interactions
+
+PASS /dashboard/academy light/desktop direct
+PASS /dashboard/academy light/mobile direct
+PASS /dashboard/academy dark/desktop direct
+PASS /dashboard/academy dark/mobile direct
+FAIL /dashboard/infrastructure light/desktop direct
+locator.waitFor: Error: strict mode violation: getByRole('menuitem', { name: 'Project Settings', exact: true }) resolved to 2 elements:
+    1) <div tabindex="-1" role="menuitem" id="base-ui-_r_3_" data-variant="default" data-slot="dropdown-menu-item" class="group/dropdown-menu-item relative flex cursor-default items-center gap-1.5 rounded-md px-1.5 py-1 text-sm outline-hidden select-none focus:bg-accent focus:text-accent-foreground not-data-[variant=destructive]:focus:**:text-accent-foreground data-inset:pl-7 data-[variant=destructive]:text-destructive data-[variant=destructive]:focus:bg-destructive/10 data-[variant=destructive]:focus:tex…>…</div> aka getByRole('menu', { name: 'Project actions for Admin' }).getByRole('menuitem', { name: 'Project Settings' })
+    2) <div tabindex="-1" role="menuitem" id="base-ui-_r_e_" data-variant="default" data-slot="dropdown-menu-item" class="group/dropdown-menu-item relative flex cursor-default items-center gap-1.5 rounded-md px-1.5 py-1 text-sm outline-hidden select-none focus:bg-accent focus:text-accent-foreground not-data-[variant=destructive]:focus:**:text-accent-foreground data-inset:pl-7 data-[variant=destructive]:text-destructive data-[variant=destructive]:focus:bg-destructive/10 data-[variant=destructive]:focus:tex…>…</div> aka getByRole('menu', { name: 'Project actions for Inbox' }).getByRole('menuitem', { name: 'Project Settings' })
+
+Call log:
+[2m  - waiting for getByRole('menuitem', { name: 'Project Settings', exact: true }) to be visible[22m
+
+FAIL /dashboard/infrastructure light/mobile direct
+locator.waitFor: Error: strict mode violation: getByRole('menuitem', { name: 'Project Settings', exact: true }) resolved to 2 elements:
+    1) <div tabindex="-1" role="menuitem" id="base-ui-_r_4_" data-variant="default" data-slot="dropdown-menu-item" class="group/dropdown-menu-item relative flex cursor-default items-center gap-1.5 rounded-md px-1.5 py-1 text-sm outline-hidden select-none focus:bg-accent focus:text-accent-foreground not-data-[variant=destructive]:focus:**:text-accent-foreground data-inset:pl-7 data-[variant=destructive]:text-destructive data-[variant=destructive]:focus:bg-destructive/10 data-[variant=destructive]:focus:tex…>…</div> aka getByRole('menu', { name: 'Project actions for Admin' }).getByRole('menuitem', { name: 'Project Settings' })
+    2) <div tabindex="-1" role="menuitem" id="base-ui-_r_f_" data-variant="default" data-slot="dropdown-menu-item" class="group/dropdown-menu-item relative flex cursor-default items-center gap-1.5 rounded-md px-1.5 py-1 text-sm outline-hidden select-none focus:bg-accent focus:text-accent-foreground not-data-[variant=destructive]:focus:**:text-accent-foreground data-inset:pl-7 data-[variant=destructive]:text-destructive data-[variant=destructive]:focus:bg-destructive/10 data-[variant=destructive]:focus:tex…>…</div> aka getByRole('menu', { name: 'Project actions for Inbox' }).getByRole('menuitem', { name: 'Project Settings' })
+
+Call log:
+[2m  - waiting for getByRole('menuitem', { name: 'Project Settings', exact: true }) to be visible[22m
+
+PASS /dashboard/infrastructure dark/desktop direct
+PASS /dashboard/infrastructure dark/mobile direct
+PASS /dashboard/logistics light/desktop direct
+PASS /dashboard/logistics light/mobile direct
+PASS /dashboard/logistics dark/desktop direct
+PASS /dashboard/logistics dark/mobile direct
+PASS /dashboard/patient-monitoring light/desktop direct
+PASS /dashboard/patient-monitoring light/mobile direct
+PASS /dashboard/patient-monitoring dark/desktop direct
+PASS /dashboard/patient-monitoring dark/mobile direct
+PASS /dashboard/productivity light/desktop direct
+PASS /dashboard/productivity light/mobile direct
+PASS /dashboard/productivity dark/desktop direct
+PASS /dashboard/productivity dark/mobile direct

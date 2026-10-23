@@ -1,0 +1,13 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+page.evaluate: Error: Removed selection must highlight fallback shipment
+    at assert (http://127.0.0.1:3000/scripts/operational-state-probe.tsx:291:25)
+    at runOperationalStateProbe (http://127.0.0.1:3000/scripts/operational-state-probe.tsx:316:3)
+    at async <anonymous>:396:30
+    at /Users/moeghashim/tenboards/scripts/check-operational-state.ts:9:16 {
+  log: []
+}
+
+Node.js v24.21.0

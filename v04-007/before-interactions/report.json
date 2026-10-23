@@ -1,0 +1,331 @@
+{
+  "baseURL": "https://f0c16789-tenboards.mohanadgh.workers.dev/",
+  "fontAssets": "exact public responses cached between contexts",
+  "hydrationDelayMs": 0,
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": false,
+  "interactions": true,
+  "results": [
+    {
+      "route": "/dashboard/academy",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_academy-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_academy-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Student achievement tooltip opens by keyboard focus",
+        "Escape dismisses tooltip",
+        "Gradebook demo action retains screen",
+        "Full course name and no page overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/academy",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_academy-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_academy-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Student achievement tooltip opens by keyboard focus",
+        "Escape dismisses tooltip",
+        "Gradebook demo action retains screen",
+        "Full course name and no page overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/academy",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_academy-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_academy-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Student achievement tooltip opens by keyboard focus",
+        "Escape dismisses tooltip",
+        "Gradebook demo action retains screen",
+        "Full course name and no page overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/academy",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_academy-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_academy-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Student achievement tooltip opens by keyboard focus",
+        "Escape dismisses tooltip",
+        "Gradebook demo action retains screen",
+        "Full course name and no page overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/infrastructure",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_infrastructure-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_infrastructure-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": [
+        "locator.waitFor: Error: strict mode violation: getByRole('menuitem', { name: 'Project Settings', exact: true }) resolved to 2 elements:\n    1) <div tabindex=\"-1\" role=\"menuitem\" id=\"base-ui-_r_3_\" data-variant=\"default\" data-slot=\"dropdown-menu-item\" class=\"group/dropdown-menu-item relative flex cursor-default items-center gap-1.5 rounded-md px-1.5 py-1 text-sm outline-hidden select-none focus:bg-accent focus:text-accent-foreground not-data-[variant=destructive]:focus:**:text-accent-foreground data-inset:pl-7 data-[variant=destructive]:text-destructive data-[variant=destructive]:focus:bg-destructive/10 data-[variant=destructive]:focus:tex…>…</div> aka getByRole('menu', { name: 'Project actions for Admin' }).getByRole('menuitem', { name: 'Project Settings' })\n    2) <div tabindex=\"-1\" role=\"menuitem\" id=\"base-ui-_r_e_\" data-variant=\"default\" data-slot=\"dropdown-menu-item\" class=\"group/dropdown-menu-item relative flex cursor-default items-center gap-1.5 rounded-md px-1.5 py-1 text-sm outline-hidden select-none focus:bg-accent focus:text-accent-foreground not-data-[variant=destructive]:focus:**:text-accent-foreground data-inset:pl-7 data-[variant=destructive]:text-destructive data-[variant=destructive]:focus:bg-destructive/10 data-[variant=destructive]:focus:tex…>…</div> aka getByRole('menu', { name: 'Project actions for Inbox' }).getByRole('menuitem', { name: 'Project Settings' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('menuitem', { name: 'Project Settings', exact: true }) to be visible\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/infrastructure",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_infrastructure-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_infrastructure-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": [
+        "locator.waitFor: Error: strict mode violation: getByRole('menuitem', { name: 'Project Settings', exact: true }) resolved to 2 elements:\n    1) <div tabindex=\"-1\" role=\"menuitem\" id=\"base-ui-_r_4_\" data-variant=\"default\" data-slot=\"dropdown-menu-item\" class=\"group/dropdown-menu-item relative flex cursor-default items-center gap-1.5 rounded-md px-1.5 py-1 text-sm outline-hidden select-none focus:bg-accent focus:text-accent-foreground not-data-[variant=destructive]:focus:**:text-accent-foreground data-inset:pl-7 data-[variant=destructive]:text-destructive data-[variant=destructive]:focus:bg-destructive/10 data-[variant=destructive]:focus:tex…>…</div> aka getByRole('menu', { name: 'Project actions for Admin' }).getByRole('menuitem', { name: 'Project Settings' })\n    2) <div tabindex=\"-1\" role=\"menuitem\" id=\"base-ui-_r_f_\" data-variant=\"default\" data-slot=\"dropdown-menu-item\" class=\"group/dropdown-menu-item relative flex cursor-default items-center gap-1.5 rounded-md px-1.5 py-1 text-sm outline-hidden select-none focus:bg-accent focus:text-accent-foreground not-data-[variant=destructive]:focus:**:text-accent-foreground data-inset:pl-7 data-[variant=destructive]:text-destructive data-[variant=destructive]:focus:bg-destructive/10 data-[variant=destructive]:focus:tex…>…</div> aka getByRole('menu', { name: 'Project actions for Inbox' }).getByRole('menuitem', { name: 'Project Settings' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('menuitem', { name: 'Project Settings', exact: true }) to be visible\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/infrastructure",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_infrastructure-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_infrastructure-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Enter collapses/reopens project",
+        "Named project/environment action menus open; Escape closes",
+        "All four fixture rows and empty project retained",
+        "Search remains a demo input; no page-wide overflow",
+        "Empty-project menu open"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/infrastructure",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_infrastructure-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_infrastructure-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Enter collapses/reopens project",
+        "Named project/environment action menus open; Escape closes",
+        "All four fixture rows and empty project retained",
+        "Search remains a demo input; no page-wide overflow",
+        "Empty-project menu open"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/logistics",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_logistics-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_logistics-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Enter selects second shipment and correct details",
+        "Route placeholder and Overview tabs preserved",
+        "Desktop split pane updated",
+        "No page-wide overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/logistics",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_logistics-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_logistics-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Enter selects second shipment and correct details",
+        "Route placeholder and Overview tabs preserved",
+        "Mobile sheet named; Escape closes and returns focus; Enter reopens",
+        "No page-wide overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/logistics",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_logistics-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_logistics-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Enter selects second shipment and correct details",
+        "Route placeholder and Overview tabs preserved",
+        "Desktop split pane updated",
+        "No page-wide overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/logistics",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_logistics-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_logistics-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Enter selects second shipment and correct details",
+        "Route placeholder and Overview tabs preserved",
+        "Mobile sheet named; Escape closes and returns focus; Enter reopens",
+        "No page-wide overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_patient-monitoring-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_patient-monitoring-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Real clock advances across second boundary",
+        "Reduced-motion trace stable",
+        "Normal-motion trace updates; runtime reduction pauses it",
+        "Keyboard acknowledgement persists; patient selection and event/trend tabs work",
+        "Footer keyboard focus and no page-wide overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_patient-monitoring-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_patient-monitoring-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Real clock advances across second boundary",
+        "Reduced-motion trace stable",
+        "Normal-motion trace updates; runtime reduction pauses it",
+        "Keyboard acknowledgement persists; patient selection and event/trend tabs work",
+        "Footer keyboard focus and no page-wide overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_patient-monitoring-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_patient-monitoring-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Real clock advances across second boundary",
+        "Reduced-motion trace stable",
+        "Normal-motion trace updates; runtime reduction pauses it",
+        "Keyboard acknowledgement persists; patient selection and event/trend tabs work",
+        "Footer keyboard focus and no page-wide overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_patient-monitoring-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_patient-monitoring-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Real clock advances across second boundary",
+        "Reduced-motion trace stable",
+        "Normal-motion trace updates; runtime reduction pauses it",
+        "Keyboard acknowledgement persists; patient selection and event/trend tabs work",
+        "Footer keyboard focus and no page-wide overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/productivity",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_productivity-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_productivity-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Space completes first task",
+        "Tomorrow / Planning selected",
+        "Enter navigates to November; ArrowRight + Enter selects November 5",
+        "Focus Start retains existing 90:00 placeholder; Task period menu open"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/productivity",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_productivity-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_productivity-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Space completes first task",
+        "Tomorrow / Planning selected",
+        "Enter navigates to November; ArrowRight + Enter selects November 5",
+        "Focus Start retains existing 90:00 placeholder; Task period menu open"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/productivity",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_productivity-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_productivity-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Space completes first task",
+        "Tomorrow / Planning selected",
+        "Enter navigates to November; ArrowRight + Enter selects November 5",
+        "Focus Start retains existing 90:00 placeholder; Task period menu open"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/productivity",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_productivity-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_productivity-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Space completes first task",
+        "Tomorrow / Planning selected",
+        "Enter navigates to November; ArrowRight + Enter selects November 5",
+        "Focus Start retains existing 90:00 placeholder; Task period menu open"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    }
+  ]
+}

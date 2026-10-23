@@ -1,0 +1,11 @@
+PostgreSQL 17.10 on aarch64-unknown-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit
+11
+core-analytics|354
+core-crm|78
+core-default|756
+core-finance|130
+ecommerce|375
+operational-academy|13
+operational-infrastructure|4
+operational-logistics|4
+operational-productivity|3

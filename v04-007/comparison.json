@@ -1,0 +1,322 @@
+[
+  {
+    "a": "before-local",
+    "b": "final-demo",
+    "file": "_dashboard_academy-dark-desktop.png",
+    "bbox": null,
+    "changed": 0,
+    "max": 0
+  },
+  {
+    "a": "before-local",
+    "b": "final-demo",
+    "file": "_dashboard_academy-dark-mobile.png",
+    "bbox": null,
+    "changed": 0,
+    "max": 0
+  },
+  {
+    "a": "before-local",
+    "b": "final-demo",
+    "file": "_dashboard_academy-light-desktop.png",
+    "bbox": null,
+    "changed": 0,
+    "max": 0
+  },
+  {
+    "a": "before-local",
+    "b": "final-demo",
+    "file": "_dashboard_academy-light-mobile.png",
+    "bbox": null,
+    "changed": 0,
+    "max": 0
+  },
+  {
+    "a": "before-local",
+    "b": "final-demo",
+    "file": "_dashboard_infrastructure-dark-desktop.png",
+    "bbox": null,
+    "changed": 0,
+    "max": 0
+  },
+  {
+    "a": "before-local",
+    "b": "final-demo",
+    "file": "_dashboard_infrastructure-dark-mobile.png",
+    "bbox": null,
+    "changed": 0,
+    "max": 0
+  },
+  {
+    "a": "before-local",
+    "b": "final-demo",
+    "file": "_dashboard_infrastructure-light-desktop.png",
+    "bbox": null,
+    "changed": 0,
+    "max": 0
+  },
+  {
+    "a": "before-local",
+    "b": "final-demo",
+    "file": "_dashboard_infrastructure-light-mobile.png",
+    "bbox": null,
+    "changed": 0,
+    "max": 0
+  },
+  {
+    "a": "before-local",
+    "b": "final-demo",
+    "file": "_dashboard_logistics-dark-desktop.png",
+    "bbox": null,
+    "changed": 0,
+    "max": 0
+  },
+  {
+    "a": "before-local",
+    "b": "final-demo",
+    "file": "_dashboard_logistics-dark-mobile.png",
+    "bbox": null,
+    "changed": 0,
+    "max": 0
+  },
+  {
+    "a": "before-local",
+    "b": "final-demo",
+    "file": "_dashboard_logistics-light-desktop.png",
+    "bbox": null,
+    "changed": 0,
+    "max": 0
+  },
+  {
+    "a": "before-local",
+    "b": "final-demo",
+    "file": "_dashboard_logistics-light-mobile.png",
+    "bbox": null,
+    "changed": 0,
+    "max": 0
+  },
+  {
+    "a": "before-local",
+    "b": "final-demo",
+    "file": "_dashboard_patient-monitoring-dark-desktop.png",
+    "bbox": null,
+    "changed": 0,
+    "max": 0
+  },
+  {
+    "a": "before-local",
+    "b": "final-demo",
+    "file": "_dashboard_patient-monitoring-dark-mobile.png",
+    "bbox": null,
+    "changed": 0,
+    "max": 0
+  },
+  {
+    "a": "before-local",
+    "b": "final-demo",
+    "file": "_dashboard_patient-monitoring-light-desktop.png",
+    "bbox": null,
+    "changed": 0,
+    "max": 0
+  },
+  {
+    "a": "before-local",
+    "b": "final-demo",
+    "file": "_dashboard_patient-monitoring-light-mobile.png",
+    "bbox": null,
+    "changed": 0,
+    "max": 0
+  },
+  {
+    "a": "before-local",
+    "b": "final-demo",
+    "file": "_dashboard_productivity-dark-desktop.png",
+    "bbox": null,
+    "changed": 0,
+    "max": 0
+  },
+  {
+    "a": "before-local",
+    "b": "final-demo",
+    "file": "_dashboard_productivity-dark-mobile.png",
+    "bbox": null,
+    "changed": 0,
+    "max": 0
+  },
+  {
+    "a": "before-local",
+    "b": "final-demo",
+    "file": "_dashboard_productivity-light-desktop.png",
+    "bbox": null,
+    "changed": 0,
+    "max": 0
+  },
+  {
+    "a": "before-local",
+    "b": "final-demo",
+    "file": "_dashboard_productivity-light-mobile.png",
+    "bbox": null,
+    "changed": 0,
+    "max": 0
+  },
+  {
+    "a": "final-demo",
+    "b": "final-db",
+    "file": "_dashboard_academy-dark-desktop.png",
+    "bbox": null,
+    "changed": 0,
+    "max": 0
+  },
+  {
+    "a": "final-demo",
+    "b": "final-db",
+    "file": "_dashboard_academy-dark-mobile.png",
+    "bbox": null,
+    "changed": 0,
+    "max": 0
+  },
+  {
+    "a": "final-demo",
+    "b": "final-db",
+    "file": "_dashboard_academy-light-desktop.png",
+    "bbox": null,
+    "changed": 0,
+    "max": 0
+  },
+  {
+    "a": "final-demo",
+    "b": "final-db",
+    "file": "_dashboard_academy-light-mobile.png",
+    "bbox": null,
+    "changed": 0,
+    "max": 0
+  },
+  {
+    "a": "final-demo",
+    "b": "final-db",
+    "file": "_dashboard_infrastructure-dark-desktop.png",
+    "bbox": null,
+    "changed": 0,
+    "max": 0
+  },
+  {
+    "a": "final-demo",
+    "b": "final-db",
+    "file": "_dashboard_infrastructure-dark-mobile.png",
+    "bbox": null,
+    "changed": 0,
+    "max": 0
+  },
+  {
+    "a": "final-demo",
+    "b": "final-db",
+    "file": "_dashboard_infrastructure-light-desktop.png",
+    "bbox": null,
+    "changed": 0,
+    "max": 0
+  },
+  {
+    "a": "final-demo",
+    "b": "final-db",
+    "file": "_dashboard_infrastructure-light-mobile.png",
+    "bbox": null,
+    "changed": 0,
+    "max": 0
+  },
+  {
+    "a": "final-demo",
+    "b": "final-db",
+    "file": "_dashboard_logistics-dark-desktop.png",
+    "bbox": null,
+    "changed": 0,
+    "max": 0
+  },
+  {
+    "a": "final-demo",
+    "b": "final-db",
+    "file": "_dashboard_logistics-dark-mobile.png",
+    "bbox": null,
+    "changed": 0,
+    "max": 0
+  },
+  {
+    "a": "final-demo",
+    "b": "final-db",
+    "file": "_dashboard_logistics-light-desktop.png",
+    "bbox": null,
+    "changed": 0,
+    "max": 0
+  },
+  {
+    "a": "final-demo",
+    "b": "final-db",
+    "file": "_dashboard_logistics-light-mobile.png",
+    "bbox": null,
+    "changed": 0,
+    "max": 0
+  },
+  {
+    "a": "final-demo",
+    "b": "final-db",
+    "file": "_dashboard_patient-monitoring-dark-desktop.png",
+    "bbox": null,
+    "changed": 0,
+    "max": 0
+  },
+  {
+    "a": "final-demo",
+    "b": "final-db",
+    "file": "_dashboard_patient-monitoring-dark-mobile.png",
+    "bbox": null,
+    "changed": 0,
+    "max": 0
+  },
+  {
+    "a": "final-demo",
+    "b": "final-db",
+    "file": "_dashboard_patient-monitoring-light-desktop.png",
+    "bbox": null,
+    "changed": 0,
+    "max": 0
+  },
+  {
+    "a": "final-demo",
+    "b": "final-db",
+    "file": "_dashboard_patient-monitoring-light-mobile.png",
+    "bbox": null,
+    "changed": 0,
+    "max": 0
+  },
+  {
+    "a": "final-demo",
+    "b": "final-db",
+    "file": "_dashboard_productivity-dark-desktop.png",
+    "bbox": null,
+    "changed": 0,
+    "max": 0
+  },
+  {
+    "a": "final-demo",
+    "b": "final-db",
+    "file": "_dashboard_productivity-dark-mobile.png",
+    "bbox": null,
+    "changed": 0,
+    "max": 0
+  },
+  {
+    "a": "final-demo",
+    "b": "final-db",
+    "file": "_dashboard_productivity-light-desktop.png",
+    "bbox": null,
+    "changed": 0,
+    "max": 0
+  },
+  {
+    "a": "final-demo",
+    "b": "final-db",
+    "file": "_dashboard_productivity-light-mobile.png",
+    "bbox": null,
+    "changed": 0,
+    "max": 0
+  }
+]

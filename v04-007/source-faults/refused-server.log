@@ -1,0 +1,142 @@
+4:35:41 PM [vite] (client) Re-optimizing dependencies because vite config has changed
+
+  VITE v8.3.5  ready in 675 ms
+
+  ➜  Local:   http://127.0.0.1:3102/
+4:35:44 PM [vite] (client) [console.error] Error: Unable to load database data. Check the connection and migrations, then retry.
+    at http://127.0.0.1:3102/dashboard/users:153:2201
+    at http://127.0.0.1:3102/dashboard/users:153:2303
+
+The above error occurred in the <MatchInnerImpl> component.
+
+React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.
+
+4:35:44 PM [vite] (client) [console.warn] Warning: Error in route match: __root__/
+4:35:44 PM [vite] (client) [console.error] Error: Unable to load database data. Check the connection and migrations, then retry.
+    at http://127.0.0.1:3102/dashboard/users:153:2201
+    at http://127.0.0.1:3102/dashboard/users:153:2303
+
+The above error occurred in the <MatchInnerImpl> component.
+
+React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.
+
+4:35:44 PM [vite] (client) [console.warn] Warning: Error in route match: __root__/
+[Client] %o
+
+%s
+
+%s
+ {
+  name: 'Error',
+  message: 'Unable to load database data. Check the connection and migrations, then retry.',
+  stack: 'Error: Unable to load database data. Check the connection and migrations, then retry.\n' +
+    '    at http://127.0.0.1:3102/dashboard/users:153:2201\n' +
+    '    at http://127.0.0.1:3102/dashboard/users:153:2303'
+} The above error occurred in the <MatchInnerImpl> component. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.
+[Client] Warning: Error in route match: __root__/
+[Client] %o
+
+%s
+
+%s
+ {
+  name: 'Error',
+  message: 'Unable to load database data. Check the connection and migrations, then retry.',
+  stack: 'Error: Unable to load database data. Check the connection and migrations, then retry.\n' +
+    '    at http://127.0.0.1:3102/dashboard/users:153:2201\n' +
+    '    at http://127.0.0.1:3102/dashboard/users:153:2303'
+} The above error occurred in the <MatchInnerImpl> component. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.
+[Client] Warning: Error in route match: __root__/
+4:35:44 PM [vite] (client) [console.error] Error: Unable to load database data. Check the connection and migrations, then retry.
+    at http://127.0.0.1:3102/dashboard/users:153:2201
+    at http://127.0.0.1:3102/dashboard/users:153:2303
+
+The above error occurred in the <MatchInnerImpl> component.
+
+React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.
+
+4:35:44 PM [vite] (client) [console.warn] Warning: Error in route match: __root__/
+[Client] %o
+
+%s
+
+%s
+ {
+  name: 'Error',
+  message: 'Unable to load database data. Check the connection and migrations, then retry.',
+  stack: 'Error: Unable to load database data. Check the connection and migrations, then retry.\n' +
+    '    at http://127.0.0.1:3102/dashboard/users:153:2201\n' +
+    '    at http://127.0.0.1:3102/dashboard/users:153:2303'
+} The above error occurred in the <MatchInnerImpl> component. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.
+[Client] Warning: Error in route match: __root__/
+4:35:44 PM [vite] (client) [console.error] Error: Unable to load database data. Check the connection and migrations, then retry.
+    at http://127.0.0.1:3102/dashboard/users:153:2201
+    at http://127.0.0.1:3102/dashboard/users:153:2303
+
+The above error occurred in the <MatchInnerImpl> component.
+
+React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.
+
+4:35:44 PM [vite] (client) [console.warn] Warning: Error in route match: __root__/
+4:35:45 PM [vite] (client) [console.error] Error: Unable to load database data. Check the connection and migrations, then retry.
+    at http://127.0.0.1:3102/dashboard/users:153:2201
+    at http://127.0.0.1:3102/dashboard/users:153:2303
+
+The above error occurred in the <MatchInnerImpl> component.
+
+React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.
+
+4:35:45 PM [vite] (client) [console.warn] Warning: Error in route match: __root__/
+[Client] %o
+
+%s
+
+%s
+ {
+  name: 'Error',
+  message: 'Unable to load database data. Check the connection and migrations, then retry.',
+  stack: 'Error: Unable to load database data. Check the connection and migrations, then retry.\n' +
+    '    at http://127.0.0.1:3102/dashboard/users:153:2201\n' +
+    '    at http://127.0.0.1:3102/dashboard/users:153:2303'
+} The above error occurred in the <MatchInnerImpl> component. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.
+[Client] Warning: Error in route match: __root__/
+4:35:45 PM [vite] (client) [console.error] Error: Unable to load database data. Check the connection and migrations, then retry.
+    at http://127.0.0.1:3102/dashboard/users:153:2201
+    at http://127.0.0.1:3102/dashboard/users:153:2303
+
+The above error occurred in the <MatchInnerImpl> component.
+
+React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.
+
+4:35:45 PM [vite] (client) [console.warn] Warning: Error in route match: __root__/
+4:35:45 PM [vite] (client) [console.error] Error: Unable to load database data. Check the connection and migrations, then retry.
+    at http://127.0.0.1:3102/dashboard/users:153:2201
+    at http://127.0.0.1:3102/dashboard/users:153:2303
+
+The above error occurred in the <MatchInnerImpl> component.
+
+React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.
+
+4:35:45 PM [vite] (client) [console.warn] Warning: Error in route match: __root__/
+[Client] %o
+
+%s
+
+%s
+ {
+  name: 'Error',
+  message: 'Unable to load database data. Check the connection and migrations, then retry.',
+  stack: 'Error: Unable to load database data. Check the connection and migrations, then retry.\n' +
+    '    at http://127.0.0.1:3102/dashboard/users:153:2201\n' +
+    '    at http://127.0.0.1:3102/dashboard/users:153:2303'
+} The above error occurred in the <MatchInnerImpl> component. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.
+[Client] Warning: Error in route match: __root__/
+4:35:45 PM [vite] (client) [console.error] Error: Unable to load database data. Check the connection and migrations, then retry.
+    at http://127.0.0.1:3102/dashboard/users:153:2201
+    at http://127.0.0.1:3102/dashboard/users:153:2303
+
+The above error occurred in the <MatchInnerImpl> component.
+
+React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.
+
+4:35:45 PM [vite] (client) [console.warn] Warning: Error in route match: __root__/

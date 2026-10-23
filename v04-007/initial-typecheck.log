@@ -1,0 +1,6 @@
+
+> tenboards@0.3.0 typecheck
+> tsc --noEmit
+
+src/server/db/seed-operational.ts(9,21): error TS6133: 'logisticsMetrics' is declared but its value is never read.
+src/server/db/seed-operational.ts(10,21): error TS6133: 'patientsMetrics' is declared but its value is never read.
