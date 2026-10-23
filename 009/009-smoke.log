@@ -1,0 +1,6 @@
+PASS light/1440: long route title, no viewport overflow, mobile-only search, account switch, keyboard focus, no console errors
+PASS light/390: long route title, no viewport overflow, mobile-only search, account switch, keyboard focus, no console errors
+PASS light/320: long route title, no viewport overflow, mobile-only search, account switch, keyboard focus, no console errors
+PASS dark/1440: long route title, no viewport overflow, mobile-only search, account switch, keyboard focus, no console errors
+PASS dark/390: long route title, no viewport overflow, mobile-only search, account switch, keyboard focus, no console errors
+PASS dark/320: long route title, no viewport overflow, mobile-only search, account switch, keyboard focus, no console errors

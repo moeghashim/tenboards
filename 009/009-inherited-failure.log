@@ -1,0 +1,49 @@
+
+> tenboards@0.1.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://localhost:3001 --routes /dashboard/default,/dashboard/patient-monitoring --output screenshots/009-after
+
+PASS /dashboard/default light/desktop
+PASS /dashboard/default light/mobile
+PASS /dashboard/default dark/desktop
+PASS /dashboard/default dark/mobile
+FAIL /dashboard/patient-monitoring light/desktop
+page: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <div data-slot="sidebar-wr..." style={{...}} className="group/side..." data-tsd-source="/src/route...">
+      <AppSidebar>
+      <SidebarInset className={"[html[da..."} data-tsd-source="/src/route...">
+        <main data-slot="sidebar-inset" className={"relative..."} data-tsd-source="/src/route...">
+          <ShellHeader>
+          <SearchDialog>
+          <div className="min-h-0 mi..." data-tsd-source="/src/route...">
+            <OutletImpl data-tsd-source="/src/route...">
+              <MatchImpl routeId="/(main)/da...">
+                <MatchInnerImpl match={{id:"/(main...", ...}}>
+                  <Lazy>
+                    <Page>
+                      <div className="flex min-h..." data-content-padding="false" data-tsd-source="/src/route...">
+                        <div className="grid min-h..." data-tsd-source="/src/route...">
+                          <div>
+                          <div>
+                          <div className="text-muted..." data-tsd-source="/src/route...">
+                            <span className="whitespace..." data-tsd-source="/src/route...">
++                             04:55:30
+-                             04:55:29
+                            ...
+                        ...
+
+FAIL /dashboard/patient-monitoring light/mobile
+console: Encountered a script tag while rendering React component. Scripts inside React components are never executed when rendering on the client. Consider using template tag instead (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template).
+PASS /dashboard/patient-monitoring dark/desktop
+PASS /dashboard/patient-monitoring dark/mobile
