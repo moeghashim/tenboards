@@ -32,19 +32,19 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { dataTableFeatures } from "@/lib/data-table-features";
 
 import { DashboardCard as Card, SectionHeader } from "../../-components/dashboard/cards";
+import { useDashboardData } from "./data-context";
 import { opportunitiesColumns } from "./opportunities-table/columns";
-import opportunitiesData from "./opportunities-table/data.json";
 import { opportunitiesSchema } from "./opportunities-table/schema";
 
 const stageOptions = ["all", "Proposal Sent", "Discovery", "Negotiation", "Qualified"] as const;
 const healthOptions = ["all", "On Track", "Needs Review", "At Risk", "On Hold"] as const;
-const opportunities = opportunitiesSchema.parse(opportunitiesData);
 
 function preventPaginationNavigation(event: React.MouseEvent<HTMLAnchorElement>) {
   event.preventDefault();
 }
 
 export function OpportunitiesSection() {
+  const opportunities = opportunitiesSchema.parse(useDashboardData().recordsOpportunities);
   const [rowSelection, setRowSelection] = React.useState({});
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>([]);
   const [columnVisibility] = React.useState<ColumnVisibilityState>({});

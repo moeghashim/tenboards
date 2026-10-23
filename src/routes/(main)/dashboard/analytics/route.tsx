@@ -1,9 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { createServerFn } from "@tanstack/react-start";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import { AnalyticsKpiStrip } from "./-components/analytics-kpi-strip";
 import { AnalyticsToolbar } from "./-components/analytics-toolbar";
+import { DataProvider, useDashboardData } from "./-components/data-context";
 import { RealtimeVisitors } from "./-components/realtime-visitors";
 import { TopPages } from "./-components/top-pages";
 import { TopTrafficSources } from "./-components/top-traffic-sources";
@@ -12,15 +14,23 @@ import { TrafficQuality } from "./-components/traffic-quality";
 // Import this stylesheet in any page or component that renders country flag classes.
 import "@/styles/flag-icons/flags.css";
 
+const loadData = createServerFn({ method: "GET" }).handler(async () => {
+  const { readAnalytics } = await import("@/server/data/analytics");
+  return readAnalytics({ variant: "current", renderedAt: new Date().toISOString() });
+});
+
 export const Route = createFileRoute("/(main)/dashboard/analytics")({
+  loader: () => loadData(),
   component: Page,
 });
 
-function Page() {
+function PageContent() {
+  const summary = useDashboardData().pageSummary[0];
+
   return (
     <div className="flex min-w-0 flex-col gap-4">
       <div className="space-y-1">
-        <h1 className="text-3xl tracking-tight">Hello, Jordan</h1>
+        <h1 className="text-3xl tracking-tight">{summary.value1}</h1>
         <p className="text-muted-foreground text-sm">
           Monitor traffic, engagement, and conversion performance in one view.
         </p>
@@ -86,5 +96,14 @@ function Page() {
         </TabsContent>
       </Tabs>
     </div>
+  );
+}
+
+function Page() {
+  const data = Route.useLoaderData();
+  return (
+    <DataProvider data={data}>
+      <PageContent />
+    </DataProvider>
   );
 }

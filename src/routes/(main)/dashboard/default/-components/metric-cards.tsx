@@ -3,17 +3,20 @@ import { TrendingDown, TrendingUp } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 import { StatCard } from "../../-components/dashboard/cards";
+import { useDashboardData } from "./data-context";
 
 export function MetricCards() {
+  const summary = useDashboardData().metricCardsSummary[0];
+
   return (
     <div className="grid min-w-0 grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
       <StatCard
         label="Total Revenue"
-        value="$1,250.00"
+        value={summary.value1}
         trend={
           <Badge variant="outline" className="text-success bg-success-surface border-transparent">
             <TrendingUp className="size-3" />
-            +12.5%
+            {summary.value2}
           </Badge>
         }
         help="Visitors for the last 6 months"
@@ -21,11 +24,11 @@ export function MetricCards() {
 
       <StatCard
         label="New Customers"
-        value="1,234"
+        value={summary.value3}
         trend={
           <Badge variant="outline" className="text-danger bg-danger-surface border-transparent">
             <TrendingDown className="size-3" />
-            -20%
+            {summary.value4}
           </Badge>
         }
         help="Acquisition needs attention"
@@ -33,11 +36,11 @@ export function MetricCards() {
 
       <StatCard
         label="Active Accounts"
-        value="45,678"
+        value={summary.value5}
         trend={
           <Badge variant="outline" className="text-success bg-success-surface border-transparent">
             <TrendingUp className="size-3" />
-            +12.5%
+            {summary.value6}
           </Badge>
         }
         help="Engagement exceeds targets"
@@ -45,11 +48,11 @@ export function MetricCards() {
 
       <StatCard
         label="Growth Rate"
-        value="4.5%"
+        value={summary.value7}
         trend={
           <Badge variant="outline" className="text-success bg-success-surface border-transparent">
             <TrendingUp className="size-3" />
-            +4.5%
+            {summary.value8}
           </Badge>
         }
         help="Meets growth projections"

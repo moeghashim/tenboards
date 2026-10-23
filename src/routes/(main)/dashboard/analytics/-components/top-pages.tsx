@@ -2,16 +2,11 @@ import { CardContent } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 import { DashboardCard as Card, SectionHeader } from "../../-components/dashboard/cards";
-
-const pages = [
-  { bounce: "24%", path: "/dashboard", time: "3m 12s", views: "64.2k" },
-  { bounce: "31%", path: "/pricing", time: "2m 08s", views: "41.8k" },
-  { bounce: "18%", path: "/docs/getting-started", time: "4m 44s", views: "28.6k" },
-  { bounce: "22%", path: "/blog/analytics-guide", time: "5m 06s", views: "19.3k" },
-  { bounce: "42%", path: "/contact", time: "1m 18s", views: "8.9k" },
-];
+import { useDashboardData } from "./data-context";
 
 export function TopPages() {
+  const pages = useDashboardData().topPagesPages;
+
   return (
     <Card className="h-full gap-2">
       <SectionHeader title="Page Performance" />

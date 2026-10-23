@@ -1,9 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { createServerFn } from "@tanstack/react-start";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import { CardOverview } from "./-components/card-overview";
 import { CashFlowOverview } from "./-components/cash-flow-overview";
+import { DataProvider } from "./-components/data-context";
 import { IncomeReliability } from "./-components/income-reliability";
 import { MonthlyCashFlow } from "./-components/kpis/monthly-cash-flow";
 import { NetWorth } from "./-components/kpis/net-worth";
@@ -11,11 +13,17 @@ import { PrimaryAccount } from "./-components/kpis/primary-account";
 import { SavingsRate } from "./-components/kpis/savings-rate";
 import { SpendingBreakdown } from "./-components/spending-breakdown";
 
+const loadData = createServerFn({ method: "GET" }).handler(async () => {
+  const { readFinance } = await import("@/server/data/finance");
+  return readFinance({ variant: "v1", renderedAt: new Date().toISOString() });
+});
+
 export const Route = createFileRoute("/(main)/dashboard/(legacy)/finance-v1")({
+  loader: () => loadData(),
   component: Page,
 });
 
-function Page() {
+function PageContent() {
   return (
     <div className="min-w-0">
       <Tabs className="gap-4" defaultValue="overview">
@@ -57,5 +65,14 @@ function Page() {
         </TabsContent>
       </Tabs>
     </div>
+  );
+}
+
+function Page() {
+  const data = Route.useLoaderData();
+  return (
+    <DataProvider data={data}>
+      <PageContent />
+    </DataProvider>
   );
 }

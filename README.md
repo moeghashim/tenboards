@@ -347,3 +347,19 @@ to icons in the UI. Selection stores belong to each mounted view, safely handle
 empty/removed records, and never represent authentication or persist messages.
 Migration `0006_useful_quentin_quire.sql` extends the journal; cumulative parity also
 checks later request dates against an unchanged seed.
+
+### Core dashboard reads (v0.4/006, in review)
+
+Default, CRM, Finance and Analytics, including their distinct V1 routes, now load
+through four typed GET reads. Customer/proposal/opportunity/lead, financial
+account/card/payment and analytics page/source/campaign/risk records use normalized
+tables. KPI and chart measures use ordered typed metric points with display metadata;
+chart colors, geometry and placeholder controls remain local. No action writes to the DB.
+
+Default visitor ranges and legacy Analytics date-range revenue use loaded records
+and model parameters. CRM month labels share the serialized request reference;
+Finance statement dates retain explicit UTC semantics. Migrations
+`0007_even_the_santerians.sql`, `0008_cultured_praxagora.sql` and
+`0009_large_katie_power.sql` extend the journal.
+Cumulative parity covers 17 reads / 107 scenarios, including current/V1, missing IDs,
+non-default ranges, leap days and year boundaries. Apply migrations and reseed when upgrading.

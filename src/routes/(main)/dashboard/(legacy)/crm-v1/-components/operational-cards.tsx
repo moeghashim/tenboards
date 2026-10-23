@@ -9,9 +9,32 @@ import { DashboardChart, useChartMotion } from "@/lib/charts/theme";
 import { formatCurrency } from "@/lib/utils";
 
 import { DashboardCard as Card, SectionHeader } from "../../../-components/dashboard/cards";
-import { actionItems, regionSalesData, salesPipelineChartConfig, salesPipelineChartData } from "./crm.config";
+import { salesPipelineChartConfig } from "./crm.config";
+import { useDashboardData } from "./data-context";
 
 export function OperationalCards() {
+  const summary = useDashboardData().operationalCardsSummary[0];
+
+  const salesPipelineChartData = useDashboardData().crmConfigSalesPipelineChartData.map((row, index) => ({
+    ...row,
+    ...[
+      { fill: "var(--chart-1)" },
+      { fill: "var(--chart-2)" },
+      { fill: "var(--muted-foreground)" },
+      { fill: "var(--chart-4)" },
+      { fill: "var(--chart-5)" },
+    ][index],
+  }));
+  const regionSalesData = useDashboardData().crmConfigRegionSalesData;
+  const actionItems = useDashboardData().crmConfigActionItems.map((row, index) => ({
+    ...row,
+    ...[
+      { priorityColor: "bg-danger-surface text-danger" },
+      { priorityColor: "bg-warning-surface text-warning" },
+      { priorityColor: "bg-success-surface text-success" },
+    ][index],
+  }));
+
   const totalSales = regionSalesData.reduce((sum, region) => sum + region.sales, 0);
   const motion = useChartMotion();
   return (
@@ -51,7 +74,7 @@ export function OperationalCards() {
           </DashboardChart>
         </CardContent>
         <CardFooter>
-          <p className="text-muted-foreground text-xs">Leads increased by 18.2% since last month.</p>
+          <p className="text-muted-foreground text-xs">{summary.value1}</p>
         </CardFooter>
       </Card>
 

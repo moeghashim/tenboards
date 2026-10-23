@@ -1,6 +1,7 @@
 import type { Page } from "playwright";
 
 import { captureAuth } from "./screenshot-auth.ts";
+import { captureAnalyticsRange, captureCore } from "./screenshot-core.ts";
 import { captureDirectories } from "./screenshot-directories.ts";
 import { captureProducts } from "./screenshot-products.ts";
 import { captureProfile } from "./screenshot-profile.ts";
@@ -13,7 +14,10 @@ export async function captureInteractions(
   route: string,
   captureVariant: (name: string) => Promise<void>,
 ): Promise<string[]> {
-  if (route === "/dashboard/default") return captureShell(page, captureVariant);
+  if (route === "/dashboard/default")
+    return [...(await captureShell(page, captureVariant)), ...(await captureCore(page, route, captureVariant))];
+  if (["/dashboard/default-v1", "/dashboard/crm", "/dashboard/crm-v1", "/dashboard/finance-v1"].includes(route))
+    return captureCore(page, route, captureVariant);
   if (route.startsWith("qa:") || ["/dashboard/coming-soon", "/dashboard/$", "/unauthorized"].includes(route))
     return captureSystem(page, route, captureVariant);
   if (route.startsWith("/auth/")) return captureAuth(page, route, captureVariant);
@@ -860,6 +864,7 @@ export async function captureInteractions(
     ];
   }
   if (route === "/dashboard/analytics-v1") {
+    await captureAnalyticsRange(page, captureVariant);
     await page.getByRole("button", { name: /Filters/ }).click();
     await page.getByText("Enterprise only", { exact: true }).click();
     await page.keyboard.press("Escape");

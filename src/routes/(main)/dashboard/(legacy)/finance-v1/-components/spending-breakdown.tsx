@@ -2,46 +2,11 @@ import { CardContent } from "@/components/ui/card";
 import { formatCurrency } from "@/lib/utils";
 
 import { DashboardCard as Card, SectionHeader } from "../../../-components/dashboard/cards";
-
-const expenses = [
-  {
-    key: "housing",
-    label: "Housing",
-    amount: 1650,
-  },
-  {
-    key: "utilities",
-    label: "Utilities",
-    amount: 420,
-  },
-  {
-    key: "groceries",
-    label: "Groceries",
-    amount: 560,
-  },
-  {
-    key: "transportation",
-    label: "Transport",
-    amount: 740,
-  },
-  {
-    key: "subscriptions",
-    label: "Subscriptions",
-    amount: 260,
-  },
-  {
-    key: "healthcare",
-    label: "Healthcare",
-    amount: 390,
-  },
-  {
-    key: "other",
-    label: "Other",
-    amount: 980,
-  },
-];
+import { useDashboardData } from "./data-context";
 
 export function SpendingBreakdown() {
+  const expenses = useDashboardData().spendingBreakdownExpenses;
+
   const total = expenses.reduce((sum, item) => sum + item.amount, 0);
   return (
     <Card>

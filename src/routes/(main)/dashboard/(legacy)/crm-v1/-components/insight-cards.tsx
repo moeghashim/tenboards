@@ -6,14 +6,24 @@ import { ChartTooltip } from "@/components/ui/chart";
 import { chartAxis, chartGrid, DashboardChart, DashboardTooltip, useChartMotion } from "@/lib/charts/theme";
 
 import { DashboardCard as Card, SectionHeader } from "../../../-components/dashboard/cards";
-import {
-  leadsBySourceChartConfig,
-  leadsBySourceChartData,
-  projectRevenueChartConfig,
-  projectRevenueChartData,
-} from "./crm.config";
+import { leadsBySourceChartConfig, projectRevenueChartConfig } from "./crm.config";
+import { useDashboardData } from "./data-context";
 
 export function InsightCards() {
+  const summary = useDashboardData().insightCardsSummary[0];
+
+  const leadsBySourceChartData = useDashboardData().crmConfigLeadsBySourceChartData.map((row, index) => ({
+    ...row,
+    ...[
+      { fill: "var(--color-website)" },
+      { fill: "var(--color-referral)" },
+      { fill: "var(--color-social)" },
+      { fill: "var(--color-cold)" },
+      { fill: "var(--color-other)" },
+    ][index],
+  }));
+  const projectRevenueChartData = useDashboardData().crmConfigProjectRevenueChartData;
+
   const totalLeads = leadsBySourceChartData.reduce((acc, curr) => acc + curr.leads, 0);
 
   const motion = useChartMotion();
@@ -166,7 +176,7 @@ export function InsightCards() {
         </CardContent>
         <CardFooter className="flex flex-col items-start gap-2">
           <p className="text-muted-foreground text-xs">Solid: actual revenue · Outlined: remaining to target</p>
-          <p className="text-muted-foreground text-xs">Average progress: 78% · 2 projects above target</p>
+          <p className="text-muted-foreground text-xs">{summary.value1}</p>
         </CardFooter>
       </Card>
     </div>

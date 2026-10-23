@@ -1,11 +1,14 @@
 import { Button } from "@/components/ui/button";
 
 import { StatCard } from "../../../../-components/dashboard/cards";
+import { useDashboardData } from "../data-context";
 export function PrimaryAccount() {
+  const summary = useDashboardData().kpisPrimaryAccountSummary[0];
+
   return (
     <StatCard
       label="Primary Account"
-      value="$12,450"
+      value={summary.value1}
       help={
         <>
           <p>Available balance</p>

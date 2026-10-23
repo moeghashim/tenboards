@@ -3,32 +3,13 @@ import { CardContent } from "@/components/ui/card";
 import { formatCurrency } from "@/lib/utils";
 
 import { DashboardCard as Card, SectionHeader } from "../../../-components/dashboard/cards";
-
-const NEXT_INTERVENTIONS = [
-  {
-    dealId: "OPP-489",
-    priority: "Escalate",
-    owner: "Leila Zhang",
-    risk: 81,
-    recommendation: "Join next customer call and reset close plan.",
-  },
-  {
-    dealId: "OPP-475",
-    priority: "Coach",
-    owner: "Omar Ali",
-    risk: 76,
-    recommendation: "Review deal strategy and unblock stage exit.",
-  },
-  {
-    dealId: "OPP-447",
-    priority: "Coach",
-    owner: "Sofia Bautista",
-    risk: 75,
-    recommendation: "Review deal strategy and unblock stage exit.",
-  },
-] as const;
+import { useDashboardData } from "./data-context";
 
 export function ActionsManagerQueue() {
+  const summary = useDashboardData().analyticsActionsManagerQueueSummary[0];
+
+  const NEXT_INTERVENTIONS = useDashboardData().analyticsActionsManagerQueueNextInterventions;
+
   return (
     <Card className="h-full">
       <SectionHeader title="Manager Action Queue" description="Escalate, coach, and reforecast before commit call" />
@@ -36,36 +17,39 @@ export function ActionsManagerQueue() {
       <CardContent className="flex h-full flex-col gap-4">
         <div className="flex h-full flex-col gap-3">
           <div className="grid grid-cols-2 gap-2">
-            <StatCard label="Actionable deals" value="7" />
-            <StatCard label="Revenue in play" value={formatCurrency(811000, { noDecimals: true })} mono />
-            <StatCard label="Owners engaged" value="3" />
-            <StatCard label="Median risk" value="72" mono />
+            <StatCard label="Actionable deals" value={summary.value1} />
+            <StatCard label="Revenue in play" value={formatCurrency(summary.value2, { noDecimals: true })} mono />
+            <StatCard label="Owners engaged" value={summary.value3} />
+            <StatCard label="Median risk" value={summary.value4} mono />
           </div>
 
           <div className="bg-muted space-y-2 rounded-md border px-3 py-2">
             <div className="flex flex-wrap items-center justify-between gap-2">
               <p className="text-muted-foreground text-xs">Intervention mix</p>
               <Badge variant="outline" className="h-5 px-2 text-xs tabular-nums">
-                Escalate {formatCurrency(174000, { noDecimals: true })}
+                Escalate {formatCurrency(summary.value5, { noDecimals: true })}
               </Badge>
             </div>
             <div className="space-y-1.5">
               <div className="bg-background flex flex-wrap items-center justify-between rounded-md border px-2.5 py-1.5">
                 <span className="text-xs">Escalate</span>
                 <span className="text-muted-foreground text-xs tabular-nums">
-                  1 deals · 14% · {formatCurrency(174000, { noDecimals: true })}
+                  {summary.value6}
+                  {formatCurrency(summary.value7, { noDecimals: true })}
                 </span>
               </div>
               <div className="bg-background flex flex-wrap items-center justify-between rounded-md border px-2.5 py-1.5">
                 <span className="text-xs">Coach</span>
                 <span className="text-muted-foreground text-xs tabular-nums">
-                  4 deals · 57% · {formatCurrency(478000, { noDecimals: true })}
+                  {summary.value8}
+                  {formatCurrency(summary.value9, { noDecimals: true })}
                 </span>
               </div>
               <div className="bg-background flex flex-wrap items-center justify-between rounded-md border px-2.5 py-1.5">
                 <span className="text-xs">Reforecast</span>
                 <span className="text-muted-foreground text-xs tabular-nums">
-                  2 deals · 29% · {formatCurrency(159000, { noDecimals: true })}
+                  {summary.value10}
+                  {formatCurrency(summary.value11, { noDecimals: true })}
                 </span>
               </div>
             </div>
@@ -81,19 +65,21 @@ export function ActionsManagerQueue() {
               <div className="bg-background flex flex-wrap items-center justify-between gap-2 rounded-md border px-2.5 py-1.5">
                 <span>Coach queue</span>
                 <span className="text-muted-foreground tabular-nums">
-                  4 deals · {formatCurrency(478000, { noDecimals: true })}
+                  {summary.value12}
+                  {formatCurrency(summary.value13, { noDecimals: true })}
                 </span>
               </div>
 
               <div className="bg-background flex flex-wrap items-center justify-between gap-2 rounded-md border px-2.5 py-1.5">
                 <span>Primary owner</span>
-                <span className="text-muted-foreground tabular-nums">Leila Zhang · 3 deals</span>
+                <span className="text-muted-foreground tabular-nums">{summary.value14}</span>
               </div>
 
               <div className="bg-background flex flex-wrap items-center justify-between gap-2 rounded-md border px-2.5 py-1.5">
                 <span>Stale pipeline</span>
                 <span className="text-muted-foreground tabular-nums">
-                  8 deals · {formatCurrency(1151000, { noDecimals: true })}
+                  {summary.value15}
+                  {formatCurrency(summary.value16, { noDecimals: true })}
                 </span>
               </div>
             </div>
@@ -120,7 +106,7 @@ export function ActionsManagerQueue() {
 
           <div className="bg-muted flex flex-wrap items-center justify-between gap-2 rounded-md border px-3 py-2">
             <span className="text-muted-foreground text-xs">No-action monitor</span>
-            <span className="text-xs font-medium tabular-nums">3 Deals</span>
+            <span className="text-xs font-medium tabular-nums">{summary.value17}</span>
           </div>
         </div>
       </CardContent>

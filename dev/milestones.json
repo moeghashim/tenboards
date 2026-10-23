@@ -119,7 +119,7 @@
         "003-commerce-data": "review",
         "004-workspace-data": "review",
         "005-communication-data": "review",
-        "006-core-dashboard-data": "todo",
+        "006-core-dashboard-data": "review",
         "007-operational-dashboard-data": "todo",
         "008-data-layer-acceptance": "todo"
       }

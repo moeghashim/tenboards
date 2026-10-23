@@ -14,8 +14,7 @@ import {
 } from "@/lib/charts/theme";
 
 import { DashboardCard as Card, SectionHeader } from "../../-components/dashboard/cards";
-
-const pipelineChartValues = [34, 38, 31, 47, 42, 51, 44, 40, 58, 46, 43, 49] as const;
+import { useDashboardData } from "./data-context";
 
 const pipelineChartConfig = {
   qualified: {
@@ -30,26 +29,16 @@ const pipelineRangeItems = [
   { value: "last-12-months", label: "Last 12 months" },
 ] as const;
 
-const axisMonthFormatter = new Intl.DateTimeFormat("en-US", { month: "short" });
-const tooltipMonthFormatter = new Intl.DateTimeFormat("en-US", { month: "short", year: "2-digit" });
-
-function getRollingMonthData(values: readonly number[]) {
-  return values.map((qualified, index) => {
-    const date = new Date();
-    date.setMonth(date.getMonth() - (values.length - 1 - index));
-
-    return {
-      date: date.toISOString(),
-      qualified,
-    };
-  });
-}
+const axisMonthFormatter = new Intl.DateTimeFormat("en-US", { month: "short", timeZone: "UTC" });
+const tooltipMonthFormatter = new Intl.DateTimeFormat("en-US", { month: "short", year: "2-digit", timeZone: "UTC" });
 
 export function PipelineActivity() {
+  const summary = useDashboardData().pipelineActivitySummary[0];
+
   const motion = useChartMotion();
-  const pipelineChartData = getRollingMonthData(pipelineChartValues);
+  const pipelineChartData = useDashboardData().projection.pipeline;
   const totalQualified = pipelineChartData.reduce((sum, item) => sum + item.qualified, 0);
-  const discoveryCallsBooked = 184;
+  const discoveryCallsBooked = useDashboardData().pipelineActivityTotals[0].discoveryCallsBooked;
   const discoveryProgress = Math.round((discoveryCallsBooked / totalQualified) * 100);
 
   return (
@@ -114,7 +103,7 @@ export function PipelineActivity() {
                 <div className="text-4xl leading-none font-medium tabular-nums">
                   {totalQualified} <span className="text-muted-foreground text-lg font-normal">leads</span>
                 </div>
-                <p className="text-muted-foreground text-sm">Total qualified leads captured over the last 12 months.</p>
+                <p className="text-muted-foreground text-sm">{summary.value1}</p>
               </div>
 
               <div className="flex flex-col gap-3 border-t pt-4">

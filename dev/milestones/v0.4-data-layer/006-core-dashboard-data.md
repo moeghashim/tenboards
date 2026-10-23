@@ -2,7 +2,7 @@
 id: "006"
 title: Connect Default, CRM, Finance and Analytics, including V1
 milestone: v0.4-data-layer
-status: todo
+status: review
 category: data
 files: ["src/routes/(main)/dashboard/default/", "src/routes/(main)/dashboard/crm/", "src/routes/(main)/dashboard/finance/", "src/routes/(main)/dashboard/analytics/", "src/routes/(main)/dashboard/(legacy)/", "src/routes/(main)/dashboard/-components/finance-demo-dates.ts", "src/server/data/default.ts", "src/server/data/crm.ts", "src/server/data/finance.ts", "src/server/data/analytics.ts", "src/server/db/", "scripts/data-parity.ts", "README.md", "dev/milestones.json"]
 ---
@@ -36,12 +36,12 @@ Prefactor inspection: Most chart/KPI fixtures are embedded in components or crm.
 
 ## Acceptance criteria
 
-- [ ] Implement default.ts, crm.ts, finance.ts and analytics.ts typed reads with distinct current/V1 result shapes or explicit variant inputs; register every function and supported parameter scenario. Route loaders/server functions supply every business-data consumer; no fixture reads hidden inside chart/card components.
-- [ ] Normalize Default customers and V1 proposal sections; CRM opportunities/leads/activities/reminders/project and region records; Finance accounts/cards/holdings/contacts/transactions/payments; Analytics page/source/campaign/referrer records and V1 risk ledger/intervention/coverage records. Preserve actual relations and order; avoid inventing a single universal entity or deduplicating unrelated demo records.
-- [ ] Move aggregate KPI values, deltas, revenue/forecast/quality/traffic/finance series, totals and other inline business summaries into typed metric points or their natural entity fields. Preserve units, precision, series ordering and current/V1 differences; no whole-fixture JSON.
-- [ ] Explicitly cover legacy analytics buildRevenueChartData and its date-range updates, current CRM request-relative pipeline dates, default/current legacy chart time ranges and all Finance date labels. Initial and changed ranges must use loaded data or a typed read with validated inputs; deterministic chart generation is not exempt as a live waveform. Keep pure data transformations source-independent and based on loaded typed records, with parity cases for initial and non-default ranges.
-- [ ] Preserve finance-demo-dates UTC statement semantics and all existing hydration fixes. All dates are serialized through loaders and UI reconstruction is explicit; no locale-dependent server/client defaults, module-startup clocks, suppressHydrationWarning or SSR disabling.
-- [ ] Maintain every table filter/sort/pagination, chart range/control, risk view, account/wallet tab and demo action. No change to chart geometry, formatting, status semantics, shell, tokens, or persistence.
+- [x] Implement default.ts, crm.ts, finance.ts and analytics.ts typed reads with distinct current/V1 result shapes or explicit variant inputs; register every function and supported parameter scenario. Route loaders/server functions supply every business-data consumer; no fixture reads hidden inside chart/card components.
+- [x] Normalize Default customers and V1 proposal sections; CRM opportunities/leads/activities/reminders/project and region records; Finance accounts/cards/holdings/contacts/transactions/payments; Analytics page/source/campaign/referrer records and V1 risk ledger/intervention/coverage records. Preserve actual relations and order; avoid inventing a single universal entity or deduplicating unrelated demo records.
+- [x] Move aggregate KPI values, deltas, revenue/forecast/quality/traffic/finance series, totals and other inline business summaries into typed metric points or their natural entity fields. Preserve units, precision, series ordering and current/V1 differences; no whole-fixture JSON.
+- [x] Explicitly cover legacy analytics buildRevenueChartData and its date-range updates, current CRM request-relative pipeline dates, default/current legacy chart time ranges and all Finance date labels. Initial and changed ranges must use loaded data or a typed read with validated inputs; deterministic chart generation is not exempt as a live waveform. Keep pure data transformations source-independent and based on loaded typed records, with parity cases for initial and non-default ranges.
+- [x] Preserve finance-demo-dates UTC statement semantics and all existing hydration fixes. All dates are serialized through loaders and UI reconstruction is explicit; no locale-dependent server/client defaults, module-startup clocks, suppressHydrationWarning or SSR disabling.
+- [x] Maintain every table filter/sort/pagination, chart range/control, risk view, account/wallet tab and demo action. No change to chart geometry, formatting, status semantics, shell, tokens, or persistence.
 
 ## Tests
 
@@ -55,9 +55,9 @@ Hard dependency: 001. Default merge order: after 005; shared schema/seed/registr
 
 ## Common gates and delivery
 
-- [ ] All [milestone test-floor gates](README.md#test-floor-and-evidence) pass for this task: build/check/typecheck; zero-env demo and actual Docker Postgres reads; parity for owned reads; dev `/dashboard/default` plus owned-route smoke; Workers demo version preview.
-- [ ] Capture and inspect incumbent → demo after → seeded DB for owned routes in light/dark × desktop (1440×900)/mobile (390×844), including listed variants. Attach four-state comparisons; no visual change is expected. Keep evidence on `pr-assets` or PR attachments, never main.
-- [ ] README reflects verified commands/behavior/status and the PR states `README: updated (sections …)` or `README: no change needed (reason)`. Update task acceptance and `dev/milestones.json` only from evidence; leave in review until merged.
+- [x] All [milestone test-floor gates](README.md#test-floor-and-evidence) pass for this task: build/check/typecheck; zero-env demo and actual Docker Postgres reads; parity for owned reads; dev `/dashboard/default` plus owned-route smoke; Workers demo version preview.
+- [x] Capture and inspect incumbent → demo after → seeded DB for owned routes in light/dark × desktop (1440×900)/mobile (390×844), including listed variants. Attach four-state comparisons; no visual change is expected. Keep evidence on `pr-assets` or PR attachments, never main.
+- [x] README reflects verified commands/behavior/status and the PR states `README: updated (sections …)` or `README: no change needed (reason)`. Update task acceptance and `dev/milestones.json` only from evidence; leave in review until merged.
 
 Read AGENTS.md and PLAN.md (Decisions log wins), inspect affected code before implementation, and read current official TanStack docs before framework/loader changes. UI edits use global Impeccable in Operate mode, context once per session, incumbent inspection and craft floor immediately before edits. Preserve keyboard access, names, focus, reduced motion and all four presets. No token/preset edits are planned; if approved, record actual contrast evidence. Keep `src/components/ui/`, `src/components/calendar/`, generated route/Worker files, font/preferences registries and PLAN.md intact.
 

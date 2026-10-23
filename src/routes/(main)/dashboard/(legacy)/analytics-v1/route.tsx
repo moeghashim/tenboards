@@ -1,16 +1,24 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { createServerFn } from "@tanstack/react-start";
 
 import { ActionsManagerQueue } from "./-components/analytics-actions-manager-queue";
 import { ActionsRiskLedger } from "./-components/analytics-actions-risk-ledger";
 import { DriversCoverageTriage } from "./-components/analytics-drivers-coverage-triage";
 import { DriversForecastTarget } from "./-components/analytics-drivers-forecast-target";
 import { AnalyticsOverview } from "./-components/analytics-overview";
+import { DataProvider } from "./-components/data-context";
+
+const loadData = createServerFn({ method: "GET" }).handler(async () => {
+  const { readAnalytics } = await import("@/server/data/analytics");
+  return readAnalytics({ variant: "v1", renderedAt: new Date().toISOString() });
+});
 
 export const Route = createFileRoute("/(main)/dashboard/(legacy)/analytics-v1")({
+  loader: () => loadData(),
   component: Page,
 });
 
-function Page() {
+function PageContent() {
   return (
     <div className="flex min-w-0 flex-col gap-4 md:gap-6">
       <AnalyticsOverview />
@@ -25,5 +33,14 @@ function Page() {
 
       <ActionsRiskLedger />
     </div>
+  );
+}
+
+function Page() {
+  const data = Route.useLoaderData();
+  return (
+    <DataProvider data={data}>
+      <PageContent />
+    </DataProvider>
   );
 }

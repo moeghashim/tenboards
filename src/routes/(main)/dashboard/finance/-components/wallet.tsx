@@ -5,55 +5,19 @@ import { CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 
 import { DashboardCard as Card, SectionHeader } from "../../-components/dashboard/cards";
-
-const walletCards = [
-  {
-    id: 1,
-    bank: "Revolut Premium",
-    last4: "4182",
-    balance: "$12,450.60",
-    icon: siRevolut,
-    iconColor: "fill-foreground",
-  },
-  {
-    id: 2,
-    bank: "HSBC Bank",
-    last4: "1004",
-    balance: "$3,200.11",
-    icon: siHsbc,
-    iconColor: "fill-foreground",
-  },
-
-  {
-    id: 4,
-    bank: "Barclays Bank",
-    last4: "9912",
-    balance: "$1,450.00",
-    icon: siBarclays,
-    iconColor: "fill-foreground",
-  },
-];
-
-const cryptoAssets = [
-  {
-    id: 1,
-    name: "Bitcoin",
-    vault: "Binance",
-    balance: "0.42 BTC",
-    usdValue: "$24,150.00",
-    icon: siBitcoin,
-  },
-  {
-    id: 2,
-    name: "Ethereum",
-    vault: "MetaMask",
-    balance: "4.85 ETH",
-    usdValue: "$12,420.10",
-    icon: siEthereum,
-  },
-];
+import { useDashboardData } from "./data-context";
 
 export function Wallet() {
+  const walletCards = useDashboardData().walletWalletCards.map((row, index) => ({
+    ...row,
+    ...[{ iconColor: "fill-foreground" }, { iconColor: "fill-foreground" }, { iconColor: "fill-foreground" }][index],
+    icon: { siRevolut, siHsbc, siBarclays }[row.icon as "siRevolut" | "siHsbc" | "siBarclays"],
+  }));
+  const cryptoAssets = useDashboardData().walletCryptoAssets.map((row) => ({
+    ...row,
+    icon: { siBitcoin, siEthereum }[row.icon as "siBitcoin" | "siEthereum"],
+  }));
+
   return (
     <Card className="h-full">
       <SectionHeader title="Wallet" />

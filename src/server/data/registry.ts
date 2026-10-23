@@ -1,8 +1,12 @@
 import { dbAccounts, demoAccounts } from "./accounts.ts";
+import { dbAnalytics, demoAnalytics } from "./analytics.ts";
 import { dbCalendar, demoCalendar } from "./calendar.ts";
 import { dbChat, demoChat } from "./chat.ts";
+import { dbCrm, demoCrm } from "./crm.ts";
+import { dbDefault, demoDefault } from "./default.ts";
 import { dbEcommerce, demoEcommerce } from "./ecommerce.ts";
 import { dbFiles, demoFiles } from "./files.ts";
+import { dbFinance, demoFinance } from "./finance.ts";
 import { dbInvoices, demoInvoices } from "./invoices.ts";
 import { dbKanban, demoKanban } from "./kanban.ts";
 import { dbMail, demoMail } from "./mail.ts";
@@ -27,6 +31,7 @@ function defineRead<Input, Output>(entry: {
     db: entry.db,
     scenarios: entry.scenarios.map(({ name, input }) => ({
       name,
+      input,
       demo: (): Promise<unknown> => entry.demo(input),
       db: (): Promise<unknown> => entry.db(input),
     })),
@@ -34,6 +39,94 @@ function defineRead<Input, Output>(entry: {
 }
 
 export const readRegistry = [
+  defineRead({
+    module: "default",
+    read: "readDefault",
+    demo: demoDefault,
+    db: dbDefault,
+    scenarios: [
+      { name: "current/all", input: { variant: "current", renderedAt: "2026-10-23T12:00:00Z" } },
+      { name: "current/existing", input: { variant: "current", renderedAt: "2026-10-23T12:00:00Z", id: "18425" } },
+      { name: "current/missing", input: { variant: "current", renderedAt: "2026-10-23T12:00:00Z", id: "missing" } },
+      { name: "current/2026-12-31T23:59:59Z", input: { variant: "current", renderedAt: "2026-12-31T23:59:59Z" } },
+      { name: "current/2028-02-29T23:59:59Z", input: { variant: "current", renderedAt: "2028-02-29T23:59:59Z" } },
+      { name: "current/2028-03-01T00:00:01Z", input: { variant: "current", renderedAt: "2028-03-01T00:00:01Z" } },
+      { name: "v1/all", input: { variant: "v1", renderedAt: "2026-10-23T12:00:00Z" } },
+      { name: "v1/existing", input: { variant: "v1", renderedAt: "2026-10-23T12:00:00Z", id: "1" } },
+      { name: "v1/missing", input: { variant: "v1", renderedAt: "2026-10-23T12:00:00Z", id: "missing" } },
+      { name: "v1/2026-12-31T23:59:59Z", input: { variant: "v1", renderedAt: "2026-12-31T23:59:59Z" } },
+      { name: "v1/2028-02-29T23:59:59Z", input: { variant: "v1", renderedAt: "2028-02-29T23:59:59Z" } },
+      { name: "v1/2028-03-01T00:00:01Z", input: { variant: "v1", renderedAt: "2028-03-01T00:00:01Z" } },
+      { name: "v1/7d", input: { variant: "v1", renderedAt: "2026-10-23T12:00:00Z", range: "7d" } },
+      { name: "v1/30d", input: { variant: "v1", renderedAt: "2026-10-23T12:00:00Z", range: "30d" } },
+    ],
+  }),
+  defineRead({
+    module: "crm",
+    read: "readCrm",
+    demo: demoCrm,
+    db: dbCrm,
+    scenarios: [
+      { name: "current/all", input: { variant: "current", renderedAt: "2026-10-23T12:00:00Z" } },
+      { name: "current/existing", input: { variant: "current", renderedAt: "2026-10-23T12:00:00Z", id: "OP-1842" } },
+      { name: "current/missing", input: { variant: "current", renderedAt: "2026-10-23T12:00:00Z", id: "missing" } },
+      { name: "current/2026-12-31T23:59:59Z", input: { variant: "current", renderedAt: "2026-12-31T23:59:59Z" } },
+      { name: "current/2028-02-29T23:59:59Z", input: { variant: "current", renderedAt: "2028-02-29T23:59:59Z" } },
+      { name: "current/2028-03-01T00:00:01Z", input: { variant: "current", renderedAt: "2028-03-01T00:00:01Z" } },
+      { name: "v1/all", input: { variant: "v1", renderedAt: "2026-10-23T12:00:00Z" } },
+      { name: "v1/existing", input: { variant: "v1", renderedAt: "2026-10-23T12:00:00Z", id: "L-1012" } },
+      { name: "v1/missing", input: { variant: "v1", renderedAt: "2026-10-23T12:00:00Z", id: "missing" } },
+      { name: "v1/2026-12-31T23:59:59Z", input: { variant: "v1", renderedAt: "2026-12-31T23:59:59Z" } },
+      { name: "v1/2028-02-29T23:59:59Z", input: { variant: "v1", renderedAt: "2028-02-29T23:59:59Z" } },
+      { name: "v1/2028-03-01T00:00:01Z", input: { variant: "v1", renderedAt: "2028-03-01T00:00:01Z" } },
+    ],
+  }),
+  defineRead({
+    module: "finance",
+    read: "readFinance",
+    demo: demoFinance,
+    db: dbFinance,
+    scenarios: [
+      { name: "current/all", input: { variant: "current", renderedAt: "2026-10-23T12:00:00Z" } },
+      { name: "current/existing", input: { variant: "current", renderedAt: "2026-10-23T12:00:00Z", id: "1" } },
+      { name: "current/missing", input: { variant: "current", renderedAt: "2026-10-23T12:00:00Z", id: "missing" } },
+      { name: "current/2026-12-31T23:59:59Z", input: { variant: "current", renderedAt: "2026-12-31T23:59:59Z" } },
+      { name: "current/2028-02-29T23:59:59Z", input: { variant: "current", renderedAt: "2028-02-29T23:59:59Z" } },
+      { name: "current/2028-03-01T00:00:01Z", input: { variant: "current", renderedAt: "2028-03-01T00:00:01Z" } },
+      { name: "v1/all", input: { variant: "v1", renderedAt: "2026-10-23T12:00:00Z" } },
+      { name: "v1/existing", input: { variant: "v1", renderedAt: "2026-10-23T12:00:00Z", id: "1" } },
+      { name: "v1/missing", input: { variant: "v1", renderedAt: "2026-10-23T12:00:00Z", id: "missing" } },
+      { name: "v1/2026-12-31T23:59:59Z", input: { variant: "v1", renderedAt: "2026-12-31T23:59:59Z" } },
+      { name: "v1/2028-02-29T23:59:59Z", input: { variant: "v1", renderedAt: "2028-02-29T23:59:59Z" } },
+      { name: "v1/2028-03-01T00:00:01Z", input: { variant: "v1", renderedAt: "2028-03-01T00:00:01Z" } },
+    ],
+  }),
+  defineRead({
+    module: "analytics",
+    read: "readAnalytics",
+    demo: demoAnalytics,
+    db: dbAnalytics,
+    scenarios: [
+      { name: "current/all", input: { variant: "current", renderedAt: "2026-10-23T12:00:00Z" } },
+      { name: "current/existing", input: { variant: "current", renderedAt: "2026-10-23T12:00:00Z", id: "/dashboard" } },
+      { name: "current/missing", input: { variant: "current", renderedAt: "2026-10-23T12:00:00Z", id: "missing" } },
+      { name: "v1/all", input: { variant: "v1", renderedAt: "2026-10-23T12:00:00Z" } },
+      { name: "v1/existing", input: { variant: "v1", renderedAt: "2026-10-23T12:00:00Z", id: "1" } },
+      { name: "v1/missing", input: { variant: "v1", renderedAt: "2026-10-23T12:00:00Z", id: "missing" } },
+      {
+        name: "2026-01-01/2026-12-31",
+        input: { variant: "v1", renderedAt: "2026-10-23T12:00:00Z", from: "2026-01-01", to: "2026-12-31" },
+      },
+      {
+        name: "2028-02-28/2028-03-02",
+        input: { variant: "v1", renderedAt: "2026-10-23T12:00:00Z", from: "2028-02-28", to: "2028-03-02" },
+      },
+      {
+        name: "2026-10-23/2026-10-23",
+        input: { variant: "v1", renderedAt: "2026-10-23T12:00:00Z", from: "2026-10-23", to: "2026-10-23" },
+      },
+    ],
+  }),
   defineRead({
     module: "mail",
     read: "readMail",

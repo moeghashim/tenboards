@@ -1,12 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { createServerFn } from "@tanstack/react-start";
 
 import { Download, RotateCw, Settings2 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { financeStatementDate, formatDemoDate } from "@/routes/(main)/dashboard/-components/finance-demo-dates";
+import { formatDemoDate } from "@/routes/(main)/dashboard/-components/finance-demo-dates";
 
 import { BalanceDistributionCard } from "./-components/balance-distribution-card";
+import { DataProvider, useDashboardData } from "./-components/data-context";
 import { FinanceNotification } from "./-components/finance-notification";
 import { IncomeBreakdown } from "./-components/income-breakdown";
 import { OverviewKpis } from "./-components/overview-kpis";
@@ -15,12 +17,20 @@ import { TransactionsOverviewCard } from "./-components/transactions-overview-ca
 import { UpcomingTransactions } from "./-components/upcoming-transactions";
 import { Wallet } from "./-components/wallet";
 
+const loadData = createServerFn({ method: "GET" }).handler(async () => {
+  const { readFinance } = await import("@/server/data/finance");
+  return readFinance({ variant: "current", renderedAt: new Date().toISOString() });
+});
+
 export const Route = createFileRoute("/(main)/dashboard/finance")({
+  loader: () => loadData(),
   component: Page,
 });
 
-function Page() {
-  const formattedDate = formatDemoDate(financeStatementDate);
+function PageContent() {
+  const summary = useDashboardData().pageSummary[0];
+
+  const formattedDate = formatDemoDate(useDashboardData().statementDate);
 
   return (
     <div className="flex min-w-0 flex-col gap-4">
@@ -40,7 +50,7 @@ function Page() {
           <div className="flex flex-wrap items-center gap-3">
             <div className="text-muted-foreground flex items-center gap-1.5 text-xs">
               <RotateCw className="size-4" />
-              <span>Updated 5 min ago</span>
+              <span>{summary.value1}</span>
             </div>
             <Button size="sm" variant="outline">
               <Settings2 />
@@ -100,5 +110,14 @@ function Page() {
         </TabsContent>
       </Tabs>
     </div>
+  );
+}
+
+function Page() {
+  const data = Route.useLoaderData();
+  return (
+    <DataProvider data={data}>
+      <PageContent />
+    </DataProvider>
   );
 }
