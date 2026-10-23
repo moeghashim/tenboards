@@ -1,67 +1,108 @@
-import { Settings } from "lucide-react";
+import { useId, useState } from "react";
+
+import { RotateCcw, Settings } from "lucide-react";
 import { useShallow } from "zustand/react/shallow";
 
 import { Button } from "@/components/ui/button";
-import { Label } from "@/components/ui/label";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import { useSidebar } from "@/components/ui/sidebar";
 import { type FontKey, fontOptions } from "@/lib/fonts/registry";
 import type { ContentLayout, NavbarStyle, SidebarCollapsible, SidebarVariant } from "@/lib/preferences/layout";
 import { THEME_PRESET_OPTIONS, type ThemeMode, type ThemePreset } from "@/lib/preferences/theme";
 import { usePreferencesStore } from "@/stores/preferences/preferences-provider";
 
+type Option = { value: string; label: string };
+function ChoiceField({
+  label,
+  value,
+  options,
+  onChange,
+}: {
+  label: string;
+  value: string;
+  options: readonly Option[];
+  onChange: (value: string) => void;
+}) {
+  const name = useId();
+  return (
+    <fieldset className="space-y-2">
+      <legend className="text-sm font-medium">{label}</legend>
+      <div className="flex gap-2">
+        {options.map((option) => (
+          <label
+            key={option.value}
+            className="border-input has-checked:border-primary has-checked:bg-muted has-focus-visible:outline-ring relative flex min-h-10 min-w-0 flex-1 cursor-pointer items-center justify-center rounded-lg border px-2 text-center text-sm has-focus-visible:outline-2 has-focus-visible:outline-offset-2"
+          >
+            <input
+              type="radio"
+              name={name}
+              value={option.value}
+              checked={value === option.value}
+              onChange={() => onChange(option.value)}
+              className="sr-only"
+            />
+            <span>{option.label}</span>
+          </label>
+        ))}
+      </div>
+    </fieldset>
+  );
+}
+function SelectField({
+  label,
+  value,
+  options,
+  onChange,
+}: {
+  label: string;
+  value: string;
+  options: readonly Option[];
+  onChange: (value: string) => void;
+}) {
+  const id = useId();
+  return (
+    <div className="space-y-2">
+      <label htmlFor={id} className="block text-sm font-medium">
+        {label}
+      </label>
+      <select
+        id={id}
+        value={value}
+        onChange={(event) => onChange(event.target.value)}
+        className="border-input bg-background h-10 w-full rounded-lg border px-3 text-sm"
+      >
+        {options.map((option) => (
+          <option key={option.value} value={option.value}>
+            {option.label}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
+}
+
 export function LayoutControls({ sidebar = false }: { sidebar?: boolean }) {
-  const { values, resolvedThemeMode, setPreference, resetPreferences } = usePreferencesStore(
+  const { values, setPreference, resetPreferences } = usePreferencesStore(
     useShallow((state) => ({
       values: state.values,
-      resolvedThemeMode: state.resolvedThemeMode,
       setPreference: state.setPreference,
       resetPreferences: state.resetPreferences,
     })),
   );
-
-  const {
-    theme_mode: themeMode,
-    theme_preset: themePreset,
-    content_layout: contentLayout,
-    navbar_style: navbarStyle,
-    sidebar_variant: variant,
-    sidebar_collapsible: collapsible,
-    font,
-  } = values;
-
-  const themePresetItems = THEME_PRESET_OPTIONS.map((preset) => ({
-    value: preset.value,
-    label: (
-      <span className="flex items-center gap-1.5">
-        <span
-          className="size-2.5 rounded-full"
-          style={{
-            backgroundColor: (resolvedThemeMode ?? "light") === "dark" ? preset.primary.dark : preset.primary.light,
-          }}
-        />
-        {preset.label}
-      </span>
-    ),
-  }));
-  const fontItems = fontOptions.map((option) => ({
-    value: option.key,
-    label: option.label,
-  }));
-
-  const onThemePresetChange = (preset: ThemePreset) => {
-    setPreference("theme_preset", preset);
-  };
-
-  const onFontChange = (value: FontKey | "") => {
-    if (!value) return;
-    setPreference("font", value);
-  };
-
+  const { setOpen } = useSidebar();
+  const [resetMessage, setResetMessage] = useState("");
+  const sectionId = useId();
   return (
-    <Popover>
-      <PopoverTrigger
+    <Sheet onOpenChange={() => setResetMessage("")}>
+      <SheetTrigger
         render={
           <Button
             variant="ghost"
@@ -73,190 +114,107 @@ export function LayoutControls({ sidebar = false }: { sidebar?: boolean }) {
       >
         <Settings />
         {sidebar && <span className="group-data-[collapsible=icon]:hidden">Settings</span>}
-      </PopoverTrigger>
-      <PopoverContent align="end">
-        <div className="flex flex-col gap-5">
-          <div className="space-y-1.5">
-            <h4 className="text-sm leading-none font-medium">Preferences</h4>
-            <p className="text-muted-foreground text-xs">Customize your dashboard layout preferences.</p>
-          </div>
-          <div className="space-y-3 **:data-[slot=toggle-group]:w-full **:data-[slot=toggle-group-item]:flex-1 **:data-[slot=toggle-group-item]:text-xs">
-            <div className="space-y-1">
-              <Label className="text-xs font-medium">Theme Preset</Label>
-              <Select
-                items={themePresetItems}
-                value={themePreset}
-                onValueChange={(value) => {
-                  if (!value) return;
-                  void onThemePresetChange(value as ThemePreset);
-                }}
-              >
-                <SelectTrigger size="sm" className="w-full text-xs">
-                  <SelectValue className="items-center" placeholder="Preset" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectGroup>
-                    {THEME_PRESET_OPTIONS.map((preset) => (
-                      <SelectItem key={preset.value} className="text-xs" value={preset.value}>
-                        <span className="flex items-center gap-2">
-                          <span
-                            className="size-2.5 rounded-full"
-                            style={{
-                              backgroundColor:
-                                resolvedThemeMode === "dark" ? preset.primary.dark : preset.primary.light,
-                            }}
-                          />
-                          {preset.label}
-                        </span>
-                      </SelectItem>
-                    ))}
-                  </SelectGroup>
-                </SelectContent>
-              </Select>
-            </div>
-
-            <div className="space-y-1">
-              <Label className="text-xs font-medium">Fonts</Label>
-              <Select
-                items={fontItems}
-                value={font}
-                onValueChange={(value) => {
-                  if (!value) return;
-                  void onFontChange(value as FontKey);
-                }}
-              >
-                <SelectTrigger size="sm" className="w-full text-xs">
-                  <SelectValue placeholder="Select font" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectGroup>
-                    {fontOptions.map((font) => (
-                      <SelectItem key={font.key} className="text-xs" value={font.key}>
-                        {font.label}
-                      </SelectItem>
-                    ))}
-                  </SelectGroup>
-                </SelectContent>
-              </Select>
-            </div>
-
-            <div className="space-y-1">
-              <Label className="text-xs font-medium">Theme Mode</Label>
-              <ToggleGroup
-                size="sm"
-                spacing={0}
-                variant="outline"
-                value={[themeMode]}
-                onValueChange={([mode]) => {
-                  if (!mode) return;
-                  setPreference("theme_mode", mode as ThemeMode);
-                }}
-              >
-                <ToggleGroupItem value="light" aria-label="Toggle light">
-                  Light
-                </ToggleGroupItem>
-                <ToggleGroupItem value="dark" aria-label="Toggle dark">
-                  Dark
-                </ToggleGroupItem>
-                <ToggleGroupItem value="system" aria-label="Toggle system">
-                  System
-                </ToggleGroupItem>
-              </ToggleGroup>
-            </div>
-
-            <div className="space-y-1">
-              <Label className="text-xs font-medium">Page Layout</Label>
-              <ToggleGroup
-                size="sm"
-                spacing={0}
-                variant="outline"
-                value={[contentLayout]}
-                onValueChange={([layout]) => {
-                  if (!layout) return;
-                  setPreference("content_layout", layout as ContentLayout);
-                }}
-              >
-                <ToggleGroupItem value="centered" aria-label="Toggle centered">
-                  Centered
-                </ToggleGroupItem>
-                <ToggleGroupItem value="full-width" aria-label="Toggle full-width">
-                  Full Width
-                </ToggleGroupItem>
-              </ToggleGroup>
-            </div>
-
-            <div className="space-y-1">
-              <Label className="text-xs font-medium">Navbar Behavior</Label>
-              <ToggleGroup
-                size="sm"
-                spacing={0}
-                variant="outline"
-                value={[navbarStyle]}
-                onValueChange={([style]) => {
-                  if (!style) return;
-                  setPreference("navbar_style", style as NavbarStyle);
-                }}
-              >
-                <ToggleGroupItem value="sticky" aria-label="Toggle sticky">
-                  Sticky
-                </ToggleGroupItem>
-                <ToggleGroupItem value="scroll" aria-label="Toggle scroll">
-                  Scroll
-                </ToggleGroupItem>
-              </ToggleGroup>
-            </div>
-
-            <div className="space-y-1">
-              <Label className="text-xs font-medium">Sidebar Style</Label>
-              <ToggleGroup
-                size="sm"
-                spacing={0}
-                variant="outline"
-                value={[variant]}
-                onValueChange={([nextVariant]) => {
-                  if (!nextVariant) return;
-                  setPreference("sidebar_variant", nextVariant as SidebarVariant);
-                }}
-              >
-                <ToggleGroupItem value="inset" aria-label="Toggle inset">
-                  Inset
-                </ToggleGroupItem>
-                <ToggleGroupItem value="sidebar" aria-label="Toggle sidebar">
-                  Sidebar
-                </ToggleGroupItem>
-                <ToggleGroupItem value="floating" aria-label="Toggle floating">
-                  Floating
-                </ToggleGroupItem>
-              </ToggleGroup>
-            </div>
-
-            <div className="space-y-1">
-              <Label className="text-xs font-medium">Sidebar Collapse Mode</Label>
-              <ToggleGroup
-                size="sm"
-                spacing={0}
-                variant="outline"
-                value={[collapsible]}
-                onValueChange={([nextCollapsible]) => {
-                  if (!nextCollapsible) return;
-                  setPreference("sidebar_collapsible", nextCollapsible as SidebarCollapsible);
-                }}
-              >
-                <ToggleGroupItem value="icon" aria-label="Toggle icon">
-                  Icon
-                </ToggleGroupItem>
-                <ToggleGroupItem value="offcanvas" aria-label="Toggle offcanvas">
-                  OffCanvas
-                </ToggleGroupItem>
-              </ToggleGroup>
-            </div>
-
-            <Button type="button" size="sm" variant="outline" className="w-full text-xs" onClick={resetPreferences}>
-              Restore Defaults
-            </Button>
-          </div>
+      </SheetTrigger>
+      <SheetContent
+        className="gap-0 data-[side=right]:w-full data-[side=right]:sm:max-w-md"
+        aria-label="Layout settings"
+      >
+        <SheetHeader className="border-b p-6 pr-12">
+          <SheetTitle>Make it your workspace</SheetTitle>
+          <SheetDescription>Changes apply immediately and stay in this browser.</SheetDescription>
+        </SheetHeader>
+        <div className="min-h-0 flex-1 space-y-7 overflow-y-auto p-6">
+          <section aria-labelledby={`${sectionId}-appearance`} className="space-y-5">
+            <h3 id={`${sectionId}-appearance`} className="text-base font-medium">
+              Appearance
+            </h3>
+            <ChoiceField
+              label="Theme"
+              value={values.theme_mode}
+              options={[
+                { value: "light", label: "Light" },
+                { value: "dark", label: "Dark" },
+                { value: "system", label: "System" },
+              ]}
+              onChange={(value) => setPreference("theme_mode", value as ThemeMode)}
+            />
+            <SelectField
+              label="Color preset"
+              value={values.theme_preset}
+              options={THEME_PRESET_OPTIONS}
+              onChange={(value) => setPreference("theme_preset", value as ThemePreset)}
+            />
+            <SelectField
+              label="Font"
+              value={values.font}
+              options={fontOptions.map((option) => ({ value: option.key, label: option.label }))}
+              onChange={(value) => setPreference("font", value as FontKey)}
+            />
+          </section>
+          <section aria-labelledby={`${sectionId}-layout`} className="space-y-5 border-t pt-6">
+            <h3 id={`${sectionId}-layout`} className="text-base font-medium">
+              Layout
+            </h3>
+            <ChoiceField
+              label="Content width"
+              value={values.content_layout}
+              options={[
+                { value: "centered", label: "Centered" },
+                { value: "full-width", label: "Full width" },
+              ]}
+              onChange={(value) => setPreference("content_layout", value as ContentLayout)}
+            />
+            <ChoiceField
+              label="Header position"
+              value={values.navbar_style}
+              options={[
+                { value: "sticky", label: "Sticky" },
+                { value: "scroll", label: "Scroll with page" },
+              ]}
+              onChange={(value) => setPreference("navbar_style", value as NavbarStyle)}
+            />
+            <ChoiceField
+              label="Sidebar style"
+              value={values.sidebar_variant}
+              options={[
+                { value: "sidebar", label: "Panel" },
+                { value: "inset", label: "Inset" },
+                { value: "floating", label: "Floating" },
+              ]}
+              onChange={(value) => setPreference("sidebar_variant", value as SidebarVariant)}
+            />
+            <p className="text-muted-foreground text-xs">
+              Every style keeps the floating navigation panel. Inset also frames the content area.
+            </p>
+            <ChoiceField
+              label="When collapsed"
+              value={values.sidebar_collapsible}
+              options={[
+                { value: "icon", label: "Show icons" },
+                { value: "offcanvas", label: "Hide panel" },
+              ]}
+              onChange={(value) => setPreference("sidebar_collapsible", value as SidebarCollapsible)}
+            />
+            <p className="text-muted-foreground text-xs">On small screens, navigation always opens in a sheet.</p>
+          </section>
         </div>
-      </PopoverContent>
-    </Popover>
+        <SheetFooter className="gap-2 border-t p-6">
+          <Button
+            variant="outline"
+            onClick={() => {
+              resetPreferences();
+              setOpen(true);
+              setResetMessage("tenboards defaults restored.");
+            }}
+          >
+            <RotateCcw />
+            Reset to tenboards defaults
+          </Button>
+          <p role="status" className="text-muted-foreground min-h-4 text-center text-xs">
+            {resetMessage || "Light · Default preset · Geist · Centered"}
+          </p>
+        </SheetFooter>
+      </SheetContent>
+    </Sheet>
   );
 }
