@@ -1,5 +1,6 @@
 import type { Page } from "playwright";
 
+import { captureAuth } from "./screenshot-auth.ts";
 import { captureDirectories } from "./screenshot-directories.ts";
 import { captureProducts } from "./screenshot-products.ts";
 import { captureProfile } from "./screenshot-profile.ts";
@@ -10,6 +11,7 @@ export async function captureInteractions(
   route: string,
   captureVariant: (name: string) => Promise<void>,
 ): Promise<string[]> {
+  if (route.startsWith("/auth/")) return captureAuth(page, route, captureVariant);
   if (route === "/dashboard/users" || route === "/dashboard/roles")
     return captureDirectories(page, route, captureVariant);
   if (route === "/dashboard/profile") return captureProfile(page, captureVariant);

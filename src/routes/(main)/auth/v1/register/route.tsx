@@ -11,21 +11,22 @@ export const Route = createFileRoute("/(main)/auth/v1/register")({
 
 function RegisterV1() {
   return (
-    <div className="flex h-dvh">
-      <div className="bg-background flex w-full items-center justify-center p-8 lg:w-2/3">
-        <div className="w-full max-w-md space-y-10 py-24 lg:py-32">
-          <div className="space-y-4 text-center">
-            <div className="font-medium tracking-tight">Register</div>
-            <div className="text-muted-foreground mx-auto max-w-xl">
-              Fill in your details below. We promise not to quiz you about your first pet&apos;s name (this time).
-            </div>
+    <div className="flex min-h-dvh">
+      <div className="bg-background flex w-full items-center justify-center px-6 py-8 lg:w-2/3">
+        <div className="w-full max-w-sm space-y-6 py-4">
+          <div className="space-y-2">
+            <h1 className="text-2xl font-medium">Register</h1>
+            <div className="text-muted-foreground text-sm">Enter your details to explore the demo.</div>
           </div>
           <div className="space-y-4">
             <RegisterForm />
             <GoogleButton className="w-full" variant="outline" />
             <p className="text-muted-foreground text-center text-xs">
               Already have an account?{" "}
-              <Link to="/auth/v1/login" className="text-primary">
+              <Link
+                to="/auth/v1/login"
+                className="text-primary focus-visible:outline-ring rounded-sm underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-4"
+              >
                 Login
               </Link>
             </p>
@@ -38,8 +39,8 @@ function RegisterV1() {
           <div className="space-y-6">
             <Brand className="text-primary-foreground text-2xl" />
             <div className="space-y-2">
-              <h1 className="text-primary-foreground text-5xl font-light">Welcome!</h1>
-              <p className="text-primary-foreground/80 text-xl">You&apos;re in the right place.</p>
+              <h2 className="text-primary-foreground text-3xl font-medium">Welcome!</h2>
+              <p className="text-primary-foreground text-sm">You&apos;re in the right place.</p>
             </div>
           </div>
         </div>

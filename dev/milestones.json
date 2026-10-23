@@ -95,7 +95,7 @@
         "009-products-page": "review",
         "010-users-roles-pages": "review",
         "011-profile-page": "review",
-        "012-auth-pages": "planned",
+        "012-auth-pages": "review",
         "013-system-pages": "planned",
         "014-app-pages-acceptance": "planned"
       }

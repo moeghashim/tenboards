@@ -22,9 +22,9 @@ const onSubmit = (data: z.infer<typeof formSchema>) => {
   toast.add({
     title: "You submitted the following values",
     description: (
-      <pre className="mt-2 w-[320px] rounded-md bg-neutral-950 p-4">
-        <code className="text-white">{JSON.stringify(data, null, 2)}</code>
-      </pre>
+      <span className="bg-muted text-foreground mt-2 block max-w-full overflow-x-auto rounded-md p-3 text-xs">
+        <code className="break-all whitespace-pre-wrap">{JSON.stringify(data, null, 2)}</code>
+      </span>
     ),
   });
 };
@@ -51,12 +51,13 @@ export function RegisterForm() {
               <Input
                 {...field}
                 id="register-email"
+                aria-describedby={fieldState.invalid ? "register-email-error" : undefined}
                 type="email"
                 placeholder="you@example.com"
                 autoComplete="email"
                 aria-invalid={fieldState.invalid}
               />
-              {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+              {fieldState.invalid && <FieldError id="register-email-error" errors={[fieldState.error]} />}
             </Field>
           )}
         />
@@ -69,12 +70,13 @@ export function RegisterForm() {
               <Input
                 {...field}
                 id="register-password"
+                aria-describedby={fieldState.invalid ? "register-password-error" : undefined}
                 type="password"
                 placeholder="••••••••"
                 autoComplete="new-password"
                 aria-invalid={fieldState.invalid}
               />
-              {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+              {fieldState.invalid && <FieldError id="register-password-error" errors={[fieldState.error]} />}
             </Field>
           )}
         />
@@ -87,12 +89,13 @@ export function RegisterForm() {
               <Input
                 {...field}
                 id="register-confirm-password"
+                aria-describedby={fieldState.invalid ? "register-confirm-password-error" : undefined}
                 type="password"
                 placeholder="••••••••"
                 autoComplete="new-password"
                 aria-invalid={fieldState.invalid}
               />
-              {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+              {fieldState.invalid && <FieldError id="register-confirm-password-error" errors={[fieldState.error]} />}
             </Field>
           )}
         />
