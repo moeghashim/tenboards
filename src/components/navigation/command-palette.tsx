@@ -90,9 +90,13 @@ export function CommandPalette() {
           <DialogTitle className="text-sm">Go to a page</DialogTitle>
           <DialogDescription>Search dashboards, apps, and demo screens.</DialogDescription>
         </DialogHeader>
-        <Command label="Search pages" className="min-h-0 rounded-none! p-2">
+        <Command
+          label="Search pages"
+          className="[&_[data-slot=input-group]:focus-within]:outline-ring min-h-0 rounded-none! p-2 [&_[data-slot=input-group]:focus-within]:[outline:2px_solid_var(--ring)] [&_[data-slot=input-group]:focus-within]:outline-offset-2"
+        >
           <CommandInput
             ref={input}
+            className="focus-visible:outline-none!"
             aria-label="Search pages"
             placeholder="Search pages…"
             value={query}
