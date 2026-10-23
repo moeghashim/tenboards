@@ -99,6 +99,30 @@
         "013-system-pages": "merged",
         "014-app-pages-acceptance": "merged"
       }
+    },
+    {
+      "id": "v0.4-data-layer",
+      "status": "planned",
+      "tasks": [
+        "001-data-foundation",
+        "002-people-profile",
+        "003-commerce-data",
+        "004-workspace-data",
+        "005-communication-data",
+        "006-core-dashboard-data",
+        "007-operational-dashboard-data",
+        "008-data-layer-acceptance"
+      ],
+      "taskStatuses": {
+        "001-data-foundation": "todo",
+        "002-people-profile": "todo",
+        "003-commerce-data": "todo",
+        "004-workspace-data": "todo",
+        "005-communication-data": "todo",
+        "006-core-dashboard-data": "todo",
+        "007-operational-dashboard-data": "todo",
+        "008-data-layer-acceptance": "todo"
+      }
     }
   ]
 }
