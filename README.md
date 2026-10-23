@@ -264,3 +264,8 @@ Products uses semantic stock/status labels, wrapping names and SKUs, aligned tab
 ### Users and Roles (v0.3 / 010)
 
 Users and Roles use compact tables, semantic statuses, named search/filter controls and wrapping pagination. Users exposes full workspace names and a live selection count; its workspace selector supplies the array value required by TanStack Table v9 membership filtering. Roles retains its grouping, disabled system-role actions and Permission Sets/Access Reviews placeholder tabs. Directory actions and permission information remain demo-only. No invitations, RBAC or backend mutations are implemented. The `--interactions` screenshot scenarios verify combined filters against exact fixtures, selection, page size/pagination, keyboard menus and all Roles tabs.
+
+
+### Profile (v0.3 / 011)
+
+Profile retains Overview, Personal, Employment, Compensation, Time off and Documents. Jordan Lee, matching JL initials, reserved example-domain emails, neutral manager/contact and updater attribution replace the upstream identity and remote author avatar. A route-local detail field keeps labels and long values consistent; the document table scrolls locally, and tab navigation remains horizontally scrollable. Restricted compensation copy explicitly identifies the demo state; header/document actions retain their existing behavior. The Profile `--interactions` capture checks all six tabs, identity fields, keyboard menu focus return and document controls.

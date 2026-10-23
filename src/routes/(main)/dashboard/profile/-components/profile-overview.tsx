@@ -15,15 +15,15 @@ export function ProfileOverview({ profile }: ProfileOverviewProps) {
     <>
       <div className="flex flex-col gap-2">
         <h2 className="font-heading text-base font-medium">About</h2>
-        <p className="text-muted-foreground text-sm">{profile.bio}</p>
+        <p className="text-muted-foreground max-w-prose text-sm leading-relaxed">{profile.bio}</p>
       </div>
 
       <Separator className="my-4" />
 
       <div className="flex flex-col gap-2">
         <h2 className="font-heading text-base font-medium">Work details</h2>
-        <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-3 xl:gap-12">
-          <div className="flex flex-col gap-5">
+        <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+          <div className="flex min-w-0 flex-col gap-4">
             <div className="flex flex-col gap-1">
               <span className="text-muted-foreground text-xs">Contractor ID</span>
               <span className="text-sm">{profile.contractorId}</span>
@@ -38,7 +38,7 @@ export function ProfileOverview({ profile }: ProfileOverviewProps) {
             </div>
           </div>
 
-          <div className="flex flex-col gap-5">
+          <div className="flex min-w-0 flex-col gap-4">
             <div className="flex flex-col gap-1">
               <span className="text-muted-foreground text-xs">Department</span>
               <span className="text-sm">{profile.department}</span>
@@ -53,7 +53,7 @@ export function ProfileOverview({ profile }: ProfileOverviewProps) {
             </div>
           </div>
 
-          <div className="flex flex-col gap-5">
+          <div className="flex min-w-0 flex-col gap-4">
             <div className="flex flex-col gap-1">
               <span className="text-muted-foreground text-xs">Start date</span>
               <span className="text-sm">{profile.startDate}</span>
@@ -69,7 +69,7 @@ export function ProfileOverview({ profile }: ProfileOverviewProps) {
       <Separator className="my-4" />
 
       <div className="flex flex-col gap-2">
-        <div className="flex items-center justify-between gap-4">
+        <div className="flex flex-wrap items-center justify-between gap-4">
           <div className="flex flex-col gap-0.5">
             <h2 className="font-heading text-base leading-none font-medium">Reporting line</h2>
             <p className="text-muted-foreground text-sm">Direct manager</p>

@@ -27,8 +27,8 @@ export const Route = createFileRoute("/(main)/dashboard/profile")({
 
 function Page() {
   return (
-    <div className="flex flex-col gap-4 py-4" data-content-padding="false">
-      <Breadcrumb className="px-4">
+    <div className="flex min-w-0 flex-col gap-4 py-4" data-content-padding="false">
+      <Breadcrumb className="px-4 md:px-6">
         <BreadcrumbList>
           <BreadcrumbItem>
             <span>Dashboard</span>
@@ -90,12 +90,12 @@ function Page() {
           </TabsContent>
 
           <TabsContent className="py-4" value="compensation">
-            <div className="flex items-start gap-3">
+            <div className="bg-muted flex items-start gap-3 rounded-xl p-4">
               <LockKeyhole aria-hidden="true" className="text-muted-foreground size-4" />
               <div>
-                <p className="text-sm font-medium">Restricted information</p>
+                <h2 className="text-base font-medium">Restricted information</h2>
                 <p className="text-muted-foreground mt-0.5 text-sm">
-                  Visible to people administrators and authorized finance roles.
+                  Demo restricted state for people administrators and finance roles. No access control is connected.
                 </p>
               </div>
             </div>

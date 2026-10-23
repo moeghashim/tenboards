@@ -9,7 +9,7 @@ import type { ProfileDocument } from "./profile-data";
 export function ProfileDocuments({ documents }: { documents: ProfileDocument[] }) {
   return (
     <div className="flex flex-col gap-4">
-      <div className="flex items-center justify-between gap-4">
+      <div className="flex flex-wrap items-center justify-between gap-4">
         <h2 className="font-heading text-base font-medium">Documents</h2>
         <Button size="sm">
           <FileText data-icon="inline-start" />
@@ -17,7 +17,7 @@ export function ProfileDocuments({ documents }: { documents: ProfileDocument[] }
         </Button>
       </div>
 
-      <Table className="border-y">
+      <Table className="min-w-160 border-y">
         <TableCaption className="sr-only">Documents attached to this contractor profile</TableCaption>
         <TableHeader className="[&_th]:h-8">
           <TableRow className="hover:bg-transparent">
@@ -33,11 +33,11 @@ export function ProfileDocuments({ documents }: { documents: ProfileDocument[] }
         <TableBody>
           {documents.map((document) => (
             <TableRow key={document.id}>
-              <TableCell className="font-medium">{document.name}</TableCell>
+              <TableCell className="font-medium [overflow-wrap:anywhere] whitespace-normal">{document.name}</TableCell>
               <TableCell className="text-muted-foreground">{document.category}</TableCell>
               <TableCell className="text-muted-foreground">{document.updatedAt}</TableCell>
               <TableCell>
-                <Badge className="rounded-sm" variant="outline">
+                <Badge className="bg-success-surface text-success" variant="secondary">
                   {document.status}
                 </Badge>
               </TableCell>

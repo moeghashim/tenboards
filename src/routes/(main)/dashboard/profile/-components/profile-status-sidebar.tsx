@@ -6,11 +6,11 @@ import type { ProfileRecord } from "./profile-data";
 
 export function ProfileStatusSidebar({ profile }: { profile: ProfileRecord }) {
   return (
-    <aside>
+    <aside className="bg-muted rounded-xl p-4 [overflow-wrap:anywhere]">
       <div className="flex flex-col gap-4">
         <h2 className="font-heading text-sm font-medium">Record status</h2>
         <div className="flex items-start gap-2">
-          <CircleCheck aria-hidden="true" className="text-muted-foreground mt-0.5 size-4" />
+          <CircleCheck aria-hidden="true" className="text-muted-foreground mt-0.5 size-4 shrink-0" />
           <div>
             <p className="text-sm font-medium">Active contractor</p>
             <p className="text-muted-foreground text-xs">Contract and access active</p>
@@ -27,7 +27,7 @@ export function ProfileStatusSidebar({ profile }: { profile: ProfileRecord }) {
         <h2 className="font-heading text-sm font-medium">Upcoming events</h2>
         <div className="flex flex-col">
           <div className="flex gap-3 py-2.5">
-            <CalendarDays aria-hidden="true" className="text-muted-foreground mt-0.5 size-4" />
+            <CalendarDays aria-hidden="true" className="text-muted-foreground mt-0.5 size-4 shrink-0" />
             <div>
               <p className="text-sm font-medium">Time off</p>
               <p className="text-muted-foreground text-xs">{profile.nextLeave}</p>
@@ -35,7 +35,7 @@ export function ProfileStatusSidebar({ profile }: { profile: ProfileRecord }) {
           </div>
           <Separator />
           <div className="flex gap-3 py-2.5">
-            <Clock3 aria-hidden="true" className="text-muted-foreground mt-0.5 size-4" />
+            <Clock3 aria-hidden="true" className="text-muted-foreground mt-0.5 size-4 shrink-0" />
             <div>
               <p className="text-sm font-medium">Last working day</p>
               <p className="text-muted-foreground text-xs">{profile.lastWorkingDay}</p>
