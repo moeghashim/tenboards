@@ -1,0 +1,20 @@
+
+> tenboards@0.2.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://localhost:3000 --routes /dashboard/file-manager,/dashboard/default --reload --interactions --output /private/tmp/tenboards-v03-evidence/v03-008/after
+
+FAIL /dashboard/default light/desktop direct
+No interaction scenario for /dashboard/default. Use an explicit supported --routes subset.
+FAIL /dashboard/default light/desktop refresh
+No interaction scenario for /dashboard/default. Use an explicit supported --routes subset.
+FAIL /dashboard/default light/mobile direct
+No interaction scenario for /dashboard/default. Use an explicit supported --routes subset.
+FAIL /dashboard/default light/mobile refresh
+No interaction scenario for /dashboard/default. Use an explicit supported --routes subset.
+FAIL /dashboard/default dark/desktop direct
+No interaction scenario for /dashboard/default. Use an explicit supported --routes subset.
+FAIL /dashboard/default dark/desktop refresh
+No interaction scenario for /dashboard/default. Use an explicit supported --routes subset.
+FAIL /dashboard/default dark/mobile direct
+No interaction scenario for /dashboard/default. Use an explicit supported --routes subset.
+FAIL /dashboard/default dark/mobile refresh
+No interaction scenario for /dashboard/default. Use an explicit supported --routes subset.

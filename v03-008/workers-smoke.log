@@ -1,0 +1,8 @@
+
+> tenboards@0.2.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url https://914e4255-tenboards.mohanadgh.workers.dev --routes /dashboard/default --output /private/tmp/tenboards-v03-evidence/v03-008/workers-smoke
+
+PASS /dashboard/default light/desktop direct
+PASS /dashboard/default light/mobile direct
+PASS /dashboard/default dark/desktop direct
+PASS /dashboard/default dark/mobile direct

@@ -1,0 +1,8 @@
+
+> tenboards@0.2.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://localhost:3000 --routes /dashboard/file-manager --output /private/tmp/tenboards-v03-evidence/v03-008/before-grid-retry
+
+PASS /dashboard/file-manager light/desktop direct
+PASS /dashboard/file-manager light/mobile direct
+PASS /dashboard/file-manager dark/desktop direct
+PASS /dashboard/file-manager dark/mobile direct

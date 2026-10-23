@@ -1,0 +1,29 @@
+
+> tenboards@0.2.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://localhost:3000 --routes /dashboard/file-manager --reload --interactions --output /private/tmp/tenboards-v03-evidence/v03-008/after-retry
+
+FAIL /dashboard/file-manager light/desktop direct
+locator.waitFor: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('button', { name: 'Star Product roadmap 2027.pdf', exact: true }) to be visible[22m
+
+FAIL /dashboard/file-manager light/desktop refresh
+locator.waitFor: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('button', { name: 'Star Product roadmap 2027.pdf', exact: true }) to be visible[22m
+
+FAIL /dashboard/file-manager light/mobile direct
+locator.waitFor: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('button', { name: 'Star Product roadmap 2027.pdf', exact: true }) to be visible[22m
+
+FAIL /dashboard/file-manager light/mobile refresh
+locator.waitFor: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('button', { name: 'Star Product roadmap 2027.pdf', exact: true }) to be visible[22m
+
+FAIL /dashboard/file-manager dark/desktop direct
+locator.waitFor: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('button', { name: 'Star Product roadmap 2027.pdf', exact: true }) to be visible[22m
+

@@ -1,0 +1,130 @@
+{
+  "baseURL": "https://914e4255-tenboards.mohanadgh.workers.dev/",
+  "hydrationDelayMs": 0,
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": true,
+  "interactions": true,
+  "results": [
+    {
+      "route": "/dashboard/file-manager",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_file-manager-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_file-manager-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Long h1 wraps; keyboard view query survives refresh",
+        "Grid/list button and menu star actions work",
+        "All table metadata remains visible in local horizontal scroll; neutral initials",
+        "Existing folder/search/filter/upload placeholders preserved; no document overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/file-manager",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_file-manager-light-desktop-refresh-interactive.png",
+      "controlsFile": "_dashboard_file-manager-light-desktop-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Long h1 wraps; keyboard view query survives refresh",
+        "Grid/list button and menu star actions work",
+        "All table metadata remains visible in local horizontal scroll; neutral initials",
+        "Existing folder/search/filter/upload placeholders preserved; no document overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/file-manager",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_file-manager-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_file-manager-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Long h1 wraps; keyboard view query survives refresh",
+        "Grid/list button and menu star actions work",
+        "All table metadata remains visible in local horizontal scroll; neutral initials",
+        "Existing folder/search/filter/upload placeholders preserved; no document overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/file-manager",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_file-manager-light-mobile-refresh-interactive.png",
+      "controlsFile": "_dashboard_file-manager-light-mobile-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Long h1 wraps; keyboard view query survives refresh",
+        "Grid/list button and menu star actions work",
+        "All table metadata remains visible in local horizontal scroll; neutral initials",
+        "Existing folder/search/filter/upload placeholders preserved; no document overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/file-manager",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_file-manager-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_file-manager-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Long h1 wraps; keyboard view query survives refresh",
+        "Grid/list button and menu star actions work",
+        "All table metadata remains visible in local horizontal scroll; neutral initials",
+        "Existing folder/search/filter/upload placeholders preserved; no document overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/file-manager",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_file-manager-dark-desktop-refresh-interactive.png",
+      "controlsFile": "_dashboard_file-manager-dark-desktop-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Long h1 wraps; keyboard view query survives refresh",
+        "Grid/list button and menu star actions work",
+        "All table metadata remains visible in local horizontal scroll; neutral initials",
+        "Existing folder/search/filter/upload placeholders preserved; no document overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/file-manager",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_file-manager-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_file-manager-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Long h1 wraps; keyboard view query survives refresh",
+        "Grid/list button and menu star actions work",
+        "All table metadata remains visible in local horizontal scroll; neutral initials",
+        "Existing folder/search/filter/upload placeholders preserved; no document overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/file-manager",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_file-manager-dark-mobile-refresh-interactive.png",
+      "controlsFile": "_dashboard_file-manager-dark-mobile-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Long h1 wraps; keyboard view query survives refresh",
+        "Grid/list button and menu star actions work",
+        "All table metadata remains visible in local horizontal scroll; neutral initials",
+        "Existing folder/search/filter/upload placeholders preserved; no document overflow"
+      ],
+      "errors": []
+    }
+  ]
+}
