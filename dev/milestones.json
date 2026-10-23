@@ -31,6 +31,38 @@
         "011-layout-settings": "merged",
         "012-shell-acceptance": "merged"
       }
+    },
+    {
+      "id": "v0.2-dashboards",
+      "status": "planned",
+      "tasks": [
+        "001-dashboard-foundation",
+        "002-default-dashboards",
+        "003-crm-dashboards",
+        "004-finance-dashboards",
+        "005-analytics-dashboards",
+        "006-productivity-dashboard",
+        "007-ecommerce-dashboard",
+        "008-academy-dashboard",
+        "009-logistics-dashboard",
+        "010-infrastructure-dashboard",
+        "011-patient-monitoring-dashboard",
+        "012-dashboard-acceptance"
+      ],
+      "taskStatuses": {
+        "001-dashboard-foundation": "planned",
+        "002-default-dashboards": "planned",
+        "003-crm-dashboards": "planned",
+        "004-finance-dashboards": "planned",
+        "005-analytics-dashboards": "planned",
+        "006-productivity-dashboard": "planned",
+        "007-ecommerce-dashboard": "planned",
+        "008-academy-dashboard": "planned",
+        "009-logistics-dashboard": "planned",
+        "010-infrastructure-dashboard": "planned",
+        "011-patient-monitoring-dashboard": "planned",
+        "012-dashboard-acceptance": "planned"
+      }
     }
   ]
 }
