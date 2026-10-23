@@ -46,6 +46,21 @@ export function ThemeBootScript() {
             value = readCookie(key);
           }
 
+          // Rewrite retired selections once; the same registry drives parser fallback and boot.
+          if (definition.legacyValues && definition.legacyValues.indexOf(value) >= 0) {
+            value = definition.defaultValue;
+            try {
+              if (mode === "client-cookie") {
+                document.cookie = encodeURIComponent(key) + "=" + encodeURIComponent(value) +
+                  "; path=/; max-age=604800; SameSite=Lax";
+              } else if (mode === "localStorage") {
+                window.localStorage.setItem(key, value);
+              }
+            } catch (e) {
+              // Storage restrictions must not prevent applying the valid default in memory.
+            }
+          }
+
           return definition.values.indexOf(value) >= 0 ? value : definition.defaultValue;
         }
 

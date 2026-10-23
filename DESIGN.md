@@ -53,7 +53,7 @@ components:
 
 **Creative North Star: "Refined product UI"** — the approved Linear/Vercel register in PLAN §7. Precision, scanability, and restraint serve dense administrative work. PLAN and its Decisions log win every conflict.
 
-The frontmatter records the implemented task 005 tokens. The default combines cool neutral surfaces with a deep blue action accent. Task 007 replaces the inherited presets. Shell tasks 008–011 and screen work in v0.2/v0.3 remain separate.
+The frontmatter records the implemented task 005 tokens. The default combines cool neutral surfaces with a deep blue action accent. Task 007 supplies token-only Graphite, Pine, and Iris alternatives. Shell tasks 008–011 and screen work in v0.2/v0.3 remain separate.
 
 **Key Characteristics:** neutral-first surfaces, one action accent, crisp borders, compact data, restrained depth, and consistent control states.
 
@@ -65,7 +65,19 @@ Supported AA text pairs: text, text-muted (including placeholders), primary, suc
 
 Run `node --experimental-strip-types scripts/check-contrast.ts` against the dev server; `--presets` and `--base-url` support later preset/version checks. It resolves rendered CSS values, converts to sRGB, and checks WCAG relative luminance. Disabled controls retain native disabled semantics, pointer suppression, opacity, and cursor treatment; inactive controls are contrast-exempt, and their treatment must not be used for enabled explanatory text. Text selection and input carets use the primary pair.
 
-Preset primitives established here are graphite, pine, and iris, each with explicit light/dark action values. They are palette resources for 007; the old preset files remain unchanged in 005.
+Presets use only task 005 palette primitives. Default retains blue; Graphite uses charcoal/silver, Pine uses deep teal/mint, and Iris uses violet/lavender. Each changes only primary; all semantic colors, foreground pairings, focus, type, spacing, radii, and shadows inherit the shared contract. The generator resolves each swatch from its referenced root primitive and rejects unresolvable values. No literal palette values live in preset files.
+
+Persisted Tangerine, Brutalist/Neo Brutalism, and Soft Pop selections migrate to Default during boot, before hydration, and their cookie is rewritten. The parser and preference store retain their existing allowed-value fallback; the provider reads the sanitized DOM. Valid new selections and the font registry remain intact. Verify all presets with `node --experimental-strip-types scripts/check-contrast.ts --presets default,graphite,pine,iris`.
+
+Verified contrast floor (35 supported checks per mode, 2026-10-23; full results in PR evidence):
+
+| Preset | Light text / hover | Dark text / hover | Light control / focus | Dark control / focus |
+| --- | --- | --- | --- | --- |
+| Default | 5.30:1 | 7.05:1 | 3.41:1 | 3.70:1 |
+| Graphite | 6.11:1 | 7.26:1 | 3.41:1 | 3.70:1 |
+| Pine | 4.67:1 | 7.26:1 | 3.41:1 | 3.70:1 |
+| Iris | 5.63:1 | 6.79:1 | 3.41:1 | 3.70:1 |
+
 
 ## Typography
 
