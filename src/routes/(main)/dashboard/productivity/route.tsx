@@ -16,12 +16,12 @@ export const Route = createFileRoute("/(main)/dashboard/productivity")({
 
 function Page() {
   return (
-    <div className="grid gap-6 lg:grid-cols-12">
-      <section className="lg:col-span-9">
-        <div className="flex flex-col gap-6">
+    <div className="grid min-w-0 items-start gap-4 xl:grid-cols-[minmax(0,1fr)_20rem]">
+      <section className="min-w-0">
+        <div className="flex flex-col gap-4">
           <div className="flex flex-col gap-2">
-            <h1 className="text-foreground text-3xl leading-none tracking-tight">Good morning, Arham.</h1>
-            <p className="text-muted-foreground text-lg leading-none">
+            <h1 className="text-foreground text-3xl leading-tight tracking-tight">Good morning, Jordan.</h1>
+            <p className="text-muted-foreground text-sm leading-relaxed">
               Let&apos;s make today productive and meaningful.
             </p>
           </div>
@@ -33,7 +33,7 @@ function Page() {
         </div>
       </section>
 
-      <section className="flex flex-col gap-6 lg:col-span-3">
+      <section className="grid min-w-0 items-start gap-4 sm:grid-cols-2 xl:grid-cols-1">
         <CalendarPanel />
         <FocusCard />
         <RecentNotesCard />
