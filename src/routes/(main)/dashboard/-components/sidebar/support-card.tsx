@@ -1,36 +1,34 @@
-import { siX } from "simple-icons";
+import { useEffect, useState } from "react";
 
-import { SimpleIcon } from "@/components/simple-icon";
-import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { useRouterState } from "@tanstack/react-router";
+
+import { sidebarItems } from "@/navigation/sidebar/sidebar-items";
+
+const demoPaths = new Set(
+  sidebarItems
+    .flatMap((group) => group.items.flatMap((item) => item.subItems ?? [item]))
+    .filter((item) => !item.disabled && item.url.startsWith("/dashboard/"))
+    .map((item) => item.url),
+);
 
 export function SupportCard() {
+  const path = useRouterState({ select: (state) => state.location.pathname });
+  const [visited, setVisited] = useState<Set<string>>(() => new Set());
+  useEffect(() => {
+    if ([...demoPaths].some((url) => url === path)) setVisited((previous) => new Set([...previous, path]));
+  }, [path]);
   return (
-    <Card size="sm" className="overflow-hidden shadow-none group-data-[collapsible=icon]:hidden">
-      <CardHeader className="min-w-0 px-4">
-        <CardTitle className="truncate text-sm">Have something in mind?</CardTitle>
-        <CardDescription className="line-clamp-3">
-          Suggest a feature or discuss custom work with me on&nbsp;
-          <a
-            href="https://x.com/arhamkhnz"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Reach out on X"
-            className="text-foreground inline-flex items-center"
-          >
-            <SimpleIcon icon={siX} aria-hidden className="fill-foreground size-3" />
-          </a>
-          &nbsp;or by{" "}
-          <a
-            href="https://github.com/arhamkhnz#want-to-connect"
-            target="_blank"
-            rel="noreferrer"
-            className="text-foreground hover:underline"
-          >
-            email
-          </a>
-          .
-        </CardDescription>
-      </CardHeader>
-    </Card>
+    <div className="space-y-2 rounded-xl border p-3 group-data-[collapsible=icon]:hidden">
+      <div className="text-sm">Demo mode</div>
+      <p className="text-muted-foreground text-xs">
+        Sample data · {visited.size} of {demoPaths.size} pages explored
+      </p>
+      <progress
+        aria-label="Pages explored this session"
+        value={visited.size}
+        max={demoPaths.size}
+        className="shell-demo-progress block h-1 w-full"
+      />
+    </div>
   );
 }

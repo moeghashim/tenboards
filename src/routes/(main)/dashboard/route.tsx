@@ -1,3 +1,5 @@
+import "./-components/sidebar/shell-sidebar.css";
+
 import type { CSSProperties } from "react";
 
 import { createFileRoute, Outlet } from "@tanstack/react-router";
@@ -26,10 +28,12 @@ function DashboardLayout() {
 
   return (
     <SidebarProvider
+      className="tenboards-shell"
       defaultOpen={defaultOpen}
       style={
         {
-          "--sidebar-width": "calc(var(--spacing) * 68)",
+          "--sidebar-width": "18rem",
+          "--sidebar-width-icon": "4.5rem",
         } as CSSProperties
       }
     >
