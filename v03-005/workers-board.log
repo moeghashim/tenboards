@@ -1,0 +1,20 @@
+
+> tenboards@0.2.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url https://ca3f6e06-tenboards.mohanadgh.workers.dev --routes /dashboard/kanban,/dashboard/default --reload --output screenshots/v03-005/workers-board
+
+PASS /dashboard/default light/desktop direct
+PASS /dashboard/default light/desktop refresh
+PASS /dashboard/default light/mobile direct
+PASS /dashboard/default light/mobile refresh
+PASS /dashboard/default dark/desktop direct
+PASS /dashboard/default dark/desktop refresh
+PASS /dashboard/default dark/mobile direct
+PASS /dashboard/default dark/mobile refresh
+PASS /dashboard/kanban light/desktop direct
+PASS /dashboard/kanban light/desktop refresh
+PASS /dashboard/kanban light/mobile direct
+PASS /dashboard/kanban light/mobile refresh
+PASS /dashboard/kanban dark/desktop direct
+PASS /dashboard/kanban dark/desktop refresh
+PASS /dashboard/kanban dark/mobile direct
+PASS /dashboard/kanban dark/mobile refresh

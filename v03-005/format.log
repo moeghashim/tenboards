@@ -1,0 +1,47 @@
+src/routes/(main)/dashboard/kanban/-components/sortable-task-card.tsx:18:5 lint/a11y/useAriaPropsSupportedByRole ━━━━━━━━━━
+
+  × The ARIA attribute 'aria-label' is not supported by this element.
+  
+    17 │   return (
+  > 18 │     <div
+       │     ^^^^
+  > 19 │       ref={ref}
+        ...
+  > 25 │       )}
+  > 26 │     >
+       │     ^
+    27 │       <TaskCard task={task} columnId={columnId} />
+    28 │     </div>
+  
+  i Assistive technologies may ignore an ARIA attribute that the role of the element does not support, or report incorrect information to the user.
+  
+  i Remove the attribute, or use a role that supports it.
+  
+
+src/routes/(main)/dashboard/kanban/-components/task-card.tsx:132:17 lint/a11y/useAriaPropsSupportedByRole ━━━━━━━━━━
+
+  × The ARIA attribute 'aria-label' is not supported by this element.
+  
+    131 │               return (
+  > 132 │                 <span
+        │                 ^^^^^
+  > 133 │                   key={insight.label}
+  > 134 │                   className="flex items-center gap-1.5 text-sm"
+  > 135 │                   aria-label={`${insight.count} ${insight.label.toLowerCase()}`}
+  > 136 │                 >
+        │                 ^
+    137 │                   <Icon className="size-3.5" />
+    138 │                   {insight.count}
+  
+  i Assistive technologies may ignore an ARIA attribute that the role of the element does not support, or report incorrect information to the user.
+  
+  i Remove the attribute, or use a role that supports it.
+  
+
+Checked 16 files in 408ms. Fixed 7 files.
+Found 2 errors.
+check ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Some errors were emitted while running checks.
+  
+

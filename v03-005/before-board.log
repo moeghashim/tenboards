@@ -1,0 +1,8 @@
+
+> tenboards@0.2.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://localhost:3003 --routes /dashboard/kanban --search view=board --output screenshots/v03-005/before-board
+
+PASS /dashboard/kanban light/desktop direct
+PASS /dashboard/kanban light/mobile direct
+PASS /dashboard/kanban dark/desktop direct
+PASS /dashboard/kanban dark/mobile direct

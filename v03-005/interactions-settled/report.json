@@ -1,0 +1,58 @@
+{
+  "baseURL": "http://localhost:3003/",
+  "hydrationDelayMs": 0,
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": false,
+  "interactions": true,
+  "results": [
+    {
+      "route": "/dashboard/kanban",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_kanban-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_kanban-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": [
+        "locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-column-id=\"ideas\"] [data-task-id=\"tender-workflow-map\"]') to be visible\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/kanban",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_kanban-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_kanban-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": [
+        "locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-column-id=\"ideas\"] [data-task-id=\"tender-workflow-map\"]') to be visible\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/kanban",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_kanban-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_kanban-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": [
+        "locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-column-id=\"ideas\"] [data-task-id=\"tender-workflow-map\"]') to be visible\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/kanban",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_kanban-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_kanban-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": [
+        "locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-column-id=\"ideas\"] [data-task-id=\"tender-workflow-map\"]') to be visible\u001b[22m\n"
+      ]
+    }
+  ]
+}

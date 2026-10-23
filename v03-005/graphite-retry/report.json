@@ -1,0 +1,74 @@
+{
+  "baseURL": "http://localhost:3003/",
+  "hydrationDelayMs": 0,
+  "preset": "graphite",
+  "timezone": "America/Chicago",
+  "reload": false,
+  "interactions": true,
+  "results": [
+    {
+      "route": "/dashboard/kanban",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_kanban-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_kanban-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Query Board/List/Table selections and list/table refresh",
+        "Keyboard task move and Escape rollback; desktop pointer move",
+        "Keyboard column and table ordering; list/table cancellation",
+        "Table status edit reflected in board; empty QA column",
+        "Local horizontal scrolling and neutral owner across all views"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/kanban",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_kanban-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_kanban-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Query Board/List/Table selections and list/table refresh",
+        "Keyboard task move and Escape rollback; desktop pointer move",
+        "Keyboard column and table ordering; list/table cancellation",
+        "Table status edit reflected in board; empty QA column",
+        "Local horizontal scrolling and neutral owner across all views"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/kanban",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_kanban-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_kanban-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Query Board/List/Table selections and list/table refresh",
+        "Keyboard task move and Escape rollback; desktop pointer move",
+        "Keyboard column and table ordering; list/table cancellation",
+        "Table status edit reflected in board; empty QA column",
+        "Local horizontal scrolling and neutral owner across all views"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/kanban",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_kanban-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_kanban-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Query Board/List/Table selections and list/table refresh",
+        "Keyboard task move and Escape rollback; desktop pointer move",
+        "Keyboard column and table ordering; list/table cancellation",
+        "Table status edit reflected in board; empty QA column",
+        "Local horizontal scrolling and neutral owner across all views"
+      ],
+      "errors": []
+    }
+  ]
+}

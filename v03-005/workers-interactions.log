@@ -1,0 +1,8 @@
+
+> tenboards@0.2.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url https://ca3f6e06-tenboards.mohanadgh.workers.dev --routes /dashboard/kanban --interactions --output screenshots/v03-005/workers-interactions
+
+PASS /dashboard/kanban light/desktop direct
+PASS /dashboard/kanban light/mobile direct
+PASS /dashboard/kanban dark/desktop direct
+PASS /dashboard/kanban dark/mobile direct

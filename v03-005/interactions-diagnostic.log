@@ -1,0 +1,12 @@
+
+> tenboards@0.2.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url https://ca3f6e06-tenboards.mohanadgh.workers.dev --routes /dashboard/kanban --interactions --output screenshots/v03-005/interactions-diagnostic
+
+FAIL /dashboard/kanban light/desktop direct
+Task return to Ideas failed: {"columns":["planned"],"live":["","Draggable item tender-workflow-map was dropped over droppable target tender-workflow-map"]}
+FAIL /dashboard/kanban light/mobile direct
+Task return to Ideas failed: {"columns":["planned"],"live":["","Draggable item tender-workflow-map was dropped over droppable target tender-workflow-map"]}
+FAIL /dashboard/kanban dark/desktop direct
+Task return to Ideas failed: {"columns":["planned"],"live":["","Draggable item tender-workflow-map was dropped over droppable target tender-workflow-map"]}
+FAIL /dashboard/kanban dark/mobile direct
+Task return to Ideas failed: {"columns":["planned"],"live":["","Draggable item tender-workflow-map was dropped over droppable target tender-workflow-map"]}

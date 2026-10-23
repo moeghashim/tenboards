@@ -1,0 +1,24 @@
+
+> tenboards@0.2.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://localhost:3003 --routes /dashboard/kanban --interactions --output screenshots/v03-005/interactions-fixed
+
+FAIL /dashboard/kanban light/desktop direct
+locator.waitFor: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('[data-column-id="ideas"] [data-task-id="tender-workflow-map"]') to be visible[22m
+
+FAIL /dashboard/kanban light/mobile direct
+locator.waitFor: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('[data-column-id="planned"] [data-task-id="tender-workflow-map"]') to be visible[22m
+
+FAIL /dashboard/kanban dark/desktop direct
+locator.waitFor: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('[data-column-id="ideas"] [data-task-id="tender-workflow-map"]') to be visible[22m
+
+FAIL /dashboard/kanban dark/mobile direct
+locator.waitFor: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('[data-column-id="ideas"] [data-task-id="tender-workflow-map"]') to be visible[22m
+

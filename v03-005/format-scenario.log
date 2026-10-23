@@ -1,0 +1,30 @@
+scripts/screenshot-interactions.ts:89:25 lint/performance/useDomNodeTextContent  FIXABLE  ━━━━━━━━━━
+
+  ! innerText is not recommended for reading DOM node text.
+  
+    87 │     for (let index = 0; index < (await statusSelects.count()); index++) {
+    88 │       const select = statusSelects.nth(index);
+  > 89 │       if ((await select.innerText()).trim().startsWith("QA")) {
+       │                         ^^^^^^^^^
+    90 │         await select.click();
+    91 │         await page.getByRole("option", { name: "Shipped", exact: true }).click();
+  
+  i innerText depends on rendered layout and CSS, so it can be slower and produce different results from the DOM tree's text content.
+  
+  i Use textContent when you want the node's text without rendered-text behavior.
+  
+  i Unsafe fix: Use textContent instead.
+  
+     87  87 │       for (let index = 0; index < (await statusSelects.count()); index++) {
+     88  88 │         const select = statusSelects.nth(index);
+     89     │ - ······if·((await·select.innerText()).trim().startsWith("QA"))·{
+         89 │ + ······if·((await·select.textContent()).trim().startsWith("QA"))·{
+     90  90 │           await select.click();
+     91  91 │           await page.getByRole("option", { name: "Shipped", exact: true }).click();
+  
+
+Skipped 1 suggested fixes.
+If you wish to apply the suggested (unsafe) fixes, use the command biome check --write --unsafe
+
+Checked 1 file in 426ms. Fixed 1 file.
+Found 1 warning.
