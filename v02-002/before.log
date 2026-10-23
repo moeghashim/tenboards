@@ -1,0 +1,8 @@
+
+> tenboards@0.1.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --routes /dashboard/default-v1 --output screenshots/v02-002/before
+
+PASS /dashboard/default-v1 light/desktop
+PASS /dashboard/default-v1 light/mobile
+PASS /dashboard/default-v1 dark/desktop
+PASS /dashboard/default-v1 dark/mobile

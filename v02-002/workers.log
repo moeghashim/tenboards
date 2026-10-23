@@ -1,0 +1,12 @@
+
+> tenboards@0.1.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url https://565fca75-tenboards.mohanadgh.workers.dev --routes /dashboard/default,/dashboard/default-v1 --output screenshots/v02-002/workers
+
+PASS /dashboard/default light/desktop
+PASS /dashboard/default light/mobile
+PASS /dashboard/default dark/desktop
+PASS /dashboard/default dark/mobile
+PASS /dashboard/default-v1 light/desktop
+PASS /dashboard/default-v1 light/mobile
+PASS /dashboard/default-v1 dark/desktop
+PASS /dashboard/default-v1 dark/mobile

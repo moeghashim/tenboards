@@ -1,0 +1,12 @@
+
+> tenboards@0.1.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --routes /dashboard/default,/dashboard/default-v1 --preset iris --output screenshots/v02-002/presets/iris
+
+PASS /dashboard/default light/desktop
+PASS /dashboard/default light/mobile
+PASS /dashboard/default dark/desktop
+PASS /dashboard/default dark/mobile
+PASS /dashboard/default-v1 light/desktop
+PASS /dashboard/default-v1 light/mobile
+PASS /dashboard/default-v1 dark/desktop
+PASS /dashboard/default-v1 dark/mobile
