@@ -34,7 +34,7 @@
     },
     {
       "id": "v0.2-dashboards",
-      "status": "planned",
+      "status": "in_progress",
       "tasks": [
         "001-dashboard-foundation",
         "002-default-dashboards",
@@ -50,7 +50,7 @@
         "012-dashboard-acceptance"
       ],
       "taskStatuses": {
-        "001-dashboard-foundation": "planned",
+        "001-dashboard-foundation": "in_review",
         "002-default-dashboards": "planned",
         "003-crm-dashboards": "planned",
         "004-finance-dashboards": "planned",

@@ -2,7 +2,7 @@
 
 An MIT-licensed dashboard template built with TanStack Start, React 19, TypeScript, Tailwind CSS v4, and shadcn/ui on Base UI.
 
-The full upstream screen catalog and mock data are retained. **v0.1 is merged, deployed and closed**: the design system and shell follow [PLAN.md](PLAN.md). **v0.2 is planned, awaiting breakdown review** in [the dashboard task breakdown](dev/milestones/v0.2-dashboards/README.md); no dashboard restyles have started. Current milestone/task status is tracked in [dev/milestones.json](dev/milestones.json). Current screens are demonstrations; database and authentication integrations are later milestones.
+The full upstream screen catalog and mock data are retained. **v0.1 is merged, deployed and closed**: the design system and shell follow [PLAN.md](PLAN.md). **v0.2 implementation is underway** following [the approved dashboard task breakdown](dev/milestones/v0.2-dashboards/README.md). Current milestone/task status is tracked in [dev/milestones.json](dev/milestones.json). Current screens are demonstrations; database and authentication integrations are later milestones.
 
 ## Run locally
 
@@ -31,7 +31,7 @@ Open [the default dashboard](http://localhost:3000/dashboard/default).
 
 ## Included screens
 
-The 14 dashboard routes are Default, CRM, Finance, Analytics, Productivity, E-commerce, Academy, Logistics, Infrastructure, Patient Monitoring, Default V1, CRM V1, Finance V1 and Analytics V1. Their shared chart theme and content restyles are planned for v0.2.
+The 14 dashboard routes are Default, CRM, Finance, Analytics, Productivity, E-commerce, Academy, Logistics, Infrastructure, Patient Monitoring, Default V1, CRM V1, Finance V1 and Analytics V1. Their shared foundation and route-by-route restyles are tracked in [dev/milestones.json](dev/milestones.json) for v0.2.
 
 File manager, products, profile, mail, chat, calendar, kanban, tasks, invoice, users, roles, authentication layouts, coming-soon and error pages are retained for v0.3 restyling. Route-specific components remain colocated under `src/routes/`.
 
@@ -124,3 +124,10 @@ node --experimental-strip-types scripts/check-contrast.ts --presets default,grap
 Axe is not part of the existing tooling; the acceptance evidence identifies the semantic/keyboard checks actually run. [Task 012 evidence](https://github.com/moeghashim/tenboards/tree/pr-assets/012) holds the complete route matrix, logs, and smoke scripts. [Sidebar/reference comparison](https://github.com/moeghashim/tenboards/blob/pr-assets/008/sidebar-reference-comparison.png) records the locked reference comparison. Captures may contain inherited TanStack development-tool chrome.
 
 Known upstream limitations remain separate from shell acceptance: Patient Monitoring reads a fresh clock during SSR/client rendering and can produce a hydration mismatch on direct navigation. Calendar, Finance, Invoice, Productivity, Finance V1, and Auth V2 login/register also reproduce Workers hydration mismatches on the existing production deployment. The locked decision in [open questions](dev/open-questions.md) waived these inherited failures for v0.1 and requires error-free dev/Workers hydration in the owning restyle task: Finance, Finance V1, Productivity and Patient Monitoring in v0.2; Calendar, Invoice and Auth V2 in v0.3. Auth screens and account switching are demonstrations; there is no session/auth backend. Charts, tables, app layouts, and legacy content await v0.2/v0.3; changing global tokens does not constitute a content restyle. Full-route capture failures are recorded rather than omitted or suppressed. The retained optional font registry loads external Google font assets and may encounter network timeouts; the default Geist faces are self-hosted.
+
+
+## Dashboard foundation (v0.2 / 001)
+
+`src/lib/charts/theme.tsx` composes the existing chart wrappers with responsive sizing, token-based axes/grid/cursor/tooltips/legends, explicit en-US numeric formatters, and `useChartMotion`. The hook starts without animation on both SSR and initial hydration, then observes reduced-motion changes; pass its props to every animated Recharts series. `seriesConfig` selects chart-1, chart-2, chart-4 and chart-5, avoiding Default's duplicate chart-3 color. Pair series with labels and dash patterns from their keyed `seriesConfig` entries; color alone is insufficient.
+
+`dashboard/-components/dashboard/cards.tsx` provides `DashboardCard` (12px compact / 16px standard), `SectionHeader`, and `StatCard`. These presentation APIs accept domain values, help, trends and actions without owning data or state. Default's metrics and customer-activity chart are the first consumers; the full dashboard restyle follows in task 002. Other dashboards and the protected UI wrappers remain intact.

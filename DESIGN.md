@@ -119,3 +119,12 @@ Layout settings is a right-hand sheet capped at 28rem on desktop and full width 
 - Don't redesign dashboard or app-page content in v0.1.
 - Don't treat documentation of a future design as proof it is implemented.
 - Don't remove screens or copy third-party logos into the tenboards identity.
+
+
+## Dashboard presentation foundation
+
+The shared dashboard ancestor owns `DashboardCard`, `SectionHeader`, and `StatCard`. Compact/standard density maps to the existing 12/16px card spacing; headings are semantic h2/h3, labels wrap and metric values use tabular numerals. Optional help, trend and action slots retain route-owned data and behavior. Task 001 integrates only Default metrics and customer activity; its incumbent composition and metric decoration stay until task 002.
+
+`src/lib/charts/theme.tsx` composes protected chart exports. Use `DashboardChart` for bounded responsive height and visible keyboard focus, `chartAxis` for 12px muted ticks, `chartGrid` for decorative dashed separators, `chartCursor`, `DashboardTooltip`, and wrapping `DashboardLegend`. `seriesConfig` deliberately selects chart-1/2/4/5 (primary, text-muted, success, warning) rather than duplicate Default chart-3. Every line also needs a distinct dash/marker or labeled form; the initial chart uses solid/dashed/dotted series with matching line samples in its legend. Marks use opaque token strokes, with area fills only as supplementary cues. Numeric formatters use explicit en-US locale; route code owns time ranges and units.
+
+Pass `useChartMotion()` to every animated series and tooltip. Its server snapshot and initial hydration disable animation, then a guarded media-query subscription observes changes and permits 200ms animation only when reduced motion is off. No global tokens, font/preset registry or protected wrappers change.

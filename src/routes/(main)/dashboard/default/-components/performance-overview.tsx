@@ -2,15 +2,8 @@ import { addHours, endOfToday, format, parseISO, subHours } from "date-fns";
 import { Area, CartesianGrid, ComposedChart, Line, XAxis } from "recharts";
 
 import { Button } from "@/components/ui/button";
-import { Card, CardAction, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import {
-  type ChartConfig,
-  ChartContainer,
-  ChartLegend,
-  ChartLegendContent,
-  ChartTooltip,
-  ChartTooltipContent,
-} from "@/components/ui/chart";
+import { Card, CardContent } from "@/components/ui/card";
+import { ChartLegend, ChartTooltip } from "@/components/ui/chart";
 import {
   Select,
   SelectContent,
@@ -20,6 +13,18 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import {
+  chartAxis,
+  chartCursor,
+  chartGrid,
+  DashboardChart,
+  DashboardLegend,
+  DashboardTooltip,
+  seriesConfig,
+  useChartMotion,
+} from "@/lib/charts/theme";
+
+import { SectionHeader } from "../../-components/dashboard/cards";
 
 const chartValues = [
   { newCustomers: 23840, activeAccounts: 6630, returningUsers: 4880 },
@@ -212,20 +217,11 @@ const chartData = chartValues.map((point, index) => ({
   ...point,
 }));
 
-const chartConfig = {
-  newCustomers: {
-    label: "New Customers",
-    color: "var(--chart-1)",
-  },
-  activeAccounts: {
-    label: "Active Accounts",
-    color: "var(--chart-2)",
-  },
-  returningUsers: {
-    label: "Returning Users",
-    color: "var(--chart-3)",
-  },
-} satisfies ChartConfig;
+const chartConfig = seriesConfig({
+  newCustomers: "New Customers",
+  activeAccounts: "Active Accounts",
+  returningUsers: "Returning Users",
+});
 
 const performancePeriodItems = [{ value: "quarter", label: "3 months" }] as const;
 
@@ -236,69 +232,72 @@ const performanceSegmentItems = [
 ] as const;
 
 export function PerformanceOverview() {
+  const motion = useChartMotion();
   return (
     <Card className="@container/card">
-      <CardHeader>
-        <CardTitle className="leading-none">Customer Activity</CardTitle>
-        <CardDescription>
-          <span className="hidden @[540px]/card:block">Customer activity for the last 3 months</span>
-          <span className="@[540px]/card:hidden">Last 3 months</span>
-        </CardDescription>
-        <CardAction className="flex items-center gap-2">
-          <Select defaultValue="quarter" items={performancePeriodItems}>
-            <SelectTrigger size="sm" className="w-28">
-              <SelectValue placeholder="3 months" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectGroup>
-                <SelectLabel>Period</SelectLabel>
-                {performancePeriodItems.map((item) => (
-                  <SelectItem key={item.value} value={item.value}>
-                    {item.label}
-                  </SelectItem>
-                ))}
-              </SelectGroup>
-            </SelectContent>
-          </Select>
+      <SectionHeader
+        title="Customer Activity"
+        description={
+          <>
+            <span className="hidden @[540px]/card:block">Customer activity for the last 3 months</span>
+            <span className="@[540px]/card:hidden">Last 3 months</span>
+          </>
+        }
+        actions={
+          <>
+            <Select defaultValue="quarter" items={performancePeriodItems}>
+              <SelectTrigger size="sm" className="w-28">
+                <SelectValue placeholder="3 months" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectGroup>
+                  <SelectLabel>Period</SelectLabel>
+                  {performancePeriodItems.map((item) => (
+                    <SelectItem key={item.value} value={item.value}>
+                      {item.label}
+                    </SelectItem>
+                  ))}
+                </SelectGroup>
+              </SelectContent>
+            </Select>
 
-          <Select defaultValue="all" items={performanceSegmentItems}>
-            <SelectTrigger size="sm" className="w-32">
-              <SelectValue placeholder="All segments" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectGroup>
-                <SelectLabel>Segments</SelectLabel>
-                {performanceSegmentItems.map((item) => (
-                  <SelectItem key={item.value} value={item.value}>
-                    {item.label}
-                  </SelectItem>
-                ))}
-              </SelectGroup>
-            </SelectContent>
-          </Select>
+            <Select defaultValue="all" items={performanceSegmentItems}>
+              <SelectTrigger size="sm" className="w-32">
+                <SelectValue placeholder="All segments" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectGroup>
+                  <SelectLabel>Segments</SelectLabel>
+                  {performanceSegmentItems.map((item) => (
+                    <SelectItem key={item.value} value={item.value}>
+                      {item.label}
+                    </SelectItem>
+                  ))}
+                </SelectGroup>
+              </SelectContent>
+            </Select>
 
-          <Button variant="outline" size="sm">
-            View report
-          </Button>
-        </CardAction>
-      </CardHeader>
+            <Button variant="outline" size="sm">
+              View report
+            </Button>
+          </>
+        }
+      />
 
       <CardContent>
-        <ChartContainer config={chartConfig} className="aspect-auto h-80 w-full">
+        <DashboardChart config={chartConfig} className="aspect-auto h-80 w-full">
           <ComposedChart data={chartData} margin={{ top: 0 }}>
             <defs>
               <linearGradient id="fillNewCustomers" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="var(--color-newCustomers)" stopOpacity={0.36} />
+                <stop offset="5%" stopColor="var(--color-newCustomers)" stopOpacity={0.08} />
                 <stop offset="95%" stopColor="var(--color-newCustomers)" stopOpacity={0.04} />
               </linearGradient>
             </defs>
-            <CartesianGrid vertical={false} strokeOpacity={0.5} />
+            <CartesianGrid {...chartGrid} />
 
             <XAxis
               dataKey="date"
-              tickLine={false}
-              axisLine={false}
-              tickMargin={8}
+              {...chartAxis}
               minTickGap={48}
               tickFormatter={(value) =>
                 parseISO(value).toLocaleDateString("en-US", {
@@ -309,42 +308,48 @@ export function PerformanceOverview() {
             />
 
             <ChartTooltip
-              cursor={false}
+              {...motion}
+              cursor={chartCursor}
               content={
-                <ChartTooltipContent
+                <DashboardTooltip
                   className="w-50"
                   indicator="line"
                   labelFormatter={(value) => format(parseISO(value), "d MMMM yyyy")}
                 />
               }
             />
-            <ChartLegend verticalAlign="top" content={<ChartLegendContent className="mb-5 justify-end" />} />
+            <ChartLegend verticalAlign="top" content={<DashboardLegend config={chartConfig} className="mb-5" />} />
 
             <Area
+              {...motion}
               dataKey="newCustomers"
               type="natural"
               fill="url(#fillNewCustomers)"
               stroke="var(--color-newCustomers)"
-              strokeWidth={1.25}
+              strokeWidth={2}
               dot={false}
               fillOpacity={1}
             />
             <Line
+              {...motion}
               dataKey="activeAccounts"
               type="natural"
               stroke="var(--color-activeAccounts)"
-              strokeWidth={1.4}
+              strokeWidth={2}
+              strokeDasharray={chartConfig.activeAccounts.strokeDasharray}
               dot={false}
             />
             <Line
+              {...motion}
               dataKey="returningUsers"
               type="natural"
               stroke="var(--color-returningUsers)"
-              strokeWidth={1.2}
+              strokeWidth={2}
+              strokeDasharray={chartConfig.returningUsers.strokeDasharray}
               dot={false}
             />
           </ComposedChart>
-        </ChartContainer>
+        </DashboardChart>
       </CardContent>
     </Card>
   );
