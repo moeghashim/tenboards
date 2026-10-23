@@ -10,12 +10,14 @@ import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectVa
 import { toast } from "@/components/ui/toast";
 import { dataTableFeatures } from "@/lib/data-table-features";
 
-import { categories, products as initialProducts, type Product, statuses } from "./data";
+import { useCatalog } from "./catalog-context";
+import type { Product } from "./data";
 import { ProductForm } from "./product-form";
 import { createProductsColumns } from "./products-columns";
 import { ProductsTable } from "./products-table";
 
 export function Products() {
+  const { categories, statuses, products: initialProducts } = useCatalog();
   const [products, setProducts] = useState(initialProducts);
   const [editor, setEditor] = useState<Product | null>(null);
 

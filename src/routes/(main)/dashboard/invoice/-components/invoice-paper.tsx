@@ -12,9 +12,11 @@ import {
   INVOICE_PAPER_WIDTH,
   type InvoiceFormValues,
 } from "./data";
+import { useInvoiceReferences } from "./invoice-context";
 
 export function InvoicePaper({ invoice }: { invoice: InvoiceFormValues }) {
-  const taxOption = getInvoiceTaxOption(invoice);
+  const { invoiceTaxOptions } = useInvoiceReferences();
+  const taxOption = getInvoiceTaxOption(invoice, invoiceTaxOptions);
   const discountValue = Number.isFinite(invoice.discountValue) ? invoice.discountValue : 0;
   const discountLabel = invoice.discountType === "percent" ? `Discount ${discountValue}%` : "Discount";
 
@@ -104,13 +106,15 @@ export function InvoicePaper({ invoice }: { invoice: InvoiceFormValues }) {
                 <span>
                   {taxOption.name} {taxOption.rate}%
                 </span>
-                <span>{formatInvoiceCurrency(getInvoiceTax(invoice))}</span>
+                <span>{formatInvoiceCurrency(getInvoiceTax(invoice, invoiceTaxOptions))}</span>
               </div>
             </div>
             <div className="border-y-2 border-current py-3">
               <div className="flex justify-between gap-8">
                 <span className="font-medium">Balance due</span>
-                <span className="font-semibold">{formatInvoiceCurrency(getInvoiceTotal(invoice))}</span>
+                <span className="font-semibold">
+                  {formatInvoiceCurrency(getInvoiceTotal(invoice, invoiceTaxOptions))}
+                </span>
               </div>
             </div>
           </section>

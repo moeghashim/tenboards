@@ -317,3 +317,12 @@ The dashboard parent loads demo accounts alongside the existing cookie preferenc
 All six Profile tabs load normalized identity, contact, employment, time-off and ordered document records, including manager/updater attribution and the previously inline completion, verification and record-status fields. Restricted-compensation and action behavior remain demonstration-only. Cumulative parity covers four reads and twelve scenarios, including missing-account empty arrays and missing-profile null. Apply the new cumulative migrations and rerun `db:seed` when upgrading an existing local database.
 
 `node --experimental-strip-types scripts/check-accounts.ts <base-url> <evidence-folder>` checks account-menu keyboard selection, Escape focus, refresh reset and cookie preferences across light/dark desktop/mobile. The existing Profile interaction captures cover all six tabs and document controls. Evidence belongs on `pr-assets`, never application branches.
+
+
+### Commerce reads (v0.4 / 003, in review)
+
+Products, Invoice and the entire E-commerce dashboard now use typed server reads. Product categories/status options load with the catalog; local duplication/editing and validation-only Add remain unchanged. Invoice keeps pure arithmetic/paper helpers in its UI module and receives clients/taxes through a route-local context. Draft date offsets are stored as definitions and resolved from one request timestamp in UTC, including a +14-day due date. Reloading discards local product and invoice edits.
+
+Store orders/customers, review records, traffic-source metadata, category/product summaries and report metadata use normalized tables. Chart series, KPIs, traffic and inventory buckets use typed metric points with decimal values and explicit currency/units. Presentation icons/colors remain local. The store's illustrative totals, short order list and separate catalog are intentionally not reconciled or joined by similar names. Order customer identities are scoped to their source order because the fixture supplies names, not shared customer IDs.
+
+Cumulative parity covers seven reads and 26 scenarios, including product filters/missing records, order filtering, Invoice year/leap-day rollover and later requests after seeding. Upgrade with `db:migrate` and `db:seed`; no new dependency or write endpoint is added. `node --experimental-strip-types scripts/check-commerce-local.ts <base-url>...` verifies local edits reset after reload. Invoice's existing delayed-timezone/print interaction checks remain available through `npm run screenshots`.

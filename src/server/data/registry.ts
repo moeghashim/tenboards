@@ -1,4 +1,7 @@
 import { dbAccounts, demoAccounts } from "./accounts.ts";
+import { dbEcommerce, demoEcommerce } from "./ecommerce.ts";
+import { dbInvoices, demoInvoices } from "./invoices.ts";
+import { dbProducts, demoProducts } from "./products.ts";
 import { dbProfile, demoProfile } from "./profile.ts";
 import { dbRoles, demoRoles } from "./roles.ts";
 import { dbUsers, demoUsers } from "./users.ts";
@@ -67,6 +70,46 @@ export const readRegistry = [
       { name: "default", input: {} },
       { name: "existing", input: { id: "WS-2301" } },
       { name: "missing", input: { id: "absent" } },
+    ],
+  }),
+  defineRead({
+    module: "products",
+    read: "readProducts",
+    demo: demoProducts,
+    db: dbProducts,
+    scenarios: [
+      { name: "all", input: {} },
+      { name: "existing", input: { id: "p01" } },
+      { name: "missing", input: { id: "missing" } },
+      { name: "category", input: { category: "Clothing" } },
+      { name: "empty-category", input: { category: "missing" } },
+    ],
+  }),
+  defineRead({
+    module: "invoices",
+    read: "readInvoices",
+    demo: demoInvoices,
+    db: dbInvoices,
+    scenarios: [
+      ...[
+        "2026-10-23T12:00:00Z",
+        "2026-12-31T23:59:59Z",
+        "2028-02-28T23:59:59Z",
+        "2028-02-29T00:00:00Z",
+        "2029-01-01T00:00:00Z",
+      ].map((renderedAt) => ({ name: renderedAt, input: { renderedAt } })),
+      { name: "missing", input: { renderedAt: "2026-10-23T12:00:00Z", draftId: "missing" } },
+    ],
+  }),
+  defineRead({
+    module: "ecommerce",
+    read: "readEcommerce",
+    demo: demoEcommerce,
+    db: dbEcommerce,
+    scenarios: [
+      { name: "all", input: {} },
+      { name: "existing-order", input: { orderId: "#14550" } },
+      { name: "missing-order", input: { orderId: "missing" } },
     ],
   }),
 ];

@@ -19,43 +19,47 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 
-import { categories, statuses } from "./data";
+import { useCatalog } from "./catalog-context";
+import type { Category, ProductStatus } from "./data";
 import { maxProductImageSize, ProductImagesField, productImageTypes } from "./product-images-field";
 
-const productSchema = z.object({
-  name: z.string().trim().min(1, "Enter a product name.").max(100, "Use 100 characters or fewer."),
-  description: z.string().trim().min(1, "Enter a product description.").max(2000, "Use 2,000 characters or fewer."),
-  images: z
-    .array(z.custom<File>((value) => typeof File !== "undefined" && value instanceof File))
-    .max(5, "Select up to 5 images.")
-    .refine((files) => files.every((file) => productImageTypes.includes(file.type)), "Use JPG, PNG, or WebP images.")
-    .refine(
-      (files) => files.every((file) => file.size > 0 && file.size <= maxProductImageSize),
-      "Each image must be non-empty and no larger than 5 MB.",
-    ),
-  sku: z
-    .string()
-    .trim()
-    .min(1, "Enter a SKU.")
-    .max(40, "Use 40 characters or fewer.")
-    .regex(/^[A-Za-z0-9_-]+$/, "Use letters, numbers, hyphens, or underscores."),
-  category: z.enum(categories),
-  status: z.enum(statuses),
-  price: z
-    .string()
-    .min(1, "Enter a price.")
-    .regex(/^\d+(\.\d{1,2})?$/, "Enter a non-negative price with up to two decimal places.")
-    .refine((value) => Number(value) <= 1_000_000, "Price must not exceed $1,000,000."),
-  stock: z
-    .string()
-    .min(1, "Enter a stock quantity.")
-    .regex(/^\d+$/, "Enter a non-negative whole number.")
-    .refine((value) => Number(value) <= 1_000_000, "Stock must not exceed 1,000,000."),
-});
+const createProductSchema = (categories: Category[], statuses: ProductStatus[]) =>
+  z.object({
+    name: z.string().trim().min(1, "Enter a product name.").max(100, "Use 100 characters or fewer."),
+    description: z.string().trim().min(1, "Enter a product description.").max(2000, "Use 2,000 characters or fewer."),
+    images: z
+      .array(z.custom<File>((value) => typeof File !== "undefined" && value instanceof File))
+      .max(5, "Select up to 5 images.")
+      .refine((files) => files.every((file) => productImageTypes.includes(file.type)), "Use JPG, PNG, or WebP images.")
+      .refine(
+        (files) => files.every((file) => file.size > 0 && file.size <= maxProductImageSize),
+        "Each image must be non-empty and no larger than 5 MB.",
+      ),
+    sku: z
+      .string()
+      .trim()
+      .min(1, "Enter a SKU.")
+      .max(40, "Use 40 characters or fewer.")
+      .regex(/^[A-Za-z0-9_-]+$/, "Use letters, numbers, hyphens, or underscores."),
+    category: z.enum(categories),
+    status: z.enum(statuses),
+    price: z
+      .string()
+      .min(1, "Enter a price.")
+      .regex(/^\d+(\.\d{1,2})?$/, "Enter a non-negative price with up to two decimal places.")
+      .refine((value) => Number(value) <= 1_000_000, "Price must not exceed $1,000,000."),
+    stock: z
+      .string()
+      .min(1, "Enter a stock quantity.")
+      .regex(/^\d+$/, "Enter a non-negative whole number.")
+      .refine((value) => Number(value) <= 1_000_000, "Stock must not exceed 1,000,000."),
+  });
 
-type ProductFormValues = z.infer<typeof productSchema>;
+type ProductFormValues = z.infer<ReturnType<typeof createProductSchema>>;
 
 export function AddProductDrawer() {
+  const { categories, statuses } = useCatalog();
+  const productSchema = createProductSchema(categories, statuses);
   const form = useForm<ProductFormValues>({
     resolver: zodResolver(productSchema),
     mode: "onBlur",

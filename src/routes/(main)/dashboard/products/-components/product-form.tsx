@@ -14,7 +14,8 @@ import { Field, FieldError, FieldGroup, FieldLabel } from "@/components/ui/field
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
-import { type Category, categories, type Product, type ProductStatus, statuses } from "./data";
+import { useCatalog } from "./catalog-context";
+import type { Category, Product, ProductStatus } from "./data";
 
 interface ProductFormProps {
   product: Product | null;
@@ -25,6 +26,7 @@ interface ProductFormProps {
 }
 
 export function ProductForm({ product, products, onClose, onSave, returnFocus }: ProductFormProps) {
+  const { categories, statuses } = useCatalog();
   const [category, setCategory] = useState<Category>(product?.category ?? "Clothing");
   const [status, setStatus] = useState<ProductStatus>(product?.status ?? "Draft");
   const [error, setError] = useState("");

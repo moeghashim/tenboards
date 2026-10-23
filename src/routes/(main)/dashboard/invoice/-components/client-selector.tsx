@@ -7,9 +7,11 @@ import { Field, FieldLabel } from "@/components/ui/field";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { getInitials } from "@/lib/utils";
 
-import { type InvoiceFormValues, invoiceClients } from "./data";
+import type { InvoiceFormValues } from "./data";
+import { useInvoiceReferences } from "./invoice-context";
 
 export function ClientSelector() {
+  const { invoiceClients } = useInvoiceReferences();
   const { control } = useFormContext<InvoiceFormValues>();
 
   return (

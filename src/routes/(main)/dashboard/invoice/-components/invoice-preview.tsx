@@ -13,6 +13,7 @@ import {
   INVOICE_PAPER_WIDTH,
   type InvoiceFormValues,
 } from "./data";
+import { useInvoiceReferences } from "./invoice-context";
 import { InvoicePaper } from "./invoice-paper";
 import { PrintInvoice } from "./print-invoice";
 import { useVisibleCenterPosition } from "./use-visible-center-position";
@@ -22,6 +23,7 @@ function handlePrint() {
 }
 
 export function InvoicePreview({ invoice }: { invoice: InvoiceFormValues }) {
+  const { invoiceTaxOptions } = useInvoiceReferences();
   const paperRef = React.useRef<HTMLDivElement>(null);
   const [paperHeight, setPaperHeight] = React.useState(INVOICE_PAPER_HEIGHT);
   React.useEffect(() => {
@@ -48,7 +50,10 @@ export function InvoicePreview({ invoice }: { invoice: InvoiceFormValues }) {
             <p className="text-muted-foreground text-sm" aria-live="polite">
               Balance due{" "}
               <span data-invoice-total className="text-foreground font-medium tabular-nums">
-                {formatCurrency(getInvoiceTotal(invoice), { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                {formatCurrency(getInvoiceTotal(invoice, invoiceTaxOptions), {
+                  minimumFractionDigits: 2,
+                  maximumFractionDigits: 2,
+                })}
               </span>
             </p>
           </div>

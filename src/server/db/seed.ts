@@ -4,11 +4,15 @@ import { getDatabase } from "./client.server.ts";
 import { roles } from "./fixtures/roles.ts";
 import { users } from "./fixtures/users.ts";
 import { directoryUsers, displayRoles, rolePermissions, workspaceMemberships, workspaces } from "./schema.ts";
+import { seedCommerce } from "./seed-commerce.ts";
+import { seedEcommerce } from "./seed-ecommerce.ts";
 import { seedPeople } from "./seed-people.ts";
 
 export async function seed() {
   await getDatabase().transaction(async (tx) => {
     await seedPeople(tx);
+    await seedCommerce(tx);
+    await seedEcommerce(tx);
     for (const [position, { workspace, ...user }] of users.entries()) {
       await tx
         .insert(directoryUsers)
