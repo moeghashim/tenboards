@@ -1,9 +1,12 @@
 import { useState } from "react";
 
+import { Link } from "@tanstack/react-router";
+
 import { cn } from "cn";
-import { BadgeCheck, Bell, Check, CreditCard, LogOut } from "lucide-react";
+import { Check, UserRound } from "lucide-react";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -33,11 +36,18 @@ export function AccountSwitcher({
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger nativeButton={false} render={<Avatar className="size-9 rounded-lg" />}>
-        <AvatarImage src={activeUser.avatar || undefined} alt={activeUser.name} />
-        <AvatarFallback>{getInitials(activeUser.name)}</AvatarFallback>
+      <DropdownMenuTrigger
+        render={<Button variant="ghost" size="icon" aria-label={`Demo account: ${activeUser.name}`} />}
+      >
+        <Avatar className="size-8">
+          <AvatarFallback>{getInitials(activeUser.name)}</AvatarFallback>
+        </Avatar>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="min-w-56 space-y-1 rounded-lg" side="bottom" align="end" sideOffset={4}>
+        <div className="px-2 py-2">
+          <p className="font-medium">Demo accounts</p>
+          <p className="text-muted-foreground text-xs">Switch sample identity. No sign-in required.</p>
+        </div>
         {users.map((user) => (
           <DropdownMenuItem
             key={user.email}
@@ -52,7 +62,7 @@ export function AccountSwitcher({
               </Avatar>
               <div className="grid min-w-0 flex-1 text-left text-sm leading-tight">
                 <span className="truncate font-semibold">{user.name}</span>
-                <span className="truncate text-xs capitalize">{user.role}</span>
+                <span className="truncate text-xs capitalize">{user.email}</span>
               </div>
               <span
                 className={cn(
@@ -67,24 +77,11 @@ export function AccountSwitcher({
         ))}
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
-          <DropdownMenuItem>
-            <BadgeCheck />
-            Account
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            <CreditCard />
-            Billing
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            <Bell />
-            Notifications
+          <DropdownMenuItem render={<Link to="/dashboard/profile" />}>
+            <UserRound />
+            View demo profile
           </DropdownMenuItem>
         </DropdownMenuGroup>
-        <DropdownMenuSeparator />
-        <DropdownMenuItem>
-          <LogOut />
-          Log out
-        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );
