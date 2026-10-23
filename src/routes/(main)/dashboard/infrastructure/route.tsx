@@ -1,17 +1,33 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { createServerFn } from "@tanstack/react-start";
 
-import { infrastructureGroups } from "./-components/infrastructure-data";
+import { DataProvider, useDashboardData } from "./-components/data-context";
+import { presentGroups } from "./-components/infrastructure-data";
 import { InfrastructureHeader } from "./-components/infrastructure-header";
 import { ProjectEnvironments } from "./-components/project-environments";
 
 // Import this stylesheet in any page or component that renders country flag classes.
 import "@/styles/flag-icons/flags.css";
 
+const loadData = createServerFn({ method: "GET" }).handler(async () => {
+  const { readInfrastructure } = await import("@/server/data/infrastructure");
+  return readInfrastructure();
+});
 export const Route = createFileRoute("/(main)/dashboard/infrastructure")({
+  loader: () => loadData(),
   component: Page,
 });
 
 function Page() {
+  return (
+    <DataProvider data={Route.useLoaderData()}>
+      <PageContent />
+    </DataProvider>
+  );
+}
+function PageContent() {
+  const data = useDashboardData();
+  const infrastructureGroups = presentGroups(data.groups);
   return (
     <div className="flex flex-col gap-4">
       <InfrastructureHeader />

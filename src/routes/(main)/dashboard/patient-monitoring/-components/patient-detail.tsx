@@ -1,6 +1,7 @@
 import { cn } from "cn";
 
 import type { PatientRecord } from "./data";
+import { useDashboardData } from "./data-context";
 import { type EcgLead, usePatientWaveformSeries } from "./use-patient-vital-series";
 import { VitalWaveform, type WaveformKind } from "./vital-waveform";
 
@@ -73,6 +74,7 @@ function NumericVital({
 }
 
 export function PatientDetail({ hasActiveAlarm, patient }: PatientDetailProps) {
+  const settings = useDashboardData().settings;
   return (
     <div className="grid min-w-0 xl:grid-cols-[minmax(0,1fr)_17rem]">
       <div className="border-border xl:after:border-border min-w-0 after:hidden xl:grid xl:grid-rows-6 xl:border-r xl:after:block xl:after:border-b">
@@ -87,27 +89,45 @@ export function PatientDetail({ hasActiveAlarm, patient }: PatientDetailProps) {
         <NumericVital
           color={hasActiveAlarm ? "text-warning" : "text-success"}
           label="HR"
-          limits="50–100"
+          limits={`${settings.hrMin}–${settings.hrMax}`}
           unit="bpm"
           value={patient.heartRate}
         />
-        <NumericVital color="text-info" label="SpO₂" limits="92–100" unit="%" value={patient.spo2} />
-        <NumericVital color="text-warning" label="RR" limits="8–30" unit="/min" value={patient.respirationRate} />
+        <NumericVital
+          color="text-info"
+          label="SpO₂"
+          limits={`${settings.spo2Min}–${settings.spo2Max}`}
+          unit="%"
+          value={patient.spo2}
+        />
+        <NumericVital
+          color="text-warning"
+          label="RR"
+          limits={`${settings.rrMin}–${settings.rrMax}`}
+          unit="/min"
+          value={patient.respirationRate}
+        />
         <NumericVital
           color="text-foreground"
           label="NIBP"
-          limits="90–160"
+          limits={`${settings.nibpMin}–${settings.nibpMax}`}
           unit={`(${patient.map})`}
           value={patient.nibp}
         />
         <NumericVital
           color="text-danger"
           label="ART"
-          limits="80–140"
+          limits={`${settings.arterialMin}–${settings.arterialMax}`}
           unit={`(${patient.arterialMap})`}
           value={patient.arterialPressure}
         />
-        <NumericVital color="text-foreground" label="Temp" limits="36.0–38.0" unit="°C" value={patient.temperature} />
+        <NumericVital
+          color="text-foreground"
+          label="Temp"
+          limits={`${settings.temperatureMin.toFixed(1)}–${settings.temperatureMax.toFixed(1)}`}
+          unit="°C"
+          value={patient.temperature}
+        />
       </dl>
     </div>
   );

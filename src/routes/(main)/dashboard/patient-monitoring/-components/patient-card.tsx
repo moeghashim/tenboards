@@ -38,7 +38,7 @@ export function PatientCard({ active, acknowledged, onSelect, patient }: Patient
             className="border-warning/30 bg-warning-surface text-warning h-auto shrink-0 rounded-md text-xs"
             variant="outline"
           >
-            HR HIGH {patient.heartRate}
+            {patient.alarmShortLabel} {patient.heartRate}
           </Badge>
         )}
       </div>

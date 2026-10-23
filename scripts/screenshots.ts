@@ -19,6 +19,7 @@ const { values } = parseArgs({
     reload: { type: "boolean", default: false },
     boundaries: { type: "boolean", default: false },
     interactions: { type: "boolean", default: false },
+    "mask-live-clocks": { type: "boolean", default: false },
     "hydration-delay-ms": { type: "string", default: "0" },
   },
 });
@@ -97,6 +98,12 @@ try {
             { name: "font", value: "geist", url: baseURL.origin },
           ]);
           const page = await context.newPage();
+          // Only the explicitly documented live monitor clock is masked. Waveforms
+          // use their normal reduced-motion snapshot; no application clock is replaced.
+          const liveClockMask =
+            values["mask-live-clocks"] && entry.route === "/dashboard/patient-monitoring"
+              ? [page.locator("[data-monitoring-clock]")]
+              : [];
           const errors: string[] = [];
           const expectedDiagnostics: string[] = [];
           const recordError = (message: string, source?: string) => {
@@ -171,6 +178,7 @@ try {
                     printBackground: true,
                   });
                 await page.screenshot({
+                  mask: liveClockMask,
                   path: path.join(output, file.replace(".png", `-${variant}.png`)),
                   fullPage: !variant.includes("drag") && !variant.startsWith("shell-"),
                   animations: variant.includes("drag") ? "allow" : "disabled",
@@ -188,12 +196,26 @@ try {
             }
             if (stable < 3) throw new Error("Content did not stabilize before capture.");
             // Full-page capture can resize the viewport and dismiss anchored menus.
-            if (controlsFile) await page.screenshot({ path: path.join(output, controlsFile), animations: "disabled" });
-            await page.screenshot({ path: path.join(output, file), fullPage: true, animations: "disabled" });
+            if (controlsFile)
+              await page.screenshot({
+                mask: liveClockMask,
+                path: path.join(output, controlsFile),
+                animations: "disabled",
+              });
+            await page.screenshot({
+              mask: liveClockMask,
+              path: path.join(output, file),
+              fullPage: true,
+              animations: "disabled",
+            });
           } catch (error) {
             errors.push(error instanceof Error ? error.message : String(error));
             await page
-              .screenshot({ path: path.join(output, file.replace(".png", "-failed.png")), animations: "disabled" })
+              .screenshot({
+                mask: liveClockMask,
+                path: path.join(output, file.replace(".png", "-failed.png")),
+                animations: "disabled",
+              })
               .catch(() => {
                 /* The original error remains in the report if the browser cannot capture. */
               });
@@ -221,7 +243,7 @@ try {
   await browser.close();
   await writeFile(
     path.join(output, "report.json"),
-    `${JSON.stringify({ baseURL, fontAssets: "exact public responses cached between contexts", search: values.search, hydrationDelayMs, preset: values.preset, timezone: values.timezone, reload: values.reload, interactions: values.interactions, results }, null, 2)}\n`,
+    `${JSON.stringify({ baseURL, fontAssets: "exact public responses cached between contexts", maskedLiveClocks: values["mask-live-clocks"], search: values.search, hydrationDelayMs, preset: values.preset, timezone: values.timezone, reload: values.reload, interactions: values.interactions, results }, null, 2)}\n`,
   );
 }
 if (results.some((result) => result.errors.length)) process.exitCode = 1;

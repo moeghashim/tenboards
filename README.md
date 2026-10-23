@@ -363,3 +363,30 @@ Finance statement dates retain explicit UTC semantics. Migrations
 `0009_large_katie_power.sql` extend the journal.
 Cumulative parity covers 17 reads / 107 scenarios, including current/V1, missing IDs,
 non-default ranges, leap days and year boundaries. Apply migrations and reseed when upgrading.
+
+### Operational dashboard reads (v0.4/007, in review)
+
+Productivity, Academy, Logistics, Infrastructure and Patient Monitoring now load
+normalized records through five typed GET reads. Projects/tasks/notes/goals/focus,
+class/room schedules and achievements, customer/shipment/cargo/tracking/coordinates,
+project/environment resources, and patient/bed/vital/alarm records retain their
+original values and ordering. Header totals and aggregate KPIs are typed metric
+points; illustrative totals remain independent of short visible lists. Civil-date
+labels use explicit UTC formatting. Local actions remain local and reset on reload.
+
+Patient Monitoring's `waveform-data.ts`, `realtime-utils.ts`,
+`use-patient-vital-series.ts` and `use-realtime-tick.ts` remain client simulation.
+Only waveform/trend geometry, tick progression and live clocks are exempt from
+server reads; identities, diagnoses, baseline vitals, signal parameters, alarm
+labels/durations, thresholds and monitor settings load normally. This is demo data,
+not a medical feed. Real clocks advance and reduced motion pauses traces.
+Logistics retains its remote world-atlas presentation asset and exact coordinates.
+Removed selections fall back safely, and empty loaded lists do not crash.
+
+Migration `0010_plain_thunderball.sql` extends the cumulative journal. Parity covers
+22 reads / 130 scenarios. `scripts/check-operational-data.ts <incumbent-data.json>`
+compares both sources with the prior layer's evidence snapshot; the fixture snapshot
+belongs on `pr-assets`. `scripts/check-operational-state.ts` verifies loaded selection
+changes and empty states on the local dev server. Screenshot `--mask-live-clocks`
+masks only Patient Monitoring's explicitly marked live clock, never patient data;
+normal reduced-motion snapshots preserve deterministic signal geometry.

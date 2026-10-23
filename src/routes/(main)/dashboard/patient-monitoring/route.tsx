@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { createServerFn } from "@tanstack/react-start";
 
 import { Network, Printer, Volume2 } from "lucide-react";
 
@@ -7,15 +8,29 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 
-import { patients } from "./-components/data";
+import { DataProvider, useDashboardData } from "./-components/data-context";
 import { PatientMonitoring } from "./-components/patient-monitoring";
 import { useMonitoringClock } from "./-components/use-realtime-tick";
 
+const loadData = createServerFn({ method: "GET" }).handler(async () => {
+  const { readPatients } = await import("@/server/data/patients");
+  return readPatients();
+});
 export const Route = createFileRoute("/(main)/dashboard/patient-monitoring")({
+  loader: () => loadData(),
   component: Page,
 });
 
 function Page() {
+  return (
+    <DataProvider data={Route.useLoaderData()}>
+      <PageContent />
+    </DataProvider>
+  );
+}
+function PageContent() {
+  const data = useDashboardData();
+  const { patients, settings } = data;
   const now = useMonitoringClock();
 
   return (
@@ -33,27 +48,35 @@ function Page() {
               : `${new Intl.DateTimeFormat("en-GB", { day: "2-digit", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit", second: "2-digit", timeZone: "UTC", hourCycle: "h23" }).format(now)} UTC`}
           </span>
           <Tooltip>
-            <TooltipTrigger aria-label="Alarm audio enabled" className="inline-flex" type="button">
+            <TooltipTrigger
+              aria-label={`Alarm audio ${settings.audioEnabled ? "enabled" : "disabled"}`}
+              className="inline-flex"
+              type="button"
+            >
               <Volume2 aria-hidden="true" className="size-4" />
             </TooltipTrigger>
-            <TooltipContent>Alarm audio enabled</TooltipContent>
+            <TooltipContent>{`Alarm audio ${settings.audioEnabled ? "enabled" : "disabled"}`}</TooltipContent>
           </Tooltip>
           <Tooltip>
-            <TooltipTrigger aria-label="Monitoring network connected" className="inline-flex" type="button">
+            <TooltipTrigger
+              aria-label={`Monitoring network ${settings.networkConnected ? "connected" : "disconnected"}`}
+              className="inline-flex"
+              type="button"
+            >
               <Network aria-hidden="true" className="size-4" />
             </TooltipTrigger>
-            <TooltipContent>Monitoring network connected</TooltipContent>
+            <TooltipContent>{`Monitoring network ${settings.networkConnected ? "connected" : "disconnected"}`}</TooltipContent>
           </Tooltip>
         </div>
       </div>
       <Separator />
 
       {/*
-        data.ts holds the patients and PatientMonitoring renders the screen.
+        Patient records and baselines arrive through readPatients.
         use-patient-vital-series.ts repeats templates from waveform-data.ts,
         while use-realtime-tick.ts and realtime-utils.ts move the charts.
       */}
-      <PatientMonitoring patients={patients} />
+      <PatientMonitoring patients={patients} initialPatientId={settings.initialPatientId} />
 
       <Separator />
       <footer className="flex flex-wrap gap-2 p-2 *:data-[slot=button]:h-11 *:data-[slot=button]:min-w-32 *:data-[slot=button]:flex-1 *:data-[slot=button]:rounded-lg">
@@ -71,7 +94,7 @@ function Page() {
           Silence
         </Button>
         <Badge className="text-muted-foreground h-11 min-w-44 flex-1 rounded-lg" variant="outline">
-          Device C04 connected
+          {`Device ${settings.deviceId} ${settings.connected ? "connected" : "disconnected"}`}
         </Badge>
       </footer>
     </div>

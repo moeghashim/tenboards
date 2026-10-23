@@ -8,6 +8,7 @@ import { seedCommerce } from "./seed-commerce.ts";
 import { seedCommunications } from "./seed-communications.ts";
 import { seedCore } from "./seed-core.ts";
 import { seedEcommerce } from "./seed-ecommerce.ts";
+import { seedOperational } from "./seed-operational.ts";
 import { seedPeople } from "./seed-people.ts";
 import { seedWorkspace } from "./seed-workspace.ts";
 
@@ -17,6 +18,7 @@ export async function seed() {
     await seedWorkspace(tx);
     await seedCommunications(tx);
     await seedCore(tx);
+    await seedOperational(tx);
     await seedCommerce(tx);
     await seedEcommerce(tx);
     for (const [position, { workspace, ...user }] of users.entries()) {

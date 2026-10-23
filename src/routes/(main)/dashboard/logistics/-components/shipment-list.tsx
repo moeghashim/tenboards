@@ -7,6 +7,7 @@ import { InputGroup, InputGroupAddon, InputGroupInput } from "@/components/ui/in
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
+import { useDashboardData } from "./data-context";
 import type { Shipment } from "./shipment-data";
 import { statusText } from "./shipment-status";
 
@@ -107,6 +108,7 @@ function ShipmentCard({ shipment, active, onSelectShipment }: ShipmentCardProps)
 }
 
 export function ShipmentList({ shipments, selectedShipmentId, onSelectShipment }: ShipmentListProps) {
+  const counts = useDashboardData().counts;
   return (
     <Card className="h-full rounded-none ring-0">
       <CardHeader>
@@ -121,16 +123,16 @@ export function ShipmentList({ shipments, selectedShipmentId, onSelectShipment }
         <Tabs defaultValue="all">
           <TabsList className="h-auto w-full flex-wrap border-b px-3" variant="line">
             <TabsTrigger className="text-xs" value="all">
-              All (156)
+              {`All (${counts.all})`}
             </TabsTrigger>
             <TabsTrigger className="text-xs" value="in-transit">
-              In Transit (32)
+              {`In Transit (${counts.inTransit})`}
             </TabsTrigger>
             <TabsTrigger className="text-xs" value="delivered">
-              Delivered (98)
+              {`Delivered (${counts.delivered})`}
             </TabsTrigger>
             <TabsTrigger className="text-xs" value="delayed">
-              Delayed (9)
+              {`Delayed (${counts.delayed})`}
             </TabsTrigger>
           </TabsList>
         </Tabs>

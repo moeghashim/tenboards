@@ -1,4 +1,3 @@
-import { addDays, format } from "date-fns";
 import { ClipboardCheck, Globe, Orbit, Plus } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
@@ -8,36 +7,7 @@ import { Progress } from "@/components/ui/progress";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 import { DashboardCard as Card, SectionHeader } from "../../-components/dashboard/cards";
-import { createDemoDay } from "./demo-date";
-
-const today = createDemoDay();
-
-const projects = [
-  {
-    title: "Q2 Roadmap",
-    status: "In Progress",
-    description: "Ship better, ship smarter.",
-    progress: 68,
-    due: `Due ${format(addDays(today, 9), "MMM d")}`,
-    icon: Orbit,
-  },
-  {
-    title: "Website Redesign",
-    status: "Planning",
-    description: "Clean, modern, and fast.",
-    progress: 42,
-    due: `Due ${format(addDays(today, 21), "MMM d")}`,
-    icon: Globe,
-  },
-  {
-    title: "Onboarding",
-    status: "Planning",
-    description: "Trim first-run steps.",
-    progress: 31,
-    due: `Due ${format(addDays(today, 18), "MMM d")}`,
-    icon: ClipboardCheck,
-  },
-] as const;
+import { useDashboardData } from "./data-context";
 
 const projectFilterItems = [
   { value: "active", label: "Active" },
@@ -45,7 +15,12 @@ const projectFilterItems = [
   { value: "completed", label: "Completed" },
 ] as const;
 
+const projectIcons = { Orbit, Globe, ClipboardCheck };
 export function ProjectsSection() {
+  const projects = useDashboardData().projects.map((project) => ({
+    ...project,
+    icon: projectIcons[project.icon as keyof typeof projectIcons],
+  }));
   return (
     <section className="flex flex-col gap-2">
       <div className="flex flex-wrap items-center justify-between gap-3">

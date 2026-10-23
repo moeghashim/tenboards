@@ -3,54 +3,10 @@ import { CardContent } from "@/components/ui/card";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 
 import { DashboardCard, SectionHeader } from "../../-components/dashboard/cards";
-
-const performanceHighlights = [
-  {
-    className: "G11A",
-    start: 1.25,
-    duration: 1.45,
-    subject: "Pure Math",
-    score: 84,
-    students: [
-      { initials: "OD", name: "Olivia Davis", achievement: "Top Performer", score: 96 },
-      { initials: "EM", name: "Ethan Miller", achievement: "Problem-Solving Excellence", score: 91 },
-      { initials: "SW", name: "Sophia Wilson", achievement: "Most Improved", score: 88 },
-    ],
-  },
-  {
-    className: "G11B",
-    start: 0.72,
-    duration: 1.75,
-    subject: "Literature",
-    score: 78,
-    students: [{ initials: "IA", name: "Isabella Anderson", achievement: "Critical Analysis Award", score: 93 }],
-  },
-  {
-    className: "G11C",
-    start: 1.35,
-    duration: 1.9,
-    subject: "Physics",
-    score: 80,
-    students: [
-      { initials: "AB", name: "Alexander Brown", achievement: "Top Performer", score: 95 },
-      { initials: "MG", name: "Mia Garcia", achievement: "Laboratory Excellence", score: 92 },
-      { initials: "NM", name: "Noah Martinez", achievement: "Most Improved", score: 87 },
-    ],
-  },
-  {
-    className: "G11D",
-    start: 2.22,
-    duration: 1.66,
-    subject: "History",
-    score: 73,
-    students: [
-      { initials: "ET", name: "Emma Taylor", achievement: "Research Excellence", score: 90 },
-      { initials: "WJ", name: "William Johnson", achievement: "Consistent Performer", score: 86 },
-    ],
-  },
-];
+import { useDashboardData } from "./data-context";
 
 export function PerformanceHighlights() {
+  const performanceHighlights = useDashboardData().performance;
   return (
     <DashboardCard className="h-full">
       <SectionHeader
