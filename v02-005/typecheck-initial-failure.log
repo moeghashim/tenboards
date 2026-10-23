@@ -1,0 +1,12 @@
+
+> tenboards@0.1.0 typecheck
+> tsc --noEmit
+
+src/routes/(main)/dashboard/(legacy)/analytics-v1/-components/analytics-overview.tsx(18,21): error TS6133: 'chartGrid' is declared but its value is never read.
+src/routes/(main)/dashboard/analytics/-components/realtime-visitors.tsx(1,1): error TS6133: 'Ellipsis' is declared but its value is never read.
+src/routes/(main)/dashboard/analytics/-components/realtime-visitors.tsx(6,21): error TS6133: 'chartGrid' is declared but its value is never read.
+src/routes/(main)/dashboard/analytics/-components/top-pages.tsx(1,1): error TS6133: 'Ellipsis' is declared but its value is never read.
+src/routes/(main)/dashboard/analytics/-components/top-traffic-sources.tsx(1,1): error TS6133: 'Ellipsis' is declared but its value is never read.
+src/routes/(main)/dashboard/analytics/-components/top-traffic-sources.tsx(7,21): error TS6133: 'chartGrid' is declared but its value is never read.
+src/routes/(main)/dashboard/analytics/-components/traffic-quality.tsx(1,1): error TS6133: 'Ellipsis' is declared but its value is never read.
+src/routes/(main)/dashboard/analytics/-components/traffic-quality.tsx(5,15): error TS6133: 'ChartConfig' is declared but its value is never read.

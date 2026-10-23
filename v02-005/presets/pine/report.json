@@ -1,0 +1,72 @@
+{
+  "baseURL": "http://127.0.0.1:3000/",
+  "preset": "pine",
+  "timezone": "America/Chicago",
+  "reload": false,
+  "results": [
+    {
+      "route": "/dashboard/analytics",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_analytics-light-desktop.png",
+      "phase": "direct",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_analytics-light-mobile.png",
+      "phase": "direct",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_analytics-dark-desktop.png",
+      "phase": "direct",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_analytics-dark-mobile.png",
+      "phase": "direct",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics-v1",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_analytics-v1-light-desktop.png",
+      "phase": "direct",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics-v1",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_analytics-v1-light-mobile.png",
+      "phase": "direct",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics-v1",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_analytics-v1-dark-desktop.png",
+      "phase": "direct",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics-v1",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_analytics-v1-dark-mobile.png",
+      "phase": "direct",
+      "errors": []
+    }
+  ]
+}

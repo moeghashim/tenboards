@@ -1,0 +1,327 @@
+src/routes/(main)/dashboard/(legacy)/analytics-v1/-components/analytics-actions-manager-queue.tsx:33:21 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    31 │ export function ActionsManagerQueue() {
+    32 │   return (
+  > 33 │     <Card className="h-full ">
+       │                     ^^^^^^^^^
+    34 │       <SectionHeader
+    35 │         title={<>Manager Action Queue</>}
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+    33 │ ····<Card·className="h-full·">
+       │                            -  
+
+src/routes/(main)/dashboard/(legacy)/analytics-v1/-components/analytics-actions-risk-ledger.tsx:264:21 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    263 │   return (
+  > 264 │     <Card className="min-w-0 ">
+        │                     ^^^^^^^^^^
+    265 │       <SectionHeader
+    266 │         title={<>Revenue Risk Ledger</>}
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+    264 │ ····<Card·className="min-w-0·">
+        │                             -  
+
+src/routes/(main)/dashboard/(legacy)/analytics-v1/-components/analytics-actions-risk-ledger.tsx:269:11 lint/complexity/noUselessFragments  FIXABLE  ━━━━━━━━━━
+
+  i This fragment is unnecessary.
+  
+    267 │         description={<>Accounts under pressure with blocker, next action, and owner responsibility.</>}
+    268 │         actions={
+  > 269 │           <>
+        │           ^^
+  > 270 │             <Badge variant="outline" className="font-medium tabular-nums">
+  > 271 │               {LEDGER_ROWS.length} Accounts
+  > 272 │             </Badge>
+  > 273 │           </>
+        │           ^^^
+    274 │         }
+    275 │       />
+  
+  i A fragment is redundant if it contains only one child, or if it is the child of a html element, and is not a keyed fragment.
+  
+  i Unsafe fix: Remove the Fragment
+  
+    266 266 │           title={<>Revenue Risk Ledger</>}
+    267 267 │           description={<>Accounts under pressure with blocker, next action, and owner responsibility.</>}
+    268     │ - ········actions={
+    269     │ - ··········<>
+    270     │ - ············<Badge·variant="outline"·className="font-medium·tabular-nums">
+        268 │ + ········actions={<Badge·variant="outline"·className="font-medium·tabular-nums">
+    271 269 │                 {LEDGER_ROWS.length} Accounts
+    272     │ - ············</Badge>
+    273     │ - ··········</>
+    274     │ - ········}
+        270 │ + ············</Badge>}
+    275 271 │         />
+    276 272 │   
+  
+
+src/routes/(main)/dashboard/(legacy)/analytics-v1/-components/analytics-overview.tsx:199:23 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    197 │       </div>
+    198 │ 
+  > 199 │       <Card className="min-w-0 py-4  xl:col-span-2">
+        │                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    200 │         <SectionHeader title={<>Risk summary</>} description={<>Core risk signals vs previous period</>} />
+    201 │         <CardContent className="grid grid-cols-1 gap-4 px-4 sm:grid-cols-2 xl:grid-cols-4 xl:gap-0 xl:divide-x xl:[&>div]:px-5 xl:[&>div:first-child]:pl-0 xl:[&>div:last-child]:pr-0">
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+    197 197 │         </div>
+    198 198 │   
+    199     │ - ······<Card·className="min-w-0·py-4··xl:col-span-2">
+        199 │ + ······<Card·className="min-w-0·py-4·xl:col-span-2">
+    200 200 │           <SectionHeader title={<>Risk summary</>} description={<>Core risk signals vs previous period</>} />
+    201 201 │           <CardContent className="grid grid-cols-1 gap-4 px-4 sm:grid-cols-2 xl:grid-cols-4 xl:gap-0 xl:divide-x xl:[&>div]:px-5 xl:[&>div:first-child]:pl-0 xl:[&>div:last-child]:pr-0">
+  
+
+src/routes/(main)/dashboard/analytics/-components/realtime-visitors.tsx:106:31 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    104 │           <div className="text-muted-foreground flex items-center gap-2 text-sm">
+    105 │             <span className="relative flex size-2">
+  > 106 │               <span className="relative inline-flex size-2 rounded-full bg-success" />
+        │                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    107 │             </span>
+    108 │             <span>Live</span>
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+    104 104 │             <div className="text-muted-foreground flex items-center gap-2 text-sm">
+    105 105 │               <span className="relative flex size-2">
+    106     │ - ··············<span·className="relative·inline-flex·size-2·rounded-full·bg-success"·/>
+        106 │ + ··············<span·className="bg-success·relative·inline-flex·size-2·rounded-full"·/>
+    107 107 │               </span>
+    108 108 │               <span>Live</span>
+  
+
+src/routes/(main)/dashboard/analytics/-components/realtime-visitors.tsx:120:26 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    118 │         </DashboardChart>
+    119 │         <div className="grid grid-cols-1 sm:grid-cols-2">
+  > 120 │           <div className="border-border/50 flex items-center gap-3 sm:border-r border-b pt-1 pr-5 pb-4">
+        │                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    121 │             <span
+    122 │               aria-hidden="true"
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+    118 118 │           </DashboardChart>
+    119 119 │           <div className="grid grid-cols-1 sm:grid-cols-2">
+    120     │ - ··········<div·className="border-border/50·flex·items-center·gap-3·sm:border-r·border-b·pt-1·pr-5·pb-4">
+        120 │ + ··········<div·className="border-border/50·flex·items-center·gap-3·border-b·pt-1·pr-5·pb-4·sm:border-r">
+    121 121 │               <span
+    122 122 │                 aria-hidden="true"
+  
+
+src/routes/(main)/dashboard/analytics/-components/realtime-visitors.tsx:140:26 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    138 │             <span className="text-sm tabular-nums">4</span>
+    139 │           </div>
+  > 140 │           <div className="border-border/50 flex items-center gap-3 sm:border-r pt-4 pr-5 pb-1">
+        │                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    141 │             <span
+    142 │               aria-hidden="true"
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+    138 138 │               <span className="text-sm tabular-nums">4</span>
+    139 139 │             </div>
+    140     │ - ··········<div·className="border-border/50·flex·items-center·gap-3·sm:border-r·pt-4·pr-5·pb-1">
+        140 │ + ··········<div·className="border-border/50·flex·items-center·gap-3·pt-4·pr-5·pb-1·sm:border-r">
+    141 141 │               <span
+    142 142 │                 aria-hidden="true"
+  
+
+src/routes/(main)/dashboard/(legacy)/analytics-v1/-components/analytics-overview.tsx:18:21 lint/correctness/noUnusedImports  FIXABLE  ━━━━━━━━━━
+
+  ! Several of these imports are unused.
+  
+    16 │ import { Label } from "@/components/ui/label";
+    17 │ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+  > 18 │ import { chartAxis, chartGrid, DashboardChart, DashboardTooltip, useChartMotion } from "@/lib/charts/theme";
+       │                     ^^^^^^^^^
+    19 │ 
+    20 │ import { DashboardCard as Card, SectionHeader } from "../../../-components/dashboard/cards";
+  
+  i Unused imports might be the result of an incomplete refactoring.
+  
+  i Unsafe fix: Remove the unused imports.
+  
+    18 │ import·{·chartAxis,·chartGrid,·DashboardChart,·DashboardTooltip,·useChartMotion·}·from·"@/lib/charts/theme";
+       │                     -----------                                                                             
+
+src/routes/(main)/dashboard/analytics/-components/realtime-visitors.tsx:1:8 lint/correctness/noUnusedImports  FIXABLE  ━━━━━━━━━━
+
+  ! This import is unused.
+  
+  > 1 │ import { Ellipsis } from "lucide-react";
+      │        ^^^^^^^^^^^^
+    2 │ import { Bar, BarChart, type BarShapeProps, XAxis, YAxis } from "recharts";
+    3 │ 
+  
+  i Unused imports might be the result of an incomplete refactoring.
+  
+  i Unsafe fix: Remove the unused imports.
+  
+    1 │ import·{·Ellipsis·}·from·"lucide-react";
+      │ ----------------------------------------
+
+src/routes/(main)/dashboard/analytics/-components/realtime-visitors.tsx:6:21 lint/correctness/noUnusedImports  FIXABLE  ━━━━━━━━━━
+
+  ! Several of these imports are unused.
+  
+    4 │ import { CardContent } from "@/components/ui/card";
+    5 │ import { type ChartConfig, ChartTooltip } from "@/components/ui/chart";
+  > 6 │ import { chartAxis, chartGrid, DashboardChart, DashboardTooltip, useChartMotion } from "@/lib/charts/theme";
+      │                     ^^^^^^^^^
+    7 │ 
+    8 │ import { DashboardCard as Card, SectionHeader } from "../../-components/dashboard/cards";
+  
+  i Unused imports might be the result of an incomplete refactoring.
+  
+  i Unsafe fix: Remove the unused imports.
+  
+    6 │ import·{·chartAxis,·chartGrid,·DashboardChart,·DashboardTooltip,·useChartMotion·}·from·"@/lib/charts/theme";
+      │                     -----------                                                                             
+
+src/routes/(main)/dashboard/analytics/-components/top-pages.tsx:1:8 lint/correctness/noUnusedImports  FIXABLE  ━━━━━━━━━━
+
+  ! This import is unused.
+  
+  > 1 │ import { Ellipsis } from "lucide-react";
+      │        ^^^^^^^^^^^^
+    2 │ 
+    3 │ import { CardContent } from "@/components/ui/card";
+  
+  i Unused imports might be the result of an incomplete refactoring.
+  
+  i Unsafe fix: Remove the unused imports.
+  
+    1 │ import·{·Ellipsis·}·from·"lucide-react";
+      │ ----------------------------------------
+
+src/routes/(main)/dashboard/analytics/-components/top-traffic-sources.tsx:1:8 lint/correctness/noUnusedImports  FIXABLE  ━━━━━━━━━━
+
+  ! This import is unused.
+  
+  > 1 │ import { Ellipsis } from "lucide-react";
+      │        ^^^^^^^^^^^^
+    2 │ import { Bar, BarChart, CartesianGrid, LabelList, type LabelProps, XAxis, YAxis } from "recharts";
+    3 │ 
+  
+  i Unused imports might be the result of an incomplete refactoring.
+  
+  i Unsafe fix: Remove the unused imports.
+  
+    1 │ import·{·Ellipsis·}·from·"lucide-react";
+      │ ----------------------------------------
+
+src/routes/(main)/dashboard/analytics/-components/top-traffic-sources.tsx:7:21 lint/correctness/noUnusedImports  FIXABLE  ━━━━━━━━━━
+
+  ! Several of these imports are unused.
+  
+    5 │ import { type ChartConfig, ChartTooltip } from "@/components/ui/chart";
+    6 │ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+  > 7 │ import { chartAxis, chartGrid, DashboardChart, DashboardTooltip, useChartMotion } from "@/lib/charts/theme";
+      │                     ^^^^^^^^^
+    8 │ 
+    9 │ import { DashboardCard as Card, SectionHeader } from "../../-components/dashboard/cards";
+  
+  i Unused imports might be the result of an incomplete refactoring.
+  
+  i Unsafe fix: Remove the unused imports.
+  
+    7 │ import·{·chartAxis,·chartGrid,·DashboardChart,·DashboardTooltip,·useChartMotion·}·from·"@/lib/charts/theme";
+      │                     -----------                                                                             
+
+src/routes/(main)/dashboard/analytics/-components/traffic-quality.tsx:1:8 lint/correctness/noUnusedImports  FIXABLE  ━━━━━━━━━━
+
+  ! This import is unused.
+  
+  > 1 │ import { Ellipsis } from "lucide-react";
+      │        ^^^^^^^^^^^^
+    2 │ import { CartesianGrid, ComposedChart, Legend, Line, XAxis, YAxis } from "recharts";
+    3 │ 
+  
+  i Unused imports might be the result of an incomplete refactoring.
+  
+  i Unsafe fix: Remove the unused imports.
+  
+    1 │ import·{·Ellipsis·}·from·"lucide-react";
+      │ ----------------------------------------
+
+src/routes/(main)/dashboard/analytics/-components/traffic-quality.tsx:5:10 lint/correctness/noUnusedImports  FIXABLE  ━━━━━━━━━━
+
+  ! Several of these imports are unused.
+  
+    4 │ import { CardContent } from "@/components/ui/card";
+  > 5 │ import { type ChartConfig, ChartTooltip } from "@/components/ui/chart";
+      │          ^^^^^^^^^^^^^^^^
+    6 │ import {
+    7 │   chartAxis,
+  
+  i Unused imports might be the result of an incomplete refactoring.
+  
+  i Unsafe fix: Remove the unused imports.
+  
+    5 │ import·{·type·ChartConfig,·ChartTooltip·}·from·"@/components/ui/chart";
+      │          ------------------                                            
+
+Skipped 30 suggested fixes.
+If you wish to apply the suggested (unsafe) fixes, use the command biome check --write --unsafe
+
+Checked 13 files in 695ms. Fixed 10 files.
+Found 8 warnings.
+Found 7 infos.
