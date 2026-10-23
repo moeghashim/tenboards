@@ -1,0 +1,21 @@
+src/routes/(main)/dashboard/patient-monitoring/-components/use-realtime-tick.ts:12:35 lint/suspicious/noEmptyBlockStatements ━━━━━━━━━━
+
+  × Unexpected empty block.
+  
+    10 │ // The server and hydrating client always start at the same sample, even after a prior visit.
+    11 │ const getInitialTick = () => 0;
+  > 12 │ const subscribeIdle = () => () => {};
+       │                                   ^^
+    13 │ const monitoringSpeed = Math.max(MONITORING_SPEED, 0);
+    14 │ const compactWaveformTicker = createRealtimeTicker(COMPACT_WAVEFORM_TICK_INTERVAL_MS);
+  
+  i Empty blocks are usually the result of an incomplete refactoring. Remove the empty block or add a comment inside it if it is intentional.
+  
+
+Checked 14 files in 484ms. Fixed 9 files.
+Found 1 error.
+check ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Some errors were emitted while running checks.
+  
+

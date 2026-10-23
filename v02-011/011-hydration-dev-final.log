@@ -1,0 +1,12 @@
+
+> tenboards@0.1.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://127.0.0.1:3010 --routes /dashboard/patient-monitoring --reload --interactions --hydration-delay-ms 1800 --output screenshots/v02-011/hydration-dev-final
+
+PASS /dashboard/patient-monitoring light/desktop direct
+PASS /dashboard/patient-monitoring light/desktop refresh
+PASS /dashboard/patient-monitoring light/mobile direct
+PASS /dashboard/patient-monitoring light/mobile refresh
+PASS /dashboard/patient-monitoring dark/desktop direct
+PASS /dashboard/patient-monitoring dark/desktop refresh
+PASS /dashboard/patient-monitoring dark/mobile direct
+PASS /dashboard/patient-monitoring dark/mobile refresh

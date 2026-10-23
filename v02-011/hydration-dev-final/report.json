@@ -1,0 +1,138 @@
+{
+  "baseURL": "http://127.0.0.1:3010/",
+  "hydrationDelayMs": 1800,
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": true,
+  "interactions": true,
+  "results": [
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_patient-monitoring-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_patient-monitoring-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Real clock advances across second boundary",
+        "Reduced-motion trace stable",
+        "Normal-motion trace updates; runtime reduction pauses it",
+        "Keyboard acknowledgement persists; patient selection and event/trend tabs work",
+        "Footer keyboard focus and no page-wide overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_patient-monitoring-light-desktop-refresh-interactive.png",
+      "controlsFile": "_dashboard_patient-monitoring-light-desktop-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Real clock advances across second boundary",
+        "Reduced-motion trace stable",
+        "Normal-motion trace updates; runtime reduction pauses it",
+        "Keyboard acknowledgement persists; patient selection and event/trend tabs work",
+        "Footer keyboard focus and no page-wide overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_patient-monitoring-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_patient-monitoring-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Real clock advances across second boundary",
+        "Reduced-motion trace stable",
+        "Normal-motion trace updates; runtime reduction pauses it",
+        "Keyboard acknowledgement persists; patient selection and event/trend tabs work",
+        "Footer keyboard focus and no page-wide overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_patient-monitoring-light-mobile-refresh-interactive.png",
+      "controlsFile": "_dashboard_patient-monitoring-light-mobile-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Real clock advances across second boundary",
+        "Reduced-motion trace stable",
+        "Normal-motion trace updates; runtime reduction pauses it",
+        "Keyboard acknowledgement persists; patient selection and event/trend tabs work",
+        "Footer keyboard focus and no page-wide overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_patient-monitoring-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_patient-monitoring-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Real clock advances across second boundary",
+        "Reduced-motion trace stable",
+        "Normal-motion trace updates; runtime reduction pauses it",
+        "Keyboard acknowledgement persists; patient selection and event/trend tabs work",
+        "Footer keyboard focus and no page-wide overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_patient-monitoring-dark-desktop-refresh-interactive.png",
+      "controlsFile": "_dashboard_patient-monitoring-dark-desktop-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Real clock advances across second boundary",
+        "Reduced-motion trace stable",
+        "Normal-motion trace updates; runtime reduction pauses it",
+        "Keyboard acknowledgement persists; patient selection and event/trend tabs work",
+        "Footer keyboard focus and no page-wide overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_patient-monitoring-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_patient-monitoring-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Real clock advances across second boundary",
+        "Reduced-motion trace stable",
+        "Normal-motion trace updates; runtime reduction pauses it",
+        "Keyboard acknowledgement persists; patient selection and event/trend tabs work",
+        "Footer keyboard focus and no page-wide overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_patient-monitoring-dark-mobile-refresh-interactive.png",
+      "controlsFile": "_dashboard_patient-monitoring-dark-mobile-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Real clock advances across second boundary",
+        "Reduced-motion trace stable",
+        "Normal-motion trace updates; runtime reduction pauses it",
+        "Keyboard acknowledgement persists; patient selection and event/trend tabs work",
+        "Footer keyboard focus and no page-wide overflow"
+      ],
+      "errors": []
+    }
+  ]
+}

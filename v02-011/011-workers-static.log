@@ -1,0 +1,12 @@
+
+> tenboards@0.1.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url https://b8cefdd4-tenboards.mohanadgh.workers.dev --routes /dashboard/default,/dashboard/patient-monitoring --output screenshots/v02-011/workers-static
+
+PASS /dashboard/default light/desktop direct
+PASS /dashboard/default light/mobile direct
+PASS /dashboard/default dark/desktop direct
+PASS /dashboard/default dark/mobile direct
+PASS /dashboard/patient-monitoring light/desktop direct
+PASS /dashboard/patient-monitoring light/mobile direct
+PASS /dashboard/patient-monitoring dark/desktop direct
+PASS /dashboard/patient-monitoring dark/mobile direct

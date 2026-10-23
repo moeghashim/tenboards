@@ -1,0 +1,53 @@
+
+> tenboards@0.1.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://127.0.0.1:3010 --routes /dashboard/patient-monitoring --reload --interactions --hydration-delay-ms 1800 --output screenshots/v02-011/hydration-dev
+
+PASS /dashboard/patient-monitoring light/desktop direct
+FAIL /dashboard/patient-monitoring light/desktop refresh
+locator.waitFor: Error: strict mode violation: getByText('Lead II selected', { exact: true }) resolved to 2 elements:
+    1) <span data-tsd-source="/src/routes/(main)/dashboard/patient-monitoring/-components/patient-monitoring.tsx:122:21">Lead II selected</span> aka getByRole('tabpanel', { name: 'Event review' }).getByText('Lead II selected')
+    2) <span data-tsd-source="/src/routes/(main)/dashboard/patient-monitoring/-components/patient-trends.tsx:137:15">Lead II selected</span> aka getByRole('tabpanel', { name: 'Trends' }).getByText('Lead II selected')
+
+Call log:
+[2m  - waiting for getByText('Lead II selected', { exact: true }) to be visible[22m
+
+FAIL /dashboard/patient-monitoring light/mobile direct
+locator.waitFor: Error: strict mode violation: getByText('Lead II selected', { exact: true }) resolved to 2 elements:
+    1) <span data-tsd-source="/src/routes/(main)/dashboard/patient-monitoring/-components/patient-monitoring.tsx:122:21">Lead II selected</span> aka getByRole('tabpanel', { name: 'Event review' }).getByText('Lead II selected')
+    2) <span data-tsd-source="/src/routes/(main)/dashboard/patient-monitoring/-components/patient-trends.tsx:137:15">Lead II selected</span> aka getByRole('tabpanel', { name: 'Trends' }).getByText('Lead II selected')
+
+Call log:
+[2m  - waiting for getByText('Lead II selected', { exact: true }) to be visible[22m
+
+FAIL /dashboard/patient-monitoring light/mobile refresh
+locator.waitFor: Error: strict mode violation: getByText('Lead II selected', { exact: true }) resolved to 2 elements:
+    1) <span data-tsd-source="/src/routes/(main)/dashboard/patient-monitoring/-components/patient-monitoring.tsx:122:21">Lead II selected</span> aka getByRole('tabpanel', { name: 'Event review' }).getByText('Lead II selected')
+    2) <span data-tsd-source="/src/routes/(main)/dashboard/patient-monitoring/-components/patient-trends.tsx:137:15">Lead II selected</span> aka getByRole('tabpanel', { name: 'Trends' }).getByText('Lead II selected')
+
+Call log:
+[2m  - waiting for getByText('Lead II selected', { exact: true }) to be visible[22m
+
+FAIL /dashboard/patient-monitoring dark/desktop direct
+locator.waitFor: Error: strict mode violation: getByText('Lead II selected', { exact: true }) resolved to 2 elements:
+    1) <span data-tsd-source="/src/routes/(main)/dashboard/patient-monitoring/-components/patient-monitoring.tsx:122:21">Lead II selected</span> aka getByRole('tabpanel', { name: 'Event review' }).getByText('Lead II selected')
+    2) <span data-tsd-source="/src/routes/(main)/dashboard/patient-monitoring/-components/patient-trends.tsx:137:15">Lead II selected</span> aka getByRole('tabpanel', { name: 'Trends' }).getByText('Lead II selected')
+
+Call log:
+[2m  - waiting for getByText('Lead II selected', { exact: true }) to be visible[22m
+
+FAIL /dashboard/patient-monitoring dark/desktop refresh
+locator.waitFor: Error: strict mode violation: getByText('Lead II selected', { exact: true }) resolved to 2 elements:
+    1) <span data-tsd-source="/src/routes/(main)/dashboard/patient-monitoring/-components/patient-monitoring.tsx:122:21">Lead II selected</span> aka getByRole('tabpanel', { name: 'Event review' }).getByText('Lead II selected')
+    2) <span data-tsd-source="/src/routes/(main)/dashboard/patient-monitoring/-components/patient-trends.tsx:137:15">Lead II selected</span> aka getByRole('tabpanel', { name: 'Trends' }).getByText('Lead II selected')
+
+Call log:
+[2m  - waiting for getByText('Lead II selected', { exact: true }) to be visible[22m
+
+FAIL /dashboard/patient-monitoring dark/mobile direct
+locator.waitFor: Error: strict mode violation: getByText('Lead II selected', { exact: true }) resolved to 2 elements:
+    1) <span data-tsd-source="/src/routes/(main)/dashboard/patient-monitoring/-components/patient-monitoring.tsx:122:21">Lead II selected</span> aka getByRole('tabpanel', { name: 'Event review' }).getByText('Lead II selected')
+    2) <span data-tsd-source="/src/routes/(main)/dashboard/patient-monitoring/-components/patient-trends.tsx:137:15">Lead II selected</span> aka getByRole('tabpanel', { name: 'Trends' }).getByText('Lead II selected')
+
+Call log:
+[2m  - waiting for getByText('Lead II selected', { exact: true }) to be visible[22m
+

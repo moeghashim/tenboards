@@ -1,0 +1,1 @@
+PASS: no upstream-author fixture references in Patient Monitoring.

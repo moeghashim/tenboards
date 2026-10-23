@@ -1,0 +1,51 @@
+{
+  "baseURL": "http://127.0.0.1:3010/",
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": false,
+  "interactions": false,
+  "results": [
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_patient-monitoring-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": [
+        "page: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/client branch `if (typeof window !== 'undefined')`.\n- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\n- Date formatting in a user's locale which doesn't match the server.\n- External changing data without sending a snapshot of it along with the HTML.\n- Invalid HTML tag nesting.\n\nIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\n\nhttps://react.dev/link/hydration-mismatch\n\n  ...\n    <div data-slot=\"sidebar-wr...\" style={{...}} className=\"group/side...\" data-tsd-source=\"/src/route...\">\n      <AppSidebar>\n      <SidebarInset className={\"[html[da...\"} data-tsd-source=\"/src/route...\">\n        <main data-slot=\"sidebar-inset\" className={\"relative...\"} data-tsd-source=\"/src/route...\">\n          <ShellHeader>\n          <div className=\"min-h-0 mi...\" data-tsd-source=\"/src/route...\">\n            <OutletImpl data-tsd-source=\"/src/route...\">\n              <MatchImpl routeId=\"/(main)/da...\">\n                <MatchInnerImpl match={{id:\"/(main...\", ...}}>\n                  <Lazy>\n                    <Page>\n                      <div className=\"flex min-h...\" data-content-padding=\"false\" data-tsd-source=\"/src/route...\">\n                        <div className=\"grid min-h...\" data-tsd-source=\"/src/route...\">\n                          <div>\n                          <div>\n                          <div className=\"text-muted...\" data-tsd-source=\"/src/route...\">\n                            <span className=\"whitespace...\" data-tsd-source=\"/src/route...\">\n+                             07:56:35\n-                             07:56:34\n                            ...\n                        ...\n"
+      ]
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_patient-monitoring-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_patient-monitoring-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_patient-monitoring-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "baseURL": "http://127.0.0.1:3010/",
+  "hydrationDelayMs": 1800,
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": true,
+  "interactions": true,
+  "results": [
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_patient-monitoring-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_patient-monitoring-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Real clock advances across second boundary",
+        "Reduced-motion trace stable",
+        "Normal-motion trace updates; runtime reduction pauses it",
+        "Keyboard acknowledgement persists; patient selection and event/trend tabs work",
+        "Footer keyboard focus and no page-wide overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_patient-monitoring-light-desktop-refresh-interactive.png",
+      "controlsFile": "_dashboard_patient-monitoring-light-desktop-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [],
+      "errors": [
+        "locator.waitFor: Error: strict mode violation: getByText('Lead II selected', { exact: true }) resolved to 2 elements:\n    1) <span data-tsd-source=\"/src/routes/(main)/dashboard/patient-monitoring/-components/patient-monitoring.tsx:122:21\">Lead II selected</span> aka getByRole('tabpanel', { name: 'Event review' }).getByText('Lead II selected')\n    2) <span data-tsd-source=\"/src/routes/(main)/dashboard/patient-monitoring/-components/patient-trends.tsx:137:15\">Lead II selected</span> aka getByRole('tabpanel', { name: 'Trends' }).getByText('Lead II selected')\n\nCall log:\n\u001b[2m  - waiting for getByText('Lead II selected', { exact: true }) to be visible\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_patient-monitoring-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_patient-monitoring-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": [
+        "locator.waitFor: Error: strict mode violation: getByText('Lead II selected', { exact: true }) resolved to 2 elements:\n    1) <span data-tsd-source=\"/src/routes/(main)/dashboard/patient-monitoring/-components/patient-monitoring.tsx:122:21\">Lead II selected</span> aka getByRole('tabpanel', { name: 'Event review' }).getByText('Lead II selected')\n    2) <span data-tsd-source=\"/src/routes/(main)/dashboard/patient-monitoring/-components/patient-trends.tsx:137:15\">Lead II selected</span> aka getByRole('tabpanel', { name: 'Trends' }).getByText('Lead II selected')\n\nCall log:\n\u001b[2m  - waiting for getByText('Lead II selected', { exact: true }) to be visible\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_patient-monitoring-light-mobile-refresh-interactive.png",
+      "controlsFile": "_dashboard_patient-monitoring-light-mobile-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [],
+      "errors": [
+        "locator.waitFor: Error: strict mode violation: getByText('Lead II selected', { exact: true }) resolved to 2 elements:\n    1) <span data-tsd-source=\"/src/routes/(main)/dashboard/patient-monitoring/-components/patient-monitoring.tsx:122:21\">Lead II selected</span> aka getByRole('tabpanel', { name: 'Event review' }).getByText('Lead II selected')\n    2) <span data-tsd-source=\"/src/routes/(main)/dashboard/patient-monitoring/-components/patient-trends.tsx:137:15\">Lead II selected</span> aka getByRole('tabpanel', { name: 'Trends' }).getByText('Lead II selected')\n\nCall log:\n\u001b[2m  - waiting for getByText('Lead II selected', { exact: true }) to be visible\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_patient-monitoring-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_patient-monitoring-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": [
+        "locator.waitFor: Error: strict mode violation: getByText('Lead II selected', { exact: true }) resolved to 2 elements:\n    1) <span data-tsd-source=\"/src/routes/(main)/dashboard/patient-monitoring/-components/patient-monitoring.tsx:122:21\">Lead II selected</span> aka getByRole('tabpanel', { name: 'Event review' }).getByText('Lead II selected')\n    2) <span data-tsd-source=\"/src/routes/(main)/dashboard/patient-monitoring/-components/patient-trends.tsx:137:15\">Lead II selected</span> aka getByRole('tabpanel', { name: 'Trends' }).getByText('Lead II selected')\n\nCall log:\n\u001b[2m  - waiting for getByText('Lead II selected', { exact: true }) to be visible\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_patient-monitoring-dark-desktop-refresh-interactive.png",
+      "controlsFile": "_dashboard_patient-monitoring-dark-desktop-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [],
+      "errors": [
+        "locator.waitFor: Error: strict mode violation: getByText('Lead II selected', { exact: true }) resolved to 2 elements:\n    1) <span data-tsd-source=\"/src/routes/(main)/dashboard/patient-monitoring/-components/patient-monitoring.tsx:122:21\">Lead II selected</span> aka getByRole('tabpanel', { name: 'Event review' }).getByText('Lead II selected')\n    2) <span data-tsd-source=\"/src/routes/(main)/dashboard/patient-monitoring/-components/patient-trends.tsx:137:15\">Lead II selected</span> aka getByRole('tabpanel', { name: 'Trends' }).getByText('Lead II selected')\n\nCall log:\n\u001b[2m  - waiting for getByText('Lead II selected', { exact: true }) to be visible\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_patient-monitoring-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_patient-monitoring-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": [
+        "locator.waitFor: Error: strict mode violation: getByText('Lead II selected', { exact: true }) resolved to 2 elements:\n    1) <span data-tsd-source=\"/src/routes/(main)/dashboard/patient-monitoring/-components/patient-monitoring.tsx:122:21\">Lead II selected</span> aka getByRole('tabpanel', { name: 'Event review' }).getByText('Lead II selected')\n    2) <span data-tsd-source=\"/src/routes/(main)/dashboard/patient-monitoring/-components/patient-trends.tsx:137:15\">Lead II selected</span> aka getByRole('tabpanel', { name: 'Trends' }).getByText('Lead II selected')\n\nCall log:\n\u001b[2m  - waiting for getByText('Lead II selected', { exact: true }) to be visible\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_patient-monitoring-dark-mobile-refresh-interactive.png",
+      "controlsFile": "_dashboard_patient-monitoring-dark-mobile-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [],
+      "errors": [
+        "locator.waitFor: Error: strict mode violation: getByText('Lead II selected', { exact: true }) resolved to 2 elements:\n    1) <span data-tsd-source=\"/src/routes/(main)/dashboard/patient-monitoring/-components/patient-monitoring.tsx:122:21\">Lead II selected</span> aka getByRole('tabpanel', { name: 'Event review' }).getByText('Lead II selected')\n    2) <span data-tsd-source=\"/src/routes/(main)/dashboard/patient-monitoring/-components/patient-trends.tsx:137:15\">Lead II selected</span> aka getByRole('tabpanel', { name: 'Trends' }).getByText('Lead II selected')\n\nCall log:\n\u001b[2m  - waiting for getByText('Lead II selected', { exact: true }) to be visible\u001b[22m\n"
+      ]
+    }
+  ]
+}

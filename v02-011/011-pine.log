@@ -1,0 +1,9 @@
+
+> tenboards@0.1.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://127.0.0.1:3010 --routes /dashboard/patient-monitoring --preset pine --output screenshots/v02-011/preset-pine
+
+PASS /dashboard/patient-monitoring light/desktop direct
+PASS /dashboard/patient-monitoring light/mobile direct
+FAIL /dashboard/patient-monitoring dark/desktop direct
+page.evaluate: Execution context was destroyed, most likely because of a navigation
+PASS /dashboard/patient-monitoring dark/mobile direct
