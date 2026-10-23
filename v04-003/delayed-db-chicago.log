@@ -1,0 +1,12 @@
+
+> tenboards@0.3.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://127.0.0.1:3001 --routes /dashboard/invoice --reload --hydration-delay-ms 1800 --timezone America/Chicago --output screenshots/v04-003/delayed-db-chicago
+
+PASS /dashboard/invoice light/desktop direct
+PASS /dashboard/invoice light/desktop refresh
+PASS /dashboard/invoice light/mobile direct
+PASS /dashboard/invoice light/mobile refresh
+PASS /dashboard/invoice dark/desktop direct
+PASS /dashboard/invoice dark/desktop refresh
+PASS /dashboard/invoice dark/mobile direct
+PASS /dashboard/invoice dark/mobile refresh

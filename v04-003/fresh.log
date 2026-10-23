@@ -1,0 +1,51 @@
+CREATE DATABASE
+
+> tenboards@0.3.0 db:migrate
+> node --env-file-if-exists=.env --experimental-strip-types scripts/database.ts migrate
+
+.env not found. Continuing without it.
+Database migrate completed.
+
+> tenboards@0.3.0 db:seed
+> node --env-file-if-exists=.env --experimental-strip-types scripts/database.ts seed
+
+.env not found. Continuing without it.
+Database seed completed.
+
+> tenboards@0.3.0 db:seed
+> node --env-file-if-exists=.env --experimental-strip-types scripts/database.ts seed
+
+.env not found. Continuing without it.
+Database seed completed.
+
+> tenboards@0.3.0 data:parity
+> node --env-file-if-exists=.env --experimental-strip-types scripts/data-parity.ts
+
+.env not found. Continuing without it.
+PASS readUsers/all
+PASS readUsers/existing
+PASS readUsers/missing
+PASS readRoles/all
+PASS readRoles/existing
+PASS readRoles/missing
+PASS readAccounts/all
+PASS readAccounts/existing
+PASS readAccounts/missing
+PASS readProfile/default
+PASS readProfile/existing
+PASS readProfile/missing
+PASS readProducts/all
+PASS readProducts/existing
+PASS readProducts/missing
+PASS readProducts/category
+PASS readProducts/empty-category
+PASS readInvoices/2026-10-23T12:00:00Z
+PASS readInvoices/2026-12-31T23:59:59Z
+PASS readInvoices/2028-02-28T23:59:59Z
+PASS readInvoices/2028-02-29T00:00:00Z
+PASS readInvoices/2029-01-01T00:00:00Z
+PASS readInvoices/missing
+PASS readEcommerce/all
+PASS readEcommerce/existing-order
+PASS readEcommerce/missing-order
+{"reads":7,"scenarios":26,"passing":true}

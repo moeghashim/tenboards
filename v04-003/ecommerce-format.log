@@ -1,0 +1,48 @@
+src/routes/(main)/dashboard/ecommerce/-components/customer-reviews.tsx:27:38 lint/suspicious/noArrayIndexKey ━━━━━━━━━━
+
+  ! Avoid using the index of an array as key property in an element.
+  
+    25 │               <div className="text-foreground flex gap-0.5">
+    26 │                 {Array.from({ length: review.rating }, (_, index) => (
+  > 27 │                   <Star key={`star-${index + 1}`} className="size-3.5 fill-current" />
+       │                                      ^^^^^
+    28 │                 ))}
+    29 │               </div>
+  
+  i This is the source of the key value.
+  
+    24 │             <div className="flex flex-col gap-2">
+    25 │               <div className="text-foreground flex gap-0.5">
+  > 26 │                 {Array.from({ length: review.rating }, (_, index) => (
+       │                                                            ^^^^^
+    27 │                   <Star key={`star-${index + 1}`} className="size-3.5 fill-current" />
+    28 │                 ))}
+  
+  i The order of the items may change, and this also affects performances and component state.
+  
+  i Check the React documentation. 
+  
+
+src/routes/(main)/dashboard/ecommerce/-components/recent-orders.tsx:30:28 lint/correctness/noUnusedImports  FIXABLE  ━━━━━━━━━━
+
+  ! Several of these imports are unused.
+  
+    28 │   preventPaginationNavigation,
+    29 │ } from "./recent-orders-table/formatters";
+  > 30 │ import { type OrderFilter, type OrderRow, orderFilters } from "./recent-orders-table/schema";
+       │                            ^^^^^^^^^^^^^
+    31 │ 
+    32 │ export function RecentOrders() {
+  
+  i Unused imports might be the result of an incomplete refactoring.
+  
+  i Unsafe fix: Remove the unused imports.
+  
+    30 │ import·{·type·OrderFilter,·type·OrderRow,·orderFilters·}·from·"./recent-orders-table/schema";
+       │                            ---------------                                                   
+
+Skipped 2 suggested fixes.
+If you wish to apply the suggested (unsafe) fixes, use the command biome check --write --unsafe
+
+Checked 44 files in 466ms. Fixed 17 files.
+Found 2 warnings.

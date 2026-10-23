@@ -1,0 +1,602 @@
+[
+  {
+    "file": "_dashboard_invoice-dark-desktop-interactive-controls.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-dark-mobile-interactive-add-errors.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_invoice-dark-mobile-interactive-controls.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-dark-mobile-interactive-controls.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-light-desktop-interactive.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-dark-desktop-interactive.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-dark-mobile-interactive-empty.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_invoice-light-desktop-interactive-controls.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-light-mobile-interactive-filtered-selected.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_ecommerce-light-mobile-interactive-controls.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-light-desktop-interactive-edit-validation.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_invoice-dark-desktop-interactive-print.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-light-desktop-interactive-controls.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_invoice-light-desktop-interactive-preview.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-light-mobile-interactive-edited.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-dark-desktop-interactive-controls.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_ecommerce-light-desktop-interactive.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_invoice-light-desktop-interactive-print.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-dark-mobile-interactive-edit-validation.png",
+    "mode": "demo",
+    "difference": [
+      374,
+      334,
+      390,
+      412
+    ]
+  },
+  {
+    "file": "_dashboard_products-light-desktop-interactive-edited.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-light-mobile-interactive-empty.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_ecommerce-light-mobile-interactive.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-dark-mobile-interactive-add-image.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-light-desktop-interactive-add-image.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-light-desktop-interactive-empty.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_invoice-light-mobile-interactive-preview.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_ecommerce-light-desktop-interactive-controls.png",
+    "mode": "demo",
+    "difference": [
+      1315,
+      828,
+      1323,
+      860
+    ]
+  },
+  {
+    "file": "_dashboard_products-light-mobile-interactive-add-image.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_ecommerce-dark-mobile-interactive.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_invoice-light-mobile-interactive-controls.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_invoice-dark-desktop-interactive-preview.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-light-mobile-interactive-controls.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_invoice-dark-desktop-interactive.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_invoice-dark-mobile-interactive-preview.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_invoice-dark-mobile-interactive.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_ecommerce-dark-desktop-interactive-controls.png",
+    "mode": "demo",
+    "difference": [
+      1296,
+      828,
+      1323,
+      860
+    ]
+  },
+  {
+    "file": "_dashboard_products-dark-desktop-interactive-filtered-selected.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-dark-desktop-interactive-empty.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-dark-desktop-interactive-add-errors.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_invoice-light-mobile-interactive.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-light-mobile-interactive-add-errors.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-light-desktop-interactive-filtered-selected.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_ecommerce-dark-desktop-interactive.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-dark-mobile-interactive-filtered-selected.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-light-mobile-interactive-edit-validation.png",
+    "mode": "demo",
+    "difference": [
+      374,
+      352,
+      390,
+      412
+    ]
+  },
+  {
+    "file": "_dashboard_products-dark-desktop-interactive-edit-validation.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_ecommerce-dark-mobile-interactive-controls.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-dark-mobile-interactive.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-dark-desktop-interactive-edited.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-dark-desktop-interactive-add-image.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_invoice-dark-mobile-interactive-print.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-dark-mobile-interactive-edited.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-light-mobile-interactive.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_invoice-light-mobile-interactive-print.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-light-desktop-interactive-add-errors.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_invoice-light-desktop-interactive.png",
+    "mode": "demo",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_invoice-dark-desktop-interactive-controls.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-dark-mobile-interactive-add-errors.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_invoice-dark-mobile-interactive-controls.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-dark-mobile-interactive-controls.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-light-desktop-interactive.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-dark-desktop-interactive.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-dark-mobile-interactive-empty.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_invoice-light-desktop-interactive-controls.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-light-mobile-interactive-filtered-selected.png",
+    "mode": "db",
+    "difference": [
+      22,
+      206,
+      374,
+      233
+    ]
+  },
+  {
+    "file": "_dashboard_ecommerce-light-mobile-interactive-controls.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-light-desktop-interactive-edit-validation.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_invoice-dark-desktop-interactive-print.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-light-desktop-interactive-controls.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_invoice-light-desktop-interactive-preview.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-light-mobile-interactive-edited.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-dark-desktop-interactive-controls.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_ecommerce-light-desktop-interactive.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_invoice-light-desktop-interactive-print.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-dark-mobile-interactive-edit-validation.png",
+    "mode": "db",
+    "difference": [
+      374,
+      334,
+      390,
+      411
+    ]
+  },
+  {
+    "file": "_dashboard_products-light-desktop-interactive-edited.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-light-mobile-interactive-empty.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_ecommerce-light-mobile-interactive.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-dark-mobile-interactive-add-image.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-light-desktop-interactive-add-image.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-light-desktop-interactive-empty.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_invoice-light-mobile-interactive-preview.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_ecommerce-light-desktop-interactive-controls.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-light-mobile-interactive-add-image.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_ecommerce-dark-mobile-interactive.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_invoice-light-mobile-interactive-controls.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_invoice-dark-desktop-interactive-preview.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-light-mobile-interactive-controls.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_invoice-dark-desktop-interactive.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_invoice-dark-mobile-interactive-preview.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_invoice-dark-mobile-interactive.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_ecommerce-dark-desktop-interactive-controls.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-dark-desktop-interactive-filtered-selected.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-dark-desktop-interactive-empty.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-dark-desktop-interactive-add-errors.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_invoice-light-mobile-interactive.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-light-mobile-interactive-add-errors.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-light-desktop-interactive-filtered-selected.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_ecommerce-dark-desktop-interactive.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-dark-mobile-interactive-filtered-selected.png",
+    "mode": "db",
+    "difference": [
+      16,
+      212,
+      35,
+      344
+    ]
+  },
+  {
+    "file": "_dashboard_products-light-mobile-interactive-edit-validation.png",
+    "mode": "db",
+    "difference": [
+      374,
+      336,
+      390,
+      412
+    ]
+  },
+  {
+    "file": "_dashboard_products-dark-desktop-interactive-edit-validation.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_ecommerce-dark-mobile-interactive-controls.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-dark-mobile-interactive.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-dark-desktop-interactive-edited.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-dark-desktop-interactive-add-image.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_invoice-dark-mobile-interactive-print.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-dark-mobile-interactive-edited.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-light-mobile-interactive.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_invoice-light-mobile-interactive-print.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_products-light-desktop-interactive-add-errors.png",
+    "mode": "db",
+    "difference": null
+  },
+  {
+    "file": "_dashboard_invoice-light-desktop-interactive.png",
+    "mode": "db",
+    "difference": null
+  }
+]

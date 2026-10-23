@@ -1,0 +1,40 @@
+
+> tenboards@0.3.0 db:generate
+> drizzle-kit generate
+
+No config path provided, using default 'drizzle.config.ts'
+Reading config file '/Users/moeghashim/tenboards/drizzle.config.ts'
+31 tables
+directory_users 8 columns 0 indexes 0 fks
+display_roles 8 columns 0 indexes 0 fks
+metric_dimensions 5 columns 0 indexes 1 fks
+metric_points 7 columns 0 indexes 0 fks
+role_permissions 3 columns 0 indexes 1 fks
+workspace_memberships 3 columns 0 indexes 2 fks
+workspaces 1 columns 0 indexes 0 fks
+catalog_products 9 columns 0 indexes 2 fks
+invoice_addresses 3 columns 0 indexes 1 fks
+invoice_drafts 9 columns 0 indexes 3 fks
+invoice_line_items 6 columns 0 indexes 1 fks
+invoice_parties 11 columns 0 indexes 0 fks
+invoice_taxes 4 columns 0 indexes 0 fks
+product_categories 2 columns 0 indexes 0 fks
+product_statuses 2 columns 0 indexes 0 fks
+ecommerce_categories 2 columns 0 indexes 0 fks
+ecommerce_kpis 11 columns 0 indexes 0 fks
+ecommerce_order_customers 2 columns 0 indexes 0 fks
+ecommerce_orders 8 columns 0 indexes 1 fks
+ecommerce_reports 5 columns 0 indexes 1 fks
+ecommerce_review_avatars 4 columns 0 indexes 1 fks
+ecommerce_reviews 4 columns 0 indexes 0 fks
+ecommerce_sources 3 columns 0 indexes 0 fks
+ecommerce_top_products 5 columns 0 indexes 1 fks
+demo_accounts 7 columns 0 indexes 0 fks
+profile_contacts 7 columns 0 indexes 1 fks
+profile_documents 8 columns 0 indexes 1 fks
+profile_employment 15 columns 0 indexes 1 fks
+profile_leave 11 columns 0 indexes 1 fks
+profile_people 4 columns 0 indexes 0 fks
+profiles 17 columns 0 indexes 1 fks
+
+[✓] Your SQL migration file ➜ src/server/db/migrations/0004_easy_la_nuit.sql 🚀
