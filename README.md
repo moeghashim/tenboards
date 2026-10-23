@@ -2,7 +2,7 @@
 
 An MIT-licensed dashboard template built with TanStack Start, React 19, TypeScript, Tailwind CSS v4, and shadcn/ui on Base UI.
 
-The full upstream screen catalog and demo-data relationships are retained, with neutral demo identities. **v0.1 is merged, deployed and closed**: the design system and shell follow [PLAN.md](PLAN.md). **v0.2 (all 14 dashboards restyled) is merged, deployed and closed** per [the dashboard task breakdown](dev/milestones/v0.2-dashboards/README.md). **v0.3 (all app pages restyled) is merged, deployed and released as [v0.3.0](https://github.com/moeghashim/tenboards/releases/tag/v0.3.0)** — [14 app-page tasks](dev/milestones/v0.3-app-pages/README.md) deliver a small shared header foundation, standalone/embedded Mail and Chat, Calendar, Kanban, Tasks, Invoice, File Manager, Products, Users/Roles, Profile, Auth V1/V2, system states, and full-route acceptance. Current milestone/task status is tracked in [dev/milestones.json](dev/milestones.json). Current screens are demonstrations. **v0.4 is planned** — [8 data-layer tasks](dev/milestones/v0.4-data-layer/README.md) will connect every app page and dashboard to Drizzle + local Docker Postgres 17 with zero-config demo fallback. Implementation has not started; production stays in demo mode. Better Auth follows in v0.5 and production Neon/Hyperdrive setup in v0.6.
+The full upstream screen catalog and demo-data relationships are retained, with neutral demo identities. **v0.1 is merged, deployed and closed**: the design system and shell follow [PLAN.md](PLAN.md). **v0.2 (all 14 dashboards restyled) is merged, deployed and closed** per [the dashboard task breakdown](dev/milestones/v0.2-dashboards/README.md). **v0.3 (all app pages restyled) is merged, deployed and released as [v0.3.0](https://github.com/moeghashim/tenboards/releases/tag/v0.3.0)** — [14 app-page tasks](dev/milestones/v0.3-app-pages/README.md) deliver a small shared header foundation, standalone/embedded Mail and Chat, Calendar, Kanban, Tasks, Invoice, File Manager, Products, Users/Roles, Profile, Auth V1/V2, system states, and full-route acceptance. Current milestone/task status is tracked in [dev/milestones.json](dev/milestones.json). Current screens are demonstrations. **v0.4 is in progress** — [8 data-layer tasks](dev/milestones/v0.4-data-layer/README.md) connect app pages and dashboards to Drizzle + optional local Docker Postgres 17. The implementation stack is in review; production stays in demo mode. Better Auth follows in v0.5 and production Neon/Hyperdrive setup in v0.6.
 
 ## Run locally
 
@@ -286,3 +286,25 @@ Coming Soon describes planned content; the dashboard splat explains an unknown d
 The integrated v0.3 stack passes all 38 catalog entries on dev and Workers with Default, Graphite, Pine and Iris × light/dark × desktop/mobile: 608 cases per environment, 1,216 total. The coverage manifest checks generated routes, duplicates, missing/unexpected cases and every error; original failures and explicit reruns remain in pr-assets/v03-014. Supplemental scenarios cover Mail/Chat iframe contents, File Manager grid/list, Kanban board/list/table and overlays, Roles and all six Profile tabs, product/directory/task filters and forms, four auth forms, Invoice print, live Calendar/Patient Monitoring behavior, root 404/error/reset, and shell focus/preferences/reduced motion. All eight historical hydration findings are resolved; the whole-src author scan returns no matches. Supported-token audits pass 280 comparisons per environment; scoped actual-surface evidence is linked, not represented as a complete accessibility certification. The app source is unchanged by this acceptance layer. Tasks 001–007 are merged/deployed; 008–014 and the milestone stay in review pending Claude’s merges and release. Package version remains 0.2.0 until the reviewer releases 0.3.0.
 
 Run `npm run screenshots -- --base-url <url> --preset <default|graphite|pine|iris> --output <root>/<dev|workers>/<preset>` for each environment/preset. `node --experimental-strip-types scripts/report-route-coverage.ts --root <root> --retries <manifest.json>` verifies complete coverage and retains original errors alongside explicitly mapped reruns. `--interactions` on `/dashboard/default` verifies shell focus, preference persistence and reduced motion; dialog evidence uses the existing viewport so screenshot resizing cannot disturb focus.
+
+
+### Optional local data (v0.4 / 001, in review)
+
+Users and Roles now load through typed GET server functions. With `DATABASE_URL` unset, install, development, builds and Workers previews use demo records without opening a database connection. `DATA_SOURCE=demo` explicitly forces demo; any other configured value is rejected. A configured empty, malformed, unreachable or unmigrated database produces a visible load error, never silent demo fallback. Actions remain local demonstrations, with no auth or writes.
+
+For optional real reads, run Docker Compose with Postgres 17:
+
+```sh
+docker compose up -d
+cp .env.example .env
+npm run db:migrate
+npm run db:seed
+npm run data:parity
+npm run dev
+```
+
+The example uses local-only port `54329`, database/user `tenboards`, password `tenboards_local`, and a named `tenboards_postgres` volume. These are local development credentials, never production secrets. Keep `.env` uncommitted; scripts read it with Node's built-in env-file support. Docker is optional for demo. Only explicit DB commands migrate or seed; startup never does. DB scripts require an explicit localhost target and redact driver errors. Stop containers with `docker compose stop`; no destructive reset helper is provided.
+
+`npm run db:generate` creates reviewed Drizzle SQL under `src/server/db/migrations/`. Migrations are cumulative. The transactional seed upserts stable directory email/role keys, replaces only those fixtures' ordered children, and preserves unrelated parent records. Directory role labels and the informational Roles list remain distinct. Aggregate chart series have a typed decimal metric-points contract; entity lists use normalized tables.
+
+`npm run data:parity` compares actual demo and Postgres implementations with exact ordering and types. The registry currently covers Users/Roles (two reads, six all/existing/missing scenarios); omitted registration and controlled mismatch tests fail nonzero. `node --env-file=.env --experimental-strip-types scripts/data-source-check.ts` verifies source selection and negative parity tests; its missing-schema case requires a separate local `tenboards_missing_schema` database with no migrations. Database/UI fault evidence is separate from clean smoke. Production remains demo-only until v0.6.

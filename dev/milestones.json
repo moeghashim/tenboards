@@ -102,7 +102,7 @@
     },
     {
       "id": "v0.4-data-layer",
-      "status": "planned",
+      "status": "in-progress",
       "tasks": [
         "001-data-foundation",
         "002-people-profile",
@@ -114,7 +114,7 @@
         "008-data-layer-acceptance"
       ],
       "taskStatuses": {
-        "001-data-foundation": "todo",
+        "001-data-foundation": "review",
         "002-people-profile": "todo",
         "003-commerce-data": "todo",
         "004-workspace-data": "todo",
