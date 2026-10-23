@@ -144,6 +144,12 @@ Upstream scripts kept (`dev`, `build`, `preview`, `check`, `check:fix`, `generat
 | README upkeep | Every PR that changes user-visible behavior, commands, routes, screens, setup, deploy, or status updates README.md in the same PR; reviewer blocks PRs that leave README stale | Locked by user |
 | Releases | On each milestone close the reviewer bumps package.json to vX.Y.0, tags it, and publishes a GitHub Release with notes from that CHANGELOG section (v0.1.0, v0.2.0 published 2026-10-23) | Locked by user |
 | Local checkout | `/Users/moeghashim/tenboards`, remote `origin` = moeghashim/tenboards | Locked by user |
+| v0.4 data scope | Everything: every app page **and** every dashboard (incl. legacy v1) reads through the data layer; read-only (real CRUD stays deferred) | Locked by user 2026-10-23 |
+| v0.4 database host | Build and verify against local Postgres (Docker Compose, Postgres 17); Neon `DATABASE_URL` added by the user later, at the latest in v0.6. Production stays in demo mode until v0.6 | Locked by user 2026-10-23 |
+| v0.4 driver | `drizzle-orm` + `postgres` (postgres.js) — one driver for local Postgres, Neon direct and Hyperdrive (v0.6); `drizzle-kit` for SQL migrations committed under `src/server/db/migrations/` | Reviewer decision |
+| v0.4 data-source rule | `DATABASE_URL` unset → demo source (existing fixtures), zero config. Set → database source. Optional `DATA_SOURCE=demo` forces demo. A configured but unreachable/unmigrated database is a visible error, never a silent fallback to demo | Reviewer decision |
+| v0.4 access pattern | Components stop importing fixtures directly. Each domain exposes typed read functions in `src/server/data/<domain>.ts` with a demo and a db implementation behind one interface; routes load through TanStack Start server functions in route loaders. Fixtures remain the single seed source, so `db:seed` reproduces demo output exactly; a parity script proves demo ≡ db per read function | Reviewer decision |
+| v0.4 modelling | Normalized entity tables for lists/tables/boards (users, roles, products, invoices, orders, events, files, mail, chat, tasks…); aggregate chart series without a natural entity go in a typed metric-points table. No whole-fixture JSON blobs. Purely simulated client signals (e.g. live waveforms) stay computed client-side | Reviewer decision |
 | Deferred | RBAC/multi-tenant, i18n/RTL, real CRUD, tests+CI — not before v0.6, each needs planning | Locked |
 | Defaults 1–10 | As listed in §9 | Locked by user ("lock all") |
 
