@@ -1,0 +1,12 @@
+
+> tenboards@0.1.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url https://fa753b43-tenboards.mohanadgh.workers.dev --routes /mail,/dashboard/mail --output screenshots/006/before-mail
+
+PASS /mail light/desktop
+PASS /mail light/mobile
+PASS /mail dark/desktop
+PASS /mail dark/mobile
+PASS /dashboard/mail light/desktop
+PASS /dashboard/mail light/mobile
+PASS /dashboard/mail dark/desktop
+PASS /dashboard/mail dark/mobile

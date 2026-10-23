@@ -1,0 +1,42 @@
+{
+  "brand": "tenboards",
+  "og": "https://tenboards.mohanadgh.workers.dev/og.png",
+  "assets": [
+    {
+      "url": "https://pr-006-tenboards.mohanadgh.workers.dev/favicon.svg",
+      "status": 200
+    },
+    {
+      "url": "https://pr-006-tenboards.mohanadgh.workers.dev/favicon.ico",
+      "status": 200
+    },
+    {
+      "url": "https://pr-006-tenboards.mohanadgh.workers.dev/favicon-32.png",
+      "status": 200
+    },
+    {
+      "url": "https://pr-006-tenboards.mohanadgh.workers.dev/favicon-16.png",
+      "status": 200
+    },
+    {
+      "url": "https://pr-006-tenboards.mohanadgh.workers.dev/apple-touch-icon.png",
+      "status": 200
+    },
+    {
+      "url": "https://pr-006-tenboards.mohanadgh.workers.dev/favicon.ico",
+      "status": 200
+    },
+    {
+      "url": "https://pr-006-tenboards.mohanadgh.workers.dev/logo192.png",
+      "status": 200
+    },
+    {
+      "url": "https://pr-006-tenboards.mohanadgh.workers.dev/logo512.png",
+      "status": 200
+    },
+    {
+      "url": "https://pr-006-tenboards.mohanadgh.workers.dev/og.png",
+      "status": 200
+    }
+  ]
+}

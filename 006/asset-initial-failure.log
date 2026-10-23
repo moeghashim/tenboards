@@ -1,0 +1,3 @@
+The WOFF2 decoder requires the Brotli Python extension, available at: https://github.com/google/brotli
+ImportError: No module named brotli
+Resolved by installing fonttools, brotli, and pillow in /tmp/tenboards-brand-tools, not in app dependencies.
