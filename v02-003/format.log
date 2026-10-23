@@ -1,0 +1,31 @@
+src/routes/(main)/dashboard/(legacy)/crm-v1/-components/operational-cards.tsx:26:15 lint/style/useSelfClosingElements  FIXABLE  ━━━━━━━━━━
+
+  × JSX elements without children should be marked as self-closing.
+  
+    24 │           <DashboardChart config={salesPipelineChartConfig} className="h-56 w-[45%] shrink-0 sm:h-56">
+    25 │             <FunnelChart margin={{ left: 0, right: 0, top: 0, bottom: 0 }}>
+  > 26 │               <Funnel
+       │               ^^^^^^^
+  > 27 │                 {...motion}
+  > 28 │                 className="stroke-card stroke-2"
+  > 29 │                 dataKey="value"
+  > 30 │                 data={salesPipelineChartData}
+  > 31 │               ></Funnel>
+       │               ^^^^^^^^^^
+    32 │             </FunnelChart>
+    33 │           </DashboardChart>
+  
+  i In JSX, it is valid for any element to be self-closing, and the shorter form is easier to read.
+  
+  i Safe fix: Use a self-closing element instead.
+  
+    31 │ ··············></Funnel>
+       │               -- ------ 
+
+Checked 16 files in 533ms. Fixed 10 files.
+Found 1 error.
+check ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Some errors were emitted while running checks.
+  
+

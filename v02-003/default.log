@@ -1,0 +1,12 @@
+
+> tenboards@0.1.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --routes /dashboard/crm,/dashboard/crm-v1 --preset default --output screenshots/v02-003/presets/default
+
+PASS /dashboard/crm light/desktop
+PASS /dashboard/crm light/mobile
+PASS /dashboard/crm dark/desktop
+PASS /dashboard/crm dark/mobile
+PASS /dashboard/crm-v1 light/desktop
+PASS /dashboard/crm-v1 light/mobile
+PASS /dashboard/crm-v1 dark/desktop
+PASS /dashboard/crm-v1 dark/mobile
