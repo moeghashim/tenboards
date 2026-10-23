@@ -5,6 +5,7 @@ import { FolderPlus, Grid2X2, List, Upload } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 
+import { PageHeader } from "../-components/app-pages/page-header";
 import { type FileManagerView, files, folders } from "./-components/data";
 import { FileGridView } from "./-components/file-grid-view";
 import { FileListView } from "./-components/file-list-view";
@@ -23,22 +24,22 @@ function Page() {
 
   return (
     <div className="flex flex-col gap-4">
-      <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-        <div className="flex flex-col gap-1">
-          <h1 className="text-3xl leading-none tracking-tight">My files</h1>
-          <p className="text-muted-foreground text-sm">Organize, share, and find workspace files.</p>
-        </div>
-        <div className="flex items-center gap-2">
-          <Button variant="outline">
-            <FolderPlus data-icon="inline-start" />
-            New folder
-          </Button>
-          <Button>
-            <Upload data-icon="inline-start" />
-            Upload
-          </Button>
-        </div>
-      </div>
+      <PageHeader
+        title="My files"
+        description="Organize, share, and find workspace files."
+        actions={
+          <>
+            <Button variant="outline">
+              <FolderPlus data-icon="inline-start" />
+              New folder
+            </Button>
+            <Button>
+              <Upload data-icon="inline-start" />
+              Upload
+            </Button>
+          </>
+        }
+      />
       <FileManagerToolbar />
       <FoldersSection folders={folders} />
       <div className="flex flex-col gap-2">

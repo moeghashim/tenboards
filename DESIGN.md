@@ -133,3 +133,8 @@ Pass `useChartMotion()` to every animated series and tooltip. Its server snapsho
 The integrated dashboard layout uses equal-height cards within a common comparison row; stacked auxiliary columns align their outer bounds where they share that row. Independent work streams such as Productivity's main work and calendar/notes sidebar keep their content-driven heights. Tables scroll locally or reflow to labelled mobile fields; no data is hidden to fit.
 
 Patient Monitoring retains local simulation and signal identity: labelled ECG/success, Pleth/info, Resp/warning and ART/danger traces. Continuous subscriptions pause under reduced motion, while numeric readings and a post-hydration live UTC clock remain available. Static date-based dashboards explicitly identify their deterministic demo reporting dates; no hydration warning suppression or page SSR removal is used.
+
+
+## App-page headings
+
+`dashboard/-components/app-pages/page-header.tsx` owns the small `PageHeader` presentation API: required string `title`, optional string `description`, React `actions`, and optional layout `className`. The h1 uses the 24px scale with medium weight and tight tracking; descriptive text uses the existing muted 14px role. A wrapping flex row, shrinkable title column and wrapping action slot support narrow screens and long titles. File Manager and Products consume it first; Tasks and Invoice follow in their owned tasks. It owns no route, state or data. Continue using `SectionHeader` for card h2/h3 semantics and the existing dashboard primitives for cards.

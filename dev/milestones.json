@@ -66,7 +66,7 @@
     },
     {
       "id": "v0.3-app-pages",
-      "status": "planned",
+      "status": "in-progress",
       "tasks": [
         "001-app-page-foundation",
         "002-mail-pages",
@@ -84,7 +84,7 @@
         "014-app-pages-acceptance"
       ],
       "taskStatuses": {
-        "001-app-page-foundation": "planned",
+        "001-app-page-foundation": "review",
         "002-mail-pages": "planned",
         "003-chat-pages": "planned",
         "004-calendar-page": "planned",
