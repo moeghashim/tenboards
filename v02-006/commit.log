@@ -1,0 +1,25 @@
+
+> tenboards@0.1.0 generate:presets
+> ts-node -P tsconfig.scripts.json src/scripts/generate-theme-presets.ts
+
+ℹ️  No changes in theme.ts
+(node:87859) [DEP0180] DeprecationWarning: fs.Stats constructor is deprecated.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+[STARTED] Backing up original state...
+[COMPLETED] Backed up original state in git stash (591bda4)
+[STARTED] Running tasks for staged files...
+[STARTED] package.json — 17 files
+[STARTED] *.{js,ts,jsx,tsx} — 13 files
+[STARTED] biome check --write --no-errors-on-unmatched
+[COMPLETED] biome check --write --no-errors-on-unmatched
+[COMPLETED] *.{js,ts,jsx,tsx} — 13 files
+[COMPLETED] package.json — 17 files
+[COMPLETED] Running tasks for staged files...
+[STARTED] Applying modifications from tasks...
+[COMPLETED] Applying modifications from tasks...
+[STARTED] Cleaning up temporary files...
+[COMPLETED] Cleaning up temporary files...
+[feat/v0.2/006-productivity-dashboard db08197] feat(productivity): unify dashboard and stabilize demo calendar
+ 17 files changed, 236 insertions(+), 125 deletions(-)
+ create mode 100644 scripts/screenshot-interactions.ts
+ create mode 100644 src/routes/(main)/dashboard/productivity/-components/demo-date.ts
