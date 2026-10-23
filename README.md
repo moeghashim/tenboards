@@ -62,7 +62,6 @@ The unmodified import passed Biome with one existing `noArrayIndexKey` warning i
 
 ## Cloudflare demo and PR previews
 
-**Live demo:** [tenboards.mohanadgh.workers.dev](https://tenboards.mohanadgh.workers.dev/dashboard/default).
 
 **Live demo:** [tenboards.mohanadgh.workers.dev](https://tenboards.mohanadgh.workers.dev/dashboard/default) — redeployed from `main` after each merge.
 
