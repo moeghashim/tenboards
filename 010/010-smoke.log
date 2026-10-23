@@ -1,0 +1,4 @@
+PASS light/1440: 34 distinct screens (38 retained routes), empty, Escape + focus return, Ctrl/Meta K on standalone/auth/legacy, keyboard selection and navigation; no J listener; zero console errors
+PASS light/390: 34 distinct screens (38 retained routes), empty, Escape + focus return, Ctrl/Meta K on standalone/auth/legacy, keyboard selection and navigation; no J listener; zero console errors
+PASS dark/1440: 34 distinct screens (38 retained routes), empty, Escape + focus return, Ctrl/Meta K on standalone/auth/legacy, keyboard selection and navigation; no J listener; zero console errors
+PASS dark/390: 34 distinct screens (38 retained routes), empty, Escape + focus return, Ctrl/Meta K on standalone/auth/legacy, keyboard selection and navigation; no J listener; zero console errors
