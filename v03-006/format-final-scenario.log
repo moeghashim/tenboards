@@ -1,0 +1,18 @@
+scripts/screenshot-interactions.ts:494:40 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━
+
+  ! This condition is always truthy.
+  
+    492 │       return {
+    493 │         overflow: document.documentElement.scrollWidth > innerWidth,
+  > 494 │         aligned: innerWidth < 1280 || (spending && allocation && Math.abs(spending.bottom - allocation.bottom) < 1),
+        │                                        ^^^^^^^^
+    495 │         outline: document.activeElement ? getComputedStyle(document.activeElement).outlineStyle : "none",
+    496 │       };
+  
+  i The value's type can never be falsy, so this check is redundant.
+  
+  i Remove the condition, or check the value you meant to test.
+  
+
+Checked 1 file in 524ms. Fixed 1 file.
+Found 1 warning.

@@ -1,0 +1,50 @@
+{
+  "baseURL": "http://localhost:3003/",
+  "hydrationDelayMs": 0,
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": false,
+  "interactions": false,
+  "results": [
+    {
+      "route": "/dashboard/tasks",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_tasks-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/tasks",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_tasks-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/tasks",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_tasks-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/tasks",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_tasks-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    }
+  ]
+}

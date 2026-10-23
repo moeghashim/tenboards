@@ -1,0 +1,8 @@
+
+> tenboards@0.2.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://localhost:3003 --routes /dashboard/tasks --interactions --preset iris --output screenshots/v03-006/iris
+
+PASS /dashboard/tasks light/desktop direct
+PASS /dashboard/tasks light/mobile direct
+PASS /dashboard/tasks dark/desktop direct
+PASS /dashboard/tasks dark/mobile direct

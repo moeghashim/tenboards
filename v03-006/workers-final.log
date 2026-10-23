@@ -1,0 +1,12 @@
+
+> tenboards@0.2.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url https://87905fb3-tenboards.mohanadgh.workers.dev --routes /dashboard/tasks --interactions --reload --output screenshots/v03-006/workers-final
+
+PASS /dashboard/tasks light/desktop direct
+PASS /dashboard/tasks light/desktop refresh
+PASS /dashboard/tasks light/mobile direct
+PASS /dashboard/tasks light/mobile refresh
+PASS /dashboard/tasks dark/desktop direct
+PASS /dashboard/tasks dark/desktop refresh
+PASS /dashboard/tasks dark/mobile direct
+PASS /dashboard/tasks dark/mobile refresh
