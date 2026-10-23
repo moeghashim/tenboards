@@ -4,17 +4,17 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
 import { SectionHeader } from "../../-components/dashboard/cards";
-import customersData from "./data.json";
-import type { RecentCustomerRow } from "./recent-customers-table/schema";
+import { useDashboardData } from "./data-context";
 import { RecentCustomersTable } from "./recent-customers-table/table";
 
-const customers = customersData as RecentCustomerRow[];
-
 export function SubscriberOverview() {
+  const summary = useDashboardData().subscriberOverviewSummary[0];
+
+  const customers = useDashboardData().recordsCustomers;
   return (
     <Card>
       <SectionHeader
-        title="18,426 Customers"
+        title={summary.value1}
         description="Recent customer records with plan, billing, status, and signup activity."
         actions={
           <Button variant="outline" size="sm">

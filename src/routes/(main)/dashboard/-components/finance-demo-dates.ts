@@ -1,6 +1,5 @@
 // This is a dated demo statement, not live financial data. Explicit UTC dates
 // keep SSR, Workers module initialization, and browser hydration identical.
-export const financeStatementDate = "2026-10-23T12:00:00Z";
 
 export function formatDemoDate(iso: string, withTime = false) {
   return new Intl.DateTimeFormat("en-US", {

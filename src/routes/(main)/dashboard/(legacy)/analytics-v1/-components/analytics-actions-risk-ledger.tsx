@@ -12,6 +12,7 @@ import { type DataTableFeatures, dataTableFeatures } from "@/lib/data-table-feat
 import { formatCurrency } from "@/lib/utils";
 
 import { DashboardCard as Card, SectionHeader } from "../../../-components/dashboard/cards";
+import { useDashboardData } from "./data-context";
 
 type LedgerPriority = "Escalate" | "Coach" | "Reforecast" | null;
 
@@ -28,139 +29,6 @@ type LedgerRow = {
   nextAction: string;
   riskScore: number;
 };
-
-const LEDGER_ROWS: LedgerRow[] = [
-  {
-    id: 1,
-    account: "Oscorp Labs",
-    dealId: "OPP-489",
-    stage: "Legal",
-    blocker: "Close date overdue by 35 days",
-    owner: "Leila Zhang",
-    idleDays: 36,
-    closeVariance: "35d overdue",
-    priority: "Escalate",
-    nextAction: "Join next customer call and reset close plan.",
-    riskScore: 81,
-  },
-  {
-    id: 2,
-    account: "Hooli AI",
-    dealId: "OPP-475",
-    stage: "Qualification",
-    blocker: "Close date overdue by 28 days",
-    owner: "Omar Ali",
-    idleDays: 33,
-    closeVariance: "28d overdue",
-    priority: "Coach",
-    nextAction: "Review deal strategy and unblock stage exit.",
-    riskScore: 76,
-  },
-  {
-    id: 3,
-    account: "Globex Systems",
-    dealId: "OPP-447",
-    stage: "Qualification",
-    blocker: "Close date overdue by 37 days",
-    owner: "Sofia Bautista",
-    idleDays: 34,
-    closeVariance: "37d overdue",
-    priority: "Coach",
-    nextAction: "Review deal strategy and unblock stage exit.",
-    riskScore: 75,
-  },
-  {
-    id: 4,
-    account: "Umbrella Corp",
-    dealId: "OPP-459",
-    stage: "Legal",
-    blocker: "Close date overdue by 24 days",
-    owner: "Leila Zhang",
-    idleDays: 29,
-    closeVariance: "24d overdue",
-    priority: "Coach",
-    nextAction: "Review deal strategy and unblock stage exit.",
-    riskScore: 72,
-  },
-  {
-    id: 5,
-    account: "Acme Industries",
-    dealId: "OPP-421",
-    stage: "Negotiation",
-    blocker: "Close date overdue by 32 days",
-    owner: "Leila Zhang",
-    idleDays: 31,
-    closeVariance: "32d overdue",
-    priority: "Coach",
-    nextAction: "Review deal strategy and unblock stage exit.",
-    riskScore: 69,
-  },
-  {
-    id: 6,
-    account: "Wayne Devices",
-    dealId: "OPP-471",
-    stage: "Proposal",
-    blocker: "Close date overdue by 22 days",
-    owner: "Sofia Bautista",
-    idleDays: 32,
-    closeVariance: "22d overdue",
-    priority: "Reforecast",
-    nextAction: "Adjust forecast category and expected close.",
-    riskScore: 56,
-  },
-  {
-    id: 7,
-    account: "Aperture Health",
-    dealId: "OPP-497",
-    stage: "Proposal",
-    blocker: "Close date overdue by 20 days",
-    owner: "Omar Ali",
-    idleDays: 30,
-    closeVariance: "20d overdue",
-    priority: "Reforecast",
-    nextAction: "Adjust forecast category and expected close.",
-    riskScore: 50,
-  },
-  {
-    id: 8,
-    account: "Northwind Labs",
-    dealId: "OPP-438",
-    stage: "Proposal",
-    blocker: "Close date overdue by 14 days",
-    owner: "Julian Singh",
-    idleDays: 23,
-    closeVariance: "14d overdue",
-    priority: null,
-    nextAction: "No immediate intervention required.",
-    riskScore: 42,
-  },
-  {
-    id: 9,
-    account: "Stark Logistics",
-    dealId: "OPP-463",
-    stage: "Negotiation",
-    blocker: "Close date overdue by 10 days",
-    owner: "Julian Singh",
-    idleDays: 21,
-    closeVariance: "10d overdue",
-    priority: null,
-    nextAction: "No immediate intervention required.",
-    riskScore: 39,
-  },
-  {
-    id: 10,
-    account: "Soylent Foods",
-    dealId: "OPP-482",
-    stage: "Negotiation",
-    blocker: "Close date overdue by 5 days",
-    owner: "Julian Singh",
-    idleDays: 24,
-    closeVariance: "5d overdue",
-    priority: null,
-    nextAction: "No immediate intervention required.",
-    riskScore: 31,
-  },
-];
 
 const priorityTone: Record<Exclude<LedgerPriority, null>, string> = {
   Escalate: "border-danger/30 bg-danger/10 text-danger",
@@ -249,6 +117,10 @@ const ledgerColumns: ColumnDef<DataTableFeatures, LedgerRow>[] = [
 ];
 
 export function ActionsRiskLedger() {
+  const summary = useDashboardData().analyticsActionsRiskLedgerSummary[0];
+
+  const LEDGER_ROWS = useDashboardData().analyticsActionsRiskLedgerLedgerRows as LedgerRow[];
+
   const [sorting, setSorting] = React.useState<SortingState>([{ id: "riskScore", desc: true }]);
 
   const table = useTable({
@@ -276,12 +148,12 @@ export function ActionsRiskLedger() {
 
       <CardContent className="space-y-4">
         <div className="bg-muted sm:divide-border/60 grid gap-3 rounded-lg border p-3 text-sm sm:grid-cols-4 sm:divide-x">
-          <LedgerStat label="Critical accounts" value="1" detail="Risk Ladder >= 80 (current window)" />
-          <LedgerStat label="Escalations due" value="1" detail="Next 7 days" />
-          <LedgerStat label="Median inactivity" value="31d" detail="Current filter window" />
+          <LedgerStat label="Critical accounts" value={summary.value1} detail="Risk Ladder >= 80 (current window)" />
+          <LedgerStat label="Escalations due" value={summary.value2} detail="Next 7 days" />
+          <LedgerStat label="Median inactivity" value={summary.value3} detail="Current filter window" />
           <LedgerStat
             label="Overdue revenue"
-            value={formatCurrency(1084000, { noDecimals: true })}
+            value={formatCurrency(summary.value4, { noDecimals: true })}
             detail="Close date already exceeded"
           />
         </div>

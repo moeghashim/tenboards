@@ -3,15 +3,11 @@ import { TrendingDown, TrendingUp } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 import { SectionHeader, StatCard } from "../../-components/dashboard/cards";
-
-const metrics = [
-  { label: "Lead Pipeline Value", value: "$284,500", trend: "+12%", previous: "$254,200", positive: true },
-  { label: "Qualified Lead Rate", value: "28.4%", trend: "-2.5%", previous: "30.9%", positive: false },
-  { label: "Open Opportunities", value: "42", trend: "+7", previous: "35", positive: true },
-  { label: "Lead-to-Deal Rate", value: "18.1%", trend: "+1.6%", previous: "16.5%", positive: true },
-];
+import { useDashboardData } from "./data-context";
 
 export function KpiCards() {
+  const metrics = useDashboardData().kpiCardsMetrics;
+
   return (
     <section className="min-w-0 space-y-4">
       <SectionHeader

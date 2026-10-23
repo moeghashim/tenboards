@@ -1,4 +1,3 @@
-import { format, subMonths } from "date-fns";
 import { Area, AreaChart, Bar, BarChart, Line, LineChart, XAxis } from "recharts";
 
 import { Badge } from "@/components/ui/badge";
@@ -7,18 +6,17 @@ import { ChartTooltip } from "@/components/ui/chart";
 import { chartAxis, DashboardChart, DashboardTooltip, useChartMotion } from "@/lib/charts/theme";
 
 import { DashboardCard as Card, SectionHeader, StatCard } from "../../../-components/dashboard/cards";
-import {
-  leadsChartConfig,
-  leadsChartData,
-  proposalsChartConfig,
-  proposalsChartData,
-  revenueChartConfig,
-  revenueChartData,
-} from "./crm.config";
-
-const lastMonth = format(subMonths(new Date(), 1), "LLLL");
+import { leadsChartConfig, proposalsChartConfig, revenueChartConfig } from "./crm.config";
+import { useDashboardData } from "./data-context";
 
 export function OverviewCards() {
+  const lastMonth = useDashboardData().projection.previousMonth;
+  const summary = useDashboardData().overviewCardsSummary[0];
+
+  const leadsChartData = useDashboardData().crmConfigLeadsChartData;
+  const proposalsChartData = useDashboardData().crmConfigProposalsChartData;
+  const revenueChartData = useDashboardData().crmConfigRevenueChartData;
+
   const motion = useChartMotion();
   return (
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
@@ -59,8 +57,8 @@ export function OverviewCards() {
         </CardContent>
         <p className="text-muted-foreground px-4 text-xs">Solid: new leads · Striped: disqualified</p>
         <CardFooter className="flex flex-wrap items-center justify-between gap-2">
-          <span className="text-xl font-semibold tabular-nums">635</span>
-          <span className="text-success text-sm font-medium">+54.6%</span>
+          <span className="text-xl font-semibold tabular-nums">{summary.value1}</span>
+          <span className="text-success text-sm font-medium">{summary.value2}</span>
         </CardFooter>
       </Card>
 
@@ -97,15 +95,15 @@ export function OverviewCards() {
 
       <StatCard
         label="Revenue"
-        value="$56,050"
+        value={summary.value3}
         help="Last 6 Months"
-        trend={<Badge className="bg-success-surface text-success">+22.2%</Badge>}
+        trend={<Badge className="bg-success-surface text-success">{summary.value4}</Badge>}
       />
       <StatCard
         label="Projects Won"
-        value="136"
+        value={summary.value5}
         help="Last 6 Months"
-        trend={<Badge className="bg-danger-surface text-danger">-2.5%</Badge>}
+        trend={<Badge className="bg-danger-surface text-danger">{summary.value6}</Badge>}
       />
 
       <Card className="col-span-1 xl:col-span-2">
@@ -137,7 +135,7 @@ export function OverviewCards() {
           </DashboardChart>
         </CardContent>
         <CardFooter>
-          <p className="text-muted-foreground text-sm">+35% growth since last year</p>
+          <p className="text-muted-foreground text-sm">{summary.value7}</p>
         </CardFooter>
       </Card>
     </div>

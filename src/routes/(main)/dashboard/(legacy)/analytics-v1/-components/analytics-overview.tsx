@@ -1,7 +1,6 @@
 import * as React from "react";
 
 import { cn } from "cn";
-import { eachDayOfInterval, format, startOfDay, subDays } from "date-fns";
 import { Check, ChevronsUpDown, Download } from "lucide-react";
 import type { DateRange } from "react-day-picker";
 import { Area, ComposedChart, XAxis, YAxis } from "recharts";
@@ -16,8 +15,10 @@ import { Command, CommandGroup, CommandItem, CommandList } from "@/components/ui
 import { Label } from "@/components/ui/label";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { chartAxis, DashboardChart, DashboardTooltip, useChartMotion } from "@/lib/charts/theme";
+import { civilDate, dateCivil, revenueRange } from "@/server/data/core-dates";
 
 import { DashboardCard as Card, SectionHeader } from "../../../-components/dashboard/cards";
+import { useDashboardData } from "./data-context";
 
 type RiskView = "risk-view" | "momentum" | "quality";
 type FilterToggleKey = "enterpriseOnly" | "stalledOnly" | "overdueOnly" | "includeRenewals";
@@ -51,41 +52,18 @@ const riskViews: Array<{
   },
 ];
 
-const RISK_SUMMARY_METRICS = [
-  {
-    key: "stalled",
-    label: "Stalled Deals",
-    value: "8",
-    comparatorLabel: "vs previous period",
-  },
-  {
-    key: "risk",
-    label: "Revenue at Risk",
-    value: "$1,151,000",
-    comparatorLabel: "vs previous period",
-  },
-  {
-    key: "win-rate",
-    label: "Win Rate Trend",
-    value: "+8.3pp",
-    comparatorLabel: "vs previous period",
-  },
-  {
-    key: "cycle",
-    label: "Sales Cycle Drift",
-    value: "+2.3 days",
-    comparatorLabel: "vs previous period",
-  },
-] as const;
-
 export function AnalyticsOverview() {
+  const data = useDashboardData();
+  const buildRevenueChartData = (from: Date, to: Date) =>
+    revenueRange(data.analyticsOverviewRevenueModel[0], dateCivil(from), dateCivil(to));
+
   const [dateRange, setDateRange] = React.useState<{ from: Date; to: Date }>(() => {
-    const to = startOfDay(new Date(2026, 9, 23));
-    return { from: subDays(to, 29), to };
+    const range = data.projection.range;
+    return { from: civilDate(range.from), to: civilDate(range.to) };
   });
   const [selectedFilters, setSelectedFilters] = React.useState<FilterToggleKey[]>(["includeRenewals"]);
 
-  const [revenueSeries, setRevenueSeries] = React.useState(() => buildRevenueChartData(dateRange.from, dateRange.to));
+  const [revenueSeries, setRevenueSeries] = React.useState(() => data.projection.revenue);
 
   const handleFilterToggle = (key: FilterToggleKey, checked: boolean) => {
     setSelectedFilters((prev) => {
@@ -126,24 +104,10 @@ export function AnalyticsOverview() {
   );
 }
 
-function buildRevenueChartData(from: Date, to: Date) {
-  const days = eachDayOfInterval({ start: from, end: to });
-  const minRevenue = 22_000;
-  const maxRevenue = 32_000;
-  let currentRevenue = 27_500;
-
-  return days.map((day, index) => {
-    const nextRevenue = currentRevenue + Math.round((Math.sin(index * 2.4 + 1) * 0.5 + 0.05) * 4_000);
-    currentRevenue = Math.max(minRevenue, Math.min(maxRevenue, nextRevenue));
-
-    return {
-      day: format(day, "MMM d"),
-      revenue: currentRevenue,
-    };
-  });
-}
-
 function SummaryRow({ revenueSeries }: { revenueSeries: Array<{ day: string; revenue: number }> }) {
+  const summary = useDashboardData().analyticsOverviewSummary[0];
+
+  const RISK_SUMMARY_METRICS = useDashboardData().analyticsOverviewRiskSummaryMetrics;
   const motion = useChartMotion();
   const revenueChartConfig = {
     revenue: {
@@ -163,15 +127,15 @@ function SummaryRow({ revenueSeries }: { revenueSeries: Array<{ day: string; rev
       <div className="min-w-0 space-y-2">
         <div>
           <div className="text-muted-foreground text-sm font-medium">Revenue</div>
-          <div className="text-3xl font-medium tracking-tight tabular-nums">$1,248,000</div>
+          <div className="text-3xl font-medium tracking-tight tabular-nums">{summary.value1}</div>
         </div>
         <div className="flex flex-wrap items-center gap-2">
-          <Badge className="bg-success/10 text-success">+9.4%</Badge>
-          <Badge className="bg-success/10 text-success">+$107,000</Badge>
+          <Badge className="bg-success/10 text-success">{summary.value2}</Badge>
+          <Badge className="bg-success/10 text-success">{summary.value3}</Badge>
         </div>
 
         <div className="text-muted-foreground flex flex-wrap items-center gap-2 text-sm">
-          <span>Previous $1,141,000</span>
+          <span>{summary.value4}</span>
           <Badge variant="outline" className="text-xs font-medium">
             Risk Ladder 30
           </Badge>

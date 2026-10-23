@@ -1,6 +1,7 @@
 import { chromium } from "playwright";
 
 import { databaseUrl } from "../src/server/data/source.ts";
+import { cacheCaptureFonts } from "./screenshot-assets.ts";
 import assert from "node:assert/strict";
 import { spawn } from "node:child_process";
 import { mkdir, writeFile } from "node:fs/promises";
@@ -55,6 +56,7 @@ try {
             timezoneId: "America/Chicago",
             reducedMotion: "reduce",
           });
+          await cacheCaptureFonts(context);
           await context.addCookies([{ name: "theme_mode", value: theme, url: "http://127.0.0.1:3102" }]);
           const page = await context.newPage();
           const diagnostics: string[] = [];

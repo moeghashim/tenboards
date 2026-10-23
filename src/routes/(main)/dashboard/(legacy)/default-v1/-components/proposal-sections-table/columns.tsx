@@ -48,16 +48,8 @@ import {
 } from "@/lib/charts/theme";
 import type { DataTableFeatures } from "@/lib/data-table-features";
 
+import { useDashboardData } from "../data-context";
 import type { ProposalSectionsRow } from "./schema";
-
-const chartData = [
-  { month: "January", desktop: 186, mobile: 80 },
-  { month: "February", desktop: 305, mobile: 200 },
-  { month: "March", desktop: 237, mobile: 120 },
-  { month: "April", desktop: 73, mobile: 190 },
-  { month: "May", desktop: 209, mobile: 130 },
-  { month: "June", desktop: 214, mobile: 140 },
-];
 
 const chartConfig = seriesConfig({ desktop: "Desktop", mobile: "Mobile" });
 
@@ -77,14 +69,6 @@ const sectionStatusItems = [
   { value: "In Progress", label: "In Progress" },
   { value: "Not Started", label: "Not Started" },
 ] as const;
-
-const reviewerItems = [
-  { value: "Eddie Lake", label: "Eddie Lake" },
-  { value: "Jamik Tashpulatov", label: "Jamik Tashpulatov" },
-  { value: "Emily Whalen", label: "Emily Whalen" },
-] as const;
-
-const assignReviewerItems = reviewerItems.slice(0, 2);
 
 type SortableRowContextValue = Pick<ReturnType<typeof useSortable>, "handleRef">;
 
@@ -108,6 +92,11 @@ function DragHandle() {
 }
 
 function ProposalSectionDetailViewer({ item }: { item: ProposalSectionsRow }) {
+  const reviewerItems = useDashboardData().reviewers;
+  const summary = useDashboardData().proposalSectionsTableColumnsSummary[0];
+
+  const chartData = useDashboardData().proposalSectionsTableColumnsChartData;
+
   const isMobile = useIsMobile();
   const motion = useChartMotion();
 
@@ -161,7 +150,8 @@ function ProposalSectionDetailViewer({ item }: { item: ProposalSectionsRow }) {
               <Separator />
               <div className="grid gap-2">
                 <div className="flex gap-2 leading-none font-medium">
-                  Trending up by 5.2% this month <TrendingUpIcon />
+                  {summary.value1}
+                  <TrendingUpIcon />
                 </div>
                 <div className="text-muted-foreground">
                   Showing total visitors for the last 6 months. This is just some random text to test the layout. It
@@ -363,39 +353,7 @@ export const proposalSectionsColumns: ColumnDef<DataTableFeatures, ProposalSecti
   {
     accessorKey: "reviewer",
     header: "Reviewer",
-    cell: ({ row }) => {
-      const isAssigned = row.original.reviewer !== "Assign reviewer";
-
-      if (isAssigned) {
-        return row.original.reviewer;
-      }
-
-      return (
-        <>
-          <Label htmlFor={`${row.original.id}-reviewer`} className="sr-only">
-            Reviewer
-          </Label>
-          <Select items={assignReviewerItems}>
-            <SelectTrigger
-              id={`${row.original.id}-reviewer`}
-              className="w-38 **:data-[slot=select-value]:block **:data-[slot=select-value]:truncate"
-              size="sm"
-            >
-              <SelectValue placeholder="Assign reviewer" />
-            </SelectTrigger>
-            <SelectContent align="end">
-              <SelectGroup>
-                {assignReviewerItems.map((reviewer) => (
-                  <SelectItem key={reviewer.value} value={reviewer.value}>
-                    {reviewer.label}
-                  </SelectItem>
-                ))}
-              </SelectGroup>
-            </SelectContent>
-          </Select>
-        </>
-      );
-    },
+    cell: ({ row }) => <ProposalReviewerCell item={row.original} />,
   },
   {
     id: "actions",
@@ -459,5 +417,41 @@ export function DraggableProposalSectionsRow({
         ))}
       </TableRow>
     </SortableRowContext.Provider>
+  );
+}
+
+function ProposalReviewerCell({ item }: { item: ProposalSectionsRow }) {
+  const assignReviewerItems = useDashboardData().reviewers.slice(0, 2);
+
+  const isAssigned = item.reviewer !== "Assign reviewer";
+
+  if (isAssigned) {
+    return item.reviewer;
+  }
+
+  return (
+    <>
+      <Label htmlFor={`${item.id}-reviewer`} className="sr-only">
+        Reviewer
+      </Label>
+      <Select items={assignReviewerItems}>
+        <SelectTrigger
+          id={`${item.id}-reviewer`}
+          className="w-38 **:data-[slot=select-value]:block **:data-[slot=select-value]:truncate"
+          size="sm"
+        >
+          <SelectValue placeholder="Assign reviewer" />
+        </SelectTrigger>
+        <SelectContent align="end">
+          <SelectGroup>
+            {assignReviewerItems.map((reviewer) => (
+              <SelectItem key={reviewer.value} value={reviewer.value}>
+                {reviewer.label}
+              </SelectItem>
+            ))}
+          </SelectGroup>
+        </SelectContent>
+      </Select>
+    </>
   );
 }

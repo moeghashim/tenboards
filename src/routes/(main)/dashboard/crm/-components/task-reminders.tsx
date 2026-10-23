@@ -5,19 +5,22 @@ import { Button } from "@/components/ui/button";
 import { CardContent } from "@/components/ui/card";
 
 import { DashboardCard as Card, SectionHeader } from "../../-components/dashboard/cards";
-
-const proposalSent = 12;
-const proposalGoal = 18;
-const proposalProgressPercentage = Math.round((proposalSent / proposalGoal) * 100);
-const proposalGoalBarCount = 42;
-const activeProposalBars = Math.round((proposalSent / proposalGoal) * proposalGoalBarCount);
-
-const proposalGoalBars = Array.from({ length: proposalGoalBarCount }, (_, index) => ({
-  id: `proposal-goal-${index + 1}`,
-  active: index < activeProposalBars,
-}));
+import { useDashboardData } from "./data-context";
 
 export function TaskReminders() {
+  const proposalSent = useDashboardData().taskRemindersGoal[0].sent;
+  const proposalGoal = useDashboardData().taskRemindersGoal[0].target;
+  const proposalProgressPercentage = Math.round((proposalSent / proposalGoal) * 100);
+  const proposalGoalBarCount = 42;
+  const activeProposalBars = Math.round((proposalSent / proposalGoal) * proposalGoalBarCount);
+
+  const proposalGoalBars = Array.from({ length: proposalGoalBarCount }, (_, index) => ({
+    id: `proposal-goal-${index + 1}`,
+    active: index < activeProposalBars,
+  }));
+
+  const summary = useDashboardData().taskRemindersSummary[0];
+
   return (
     <section className="grid grid-cols-1 gap-4 xl:grid-cols-12">
       <Card className="xl:col-span-8">
@@ -35,19 +38,19 @@ export function TaskReminders() {
           <div className="space-y-1">
             <div className="text-muted-foreground flex items-center justify-between text-xs tabular-nums">
               <div className="flex flex-col items-center gap-1">
-                <span>08:45</span>
+                <span>{summary.value1}</span>
                 <span className="bg-border h-2 w-px" />
               </div>
               <div className="flex flex-col items-center gap-1">
-                <span>09:00</span>
+                <span>{summary.value2}</span>
                 <span className="bg-border h-2 w-px" />
               </div>
               <div className="flex flex-col items-center gap-1">
-                <span>10:00</span>
+                <span>{summary.value3}</span>
                 <span className="bg-border h-2 w-px" />
               </div>
               <div className="flex flex-col items-center gap-1">
-                <span>10:20</span>
+                <span>{summary.value4}</span>
                 <span className="bg-border h-2 w-px" />
               </div>
             </div>
@@ -61,9 +64,9 @@ export function TaskReminders() {
                   </div>
                   <div className="min-w-0">
                     <div className="text-primary-foreground truncate text-xs leading-none font-medium">
-                      Product demo with Tim
+                      {summary.value5}
                     </div>
-                    <div className="text-primary-foreground truncate text-xs">Northwind Studio</div>
+                    <div className="text-primary-foreground truncate text-xs">{summary.value6}</div>
                   </div>
                 </div>
               </div>

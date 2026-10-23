@@ -17,13 +17,7 @@ import { Field } from "@/components/ui/field";
 import { InputGroup, InputGroupAddon, InputGroupInput, InputGroupText } from "@/components/ui/input-group";
 
 import { DashboardCard as Card, SectionHeader } from "../../-components/dashboard/cards";
-
-const contacts = [
-  { id: 1, initials: "AR" },
-  { id: 2, initials: "SC" },
-  { id: 3, initials: "MJ" },
-  { id: 4, initials: "ED" },
-];
+import { useDashboardData } from "./data-context";
 
 const shortcuts = [
   { id: 1, label: "Scan QR", icon: QrCode },
@@ -37,6 +31,8 @@ const shortcuts = [
 ];
 
 export function QuickActions() {
+  const contacts = useDashboardData().quickActionsContacts;
+
   return (
     <div className="flex h-full flex-col gap-4">
       <Card>

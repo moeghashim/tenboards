@@ -6,6 +6,7 @@ import { users } from "./fixtures/users.ts";
 import { directoryUsers, displayRoles, rolePermissions, workspaceMemberships, workspaces } from "./schema.ts";
 import { seedCommerce } from "./seed-commerce.ts";
 import { seedCommunications } from "./seed-communications.ts";
+import { seedCore } from "./seed-core.ts";
 import { seedEcommerce } from "./seed-ecommerce.ts";
 import { seedPeople } from "./seed-people.ts";
 import { seedWorkspace } from "./seed-workspace.ts";
@@ -15,6 +16,7 @@ export async function seed() {
     await seedPeople(tx);
     await seedWorkspace(tx);
     await seedCommunications(tx);
+    await seedCore(tx);
     await seedCommerce(tx);
     await seedEcommerce(tx);
     for (const [position, { workspace, ...user }] of users.entries()) {

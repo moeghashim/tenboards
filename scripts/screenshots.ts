@@ -1,5 +1,6 @@
 import { chromium } from "playwright";
 
+import { cacheCaptureFonts } from "./screenshot-assets.ts";
 import { captureInteractions } from "./screenshot-interactions.ts";
 import { captureRoutes } from "./screenshot-routes.ts";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
@@ -89,6 +90,7 @@ try {
                 await new Promise((resolve) => setTimeout(resolve, remaining));
               await route.continue();
             });
+          await cacheCaptureFonts(context);
           await context.addCookies([
             { name: "theme_mode", value: theme, url: baseURL.origin },
             { name: "theme_preset", value: values.preset, url: baseURL.origin },
@@ -219,7 +221,7 @@ try {
   await browser.close();
   await writeFile(
     path.join(output, "report.json"),
-    `${JSON.stringify({ baseURL, search: values.search, hydrationDelayMs, preset: values.preset, timezone: values.timezone, reload: values.reload, interactions: values.interactions, results }, null, 2)}\n`,
+    `${JSON.stringify({ baseURL, fontAssets: "exact public responses cached between contexts", search: values.search, hydrationDelayMs, preset: values.preset, timezone: values.timezone, reload: values.reload, interactions: values.interactions, results }, null, 2)}\n`,
   );
 }
 if (results.some((result) => result.errors.length)) process.exitCode = 1;

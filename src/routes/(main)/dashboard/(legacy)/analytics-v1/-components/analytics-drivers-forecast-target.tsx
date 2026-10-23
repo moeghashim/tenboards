@@ -5,6 +5,7 @@ import { type ChartConfig, ChartTooltip } from "@/components/ui/chart";
 import { chartAxis, chartGrid, DashboardChart, DashboardTooltip, useChartMotion } from "@/lib/charts/theme";
 
 import { DashboardCard as Card, SectionHeader } from "../../../-components/dashboard/cards";
+import { useDashboardData } from "./data-context";
 
 const forecastChartConfig = {
   closedWon: {
@@ -29,22 +30,11 @@ type TrendPoint = {
   deltaLabel?: string;
 };
 
-const CHART_DATA: TrendPoint[] = [
-  { period: "W1", closedWon: 68.6, weightedPipeline: 152.4, target: 100 },
-  { period: "W2", closedWon: 87.1, weightedPipeline: 158.1, target: 100 },
-  { period: "W3", closedWon: 77.1, weightedPipeline: 154.8, target: 100 },
-  { period: "W4", closedWon: 94.3, weightedPipeline: 162.2, target: 100 },
-  { period: "W5", closedWon: 80.6, weightedPipeline: 160.4, target: 100 },
-  { period: "W6", closedWon: 100, weightedPipeline: 168.5, target: 100 },
-  { period: "W7", closedWon: 87.5, weightedPipeline: 172.1, target: 100 },
-  { period: "W8", closedWon: 95.8, weightedPipeline: 178.3, target: 100 },
-  { period: "W9", closedWon: 100, weightedPipeline: 181.0, target: 100 },
-  { period: "W10", closedWon: 95.9, weightedPipeline: 185.4, target: 100 },
-  { period: "W11", closedWon: 104.1, weightedPipeline: 188.7, target: 100 },
-  { period: "W12", closedWon: 109.5, weightedPipeline: 192.1, target: 100, deltaLabel: "+9.5pp" },
-];
-
 export function DriversForecastTarget() {
+  const summary = useDashboardData().analyticsDriversForecastTargetSummary[0];
+
+  const CHART_DATA: TrendPoint[] = useDashboardData().analyticsDriversForecastTargetChartData;
+
   const motion = useChartMotion();
   const chartData = CHART_DATA;
 
@@ -53,9 +43,9 @@ export function DriversForecastTarget() {
       <SectionHeader title="Forecast vs Target" description="12-week trend with attainment context" />
       <CardContent className="space-y-4">
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
-          <MetricChip label="Attainment" value="72.4%" note="closed won / monthly target" />
-          <MetricChip label="Weighted Pipeline" value="$1,284,000" note="vs $668,000 remaining" />
-          <MetricChip label="Forecast Confidence" value="81.0%" note="volatility-adjusted confidence" />
+          <MetricChip label="Attainment" value={summary.value1} note="closed won / monthly target" />
+          <MetricChip label="Weighted Pipeline" value={summary.value2} note={summary.value3} />
+          <MetricChip label="Forecast Confidence" value={summary.value4} note="volatility-adjusted confidence" />
         </div>
         <DashboardChart config={forecastChartConfig} className="h-72 w-full sm:h-80">
           <ComposedChart data={chartData} margin={{ left: 4, right: 8, top: 8, bottom: 0 }}>

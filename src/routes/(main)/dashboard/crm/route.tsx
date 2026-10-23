@@ -1,15 +1,23 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { createServerFn } from "@tanstack/react-start";
 
+import { DataProvider } from "./-components/data-context";
 import { KpiCards } from "./-components/kpi-cards";
 import { OpportunitiesSection } from "./-components/opportunities-section";
 import { PipelineActivity } from "./-components/pipeline-activity";
 import { TaskReminders } from "./-components/task-reminders";
 
+const loadData = createServerFn({ method: "GET" }).handler(async () => {
+  const { readCrm } = await import("@/server/data/crm");
+  return readCrm({ variant: "current", renderedAt: new Date().toISOString() });
+});
+
 export const Route = createFileRoute("/(main)/dashboard/crm")({
+  loader: () => loadData(),
   component: Page,
 });
 
-function Page() {
+function PageContent() {
   return (
     <div className="flex min-w-0 flex-col gap-4 md:gap-6">
       <KpiCards />
@@ -17,5 +25,14 @@ function Page() {
       <TaskReminders />
       <OpportunitiesSection />
     </div>
+  );
+}
+
+function Page() {
+  const data = Route.useLoaderData();
+  return (
+    <DataProvider data={data}>
+      <PageContent />
+    </DataProvider>
   );
 }

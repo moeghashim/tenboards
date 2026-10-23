@@ -5,39 +5,7 @@ import { type ChartConfig, ChartTooltip } from "@/components/ui/chart";
 import { chartAxis, DashboardChart, DashboardTooltip, useChartMotion } from "@/lib/charts/theme";
 
 import { DashboardCard as Card, SectionHeader } from "../../-components/dashboard/cards";
-
-const realtimeData = [
-  { minute: 1, visitors: 0 },
-  { minute: 2, visitors: 6 },
-  { minute: 3, visitors: 12 },
-  { minute: 4, visitors: 20 },
-  { minute: 5, visitors: 12 },
-  { minute: 6, visitors: 0 },
-  { minute: 7, visitors: 6 },
-  { minute: 8, visitors: 6 },
-  { minute: 9, visitors: 0 },
-  { minute: 10, visitors: 4 },
-  { minute: 11, visitors: 0 },
-  { minute: 12, visitors: 20 },
-  { minute: 13, visitors: 15 },
-  { minute: 14, visitors: 4 },
-  { minute: 15, visitors: 6 },
-  { minute: 16, visitors: 0 },
-  { minute: 17, visitors: 4 },
-  { minute: 18, visitors: 12 },
-  { minute: 19, visitors: 20 },
-  { minute: 20, visitors: 0 },
-  { minute: 21, visitors: 4 },
-  { minute: 22, visitors: 20 },
-  { minute: 23, visitors: 12 },
-  { minute: 24, visitors: 0 },
-  { minute: 25, visitors: 6 },
-  { minute: 26, visitors: 6 },
-  { minute: 27, visitors: 0 },
-  { minute: 28, visitors: 20 },
-  { minute: 29, visitors: 0 },
-  { minute: 30, visitors: 4 },
-];
+import { useDashboardData } from "./data-context";
 
 const chartConfig = {
   visitors: {
@@ -48,7 +16,7 @@ const chartConfig = {
 
 function RealtimeBarShape(props: BarShapeProps) {
   const { height, payload, width, x, y } = props;
-  const barPayload = payload as (typeof realtimeData)[number] | undefined;
+  const barPayload = payload as { visitors: number } | undefined;
   const barHeightValue = Number(height);
   const barWidthValue = Number(width);
   const xValue = Number(x);
@@ -89,6 +57,10 @@ function RealtimeBarShape(props: BarShapeProps) {
 }
 
 export function RealtimeVisitors() {
+  const summary = useDashboardData().realtimeVisitorsSummary[0];
+
+  const realtimeData = useDashboardData().realtimeVisitorsRealtimeData;
+
   const motion = useChartMotion();
   return (
     <Card className="h-full">
@@ -97,7 +69,7 @@ export function RealtimeVisitors() {
       <CardContent className="flex flex-col gap-4">
         <div className="flex items-end justify-between">
           <div className="flex items-baseline gap-1">
-            <span className="text-2xl leading-none tracking-tight tabular-nums">24</span>
+            <span className="text-2xl leading-none tracking-tight tabular-nums">{summary.value1}</span>
             <span className="text-muted-foreground text-sm">per minute</span>
           </div>
           <div className="text-muted-foreground flex items-center gap-2 text-sm">
@@ -124,7 +96,7 @@ export function RealtimeVisitors() {
               US
             </span>
             <span className="min-w-0 flex-1 truncate text-sm">United States</span>
-            <span className="text-sm tabular-nums">14</span>
+            <span className="text-sm tabular-nums">{summary.value2}</span>
           </div>
           <div className="border-border/50 flex items-center gap-3 border-b pt-1 pb-4 sm:pl-5">
             <span
@@ -134,7 +106,7 @@ export function RealtimeVisitors() {
               GB
             </span>
             <span className="min-w-0 flex-1 truncate text-sm">United Kingdom</span>
-            <span className="text-sm tabular-nums">4</span>
+            <span className="text-sm tabular-nums">{summary.value3}</span>
           </div>
           <div className="border-border/50 flex items-center gap-3 sm:border-r pt-4 pr-5 pb-1">
             <span
@@ -144,7 +116,7 @@ export function RealtimeVisitors() {
               CA
             </span>
             <span className="min-w-0 flex-1 truncate text-sm">Canada</span>
-            <span className="text-sm tabular-nums">3</span>
+            <span className="text-sm tabular-nums">{summary.value4}</span>
           </div>
           <div className="flex items-center gap-3 pt-4 pb-1 sm:pl-5">
             <span
@@ -154,7 +126,7 @@ export function RealtimeVisitors() {
               IN
             </span>
             <span className="min-w-0 flex-1 truncate text-sm">India</span>
-            <span className="text-sm tabular-nums">3</span>
+            <span className="text-sm tabular-nums">{summary.value5}</span>
           </div>
         </div>
       </CardContent>

@@ -34,7 +34,17 @@ const probe = async (name: string, env: NodeJS.ProcessEnv, expectSuccess: boolea
       `
     import { readUsers } from './src/server/data/users.ts';
     import { closeDatabase } from './src/server/db/client.server.ts';
-    try { if (!(await readUsers()).length) throw new Error('Empty read'); }
+    try {
+      if (!(await readUsers()).length) throw new Error('Empty read');
+      if (process.env.DATA_SOURCE === 'demo') {
+        const { readRegistry } = await import('./src/server/data/registry.ts');
+        for (const entry of readRegistry) {
+          const module = await import('./src/server/data/' + entry.module + '.ts');
+          await module[entry.read](entry.scenarios[0].input);
+        }
+        console.log('Forced demo traversed every registered read');
+      }
+    }
     catch(e) { console.error(e.message); process.exitCode=1; }
     finally { await closeDatabase(); }
   `,

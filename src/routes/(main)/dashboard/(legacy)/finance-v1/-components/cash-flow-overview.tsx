@@ -16,21 +16,7 @@ import {
 import { formatCurrency } from "@/lib/utils";
 
 import { DashboardCard as Card, SectionHeader } from "../../../-components/dashboard/cards";
-
-const chartData = [
-  { month: "Jan", income: 5900, expenses: -4200 },
-  { month: "Feb", income: 3800, expenses: -6100 },
-  { month: "Mar", income: 5200, expenses: -5600 },
-  { month: "Apr", income: 7100, expenses: -3200 },
-  { month: "May", income: 4500, expenses: -4400 },
-  { month: "Jun", income: 6100, expenses: -3600 },
-  { month: "Jul", income: 3300, expenses: -5200 },
-  { month: "Aug", income: 4300, expenses: -4000 },
-  { month: "Sep", income: 7200, expenses: -5800 },
-  { month: "Oct", income: 5600, expenses: -4600 },
-  { month: "Nov", income: 3600, expenses: -6400 },
-  { month: "Dec", income: 4700, expenses: -3400 },
-];
+import { useDashboardData } from "./data-context";
 
 const chartConfig = {
   income: {
@@ -51,6 +37,8 @@ const cashFlowPeriodItems = [
 ] as const;
 
 export function CashFlowOverview() {
+  const chartData = useDashboardData().cashFlowOverviewChartData;
+
   const motion = useChartMotion();
   const totalIncome = chartData.reduce((acc, item) => acc + item.income, 0);
   const totalExpenses = chartData.reduce((acc, item) => acc + Math.abs(item.expenses), 0);

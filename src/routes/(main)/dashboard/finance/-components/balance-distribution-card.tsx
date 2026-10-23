@@ -9,40 +9,9 @@ import { DashboardChart, DashboardTooltip, useChartMotion } from "@/lib/charts/t
 import { formatCurrency } from "@/lib/utils";
 
 import { DashboardCard as Card, SectionHeader } from "../../-components/dashboard/cards";
+import { useDashboardData } from "./data-context";
 
 type BalanceKey = "investment" | "main" | "reserve" | "savings";
-
-const balanceData: {
-  account: string;
-  amount: number;
-  key: BalanceKey;
-  percentage: number;
-}[] = [
-  {
-    account: "Main Wallet",
-    amount: 122_540,
-    key: "main",
-    percentage: 52.2,
-  },
-  {
-    account: "Savings Account",
-    amount: 48_320,
-    key: "savings",
-    percentage: 20.6,
-  },
-  {
-    account: "Investment Account",
-    amount: 36_780,
-    key: "investment",
-    percentage: 15.7,
-  },
-  {
-    account: "Reserve Account",
-    amount: 27_256,
-    key: "reserve",
-    percentage: 11.5,
-  },
-];
 
 const chartConfig = {
   amount: {
@@ -91,14 +60,14 @@ const getAccountColor = (key: BalanceKey) => {
   return "color" in config ? config.color : undefined;
 };
 
-const chartData = balanceData.map((item) => ({
-  ...item,
-  fill: getAccountColor(item.key),
-}));
-
-const totalBalance = balanceData.reduce((total, item) => total + item.amount, 0);
-
 export function BalanceDistributionCard() {
+  const balanceData = useDashboardData().balanceDistributionCardBalanceData;
+  const chartData = balanceData.map((item) => ({
+    ...item,
+    fill: getAccountColor(item.key as BalanceKey),
+  }));
+  const totalBalance = balanceData.reduce((total, item) => total + item.amount, 0);
+
   const motion = useChartMotion();
   const [currency, setCurrency] = React.useState<Currency>("USD");
 

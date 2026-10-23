@@ -3,17 +3,20 @@ import { TrendingDown, TrendingUp } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 import { StatCard } from "../../../-components/dashboard/cards";
+import { useDashboardData } from "./data-context";
 
 export function SectionCards() {
+  const summary = useDashboardData().sectionCardsSummary[0];
+
   return (
     <div className="grid min-w-0 grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
       <StatCard
         label="Total Revenue"
-        value="$1,250.00"
+        value={summary.value1}
         trend={
           <Badge variant="outline" className="text-success bg-success-surface border-transparent">
             <TrendingUp />
-            +12.5%
+            {summary.value2}
           </Badge>
         }
         help={
@@ -25,27 +28,27 @@ export function SectionCards() {
       />
       <StatCard
         label="New Customers"
-        value="1,234"
+        value={summary.value3}
         trend={
           <Badge variant="outline" className="text-danger bg-danger-surface border-transparent">
             <TrendingDown />
-            -20%
+            {summary.value4}
           </Badge>
         }
         help={
           <>
-            <p className="text-foreground font-medium">Down 20% this period</p>
+            <p className="text-foreground font-medium">{summary.value5}</p>
             <p>Acquisition needs attention</p>
           </>
         }
       />
       <StatCard
         label="Active Accounts"
-        value="45,678"
+        value={summary.value6}
         trend={
           <Badge variant="outline" className="text-success bg-success-surface border-transparent">
             <TrendingUp />
-            +12.5%
+            {summary.value7}
           </Badge>
         }
         help={
@@ -57,11 +60,11 @@ export function SectionCards() {
       />
       <StatCard
         label="Growth Rate"
-        value="4.5%"
+        value={summary.value8}
         trend={
           <Badge variant="outline" className="text-success bg-success-surface border-transparent">
             <TrendingUp />
-            +4.5%
+            {summary.value9}
           </Badge>
         }
         help={

@@ -1,13 +1,11 @@
 import { CardContent } from "@/components/ui/card";
 
 import { DashboardCard, SectionHeader } from "../../-components/dashboard/cards";
+import { useDashboardData } from "./data-context";
 
-const sources = [
-  { label: "Primary salary", share: 68, value: "$4,560.00" },
-  { label: "Freelance projects", share: 21, value: "$1,412.00" },
-  { label: "Dividends and interest", share: 11, value: "$765.00" },
-];
 export function IncomeBreakdown() {
+  const sources = useDashboardData().incomeBreakdownSources;
+
   return (
     <DashboardCard>
       <SectionHeader title="Income sources" />
