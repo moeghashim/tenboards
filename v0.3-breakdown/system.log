@@ -1,0 +1,12 @@
+
+> tenboards@0.2.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --routes /dashboard/$,/dashboard/ --output screenshots/v03-breakdown/system-before
+
+PASS /dashboard/$ light/desktop direct
+PASS /dashboard/$ light/mobile direct
+PASS /dashboard/$ dark/desktop direct
+PASS /dashboard/$ dark/mobile direct
+PASS /dashboard/ light/desktop direct
+PASS /dashboard/ light/mobile direct
+PASS /dashboard/ dark/desktop direct
+PASS /dashboard/ dark/mobile direct

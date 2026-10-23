@@ -1,0 +1,90 @@
+{
+  "baseURL": "http://127.0.0.1:3000/",
+  "hydrationDelayMs": 0,
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": false,
+  "interactions": false,
+  "results": [
+    {
+      "route": "/dashboard/$",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard__-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/$",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard__-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/$",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard__-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/$",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard__-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    }
+  ]
+}
