@@ -3,6 +3,7 @@ import "./-components/sidebar/shell-sidebar.css";
 import type { CSSProperties } from "react";
 
 import { createFileRoute, Outlet } from "@tanstack/react-router";
+import { createServerFn } from "@tanstack/react-start";
 
 import { cn } from "cn";
 
@@ -12,13 +13,21 @@ import { getDashboardLayout } from "@/server/server-actions";
 import { ShellHeader } from "./-components/header/shell-header";
 import { AppSidebar } from "./-components/sidebar/app-sidebar";
 
+const getAccounts = createServerFn({ method: "GET" }).handler(async () => {
+  const { readAccounts } = await import("@/server/data/accounts");
+  return readAccounts();
+});
+
 export const Route = createFileRoute("/(main)/dashboard")({
-  loader: () => getDashboardLayout(),
+  loader: async () => {
+    const [layout, accounts] = await Promise.all([getDashboardLayout(), getAccounts()]);
+    return { ...layout, accounts };
+  },
   component: DashboardLayout,
 });
 
 function DashboardLayout() {
-  const { defaultOpen, variant, collapsible } = Route.useLoaderData();
+  const { defaultOpen, variant, collapsible, accounts } = Route.useLoaderData();
 
   return (
     <SidebarProvider
@@ -42,7 +51,7 @@ function DashboardLayout() {
           "min-w-0 overflow-x-clip",
         )}
       >
-        <ShellHeader />
+        <ShellHeader accounts={accounts} />
         {/* Pages can set data-content-padding="false" to render full-bleed app layouts. */}
         <div className="min-h-0 min-w-0 flex-1 overflow-x-hidden p-4 has-data-[content-padding=false]:p-0 md:p-6 md:has-data-[content-padding=false]:p-0">
           <Outlet />

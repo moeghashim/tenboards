@@ -21,13 +21,14 @@ try {
     assert.notEqual(entry.demo, entry.db, "Parity requires distinct implementations");
     assert.ok(entry.scenarios.length);
     for (const scenario of entry.scenarios) {
-      const demo = await entry.demo(scenario.input);
-      const db = await entry.db(scenario.input);
-      if (process.argv.includes("--inject-mismatch") && scenarios === 0) db.reverse();
+      const demo = await scenario.demo();
+      const db = await scenario.db();
+      if (process.argv.includes("--inject-mismatch") && scenarios === 0 && Array.isArray(db)) db.reverse();
       assert.deepEqual(db, demo, `${entry.read}/${scenario.name}`);
       // Caller mutations cannot contaminate future requests.
-      demo.splice(0);
-      assert.deepEqual(await entry.demo(scenario.input), db);
+      if (Array.isArray(demo)) demo.splice(0);
+      else if (demo && typeof demo === "object") Reflect.set(demo, Object.keys(demo)[0], "QA_MUTATION");
+      assert.deepEqual(await scenario.demo(), db);
       scenarios++;
       console.log(`PASS ${entry.read}/${scenario.name}`);
     }

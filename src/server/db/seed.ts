@@ -4,9 +4,11 @@ import { getDatabase } from "./client.server.ts";
 import { roles } from "./fixtures/roles.ts";
 import { users } from "./fixtures/users.ts";
 import { directoryUsers, displayRoles, rolePermissions, workspaceMemberships, workspaces } from "./schema.ts";
+import { seedPeople } from "./seed-people.ts";
 
 export async function seed() {
   await getDatabase().transaction(async (tx) => {
+    await seedPeople(tx);
     for (const [position, { workspace, ...user }] of users.entries()) {
       await tx
         .insert(directoryUsers)

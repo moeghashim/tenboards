@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { createServerFn } from "@tanstack/react-start";
 
 import { LockKeyhole } from "lucide-react";
 
@@ -12,7 +13,6 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-import { profile } from "./-components/profile-data";
 import { ProfileDocuments } from "./-components/profile-documents";
 import { EmploymentDetails } from "./-components/profile-employment-details";
 import { ProfileHeader } from "./-components/profile-header";
@@ -21,11 +21,20 @@ import { PersonalDetails } from "./-components/profile-personal-details";
 import { ProfileStatusSidebar } from "./-components/profile-status-sidebar";
 import { TimeOffDetails } from "./-components/profile-time-off-details";
 
+const loadProfile = createServerFn({ method: "GET" }).handler(async () => {
+  const { readProfile } = await import("@/server/data/profile");
+  const profile = await readProfile();
+  if (!profile) throw new Error("Profile data is unavailable. Check the seed and retry.");
+  return profile;
+});
+
 export const Route = createFileRoute("/(main)/dashboard/profile")({
+  loader: () => loadProfile(),
   component: Page,
 });
 
 function Page() {
+  const profile = Route.useLoaderData();
   return (
     <div className="flex min-w-0 flex-col gap-4 py-4" data-content-padding="false">
       <Breadcrumb className="px-4 md:px-6">
