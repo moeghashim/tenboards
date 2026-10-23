@@ -71,11 +71,11 @@ export function Roles({ roles }: { roles: Role[] }) {
   const statusFilter = (table.getColumn("status")?.getFilterValue() as string | undefined) ?? "All";
 
   return (
-    <div className="flex h-full flex-col gap-4">
+    <div className="flex h-full min-w-0 flex-col gap-4">
       <div className="flex flex-col items-start gap-4 sm:flex-row sm:justify-between">
         <div className="flex flex-col gap-1">
-          <h1 className="text-3xl tracking-tight">Roles & Permissions</h1>
-          <p className="text-muted-foreground text-sm">Manage access roles and permissions across your organization.</p>
+          <h1 className="text-2xl font-medium tracking-tight">Roles & Permissions</h1>
+          <p className="text-muted-foreground text-sm">Explore demo roles and permissions across your organization.</p>
         </div>
 
         <div className="flex items-center gap-2">
@@ -90,7 +90,7 @@ export function Roles({ roles }: { roles: Role[] }) {
       <Tabs className="h-full gap-4" defaultValue="roles">
         <TabsList
           variant="line"
-          className="w-full justify-start gap-2 border-b ps-0 *:data-[slot=tabs-trigger]:flex-none"
+          className="max-w-full justify-start gap-2 overflow-x-auto border-b ps-0 *:data-[slot=tabs-trigger]:flex-none"
         >
           <TabsTrigger value="roles">Roles</TabsTrigger>
           <TabsTrigger value="permission-sets">Permission sets</TabsTrigger>
@@ -99,7 +99,7 @@ export function Roles({ roles }: { roles: Role[] }) {
 
         <TabsContent value="roles">
           <div className="flex flex-col gap-4">
-            <Alert className="border-amber-200 bg-amber-50 text-amber-900 dark:border-amber-900 dark:bg-amber-950 dark:text-amber-50">
+            <Alert className="border-border bg-warning-surface text-warning [&_[data-slot=alert-description]]:text-warning">
               <AlertTriangle className="size-4" />
               <AlertTitle>Review required</AlertTitle>
               <AlertDescription>3 roles have unreviewed permission changes.</AlertDescription>
@@ -111,14 +111,15 @@ export function Roles({ roles }: { roles: Role[] }) {
               </AlertAction>
             </Alert>
 
-            <div className="border-border/70 bg-background overflow-hidden rounded-xl border">
+            <div className="border-border bg-card overflow-hidden rounded-xl border">
               <div className="flex flex-col items-stretch gap-4 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
-                <InputGroup className="h-7 w-full rounded-md sm:w-82">
+                <InputGroup className="w-full sm:w-82">
                   <InputGroupAddon>
                     <Search />
                   </InputGroupAddon>
                   <InputGroupInput
-                    className="h-7"
+                    className="h-8"
+                    aria-label="Search roles"
                     placeholder="Search roles..."
                     value={search}
                     onChange={(e) => {
@@ -136,7 +137,7 @@ export function Roles({ roles }: { roles: Role[] }) {
                       table.setPageIndex(0);
                     }}
                   >
-                    <SelectTrigger size="sm">
+                    <SelectTrigger size="sm" aria-label="Filter roles by type">
                       <span className="text-muted-foreground">Type:</span>
                       <SelectValue placeholder="All" />
                     </SelectTrigger>
@@ -156,7 +157,7 @@ export function Roles({ roles }: { roles: Role[] }) {
                       table.setPageIndex(0);
                     }}
                   >
-                    <SelectTrigger size="sm">
+                    <SelectTrigger size="sm" aria-label="Filter roles by owner">
                       <span className="text-muted-foreground">Owner:</span>
                       <SelectValue placeholder="All" />
                     </SelectTrigger>
@@ -178,7 +179,7 @@ export function Roles({ roles }: { roles: Role[] }) {
                       table.setPageIndex(0);
                     }}
                   >
-                    <SelectTrigger size="sm">
+                    <SelectTrigger size="sm" aria-label="Filter roles by status">
                       <span className="text-muted-foreground">Status:</span>
                       <SelectValue placeholder="All" />
                     </SelectTrigger>
@@ -198,12 +199,12 @@ export function Roles({ roles }: { roles: Role[] }) {
           </div>
         </TabsContent>
         <TabsContent value="permission-sets">
-          <div className="text-muted-foreground flex h-full items-center justify-center rounded-md border border-dashed text-sm">
+          <div className="text-muted-foreground flex min-h-48 items-center justify-center rounded-xl border border-dashed p-4 text-sm">
             Permission Sets Coming Soon
           </div>
         </TabsContent>
         <TabsContent value="access-reviews">
-          <div className="text-muted-foreground flex h-full items-center justify-center rounded-md border border-dashed text-sm">
+          <div className="text-muted-foreground flex min-h-48 items-center justify-center rounded-xl border border-dashed p-4 text-sm">
             Access Reviews Coming Soon
           </div>
         </TabsContent>

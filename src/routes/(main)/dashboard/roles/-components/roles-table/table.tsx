@@ -57,10 +57,14 @@ export function RolesTable({ table }: { table: ReactTable<DataTableFeatures, Rol
 
   return (
     <>
-      <Table className="w-full table-fixed border-collapse" style={{ minWidth: table.getTotalSize() }}>
+      <Table
+        aria-label="Roles"
+        className="w-full table-fixed border-collapse"
+        style={{ minWidth: table.getTotalSize() }}
+      >
         <TableHeader>
           {table.getHeaderGroups().map((headerGroup) => (
-            <TableRow key={headerGroup.id} className="border-y hover:bg-transparent [&>:not(:last-child)]:border-r">
+            <TableRow key={headerGroup.id} className="border-y hover:bg-transparent">
               {headerGroup.headers.map((header) => (
                 <TableHead
                   key={header.id}
@@ -86,23 +90,25 @@ export function RolesTable({ table }: { table: ReactTable<DataTableFeatures, Rol
           ) : (
             <TableRow>
               <TableCell colSpan={colCount} className="text-muted-foreground h-24 text-center">
-                No results.
+                No roles found. Try another search or adjust your filters.
               </TableCell>
             </TableRow>
           )}
         </TableBody>
       </Table>
 
-      <div className="border-border/70 flex items-center border-t p-4">
+      <div className="border-border flex flex-wrap items-center justify-between gap-3 border-t p-4">
         <div className="text-muted-foreground text-sm">
           Showing {start} to {end} of {filteredRows.length} roles
         </div>
 
-        <div className="mx-auto">
+        <div className="mx-0">
           <Pagination className="mx-0 w-auto justify-center">
             <PaginationContent>
               <PaginationItem>
                 <PaginationPrevious
+                  aria-disabled={!table.getCanPreviousPage()}
+                  tabIndex={table.getCanPreviousPage() ? 0 : -1}
                   size="sm"
                   href="#"
                   text=""
@@ -127,6 +133,8 @@ export function RolesTable({ table }: { table: ReactTable<DataTableFeatures, Rol
               </PaginationItem>
               <PaginationItem>
                 <PaginationNext
+                  aria-disabled={!table.getCanNextPage()}
+                  tabIndex={table.getCanNextPage() ? 0 : -1}
                   size="sm"
                   href="#"
                   text=""
@@ -149,7 +157,7 @@ export function RolesTable({ table }: { table: ReactTable<DataTableFeatures, Rol
               table.setPageSize(Number(v));
             }}
           >
-            <SelectTrigger size="sm" className="w-32">
+            <SelectTrigger size="sm" className="w-20" aria-label="Roles rows per page">
               <SelectValue />
             </SelectTrigger>
             <SelectContent align="end" side="top">
@@ -178,7 +186,7 @@ function TableBodyGroup({
   return (
     <>
       <TableRow className="bg-muted h-10">
-        <TableCell className="text-foreground/60 px-4 text-sm" colSpan={colCount}>
+        <TableCell className="text-muted-foreground px-4 text-sm" colSpan={colCount}>
           {group.label}{" "}
           <Badge variant="outline" className="text-muted-foreground ml-2 rounded-sm bg-transparent text-xs">
             {group.rows.length} of {totalCount}
@@ -192,7 +200,7 @@ function TableBodyGroup({
               key={cell.id}
               style={{ width: cell.column.getSize() }}
               className={cn(
-                "border-r px-4 align-middle",
+                "px-4 align-middle",
                 index === row.getVisibleCells().length - 1 && "border-r-0",
                 index === 0 ? "text-left" : "text-center",
               )}

@@ -95,7 +95,12 @@ export const rolesColumns: ColumnDef<DataTableFeatures, Role>[] = [
     size: 130,
     filterFn: "equalsString",
     cell: ({ row }) => (
-      <Badge className="rounded-sm" variant="outline">
+      <Badge
+        className={
+          row.original.status === "Active" ? "bg-success-surface text-success" : "bg-warning-surface text-warning"
+        }
+        variant="secondary"
+      >
         {row.original.status}
       </Badge>
     ),
@@ -110,7 +115,9 @@ export const rolesColumns: ColumnDef<DataTableFeatures, Role>[] = [
 
       return (
         <DropdownMenu>
-          <DropdownMenuTrigger render={<Button variant="ghost" size="icon-sm" aria-label="Open actions" />}>
+          <DropdownMenuTrigger
+            render={<Button variant="ghost" size="icon-sm" aria-label={`Actions for ${row.original.role}`} />}
+          >
             <MoreVertical />
           </DropdownMenuTrigger>
           <DropdownMenuContent className="w-48" align="end">

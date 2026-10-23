@@ -40,14 +40,14 @@ export function UsersTable({ table }: { table: ReactTable<DataTableFeatures, Use
   const rowsPerPage = `${table.state.pagination.pageSize}`;
 
   return (
-    <div className="flex flex-1 flex-col gap-4">
+    <div className="flex min-w-0 flex-1 flex-col gap-4">
       <div>
-        <Table className="**:data-[slot='table-cell']:px-4 **:data-[slot='table-head']:px-4">
+        <Table aria-label="Users" className="**:data-[slot='table-cell']:px-4 **:data-[slot='table-head']:px-4">
           <TableHeader className="[&_tr]:border-t">
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => (
-                  <TableHead key={header.id} className="py-4 font-normal">
+                  <TableHead key={header.id} className="py-2 font-medium">
                     {header.isPlaceholder ? null : <table.FlexRender header={header} />}
                   </TableHead>
                 ))}
@@ -60,11 +60,11 @@ export function UsersTable({ table }: { table: ReactTable<DataTableFeatures, Use
               table.getRowModel().rows.map((row) => (
                 <TableRow
                   key={row.id}
-                  className="border-border/60 hover:bg-white/2.5"
+                  className="border-border hover:bg-muted/50"
                   data-state={table.state.rowSelection[row.id] && "selected"}
                 >
                   {row.getVisibleCells().map((cell) => (
-                    <TableCell key={cell.id} className="px-3 py-4 align-middle">
+                    <TableCell key={cell.id} className="px-3 py-3 align-middle">
                       <table.FlexRender cell={cell} />
                     </TableCell>
                   ))}
@@ -73,7 +73,7 @@ export function UsersTable({ table }: { table: ReactTable<DataTableFeatures, Use
             ) : (
               <TableRow>
                 <TableCell colSpan={table.getVisibleLeafColumns().length} className="h-24 text-center">
-                  No results.
+                  No users found. Try another search or adjust your filters.
                 </TableCell>
               </TableRow>
             )}
@@ -83,10 +83,10 @@ export function UsersTable({ table }: { table: ReactTable<DataTableFeatures, Use
 
       <Separator />
 
-      <div className="flex items-center justify-between px-4">
-        <div className="text-muted-foreground flex items-center gap-4 text-sm">
+      <div className="flex flex-wrap items-center justify-between gap-3 px-4">
+        <div className="text-muted-foreground flex flex-wrap items-center gap-4 text-sm">
           <div className="flex items-center gap-2">
-            <span>Rows per page</span>
+            <label htmlFor="users-rows-per-page">Rows per page</label>
             <Select
               value={`${table.state.pagination.pageSize}`}
               onValueChange={(value) => table.setPageSize(Number(value))}
@@ -114,6 +114,8 @@ export function UsersTable({ table }: { table: ReactTable<DataTableFeatures, Use
           <PaginationContent>
             <PaginationItem>
               <PaginationPrevious
+                aria-disabled={!table.getCanPreviousPage()}
+                tabIndex={table.getCanPreviousPage() ? 0 : -1}
                 href="#"
                 text=""
                 className={!table.getCanPreviousPage() ? "pointer-events-none opacity-50" : undefined}
@@ -149,6 +151,8 @@ export function UsersTable({ table }: { table: ReactTable<DataTableFeatures, Use
             ) : null}
             <PaginationItem>
               <PaginationNext
+                aria-disabled={!table.getCanNextPage()}
+                tabIndex={table.getCanNextPage() ? 0 : -1}
                 href="#"
                 text=""
                 className={!table.getCanNextPage() ? "pointer-events-none opacity-50" : undefined}
