@@ -1,0 +1,33 @@
+
+> tenboards@0.2.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url https://750e4016-tenboards.mohanadgh.workers.dev --routes /dashboard/default,/dashboard/file-manager,/dashboard/products --interactions --output screenshots/v03-001/workers
+
+FAIL /dashboard/default light/desktop direct
+No interaction scenario for /dashboard/default. Use an explicit supported --routes subset.
+FAIL /dashboard/default light/mobile direct
+No interaction scenario for /dashboard/default. Use an explicit supported --routes subset.
+FAIL /dashboard/default dark/desktop direct
+No interaction scenario for /dashboard/default. Use an explicit supported --routes subset.
+FAIL /dashboard/default dark/mobile direct
+No interaction scenario for /dashboard/default. Use an explicit supported --routes subset.
+FAIL /dashboard/file-manager light/desktop direct
+locator.press: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('radio', { name: 'List View', exact: true })[22m
+
+FAIL /dashboard/file-manager light/mobile direct
+locator.press: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('radio', { name: 'List View', exact: true })[22m
+
+FAIL /dashboard/file-manager dark/desktop direct
+locator.press: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('radio', { name: 'List View', exact: true })[22m
+
+FAIL /dashboard/file-manager dark/mobile direct
+locator.press: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('radio', { name: 'List View', exact: true })[22m
+
+PASS /dashboard/products light/desktop direct

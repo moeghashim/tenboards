@@ -1,0 +1,112 @@
+{
+  "baseURL": "http://localhost:3003/",
+  "hydrationDelayMs": 0,
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": false,
+  "interactions": true,
+  "results": [
+    {
+      "route": "/dashboard/file-manager",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_file-manager-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_file-manager-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": [
+        "locator.press: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('radio', { name: 'List View', exact: true })\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/file-manager",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_file-manager-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_file-manager-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": [
+        "locator.press: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('radio', { name: 'List View', exact: true })\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/file-manager",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_file-manager-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_file-manager-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": [
+        "locator.press: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('radio', { name: 'List View', exact: true })\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/file-manager",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_file-manager-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_file-manager-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": [
+        "locator.press: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('radio', { name: 'List View', exact: true })\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/products",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_products-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_products-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Long h1 wraps without clipping",
+        "Keyboard drawer opens, Escape closes, form resets on reopen"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/products",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_products-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_products-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Long h1 wraps without clipping",
+        "Keyboard drawer opens, Escape closes, form resets on reopen"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/products",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_products-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_products-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Long h1 wraps without clipping",
+        "Keyboard drawer opens, Escape closes, form resets on reopen"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/products",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_products-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_products-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Long h1 wraps without clipping",
+        "Keyboard drawer opens, Escape closes, form resets on reopen"
+      ],
+      "errors": [
+        "page.evaluate: Execution context was destroyed, most likely because of a navigation"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+
+> tenboards@0.2.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://localhost:3003 --routes /dashboard/file-manager,/dashboard/products --interactions --output screenshots/v03-001/interactions
+
+FAIL /dashboard/file-manager light/desktop direct
+locator.press: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('radio', { name: 'List View', exact: true })[22m
+
+FAIL /dashboard/file-manager light/mobile direct
+locator.press: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('radio', { name: 'List View', exact: true })[22m
+
+FAIL /dashboard/file-manager dark/desktop direct
+locator.press: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('radio', { name: 'List View', exact: true })[22m
+
+FAIL /dashboard/file-manager dark/mobile direct
+locator.press: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('radio', { name: 'List View', exact: true })[22m
+
+PASS /dashboard/products light/desktop direct
+PASS /dashboard/products light/mobile direct
+PASS /dashboard/products dark/desktop direct
+FAIL /dashboard/products dark/mobile direct
+page.evaluate: Execution context was destroyed, most likely because of a navigation

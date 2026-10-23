@@ -1,0 +1,12 @@
+
+> tenboards@0.2.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://localhost:3003 --routes /dashboard/file-manager,/dashboard/products --interactions --output screenshots/v03-001/interactions-verified
+
+PASS /dashboard/file-manager light/desktop direct
+PASS /dashboard/file-manager light/mobile direct
+PASS /dashboard/file-manager dark/desktop direct
+PASS /dashboard/file-manager dark/mobile direct
+PASS /dashboard/products light/desktop direct
+PASS /dashboard/products light/mobile direct
+PASS /dashboard/products dark/desktop direct
+PASS /dashboard/products dark/mobile direct

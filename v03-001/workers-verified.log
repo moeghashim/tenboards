@@ -1,0 +1,20 @@
+
+> tenboards@0.2.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url https://750e4016-tenboards.mohanadgh.workers.dev --routes /dashboard/default,/dashboard/file-manager,/dashboard/products --interactions --output screenshots/v03-001/workers-verified
+
+FAIL /dashboard/default light/desktop direct
+No interaction scenario for /dashboard/default. Use an explicit supported --routes subset.
+FAIL /dashboard/default light/mobile direct
+No interaction scenario for /dashboard/default. Use an explicit supported --routes subset.
+FAIL /dashboard/default dark/desktop direct
+No interaction scenario for /dashboard/default. Use an explicit supported --routes subset.
+FAIL /dashboard/default dark/mobile direct
+No interaction scenario for /dashboard/default. Use an explicit supported --routes subset.
+PASS /dashboard/file-manager light/desktop direct
+PASS /dashboard/file-manager light/mobile direct
+PASS /dashboard/file-manager dark/desktop direct
+PASS /dashboard/file-manager dark/mobile direct
+PASS /dashboard/products light/desktop direct
+PASS /dashboard/products light/mobile direct
+PASS /dashboard/products dark/desktop direct
+PASS /dashboard/products dark/mobile direct
