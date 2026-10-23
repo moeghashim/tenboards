@@ -23,7 +23,8 @@
         "003-impeccable-context": "in_review",
         "004-visual-capture": "in_review",
         "005-design-tokens": "in_review",
-        "006-brand-assets": "in_review"
+        "006-brand-assets": "in_review",
+        "007-theme-presets": "in_review"
       }
     }
   ]

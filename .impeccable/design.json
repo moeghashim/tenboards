@@ -36,7 +36,13 @@
         "value": "0 4px 12px rgb(24 28 37 / 8%), 0 12px 32px rgb(24 28 37 / 6%)",
         "purpose": "Overlays"
       }
-    ]
+    ],
+    "colorMeta": {
+      "primary": {
+        "role": "primary",
+        "displayName": "Default blue; Graphite, Pine, and Iris use task 005 primary alternatives"
+      }
+    }
   },
   "components": [
     {

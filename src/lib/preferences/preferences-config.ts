@@ -34,6 +34,7 @@ type PreferenceDefinition<
   defaultValue: Values[number];
   persistence: Persistence;
   attribute: Attribute;
+  legacyValues?: readonly string[];
 };
 
 function definePreference<
@@ -62,6 +63,7 @@ export const PREFERENCE_REGISTRY = {
 
   theme_preset: definePreference({
     values: THEME_PRESET_VALUES,
+    legacyValues: ["brutalist", "neo-brutalism", "soft-pop", "tangerine"],
     defaultValue: "default",
     persistence: "client-cookie",
     attribute: "data-theme-preset",

@@ -8,11 +8,11 @@ files: ["src/styles/presets/", "src/lib/preferences/", "src/scripts/generate-the
 ---
 
 ## Acceptance criteria
-- [ ] Replace Tangerine, Neo Brutalism, and Soft Pop with cohesive tenboards presets using the new token system.
-- [ ] Keep the customizer and font registry; migrate obsolete persisted preset selections to a valid default.
-- [ ] Verify all new presets in light/dark, including semantic contrast and focus states.
-- [ ] Keep SSR and hydration preference behavior consistent.
-- [ ] Build, check, typecheck, preset generation, smoke, and screenshot matrix pass.
+- [x] Replace Tangerine, Neo Brutalism, and Soft Pop with cohesive tenboards presets using the new token system.
+- [x] Keep the customizer and font registry; migrate obsolete persisted preset selections to a valid default.
+- [x] Verify all new presets in light/dark, including semantic contrast and focus states.
+- [x] Keep SSR and hydration preference behavior consistent.
+- [x] Build, check, typecheck, preset generation, smoke, and screenshot matrix pass.
 
 ## Suggested approach
 Inspect existing preset generation and persistence before making a narrowly scoped migration helper. Document final presets in DESIGN.md.

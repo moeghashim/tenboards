@@ -39,6 +39,33 @@ if (files.length === 0) {
   console.warn("⚠️ No preset CSS files found. Only default preset will be included.");
 }
 
+const globalStylesPath = path.resolve(__dirname, "../styles/styles.css");
+
+let globalContent = "";
+try {
+  globalContent = fs.readFileSync(globalStylesPath, "utf8");
+} catch (error) {
+  console.error(`❌ Could not read styles.css at ${globalStylesPath}`);
+  console.error(error);
+  process.exit(1);
+}
+
+// Resolve swatches from the same root primitives as the CSS; no duplicated palette literals.
+const rootTokens = Object.fromEntries(
+  [...(globalContent.match(/:root\s*\{([^}]+)\}/)?.[1] ?? "").matchAll(/(--[\w-]+):\s*([^;]+);/g)].map((match) => [
+    match[1],
+    match[2].trim(),
+  ]),
+);
+
+function resolvePrimary(value: string): string {
+  const token = value.match(/^var\((--[\w-]+)\)$/)?.[1];
+  if (!token || !rootTokens[token] || rootTokens[token].startsWith("var(")) {
+    throw new Error(`Preset primary must reference a concrete root token: ${value}`);
+  }
+  return rootTokens[token];
+}
+
 const presets = files.map((file) => {
   const filePath = path.join(presetDir, file);
   const content = fs.readFileSync(filePath, "utf8");
@@ -60,8 +87,8 @@ const presets = files.map((file) => {
   const darkPrimaryMatch = content.match(/\.dark:root\[data-theme-preset="[^"]*"\][\s\S]*?--primary:\s*([^;]+);/);
 
   const primary = {
-    light: lightPrimaryMatch?.[1]?.trim() ?? "",
-    dark: darkPrimaryMatch?.[1]?.trim() ?? "",
+    light: resolvePrimary(lightPrimaryMatch?.[1]?.trim() ?? ""),
+    dark: resolvePrimary(darkPrimaryMatch?.[1]?.trim() ?? ""),
   };
 
   if (!lightPrimaryMatch || !darkPrimaryMatch) {
@@ -70,17 +97,6 @@ const presets = files.map((file) => {
 
   return { label, value, primary };
 });
-
-const globalStylesPath = path.resolve(__dirname, "../styles/styles.css");
-
-let globalContent = "";
-try {
-  globalContent = fs.readFileSync(globalStylesPath, "utf8");
-} catch (error) {
-  console.error(`❌ Could not read styles.css at ${globalStylesPath}`);
-  console.error(error);
-  process.exit(1);
-}
 
 const defaultLightPrimaryRegex = /:root\s*{[^}]*--primary:\s*([^;]+);/;
 const defaultDarkPrimaryRegex = /\.dark\s*{[^}]*--primary:\s*([^;]+);/;
