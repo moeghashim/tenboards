@@ -2,6 +2,77 @@ import type { Page } from "playwright";
 
 // Opt-in interaction evidence for the dashboard batch. Never replace the runtime clock.
 export async function captureInteractions(page: Page, route: string): Promise<string[]> {
+  if (route === "/mail" || route === "/dashboard/mail") {
+    const embedded = route === "/dashboard/mail";
+    if (embedded)
+      await page
+        .frameLocator('iframe[title="Mail preview"]')
+        .getByRole("heading", { name: "Inbox", exact: true })
+        .waitFor();
+    const surface = embedded ? page.frames().find((frame) => new URL(frame.url()).pathname === "/mail") : page;
+    if (!surface) throw new Error("Mail iframe missing");
+    const parentTheme = await page.evaluate(() => ({
+      dark: document.documentElement.classList.contains("dark"),
+      preset: document.documentElement.dataset.themePreset,
+    }));
+    const inner = await surface.evaluate(() => ({
+      dark: document.documentElement.classList.contains("dark"),
+      preset: document.documentElement.dataset.themePreset,
+      width: innerWidth,
+      overflow: document.documentElement.scrollWidth > innerWidth,
+    }));
+    if (inner.dark !== parentTheme.dark || inner.preset !== parentTheme.preset || inner.overflow)
+      throw new Error(`Mail frame geometry/theme: ${JSON.stringify(inner)}`);
+    const row = surface.locator("[data-mail-id]").first();
+    await row.press("Enter");
+    await surface
+      .getByRole("textbox", { name: "Reply message", exact: true })
+      .fill("Thanks — reviewing the attached documents.");
+    await surface.getByRole("button", { name: "Attachments (3)", exact: true }).press("Enter");
+    await surface.getByRole("button", { name: "Attachments (3)", exact: true }).press("Enter");
+    await surface.getByRole("button", { name: "More actions", exact: true }).press("Enter");
+    await surface.getByRole("menuitem", { name: "Reply all", exact: true }).waitFor();
+    await page.keyboard.press("Escape");
+    if (inner.width < 768) {
+      await page.keyboard.press("Escape");
+      await surface.getByRole("dialog", { name: "Mail message", exact: true }).waitFor({ state: "hidden" });
+      if (!(await row.evaluate((node) => node === document.activeElement)))
+        throw new Error("Mail drawer did not return focus");
+      await row.press("Enter");
+    } else {
+      const handle = surface.locator('[data-slot="resizable-handle"]');
+      const oldWidth = await surface
+        .locator("#mail-message-list-panel")
+        .evaluate((node) => node.getBoundingClientRect().width);
+      await handle.press("ArrowRight");
+      await surface.waitForFunction(
+        (previous) =>
+          Math.abs(
+            (document.getElementById("mail-message-list-panel")?.getBoundingClientRect().width ?? previous) - previous,
+          ) >= 1,
+        oldWidth,
+      );
+      const newWidth = await surface
+        .locator("#mail-message-list-panel")
+        .evaluate((node) => node.getBoundingClientRect().width);
+      if (Math.abs(newWidth - oldWidth) < 1) throw new Error("Keyboard resize did not change panel width");
+      const cookie = (await page.context().cookies()).find((item) => item.name === "mail_panel_layout");
+      if (!cookie || (!cookie.value.includes("%") && !cookie.value.includes("[")))
+        throw new Error("Mail layout cookie missing");
+      await surface.getByRole("button", { name: "Close message", exact: true }).press("Enter");
+      await surface.getByText("Select an email to read its message", { exact: true }).waitFor();
+      await row.press("Enter");
+    }
+    await surface.getByRole("textbox", { name: "Reply message", exact: true }).focus();
+    return [
+      "Standalone/iframe theme and preset match; no page overflow",
+      "Keyboard selection, attachments and reply menu/composer",
+      inner.width < 768
+        ? "Mobile Escape restores row focus; drawer reopens"
+        : "Resizable panels persist layout cookie; empty selection and reselection",
+      "Existing search/filter/send actions remain demo placeholders",
+    ];
+  }
   if (route === "/dashboard/file-manager" || route === "/dashboard/products") {
     const title = page.getByRole("heading", { level: 1 });
     const original = await title.textContent();

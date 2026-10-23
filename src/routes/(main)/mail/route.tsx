@@ -26,7 +26,7 @@ function Page() {
     <div className="relative h-full">
       <SidebarProvider className="h-full min-h-0">
         <MailSidebar />
-        <div className="size-full">
+        <div className="size-full min-w-0">
           <div className="h-dvh min-h-0 overflow-hidden">
             <MailComponent mails={mails} defaultLayout={defaultLayout} />
           </div>

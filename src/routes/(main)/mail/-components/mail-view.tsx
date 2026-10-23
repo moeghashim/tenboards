@@ -52,9 +52,9 @@ export function MailView({ mail, onClose }: MailDisplayProps) {
   }
 
   return (
-    <div className="flex h-full min-h-0 flex-col gap-3 px-2 py-3">
-      <div className="flex items-center">
-        <div className="flex items-center gap-2">
+    <div className="bg-card flex h-full min-h-0 min-w-0 flex-col gap-3 p-3">
+      <div className="flex flex-wrap items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2">
           <Tooltip>
             <TooltipTrigger
               render={<Button variant="ghost" size="icon-sm" aria-label="Close message" onClick={handleClose} />}
@@ -150,7 +150,7 @@ export function MailView({ mail, onClose }: MailDisplayProps) {
         {mail ? (
           <div className="flex min-h-0 flex-1 flex-col gap-3">
             <div className="space-y-1.5">
-              <div className="leading-none font-medium">{mail.subject}</div>
+              <div className="text-base leading-snug font-medium wrap-break-word">{mail.subject}</div>
 
               <div className="text-muted-foreground text-xs leading-none">
                 {format(new Date(mail.receivedAt), "EEE, d MMM yyyy, h:mm a")}
@@ -164,13 +164,13 @@ export function MailView({ mail, onClose }: MailDisplayProps) {
                 <AvatarFallback className="bg-background rounded-sm">{mail.from.name[0]}</AvatarFallback>
               </Avatar>
 
-              <div className="flex h-full flex-col gap-1">
-                <div className="flex items-center gap-2">
+              <div className="flex h-full min-w-0 flex-col gap-1 wrap-break-word">
+                <div className="flex flex-wrap items-center gap-2">
                   <div className="text-xs">{mail.from.name}</div>
                   <Separator className="h-3 data-vertical:self-center" orientation="vertical" />
                   <div className="text-muted-foreground text-xs">{mail.from.email}</div>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex flex-wrap items-center gap-2">
                   <div className="text-muted-foreground text-xs">
                     To: <span className="text-foreground">{mail.to.map((recipient) => recipient.name).join(", ")}</span>
                   </div>
@@ -210,9 +210,14 @@ export function MailView({ mail, onClose }: MailDisplayProps) {
                   <CollapsibleContent>
                     <div className="flex flex-wrap gap-2">
                       {mail.attachments.map((attachment) => (
-                        <Button size="xs" variant="secondary" key={attachment.id}>
+                        <Button
+                          size="sm"
+                          variant="secondary"
+                          className="h-auto max-w-full py-1 whitespace-normal"
+                          key={attachment.id}
+                        >
                           <SimpleIcon icon={attachment.icon} className="size-3 fill-current" />
-                          <span className="font-normal">{attachment.name}</span>
+                          <span className="min-w-0 font-normal wrap-break-word">{attachment.name}</span>
                           <span className="text-muted-foreground font-normal">{attachment.size}</span>
                         </Button>
                       ))}
@@ -224,7 +229,9 @@ export function MailView({ mail, onClose }: MailDisplayProps) {
               </>
             ) : null}
 
-            <div className="min-h-0 flex-1 scrollbar-none overflow-y-auto text-sm whitespace-pre-wrap">{mail.body}</div>
+            <div className="min-h-0 flex-1 overflow-y-auto text-sm leading-6 wrap-break-word whitespace-pre-wrap">
+              {mail.body}
+            </div>
 
             <div className="mt-auto flex flex-col gap-3">
               <Separator />
@@ -232,15 +239,19 @@ export function MailView({ mail, onClose }: MailDisplayProps) {
                 <InputGroupAddon align="inline-start">
                   <Reply />
                 </InputGroupAddon>
-                <InputGroupInput className="text-xs" placeholder={`Reply ${mail.from.name}...`} />
+                <InputGroupInput
+                  aria-label="Reply message"
+                  className="text-sm"
+                  placeholder={`Reply ${mail.from.name}...`}
+                />
                 <InputGroupAddon className="gap-1" align="inline-end">
-                  <InputGroupButton variant="ghost">
+                  <InputGroupButton variant="ghost" aria-label="Add emoji">
                     <Smile />
                   </InputGroupButton>
-                  <InputGroupButton variant="ghost">
+                  <InputGroupButton variant="ghost" aria-label="Attach file">
                     <Paperclip />
                   </InputGroupButton>
-                  <InputGroupButton variant="ghost">
+                  <InputGroupButton variant="ghost" aria-label="Send reply">
                     <Send />
                   </InputGroupButton>
                 </InputGroupAddon>
@@ -248,7 +259,9 @@ export function MailView({ mail, onClose }: MailDisplayProps) {
             </div>
           </div>
         ) : (
-          <div className="text-muted-foreground grid h-full place-items-center text-sm">No email selected</div>
+          <div className="text-muted-foreground grid h-full place-items-center text-sm">
+            Select an email to read its message
+          </div>
         )}
       </div>
     </div>

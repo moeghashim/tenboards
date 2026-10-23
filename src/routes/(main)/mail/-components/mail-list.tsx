@@ -28,7 +28,7 @@ export function MailList({ groups, onSelectMail }: MailListProps) {
       <div className="flex flex-col gap-1.5 pt-0">
         {groups.map((group) => (
           <section key={group.id} className="flex flex-col gap-1.5">
-            <div className="text-muted-foreground mx-3 text-xs">
+            <div className="text-muted-foreground mx-3 pt-2 text-xs font-medium">
               {group.title} ({group.items.length})
             </div>
 
@@ -38,14 +38,13 @@ export function MailList({ groups, onSelectMail }: MailListProps) {
                   type="button"
                   key={item.id}
                   className={cn(
-                    "group relative w-full border-y border-transparent p-3 text-left transition-colors",
-                    "hover:bg-muted/60",
-                    mail.selected === item.id &&
-                      "border-border bg-muted/70 before:bg-primary before:absolute before:-inset-y-px before:left-0 before:w-0.5",
+                    "group border-border relative w-full border-b p-3 text-left transition-colors",
+                    "hover:bg-muted",
+                    mail.selected === item.id && "bg-muted",
                   )}
-                  onClick={(event) => {
-                    event.currentTarget.blur();
-
+                  aria-pressed={mail.selected === item.id}
+                  data-mail-id={item.id}
+                  onClick={() => {
                     setMail({
                       ...mail,
                       selected: item.id,
@@ -58,16 +57,17 @@ export function MailList({ groups, onSelectMail }: MailListProps) {
                       <AvatarFallback className="bg-background rounded-sm">{item.from.name[0]}</AvatarFallback>
                     </Avatar>
 
-                    <div className="space-y-2">
+                    <div className="min-w-0 flex-1 space-y-2">
                       <div className="flex items-start justify-between gap-3">
-                        <div>
+                        <div className="min-w-0">
                           <div
                             className={cn(
-                              "flex items-center gap-2 truncate text-sm font-normal",
+                              "flex flex-wrap items-center gap-2 text-sm font-normal",
                               !item.isRead && "font-medium",
                             )}
                           >
-                            {item.from.name} {!item.isRead && <span className="size-2 rounded-full bg-blue-600" />}
+                            {item.from.name}
+                            {!item.isRead && <span className="text-primary text-xs">Unread</span>}
                           </div>
                           <div
                             className={cn(

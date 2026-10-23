@@ -40,7 +40,7 @@ export function MailSidebar() {
   const [selectedAccount, setSelectedAccount] = React.useState(accounts[0]);
 
   return (
-    <Sidebar collapsible="icon" className="**:data-[sidebar=sidebar]:bg-background absolute inset-y-0 h-full">
+    <Sidebar collapsible="icon" className="**:data-[sidebar=sidebar]:bg-muted absolute inset-y-0 h-full">
       <SidebarHeader className="gap-3 py-3 pb-1">
         <div className="flex items-center justify-between">
           {isCollapsed ? (
@@ -68,6 +68,7 @@ export function MailSidebar() {
           ) : (
             <>
               <ToggleGroup
+                aria-label="Mail account"
                 value={[String(selectedAccount.id)]}
                 onValueChange={(value) => {
                   const account = accounts.find((item) => item.id === Number(value[0]));
@@ -107,7 +108,12 @@ export function MailSidebar() {
           <div className="text-muted-foreground truncate text-sm leading-none">{selectedAccount.email}</div>
         </div>
 
-        <Button size={isCollapsed ? "icon-sm" : "sm"} variant="outline" className="group-data-[state=expanded]:w-full">
+        <Button
+          size={isCollapsed ? "icon-sm" : "sm"}
+          variant="outline"
+          aria-label="New email"
+          className="group-data-[state=expanded]:w-full"
+        >
           <PenLine data-icon="inline-start" />
           <span className="group-data-[state=collapsed]:hidden">New email</span>
         </Button>
@@ -143,10 +149,9 @@ function renderNavItem(nav: MailNavItem) {
 
 const accountTriggerClassName = cn(
   "relative size-7 min-w-7 rounded-sm p-0 transition-colors",
-  "bg-primary text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground text-xs",
+  "bg-background text-foreground hover:bg-muted text-xs",
   "aria-pressed:bg-primary aria-pressed:text-primary-foreground",
-  "aria-pressed:ring aria-pressed:ring-green-600",
-  "focus-visible:border-transparent focus-visible:ring-0",
+  "aria-pressed:ring-primary aria-pressed:ring",
 );
 
 type Account = (typeof accounts)[number];
@@ -157,7 +162,7 @@ function AccountMarker({ account, isSelected = false }: { account: Account; isSe
       {getInitials(account.label).slice(0, 1)}
       <span
         className={cn(
-          "text-primary-foreground ring-background absolute right-0 bottom-0 z-10 hidden size-2.5 items-center justify-center rounded-full bg-green-600 ring-[1.25px] group-aria-pressed/toggle:flex",
+          "text-primary-foreground ring-background bg-primary absolute right-0 bottom-0 z-10 hidden size-2.5 items-center justify-center rounded-full ring-[1.25px] group-aria-pressed/toggle:flex",
           isSelected && "flex",
         )}
       >

@@ -18,8 +18,8 @@ export function MailInbox({ mails, onSelectMail }: MailInboxProps) {
   const unpinnedMails = mails.filter((mail) => !mail.isPinned);
 
   return (
-    <div className="flex h-full min-h-0 flex-col gap-3 pt-3">
-      <div className="flex items-center justify-between gap-4 px-2">
+    <div className="bg-card flex h-full min-h-0 min-w-0 flex-col gap-3 pt-3">
+      <div className="flex items-center justify-between gap-3 px-3">
         <div className="flex items-center">
           <SidebarTrigger />
           <Separator orientation="vertical" className="mr-2 ml-1 h-4 data-vertical:self-center" />
@@ -38,13 +38,13 @@ export function MailInbox({ mails, onSelectMail }: MailInboxProps) {
         </div>
       </div>
 
-      <div className="px-2">
+      <div className="px-3">
         <Separator />
       </div>
 
-      <div className="px-2">
+      <div className="px-3">
         <InputGroup className="h-7 w-full rounded-md">
-          <InputGroupInput className="h-7" placeholder="Search..." />
+          <InputGroupInput className="h-7" aria-label="Search mail" placeholder="Search mail..." />
           <InputGroupAddon>
             <Search />
           </InputGroupAddon>

@@ -85,7 +85,7 @@
       ],
       "taskStatuses": {
         "001-app-page-foundation": "review",
-        "002-mail-pages": "planned",
+        "002-mail-pages": "review",
         "003-chat-pages": "planned",
         "004-calendar-page": "planned",
         "005-kanban-page": "planned",
