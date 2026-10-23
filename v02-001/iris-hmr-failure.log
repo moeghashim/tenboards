@@ -1,0 +1,71 @@
+
+> tenboards@0.1.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --routes /dashboard/default --preset iris --output screenshots/v02-001/presets/iris
+
+FAIL /dashboard/default light/desktop
+page: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <SidebarProvider className="tenboards-..." defaultOpen={true} style={{...}} data-tsd-source="/src/route...">
+      <div data-slot="sidebar-wr..." style={{...}} className="group/side..." data-tsd-source="/src/route...">
+        <AppSidebar>
+        <SidebarInset className={"[html[da..."} data-tsd-source="/src/route...">
+          <main data-slot="sidebar-inset" className={"relative..."} data-tsd-source="/src/route...">
+            <ShellHeader>
+            <div className="min-h-0 mi..." data-tsd-source="/src/route...">
+              <OutletImpl data-tsd-source="/src/route...">
+                <MatchImpl routeId="/(main)/da...">
+                  <MatchInnerImpl match={{id:"/(main...", ...}}>
+                    <Lazy>
+                      <Page>
+                        <div className="@container..." data-tsd-source="/src/route...">
+                          <MetricCards>
+                          <PerformanceOverview data-tsd-source="/src/route...">
+                            <Card className="@container..." data-tsd-source="/src/route...">
+                              <div
+                                data-slot="card"
+                                data-size="default"
+                                className={"group/card flex flex-col gap-(--card-spacing) overflow-hidden rounded-xl ..."}
++                               data-tsd-source="/src/routes/(main)/dashboard/default/-components/performance-overview..."
+-                               data-tsd-source="/src/routes/(main)/dashboard/default/-components/performance-overview..."
+                              >
+                                <SectionHeader title="Customer A..." description={<Fragment>} actions={<Fragment>} ...>
+                                  <CardHeader className="flex flex-..." data-tsd-source="/src/route...">
+                                    <div
+                                      data-slot="card-header"
++                                     className="group/card-header @container/card-header auto-rows-min rounded-t-xl p..."
+-                                     className="group/card-header @container/card-header grid auto-rows-min items-sta..."
++                                     data-tsd-source="/src/routes/(main)/dashboard/-components/dashboard/cards.tsx:30:5"
+-                                     data-tsd-source="/src/routes/(main)/dashboard/default/-components/performance-ov..."
+                                    >
+                                      <div
++                                       className="min-w-0 flex-1 basis-40"
+-                                       className="font-heading text-base font-medium group-data-[size=sm]/card:text-s..."
++                                       data-tsd-source="/src/routes/(main)/dashboard/-components/dashboard/cards.tsx:..."
+-                                       data-tsd-source="/src/routes/(main)/dashboard/default/-components/performance-..."
+-                                       data-slot="card-title"
+                                      >
++                                       <h2
++                                         id={undefined}
++                                         className="text-base font-medium tracking-tight wrap-break-word"
++                                         data-tsd-source="/src/routes/(main)/dashboard/-components/dashboard/cards.ts..."
++                                       >
+-                                       Customer Activity
+                                        ...
+                                      ...
+                                ...
+                          ...
+
+PASS /dashboard/default light/mobile
+PASS /dashboard/default dark/desktop
+PASS /dashboard/default dark/mobile

@@ -1,0 +1,186 @@
+[
+  {
+    "dark": false,
+    "marks": [
+      {
+        "ratio": 7.640381818560236,
+        "token": "chart-1"
+      },
+      {
+        "ratio": 6.014147196145378,
+        "token": "chart-2"
+      },
+      {
+        "ratio": 6.245783741652524,
+        "token": "chart-4"
+      },
+      {
+        "ratio": 6.001210137659448,
+        "token": "chart-5"
+      }
+    ],
+    "preset": "default",
+    "text": 6.865869221159854
+  },
+  {
+    "dark": true,
+    "marks": [
+      {
+        "ratio": 8.087024978792453,
+        "token": "chart-1"
+      },
+      {
+        "ratio": 7.325418382144899,
+        "token": "chart-2"
+      },
+      {
+        "ratio": 10.208664288068611,
+        "token": "chart-4"
+      },
+      {
+        "ratio": 11.509848929277842,
+        "token": "chart-5"
+      }
+    ],
+    "preset": "default",
+    "text": 8.628386557709579
+  },
+  {
+    "dark": false,
+    "marks": [
+      {
+        "ratio": 10.129420176335314,
+        "token": "chart-1"
+      },
+      {
+        "ratio": 5.97610637745478,
+        "token": "chart-2"
+      },
+      {
+        "ratio": 6.206277770290671,
+        "token": "chart-4"
+      },
+      {
+        "ratio": 5.963251148741252,
+        "token": "chart-5"
+      }
+    ],
+    "preset": "graphite",
+    "text": 6.865869221159854
+  },
+  {
+    "dark": true,
+    "marks": [
+      {
+        "ratio": 9.776463046579218,
+        "token": "chart-1"
+      },
+      {
+        "ratio": 7.159998657870076,
+        "token": "chart-2"
+      },
+      {
+        "ratio": 9.978136235792082,
+        "token": "chart-4"
+      },
+      {
+        "ratio": 11.249938035865016,
+        "token": "chart-5"
+      }
+    ],
+    "preset": "graphite",
+    "text": 8.628386557709579
+  },
+  {
+    "dark": false,
+    "marks": [
+      {
+        "ratio": 6.702062644872232,
+        "token": "chart-1"
+      },
+      {
+        "ratio": 6.067841515142092,
+        "token": "chart-2"
+      },
+      {
+        "ratio": 6.301546112221659,
+        "token": "chart-4"
+      },
+      {
+        "ratio": 6.054788954570402,
+        "token": "chart-5"
+      }
+    ],
+    "preset": "pine",
+    "text": 6.865869221159854
+  },
+  {
+    "dark": true,
+    "marks": [
+      {
+        "ratio": 9.552528444197272,
+        "token": "chart-1"
+      },
+      {
+        "ratio": 7.221678075371403,
+        "token": "chart-2"
+      },
+      {
+        "ratio": 10.064092345587726,
+        "token": "chart-4"
+      },
+      {
+        "ratio": 11.34685001282684,
+        "token": "chart-5"
+      }
+    ],
+    "preset": "pine",
+    "text": 8.628386557709579
+  },
+  {
+    "dark": false,
+    "marks": [
+      {
+        "ratio": 7.820257148366056,
+        "token": "chart-1"
+      },
+      {
+        "ratio": 5.977426178750459,
+        "token": "chart-2"
+      },
+      {
+        "ratio": 6.20764840409891,
+        "token": "chart-4"
+      },
+      {
+        "ratio": 5.9645681110065585,
+        "token": "chart-5"
+      }
+    ],
+    "preset": "iris",
+    "text": 6.865869221159854
+  },
+  {
+    "dark": true,
+    "marks": [
+      {
+        "ratio": 7.800697675770162,
+        "token": "chart-1"
+      },
+      {
+        "ratio": 7.359658405246805,
+        "token": "chart-2"
+      },
+      {
+        "ratio": 10.256381003050386,
+        "token": "chart-4"
+      },
+      {
+        "ratio": 11.563647562021945,
+        "token": "chart-5"
+      }
+    ],
+    "preset": "iris",
+    "text": 8.628386557709579
+  }
+]
