@@ -1,0 +1,8 @@
+
+> tenboards@0.1.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --routes /dashboard/productivity --preset graphite --output screenshots/v02-006/presets/graphite
+
+PASS /dashboard/productivity light/desktop direct
+PASS /dashboard/productivity light/mobile direct
+PASS /dashboard/productivity dark/desktop direct
+PASS /dashboard/productivity dark/mobile direct

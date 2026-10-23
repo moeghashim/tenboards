@@ -1,0 +1,83 @@
+{
+  "baseURL": "https://115dd307-tenboards.mohanadgh.workers.dev/",
+  "preset": "default",
+  "timezone": "Pacific/Kiritimati",
+  "reload": true,
+  "interactions": false,
+  "results": [
+    {
+      "route": "/dashboard/productivity",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_productivity-light-desktop.png",
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/productivity",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_productivity-light-desktop-refresh.png",
+      "phase": "refresh",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/productivity",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_productivity-light-mobile.png",
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": [
+        "page.waitForLoadState: Timeout 30000ms exceeded."
+      ]
+    },
+    {
+      "route": "/dashboard/productivity",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_productivity-light-mobile-refresh.png",
+      "phase": "refresh",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/productivity",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_productivity-dark-desktop.png",
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/productivity",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_productivity-dark-desktop-refresh.png",
+      "phase": "refresh",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/productivity",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_productivity-dark-mobile.png",
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/productivity",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_productivity-dark-mobile-refresh.png",
+      "phase": "refresh",
+      "interactionNotes": [],
+      "errors": []
+    }
+  ]
+}

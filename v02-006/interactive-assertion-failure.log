@@ -1,0 +1,12 @@
+
+> tenboards@0.1.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --routes /dashboard/productivity --interactions --output screenshots/v02-006/interactive
+
+FAIL /dashboard/productivity light/desktop direct
+Task period did not select Tomorrow.
+FAIL /dashboard/productivity light/mobile direct
+Task period did not select Tomorrow.
+FAIL /dashboard/productivity dark/desktop direct
+Task period did not select Tomorrow.
+FAIL /dashboard/productivity dark/mobile direct
+Task period did not select Tomorrow.

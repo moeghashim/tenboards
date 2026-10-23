@@ -1,0 +1,28 @@
+
+> tenboards@0.1.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url https://d12e4d81-tenboards.mohanadgh.workers.dev --routes /dashboard/analytics,/dashboard/analytics-v1 --interactions --output screenshots/v02-005/interactive
+
+FAIL /dashboard/analytics light/desktop direct
+locator.waitFor: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('.recharts-yAxis').getByText('Newsletter', { exact: true }) to be visible[22m
+
+FAIL /dashboard/analytics light/mobile direct
+locator.waitFor: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('.recharts-yAxis').getByText('Newsletter', { exact: true }) to be visible[22m
+
+FAIL /dashboard/analytics dark/desktop direct
+locator.waitFor: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('.recharts-yAxis').getByText('Newsletter', { exact: true }) to be visible[22m
+
+FAIL /dashboard/analytics dark/mobile direct
+locator.waitFor: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('.recharts-yAxis').getByText('Newsletter', { exact: true }) to be visible[22m
+
+PASS /dashboard/analytics-v1 light/desktop direct
+PASS /dashboard/analytics-v1 light/mobile direct
+PASS /dashboard/analytics-v1 dark/desktop direct
+PASS /dashboard/analytics-v1 dark/mobile direct

@@ -1,0 +1,180 @@
+
+> tenboards@0.1.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://127.0.0.1:3001 --routes /dashboard/productivity --output screenshots/v02-006/before-timezone
+
+FAIL /dashboard/productivity light/desktop direct
+page: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <MatchImpl routeId="/(main)/da...">
+      <MatchInnerImpl match={{id:"/(main...", ...}}>
+        <Lazy>
+          <Page>
+            <div className="grid gap-6..." data-tsd-source="/src/route...">
+              <section className="lg:col-span-9" data-tsd-source="/src/route...">
+                <div className="flex flex-..." data-tsd-source="/src/route...">
+                  <div>
+                  <SummaryCards>
+                  <TasksSection>
+                  <ProjectsSection data-tsd-source="/src/route...">
+                    <section className="flex flex-..." data-tsd-source="/src/route...">
+                      <div>
+                      <div className="grid gap-4..." data-tsd-source="/src/route...">
+                        <Card className="shadow-xs" data-tsd-source="/src/route...">
+                          <div data-slot="card" data-size="default" className={"group/ca..."} ...>
+                            <CardHeader>
+                            <CardContent>
+                            <CardFooter className="py-2.5" data-tsd-source="/src/route...">
+                              <div data-slot="card-footer" className="flex items..." data-tsd-source="/src/route...">
+                                <span
+                                  className="text-muted-foreground"
+                                  data-tsd-source="/src/routes/(main)/dashboard/productivity/-components/projects-sect..."
+                                >
++                                 Due Nov 1
+-                                 Due Nov 2
+                        ...
+                  ...
+              ...
+
+FAIL /dashboard/productivity light/mobile direct
+page: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <MatchImpl routeId="/(main)/da...">
+      <MatchInnerImpl match={{id:"/(main...", ...}}>
+        <Lazy>
+          <Page>
+            <div className="grid gap-6..." data-tsd-source="/src/route...">
+              <section className="lg:col-span-9" data-tsd-source="/src/route...">
+                <div className="flex flex-..." data-tsd-source="/src/route...">
+                  <div>
+                  <SummaryCards>
+                  <TasksSection>
+                  <ProjectsSection data-tsd-source="/src/route...">
+                    <section className="flex flex-..." data-tsd-source="/src/route...">
+                      <div>
+                      <div className="grid gap-4..." data-tsd-source="/src/route...">
+                        <Card className="shadow-xs" data-tsd-source="/src/route...">
+                          <div data-slot="card" data-size="default" className={"group/ca..."} ...>
+                            <CardHeader>
+                            <CardContent>
+                            <CardFooter className="py-2.5" data-tsd-source="/src/route...">
+                              <div data-slot="card-footer" className="flex items..." data-tsd-source="/src/route...">
+                                <span
+                                  className="text-muted-foreground"
+                                  data-tsd-source="/src/routes/(main)/dashboard/productivity/-components/projects-sect..."
+                                >
++                                 Due Nov 1
+-                                 Due Nov 2
+                        ...
+                  ...
+              ...
+
+FAIL /dashboard/productivity dark/desktop direct
+page: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <MatchImpl routeId="/(main)/da...">
+      <MatchInnerImpl match={{id:"/(main...", ...}}>
+        <Lazy>
+          <Page>
+            <div className="grid gap-6..." data-tsd-source="/src/route...">
+              <section className="lg:col-span-9" data-tsd-source="/src/route...">
+                <div className="flex flex-..." data-tsd-source="/src/route...">
+                  <div>
+                  <SummaryCards>
+                  <TasksSection>
+                  <ProjectsSection data-tsd-source="/src/route...">
+                    <section className="flex flex-..." data-tsd-source="/src/route...">
+                      <div>
+                      <div className="grid gap-4..." data-tsd-source="/src/route...">
+                        <Card className="shadow-xs" data-tsd-source="/src/route...">
+                          <div data-slot="card" data-size="default" className={"group/ca..."} ...>
+                            <CardHeader>
+                            <CardContent>
+                            <CardFooter className="py-2.5" data-tsd-source="/src/route...">
+                              <div data-slot="card-footer" className="flex items..." data-tsd-source="/src/route...">
+                                <span
+                                  className="text-muted-foreground"
+                                  data-tsd-source="/src/routes/(main)/dashboard/productivity/-components/projects-sect..."
+                                >
++                                 Due Nov 1
+-                                 Due Nov 2
+                        ...
+                  ...
+              ...
+
+FAIL /dashboard/productivity dark/mobile direct
+page: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <MatchImpl routeId="/(main)/da...">
+      <MatchInnerImpl match={{id:"/(main...", ...}}>
+        <Lazy>
+          <Page>
+            <div className="grid gap-6..." data-tsd-source="/src/route...">
+              <section className="lg:col-span-9" data-tsd-source="/src/route...">
+                <div className="flex flex-..." data-tsd-source="/src/route...">
+                  <div>
+                  <SummaryCards>
+                  <TasksSection>
+                  <ProjectsSection data-tsd-source="/src/route...">
+                    <section className="flex flex-..." data-tsd-source="/src/route...">
+                      <div>
+                      <div className="grid gap-4..." data-tsd-source="/src/route...">
+                        <Card className="shadow-xs" data-tsd-source="/src/route...">
+                          <div data-slot="card" data-size="default" className={"group/ca..."} ...>
+                            <CardHeader>
+                            <CardContent>
+                            <CardFooter className="py-2.5" data-tsd-source="/src/route...">
+                              <div data-slot="card-footer" className="flex items..." data-tsd-source="/src/route...">
+                                <span
+                                  className="text-muted-foreground"
+                                  data-tsd-source="/src/routes/(main)/dashboard/productivity/-components/projects-sect..."
+                                >
++                                 Due Nov 1
+-                                 Due Nov 2
+                        ...
+                  ...
+              ...
+

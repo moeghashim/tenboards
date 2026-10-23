@@ -1,0 +1,12 @@
+
+> tenboards@0.1.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://127.0.0.1:3001 --routes /dashboard/productivity --reload --output screenshots/v02-006/after-timezone
+
+PASS /dashboard/productivity light/desktop direct
+PASS /dashboard/productivity light/desktop refresh
+PASS /dashboard/productivity light/mobile direct
+PASS /dashboard/productivity light/mobile refresh
+PASS /dashboard/productivity dark/desktop direct
+PASS /dashboard/productivity dark/desktop refresh
+PASS /dashboard/productivity dark/mobile direct
+PASS /dashboard/productivity dark/mobile refresh

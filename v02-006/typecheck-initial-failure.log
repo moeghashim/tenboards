@@ -1,0 +1,6 @@
+
+> tenboards@0.1.0 typecheck
+> tsc --noEmit
+
+src/routes/(main)/dashboard/productivity/-components/calendar-panel.tsx(17,54): error TS2322: Type '{ locale: Locale; ref: RefObject<HTMLButtonElement | null>; day: CalendarDay; modifiers: Modifiers; disabled?: boolean | undefined; ... 286 more ...; onTransitionStartCapture?: TransitionEventHandler<...> | undefined; }' is not assignable to type 'IntrinsicAttributes & { day: CalendarDay; modifiers: Modifiers; } & ButtonHTMLAttributes<HTMLButtonElement> & { ...; }'.
+  Property 'ref' does not exist on type 'IntrinsicAttributes & { day: CalendarDay; modifiers: Modifiers; } & ButtonHTMLAttributes<HTMLButtonElement> & { ...; }'.

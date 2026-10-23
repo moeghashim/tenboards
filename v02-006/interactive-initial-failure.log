@@ -1,0 +1,24 @@
+
+> tenboards@0.1.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --routes /dashboard/productivity --interactions --output screenshots/v02-006/interactive
+
+FAIL /dashboard/productivity light/desktop direct
+locator.press: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('button', { name: 'Wednesday, 4 November 2026', exact: true })[22m
+
+FAIL /dashboard/productivity light/mobile direct
+locator.press: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('button', { name: 'Wednesday, 4 November 2026', exact: true })[22m
+
+FAIL /dashboard/productivity dark/desktop direct
+locator.press: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('button', { name: 'Wednesday, 4 November 2026', exact: true })[22m
+
+FAIL /dashboard/productivity dark/mobile direct
+locator.press: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('button', { name: 'Wednesday, 4 November 2026', exact: true })[22m
+

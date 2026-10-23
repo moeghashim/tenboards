@@ -1,0 +1,59 @@
+{
+  "baseURL": "http://127.0.0.1:3000/",
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": false,
+  "interactions": false,
+  "results": [
+    {
+      "route": "/dashboard/productivity",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_productivity-light-desktop.png",
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/productivity",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_productivity-light-mobile.png",
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/productivity",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_productivity-dark-desktop.png",
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": [
+        "request: https://fonts.gstatic.com/s/notosans/v42/o-0bIpQlx3QUlC5A4PNB6Ryti20_6n1iPHjc5a7du3mhPy0.woff2 net::ERR_TIMED_OUT",
+        "console: Failed to load resource: net::ERR_TIMED_OUT",
+        "request: https://fonts.gstatic.com/s/notoserif/v33/ga6daw1J5X9T9RW6j9bNVls-hfgvz8JcMofYTYf6D33WsNFH.woff2 net::ERR_TIMED_OUT",
+        "console: Failed to load resource: net::ERR_TIMED_OUT",
+        "request: https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2 net::ERR_TIMED_OUT",
+        "console: Failed to load resource: net::ERR_TIMED_OUT",
+        "request: https://fonts.gstatic.com/s/playfairdisplay/v40/nuFiD-vYSZviVYUb_rj3ij__anPXDTzYgEM86xQ.woff2 net::ERR_TIMED_OUT",
+        "console: Failed to load resource: net::ERR_TIMED_OUT",
+        "request: https://fonts.gstatic.com/s/figtree/v9/_Xms-HUzqDCFdgfMm4S9DaRvzig.woff2 net::ERR_TIMED_OUT",
+        "console: Failed to load resource: net::ERR_TIMED_OUT",
+        "request: https://fonts.gstatic.com/l/font?kit=ijw7s572Xtc6ZYQws9YVwllKVG8qX1oyOymuFpnbyC_Zh8OeeDPizkB8SYxlRpb6sgI&skey=d896b51311bb3f4e&v=v21 net::ERR_TIMED_OUT",
+        "console: Failed to load resource: net::ERR_TIMED_OUT",
+        "page.waitForFunction: Timeout 30000ms exceeded."
+      ]
+    },
+    {
+      "route": "/dashboard/productivity",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_productivity-dark-mobile.png",
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    }
+  ]
+}

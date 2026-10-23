@@ -1,0 +1,109 @@
+{
+  "baseURL": "https://d12e4d81-tenboards.mohanadgh.workers.dev/",
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": false,
+  "interactions": true,
+  "results": [
+    {
+      "route": "/dashboard/analytics",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_analytics-light-desktop-interactive.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Last 7 days selected",
+        "Campaigns displays Spring Launch / Newsletter / Retargeting / Brand Search / Partners"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_analytics-light-mobile-interactive.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Last 7 days selected",
+        "Campaigns displays Spring Launch / Newsletter / Retargeting / Brand Search / Partners"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_analytics-dark-desktop-interactive.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Last 7 days selected",
+        "Campaigns displays Spring Launch / Newsletter / Retargeting / Brand Search / Partners"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_analytics-dark-mobile-interactive.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Last 7 days selected",
+        "Campaigns displays Spring Launch / Newsletter / Retargeting / Brand Search / Partners"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics-v1",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_analytics-v1-light-desktop-interactive.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Enterprise + Renewals filter count 2",
+        "Momentum selected",
+        "Risk ascending: Soylent Foods / 31 first"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics-v1",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_analytics-v1-light-mobile-interactive.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Enterprise + Renewals filter count 2",
+        "Momentum selected",
+        "Risk ascending: Soylent Foods / 31 first"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics-v1",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_analytics-v1-dark-desktop-interactive.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Enterprise + Renewals filter count 2",
+        "Momentum selected",
+        "Risk ascending: Soylent Foods / 31 first"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics-v1",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_analytics-v1-dark-mobile-interactive.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Enterprise + Renewals filter count 2",
+        "Momentum selected",
+        "Risk ascending: Soylent Foods / 31 first"
+      ],
+      "errors": []
+    }
+  ]
+}

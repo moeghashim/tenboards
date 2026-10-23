@@ -1,0 +1,17 @@
+
+> tenboards@0.1.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url https://d12e4d81-tenboards.mohanadgh.workers.dev --routes /dashboard/analytics,/dashboard/analytics-v1 --interactions --output screenshots/v02-005/interactive
+
+FAIL /dashboard/analytics light/desktop direct
+Analytics period did not select Last 7 days.
+FAIL /dashboard/analytics light/mobile direct
+Analytics period did not select Last 7 days.
+FAIL /dashboard/analytics dark/desktop direct
+Analytics period did not select Last 7 days.
+FAIL /dashboard/analytics dark/mobile direct
+Analytics period did not select Last 7 days.
+FAIL /dashboard/analytics-v1 light/desktop direct
+locator.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('combobox', { name: /Risk view/ })[22m
+

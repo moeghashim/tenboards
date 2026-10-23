@@ -1,0 +1,69 @@
+{
+  "baseURL": "http://127.0.0.1:3000/",
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": false,
+  "interactions": true,
+  "results": [
+    {
+      "route": "/dashboard/productivity",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_productivity-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_productivity-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Space completes first task",
+        "Tomorrow / Planning selected",
+        "Enter navigates to November; ArrowRight + Enter selects November 5",
+        "Focus Start retains existing 90:00 placeholder; Task period menu open"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/productivity",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_productivity-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_productivity-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Space completes first task",
+        "Tomorrow / Planning selected",
+        "Enter navigates to November; ArrowRight + Enter selects November 5",
+        "Focus Start retains existing 90:00 placeholder; Task period menu open"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/productivity",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_productivity-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_productivity-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Space completes first task",
+        "Tomorrow / Planning selected",
+        "Enter navigates to November; ArrowRight + Enter selects November 5",
+        "Focus Start retains existing 90:00 placeholder; Task period menu open"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/productivity",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_productivity-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_productivity-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Space completes first task",
+        "Tomorrow / Planning selected",
+        "Enter navigates to November; ArrowRight + Enter selects November 5",
+        "Focus Start retains existing 90:00 placeholder; Task period menu open"
+      ],
+      "errors": []
+    }
+  ]
+}

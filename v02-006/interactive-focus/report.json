@@ -1,0 +1,53 @@
+{
+  "baseURL": "http://127.0.0.1:3000/",
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": false,
+  "interactions": true,
+  "results": [
+    {
+      "route": "/dashboard/productivity",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_productivity-light-desktop-interactive.png",
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": [
+        "Calendar arrow focus: Wednesday, 4 November 2026, selected"
+      ]
+    },
+    {
+      "route": "/dashboard/productivity",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_productivity-light-mobile-interactive.png",
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": [
+        "Calendar arrow focus: Wednesday, 4 November 2026, selected"
+      ]
+    },
+    {
+      "route": "/dashboard/productivity",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_productivity-dark-desktop-interactive.png",
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": [
+        "Calendar arrow focus: Wednesday, 4 November 2026, selected"
+      ]
+    },
+    {
+      "route": "/dashboard/productivity",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_productivity-dark-mobile-interactive.png",
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": [
+        "Calendar arrow focus: Wednesday, 4 November 2026, selected"
+      ]
+    }
+  ]
+}

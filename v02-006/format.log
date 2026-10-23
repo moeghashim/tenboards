@@ -1,0 +1,147 @@
+src/routes/(main)/dashboard/productivity/-components/projects-section.tsx:79:17 lint/complexity/noUselessFragments  FIXABLE  ━━━━━━━━━━
+
+  i This fragment is unnecessary.
+  
+    77 │             <SectionHeader
+    78 │               title={
+  > 79 │                 <>
+       │                 ^^
+  > 80 │                   <div className="flex items-center gap-2">
+  > 81 │                     <project.icon className="text-muted-foreground size-4" />
+  > 82 │                     <span>{project.title}</span>
+  > 83 │                   </div>
+  > 84 │                 </>
+       │                 ^^^
+    85 │               }
+    86 │               actions={
+  
+  i A fragment is redundant if it contains only one child, or if it is the child of a html element, and is not a keyed fragment.
+  
+  i Unsafe fix: Remove the Fragment
+  
+     76  76 │             <Card key={project.title} density="compact">
+     77  77 │               <SectionHeader
+     78     │ - ··············title={
+     79     │ - ················<>
+     80     │ - ··················<div·className="flex·items-center·gap-2">
+         78 │ + ··············title={<div·className="flex·items-center·gap-2">
+     81  79 │                       <project.icon className="text-muted-foreground size-4" />
+     82  80 │                       <span>{project.title}</span>
+     83     │ - ··················</div>
+     84     │ - ················</>
+     85     │ - ··············}
+         81 │ + ··················</div>}
+     86  82 │                 actions={
+     87  83 │                   <>
+  
+
+src/routes/(main)/dashboard/productivity/-components/projects-section.tsx:87:17 lint/complexity/noUselessFragments  FIXABLE  ━━━━━━━━━━
+
+  i This fragment is unnecessary.
+  
+    85 │               }
+    86 │               actions={
+  > 87 │                 <>
+       │                 ^^
+  > 88 │                   <Badge variant="outline" className="text-xs">
+  > 89 │                     {project.status}
+  > 90 │                   </Badge>
+  > 91 │                 </>
+       │                 ^^^
+    92 │               }
+    93 │               level={3}
+  
+  i A fragment is redundant if it contains only one child, or if it is the child of a html element, and is not a keyed fragment.
+  
+  i Unsafe fix: Remove the Fragment
+  
+     84  84 │                   </>
+     85  85 │                 }
+     86     │ - ··············actions={
+     87     │ - ················<>
+     88     │ - ··················<Badge·variant="outline"·className="text-xs">
+         86 │ + ··············actions={<Badge·variant="outline"·className="text-xs">
+     89  87 │                       {project.status}
+     90     │ - ··················</Badge>
+     91     │ - ················</>
+     92     │ - ··············}
+         88 │ + ··················</Badge>}
+     93  89 │                 level={3}
+     94  90 │               />
+  
+
+src/routes/(main)/dashboard/productivity/-components/recent-notes-card.tsx:28:11 lint/complexity/noUselessFragments  FIXABLE  ━━━━━━━━━━
+
+  i This fragment is unnecessary.
+  
+    26 │         title="Recent Notes"
+    27 │         actions={
+  > 28 │           <>
+       │           ^^
+  > 29 │             <Button variant="ghost" size="sm" className="text-muted-foreground">
+  > 30 │               View all
+  > 31 │             </Button>
+  > 32 │           </>
+       │           ^^^
+    33 │         }
+    34 │       />
+  
+  i A fragment is redundant if it contains only one child, or if it is the child of a html element, and is not a keyed fragment.
+  
+  i Unsafe fix: Remove the Fragment
+  
+    25 25 │         <SectionHeader
+    26 26 │           title="Recent Notes"
+    27    │ - ········actions={
+    28    │ - ··········<>
+    29    │ - ············<Button·variant="ghost"·size="sm"·className="text-muted-foreground">
+       27 │ + ········actions={<Button·variant="ghost"·size="sm"·className="text-muted-foreground">
+    30 28 │                 View all
+    31    │ - ············</Button>
+    32    │ - ··········</>
+    33    │ - ········}
+       29 │ + ············</Button>}
+    34 30 │         />
+    35 31 │         <CardContent className="flex flex-col gap-4">
+  
+
+src/routes/(main)/dashboard/productivity/-components/weekly-summary-card.tsx:13:11 lint/complexity/noUselessFragments  FIXABLE  ━━━━━━━━━━
+
+  i This fragment is unnecessary.
+  
+    11 │         title="This Week"
+    12 │         actions={
+  > 13 │           <>
+       │           ^^
+  > 14 │             <Button variant="ghost" size="sm" className="text-muted-foreground">
+  > 15 │               View all
+  > 16 │             </Button>
+  > 17 │           </>
+       │           ^^^
+    18 │         }
+    19 │       />
+  
+  i A fragment is redundant if it contains only one child, or if it is the child of a html element, and is not a keyed fragment.
+  
+  i Unsafe fix: Remove the Fragment
+  
+    10 10 │         <SectionHeader
+    11 11 │           title="This Week"
+    12    │ - ········actions={
+    13    │ - ··········<>
+    14    │ - ············<Button·variant="ghost"·size="sm"·className="text-muted-foreground">
+       12 │ + ········actions={<Button·variant="ghost"·size="sm"·className="text-muted-foreground">
+    15 13 │                 View all
+    16    │ - ············</Button>
+    17    │ - ··········</>
+    18    │ - ········}
+       14 │ + ············</Button>}
+    19 15 │         />
+    20 16 │         <CardContent className="flex flex-col gap-4">
+  
+
+Skipped 8 suggested fixes.
+If you wish to apply the suggested (unsafe) fixes, use the command biome check --write --unsafe
+
+Checked 11 files in 646ms. Fixed 8 files.
+Found 4 infos.

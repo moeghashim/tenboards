@@ -1,0 +1,20 @@
+
+> tenboards@0.1.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url https://c2ec54fc-tenboards.mohanadgh.workers.dev --routes /dashboard/default,/dashboard/productivity --reload --output screenshots/v02-006/workers
+
+PASS /dashboard/default light/desktop direct
+PASS /dashboard/default light/desktop refresh
+PASS /dashboard/default light/mobile direct
+PASS /dashboard/default light/mobile refresh
+PASS /dashboard/default dark/desktop direct
+PASS /dashboard/default dark/desktop refresh
+PASS /dashboard/default dark/mobile direct
+PASS /dashboard/default dark/mobile refresh
+PASS /dashboard/productivity light/desktop direct
+PASS /dashboard/productivity light/desktop refresh
+PASS /dashboard/productivity light/mobile direct
+PASS /dashboard/productivity light/mobile refresh
+PASS /dashboard/productivity dark/desktop direct
+PASS /dashboard/productivity dark/desktop refresh
+PASS /dashboard/productivity dark/mobile direct
+PASS /dashboard/productivity dark/mobile refresh

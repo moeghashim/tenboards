@@ -1,0 +1,12 @@
+
+> tenboards@0.1.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --routes /dashboard/productivity --interactions --output screenshots/v02-006/interactive-focus
+
+FAIL /dashboard/productivity light/desktop direct
+Calendar arrow focus: Wednesday, 4 November 2026, selected
+FAIL /dashboard/productivity light/mobile direct
+Calendar arrow focus: Wednesday, 4 November 2026, selected
+FAIL /dashboard/productivity dark/desktop direct
+Calendar arrow focus: Wednesday, 4 November 2026, selected
+FAIL /dashboard/productivity dark/mobile direct
+Calendar arrow focus: Wednesday, 4 November 2026, selected

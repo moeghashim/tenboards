@@ -1,0 +1,13 @@
+
+> tenboards@0.1.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url https://115dd307-tenboards.mohanadgh.workers.dev --routes /dashboard/productivity --timezone Pacific/Kiritimati --reload --output screenshots/v02-006/workers-kiritimati
+
+PASS /dashboard/productivity light/desktop direct
+PASS /dashboard/productivity light/desktop refresh
+FAIL /dashboard/productivity light/mobile direct
+page.waitForLoadState: Timeout 30000ms exceeded.
+PASS /dashboard/productivity light/mobile refresh
+PASS /dashboard/productivity dark/desktop direct
+PASS /dashboard/productivity dark/desktop refresh
+PASS /dashboard/productivity dark/mobile direct
+PASS /dashboard/productivity dark/mobile refresh
