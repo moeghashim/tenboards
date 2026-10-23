@@ -1,0 +1,25 @@
+scripts/screenshot-interactions.ts:56:32 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━
+
+  ! Unnecessary optional chaining.
+  
+    54 │       await surface.getByRole("button", { name: "Back to conversations", exact: true }).press("Enter");
+    55 │       await surface
+  > 56 │         .waitForFunction(() => document.activeElement?.hasAttribute("data-conversation-id"))
+       │                                ^^^^^^^^^^^^^^^^^^^^^^
+    57 │         .catch(() => {
+    58 │           throw new Error("Mobile back focus return failed");
+  
+  i Replace ?. with ..
+  
+    54 │       await surface.getByRole("button", { name: "Back to conversations", exact: true }).press("Enter");
+    55 │       await surface
+  > 56 │         .waitForFunction(() => document.activeElement?.hasAttribute("data-conversation-id"))
+       │                                                      ^^
+    57 │         .catch(() => {
+    58 │           throw new Error("Mobile back focus return failed");
+  
+  i The receiver is guaranteed to be non-nullish.
+  
+
+Checked 2 files in 465ms. Fixed 2 files.
+Found 1 warning.

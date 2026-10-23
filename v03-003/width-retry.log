@@ -1,0 +1,8 @@
+
+> tenboards@0.2.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://localhost:3003 --routes /dashboard/chat --interactions --output screenshots/v03-003/width-retry
+
+PASS /dashboard/chat light/desktop direct
+PASS /dashboard/chat light/mobile direct
+PASS /dashboard/chat dark/desktop direct
+PASS /dashboard/chat dark/mobile direct

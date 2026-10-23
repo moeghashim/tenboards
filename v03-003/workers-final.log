@@ -1,0 +1,20 @@
+
+> tenboards@0.2.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url https://ac198a98-tenboards.mohanadgh.workers.dev --routes /chat,/dashboard/chat --interactions --output screenshots/v03-003/workers-final
+
+PASS /chat light/desktop direct
+PASS /chat light/mobile direct
+PASS /chat dark/desktop direct
+PASS /chat dark/mobile direct
+PASS /dashboard/chat light/desktop direct
+FAIL /dashboard/chat light/mobile direct
+locator.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('menuitem', { name: 'View profile', exact: true })[22m
+[2m    - locator resolved to <div tabindex="-1" role="menuitem" id="base-ui-_r_d_" data-variant="default" data-slot="dropdown-menu-item" class="group/dropdown-menu-item relative flex cursor-default items-center gap-1.5 rounded-md px-1.5 py-1 text-sm outline-hidden select-none focus:bg-accent focus:text-accent-foreground not-data-[variant=destructive]:focus:**:text-accent-foreground data-inset:pl-7 data-[variant=destructive]:text-destructive data-[variant=destructive]:focus:bg-destructive/10 data-[variant=destructive]:focus:tex…>…</div>[22m
+[2m  - attempting click action[22m
+[2m    - waiting for element to be visible, enabled and stable[22m
+[2m  - element was detached from the DOM, retrying[22m
+
+PASS /dashboard/chat dark/desktop direct
+PASS /dashboard/chat dark/mobile direct

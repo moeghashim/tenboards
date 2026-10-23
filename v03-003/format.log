@@ -1,0 +1,26 @@
+src/routes/(main)/chat/-components/chat.tsx:50:7 lint/a11y/noStaticElementInteractions ━━━━━━━━━━━━━
+
+  × Unexpected event handler on static element.
+  
+    48 │   return (
+    49 │     <>
+  > 50 │       <div
+       │       ^^^^
+  > 51 │         ref={container}
+        ...
+  > 67 │         }
+  > 68 │       >
+       │       ^
+    69 │         <ChatConversationList
+    70 │           conversations={conversations}
+  
+  i Static elements should not be interactive. To add interactivity such as a mouse or key event listener to a static element, give the element an appropriate role value.
+  
+
+Checked 10 files in 499ms. Fixed 6 files.
+Found 1 error.
+check ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Some errors were emitted while running checks.
+  
+

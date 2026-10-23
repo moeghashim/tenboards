@@ -1,0 +1,16 @@
+
+> tenboards@0.2.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://localhost:3003 --routes /chat,/dashboard/chat --interactions --output screenshots/v03-003/interactions-final
+
+PASS /chat light/desktop direct
+FAIL /chat light/mobile direct
+page.waitForFunction: Timeout 30000ms exceeded.
+PASS /chat dark/desktop direct
+FAIL /chat dark/mobile direct
+page.waitForFunction: Timeout 30000ms exceeded.
+PASS /dashboard/chat light/desktop direct
+FAIL /dashboard/chat light/mobile direct
+frame.waitForFunction: Timeout 30000ms exceeded.
+PASS /dashboard/chat dark/desktop direct
+FAIL /dashboard/chat dark/mobile direct
+frame.waitForFunction: Timeout 30000ms exceeded.

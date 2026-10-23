@@ -1,0 +1,8 @@
+Initial app/test findings, corrected before final acceptance:
+Base UI profile item onSelect did not open profile: locator.waitFor: Timeout 30000ms exceeded (Close profile). Changed to onClick.
+Mobile focus with visibility transition: page.waitForFunction: Timeout 30000ms exceeded. Keep slide transform and inert; remove redundant visibility transition; focus after render with preventScroll.
+Initial onKeyDown div Biome: Unexpected event handler on static element. A role=group trial requested fieldset. Final uses a scoped native key listener with cleanup, preserving semantic DOM.
+Before capture: external fonts.googleapis.com net::ERR_TIMED_OUT (Inter, Noto Sans, Nunito Sans, Figtree, Roboto, Raleway); four-state pre-edit Workers retry passed.
+One final dev iframe capture: page.waitForLoadState: Timeout 30000ms exceeded; four-state width-retry verifies route.
+
+Final Workers iframe light/mobile interaction retry: locator.click: Element is not attached to the DOM (View profile). Test reopened before closing sheet completed; explicit hidden-state wait added. workers-retry report passes 4/4. Dev width capture dark/desktop: page.waitForLoadState: Timeout 30000ms exceeded (networkidle); width-retry passes 4/4. Contact-sheet helper command initially failed: zsh:1: command not found: python; rerun with python3 passed.
