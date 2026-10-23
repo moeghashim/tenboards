@@ -2,7 +2,7 @@
 
 An MIT-licensed dashboard template built with TanStack Start, React 19, TypeScript, Tailwind CSS v4, and shadcn/ui on Base UI.
 
-The initial import preserves the full upstream screen catalog and mock data. The design-system and shell upgrade is planned in [PLAN.md](PLAN.md) and [the v0.1 task breakdown](dev/milestones/v0.1-design-system-shell/README.md). Current screens are demonstrations; database and authentication integrations are later milestones.
+The initial import preserves the full upstream screen catalog and mock data. The v0.1 branch implements the design system and shell described in [PLAN.md](PLAN.md) and [the v0.1 task breakdown](dev/milestones/v0.1-design-system-shell/README.md); final acceptance and merge status are tracked there. Current screens are demonstrations; database and authentication integrations are later milestones.
 
 ## Run locally
 
@@ -49,9 +49,9 @@ The unmodified import passed Biome with one existing `noArrayIndexKey` warning i
 
 **Live demo:** [tenboards.mohanadgh.workers.dev](https://tenboards.mohanadgh.workers.dev/dashboard/default).
 
-**Task 002 preview:** [version 9913d738](https://9913d738-tenboards.mohanadgh.workers.dev/dashboard/default), with the reusable [pr-002 alias](https://pr-002-tenboards.mohanadgh.workers.dev/dashboard/default).
+**Integrated shell preview:** [pr-012](https://pr-012-tenboards.mohanadgh.workers.dev/dashboard/default). The version-specific URL is recorded in the task 012 PR; this alias follows subsequent review uploads.
 
-The Worker serves the existing mock-data demo. It has no database, authentication service, or secret bindings. Its only generated binding is `ASSETS` for static files. This first deployment comes from task 002's review branch; after merge, redeploy from `main`.
+The Worker serves the existing mock-data demo. It has no database, authentication service, or secret bindings. Its only generated binding is `ASSETS` for static files. Production is redeployed from `main` by the reviewer after approved merges. Preview uploads do not change live traffic.
 
 The build uses Nitro's `cloudflare-module` preset. `wrangler.jsonc` owns the Worker name, compatibility date, and public live/preview URL settings. Nitro generates `.output/server/wrangler.json` and `.wrangler/deploy/config.json`, including the server entry, assets binding, module rules, and Node compatibility flag. Do not hand-edit or commit generated output, or pass the root config explicitly to deploy (Wrangler follows Nitro's generated config redirect).
 
@@ -86,11 +86,11 @@ Install the approved browser tooling once with `npx playwright install chromium`
 ```sh
 npm run screenshots
 npm run screenshots -- --routes /dashboard/default,/auth/v1/login --output screenshots/before
-npm run screenshots -- --base-url https://pr-004-tenboards.mohanadgh.workers.dev --output screenshots/after
+npm run screenshots -- --base-url https://pr-012-tenboards.mohanadgh.workers.dev --output screenshots/after
 npm run screenshots -- --list
 ```
 
-The default captures every retained route in light/dark at desktop 1440×900 and mobile 390×844. `scripts/screenshot-routes.ts` is an explicit inventory checked against generated route metadata; missing/stale routes and unknown subsets fail before launch. The dashboard splat uses `/dashboard/capture-not-found` to exercise its not-found state; there are no entity-ID routes needing demo records. Redirect entries are captured at their destination. `--preset` selects a valid preset for the same four-state matrix.
+The default captures every retained route in light/dark at desktop 1440×900 and mobile 390×844. `src/navigation/route-catalog.ts` is the shared 38-route inventory, re-exported by `scripts/screenshot-routes.ts` and checked against generated route metadata; missing/stale routes and unknown subsets fail before launch. The dashboard splat uses `/dashboard/capture-not-found` to exercise its not-found state; there are no entity-ID routes needing demo records. Redirect entries are captured at their destination. `--preset` selects a valid preset for the same four-state matrix.
 
 Captures wait for React hydration, fonts, network idle, images, JS chart settling, and stable content. Reduced motion is emulated and screenshot animations are disabled. Console errors, page errors, failed requests, unexpected HTTP status, and capture failures are recorded in `report.json` and cause a nonzero exit. The hydration check uses React's DOM binding marker; revisit it if React's renderer changes. Date-dependent demo data is not frozen, so capture before/after close together and note changing data in reviews.
 
@@ -104,3 +104,21 @@ The original tenboards mark pairs a solid upright with an open board, reading as
 `public/brand/mark.svg` and `wordmark.svg` are vector masters (the wordmark outlines the bundled SIL-OFL Geist face). `favicon.svg`, ICO/16/32px PNGs, the 180px touch icon, and 192/512px app icons share the same original silhouette. `public/brand/og.svg` is the 1200×630 social-image source for `public/og.png`. PNG/ICO derivatives were rendered locally from these authored vectors, with no stock or third-party logo. Preserve the font package license when redistributing its font files.
 
 Social metadata uses the canonical production `/og.png` URL; the asset becomes live when the reviewer deploys this merged layer. For PR review, inspect `/og.png` on that PR's version URL. Favicons and the manifest use origin-relative URLs and work on version previews.
+
+## Shell usage and acceptance
+
+The floating sidebar keeps a viewport-height panel while long pages scroll. Primary links, collapsible route sections, icon-only collapse, and the mobile sheet share the same navigation. The demo status card counts distinct enabled `/dashboard/*` sidebar pages (25 total) visited since the sidebar mounted; the count resets on reload or when the mobile sheet remounts; it does not represent a subscription, saved progress, or server data.
+
+Open search from the sidebar, the mobile header, or **⌘K / Ctrl+K** on any retained route. Arrow keys choose results; Enter opens a page; Escape closes and restores focus. The shared catalog exposes 34 searchable screens; the remaining four catalog entries cover redirects and the auth layout route. Pressing the shortcut again closes search. Other visible dialogs, alert dialogs, menus, and listboxes retain the shortcut (the mobile navigation sheet excepted); text-field focus alone does not suppress it. The bare `/auth/v2` path is an inherited layout-only screen; its login/register children are the searchable destinations.
+
+Settings in the sidebar or header controls theme (including System), Default/Graphite/Pine/Iris presets, the existing font registry, content width, header behavior, sidebar style, and collapse behavior. Changes persist in the existing seven-day browser cookies, one per preference key, plus the separate sidebar-state cookie. Reset restores Light, Default, Geist, Centered, Sticky, Panel, Show icons, and expanded navigation. Inset also frames the content; every desktop style preserves the reference sidebar. Mobile navigation always uses a sheet.
+
+Shell accessibility checks cover keyboard navigation, named controls, visible focus, palette selection and focus return, settings radio/select operation and focus trapping, mobile sheets, and reduced-motion CSS across all four presets in both modes. Run the supported token-pair contrast audit with:
+
+```sh
+node --experimental-strip-types scripts/check-contrast.ts --presets default,graphite,pine,iris --base-url http://localhost:3000
+```
+
+Axe is not part of the existing tooling; the acceptance evidence identifies the semantic/keyboard checks actually run. [Task 012 evidence](https://github.com/moeghashim/tenboards/tree/pr-assets/012) holds the complete route matrix, logs, and smoke scripts. [Sidebar/reference comparison](https://github.com/moeghashim/tenboards/blob/pr-assets/008/sidebar-reference-comparison.png) records the locked reference comparison. Captures may contain inherited TanStack development-tool chrome.
+
+Known upstream limitations remain separate from shell acceptance: Patient Monitoring reads a fresh clock during SSR/client rendering and can produce a hydration mismatch on direct navigation. Calendar, Finance, Invoice, Productivity, Finance V1, and Auth V2 login/register also reproduce Workers hydration mismatches on the existing production deployment. These fixes require the scope decisions recorded in [open questions](dev/open-questions.md). Auth screens and account switching are demonstrations; there is no session/auth backend. Charts, tables, app layouts, and legacy content await v0.2/v0.3; changing global tokens does not constitute a content restyle. Full-route capture failures are recorded rather than omitted or suppressed. The retained optional font registry loads external Google font assets and may encounter network timeouts; the default Geist faces are self-hosted.

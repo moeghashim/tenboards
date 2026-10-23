@@ -8,11 +8,11 @@ files: ["README.md", "DESIGN.md", "dev/milestones.json", "dev/milestones/v0.1-de
 ---
 
 ## Acceptance criteria
-- [ ] Run all retained routes through the screenshot matrix and fix only v0.1 shell regressions.
-- [ ] Verify keyboard navigation, responsive shell, light/dark presets, reduced motion, and no route removals.
+- [x] Run all retained routes through the screenshot matrix and fix only v0.1 shell regressions.
+- [x] Verify keyboard navigation, responsive shell, light/dark presets, reduced motion, and no route removals.
 - [ ] Build, check, typecheck, local smoke, Workers preview smoke, and captures pass.
-- [ ] Document commands, live/preview URLs, manual main deploy procedure, and known upstream limitations.
-- [ ] Update milestone/task status only from evidence; leave v0.2+ work deferred and user merge authority intact.
+- [x] Document commands, live/preview URLs, manual main deploy procedure, and known upstream limitations.
+- [x] Update milestone/task status only from evidence; leave v0.2+ work deferred and user merge authority intact.
 
 ## Suggested approach
 Audit the integrated shell against this milestone DoD and PLAN. Escalate failures requiring auth, new config, unapproved runtime dependencies, or another milestone.

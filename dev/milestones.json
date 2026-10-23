@@ -29,7 +29,7 @@
         "009-shell-header": "in_review",
         "010-command-palette": "in_review",
         "011-layout-settings": "in_review",
-        "012-shell-acceptance": "pending"
+        "012-shell-acceptance": "blocked"
       }
     }
   ]
