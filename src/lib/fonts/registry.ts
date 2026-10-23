@@ -1,3 +1,6 @@
+import geistStylesheet from "@fontsource-variable/geist/index.css?url";
+import geistMonoStylesheet from "@fontsource-variable/geist-mono/index.css?url";
+
 type FontDefinition = {
   label: string;
   family: string;
@@ -13,9 +16,9 @@ function googleFont(family: string, axes = "wght@400..700"): string {
 export const fontRegistry = {
   geist: {
     label: "Geist",
-    family: "Geist",
+    family: "Geist Variable",
     fallback: "sans-serif",
-    stylesheet: googleFont("Geist"),
+    stylesheet: geistStylesheet,
   },
   inter: {
     label: "Inter",
@@ -73,9 +76,9 @@ export const fontRegistry = {
   },
   geistMono: {
     label: "Geist Mono",
-    family: "Geist Mono",
+    family: "Geist Mono Variable",
     fallback: "monospace",
-    stylesheet: googleFont("Geist Mono"),
+    stylesheet: geistMonoStylesheet,
   },
   geistPixelSquare: {
     label: "Geist Pixel Square",
