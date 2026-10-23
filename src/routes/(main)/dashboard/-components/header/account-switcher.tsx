@@ -28,7 +28,8 @@ export function AccountSwitcher({
     readonly role: string;
   }>;
 }) {
-  const [activeUser, setActiveUser] = useState(users[0]);
+  const [activeId, setActiveId] = useState(users[0]?.id);
+  const activeUser = users.find((user) => user.id === activeId) ?? users[0];
 
   if (!activeUser) {
     return null;
@@ -53,7 +54,7 @@ export function AccountSwitcher({
             key={user.email}
             className={cn("p-0", user.id === activeUser.id && "bg-accent/50")}
             aria-current={user.id === activeUser.id ? "true" : undefined}
-            onClick={() => setActiveUser(user)}
+            onClick={() => setActiveId(user.id)}
           >
             <div className="flex w-full items-center gap-2 px-1 py-1.5">
               <Avatar className="size-9 rounded-lg">

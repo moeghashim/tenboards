@@ -86,3 +86,5 @@ export const metricDimensions = pgTable(
     }),
   ],
 );
+
+export * from "./people-schema.ts";

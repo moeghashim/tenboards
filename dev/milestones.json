@@ -115,7 +115,7 @@
       ],
       "taskStatuses": {
         "001-data-foundation": "review",
-        "002-people-profile": "todo",
+        "002-people-profile": "review",
         "003-commerce-data": "todo",
         "004-workspace-data": "todo",
         "005-communication-data": "todo",

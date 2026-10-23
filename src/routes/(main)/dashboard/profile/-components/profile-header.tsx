@@ -23,7 +23,7 @@ export function ProfileHeader({ profile }: ProfileHeaderProps) {
     <div className="flex flex-col gap-4 px-4 md:px-6 lg:flex-row lg:items-end lg:justify-between">
       <div className="flex min-w-0 items-center gap-4">
         <div className="grid size-18 shrink-0 place-items-center sm:size-23">
-          <span className="sr-only">Profile 92% complete</span>
+          <span className="sr-only">{`Profile ${profile.completionPercent}% complete`}</span>
           <svg aria-hidden="true" className="col-start-1 row-start-1 size-full -rotate-90" viewBox="0 0 100 100">
             <circle
               className="stroke-success fill-none"
@@ -31,7 +31,7 @@ export function ProfileHeader({ profile }: ProfileHeaderProps) {
               cy="50"
               pathLength="100"
               r="46"
-              strokeDasharray="92 100"
+              strokeDasharray={`${profile.completionPercent} 100`}
               strokeLinecap="round"
               strokeWidth="2.5"
             />
@@ -53,11 +53,11 @@ export function ProfileHeader({ profile }: ProfileHeaderProps) {
           </div>
           <div className="flex flex-wrap gap-2">
             <Badge className="bg-warning-surface text-warning" variant="secondary">
-              92% Complete
+              {`${profile.completionPercent}% Complete`}
             </Badge>
             <Badge className="bg-success-surface text-success" variant="default">
               <BadgeCheck data-icon="inline-start" />
-              Verified
+              {profile.verified ? "Verified" : "Unverified"}
             </Badge>
             <Badge className="rounded-sm" variant="outline">
               {profile.employmentType}

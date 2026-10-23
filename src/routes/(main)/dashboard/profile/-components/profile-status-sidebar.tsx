@@ -12,8 +12,8 @@ export function ProfileStatusSidebar({ profile }: { profile: ProfileRecord }) {
         <div className="flex items-start gap-2">
           <CircleCheck aria-hidden="true" className="text-muted-foreground mt-0.5 size-4 shrink-0" />
           <div>
-            <p className="text-sm font-medium">Active contractor</p>
-            <p className="text-muted-foreground text-xs">Contract and access active</p>
+            <p className="text-sm font-medium">{profile.recordStatus}</p>
+            <p className="text-muted-foreground text-xs">{profile.recordDescription}</p>
           </div>
         </div>
         <p className="text-muted-foreground text-xs">
