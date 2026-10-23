@@ -16,8 +16,42 @@ import {
 import { useSidebar } from "@/components/ui/sidebar";
 import { type FontKey, fontOptions } from "@/lib/fonts/registry";
 import type { ContentLayout, NavbarStyle, SidebarCollapsible, SidebarVariant } from "@/lib/preferences/layout";
+import { PREFERENCE_DEFAULTS } from "@/lib/preferences/preferences-config";
 import { THEME_PRESET_OPTIONS, type ThemeMode, type ThemePreset } from "@/lib/preferences/theme";
 import { usePreferencesStore } from "@/stores/preferences/preferences-provider";
+
+const choices = {
+  theme_mode: [
+    { value: "light", label: "Light" },
+    { value: "dark", label: "Dark" },
+    { value: "system", label: "System" },
+  ],
+  content_layout: [
+    { value: "centered", label: "Centered" },
+    { value: "full-width", label: "Full width" },
+  ],
+  navbar_style: [
+    { value: "sticky", label: "Sticky" },
+    { value: "scroll", label: "Scroll with page" },
+  ],
+  sidebar_variant: [
+    { value: "sidebar", label: "Panel" },
+    { value: "inset", label: "Inset" },
+    { value: "floating", label: "Floating" },
+  ],
+  sidebar_collapsible: [
+    { value: "icon", label: "Show icons" },
+    { value: "offcanvas", label: "Hide panel" },
+  ],
+} as const;
+const defaultsSummary = [
+  choices.theme_mode.find((option) => option.value === PREFERENCE_DEFAULTS.theme_mode)?.label,
+  `${THEME_PRESET_OPTIONS.find((option) => option.value === PREFERENCE_DEFAULTS.theme_preset)?.label} preset`,
+  fontOptions.find((option) => option.key === PREFERENCE_DEFAULTS.font)?.label,
+  ...(["content_layout", "navbar_style", "sidebar_variant", "sidebar_collapsible"] as const).map(
+    (key) => choices[key].find((option) => option.value === PREFERENCE_DEFAULTS[key])?.label,
+  ),
+].join(" · ");
 
 type Option = { value: string; label: string };
 function ChoiceField({
@@ -131,11 +165,7 @@ export function LayoutControls({ sidebar = false }: { sidebar?: boolean }) {
             <ChoiceField
               label="Theme"
               value={values.theme_mode}
-              options={[
-                { value: "light", label: "Light" },
-                { value: "dark", label: "Dark" },
-                { value: "system", label: "System" },
-              ]}
+              options={choices.theme_mode}
               onChange={(value) => setPreference("theme_mode", value as ThemeMode)}
             />
             <SelectField
@@ -158,29 +188,19 @@ export function LayoutControls({ sidebar = false }: { sidebar?: boolean }) {
             <ChoiceField
               label="Content width"
               value={values.content_layout}
-              options={[
-                { value: "centered", label: "Centered" },
-                { value: "full-width", label: "Full width" },
-              ]}
+              options={choices.content_layout}
               onChange={(value) => setPreference("content_layout", value as ContentLayout)}
             />
             <ChoiceField
               label="Header position"
               value={values.navbar_style}
-              options={[
-                { value: "sticky", label: "Sticky" },
-                { value: "scroll", label: "Scroll with page" },
-              ]}
+              options={choices.navbar_style}
               onChange={(value) => setPreference("navbar_style", value as NavbarStyle)}
             />
             <ChoiceField
               label="Sidebar style"
               value={values.sidebar_variant}
-              options={[
-                { value: "sidebar", label: "Panel" },
-                { value: "inset", label: "Inset" },
-                { value: "floating", label: "Floating" },
-              ]}
+              options={choices.sidebar_variant}
               onChange={(value) => setPreference("sidebar_variant", value as SidebarVariant)}
             />
             <p className="text-muted-foreground text-xs">
@@ -189,10 +209,7 @@ export function LayoutControls({ sidebar = false }: { sidebar?: boolean }) {
             <ChoiceField
               label="When collapsed"
               value={values.sidebar_collapsible}
-              options={[
-                { value: "icon", label: "Show icons" },
-                { value: "offcanvas", label: "Hide panel" },
-              ]}
+              options={choices.sidebar_collapsible}
               onChange={(value) => setPreference("sidebar_collapsible", value as SidebarCollapsible)}
             />
             <p className="text-muted-foreground text-xs">On small screens, navigation always opens in a sheet.</p>
@@ -211,7 +228,7 @@ export function LayoutControls({ sidebar = false }: { sidebar?: boolean }) {
             Reset to tenboards defaults
           </Button>
           <p role="status" className="text-muted-foreground min-h-4 text-center text-xs">
-            {resetMessage || "Light · Default preset · Geist · Centered"}
+            {resetMessage || `Defaults: ${defaultsSummary}`}
           </p>
         </SheetFooter>
       </SheetContent>
