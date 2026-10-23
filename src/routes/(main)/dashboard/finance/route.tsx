@@ -1,10 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import { format } from "date-fns";
 import { Download, RotateCw, Settings2 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { financeStatementDate, formatDemoDate } from "@/routes/(main)/dashboard/-components/finance-demo-dates";
 
 import { BalanceDistributionCard } from "./-components/balance-distribution-card";
 import { FinanceNotification } from "./-components/finance-notification";
@@ -20,16 +20,16 @@ export const Route = createFileRoute("/(main)/dashboard/finance")({
 });
 
 function Page() {
-  const formattedDate = format(new Date(), "EEEE, do MMMM yyyy");
+  const formattedDate = formatDemoDate(financeStatementDate);
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex min-w-0 flex-col gap-4">
       <div className="space-y-1">
         <h1 className="text-3xl tracking-tight">Personal Finances</h1>
-        <p className="text-muted-foreground text-sm">{formattedDate}</p>
+        <p className="text-muted-foreground text-sm">Demo statement · {formattedDate}</p>
       </div>
 
-      <Tabs defaultValue="30-days" className="flex flex-col gap-4">
+      <Tabs defaultValue="30-days" className="flex min-w-0 flex-col gap-4">
         <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
           <TabsList variant="line">
             <TabsTrigger value="30-days">Dashboard</TabsTrigger>
@@ -53,7 +53,7 @@ function Page() {
           </div>
         </div>
 
-        <TabsContent value="30-days" className="flex flex-col gap-4">
+        <TabsContent value="30-days" className="flex min-w-0 flex-col gap-4">
           <div className="grid grid-cols-1 gap-4 xl:grid-cols-12">
             <div className="xl:col-span-6">
               <OverviewKpis />

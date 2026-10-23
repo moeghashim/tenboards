@@ -2,10 +2,13 @@ import * as React from "react";
 
 import { Label, Pie, PieChart } from "recharts";
 
-import { Card, CardAction, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { type ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
+import { CardContent } from "@/components/ui/card";
+import { type ChartConfig, ChartTooltip } from "@/components/ui/chart";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { DashboardChart, DashboardTooltip, useChartMotion } from "@/lib/charts/theme";
 import { formatCurrency } from "@/lib/utils";
+
+import { DashboardCard as Card, SectionHeader } from "../../-components/dashboard/cards";
 
 type BalanceKey = "investment" | "main" | "reserve" | "savings";
 
@@ -54,7 +57,7 @@ const chartConfig = {
     label: "Main Wallet",
   },
   reserve: {
-    color: "var(--chart-3)",
+    color: "var(--chart-5)",
     label: "Reserve Account",
   },
   savings: {
@@ -96,15 +99,16 @@ const chartData = balanceData.map((item) => ({
 const totalBalance = balanceData.reduce((total, item) => total + item.amount, 0);
 
 export function BalanceDistributionCard() {
+  const motion = useChartMotion();
   const [currency, setCurrency] = React.useState<Currency>("USD");
 
   return (
     <Card>
-      <CardHeader>
-        <CardTitle className="font-normal">Account Allocation</CardTitle>
-        <CardAction>
+      <SectionHeader
+        title="Account Allocation"
+        actions={
           <Select items={currencyItems} onValueChange={(value) => setCurrency(value as Currency)} value={currency}>
-            <SelectTrigger className="w-36" size="sm">
+            <SelectTrigger aria-label="Account currency" className="w-36" size="sm">
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
@@ -117,23 +121,60 @@ export function BalanceDistributionCard() {
               </SelectGroup>
             </SelectContent>
           </Select>
-        </CardAction>
-      </CardHeader>
+        }
+      />
 
-      <CardContent className="grid items-center gap-4 sm:grid-cols-[minmax(0,0.9fr)_minmax(0,1fr)]">
-        <ChartContainer config={chartConfig} className="mx-auto aspect-square h-50">
+      <CardContent className="grid items-center gap-4 2xl:grid-cols-[minmax(0,0.9fr)_minmax(0,1fr)]">
+        <DashboardChart config={chartConfig} className="mx-auto h-64 w-full sm:h-64">
           <PieChart>
             <ChartTooltip
+              {...motion}
               cursor={false}
-              content={<ChartTooltipContent hideLabel className="w-52" nameKey="account" />}
+              content={
+                <DashboardTooltip
+                  hideLabel
+                  className="w-52"
+                  nameKey="account"
+                  formatter={(value, name) => (
+                    <div className="flex w-full justify-between gap-3">
+                      <span>{name}</span>
+                      <span className="font-medium tabular-nums">
+                        {formatCurrency(Number(value), { currency, noDecimals: true })}
+                      </span>
+                    </div>
+                  )}
+                />
+              }
             />
             <Pie
+              {...motion}
               cornerRadius={6}
               data={chartData}
               dataKey="amount"
-              innerRadius={65}
+              innerRadius={52}
               nameKey="account"
-              outerRadius={90}
+              outerRadius={72}
+              label={({ cx, cy, midAngle, outerRadius, index }) => {
+                const item = chartData[index];
+                const angle = (-Number(midAngle) * Math.PI) / 180;
+                const x = Number(cx) + (Number(outerRadius) + 20) * Math.cos(angle);
+                const y = Number(cy) + (Number(outerRadius) + 20) * Math.sin(angle);
+                return (
+                  <text
+                    x={x}
+                    y={y}
+                    fill="var(--foreground)"
+                    fontSize={12}
+                    textAnchor={x > Number(cx) ? "start" : "end"}
+                  >
+                    {item.account.split(" ")[0]}
+                    <tspan x={x} dy={14}>
+                      {item.percentage}%
+                    </tspan>
+                  </text>
+                );
+              }}
+              labelLine={false}
               paddingAngle={2}
               strokeWidth={5}
             >
@@ -161,7 +202,7 @@ export function BalanceDistributionCard() {
               />
             </Pie>
           </PieChart>
-        </ChartContainer>
+        </DashboardChart>
 
         <div className="flex min-w-0 flex-col gap-3">
           {chartData.map((item) => (

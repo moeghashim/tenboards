@@ -1,11 +1,21 @@
 import { ArrowDownLeft, ArrowUpRight } from "lucide-react";
 import { Bar, BarChart, CartesianGrid, ReferenceLine, XAxis, YAxis } from "recharts";
 
-import { Card, CardAction, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { type ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
+import { CardContent } from "@/components/ui/card";
+import { type ChartConfig, ChartTooltip } from "@/components/ui/chart";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Separator } from "@/components/ui/separator";
+import {
+  chartAxis,
+  chartCursor,
+  chartGrid,
+  DashboardChart,
+  DashboardTooltip,
+  useChartMotion,
+} from "@/lib/charts/theme";
 import { formatCurrency } from "@/lib/utils";
+
+import { DashboardCard as Card, SectionHeader } from "../../../-components/dashboard/cards";
 
 const chartData = [
   { month: "Jan", income: 5900, expenses: -4200 },
@@ -33,64 +43,74 @@ const chartConfig = {
   },
 } as ChartConfig;
 
+const cashFlowPeriodItems = [
+  { value: "this-month", label: "This Month" },
+  { value: "last-6-months", label: "Last 6 Months" },
+  { value: "ytd", label: "Year to Date" },
+  { value: "this-year", label: "This Year" },
+] as const;
+
 export function CashFlowOverview() {
+  const motion = useChartMotion();
   const totalIncome = chartData.reduce((acc, item) => acc + item.income, 0);
   const totalExpenses = chartData.reduce((acc, item) => acc + Math.abs(item.expenses), 0);
   return (
     <Card>
-      <CardHeader>
-        <CardTitle>Cash Flow Overview</CardTitle>
-        <CardDescription>Monthly income and expenses with net cash impact.</CardDescription>
-        <CardAction>
-          <Select defaultValue="this-year">
-            <SelectTrigger size="sm" className="w-37">
+      <SectionHeader
+        title="Cash Flow Overview"
+        description="Monthly income and expenses with net cash impact."
+        actions={
+          <Select defaultValue="this-year" items={cashFlowPeriodItems}>
+            <SelectTrigger aria-label="Cash flow period" size="sm" className="w-37">
               <SelectValue placeholder="Select period" />
             </SelectTrigger>
             <SelectContent>
               <SelectGroup>
-                <SelectItem value="this-month">This Month</SelectItem>
-                <SelectItem value="last-6-months">Last 6 Months</SelectItem>
-                <SelectItem value="ytd">Year to Date</SelectItem>
-                <SelectItem value="this-year">This Year</SelectItem>
+                {cashFlowPeriodItems.map((item) => (
+                  <SelectItem key={item.value} value={item.value}>
+                    {item.label}
+                  </SelectItem>
+                ))}
               </SelectGroup>
             </SelectContent>
           </Select>
-        </CardAction>
-      </CardHeader>
+        }
+      />
       <CardContent>
         <Separator />
         <div className="flex items-start justify-between gap-2 py-5 md:items-stretch md:gap-0">
           <div className="flex flex-1 items-center justify-center gap-2">
-            <div className="bg-chart-1 flex size-10 shrink-0 items-center justify-center rounded-full">
-              <ArrowDownLeft className="stroke-background size-6" />
+            <div className="text-primary flex shrink-0 items-center justify-center">
+              <ArrowDownLeft className="size-4" />
             </div>
             <div>
-              <p className="text-muted-foreground text-xs uppercase">Income</p>
+              <p className="text-muted-foreground text-sm">Income</p>
               <p className="font-medium tabular-nums">{formatCurrency(totalIncome, { noDecimals: true })}</p>
             </div>
           </div>
           <Separator orientation="vertical" className="h-auto! self-stretch" />
           <div className="flex flex-1 items-center justify-center gap-2">
-            <div className="bg-chart-2 flex size-10 shrink-0 items-center justify-center rounded-full">
-              <ArrowUpRight className="stroke-background size-6" />
+            <div className="text-muted-foreground flex shrink-0 items-center justify-center">
+              <ArrowUpRight className="size-4" />
             </div>
             <div>
-              <p className="text-muted-foreground text-xs uppercase">Expenses</p>
+              <p className="text-muted-foreground text-sm">Expenses</p>
               <p className="font-medium tabular-nums">{formatCurrency(totalExpenses, { noDecimals: true })}</p>
             </div>
           </div>
         </div>
         <Separator />
-        <ChartContainer className="max-h-72 w-full" config={chartConfig}>
+        <DashboardChart config={chartConfig}>
           <BarChart
             stackOffset="sign"
             margin={{ left: -25, right: 0, top: 25, bottom: 0 }}
             accessibilityLayer
             data={chartData}
           >
-            <CartesianGrid vertical={false} />
-            <XAxis dataKey="month" tickLine={false} tickMargin={10} axisLine={false} />
+            <CartesianGrid {...chartGrid} />
+            <XAxis {...chartAxis} dataKey="month" tickLine={false} tickMargin={10} axisLine={false} />
             <YAxis
+              {...chartAxis}
               axisLine={false}
               tickLine={false}
               tickMargin={8}
@@ -101,12 +121,27 @@ export function CashFlowOverview() {
               }}
               ticks={[-8000, -4000, 0, 4000, 8000]}
             />
-            <ChartTooltip content={<ChartTooltipContent hideLabel />} />
-            <ReferenceLine y={0} stroke="var(--border)" />
-            <Bar dataKey="income" stackId="a" fill={chartConfig.income.color} radius={[4, 4, 0, 0]} />
-            <Bar dataKey="expenses" stackId="a" fill={chartConfig.expenses.color} radius={[4, 4, 0, 0]} />
+            <ChartTooltip
+              {...motion}
+              cursor={chartCursor}
+              content={
+                <DashboardTooltip
+                  formatter={(value, name) => (
+                    <div className="flex w-full justify-between gap-3">
+                      <span>{name === "income" ? "Income" : "Expenses"}</span>
+                      <span className="font-medium tabular-nums">
+                        {formatCurrency(Number(value), { noDecimals: true })}
+                      </span>
+                    </div>
+                  )}
+                />
+              }
+            />
+            <ReferenceLine y={0} stroke="var(--text-muted)" />
+            <Bar {...motion} dataKey="income" stackId="a" fill={chartConfig.income.color} radius={[4, 4, 0, 0]} />
+            <Bar {...motion} dataKey="expenses" stackId="a" fill={chartConfig.expenses.color} radius={[4, 4, 0, 0]} />
           </BarChart>
-        </ChartContainer>
+        </DashboardChart>
       </CardContent>
     </Card>
   );

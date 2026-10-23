@@ -1,5 +1,7 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { CardContent } from "@/components/ui/card";
 import { formatCurrency } from "@/lib/utils";
+
+import { DashboardCard as Card, SectionHeader } from "../../../-components/dashboard/cards";
 
 const expenses = [
   {
@@ -43,51 +45,24 @@ export function SpendingBreakdown() {
   const total = expenses.reduce((sum, item) => sum + item.amount, 0);
   return (
     <Card>
-      <CardHeader>
-        <CardTitle>Spending Breakdown</CardTitle>
-        <CardDescription>Expense distribution by category.</CardDescription>
-      </CardHeader>
+      <SectionHeader title="Spending Breakdown" description="Expense distribution by category." />
       <CardContent className="space-y-4">
         <div className="space-y-1">
           <div className="text-2xl font-medium">{formatCurrency(total, { noDecimals: true })}</div>
-          <div className="flex h-6 w-full overflow-hidden rounded-md">
-            {expenses.map((item, index) => {
-              const width = (item.amount / total) * 100;
-              const alpha = Math.max(0.35, 1 - index * 0.08);
-
-              return (
-                <div
-                  key={item.key}
-                  className="border-background h-full shrink-0 border-l first:border-l-0"
-                  style={{
-                    width: `${width}%`,
-                    background: `color-mix(in oklch, var(--primary) ${alpha * 100}%, transparent)`,
-                  }}
-                  title={`${item.label}: ${formatCurrency(item.amount)}`}
-                />
-              );
-            })}
-          </div>
         </div>
 
         <div className="space-y-2">
-          {expenses.map((item, index) => {
+          {expenses.map((item) => {
             const pct = Math.round((item.amount / total) * 100);
-            const alpha = Math.max(0.35, 1 - index * 0.08);
-
             return (
-              <div key={item.key} className="flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <div
-                    className="size-3 rounded-sm"
-                    style={{
-                      background: `color-mix(in oklch, var(--primary) ${alpha * 100}%, transparent)`,
-                    }}
-                  />
-                  <span className="text-muted-foreground text-sm">{item.label}</span>
+              <div key={item.key} className="space-y-1">
+                <div className="flex justify-between gap-2 text-sm">
+                  <span>{item.label}</span>
+                  <span className="tabular-nums">{pct}%</span>
                 </div>
-
-                <span className="text-sm font-medium tabular-nums">{pct}%</span>
+                <div aria-hidden="true" className="bg-muted h-1.5 rounded-sm">
+                  <div className="bg-primary h-full rounded-sm" style={{ width: `${(item.amount / total) * 100}%` }} />
+                </div>
               </div>
             );
           })}

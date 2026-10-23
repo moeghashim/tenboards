@@ -32,3 +32,7 @@ Initial Workers results: 119/152 pass; a CRM light/mobile navigation timeout pas
 Task 012 is blocked, with the clean-captures acceptance box unchecked. Required decision: authorize scoped SSR/hydration fixes for these eight inherited routes (including protected Calendar/auth surfaces), or explicitly waive the inherited errors in the full-route gate. Root AGENTS.md requires escalation for scope expansion and protected surfaces; the approved batch is shell-only. No dependent fixes proceed without that decision. Full evidence: https://github.com/moeghashim/tenboards/tree/pr-assets/012.
 
 **Resolution (2026-10-23, user via reviewer)**: Waived for v0.1. All three 012 hydration entries above are answered: each affected route's hydration fix becomes a required acceptance criterion in the v0.2/v0.3 task that restyles it (Finance, Finance V1, Productivity, Patient Monitoring → v0.2; Calendar, Invoice, Auth V2 → v0.3). **Status**: answered
+
+### v0.2 task 004 verification
+
+The Finance and Finance V1 portion of the inherited hydration finding is resolved on the task 004 version preview. Explicit demo statement dates and UTC formatting remove module-clock and timezone differences. Direct/refresh light/dark desktop/mobile pass in dev (Kiritimati server vs Chicago browser) and Workers (Chicago and Kiritimati browser zones). Evidence: `pr-assets/v02-004/after-timezone`, `workers`, `workers-kiritimati`. Other inherited routes remain for their scoped tasks; this does not change production.
