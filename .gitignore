@@ -11,3 +11,6 @@ dist-ssr
 .vinxi
 __unconfig*
 todos.json
+
+# Visual QA evidence belongs on pr-assets, never main.
+screenshots/

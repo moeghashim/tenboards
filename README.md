@@ -78,3 +78,20 @@ npm run preview:deploy -- --preview-alias pr-NNN
 Copy the returned version-specific URL into the PR body. The optional alias gives a reusable URL for that PR; uploading a version does not replace the live deployment. Preview URLs are public demo URLs. No GitHub Actions secrets or automated deployments are configured.
 
 Deployment references: [Nitro Cloudflare](https://nitro.build/deploy/providers/cloudflare) and [Cloudflare version URLs](https://developers.cloudflare.com/workers/versions-and-deployments/version-urls/).
+
+## Visual QA
+
+Install the approved browser tooling once with `npx playwright install chromium`, then run a dev server (`npm run dev`) in another terminal:
+
+```sh
+npm run screenshots
+npm run screenshots -- --routes /dashboard/default,/auth/v1/login --output screenshots/before
+npm run screenshots -- --base-url https://pr-004-tenboards.mohanadgh.workers.dev --output screenshots/after
+npm run screenshots -- --list
+```
+
+The default captures every retained route in light/dark at desktop 1440×900 and mobile 390×844. `scripts/screenshot-routes.ts` is an explicit inventory checked against generated route metadata; missing/stale routes and unknown subsets fail before launch. The dashboard splat uses `/dashboard/capture-not-found` to exercise its not-found state; there are no entity-ID routes needing demo records. Redirect entries are captured at their destination. `--preset` selects a valid preset for the same four-state matrix.
+
+Captures wait for React hydration, fonts, network idle, images, JS chart settling, and stable content. Reduced motion is emulated and screenshot animations are disabled. Console errors, page errors, failed requests, unexpected HTTP status, and capture failures are recorded in `report.json` and cause a nonzero exit. The hydration check uses React's DOM binding marker; revisit it if React's renderer changes. Date-dependent demo data is not frozen, so capture before/after close together and note changing data in reviews.
+
+`screenshots/` is gitignored. Keep all PNGs and reports off main: create a separate worktree from `origin/pr-assets`, copy each task's `before/` and `after/` directories there, commit with the required co-author trailer, and push only that branch. Link images using `https://raw.githubusercontent.com/moeghashim/tenboards/pr-assets/NNN/before/<file>.png` and the corresponding `after/` URL in the PR table. Never add screenshots to an implementation branch. Inspect every submitted capture for blank, incomplete, or mislabeled output.
