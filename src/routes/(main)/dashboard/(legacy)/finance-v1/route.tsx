@@ -17,7 +17,7 @@ export const Route = createFileRoute("/(main)/dashboard/(legacy)/finance-v1")({
 
 function Page() {
   return (
-    <div>
+    <div className="min-w-0">
       <Tabs className="gap-4" defaultValue="overview">
         <TabsList>
           <TabsTrigger value="overview">Overview</TabsTrigger>
@@ -33,8 +33,8 @@ function Page() {
         </TabsList>
 
         <TabsContent value="overview">
-          <div className="flex flex-col gap-4 **:data-[slot=card]:shadow-xs">
-            <div className="*:data-[slot=card]:from-primary/5 *:data-[slot=card]:to-card grid grid-cols-1 gap-4 *:data-[slot=card]:gap-2 *:data-[slot=card]:bg-linear-to-t sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">
+          <div className="flex min-w-0 flex-col gap-4">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">
               <PrimaryAccount />
               <NetWorth />
               <MonthlyCashFlow />

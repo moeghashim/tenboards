@@ -1,8 +1,10 @@
 import { siBarclays, siBitcoin, siEthereum, siHsbc, siRevolut } from "simple-icons";
 
 import { SimpleIcon } from "@/components/simple-icon";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+
+import { DashboardCard as Card, SectionHeader } from "../../-components/dashboard/cards";
 
 const walletCards = [
   {
@@ -54,20 +56,18 @@ const cryptoAssets = [
 export function Wallet() {
   return (
     <Card>
-      <CardHeader>
-        <CardTitle className="font-normal">Wallet</CardTitle>
-      </CardHeader>
+      <SectionHeader title="Wallet" />
       <CardContent className="flex flex-col gap-4">
         <div className="flex flex-col gap-4">
           {walletCards.map((card) => (
-            <div key={card.id} className="flex items-center justify-between">
+            <div key={card.id} className="flex flex-wrap items-center justify-between gap-2">
               <div className="flex flex-col gap-0.5">
                 <div className="flex items-center gap-2">
                   <span className="text-foreground text-sm leading-none font-medium">
                     {card.bank} • **** {card.last4}
                   </span>
                 </div>
-                <span className="text-muted-foreground text-xs font-normal">{card.balance}</span>
+                <span className="text-muted-foreground text-sm font-normal tabular-nums">{card.balance}</span>
               </div>
               <div className="bg-background flex size-9 shrink-0 items-center justify-center rounded-md border">
                 <SimpleIcon icon={card.icon} />
@@ -80,14 +80,14 @@ export function Wallet() {
 
         <div className="flex flex-col gap-4">
           {cryptoAssets.map((asset) => (
-            <div key={asset.id} className="flex items-center justify-between">
+            <div key={asset.id} className="flex flex-wrap items-center justify-between gap-2">
               <div className="flex flex-col gap-0.5">
                 <div className="flex items-center gap-2">
                   <span className="text-foreground text-sm leading-none font-medium">
                     {asset.name} • {asset.vault}
                   </span>
                 </div>
-                <span className="text-muted-foreground text-xs font-normal">
+                <span className="text-muted-foreground text-sm font-normal tabular-nums">
                   {asset.balance} • {asset.usdValue}
                 </span>
               </div>
@@ -98,15 +98,15 @@ export function Wallet() {
           ))}
         </div>
 
-        <div className="flex items-center justify-between">
+        <div className="flex flex-wrap items-center justify-between gap-2">
           <div className="flex items-center gap-1.5">
-            <span className="text-muted-foreground text-[10px] font-medium">
+            <span className="text-muted-foreground text-xs font-medium">
               Physical Vault: <span className="text-foreground">Ledger Nano X</span>
             </span>
           </div>
           <div className="flex items-center gap-1.5">
-            <div className="size-1 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.5)]" />
-            <span className="text-[9px] font-bold tracking-widest text-green-500 uppercase">Air-Gapped</span>
+            <div className="bg-success size-1.5 rounded-full" />
+            <span className="text-success text-xs font-medium">Air-Gapped</span>
           </div>
         </div>
       </CardContent>

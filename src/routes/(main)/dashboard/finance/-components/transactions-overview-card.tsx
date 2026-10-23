@@ -1,9 +1,21 @@
-import { CartesianGrid, Line, LineChart, XAxis, YAxis } from "recharts";
+import { CartesianGrid, Legend, Line, LineChart, XAxis, YAxis } from "recharts";
 
-import { Card, CardAction, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { type ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
+import { CardContent } from "@/components/ui/card";
+import { ChartTooltip } from "@/components/ui/chart";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  chartAxis,
+  chartCursor,
+  chartGrid,
+  DashboardChart,
+  DashboardLegend,
+  DashboardTooltip,
+  seriesConfig,
+  useChartMotion,
+} from "@/lib/charts/theme";
 import { formatCurrency } from "@/lib/utils";
+
+import { DashboardCard as Card, SectionHeader } from "../../-components/dashboard/cards";
 
 const DAY_MS = 24 * 60 * 60 * 1000;
 const weekStart = Date.UTC(2026, 0, 5);
@@ -50,7 +62,7 @@ const weekdayTicks = Array.from({ length: 7 }, (_, index) => weekStart + (index 
 
 const weekdayFormatter = new Intl.DateTimeFormat("en-US", {
   timeZone: "UTC",
-  weekday: "long",
+  weekday: "short",
 });
 
 const formatWeekday = (value: number) => weekdayFormatter.format(new Date(value));
@@ -58,16 +70,7 @@ const formatWeekday = (value: number) => weekdayFormatter.format(new Date(value)
 const chartDomain = [weekStart, weekStart + 7 * DAY_MS];
 const formatTooltipCurrency = (value: number | string) => formatCurrency(Number(value), { noDecimals: true });
 
-const chartConfig = {
-  expense: {
-    color: "var(--chart-4)",
-    label: "Expense",
-  },
-  income: {
-    color: "var(--chart-2)",
-    label: "Income",
-  },
-} satisfies ChartConfig;
+const chartConfig = seriesConfig({ expense: "Expense", income: "Income" });
 
 const transactionPeriodItems = [
   { value: "weekly", label: "Weekly" },
@@ -76,13 +79,14 @@ const transactionPeriodItems = [
 ] as const;
 
 export function TransactionsOverviewCard() {
+  const motion = useChartMotion();
   return (
     <Card>
-      <CardHeader>
-        <CardTitle className="font-normal">Spending Overview</CardTitle>
-        <CardAction>
+      <SectionHeader
+        title="Spending Overview"
+        actions={
           <Select defaultValue="weekly" items={transactionPeriodItems}>
-            <SelectTrigger className="w-28" size="sm">
+            <SelectTrigger aria-label="Spending period" className="w-28" size="sm">
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
@@ -95,14 +99,16 @@ export function TransactionsOverviewCard() {
               </SelectGroup>
             </SelectContent>
           </Select>
-        </CardAction>
-      </CardHeader>
+        }
+      />
 
       <CardContent>
-        <ChartContainer config={chartConfig} className="h-50 w-full">
+        <DashboardChart config={chartConfig}>
           <LineChart accessibilityLayer data={chartData} margin={{ bottom: 0, left: 0, right: 0, top: 0 }}>
-            <CartesianGrid vertical={false} />
+            <Legend content={<DashboardLegend config={chartConfig} />} />
+            <CartesianGrid {...chartGrid} />
             <XAxis
+              {...chartAxis}
               axisLine={false}
               dataKey="timestamp"
               domain={chartDomain}
@@ -111,14 +117,15 @@ export function TransactionsOverviewCard() {
               tickLine={false}
               tickMargin={10}
               ticks={weekdayTicks}
-              tick={{ fontSize: 12 }}
+              tick={chartAxis.tick}
               type="number"
             />
-            <YAxis hide axisLine={false} tickLine={false} tickMargin={10} tick={{ fontSize: 12 }} />
+            <YAxis {...chartAxis} hide axisLine={false} tickLine={false} tickMargin={10} tick={chartAxis.tick} />
             <ChartTooltip
-              cursor={false}
+              {...motion}
+              cursor={chartCursor}
               content={({ active, payload, label }) => (
-                <ChartTooltipContent
+                <DashboardTooltip
                   active={active}
                   hideLabel
                   label={label}
@@ -130,25 +137,27 @@ export function TransactionsOverviewCard() {
               )}
             />
             <Line
+              {...motion}
               connectNulls
               dataKey="income"
               dot={false}
               stroke="var(--color-income)"
-              strokeDasharray="5 5"
+              strokeDasharray={chartConfig.income.strokeDasharray}
               strokeLinecap="round"
-              strokeWidth={1}
+              strokeWidth={2}
               type="linear"
             />
             <Line
+              {...motion}
               dataKey="expense"
               dot={false}
               stroke="var(--color-expense)"
               strokeLinecap="round"
-              strokeWidth={3}
+              strokeWidth={2}
               type="linear"
             />
           </LineChart>
-        </ChartContainer>
+        </DashboardChart>
       </CardContent>
     </Card>
   );

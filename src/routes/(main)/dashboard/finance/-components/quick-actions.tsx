@@ -12,9 +12,11 @@ import {
 
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import { Card, CardAction, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { CardContent } from "@/components/ui/card";
 import { Field } from "@/components/ui/field";
 import { InputGroup, InputGroupAddon, InputGroupInput, InputGroupText } from "@/components/ui/input-group";
+
+import { DashboardCard as Card, SectionHeader } from "../../-components/dashboard/cards";
 
 const contacts = [
   { id: 1, initials: "AR" },
@@ -38,9 +40,9 @@ export function QuickActions() {
   return (
     <div className="flex flex-col gap-4">
       <Card>
-        <CardHeader>
-          <CardTitle className="font-normal">Quick Transfer</CardTitle>
-          <CardAction>
+        <SectionHeader
+          title="Quick Transfer"
+          actions={
             <div className="flex items-center gap-1">
               <div className="flex -space-x-2">
                 {contacts.map((contact) => (
@@ -51,15 +53,15 @@ export function QuickActions() {
               </div>
               <ChevronRight className="size-4" />
             </div>
-          </CardAction>
-        </CardHeader>
+          }
+        />
         <CardContent>
           <Field orientation="horizontal">
             <InputGroup>
               <InputGroupAddon>
                 <InputGroupText>$</InputGroupText>
               </InputGroupAddon>
-              <InputGroupInput placeholder="0.00" />
+              <InputGroupInput aria-label="Transfer amount in USD" inputMode="decimal" placeholder="0.00" />
               <InputGroupAddon align="inline-end">
                 <InputGroupText>USD</InputGroupText>
               </InputGroupAddon>
@@ -70,16 +72,14 @@ export function QuickActions() {
       </Card>
 
       <Card>
-        <CardHeader>
-          <CardTitle className="font-normal">Shortcuts</CardTitle>
-        </CardHeader>
+        <SectionHeader title="Shortcuts" />
         <CardContent>
-          <div className="grid grid-cols-4 gap-4">
+          <div className="grid grid-cols-4 gap-3">
             {shortcuts.map((shortcut) => {
               const Icon = shortcut.icon;
               return (
                 <div key={shortcut.id} className="flex flex-col items-center gap-2.5">
-                  <Button variant="outline" className="size-12 rounded-full">
+                  <Button aria-label={shortcut.label} variant="outline" className="size-10 rounded-md">
                     <Icon className="size-5" />
                   </Button>
                   <span className="text-muted-foreground text-center text-xs">{shortcut.label}</span>

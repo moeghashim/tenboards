@@ -5,12 +5,14 @@ import { Item, ItemActions, ItemContent, ItemDescription, ItemMedia, ItemTitle }
 
 export function FinanceNotification() {
   return (
-    <Item className="rounded-xl" variant="outline">
+    <Item className="bg-card rounded-xl" variant="outline">
       <ItemMedia variant="icon">
         <TrendingUp />
       </ItemMedia>
       <ItemContent>
-        <ItemTitle>Credit score updated</ItemTitle>
+        <ItemTitle>
+          <h2 className="text-sm font-medium">Credit score updated</h2>
+        </ItemTitle>
         <ItemDescription>Your score increased by 14 points to 782.</ItemDescription>
       </ItemContent>
       <ItemActions>

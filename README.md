@@ -139,3 +139,9 @@ Default and Default V1 use neutral KPI cards, semantic signed trends, and shared
 ## CRM dashboards (v0.2 / 003)
 
 CRM and CRM V1 use shared compact cards and motion-aware charts, semantic signed trends and explicit opportunity health labels. Narrow tables scroll locally; the opportunity toolbar wraps, and the legacy funnel and source breakdown label segments directly with names and counts. Existing periods, records, table state and demo actions remain local. The upstream-author lead fixture is now Jordan Lee at Northwind Studio.
+
+## Finance dashboards (v0.2 / 004)
+
+Finance and Finance V1 use neutral shared KPI cards, semantic signed amounts, directly labelled allocation charts and compact source/spending breakdowns. Existing account/transaction placeholders, disabled legacy tabs, masked accounts and demo actions remain. The payment card uses Jordan Lee. Both screens render a dated October 23, 2026 demo statement with explicit UTC fixture dates, avoiding Worker module-start clocks and server/browser date differences; no financial backend is connected.
+
+For direct-load and refresh hydration checks with the real clock, `npm run screenshots -- --routes /dashboard/finance,/dashboard/finance-v1 --timezone Pacific/Kiritimati --reload` adds a fresh-load/refresh pair in every theme and viewport. `--timezone` defaults to America/Chicago; `--reload` is optional. Use `--base-url` for the Workers version.

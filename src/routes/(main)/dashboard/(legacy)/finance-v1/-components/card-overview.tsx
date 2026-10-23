@@ -1,14 +1,14 @@
-import { addDays, format } from "date-fns";
 import { Home, Receipt, Sparkles, Zap } from "lucide-react";
 import { siApple, siMastercard } from "simple-icons";
 
 import { SimpleIcon } from "@/components/simple-icon";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { formatCurrency } from "@/lib/utils";
+import { financeStatementDate, formatDemoDate } from "@/routes/(main)/dashboard/-components/finance-demo-dates";
 
-const now = new Date();
+import { DashboardCard as Card, SectionHeader } from "../../../-components/dashboard/cards";
 
 const upcomingPayments = [
   {
@@ -16,38 +16,38 @@ const upcomingPayments = [
     icon: Home,
     title: "Apartment Rent",
     amount: 1200,
-    date: `Due on ${format(addDays(now, 2), "do MMMM yyyy")}`,
+    date: `Due on ${formatDemoDate("2026-10-25T12:00:00Z")}`,
   },
   {
     id: 2,
     icon: Zap,
     title: "Electricity Bill",
     amount: 75,
-    date: `Due on ${format(addDays(now, 2), "do MMMM yyyy")}`,
+    date: `Due on ${formatDemoDate("2026-10-25T12:00:00Z")}`,
   },
   {
     id: 3,
     icon: Sparkles,
     title: "ChatGPT Plus",
     amount: 20,
-    date: `Due on ${format(addDays(now, 7), "do MMMM yyyy")}`,
+    date: `Due on ${formatDemoDate("2026-10-30T12:00:00Z")}`,
   },
   {
     id: 4,
     icon: Receipt,
     title: "Credit Card Payment",
     amount: 420,
-    date: `Due on ${format(addDays(now, 9), "do MMMM yyyy")}`,
+    date: `Due on ${formatDemoDate("2026-11-01T12:00:00Z")}`,
   },
 ];
 
 export function CardOverview() {
   return (
-    <Card className="shadow-xs">
-      <CardHeader className="items-center">
-        <CardTitle>My Card</CardTitle>
-        <CardDescription>1 of 4 cards added · Overview of your primary card and upcoming payments</CardDescription>
-      </CardHeader>
+    <Card>
+      <SectionHeader
+        title="My Card"
+        description={`1 of 4 demo cards · Statement dated ${formatDemoDate(financeStatementDate)}`}
+      />
       <CardContent>
         <div className="space-y-4">
           <div className="grid w-full place-items-center">
@@ -57,28 +57,26 @@ export function CardOverview() {
               </div>
 
               <div className="space-y-1">
-                <p className="text-primary-foreground/90 font-mono text-sm tracking-[0.15em] sm:text-lg">
+                <p className="text-primary-foreground font-mono text-sm tracking-[0.15em] sm:text-lg">
                   •••• •••• •••• 2301
                 </p>
               </div>
 
               <div className="flex items-end justify-between">
                 <div className="space-y-2">
-                  <p className="text-primary-foreground font-mono text-sm font-medium tracking-wide uppercase">
-                    Arham Khan
-                  </p>
+                  <p className="text-primary-foreground text-sm font-medium">Jordan Lee</p>
                   <div className="flex gap-6">
                     <div>
-                      <p className="text-primary-foreground/80 text-[10px] tracking-wider uppercase">Valid Thru</p>
-                      <p className="text-primary-foreground/80 font-mono text-xs">06/30</p>
+                      <p className="text-primary-foreground text-xs">Valid Thru</p>
+                      <p className="text-primary-foreground font-mono text-xs">06/30</p>
                     </div>
                     <div>
-                      <p className="text-primary-foreground/80 text-[10px] tracking-wider uppercase">CVV</p>
-                      <p className="text-primary-foreground/80 font-mono text-xs">•••</p>
+                      <p className="text-primary-foreground text-xs">CVV</p>
+                      <p className="text-primary-foreground font-mono text-xs">•••</p>
                     </div>
                   </div>
                 </div>
-                <SimpleIcon icon={siMastercard} className="fill-primary-foreground/80 size-7 sm:size-10" />
+                <SimpleIcon icon={siMastercard} className="fill-primary-foreground size-7 sm:size-10" />
               </div>
             </div>
           </div>
@@ -114,7 +112,7 @@ export function CardOverview() {
           <Separator />
 
           <div className="space-y-4">
-            <h6 className="text-muted-foreground text-sm uppercase">Upcoming Payments</h6>
+            <h3 className="text-base font-medium">Upcoming Payments</h3>
 
             <div className="space-y-4">
               {upcomingPayments.map((transaction) => (
@@ -122,13 +120,14 @@ export function CardOverview() {
                   <div className="bg-muted flex size-10 shrink-0 items-center justify-center rounded-full">
                     <transaction.icon className="text-muted-foreground size-5" />
                   </div>
-                  <div className="flex w-full items-end justify-between">
+                  <div className="flex w-full min-w-0 flex-wrap items-end justify-between gap-2">
                     <div>
                       <p className="text-sm font-medium">{transaction.title}</p>
                       <p className="text-muted-foreground text-xs">{transaction.date}</p>
                     </div>
                     <div>
-                      <span className="text-destructive text-sm leading-none font-medium tabular-nums">
+                      <span className="text-danger text-sm leading-none font-medium tabular-nums">
+                        −
                         {formatCurrency(transaction.amount, {
                           noDecimals: true,
                         })}

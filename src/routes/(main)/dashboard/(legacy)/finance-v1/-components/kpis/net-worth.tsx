@@ -1,35 +1,13 @@
-import { SaudiRiyal } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
-import { formatCurrency } from "@/lib/utils";
-
+import { StatCard } from "../../../../-components/dashboard/cards";
 export function NetWorth() {
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>
-          <div className="flex items-center gap-2">
-            <span className="bg-muted grid size-7 place-content-center rounded-sm">
-              <SaudiRiyal className="size-5" />
-            </span>
-            Net Worth
-          </div>
-        </CardTitle>
-      </CardHeader>
-      <CardContent className="space-y-4">
-        <div className="space-y-0.5">
-          <div className="flex items-center justify-between">
-            <p className="text-xl font-medium tabular-nums">{formatCurrency(84250, { noDecimals: true })}</p>
-            <span className="text-xs">+$3,680 MoM</span>
-          </div>
-          <p className="text-muted-foreground text-xs">This month</p>
-        </div>
-
-        <Separator />
-
-        <p className="text-muted-foreground text-xs">Across all linked accounts</p>
-      </CardContent>
-    </Card>
+    <StatCard
+      label="Net Worth"
+      value="$84,250"
+      help="This month · Across all linked accounts"
+      trend={<Badge className="bg-success-surface text-success">+$3,680 MoM</Badge>}
+    />
   );
 }
