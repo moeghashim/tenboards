@@ -1,0 +1,22 @@
+{
+  "milestones": [
+    {
+      "id": "v0.1-design-system-shell",
+      "status": "planned",
+      "tasks": [
+        "001-import-upstream",
+        "002-workers-preview",
+        "003-impeccable-context",
+        "004-visual-capture",
+        "005-design-tokens",
+        "006-brand-assets",
+        "007-theme-presets",
+        "008-floating-sidebar",
+        "009-shell-header",
+        "010-command-palette",
+        "011-layout-settings",
+        "012-shell-acceptance"
+      ]
+    }
+  ]
+}
