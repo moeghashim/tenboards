@@ -135,3 +135,7 @@ Known upstream limitations remain separate from shell acceptance: Patient Monito
 ## Default dashboards (v0.2 / 002)
 
 Default and Default V1 use neutral KPI cards, semantic signed trends, and shared token-based charts with distinct legend line samples. Customer and proposal tables retain filtering, selection, pagination and detail actions; their full columns scroll inside the table on narrow screens. Legacy visitor range selection retains its 7-day mobile default and 3-month desktop default. Existing demo controls and distinct datasets remain intact; no backend behavior was added.
+
+## CRM dashboards (v0.2 / 003)
+
+CRM and CRM V1 use shared compact cards and motion-aware charts, semantic signed trends and explicit opportunity health labels. Narrow tables scroll locally; the opportunity toolbar wraps, and the legacy funnel and source breakdown label segments directly with names and counts. Existing periods, records, table state and demo actions remain local. The upstream-author lead fixture is now Jordan Lee at Northwind Studio.

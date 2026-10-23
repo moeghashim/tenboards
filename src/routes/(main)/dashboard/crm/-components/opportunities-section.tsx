@@ -10,7 +10,7 @@ import {
 import { ChevronDownIcon, ListFilter } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { Card, CardAction, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { CardContent } from "@/components/ui/card";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -31,6 +31,7 @@ import {
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { dataTableFeatures } from "@/lib/data-table-features";
 
+import { DashboardCard as Card, SectionHeader } from "../../-components/dashboard/cards";
 import { opportunitiesColumns } from "./opportunities-table/columns";
 import opportunitiesData from "./opportunities-table/data.json";
 import { opportunitiesSchema } from "./opportunities-table/schema";
@@ -93,15 +94,14 @@ export function OpportunitiesSection() {
   return (
     <section>
       <Card>
-        <CardHeader>
-          <CardTitle className="leading-none">Recent Opportunities</CardTitle>
-          <CardDescription>
-            Track qualified leads moving through discovery, proposal, and closing stages.
-          </CardDescription>
-          <CardAction>
-            <div className="flex items-center gap-2">
+        <SectionHeader
+          title="Recent Opportunities"
+          description="Track qualified leads moving through discovery, proposal, and closing stages."
+          actions={
+            <div className="flex flex-wrap items-center gap-2">
               <Input
                 className="h-7 w-44 md:w-52"
+                aria-label="Search deals"
                 placeholder="Search deals..."
                 value={searchQuery}
                 onChange={(event) => {
@@ -154,11 +154,12 @@ export function OpportunitiesSection() {
                 </DropdownMenuContent>
               </DropdownMenu>
             </div>
-          </CardAction>
-        </CardHeader>
+          }
+        />
+
         <CardContent className="flex flex-col gap-4 px-0">
-          <div className="overflow-hidden">
-            <Table className="**:data-[slot='table-cell']:px-4 **:data-[slot='table-cell']:py-4 **:data-[slot='table-head']:px-4">
+          <div className="min-w-0 overflow-hidden">
+            <Table className="min-w-[760px] **:data-[slot='table-cell']:px-4 **:data-[slot='table-cell']:py-3 **:data-[slot='table-head']:px-4">
               <TableHeader className="**:data-[slot='table-head']:text-foreground border-t **:data-[slot='table-head']:h-11 **:data-[slot='table-head']:text-sm **:data-[slot='table-head']:font-medium">
                 {table.getHeaderGroups().map((headerGroup) => (
                   <TableRow key={headerGroup.id}>
@@ -191,7 +192,7 @@ export function OpportunitiesSection() {
               </TableBody>
             </Table>
           </div>
-          <div className="flex items-center justify-between gap-4 px-4 pb-1">
+          <div className="flex flex-wrap items-center justify-between gap-4 px-4 pb-1">
             <p className="text-muted-foreground text-sm">
               Viewing {visibleOpportunityCount} out of {filteredOpportunityCount.toLocaleString()} opportunities
             </p>

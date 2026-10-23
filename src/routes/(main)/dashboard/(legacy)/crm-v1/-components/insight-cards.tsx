@@ -1,9 +1,11 @@
 import { Bar, BarChart, CartesianGrid, Label, LabelList, Pie, PieChart, XAxis, YAxis } from "recharts";
 
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
+import { CardContent, CardFooter } from "@/components/ui/card";
+import { ChartTooltip } from "@/components/ui/chart";
+import { chartAxis, chartGrid, DashboardChart, DashboardTooltip, useChartMotion } from "@/lib/charts/theme";
 
+import { DashboardCard as Card, SectionHeader } from "../../../-components/dashboard/cards";
 import {
   leadsBySourceChartConfig,
   leadsBySourceChartData,
@@ -14,14 +16,14 @@ import {
 export function InsightCards() {
   const totalLeads = leadsBySourceChartData.reduce((acc, curr) => acc + curr.leads, 0);
 
+  const motion = useChartMotion();
   return (
-    <div className="grid grid-cols-1 gap-4 *:data-[slot=card]:shadow-xs sm:grid-cols-2 xl:grid-cols-5">
+    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-5">
       <Card className="col-span-1 xl:col-span-2">
-        <CardHeader>
-          <CardTitle>Leads by Source</CardTitle>
-        </CardHeader>
-        <CardContent className="flex items-center gap-6">
-          <ChartContainer config={leadsBySourceChartConfig} className="mx-auto aspect-square max-h-48 flex-1">
+        <SectionHeader title="Leads by Source" />
+
+        <CardContent className="flex flex-wrap items-center gap-4">
+          <DashboardChart config={leadsBySourceChartConfig} className="mx-auto h-64 w-full shrink-0 sm:h-64">
             <PieChart
               className="m-0"
               margin={{
@@ -31,13 +33,36 @@ export function InsightCards() {
                 bottom: 0,
               }}
             >
-              <ChartTooltip cursor={false} content={<ChartTooltipContent hideLabel />} />
+              <ChartTooltip {...motion} cursor={false} content={<DashboardTooltip hideLabel />} />
               <Pie
+                {...motion}
                 data={leadsBySourceChartData}
                 dataKey="leads"
                 nameKey="source"
-                innerRadius={65}
-                outerRadius={90}
+                innerRadius={52}
+                outerRadius={65}
+                label={({ cx, cy, midAngle, outerRadius, index }) => {
+                  const entry = leadsBySourceChartData[index];
+                  const words = String(leadsBySourceChartConfig[entry.source].label).split(" ");
+                  const angle = (-Number(midAngle) * Math.PI) / 180;
+                  const x = Number(cx) + (Number(outerRadius) + 22) * Math.cos(angle);
+                  const y = Number(cy) + (Number(outerRadius) + 22) * Math.sin(angle);
+                  return (
+                    <text
+                      x={x}
+                      y={y}
+                      fill="var(--foreground)"
+                      fontSize={12}
+                      textAnchor={x > Number(cx) ? "start" : "end"}
+                    >
+                      <tspan x={x}>{words[0]}</tspan>
+                      <tspan x={x} dy={14}>
+                        {words.slice(1).join(" ")} {entry.leads}
+                      </tspan>
+                    </text>
+                  );
+                }}
+                labelLine={{ stroke: "var(--muted-foreground)" }}
                 paddingAngle={2}
                 cornerRadius={4}
               >
@@ -63,11 +88,11 @@ export function InsightCards() {
                 />
               </Pie>
             </PieChart>
-          </ChartContainer>
+          </DashboardChart>
 
-          <ul className="flex flex-col gap-3">
+          <ul className="flex min-w-36 flex-1 flex-col gap-3">
             {leadsBySourceChartData.map((item) => (
-              <li key={item.source} className="flex w-36 items-center justify-between">
+              <li key={item.source} className="flex items-center justify-between gap-4">
                 <span className="flex items-center gap-2 text-xs capitalize">
                   <span
                     className="size-2.5 rounded-full"
@@ -96,31 +121,24 @@ export function InsightCards() {
       </Card>
 
       <Card className="col-span-1 xl:col-span-3">
-        <CardHeader>
-          <CardTitle>Project Revenue vs. Target</CardTitle>
-        </CardHeader>
-        <CardContent className="size-full max-h-52">
-          <ChartContainer config={projectRevenueChartConfig} className="size-full">
+        <SectionHeader title="Project Revenue vs. Target" />
+
+        <CardContent className="min-w-0 overflow-x-auto">
+          <DashboardChart config={projectRevenueChartConfig} className="h-64 min-w-[600px] sm:h-64">
             <BarChart accessibilityLayer data={projectRevenueChartData} layout="vertical">
-              <CartesianGrid horizontal={false} />
+              <CartesianGrid {...chartGrid} horizontal={false} vertical />
               <YAxis
+                {...chartAxis}
                 dataKey="name"
                 type="category"
                 tickLine={false}
                 tickMargin={10}
                 axisLine={false}
-                tickFormatter={(value) => value.slice(0, 3)}
-                hide
+                width={130}
               />
-              <XAxis dataKey="actual" type="number" hide />
-              <ChartTooltip cursor={false} content={<ChartTooltipContent indicator="line" />} />
-              <Bar stackId="a" dataKey="actual" fill="var(--color-actual)">
-                <LabelList
-                  dataKey="name"
-                  position="insideLeft"
-                  offset={8}
-                  className="fill-primary-foreground text-xs"
-                />
+              <XAxis {...chartAxis} type="number" />
+              <ChartTooltip {...motion} cursor={false} content={<DashboardTooltip indicator="line" />} />
+              <Bar {...motion} stackId="a" dataKey="actual" fill="var(--color-actual)">
                 <LabelList
                   dataKey="actual"
                   position="insideRight"
@@ -128,18 +146,26 @@ export function InsightCards() {
                   className="fill-primary-foreground text-xs tabular-nums"
                 />
               </Bar>
-              <Bar stackId="a" dataKey="remaining" fill="var(--color-remaining)" radius={[0, 6, 6, 0]}>
+              <Bar
+                {...motion}
+                stackId="a"
+                dataKey="remaining"
+                fill="var(--color-remaining)"
+                stroke="var(--border-strong)"
+                radius={[0, 3, 3, 0]}
+              >
                 <LabelList
                   dataKey="remaining"
                   position="insideRight"
                   offset={8}
-                  className="fill-primary-foreground text-xs tabular-nums"
+                  className="fill-foreground text-xs tabular-nums"
                 />
               </Bar>
             </BarChart>
-          </ChartContainer>
+          </DashboardChart>
         </CardContent>
-        <CardFooter>
+        <CardFooter className="flex flex-col items-start gap-2">
+          <p className="text-muted-foreground text-xs">Solid: actual revenue · Outlined: remaining to target</p>
           <p className="text-muted-foreground text-xs">Average progress: 78% · 2 projects above target</p>
         </CardFooter>
       </Card>

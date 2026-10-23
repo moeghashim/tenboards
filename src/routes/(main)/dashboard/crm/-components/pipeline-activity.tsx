@@ -1,9 +1,19 @@
 import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts";
 
-import { Card, CardAction, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { type ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
+import { CardContent } from "@/components/ui/card";
+import { type ChartConfig, ChartTooltip } from "@/components/ui/chart";
 import { Progress } from "@/components/ui/progress";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  chartAxis,
+  chartCursor,
+  chartGrid,
+  DashboardChart,
+  DashboardTooltip,
+  useChartMotion,
+} from "@/lib/charts/theme";
+
+import { DashboardCard as Card, SectionHeader } from "../../-components/dashboard/cards";
 
 const pipelineChartValues = [34, 38, 31, 47, 42, 51, 44, 40, 58, 46, 43, 49] as const;
 
@@ -36,6 +46,7 @@ function getRollingMonthData(values: readonly number[]) {
 }
 
 export function PipelineActivity() {
+  const motion = useChartMotion();
   const pipelineChartData = getRollingMonthData(pipelineChartValues);
   const totalQualified = pipelineChartData.reduce((sum, item) => sum + item.qualified, 0);
   const discoveryCallsBooked = 184;
@@ -44,11 +55,11 @@ export function PipelineActivity() {
   return (
     <div className="grid grid-cols-1 gap-4 xl:grid-cols-12">
       <Card className="xl:col-span-12">
-        <CardHeader>
-          <CardTitle>Qualified Lead Flow</CardTitle>
-          <CardAction>
+        <SectionHeader
+          title="Qualified Lead Flow"
+          actions={
             <Select defaultValue="last-12-months" items={pipelineRangeItems}>
-              <SelectTrigger size="sm" className="min-w-40">
+              <SelectTrigger aria-label="Pipeline period" size="sm" className="min-w-40">
                 <SelectValue placeholder="Select range" />
               </SelectTrigger>
               <SelectContent>
@@ -61,34 +72,16 @@ export function PipelineActivity() {
                 </SelectGroup>
               </SelectContent>
             </Select>
-          </CardAction>
-        </CardHeader>
+          }
+        />
+
         <CardContent>
           <div className="grid grid-cols-1 gap-4 lg:grid-cols-12">
-            <ChartContainer config={pipelineChartConfig} className="h-72 w-full lg:col-span-8">
+            <DashboardChart config={pipelineChartConfig} className="lg:col-span-8">
               <BarChart data={pipelineChartData} margin={{ left: 0, right: 0, top: 0, bottom: 0 }} barSize={38}>
-                <defs>
-                  <pattern
-                    id="crm-qualified-pattern"
-                    width="4"
-                    height="4"
-                    patternUnits="userSpaceOnUse"
-                    patternTransform="rotate(45)"
-                  >
-                    <rect width="6" height="6" fill="var(--color-qualified)" fillOpacity="0.15" />
-                    <line
-                      x1="0"
-                      y1="0"
-                      x2="0"
-                      y2="6"
-                      stroke="var(--color-qualified)"
-                      strokeWidth="1.25"
-                      strokeOpacity="0.40"
-                    />
-                  </pattern>
-                </defs>
-                <CartesianGrid vertical={false} strokeDasharray="0" />
+                <CartesianGrid {...chartGrid} />
                 <XAxis
+                  {...chartAxis}
                   dataKey="date"
                   tickLine={false}
                   tickMargin={10}
@@ -97,23 +90,24 @@ export function PipelineActivity() {
                 />
                 <YAxis hide />
                 <ChartTooltip
+                  {...motion}
+                  cursor={chartCursor}
                   content={
-                    <ChartTooltipContent
+                    <DashboardTooltip
                       hideIndicator
                       labelFormatter={(value) => tooltipMonthFormatter.format(new Date(String(value)))}
                     />
                   }
                 />
                 <Bar
+                  {...motion}
                   dataKey="qualified"
-                  fill="url(#crm-qualified-pattern)"
-                  radius={[8, 8, 0, 0]}
+                  fill="var(--color-qualified)"
+                  radius={[3, 3, 0, 0]}
                   stroke="var(--color-qualified)"
-                  strokeOpacity={0.5}
-                  strokeWidth={0.5}
                 />
               </BarChart>
-            </ChartContainer>
+            </DashboardChart>
 
             <div className="flex flex-col gap-5 rounded-lg p-4 lg:col-span-4">
               <div className="flex flex-col gap-1">
@@ -123,10 +117,8 @@ export function PipelineActivity() {
                 <p className="text-muted-foreground text-sm">Total qualified leads captured over the last 12 months.</p>
               </div>
 
-              <div className="border-border/60 flex flex-col gap-3 rounded-lg border p-3">
-                <div className="text-muted-foreground text-[11px] tracking-widest uppercase">
-                  Discovery Calls Booked
-                </div>
+              <div className="flex flex-col gap-3 border-t pt-4">
+                <div className="text-muted-foreground text-sm">Discovery Calls Booked</div>
 
                 <div className="flex flex-col gap-1.5">
                   <div className="text-2xl leading-none font-medium tabular-nums">
@@ -140,7 +132,7 @@ export function PipelineActivity() {
                 <div className="flex flex-col gap-2 pt-0.5">
                   <Progress
                     value={discoveryProgress}
-                    className="bg-chart-2/12 *:data-[slot='progress-indicator']:bg-chart-2 h-2.5"
+                    className="bg-muted *:data-[slot='progress-indicator']:bg-chart-2 h-2.5"
                   />
                   <div className="flex items-center justify-between text-xs">
                     <div className="font-medium tabular-nums">{discoveryCallsBooked} booked</div>
