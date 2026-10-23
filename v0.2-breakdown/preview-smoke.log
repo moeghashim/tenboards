@@ -1,0 +1,8 @@
+
+> tenboards@0.1.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url https://694b9eb3-tenboards.mohanadgh.workers.dev --routes /dashboard/default --output screenshots/v0.2-breakdown-preview-smoke
+
+PASS /dashboard/default light/desktop
+PASS /dashboard/default light/mobile
+PASS /dashboard/default dark/desktop
+PASS /dashboard/default dark/mobile

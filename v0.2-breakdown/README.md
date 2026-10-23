@@ -30,3 +30,11 @@ The local report is authoritative per case; a PNG may exist despite a hydration 
 | /dashboard/patient-monitoring | [light/desktop](local/_dashboard_patient-monitoring-light-desktop.png) | [dark/desktop](local/_dashboard_patient-monitoring-dark-desktop.png) | [light/mobile](local/_dashboard_patient-monitoring-light-mobile.png) | [dark/mobile](local/_dashboard_patient-monitoring-dark-mobile.png) |
 
 Infrastructure dark/mobile original PNG was not saved because fonts did not settle; use the [successful retry](infrastructure-retry/_dashboard_infrastructure-dark-mobile.png).
+
+## Planning PR Workers preview
+
+Version: https://694b9eb3-tenboards.mohanadgh.workers.dev/dashboard/default
+
+Alias: https://pr-013-tenboards.mohanadgh.workers.dev/dashboard/default
+
+Default-route smoke passes 4/4 light/dark × desktop/mobile without console/page errors; see [report](preview-smoke/report.json) and [log](preview-smoke.log). Runtime code is unchanged and production traffic was not deployed.
