@@ -2,7 +2,7 @@
 
 An MIT-licensed dashboard template built with TanStack Start, React 19, TypeScript, Tailwind CSS v4, and shadcn/ui on Base UI.
 
-The full upstream screen catalog and demo-data relationships are retained, with neutral demo identities. **v0.1 is merged, deployed and closed**: the design system and shell follow [PLAN.md](PLAN.md). **v0.2 (all 14 dashboards restyled) is merged, deployed and closed** per [the dashboard task breakdown](dev/milestones/v0.2-dashboards/README.md). **v0.3 app pages are complete pending merge** — [14 app-page tasks](dev/milestones/v0.3-app-pages/README.md) deliver a small shared header foundation, standalone/embedded Mail and Chat, Calendar, Kanban, Tasks, Invoice, File Manager, Products, Users/Roles, Profile, Auth V1/V2, system states, and full-route acceptance. Current milestone/task status is tracked in [dev/milestones.json](dev/milestones.json). Current screens are demonstrations; database and authentication integrations are later milestones.
+The full upstream screen catalog and demo-data relationships are retained, with neutral demo identities. **v0.1 is merged, deployed and closed**: the design system and shell follow [PLAN.md](PLAN.md). **v0.2 (all 14 dashboards restyled) is merged, deployed and closed** per [the dashboard task breakdown](dev/milestones/v0.2-dashboards/README.md). **v0.3 (all app pages restyled) is merged, deployed and released as [v0.3.0](https://github.com/moeghashim/tenboards/releases/tag/v0.3.0)** — [14 app-page tasks](dev/milestones/v0.3-app-pages/README.md) deliver a small shared header foundation, standalone/embedded Mail and Chat, Calendar, Kanban, Tasks, Invoice, File Manager, Products, Users/Roles, Profile, Auth V1/V2, system states, and full-route acceptance. Current milestone/task status is tracked in [dev/milestones.json](dev/milestones.json). Current screens are demonstrations. **Next: v0.4** — Postgres + Drizzle data layer with zero-config demo fallback, then Better Auth (v0.5) and production Cloudflare setup (v0.6).
 
 ## Run locally
 
@@ -46,7 +46,7 @@ The 14 dashboard routes are Default, CRM, Finance, Analytics, Productivity, E-co
 | Infrastructure | `/dashboard/infrastructure` | — |
 | Patient Monitoring | `/dashboard/patient-monitoring` | — |
 
-File Manager, Products, Users, Roles, Profile, Mail, Chat, Calendar, Kanban, Tasks, Invoice, Auth V1/V2, Coming Soon and error/permission states now follow the v0.3 app-page design. Standalone `/mail` and `/chat` retain `/dashboard/mail` and `/dashboard/chat` iframe aliases. All four auth forms and the bare `/auth/v2` layout remain distinct; all screens remain demos. Route-specific components stay colocated under `src/routes/`. Tasks 001–007 are merged and deployed; tasks 008–014 are in review pending Claude’s authorized merges.
+File Manager, Products, Users, Roles, Profile, Mail, Chat, Calendar, Kanban, Tasks, Invoice, Auth V1/V2, Coming Soon and error/permission states now follow the v0.3 app-page design. Standalone `/mail` and `/chat` retain `/dashboard/mail` and `/dashboard/chat` iframe aliases. All four auth forms and the bare `/auth/v2` layout remain distinct; all screens remain demos. Route-specific components stay colocated under `src/routes/`. All 14 v0.3 tasks are merged and deployed.
 
 ## Provenance and license
 
@@ -135,7 +135,7 @@ node --experimental-strip-types scripts/check-contrast.ts --presets default,grap
 
 Axe is not part of the existing tooling; the acceptance evidence identifies the semantic/keyboard checks actually run. [Task 012 evidence](https://github.com/moeghashim/tenboards/tree/pr-assets/012) holds the complete route matrix, logs, and smoke scripts. [Sidebar/reference comparison](https://github.com/moeghashim/tenboards/blob/pr-assets/008/sidebar-reference-comparison.png) records the locked reference comparison. Captures may contain inherited TanStack development-tool chrome.
 
-Current hydration status: all eight inherited findings are resolved and verified on dev and Workers. Finance, Finance V1, Productivity and Patient Monitoring shipped in v0.2; Calendar and Invoice shipped in v0.3 batch A; Auth V2 login/register are verified in the pending batch B stack. Calendar, Invoice and Auth use serialized request data; Patient Monitoring starts its real clock after hydration. Delayed JavaScript, refresh and differing timezone checks use real clocks. The final 1,216-case matrix covers all 38 routes across four presets, both themes and both viewports. Historical failures and linked resolutions remain in [dev/open-questions.md](dev/open-questions.md).
+Current hydration status: all eight inherited findings are resolved and verified on dev and Workers. Finance, Finance V1, Productivity and Patient Monitoring shipped in v0.2; Calendar and Invoice shipped in v0.3 batch A; Auth V2 login/register shipped in v0.3 batch B. Calendar, Invoice and Auth use serialized request data; Patient Monitoring starts its real clock after hydration. Delayed JavaScript, refresh and differing timezone checks use real clocks. The final 1,216-case matrix covers all 38 routes across four presets, both themes and both viewports. Historical failures and linked resolutions remain in [dev/open-questions.md](dev/open-questions.md).
 
 
 ## Dashboard foundation (v0.2 / 001)

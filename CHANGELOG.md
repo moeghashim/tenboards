@@ -10,7 +10,7 @@
 - Verify 1,216 route/preset/theme/viewport cases on dev and Workers, plus iframe, query/tab/overlay/print, auth and real root-boundary recovery scenarios.
 - Preserve root/dashboard redirects, root 404 semantics, generic production errors and UI-only authentication. Add no runtime dependencies, backend integration or public error trigger.
 
-Released on merge of the approved v0.3 stack; the reviewer owns the version bump, release link, tag and production redeploy.
+All 14 tasks are merged and deployed to https://tenboards.mohanadgh.workers.dev. Release: [v0.3.0](https://github.com/moeghashim/tenboards/releases/tag/v0.3.0).
 
 ## v0.2 — Dashboards (2026-10-23)
 
@@ -22,7 +22,7 @@ Released on merge of the approved v0.3 stack; the reviewer owns the version bump
 - Align Finance comparison-row heights and verify all 14 routes across four presets, two themes and two viewports on dev and Workers.
 - Retain mock data, placeholder/disabled actions and the existing external Logistics basemap. No runtime dependency or backend/auth integration is added. Calendar, Invoice and Auth V2 hydration fixes and app-page restyles remain v0.3 work.
 
-All 12 tasks are merged and deployed to https://tenboards.mohanadgh.workers.dev.
+All 12 tasks are merged and deployed. Release: [v0.2.0](https://github.com/moeghashim/tenboards/releases/tag/v0.2.0).
 
 ## v0.1 — Design system and shell (2026-10-23)
 
