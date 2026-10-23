@@ -1,0 +1,171 @@
+routes/(main)/auth/-components/login-form.tsx: 92: Remember me for 30 days
+routes/(main)/auth/v1/login/route.tsx: 38: @to=/auth/v1/register
+routes/(main)/auth/v1/register/route.tsx: 26: @to=/auth/v1/login
+routes/(main)/auth/v2/route.tsx: 21: Design. Build. Launch. Repeat.
+routes/(main)/dashboard/(legacy)/analytics-v1/-components/analytics-actions-manager-queue.tsx: 73: Primary owner
+routes/(main)/dashboard/(legacy)/analytics-v1/-components/analytics-actions-risk-ledger.tsx: 150: @detail=Risk Ladder >= 80 (current window)
+routes/(main)/dashboard/(legacy)/analytics-v1/-components/analytics-actions-risk-ledger.tsx: 151: @detail=Next 7 days
+routes/(main)/dashboard/(legacy)/analytics-v1/-components/analytics-drivers-coverage-triage.tsx: 59: Open top 5 deals
+routes/(main)/dashboard/(legacy)/analytics-v1/-components/analytics-drivers-forecast-target.tsx: 42: @description=12-week trend with attainment context
+routes/(main)/dashboard/(legacy)/analytics-v1/-components/analytics-drivers-forecast-target.tsx: 78: @strokeDasharray=6 5
+routes/(main)/dashboard/(legacy)/analytics-v1/-components/analytics-drivers-forecast-target.tsx: 99: @strokeDasharray=2 3
+routes/(main)/dashboard/(legacy)/analytics-v1/-components/analytics-drivers-forecast-target.tsx: 108: Dashed line: 100% target
+routes/(main)/dashboard/(legacy)/analytics-v1/-components/analytics-overview.tsx: 139: Risk Ladder 30
+routes/(main)/dashboard/(legacy)/analytics-v1/-components/analytics-overview.tsx: 259: Risk Ladder 30
+routes/(main)/dashboard/(legacy)/crm-v1/-components/operational-cards.tsx: 110: %
+routes/(main)/dashboard/(legacy)/crm-v1/-components/overview-cards.tsx: 98: @help=Last 6 Months
+routes/(main)/dashboard/(legacy)/crm-v1/-components/overview-cards.tsx: 104: @help=Last 6 Months
+routes/(main)/dashboard/(legacy)/default-v1/-components/chart-area-interactive.tsx: 65: Total for the last 3 months
+routes/(main)/dashboard/(legacy)/default-v1/-components/chart-area-interactive.tsx: 66: Last 3 months
+routes/(main)/dashboard/(legacy)/default-v1/-components/chart-area-interactive.tsx: 77: @value=90d
+routes/(main)/dashboard/(legacy)/default-v1/-components/chart-area-interactive.tsx: 77: Last 3 months
+routes/(main)/dashboard/(legacy)/default-v1/-components/chart-area-interactive.tsx: 78: @value=30d
+routes/(main)/dashboard/(legacy)/default-v1/-components/chart-area-interactive.tsx: 78: Last 30 days
+routes/(main)/dashboard/(legacy)/default-v1/-components/chart-area-interactive.tsx: 79: @value=7d
+routes/(main)/dashboard/(legacy)/default-v1/-components/chart-area-interactive.tsx: 79: Last 7 days
+routes/(main)/dashboard/(legacy)/default-v1/-components/chart-area-interactive.tsx: 87: @placeholder=Last 3 months
+routes/(main)/dashboard/(legacy)/default-v1/-components/chart-area-interactive.tsx: 106: @x1=0
+routes/(main)/dashboard/(legacy)/default-v1/-components/chart-area-interactive.tsx: 106: @y1=0
+routes/(main)/dashboard/(legacy)/default-v1/-components/chart-area-interactive.tsx: 106: @x2=0
+routes/(main)/dashboard/(legacy)/default-v1/-components/chart-area-interactive.tsx: 106: @y2=1
+routes/(main)/dashboard/(legacy)/default-v1/-components/chart-area-interactive.tsx: 107: @offset=5%
+routes/(main)/dashboard/(legacy)/default-v1/-components/chart-area-interactive.tsx: 108: @offset=95%
+routes/(main)/dashboard/(legacy)/default-v1/-components/chart-area-interactive.tsx: 110: @x1=0
+routes/(main)/dashboard/(legacy)/default-v1/-components/chart-area-interactive.tsx: 110: @y1=0
+routes/(main)/dashboard/(legacy)/default-v1/-components/chart-area-interactive.tsx: 110: @x2=0
+routes/(main)/dashboard/(legacy)/default-v1/-components/chart-area-interactive.tsx: 110: @y2=1
+routes/(main)/dashboard/(legacy)/default-v1/-components/chart-area-interactive.tsx: 111: @offset=5%
+routes/(main)/dashboard/(legacy)/default-v1/-components/chart-area-interactive.tsx: 112: @offset=95%
+routes/(main)/dashboard/(legacy)/default-v1/-components/proposal-sections-table/columns.tsx: 110: Showing total visitors for the last 6 months
+routes/(main)/dashboard/(legacy)/default-v1/-components/proposal-sections-table/columns.tsx: 156: Showing total visitors for the last 6 months. This is just some random text to test the layout. It
+                  spans multiple lines and should wrap around.
+routes/(main)/dashboard/(legacy)/default-v1/-components/section-cards.tsx: 24: Visitors for the last 6 months
+routes/(main)/dashboard/(legacy)/finance-v1/-components/income-reliability.tsx: 17: Based on last 6 months of income
+routes/(main)/dashboard/(legacy)/finance-v1/-components/spending-breakdown.tsx: 25: %
+routes/(main)/dashboard/academy/-components/performance-highlights.tsx: 28: %
+routes/(main)/dashboard/academy/-components/performance-highlights.tsx: 56: %
+routes/(main)/dashboard/analytics/-components/analytics-toolbar.tsx: 24: @defaultValue=last-4-weeks
+routes/(main)/dashboard/analytics/-components/top-traffic-sources.tsx: 33: @x=100%
+routes/(main)/dashboard/calendar/-components/calendar.tsx: 150: @backgroundEventTitleClass=p-1 text-xs text-muted-foreground
+routes/(main)/dashboard/calendar/-components/calendar.tsx: 152: @moreLinkClass=text-primary outline-ring focus-visible:outline-3
+routes/(main)/dashboard/calendar/-components/calendar.tsx: 153: @popoverCloseClass=absolute end-1 top-1 rounded-sm p-1 hover:bg-accent focus-visible:outline-3 outline-ring
+routes/(main)/dashboard/calendar/-components/calendar.tsx: 154: @popoverClass=m-1 max-w-80 overflow-hidden rounded-lg border bg-popover text-popover-foreground
+routes/(main)/dashboard/crm/-components/pipeline-activity.tsx: 49: @defaultValue=last-12-months
+routes/(main)/dashboard/crm/-components/pipeline-activity.tsx: 109: Discovery Calls Booked
+routes/(main)/dashboard/crm/-components/pipeline-activity.tsx: 116: % of qualified leads booked a first call.
+routes/(main)/dashboard/crm/-components/task-reminders.tsx: 96: % of this month&apos;s proposal target reached.
+routes/(main)/dashboard/default/-components/metric-cards.tsx: 21: @help=Visitors for the last 6 months
+routes/(main)/dashboard/default/-components/performance-overview.tsx: 54: Customer activity for the last 3 months
+routes/(main)/dashboard/default/-components/performance-overview.tsx: 55: Last 3 months
+routes/(main)/dashboard/default/-components/performance-overview.tsx: 62: @placeholder=3 months
+routes/(main)/dashboard/default/-components/performance-overview.tsx: 103: @x1=0
+routes/(main)/dashboard/default/-components/performance-overview.tsx: 103: @y1=0
+routes/(main)/dashboard/default/-components/performance-overview.tsx: 103: @x2=0
+routes/(main)/dashboard/default/-components/performance-overview.tsx: 103: @y2=1
+routes/(main)/dashboard/default/-components/performance-overview.tsx: 104: @offset=5%
+routes/(main)/dashboard/default/-components/performance-overview.tsx: 105: @offset=95%
+routes/(main)/dashboard/ecommerce/-components/inventory.tsx: 80: % available
+routes/(main)/dashboard/ecommerce/-components/inventory.tsx: 88: @cx=50%
+routes/(main)/dashboard/ecommerce/-components/inventory.tsx: 89: @cy=72%
+routes/(main)/dashboard/ecommerce/-components/inventory.tsx: 111: %
+routes/(main)/dashboard/ecommerce/-components/store-traffic.tsx: 65: @x1=0
+routes/(main)/dashboard/ecommerce/-components/store-traffic.tsx: 65: @x2=0
+routes/(main)/dashboard/ecommerce/-components/store-traffic.tsx: 65: @y1=0
+routes/(main)/dashboard/ecommerce/-components/store-traffic.tsx: 65: @y2=1
+routes/(main)/dashboard/ecommerce/-components/store-traffic.tsx: 66: @offset=5%
+routes/(main)/dashboard/ecommerce/-components/store-traffic.tsx: 67: @offset=95%
+routes/(main)/dashboard/ecommerce/-components/store-traffic.tsx: 107: @strokeDasharray=6 3
+routes/(main)/dashboard/ecommerce/-components/top-products.tsx: 41: %
+routes/(main)/dashboard/ecommerce/-components/traffic-sources.tsx: 25: %
+routes/(main)/dashboard/file-manager/-components/file-manager-toolbar.tsx: 54: Design
+routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx: 140: %
+routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx: 187: %
+routes/(main)/dashboard/finance/-components/income-breakdown.tsx: 16: %
+routes/(main)/dashboard/finance/-components/quick-actions.tsx: 57: $
+routes/(main)/dashboard/finance/-components/quick-actions.tsx: 59: @placeholder=0.00
+routes/(main)/dashboard/finance/route.tsx: 42: @defaultValue=30-days
+routes/(main)/dashboard/finance/route.tsx: 45: @value=30-days
+routes/(main)/dashboard/finance/route.tsx: 46: @value=12-months
+routes/(main)/dashboard/finance/route.tsx: 66: @value=30-days
+routes/(main)/dashboard/finance/route.tsx: 100: @value=12-months
+routes/(main)/dashboard/infrastructure/-components/project-environments.tsx: 282: %
+routes/(main)/dashboard/invoice/-components/invoice-adjustments.tsx: 81: @step=0.01
+routes/(main)/dashboard/invoice/-components/invoice-items.tsx: 136: @step=1
+routes/(main)/dashboard/invoice/-components/invoice-items.tsx: 149: @step=0.01
+routes/(main)/dashboard/invoice/-components/invoice-paper.tsx: 30: @viewBox=0 0 48 48
+routes/(main)/dashboard/invoice/-components/invoice-paper.tsx: 31: @rx=3
+routes/(main)/dashboard/invoice/-components/invoice-paper.tsx: 32: @x=28
+routes/(main)/dashboard/invoice/-components/invoice-paper.tsx: 32: @rx=3
+routes/(main)/dashboard/invoice/-components/invoice-paper.tsx: 33: @y=28
+routes/(main)/dashboard/invoice/-components/invoice-paper.tsx: 33: @rx=3
+routes/(main)/dashboard/invoice/-components/invoice-paper.tsx: 34: @x=28
+routes/(main)/dashboard/invoice/-components/invoice-paper.tsx: 34: @y=28
+routes/(main)/dashboard/invoice/-components/invoice-paper.tsx: 34: @rx=3
+routes/(main)/dashboard/invoice/-components/invoice-paper.tsx: 106: %
+routes/(main)/dashboard/kanban/-components/task-card.tsx: 79: %
+routes/(main)/dashboard/kanban/-components/task-card.tsx: 103: Team
+routes/(main)/dashboard/logistics/-components/shipment-details.tsx: 77: % complete
+routes/(main)/dashboard/logistics/-components/shipment-details.tsx: 148: % complete
+routes/(main)/dashboard/logistics/-components/shipment-route-map.tsx: 199: @strokeDasharray=8 8
+routes/(main)/dashboard/patient-monitoring/-components/patient-detail.tsx: 80: @calibration=25 mm/s · 10 mm/mV
+routes/(main)/dashboard/patient-monitoring/-components/patient-detail.tsx: 81: @calibration=25 mm/s · 10 mm/mV
+routes/(main)/dashboard/patient-monitoring/-components/patient-detail.tsx: 81: @label=ECG V5
+routes/(main)/dashboard/patient-monitoring/-components/patient-detail.tsx: 81: @lead=V5
+routes/(main)/dashboard/patient-monitoring/-components/patient-detail.tsx: 83: @calibration=10 mm/mV
+routes/(main)/dashboard/patient-monitoring/-components/patient-detail.tsx: 99: @unit=%
+routes/(main)/dashboard/patient-monitoring/-components/patient-trends.tsx: 117: @kind=spo2
+routes/(main)/dashboard/patient-monitoring/-components/patient-trends.tsx: 117: @unit=%
+routes/(main)/dashboard/patient-monitoring/-components/patient-trends.tsx: 122: 21:00
+routes/(main)/dashboard/patient-monitoring/-components/patient-trends.tsx: 123: 22:00
+routes/(main)/dashboard/patient-monitoring/-components/patient-trends.tsx: 124: 23:00
+routes/(main)/dashboard/patient-monitoring/-components/patient-trends.tsx: 125: 00:00
+routes/(main)/dashboard/patient-monitoring/-components/patient-trends.tsx: 126: 01:00
+routes/(main)/dashboard/productivity/-components/projects-section.tsx: 75: %
+routes/(main)/dashboard/products/-components/add-product-drawer.tsx: 151: @placeholder=e.g. CL-TEE-105
+routes/(main)/dashboard/products/-components/add-product-drawer.tsx: 231: @min=0
+routes/(main)/dashboard/products/-components/add-product-drawer.tsx: 232: @max=1000000
+routes/(main)/dashboard/products/-components/add-product-drawer.tsx: 233: @step=0.01
+routes/(main)/dashboard/products/-components/add-product-drawer.tsx: 234: @placeholder=0.00
+routes/(main)/dashboard/products/-components/add-product-drawer.tsx: 246: @min=0
+routes/(main)/dashboard/products/-components/add-product-drawer.tsx: 247: @max=1000000
+routes/(main)/dashboard/products/-components/add-product-drawer.tsx: 248: @step=1
+routes/(main)/dashboard/products/-components/product-form.tsx: 136: @min=0
+routes/(main)/dashboard/products/-components/product-form.tsx: 137: @max=1000000
+routes/(main)/dashboard/products/-components/product-form.tsx: 138: @step=0.01
+routes/(main)/dashboard/products/-components/product-form.tsx: 149: @min=0
+routes/(main)/dashboard/products/-components/product-form.tsx: 150: @max=1000000
+routes/(main)/dashboard/products/-components/product-form.tsx: 151: @step=1
+routes/(main)/dashboard/products/-components/product-images-field.tsx: 91: Up to 5 JPG, PNG, or WebP images, 5 MB each.
+routes/(main)/dashboard/profile/-components/profile-header.tsx: 26: @viewBox=0 0 100 100
+routes/(main)/dashboard/profile/-components/profile-header.tsx: 29: @cx=50
+routes/(main)/dashboard/profile/-components/profile-header.tsx: 30: @cy=50
+routes/(main)/dashboard/profile/-components/profile-header.tsx: 31: @pathLength=100
+routes/(main)/dashboard/profile/-components/profile-header.tsx: 32: @r=46
+routes/(main)/dashboard/profile/-components/profile-overview.tsx: 46: Team
+routes/(main)/dashboard/roles/-components/roles-table/table.tsx: 164: @value=12
+routes/(main)/dashboard/roles/-components/roles-table/table.tsx: 164: 12
+routes/(main)/dashboard/roles/-components/roles-table/table.tsx: 165: @value=24
+routes/(main)/dashboard/roles/-components/roles-table/table.tsx: 165: 24
+routes/(main)/dashboard/roles/-components/roles-table/table.tsx: 166: @value=48
+routes/(main)/dashboard/roles/-components/roles-table/table.tsx: 166: 48
+routes/(main)/dashboard/users/-components/users.tsx: 147: Team:
+routes/(main)/mail/-components/mail.tsx: 76: @minSize=30%
+routes/(main)/mail/-components/mail.tsx: 80: @minSize=30%
+components/brand/brand.tsx: 8: @viewBox=0 0 24 24
+components/calendar/event-calendar-views.tsx: 101: @backgroundEventColor=var(--chart-3)
+components/calendar/event-calendar-views.tsx: 102: @backgroundEventClass=not-print:bg-[color-mix(in_oklab,var(--fc-event-color)_10%,transparent)] print:border-1 print:border-(--fc-event-color)
+components/calendar/event-calendar-views.tsx: 124: @blockEventTimeClass=whitespace-nowrap overflow-hidden shrink-1
+components/calendar/event-calendar-views.tsx: 125: @blockEventTitleClass=whitespace-nowrap overflow-hidden shrink-100
+components/calendar/event-calendar-views.tsx: 197: @moreLinkClass=focus-visible:outline-3 outline-ring/50
+components/calendar/event-calendar-views.tsx: 199: @columnMoreLinkClass=my-0.5 border border-transparent print:border-black rounded-md bg-[color-mix(in_oklab,var(--foreground)_10%,var(--background))] hover:bg-[color-mix(in_oklab,var(--foreground)_13%,var(--background))] print:bg-white ring ring-background
+components/calendar/event-calendar-views.tsx: 314: @popoverClass=border rounded-md overflow-hidden shadow-lg m-1 bg-popover text-popover-foreground min-w-55
+components/calendar/event-calendar-views.tsx: 315: @popoverCloseClass=group absolute top-1.5 end-1.5 p-0.5 rounded-sm hover:bg-foreground/5 focus-visible:outline-3 outline-ring/50
+components/calendar/event-calendar-views.tsx: 342: @listDayHeaderClass=-mb-px border-b bg-[color-mix(in_oklab,var(--foreground)_3%,var(--background))] flex flex-row items-center justify-between
+components/calendar/event-calendar-views.tsx: 353: @listDayBodyClass=mt-px px-1.5 py-2 gap-2
+components/calendar/event-calendar-views.tsx: 375: @fillerClass=border opacity-50
+components/calendar/event-calendar-views.tsx: 385: @navLinkClass=focus-visible:outline-3 outline-ring/50
+components/calendar/event-calendar-views.tsx: 393: @highlightClass=bg-chart-1/20
+components/calendar/event-calendar-views.tsx: 394: @nonBusinessHoursClass=bg-foreground/3
+components/calendar/event-calendar-views.tsx: 395: @nowIndicatorLineClass=-m-px border-1 border-destructive
+components/calendar/event-calendar-views.tsx: 396: @nowIndicatorDotClass=-m-[6px] border-6 border-destructive size-0 rounded-full ring-2 ring-background
+components/simple-icon.tsx: 15: @viewBox=0 0 24 24

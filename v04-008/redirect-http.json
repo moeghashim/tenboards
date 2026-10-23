@@ -1,0 +1,56 @@
+[
+  {
+    "base": "http://127.0.0.1:3005",
+    "path": "/",
+    "status": 307,
+    "location": "/dashboard/default"
+  },
+  {
+    "base": "http://127.0.0.1:3005",
+    "path": "/dashboard",
+    "status": 307,
+    "location": "/dashboard/default"
+  },
+  {
+    "base": "http://127.0.0.1:3005",
+    "path": "/dashboard/",
+    "status": 307,
+    "location": "/dashboard"
+  },
+  {
+    "base": "http://127.0.0.1:3001",
+    "path": "/",
+    "status": 307,
+    "location": "/dashboard/default"
+  },
+  {
+    "base": "http://127.0.0.1:3001",
+    "path": "/dashboard",
+    "status": 307,
+    "location": "/dashboard/default"
+  },
+  {
+    "base": "http://127.0.0.1:3001",
+    "path": "/dashboard/",
+    "status": 307,
+    "location": "/dashboard"
+  },
+  {
+    "base": "https://9d63aeb5-tenboards.mohanadgh.workers.dev",
+    "path": "/",
+    "status": 307,
+    "location": "/dashboard/default"
+  },
+  {
+    "base": "https://9d63aeb5-tenboards.mohanadgh.workers.dev",
+    "path": "/dashboard",
+    "status": 307,
+    "location": "/dashboard/default"
+  },
+  {
+    "base": "https://9d63aeb5-tenboards.mohanadgh.workers.dev",
+    "path": "/dashboard/",
+    "status": 307,
+    "location": "/dashboard"
+  }
+]

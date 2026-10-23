@@ -1,0 +1,139 @@
+[
+  {
+    "preset": "default",
+    "file": "_chat-light-mobile.png",
+    "bbox": null,
+    "changedPixels": 0,
+    "maximumChannelDelta": 0
+  },
+  {
+    "preset": "default",
+    "file": "_chat-dark-desktop.png",
+    "bbox": [
+      284,
+      221,
+      306,
+      891
+    ],
+    "changedPixels": 203,
+    "maximumChannelDelta": 1
+  },
+  {
+    "preset": "default",
+    "file": "_chat-light-desktop.png",
+    "bbox": [
+      284,
+      221,
+      306,
+      815
+    ],
+    "changedPixels": 73,
+    "maximumChannelDelta": 2
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_chat-dark-mobile.png",
+    "bbox": null,
+    "changedPixels": 0,
+    "maximumChannelDelta": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_chat-dark-desktop.png",
+    "bbox": null,
+    "changedPixels": 0,
+    "maximumChannelDelta": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_chat-light-desktop.png",
+    "bbox": null,
+    "changedPixels": 0,
+    "maximumChannelDelta": 0
+  },
+  {
+    "preset": "default",
+    "file": "_chat-dark-mobile.png",
+    "bbox": null,
+    "changedPixels": 0,
+    "maximumChannelDelta": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_chat-light-mobile.png",
+    "bbox": [
+      17,
+      151,
+      26,
+      159
+    ],
+    "changedPixels": 15,
+    "maximumChannelDelta": 2
+  },
+  {
+    "preset": "pine",
+    "file": "_chat-light-mobile.png",
+    "bbox": null,
+    "changedPixels": 0,
+    "maximumChannelDelta": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_chat-dark-desktop.png",
+    "bbox": [
+      284,
+      171,
+      614,
+      663
+    ],
+    "changedPixels": 114,
+    "maximumChannelDelta": 2
+  },
+  {
+    "preset": "pine",
+    "file": "_chat-light-desktop.png",
+    "bbox": [
+      284,
+      171,
+      614,
+      891
+    ],
+    "changedPixels": 132,
+    "maximumChannelDelta": 2
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_chat-dark-mobile.png",
+    "bbox": null,
+    "changedPixels": 0,
+    "maximumChannelDelta": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_chat-dark-desktop.png",
+    "bbox": null,
+    "changedPixels": 0,
+    "maximumChannelDelta": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_chat-light-desktop.png",
+    "bbox": null,
+    "changedPixels": 0,
+    "maximumChannelDelta": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_chat-dark-mobile.png",
+    "bbox": null,
+    "changedPixels": 0,
+    "maximumChannelDelta": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_chat-light-mobile.png",
+    "bbox": null,
+    "changedPixels": 0,
+    "maximumChannelDelta": 0
+  }
+]

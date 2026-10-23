@@ -1,0 +1,20 @@
+
+> tenboards@0.3.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://127.0.0.1:3005 --routes /,/dashboard,/dashboard/ --output screenshots/v04-008/redirects-dev-retry --reference 2026-10-23T12:00:00.000Z --mask-live-clocks --interactions
+
+PASS /dashboard light/desktop direct
+PASS /dashboard light/mobile direct
+PASS /dashboard dark/desktop direct
+PASS /dashboard dark/mobile direct
+PASS / light/desktop direct
+PASS / light/mobile direct
+PASS / dark/desktop direct
+PASS / dark/mobile direct
+FAIL /dashboard/ light/desktop direct
+Unexpected redirect for /dashboard/: 307 /dashboard
+FAIL /dashboard/ light/mobile direct
+Unexpected redirect for /dashboard/: 307 /dashboard
+FAIL /dashboard/ dark/desktop direct
+Unexpected redirect for /dashboard/: 307 /dashboard
+FAIL /dashboard/ dark/mobile direct
+Unexpected redirect for /dashboard/: 307 /dashboard

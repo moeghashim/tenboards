@@ -1,0 +1,12 @@
+{
+  "pairs": 1216,
+  "exact": 1154,
+  "nonzero": 62,
+  "maxChangedPixels": 204,
+  "maxChannelDelta": 4,
+  "inspection": "Viewed all dev and Workers preset contact sheets, DB Default sheets, and all 62 side-by-side magnified difference crops. Nonzero pixels are rasterization on existing avatar circles/status marks, Finance icon/avatar edges, rounded iframe corners and Mail edges; no changed business text/layout. Per-pair bounds and deltas are retained without threshold-based acceptance. Only the explicit live clock is masked.",
+  "materialDifferences": 0,
+  "reviewImage": "pixel-diff-review.jpg",
+  "pairsReport": "image-comparison.json",
+  "baseline": "Layer 006 business code with QA-only reference seam; layer 007 separately proved all 40 operational pairs exact."
+}

@@ -1,0 +1,181 @@
+{
+  "baseURL": "http://127.0.0.1:3005/",
+  "fontAssets": "exact public responses cached between contexts",
+  "maskedLiveClocks": true,
+  "reference": "2026-10-23T12:00:00.000Z",
+  "hydrationDelayMs": 0,
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": false,
+  "interactions": true,
+  "results": [
+    {
+      "route": "/dashboard",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard-light-desktop-interactive.png",
+      "controlsFile": "_dashboard-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "HTTP 307 preserves the default-dashboard destination",
+        "Redirect target hydrates and displays loaded dashboard data"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard-light-mobile-interactive.png",
+      "controlsFile": "_dashboard-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "HTTP 307 preserves the default-dashboard destination",
+        "Redirect target hydrates and displays loaded dashboard data"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "HTTP 307 preserves the default-dashboard destination",
+        "Redirect target hydrates and displays loaded dashboard data"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "HTTP 307 preserves the default-dashboard destination",
+        "Redirect target hydrates and displays loaded dashboard data"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_-light-desktop-interactive.png",
+      "controlsFile": "_-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "HTTP 307 preserves the default-dashboard destination",
+        "Redirect target hydrates and displays loaded dashboard data"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_-light-mobile-interactive.png",
+      "controlsFile": "_-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "HTTP 307 preserves the default-dashboard destination",
+        "Redirect target hydrates and displays loaded dashboard data"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_-dark-desktop-interactive.png",
+      "controlsFile": "_-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "HTTP 307 preserves the default-dashboard destination",
+        "Redirect target hydrates and displays loaded dashboard data"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_-dark-mobile-interactive.png",
+      "controlsFile": "_-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "HTTP 307 preserves the default-dashboard destination",
+        "Redirect target hydrates and displays loaded dashboard data"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "HTTP 307 preserves the default-dashboard destination",
+        "Redirect target hydrates and displays loaded dashboard data"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "HTTP 307 preserves the default-dashboard destination",
+        "Redirect target hydrates and displays loaded dashboard data"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "HTTP 307 preserves the default-dashboard destination",
+        "Redirect target hydrates and displays loaded dashboard data"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "HTTP 307 preserves the default-dashboard destination",
+        "Redirect target hydrates and displays loaded dashboard data"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+
+> tenboards@0.3.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://127.0.0.1:3005 --routes /dashboard/default --boundaries --interactions --output screenshots/v04-008/system-dev-recovery-retry --reference 2026-10-23T12:00:00.000Z --mask-live-clocks
+
+PASS /dashboard/default light/desktop direct
+PASS /dashboard/default light/mobile direct
+PASS /dashboard/default dark/desktop direct
+PASS /dashboard/default dark/mobile direct
+PASS qa:root-not-found light/desktop direct
+PASS qa:root-not-found light/mobile direct
+PASS qa:root-not-found dark/desktop direct
+PASS qa:root-not-found dark/mobile direct
+FAIL qa:root-error light/desktop direct
+locator.press: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('button', { name: 'Try again', exact: true })[22m
+[2m    - locator resolved to <button tabindex="0" type="button" data-slot="button" data-tsd-source="/src/routes/-components/root-error.tsx:20:9" class="group/button inline-flex shrink-0 items-center justify-center rounded-lg border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destr…>Try again</button>[22m
+[2m  - elementHandle.press("Enter")[22m
+[2m  - element was detached from the DOM, retrying[22m
+
+PASS qa:root-error light/mobile direct
+PASS qa:root-error dark/desktop direct
+FAIL qa:root-error dark/mobile direct
+locator.press: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('button', { name: 'Try again', exact: true })[22m
+[2m    - locator resolved to <button tabindex="0" type="button" data-slot="button" data-tsd-source="/src/routes/-components/root-error.tsx:20:9" class="group/button inline-flex shrink-0 items-center justify-center rounded-lg border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destr…>Try again</button>[22m
+[2m  - elementHandle.press("Enter")[22m
+[2m  - element was detached from the DOM, retrying[22m
+

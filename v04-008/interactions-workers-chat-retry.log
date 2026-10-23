@@ -1,0 +1,12 @@
+
+> tenboards@0.3.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url https://9d63aeb5-tenboards.mohanadgh.workers.dev --routes /chat --interactions --reload --output screenshots/v04-008/interactions-workers-chat-retry --reference 2026-10-23T12:00:00.000Z --mask-live-clocks
+
+PASS /chat light/desktop direct
+PASS /chat light/desktop refresh
+PASS /chat light/mobile direct
+PASS /chat light/mobile refresh
+PASS /chat dark/desktop direct
+PASS /chat dark/desktop refresh
+PASS /chat dark/mobile direct
+PASS /chat dark/mobile refresh

@@ -1,0 +1,916 @@
+[
+  {
+    "preset": "default",
+    "file": "_-dark-desktop.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_-dark-mobile.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_-light-desktop.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_-light-mobile.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_auth_v2-dark-desktop.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_auth_v2-dark-mobile.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_auth_v2-light-desktop.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_auth_v2-light-mobile.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_chat-dark-desktop.png",
+    "sameSize": true,
+    "bbox": [
+      284,
+      135,
+      614,
+      891
+    ],
+    "changedPixels": 238
+  },
+  {
+    "preset": "default",
+    "file": "_chat-dark-mobile.png",
+    "sameSize": true,
+    "bbox": [
+      114,
+      135,
+      125,
+      147
+    ],
+    "changedPixels": 69
+  },
+  {
+    "preset": "default",
+    "file": "_chat-light-desktop.png",
+    "sameSize": true,
+    "bbox": [
+      515,
+      135,
+      519,
+      147
+    ],
+    "changedPixels": 34
+  },
+  {
+    "preset": "default",
+    "file": "_chat-light-mobile.png",
+    "sameSize": true,
+    "bbox": [
+      114,
+      135,
+      125,
+      147
+    ],
+    "changedPixels": 70
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard-dark-desktop.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard-dark-mobile.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard-light-desktop.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard-light-mobile.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_academy-dark-desktop.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_academy-dark-mobile.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_academy-light-desktop.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_academy-light-mobile.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_analytics-dark-desktop.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_analytics-dark-mobile.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_analytics-light-desktop.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_analytics-light-mobile.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_calendar-dark-desktop.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_calendar-dark-mobile.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_calendar-light-desktop.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_calendar-light-mobile.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_chat-dark-desktop.png",
+    "sameSize": true,
+    "bbox": [
+      828,
+      274,
+      832,
+      286
+    ],
+    "changedPixels": 34
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_chat-dark-mobile.png",
+    "sameSize": true,
+    "bbox": [
+      274,
+      286,
+      278,
+      298
+    ],
+    "changedPixels": 34
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_chat-light-desktop.png",
+    "sameSize": true,
+    "bbox": [
+      828,
+      274,
+      832,
+      286
+    ],
+    "changedPixels": 34
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_chat-light-mobile.png",
+    "sameSize": true,
+    "bbox": [
+      274,
+      286,
+      278,
+      298
+    ],
+    "changedPixels": 34
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_coming-soon-dark-desktop.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_coming-soon-dark-mobile.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_coming-soon-light-desktop.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_coming-soon-light-mobile.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_crm-dark-desktop.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_crm-dark-mobile.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_crm-light-desktop.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_crm-light-mobile.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_default-dark-desktop.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_default-dark-mobile.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_default-light-desktop.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_default-light-mobile.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_ecommerce-dark-desktop.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_ecommerce-dark-mobile.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_ecommerce-light-desktop.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_ecommerce-light-mobile.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_file-manager-light-desktop.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_file-manager-light-mobile.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_mail-dark-desktop.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_mail-dark-mobile.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_mail-light-desktop.png",
+    "sameSize": true,
+    "bbox": [
+      271,
+      109,
+      705,
+      872
+    ],
+    "changedPixels": 29
+  },
+  {
+    "preset": "default",
+    "file": "_mail-light-mobile.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_unauthorized-dark-desktop.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_unauthorized-dark-mobile.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_unauthorized-light-desktop.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_unauthorized-light-mobile.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_-dark-desktop.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_-dark-mobile.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_-light-desktop.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_-light-mobile.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_auth_v2-dark-desktop.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_auth_v2-dark-mobile.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_auth_v2-light-desktop.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_auth_v2-light-mobile.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_chat-dark-desktop.png",
+    "sameSize": true,
+    "bbox": [
+      284,
+      135,
+      519,
+      891
+    ],
+    "changedPixels": 102
+  },
+  {
+    "preset": "pine",
+    "file": "_chat-dark-mobile.png",
+    "sameSize": true,
+    "bbox": [
+      114,
+      135,
+      125,
+      147
+    ],
+    "changedPixels": 69
+  },
+  {
+    "preset": "pine",
+    "file": "_chat-light-desktop.png",
+    "sameSize": true,
+    "bbox": [
+      515,
+      135,
+      519,
+      147
+    ],
+    "changedPixels": 34
+  },
+  {
+    "preset": "pine",
+    "file": "_chat-light-mobile.png",
+    "sameSize": true,
+    "bbox": [
+      114,
+      135,
+      125,
+      147
+    ],
+    "changedPixels": 70
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard-dark-desktop.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard-dark-mobile.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard-light-desktop.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard-light-mobile.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_academy-dark-desktop.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_academy-dark-mobile.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_academy-light-desktop.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_academy-light-mobile.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_analytics-dark-desktop.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_analytics-dark-mobile.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_analytics-light-desktop.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_analytics-light-mobile.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_calendar-dark-desktop.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_calendar-dark-mobile.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_calendar-light-desktop.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_calendar-light-mobile.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_chat-dark-desktop.png",
+    "sameSize": true,
+    "bbox": [
+      828,
+      274,
+      832,
+      286
+    ],
+    "changedPixels": 34
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_chat-dark-mobile.png",
+    "sameSize": true,
+    "bbox": [
+      17,
+      151,
+      278,
+      298
+    ],
+    "changedPixels": 49
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_chat-light-desktop.png",
+    "sameSize": true,
+    "bbox": [
+      828,
+      274,
+      832,
+      286
+    ],
+    "changedPixels": 34
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_chat-light-mobile.png",
+    "sameSize": true,
+    "bbox": [
+      17,
+      151,
+      278,
+      298
+    ],
+    "changedPixels": 49
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_coming-soon-dark-desktop.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_coming-soon-dark-mobile.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_coming-soon-light-desktop.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_coming-soon-light-mobile.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_crm-dark-desktop.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_crm-dark-mobile.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_crm-light-desktop.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_crm-light-mobile.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_default-dark-desktop.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_default-dark-mobile.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_default-light-desktop.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_default-light-mobile.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_ecommerce-dark-desktop.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_ecommerce-dark-mobile.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_ecommerce-light-desktop.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_ecommerce-light-mobile.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_file-manager-dark-desktop.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_file-manager-light-desktop.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_file-manager-light-mobile.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_mail-dark-desktop.png",
+    "sameSize": true,
+    "bbox": [
+      269,
+      148,
+      304,
+      873
+    ],
+    "changedPixels": 98
+  },
+  {
+    "preset": "pine",
+    "file": "_mail-dark-mobile.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_mail-light-desktop.png",
+    "sameSize": true,
+    "bbox": [
+      271,
+      109,
+      705,
+      872
+    ],
+    "changedPixels": 29
+  },
+  {
+    "preset": "pine",
+    "file": "_mail-light-mobile.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_unauthorized-dark-desktop.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_unauthorized-dark-mobile.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_unauthorized-light-desktop.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_unauthorized-light-mobile.png",
+    "sameSize": true,
+    "bbox": null,
+    "changedPixels": 0
+  }
+]

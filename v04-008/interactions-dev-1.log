@@ -1,0 +1,88 @@
+
+> tenboards@0.3.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://127.0.0.1:3005 --routes /dashboard,/unauthorized,/auth/v2,/dashboard/analytics,/dashboard/chat,/dashboard/crm,/dashboard/ecommerce,/dashboard/finance,/dashboard/invoice,/dashboard/logistics,/dashboard/patient-monitoring,/dashboard/products,/dashboard/roles,/dashboard/users,/dashboard/,/auth/v1/register,/auth/v2/register,/dashboard/crm-v1,/dashboard/finance-v1 --output screenshots/v04-008/interactions-dev-1 --reference 2026-10-23T12:00:00.000Z --mask-live-clocks --interactions
+
+FAIL /dashboard light/desktop direct
+No interaction scenario for /dashboard. Use an explicit supported --routes subset.
+FAIL /dashboard light/mobile direct
+No interaction scenario for /dashboard. Use an explicit supported --routes subset.
+FAIL /dashboard dark/desktop direct
+No interaction scenario for /dashboard. Use an explicit supported --routes subset.
+FAIL /dashboard dark/mobile direct
+No interaction scenario for /dashboard. Use an explicit supported --routes subset.
+PASS /unauthorized light/desktop direct
+PASS /unauthorized light/mobile direct
+PASS /unauthorized dark/desktop direct
+PASS /unauthorized dark/mobile direct
+PASS /auth/v2 light/desktop direct
+PASS /auth/v2 light/mobile direct
+PASS /auth/v2 dark/desktop direct
+PASS /auth/v2 dark/mobile direct
+PASS /dashboard/analytics light/desktop direct
+PASS /dashboard/analytics light/mobile direct
+PASS /dashboard/analytics dark/desktop direct
+PASS /dashboard/analytics dark/mobile direct
+PASS /dashboard/chat light/desktop direct
+PASS /dashboard/chat light/mobile direct
+PASS /dashboard/chat dark/desktop direct
+PASS /dashboard/chat dark/mobile direct
+PASS /dashboard/crm light/desktop direct
+PASS /dashboard/crm light/mobile direct
+PASS /dashboard/crm dark/desktop direct
+PASS /dashboard/crm dark/mobile direct
+PASS /dashboard/ecommerce light/desktop direct
+PASS /dashboard/ecommerce light/mobile direct
+PASS /dashboard/ecommerce dark/desktop direct
+PASS /dashboard/ecommerce dark/mobile direct
+PASS /dashboard/finance light/desktop direct
+PASS /dashboard/finance light/mobile direct
+PASS /dashboard/finance dark/desktop direct
+PASS /dashboard/finance dark/mobile direct
+PASS /dashboard/invoice light/desktop direct
+PASS /dashboard/invoice light/mobile direct
+PASS /dashboard/invoice dark/desktop direct
+PASS /dashboard/invoice dark/mobile direct
+PASS /dashboard/logistics light/desktop direct
+PASS /dashboard/logistics light/mobile direct
+PASS /dashboard/logistics dark/desktop direct
+PASS /dashboard/logistics dark/mobile direct
+PASS /dashboard/patient-monitoring light/desktop direct
+PASS /dashboard/patient-monitoring light/mobile direct
+PASS /dashboard/patient-monitoring dark/desktop direct
+PASS /dashboard/patient-monitoring dark/mobile direct
+PASS /dashboard/products light/desktop direct
+PASS /dashboard/products light/mobile direct
+PASS /dashboard/products dark/desktop direct
+PASS /dashboard/products dark/mobile direct
+PASS /dashboard/roles light/desktop direct
+PASS /dashboard/roles light/mobile direct
+PASS /dashboard/roles dark/desktop direct
+PASS /dashboard/roles dark/mobile direct
+PASS /dashboard/users light/desktop direct
+PASS /dashboard/users light/mobile direct
+PASS /dashboard/users dark/desktop direct
+PASS /dashboard/users dark/mobile direct
+FAIL /dashboard/ light/desktop direct
+No interaction scenario for /dashboard/. Use an explicit supported --routes subset.
+FAIL /dashboard/ light/mobile direct
+No interaction scenario for /dashboard/. Use an explicit supported --routes subset.
+FAIL /dashboard/ dark/desktop direct
+No interaction scenario for /dashboard/. Use an explicit supported --routes subset.
+FAIL /dashboard/ dark/mobile direct
+No interaction scenario for /dashboard/. Use an explicit supported --routes subset.
+PASS /auth/v1/register light/desktop direct
+PASS /auth/v1/register light/mobile direct
+PASS /auth/v1/register dark/desktop direct
+PASS /auth/v1/register dark/mobile direct
+PASS /auth/v2/register light/desktop direct
+PASS /auth/v2/register light/mobile direct
+PASS /auth/v2/register dark/desktop direct
+PASS /auth/v2/register dark/mobile direct
+PASS /dashboard/crm-v1 light/desktop direct
+PASS /dashboard/crm-v1 light/mobile direct
+PASS /dashboard/crm-v1 dark/desktop direct
+PASS /dashboard/crm-v1 dark/mobile direct
+PASS /dashboard/finance-v1 light/desktop direct
+PASS /dashboard/finance-v1 light/mobile direct
+PASS /dashboard/finance-v1 dark/desktop direct
+PASS /dashboard/finance-v1 dark/mobile direct

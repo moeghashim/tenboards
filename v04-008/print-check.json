@@ -1,0 +1,114 @@
+[
+  {
+    "file" : "interactions-db-1\/_dashboard_invoice-light-desktop-interactive-print.pdf",
+    "height" : 792,
+    "pages" : 1,
+    "total" : "$945.18",
+    "width" : 612
+  },
+  {
+    "file" : "interactions-db-1\/_dashboard_invoice-dark-desktop-interactive-print.pdf",
+    "height" : 792,
+    "pages" : 1,
+    "total" : "$945.18",
+    "width" : 612
+  },
+  {
+    "file" : "interactions-db-1\/_dashboard_invoice-dark-mobile-interactive-print.pdf",
+    "height" : 792,
+    "pages" : 1,
+    "total" : "$945.18",
+    "width" : 612
+  },
+  {
+    "file" : "interactions-db-1\/_dashboard_invoice-light-mobile-interactive-print.pdf",
+    "height" : 792,
+    "pages" : 1,
+    "total" : "$945.18",
+    "width" : 612
+  },
+  {
+    "file" : "interactions-workers-1\/_dashboard_invoice-light-desktop-interactive-print.pdf",
+    "height" : 792,
+    "pages" : 1,
+    "total" : "$945.18",
+    "width" : 612
+  },
+  {
+    "file" : "interactions-workers-1\/_dashboard_invoice-dark-desktop-interactive-print.pdf",
+    "height" : 792,
+    "pages" : 1,
+    "total" : "$945.18",
+    "width" : 612
+  },
+  {
+    "file" : "interactions-workers-1\/_dashboard_invoice-dark-mobile-refresh-interactive-print.pdf",
+    "height" : 792,
+    "pages" : 1,
+    "total" : "$945.18",
+    "width" : 612
+  },
+  {
+    "file" : "interactions-workers-1\/_dashboard_invoice-light-mobile-refresh-interactive-print.pdf",
+    "height" : 792,
+    "pages" : 1,
+    "total" : "$945.18",
+    "width" : 612
+  },
+  {
+    "file" : "interactions-workers-1\/_dashboard_invoice-light-desktop-refresh-interactive-print.pdf",
+    "height" : 792,
+    "pages" : 1,
+    "total" : "$945.18",
+    "width" : 612
+  },
+  {
+    "file" : "interactions-workers-1\/_dashboard_invoice-dark-desktop-refresh-interactive-print.pdf",
+    "height" : 792,
+    "pages" : 1,
+    "total" : "$945.18",
+    "width" : 612
+  },
+  {
+    "file" : "interactions-workers-1\/_dashboard_invoice-dark-mobile-interactive-print.pdf",
+    "height" : 792,
+    "pages" : 1,
+    "total" : "$945.18",
+    "width" : 612
+  },
+  {
+    "file" : "interactions-workers-1\/_dashboard_invoice-light-mobile-interactive-print.pdf",
+    "height" : 792,
+    "pages" : 1,
+    "total" : "$945.18",
+    "width" : 612
+  },
+  {
+    "file" : "interactions-dev-1\/_dashboard_invoice-light-desktop-interactive-print.pdf",
+    "height" : 792,
+    "pages" : 1,
+    "total" : "$945.18",
+    "width" : 612
+  },
+  {
+    "file" : "interactions-dev-1\/_dashboard_invoice-dark-desktop-interactive-print.pdf",
+    "height" : 792,
+    "pages" : 1,
+    "total" : "$945.18",
+    "width" : 612
+  },
+  {
+    "file" : "interactions-dev-1\/_dashboard_invoice-dark-mobile-interactive-print.pdf",
+    "height" : 792,
+    "pages" : 1,
+    "total" : "$945.18",
+    "width" : 612
+  },
+  {
+    "file" : "interactions-dev-1\/_dashboard_invoice-light-mobile-interactive-print.pdf",
+    "height" : 792,
+    "pages" : 1,
+    "total" : "$945.18",
+    "width" : 612
+  }
+]

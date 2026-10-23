@@ -1,0 +1,25 @@
+{
+  "compatibility_date": "2026-10-23",
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "tenboards",
+  "workers_dev": true,
+  "preview_urls": true,
+  "main": "index.mjs",
+  "assets": {
+    "binding": "ASSETS",
+    "directory": "../public"
+  },
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "no_bundle": true,
+  "rules": [
+    {
+      "type": "ESModule",
+      "globs": [
+        "**/*.mjs",
+        "**/*.js"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "expectedFault": true,
+  "diagnostics": [
+    "Failed to load resource: the server responded with a status of 500 ()",
+    "%o\n\n%s\n\n%s\n Error: Unable to load database data. Check the connection and migrations, then retry.\n    at http://127.0.0.1:3102/dashboard/users:153:2201\n    at http://127.0.0.1:3102/dashboard/users:153:2303 The above error occurred in the <MatchInnerImpl> component. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.",
+    "%o\n\n%s\n\n%s\n Error: Unable to load database data. Check the connection and migrations, then retry.\n    at http://127.0.0.1:3102/dashboard/users:153:2201\n    at http://127.0.0.1:3102/dashboard/users:153:2303 The above error occurred in the <MatchInnerImpl> component. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary."
+  ],
+  "body": "Something went wrong.An unexpected error occurred while loading this page. Try again or return to the dashboard.Unable to load database data. Check the connection and migrations, then retry.Try againGo to dashboard"
+}

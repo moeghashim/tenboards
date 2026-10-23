@@ -1,0 +1,1158 @@
+{
+  "baseURL": "http://127.0.0.1:3001/",
+  "fontAssets": "exact public responses cached between contexts",
+  "maskedLiveClocks": true,
+  "reference": "2026-10-23T12:00:00.000Z",
+  "hydrationDelayMs": 0,
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": false,
+  "interactions": true,
+  "results": [
+    {
+      "route": "/dashboard",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard-light-desktop-interactive.png",
+      "controlsFile": "_dashboard-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "HTTP 307 preserves the default-dashboard destination",
+        "Redirect target hydrates and displays loaded dashboard data"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard-light-mobile-interactive.png",
+      "controlsFile": "_dashboard-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "HTTP 307 preserves the default-dashboard destination",
+        "Redirect target hydrates and displays loaded dashboard data"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "HTTP 307 preserves the default-dashboard destination",
+        "Redirect target hydrates and displays loaded dashboard data"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "HTTP 307 preserves the default-dashboard destination",
+        "Redirect target hydrates and displays loaded dashboard data"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/unauthorized",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_unauthorized-light-desktop-interactive.png",
+      "controlsFile": "_unauthorized-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Distinct system heading and no page overflow",
+        "Existing recovery link navigates by keyboard when provided"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/unauthorized",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_unauthorized-light-mobile-interactive.png",
+      "controlsFile": "_unauthorized-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Distinct system heading and no page overflow",
+        "Existing recovery link navigates by keyboard when provided"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/unauthorized",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_unauthorized-dark-desktop-interactive.png",
+      "controlsFile": "_unauthorized-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Distinct system heading and no page overflow",
+        "Existing recovery link navigates by keyboard when provided"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/unauthorized",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_unauthorized-dark-mobile-interactive.png",
+      "controlsFile": "_unauthorized-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Distinct system heading and no page overflow",
+        "Existing recovery link navigates by keyboard when provided"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v2",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_auth_v2-light-desktop-interactive.png",
+      "controlsFile": "_auth_v2-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Bare V2 retains its layout-only URL without a form or redirect"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v2",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_auth_v2-light-mobile-interactive.png",
+      "controlsFile": "_auth_v2-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Bare V2 retains its layout-only URL without a form or redirect"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v2",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_auth_v2-dark-desktop-interactive.png",
+      "controlsFile": "_auth_v2-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Bare V2 retains its layout-only URL without a form or redirect"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v2",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_auth_v2-dark-mobile-interactive.png",
+      "controlsFile": "_auth_v2-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Bare V2 retains its layout-only URL without a form or redirect"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_analytics-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_analytics-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Last 7 days selected",
+        "Campaigns displays Spring Launch / Newsletter / Retargeting / Brand Search / Partners"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_analytics-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_analytics-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Last 7 days selected",
+        "Campaigns displays Spring Launch / Newsletter / Retargeting / Brand Search / Partners"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_analytics-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_analytics-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Last 7 days selected",
+        "Campaigns displays Spring Launch / Newsletter / Retargeting / Brand Search / Partners"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_analytics-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_analytics-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Last 7 days selected",
+        "Campaigns displays Spring Launch / Newsletter / Retargeting / Brand Search / Partners"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/chat",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_chat-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_chat-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Iframe preset/theme and no page overflow",
+        "Conversation selection, multiline composer and note tab",
+        "Profile Escape and trigger focus return",
+        "Mobile back returns row focus; hidden list/thread/contact panels inert",
+        "Existing sends/search/filter remain demo behavior"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/chat",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_chat-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_chat-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Iframe preset/theme and no page overflow",
+        "Conversation selection, multiline composer and note tab",
+        "Profile Escape and trigger focus return",
+        "Mobile back returns row focus; hidden list/thread/contact panels inert",
+        "Existing sends/search/filter remain demo behavior"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/chat",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_chat-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_chat-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Iframe preset/theme and no page overflow",
+        "Conversation selection, multiline composer and note tab",
+        "Profile Escape and trigger focus return",
+        "Mobile back returns row focus; hidden list/thread/contact panels inert",
+        "Existing sends/search/filter remain demo behavior"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/chat",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_chat-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_chat-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Iframe preset/theme and no page overflow",
+        "Conversation selection, multiline composer and note tab",
+        "Profile Escape and trigger focus return",
+        "Mobile back returns row focus; hidden list/thread/contact panels inert",
+        "Existing sends/search/filter remain demo behavior"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/crm",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_crm-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_crm-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Opportunity search empty/reset; Proposal stage filter"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/crm",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_crm-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_crm-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Opportunity search empty/reset; Proposal stage filter"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/crm",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_crm-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_crm-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Opportunity search empty/reset; Proposal stage filter"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/crm",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_crm-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_crm-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Opportunity search empty/reset; Proposal stage filter"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/ecommerce",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_ecommerce-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_ecommerce-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Last Month / Online Store selected",
+        "Returns filter, Space selects orders, Enter sorts dates",
+        "Order menu opens, Escape closes",
+        "No page-wide overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/ecommerce",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_ecommerce-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_ecommerce-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Last Month / Online Store selected",
+        "Returns filter, Space selects orders, Enter sorts dates",
+        "Order menu opens, Escape closes",
+        "No page-wide overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/ecommerce",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_ecommerce-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_ecommerce-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Last Month / Online Store selected",
+        "Returns filter, Space selects orders, Enter sorts dates",
+        "Order menu opens, Escape closes",
+        "No page-wide overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/ecommerce",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_ecommerce-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_ecommerce-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Last Month / Online Store selected",
+        "Returns filter, Space selects orders, Enter sorts dates",
+        "Order menu opens, Escape closes",
+        "No page-wide overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/finance",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_finance-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_finance-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Spending period keyboard menu; Accounts placeholder and Dashboard return",
+        "Transfer field editable; named select retains visible focus",
+        "Desktop Spending/Allocation bottoms aligned; no page overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/finance",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_finance-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_finance-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Spending period keyboard menu; Accounts placeholder and Dashboard return",
+        "Transfer field editable; named select retains visible focus",
+        "Desktop Spending/Allocation bottoms aligned; no page overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/finance",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_finance-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_finance-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Spending period keyboard menu; Accounts placeholder and Dashboard return",
+        "Transfer field editable; named select retains visible focus",
+        "Desktop Spending/Allocation bottoms aligned; no page overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/finance",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_finance-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_finance-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Spending period keyboard menu; Accounts placeholder and Dashboard return",
+        "Transfer field editable; named select retains visible focus",
+        "Desktop Spending/Allocation bottoms aligned; no page overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/invoice",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_invoice-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_invoice-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Date edited 2026-10-23 → 2026-10-24 as a civil date",
+        "Client changed; multiline description and quantity/price edits",
+        "Add/remove items, GST 18%, discount 10%; totals $2,538.18 → $945.18",
+        "Keyboard reorder and cancellation preserve values/totals",
+        "Preview/print content agrees; Jordan Lee issuer",
+        "Paper text contrast 19.80 / 7.81 / 18.16:1",
+        "Print PDF exported and screen portal hidden; no page overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/invoice",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_invoice-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_invoice-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Date edited 2026-10-23 → 2026-10-24 as a civil date",
+        "Client changed; multiline description and quantity/price edits",
+        "Add/remove items, GST 18%, discount 10%; totals $2,538.18 → $945.18",
+        "Keyboard reorder and cancellation preserve values/totals",
+        "Preview/print content agrees; Jordan Lee issuer",
+        "Paper text contrast 19.80 / 7.81 / 18.16:1",
+        "Print PDF exported and screen portal hidden; no page overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/invoice",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_invoice-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_invoice-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Date edited 2026-10-23 → 2026-10-24 as a civil date",
+        "Client changed; multiline description and quantity/price edits",
+        "Add/remove items, GST 18%, discount 10%; totals $2,538.18 → $945.18",
+        "Keyboard reorder and cancellation preserve values/totals",
+        "Preview/print content agrees; Jordan Lee issuer",
+        "Paper text contrast 19.80 / 7.81 / 18.16:1",
+        "Print PDF exported and screen portal hidden; no page overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/invoice",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_invoice-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_invoice-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Date edited 2026-10-23 → 2026-10-24 as a civil date",
+        "Client changed; multiline description and quantity/price edits",
+        "Add/remove items, GST 18%, discount 10%; totals $2,538.18 → $945.18",
+        "Keyboard reorder and cancellation preserve values/totals",
+        "Preview/print content agrees; Jordan Lee issuer",
+        "Paper text contrast 19.80 / 7.81 / 18.16:1",
+        "Print PDF exported and screen portal hidden; no page overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/logistics",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_logistics-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_logistics-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Enter selects second shipment and correct details",
+        "Route placeholder and Overview tabs preserved",
+        "Desktop split pane updated",
+        "No page-wide overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/logistics",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_logistics-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_logistics-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Enter selects second shipment and correct details",
+        "Route placeholder and Overview tabs preserved",
+        "Mobile sheet named; Escape closes and returns focus; Enter reopens",
+        "No page-wide overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/logistics",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_logistics-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_logistics-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Enter selects second shipment and correct details",
+        "Route placeholder and Overview tabs preserved",
+        "Desktop split pane updated",
+        "No page-wide overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/logistics",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_logistics-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_logistics-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Enter selects second shipment and correct details",
+        "Route placeholder and Overview tabs preserved",
+        "Mobile sheet named; Escape closes and returns focus; Enter reopens",
+        "No page-wide overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_patient-monitoring-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_patient-monitoring-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Real clock advances across second boundary",
+        "Reduced-motion trace stable",
+        "Normal-motion trace updates; runtime reduction pauses it",
+        "Keyboard acknowledgement persists; patient selection and event/trend tabs work",
+        "Footer keyboard focus and no page-wide overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_patient-monitoring-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_patient-monitoring-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Real clock advances across second boundary",
+        "Reduced-motion trace stable",
+        "Normal-motion trace updates; runtime reduction pauses it",
+        "Keyboard acknowledgement persists; patient selection and event/trend tabs work",
+        "Footer keyboard focus and no page-wide overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_patient-monitoring-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_patient-monitoring-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Real clock advances across second boundary",
+        "Reduced-motion trace stable",
+        "Normal-motion trace updates; runtime reduction pauses it",
+        "Keyboard acknowledgement persists; patient selection and event/trend tabs work",
+        "Footer keyboard focus and no page-wide overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_patient-monitoring-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_patient-monitoring-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Real clock advances across second boundary",
+        "Reduced-motion trace stable",
+        "Normal-motion trace updates; runtime reduction pauses it",
+        "Keyboard acknowledgement persists; patient selection and event/trend tabs work",
+        "Footer keyboard focus and no page-wide overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/products",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_products-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_products-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Search/status/category exact results; empty/clear, selection and pagination",
+        "Duplicate to draft and edit unique-SKU validation; zero price/stock saved",
+        "Edit Escape returns focus to product",
+        "Add validation-only at upper bounds; image preview/clear, Escape and focus return",
+        "Long name wraps; table scrolls locally without document overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/products",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_products-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_products-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Search/status/category exact results; empty/clear, selection and pagination",
+        "Duplicate to draft and edit unique-SKU validation; zero price/stock saved",
+        "Edit Escape returns focus to product",
+        "Add validation-only at upper bounds; image preview/clear, Escape and focus return",
+        "Long name wraps; table scrolls locally without document overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/products",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_products-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_products-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Search/status/category exact results; empty/clear, selection and pagination",
+        "Duplicate to draft and edit unique-SKU validation; zero price/stock saved",
+        "Edit Escape returns focus to product",
+        "Add validation-only at upper bounds; image preview/clear, Escape and focus return",
+        "Long name wraps; table scrolls locally without document overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/products",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_products-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_products-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Search/status/category exact results; empty/clear, selection and pagination",
+        "Duplicate to draft and edit unique-SKU validation; zero price/stock saved",
+        "Edit Escape returns focus to product",
+        "Add validation-only at upper bounds; image preview/clear, Escape and focus return",
+        "Long name wraps; table scrolls locally without document overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/roles",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_roles-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_roles-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "System/owner/status/search exact counts; system actions remain disabled; all three tabs",
+        "Empty recovery, named keyboard menus and local table scroll; no document overflow",
+        "Existing admin actions remain placeholders; no permission/auth mutations"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/roles",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_roles-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_roles-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "System/owner/status/search exact counts; system actions remain disabled; all three tabs",
+        "Empty recovery, named keyboard menus and local table scroll; no document overflow",
+        "Existing admin actions remain placeholders; no permission/auth mutations"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/roles",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_roles-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_roles-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "System/owner/status/search exact counts; system actions remain disabled; all three tabs",
+        "Empty recovery, named keyboard menus and local table scroll; no document overflow",
+        "Existing admin actions remain placeholders; no permission/auth mutations"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/roles",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_roles-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_roles-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "System/owner/status/search exact counts; system actions remain disabled; all three tabs",
+        "Empty recovery, named keyboard menus and local table scroll; no document overflow",
+        "Existing admin actions remain placeholders; no permission/auth mutations"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/users",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_users-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_users-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Combined role/team/status/workspace/search exact result; selection, page size and pagination",
+        "Empty recovery, named keyboard menus and local table scroll; no document overflow",
+        "Existing admin actions remain placeholders; no permission/auth mutations"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/users",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_users-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_users-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Combined role/team/status/workspace/search exact result; selection, page size and pagination",
+        "Empty recovery, named keyboard menus and local table scroll; no document overflow",
+        "Existing admin actions remain placeholders; no permission/auth mutations"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/users",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_users-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_users-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Combined role/team/status/workspace/search exact result; selection, page size and pagination",
+        "Empty recovery, named keyboard menus and local table scroll; no document overflow",
+        "Existing admin actions remain placeholders; no permission/auth mutations"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/users",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_users-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_users-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Combined role/team/status/workspace/search exact result; selection, page size and pagination",
+        "Empty recovery, named keyboard menus and local table scroll; no document overflow",
+        "Existing admin actions remain placeholders; no permission/auth mutations"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "HTTP 307 preserves the default-dashboard destination",
+        "Redirect target hydrates and displays loaded dashboard data"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "HTTP 307 preserves the default-dashboard destination",
+        "Redirect target hydrates and displays loaded dashboard data"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "HTTP 307 preserves the default-dashboard destination",
+        "Redirect target hydrates and displays loaded dashboard data"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "HTTP 307 preserves the default-dashboard destination",
+        "Redirect target hydrates and displays loaded dashboard data"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v1/register",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_auth_v1_register-light-desktop-interactive.png",
+      "controlsFile": "_auth_v1_register-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Labels, masked passwords and email/current/new-password autofill verified",
+        "Empty and mismatched-password errors; error association and local demo submission verified",
+        "Google remains demo-only; keyboard crosslink works",
+        "360×500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v1/register",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_auth_v1_register-light-mobile-interactive.png",
+      "controlsFile": "_auth_v1_register-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Labels, masked passwords and email/current/new-password autofill verified",
+        "Empty and mismatched-password errors; error association and local demo submission verified",
+        "Google remains demo-only; keyboard crosslink works",
+        "360×500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v1/register",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_auth_v1_register-dark-desktop-interactive.png",
+      "controlsFile": "_auth_v1_register-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Labels, masked passwords and email/current/new-password autofill verified",
+        "Empty and mismatched-password errors; error association and local demo submission verified",
+        "Google remains demo-only; keyboard crosslink works",
+        "360×500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v1/register",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_auth_v1_register-dark-mobile-interactive.png",
+      "controlsFile": "_auth_v1_register-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Labels, masked passwords and email/current/new-password autofill verified",
+        "Empty and mismatched-password errors; error association and local demo submission verified",
+        "Google remains demo-only; keyboard crosslink works",
+        "360×500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v2/register",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_auth_v2_register-light-desktop-interactive.png",
+      "controlsFile": "_auth_v2_register-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Labels, masked passwords and email/current/new-password autofill verified",
+        "Empty and mismatched-password errors; error association and local demo submission verified",
+        "Google remains demo-only; keyboard crosslink works",
+        "360×500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v2/register",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_auth_v2_register-light-mobile-interactive.png",
+      "controlsFile": "_auth_v2_register-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": [
+        "locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByText('Please enter a valid email address.', { exact: true }) to be visible\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/auth/v2/register",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_auth_v2_register-dark-desktop-interactive.png",
+      "controlsFile": "_auth_v2_register-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Labels, masked passwords and email/current/new-password autofill verified",
+        "Empty and mismatched-password errors; error association and local demo submission verified",
+        "Google remains demo-only; keyboard crosslink works",
+        "360×500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v2/register",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_auth_v2_register-dark-mobile-interactive.png",
+      "controlsFile": "_auth_v2_register-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Labels, masked passwords and email/current/new-password autofill verified",
+        "Empty and mismatched-password errors; error association and local demo submission verified",
+        "Google remains demo-only; keyboard crosslink works",
+        "360×500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/crm-v1",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_crm-v1-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_crm-v1-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Lead selection and column visibility"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/crm-v1",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_crm-v1-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_crm-v1-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Lead selection and column visibility"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/crm-v1",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_crm-v1-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_crm-v1-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Lead selection and column visibility"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/crm-v1",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_crm-v1-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_crm-v1-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Lead selection and column visibility"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/finance-v1",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_finance-v1-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_finance-v1-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Cash flow period selector preserves placeholder behavior"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/finance-v1",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_finance-v1-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_finance-v1-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Cash flow period selector preserves placeholder behavior"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/finance-v1",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_finance-v1-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_finance-v1-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Cash flow period selector preserves placeholder behavior"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/finance-v1",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_finance-v1-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_finance-v1-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Cash flow period selector preserves placeholder behavior"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    }
+  ]
+}

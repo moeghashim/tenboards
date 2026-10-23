@@ -1,0 +1,17 @@
+[
+  {
+    "environment": "dev",
+    "preset": "default",
+    "report": "chat-spacing-default/report.json"
+  },
+  {
+    "environment": "dev",
+    "preset": "pine",
+    "report": "chat-spacing-pine/report.json"
+  },
+  {
+    "environment": "workers",
+    "preset": "graphite",
+    "report": "workers-graphite-roles-retry/report.json"
+  }
+]

@@ -1,0 +1,149 @@
+{
+  "baseURL": "https://9d63aeb5-tenboards.mohanadgh.workers.dev/",
+  "fontAssets": "exact public responses cached between contexts",
+  "maskedLiveClocks": true,
+  "reference": "2026-10-23T12:00:00.000Z",
+  "hydrationDelayMs": 0,
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": true,
+  "interactions": true,
+  "results": [
+    {
+      "route": "/chat",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_chat-light-desktop-interactive.png",
+      "controlsFile": "_chat-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Iframe preset/theme and no page overflow",
+        "Conversation selection, multiline composer and note tab",
+        "Profile Escape and trigger focus return",
+        "Mobile back returns row focus; hidden list/thread/contact panels inert",
+        "Existing sends/search/filter remain demo behavior"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/chat",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_chat-light-desktop-refresh-interactive.png",
+      "controlsFile": "_chat-light-desktop-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Iframe preset/theme and no page overflow",
+        "Conversation selection, multiline composer and note tab",
+        "Profile Escape and trigger focus return",
+        "Mobile back returns row focus; hidden list/thread/contact panels inert",
+        "Existing sends/search/filter remain demo behavior"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/chat",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_chat-light-mobile-interactive.png",
+      "controlsFile": "_chat-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Iframe preset/theme and no page overflow",
+        "Conversation selection, multiline composer and note tab",
+        "Profile Escape and trigger focus return",
+        "Mobile back returns row focus; hidden list/thread/contact panels inert",
+        "Existing sends/search/filter remain demo behavior"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/chat",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_chat-light-mobile-refresh-interactive.png",
+      "controlsFile": "_chat-light-mobile-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Iframe preset/theme and no page overflow",
+        "Conversation selection, multiline composer and note tab",
+        "Profile Escape and trigger focus return",
+        "Mobile back returns row focus; hidden list/thread/contact panels inert",
+        "Existing sends/search/filter remain demo behavior"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/chat",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_chat-dark-desktop-interactive.png",
+      "controlsFile": "_chat-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Iframe preset/theme and no page overflow",
+        "Conversation selection, multiline composer and note tab",
+        "Profile Escape and trigger focus return",
+        "Mobile back returns row focus; hidden list/thread/contact panels inert",
+        "Existing sends/search/filter remain demo behavior"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/chat",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_chat-dark-desktop-refresh-interactive.png",
+      "controlsFile": "_chat-dark-desktop-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Iframe preset/theme and no page overflow",
+        "Conversation selection, multiline composer and note tab",
+        "Profile Escape and trigger focus return",
+        "Mobile back returns row focus; hidden list/thread/contact panels inert",
+        "Existing sends/search/filter remain demo behavior"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/chat",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_chat-dark-mobile-interactive.png",
+      "controlsFile": "_chat-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Iframe preset/theme and no page overflow",
+        "Conversation selection, multiline composer and note tab",
+        "Profile Escape and trigger focus return",
+        "Mobile back returns row focus; hidden list/thread/contact panels inert",
+        "Existing sends/search/filter remain demo behavior"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/chat",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_chat-dark-mobile-refresh-interactive.png",
+      "controlsFile": "_chat-dark-mobile-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Iframe preset/theme and no page overflow",
+        "Conversation selection, multiline composer and note tab",
+        "Profile Escape and trigger focus return",
+        "Mobile back returns row focus; hidden list/thread/contact panels inert",
+        "Existing sends/search/filter remain demo behavior"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    }
+  ]
+}

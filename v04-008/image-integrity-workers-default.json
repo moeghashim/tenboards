@@ -1,0 +1,1218 @@
+[
+  {
+    "file": "workers/default/_chat-light-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 3023.907477664524
+  },
+  {
+    "file": "workers/default/_chat-light-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 1747.7524437120696
+  },
+  {
+    "file": "workers/default/_chat-dark-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 2887.7619447455695
+  },
+  {
+    "file": "workers/default/_chat-dark-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 1503.692594879128
+  },
+  {
+    "file": "workers/default/_dashboard-light-desktop.png",
+    "size": [
+      1440,
+      1517
+    ],
+    "variance": 772.3323081147721
+  },
+  {
+    "file": "workers/default/_dashboard-light-mobile.png",
+    "size": [
+      390,
+      2036
+    ],
+    "variance": 1107.7589006800597
+  },
+  {
+    "file": "workers/default/_dashboard-dark-desktop.png",
+    "size": [
+      1440,
+      1517
+    ],
+    "variance": 748.2663796712287
+  },
+  {
+    "file": "workers/default/_dashboard-dark-mobile.png",
+    "size": [
+      390,
+      2036
+    ],
+    "variance": 1090.9721304204968
+  },
+  {
+    "file": "workers/default/_mail-light-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 787.1998808058868
+  },
+  {
+    "file": "workers/default/_mail-light-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 1174.22515253414
+  },
+  {
+    "file": "workers/default/_mail-dark-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 716.1359523880692
+  },
+  {
+    "file": "workers/default/_mail-dark-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 1057.3398297853453
+  },
+  {
+    "file": "workers/default/_unauthorized-light-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 105.31018605724381
+  },
+  {
+    "file": "workers/default/_unauthorized-light-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 408.56278812422585
+  },
+  {
+    "file": "workers/default/_unauthorized-dark-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 120.13195930206665
+  },
+  {
+    "file": "workers/default/_unauthorized-dark-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 464.25446703621617
+  },
+  {
+    "file": "workers/default/_-light-desktop.png",
+    "size": [
+      1440,
+      1517
+    ],
+    "variance": 772.3323081147721
+  },
+  {
+    "file": "workers/default/_-light-mobile.png",
+    "size": [
+      390,
+      2036
+    ],
+    "variance": 1107.7589006800597
+  },
+  {
+    "file": "workers/default/_-dark-desktop.png",
+    "size": [
+      1440,
+      1517
+    ],
+    "variance": 748.2663796712287
+  },
+  {
+    "file": "workers/default/_-dark-mobile.png",
+    "size": [
+      390,
+      2036
+    ],
+    "variance": 1090.9721304204968
+  },
+  {
+    "file": "workers/default/_auth_v2-light-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 119.21430804269107
+  },
+  {
+    "file": "workers/default/_auth_v2-light-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 0.0
+  },
+  {
+    "file": "workers/default/_auth_v2-dark-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 325.2995981544442
+  },
+  {
+    "file": "workers/default/_auth_v2-dark-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 0.0
+  },
+  {
+    "file": "workers/default/_dashboard_academy-light-desktop.png",
+    "size": [
+      1440,
+      1483
+    ],
+    "variance": 1544.5284116111427
+  },
+  {
+    "file": "workers/default/_dashboard_academy-light-mobile.png",
+    "size": [
+      390,
+      3112
+    ],
+    "variance": 1550.1394722650946
+  },
+  {
+    "file": "workers/default/_dashboard_academy-dark-desktop.png",
+    "size": [
+      1440,
+      1483
+    ],
+    "variance": 1520.7672027040824
+  },
+  {
+    "file": "workers/default/_dashboard_academy-dark-mobile.png",
+    "size": [
+      390,
+      3112
+    ],
+    "variance": 1428.9410822374687
+  },
+  {
+    "file": "workers/default/_dashboard_analytics-light-desktop.png",
+    "size": [
+      1440,
+      1136
+    ],
+    "variance": 1378.240451068367
+  },
+  {
+    "file": "workers/default/_dashboard_analytics-light-mobile.png",
+    "size": [
+      390,
+      2460
+    ],
+    "variance": 1516.184985990566
+  },
+  {
+    "file": "workers/default/_dashboard_analytics-dark-desktop.png",
+    "size": [
+      1440,
+      1136
+    ],
+    "variance": 1348.7987356600006
+  },
+  {
+    "file": "workers/default/_dashboard_analytics-dark-mobile.png",
+    "size": [
+      390,
+      2460
+    ],
+    "variance": 1458.8605514569183
+  },
+  {
+    "file": "workers/default/_dashboard_calendar-light-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 1109.985916426376
+  },
+  {
+    "file": "workers/default/_dashboard_calendar-light-mobile.png",
+    "size": [
+      390,
+      987
+    ],
+    "variance": 1079.7705325219629
+  },
+  {
+    "file": "workers/default/_dashboard_calendar-dark-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 1081.646009230443
+  },
+  {
+    "file": "workers/default/_dashboard_calendar-dark-mobile.png",
+    "size": [
+      390,
+      987
+    ],
+    "variance": 1084.0700272026113
+  },
+  {
+    "file": "workers/default/_dashboard_chat-light-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 2537.1715021253162
+  },
+  {
+    "file": "workers/default/_dashboard_chat-light-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 1489.5236998864116
+  },
+  {
+    "file": "workers/default/_dashboard_chat-dark-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 2515.28880223146
+  },
+  {
+    "file": "workers/default/_dashboard_chat-dark-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 1408.7317209850116
+  },
+  {
+    "file": "workers/default/_dashboard_coming-soon-light-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 186.07034676982738
+  },
+  {
+    "file": "workers/default/_dashboard_coming-soon-light-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 252.33937177655764
+  },
+  {
+    "file": "workers/default/_dashboard_coming-soon-dark-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 216.63392230866995
+  },
+  {
+    "file": "workers/default/_dashboard_coming-soon-dark-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 267.59664140540843
+  },
+  {
+    "file": "workers/default/_dashboard_crm-light-desktop.png",
+    "size": [
+      1440,
+      1695
+    ],
+    "variance": 1983.502098282408
+  },
+  {
+    "file": "workers/default/_dashboard_crm-light-mobile.png",
+    "size": [
+      390,
+      2663
+    ],
+    "variance": 2791.5867740138806
+  },
+  {
+    "file": "workers/default/_dashboard_crm-dark-desktop.png",
+    "size": [
+      1440,
+      1695
+    ],
+    "variance": 1922.0674105005817
+  },
+  {
+    "file": "workers/default/_dashboard_crm-dark-mobile.png",
+    "size": [
+      390,
+      2663
+    ],
+    "variance": 2647.2276030036182
+  },
+  {
+    "file": "workers/default/_dashboard_default-light-desktop.png",
+    "size": [
+      1440,
+      1517
+    ],
+    "variance": 772.3323081147721
+  },
+  {
+    "file": "workers/default/_dashboard_default-light-mobile.png",
+    "size": [
+      390,
+      2036
+    ],
+    "variance": 1107.7589006800597
+  },
+  {
+    "file": "workers/default/_dashboard_default-dark-desktop.png",
+    "size": [
+      1440,
+      1517
+    ],
+    "variance": 748.2663796712287
+  },
+  {
+    "file": "workers/default/_dashboard_default-dark-mobile.png",
+    "size": [
+      390,
+      2036
+    ],
+    "variance": 1090.9721304204968
+  },
+  {
+    "file": "workers/default/_dashboard_ecommerce-light-desktop.png",
+    "size": [
+      1440,
+      2159
+    ],
+    "variance": 960.9231654219053
+  },
+  {
+    "file": "workers/default/_dashboard_ecommerce-light-mobile.png",
+    "size": [
+      390,
+      4051
+    ],
+    "variance": 1273.7335076050865
+  },
+  {
+    "file": "workers/default/_dashboard_ecommerce-dark-desktop.png",
+    "size": [
+      1440,
+      2159
+    ],
+    "variance": 898.6104261595267
+  },
+  {
+    "file": "workers/default/_dashboard_ecommerce-dark-mobile.png",
+    "size": [
+      390,
+      4051
+    ],
+    "variance": 1127.5591735221165
+  },
+  {
+    "file": "workers/default/_dashboard_file-manager-light-desktop.png",
+    "size": [
+      1440,
+      1202
+    ],
+    "variance": 703.9954334182954
+  },
+  {
+    "file": "workers/default/_dashboard_file-manager-light-mobile.png",
+    "size": [
+      390,
+      3441
+    ],
+    "variance": 746.2193721337209
+  },
+  {
+    "file": "workers/default/_dashboard_file-manager-dark-desktop.png",
+    "size": [
+      1440,
+      1202
+    ],
+    "variance": 759.9540669567631
+  },
+  {
+    "file": "workers/default/_dashboard_file-manager-dark-mobile.png",
+    "size": [
+      390,
+      3441
+    ],
+    "variance": 758.7555683791369
+  },
+  {
+    "file": "workers/default/_dashboard_finance-light-desktop.png",
+    "size": [
+      1440,
+      1428
+    ],
+    "variance": 1025.1842399589673
+  },
+  {
+    "file": "workers/default/_dashboard_finance-light-mobile.png",
+    "size": [
+      390,
+      3099
+    ],
+    "variance": 1375.2878017344767
+  },
+  {
+    "file": "workers/default/_dashboard_finance-dark-desktop.png",
+    "size": [
+      1440,
+      1428
+    ],
+    "variance": 981.2049744347024
+  },
+  {
+    "file": "workers/default/_dashboard_finance-dark-mobile.png",
+    "size": [
+      390,
+      3099
+    ],
+    "variance": 1267.4739985760903
+  },
+  {
+    "file": "workers/default/_dashboard_infrastructure-light-desktop.png",
+    "size": [
+      1440,
+      992
+    ],
+    "variance": 860.865508142071
+  },
+  {
+    "file": "workers/default/_dashboard_infrastructure-light-mobile.png",
+    "size": [
+      390,
+      2874
+    ],
+    "variance": 882.513885448031
+  },
+  {
+    "file": "workers/default/_dashboard_infrastructure-dark-desktop.png",
+    "size": [
+      1440,
+      992
+    ],
+    "variance": 836.1760400752953
+  },
+  {
+    "file": "workers/default/_dashboard_infrastructure-dark-mobile.png",
+    "size": [
+      390,
+      2874
+    ],
+    "variance": 836.9688786062511
+  },
+  {
+    "file": "workers/default/_dashboard_invoice-light-desktop.png",
+    "size": [
+      1440,
+      1423
+    ],
+    "variance": 632.2100718545069
+  },
+  {
+    "file": "workers/default/_dashboard_invoice-light-mobile.png",
+    "size": [
+      390,
+      2269
+    ],
+    "variance": 955.394767442367
+  },
+  {
+    "file": "workers/default/_dashboard_invoice-dark-desktop.png",
+    "size": [
+      1440,
+      1423
+    ],
+    "variance": 6658.332776308179
+  },
+  {
+    "file": "workers/default/_dashboard_invoice-dark-mobile.png",
+    "size": [
+      390,
+      2269
+    ],
+    "variance": 6760.504444271828
+  },
+  {
+    "file": "workers/default/_dashboard_kanban-light-desktop.png",
+    "size": [
+      1440,
+      1159
+    ],
+    "variance": 823.3084800728626
+  },
+  {
+    "file": "workers/default/_dashboard_kanban-light-mobile.png",
+    "size": [
+      390,
+      1195
+    ],
+    "variance": 1017.3713188564766
+  },
+  {
+    "file": "workers/default/_dashboard_kanban-dark-desktop.png",
+    "size": [
+      1440,
+      1159
+    ],
+    "variance": 872.0161016925597
+  },
+  {
+    "file": "workers/default/_dashboard_kanban-dark-mobile.png",
+    "size": [
+      390,
+      1195
+    ],
+    "variance": 1142.0435626168937
+  },
+  {
+    "file": "workers/default/_dashboard_logistics-light-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 733.3657881172793
+  },
+  {
+    "file": "workers/default/_dashboard_logistics-light-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 1224.3892330689569
+  },
+  {
+    "file": "workers/default/_dashboard_logistics-dark-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 777.4549739138852
+  },
+  {
+    "file": "workers/default/_dashboard_logistics-dark-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 1114.7842426402399
+  },
+  {
+    "file": "workers/default/_dashboard_mail-light-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 856.6617389473975
+  },
+  {
+    "file": "workers/default/_dashboard_mail-light-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 1092.2116320518028
+  },
+  {
+    "file": "workers/default/_dashboard_mail-dark-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 848.125357074186
+  },
+  {
+    "file": "workers/default/_dashboard_mail-dark-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 1091.4528925536708
+  },
+  {
+    "file": "workers/default/_dashboard_patient-monitoring-light-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 1261.2846946369218
+  },
+  {
+    "file": "workers/default/_dashboard_patient-monitoring-light-mobile.png",
+    "size": [
+      390,
+      2190
+    ],
+    "variance": 1545.0267266587907
+  },
+  {
+    "file": "workers/default/_dashboard_patient-monitoring-dark-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 1236.862165185137
+  },
+  {
+    "file": "workers/default/_dashboard_patient-monitoring-dark-mobile.png",
+    "size": [
+      390,
+      2190
+    ],
+    "variance": 1518.3822319114706
+  },
+  {
+    "file": "workers/default/_dashboard_productivity-light-desktop.png",
+    "size": [
+      1440,
+      1171
+    ],
+    "variance": 989.457822049638
+  },
+  {
+    "file": "workers/default/_dashboard_productivity-light-mobile.png",
+    "size": [
+      390,
+      2936
+    ],
+    "variance": 1284.4459709200662
+  },
+  {
+    "file": "workers/default/_dashboard_productivity-dark-desktop.png",
+    "size": [
+      1440,
+      1171
+    ],
+    "variance": 992.1415640190208
+  },
+  {
+    "file": "workers/default/_dashboard_productivity-dark-mobile.png",
+    "size": [
+      390,
+      2936
+    ],
+    "variance": 1225.44293142644
+  },
+  {
+    "file": "workers/default/_dashboard_products-light-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 766.9126248330716
+  },
+  {
+    "file": "workers/default/_dashboard_products-light-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 1358.0832385733954
+  },
+  {
+    "file": "workers/default/_dashboard_products-dark-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 712.603885351928
+  },
+  {
+    "file": "workers/default/_dashboard_products-dark-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 1324.83484343624
+  },
+  {
+    "file": "workers/default/_dashboard_profile-light-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 714.2199161908303
+  },
+  {
+    "file": "workers/default/_dashboard_profile-light-mobile.png",
+    "size": [
+      390,
+      1622
+    ],
+    "variance": 1039.3398075428556
+  },
+  {
+    "file": "workers/default/_dashboard_profile-dark-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 796.1925026869708
+  },
+  {
+    "file": "workers/default/_dashboard_profile-dark-mobile.png",
+    "size": [
+      390,
+      1622
+    ],
+    "variance": 1199.840985827288
+  },
+  {
+    "file": "workers/default/_dashboard_roles-light-desktop.png",
+    "size": [
+      1440,
+      1165
+    ],
+    "variance": 768.5737583665298
+  },
+  {
+    "file": "workers/default/_dashboard_roles-light-mobile.png",
+    "size": [
+      390,
+      1352
+    ],
+    "variance": 1028.278129755342
+  },
+  {
+    "file": "workers/default/_dashboard_roles-dark-desktop.png",
+    "size": [
+      1440,
+      1165
+    ],
+    "variance": 753.9108044948727
+  },
+  {
+    "file": "workers/default/_dashboard_roles-dark-mobile.png",
+    "size": [
+      390,
+      1352
+    ],
+    "variance": 1050.0903708085864
+  },
+  {
+    "file": "workers/default/_dashboard_tasks-light-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 910.1128071517355
+  },
+  {
+    "file": "workers/default/_dashboard_tasks-light-mobile.png",
+    "size": [
+      390,
+      1200
+    ],
+    "variance": 1315.193805015776
+  },
+  {
+    "file": "workers/default/_dashboard_tasks-dark-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 865.4500351260234
+  },
+  {
+    "file": "workers/default/_dashboard_tasks-dark-mobile.png",
+    "size": [
+      390,
+      1200
+    ],
+    "variance": 1240.4542375725764
+  },
+  {
+    "file": "workers/default/_dashboard_users-light-desktop.png",
+    "size": [
+      1440,
+      1071
+    ],
+    "variance": 800.5670272055423
+  },
+  {
+    "file": "workers/default/_dashboard_users-light-mobile.png",
+    "size": [
+      390,
+      1319
+    ],
+    "variance": 1117.7060059792345
+  },
+  {
+    "file": "workers/default/_dashboard_users-dark-desktop.png",
+    "size": [
+      1440,
+      1071
+    ],
+    "variance": 744.2746686923475
+  },
+  {
+    "file": "workers/default/_dashboard_users-dark-mobile.png",
+    "size": [
+      390,
+      1319
+    ],
+    "variance": 1098.143756548549
+  },
+  {
+    "file": "workers/default/_dashboard__-light-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 192.50303932707988
+  },
+  {
+    "file": "workers/default/_dashboard__-light-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 289.8066696340019
+  },
+  {
+    "file": "workers/default/_dashboard__-dark-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 220.0435035175892
+  },
+  {
+    "file": "workers/default/_dashboard__-dark-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 306.5588471910389
+  },
+  {
+    "file": "workers/default/_dashboard_-light-desktop.png",
+    "size": [
+      1440,
+      1517
+    ],
+    "variance": 772.3323081147721
+  },
+  {
+    "file": "workers/default/_dashboard_-light-mobile.png",
+    "size": [
+      390,
+      2036
+    ],
+    "variance": 1107.7589006800597
+  },
+  {
+    "file": "workers/default/_dashboard_-dark-desktop.png",
+    "size": [
+      1440,
+      1517
+    ],
+    "variance": 748.2663796712287
+  },
+  {
+    "file": "workers/default/_dashboard_-dark-mobile.png",
+    "size": [
+      390,
+      2036
+    ],
+    "variance": 1090.9721304204968
+  },
+  {
+    "file": "workers/default/_auth_v1_login-light-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 10652.62981447526
+  },
+  {
+    "file": "workers/default/_auth_v1_login-light-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 1794.1096985239467
+  },
+  {
+    "file": "workers/default/_auth_v1_login-dark-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 11837.838981481422
+  },
+  {
+    "file": "workers/default/_auth_v1_login-dark-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 2067.8263226112163
+  },
+  {
+    "file": "workers/default/_auth_v1_register-light-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 10650.916769715881
+  },
+  {
+    "file": "workers/default/_auth_v1_register-light-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 1819.936282099048
+  },
+  {
+    "file": "workers/default/_auth_v1_register-dark-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 11794.63228673585
+  },
+  {
+    "file": "workers/default/_auth_v1_register-dark-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 2099.5775238296633
+  },
+  {
+    "file": "workers/default/_auth_v2_login-light-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 650.2319836873302
+  },
+  {
+    "file": "workers/default/_auth_v2_login-light-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 1933.6671717051647
+  },
+  {
+    "file": "workers/default/_auth_v2_login-dark-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 856.9411462094758
+  },
+  {
+    "file": "workers/default/_auth_v2_login-dark-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 2202.5003104178204
+  },
+  {
+    "file": "workers/default/_auth_v2_register-light-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 652.6072627865356
+  },
+  {
+    "file": "workers/default/_auth_v2_register-light-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 1939.1636120292305
+  },
+  {
+    "file": "workers/default/_auth_v2_register-dark-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 857.986950139832
+  },
+  {
+    "file": "workers/default/_auth_v2_register-dark-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 2215.327232078091
+  },
+  {
+    "file": "workers/default/_dashboard_analytics-v1-light-desktop.png",
+    "size": [
+      1440,
+      2162
+    ],
+    "variance": 1084.855646715871
+  },
+  {
+    "file": "workers/default/_dashboard_analytics-v1-light-mobile.png",
+    "size": [
+      390,
+      4374
+    ],
+    "variance": 1477.223480626496
+  },
+  {
+    "file": "workers/default/_dashboard_analytics-v1-dark-desktop.png",
+    "size": [
+      1440,
+      2162
+    ],
+    "variance": 1074.133217460748
+  },
+  {
+    "file": "workers/default/_dashboard_analytics-v1-dark-mobile.png",
+    "size": [
+      390,
+      4374
+    ],
+    "variance": 1430.1856486993056
+  },
+  {
+    "file": "workers/default/_dashboard_crm-v1-light-desktop.png",
+    "size": [
+      1440,
+      2093
+    ],
+    "variance": 1614.351445867631
+  },
+  {
+    "file": "workers/default/_dashboard_crm-v1-light-mobile.png",
+    "size": [
+      390,
+      4014
+    ],
+    "variance": 2303.091347848702
+  },
+  {
+    "file": "workers/default/_dashboard_crm-v1-dark-desktop.png",
+    "size": [
+      1440,
+      2093
+    ],
+    "variance": 1576.8877723946753
+  },
+  {
+    "file": "workers/default/_dashboard_crm-v1-dark-mobile.png",
+    "size": [
+      390,
+      4014
+    ],
+    "variance": 2179.125402090908
+  },
+  {
+    "file": "workers/default/_dashboard_default-v1-light-desktop.png",
+    "size": [
+      1440,
+      1353
+    ],
+    "variance": 973.616766066597
+  },
+  {
+    "file": "workers/default/_dashboard_default-v1-light-mobile.png",
+    "size": [
+      390,
+      1760
+    ],
+    "variance": 982.1953323205756
+  },
+  {
+    "file": "workers/default/_dashboard_default-v1-dark-desktop.png",
+    "size": [
+      1440,
+      1353
+    ],
+    "variance": 961.6685926018345
+  },
+  {
+    "file": "workers/default/_dashboard_default-v1-dark-mobile.png",
+    "size": [
+      390,
+      1760
+    ],
+    "variance": 918.5674085528495
+  },
+  {
+    "file": "workers/default/_dashboard_finance-v1-light-desktop.png",
+    "size": [
+      1440,
+      1254
+    ],
+    "variance": 4096.743878215268
+  },
+  {
+    "file": "workers/default/_dashboard_finance-v1-light-mobile.png",
+    "size": [
+      390,
+      2843
+    ],
+    "variance": 4642.175417017887
+  },
+  {
+    "file": "workers/default/_dashboard_finance-v1-dark-desktop.png",
+    "size": [
+      1440,
+      1254
+    ],
+    "variance": 4007.466490977233
+  },
+  {
+    "file": "workers/default/_dashboard_finance-v1-dark-mobile.png",
+    "size": [
+      390,
+      2843
+    ],
+    "variance": 4460.9151627567435
+  }
+]

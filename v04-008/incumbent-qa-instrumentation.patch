@@ -1,0 +1,165 @@
+diff --git a/src/routes/(main)/dashboard/(legacy)/analytics-v1/route.tsx b/src/routes/(main)/dashboard/(legacy)/analytics-v1/route.tsx
+index 39b64ac..329a0a5 100644
+--- a/src/routes/(main)/dashboard/(legacy)/analytics-v1/route.tsx
++++ b/src/routes/(main)/dashboard/(legacy)/analytics-v1/route.tsx
+@@ -9,8 +9,9 @@ import { AnalyticsOverview } from "./-components/analytics-overview";
+ import { DataProvider } from "./-components/data-context";
+ 
+ const loadData = createServerFn({ method: "GET" }).handler(async () => {
++  const { requestReference } = await import("@/server/request-reference.server");
+   const { readAnalytics } = await import("@/server/data/analytics");
+-  return readAnalytics({ variant: "v1", renderedAt: new Date().toISOString() });
++  return readAnalytics({ variant: "v1", renderedAt: requestReference() });
+ });
+ 
+ export const Route = createFileRoute("/(main)/dashboard/(legacy)/analytics-v1")({
+diff --git a/src/routes/(main)/dashboard/(legacy)/crm-v1/route.tsx b/src/routes/(main)/dashboard/(legacy)/crm-v1/route.tsx
+index 21e0fe1..ceca8bc 100644
+--- a/src/routes/(main)/dashboard/(legacy)/crm-v1/route.tsx
++++ b/src/routes/(main)/dashboard/(legacy)/crm-v1/route.tsx
+@@ -8,8 +8,9 @@ import { OverviewCards } from "./-components/overview-cards";
+ import { RecentLeadsTable } from "./-components/recent-leads-table/table";
+ 
+ const loadData = createServerFn({ method: "GET" }).handler(async () => {
++  const { requestReference } = await import("@/server/request-reference.server");
+   const { readCrm } = await import("@/server/data/crm");
+-  return readCrm({ variant: "v1", renderedAt: new Date().toISOString() });
++  return readCrm({ variant: "v1", renderedAt: requestReference() });
+ });
+ 
+ export const Route = createFileRoute("/(main)/dashboard/(legacy)/crm-v1")({
+diff --git a/src/routes/(main)/dashboard/(legacy)/default-v1/route.tsx b/src/routes/(main)/dashboard/(legacy)/default-v1/route.tsx
+index 90c5bab..4ecedcd 100644
+--- a/src/routes/(main)/dashboard/(legacy)/default-v1/route.tsx
++++ b/src/routes/(main)/dashboard/(legacy)/default-v1/route.tsx
+@@ -7,8 +7,9 @@ import { ProposalSectionsTable } from "./-components/proposal-sections-table/tab
+ import { SectionCards } from "./-components/section-cards";
+ 
+ const loadData = createServerFn({ method: "GET" }).handler(async () => {
++  const { requestReference } = await import("@/server/request-reference.server");
+   const { readDefault } = await import("@/server/data/default");
+-  return readDefault({ variant: "v1", renderedAt: new Date().toISOString() });
++  return readDefault({ variant: "v1", renderedAt: requestReference() });
+ });
+ 
+ export const Route = createFileRoute("/(main)/dashboard/(legacy)/default-v1")({
+diff --git a/src/routes/(main)/dashboard/(legacy)/finance-v1/route.tsx b/src/routes/(main)/dashboard/(legacy)/finance-v1/route.tsx
+index c9c0715..47730f5 100644
+--- a/src/routes/(main)/dashboard/(legacy)/finance-v1/route.tsx
++++ b/src/routes/(main)/dashboard/(legacy)/finance-v1/route.tsx
+@@ -14,8 +14,9 @@ import { SavingsRate } from "./-components/kpis/savings-rate";
+ import { SpendingBreakdown } from "./-components/spending-breakdown";
+ 
+ const loadData = createServerFn({ method: "GET" }).handler(async () => {
++  const { requestReference } = await import("@/server/request-reference.server");
+   const { readFinance } = await import("@/server/data/finance");
+-  return readFinance({ variant: "v1", renderedAt: new Date().toISOString() });
++  return readFinance({ variant: "v1", renderedAt: requestReference() });
+ });
+ 
+ export const Route = createFileRoute("/(main)/dashboard/(legacy)/finance-v1")({
+diff --git a/src/routes/(main)/dashboard/analytics/route.tsx b/src/routes/(main)/dashboard/analytics/route.tsx
+index 8604c38..c8b44fb 100644
+--- a/src/routes/(main)/dashboard/analytics/route.tsx
++++ b/src/routes/(main)/dashboard/analytics/route.tsx
+@@ -15,8 +15,9 @@ import { TrafficQuality } from "./-components/traffic-quality";
+ import "@/styles/flag-icons/flags.css";
+ 
+ const loadData = createServerFn({ method: "GET" }).handler(async () => {
++  const { requestReference } = await import("@/server/request-reference.server");
+   const { readAnalytics } = await import("@/server/data/analytics");
+-  return readAnalytics({ variant: "current", renderedAt: new Date().toISOString() });
++  return readAnalytics({ variant: "current", renderedAt: requestReference() });
+ });
+ 
+ export const Route = createFileRoute("/(main)/dashboard/analytics")({
+diff --git a/src/routes/(main)/dashboard/calendar/route.tsx b/src/routes/(main)/dashboard/calendar/route.tsx
+index 1a48ccc..c19780d 100644
+--- a/src/routes/(main)/dashboard/calendar/route.tsx
++++ b/src/routes/(main)/dashboard/calendar/route.tsx
+@@ -4,8 +4,9 @@ import { createServerFn } from "@tanstack/react-start";
+ import { Calendar } from "./-components/calendar";
+ 
+ const loadData = createServerFn({ method: "GET" }).handler(async () => {
++  const { requestReference } = await import("@/server/request-reference.server");
+   const { readCalendar } = await import("@/server/data/calendar");
+-  return readCalendar({ renderedAt: new Date().toISOString() });
++  return readCalendar({ renderedAt: requestReference() });
+ });
+ 
+ export const Route = createFileRoute("/(main)/dashboard/calendar")({
+diff --git a/src/routes/(main)/dashboard/crm/route.tsx b/src/routes/(main)/dashboard/crm/route.tsx
+index fa3f325..adabd73 100644
+--- a/src/routes/(main)/dashboard/crm/route.tsx
++++ b/src/routes/(main)/dashboard/crm/route.tsx
+@@ -8,8 +8,9 @@ import { PipelineActivity } from "./-components/pipeline-activity";
+ import { TaskReminders } from "./-components/task-reminders";
+ 
+ const loadData = createServerFn({ method: "GET" }).handler(async () => {
++  const { requestReference } = await import("@/server/request-reference.server");
+   const { readCrm } = await import("@/server/data/crm");
+-  return readCrm({ variant: "current", renderedAt: new Date().toISOString() });
++  return readCrm({ variant: "current", renderedAt: requestReference() });
+ });
+ 
+ export const Route = createFileRoute("/(main)/dashboard/crm")({
+diff --git a/src/routes/(main)/dashboard/default/route.tsx b/src/routes/(main)/dashboard/default/route.tsx
+index e6300f9..a07ee53 100644
+--- a/src/routes/(main)/dashboard/default/route.tsx
++++ b/src/routes/(main)/dashboard/default/route.tsx
+@@ -7,8 +7,9 @@ import { PerformanceOverview } from "./-components/performance-overview";
+ import { SubscriberOverview } from "./-components/subscriber-overview";
+ 
+ const loadData = createServerFn({ method: "GET" }).handler(async () => {
++  const { requestReference } = await import("@/server/request-reference.server");
+   const { readDefault } = await import("@/server/data/default");
+-  return readDefault({ variant: "current", renderedAt: new Date().toISOString() });
++  return readDefault({ variant: "current", renderedAt: requestReference() });
+ });
+ 
+ export const Route = createFileRoute("/(main)/dashboard/default")({
+diff --git a/src/routes/(main)/dashboard/finance/route.tsx b/src/routes/(main)/dashboard/finance/route.tsx
+index 521a20e..8129b5f 100644
+--- a/src/routes/(main)/dashboard/finance/route.tsx
++++ b/src/routes/(main)/dashboard/finance/route.tsx
+@@ -18,8 +18,9 @@ import { UpcomingTransactions } from "./-components/upcoming-transactions";
+ import { Wallet } from "./-components/wallet";
+ 
+ const loadData = createServerFn({ method: "GET" }).handler(async () => {
++  const { requestReference } = await import("@/server/request-reference.server");
+   const { readFinance } = await import("@/server/data/finance");
+-  return readFinance({ variant: "current", renderedAt: new Date().toISOString() });
++  return readFinance({ variant: "current", renderedAt: requestReference() });
+ });
+ 
+ export const Route = createFileRoute("/(main)/dashboard/finance")({
+diff --git a/src/routes/(main)/dashboard/invoice/route.tsx b/src/routes/(main)/dashboard/invoice/route.tsx
+index 45000d1..6761d76 100644
+--- a/src/routes/(main)/dashboard/invoice/route.tsx
++++ b/src/routes/(main)/dashboard/invoice/route.tsx
+@@ -10,8 +10,9 @@ import { Invoice } from "./-components/invoice";
+ import { InvoiceContext } from "./-components/invoice-context";
+ 
+ const loadInvoice = createServerFn({ method: "GET" }).handler(async () => {
++  const { requestReference } = await import("@/server/request-reference.server");
+   const { readInvoices } = await import("@/server/data/invoices");
+-  const data = await readInvoices({ renderedAt: new Date().toISOString() });
++  const data = await readInvoices({ renderedAt: requestReference() });
+   if (!data.defaultValues) throw new Error("Invoice draft is unavailable. Check the seed and retry.");
+   return { ...data, defaultValues: data.defaultValues };
+ });
+diff --git a/src/routes/(main)/mail/route.tsx b/src/routes/(main)/mail/route.tsx
+index 512dcaf..6a61138 100644
+--- a/src/routes/(main)/mail/route.tsx
++++ b/src/routes/(main)/mail/route.tsx
+@@ -10,8 +10,9 @@ import { MailSidebar } from "./-components/mail-sidebar";
+ import { MailProvider } from "./-components/use-mail";
+ 
+ const loadData = createServerFn({ method: "GET" }).handler(async () => {
++  const { requestReference } = await import("@/server/request-reference.server");
+   const { readMail } = await import("@/server/data/mail");
+-  return readMail({ renderedAt: new Date().toISOString() });
++  return readMail({ renderedAt: requestReference() });
+ });
+ 
+ export const Route = createFileRoute("/(main)/mail")({

@@ -1,0 +1,1218 @@
+[
+  {
+    "file": "workers/iris/_chat-light-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 2919.8327541714657
+  },
+  {
+    "file": "workers/iris/_chat-light-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 1675.6738580084177
+  },
+  {
+    "file": "workers/iris/_chat-dark-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 2847.7311129969135
+  },
+  {
+    "file": "workers/iris/_chat-dark-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 1500.9926757688634
+  },
+  {
+    "file": "workers/iris/_dashboard-light-desktop.png",
+    "size": [
+      1440,
+      1517
+    ],
+    "variance": 718.4676147883396
+  },
+  {
+    "file": "workers/iris/_dashboard-light-mobile.png",
+    "size": [
+      390,
+      2036
+    ],
+    "variance": 1029.0678211689499
+  },
+  {
+    "file": "workers/iris/_dashboard-dark-desktop.png",
+    "size": [
+      1440,
+      1517
+    ],
+    "variance": 745.0023860161197
+  },
+  {
+    "file": "workers/iris/_dashboard-dark-mobile.png",
+    "size": [
+      390,
+      2036
+    ],
+    "variance": 1085.5176161171173
+  },
+  {
+    "file": "workers/iris/_mail-light-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 768.4684101980233
+  },
+  {
+    "file": "workers/iris/_mail-light-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 1161.2380519933117
+  },
+  {
+    "file": "workers/iris/_mail-dark-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 715.4341150462963
+  },
+  {
+    "file": "workers/iris/_mail-dark-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 1056.8198940440475
+  },
+  {
+    "file": "workers/iris/_unauthorized-light-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 105.31018605724381
+  },
+  {
+    "file": "workers/iris/_unauthorized-light-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 408.56278812422585
+  },
+  {
+    "file": "workers/iris/_unauthorized-dark-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 120.13195930206665
+  },
+  {
+    "file": "workers/iris/_unauthorized-dark-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 464.25446703621617
+  },
+  {
+    "file": "workers/iris/_-light-desktop.png",
+    "size": [
+      1440,
+      1517
+    ],
+    "variance": 718.4676147883396
+  },
+  {
+    "file": "workers/iris/_-light-mobile.png",
+    "size": [
+      390,
+      2036
+    ],
+    "variance": 1029.0678211689499
+  },
+  {
+    "file": "workers/iris/_-dark-desktop.png",
+    "size": [
+      1440,
+      1517
+    ],
+    "variance": 745.0023860161197
+  },
+  {
+    "file": "workers/iris/_-dark-mobile.png",
+    "size": [
+      390,
+      2036
+    ],
+    "variance": 1085.5176161171173
+  },
+  {
+    "file": "workers/iris/_auth_v2-light-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 119.21430804269107
+  },
+  {
+    "file": "workers/iris/_auth_v2-light-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 0.0
+  },
+  {
+    "file": "workers/iris/_auth_v2-dark-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 325.2995981544442
+  },
+  {
+    "file": "workers/iris/_auth_v2-dark-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 0.0
+  },
+  {
+    "file": "workers/iris/_dashboard_academy-light-desktop.png",
+    "size": [
+      1440,
+      1483
+    ],
+    "variance": 1493.2674343684037
+  },
+  {
+    "file": "workers/iris/_dashboard_academy-light-mobile.png",
+    "size": [
+      390,
+      3112
+    ],
+    "variance": 1436.5944920133204
+  },
+  {
+    "file": "workers/iris/_dashboard_academy-dark-desktop.png",
+    "size": [
+      1440,
+      1483
+    ],
+    "variance": 1496.8694651186604
+  },
+  {
+    "file": "workers/iris/_dashboard_academy-dark-mobile.png",
+    "size": [
+      390,
+      3112
+    ],
+    "variance": 1403.4033991754588
+  },
+  {
+    "file": "workers/iris/_dashboard_analytics-light-desktop.png",
+    "size": [
+      1440,
+      1136
+    ],
+    "variance": 1323.7714400737405
+  },
+  {
+    "file": "workers/iris/_dashboard_analytics-light-mobile.png",
+    "size": [
+      390,
+      2460
+    ],
+    "variance": 1452.94929346085
+  },
+  {
+    "file": "workers/iris/_dashboard_analytics-dark-desktop.png",
+    "size": [
+      1440,
+      1136
+    ],
+    "variance": 1335.0595074352846
+  },
+  {
+    "file": "workers/iris/_dashboard_analytics-dark-mobile.png",
+    "size": [
+      390,
+      2460
+    ],
+    "variance": 1444.2411341435547
+  },
+  {
+    "file": "workers/iris/_dashboard_calendar-light-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 1061.2838111294404
+  },
+  {
+    "file": "workers/iris/_dashboard_calendar-light-mobile.png",
+    "size": [
+      390,
+      987
+    ],
+    "variance": 1032.0416983817722
+  },
+  {
+    "file": "workers/iris/_dashboard_calendar-dark-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 1069.4863046048526
+  },
+  {
+    "file": "workers/iris/_dashboard_calendar-dark-mobile.png",
+    "size": [
+      390,
+      987
+    ],
+    "variance": 1072.4457774947996
+  },
+  {
+    "file": "workers/iris/_dashboard_chat-light-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 2443.4354095185126
+  },
+  {
+    "file": "workers/iris/_dashboard_chat-light-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 1423.161769669058
+  },
+  {
+    "file": "workers/iris/_dashboard_chat-dark-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 2484.1216839580707
+  },
+  {
+    "file": "workers/iris/_dashboard_chat-dark-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 1406.1827229741373
+  },
+  {
+    "file": "workers/iris/_dashboard_coming-soon-light-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 186.07034676982738
+  },
+  {
+    "file": "workers/iris/_dashboard_coming-soon-light-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 252.33937177655764
+  },
+  {
+    "file": "workers/iris/_dashboard_coming-soon-dark-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 216.63392230866995
+  },
+  {
+    "file": "workers/iris/_dashboard_coming-soon-dark-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 267.59664140540843
+  },
+  {
+    "file": "workers/iris/_dashboard_crm-light-desktop.png",
+    "size": [
+      1440,
+      1695
+    ],
+    "variance": 1827.6699326449993
+  },
+  {
+    "file": "workers/iris/_dashboard_crm-light-mobile.png",
+    "size": [
+      390,
+      2663
+    ],
+    "variance": 2585.176361979733
+  },
+  {
+    "file": "workers/iris/_dashboard_crm-dark-desktop.png",
+    "size": [
+      1440,
+      1695
+    ],
+    "variance": 1916.1345603473605
+  },
+  {
+    "file": "workers/iris/_dashboard_crm-dark-mobile.png",
+    "size": [
+      390,
+      2663
+    ],
+    "variance": 2634.730134670884
+  },
+  {
+    "file": "workers/iris/_dashboard_default-light-desktop.png",
+    "size": [
+      1440,
+      1517
+    ],
+    "variance": 718.4676147883396
+  },
+  {
+    "file": "workers/iris/_dashboard_default-light-mobile.png",
+    "size": [
+      390,
+      2036
+    ],
+    "variance": 1029.0678211689499
+  },
+  {
+    "file": "workers/iris/_dashboard_default-dark-desktop.png",
+    "size": [
+      1440,
+      1517
+    ],
+    "variance": 745.0023860161197
+  },
+  {
+    "file": "workers/iris/_dashboard_default-dark-mobile.png",
+    "size": [
+      390,
+      2036
+    ],
+    "variance": 1085.5176161171173
+  },
+  {
+    "file": "workers/iris/_dashboard_ecommerce-light-desktop.png",
+    "size": [
+      1440,
+      2159
+    ],
+    "variance": 907.6759924291159
+  },
+  {
+    "file": "workers/iris/_dashboard_ecommerce-light-mobile.png",
+    "size": [
+      390,
+      4051
+    ],
+    "variance": 1185.492901836237
+  },
+  {
+    "file": "workers/iris/_dashboard_ecommerce-dark-desktop.png",
+    "size": [
+      1440,
+      2159
+    ],
+    "variance": 895.1223579583319
+  },
+  {
+    "file": "workers/iris/_dashboard_ecommerce-dark-mobile.png",
+    "size": [
+      390,
+      4051
+    ],
+    "variance": 1122.328081102653
+  },
+  {
+    "file": "workers/iris/_dashboard_file-manager-light-desktop.png",
+    "size": [
+      1440,
+      1202
+    ],
+    "variance": 674.441060101371
+  },
+  {
+    "file": "workers/iris/_dashboard_file-manager-light-mobile.png",
+    "size": [
+      390,
+      3441
+    ],
+    "variance": 708.3174742705655
+  },
+  {
+    "file": "workers/iris/_dashboard_file-manager-dark-desktop.png",
+    "size": [
+      1440,
+      1202
+    ],
+    "variance": 758.823744979663
+  },
+  {
+    "file": "workers/iris/_dashboard_file-manager-dark-mobile.png",
+    "size": [
+      390,
+      3441
+    ],
+    "variance": 757.330225732353
+  },
+  {
+    "file": "workers/iris/_dashboard_finance-light-desktop.png",
+    "size": [
+      1440,
+      1428
+    ],
+    "variance": 956.2587745427046
+  },
+  {
+    "file": "workers/iris/_dashboard_finance-light-mobile.png",
+    "size": [
+      390,
+      3099
+    ],
+    "variance": 1273.8211708495764
+  },
+  {
+    "file": "workers/iris/_dashboard_finance-dark-desktop.png",
+    "size": [
+      1440,
+      1428
+    ],
+    "variance": 977.3372538444389
+  },
+  {
+    "file": "workers/iris/_dashboard_finance-dark-mobile.png",
+    "size": [
+      390,
+      3099
+    ],
+    "variance": 1263.029427104199
+  },
+  {
+    "file": "workers/iris/_dashboard_infrastructure-light-desktop.png",
+    "size": [
+      1440,
+      992
+    ],
+    "variance": 860.865508142071
+  },
+  {
+    "file": "workers/iris/_dashboard_infrastructure-light-mobile.png",
+    "size": [
+      390,
+      2874
+    ],
+    "variance": 882.513885448031
+  },
+  {
+    "file": "workers/iris/_dashboard_infrastructure-dark-desktop.png",
+    "size": [
+      1440,
+      992
+    ],
+    "variance": 836.1760400752953
+  },
+  {
+    "file": "workers/iris/_dashboard_infrastructure-dark-mobile.png",
+    "size": [
+      390,
+      2874
+    ],
+    "variance": 836.9688786062511
+  },
+  {
+    "file": "workers/iris/_dashboard_invoice-light-desktop.png",
+    "size": [
+      1440,
+      1423
+    ],
+    "variance": 596.4496610229464
+  },
+  {
+    "file": "workers/iris/_dashboard_invoice-light-mobile.png",
+    "size": [
+      390,
+      2269
+    ],
+    "variance": 901.6995967677082
+  },
+  {
+    "file": "workers/iris/_dashboard_invoice-dark-desktop.png",
+    "size": [
+      1440,
+      1423
+    ],
+    "variance": 6668.193556805351
+  },
+  {
+    "file": "workers/iris/_dashboard_invoice-dark-mobile.png",
+    "size": [
+      390,
+      2269
+    ],
+    "variance": 6782.610567629758
+  },
+  {
+    "file": "workers/iris/_dashboard_kanban-light-desktop.png",
+    "size": [
+      1440,
+      1159
+    ],
+    "variance": 781.0137724980082
+  },
+  {
+    "file": "workers/iris/_dashboard_kanban-light-mobile.png",
+    "size": [
+      390,
+      1195
+    ],
+    "variance": 972.4920576888683
+  },
+  {
+    "file": "workers/iris/_dashboard_kanban-dark-desktop.png",
+    "size": [
+      1440,
+      1159
+    ],
+    "variance": 869.3710291777252
+  },
+  {
+    "file": "workers/iris/_dashboard_kanban-dark-mobile.png",
+    "size": [
+      390,
+      1195
+    ],
+    "variance": 1135.3439683712998
+  },
+  {
+    "file": "workers/iris/_dashboard_logistics-light-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 713.7029618713945
+  },
+  {
+    "file": "workers/iris/_dashboard_logistics-light-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 1162.6538448805536
+  },
+  {
+    "file": "workers/iris/_dashboard_logistics-dark-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 776.6352531599075
+  },
+  {
+    "file": "workers/iris/_dashboard_logistics-dark-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 1112.2818279701087
+  },
+  {
+    "file": "workers/iris/_dashboard_mail-light-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 839.6743973011559
+  },
+  {
+    "file": "workers/iris/_dashboard_mail-light-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 1079.6572588793808
+  },
+  {
+    "file": "workers/iris/_dashboard_mail-dark-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 847.4787480637835
+  },
+  {
+    "file": "workers/iris/_dashboard_mail-dark-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 1090.9323525615348
+  },
+  {
+    "file": "workers/iris/_dashboard_patient-monitoring-light-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 1240.832696752101
+  },
+  {
+    "file": "workers/iris/_dashboard_patient-monitoring-light-mobile.png",
+    "size": [
+      390,
+      2190
+    ],
+    "variance": 1519.8332232094235
+  },
+  {
+    "file": "workers/iris/_dashboard_patient-monitoring-dark-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 1233.1620879662917
+  },
+  {
+    "file": "workers/iris/_dashboard_patient-monitoring-dark-mobile.png",
+    "size": [
+      390,
+      2190
+    ],
+    "variance": 1512.212781871205
+  },
+  {
+    "file": "workers/iris/_dashboard_productivity-light-desktop.png",
+    "size": [
+      1440,
+      1171
+    ],
+    "variance": 945.5463937309664
+  },
+  {
+    "file": "workers/iris/_dashboard_productivity-light-mobile.png",
+    "size": [
+      390,
+      2936
+    ],
+    "variance": 1228.1693464567816
+  },
+  {
+    "file": "workers/iris/_dashboard_productivity-dark-desktop.png",
+    "size": [
+      1440,
+      1171
+    ],
+    "variance": 987.7700494666976
+  },
+  {
+    "file": "workers/iris/_dashboard_productivity-dark-mobile.png",
+    "size": [
+      390,
+      2936
+    ],
+    "variance": 1218.1915243278015
+  },
+  {
+    "file": "workers/iris/_dashboard_products-light-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 724.5306904445342
+  },
+  {
+    "file": "workers/iris/_dashboard_products-light-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 1279.8609212223705
+  },
+  {
+    "file": "workers/iris/_dashboard_products-dark-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 711.0101425919829
+  },
+  {
+    "file": "workers/iris/_dashboard_products-dark-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 1318.6752829879233
+  },
+  {
+    "file": "workers/iris/_dashboard_profile-light-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 675.8577385675995
+  },
+  {
+    "file": "workers/iris/_dashboard_profile-light-mobile.png",
+    "size": [
+      390,
+      1622
+    ],
+    "variance": 968.6213090402417
+  },
+  {
+    "file": "workers/iris/_dashboard_profile-dark-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 794.6683894449868
+  },
+  {
+    "file": "workers/iris/_dashboard_profile-dark-mobile.png",
+    "size": [
+      390,
+      1622
+    ],
+    "variance": 1196.810893731828
+  },
+  {
+    "file": "workers/iris/_dashboard_roles-light-desktop.png",
+    "size": [
+      1440,
+      1165
+    ],
+    "variance": 738.7608633228297
+  },
+  {
+    "file": "workers/iris/_dashboard_roles-light-mobile.png",
+    "size": [
+      390,
+      1352
+    ],
+    "variance": 996.6609379940339
+  },
+  {
+    "file": "workers/iris/_dashboard_roles-dark-desktop.png",
+    "size": [
+      1440,
+      1165
+    ],
+    "variance": 752.7738554405245
+  },
+  {
+    "file": "workers/iris/_dashboard_roles-dark-mobile.png",
+    "size": [
+      390,
+      1352
+    ],
+    "variance": 1046.5261663288516
+  },
+  {
+    "file": "workers/iris/_dashboard_tasks-light-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 910.1128071517355
+  },
+  {
+    "file": "workers/iris/_dashboard_tasks-light-mobile.png",
+    "size": [
+      390,
+      1200
+    ],
+    "variance": 1315.193805015776
+  },
+  {
+    "file": "workers/iris/_dashboard_tasks-dark-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 865.4500351260234
+  },
+  {
+    "file": "workers/iris/_dashboard_tasks-dark-mobile.png",
+    "size": [
+      390,
+      1200
+    ],
+    "variance": 1240.4542375725764
+  },
+  {
+    "file": "workers/iris/_dashboard_users-light-desktop.png",
+    "size": [
+      1440,
+      1071
+    ],
+    "variance": 768.6634175877216
+  },
+  {
+    "file": "workers/iris/_dashboard_users-light-mobile.png",
+    "size": [
+      390,
+      1319
+    ],
+    "variance": 1039.4937845050754
+  },
+  {
+    "file": "workers/iris/_dashboard_users-dark-desktop.png",
+    "size": [
+      1440,
+      1071
+    ],
+    "variance": 743.0793095603649
+  },
+  {
+    "file": "workers/iris/_dashboard_users-dark-mobile.png",
+    "size": [
+      390,
+      1319
+    ],
+    "variance": 1094.6348365946194
+  },
+  {
+    "file": "workers/iris/_dashboard__-light-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 192.50303932707988
+  },
+  {
+    "file": "workers/iris/_dashboard__-light-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 289.8066696340019
+  },
+  {
+    "file": "workers/iris/_dashboard__-dark-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 220.0435035175892
+  },
+  {
+    "file": "workers/iris/_dashboard__-dark-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 306.5588471910389
+  },
+  {
+    "file": "workers/iris/_dashboard_-light-desktop.png",
+    "size": [
+      1440,
+      1517
+    ],
+    "variance": 718.4676147883396
+  },
+  {
+    "file": "workers/iris/_dashboard_-light-mobile.png",
+    "size": [
+      390,
+      2036
+    ],
+    "variance": 1029.0678211689499
+  },
+  {
+    "file": "workers/iris/_dashboard_-dark-desktop.png",
+    "size": [
+      1440,
+      1517
+    ],
+    "variance": 745.0023860161197
+  },
+  {
+    "file": "workers/iris/_dashboard_-dark-mobile.png",
+    "size": [
+      390,
+      2036
+    ],
+    "variance": 1085.5176161171173
+  },
+  {
+    "file": "workers/iris/_auth_v1_login-light-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 10455.95829229239
+  },
+  {
+    "file": "workers/iris/_auth_v1_login-light-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 1741.6436085591702
+  },
+  {
+    "file": "workers/iris/_auth_v1_login-dark-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 11633.979778343537
+  },
+  {
+    "file": "workers/iris/_auth_v1_login-dark-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 2041.1658719385075
+  },
+  {
+    "file": "workers/iris/_auth_v1_register-light-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 10453.821909410983
+  },
+  {
+    "file": "workers/iris/_auth_v1_register-light-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 1763.1918336456058
+  },
+  {
+    "file": "workers/iris/_auth_v1_register-dark-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 11591.386470641575
+  },
+  {
+    "file": "workers/iris/_auth_v1_register-dark-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 2073.502285101044
+  },
+  {
+    "file": "workers/iris/_auth_v2_login-light-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 627.3943244902057
+  },
+  {
+    "file": "workers/iris/_auth_v2_login-light-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 1875.2569365244356
+  },
+  {
+    "file": "workers/iris/_auth_v2_login-dark-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 849.6158571101818
+  },
+  {
+    "file": "workers/iris/_auth_v2_login-dark-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 2176.3503762797795
+  },
+  {
+    "file": "workers/iris/_auth_v2_register-light-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 628.3647848601753
+  },
+  {
+    "file": "workers/iris/_auth_v2_register-light-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 1875.716337622859
+  },
+  {
+    "file": "workers/iris/_auth_v2_register-dark-desktop.png",
+    "size": [
+      1440,
+      900
+    ],
+    "variance": 850.7418703008967
+  },
+  {
+    "file": "workers/iris/_auth_v2_register-dark-mobile.png",
+    "size": [
+      390,
+      844
+    ],
+    "variance": 2189.606416857872
+  },
+  {
+    "file": "workers/iris/_dashboard_analytics-v1-light-desktop.png",
+    "size": [
+      1440,
+      2162
+    ],
+    "variance": 1037.6111704048633
+  },
+  {
+    "file": "workers/iris/_dashboard_analytics-v1-light-mobile.png",
+    "size": [
+      390,
+      4374
+    ],
+    "variance": 1405.2419456830607
+  },
+  {
+    "file": "workers/iris/_dashboard_analytics-v1-dark-desktop.png",
+    "size": [
+      1440,
+      2162
+    ],
+    "variance": 1067.6590560886518
+  },
+  {
+    "file": "workers/iris/_dashboard_analytics-v1-dark-mobile.png",
+    "size": [
+      390,
+      4374
+    ],
+    "variance": 1420.269051126571
+  },
+  {
+    "file": "workers/iris/_dashboard_crm-v1-light-desktop.png",
+    "size": [
+      1440,
+      2093
+    ],
+    "variance": 1552.2791605554353
+  },
+  {
+    "file": "workers/iris/_dashboard_crm-v1-light-mobile.png",
+    "size": [
+      390,
+      4014
+    ],
+    "variance": 2215.7896452538535
+  },
+  {
+    "file": "workers/iris/_dashboard_crm-v1-dark-desktop.png",
+    "size": [
+      1440,
+      2093
+    ],
+    "variance": 1558.1861534475136
+  },
+  {
+    "file": "workers/iris/_dashboard_crm-v1-dark-mobile.png",
+    "size": [
+      390,
+      4014
+    ],
+    "variance": 2151.5440103406627
+  },
+  {
+    "file": "workers/iris/_dashboard_default-v1-light-desktop.png",
+    "size": [
+      1440,
+      1353
+    ],
+    "variance": 917.1593634604076
+  },
+  {
+    "file": "workers/iris/_dashboard_default-v1-light-mobile.png",
+    "size": [
+      390,
+      1760
+    ],
+    "variance": 943.9037205312858
+  },
+  {
+    "file": "workers/iris/_dashboard_default-v1-dark-desktop.png",
+    "size": [
+      1440,
+      1353
+    ],
+    "variance": 956.9158835000991
+  },
+  {
+    "file": "workers/iris/_dashboard_default-v1-dark-mobile.png",
+    "size": [
+      390,
+      1760
+    ],
+    "variance": 917.1795063958892
+  },
+  {
+    "file": "workers/iris/_dashboard_finance-v1-light-desktop.png",
+    "size": [
+      1440,
+      1254
+    ],
+    "variance": 3933.0843360783847
+  },
+  {
+    "file": "workers/iris/_dashboard_finance-v1-light-mobile.png",
+    "size": [
+      390,
+      2843
+    ],
+    "variance": 4481.678538851451
+  },
+  {
+    "file": "workers/iris/_dashboard_finance-v1-dark-desktop.png",
+    "size": [
+      1440,
+      1254
+    ],
+    "variance": 3954.5785213394233
+  },
+  {
+    "file": "workers/iris/_dashboard_finance-v1-dark-mobile.png",
+    "size": [
+      390,
+      2843
+    ],
+    "variance": 4396.41034401326
+  }
+]

@@ -1,0 +1,8 @@
+
+> tenboards@0.3.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url https://9d63aeb5-tenboards.mohanadgh.workers.dev --routes /dashboard/roles --preset graphite --output screenshots/v04-008/workers-graphite-roles-retry --reference 2026-10-23T12:00:00.000Z --mask-live-clocks
+
+PASS /dashboard/roles light/desktop direct
+PASS /dashboard/roles light/mobile direct
+PASS /dashboard/roles dark/desktop direct
+PASS /dashboard/roles dark/mobile direct

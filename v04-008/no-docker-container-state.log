@@ -1,0 +1,2 @@
+NAME                   IMAGE                COMMAND                  SERVICE    CREATED       STATUS                     PORTS
+tenboards-postgres-1   postgres:17-alpine   "docker-entrypoint.s…"   postgres   2 hours ago   Exited (0) 4 minutes ago   

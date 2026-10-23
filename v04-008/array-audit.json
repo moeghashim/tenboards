@@ -1,0 +1,416 @@
+[
+  {
+    "file": "src/routes/(main)/chat/-components/data.ts",
+    "line": 48,
+    "length": 6,
+    "text": "[\n  { id: \"inbox\", title: \"Inbox\", icon: Inbox, isActive: true },\n  { id: \"mentions\", title: \"Mentions\", icon: Mail, isActive: false },\n  { id: \"snoozed\", title: \"Snoozed\", icon: Clock3, isActive: false },\n  { id: \"sent\", title: \"Sent\", icon: Send, isActive: false },\n  { id: \"all\", title: \"All conversations\", icon: MessageCircle, isActive: false },\n  { id: \"unassigned\", title: \"Unassigned\", icon: User, isActive: false },\n]"
+  },
+  {
+    "file": "src/routes/(main)/chat/-components/data.ts",
+    "line": 57,
+    "length": 6,
+    "text": "[\n  { id: \"email\", title: \"Email\", icon: Mail, isActive: false },\n  { id: \"chat\", title: \"Chat\", icon: MessageCircle, isActive: false },\n  { id: \"whatsapp\", title: \"WhatsApp\", icon: Phone, isActive: false },\n  { id: \"instagram\", title: \"Instagram\", icon: Phone, isActive: false },\n  { id: \"facebook\", title: \"Facebook\", icon: Phone, isActive: false },\n  { id: \"phone\", title: \"Phone\", icon: Phone, isActive: false },\n]"
+  },
+  {
+    "file": "src/routes/(main)/chat/-components/data.ts",
+    "line": 66,
+    "length": 3,
+    "text": "[\n  { id: \"vip\", title: \"VIP Customers\", icon: Star, isActive: false },\n  { id: \"orders\", title: \"Orders & Returns\", icon: Inbox, isActive: false },\n  { id: \"feedback\", title: \"Product Feedback\", icon: MessageCircle, isActive: false },\n]"
+  },
+  {
+    "file": "src/routes/(main)/dashboard/(legacy)/analytics-v1/-components/analytics-actions-risk-ledger.tsx",
+    "line": 39,
+    "length": 7,
+    "text": "[\n  {\n    accessorKey: \"account\",\n    header: \"Account\",\n    cell: ({ row }) => (\n      <div className=\"flex flex-col gap-1\">\n        <p className=\"text-sm font-medium\">{row.original.account}</p>\n        <p className=\"text-muted-foreground text-xs\">\n          {row.original.dealId} · {row.original.stage}\n        </p>\n      </div>\n    ),\n  },\n  {\n    accessorKey: \"blocker\",\n    header: \"Blocker\",\n    cell: ({ row }) => <div className=\"max-w-44 text-xs whitespace-normal\">{row.original.blocker}</div>,\n  },\n  {\n    accessorKey: \"owner\",\n    header: \"Owner\",\n    cell: ({ row }) => <span className=\"t"
+  },
+  {
+    "file": "src/routes/(main)/dashboard/(legacy)/analytics-v1/-components/analytics-overview.tsx",
+    "line": 26,
+    "length": 4,
+    "text": "[\n  { key: \"enterpriseOnly\", label: \"Enterprise only\", summaryLabel: \"Enterprise\" },\n  { key: \"stalledOnly\", label: \"Stalled deals (>14 days)\", summaryLabel: \"Stalled\" },\n  { key: \"overdueOnly\", label: \"Closing date exceeded\", summaryLabel: \"Overdue\" },\n  { key: \"includeRenewals\", label: \"Include renewals\", summaryLabel: \"Renewals\" },\n]"
+  },
+  {
+    "file": "src/routes/(main)/dashboard/(legacy)/analytics-v1/-components/analytics-overview.tsx",
+    "line": 37,
+    "length": 3,
+    "text": "[\n  {\n    value: \"risk-view\",\n    label: \"Risk view\",\n    description: \"Early warnings\",\n  },\n  {\n    value: \"momentum\",\n    label: \"Momentum\",\n    description: \"Trend direction\",\n  },\n  {\n    value: \"quality\",\n    label: \"Quality\",\n    description: \"Pipeline hygiene\",\n  },\n]"
+  },
+  {
+    "file": "src/routes/(main)/dashboard/(legacy)/crm-v1/-components/insight-cards.tsx",
+    "line": 17,
+    "length": 5,
+    "text": "[\n      { fill: \"var(--color-website)\" },\n      { fill: \"var(--color-referral)\" },\n      { fill: \"var(--color-social)\" },\n      { fill: \"var(--color-cold)\" },\n      { fill: \"var(--color-other)\" },\n    ]"
+  },
+  {
+    "file": "src/routes/(main)/dashboard/(legacy)/crm-v1/-components/operational-cards.tsx",
+    "line": 20,
+    "length": 5,
+    "text": "[\n      { fill: \"var(--chart-1)\" },\n      { fill: \"var(--chart-2)\" },\n      { fill: \"var(--muted-foreground)\" },\n      { fill: \"var(--chart-4)\" },\n      { fill: \"var(--chart-5)\" },\n    ]"
+  },
+  {
+    "file": "src/routes/(main)/dashboard/(legacy)/crm-v1/-components/operational-cards.tsx",
+    "line": 31,
+    "length": 3,
+    "text": "[\n      { priorityColor: \"bg-danger-surface text-danger\" },\n      { priorityColor: \"bg-warning-surface text-warning\" },\n      { priorityColor: \"bg-success-surface text-success\" },\n    ]"
+  },
+  {
+    "file": "src/routes/(main)/dashboard/(legacy)/crm-v1/-components/recent-leads-table/columns.tsx",
+    "line": 21,
+    "length": 8,
+    "text": "[\n  {\n    id: \"select\",\n    header: ({ table }) => (\n      <div className=\"flex items-center justify-center\">\n        <Subscribe source={table.atoms.rowSelection}>\n          {() => (\n            <Checkbox\n              checked={table.getIsAllPageRowsSelected()}\n              indeterminate={!table.getIsAllPageRowsSelected() && table.getIsSomePageRowsSelected()}\n              onCheckedChange={(value) => table.toggleAllPageRowsSelected(value)}\n              aria-label=\"Select all\"\n            />\n          )}\n        </Subscribe>\n      </div>\n    ),\n    cell: ({ row }) => (\n      <div className=\"f"
+  },
+  {
+    "file": "src/routes/(main)/dashboard/(legacy)/default-v1/-components/chart-area-interactive.tsx",
+    "line": 27,
+    "length": 3,
+    "text": "[\n  { value: \"90d\", label: \"Last 3 months\" },\n  { value: \"30d\", label: \"Last 30 days\" },\n  { value: \"7d\", label: \"Last 7 days\" },\n]"
+  },
+  {
+    "file": "src/routes/(main)/dashboard/(legacy)/default-v1/-components/proposal-sections-table/columns.tsx",
+    "line": 56,
+    "length": 8,
+    "text": "[\n  { value: \"Table of Contents\", label: \"Table of Contents\" },\n  { value: \"Executive Summary\", label: \"Executive Summary\" },\n  { value: \"Technical Approach\", label: \"Technical Approach\" },\n  { value: \"Design\", label: \"Design\" },\n  { value: \"Capabilities\", label: \"Capabilities\" },\n  { value: \"Focus Documents\", label: \"Focus Documents\" },\n  { value: \"Narrative\", label: \"Narrative\" },\n  { value: \"Cover Page\", label: \"Cover Page\" },\n]"
+  },
+  {
+    "file": "src/routes/(main)/dashboard/(legacy)/default-v1/-components/proposal-sections-table/columns.tsx",
+    "line": 67,
+    "length": 3,
+    "text": "[\n  { value: \"Done\", label: \"Done\" },\n  { value: \"In Progress\", label: \"In Progress\" },\n  { value: \"Not Started\", label: \"Not Started\" },\n]"
+  },
+  {
+    "file": "src/routes/(main)/dashboard/(legacy)/default-v1/-components/proposal-sections-table/columns.tsx",
+    "line": 254,
+    "length": 9,
+    "text": "[\n  {\n    id: \"drag\",\n    header: () => null,\n    cell: () => <DragHandle />,\n    enableSorting: false,\n    enableHiding: false,\n  },\n  {\n    id: \"select\",\n    header: ({ table }) => (\n      <div className=\"flex items-center justify-center\">\n        <Subscribe source={table.atoms.rowSelection}>\n          {() => (\n            <Checkbox\n              checked={table.getIsAllPageRowsSelected()}\n              indeterminate={!table.getIsAllPageRowsSelected() && table.getIsSomePageRowsSelected()}\n              onCheckedChange={(value) => table.toggleAllPageRowsSelected(value)}\n              aria-labe"
+  },
+  {
+    "file": "src/routes/(main)/dashboard/(legacy)/default-v1/-components/proposal-sections-table/table.tsx",
+    "line": 43,
+    "length": 4,
+    "text": "[\n  { value: \"outline\", label: \"Outline\" },\n  { value: \"past-performance\", label: \"Past Performance\" },\n  { value: \"key-personnel\", label: \"Key Personnel\" },\n  { value: \"focus-documents\", label: \"Focus Documents\" },\n]"
+  },
+  {
+    "file": "src/routes/(main)/dashboard/(legacy)/finance-v1/-components/cash-flow-overview.tsx",
+    "line": 32,
+    "length": 4,
+    "text": "[\n  { value: \"this-month\", label: \"This Month\" },\n  { value: \"last-6-months\", label: \"Last 6 Months\" },\n  { value: \"ytd\", label: \"Year to Date\" },\n  { value: \"this-year\", label: \"This Year\" },\n]"
+  },
+  {
+    "file": "src/routes/(main)/dashboard/-components/header/layout-controls.tsx",
+    "line": 24,
+    "length": 3,
+    "text": "[\n    { value: \"light\", label: \"Light\" },\n    { value: \"dark\", label: \"Dark\" },\n    { value: \"system\", label: \"System\" },\n  ]"
+  },
+  {
+    "file": "src/routes/(main)/dashboard/-components/header/layout-controls.tsx",
+    "line": 29,
+    "length": 2,
+    "text": "[\n    { value: \"centered\", label: \"Centered\" },\n    { value: \"full-width\", label: \"Full width\" },\n  ]"
+  },
+  {
+    "file": "src/routes/(main)/dashboard/-components/header/layout-controls.tsx",
+    "line": 33,
+    "length": 2,
+    "text": "[\n    { value: \"sticky\", label: \"Sticky\" },\n    { value: \"scroll\", label: \"Scroll with page\" },\n  ]"
+  },
+  {
+    "file": "src/routes/(main)/dashboard/-components/header/layout-controls.tsx",
+    "line": 37,
+    "length": 3,
+    "text": "[\n    { value: \"sidebar\", label: \"Panel\" },\n    { value: \"inset\", label: \"Inset\" },\n    { value: \"floating\", label: \"Floating\" },\n  ]"
+  },
+  {
+    "file": "src/routes/(main)/dashboard/-components/header/layout-controls.tsx",
+    "line": 42,
+    "length": 2,
+    "text": "[\n    { value: \"icon\", label: \"Show icons\" },\n    { value: \"offcanvas\", label: \"Hide panel\" },\n  ]"
+  },
+  {
+    "file": "src/routes/(main)/dashboard/-components/sidebar/app-sidebar.tsx",
+    "line": 69,
+    "length": 3,
+    "text": "[\n              { title: \"Help\", href: \"https://github.com/moeghashim/tenboards/issues\", icon: CircleHelp },\n              {\n                title: \"Documentation\",\n                href: \"https://github.com/moeghashim/tenboards/blob/main/README.md\",\n                icon: BookOpen,\n              },\n              { title: \"Feedback\", href: \"https://github.com/moeghashim/tenboards/issues/new\", icon: MessageCircle },\n            ]"
+  },
+  {
+    "file": "src/routes/(main)/dashboard/analytics/-components/analytics-toolbar.tsx",
+    "line": 15,
+    "length": 4,
+    "text": "[\n  { value: \"last-7-days\", label: \"Last 7 days\" },\n  { value: \"last-4-weeks\", label: \"Last 4 weeks\" },\n  { value: \"last-3-months\", label: \"Last 3 months\" },\n  { value: \"year-to-date\", label: \"Year to date\" },\n]"
+  },
+  {
+    "file": "src/routes/(main)/dashboard/calendar/-components/calendar.tsx",
+    "line": 18,
+    "length": 3,
+    "text": "[\n  { value: \"dayGridMonth\", label: \"Month\" },\n  { value: \"timeGridWeek\", label: \"Week\" },\n  { value: \"timeGridDay\", label: \"Day\" },\n]"
+  },
+  {
+    "file": "src/routes/(main)/dashboard/crm/-components/opportunities-table/columns.tsx",
+    "line": 20,
+    "length": 8,
+    "text": "[\n  {\n    id: \"select\",\n    header: ({ table }) => (\n      <Subscribe source={table.atoms.rowSelection}>\n        {() => (\n          <Checkbox\n            checked={table.getIsAllPageRowsSelected()}\n            indeterminate={!table.getIsAllPageRowsSelected() && table.getIsSomePageRowsSelected()}\n            onCheckedChange={(value) => table.toggleAllPageRowsSelected(value)}\n            aria-label=\"Select all opportunities\"\n          />\n        )}\n      </Subscribe>\n    ),\n    cell: ({ row }) => (\n      <Subscribe source={row.table.atoms.rowSelection} selector={(selection) => Boolean(selection?."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/crm/-components/pipeline-activity.tsx",
+    "line": 26,
+    "length": 3,
+    "text": "[\n  { value: \"last-30-days\", label: \"Last 30 days\" },\n  { value: \"last-quarter\", label: \"Last quarter\" },\n  { value: \"last-12-months\", label: \"Last 12 months\" },\n]"
+  },
+  {
+    "file": "src/routes/(main)/dashboard/default/-components/performance-overview.tsx",
+    "line": 38,
+    "length": 3,
+    "text": "[\n  { value: \"all\", label: \"All segments\" },\n  { value: \"paid\", label: \"Paid\" },\n  { value: \"organic\", label: \"Organic\" },\n]"
+  },
+  {
+    "file": "src/routes/(main)/dashboard/default/-components/recent-customers-table/columns.tsx",
+    "line": 28,
+    "length": 8,
+    "text": "[\n  {\n    id: \"select\",\n    header: ({ table }) => (\n      <div className=\"flex items-center justify-center\">\n        <Subscribe source={table.atoms.rowSelection}>\n          {() => (\n            <Checkbox\n              checked={table.getIsAllPageRowsSelected()}\n              indeterminate={!table.getIsAllPageRowsSelected() && table.getIsSomePageRowsSelected()}\n              onCheckedChange={(value) => table.toggleAllPageRowsSelected(value)}\n              aria-label=\"Select all customers on this page\"\n            />\n          )}\n        </Subscribe>\n      </div>\n    ),\n    cell: ({ row }) => (\n"
+  },
+  {
+    "file": "src/routes/(main)/dashboard/default/-components/recent-customers-table/table.tsx",
+    "line": 40,
+    "length": 4,
+    "text": "[\n  { value: \"all\", label: \"All\" },\n  { value: \"Subscribed\", label: \"Subscribed\" },\n  { value: \"Inactive\", label: \"Inactive\" },\n  { value: \"Unsubscribed\", label: \"Unsubscribed\" },\n]"
+  },
+  {
+    "file": "src/routes/(main)/dashboard/default/-components/recent-customers-table/table.tsx",
+    "line": 47,
+    "length": 5,
+    "text": "[\n  { value: \"all\", label: \"All\" },\n  { value: \"Paid\", label: \"Paid\" },\n  { value: \"Pending\", label: \"Pending\" },\n  { value: \"Overdue\", label: \"Overdue\" },\n  { value: \"Trial\", label: \"Trial\" },\n]"
+  },
+  {
+    "file": "src/routes/(main)/dashboard/default/-components/recent-customers-table/table.tsx",
+    "line": 55,
+    "length": 3,
+    "text": "[\n  { value: \"all\", label: \"All time\" },\n  { value: \"30\", label: \"Last 30 days\" },\n  { value: \"90\", label: \"Last 90 days\" },\n]"
+  },
+  {
+    "file": "src/routes/(main)/dashboard/default/-components/recent-customers-table/table.tsx",
+    "line": 61,
+    "length": 4,
+    "text": "[\n  { value: \"newest\", label: \"Newest first\" },\n  { value: \"oldest\", label: \"Oldest first\" },\n  { value: \"name-asc\", label: \"Name A-Z\" },\n  { value: \"name-desc\", label: \"Name Z-A\" },\n]"
+  },
+  {
+    "file": "src/routes/(main)/dashboard/ecommerce/-components/inventory.tsx",
+    "line": 57,
+    "length": 3,
+    "text": "[\n    {\n      icon: PackageCheck,\n      label: \"In stock\",\n      value: chartData[0][\"in-stock\"],\n    },\n    {\n      icon: TriangleAlert,\n      label: \"Low stock\",\n      value: chartData[0][\"low-stock\"],\n    },\n    {\n      icon: PackageX,\n      label: \"Out of stock\",\n      value: chartData[0][\"out-of-stock\"],\n    },\n  ]"
+  },
+  {
+    "file": "src/routes/(main)/dashboard/ecommerce/-components/recent-orders-table/columns.tsx",
+    "line": 80,
+    "length": 7,
+    "text": "[\n  {\n    id: \"select\",\n    header: ({ table }) => (\n      <div className=\"w-10\">\n        <Subscribe source={table.atoms.rowSelection}>\n          {() => (\n            <Checkbox\n              aria-label=\"Select all orders\"\n              checked={table.getIsAllPageRowsSelected()}\n              indeterminate={!table.getIsAllPageRowsSelected() && table.getIsSomePageRowsSelected()}\n              onCheckedChange={(value) => table.toggleAllPageRowsSelected(value)}\n            />\n          )}\n        </Subscribe>\n      </div>\n    ),\n    cell: ({ row }) => (\n      <div className=\"w-10\">\n        <Subscr"
+  },
+  {
+    "file": "src/routes/(main)/dashboard/ecommerce/route.tsx",
+    "line": 28,
+    "length": 4,
+    "text": "[\n  { value: \"this-month\", label: \"This Month\" },\n  { value: \"last-month\", label: \"Last Month\" },\n  { value: \"last-30-days\", label: \"Last 30 Days\" },\n  { value: \"year-to-date\", label: \"Year to Date\" },\n]"
+  },
+  {
+    "file": "src/routes/(main)/dashboard/ecommerce/route.tsx",
+    "line": 35,
+    "length": 5,
+    "text": "[\n  { value: \"all-channels\", label: \"All Channels\" },\n  { value: \"online-store\", label: \"Online Store\" },\n  { value: \"marketplace\", label: \"Marketplace\" },\n  { value: \"social\", label: \"Social\" },\n  { value: \"retail\", label: \"Retail\" },\n]"
+  },
+  {
+    "file": "src/routes/(main)/dashboard/finance/-components/quick-actions.tsx",
+    "line": 22,
+    "length": 8,
+    "text": "[\n  { id: 1, label: \"Scan QR\", icon: QrCode },\n  { id: 2, label: \"Transfer\", icon: SendHorizontal },\n  { id: 3, label: \"Pay Bills\", icon: Banknote },\n  { id: 4, label: \"History\", icon: History },\n  { id: 5, label: \"Mobile\", icon: Smartphone },\n  { id: 6, label: \"Electricity\", icon: Lightbulb },\n  { id: 7, label: \"Water\", icon: Droplet },\n  { id: 8, label: \"More\", icon: MoreHorizontal },\n]"
+  },
+  {
+    "file": "src/routes/(main)/dashboard/finance/-components/transactions-overview-card.tsx",
+    "line": 34,
+    "length": 3,
+    "text": "[\n  { value: \"weekly\", label: \"Weekly\" },\n  { value: \"monthly\", label: \"Monthly\" },\n  { value: \"yearly\", label: \"Yearly\" },\n]"
+  },
+  {
+    "file": "src/routes/(main)/dashboard/finance/-components/wallet.tsx",
+    "line": 13,
+    "length": 3,
+    "text": "[{ iconColor: \"fill-foreground\" }, { iconColor: \"fill-foreground\" }, { iconColor: \"fill-foreground\" }]"
+  },
+  {
+    "file": "src/routes/(main)/dashboard/invoice/-components/invoice-adjustments.tsx",
+    "line": 10,
+    "length": 2,
+    "text": "[\n  { value: \"fixed\", label: \"Fixed amount\" },\n  { value: \"percent\", label: \"Percent\" },\n]"
+  },
+  {
+    "file": "src/routes/(main)/dashboard/invoice/-components/invoice-details.tsx",
+    "line": 19,
+    "length": 2,
+    "text": "[\n  {\n    id: \"issued-date\",\n    label: \"Issued Date\",\n    name: \"issuedDate\",\n  },\n  {\n    id: \"payment-due-date\",\n    label: \"Due Date\",\n    name: \"paymentDueDate\",\n  },\n]"
+  },
+  {
+    "file": "src/routes/(main)/dashboard/kanban/-components/kanban-table-columns.tsx",
+    "line": 29,
+    "length": 7,
+    "text": "[\n    {\n      id: \"drag\",\n      header: \"\",\n      size: 48,\n      minSize: 48,\n      maxSize: 48,\n      cell: () => null,\n    },\n    {\n      accessorKey: \"title\",\n      header: \"Task\",\n      size: 360,\n      cell: ({ row }) => (\n        <div className=\"flex min-w-0 items-center gap-4\">\n          <span className=\"min-w-0 flex-1 break-words whitespace-normal\" title={row.original.description}>\n            {row.original.title}\n          </span>\n          <span className=\"text-muted-foreground flex shrink-0 items-center gap-2.5 text-xs tabular-nums\">\n            {row.original.insights\n             "
+  },
+  {
+    "file": "src/routes/(main)/dashboard/productivity/-components/projects-section.tsx",
+    "line": 12,
+    "length": 3,
+    "text": "[\n  { value: \"active\", label: \"Active\" },\n  { value: \"planning\", label: \"Planning\" },\n  { value: \"completed\", label: \"Completed\" },\n]"
+  },
+  {
+    "file": "src/routes/(main)/dashboard/productivity/-components/quick-actions.tsx",
+    "line": 5,
+    "length": 5,
+    "text": "[\n  { label: \"New Note\", icon: FileText },\n  { label: \"New Task\", icon: CheckSquare },\n  { label: \"New Project\", icon: Orbit },\n  { label: \"New Goal\", icon: Focus },\n  { label: \"Upload\", icon: Upload },\n]"
+  },
+  {
+    "file": "src/routes/(main)/dashboard/productivity/-components/tasks-section.tsx",
+    "line": 19,
+    "length": 3,
+    "text": "[\n  { value: \"today\", label: \"Today\" },\n  { value: \"tomorrow\", label: \"Tomorrow\" },\n  { value: \"this-week\", label: \"This Week\" },\n]"
+  },
+  {
+    "file": "src/routes/(main)/dashboard/products/-components/products-columns.tsx",
+    "line": 30,
+    "length": 10,
+    "text": "[\n    {\n      id: \"select\",\n      size: 56,\n      minSize: 56,\n      maxSize: 56,\n      header: ({ table }) => (\n        <Subscribe\n          source={table.store}\n          selector={() => ({\n            checked:\n              table.getIsAllPageRowsSelected() || (table.getIsSomePageRowsSelected() && (\"indeterminate\" as const)),\n            disabled: !table.getRowModel().rows.length,\n          })}\n        >\n          {({ checked, disabled }) => (\n            <Checkbox\n              className=\"mx-auto\"\n              aria-label=\"Select all products on this page\"\n              checked={checked ==="
+  },
+  {
+    "file": "src/routes/(main)/dashboard/products/-components/products.tsx",
+    "line": 31,
+    "length": 2,
+    "text": "[\n      {\n        ...product,\n        id,\n        name: `${product.name} (copy)`,\n        sku: `COPY-${id.replaceAll(\"-\", \"\")}`,\n        status: \"Draft\",\n        sold: 0,\n      },\n      ...current,\n    ]"
+  },
+  {
+    "file": "src/routes/(main)/dashboard/products/route.tsx",
+    "line": 15,
+    "length": 2,
+    "text": "[\n      { title: \"Open Source Product Management Dashboard with shadcn/ui\" },\n      {\n        name: \"description\",\n        content: \"Manage an ecommerce product catalog with categories, inventory, availability, pricing, and sales.\",\n      },\n    ]"
+  },
+  {
+    "file": "src/routes/(main)/dashboard/roles/-components/roles-table/columns.tsx",
+    "line": 19,
+    "length": 10,
+    "text": "[\n  {\n    id: \"group\",\n    accessorKey: \"group\",\n    filterFn: \"equalsString\",\n    enableHiding: true,\n  },\n  {\n    id: \"search\",\n    accessorFn: (row) => [row.role, row.owner, ...row.permissionSets].join(\" \"),\n    filterFn: \"includesString\",\n    enableHiding: true,\n  },\n  {\n    id: \"role\",\n    accessorKey: \"role\",\n    header: \"Role\",\n    size: 180,\n    minSize: 180,\n    cell: ({ row }) => <span className=\"text-sm font-medium\">{row.original.role}</span>,\n  },\n  {\n    id: \"accessLevel\",\n    accessorKey: \"accessLevel\",\n    header: \"Access level\",\n    size: 120,\n    cell: ({ row }) => (\n      <Ba"
+  },
+  {
+    "file": "src/routes/(main)/dashboard/tasks/-components/columns.tsx",
+    "line": 67,
+    "length": 6,
+    "text": "[\n  {\n    id: \"select\",\n    header: ({ table }) => (\n      <Subscribe source={table.atoms.rowSelection}>\n        {() => (\n          <Checkbox\n            checked={table.getIsAllPageRowsSelected()}\n            indeterminate={!table.getIsAllPageRowsSelected() && table.getIsSomePageRowsSelected()}\n            onCheckedChange={(value) => table.toggleAllPageRowsSelected(value)}\n            aria-label=\"Select all\"\n            className=\"translate-y-0.5\"\n          />\n        )}\n      </Subscribe>\n    ),\n    cell: ({ row }) => (\n      <Subscribe source={row.table.atoms.rowSelection} selector={(selecti"
+  },
+  {
+    "file": "src/routes/(main)/dashboard/tasks/-components/data.ts",
+    "line": 14,
+    "length": 3,
+    "text": "[\n  {\n    value: \"bug\",\n    label: \"Bug\",\n  },\n  {\n    value: \"feature\",\n    label: \"Feature\",\n  },\n  {\n    value: \"documentation\",\n    label: \"Documentation\",\n  },\n]"
+  },
+  {
+    "file": "src/routes/(main)/dashboard/tasks/-components/data.ts",
+    "line": 29,
+    "length": 5,
+    "text": "[\n  {\n    value: \"backlog\",\n    label: \"Backlog\",\n    icon: HelpCircle,\n    className: \"bg-muted text-muted-foreground\",\n  },\n  {\n    value: \"todo\",\n    label: \"Todo\",\n    icon: Circle,\n    className: \"bg-info-surface text-info\",\n  },\n  {\n    value: \"in progress\",\n    label: \"In Progress\",\n    icon: Timer,\n    className: \"bg-warning-surface text-warning\",\n  },\n  {\n    value: \"done\",\n    label: \"Done\",\n    icon: CheckCircle,\n    className: \"bg-success-surface text-success\",\n  },\n  {\n    value: \"canceled\",\n    label: \"Canceled\",\n    icon: CircleOff,\n    className: \"bg-muted text-muted-foreground"
+  },
+  {
+    "file": "src/routes/(main)/dashboard/tasks/-components/data.ts",
+    "line": 62,
+    "length": 3,
+    "text": "[\n  {\n    label: \"Low\",\n    value: \"low\",\n    icon: ArrowDown,\n    className: \"bg-muted text-muted-foreground\",\n  },\n  {\n    label: \"Medium\",\n    value: \"medium\",\n    icon: ArrowRight,\n    className: \"bg-warning-surface text-warning\",\n  },\n  {\n    label: \"High\",\n    value: \"high\",\n    icon: ArrowUp,\n    className: \"bg-danger-surface text-danger\",\n  },\n]"
+  },
+  {
+    "file": "src/routes/(main)/dashboard/users/-components/users-columns.tsx",
+    "line": 94,
+    "length": 9,
+    "text": "[\n  {\n    id: \"select\",\n    header: ({ table }) => (\n      <div className=\"flex items-center justify-center\">\n        <Subscribe source={table.atoms.rowSelection}>\n          {() => (\n            <Checkbox\n              aria-label=\"Select all users\"\n              checked={table.getIsAllPageRowsSelected()}\n              indeterminate={!table.getIsAllPageRowsSelected() && table.getIsSomePageRowsSelected()}\n              onCheckedChange={(value) => table.toggleAllPageRowsSelected(value)}\n            />\n          )}\n        </Subscribe>\n      </div>\n    ),\n    cell: ({ row }) => (\n      <div classN"
+  },
+  {
+    "file": "src/routes/(main)/mail/-components/data.tsx",
+    "line": 49,
+    "length": 2,
+    "text": "[\n    {\n      id: \"inbox\",\n      title: \"Inbox\",\n      icon: Inbox,\n      isActive: true,\n    },\n    {\n      id: \"priority\",\n      title: \"Priority\",\n      icon: Star,\n      isActive: false,\n    },\n  ]"
+  },
+  {
+    "file": "src/routes/(main)/mail/-components/data.tsx",
+    "line": 63,
+    "length": 4,
+    "text": "[\n    {\n      id: \"drafts\",\n      title: \"Drafts\",\n      icon: File,\n      isActive: false,\n    },\n    {\n      id: \"sent\",\n      title: \"Sent\",\n      icon: Send,\n      isActive: false,\n    },\n    {\n      id: \"archive\",\n      title: \"Archive\",\n      icon: Archive,\n      isActive: false,\n    },\n    {\n      id: \"trash\",\n      title: \"Trash\",\n      icon: Trash2,\n      isActive: false,\n    },\n  ]"
+  },
+  {
+    "file": "src/routes/(main)/mail/-components/data.tsx",
+    "line": 89,
+    "length": 2,
+    "text": "[\n    {\n      id: \"help-feedback\",\n      title: \"Help & feedback\",\n      icon: CircleHelp,\n      isActive: false,\n    },\n    {\n      id: \"keyboard-shortcuts\",\n      title: \"Keyboard shortcuts\",\n      icon: Keyboard,\n      isActive: false,\n    },\n  ]"
+  },
+  {
+    "file": "src/routes/(main)/mail/-components/mail-inbox.tsx",
+    "line": 56,
+    "length": 2,
+    "text": "[\n            {\n              id: \"pinned\",\n              title: \"Pinned\",\n              items: pinnedMails,\n            },\n            {\n              id: \"inbox\",\n              title: \"Inbox\",\n              items: unpinnedMails,\n            },\n          ]"
+  },
+  {
+    "file": "src/routes/__root.tsx",
+    "line": 20,
+    "length": 14,
+    "text": "[\n      { property: \"og:type\", content: \"website\" },\n      { property: \"og:site_name\", content: APP_CONFIG.name },\n      { property: \"og:title\", content: APP_CONFIG.meta.title },\n      { property: \"og:description\", content: APP_CONFIG.meta.description },\n      { property: \"og:image\", content: APP_CONFIG.meta.image },\n      { property: \"og:image:width\", content: \"1200\" },\n      { property: \"og:image:height\", content: \"630\" },\n      { property: \"og:image:alt\", content: \"tenboards — a complete admin dashboard starter\" },\n      { name: \"twitter:card\", content: \"summary_large_image\" },\n      { name"
+  },
+  {
+    "file": "src/routes/__root.tsx",
+    "line": 46,
+    "length": 10,
+    "text": "[\n      { rel: \"icon\", type: \"image/svg+xml\", href: \"/favicon.svg\" },\n      { rel: \"icon\", type: \"image/x-icon\", href: \"/favicon.ico\" },\n      { rel: \"icon\", type: \"image/png\", sizes: \"32x32\", href: \"/favicon-32.png\" },\n      { rel: \"icon\", type: \"image/png\", sizes: \"16x16\", href: \"/favicon-16.png\" },\n      { rel: \"apple-touch-icon\", sizes: \"180x180\", href: \"/apple-touch-icon.png\" },\n      {\n        rel: \"preconnect\",\n        href: \"https://fonts.googleapis.com\",\n      },\n      {\n        rel: \"preconnect\",\n        href: \"https://fonts.gstatic.com\",\n        crossOrigin: \"anonymous\",\n      },\n  "
+  },
+  {
+    "file": "src/lib/charts/theme.tsx",
+    "line": 8,
+    "length": 4,
+    "text": "[\n  { color: \"var(--chart-1)\", strokeDasharray: undefined },\n  { color: \"var(--chart-2)\", strokeDasharray: \"6 3\" },\n  { color: \"var(--chart-4)\", strokeDasharray: \"2 3\" },\n  { color: \"var(--chart-5)\", strokeDasharray: \"8 3 2 3\" },\n]"
+  },
+  {
+    "file": "src/lib/charts/theme.tsx",
+    "line": 19,
+    "length": 2,
+    "text": "[\n      key,\n      { label, ...chartSeries[index % chartSeries.length] },\n    ]"
+  },
+  {
+    "file": "src/lib/fonts/registry.ts",
+    "line": 141,
+    "length": 2,
+    "text": "[\n      key,\n      {\n        family: font.family,\n        fallback: font.fallback,\n        stylesheet: font.stylesheet,\n        variationSettings: \"variationSettings\" in font ? font.variationSettings : undefined,\n      },\n    ]"
+  },
+  {
+    "file": "src/lib/preferences/layout.ts",
+    "line": 2,
+    "length": 3,
+    "text": "[\n  { label: \"Sidebar\", value: \"sidebar\" },\n  { label: \"Inset\", value: \"inset\" },\n  { label: \"Floating\", value: \"floating\" },\n]"
+  },
+  {
+    "file": "src/lib/preferences/layout.ts",
+    "line": 11,
+    "length": 2,
+    "text": "[\n  { label: \"Icon\", value: \"icon\" },\n  { label: \"Offcanvas\", value: \"offcanvas\" },\n]"
+  },
+  {
+    "file": "src/lib/preferences/layout.ts",
+    "line": 19,
+    "length": 2,
+    "text": "[\n  { label: \"Centered\", value: \"centered\" },\n  { label: \"Full Width\", value: \"full-width\" },\n]"
+  },
+  {
+    "file": "src/lib/preferences/layout.ts",
+    "line": 27,
+    "length": 2,
+    "text": "[\n  { label: \"Sticky\", value: \"sticky\" },\n  { label: \"Scroll\", value: \"scroll\" },\n]"
+  },
+  {
+    "file": "src/lib/preferences/theme.ts",
+    "line": 1,
+    "length": 3,
+    "text": "[\n  { label: \"Light\", value: \"light\" },\n  { label: \"Dark\", value: \"dark\" },\n  { label: \"System\", value: \"system\" },\n]"
+  },
+  {
+    "file": "src/lib/preferences/theme.ts",
+    "line": 13,
+    "length": 4,
+    "text": "[\n  {\n    label: \"Default\",\n    value: \"default\",\n    primary: {\n      light: \"#1e40af\",\n      dark: \"#a9c2ff\",\n    },\n  },\n  {\n    label: \"Graphite\",\n    value: \"graphite\",\n    primary: {\n      light: \"#303948\",\n      dark: \"#d1d8e4\",\n    },\n  },\n  {\n    label: \"Iris\",\n    value: \"iris\",\n    primary: {\n      light: \"#5b21b6\",\n      dark: \"#c4b5fd\",\n    },\n  },\n  {\n    label: \"Pine\",\n    value: \"pine\",\n    primary: {\n      light: \"#115e59\",\n      dark: \"#5eead4\",\n    },\n  },\n]"
+  }
+]

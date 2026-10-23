@@ -1,0 +1,404 @@
+[
+  {
+    "report": "hydration-db-Chicago/report.json",
+    "route": "/dashboard/invoice",
+    "theme": "light",
+    "viewport": "mobile",
+    "file": "_dashboard_invoice-light-mobile-refresh.png",
+    "controlsFile": null,
+    "phase": "refresh",
+    "interactionNotes": [],
+    "expectedDiagnostics": [],
+    "errors": [
+      "page.evaluate: Execution context was destroyed, most likely because of a navigation"
+    ]
+  },
+  {
+    "report": "redirects-dev-retry/report.json",
+    "route": "/dashboard/",
+    "theme": "light",
+    "viewport": "desktop",
+    "file": "_dashboard_-light-desktop-interactive.png",
+    "controlsFile": "_dashboard_-light-desktop-interactive-controls.png",
+    "phase": "direct",
+    "interactionNotes": [],
+    "expectedDiagnostics": [],
+    "errors": [
+      "Unexpected redirect for /dashboard/: 307 /dashboard"
+    ]
+  },
+  {
+    "report": "redirects-dev-retry/report.json",
+    "route": "/dashboard/",
+    "theme": "light",
+    "viewport": "mobile",
+    "file": "_dashboard_-light-mobile-interactive.png",
+    "controlsFile": "_dashboard_-light-mobile-interactive-controls.png",
+    "phase": "direct",
+    "interactionNotes": [],
+    "expectedDiagnostics": [],
+    "errors": [
+      "Unexpected redirect for /dashboard/: 307 /dashboard"
+    ]
+  },
+  {
+    "report": "redirects-dev-retry/report.json",
+    "route": "/dashboard/",
+    "theme": "dark",
+    "viewport": "desktop",
+    "file": "_dashboard_-dark-desktop-interactive.png",
+    "controlsFile": "_dashboard_-dark-desktop-interactive-controls.png",
+    "phase": "direct",
+    "interactionNotes": [],
+    "expectedDiagnostics": [],
+    "errors": [
+      "Unexpected redirect for /dashboard/: 307 /dashboard"
+    ]
+  },
+  {
+    "report": "redirects-dev-retry/report.json",
+    "route": "/dashboard/",
+    "theme": "dark",
+    "viewport": "mobile",
+    "file": "_dashboard_-dark-mobile-interactive.png",
+    "controlsFile": "_dashboard_-dark-mobile-interactive-controls.png",
+    "phase": "direct",
+    "interactionNotes": [],
+    "expectedDiagnostics": [],
+    "errors": [
+      "Unexpected redirect for /dashboard/: 307 /dashboard"
+    ]
+  },
+  {
+    "report": "interactions-db-1/report.json",
+    "route": "/auth/v2/register",
+    "theme": "light",
+    "viewport": "mobile",
+    "file": "_auth_v2_register-light-mobile-interactive.png",
+    "controlsFile": "_auth_v2_register-light-mobile-interactive-controls.png",
+    "phase": "direct",
+    "interactionNotes": [],
+    "expectedDiagnostics": [],
+    "errors": [
+      "locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByText('Please enter a valid email address.', { exact: true }) to be visible\u001b[22m\n"
+    ]
+  },
+  {
+    "report": "system-dev-recovery-retry/report.json",
+    "route": "qa:root-error",
+    "theme": "light",
+    "viewport": "desktop",
+    "file": "qa_root-error-light-desktop-interactive.png",
+    "controlsFile": "qa_root-error-light-desktop-interactive-controls.png",
+    "phase": "direct",
+    "interactionNotes": [],
+    "expectedDiagnostics": [
+      "console: %o\n\n%s\n\n%s\n Error: QA_ONLY_ROOT_ERROR\n    at target.options.component (eval at evaluate (:370:30), <anonymous>:10:15)\n    at Object.react_stack_bottom_frame (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:14142:12)\n    at renderWithHooks (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:4400:19)\n    at updateFunctionComponent (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:5775:16)\n    at beginWork (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:6391:20)\n    at runWithFiberInDEV (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:944:66)\n    at performUnitOfWork (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:9148:92)\n    at workLoopSync (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:9044:37)\n    at renderRootSync (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:9028:6)\n    at performWorkOnRoot (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:8715:27) The above error occurred in one of your React components. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.",
+      "console: %o\n\n%s\n\n%s\n Error: QA_ONLY_ROOT_ERROR\n    at target.options.component (eval at evaluate (:370:30), <anonymous>:10:15)\n    at Object.react_stack_bottom_frame (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:14142:12)\n    at renderWithHooks (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:4400:19)\n    at updateFunctionComponent (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:5775:16)\n    at beginWork (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:6391:20)\n    at runWithFiberInDEV (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:944:66)\n    at performUnitOfWork (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:9148:92)\n    at workLoopSync (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:9044:37)\n    at renderRootSync (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:9028:6)\n    at performWorkOnRoot (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:8715:27) The above error occurred in one of your React components. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary."
+    ],
+    "errors": [
+      "locator.press: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Try again', exact: true })\u001b[22m\n\u001b[2m    - locator resolved to <button tabindex=\"0\" type=\"button\" data-slot=\"button\" data-tsd-source=\"/src/routes/-components/root-error.tsx:20:9\" class=\"group/button inline-flex shrink-0 items-center justify-center rounded-lg border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destr\u2026>Try again</button>\u001b[22m\n\u001b[2m  - elementHandle.press(\"Enter\")\u001b[22m\n\u001b[2m  - element was detached from the DOM, retrying\u001b[22m\n"
+    ]
+  },
+  {
+    "report": "system-dev-recovery-retry/report.json",
+    "route": "qa:root-error",
+    "theme": "dark",
+    "viewport": "mobile",
+    "file": "qa_root-error-dark-mobile-interactive.png",
+    "controlsFile": "qa_root-error-dark-mobile-interactive-controls.png",
+    "phase": "direct",
+    "interactionNotes": [],
+    "expectedDiagnostics": [
+      "console: %o\n\n%s\n\n%s\n Error: QA_ONLY_ROOT_ERROR\n    at target.options.component (eval at evaluate (:370:30), <anonymous>:10:15)\n    at Object.react_stack_bottom_frame (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:14142:12)\n    at renderWithHooks (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:4400:19)\n    at updateFunctionComponent (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:5775:16)\n    at beginWork (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:6391:20)\n    at runWithFiberInDEV (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:944:66)\n    at performUnitOfWork (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:9148:92)\n    at workLoopSync (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:9044:37)\n    at renderRootSync (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:9028:6)\n    at performWorkOnRoot (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:8715:27) The above error occurred in one of your React components. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.",
+      "console: %o\n\n%s\n\n%s\n Error: QA_ONLY_ROOT_ERROR\n    at target.options.component (eval at evaluate (:370:30), <anonymous>:10:15)\n    at Object.react_stack_bottom_frame (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:14142:12)\n    at renderWithHooks (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:4400:19)\n    at updateFunctionComponent (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:5775:16)\n    at beginWork (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:6391:20)\n    at runWithFiberInDEV (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:944:66)\n    at performUnitOfWork (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:9148:92)\n    at workLoopSync (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:9044:37)\n    at renderRootSync (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:9028:6)\n    at performWorkOnRoot (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:8715:27) The above error occurred in one of your React components. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary."
+    ],
+    "errors": [
+      "locator.press: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Try again', exact: true })\u001b[22m\n\u001b[2m    - locator resolved to <button tabindex=\"0\" type=\"button\" data-slot=\"button\" data-tsd-source=\"/src/routes/-components/root-error.tsx:20:9\" class=\"group/button inline-flex shrink-0 items-center justify-center rounded-lg border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destr\u2026>Try again</button>\u001b[22m\n\u001b[2m  - elementHandle.press(\"Enter\")\u001b[22m\n\u001b[2m  - element was detached from the DOM, retrying\u001b[22m\n"
+    ]
+  },
+  {
+    "report": "interactions-workers-0/report.json",
+    "route": "/chat",
+    "theme": "light",
+    "viewport": "mobile",
+    "file": "_chat-light-mobile-interactive.png",
+    "controlsFile": "_chat-light-mobile-interactive-controls.png",
+    "phase": "direct",
+    "interactionNotes": [],
+    "expectedDiagnostics": [],
+    "errors": [
+      "locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('menuitem', { name: 'View profile', exact: true })\u001b[22m\n\u001b[2m    - locator resolved to <div tabindex=\"-1\" role=\"menuitem\" id=\"base-ui-_r_d_\" data-variant=\"default\" data-slot=\"dropdown-menu-item\" class=\"group/dropdown-menu-item relative flex cursor-default items-center gap-1.5 rounded-md px-1.5 py-1 text-sm outline-hidden select-none focus:bg-accent focus:text-accent-foreground not-data-[variant=destructive]:focus:**:text-accent-foreground data-inset:pl-7 data-[variant=destructive]:text-destructive data-[variant=destructive]:focus:bg-destructive/10 data-[variant=destructive]:focus:tex\u2026>\u2026</div>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m  - element was detached from the DOM, retrying\u001b[22m\n"
+    ]
+  },
+  {
+    "report": "system-dev-final/report.json",
+    "route": "qa:root-error",
+    "theme": "dark",
+    "viewport": "mobile",
+    "file": "qa_root-error-dark-mobile-interactive.png",
+    "controlsFile": "qa_root-error-dark-mobile-interactive-controls.png",
+    "phase": "direct",
+    "interactionNotes": [],
+    "expectedDiagnostics": [
+      "console: %o\n\n%s\n\n%s\n Error: QA_ONLY_ROOT_ERROR\n    at target.options.component (eval at evaluate (:370:30), <anonymous>:10:15)\n    at Object.react_stack_bottom_frame (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:14142:12)\n    at renderWithHooks (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:4400:19)\n    at updateFunctionComponent (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:5775:16)\n    at beginWork (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:6391:20)\n    at runWithFiberInDEV (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:944:66)\n    at performUnitOfWork (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:9148:92)\n    at workLoopSync (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:9044:37)\n    at renderRootSync (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:9028:6)\n    at performWorkOnRoot (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:8715:27) The above error occurred in one of your React components. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.",
+      "console: %o\n\n%s\n\n%s\n Error: QA_ONLY_ROOT_ERROR\n    at target.options.component (eval at evaluate (:370:30), <anonymous>:10:15)\n    at Object.react_stack_bottom_frame (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:14142:12)\n    at renderWithHooks (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:4400:19)\n    at updateFunctionComponent (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:5775:16)\n    at beginWork (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:6391:20)\n    at runWithFiberInDEV (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:944:66)\n    at performUnitOfWork (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:9148:92)\n    at workLoopSync (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:9044:37)\n    at renderRootSync (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:9028:6)\n    at performWorkOnRoot (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:8715:27) The above error occurred in one of your React components. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary."
+    ],
+    "errors": [
+      "locator.press: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Try again', exact: true })\u001b[22m\n\u001b[2m    - locator resolved to <button tabindex=\"0\" type=\"button\" data-slot=\"button\" data-tsd-source=\"/src/routes/-components/root-error.tsx:20:9\" class=\"group/button inline-flex shrink-0 items-center justify-center rounded-lg border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destr\u2026>Try again</button>\u001b[22m\n\u001b[2m  - elementHandle.press(\"Enter\")\u001b[22m\n\u001b[2m  - element was detached from the DOM, retrying\u001b[22m\n"
+    ]
+  },
+  {
+    "report": "workers/graphite/report.json",
+    "route": "/dashboard/roles",
+    "theme": "light",
+    "viewport": "mobile",
+    "file": "_dashboard_roles-light-mobile.png",
+    "controlsFile": null,
+    "phase": "direct",
+    "interactionNotes": [],
+    "expectedDiagnostics": [],
+    "errors": [
+      "request: https://9d63aeb5-tenboards.mohanadgh.workers.dev/dashboard/roles net::ERR_TIMED_OUT",
+      "page.goto: net::ERR_TIMED_OUT at https://9d63aeb5-tenboards.mohanadgh.workers.dev/dashboard/roles\nCall log:\n\u001b[2m  - navigating to \"https://9d63aeb5-tenboards.mohanadgh.workers.dev/dashboard/roles\", waiting until \"domcontentloaded\"\u001b[22m\n"
+    ]
+  },
+  {
+    "report": "interactions-dev-1/report.json",
+    "route": "/dashboard",
+    "theme": "light",
+    "viewport": "desktop",
+    "file": "_dashboard-light-desktop-interactive.png",
+    "controlsFile": "_dashboard-light-desktop-interactive-controls.png",
+    "phase": "direct",
+    "interactionNotes": [],
+    "expectedDiagnostics": [],
+    "errors": [
+      "No interaction scenario for /dashboard. Use an explicit supported --routes subset."
+    ]
+  },
+  {
+    "report": "interactions-dev-1/report.json",
+    "route": "/dashboard",
+    "theme": "light",
+    "viewport": "mobile",
+    "file": "_dashboard-light-mobile-interactive.png",
+    "controlsFile": "_dashboard-light-mobile-interactive-controls.png",
+    "phase": "direct",
+    "interactionNotes": [],
+    "expectedDiagnostics": [],
+    "errors": [
+      "No interaction scenario for /dashboard. Use an explicit supported --routes subset."
+    ]
+  },
+  {
+    "report": "interactions-dev-1/report.json",
+    "route": "/dashboard",
+    "theme": "dark",
+    "viewport": "desktop",
+    "file": "_dashboard-dark-desktop-interactive.png",
+    "controlsFile": "_dashboard-dark-desktop-interactive-controls.png",
+    "phase": "direct",
+    "interactionNotes": [],
+    "expectedDiagnostics": [],
+    "errors": [
+      "No interaction scenario for /dashboard. Use an explicit supported --routes subset."
+    ]
+  },
+  {
+    "report": "interactions-dev-1/report.json",
+    "route": "/dashboard",
+    "theme": "dark",
+    "viewport": "mobile",
+    "file": "_dashboard-dark-mobile-interactive.png",
+    "controlsFile": "_dashboard-dark-mobile-interactive-controls.png",
+    "phase": "direct",
+    "interactionNotes": [],
+    "expectedDiagnostics": [],
+    "errors": [
+      "No interaction scenario for /dashboard. Use an explicit supported --routes subset."
+    ]
+  },
+  {
+    "report": "interactions-dev-1/report.json",
+    "route": "/dashboard/",
+    "theme": "light",
+    "viewport": "desktop",
+    "file": "_dashboard_-light-desktop-interactive.png",
+    "controlsFile": "_dashboard_-light-desktop-interactive-controls.png",
+    "phase": "direct",
+    "interactionNotes": [],
+    "expectedDiagnostics": [],
+    "errors": [
+      "No interaction scenario for /dashboard/. Use an explicit supported --routes subset."
+    ]
+  },
+  {
+    "report": "interactions-dev-1/report.json",
+    "route": "/dashboard/",
+    "theme": "light",
+    "viewport": "mobile",
+    "file": "_dashboard_-light-mobile-interactive.png",
+    "controlsFile": "_dashboard_-light-mobile-interactive-controls.png",
+    "phase": "direct",
+    "interactionNotes": [],
+    "expectedDiagnostics": [],
+    "errors": [
+      "No interaction scenario for /dashboard/. Use an explicit supported --routes subset."
+    ]
+  },
+  {
+    "report": "interactions-dev-1/report.json",
+    "route": "/dashboard/",
+    "theme": "dark",
+    "viewport": "desktop",
+    "file": "_dashboard_-dark-desktop-interactive.png",
+    "controlsFile": "_dashboard_-dark-desktop-interactive-controls.png",
+    "phase": "direct",
+    "interactionNotes": [],
+    "expectedDiagnostics": [],
+    "errors": [
+      "No interaction scenario for /dashboard/. Use an explicit supported --routes subset."
+    ]
+  },
+  {
+    "report": "interactions-dev-1/report.json",
+    "route": "/dashboard/",
+    "theme": "dark",
+    "viewport": "mobile",
+    "file": "_dashboard_-dark-mobile-interactive.png",
+    "controlsFile": "_dashboard_-dark-mobile-interactive-controls.png",
+    "phase": "direct",
+    "interactionNotes": [],
+    "expectedDiagnostics": [],
+    "errors": [
+      "No interaction scenario for /dashboard/. Use an explicit supported --routes subset."
+    ]
+  },
+  {
+    "report": "interactions-dev-0/report.json",
+    "route": "/",
+    "theme": "light",
+    "viewport": "desktop",
+    "file": "_-light-desktop-interactive.png",
+    "controlsFile": "_-light-desktop-interactive-controls.png",
+    "phase": "direct",
+    "interactionNotes": [],
+    "expectedDiagnostics": [],
+    "errors": [
+      "No interaction scenario for /. Use an explicit supported --routes subset."
+    ]
+  },
+  {
+    "report": "interactions-dev-0/report.json",
+    "route": "/",
+    "theme": "light",
+    "viewport": "mobile",
+    "file": "_-light-mobile-interactive.png",
+    "controlsFile": "_-light-mobile-interactive-controls.png",
+    "phase": "direct",
+    "interactionNotes": [],
+    "expectedDiagnostics": [],
+    "errors": [
+      "No interaction scenario for /. Use an explicit supported --routes subset."
+    ]
+  },
+  {
+    "report": "interactions-dev-0/report.json",
+    "route": "/",
+    "theme": "dark",
+    "viewport": "desktop",
+    "file": "_-dark-desktop-interactive.png",
+    "controlsFile": "_-dark-desktop-interactive-controls.png",
+    "phase": "direct",
+    "interactionNotes": [],
+    "expectedDiagnostics": [],
+    "errors": [
+      "No interaction scenario for /. Use an explicit supported --routes subset."
+    ]
+  },
+  {
+    "report": "interactions-dev-0/report.json",
+    "route": "/",
+    "theme": "dark",
+    "viewport": "mobile",
+    "file": "_-dark-mobile-interactive.png",
+    "controlsFile": "_-dark-mobile-interactive-controls.png",
+    "phase": "direct",
+    "interactionNotes": [],
+    "expectedDiagnostics": [],
+    "errors": [
+      "No interaction scenario for /. Use an explicit supported --routes subset."
+    ]
+  },
+  {
+    "report": "interactions-dev-0/report.json",
+    "route": "qa:root-error",
+    "theme": "light",
+    "viewport": "desktop",
+    "file": "qa_root-error-light-desktop-interactive.png",
+    "controlsFile": "qa_root-error-light-desktop-interactive-controls.png",
+    "phase": "direct",
+    "interactionNotes": [],
+    "expectedDiagnostics": [
+      "console: %o\n\n%s\n\n%s\n Error: QA_ONLY_ROOT_ERROR\n    at target.options.component (eval at evaluate (:370:30), <anonymous>:10:15)\n    at Object.react_stack_bottom_frame (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:14142:12)\n    at renderWithHooks (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:4400:19)\n    at updateFunctionComponent (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:5775:16)\n    at beginWork (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:6391:20)\n    at runWithFiberInDEV (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:944:66)\n    at performUnitOfWork (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:9148:92)\n    at workLoopSync (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:9044:37)\n    at renderRootSync (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:9028:6)\n    at performWorkOnRoot (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:8715:27) The above error occurred in one of your React components. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.",
+      "console: %o\n\n%s\n\n%s\n Error: QA_ONLY_ROOT_ERROR\n    at target.options.component (eval at evaluate (:370:30), <anonymous>:10:15)\n    at Object.react_stack_bottom_frame (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:14142:12)\n    at renderWithHooks (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:4400:19)\n    at updateFunctionComponent (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:5775:16)\n    at beginWork (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:6391:20)\n    at runWithFiberInDEV (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:944:66)\n    at performUnitOfWork (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:9148:92)\n    at workLoopSync (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:9044:37)\n    at renderRootSync (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:9028:6)\n    at performWorkOnRoot (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:8715:27) The above error occurred in one of your React components. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary."
+    ],
+    "errors": [
+      "Production leaked error detail"
+    ]
+  },
+  {
+    "report": "interactions-dev-0/report.json",
+    "route": "qa:root-error",
+    "theme": "light",
+    "viewport": "mobile",
+    "file": "qa_root-error-light-mobile-interactive.png",
+    "controlsFile": "qa_root-error-light-mobile-interactive-controls.png",
+    "phase": "direct",
+    "interactionNotes": [],
+    "expectedDiagnostics": [
+      "console: %o\n\n%s\n\n%s\n Error: QA_ONLY_ROOT_ERROR\n    at target.options.component (eval at evaluate (:370:30), <anonymous>:10:15)\n    at Object.react_stack_bottom_frame (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:14142:12)\n    at renderWithHooks (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:4400:19)\n    at updateFunctionComponent (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:5775:16)\n    at beginWork (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:6391:20)\n    at runWithFiberInDEV (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:944:66)\n    at performUnitOfWork (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:9148:92)\n    at workLoopSync (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:9044:37)\n    at renderRootSync (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:9028:6)\n    at performWorkOnRoot (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:8715:27) The above error occurred in one of your React components. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.",
+      "console: %o\n\n%s\n\n%s\n Error: QA_ONLY_ROOT_ERROR\n    at target.options.component (eval at evaluate (:370:30), <anonymous>:10:15)\n    at Object.react_stack_bottom_frame (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:14142:12)\n    at renderWithHooks (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:4400:19)\n    at updateFunctionComponent (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:5775:16)\n    at beginWork (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:6391:20)\n    at runWithFiberInDEV (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:944:66)\n    at performUnitOfWork (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:9148:92)\n    at workLoopSync (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:9044:37)\n    at renderRootSync (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:9028:6)\n    at performWorkOnRoot (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:8715:27) The above error occurred in one of your React components. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary."
+    ],
+    "errors": [
+      "Production leaked error detail"
+    ]
+  },
+  {
+    "report": "interactions-dev-0/report.json",
+    "route": "qa:root-error",
+    "theme": "dark",
+    "viewport": "desktop",
+    "file": "qa_root-error-dark-desktop-interactive.png",
+    "controlsFile": "qa_root-error-dark-desktop-interactive-controls.png",
+    "phase": "direct",
+    "interactionNotes": [],
+    "expectedDiagnostics": [
+      "console: %o\n\n%s\n\n%s\n Error: QA_ONLY_ROOT_ERROR\n    at target.options.component (eval at evaluate (:370:30), <anonymous>:10:15)\n    at Object.react_stack_bottom_frame (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:14142:12)\n    at renderWithHooks (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:4400:19)\n    at updateFunctionComponent (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:5775:16)\n    at beginWork (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:6391:20)\n    at runWithFiberInDEV (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:944:66)\n    at performUnitOfWork (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:9148:92)\n    at workLoopSync (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:9044:37)\n    at renderRootSync (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:9028:6)\n    at performWorkOnRoot (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:8715:27) The above error occurred in one of your React components. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.",
+      "console: %o\n\n%s\n\n%s\n Error: QA_ONLY_ROOT_ERROR\n    at target.options.component (eval at evaluate (:370:30), <anonymous>:10:15)\n    at Object.react_stack_bottom_frame (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:14142:12)\n    at renderWithHooks (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:4400:19)\n    at updateFunctionComponent (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:5775:16)\n    at beginWork (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:6391:20)\n    at runWithFiberInDEV (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:944:66)\n    at performUnitOfWork (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:9148:92)\n    at workLoopSync (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:9044:37)\n    at renderRootSync (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:9028:6)\n    at performWorkOnRoot (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:8715:27) The above error occurred in one of your React components. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.",
+      "console: %o\n\n%s\n\n%s\n Error: QA_ONLY_ROOT_ERROR\n    at target.options.component (eval at evaluate (:370:30), <anonymous>:10:15)\n    at Object.react_stack_bottom_frame (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:14142:12)\n    at renderWithHooks (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:4400:19)\n    at updateFunctionComponent (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:5775:16)\n    at beginWork (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:6391:20)\n    at runWithFiberInDEV (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:944:66)\n    at performUnitOfWork (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:9148:92)\n    at workLoopSync (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:9044:37)\n    at renderRootSync (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:9028:6)\n    at performWorkOnRoot (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:8715:27) The above error occurred in one of your React components. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary."
+    ],
+    "errors": [
+      "Production leaked error detail"
+    ]
+  },
+  {
+    "report": "interactions-dev-0/report.json",
+    "route": "qa:root-error",
+    "theme": "dark",
+    "viewport": "mobile",
+    "file": "qa_root-error-dark-mobile-interactive.png",
+    "controlsFile": "qa_root-error-dark-mobile-interactive-controls.png",
+    "phase": "direct",
+    "interactionNotes": [],
+    "expectedDiagnostics": [
+      "console: %o\n\n%s\n\n%s\n Error: QA_ONLY_ROOT_ERROR\n    at target.options.component (eval at evaluate (:370:30), <anonymous>:10:15)\n    at Object.react_stack_bottom_frame (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:14142:12)\n    at renderWithHooks (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:4400:19)\n    at updateFunctionComponent (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:5775:16)\n    at beginWork (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:6391:20)\n    at runWithFiberInDEV (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:944:66)\n    at performUnitOfWork (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:9148:92)\n    at workLoopSync (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:9044:37)\n    at renderRootSync (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:9028:6)\n    at performWorkOnRoot (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:8715:27) The above error occurred in one of your React components. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.",
+      "console: %o\n\n%s\n\n%s\n Error: QA_ONLY_ROOT_ERROR\n    at target.options.component (eval at evaluate (:370:30), <anonymous>:10:15)\n    at Object.react_stack_bottom_frame (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:14142:12)\n    at renderWithHooks (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:4400:19)\n    at updateFunctionComponent (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:5775:16)\n    at beginWork (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:6391:20)\n    at runWithFiberInDEV (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:944:66)\n    at performUnitOfWork (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:9148:92)\n    at workLoopSync (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:9044:37)\n    at renderRootSync (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:9028:6)\n    at performWorkOnRoot (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:8715:27) The above error occurred in one of your React components. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.",
+      "console: %o\n\n%s\n\n%s\n Error: QA_ONLY_ROOT_ERROR\n    at target.options.component (eval at evaluate (:370:30), <anonymous>:10:15)\n    at Object.react_stack_bottom_frame (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:14142:12)\n    at renderWithHooks (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:4400:19)\n    at updateFunctionComponent (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:5775:16)\n    at beginWork (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:6391:20)\n    at runWithFiberInDEV (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:944:66)\n    at performUnitOfWork (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:9148:92)\n    at workLoopSync (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:9044:37)\n    at renderRootSync (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:9028:6)\n    at performWorkOnRoot (http://127.0.0.1:3005/node_modules/.vite/deps/react-dom_client.js?v=4a5ef8a5:8715:27) The above error occurred in one of your React components. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary."
+    ],
+    "errors": [
+      "Production leaked error detail"
+    ]
+  }
+]

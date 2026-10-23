@@ -1,0 +1,8 @@
+
+> tenboards@0.3.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://127.0.0.1:3001 --routes /auth/v2/register --interactions --output screenshots/v04-008/interactions-db-register-retry --reference 2026-10-23T12:00:00.000Z --mask-live-clocks
+
+PASS /auth/v2/register light/desktop direct
+PASS /auth/v2/register light/mobile direct
+PASS /auth/v2/register dark/desktop direct
+PASS /auth/v2/register dark/mobile direct

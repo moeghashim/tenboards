@@ -1,0 +1,42 @@
+PASS absent URL: read
+PASS configured database: read
+PASS forced demo: read
+PASS refused connection: Unable to load database data. Check the connection and migrations, then retry.
+PASS bad credentials: Unable to load database data. Check the connection and migrations, then retry.
+PASS missing schema: Unable to load database data. Check the connection and migrations, then retry.
+PASS empty configuration: Unable to load database data. Check the connection and migrations, then retry.
+PASS malformed configuration: Unable to load database data. Check the connection and migrations, then retry.
+PASS unsupported selector: Unsupported DATA_SOURCE. Use demo or leave it unset.
+PASS recovered database: read
+PASS negative --inject-mismatch: Parity failed: readProductivity/all
++ actual - expected
+
+  {
++   day: 'QA_MISMATCH',
+-   day: {
+-     date: '2026-10-23',
+-     greeting: 'Good morning, Jordan.',
+-     label: 'October 23, 2026'
+-   },
+    focus: {
+      duration: '90:00',
+      id: 'current',
+      minutes: 90,
+      position: 0,
+PASS negative --omit-registration: Parity failed: Every domain read must be registered exactly once
++ actual - expected
+... Skipped lines
+
+  [
+    'academy:readAcademy',
+    'accounts:readAccounts',
+    'analytics:readAnalytics',
+    'calendar:readCalendar',
+...
+    'patients:readPatients',
+-   'productivity:readProductivity',
+    'products:readProducts',
+    'profile:readProfile',
+    'roles:readRoles',
+    'tasks:readTasks',
+    'users:readUsers'

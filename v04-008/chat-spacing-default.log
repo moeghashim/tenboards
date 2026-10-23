@@ -1,0 +1,12 @@
+
+> tenboards@0.3.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://127.0.0.1:3005 --routes /chat,/dashboard/chat --output screenshots/v04-008/chat-spacing-default --reference 2026-10-23T12:00:00.000Z --mask-live-clocks
+
+PASS /chat light/desktop direct
+PASS /chat light/mobile direct
+PASS /chat dark/desktop direct
+PASS /chat dark/mobile direct
+PASS /dashboard/chat light/desktop direct
+PASS /dashboard/chat light/mobile direct
+PASS /dashboard/chat dark/desktop direct
+PASS /dashboard/chat dark/mobile direct
