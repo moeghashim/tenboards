@@ -2,7 +2,7 @@
 id: "005"
 title: Restyle Analytics and Analytics V1
 milestone: v0.2-dashboards
-status: planned
+status: in_review
 category: ui
 files: ["src/routes/(main)/dashboard/analytics/", "src/routes/(main)/dashboard/(legacy)/analytics-v1/", "README.md", "dev/milestones.json"]
 ---
@@ -22,15 +22,15 @@ Prefactor inspection: Inspect chart props, date range formatting and repeated ri
 
 ## Acceptance criteria
 
-- [ ] Existing date/period controls, metric selection, realtime refresh, table/queue actions and placeholder tabs retain their behavior; realtime updates respect reduced motion without losing data access.
-- [ ] Legends, forecast/target distinctions, risk levels and geographic data remain understandable without color alone; mobile tab/toolbar and table overflow are intentional.
-- [ ] Capture and inspect before/after screenshots with `npm run screenshots` for every affected route in light/dark × desktop (1440×900)/mobile (390×844); attach a four-state comparison table for each route. Store PNGs, reports and logs only on `pr-assets` or PR attachments, never main. Include meaningful interactive states beyond the initial capture.
-- [ ] `npm run build`, `npm run check` and `npm run typecheck` pass; report inherited warnings separately from failures.
-- [ ] Dev-server `/dashboard/default` smoke and all affected-route smoke checks pass without console errors; verify the same routes on the Workers version preview and retain diagnostics. Do not waive inherited errors on a route this task owns.
-- [ ] Upload with `npm run preview:deploy -- --preview-alias pr-NNN` (NNN is the actual PR number); include the version-specific preview URL and reusable alias in the PR. Never run `npm run deploy` or merge as implementer.
-- [ ] Update root README.md for the verified behavior/screens/usage/status delivered by this task; PR body states `README: updated (sections …)`. Update task acceptance and `dev/milestones.json` only from verification.
-- [ ] Preserve keyboard access, accessible names, visible focus and reduced motion. Verify all four presets in light/dark on affected content; record contrast evidence for changed chart/status/token pairings. Inspect existing Base UI wrappers; keep `src/components/ui/`, `src/components/calendar/`, shell/preferences and out-of-scope app pages intact.
-- [ ] Audit mock data, greeting copy, names, handles, emails and author-linked demo references in every owned route; replace `Arham Khan`/`Arham`/`arhamkhnz` identity references with neutral demo names and safe example addresses, preserving related fixture consistency. Record a scoped search even if no matches exist; leave out-of-scope pages and legal attribution unchanged.
+- [x] Existing date/period controls, metric selection, realtime refresh, table/queue actions and placeholder tabs retain their behavior; realtime updates respect reduced motion without losing data access.
+- [x] Legends, forecast/target distinctions, risk levels and geographic data remain understandable without color alone; mobile tab/toolbar and table overflow are intentional.
+- [x] Capture and inspect before/after screenshots with `npm run screenshots` for every affected route in light/dark × desktop (1440×900)/mobile (390×844); attach a four-state comparison table for each route. Store PNGs, reports and logs only on `pr-assets` or PR attachments, never main. Include meaningful interactive states beyond the initial capture.
+- [x] `npm run build`, `npm run check` and `npm run typecheck` pass; report inherited warnings separately from failures.
+- [x] Dev-server `/dashboard/default` smoke and all affected-route smoke checks pass without console errors; verify the same routes on the Workers version preview and retain diagnostics. Do not waive inherited errors on a route this task owns.
+- [x] Upload with `npm run preview:deploy -- --preview-alias pr-NNN` (NNN is the actual PR number); include the version-specific preview URL and reusable alias in the PR. Never run `npm run deploy` or merge as implementer.
+- [x] Update root README.md for the verified behavior/screens/usage/status delivered by this task; PR body states `README: updated (sections …)`. Update task acceptance and `dev/milestones.json` only from verification.
+- [x] Preserve keyboard access, accessible names, visible focus and reduced motion. Verify all four presets in light/dark on affected content; record contrast evidence for changed chart/status/token pairings. Inspect existing Base UI wrappers; keep `src/components/ui/`, `src/components/calendar/`, shell/preferences and out-of-scope app pages intact.
+- [x] Audit mock data, greeting copy, names, handles, emails and author-linked demo references in every owned route; replace `Arham Khan`/`Arham`/`arhamkhnz` identity references with neutral demo names and safe example addresses, preserving related fixture consistency. Record a scoped search even if no matches exist; leave out-of-scope pages and legal attribution unchanged.
 
 ## Execution order
 

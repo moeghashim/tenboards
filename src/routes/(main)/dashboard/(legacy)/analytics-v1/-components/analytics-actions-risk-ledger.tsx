@@ -6,10 +6,12 @@ import { cn } from "cn";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardAction, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { CardContent } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { type DataTableFeatures, dataTableFeatures } from "@/lib/data-table-features";
 import { formatCurrency } from "@/lib/utils";
+
+import { DashboardCard as Card, SectionHeader } from "../../../-components/dashboard/cards";
 
 type LedgerPriority = "Escalate" | "Coach" | "Reforecast" | null;
 
@@ -161,9 +163,9 @@ const LEDGER_ROWS: LedgerRow[] = [
 ];
 
 const priorityTone: Record<Exclude<LedgerPriority, null>, string> = {
-  Escalate: "border-destructive/35 bg-destructive/10 text-destructive",
+  Escalate: "border-danger/30 bg-danger/10 text-danger",
   Coach: "border-primary/35 bg-primary/10 text-primary",
-  Reforecast: "border-amber-500/35 bg-amber-500/10 text-amber-700",
+  Reforecast: "border-warning/30 bg-warning/10 text-warning",
 };
 
 const ledgerColumns: ColumnDef<DataTableFeatures, LedgerRow>[] = [
@@ -205,7 +207,7 @@ const ledgerColumns: ColumnDef<DataTableFeatures, LedgerRow>[] = [
     cell: ({ row }) => (
       <div className="flex max-w-64 flex-col gap-1 whitespace-normal">
         {row.original.priority ? (
-          <Badge variant="outline" className={cn("text-[10px] uppercase", priorityTone[row.original.priority])}>
+          <Badge variant="outline" className={cn("text-xs", priorityTone[row.original.priority])}>
             {row.original.priority}
           </Badge>
         ) : null}
@@ -233,10 +235,10 @@ const ledgerColumns: ColumnDef<DataTableFeatures, LedgerRow>[] = [
           variant="outline"
           className={cn(
             "min-w-12 justify-center font-medium tabular-nums",
-            row.original.riskScore >= 80 && "border-destructive/35 bg-destructive/10 text-destructive",
+            row.original.riskScore >= 80 && "border-danger/30 bg-danger/10 text-danger",
             row.original.riskScore >= 65 &&
               row.original.riskScore < 80 &&
-              "border-amber-500/35 bg-amber-500/10 text-amber-700",
+              "border-warning/30 bg-warning/10 text-warning",
           )}
         >
           {row.original.riskScore}
@@ -259,19 +261,21 @@ export function ActionsRiskLedger() {
   });
 
   return (
-    <Card className="min-w-0 shadow-xs">
-      <CardHeader>
-        <CardTitle>Revenue Risk Ledger</CardTitle>
-        <CardDescription>Accounts under pressure with blocker, next action, and owner responsibility.</CardDescription>
-        <CardAction>
-          <Badge variant="outline" className="font-medium tabular-nums">
-            {LEDGER_ROWS.length} Accounts
-          </Badge>
-        </CardAction>
-      </CardHeader>
+    <Card className="min-w-0">
+      <SectionHeader
+        title="Revenue Risk Ledger"
+        description="Accounts under pressure with blocker, next action, and owner responsibility."
+        actions={
+          <>
+            <Badge variant="outline" className="font-medium tabular-nums">
+              {LEDGER_ROWS.length} Accounts
+            </Badge>
+          </>
+        }
+      />
 
       <CardContent className="space-y-4">
-        <div className="bg-muted/20 sm:divide-border/60 grid gap-3 rounded-lg border p-3 text-sm sm:grid-cols-4 sm:divide-x">
+        <div className="bg-muted sm:divide-border/60 grid gap-3 rounded-lg border p-3 text-sm sm:grid-cols-4 sm:divide-x">
           <LedgerStat label="Critical accounts" value="1" detail="Risk Ladder >= 80 (current window)" />
           <LedgerStat label="Escalations due" value="1" detail="Next 7 days" />
           <LedgerStat label="Median inactivity" value="31d" detail="Current filter window" />
@@ -283,7 +287,7 @@ export function ActionsRiskLedger() {
         </div>
 
         <div className="min-w-0 overflow-hidden rounded-lg border">
-          <Table>
+          <Table className="min-w-[960px]">
             <TableHeader className="bg-muted/30">
               {table.getHeaderGroups().map((headerGroup) => (
                 <TableRow key={headerGroup.id}>

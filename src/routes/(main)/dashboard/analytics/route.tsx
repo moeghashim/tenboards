@@ -18,17 +18,17 @@ export const Route = createFileRoute("/(main)/dashboard/analytics")({
 
 function Page() {
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex min-w-0 flex-col gap-4">
       <div className="space-y-1">
-        <h1 className="text-3xl tracking-tight">Hello, Aiy</h1>
+        <h1 className="text-3xl tracking-tight">Hello, Jordan</h1>
         <p className="text-muted-foreground text-sm">
           Monitor traffic, engagement, and conversion performance in one view.
         </p>
       </div>
 
-      <Tabs defaultValue="overview" className="flex flex-col gap-4">
+      <Tabs defaultValue="overview" className="flex min-w-0 flex-col gap-4">
         <div className="flex flex-wrap items-center justify-between gap-3">
-          <TabsList className="gap-1">
+          <TabsList className="group-data-horizontal/tabs:h-auto max-w-full flex-wrap justify-start gap-1 [&_[role=tab]]:h-7">
             <TabsTrigger value="overview">Overview</TabsTrigger>
             <TabsTrigger value="audience">Audience</TabsTrigger>
             <TabsTrigger value="acquisition">Acquisition</TabsTrigger>
@@ -39,7 +39,7 @@ function Page() {
           <AnalyticsToolbar />
         </div>
 
-        <TabsContent value="overview" className="flex flex-col gap-4">
+        <TabsContent value="overview" className="flex min-w-0 flex-col gap-4">
           <AnalyticsKpiStrip />
 
           <div className="grid grid-cols-1 items-stretch gap-4 xl:grid-cols-12">

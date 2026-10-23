@@ -1,6 +1,8 @@
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { CardContent } from "@/components/ui/card";
 import { formatCurrency } from "@/lib/utils";
+
+import { DashboardCard as Card, SectionHeader } from "../../../-components/dashboard/cards";
 
 const NEXT_INTERVENTIONS = [
   {
@@ -28,11 +30,8 @@ const NEXT_INTERVENTIONS = [
 
 export function ActionsManagerQueue() {
   return (
-    <Card className="h-full shadow-xs">
-      <CardHeader>
-        <CardTitle>Manager Action Queue</CardTitle>
-        <CardDescription>Escalate, coach, and reforecast before commit call</CardDescription>
-      </CardHeader>
+    <Card className="h-full">
+      <SectionHeader title="Manager Action Queue" description="Escalate, coach, and reforecast before commit call" />
 
       <CardContent className="flex h-full flex-col gap-4">
         <div className="flex h-full flex-col gap-3">
@@ -43,27 +42,27 @@ export function ActionsManagerQueue() {
             <StatCard label="Median risk" value="72" mono />
           </div>
 
-          <div className="bg-muted/20 space-y-2 rounded-md border px-3 py-2">
-            <div className="flex items-center justify-between gap-2">
+          <div className="bg-muted space-y-2 rounded-md border px-3 py-2">
+            <div className="flex flex-wrap items-center justify-between gap-2">
               <p className="text-muted-foreground text-xs">Intervention mix</p>
-              <Badge variant="outline" className="h-5 px-2 text-[11px] tabular-nums">
+              <Badge variant="outline" className="h-5 px-2 text-xs tabular-nums">
                 Escalate {formatCurrency(174000, { noDecimals: true })}
               </Badge>
             </div>
             <div className="space-y-1.5">
-              <div className="bg-background/70 flex items-center justify-between rounded-md border px-2.5 py-1.5">
+              <div className="bg-background flex flex-wrap items-center justify-between rounded-md border px-2.5 py-1.5">
                 <span className="text-xs">Escalate</span>
                 <span className="text-muted-foreground text-xs tabular-nums">
                   1 deals · 14% · {formatCurrency(174000, { noDecimals: true })}
                 </span>
               </div>
-              <div className="bg-background/70 flex items-center justify-between rounded-md border px-2.5 py-1.5">
+              <div className="bg-background flex flex-wrap items-center justify-between rounded-md border px-2.5 py-1.5">
                 <span className="text-xs">Coach</span>
                 <span className="text-muted-foreground text-xs tabular-nums">
                   4 deals · 57% · {formatCurrency(478000, { noDecimals: true })}
                 </span>
               </div>
-              <div className="bg-background/70 flex items-center justify-between rounded-md border px-2.5 py-1.5">
+              <div className="bg-background flex flex-wrap items-center justify-between rounded-md border px-2.5 py-1.5">
                 <span className="text-xs">Reforecast</span>
                 <span className="text-muted-foreground text-xs tabular-nums">
                   2 deals · 29% · {formatCurrency(159000, { noDecimals: true })}
@@ -72,26 +71,26 @@ export function ActionsManagerQueue() {
             </div>
           </div>
 
-          <div className="bg-muted/20 space-y-2 rounded-md border px-3 py-2">
-            <div className="flex items-center justify-between gap-2">
+          <div className="bg-muted space-y-2 rounded-md border px-3 py-2">
+            <div className="flex flex-wrap items-center justify-between gap-2">
               <p className="text-muted-foreground text-xs">Manager focus</p>
               <span className="text-muted-foreground text-xs tabular-nums">This forecast cycle</span>
             </div>
 
             <div className="space-y-1.5 text-xs">
-              <div className="bg-background/70 flex items-center justify-between gap-2 rounded-md border px-2.5 py-1.5">
+              <div className="bg-background flex flex-wrap items-center justify-between gap-2 rounded-md border px-2.5 py-1.5">
                 <span>Coach queue</span>
                 <span className="text-muted-foreground tabular-nums">
                   4 deals · {formatCurrency(478000, { noDecimals: true })}
                 </span>
               </div>
 
-              <div className="bg-background/70 flex items-center justify-between gap-2 rounded-md border px-2.5 py-1.5">
+              <div className="bg-background flex flex-wrap items-center justify-between gap-2 rounded-md border px-2.5 py-1.5">
                 <span>Primary owner</span>
                 <span className="text-muted-foreground tabular-nums">Leila Zhang · 3 deals</span>
               </div>
 
-              <div className="bg-background/70 flex items-center justify-between gap-2 rounded-md border px-2.5 py-1.5">
+              <div className="bg-background flex flex-wrap items-center justify-between gap-2 rounded-md border px-2.5 py-1.5">
                 <span>Stale pipeline</span>
                 <span className="text-muted-foreground tabular-nums">
                   8 deals · {formatCurrency(1151000, { noDecimals: true })}
@@ -105,9 +104,9 @@ export function ActionsManagerQueue() {
 
             {NEXT_INTERVENTIONS.map((item) => (
               <div key={`${item.priority}-${item.dealId}`} className="space-y-1 rounded-md border px-3 py-2">
-                <div className="flex items-center justify-between gap-2">
+                <div className="flex flex-wrap items-center justify-between gap-2">
                   <span className="text-sm font-medium">{item.dealId}</span>
-                  <Badge variant="outline" className="h-5 px-2 text-[11px]">
+                  <Badge variant="outline" className="h-5 px-2 text-xs">
                     {item.priority}
                   </Badge>
                 </div>
@@ -119,7 +118,7 @@ export function ActionsManagerQueue() {
             ))}
           </div>
 
-          <div className="bg-muted/20 flex items-center justify-between gap-2 rounded-md border px-3 py-2">
+          <div className="bg-muted flex flex-wrap items-center justify-between gap-2 rounded-md border px-3 py-2">
             <span className="text-muted-foreground text-xs">No-action monitor</span>
             <span className="text-xs font-medium tabular-nums">3 Deals</span>
           </div>
@@ -131,7 +130,7 @@ export function ActionsManagerQueue() {
 
 function StatCard({ label, value, mono = false }: { label: string; value: string; mono?: boolean }) {
   return (
-    <div className="bg-muted/20 rounded-md border px-2.5 py-2">
+    <div className="bg-muted rounded-md border px-2.5 py-2">
       <p className="text-muted-foreground text-xs">{label}</p>
       <p className={mono ? "text-base font-semibold tabular-nums" : "text-base font-semibold"}>{value}</p>
     </div>

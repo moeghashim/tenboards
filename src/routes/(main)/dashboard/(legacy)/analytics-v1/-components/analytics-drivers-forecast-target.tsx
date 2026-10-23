@@ -1,7 +1,10 @@
-import { Bar, CartesianGrid, ComposedChart, Dot, LabelList, Line, ReferenceLine, XAxis, YAxis } from "recharts";
+import { Bar, CartesianGrid, ComposedChart, LabelList, Line, ReferenceLine, XAxis, YAxis } from "recharts";
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { type ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
+import { CardContent } from "@/components/ui/card";
+import { type ChartConfig, ChartTooltip } from "@/components/ui/chart";
+import { chartAxis, chartGrid, DashboardChart, DashboardTooltip, useChartMotion } from "@/lib/charts/theme";
+
+import { DashboardCard as Card, SectionHeader } from "../../../-components/dashboard/cards";
 
 const forecastChartConfig = {
   closedWon: {
@@ -42,27 +45,24 @@ const CHART_DATA: TrendPoint[] = [
 ];
 
 export function DriversForecastTarget() {
+  const motion = useChartMotion();
   const chartData = CHART_DATA;
-  const pipelineMin = Math.min(...CHART_DATA.map((point) => point.weightedPipeline));
-  const pipelineMax = Math.max(...CHART_DATA.map((point) => point.weightedPipeline));
 
   return (
-    <Card className="shadow-xs">
-      <CardHeader>
-        <CardTitle>Forecast vs Target</CardTitle>
-        <CardDescription>12-week trend with attainment context</CardDescription>
-      </CardHeader>
+    <Card>
+      <SectionHeader title="Forecast vs Target" description="12-week trend with attainment context" />
       <CardContent className="space-y-4">
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
           <MetricChip label="Attainment" value="72.4%" note="closed won / monthly target" />
           <MetricChip label="Weighted Pipeline" value="$1,284,000" note="vs $668,000 remaining" />
           <MetricChip label="Forecast Confidence" value="81.0%" note="volatility-adjusted confidence" />
         </div>
-        <ChartContainer config={forecastChartConfig} className="h-68 w-full">
+        <DashboardChart config={forecastChartConfig} className="h-72 w-full sm:h-80">
           <ComposedChart data={chartData} margin={{ left: 4, right: 8, top: 8, bottom: 0 }}>
-            <CartesianGrid vertical={false} stroke="var(--border)" strokeOpacity={0.25} />
-            <XAxis dataKey="period" tickLine={false} axisLine={false} tickMargin={10} />
+            <CartesianGrid {...chartGrid} />
+            <XAxis {...chartAxis} dataKey="period" tickLine={false} axisLine={false} tickMargin={10} />
             <YAxis
+              {...chartAxis}
               tickFormatter={(value) => `${Math.round(value)}%`}
               tickLine={false}
               axisLine={false}
@@ -71,11 +71,11 @@ export function DriversForecastTarget() {
               domain={[0, "auto"]}
               ticks={[0, 50, 100, 150, 200]}
             />
-            <YAxis yAxisId="pipeline" hide domain={[pipelineMin, pipelineMax]} />
             <ChartTooltip
+              {...motion}
               cursor={false}
               content={(props) => (
-                <ChartTooltipContent
+                <DashboardTooltip
                   active={props.active}
                   label={props.label}
                   className="w-48"
@@ -88,42 +88,36 @@ export function DriversForecastTarget() {
             />
             <ReferenceLine y={100} stroke="var(--color-target)" strokeWidth={2} strokeDasharray="6 5" />
             <Bar
+              {...motion}
               dataKey="closedWon"
               name="Closed won"
               fill="var(--color-closedWon)"
-              fillOpacity={0.22}
+              fillOpacity={1}
               stroke="var(--color-closedWon)"
-              strokeOpacity={0.35}
+              strokeOpacity={1}
               radius={[5, 5, 0, 0]}
               barSize={14}
             >
               <LabelList dataKey="deltaLabel" position="top" offset={8} fill="var(--color-closedWon)" />
             </Bar>
             <Line
+              {...motion}
               type="monotone"
-              yAxisId="pipeline"
               dataKey="weightedPipeline"
               name="Pipeline vs target"
-              strokeOpacity={0}
-              strokeWidth={0}
+              strokeWidth={2}
               stroke="var(--color-weightedPipeline)"
-              isAnimationActive={false}
-              dot={({ payload, ...props }) => (
-                <Dot
-                  key={`${payload.period}-weighted-pipeline`}
-                  cx={props.cx}
-                  cy={props.cy}
-                  r={3.5}
-                  fill="var(--color-weightedPipeline)"
-                  stroke="var(--color-weightedPipeline)"
-                  strokeWidth={7}
-                  strokeOpacity={0.08}
-                />
-              )}
+              strokeDasharray="2 3"
+              dot={{ r: 3, fill: "var(--color-weightedPipeline)" }}
               activeDot={false}
             />
           </ComposedChart>
-        </ChartContainer>
+        </DashboardChart>
+        <div className="text-muted-foreground flex flex-wrap gap-x-4 gap-y-1 text-xs">
+          <span>Solid bars: Closed won</span>
+          <span>Dotted line: Pipeline vs target</span>
+          <span>Dashed line: 100% target</span>
+        </div>
       </CardContent>
     </Card>
   );
@@ -131,7 +125,7 @@ export function DriversForecastTarget() {
 
 function MetricChip({ label, value, note }: { label: string; value: string; note: string }) {
   return (
-    <div className="bg-muted/35 rounded-md border px-3 py-2.5">
+    <div className="bg-muted rounded-md border px-3 py-2.5">
       <p className="text-muted-foreground text-xs">{label}</p>
       <p className="text-lg font-semibold tabular-nums">{value}</p>
       <p className="text-muted-foreground text-xs">{note}</p>
