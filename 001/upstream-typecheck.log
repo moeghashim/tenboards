@@ -1,0 +1,4 @@
+src/components/ui/scroll-area.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/config/app-config.ts(7,24): error TS2339: Property 'version' does not exist on type '{ name: string; private: boolean; type: string; imports: { "#/*": string; }; scripts: { dev: string; "generate-routes": string; build: string; preview: string; format: string; lint: string; check: string; "check:fix": string; prepare: string; "generate:presets": string; }; "lint-staged": { ...; }; dependencies: { .....'.
+src/routes/(main)/chat/-components/chat-sidebar.tsx(40,9): error TS6133: '_isCollapsed' is declared but its value is never read.
+src/routes/-components/root-error.tsx(13,73): error TS18046: 'error' is of type 'unknown'.
