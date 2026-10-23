@@ -167,3 +167,7 @@ Academy shares compact metrics and semantic schedule/assignment states. Full cou
 ### Logistics dashboard (v0.2 / 009)
 
 Logistics keeps its shipment list/map/detail split and mobile detail sheet. Shipment selection supports Enter; Escape closes the mobile sheet and restores focus to the selected row. Shared local status styles, country codes, explicit endpoint labels and different origin/destination marks clarify the route in every preset. Detail tabs, named controls and locally scrolling panes fit narrow screens. Search/filter, copy/contact and unimplemented detail-tab actions retain their existing demo behavior. The Logistics `--interactions` capture verifies selection, placeholder tabs and sheet focus return. The geographic basemap still loads the existing public world-atlas asset.
+
+### Infrastructure dashboard (v0.2 / 010)
+
+Infrastructure retains project grouping, collapsible sections, every environment, resource thresholds and the empty project. Desktop tables scroll locally; mobile rows reflow into labelled fields so health, uptime, CPU/RAM/disk and server details remain available. Project/environment menus and refresh/settings/search controls have accessible names. Status and resource marks use semantic tokens, with values and labels alongside color. The snapshot is explicitly demo data; search/filter and operational actions remain placeholders. Author-linked upstream fixture domains are replaced by `workspace.example.com`. The Infrastructure `--interactions` capture checks keyboard collapse and both action-menu types.

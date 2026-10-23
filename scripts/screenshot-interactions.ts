@@ -2,6 +2,33 @@ import type { Page } from "playwright";
 
 // Opt-in interaction evidence for the dashboard batch. Never replace the runtime clock.
 export async function captureInteractions(page: Page, route: string): Promise<string[]> {
+  if (route === "/dashboard/infrastructure") {
+    const group = page.getByRole("button", { name: "Weblabs Studio (Admin Console)", exact: true });
+    await group.press("Enter");
+    if ((await group.getAttribute("aria-expanded")) !== "false") throw new Error("Project did not collapse");
+    await group.press("Enter");
+    await page.getByRole("button", { name: "Project actions for Admin Console", exact: true }).press("Enter");
+    await page.getByRole("menuitem", { name: "Activity Logs", exact: true }).waitFor();
+    await page.keyboard.press("Escape");
+    await page
+      .getByRole("button", { name: "Environment actions for workspace.example.com/dashboard", exact: true })
+      .press("Enter");
+    await page.getByRole("menuitem", { name: "View Logs", exact: true }).waitFor();
+    await page.keyboard.press("Escape");
+    await page.getByRole("textbox", { name: "Search environments", exact: true }).fill("demo");
+    if ((await page.locator("tbody tr").count()) !== 4) throw new Error("Fixture rows changed");
+    if (await page.evaluate(() => document.documentElement.scrollWidth > innerWidth))
+      throw new Error("Page-wide overflow");
+    await page.getByRole("button", { name: "Project actions for Inbox", exact: true }).press("Enter");
+    await page.getByRole("menuitem", { name: "Project Settings", exact: true }).waitFor();
+    return [
+      "Enter collapses/reopens project",
+      "Named project/environment action menus open; Escape closes",
+      "All four fixture rows and empty project retained",
+      "Search remains a demo input; no page-wide overflow",
+      "Empty-project menu open",
+    ];
+  }
   if (route === "/dashboard/logistics") {
     const shipment = page.getByRole("button", { name: "Select shipment SDA-02-2402", exact: true });
     await shipment.focus();

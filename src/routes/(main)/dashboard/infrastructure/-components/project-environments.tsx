@@ -48,9 +48,9 @@ export function ProjectEnvironments({ group }: { group: InfrastructureGroup }) {
           }
         >
           <ChevronDown className="group-data-panel-open:rotate-180" />
-          <div className="flex min-w-0 items-baseline gap-1.5 text-left">
+          <div className="flex min-w-0 flex-wrap items-baseline gap-1.5 text-left whitespace-normal">
             <span className="shrink-0 leading-none font-medium">{group.organization}</span>
-            <span className="text-muted-foreground min-w-0 truncate text-sm">({group.name})</span>
+            <span className="text-muted-foreground min-w-0 text-sm wrap-break-word">({group.name})</span>
           </div>
         </CollapsibleTrigger>
         <div className="flex w-full items-center justify-between gap-2 sm:ml-auto sm:w-auto sm:justify-end">
@@ -59,10 +59,12 @@ export function ProjectEnvironments({ group }: { group: InfrastructureGroup }) {
             Add Environment
           </Button>
           <DropdownMenu>
-            <DropdownMenuTrigger render={<Button variant="outline" size="icon-sm" />}>
+            <DropdownMenuTrigger
+              render={<Button aria-label={`Project actions for ${group.name}`} variant="outline" size="icon-sm" />}
+            >
               <EllipsisVertical />
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-40" align="end">
+            <DropdownMenuContent className="w-28" align="end">
               <DropdownMenuGroup>
                 {group.rows.length > 0 ? (
                   <DropdownMenuItem>
@@ -109,19 +111,19 @@ export function ProjectEnvironments({ group }: { group: InfrastructureGroup }) {
 function EnvironmentTable({ rows }: { rows: InfrastructureEnvironment[] }) {
   return (
     <div className="[&::-webkit-scrollbar-thumb]:bg-border scrollbar-thin [scrollbar-color:var(--border)_transparent] overflow-x-auto **:data-[slot=table-container]:overflow-visible [&::-webkit-scrollbar]:h-1 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-transparent">
-      <Table className="min-w-[1700px] table-fixed **:data-[slot='table-cell']:px-5 **:data-[slot='table-head']:px-5">
-        <colgroup>
-          <col className="w-90" />
-          <col className="w-40" />
-          <col className="w-42" />
-          <col className="w-35" />
-          <col className="w-35" />
-          <col className="w-38" />
-          <col className="w-98" />
-          <col className="w-55" />
-          <col className="w-18" />
+      <Table className="block w-full **:data-[slot='table-cell']:px-5 **:data-[slot='table-head']:px-5 md:table md:min-w-[1180px] md:table-fixed">
+        <colgroup className="hidden md:table-column-group">
+          <col className="w-64" />
+          <col className="w-28" />
+          <col className="w-28" />
+          <col className="w-24" />
+          <col className="w-24" />
+          <col className="w-24" />
+          <col className="w-64" />
+          <col className="w-44" />
+          <col className="w-14" />
         </colgroup>
-        <TableHeader className="bg-muted/50 [&_tr]:border-y">
+        <TableHeader className="bg-muted/50 hidden md:table-header-group [&_tr]:border-y">
           <TableRow>
             <TableHead className="font-medium">
               <span className="inline-flex items-center gap-1">
@@ -135,89 +137,102 @@ function EnvironmentTable({ rows }: { rows: InfrastructureEnvironment[] }) {
             <TableHead>Uptime</TableHead>
             <TableHead>Resources</TableHead>
             <TableHead>Server</TableHead>
-            <TableHead />
+            <TableHead>
+              <span className="sr-only">Actions</span>
+            </TableHead>
           </TableRow>
         </TableHeader>
-        <TableBody className="**:data-[slot='table-row']:hover:bg-transparent">
+        <TableBody className="block **:data-[slot='table-row']:hover:bg-transparent md:table-row-group">
           {rows.map((row) => (
-            <TableRow key={row.domain}>
-              <TableCell>
-                <span className="block truncate font-medium" title={row.domain}>
+            <TableRow key={row.domain} className="grid grid-cols-2 gap-y-1 border-t py-3 md:table-row md:py-0">
+              <TableCell className="col-span-2 block min-w-0 whitespace-normal md:table-cell">
+                <span className="text-muted-foreground mb-1 block text-xs md:hidden">Domain</span>
+                <span className="block font-medium wrap-anywhere" title={row.domain}>
                   {row.domain}
                 </span>
               </TableCell>
-              <TableCell>
+              <TableCell className="block min-w-0 whitespace-normal md:table-cell">
+                <span className="text-muted-foreground mb-1 block text-xs md:hidden">Platform</span>
                 <span className="text-muted-foreground flex items-center gap-2 font-medium">
                   <SimpleIcon icon={row.platform.icon} className="size-4 fill-current" />
                   {row.platform.name}
                 </span>
               </TableCell>
-              <TableCell>
+              <TableCell className="block min-w-0 whitespace-normal md:table-cell">
+                <span className="text-muted-foreground mb-1 block text-xs md:hidden">Environment</span>
                 <Badge
                   variant={row.environment === "Expired" ? "destructive" : "secondary"}
                   className={cn(
                     "rounded-sm px-1.5 py-0.5",
-                    row.environment === "Production" && "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400",
-                    row.environment === "Staging" && "bg-sky-500/10 text-sky-600 dark:text-sky-400",
+                    row.environment === "Production" && "bg-success-surface text-success",
+                    row.environment === "Staging" && "bg-info-surface text-info",
                   )}
                 >
                   {row.environment}
                 </Badge>
               </TableCell>
-              <TableCell>
+              <TableCell className="block min-w-0 whitespace-normal md:table-cell">
+                <span className="text-muted-foreground mb-1 block text-xs md:hidden">Health</span>
                 <Badge
                   variant={row.status === "Online" ? "secondary" : "destructive"}
                   className={cn(
                     "rounded-sm px-1.5 py-0.5",
-                    row.status === "Online" && "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400",
+                    row.status === "Online" && "bg-success-surface text-success",
                   )}
                 >
                   <span
-                    className={cn(
-                      "size-1.5 rounded-full",
-                      row.status === "Online" ? "bg-emerald-500" : "bg-destructive",
-                    )}
+                    className={cn("size-1.5 rounded-full", row.status === "Online" ? "bg-success" : "bg-destructive")}
                   />
                   {row.status}
                 </Badge>
               </TableCell>
-              <TableCell>
+              <TableCell className="block min-w-0 whitespace-normal md:table-cell">
+                <span className="text-muted-foreground mb-1 block text-xs md:hidden">Latency</span>
                 <span className="text-muted-foreground inline-flex items-center gap-1.5 tabular-nums">
                   <CircleGauge className="size-4" />
                   {row.latency}
                 </span>
               </TableCell>
-              <TableCell>
+              <TableCell className="block min-w-0 whitespace-normal md:table-cell">
+                <span className="text-muted-foreground mb-1 block text-xs md:hidden">Uptime</span>
                 <span className="text-muted-foreground inline-flex items-center gap-1.5 tabular-nums">
                   <Clock3 className="size-4" />
                   {row.uptime}
                 </span>
               </TableCell>
-              <TableCell>
-                <div className="grid grid-cols-3 gap-4">
+              <TableCell className="col-span-2 block min-w-0 whitespace-normal md:table-cell">
+                <span className="text-muted-foreground mb-1 block text-xs md:hidden">Resources</span>
+                <div className="grid grid-cols-3 gap-3">
                   <ResourceMeter label="CPU" value={row.resources.cpu} />
                   <ResourceMeter label="RAM" value={row.resources.ram} />
                   <ResourceMeter label="Disk" value={row.resources.disk} />
                 </div>
               </TableCell>
-              <TableCell>
+              <TableCell className="col-span-2 block min-w-0 whitespace-normal md:table-cell">
+                <span className="text-muted-foreground mb-1 block text-xs md:hidden">Server</span>
                 <span className="flex flex-col font-medium">
                   {row.server}
                   <span className="text-muted-foreground flex items-center gap-1.5 text-xs">
-                    <span
-                      aria-hidden="true"
-                      className={cn("ring-foreground/10 shrink-0 rounded-xs text-sm ring-1", `flag:${row.countryCode}`)}
-                    />
                     {row.countryCode} · {row.plan}
                   </span>
                 </span>
               </TableCell>
-              <TableCell className="text-right">
+              <TableCell className="block min-w-0 whitespace-normal md:table-cell">
+                <span className="text-muted-foreground mb-1 block text-xs md:hidden">Actions</span>
                 <DropdownMenu>
-                  <DropdownMenuTrigger render={<Button variant="ghost" size="icon-sm" className="-mr-2" />}>
+                  <DropdownMenuTrigger
+                    render={
+                      <Button
+                        aria-label={`Environment actions for ${row.domain}`}
+                        variant="ghost"
+                        size="icon-sm"
+                        className="-mr-2"
+                      />
+                    }
+                  >
                     <SquareTerminal />
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent className="w-40" align="end">
+                  <DropdownMenuContent className="w-28" align="end">
                     <DropdownMenuGroup>
                       <DropdownMenuItem>
                         <FileText />
@@ -260,19 +275,19 @@ function ResourceMeter({ label, value }: { label: string; value: number }) {
         <span className="text-muted-foreground font-medium">{label}</span>
         <span
           className={cn(
-            "font-medium text-emerald-600 tabular-nums dark:text-emerald-400",
-            isWarning && "text-amber-600 dark:text-amber-400",
+            "text-success font-medium tabular-nums",
+            isWarning && "text-warning",
             isCritical && "text-destructive",
           )}
         >
           {value}%
         </span>
       </span>
-      <span className="bg-muted-foreground/20 block h-1.5 overflow-hidden rounded-full">
+      <span className="bg-muted block h-1.5 overflow-hidden rounded-full">
         <span
           className={cn(
-            "block h-full rounded-full bg-emerald-500",
-            isWarning && "bg-amber-500",
+            "bg-success block h-full rounded-full",
+            isWarning && "bg-warning",
             isCritical && "bg-destructive",
           )}
           style={{ width: `${value}%` }}
