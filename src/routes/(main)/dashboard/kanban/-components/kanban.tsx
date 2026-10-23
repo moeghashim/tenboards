@@ -133,38 +133,41 @@ export function Kanban({ initialBoard }: KanbanProps) {
       onValueChange={changeView}
       className="h-[calc(100dvh-var(--dashboard-header-height))] min-h-0 min-w-0 gap-0 overflow-hidden"
     >
-      <div className="flex shrink-0 flex-col gap-3 border-b px-4 py-3 lg:flex-row lg:items-center lg:justify-between lg:px-6">
-        <TabsList className="w-full *:data-[slot=tabs-trigger]:flex-1 sm:w-fit sm:*:data-[slot=tabs-trigger]:flex-none">
-          <TabsTrigger value="board" className="gap-2">
-            <KanbanIcon />
-            Board
-          </TabsTrigger>
-          <TabsTrigger value="list" className="gap-2">
-            <List />
-            List
-          </TabsTrigger>
-          <TabsTrigger value="table" className="gap-2">
-            <Table2 />
-            Table
-          </TabsTrigger>
-        </TabsList>
+      <div className="bg-card flex shrink-0 flex-col gap-3 border-b px-4 py-3 lg:px-6">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <h1 className="text-2xl font-medium tracking-tight">Kanban</h1>
+          <TabsList className="w-fit">
+            <TabsTrigger value="board" className="gap-2">
+              <KanbanIcon />
+              Board
+            </TabsTrigger>
+            <TabsTrigger value="list" className="gap-2">
+              <List />
+              List
+            </TabsTrigger>
+            <TabsTrigger value="table" className="gap-2">
+              <Table2 />
+              Table
+            </TabsTrigger>
+          </TabsList>
+        </div>
 
-        <div className="flex min-w-0 flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center 2xl:justify-end">
-          <InputGroup className="min-w-0 sm:w-64 2xl:w-48">
+        <div className="flex min-w-0 flex-wrap items-center gap-2">
+          <InputGroup className="w-full min-w-0 sm:mr-auto sm:w-64">
             <InputGroupInput type="text" aria-label="Search tasks" placeholder="Search tasks" />
             <InputGroupAddon>
               <Search />
             </InputGroupAddon>
           </InputGroup>
-          <Button variant="outline" className="w-full sm:w-auto">
+          <Button variant="outline" className="flex-1 sm:flex-none">
             <SlidersHorizontal data-icon="inline-start" />
             Filter
           </Button>
-          <Button variant="outline" className="w-full sm:w-auto">
+          <Button variant="outline" className="flex-1 sm:flex-none">
             <ArrowUpDown data-icon="inline-start" />
             Sort
           </Button>
-          <ButtonGroup className="w-full sm:w-fit">
+          <ButtonGroup className="flex-1 sm:flex-none">
             <Button className="flex-1 sm:flex-none">
               <Plus data-icon="inline-start" />
               Add task
@@ -197,7 +200,7 @@ export function Kanban({ initialBoard }: KanbanProps) {
 
       <TabsContent value="board" className="min-h-0 min-w-0 flex-col not-data-hidden:flex">
         <DragDropProvider onDragStart={handleDragStart} onDragOver={handleDragOver} onDragEnd={handleDragEnd}>
-          <div className="bg-muted/25 [&::-webkit-scrollbar-thumb]:bg-border min-h-0 min-w-0 flex-1 scrollbar-thin [scrollbar-color:var(--border)_transparent] overflow-x-auto overflow-y-hidden px-4 pt-4 pb-0 lg:px-5 lg:pt-5 [&::-webkit-scrollbar]:h-1 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-transparent">
+          <div className="bg-background [&::-webkit-scrollbar-thumb]:bg-border-strong min-h-0 min-w-0 flex-1 scrollbar-thin [scrollbar-color:var(--border-strong)_transparent] overflow-x-auto overflow-y-hidden px-4 pt-4 pb-0 lg:px-5 lg:pt-5 [&::-webkit-scrollbar]:h-1 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-transparent">
             <div className="inline-grid h-full min-w-full grid-cols-[repeat(5,minmax(20rem,1fr))] gap-4">
               {orderedColumns.map((column, index) => (
                 <KanbanColumn key={column.id} column={column} index={index} tasks={board[column.id]} />

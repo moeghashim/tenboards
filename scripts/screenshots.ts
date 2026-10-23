@@ -10,6 +10,7 @@ const { values } = parseArgs({
   options: {
     "base-url": { type: "string", default: "http://127.0.0.1:3000" },
     routes: { type: "string" },
+    search: { type: "string" },
     output: { type: "string", default: "screenshots" },
     preset: { type: "string", default: "default" },
     list: { type: "boolean", default: false },
@@ -101,7 +102,9 @@ try {
           const file = `${entry.route.replaceAll(/[^a-z0-9-]/gi, "_") || "root"}-${theme}-${viewportName}${phase === "refresh" ? "-refresh" : ""}${values.interactions ? "-interactive" : ""}.png`;
           const controlsFile = values.interactions ? file.replace(".png", "-controls.png") : null;
           try {
-            let response = await page.goto(new URL(entry.path, baseURL).href, { waitUntil: "domcontentloaded" });
+            const targetURL = new URL(entry.path, baseURL);
+            if (values.search) targetURL.search = values.search;
+            let response = await page.goto(targetURL.href, { waitUntil: "domcontentloaded" });
             if (phase === "refresh") {
               await page.waitForFunction(() =>
                 Array.from(document.querySelectorAll("body *")).some((node) =>
@@ -143,8 +146,8 @@ try {
               interactionNotes = await captureInteractions(page, entry.route, async (variant) => {
                 await page.screenshot({
                   path: path.join(output, file.replace(".png", `-${variant}.png`)),
-                  fullPage: true,
-                  animations: "disabled",
+                  fullPage: !variant.includes("drag"),
+                  animations: variant.includes("drag") ? "allow" : "disabled",
                 });
               });
             let previous = "";
@@ -163,6 +166,11 @@ try {
             await page.screenshot({ path: path.join(output, file), fullPage: true, animations: "disabled" });
           } catch (error) {
             errors.push(error instanceof Error ? error.message : String(error));
+            await page
+              .screenshot({ path: path.join(output, file.replace(".png", "-failed.png")), animations: "disabled" })
+              .catch(() => {
+                /* The original error remains in the report if the browser cannot capture. */
+              });
           } finally {
             await context.close();
           }
@@ -186,7 +194,7 @@ try {
   await browser.close();
   await writeFile(
     path.join(output, "report.json"),
-    `${JSON.stringify({ baseURL, hydrationDelayMs, preset: values.preset, timezone: values.timezone, reload: values.reload, interactions: values.interactions, results }, null, 2)}\n`,
+    `${JSON.stringify({ baseURL, search: values.search, hydrationDelayMs, preset: values.preset, timezone: values.timezone, reload: values.reload, interactions: values.interactions, results }, null, 2)}\n`,
   );
 }
 if (results.some((result) => result.errors.length)) process.exitCode = 1;

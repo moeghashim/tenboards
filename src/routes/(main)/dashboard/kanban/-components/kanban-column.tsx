@@ -7,6 +7,7 @@ import { GripVertical, MoreVertical, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 import { SortableTaskCard } from "./sortable-task-card";
+import { statusIcons } from "./task-status";
 import type { Column, Task } from "./types";
 
 interface KanbanColumnProps {
@@ -16,6 +17,7 @@ interface KanbanColumnProps {
 }
 
 export function KanbanColumn({ column, index, tasks }: KanbanColumnProps) {
+  const StatusIcon = statusIcons[column.id];
   const columnSortable = useSortable({
     id: `column:${column.id}`,
     index,
@@ -35,9 +37,11 @@ export function KanbanColumn({ column, index, tasks }: KanbanColumnProps) {
   return (
     <section
       ref={columnSortable.ref}
+      data-column-id={column.id}
+      aria-label={`${column.title} column`}
       className={cn(
-        "bg-muted/50 flex min-h-0 flex-col rounded-t-xl border transition-colors",
-        (columnSortable.isDropTarget || taskDropTarget.isDropTarget) && "bg-muted/70",
+        "bg-muted flex min-h-0 flex-col rounded-t-xl border transition-colors",
+        (columnSortable.isDropTarget || taskDropTarget.isDropTarget) && "ring-primary ring-2 ring-inset",
         columnSortable.isDragging && "opacity-60",
       )}
     >
@@ -48,12 +52,15 @@ export function KanbanColumn({ column, index, tasks }: KanbanColumnProps) {
               ref={columnSortable.handleRef}
               variant="ghost"
               size="icon-xs"
-              className="text-foreground/70 -ml-2 cursor-grab active:cursor-grabbing"
+              className="text-muted-foreground -ml-2 cursor-grab active:cursor-grabbing"
               aria-label={`Drag ${column.title} column`}
             >
               <GripVertical />
             </Button>
-            <h2 className="truncate text-base leading-none font-medium">{column.title}</h2>
+            <h2 className="flex items-center gap-2 text-sm font-medium">
+              <StatusIcon className="text-muted-foreground size-4" aria-hidden="true" />
+              {column.title}
+            </h2>
           </div>
           <p className="text-muted-foreground text-sm leading-none tabular-nums">
             {tasks.length} {tasks.length === 1 ? "task" : "tasks"}
@@ -71,8 +78,9 @@ export function KanbanColumn({ column, index, tasks }: KanbanColumnProps) {
 
       <div
         ref={taskDropTarget.ref}
-        className="[&::-webkit-scrollbar-thumb]:bg-border flex min-h-0 flex-1 scrollbar-thin [scrollbar-color:var(--border)_transparent] flex-col gap-3 overflow-y-auto px-3 pb-3 [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-transparent"
+        className="[&::-webkit-scrollbar-thumb]:bg-border-strong flex min-h-0 flex-1 scrollbar-thin [scrollbar-color:var(--border-strong)_transparent] flex-col gap-3 overflow-y-auto px-3 pb-3 [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-transparent"
       >
+        {tasks.length === 0 && <p className="text-muted-foreground p-3 text-sm">No tasks</p>}
         {tasks.map((task, taskIndex) => (
           <SortableTaskCard key={task.id} task={task} columnId={column.id} index={taskIndex} />
         ))}

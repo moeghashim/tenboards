@@ -8,17 +8,17 @@ export const priorityBadgeConfig: Record<
 > = {
   High: {
     icon: Flame,
-    variant: "destructive",
-    className: "border-transparent",
+    variant: "secondary",
+    className: "bg-danger-surface text-danger",
   },
   Low: {
     icon: Minus,
     variant: "secondary",
-    className: "bg-slate-500/10 text-slate-700 dark:bg-slate-500/15 dark:text-slate-300",
+    className: "bg-muted text-muted-foreground",
   },
   Medium: {
     icon: ChevronUp,
     variant: "secondary",
-    className: "bg-amber-500/10 text-amber-700 dark:bg-amber-500/15 dark:text-amber-300",
+    className: "bg-warning-surface text-warning",
   },
 };
