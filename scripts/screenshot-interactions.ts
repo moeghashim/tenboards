@@ -1,7 +1,63 @@
 import type { Page } from "playwright";
 
 // Opt-in interaction evidence for the dashboard batch. Never replace the runtime clock.
-export async function captureInteractions(page: Page, route: string): Promise<string[]> {
+export async function captureInteractions(
+  page: Page,
+  route: string,
+  captureVariant: (name: string) => Promise<void>,
+): Promise<string[]> {
+  if (route === "/dashboard/calendar") {
+    const today = await page.evaluate(() => {
+      const date = new Date();
+      return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
+    });
+    const current = page.locator(`[data-date="${today}"][aria-current="date"]`).first();
+    await current.waitFor();
+    const heading = await page.getByRole("heading", { level: 1 }).textContent();
+    await page.getByRole("button", { name: "Next period", exact: true }).press("Enter");
+    await page.waitForFunction((previous) => document.querySelector("h1")?.textContent !== previous, heading);
+    await page.getByRole("button", { name: "Previous period", exact: true }).press("Enter");
+    await current.waitFor();
+    await page.getByRole("combobox", { name: "Calendar", exact: true }).press("Enter");
+    await page.getByRole("option", { name: "Work", exact: true }).click();
+    for (const view of ["Week", "Day", "Month"]) {
+      await page.getByRole("combobox", { name: "Calendar view", exact: true }).press("Enter");
+      await page.getByRole("option", { name: view, exact: true }).click();
+      await page.getByRole("button", { name: "Today", exact: true }).press("Enter");
+      await current.waitFor();
+      if (await page.evaluate(() => document.documentElement.scrollWidth > innerWidth))
+        throw new Error(`Calendar ${view} page overflow`);
+      if (view === "Day") {
+        const clock = await page.evaluate(() => {
+          const line = document.querySelector("div.border-destructive");
+          const slot = Array.from(document.querySelectorAll("[data-time='00:30:00']")).find(
+            (node) => node.getBoundingClientRect().height > 0,
+          );
+          if (!line || !slot) throw new Error("Live now indicator or time axis missing");
+          const minute = (parseFloat(getComputedStyle(line).top) / slot.getBoundingClientRect().height) * 30;
+          const now = new Date();
+          return { minute, expected: now.getHours() * 60 + now.getMinutes() };
+        });
+        if (Math.abs(clock.minute - clock.expected) > 2)
+          throw new Error(`Live local now indicator mismatch: ${JSON.stringify(clock)}`);
+      }
+      await captureVariant(view.toLowerCase());
+    }
+    const more = page.getByTitle(/Show .* more event/).first();
+    await more.press("Enter");
+    await page.getByRole("button", { name: "Close", exact: true }).waitFor();
+    await page.getByText("Team retrospective", { exact: true }).last().waitFor();
+    await page.getByRole("button", { name: "Close", exact: true }).press("Enter");
+    await more.press("Enter");
+    return [
+      `Browser-local Today ${today} after hydration`,
+      "Previous/next, Month/Week/Day and Today via keyboard",
+      "Calendar selector retains demo selection",
+      "Live now marker matches real browser-local minute (within two-minute rendering tolerance)",
+      "Crowded-day popover contains long title and closes by keyboard",
+      "Calendar grid scrolls locally; no page overflow",
+    ];
+  }
   if (route === "/chat" || route === "/dashboard/chat") {
     const embedded = route === "/dashboard/chat";
     if (embedded)

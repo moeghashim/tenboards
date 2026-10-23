@@ -201,7 +201,7 @@ All screens remain mock-data demos, including existing disabled and placeholder 
 
 The [app-page breakdown](dev/milestones/v0.3-app-pages/README.md) assigns all 38 current route-catalog entries plus root not-found/error states to page owners or final regression coverage. Mail and Chat each retain standalone and dashboard iframe routes; Auth includes four forms and the bare V2 layout. The external `/` remains a redirect to `/dashboard/default`, with no landing UI to restyle. Implementation progress is documented per task below.
 
-Calendar, Invoice, Auth V2 login and Auth V2 register each require a root-cause hydration fix verified on dev and Workers in light/dark at desktop/mobile. Owning tasks also replace remaining upstream-author demo identities; final acceptance scans all of `src/`, preserves legal attribution, checks every route across all four presets, and reconciles hydration history. Unchecked acceptance criteria are not claims of shipped behavior; task status and evidence track implementation separately from reviewer merge and deployment.
+Calendar, Invoice, Auth V2 login and Auth V2 register own the remaining inherited hydration findings; scoped verification and resolution are documented in each page section and `dev/open-questions.md`. Owning tasks also replace remaining upstream-author demo identities; final acceptance scans all of `src/`, preserves legal attribution, checks every route across all four presets, and reconciles hydration history. Unchecked acceptance criteria are not claims of shipped behavior; task status and evidence track implementation separately from reviewer merge and deployment.
 
 
 ### App-page foundation (v0.3 / 001)
@@ -217,3 +217,12 @@ Standalone Mail and its dashboard iframe use neutral panes, compact message rows
 ### Chat pages (v0.3 / 003)
 
 Standalone tenboards Chat and its dashboard iframe use neutral conversation/thread/contact panes, labelled unread/pinned/online states, and visible sender names beside message times. Jordan Lee replaces the current-user author fixture, and contact emails use the neutral workspace.example.com domain. Pane transitions use 200ms and respect reduced motion. Contact details use the existing sheet below 1280px so the embedded thread keeps room to read. Hidden list, thread and contact panes are inert; mobile selection/back and profile Escape restore focus to the relevant control. Existing conversation selection, composer tabs, messages and placeholder search/send/filter behavior remain local. The account menu label now sits in the required Base UI group. The Chat `--interactions` scenario checks iframe appearance, composer tabs, profile Escape and off-screen focus protection.
+
+
+### Calendar page (v0.3 / 004)
+
+Calendar retains Month/Week/Day, Today/previous/next, demo calendar selection and more-events popovers. The card surface, named controls, full-contrast today marker and wrapping event titles use existing tokens. Month/week grids scroll horizontally within the calendar on small screens; Day fills the available width. Two additional demo meetings provide a crowded-day example, and the birthday fixture is Jordan Lee.
+
+A route-loader request timestamp is shared by SSR and hydration with an explicit initial UTC timezone; after hydration, the calendar adopts browser-local time and its real live clock. Civil-date demo events derive from that shared month instead of a module-startup clock. This fixes the demonstrated server/browser disagreement about today's cell without disabling SSR, suppressing warnings or freezing time. Calendar adapters remain intact. Add event and calendar filtering retain their existing placeholder behavior.
+
+`npm run screenshots -- --routes /dashboard/calendar --reload --interactions --timezone Pacific/Kiritimati --hydration-delay-ms 1800` verifies local Today, real now-marker positioning, views/navigation and crowded-day popovers. Interaction runs also save Week/Day/Month variant captures. Use `--base-url` to repeat on Workers.

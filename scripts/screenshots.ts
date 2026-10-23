@@ -139,7 +139,14 @@ try {
               );
               window.scrollTo(0, 0);
             });
-            if (values.interactions) interactionNotes = await captureInteractions(page, entry.route);
+            if (values.interactions)
+              interactionNotes = await captureInteractions(page, entry.route, async (variant) => {
+                await page.screenshot({
+                  path: path.join(output, file.replace(".png", `-${variant}.png`)),
+                  fullPage: true,
+                  animations: "disabled",
+                });
+              });
             let previous = "";
             let stable = 0;
             for (let attempt = 0; attempt < 20 && stable < 3; attempt++) {
