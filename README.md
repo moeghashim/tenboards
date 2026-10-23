@@ -37,7 +37,7 @@ Default, CRM, Finance, Analytics, Productivity, E-commerce, Academy, Logistics, 
 
 Imported from [arhamkhnz/tanstack-shadcn-admin-dashboard](https://github.com/arhamkhnz/tanstack-shadcn-admin-dashboard) (Studio Admin), revision [`81e5ef1391b68c176154faba0c9ac7b0023ecbaf`](https://github.com/arhamkhnz/tanstack-shadcn-admin-dashboard/commit/81e5ef1391b68c176154faba0c9ac7b0023ecbaf). Copyright © 2026 Mohammed Arham Khan. The original MIT notice is preserved in [LICENSE](LICENSE), alongside the tenboards copyright. No upstream history or remote is retained.
 
-The upstream contributor guidance is archived at [docs/upstream-AGENTS.md](docs/upstream-AGENTS.md). PLAN.md and its Decisions log govern tenboards. The root contributor rules will be established in task 003 after breakdown approval.
+The upstream contributor guidance is archived at [docs/upstream-AGENTS.md](docs/upstream-AGENTS.md). PLAN.md and its Decisions log govern tenboards. Root [AGENTS.md](AGENTS.md) defines the current contributor workflow and required checks.
 
 ## Import validation notes
 
@@ -60,7 +60,7 @@ The build uses Nitro's `cloudflare-module` preset. `wrangler.jsonc` owns the Wor
 Run manual deployments using an already authenticated Wrangler session:
 
 ```sh
-# After the user merges, from a clean checkout:
+# Reviewer only: after an approved squash merge, from a clean checkout:
 git switch main
 git pull --ff-only
 npm ci
@@ -95,3 +95,12 @@ The default captures every retained route in light/dark at desktop 1440×900 and
 Captures wait for React hydration, fonts, network idle, images, JS chart settling, and stable content. Reduced motion is emulated and screenshot animations are disabled. Console errors, page errors, failed requests, unexpected HTTP status, and capture failures are recorded in `report.json` and cause a nonzero exit. The hydration check uses React's DOM binding marker; revisit it if React's renderer changes. Date-dependent demo data is not frozen, so capture before/after close together and note changing data in reviews.
 
 `screenshots/` is gitignored. Keep all PNGs and reports off main: create a separate worktree from `origin/pr-assets`, copy each task's `before/` and `after/` directories there, commit with the required co-author trailer, and push only that branch. Link images using `https://raw.githubusercontent.com/moeghashim/tenboards/pr-assets/NNN/before/<file>.png` and the corresponding `after/` URL in the PR table. Never add screenshots to an implementation branch. Inspect every submitted capture for blank, incomplete, or mislabeled output.
+
+
+## Brand assets
+
+The original tenboards mark pairs a solid upright with an open board, reading as “10” at small sizes. `src/components/brand/brand.tsx` supplies the inherited-color mark and wordmark; adjacent visible text or the enclosing link supplies its accessible name. The sidebar uses an explicit home label in collapsed mode. Auth changes replace brand symbols only; form behavior is unchanged.
+
+`public/brand/mark.svg` and `wordmark.svg` are vector masters (the wordmark outlines the bundled SIL-OFL Geist face). `favicon.svg`, ICO/16/32px PNGs, the 180px touch icon, and 192/512px app icons share the same original silhouette. `public/brand/og.svg` is the 1200×630 social-image source for `public/og.png`. PNG/ICO derivatives were rendered locally from these authored vectors, with no stock or third-party logo. Preserve the font package license when redistributing its font files.
+
+Social metadata uses the canonical production `/og.png` URL; the asset becomes live when the reviewer deploys this merged layer. For PR review, inspect `/og.png` on that PR's version URL. Favicons and the manifest use origin-relative URLs and work on version previews.

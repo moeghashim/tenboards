@@ -8,11 +8,11 @@ files: ["src/components/brand/", "src/config/app-config.ts", "src/routes/__root.
 ---
 
 ## Acceptance criteria
-- [ ] Create an SVG mark and tenboards wordmark, favicon, and OG asset.
-- [ ] Replace residual Studio Admin branding in the shipped app and active project documentation.
-- [ ] Preserve mandatory upstream copyright and explicitly archived provenance documents.
-- [ ] Verify accessible names, small-size legibility, dark/light contrast, and metadata asset URLs.
-- [ ] Build, check, typecheck, smoke, and before/after screenshot matrix pass.
+- [x] Create an SVG mark and tenboards wordmark, favicon, and OG asset.
+- [x] Replace residual Studio Admin branding in the shipped app and active project documentation.
+- [x] Preserve mandatory upstream copyright and explicitly archived provenance documents.
+- [x] Verify accessible names, small-size legibility, dark/light contrast, and metadata asset URLs.
+- [x] Build, check, typecheck, smoke, and before/after screenshot matrix pass.
 
 ## Suggested approach
 Use the established tokens and DESIGN.md. Inspect auth routes for branding references; if changes touch auth behavior or exceed approved brand scope, file a question and pause. Do not change auth logic.

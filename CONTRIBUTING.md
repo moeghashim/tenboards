@@ -1,7 +1,7 @@
-# Contributing to Studio Admin
+# Contributing to tenboards
 
-Thanks for showing interest in improving **Studio Admin** (repo: `tanstack-shadcn-admin-dashboard`).
-This guide will help you set up your environment and understand how to contribute.
+Thanks for showing interest in improving **tenboards** (repo: `tenboards`).
+Follow [AGENTS.md](AGENTS.md) for task branches, required checks, screenshot evidence, PR structure, and reviewer merge authority. PLAN.md and its Decisions log are authoritative.
 
 ---
 
@@ -45,18 +45,18 @@ Files and folders prefixed with `-`, such as `-components`, are excluded from ro
 
 1. Fork the Repository
 
-   [Fork the repository](https://github.com/arhamkhnz/tanstack-shadcn-admin-dashboard/fork).
+   [Fork the repository](https://github.com/moeghashim/tenboards/fork).
 
 2. Clone the Repository
 
    ```bash
-   git clone https://github.com/YOUR_USERNAME/tanstack-shadcn-admin-dashboard.git
+   git clone https://github.com/YOUR_USERNAME/tenboards.git
    ```
 
 3. Navigate into the Project
 
    ```bash
-   cd tanstack-shadcn-admin-dashboard
+   cd tenboards
    ```
 
 4. Install dependencies
@@ -129,7 +129,7 @@ Files and folders prefixed with `-`, such as `-components`, are excluded from ro
 
 ## Questions & Support
 
-Report bugs, suggestions, or issues through [GitHub Issues](https://github.com/arhamkhnz/tanstack-shadcn-admin-dashboard/issues).
+Report bugs, suggestions, or issues through [GitHub Issues](https://github.com/moeghashim/tenboards/issues).
 
 ---
 

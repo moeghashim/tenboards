@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 
-import { Command } from "lucide-react";
+import { Brand } from "@/components/brand/brand";
 
 import { LoginForm } from "../../-components/login-form";
 import { GoogleButton } from "../../-components/social-auth/google-button";
@@ -15,7 +15,7 @@ function LoginV1() {
       <div className="bg-primary hidden lg:block lg:w-1/3">
         <div className="flex h-full flex-col items-center justify-center p-12 text-center">
           <div className="space-y-6">
-            <Command className="text-primary-foreground mx-auto size-12" />
+            <Brand className="text-primary-foreground text-2xl" />
             <div className="space-y-2">
               <h1 className="text-primary-foreground text-5xl font-light">Hello again</h1>
               <p className="text-primary-foreground/80 text-xl">Login to continue</p>
