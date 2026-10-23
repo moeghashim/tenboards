@@ -1,0 +1,8 @@
+
+> tenboards@0.2.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://localhost:3003 --routes /dashboard/calendar --interactions --preset graphite --output screenshots/v03-004/graphite
+
+PASS /dashboard/calendar light/desktop direct
+PASS /dashboard/calendar light/mobile direct
+PASS /dashboard/calendar dark/desktop direct
+PASS /dashboard/calendar dark/mobile direct

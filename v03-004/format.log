@@ -1,0 +1,132 @@
+src/routes/(main)/dashboard/calendar/-components/calendar.tsx:59:20 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    58 │   return (
+  > 59 │     <div className="flex min-w-0 flex-col overflow-hidden rounded-xl border bg-card text-card-foreground">
+       │                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    60 │       <div className="flex flex-col gap-4 border-b p-4 lg:flex-row lg:items-center lg:justify-between">
+    61 │         <div className="flex min-w-0 shrink-0 flex-col gap-1">
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+     57  57 │   
+     58  58 │     return (
+     59     │ - ····<div·className="flex·min-w-0·flex-col·overflow-hidden·rounded-xl·border·bg-card·text-card-foreground">
+         59 │ + ····<div·className="bg-card·text-card-foreground·flex·min-w-0·flex-col·overflow-hidden·rounded-xl·border">
+     60  60 │         <div className="flex flex-col gap-4 border-b p-4 lg:flex-row lg:items-center lg:justify-between">
+     61  61 │           <div className="flex min-w-0 shrink-0 flex-col gap-1">
+  
+
+src/routes/(main)/dashboard/calendar/-components/calendar.tsx:145:34 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    143 │               <span
+    144 │                 className={
+  > 145 │                   info.isToday ? "rounded-sm bg-primary px-1.5 py-0.5 font-medium text-primary-foreground" : undefined
+        │                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    146 │                 }
+    147 │               >
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+    143 143 │                 <span
+    144 144 │                   className={
+    145     │ - ··················info.isToday·?·"rounded-sm·bg-primary·px-1.5·py-0.5·font-medium·text-primary-foreground"·:·undefined
+        145 │ + ··················info.isToday·?·"bg-primary·text-primary-foreground·rounded-sm·px-1.5·py-0.5·font-medium"·:·undefined
+    146 146 │                   }
+    147 147 │                 >
+  
+
+src/routes/(main)/dashboard/calendar/-components/calendar.tsx:154:43 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    152 │             dayHeaderContent={(info) => (
+    153 │               <span
+  > 154 │                 className={info.isToday ? "rounded-sm bg-primary px-1.5 py-0.5 text-primary-foreground" : undefined}
+        │                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    155 │               >
+    156 │                 {info.text}
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+    152 152 │               dayHeaderContent={(info) => (
+    153 153 │                 <span
+    154     │ - ················className={info.isToday·?·"rounded-sm·bg-primary·px-1.5·py-0.5·text-primary-foreground"·:·undefined}
+        154 │ + ················className={info.isToday·?·"bg-primary·text-primary-foreground·rounded-sm·px-1.5·py-0.5"·:·undefined}
+    155 155 │                 >
+    156 156 │                   {info.text}
+  
+
+src/routes/(main)/dashboard/calendar/-components/calendar.tsx:130:9 lint/a11y/useSemanticElements ━━━━━━━━━━
+
+  × The elements with this role can be changed to the following elements:
+    <section>
+  
+    128 │       <div
+    129 │         className="overflow-x-auto"
+  > 130 │         role="region"
+        │         ^^^^^^^^^^^^^
+    131 │         aria-label="Calendar grid, scroll horizontally on small screens"
+    132 │         tabIndex={0}
+  
+  i For examples and more information, see WAI-ARIA Roles
+  
+  i Replace with one of these elements:
+  
+  - <section>
+  
+
+src/routes/(main)/dashboard/calendar/-components/calendar.tsx:132:9 lint/a11y/noNoninteractiveTabindex  FIXABLE  ━━━━━━━━━━
+
+  × The HTML element div is non-interactive. Do not use tabIndex.
+  
+    130 │         role="region"
+    131 │         aria-label="Calendar grid, scroll horizontally on small screens"
+  > 132 │         tabIndex={0}
+        │         ^^^^^^^^^^^^
+    133 │       >
+    134 │         <div className={controller.view?.type === "timeGridDay" ? "min-w-0" : "min-w-175"}>
+  
+  i Adding non-interactive elements to the keyboard navigation flow can confuse users.
+  
+  i Unsafe fix: Remove the tabIndex attribute.
+  
+    130 130 │           role="region"
+    131 131 │           aria-label="Calendar grid, scroll horizontally on small screens"
+    132     │ - ········tabIndex={0}
+    133 132 │         >
+    134 133 │           <div className={controller.view?.type === "timeGridDay" ? "min-w-0" : "min-w-175"}>
+  
+
+Skipped 4 suggested fixes.
+If you wish to apply the suggested (unsafe) fixes, use the command biome check --write --unsafe
+
+Checked 3 files in 396ms. Fixed 2 files.
+Found 2 errors.
+Found 3 infos.
+check ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Some errors were emitted while applying fixes.
+  
+

@@ -1,0 +1,48 @@
+scripts/screenshot-interactions.ts:106:30 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━
+
+  ! Unnecessary optional chaining.
+  
+    104 │     await surface.getByRole("button", { name: "Close profile", exact: true }).waitFor({ state: "hidden" });
+    105 │     await surface
+  > 106 │       .waitForFunction(() => document.activeElement?.hasAttribute("data-contact-trigger"))
+        │                              ^^^^^^^^^^^^^^^^^^^^^^
+    107 │       .catch(() => {
+    108 │         throw new Error("Profile focus return failed");
+  
+  i Replace ?. with ..
+  
+    104 │     await surface.getByRole("button", { name: "Close profile", exact: true }).waitFor({ state: "hidden" });
+    105 │     await surface
+  > 106 │       .waitForFunction(() => document.activeElement?.hasAttribute("data-contact-trigger"))
+        │                                                    ^^
+    107 │       .catch(() => {
+    108 │         throw new Error("Profile focus return failed");
+  
+  i The receiver is guaranteed to be non-nullish.
+  
+
+scripts/screenshot-interactions.ts:113:32 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━
+
+  ! Unnecessary optional chaining.
+  
+    111 │       await surface.getByRole("button", { name: "Back to conversations", exact: true }).press("Enter");
+    112 │       await surface
+  > 113 │         .waitForFunction(() => document.activeElement?.hasAttribute("data-conversation-id"))
+        │                                ^^^^^^^^^^^^^^^^^^^^^^
+    114 │         .catch(() => {
+    115 │           throw new Error("Mobile back focus return failed");
+  
+  i Replace ?. with ..
+  
+    111 │       await surface.getByRole("button", { name: "Back to conversations", exact: true }).press("Enter");
+    112 │       await surface
+  > 113 │         .waitForFunction(() => document.activeElement?.hasAttribute("data-conversation-id"))
+        │                                                      ^^
+    114 │         .catch(() => {
+    115 │           throw new Error("Mobile back focus return failed");
+  
+  i The receiver is guaranteed to be non-nullish.
+  
+
+Checked 2 files in 373ms. Fixed 1 file.
+Found 2 warnings.

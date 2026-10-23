@@ -1,0 +1,138 @@
+{
+  "baseURL": "https://12731e75-tenboards.mohanadgh.workers.dev/",
+  "hydrationDelayMs": 1800,
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": true,
+  "interactions": true,
+  "results": [
+    {
+      "route": "/dashboard/calendar",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_calendar-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_calendar-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Browser-local Today 2026-10-23 after hydration",
+        "Previous/next, Month/Week/Day and Today via keyboard",
+        "Calendar selector retains demo selection",
+        "Crowded-day popover contains long title and closes by keyboard",
+        "Calendar grid scrolls locally; no page overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/calendar",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_calendar-light-desktop-refresh-interactive.png",
+      "controlsFile": "_dashboard_calendar-light-desktop-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Browser-local Today 2026-10-23 after hydration",
+        "Previous/next, Month/Week/Day and Today via keyboard",
+        "Calendar selector retains demo selection",
+        "Crowded-day popover contains long title and closes by keyboard",
+        "Calendar grid scrolls locally; no page overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/calendar",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_calendar-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_calendar-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Browser-local Today 2026-10-23 after hydration",
+        "Previous/next, Month/Week/Day and Today via keyboard",
+        "Calendar selector retains demo selection",
+        "Crowded-day popover contains long title and closes by keyboard",
+        "Calendar grid scrolls locally; no page overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/calendar",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_calendar-light-mobile-refresh-interactive.png",
+      "controlsFile": "_dashboard_calendar-light-mobile-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Browser-local Today 2026-10-23 after hydration",
+        "Previous/next, Month/Week/Day and Today via keyboard",
+        "Calendar selector retains demo selection",
+        "Crowded-day popover contains long title and closes by keyboard",
+        "Calendar grid scrolls locally; no page overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/calendar",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_calendar-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_calendar-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Browser-local Today 2026-10-23 after hydration",
+        "Previous/next, Month/Week/Day and Today via keyboard",
+        "Calendar selector retains demo selection",
+        "Crowded-day popover contains long title and closes by keyboard",
+        "Calendar grid scrolls locally; no page overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/calendar",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_calendar-dark-desktop-refresh-interactive.png",
+      "controlsFile": "_dashboard_calendar-dark-desktop-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Browser-local Today 2026-10-23 after hydration",
+        "Previous/next, Month/Week/Day and Today via keyboard",
+        "Calendar selector retains demo selection",
+        "Crowded-day popover contains long title and closes by keyboard",
+        "Calendar grid scrolls locally; no page overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/calendar",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_calendar-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_calendar-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Browser-local Today 2026-10-23 after hydration",
+        "Previous/next, Month/Week/Day and Today via keyboard",
+        "Calendar selector retains demo selection",
+        "Crowded-day popover contains long title and closes by keyboard",
+        "Calendar grid scrolls locally; no page overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/calendar",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_calendar-dark-mobile-refresh-interactive.png",
+      "controlsFile": "_dashboard_calendar-dark-mobile-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Browser-local Today 2026-10-23 after hydration",
+        "Previous/next, Month/Week/Day and Today via keyboard",
+        "Calendar selector retains demo selection",
+        "Crowded-day popover contains long title and closes by keyboard",
+        "Calendar grid scrolls locally; no page overflow"
+      ],
+      "errors": []
+    }
+  ]
+}

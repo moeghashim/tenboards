@@ -1,0 +1,20 @@
+
+> tenboards@0.2.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url https://12731e75-tenboards.mohanadgh.workers.dev --routes /dashboard/calendar,/dashboard/default --reload --timezone Pacific/Kiritimati --hydration-delay-ms 1800 --output screenshots/v03-004/workers
+
+PASS /dashboard/calendar light/desktop direct
+PASS /dashboard/calendar light/desktop refresh
+PASS /dashboard/calendar light/mobile direct
+PASS /dashboard/calendar light/mobile refresh
+PASS /dashboard/calendar dark/desktop direct
+PASS /dashboard/calendar dark/desktop refresh
+PASS /dashboard/calendar dark/mobile direct
+PASS /dashboard/calendar dark/mobile refresh
+PASS /dashboard/default light/desktop direct
+PASS /dashboard/default light/desktop refresh
+PASS /dashboard/default light/mobile direct
+PASS /dashboard/default light/mobile refresh
+PASS /dashboard/default dark/desktop direct
+PASS /dashboard/default dark/desktop refresh
+PASS /dashboard/default dark/mobile direct
+PASS /dashboard/default dark/mobile refresh

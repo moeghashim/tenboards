@@ -1,0 +1,792 @@
+
+> tenboards@0.2.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://localhost:3003 --routes /dashboard/calendar --reload --hydration-delay-ms 1800 --timezone Pacific/Kiritimati --output screenshots/v03-004/before
+
+FAIL /dashboard/calendar light/desktop direct
+page: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <NowTimer unit="day">
+      <DayGridLayout labelId={undefined} labelStr="October 2026" dateProfile={{...}} todayRange={{start:Date, ...}} ...>
+        <ViewContainer viewSpec={{type:"dayG...", ...}} attrs={{role:"table", ...}} className="fc-9b fc-t...">
+          <ContentContainer elRef={undefined} tag="div" attrs={{role:"table", ...}} style={undefined} ...>
+            <div role="table" aria-rowcount={7} aria-colcount={7} aria-labelledby={undefined} aria-label="October 2026" ...>
+              <DayGridLayoutNormal labelId={undefined} labelStr="October 2026" dateProfile={{...}} ...>
+                <div>
+                <Scroller vertical={true} className="bg-backgro..." ref={function} clientWidthRef={function}>
+                  <div ref={function} className="bg-backgro..." style={{...}}>
+                    <DayGridRows dateProfile={{...}} todayRange={{start:Date, ...}} cellRows={[...]} forPrint={false} ...>
+                      <div role="rowgroup" className="fc-l7 fc-mU" style={{...}} ref={function}>
+                        <DayGridRow>
+                        <DayGridRow>
+                        <DayGridRow>
+                        <DayGridRow role="row" dateProfile={{...}} todayRange={{start:Date, ...}} cells={[...]} ...>
+                          <div role="row" aria-label="Week 43" className="border fc-..." style={{flexBasis:0}} ...>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell dateProfile={{...}} todayRange={{start:Date, ...}} date={Date} isMajor={false} ...>
+                              <ContentContainer tag="div" elRef={{current:null}} className="fc-qy fc-l..." ...>
+                                <div
+                                  role="cell"
+                                  data-date="2026-10-23"
+                                  ref={function}
+                                  className="border fc-qy fc-li fc-lE fc-OV fc-mU fc-Ru fc-yU fc-Ju"
+                                  style={{width:undefined}}
+-                                 aria-current="date"
+                                >
+                                  <div role="presentation" className="fc-Ru fc-S...">
+                                    <div>
+                                    <bound InnerContentInjector tag="div" attrs={{...}} className="flex flex-...">
+                                      <ContentInjector renderProps={{date:Date,dow:5, ...}} generatorName="dayCellTop..." ...>
+                                        <div
+                                          aria-hidden={true}
+                                          ref={function}
++                                         className="flex flex-row items-center my-1 h-6 text-sm rounded-s-sm whitespa..."
+-                                         className="flex flex-row items-center my-1 h-6 text-sm group outline-none mx-2"
+                                        >
++                                         23
+-                                         <span
+-                                           className="whitespace-pre rounded-full font-semibold flex flex-row items-c..."
+-                                           data-tsd-source="/src/components/calendar/event-calendar-views.tsx:291:17"
+-                                         >
+                                  ...
+                            ...
+                        ...
+                    ...
+                ...
+
+FAIL /dashboard/calendar light/desktop refresh
+page: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <NowTimer unit="day">
+      <DayGridLayout labelId={undefined} labelStr="October 2026" dateProfile={{...}} todayRange={{start:Date, ...}} ...>
+        <ViewContainer viewSpec={{type:"dayG...", ...}} attrs={{role:"table", ...}} className="fc-9b fc-t...">
+          <ContentContainer elRef={undefined} tag="div" attrs={{role:"table", ...}} style={undefined} ...>
+            <div role="table" aria-rowcount={7} aria-colcount={7} aria-labelledby={undefined} aria-label="October 2026" ...>
+              <DayGridLayoutNormal labelId={undefined} labelStr="October 2026" dateProfile={{...}} ...>
+                <div>
+                <Scroller vertical={true} className="bg-backgro..." ref={function} clientWidthRef={function}>
+                  <div ref={function} className="bg-backgro..." style={{...}}>
+                    <DayGridRows dateProfile={{...}} todayRange={{start:Date, ...}} cellRows={[...]} forPrint={false} ...>
+                      <div role="rowgroup" className="fc-l7 fc-mU" style={{...}} ref={function}>
+                        <DayGridRow>
+                        <DayGridRow>
+                        <DayGridRow>
+                        <DayGridRow role="row" dateProfile={{...}} todayRange={{start:Date, ...}} cells={[...]} ...>
+                          <div role="row" aria-label="Week 43" className="border fc-..." style={{flexBasis:0}} ...>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell dateProfile={{...}} todayRange={{start:Date, ...}} date={Date} isMajor={false} ...>
+                              <ContentContainer tag="div" elRef={{current:null}} className="fc-qy fc-l..." ...>
+                                <div
+                                  role="cell"
+                                  data-date="2026-10-23"
+                                  ref={function}
+                                  className="border fc-qy fc-li fc-lE fc-OV fc-mU fc-Ru fc-yU fc-Ju"
+                                  style={{width:undefined}}
+-                                 aria-current="date"
+                                >
+                                  <div role="presentation" className="fc-Ru fc-S...">
+                                    <div>
+                                    <bound InnerContentInjector tag="div" attrs={{...}} className="flex flex-...">
+                                      <ContentInjector renderProps={{date:Date,dow:5, ...}} generatorName="dayCellTop..." ...>
+                                        <div
+                                          aria-hidden={true}
+                                          ref={function}
++                                         className="flex flex-row items-center my-1 h-6 text-sm rounded-s-sm whitespa..."
+-                                         className="flex flex-row items-center my-1 h-6 text-sm group outline-none mx-2"
+                                        >
++                                         23
+-                                         <span
+-                                           className="whitespace-pre rounded-full font-semibold flex flex-row items-c..."
+-                                           data-tsd-source="/src/components/calendar/event-calendar-views.tsx:291:17"
+-                                         >
+                                  ...
+                            ...
+                        ...
+                    ...
+                ...
+
+page: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <NowTimer unit="day">
+      <DayGridLayout labelId={undefined} labelStr="October 2026" dateProfile={{...}} todayRange={{start:Date, ...}} ...>
+        <ViewContainer viewSpec={{type:"dayG...", ...}} attrs={{role:"table", ...}} className="fc-9b fc-t...">
+          <ContentContainer elRef={undefined} tag="div" attrs={{role:"table", ...}} style={undefined} ...>
+            <div role="table" aria-rowcount={7} aria-colcount={7} aria-labelledby={undefined} aria-label="October 2026" ...>
+              <DayGridLayoutNormal labelId={undefined} labelStr="October 2026" dateProfile={{...}} ...>
+                <div>
+                <Scroller vertical={true} className="bg-backgro..." ref={function} clientWidthRef={function}>
+                  <div ref={function} className="bg-backgro..." style={{...}}>
+                    <DayGridRows dateProfile={{...}} todayRange={{start:Date, ...}} cellRows={[...]} forPrint={false} ...>
+                      <div role="rowgroup" className="fc-l7 fc-mU" style={{...}} ref={function}>
+                        <DayGridRow>
+                        <DayGridRow>
+                        <DayGridRow>
+                        <DayGridRow role="row" dateProfile={{...}} todayRange={{start:Date, ...}} cells={[...]} ...>
+                          <div role="row" aria-label="Week 43" className="border fc-..." style={{flexBasis:0}} ...>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell dateProfile={{...}} todayRange={{start:Date, ...}} date={Date} isMajor={false} ...>
+                              <ContentContainer tag="div" elRef={{current:null}} className="fc-qy fc-l..." ...>
+                                <div
+                                  role="cell"
+                                  data-date="2026-10-23"
+                                  ref={function}
+                                  className="border fc-qy fc-li fc-lE fc-OV fc-mU fc-Ru fc-yU fc-Ju"
+                                  style={{width:undefined}}
+-                                 aria-current="date"
+                                >
+                                  <div role="presentation" className="fc-Ru fc-S...">
+                                    <div>
+                                    <bound InnerContentInjector tag="div" attrs={{...}} className="flex flex-...">
+                                      <ContentInjector renderProps={{date:Date,dow:5, ...}} generatorName="dayCellTop..." ...>
+                                        <div
+                                          aria-hidden={true}
+                                          ref={function}
++                                         className="flex flex-row items-center my-1 h-6 text-sm rounded-s-sm whitespa..."
+-                                         className="flex flex-row items-center my-1 h-6 text-sm group outline-none mx-2"
+                                        >
++                                         23
+-                                         <span
+-                                           className="whitespace-pre rounded-full font-semibold flex flex-row items-c..."
+-                                           data-tsd-source="/src/components/calendar/event-calendar-views.tsx:291:17"
+-                                         >
+                                  ...
+                            ...
+                        ...
+                    ...
+                ...
+
+FAIL /dashboard/calendar light/mobile direct
+page: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <NowTimer unit="day">
+      <DayGridLayout labelId={undefined} labelStr="October 2026" dateProfile={{...}} todayRange={{start:Date, ...}} ...>
+        <ViewContainer viewSpec={{type:"dayG...", ...}} attrs={{role:"table", ...}} className="fc-9b fc-t...">
+          <ContentContainer elRef={undefined} tag="div" attrs={{role:"table", ...}} style={undefined} ...>
+            <div role="table" aria-rowcount={7} aria-colcount={7} aria-labelledby={undefined} aria-label="October 2026" ...>
+              <DayGridLayoutNormal labelId={undefined} labelStr="October 2026" dateProfile={{...}} ...>
+                <div>
+                <Scroller vertical={true} className="bg-backgro..." ref={function} clientWidthRef={function}>
+                  <div ref={function} className="bg-backgro..." style={{...}}>
+                    <DayGridRows dateProfile={{...}} todayRange={{start:Date, ...}} cellRows={[...]} forPrint={false} ...>
+                      <div role="rowgroup" className="fc-l7 fc-mU" style={{...}} ref={function}>
+                        <DayGridRow>
+                        <DayGridRow>
+                        <DayGridRow>
+                        <DayGridRow role="row" dateProfile={{...}} todayRange={{start:Date, ...}} cells={[...]} ...>
+                          <div role="row" aria-label="Week 43" className="border fc-..." style={{flexBasis:0}} ...>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell dateProfile={{...}} todayRange={{start:Date, ...}} date={Date} isMajor={false} ...>
+                              <ContentContainer tag="div" elRef={{current:null}} className="fc-qy fc-l..." ...>
+                                <div
+                                  role="cell"
+                                  data-date="2026-10-23"
+                                  ref={function}
+                                  className="border fc-qy fc-li fc-lE fc-OV fc-mU fc-Ru fc-yU fc-Ju"
+                                  style={{width:undefined}}
+-                                 aria-current="date"
+                                >
+                                  <div role="presentation" className="fc-Ru fc-S...">
+                                    <div>
+                                    <bound InnerContentInjector tag="div" attrs={{...}} className="flex flex-...">
+                                      <ContentInjector renderProps={{date:Date,dow:5, ...}} generatorName="dayCellTop..." ...>
+                                        <div
+                                          aria-hidden={true}
+                                          ref={function}
++                                         className="flex flex-row items-center my-1 h-6 text-sm rounded-s-sm whitespa..."
+-                                         className="flex flex-row items-center my-1 h-6 text-sm group outline-none mx-2"
+                                        >
++                                         23
+-                                         <span
+-                                           className="whitespace-pre rounded-full font-semibold flex flex-row items-c..."
+-                                           data-tsd-source="/src/components/calendar/event-calendar-views.tsx:291:17"
+-                                         >
+                                  ...
+                            ...
+                        ...
+                    ...
+                ...
+
+FAIL /dashboard/calendar light/mobile refresh
+page: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <NowTimer unit="day">
+      <DayGridLayout labelId={undefined} labelStr="October 2026" dateProfile={{...}} todayRange={{start:Date, ...}} ...>
+        <ViewContainer viewSpec={{type:"dayG...", ...}} attrs={{role:"table", ...}} className="fc-9b fc-t...">
+          <ContentContainer elRef={undefined} tag="div" attrs={{role:"table", ...}} style={undefined} ...>
+            <div role="table" aria-rowcount={7} aria-colcount={7} aria-labelledby={undefined} aria-label="October 2026" ...>
+              <DayGridLayoutNormal labelId={undefined} labelStr="October 2026" dateProfile={{...}} ...>
+                <div>
+                <Scroller vertical={true} className="bg-backgro..." ref={function} clientWidthRef={function}>
+                  <div ref={function} className="bg-backgro..." style={{...}}>
+                    <DayGridRows dateProfile={{...}} todayRange={{start:Date, ...}} cellRows={[...]} forPrint={false} ...>
+                      <div role="rowgroup" className="fc-l7 fc-mU" style={{...}} ref={function}>
+                        <DayGridRow>
+                        <DayGridRow>
+                        <DayGridRow>
+                        <DayGridRow role="row" dateProfile={{...}} todayRange={{start:Date, ...}} cells={[...]} ...>
+                          <div role="row" aria-label="Week 43" className="border fc-..." style={{flexBasis:0}} ...>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell dateProfile={{...}} todayRange={{start:Date, ...}} date={Date} isMajor={false} ...>
+                              <ContentContainer tag="div" elRef={{current:null}} className="fc-qy fc-l..." ...>
+                                <div
+                                  role="cell"
+                                  data-date="2026-10-23"
+                                  ref={function}
+                                  className="border fc-qy fc-li fc-lE fc-OV fc-mU fc-Ru fc-yU fc-Ju"
+                                  style={{width:undefined}}
+-                                 aria-current="date"
+                                >
+                                  <div role="presentation" className="fc-Ru fc-S...">
+                                    <div>
+                                    <bound InnerContentInjector tag="div" attrs={{...}} className="flex flex-...">
+                                      <ContentInjector renderProps={{date:Date,dow:5, ...}} generatorName="dayCellTop..." ...>
+                                        <div
+                                          aria-hidden={true}
+                                          ref={function}
++                                         className="flex flex-row items-center my-1 h-6 text-sm rounded-s-sm whitespa..."
+-                                         className="flex flex-row items-center my-1 h-6 text-sm group outline-none mx-2"
+                                        >
++                                         23
+-                                         <span
+-                                           className="whitespace-pre rounded-full font-semibold flex flex-row items-c..."
+-                                           data-tsd-source="/src/components/calendar/event-calendar-views.tsx:291:17"
+-                                         >
+                                  ...
+                            ...
+                        ...
+                    ...
+                ...
+
+page: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <NowTimer unit="day">
+      <DayGridLayout labelId={undefined} labelStr="October 2026" dateProfile={{...}} todayRange={{start:Date, ...}} ...>
+        <ViewContainer viewSpec={{type:"dayG...", ...}} attrs={{role:"table", ...}} className="fc-9b fc-t...">
+          <ContentContainer elRef={undefined} tag="div" attrs={{role:"table", ...}} style={undefined} ...>
+            <div role="table" aria-rowcount={7} aria-colcount={7} aria-labelledby={undefined} aria-label="October 2026" ...>
+              <DayGridLayoutNormal labelId={undefined} labelStr="October 2026" dateProfile={{...}} ...>
+                <div>
+                <Scroller vertical={true} className="bg-backgro..." ref={function} clientWidthRef={function}>
+                  <div ref={function} className="bg-backgro..." style={{...}}>
+                    <DayGridRows dateProfile={{...}} todayRange={{start:Date, ...}} cellRows={[...]} forPrint={false} ...>
+                      <div role="rowgroup" className="fc-l7 fc-mU" style={{...}} ref={function}>
+                        <DayGridRow>
+                        <DayGridRow>
+                        <DayGridRow>
+                        <DayGridRow role="row" dateProfile={{...}} todayRange={{start:Date, ...}} cells={[...]} ...>
+                          <div role="row" aria-label="Week 43" className="border fc-..." style={{flexBasis:0}} ...>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell dateProfile={{...}} todayRange={{start:Date, ...}} date={Date} isMajor={false} ...>
+                              <ContentContainer tag="div" elRef={{current:null}} className="fc-qy fc-l..." ...>
+                                <div
+                                  role="cell"
+                                  data-date="2026-10-23"
+                                  ref={function}
+                                  className="border fc-qy fc-li fc-lE fc-OV fc-mU fc-Ru fc-yU fc-Ju"
+                                  style={{width:undefined}}
+-                                 aria-current="date"
+                                >
+                                  <div role="presentation" className="fc-Ru fc-S...">
+                                    <div>
+                                    <bound InnerContentInjector tag="div" attrs={{...}} className="flex flex-...">
+                                      <ContentInjector renderProps={{date:Date,dow:5, ...}} generatorName="dayCellTop..." ...>
+                                        <div
+                                          aria-hidden={true}
+                                          ref={function}
++                                         className="flex flex-row items-center my-1 h-6 text-sm rounded-s-sm whitespa..."
+-                                         className="flex flex-row items-center my-1 h-6 text-sm group outline-none mx-2"
+                                        >
++                                         23
+-                                         <span
+-                                           className="whitespace-pre rounded-full font-semibold flex flex-row items-c..."
+-                                           data-tsd-source="/src/components/calendar/event-calendar-views.tsx:291:17"
+-                                         >
+                                  ...
+                            ...
+                        ...
+                    ...
+                ...
+
+FAIL /dashboard/calendar dark/desktop direct
+page: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <NowTimer unit="day">
+      <DayGridLayout labelId={undefined} labelStr="October 2026" dateProfile={{...}} todayRange={{start:Date, ...}} ...>
+        <ViewContainer viewSpec={{type:"dayG...", ...}} attrs={{role:"table", ...}} className="fc-9b fc-t...">
+          <ContentContainer elRef={undefined} tag="div" attrs={{role:"table", ...}} style={undefined} ...>
+            <div role="table" aria-rowcount={7} aria-colcount={7} aria-labelledby={undefined} aria-label="October 2026" ...>
+              <DayGridLayoutNormal labelId={undefined} labelStr="October 2026" dateProfile={{...}} ...>
+                <div>
+                <Scroller vertical={true} className="bg-backgro..." ref={function} clientWidthRef={function}>
+                  <div ref={function} className="bg-backgro..." style={{...}}>
+                    <DayGridRows dateProfile={{...}} todayRange={{start:Date, ...}} cellRows={[...]} forPrint={false} ...>
+                      <div role="rowgroup" className="fc-l7 fc-mU" style={{...}} ref={function}>
+                        <DayGridRow>
+                        <DayGridRow>
+                        <DayGridRow>
+                        <DayGridRow role="row" dateProfile={{...}} todayRange={{start:Date, ...}} cells={[...]} ...>
+                          <div role="row" aria-label="Week 43" className="border fc-..." style={{flexBasis:0}} ...>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell dateProfile={{...}} todayRange={{start:Date, ...}} date={Date} isMajor={false} ...>
+                              <ContentContainer tag="div" elRef={{current:null}} className="fc-qy fc-l..." ...>
+                                <div
+                                  role="cell"
+                                  data-date="2026-10-23"
+                                  ref={function}
+                                  className="border fc-qy fc-li fc-lE fc-OV fc-mU fc-Ru fc-yU fc-Ju"
+                                  style={{width:undefined}}
+-                                 aria-current="date"
+                                >
+                                  <div role="presentation" className="fc-Ru fc-S...">
+                                    <div>
+                                    <bound InnerContentInjector tag="div" attrs={{...}} className="flex flex-...">
+                                      <ContentInjector renderProps={{date:Date,dow:5, ...}} generatorName="dayCellTop..." ...>
+                                        <div
+                                          aria-hidden={true}
+                                          ref={function}
++                                         className="flex flex-row items-center my-1 h-6 text-sm rounded-s-sm whitespa..."
+-                                         className="flex flex-row items-center my-1 h-6 text-sm group outline-none mx-2"
+                                        >
++                                         23
+-                                         <span
+-                                           className="whitespace-pre rounded-full font-semibold flex flex-row items-c..."
+-                                           data-tsd-source="/src/components/calendar/event-calendar-views.tsx:291:17"
+-                                         >
+                                  ...
+                            ...
+                        ...
+                    ...
+                ...
+
+FAIL /dashboard/calendar dark/desktop refresh
+page: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <NowTimer unit="day">
+      <DayGridLayout labelId={undefined} labelStr="October 2026" dateProfile={{...}} todayRange={{start:Date, ...}} ...>
+        <ViewContainer viewSpec={{type:"dayG...", ...}} attrs={{role:"table", ...}} className="fc-9b fc-t...">
+          <ContentContainer elRef={undefined} tag="div" attrs={{role:"table", ...}} style={undefined} ...>
+            <div role="table" aria-rowcount={7} aria-colcount={7} aria-labelledby={undefined} aria-label="October 2026" ...>
+              <DayGridLayoutNormal labelId={undefined} labelStr="October 2026" dateProfile={{...}} ...>
+                <div>
+                <Scroller vertical={true} className="bg-backgro..." ref={function} clientWidthRef={function}>
+                  <div ref={function} className="bg-backgro..." style={{...}}>
+                    <DayGridRows dateProfile={{...}} todayRange={{start:Date, ...}} cellRows={[...]} forPrint={false} ...>
+                      <div role="rowgroup" className="fc-l7 fc-mU" style={{...}} ref={function}>
+                        <DayGridRow>
+                        <DayGridRow>
+                        <DayGridRow>
+                        <DayGridRow role="row" dateProfile={{...}} todayRange={{start:Date, ...}} cells={[...]} ...>
+                          <div role="row" aria-label="Week 43" className="border fc-..." style={{flexBasis:0}} ...>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell dateProfile={{...}} todayRange={{start:Date, ...}} date={Date} isMajor={false} ...>
+                              <ContentContainer tag="div" elRef={{current:null}} className="fc-qy fc-l..." ...>
+                                <div
+                                  role="cell"
+                                  data-date="2026-10-23"
+                                  ref={function}
+                                  className="border fc-qy fc-li fc-lE fc-OV fc-mU fc-Ru fc-yU fc-Ju"
+                                  style={{width:undefined}}
+-                                 aria-current="date"
+                                >
+                                  <div role="presentation" className="fc-Ru fc-S...">
+                                    <div>
+                                    <bound InnerContentInjector tag="div" attrs={{...}} className="flex flex-...">
+                                      <ContentInjector renderProps={{date:Date,dow:5, ...}} generatorName="dayCellTop..." ...>
+                                        <div
+                                          aria-hidden={true}
+                                          ref={function}
++                                         className="flex flex-row items-center my-1 h-6 text-sm rounded-s-sm whitespa..."
+-                                         className="flex flex-row items-center my-1 h-6 text-sm group outline-none mx-2"
+                                        >
++                                         23
+-                                         <span
+-                                           className="whitespace-pre rounded-full font-semibold flex flex-row items-c..."
+-                                           data-tsd-source="/src/components/calendar/event-calendar-views.tsx:291:17"
+-                                         >
+                                  ...
+                            ...
+                        ...
+                    ...
+                ...
+
+page: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <NowTimer unit="day">
+      <DayGridLayout labelId={undefined} labelStr="October 2026" dateProfile={{...}} todayRange={{start:Date, ...}} ...>
+        <ViewContainer viewSpec={{type:"dayG...", ...}} attrs={{role:"table", ...}} className="fc-9b fc-t...">
+          <ContentContainer elRef={undefined} tag="div" attrs={{role:"table", ...}} style={undefined} ...>
+            <div role="table" aria-rowcount={7} aria-colcount={7} aria-labelledby={undefined} aria-label="October 2026" ...>
+              <DayGridLayoutNormal labelId={undefined} labelStr="October 2026" dateProfile={{...}} ...>
+                <div>
+                <Scroller vertical={true} className="bg-backgro..." ref={function} clientWidthRef={function}>
+                  <div ref={function} className="bg-backgro..." style={{...}}>
+                    <DayGridRows dateProfile={{...}} todayRange={{start:Date, ...}} cellRows={[...]} forPrint={false} ...>
+                      <div role="rowgroup" className="fc-l7 fc-mU" style={{...}} ref={function}>
+                        <DayGridRow>
+                        <DayGridRow>
+                        <DayGridRow>
+                        <DayGridRow role="row" dateProfile={{...}} todayRange={{start:Date, ...}} cells={[...]} ...>
+                          <div role="row" aria-label="Week 43" className="border fc-..." style={{flexBasis:0}} ...>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell dateProfile={{...}} todayRange={{start:Date, ...}} date={Date} isMajor={false} ...>
+                              <ContentContainer tag="div" elRef={{current:null}} className="fc-qy fc-l..." ...>
+                                <div
+                                  role="cell"
+                                  data-date="2026-10-23"
+                                  ref={function}
+                                  className="border fc-qy fc-li fc-lE fc-OV fc-mU fc-Ru fc-yU fc-Ju"
+                                  style={{width:undefined}}
+-                                 aria-current="date"
+                                >
+                                  <div role="presentation" className="fc-Ru fc-S...">
+                                    <div>
+                                    <bound InnerContentInjector tag="div" attrs={{...}} className="flex flex-...">
+                                      <ContentInjector renderProps={{date:Date,dow:5, ...}} generatorName="dayCellTop..." ...>
+                                        <div
+                                          aria-hidden={true}
+                                          ref={function}
++                                         className="flex flex-row items-center my-1 h-6 text-sm rounded-s-sm whitespa..."
+-                                         className="flex flex-row items-center my-1 h-6 text-sm group outline-none mx-2"
+                                        >
++                                         23
+-                                         <span
+-                                           className="whitespace-pre rounded-full font-semibold flex flex-row items-c..."
+-                                           data-tsd-source="/src/components/calendar/event-calendar-views.tsx:291:17"
+-                                         >
+                                  ...
+                            ...
+                        ...
+                    ...
+                ...
+
+FAIL /dashboard/calendar dark/mobile direct
+page: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <NowTimer unit="day">
+      <DayGridLayout labelId={undefined} labelStr="October 2026" dateProfile={{...}} todayRange={{start:Date, ...}} ...>
+        <ViewContainer viewSpec={{type:"dayG...", ...}} attrs={{role:"table", ...}} className="fc-9b fc-t...">
+          <ContentContainer elRef={undefined} tag="div" attrs={{role:"table", ...}} style={undefined} ...>
+            <div role="table" aria-rowcount={7} aria-colcount={7} aria-labelledby={undefined} aria-label="October 2026" ...>
+              <DayGridLayoutNormal labelId={undefined} labelStr="October 2026" dateProfile={{...}} ...>
+                <div>
+                <Scroller vertical={true} className="bg-backgro..." ref={function} clientWidthRef={function}>
+                  <div ref={function} className="bg-backgro..." style={{...}}>
+                    <DayGridRows dateProfile={{...}} todayRange={{start:Date, ...}} cellRows={[...]} forPrint={false} ...>
+                      <div role="rowgroup" className="fc-l7 fc-mU" style={{...}} ref={function}>
+                        <DayGridRow>
+                        <DayGridRow>
+                        <DayGridRow>
+                        <DayGridRow role="row" dateProfile={{...}} todayRange={{start:Date, ...}} cells={[...]} ...>
+                          <div role="row" aria-label="Week 43" className="border fc-..." style={{flexBasis:0}} ...>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell dateProfile={{...}} todayRange={{start:Date, ...}} date={Date} isMajor={false} ...>
+                              <ContentContainer tag="div" elRef={{current:null}} className="fc-qy fc-l..." ...>
+                                <div
+                                  role="cell"
+                                  data-date="2026-10-23"
+                                  ref={function}
+                                  className="border fc-qy fc-li fc-lE fc-OV fc-mU fc-Ru fc-yU fc-Ju"
+                                  style={{width:undefined}}
+-                                 aria-current="date"
+                                >
+                                  <div role="presentation" className="fc-Ru fc-S...">
+                                    <div>
+                                    <bound InnerContentInjector tag="div" attrs={{...}} className="flex flex-...">
+                                      <ContentInjector renderProps={{date:Date,dow:5, ...}} generatorName="dayCellTop..." ...>
+                                        <div
+                                          aria-hidden={true}
+                                          ref={function}
++                                         className="flex flex-row items-center my-1 h-6 text-sm rounded-s-sm whitespa..."
+-                                         className="flex flex-row items-center my-1 h-6 text-sm group outline-none mx-2"
+                                        >
++                                         23
+-                                         <span
+-                                           className="whitespace-pre rounded-full font-semibold flex flex-row items-c..."
+-                                           data-tsd-source="/src/components/calendar/event-calendar-views.tsx:291:17"
+-                                         >
+                                  ...
+                            ...
+                        ...
+                    ...
+                ...
+
+FAIL /dashboard/calendar dark/mobile refresh
+page: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <NowTimer unit="day">
+      <DayGridLayout labelId={undefined} labelStr="October 2026" dateProfile={{...}} todayRange={{start:Date, ...}} ...>
+        <ViewContainer viewSpec={{type:"dayG...", ...}} attrs={{role:"table", ...}} className="fc-9b fc-t...">
+          <ContentContainer elRef={undefined} tag="div" attrs={{role:"table", ...}} style={undefined} ...>
+            <div role="table" aria-rowcount={7} aria-colcount={7} aria-labelledby={undefined} aria-label="October 2026" ...>
+              <DayGridLayoutNormal labelId={undefined} labelStr="October 2026" dateProfile={{...}} ...>
+                <div>
+                <Scroller vertical={true} className="bg-backgro..." ref={function} clientWidthRef={function}>
+                  <div ref={function} className="bg-backgro..." style={{...}}>
+                    <DayGridRows dateProfile={{...}} todayRange={{start:Date, ...}} cellRows={[...]} forPrint={false} ...>
+                      <div role="rowgroup" className="fc-l7 fc-mU" style={{...}} ref={function}>
+                        <DayGridRow>
+                        <DayGridRow>
+                        <DayGridRow>
+                        <DayGridRow role="row" dateProfile={{...}} todayRange={{start:Date, ...}} cells={[...]} ...>
+                          <div role="row" aria-label="Week 43" className="border fc-..." style={{flexBasis:0}} ...>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell dateProfile={{...}} todayRange={{start:Date, ...}} date={Date} isMajor={false} ...>
+                              <ContentContainer tag="div" elRef={{current:null}} className="fc-qy fc-l..." ...>
+                                <div
+                                  role="cell"
+                                  data-date="2026-10-23"
+                                  ref={function}
+                                  className="border fc-qy fc-li fc-lE fc-OV fc-mU fc-Ru fc-yU fc-Ju"
+                                  style={{width:undefined}}
+-                                 aria-current="date"
+                                >
+                                  <div role="presentation" className="fc-Ru fc-S...">
+                                    <div>
+                                    <bound InnerContentInjector tag="div" attrs={{...}} className="flex flex-...">
+                                      <ContentInjector renderProps={{date:Date,dow:5, ...}} generatorName="dayCellTop..." ...>
+                                        <div
+                                          aria-hidden={true}
+                                          ref={function}
++                                         className="flex flex-row items-center my-1 h-6 text-sm rounded-s-sm whitespa..."
+-                                         className="flex flex-row items-center my-1 h-6 text-sm group outline-none mx-2"
+                                        >
++                                         23
+-                                         <span
+-                                           className="whitespace-pre rounded-full font-semibold flex flex-row items-c..."
+-                                           data-tsd-source="/src/components/calendar/event-calendar-views.tsx:291:17"
+-                                         >
+                                  ...
+                            ...
+                        ...
+                    ...
+                ...
+
+page: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <NowTimer unit="day">
+      <DayGridLayout labelId={undefined} labelStr="October 2026" dateProfile={{...}} todayRange={{start:Date, ...}} ...>
+        <ViewContainer viewSpec={{type:"dayG...", ...}} attrs={{role:"table", ...}} className="fc-9b fc-t...">
+          <ContentContainer elRef={undefined} tag="div" attrs={{role:"table", ...}} style={undefined} ...>
+            <div role="table" aria-rowcount={7} aria-colcount={7} aria-labelledby={undefined} aria-label="October 2026" ...>
+              <DayGridLayoutNormal labelId={undefined} labelStr="October 2026" dateProfile={{...}} ...>
+                <div>
+                <Scroller vertical={true} className="bg-backgro..." ref={function} clientWidthRef={function}>
+                  <div ref={function} className="bg-backgro..." style={{...}}>
+                    <DayGridRows dateProfile={{...}} todayRange={{start:Date, ...}} cellRows={[...]} forPrint={false} ...>
+                      <div role="rowgroup" className="fc-l7 fc-mU" style={{...}} ref={function}>
+                        <DayGridRow>
+                        <DayGridRow>
+                        <DayGridRow>
+                        <DayGridRow role="row" dateProfile={{...}} todayRange={{start:Date, ...}} cells={[...]} ...>
+                          <div role="row" aria-label="Week 43" className="border fc-..." style={{flexBasis:0}} ...>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell>
+                            <DayGridCell dateProfile={{...}} todayRange={{start:Date, ...}} date={Date} isMajor={false} ...>
+                              <ContentContainer tag="div" elRef={{current:null}} className="fc-qy fc-l..." ...>
+                                <div
+                                  role="cell"
+                                  data-date="2026-10-23"
+                                  ref={function}
+                                  className="border fc-qy fc-li fc-lE fc-OV fc-mU fc-Ru fc-yU fc-Ju"
+                                  style={{width:undefined}}
+-                                 aria-current="date"
+                                >
+                                  <div role="presentation" className="fc-Ru fc-S...">
+                                    <div>
+                                    <bound InnerContentInjector tag="div" attrs={{...}} className="flex flex-...">
+                                      <ContentInjector renderProps={{date:Date,dow:5, ...}} generatorName="dayCellTop..." ...>
+                                        <div
+                                          aria-hidden={true}
+                                          ref={function}
++                                         className="flex flex-row items-center my-1 h-6 text-sm rounded-s-sm whitespa..."
+-                                         className="flex flex-row items-center my-1 h-6 text-sm group outline-none mx-2"
+                                        >
++                                         23
+-                                         <span
+-                                           className="whitespace-pre rounded-full font-semibold flex flex-row items-c..."
+-                                           data-tsd-source="/src/components/calendar/event-calendar-views.tsx:291:17"
+-                                         >
+                                  ...
+                            ...
+                        ...
+                    ...
+                ...
+

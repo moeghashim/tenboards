@@ -1,0 +1,24 @@
+
+> tenboards@0.2.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://localhost:3003 --routes /dashboard/calendar --interactions --output screenshots/v03-004/interactions
+
+FAIL /dashboard/calendar light/desktop direct
+locator.press: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('button', { name: /more event/ }).first()[22m
+
+FAIL /dashboard/calendar light/mobile direct
+locator.press: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('button', { name: /more event/ }).first()[22m
+
+FAIL /dashboard/calendar dark/desktop direct
+locator.press: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('button', { name: /more event/ }).first()[22m
+
+FAIL /dashboard/calendar dark/mobile direct
+locator.press: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('button', { name: /more event/ }).first()[22m
+
