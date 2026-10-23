@@ -1,0 +1,231 @@
+Tasks 003–007: resolved validation/tooling failures. Final required checks pass.
+
+--- 003/smoke-initial-failure.log ---
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+page.waitForFunction: Timeout 30000ms exceeded.
+    at /private/tmp/tenboards-qa/smoke.mjs:12:13 {
+  log: [],
+  name: 'TimeoutError'
+}
+
+Node.js v24.21.0
+
+--- 005/check-initial-failure.log ---
+
+> tenboards@0.1.0 check
+> biome check
+
+src/lib/highlighter.tsx:96:20 lint/suspicious/noArrayIndexKey ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Avoid using the index of an array as key property in an element.
+  
+    94 │           line.map((token, index) => (
+    95 │             <span
+  > 96 │               key={index}
+       │                    ^^^^^
+    97 │               style={token.htmlStyle as React.CSSProperties}
+    98 │               className="text-(--shiki-light) dark:text-(--shiki-dark)"
+  
+  i This is the source of the key value.
+  
+    92 │       return {
+    93 │         lines: tokens.map((line) =>
+  > 94 │           line.map((token, index) => (
+       │                            ^^^^^
+    95 │             <span
+    96 │               key={index}
+  
+  i The order of the items may change, and this also affects performances and component state.
+  
+  i Check the React documentation. 
+  
+
+package.json format ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Formatter would have printed the following content:
+  
+    23 23 │     },
+    24 24 │     "lint-staged": {
+    25    │ - ····"*.{js,ts,jsx,tsx}":·[
+    26    │ - ······"biome·check·--write·--no-errors-on-unmatched"
+    27    │ - ····]
+       25 │ + ····"*.{js,ts,jsx,tsx}":·["biome·check·--write·--no-errors-on-unmatched"]
+    28 26 │     },
+    29 27 │     "dependencies": {
+  
+
+Checked 276 files in 492ms. No fixes applied.
+Found 1 error.
+Found 1 warning.
+check ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Some errors were emitted while running checks.
+  
+
+
+--- 005/contrast-initial-failure.log ---
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+page.evaluate: Execution context was destroyed, most likely because of a navigation
+    at /Users/moeghashim/tenboards/scripts/check-contrast.ts:20:33 {
+  log: [],
+  name: 'Error'
+}
+
+Node.js v24.21.0
+
+--- 006/asset-initial-failure.log ---
+The WOFF2 decoder requires the Brotli Python extension, available at: https://github.com/google/brotli
+ImportError: No module named brotli
+Resolved by installing fonttools, brotli, and pillow in /tmp/tenboards-brand-tools, not in app dependencies.
+
+--- 006/check-initial-failure.log ---
+
+> tenboards@0.1.0 check
+> biome check
+
+src/lib/highlighter.tsx:96:20 lint/suspicious/noArrayIndexKey ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Avoid using the index of an array as key property in an element.
+  
+    94 │           line.map((token, index) => (
+    95 │             <span
+  > 96 │               key={index}
+       │                    ^^^^^
+    97 │               style={token.htmlStyle as React.CSSProperties}
+    98 │               className="text-(--shiki-light) dark:text-(--shiki-dark)"
+  
+  i This is the source of the key value.
+  
+    92 │       return {
+    93 │         lines: tokens.map((line) =>
+  > 94 │           line.map((token, index) => (
+       │                            ^^^^^
+    95 │             <span
+    96 │               key={index}
+  
+  i The order of the items may change, and this also affects performances and component state.
+  
+  i Check the React documentation. 
+  
+
+public/brand/og.svg:1:1 lint/a11y/noSvgWithoutTitle ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Alternative text title element cannot be empty
+  
+  > 1 │ <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+      │ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  > 2 │ <rect width="1200" height="630" fill="#f8f9fb"/>
+  > 3 │ <g transform="translate(88 158) scale(5)" fill="#1e40af"><path fill-rule="evenodd" d="M4 5h4v14H4V5Zm7 0h9v14h-9V5Zm3 3v8h3V8h-3Z"/></g>
+  > 4 │ <g transform="translate(238 168) scale(1.8)" fill="#181c25"><g transform="translate(0 64) scale(0.06...
+  > 5 │ <text x="100" y="376" font-family="Helvetica,Arial,sans-serif" font-size="34" fill="#515b6b">A complete admin dashboard starter.</text>
+  > 6 │ <text x="100" y="436" font-family="Helvetica,Arial,sans-serif" font-size="24" fill="#515b6b">TanStack Start · React · shadcn/ui</text>
+  > 7 │ <path d="M100 510H1100" stroke="#dbe0e8"/>
+  > 8 │ <text x="100" y="560" font-family="Helvetica,Arial,sans-serif" font-size="21" fill="#1e40af">Open source. Ready to make your own.</text>
+  > 9 │ </svg>
+      │ ^^^^^^
+  
+  i For accessibility purposes, SVGs should have an alternative text, provided via title element. If the svg element has role="img", you should add the aria-label or aria-labelledby attribute.
+  
+
+public/favicon.svg:1:1 lint/a11y/noSvgWithoutTitle ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Alternative text title element cannot be empty
+  
+  > 1 │ <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 24 24"><rect width="24" height="24" rx="5" fill="#1e40af"/><path fill="#ffffff" fill-rule="evenodd" d="M4 5h4v14H4V5Zm7 0h9v14h-9V5Zm3 3v8h3V8h-3Z"/></svg>
+      │ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    2 │ 
+  
+  i For accessibility purposes, SVGs should have an alternative text, provided via title element. If the svg element has role="img", you should add the aria-label or aria-labelledby attribute.
+  
+
+Checked 281 files in 463ms. No fixes applied.
+Found 2 errors.
+Found 1 warning.
+check ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Some errors were emitted while running checks.
+  
+
+
+--- 007/baseline-initial-failure.log ---
+
+> tenboards@0.1.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url https://6b4c3f68-tenboards.mohanadgh.workers.dev --routes /dashboard/default --preset brutalist --output screenshots/007/before-brutalist
+
+FAIL /dashboard/default light/desktop
+page.waitForFunction: Timeout 30000ms exceeded.
+PASS /dashboard/default light/mobile
+PASS /dashboard/default dark/desktop
+PASS /dashboard/default dark/mobile
+
+--- 007/focus-test-initial-failure.log ---
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+'3px' !== '2px'
+
+    at file:///private/tmp/tenboards-qa/presets-check.mjs:38:11
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at process.processImmediate (node:internal/timers:541:9) {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: '3px',
+  expected: '2px',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.21.0
+
+--- 007/migration-initial-failure.log ---
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
++ actual - expected
+
++ []
+- [
+-   'Default',
+-   'Graphite',
+-   'Iris',
+-   'Pine'
+- ]
+
+    at file:///private/tmp/tenboards-qa/presets-check.mjs:25:11
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at process.processImmediate (node:internal/timers:541:9) {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: [],
+  expected: [ 'Default', 'Graphite', 'Iris', 'Pine' ],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.21.0
+
+--- T3 local browser transport (003; local smoke verified with Playwright) ---
+Preview automation navigate failed on client preview-3a5f028a8bb6d635cfe0b7a6e9a580a9.
+Preview automation navigate timed out after 60000ms.
+
+--- Temporary PR-body helper (004; fixed before PR creation) ---
+SyntaxError: f-string expression part cannot include a backslash
+open /tmp/tenboards-batch/004/pr.md: no such file or directory
+
+--- Resolutions ---
+003: Wait for React hydration before clicking the theme switcher. T3 public preview works; local smoke uses requested Playwright tooling.
+004: Move the f-string expression into a variable, regenerate the body, commit verified status, then create the PR.
+005: Format npm-modified package.json; wait for network idle and rerun contrast after navigation settles.
+006: Install Brotli in isolated temporary asset tooling; add accessible SVG names. No additional runtime dependency.
+007: Rerun the transient old-preset capture timeout; wait for option portals before querying them; use actual keyboard focus rather than pointer focus in the test. All final runs pass.
