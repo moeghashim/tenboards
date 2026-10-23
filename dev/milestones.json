@@ -16,7 +16,12 @@
         "010-command-palette",
         "011-layout-settings",
         "012-shell-acceptance"
-      ]
+      ],
+      "taskStatuses": {
+        "001-import-upstream": "merged",
+        "002-workers-preview": "merged",
+        "003-impeccable-context": "in_review"
+      }
     }
   ]
 }
