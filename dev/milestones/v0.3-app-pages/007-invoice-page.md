@@ -2,7 +2,7 @@
 id: "007"
 title: Restyle Invoice and fix hydration
 milestone: v0.3-app-pages
-status: review
+status: merged
 category: ui
 files: ["src/routes/(main)/dashboard/invoice/", "README.md", "dev/milestones.json"]
 ---

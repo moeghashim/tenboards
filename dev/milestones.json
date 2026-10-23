@@ -66,7 +66,7 @@
     },
     {
       "id": "v0.3-app-pages",
-      "status": "in-progress",
+      "status": "in-review",
       "tasks": [
         "001-app-page-foundation",
         "002-mail-pages",
@@ -84,20 +84,20 @@
         "014-app-pages-acceptance"
       ],
       "taskStatuses": {
-        "001-app-page-foundation": "review",
-        "002-mail-pages": "review",
-        "003-chat-pages": "review",
-        "004-calendar-page": "review",
-        "005-kanban-page": "review",
-        "006-tasks-page": "review",
-        "007-invoice-page": "review",
+        "001-app-page-foundation": "merged",
+        "002-mail-pages": "merged",
+        "003-chat-pages": "merged",
+        "004-calendar-page": "merged",
+        "005-kanban-page": "merged",
+        "006-tasks-page": "merged",
+        "007-invoice-page": "merged",
         "008-file-manager-page": "review",
         "009-products-page": "review",
         "010-users-roles-pages": "review",
         "011-profile-page": "review",
         "012-auth-pages": "review",
         "013-system-pages": "review",
-        "014-app-pages-acceptance": "planned"
+        "014-app-pages-acceptance": "review"
       }
     }
   ]

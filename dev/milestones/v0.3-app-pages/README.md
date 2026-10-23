@@ -1,6 +1,6 @@
 # v0.3 — App pages
 
-Status: **planned; breakdown awaiting Claude review**. v0.1 and v0.2 are merged, deployed, released and closed. This milestone contains 14 tasks; none is implemented or accepted by this planning PR. PLAN.md and its Decisions log remain authoritative. The user's explicit breakdown request authorizes these new task files and registration; PLAN.md is unchanged.
+Status: **in review — implementation and acceptance complete pending merge**. Tasks 001–007 (PRs #27–#33) are merged and deployed. Tasks 008–014 await Claude Opus 5.5 review and authorized squash merges in stack order. The milestone is not marked done; the reviewer owns stack rebases, production redeploy and release. PLAN.md and its Decisions log remain authoritative.
 
 ## Brief and boundaries
 
@@ -16,14 +16,14 @@ The external `/` currently redirects to `/dashboard/default`; it renders no land
 
 ## Definition of Done
 
-- [ ] Every app page and system state in the ownership matrix is restyled without dropping routes, content, variants or current interactions; dashboards and shell remain consistent.
-- [ ] Shared app-page header is small, typed and proven by real consumers; existing dashboard primitives/chart theme are reused where appropriate and protected UI wrappers remain intact.
-- [ ] Calendar, Invoice, Auth V2 login and Auth V2 register each have **no React #418 hydration error in dev or Workers preview, light/dark × desktop/mobile**. Fix demonstrated root causes only: no suppressHydrationWarning, no SSR disabling, no frozen clocks. Direct/refresh, real-time delayed hydration and timezone checks accompany the ordinary matrix.
-- [ ] Every remaining upstream-author identity in app-page fixtures is replaced by neutral demo data in its owning task, including names, handles, emails, initials, internal identifiers and profile prose. Final `rg -n -i 'arham|arhamkhnz' src` has zero matches. LICENSE, README and docs attribution remain intact.
-- [ ] Every task provides before/after light/dark × desktop/mobile screenshots for all affected URLs and meaningful interactive states, plus build/check/typecheck, error-free dev default/owned-route smoke, Workers smoke, version-specific preview and reusable alias.
-- [ ] Final acceptance covers every catalog route on dev and Workers across Default/Graphite/Pine/Iris × light/dark × desktop/mobile: currently 38 × 4 × 2 × 2 = **608 cases per environment, 1,216 total**, plus boundary and variant scenarios. Root not-found/root error, iframe contents and query/tab/print states cannot be omitted because they are absent from the base capture list.
-- [ ] Keyboard access, names, visible focus, heading structure, form feedback, responsive overflow, reduced motion and actual status/event/chart contrast pass documented spot checks. Run the existing supported-token audit across all presets/themes; do not claim a complete accessibility audit from scoped checks.
-- [ ] README is updated in every relevant task PR with `README: updated (sections …)`. Final acceptance adds CHANGELOG v0.3, updates README screens/status, records truthful milestone/task status, and reconciles every historical hydration entry with verified resolutions.
+- [x] Every app page and system state in the ownership matrix is restyled without dropping routes, content, variants or current interactions; dashboards and shell remain consistent.
+- [x] Shared app-page header is small, typed and proven by real consumers; existing dashboard primitives/chart theme are reused where appropriate and protected UI wrappers remain intact.
+- [x] Calendar, Invoice, Auth V2 login and Auth V2 register each have **no React #418 hydration error in dev or Workers preview, light/dark × desktop/mobile**. Fix demonstrated root causes only: no suppressHydrationWarning, no SSR disabling, no frozen clocks. Direct/refresh, real-time delayed hydration and timezone checks accompany the ordinary matrix.
+- [x] Every remaining upstream-author identity in app-page fixtures is replaced by neutral demo data in its owning task, including names, handles, emails, initials, internal identifiers and profile prose. Final `rg -n -i 'arham|arhamkhnz' src` has zero matches. LICENSE, README and docs attribution remain intact.
+- [x] Every task provides before/after light/dark × desktop/mobile screenshots for all affected URLs and meaningful interactive states, plus build/check/typecheck, error-free dev default/owned-route smoke, Workers smoke, version-specific preview and reusable alias.
+- [x] Final acceptance covers every catalog route on dev and Workers across Default/Graphite/Pine/Iris × light/dark × desktop/mobile: currently 38 × 4 × 2 × 2 = **608 cases per environment, 1,216 total**, plus boundary and variant scenarios. Root not-found/root error, iframe contents and query/tab/print states cannot be omitted because they are absent from the base capture list.
+- [x] Keyboard access, names, visible focus, heading structure, form feedback, responsive overflow, reduced motion and actual status/event/chart contrast pass documented spot checks. Run the existing supported-token audit across all presets/themes; do not claim a complete accessibility audit from scoped checks.
+- [x] README is updated in every relevant task PR with `README: updated (sections …)`. Final acceptance adds CHANGELOG v0.3, updates README screens/status, records truthful milestone/task status, and reconciles every historical hydration entry with verified resolutions.
 - [ ] Claude Opus 5.5 reviews every task PR and holds delegated squash-merge/rebase authority. Only the reviewer merges, redeploys production and performs the milestone version/tag/release. Implementers retain in-review status until merges occur.
 
 ## Route and ownership matrix
@@ -116,6 +116,8 @@ Root not-found and RootError source were inspected. The live production root not
 Build and typecheck pass. Baseline `npm run check` fails on **one existing package.json formatting error** (the release-formatted `lint-staged` array); SHA comparison confirms the file is identical to HEAD. It separately reports one inherited `src/lib/highlighter.tsx` array-index-key warning and six informational diagnostics. Build emits inherited dependency `use client` directive warnings; dev emits the inherited Base UI mixed animation/transition warning. Exact logs accompany the PR. No code or package formatting is changed in this docs-only scope.
 
 ## Open questions and approval boundaries
+
+Current disposition: the planning notes below are historical. The package-format issue was fixed on main; every hydration finding is resolved with evidence in `dev/open-questions.md`. No product/access blocker remains. Implementation and acceptance are complete, with batch B in review pending Claude’s merges.
 
 - The inherited package.json formatting failure is recorded in [open questions](../../open-questions.md). Reviewer must resolve it in an authorized change or explicitly decide disposition for this docs PR; the failing check is not represented as a warning or pass.
 - No new product/design question blocks this breakdown. Calendar structural work remains a conditional reviewer approval boundary, not a speculative required rewrite.

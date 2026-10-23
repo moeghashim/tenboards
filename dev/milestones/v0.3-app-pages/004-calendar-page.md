@@ -2,7 +2,7 @@
 id: "004"
 title: Restyle Calendar and fix hydration
 milestone: v0.3-app-pages
-status: review
+status: merged
 category: ui
 files: ["src/routes/(main)/dashboard/calendar/", "README.md", "dev/milestones.json"]
 ---

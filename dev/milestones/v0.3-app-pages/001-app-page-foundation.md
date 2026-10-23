@@ -2,7 +2,7 @@
 id: "001"
 title: Establish a small app-page header foundation
 milestone: v0.3-app-pages
-status: review
+status: merged
 category: ui
 files: ["src/routes/(main)/dashboard/-components/app-pages/", "src/routes/(main)/dashboard/file-manager/route.tsx", "src/routes/(main)/dashboard/products/route.tsx", "DESIGN.md", "README.md", "dev/milestones.json"]
 ---

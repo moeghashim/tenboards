@@ -2,7 +2,7 @@
 id: "005"
 title: Restyle Kanban board, list and table
 milestone: v0.3-app-pages
-status: review
+status: merged
 category: ui
 files: ["src/routes/(main)/dashboard/kanban/", "README.md", "dev/milestones.json"]
 ---

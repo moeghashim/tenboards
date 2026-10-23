@@ -4,6 +4,7 @@ import { captureAuth } from "./screenshot-auth.ts";
 import { captureDirectories } from "./screenshot-directories.ts";
 import { captureProducts } from "./screenshot-products.ts";
 import { captureProfile } from "./screenshot-profile.ts";
+import { captureShell } from "./screenshot-shell.ts";
 import { captureSystem } from "./screenshot-system.ts";
 
 // Opt-in interaction evidence for the dashboard batch. Never replace the runtime clock.
@@ -12,6 +13,7 @@ export async function captureInteractions(
   route: string,
   captureVariant: (name: string) => Promise<void>,
 ): Promise<string[]> {
+  if (route === "/dashboard/default") return captureShell(page, captureVariant);
   if (route.startsWith("qa:") || ["/dashboard/coming-soon", "/dashboard/$", "/unauthorized"].includes(route))
     return captureSystem(page, route, captureVariant);
   if (route.startsWith("/auth/")) return captureAuth(page, route, captureVariant);
@@ -33,6 +35,7 @@ export async function captureInteractions(
     const nextCivil = `${next.getFullYear()}-${String(next.getMonth() + 1).padStart(2, "0")}-${String(next.getDate()).padStart(2, "0")}`;
     await page.locator(`[data-day="${nextDay}"]`).press("Enter");
     await paper.getByText(`Issued: ${nextCivil}`, { exact: true }).waitFor();
+    await page.waitForFunction(() => document.activeElement?.getAttribute("aria-label") === "Issued Date");
     const originalDue = (await paper.textContent())?.match(/Payment due: (\d{4}-\d{2}-\d{2})/)?.[1];
     if (!originalDue) throw new Error("Invoice due date missing");
     const due = new Date(`${originalDue}T12:00:00`);
@@ -41,6 +44,7 @@ export async function captureInteractions(
     await page.locator(`[data-day="${due.getMonth() + 1}/${due.getDate()}/${due.getFullYear()}"]`).press("Enter");
     const dueCivil = `${due.getFullYear()}-${String(due.getMonth() + 1).padStart(2, "0")}-${String(due.getDate()).padStart(2, "0")}`;
     await paper.getByText(`Payment due: ${dueCivil}`, { exact: true }).waitFor();
+    await page.waitForFunction(() => document.activeElement?.getAttribute("aria-label") === "Due Date");
     await page.getByRole("combobox", { name: "Client", exact: true }).click();
     await page.getByRole("option", { name: "Bright Enterprises", exact: true }).click();
     await page

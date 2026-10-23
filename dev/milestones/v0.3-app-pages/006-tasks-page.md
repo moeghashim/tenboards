@@ -2,7 +2,7 @@
 id: "006"
 title: Restyle Tasks and its filtering workflow
 milestone: v0.3-app-pages
-status: review
+status: merged
 category: ui
 files: ["src/routes/(main)/dashboard/tasks/", "README.md", "dev/milestones.json"]
 ---
