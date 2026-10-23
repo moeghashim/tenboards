@@ -1,0 +1,69 @@
+{
+  "baseURL": "https://4d9697b9-tenboards.mohanadgh.workers.dev/",
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": false,
+  "interactions": true,
+  "results": [
+    {
+      "route": "/dashboard/logistics",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_logistics-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_logistics-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Enter selects second shipment and correct details",
+        "Route placeholder and Overview tabs preserved",
+        "Desktop split pane updated",
+        "No page-wide overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/logistics",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_logistics-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_logistics-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Enter selects second shipment and correct details",
+        "Route placeholder and Overview tabs preserved",
+        "Mobile sheet named; Escape closes and returns focus; Enter reopens",
+        "No page-wide overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/logistics",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_logistics-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_logistics-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Enter selects second shipment and correct details",
+        "Route placeholder and Overview tabs preserved",
+        "Desktop split pane updated",
+        "No page-wide overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/logistics",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_logistics-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_logistics-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Enter selects second shipment and correct details",
+        "Route placeholder and Overview tabs preserved",
+        "Mobile sheet named; Escape closes and returns focus; Enter reopens",
+        "No page-wide overflow"
+      ],
+      "errors": []
+    }
+  ]
+}

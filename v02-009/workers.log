@@ -1,0 +1,8 @@
+
+> tenboards@0.1.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --routes /dashboard/logistics --base-url https://4d9697b9-tenboards.mohanadgh.workers.dev --interactions --output screenshots/v02-009/workers
+
+PASS /dashboard/logistics light/desktop direct
+PASS /dashboard/logistics light/mobile direct
+PASS /dashboard/logistics dark/desktop direct
+PASS /dashboard/logistics dark/mobile direct

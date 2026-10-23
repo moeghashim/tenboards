@@ -1,0 +1,8 @@
+
+> tenboards@0.1.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://127.0.0.1:3010 --routes /dashboard/logistics --interactions --output screenshots/v02-009/interactions
+
+PASS /dashboard/logistics light/desktop direct
+PASS /dashboard/logistics light/mobile direct
+PASS /dashboard/logistics dark/desktop direct
+PASS /dashboard/logistics dark/mobile direct
