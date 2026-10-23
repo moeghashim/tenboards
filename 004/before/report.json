@@ -1,0 +1,118 @@
+{
+  "baseURL": "http://127.0.0.1:3000/",
+  "preset": "default",
+  "results": [
+    {
+      "route": "/",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_default-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_default-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_default-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_default-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/$",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard__-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/$",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard__-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/$",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard__-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/dashboard/$",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard__-dark-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/auth/v1/login",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_auth_v1_login-light-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/auth/v1/login",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_auth_v1_login-light-mobile.png",
+      "errors": []
+    },
+    {
+      "route": "/auth/v1/login",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_auth_v1_login-dark-desktop.png",
+      "errors": []
+    },
+    {
+      "route": "/auth/v1/login",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_auth_v1_login-dark-mobile.png",
+      "errors": []
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+
+> tenboards@0.1.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --routes /not-a-route --list
+
+file:///Users/moeghashim/tenboards/scripts/screenshots.ts:31
+if (unknown?.length || !selected.length) throw new Error(`Unknown/empty route subset: ${unknown?.join(",")}`);
+                                               ^
+
+Error: Unknown/empty route subset: /not-a-route
+    at file:///Users/moeghashim/tenboards/scripts/screenshots.ts:31:48
+
+Node.js v24.21.0
