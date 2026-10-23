@@ -1,0 +1,5 @@
+{
+  timeZone: 'Pacific/Kiritimati',
+  now: 'Sat Oct 24 2026 02:00:54 GMT+1400 (Line Islands Time)'
+}
+Running server pid 18634:  TZ=Pacific/Kiritimati

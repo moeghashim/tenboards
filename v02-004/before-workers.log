@@ -1,0 +1,20 @@
+
+> tenboards@0.1.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url https://f26cfb30-tenboards.mohanadgh.workers.dev --routes /dashboard/finance,/dashboard/finance-v1 --output screenshots/v02-004/before-workers
+
+FAIL /dashboard/finance light/desktop
+page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+FAIL /dashboard/finance light/mobile
+page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+FAIL /dashboard/finance dark/desktop
+page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+FAIL /dashboard/finance dark/mobile
+page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+FAIL /dashboard/finance-v1 light/desktop
+page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+FAIL /dashboard/finance-v1 light/mobile
+page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+FAIL /dashboard/finance-v1 dark/desktop
+page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+FAIL /dashboard/finance-v1 dark/mobile
+page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.

@@ -1,0 +1,28 @@
+
+> tenboards@0.1.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url https://f2202fc1-tenboards.mohanadgh.workers.dev --routes /dashboard/default,/dashboard/finance,/dashboard/finance-v1 --reload --output screenshots/v02-004/workers
+
+PASS /dashboard/default light/desktop direct
+PASS /dashboard/default light/desktop refresh
+PASS /dashboard/default light/mobile direct
+PASS /dashboard/default light/mobile refresh
+PASS /dashboard/default dark/desktop direct
+PASS /dashboard/default dark/desktop refresh
+PASS /dashboard/default dark/mobile direct
+PASS /dashboard/default dark/mobile refresh
+PASS /dashboard/finance light/desktop direct
+PASS /dashboard/finance light/desktop refresh
+PASS /dashboard/finance light/mobile direct
+PASS /dashboard/finance light/mobile refresh
+PASS /dashboard/finance dark/desktop direct
+PASS /dashboard/finance dark/desktop refresh
+PASS /dashboard/finance dark/mobile direct
+PASS /dashboard/finance dark/mobile refresh
+PASS /dashboard/finance-v1 light/desktop direct
+PASS /dashboard/finance-v1 light/desktop refresh
+PASS /dashboard/finance-v1 light/mobile direct
+PASS /dashboard/finance-v1 light/mobile refresh
+PASS /dashboard/finance-v1 dark/desktop direct
+PASS /dashboard/finance-v1 dark/desktop refresh
+PASS /dashboard/finance-v1 dark/mobile direct
+PASS /dashboard/finance-v1 dark/mobile refresh

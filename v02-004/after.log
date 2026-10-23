@@ -1,0 +1,12 @@
+
+> tenboards@0.1.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --routes /dashboard/finance,/dashboard/finance-v1 --output screenshots/v02-004/after
+
+PASS /dashboard/finance light/desktop direct
+PASS /dashboard/finance light/mobile direct
+PASS /dashboard/finance dark/desktop direct
+PASS /dashboard/finance dark/mobile direct
+PASS /dashboard/finance-v1 light/desktop direct
+PASS /dashboard/finance-v1 light/mobile direct
+PASS /dashboard/finance-v1 dark/desktop direct
+PASS /dashboard/finance-v1 dark/mobile direct

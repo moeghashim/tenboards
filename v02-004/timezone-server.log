@@ -1,0 +1,709 @@
+
+> tenboards@0.1.0 dev
+> vite dev --port 3000 --host 127.0.0.1 --port 3001
+
+
+  VITE v8.3.5  ready in 661 ms
+
+  ➜  Local:   http://127.0.0.1:3001/
+1:46:02 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+1:46:02 AM [vite] (client) [Unhandled error] Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <DashboardLayout>
+      <SidebarProvider className="tenboards-..." defaultOpen={true} style={{...}} data-tsd-source="/src/route...">
+        <div data-slot="sidebar-wr..." style={{...}} className="group/side..." data-tsd-source="/src/route...">
+          <AppSidebar>
+          <SidebarInset className={"[html[da..."} data-tsd-source="/src/route...">
+            <main data-slot="sidebar-inset" className={"relative..."} data-tsd-source="/src/route...">
+              <ShellHeader>
+              <div className="min-h-0 mi..." data-tsd-source="/src/route...">
+                <OutletImpl data-tsd-source="/src/route...">
+                  <MatchImpl routeId="/(main)/da...">
+                    <MatchInnerImpl match={{id:"/(main...", ...}}>
+                      <Lazy>
+                        <Page>
+                          <div className="flex flex-..." data-tsd-source="/src/route...">
+                            <div className="space-y-1" data-tsd-source="/src/route...">
+                              <h1>
+                              <p
+                                className="text-muted-foreground text-sm"
+                                data-tsd-source="/src/routes/(main)/dashboard/finance/route.tsx:29:9"
+                              >
++                               Friday, 23rd October 2026
+-                               Saturday, 24th October 2026
+                            ...
+
+ > throwOnHydrationMismatch node_modules/react-dom/cjs/react-dom-client.development.js:5547:10
+ > prepareToHydrateHostInstance node_modules/react-dom/cjs/react-dom-client.development.js:5643:20
+ > completeWork node_modules/react-dom/cjs/react-dom-client.development.js:13009:14
+ > runWithFiberInDEV node_modules/react-dom/cjs/react-dom-client.development.js:1045:29
+ > completeUnitOfWork node_modules/react-dom/cjs/react-dom-client.development.js:19320:18
+ > performUnitOfWork node_modules/react-dom/cjs/react-dom-client.development.js:19193:10
+ > workLoopConcurrentByScheduler node_modules/react-dom/cjs/react-dom-client.development.js:19170:8
+ > renderRootConcurrent node_modules/react-dom/cjs/react-dom-client.development.js:19152:14
+ > performWorkOnRoot node_modules/react-dom/cjs/react-dom-client.development.js:18014:10
+ > performWorkOnRootViaSchedulerTask node_modules/react-dom/cjs/react-dom-client.development.js:20665:6
+
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+1:46:06 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+1:46:06 AM [vite] (client) [Unhandled error] Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <DashboardLayout>
+      <SidebarProvider className="tenboards-..." defaultOpen={true} style={{...}} data-tsd-source="/src/route...">
+        <div data-slot="sidebar-wr..." style={{...}} className="group/side..." data-tsd-source="/src/route...">
+          <AppSidebar>
+          <SidebarInset className={"[html[da..."} data-tsd-source="/src/route...">
+            <main data-slot="sidebar-inset" className={"relative..."} data-tsd-source="/src/route...">
+              <ShellHeader>
+              <div className="min-h-0 mi..." data-tsd-source="/src/route...">
+                <OutletImpl data-tsd-source="/src/route...">
+                  <MatchImpl routeId="/(main)/da...">
+                    <MatchInnerImpl match={{id:"/(main...", ...}}>
+                      <Lazy>
+                        <Page>
+                          <div className="flex flex-..." data-tsd-source="/src/route...">
+                            <div className="space-y-1" data-tsd-source="/src/route...">
+                              <h1>
+                              <p
+                                className="text-muted-foreground text-sm"
+                                data-tsd-source="/src/routes/(main)/dashboard/finance/route.tsx:29:9"
+                              >
++                               Friday, 23rd October 2026
+-                               Saturday, 24th October 2026
+                            ...
+
+ > throwOnHydrationMismatch node_modules/react-dom/cjs/react-dom-client.development.js:5547:10
+ > prepareToHydrateHostInstance node_modules/react-dom/cjs/react-dom-client.development.js:5643:20
+ > completeWork node_modules/react-dom/cjs/react-dom-client.development.js:13009:14
+ > runWithFiberInDEV node_modules/react-dom/cjs/react-dom-client.development.js:1045:29
+ > completeUnitOfWork node_modules/react-dom/cjs/react-dom-client.development.js:19320:18
+ > performUnitOfWork node_modules/react-dom/cjs/react-dom-client.development.js:19193:10
+ > workLoopConcurrentByScheduler node_modules/react-dom/cjs/react-dom-client.development.js:19170:8
+ > renderRootConcurrent node_modules/react-dom/cjs/react-dom-client.development.js:19152:14
+ > performWorkOnRoot node_modules/react-dom/cjs/react-dom-client.development.js:18014:10
+ > performWorkOnRootViaSchedulerTask node_modules/react-dom/cjs/react-dom-client.development.js:20665:6
+
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+1:46:14 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+1:46:14 AM [vite] (client) [Unhandled error] Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <DashboardLayout>
+      <SidebarProvider className="tenboards-..." defaultOpen={true} style={{...}} data-tsd-source="/src/route...">
+        <div data-slot="sidebar-wr..." style={{...}} className="group/side..." data-tsd-source="/src/route...">
+          <AppSidebar>
+          <SidebarInset className={"[html[da..."} data-tsd-source="/src/route...">
+            <main data-slot="sidebar-inset" className={"relative..."} data-tsd-source="/src/route...">
+              <ShellHeader>
+              <div className="min-h-0 mi..." data-tsd-source="/src/route...">
+                <OutletImpl data-tsd-source="/src/route...">
+                  <MatchImpl routeId="/(main)/da...">
+                    <MatchInnerImpl match={{id:"/(main...", ...}}>
+                      <Lazy>
+                        <Page>
+                          <div className="flex flex-..." data-tsd-source="/src/route...">
+                            <div className="space-y-1" data-tsd-source="/src/route...">
+                              <h1>
+                              <p
+                                className="text-muted-foreground text-sm"
+                                data-tsd-source="/src/routes/(main)/dashboard/finance/route.tsx:29:9"
+                              >
++                               Friday, 23rd October 2026
+-                               Saturday, 24th October 2026
+                            ...
+
+ > throwOnHydrationMismatch node_modules/react-dom/cjs/react-dom-client.development.js:5547:10
+ > prepareToHydrateHostInstance node_modules/react-dom/cjs/react-dom-client.development.js:5643:20
+ > completeWork node_modules/react-dom/cjs/react-dom-client.development.js:13009:14
+ > runWithFiberInDEV node_modules/react-dom/cjs/react-dom-client.development.js:1045:29
+ > completeUnitOfWork node_modules/react-dom/cjs/react-dom-client.development.js:19320:18
+ > performUnitOfWork node_modules/react-dom/cjs/react-dom-client.development.js:19193:10
+ > workLoopConcurrentByScheduler node_modules/react-dom/cjs/react-dom-client.development.js:19170:8
+ > renderRootConcurrent node_modules/react-dom/cjs/react-dom-client.development.js:19152:14
+ > performWorkOnRoot node_modules/react-dom/cjs/react-dom-client.development.js:18014:10
+ > performWorkOnRootViaSchedulerTask node_modules/react-dom/cjs/react-dom-client.development.js:20665:6
+
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+1:46:17 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+1:46:17 AM [vite] (client) [Unhandled error] Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <DashboardLayout>
+      <SidebarProvider className="tenboards-..." defaultOpen={true} style={{...}} data-tsd-source="/src/route...">
+        <div data-slot="sidebar-wr..." style={{...}} className="group/side..." data-tsd-source="/src/route...">
+          <AppSidebar>
+          <SidebarInset className={"[html[da..."} data-tsd-source="/src/route...">
+            <main data-slot="sidebar-inset" className={"relative..."} data-tsd-source="/src/route...">
+              <ShellHeader>
+              <div className="min-h-0 mi..." data-tsd-source="/src/route...">
+                <OutletImpl data-tsd-source="/src/route...">
+                  <MatchImpl routeId="/(main)/da...">
+                    <MatchInnerImpl match={{id:"/(main...", ...}}>
+                      <Lazy>
+                        <Page>
+                          <div className="flex flex-..." data-tsd-source="/src/route...">
+                            <div className="space-y-1" data-tsd-source="/src/route...">
+                              <h1>
+                              <p
+                                className="text-muted-foreground text-sm"
+                                data-tsd-source="/src/routes/(main)/dashboard/finance/route.tsx:29:9"
+                              >
++                               Friday, 23rd October 2026
+-                               Saturday, 24th October 2026
+                            ...
+
+ > throwOnHydrationMismatch node_modules/react-dom/cjs/react-dom-client.development.js:5547:10
+ > prepareToHydrateHostInstance node_modules/react-dom/cjs/react-dom-client.development.js:5643:20
+ > completeWork node_modules/react-dom/cjs/react-dom-client.development.js:13009:14
+ > runWithFiberInDEV node_modules/react-dom/cjs/react-dom-client.development.js:1045:29
+ > completeUnitOfWork node_modules/react-dom/cjs/react-dom-client.development.js:19320:18
+ > performUnitOfWork node_modules/react-dom/cjs/react-dom-client.development.js:19193:10
+ > workLoopConcurrentByScheduler node_modules/react-dom/cjs/react-dom-client.development.js:19170:8
+ > renderRootConcurrent node_modules/react-dom/cjs/react-dom-client.development.js:19152:14
+ > performWorkOnRoot node_modules/react-dom/cjs/react-dom-client.development.js:18014:10
+ > performWorkOnRootViaSchedulerTask node_modules/react-dom/cjs/react-dom-client.development.js:20665:6
+
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+1:46:21 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+1:46:21 AM [vite] (client) [Unhandled error] Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <TabsPanel data-slot="tabs-content" className="flex-1 tex..." value="overview" data-tsd-source="/src/route...">
+      <div data-orientation="horizontal" data-activation-direction="none" aria-labelledby={undefined} hidden={false} ...>
+        <div className="flex flex-..." data-tsd-source="/src/route...">
+          <div>
+          <div className="grid grid-..." data-tsd-source="/src/route...">
+            <div>
+            <CardOverview data-tsd-source="/src/route...">
+              <Card className="shadow-xs" data-tsd-source="/src/route...">
+                <div data-slot="card" data-size="default" className={"group/ca..."} data-tsd-source="/src/route...">
+                  <CardHeader>
+                  <CardContent data-tsd-source="/src/route...">
+                    <div data-slot="card-content" className="px-(--card..." data-tsd-source="/src/route...">
+                      <div className="space-y-4" data-tsd-source="/src/route...">
+                        <div>
+                        <div>
+                        <div>
+                        <Separator>
+                        <div className="space-y-4" data-tsd-source="/src/route...">
+                          <h6>
+                          <div className="space-y-4" data-tsd-source="/src/route...">
+                            <div className="flex items..." data-tsd-source="/src/route...">
+                              <div>
+                              <div className="flex w-ful..." data-tsd-source="/src/route...">
+                                <div data-tsd-source="/src/route...">
+                                  <p>
+                                  <p
+                                    className="text-muted-foreground text-xs"
+                                    data-tsd-source="/src/routes/(main)/dashboard/(legacy)/finance-v1/-components/card..."
+                                  >
++                                   Due on 25th October 2026
+-                                   Due on 26th October 2026
+                                ...
+                            ...
+                          ...
+
+ > throwOnHydrationMismatch node_modules/react-dom/cjs/react-dom-client.development.js:5547:10
+ > prepareToHydrateHostInstance node_modules/react-dom/cjs/react-dom-client.development.js:5643:20
+ > completeWork node_modules/react-dom/cjs/react-dom-client.development.js:13009:14
+ > runWithFiberInDEV node_modules/react-dom/cjs/react-dom-client.development.js:1045:29
+ > completeUnitOfWork node_modules/react-dom/cjs/react-dom-client.development.js:19320:18
+ > performUnitOfWork node_modules/react-dom/cjs/react-dom-client.development.js:19193:10
+ > workLoopConcurrentByScheduler node_modules/react-dom/cjs/react-dom-client.development.js:19170:8
+ > renderRootConcurrent node_modules/react-dom/cjs/react-dom-client.development.js:19152:14
+ > performWorkOnRoot node_modules/react-dom/cjs/react-dom-client.development.js:18014:10
+ > performWorkOnRootViaSchedulerTask node_modules/react-dom/cjs/react-dom-client.development.js:20665:6
+
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+1:46:25 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+1:46:25 AM [vite] (client) [Unhandled error] Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <TabsPanel data-slot="tabs-content" className="flex-1 tex..." value="overview" data-tsd-source="/src/route...">
+      <div data-orientation="horizontal" data-activation-direction="none" aria-labelledby={undefined} hidden={false} ...>
+        <div className="flex flex-..." data-tsd-source="/src/route...">
+          <div>
+          <div className="grid grid-..." data-tsd-source="/src/route...">
+            <div>
+            <CardOverview data-tsd-source="/src/route...">
+              <Card className="shadow-xs" data-tsd-source="/src/route...">
+                <div data-slot="card" data-size="default" className={"group/ca..."} data-tsd-source="/src/route...">
+                  <CardHeader>
+                  <CardContent data-tsd-source="/src/route...">
+                    <div data-slot="card-content" className="px-(--card..." data-tsd-source="/src/route...">
+                      <div className="space-y-4" data-tsd-source="/src/route...">
+                        <div>
+                        <div>
+                        <div>
+                        <Separator>
+                        <div className="space-y-4" data-tsd-source="/src/route...">
+                          <h6>
+                          <div className="space-y-4" data-tsd-source="/src/route...">
+                            <div className="flex items..." data-tsd-source="/src/route...">
+                              <div>
+                              <div className="flex w-ful..." data-tsd-source="/src/route...">
+                                <div data-tsd-source="/src/route...">
+                                  <p>
+                                  <p
+                                    className="text-muted-foreground text-xs"
+                                    data-tsd-source="/src/routes/(main)/dashboard/(legacy)/finance-v1/-components/card..."
+                                  >
++                                   Due on 25th October 2026
+-                                   Due on 26th October 2026
+                                ...
+                            ...
+                          ...
+
+ > throwOnHydrationMismatch node_modules/react-dom/cjs/react-dom-client.development.js:5547:10
+ > prepareToHydrateHostInstance node_modules/react-dom/cjs/react-dom-client.development.js:5643:20
+ > completeWork node_modules/react-dom/cjs/react-dom-client.development.js:13009:14
+ > runWithFiberInDEV node_modules/react-dom/cjs/react-dom-client.development.js:1045:29
+ > completeUnitOfWork node_modules/react-dom/cjs/react-dom-client.development.js:19320:18
+ > performUnitOfWork node_modules/react-dom/cjs/react-dom-client.development.js:19193:10
+ > workLoopConcurrentByScheduler node_modules/react-dom/cjs/react-dom-client.development.js:19170:8
+ > renderRootConcurrent node_modules/react-dom/cjs/react-dom-client.development.js:19152:14
+ > performWorkOnRoot node_modules/react-dom/cjs/react-dom-client.development.js:18014:10
+ > performWorkOnRootViaSchedulerTask node_modules/react-dom/cjs/react-dom-client.development.js:20665:6
+
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+1:46:35 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+1:46:35 AM [vite] (client) [Unhandled error] Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <TabsPanel data-slot="tabs-content" className="flex-1 tex..." value="overview" data-tsd-source="/src/route...">
+      <div data-orientation="horizontal" data-activation-direction="none" aria-labelledby={undefined} hidden={false} ...>
+        <div className="flex flex-..." data-tsd-source="/src/route...">
+          <div>
+          <div className="grid grid-..." data-tsd-source="/src/route...">
+            <div>
+            <CardOverview data-tsd-source="/src/route...">
+              <Card className="shadow-xs" data-tsd-source="/src/route...">
+                <div data-slot="card" data-size="default" className={"group/ca..."} data-tsd-source="/src/route...">
+                  <CardHeader>
+                  <CardContent data-tsd-source="/src/route...">
+                    <div data-slot="card-content" className="px-(--card..." data-tsd-source="/src/route...">
+                      <div className="space-y-4" data-tsd-source="/src/route...">
+                        <div>
+                        <div>
+                        <div>
+                        <Separator>
+                        <div className="space-y-4" data-tsd-source="/src/route...">
+                          <h6>
+                          <div className="space-y-4" data-tsd-source="/src/route...">
+                            <div className="flex items..." data-tsd-source="/src/route...">
+                              <div>
+                              <div className="flex w-ful..." data-tsd-source="/src/route...">
+                                <div data-tsd-source="/src/route...">
+                                  <p>
+                                  <p
+                                    className="text-muted-foreground text-xs"
+                                    data-tsd-source="/src/routes/(main)/dashboard/(legacy)/finance-v1/-components/card..."
+                                  >
++                                   Due on 25th October 2026
+-                                   Due on 26th October 2026
+                                ...
+                            ...
+                          ...
+
+ > throwOnHydrationMismatch node_modules/react-dom/cjs/react-dom-client.development.js:5547:10
+ > prepareToHydrateHostInstance node_modules/react-dom/cjs/react-dom-client.development.js:5643:20
+ > completeWork node_modules/react-dom/cjs/react-dom-client.development.js:13009:14
+ > runWithFiberInDEV node_modules/react-dom/cjs/react-dom-client.development.js:1045:29
+ > completeUnitOfWork node_modules/react-dom/cjs/react-dom-client.development.js:19320:18
+ > performUnitOfWork node_modules/react-dom/cjs/react-dom-client.development.js:19193:10
+ > workLoopConcurrentByScheduler node_modules/react-dom/cjs/react-dom-client.development.js:19170:8
+ > renderRootConcurrent node_modules/react-dom/cjs/react-dom-client.development.js:19152:14
+ > performWorkOnRoot node_modules/react-dom/cjs/react-dom-client.development.js:18014:10
+ > performWorkOnRootViaSchedulerTask node_modules/react-dom/cjs/react-dom-client.development.js:20665:6
+
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+1:46:39 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+1:46:39 AM [vite] (client) [Unhandled error] Error: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <TabsPanel data-slot="tabs-content" className="flex-1 tex..." value="overview" data-tsd-source="/src/route...">
+      <div data-orientation="horizontal" data-activation-direction="none" aria-labelledby={undefined} hidden={false} ...>
+        <div className="flex flex-..." data-tsd-source="/src/route...">
+          <div>
+          <div className="grid grid-..." data-tsd-source="/src/route...">
+            <div>
+            <CardOverview data-tsd-source="/src/route...">
+              <Card className="shadow-xs" data-tsd-source="/src/route...">
+                <div data-slot="card" data-size="default" className={"group/ca..."} data-tsd-source="/src/route...">
+                  <CardHeader>
+                  <CardContent data-tsd-source="/src/route...">
+                    <div data-slot="card-content" className="px-(--card..." data-tsd-source="/src/route...">
+                      <div className="space-y-4" data-tsd-source="/src/route...">
+                        <div>
+                        <div>
+                        <div>
+                        <Separator>
+                        <div className="space-y-4" data-tsd-source="/src/route...">
+                          <h6>
+                          <div className="space-y-4" data-tsd-source="/src/route...">
+                            <div className="flex items..." data-tsd-source="/src/route...">
+                              <div>
+                              <div className="flex w-ful..." data-tsd-source="/src/route...">
+                                <div data-tsd-source="/src/route...">
+                                  <p>
+                                  <p
+                                    className="text-muted-foreground text-xs"
+                                    data-tsd-source="/src/routes/(main)/dashboard/(legacy)/finance-v1/-components/card..."
+                                  >
++                                   Due on 25th October 2026
+-                                   Due on 26th October 2026
+                                ...
+                            ...
+                          ...
+
+ > throwOnHydrationMismatch node_modules/react-dom/cjs/react-dom-client.development.js:5547:10
+ > prepareToHydrateHostInstance node_modules/react-dom/cjs/react-dom-client.development.js:5643:20
+ > completeWork node_modules/react-dom/cjs/react-dom-client.development.js:13009:14
+ > runWithFiberInDEV node_modules/react-dom/cjs/react-dom-client.development.js:1045:29
+ > completeUnitOfWork node_modules/react-dom/cjs/react-dom-client.development.js:19320:18
+ > performUnitOfWork node_modules/react-dom/cjs/react-dom-client.development.js:19193:10
+ > workLoopConcurrentByScheduler node_modules/react-dom/cjs/react-dom-client.development.js:19170:8
+ > renderRootConcurrent node_modules/react-dom/cjs/react-dom-client.development.js:19152:14
+ > performWorkOnRoot node_modules/react-dom/cjs/react-dom-client.development.js:18014:10
+ > performWorkOnRootViaSchedulerTask node_modules/react-dom/cjs/react-dom-client.development.js:20665:6
+
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+1:47:14 AM [vite] (client) hmr update /src/styles/styles.css?direct
+1:47:14 AM [vite] (client) hmr update /src/styles/styles.css?direct
+1:47:14 AM [vite] (client) hmr update /src/styles/styles.css?direct
+1:47:15 AM [vite] (client) hmr update /src/styles/styles.css?direct
+1:47:15 AM [vite] (client) hmr update /src/styles/styles.css?direct
+1:47:39 AM [vite] (client) hmr update /src/styles/styles.css?direct
+1:47:39 AM [vite] (client) hmr update /src/styles/styles.css?direct
+1:50:31 AM [vite] (client) hmr update /src/styles/styles.css?direct
+1:53:56 AM [vite] (client) hmr update /src/styles/styles.css?direct, /src/routes/(main)/dashboard/finance/route.tsx, /src/routes/(main)/dashboard/finance/route.tsx?tsr-split=component
+1:53:56 AM [vite] (ssr) page reload src/routes/(main)/dashboard/finance/route.tsx
+1:53:56 AM [vite] (client) hmr update /src/styles/styles.css?direct, /src/routes/(main)/dashboard/finance/-components/upcoming-transactions.tsx
+1:53:56 AM [vite] (ssr) page reload src/routes/(main)/dashboard/finance/-components/upcoming-transactions.tsx
+1:53:56 AM [vite] (client) hmr update /src/styles/styles.css?direct, /src/routes/(main)/dashboard/(legacy)/finance-v1/-components/card-overview.tsx
+1:53:56 AM [vite] (ssr) page reload src/routes/(main)/dashboard/(legacy)/finance-v1/-components/card-overview.tsx
+1:53:56 AM [vite] (client) hmr update /src/styles/styles.css?direct, /src/routes/(main)/dashboard/finance/-components/overview-kpis.tsx
+1:53:56 AM [vite] (ssr) page reload src/routes/(main)/dashboard/finance/-components/overview-kpis.tsx
+1:53:56 AM [vite] (client) hmr update /src/styles/styles.css?direct, /src/routes/(main)/dashboard/finance/-components/income-breakdown.tsx
+1:53:56 AM [vite] (ssr) page reload src/routes/(main)/dashboard/finance/-components/income-breakdown.tsx
+1:53:56 AM [vite] (client) hmr update /src/styles/styles.css?direct, /src/routes/(main)/dashboard/finance/-components/transactions-overview-card.tsx
+1:53:56 AM [vite] (ssr) page reload src/routes/(main)/dashboard/finance/-components/transactions-overview-card.tsx
+1:53:56 AM [vite] (client) hmr update /src/styles/styles.css?direct, /src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx
+1:53:56 AM [vite] (ssr) page reload src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx
+1:53:56 AM [vite] (client) hmr update /src/styles/styles.css?direct, /src/routes/(main)/dashboard/(legacy)/finance-v1/-components/cash-flow-overview.tsx
+1:53:56 AM [vite] (ssr) page reload src/routes/(main)/dashboard/(legacy)/finance-v1/-components/cash-flow-overview.tsx
+1:53:56 AM [vite] (client) hmr update /src/styles/styles.css?direct, /src/routes/(main)/dashboard/(legacy)/finance-v1/-components/kpis/net-worth.tsx
+1:53:56 AM [vite] (ssr) page reload src/routes/(main)/dashboard/(legacy)/finance-v1/-components/kpis/net-worth.tsx
+1:53:56 AM [vite] (client) hmr update /src/styles/styles.css?direct, /src/routes/(main)/dashboard/(legacy)/finance-v1/-components/kpis/monthly-cash-flow.tsx
+1:53:56 AM [vite] (ssr) page reload src/routes/(main)/dashboard/(legacy)/finance-v1/-components/kpis/monthly-cash-flow.tsx
+1:53:56 AM [vite] (client) hmr update /src/styles/styles.css?direct, /src/routes/(main)/dashboard/(legacy)/finance-v1/-components/kpis/savings-rate.tsx
+1:53:56 AM [vite] (ssr) page reload src/routes/(main)/dashboard/(legacy)/finance-v1/-components/kpis/savings-rate.tsx
+1:53:56 AM [vite] (client) hmr update /src/styles/styles.css?direct, /src/routes/(main)/dashboard/(legacy)/finance-v1/-components/kpis/primary-account.tsx
+1:53:56 AM [vite] (ssr) page reload src/routes/(main)/dashboard/(legacy)/finance-v1/-components/kpis/primary-account.tsx
+1:53:56 AM [vite] (client) hmr update /src/styles/styles.css?direct, /src/routes/(main)/dashboard/(legacy)/finance-v1/-components/spending-breakdown.tsx
+1:53:56 AM [vite] (ssr) page reload src/routes/(main)/dashboard/(legacy)/finance-v1/-components/spending-breakdown.tsx
+1:53:56 AM [vite] (client) hmr update /src/styles/styles.css?direct, /src/routes/(main)/dashboard/(legacy)/finance-v1/-components/income-reliability.tsx
+1:53:56 AM [vite] (ssr) page reload src/routes/(main)/dashboard/(legacy)/finance-v1/-components/income-reliability.tsx
+1:53:56 AM [vite] (client) hmr update /src/styles/styles.css?direct, /src/routes/(main)/dashboard/(legacy)/finance-v1/route.tsx, /src/routes/(main)/dashboard/(legacy)/finance-v1/route.tsx?tsr-split=component
+1:53:56 AM [vite] (ssr) page reload src/routes/(main)/dashboard/(legacy)/finance-v1/route.tsx
+1:53:56 AM [vite] (client) hmr update /src/styles/styles.css?direct, /src/routes/(main)/dashboard/finance/-components/wallet.tsx
+1:53:56 AM [vite] (ssr) page reload src/routes/(main)/dashboard/finance/-components/wallet.tsx
+1:53:56 AM [vite] (client) hmr update /src/styles/styles.css?direct, /src/routes/(main)/dashboard/finance/-components/quick-actions.tsx
+1:53:56 AM [vite] (ssr) page reload src/routes/(main)/dashboard/finance/-components/quick-actions.tsx
+1:53:56 AM [vite] (client) hmr update /src/styles/styles.css?direct, /src/routes/(main)/dashboard/finance/-components/finance-notification.tsx
+1:53:56 AM [vite] (ssr) page reload src/routes/(main)/dashboard/finance/-components/finance-notification.tsx
+1:53:57 AM [vite] (client) hmr update /src/styles/styles.css?direct, /src/routes/(main)/dashboard/(legacy)/finance-v1/-components/kpis/primary-account.tsx
+1:53:57 AM [vite] (ssr) page reload src/routes/(main)/dashboard/(legacy)/finance-v1/-components/kpis/primary-account.tsx
+1:53:57 AM [vite] (client) hmr update /src/styles/styles.css?direct, /src/routes/(main)/dashboard/finance/route.tsx, /src/routes/(main)/dashboard/finance/route.tsx?tsr-split=component
+1:53:57 AM [vite] (ssr) page reload src/routes/(main)/dashboard/finance/route.tsx
+1:53:57 AM [vite] (client) hmr update /src/styles/styles.css?direct, /src/routes/(main)/dashboard/(legacy)/finance-v1/-components/kpis/net-worth.tsx
+1:53:57 AM [vite] (ssr) page reload src/routes/(main)/dashboard/(legacy)/finance-v1/-components/kpis/net-worth.tsx
+1:53:57 AM [vite] (client) hmr update /src/styles/styles.css?direct, /src/routes/(main)/dashboard/(legacy)/finance-v1/-components/kpis/monthly-cash-flow.tsx
+1:53:57 AM [vite] (ssr) page reload src/routes/(main)/dashboard/(legacy)/finance-v1/-components/kpis/monthly-cash-flow.tsx
+1:53:57 AM [vite] (client) hmr update /src/styles/styles.css?direct, /src/routes/(main)/dashboard/(legacy)/finance-v1/-components/kpis/savings-rate.tsx
+1:53:57 AM [vite] (ssr) page reload src/routes/(main)/dashboard/(legacy)/finance-v1/-components/kpis/savings-rate.tsx
+1:53:57 AM [vite] (client) hmr update /src/styles/styles.css?direct, /src/routes/(main)/dashboard/(legacy)/finance-v1/-components/income-reliability.tsx
+1:53:57 AM [vite] (ssr) page reload src/routes/(main)/dashboard/(legacy)/finance-v1/-components/income-reliability.tsx
+1:53:57 AM [vite] (client) hmr update /src/styles/styles.css?direct, /src/routes/(main)/dashboard/(legacy)/finance-v1/-components/cash-flow-overview.tsx
+1:53:57 AM [vite] (ssr) page reload src/routes/(main)/dashboard/(legacy)/finance-v1/-components/cash-flow-overview.tsx
+1:53:57 AM [vite] (client) hmr update /src/styles/styles.css?direct, /src/routes/(main)/dashboard/(legacy)/finance-v1/-components/spending-breakdown.tsx
+1:53:57 AM [vite] (ssr) page reload src/routes/(main)/dashboard/(legacy)/finance-v1/-components/spending-breakdown.tsx
+1:53:57 AM [vite] (client) hmr update /src/styles/styles.css?direct, /src/routes/(main)/dashboard/(legacy)/finance-v1/-components/card-overview.tsx
+1:53:57 AM [vite] (ssr) page reload src/routes/(main)/dashboard/(legacy)/finance-v1/-components/card-overview.tsx
+1:53:57 AM [vite] (client) hmr update /src/styles/styles.css?direct, /src/routes/(main)/dashboard/(legacy)/finance-v1/-components/card-overview.tsx
+1:53:57 AM [vite] (ssr) page reload src/routes/(main)/dashboard/(legacy)/finance-v1/-components/card-overview.tsx
+1:53:57 AM [vite] (client) hmr update /src/styles/styles.css?direct, /src/routes/(main)/dashboard/finance/-components/income-breakdown.tsx
+1:53:57 AM [vite] (ssr) page reload src/routes/(main)/dashboard/finance/-components/income-breakdown.tsx
+1:53:57 AM [vite] (client) hmr update /src/styles/styles.css?direct, /src/routes/(main)/dashboard/finance/-components/finance-notification.tsx
+1:53:57 AM [vite] (ssr) page reload src/routes/(main)/dashboard/finance/-components/finance-notification.tsx
+1:53:57 AM [vite] (client) hmr update /src/styles/styles.css?direct, /src/routes/(main)/dashboard/finance/-components/overview-kpis.tsx
+1:53:57 AM [vite] (ssr) page reload src/routes/(main)/dashboard/finance/-components/overview-kpis.tsx
+1:53:57 AM [vite] (client) hmr update /src/styles/styles.css?direct, /src/routes/(main)/dashboard/finance/-components/wallet.tsx
+1:53:57 AM [vite] (ssr) page reload src/routes/(main)/dashboard/finance/-components/wallet.tsx
+1:53:57 AM [vite] (client) hmr update /src/styles/styles.css?direct, /src/routes/(main)/dashboard/finance/-components/upcoming-transactions.tsx
+1:53:57 AM [vite] (ssr) page reload src/routes/(main)/dashboard/finance/-components/upcoming-transactions.tsx
+1:53:57 AM [vite] (client) hmr update /src/styles/styles.css?direct, /src/routes/(main)/dashboard/finance/-components/quick-actions.tsx
+1:53:57 AM [vite] (ssr) page reload src/routes/(main)/dashboard/finance/-components/quick-actions.tsx
+1:53:57 AM [vite] (client) hmr update /src/styles/styles.css?direct, /src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx
+1:53:57 AM [vite] (ssr) page reload src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx
+1:53:57 AM [vite] (client) hmr update /src/styles/styles.css?direct, /src/routes/(main)/dashboard/finance/-components/transactions-overview-card.tsx
+1:53:57 AM [vite] (ssr) page reload src/routes/(main)/dashboard/finance/-components/transactions-overview-card.tsx
+1:54:23 AM [vite] (client) hmr update /src/styles/styles.css?direct
+1:54:23 AM [vite] (client) hmr update /src/styles/styles.css?direct, /src/routes/(main)/dashboard/finance/-components/upcoming-transactions.tsx
+1:54:23 AM [vite] (ssr) page reload src/routes/(main)/dashboard/finance/-components/upcoming-transactions.tsx
+1:54:24 AM [vite] (client) hmr update /src/styles/styles.css?direct
+1:54:41 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+1:54:46 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+1:54:47 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+1:54:51 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+1:54:55 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+1:54:57 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+1:55:01 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+1:55:05 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+1:55:06 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+1:55:10 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+1:55:14 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+1:55:15 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+1:55:19 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+1:55:23 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+1:55:24 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+1:55:28 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+1:55:32 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+1:55:33 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+1:55:37 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+1:55:41 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+1:55:42 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+1:55:45 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+1:55:49 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+1:55:50 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+1:58:21 AM [vite] (client) hmr update /src/styles/styles.css?direct, /src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx
+1:58:21 AM [vite] (ssr) page reload src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx
+1:58:21 AM [vite] (client) hmr update /src/styles/styles.css?direct, /src/routes/(main)/dashboard/(legacy)/finance-v1/-components/cash-flow-overview.tsx
+1:58:21 AM [vite] (ssr) page reload src/routes/(main)/dashboard/(legacy)/finance-v1/-components/cash-flow-overview.tsx
+1:58:22 AM [vite] (client) hmr update /src/styles/styles.css?direct, /src/routes/(main)/dashboard/(legacy)/finance-v1/-components/cash-flow-overview.tsx
+1:58:22 AM [vite] (ssr) page reload src/routes/(main)/dashboard/(legacy)/finance-v1/-components/cash-flow-overview.tsx
+1:58:22 AM [vite] (client) hmr update /src/styles/styles.css?direct, /src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx
+1:58:22 AM [vite] (ssr) page reload src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx
+1:59:26 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+1:59:31 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+1:59:32 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+1:59:36 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+1:59:39 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+1:59:41 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+1:59:44 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+1:59:48 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+1:59:50 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+1:59:53 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+1:59:57 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+1:59:59 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+2:00:02 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+2:00:07 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+2:00:08 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+2:00:12 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+2:00:15 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+2:00:16 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+2:00:20 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+2:00:24 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+2:00:25 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+2:00:29 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+2:00:33 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+2:00:34 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+2:01:37 AM [vite] (client) hmr update /src/styles/styles.css?direct, /src/routes/(main)/dashboard/finance/route.tsx?tsr-split=component, /src/routes/(main)/dashboard/finance/-components/upcoming-transactions.tsx, /src/routes/(main)/dashboard/(legacy)/finance-v1/-components/card-overview.tsx
+2:01:37 AM [vite] (ssr) page reload src/routes/(main)/dashboard/finance/-components/demo-dates.ts
+2:01:37 AM [vite] (client) hmr update /src/styles/styles.css?direct, /src/routes/(main)/dashboard/finance/route.tsx, /src/routes/(main)/dashboard/finance/route.tsx?tsr-split=component
+2:01:37 AM [vite] (ssr) page reload src/routes/(main)/dashboard/finance/route.tsx
+2:01:37 AM [vite] (client) hmr update /src/styles/styles.css?direct, /src/routes/(main)/dashboard/finance/-components/upcoming-transactions.tsx
+2:01:37 AM [vite] (ssr) page reload src/routes/(main)/dashboard/finance/-components/upcoming-transactions.tsx
+2:01:37 AM [vite] (client) hmr update /src/styles/styles.css?direct, /src/routes/(main)/dashboard/(legacy)/finance-v1/-components/card-overview.tsx
+2:01:37 AM [vite] (ssr) page reload src/routes/(main)/dashboard/(legacy)/finance-v1/-components/card-overview.tsx
+2:01:37 AM [vite] (client) hmr update /src/styles/styles.css?direct, /src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx
+2:01:37 AM [vite] (ssr) page reload src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx
+2:01:37 AM [vite] (client) hmr update /src/styles/styles.css?direct, /src/routes/(main)/dashboard/(legacy)/finance-v1/-components/cash-flow-overview.tsx
+2:01:37 AM [vite] (ssr) page reload src/routes/(main)/dashboard/(legacy)/finance-v1/-components/cash-flow-overview.tsx
+2:01:38 AM [vite] (client) hmr update /src/styles/styles.css?direct, /src/routes/(main)/dashboard/finance/route.tsx, /src/routes/(main)/dashboard/finance/route.tsx?tsr-split=component
+2:01:38 AM [vite] (ssr) page reload src/routes/(main)/dashboard/finance/route.tsx
+2:01:38 AM [vite] (client) hmr update /src/styles/styles.css?direct, /src/routes/(main)/dashboard/(legacy)/finance-v1/-components/card-overview.tsx
+2:01:38 AM [vite] (ssr) page reload src/routes/(main)/dashboard/(legacy)/finance-v1/-components/card-overview.tsx
+2:01:38 AM [vite] (client) hmr update /src/styles/styles.css?direct, /src/routes/(main)/dashboard/(legacy)/finance-v1/-components/cash-flow-overview.tsx
+2:01:38 AM [vite] (ssr) page reload src/routes/(main)/dashboard/(legacy)/finance-v1/-components/cash-flow-overview.tsx
+2:01:38 AM [vite] (client) hmr update /src/styles/styles.css?direct, /src/routes/(main)/dashboard/finance/-components/upcoming-transactions.tsx
+2:01:38 AM [vite] (ssr) page reload src/routes/(main)/dashboard/finance/-components/upcoming-transactions.tsx
+2:01:50 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+2:01:56 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+2:01:57 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+2:02:01 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+2:02:05 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+2:02:06 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+2:02:10 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+2:02:14 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+2:02:15 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+2:02:19 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+2:02:23 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+2:02:24 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+2:02:28 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+2:02:32 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+2:02:33 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+2:02:37 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+2:02:42 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+2:02:43 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+2:02:47 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+2:02:51 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+2:02:52 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+2:02:56 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+2:03:00 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+2:03:01 AM [vite] (client) [console.warn] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+[Client] Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.
+2:05:51 AM [vite] (client) hmr update /src/styles/styles.css?direct

@@ -1,0 +1,20 @@
+
+> tenboards@0.1.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://127.0.0.1:3001 --routes /dashboard/finance,/dashboard/finance-v1 --reload --output screenshots/v02-004/after-timezone
+
+PASS /dashboard/finance light/desktop direct
+PASS /dashboard/finance light/desktop refresh
+PASS /dashboard/finance light/mobile direct
+PASS /dashboard/finance light/mobile refresh
+PASS /dashboard/finance dark/desktop direct
+PASS /dashboard/finance dark/desktop refresh
+PASS /dashboard/finance dark/mobile direct
+PASS /dashboard/finance dark/mobile refresh
+PASS /dashboard/finance-v1 light/desktop direct
+PASS /dashboard/finance-v1 light/desktop refresh
+PASS /dashboard/finance-v1 light/mobile direct
+PASS /dashboard/finance-v1 light/mobile refresh
+PASS /dashboard/finance-v1 dark/desktop direct
+PASS /dashboard/finance-v1 dark/desktop refresh
+PASS /dashboard/finance-v1 dark/mobile direct
+PASS /dashboard/finance-v1 dark/mobile refresh
