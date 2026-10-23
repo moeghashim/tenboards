@@ -63,6 +63,42 @@
         "011-patient-monitoring-dashboard": "merged",
         "012-dashboard-acceptance": "merged"
       }
+    },
+    {
+      "id": "v0.3-app-pages",
+      "status": "planned",
+      "tasks": [
+        "001-app-page-foundation",
+        "002-mail-pages",
+        "003-chat-pages",
+        "004-calendar-page",
+        "005-kanban-page",
+        "006-tasks-page",
+        "007-invoice-page",
+        "008-file-manager-page",
+        "009-products-page",
+        "010-users-roles-pages",
+        "011-profile-page",
+        "012-auth-pages",
+        "013-system-pages",
+        "014-app-pages-acceptance"
+      ],
+      "taskStatuses": {
+        "001-app-page-foundation": "planned",
+        "002-mail-pages": "planned",
+        "003-chat-pages": "planned",
+        "004-calendar-page": "planned",
+        "005-kanban-page": "planned",
+        "006-tasks-page": "planned",
+        "007-invoice-page": "planned",
+        "008-file-manager-page": "planned",
+        "009-products-page": "planned",
+        "010-users-roles-pages": "planned",
+        "011-profile-page": "planned",
+        "012-auth-pages": "planned",
+        "013-system-pages": "planned",
+        "014-app-pages-acceptance": "planned"
+      }
     }
   ]
 }

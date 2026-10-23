@@ -2,7 +2,7 @@
 
 An MIT-licensed dashboard template built with TanStack Start, React 19, TypeScript, Tailwind CSS v4, and shadcn/ui on Base UI.
 
-The full upstream screen catalog and mock data are retained. **v0.1 is merged, deployed and closed**: the design system and shell follow [PLAN.md](PLAN.md). **v0.2 (all 14 dashboards restyled) is merged, deployed and closed** per [the dashboard task breakdown](dev/milestones/v0.2-dashboards/README.md). **Next: v0.3** — app pages (mail, chat, calendar, kanban, invoice, file manager, products, users, roles, profile, auth, error pages). Current milestone/task status is tracked in [dev/milestones.json](dev/milestones.json). Current screens are demonstrations; database and authentication integrations are later milestones.
+The full upstream screen catalog and mock data are retained. **v0.1 is merged, deployed and closed**: the design system and shell follow [PLAN.md](PLAN.md). **v0.2 (all 14 dashboards restyled) is merged, deployed and closed** per [the dashboard task breakdown](dev/milestones/v0.2-dashboards/README.md). **v0.3 is planned; implementation has not started** — [14 app-page tasks](dev/milestones/v0.3-app-pages/README.md) cover a small shared header foundation, standalone/embedded Mail and Chat, Calendar, Kanban, Tasks, Invoice, File Manager, Products, Users/Roles, Profile, Auth V1/V2, system states, and full-route acceptance. Current milestone/task status is tracked in [dev/milestones.json](dev/milestones.json). Current screens are demonstrations; database and authentication integrations are later milestones.
 
 ## Run locally
 
@@ -194,4 +194,11 @@ Patient Monitoring retains all simulated readings, units, patient selection, ala
 
 The full 14-route matrix is verified on dev and Workers in Default, Graphite, Pine and Iris, each in light/dark at desktop/mobile. Finance's Spending Overview and Account Allocation now share a row height; its wallet, bills and shortcut column also finish together. The other 13 routes were checked for the same row-gap regression. Supported-token contrast measurements and keyboard/tooltip/reduced-motion spot checks are retained with the PR evidence; these are scoped checks, not a claim of a complete accessibility audit.
 
-All screens remain mock-data demos, including existing disabled and placeholder actions. No runtime dependencies, protected UI/calendar wrappers, shell preferences or v0.3 page designs change. Tasks 007–012 remain in review until Claude approves and merges the stack; production deployment remains the reviewer's responsibility.
+All screens remain mock-data demos, including existing disabled and placeholder actions. No runtime dependencies, protected UI/calendar wrappers, shell preferences or v0.3 page designs change. All v0.2 tasks are merged, deployed and released as v0.2.0; production deployment remains the reviewer's responsibility.
+
+
+### Planned app pages (v0.3)
+
+The [app-page breakdown](dev/milestones/v0.3-app-pages/README.md) assigns all 38 current route-catalog entries plus root not-found/error states to page owners or final regression coverage. Mail and Chat each retain standalone and dashboard iframe routes; Auth includes four forms and the bare V2 layout. The external `/` remains a redirect to `/dashboard/default`, with no landing UI to restyle. Existing app-page content is unchanged by planning.
+
+Calendar, Invoice, Auth V2 login and Auth V2 register each require a root-cause hydration fix verified on dev and Workers in light/dark at desktop/mobile. Owning tasks also replace remaining upstream-author demo identities; final acceptance scans all of `src/`, preserves legal attribution, checks every route across all four presets, and reconciles hydration history. The milestone remains planned until review and implementation; its unchecked acceptance criteria are not claims of shipped behavior.
