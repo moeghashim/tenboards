@@ -2,7 +2,7 @@
   "milestones": [
     {
       "id": "v0.1-design-system-shell",
-      "status": "in_progress",
+      "status": "done",
       "tasks": [
         "001-import-upstream",
         "002-workers-preview",
@@ -25,11 +25,11 @@
         "005-design-tokens": "merged",
         "006-brand-assets": "merged",
         "007-theme-presets": "merged",
-        "008-floating-sidebar": "in_review",
-        "009-shell-header": "in_review",
-        "010-command-palette": "in_review",
-        "011-layout-settings": "in_review",
-        "012-shell-acceptance": "blocked"
+        "008-floating-sidebar": "merged",
+        "009-shell-header": "merged",
+        "010-command-palette": "merged",
+        "011-layout-settings": "merged",
+        "012-shell-acceptance": "merged"
       }
     }
   ]
