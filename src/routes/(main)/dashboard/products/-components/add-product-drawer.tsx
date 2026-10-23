@@ -87,8 +87,8 @@ export function AddProductDrawer() {
         <DrawerHeader className="shrink-0 border-b pb-4">
           <div className="flex items-start justify-between gap-3">
             <div className="flex flex-col gap-1">
-              <DrawerTitle>Add product</DrawerTitle>
-              <DrawerDescription>Enter product details, pricing, and inventory.</DrawerDescription>
+              <DrawerTitle className="text-xl">Add product</DrawerTitle>
+              <DrawerDescription>Validate demo product details, pricing, and inventory.</DrawerDescription>
             </div>
             <DrawerClose render={<Button variant="ghost" size="icon-sm" aria-label="Close add product" />}>
               <X />
@@ -97,7 +97,7 @@ export function AddProductDrawer() {
         </DrawerHeader>
         <form className="flex min-h-0 flex-1 flex-col" noValidate onSubmit={form.handleSubmit(() => undefined)}>
           <div className="min-h-0 flex-1 overflow-y-auto p-4">
-            <FieldGroup>
+            <FieldGroup className="gap-4">
               <Field data-invalid={!!errors.name}>
                 <FieldLabel htmlFor="add-product-name">Product name</FieldLabel>
                 <Input

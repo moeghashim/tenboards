@@ -46,11 +46,11 @@ export function ProductsTable({
   const pages = Array.from({ length: Math.min(5, pageCount) }, (_, index) => pageStart + index);
 
   return (
-    <div className="flex min-h-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto">
-      <Table aria-label="Products" className="border-border/60 min-w-280 border-separate border-spacing-0 border-b">
-        <TableHeader className="bg-background sticky top-0 z-10">
+    <div className="bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto">
+      <Table aria-label="Products" className="border-border min-w-280 border-separate border-spacing-0 border-b">
+        <TableHeader className="bg-card sticky top-0 z-10">
           {table.getHeaderGroups().map((group) => (
-            <TableRow key={group.id} className="border-border/60 hover:bg-transparent">
+            <TableRow key={group.id} className="border-border hover:bg-transparent">
               {group.headers.map((header) => {
                 const Icon = headerIcons[header.column.id];
                 const right = header.column.id === "price" || header.column.id === "sold";
@@ -63,7 +63,7 @@ export function ProductsTable({
                       maxWidth: header.column.columnDef.maxSize,
                     }}
                     className={cn(
-                      "border-border/50 bg-background h-10 border-t border-r border-b px-4.5 font-[450] last:border-r-0",
+                      "border-border bg-card h-10 border-y px-4 font-medium",
                       header.column.id === "select" && "px-0 text-center",
                       header.column.id === "actions" && "px-2.5",
                     )}
@@ -91,7 +91,7 @@ export function ProductsTable({
             <TableRow
               key={row.id}
               data-state={table.state.rowSelection[row.id] ? "selected" : undefined}
-              className="border-border/60 hover:bg-muted/30 last:*:border-b-0"
+              className="border-border hover:bg-muted/30 last:*:border-b-0"
             >
               {row.getVisibleCells().map((cell) => (
                 <TableCell
@@ -102,7 +102,7 @@ export function ProductsTable({
                     maxWidth: cell.column.columnDef.maxSize,
                   }}
                   className={cn(
-                    "border-border/50 h-12 border-r border-b px-4.5 py-2 last:border-r-0",
+                    "border-border h-12 border-b px-4 py-2 last:border-r-0",
                     cell.column.id === "select" && "px-0 text-center",
                     cell.column.id === "actions" && "px-2.5",
                     (cell.column.id === "price" || cell.column.id === "sold") && "text-right",
@@ -130,7 +130,7 @@ export function ProductsTable({
           )}
         </TableBody>
       </Table>
-      <footer className="bg-background flex min-h-12 shrink-0 flex-wrap items-center justify-between gap-3 border-t px-4 py-2 text-sm">
+      <footer className="bg-card flex min-h-12 shrink-0 flex-wrap items-center justify-between gap-3 border-t px-4 py-2 text-sm">
         <div className="text-muted-foreground flex flex-wrap items-center gap-4">
           <span className="tabular-nums" aria-live="polite">
             {total ? pageIndex * pageSize + 1 : 0} – {Math.min((pageIndex + 1) * pageSize, total)} of {total} products

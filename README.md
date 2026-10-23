@@ -254,3 +254,8 @@ The route loader creates fresh UTC civil-date defaults for each request and shar
 ### File Manager (v0.3 / 008)
 
 File Manager retains query-selected Grid/List views and compact folders. Filenames wrap; cards expose owner, date and sharing metadata, and mobile tables scroll locally with every column intact. Star buttons are always visible and expose pressed state; the menu uses the Base UI click callback. Neutral demo owners and matching initials appear in both views. Stars retain their view-local state and reset when remounting, as before. Search/filter, folder navigation, upload, download/share/trash remain demo placeholders. `npm run screenshots -- --base-url http://localhost:3000 --routes /dashboard/file-manager --reload --interactions` verifies query refresh, button/menu stars and mobile metadata.
+
+
+### Products (v0.3 / 009)
+
+Products uses semantic stock/status labels, wrapping names and SKUs, aligned tabular prices and a locally scrolling catalog. Search, category/status filters, selection and pagination remain local. Duplicate creates a draft; editing preserves IDs and validates unique SKUs. The Add drawer remains validation-only, with optional image previews and no catalog insertion or upload service. Compact form groups retain scrolling and reachable actions; closing the editor returns focus to its product. `npm run screenshots -- --routes /dashboard/products --interactions --base-url http://localhost:3000` covers filters, empty/selection states, duplication, edit validation, zero/upper numeric boundaries, images and keyboard dismissal.

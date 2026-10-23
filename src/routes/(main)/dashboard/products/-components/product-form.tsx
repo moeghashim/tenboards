@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { type RefObject, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -18,12 +18,13 @@ import { type Category, categories, type Product, type ProductStatus, statuses }
 
 interface ProductFormProps {
   product: Product | null;
+  returnFocus: RefObject<HTMLElement | null>;
   products: Product[];
   onClose: () => void;
   onSave: (product: Product) => void;
 }
 
-export function ProductForm({ product, products, onClose, onSave }: ProductFormProps) {
+export function ProductForm({ product, products, onClose, onSave, returnFocus }: ProductFormProps) {
   const [category, setCategory] = useState<Category>(product?.category ?? "Clothing");
   const [status, setStatus] = useState<ProductStatus>(product?.status ?? "Draft");
   const [error, setError] = useState("");
@@ -35,13 +36,13 @@ export function ProductForm({ product, products, onClose, onSave }: ProductFormP
         if (!open) onClose();
       }}
     >
-      <DialogContent className="max-h-[90dvh] overflow-y-auto sm:max-w-lg">
+      <DialogContent finalFocus={returnFocus} className="max-h-[90dvh] overflow-y-auto sm:max-w-lg">
         <DialogHeader>
           <DialogTitle>{product ? "Edit product" : "Add product"}</DialogTitle>
           <DialogDescription>Update your demo catalog. Changes last until you reload this page.</DialogDescription>
         </DialogHeader>
         <form
-          className="flex flex-col gap-5"
+          className="flex flex-col gap-4"
           onSubmit={(event) => {
             event.preventDefault();
             const form = new FormData(event.currentTarget);
@@ -71,7 +72,7 @@ export function ProductForm({ product, products, onClose, onSave }: ProductFormP
             });
           }}
         >
-          <FieldGroup>
+          <FieldGroup className="gap-4">
             <Field>
               <FieldLabel htmlFor="product-name">Product name</FieldLabel>
               <Input id="product-name" name="name" defaultValue={product?.name} required maxLength={100} />

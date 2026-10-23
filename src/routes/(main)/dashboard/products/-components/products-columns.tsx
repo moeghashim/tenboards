@@ -18,9 +18,9 @@ import type { DataTableFeatures } from "@/lib/data-table-features";
 import { currency, number, type Product, type ProductStatus } from "./data";
 
 const statusColors: Record<ProductStatus, string> = {
-  Active: "bg-emerald-200 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-400",
-  Draft: "bg-zinc-200 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300",
-  Archived: "bg-slate-200 text-slate-700 dark:bg-slate-800 dark:text-slate-300",
+  Active: "bg-success-surface text-success",
+  Draft: "bg-muted text-muted-foreground",
+  Archived: "bg-muted text-muted-foreground",
 };
 
 export function createProductsColumns(
@@ -81,8 +81,9 @@ export function createProductsColumns(
       cell: ({ row }) => (
         <button
           type="button"
+          data-product-id={row.original.id}
           onClick={() => onEdit(row.original)}
-          className="hover:text-primary focus-visible:ring-ring max-w-72 truncate rounded-sm text-left outline-none focus-visible:ring-2"
+          className="hover:text-primary focus-visible:ring-ring w-56 rounded-sm text-left [overflow-wrap:anywhere] whitespace-normal outline-none focus-visible:ring-2"
         >
           {row.original.name}
         </button>
@@ -91,7 +92,11 @@ export function createProductsColumns(
     {
       accessorKey: "sku",
       header: "SKU",
-      cell: ({ row }) => <span className="text-muted-foreground font-mono text-xs">{row.original.sku}</span>,
+      cell: ({ row }) => (
+        <span className="text-muted-foreground block max-w-72 font-mono text-xs break-all whitespace-normal">
+          {row.original.sku}
+        </span>
+      ),
     },
     { accessorKey: "category", header: "Category", filterFn: "equalsString" },
     {
@@ -111,10 +116,9 @@ export function createProductsColumns(
         <Badge
           variant="secondary"
           className={cn("rounded-md tabular-nums", {
-            "bg-rose-200 text-rose-800 dark:bg-rose-950 dark:text-rose-400": row.original.stock === 0,
-            "bg-orange-200 text-orange-800 dark:bg-orange-950 dark:text-orange-400":
-              row.original.stock > 0 && row.original.stock <= 10,
-            "bg-sky-200 text-sky-800 dark:bg-sky-950 dark:text-sky-400": row.original.stock > 10,
+            "bg-danger-surface text-danger": row.original.stock === 0,
+            "bg-warning-surface text-warning": row.original.stock > 0 && row.original.stock <= 10,
+            "bg-muted text-muted-foreground": row.original.stock > 10,
           })}
         >
           {row.original.stock === 0 && "Out of stock"}
