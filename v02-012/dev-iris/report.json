@@ -1,0 +1,570 @@
+{
+  "baseURL": "http://127.0.0.1:3010/",
+  "hydrationDelayMs": 0,
+  "preset": "iris",
+  "timezone": "America/Chicago",
+  "reload": false,
+  "interactions": false,
+  "results": [
+    {
+      "route": "/dashboard/academy",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_academy-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/academy",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_academy-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/academy",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_academy-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/academy",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_academy-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_analytics-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_analytics-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_analytics-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_analytics-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/crm",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_crm-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/crm",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_crm-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/crm",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_crm-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/crm",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_crm-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_default-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_default-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_default-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_default-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/ecommerce",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_ecommerce-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/ecommerce",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_ecommerce-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/ecommerce",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_ecommerce-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/ecommerce",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_ecommerce-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/finance",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_finance-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/finance",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_finance-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/finance",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_finance-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/finance",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_finance-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/infrastructure",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_infrastructure-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/infrastructure",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_infrastructure-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/infrastructure",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_infrastructure-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/infrastructure",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_infrastructure-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/logistics",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_logistics-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/logistics",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_logistics-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/logistics",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_logistics-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/logistics",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_logistics-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_patient-monitoring-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_patient-monitoring-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_patient-monitoring-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_patient-monitoring-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/productivity",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_productivity-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/productivity",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_productivity-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/productivity",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_productivity-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/productivity",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_productivity-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics-v1",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_analytics-v1-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics-v1",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_analytics-v1-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics-v1",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_analytics-v1-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics-v1",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_analytics-v1-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/crm-v1",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_crm-v1-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/crm-v1",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_crm-v1-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/crm-v1",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_crm-v1-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/crm-v1",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_crm-v1-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default-v1",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_default-v1-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default-v1",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_default-v1-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default-v1",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_default-v1-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default-v1",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_default-v1-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/finance-v1",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_finance-v1-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/finance-v1",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_finance-v1-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/finance-v1",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_finance-v1-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/finance-v1",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_finance-v1-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    }
+  ]
+}

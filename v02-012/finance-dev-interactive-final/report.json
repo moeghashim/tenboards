@@ -1,0 +1,66 @@
+{
+  "baseURL": "http://127.0.0.1:3010/",
+  "hydrationDelayMs": 0,
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": false,
+  "interactions": true,
+  "results": [
+    {
+      "route": "/dashboard/finance",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_finance-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_finance-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Spending period keyboard menu; Accounts placeholder and Dashboard return",
+        "Transfer field editable; named select retains visible focus",
+        "Desktop Spending/Allocation bottoms aligned; no page overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/finance",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_finance-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_finance-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Spending period keyboard menu; Accounts placeholder and Dashboard return",
+        "Transfer field editable; named select retains visible focus",
+        "Desktop Spending/Allocation bottoms aligned; no page overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/finance",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_finance-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_finance-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Spending period keyboard menu; Accounts placeholder and Dashboard return",
+        "Transfer field editable; named select retains visible focus",
+        "Desktop Spending/Allocation bottoms aligned; no page overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/finance",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_finance-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_finance-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Spending period keyboard menu; Accounts placeholder and Dashboard return",
+        "Transfer field editable; named select retains visible focus",
+        "Desktop Spending/Allocation bottoms aligned; no page overflow"
+      ],
+      "errors": []
+    }
+  ]
+}

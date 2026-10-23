@@ -1,0 +1,657 @@
+[
+  {
+    "route": "default",
+    "toolIcon": {
+      "_tag": "website",
+      "pageUrl": "http://127.0.0.1:3010/dashboard/default"
+    },
+    "value": {
+      "cards": [
+        {
+          "bottom": 210,
+          "title": "Total Revenue",
+          "top": 80
+        },
+        {
+          "bottom": 210,
+          "title": "New Customers",
+          "top": 80
+        },
+        {
+          "bottom": 210,
+          "title": "Active Accounts",
+          "top": 80
+        },
+        {
+          "bottom": 210,
+          "title": "Growth Rate",
+          "top": 80
+        },
+        {
+          "bottom": 650,
+          "title": "Customer Activity",
+          "top": 234
+        },
+        {
+          "bottom": 1493,
+          "title": "18,426 Customers",
+          "top": 674
+        }
+      ],
+      "identities": [],
+      "overflow": false
+    }
+  },
+  {
+    "route": "default-v1",
+    "toolIcon": {
+      "_tag": "website",
+      "pageUrl": "http://127.0.0.1:3010/dashboard/default-v1"
+    },
+    "value": {
+      "cards": [
+        {
+          "bottom": 230,
+          "title": "Total Revenue",
+          "top": 80
+        },
+        {
+          "bottom": 230,
+          "title": "New Customers",
+          "top": 80
+        },
+        {
+          "bottom": 230,
+          "title": "Active Accounts",
+          "top": 80
+        },
+        {
+          "bottom": 230,
+          "title": "Growth Rate",
+          "top": 80
+        },
+        {
+          "bottom": 670,
+          "title": "Total Visitors",
+          "top": 254
+        }
+      ],
+      "identities": [],
+      "overflow": false
+    }
+  },
+  {
+    "route": "crm",
+    "toolIcon": {
+      "_tag": "website",
+      "pageUrl": "http://127.0.0.1:3010/dashboard/crm"
+    },
+    "value": {
+      "cards": [
+        {
+          "bottom": 274,
+          "title": "Lead Pipeline Value",
+          "top": 144
+        },
+        {
+          "bottom": 274,
+          "title": "Qualified Lead Rate",
+          "top": 144
+        },
+        {
+          "bottom": 274,
+          "title": "Open Opportunities",
+          "top": 144
+        },
+        {
+          "bottom": 274,
+          "title": "Lead-to-Deal Rate",
+          "top": 144
+        },
+        {
+          "bottom": 694,
+          "title": "Qualified Lead Flow",
+          "top": 298
+        },
+        {
+          "bottom": 885,
+          "title": "Upcoming Meetings",
+          "top": 718
+        },
+        {
+          "bottom": 885,
+          "title": "Monthly Proposal Goal",
+          "top": 718
+        },
+        {
+          "bottom": 1671,
+          "title": "Recent Opportunities",
+          "top": 909
+        }
+      ],
+      "identities": [],
+      "overflow": false
+    }
+  },
+  {
+    "route": "crm-v1",
+    "toolIcon": {
+      "_tag": "website",
+      "pageUrl": "http://127.0.0.1:3010/dashboard/crm-v1"
+    },
+    "value": {
+      "cards": [
+        {
+          "bottom": 413,
+          "title": "New Leads",
+          "top": 80
+        },
+        {
+          "bottom": 413,
+          "title": "Proposals Sent",
+          "top": 80
+        },
+        {
+          "bottom": 413,
+          "title": "Revenue",
+          "top": 80
+        },
+        {
+          "bottom": 413,
+          "title": "Projects Won",
+          "top": 80
+        },
+        {
+          "bottom": 413,
+          "title": "Revenue Growth",
+          "top": 80
+        },
+        {
+          "bottom": 970,
+          "title": "Leads by Source",
+          "top": 437
+        },
+        {
+          "bottom": 970,
+          "title": "Project Revenue vs. Target",
+          "top": 437
+        },
+        {
+          "bottom": 1369,
+          "title": "Sales Pipeline",
+          "top": 994
+        },
+        {
+          "bottom": 1369,
+          "title": "Sales by Region",
+          "top": 994
+        },
+        {
+          "bottom": 1369,
+          "title": "Action Items",
+          "top": 994
+        },
+        {
+          "bottom": 2069,
+          "title": "Recent Leads",
+          "top": 1393
+        }
+      ],
+      "identities": [],
+      "overflow": false
+    }
+  },
+  {
+    "route": "finance",
+    "toolIcon": {
+      "_tag": "website",
+      "pageUrl": "http://127.0.0.1:3010/dashboard/finance"
+    },
+    "value": {
+      "cards": [
+        {
+          "bottom": 334,
+          "title": "Net worth",
+          "top": 204
+        },
+        {
+          "bottom": 334,
+          "title": "Available cash",
+          "top": 204
+        },
+        {
+          "bottom": 479,
+          "title": "Monthly spend",
+          "top": 350
+        },
+        {
+          "bottom": 479,
+          "title": "Savings rate",
+          "top": 350
+        },
+        {
+          "bottom": 390,
+          "title": "Income sources",
+          "top": 204
+        },
+        {
+          "bottom": 1023,
+          "title": "Spending Overview",
+          "top": 495
+        },
+        {
+          "bottom": 1023,
+          "title": "Account Allocation",
+          "top": 495
+        },
+        {
+          "bottom": 1404,
+          "title": "Wallet",
+          "top": 1039
+        },
+        {
+          "bottom": 1404,
+          "title": "Upcoming Bills & Payments",
+          "top": 1039
+        },
+        {
+          "bottom": 1147,
+          "title": "Quick Transfer",
+          "top": 1039
+        },
+        {
+          "bottom": 1404,
+          "title": "Shortcuts",
+          "top": 1163
+        }
+      ],
+      "identities": [],
+      "overflow": false
+    }
+  },
+  {
+    "route": "finance-v1",
+    "toolIcon": {
+      "_tag": "website",
+      "pageUrl": "http://127.0.0.1:3010/dashboard/finance-v1"
+    },
+    "value": {
+      "cards": [
+        {
+          "bottom": 298,
+          "title": "Primary Account",
+          "top": 128
+        },
+        {
+          "bottom": 298,
+          "title": "Net Worth",
+          "top": 128
+        },
+        {
+          "bottom": 298,
+          "title": "Monthly Cash Flow",
+          "top": 128
+        },
+        {
+          "bottom": 298,
+          "title": "Savings Rate",
+          "top": 128
+        },
+        {
+          "bottom": 812,
+          "title": "Cash Flow Overview",
+          "top": 314
+        },
+        {
+          "bottom": 1230,
+          "title": "Spending Breakdown",
+          "top": 828
+        },
+        {
+          "bottom": 1230,
+          "title": "Income Reliability",
+          "top": 828
+        },
+        {
+          "bottom": 1230,
+          "title": "My Card",
+          "top": 314
+        }
+      ],
+      "identities": [],
+      "overflow": false
+    }
+  },
+  {
+    "route": "analytics",
+    "toolIcon": {
+      "_tag": "website",
+      "pageUrl": "http://127.0.0.1:3010/dashboard/analytics"
+    },
+    "value": {
+      "cards": [
+        {
+          "bottom": 324,
+          "title": "Unique Visitors",
+          "top": 206
+        },
+        {
+          "bottom": 324,
+          "title": "Sessions",
+          "top": 206
+        },
+        {
+          "bottom": 324,
+          "title": "Pageviews",
+          "top": 206
+        },
+        {
+          "bottom": 324,
+          "title": "Engagement Rate",
+          "top": 206
+        },
+        {
+          "bottom": 324,
+          "title": "Conversion Rate",
+          "top": 206
+        },
+        {
+          "bottom": 732,
+          "title": "Traffic Quality",
+          "top": 340
+        },
+        {
+          "bottom": 732,
+          "title": "Realtime Visitors",
+          "top": 340
+        },
+        {
+          "bottom": 1112,
+          "title": "Page Performance",
+          "top": 748
+        },
+        {
+          "bottom": 1112,
+          "title": "Traffic Sources",
+          "top": 748
+        }
+      ],
+      "identities": [],
+      "overflow": false
+    }
+  },
+  {
+    "route": "analytics-v1",
+    "toolIcon": {
+      "_tag": "website",
+      "pageUrl": "http://127.0.0.1:3010/dashboard/analytics-v1"
+    },
+    "value": {
+      "cards": [
+        {
+          "bottom": 352,
+          "title": "Risk summary",
+          "top": 128
+        },
+        {
+          "bottom": 922,
+          "title": "Forecast vs Target",
+          "top": 376
+        },
+        {
+          "bottom": 1300,
+          "title": "Coverage Triage",
+          "top": 938
+        },
+        {
+          "bottom": 1300,
+          "title": "Manager Action Queue",
+          "top": 376
+        },
+        {
+          "bottom": 2138,
+          "title": "Revenue Risk Ledger",
+          "top": 1324
+        }
+      ],
+      "identities": [],
+      "overflow": false
+    }
+  },
+  {
+    "route": "productivity",
+    "toolIcon": {
+      "_tag": "website",
+      "pageUrl": "http://127.0.0.1:3010/dashboard/productivity"
+    },
+    "value": {
+      "cards": [
+        {
+          "bottom": 282,
+          "title": "Today",
+          "top": 164
+        },
+        {
+          "bottom": 282,
+          "title": "This Week",
+          "top": 164
+        },
+        {
+          "bottom": 282,
+          "title": "Focus",
+          "top": 164
+        },
+        {
+          "bottom": 800,
+          "title": "Q2 Roadmap",
+          "top": 620
+        },
+        {
+          "bottom": 800,
+          "title": "Website Redesign",
+          "top": 620
+        },
+        {
+          "bottom": 800,
+          "title": "Onboarding",
+          "top": 620
+        },
+        {
+          "bottom": 538,
+          "title": "Calendar",
+          "top": 80
+        },
+        {
+          "bottom": 686,
+          "title": "Focus",
+          "top": 554
+        },
+        {
+          "bottom": 967,
+          "title": "Recent Notes",
+          "top": 702
+        },
+        {
+          "bottom": 1147,
+          "title": "This Week",
+          "top": 983
+        }
+      ],
+      "identities": [],
+      "overflow": false
+    }
+  },
+  {
+    "route": "ecommerce",
+    "toolIcon": {
+      "_tag": "website",
+      "pageUrl": "http://127.0.0.1:3010/dashboard/ecommerce"
+    },
+    "value": {
+      "cards": [
+        {
+          "bottom": 278,
+          "title": "Total Sales",
+          "top": 150
+        },
+        {
+          "bottom": 278,
+          "title": "Total Orders",
+          "top": 150
+        },
+        {
+          "bottom": 422,
+          "title": "Customer Growth",
+          "top": 294
+        },
+        {
+          "bottom": 422,
+          "title": "Average Order",
+          "top": 294
+        },
+        {
+          "bottom": 566,
+          "title": "Return Requests",
+          "top": 438
+        },
+        {
+          "bottom": 566,
+          "title": "Stock Accuracy",
+          "top": 438
+        },
+        {
+          "bottom": 566,
+          "title": "Sales Overview",
+          "top": 150
+        },
+        {
+          "bottom": 930,
+          "title": "Store Traffic",
+          "top": 582
+        },
+        {
+          "bottom": 930,
+          "title": "Traffic Sources",
+          "top": 582
+        },
+        {
+          "bottom": 1311,
+          "title": "Top Products",
+          "top": 946
+        },
+        {
+          "bottom": 1311,
+          "title": "Inventory",
+          "top": 946
+        },
+        {
+          "bottom": 1311,
+          "title": "Reviews",
+          "top": 946
+        },
+        {
+          "bottom": 2135,
+          "title": "Recent Orders",
+          "top": 1327
+        }
+      ],
+      "identities": [],
+      "overflow": false
+    }
+  },
+  {
+    "route": "academy",
+    "toolIcon": {
+      "_tag": "website",
+      "pageUrl": "http://127.0.0.1:3010/dashboard/academy"
+    },
+    "value": {
+      "cards": [
+        {
+          "bottom": 290,
+          "title": "Students Taught",
+          "top": 152
+        },
+        {
+          "bottom": 290,
+          "title": "Avg. Attendance",
+          "top": 152
+        },
+        {
+          "bottom": 290,
+          "title": "Assignments",
+          "top": 152
+        },
+        {
+          "bottom": 290,
+          "title": "Classes Today",
+          "top": 152
+        },
+        {
+          "bottom": 927,
+          "title": "Class Schedule",
+          "top": 306
+        },
+        {
+          "bottom": 927,
+          "title": "Assignment Status",
+          "top": 306
+        },
+        {
+          "bottom": 1459,
+          "title": "Performance Highlights",
+          "top": 943
+        },
+        {
+          "bottom": 1459,
+          "title": "Upcoming Events",
+          "top": 943
+        }
+      ],
+      "identities": [],
+      "overflow": false
+    }
+  },
+  {
+    "route": "logistics",
+    "toolIcon": {
+      "_tag": "website",
+      "pageUrl": "http://127.0.0.1:3010/dashboard/logistics"
+    },
+    "value": {
+      "cards": [
+        {
+          "bottom": 900,
+          "title": "Shipments",
+          "top": 56
+        }
+      ],
+      "identities": [],
+      "overflow": false
+    }
+  },
+  {
+    "route": "infrastructure",
+    "toolIcon": {
+      "_tag": "website",
+      "pageUrl": "http://127.0.0.1:3010/dashboard/infrastructure"
+    },
+    "value": {
+      "cards": [],
+      "identities": [],
+      "overflow": false
+    }
+  },
+  {
+    "route": "patient-monitoring",
+    "toolIcon": {
+      "_tag": "website",
+      "pageUrl": "http://127.0.0.1:3010/dashboard/patient-monitoring"
+    },
+    "value": {
+      "cards": [],
+      "identities": [],
+      "overflow": false
+    }
+  }
+]

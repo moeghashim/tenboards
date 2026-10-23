@@ -1,0 +1,36 @@
+
+> tenboards@0.1.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://127.0.0.1:3010 --routes /dashboard/analytics,/dashboard/analytics-v1,/dashboard/productivity,/dashboard/ecommerce,/dashboard/academy,/dashboard/logistics,/dashboard/infrastructure,/dashboard/patient-monitoring --interactions --output screenshots/v02-012/interactive-dev
+
+PASS /dashboard/academy light/desktop direct
+PASS /dashboard/academy light/mobile direct
+PASS /dashboard/academy dark/desktop direct
+PASS /dashboard/academy dark/mobile direct
+PASS /dashboard/analytics light/desktop direct
+PASS /dashboard/analytics light/mobile direct
+PASS /dashboard/analytics dark/desktop direct
+PASS /dashboard/analytics dark/mobile direct
+PASS /dashboard/ecommerce light/desktop direct
+PASS /dashboard/ecommerce light/mobile direct
+PASS /dashboard/ecommerce dark/desktop direct
+PASS /dashboard/ecommerce dark/mobile direct
+PASS /dashboard/infrastructure light/desktop direct
+PASS /dashboard/infrastructure light/mobile direct
+PASS /dashboard/infrastructure dark/desktop direct
+PASS /dashboard/infrastructure dark/mobile direct
+PASS /dashboard/logistics light/desktop direct
+PASS /dashboard/logistics light/mobile direct
+PASS /dashboard/logistics dark/desktop direct
+PASS /dashboard/logistics dark/mobile direct
+PASS /dashboard/patient-monitoring light/desktop direct
+PASS /dashboard/patient-monitoring light/mobile direct
+PASS /dashboard/patient-monitoring dark/desktop direct
+PASS /dashboard/patient-monitoring dark/mobile direct
+PASS /dashboard/productivity light/desktop direct
+PASS /dashboard/productivity light/mobile direct
+PASS /dashboard/productivity dark/desktop direct
+PASS /dashboard/productivity dark/mobile direct
+PASS /dashboard/analytics-v1 light/desktop direct
+PASS /dashboard/analytics-v1 light/mobile direct
+PASS /dashboard/analytics-v1 dark/desktop direct
+PASS /dashboard/analytics-v1 dark/mobile direct

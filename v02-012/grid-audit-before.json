@@ -1,0 +1,1009 @@
+[
+  {
+    "route": "default",
+    "result": {
+      "toolIcon": {
+        "_tag": "website",
+        "pageUrl": "http://127.0.0.1:3010/dashboard/default"
+      },
+      "value": [
+        {
+          "bottom": 210,
+          "height": 130,
+          "parentClass": "grid min-w-0 grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4",
+          "parentHeight": 130,
+          "siblings": 4,
+          "title": "Total Revenue",
+          "top": 80
+        },
+        {
+          "bottom": 210,
+          "height": 130,
+          "parentClass": "grid min-w-0 grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4",
+          "parentHeight": 130,
+          "siblings": 4,
+          "title": "New Customers",
+          "top": 80
+        },
+        {
+          "bottom": 210,
+          "height": 130,
+          "parentClass": "grid min-w-0 grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4",
+          "parentHeight": 130,
+          "siblings": 4,
+          "title": "Active Accounts",
+          "top": 80
+        },
+        {
+          "bottom": 210,
+          "height": 130,
+          "parentClass": "grid min-w-0 grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4",
+          "parentHeight": 130,
+          "siblings": 4,
+          "title": "Growth Rate",
+          "top": 80
+        },
+        {
+          "bottom": 650,
+          "height": 416,
+          "parentClass": "@container/main flex min-w-0 flex-col gap-4 md:gap-6",
+          "parentHeight": 1413,
+          "siblings": 3,
+          "title": "Customer Activity",
+          "top": 234
+        },
+        {
+          "bottom": 1493,
+          "height": 820,
+          "parentClass": "@container/main flex min-w-0 flex-col gap-4 md:gap-6",
+          "parentHeight": 1413,
+          "siblings": 3,
+          "title": "18,426 Customers",
+          "top": 674
+        }
+      ]
+    }
+  },
+  {
+    "route": "default-v1",
+    "result": {
+      "toolIcon": {
+        "_tag": "website",
+        "pageUrl": "http://127.0.0.1:3010/dashboard/default-v1"
+      },
+      "value": [
+        {
+          "bottom": 230,
+          "height": 150,
+          "parentClass": "grid min-w-0 grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4",
+          "parentHeight": 150,
+          "siblings": 4,
+          "title": "Total Revenue",
+          "top": 80
+        },
+        {
+          "bottom": 230,
+          "height": 150,
+          "parentClass": "grid min-w-0 grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4",
+          "parentHeight": 150,
+          "siblings": 4,
+          "title": "New Customers",
+          "top": 80
+        },
+        {
+          "bottom": 230,
+          "height": 150,
+          "parentClass": "grid min-w-0 grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4",
+          "parentHeight": 150,
+          "siblings": 4,
+          "title": "Active Accounts",
+          "top": 80
+        },
+        {
+          "bottom": 230,
+          "height": 150,
+          "parentClass": "grid min-w-0 grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4",
+          "parentHeight": 150,
+          "siblings": 4,
+          "title": "Growth Rate",
+          "top": 80
+        },
+        {
+          "bottom": 670,
+          "height": 416,
+          "parentClass": "@container/main flex min-w-0 flex-col gap-4 md:gap-6",
+          "parentHeight": 1249,
+          "siblings": 3,
+          "title": "Total Visitors",
+          "top": 254
+        }
+      ]
+    }
+  },
+  {
+    "route": "crm",
+    "result": {
+      "toolIcon": {
+        "_tag": "website",
+        "pageUrl": "http://127.0.0.1:3010/dashboard/crm"
+      },
+      "value": [
+        {
+          "bottom": 274,
+          "height": 130,
+          "parentClass": "grid min-w-0 grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4",
+          "parentHeight": 130,
+          "siblings": 4,
+          "title": "Lead Pipeline Value",
+          "top": 144
+        },
+        {
+          "bottom": 274,
+          "height": 130,
+          "parentClass": "grid min-w-0 grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4",
+          "parentHeight": 130,
+          "siblings": 4,
+          "title": "Qualified Lead Rate",
+          "top": 144
+        },
+        {
+          "bottom": 274,
+          "height": 130,
+          "parentClass": "grid min-w-0 grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4",
+          "parentHeight": 130,
+          "siblings": 4,
+          "title": "Open Opportunities",
+          "top": 144
+        },
+        {
+          "bottom": 274,
+          "height": 130,
+          "parentClass": "grid min-w-0 grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4",
+          "parentHeight": 130,
+          "siblings": 4,
+          "title": "Lead-to-Deal Rate",
+          "top": 144
+        },
+        {
+          "bottom": 694,
+          "height": 396,
+          "parentClass": "grid grid-cols-1 gap-4 xl:grid-cols-12",
+          "parentHeight": 396,
+          "siblings": 1,
+          "title": "Qualified Lead Flow",
+          "top": 298
+        },
+        {
+          "bottom": 885,
+          "height": 167,
+          "parentClass": "grid grid-cols-1 gap-4 xl:grid-cols-12",
+          "parentHeight": 167,
+          "siblings": 2,
+          "title": "Upcoming Meetings",
+          "top": 718
+        },
+        {
+          "bottom": 885,
+          "height": 167,
+          "parentClass": "grid grid-cols-1 gap-4 xl:grid-cols-12",
+          "parentHeight": 167,
+          "siblings": 2,
+          "title": "Monthly Proposal Goal",
+          "top": 718
+        },
+        {
+          "bottom": 1671,
+          "height": 762,
+          "parentClass": "",
+          "parentHeight": 762,
+          "siblings": 1,
+          "title": "Recent Opportunities",
+          "top": 909
+        }
+      ]
+    }
+  },
+  {
+    "route": "crm-v1",
+    "result": {
+      "toolIcon": {
+        "_tag": "website",
+        "pageUrl": "http://127.0.0.1:3010/dashboard/crm-v1"
+      },
+      "value": [
+        {
+          "bottom": 413,
+          "height": 333,
+          "parentClass": "grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6",
+          "parentHeight": 333,
+          "siblings": 5,
+          "title": "New Leads",
+          "top": 80
+        },
+        {
+          "bottom": 413,
+          "height": 333,
+          "parentClass": "grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6",
+          "parentHeight": 333,
+          "siblings": 5,
+          "title": "Proposals Sent",
+          "top": 80
+        },
+        {
+          "bottom": 413,
+          "height": 333,
+          "parentClass": "grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6",
+          "parentHeight": 333,
+          "siblings": 5,
+          "title": "Revenue",
+          "top": 80
+        },
+        {
+          "bottom": 413,
+          "height": 333,
+          "parentClass": "grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6",
+          "parentHeight": 333,
+          "siblings": 5,
+          "title": "Projects Won",
+          "top": 80
+        },
+        {
+          "bottom": 413,
+          "height": 333,
+          "parentClass": "grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6",
+          "parentHeight": 333,
+          "siblings": 5,
+          "title": "Revenue Growth",
+          "top": 80
+        },
+        {
+          "bottom": 970,
+          "height": 533,
+          "parentClass": "grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-5",
+          "parentHeight": 533,
+          "siblings": 2,
+          "title": "Leads by Source",
+          "top": 437
+        },
+        {
+          "bottom": 970,
+          "height": 533,
+          "parentClass": "grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-5",
+          "parentHeight": 533,
+          "siblings": 2,
+          "title": "Project Revenue vs. Target",
+          "top": 437
+        },
+        {
+          "bottom": 1369,
+          "height": 375,
+          "parentClass": "grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3",
+          "parentHeight": 375,
+          "siblings": 3,
+          "title": "Sales Pipeline",
+          "top": 994
+        },
+        {
+          "bottom": 1369,
+          "height": 375,
+          "parentClass": "grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3",
+          "parentHeight": 375,
+          "siblings": 3,
+          "title": "Sales by Region",
+          "top": 994
+        },
+        {
+          "bottom": 1369,
+          "height": 375,
+          "parentClass": "grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3",
+          "parentHeight": 375,
+          "siblings": 3,
+          "title": "Action Items",
+          "top": 994
+        },
+        {
+          "bottom": 2069,
+          "height": 676,
+          "parentClass": "flex min-w-0 flex-col gap-4 md:gap-6",
+          "parentHeight": 1989,
+          "siblings": 4,
+          "title": "Recent Leads",
+          "top": 1393
+        }
+      ]
+    }
+  },
+  {
+    "route": "finance",
+    "result": {
+      "toolIcon": {
+        "_tag": "website",
+        "pageUrl": "http://127.0.0.1:3010/dashboard/finance"
+      },
+      "value": [
+        {
+          "bottom": 334,
+          "height": 130,
+          "parentClass": "grid grid-cols-1 gap-4 sm:grid-cols-2",
+          "parentHeight": 275,
+          "siblings": 4,
+          "title": "Net worth",
+          "top": 204
+        },
+        {
+          "bottom": 334,
+          "height": 130,
+          "parentClass": "grid grid-cols-1 gap-4 sm:grid-cols-2",
+          "parentHeight": 275,
+          "siblings": 4,
+          "title": "Available cash",
+          "top": 204
+        },
+        {
+          "bottom": 479,
+          "height": 130,
+          "parentClass": "grid grid-cols-1 gap-4 sm:grid-cols-2",
+          "parentHeight": 275,
+          "siblings": 4,
+          "title": "Monthly spend",
+          "top": 350
+        },
+        {
+          "bottom": 479,
+          "height": 130,
+          "parentClass": "grid grid-cols-1 gap-4 sm:grid-cols-2",
+          "parentHeight": 275,
+          "siblings": 4,
+          "title": "Savings rate",
+          "top": 350
+        },
+        {
+          "bottom": 390,
+          "height": 186,
+          "parentClass": "flex flex-col gap-4 xl:col-span-6",
+          "parentHeight": 275,
+          "siblings": 2,
+          "title": "Income sources",
+          "top": 204
+        },
+        {
+          "bottom": 891,
+          "height": 396,
+          "parentClass": "xl:col-span-7",
+          "parentHeight": 528,
+          "siblings": 1,
+          "title": "Spending Overview",
+          "top": 495
+        },
+        {
+          "bottom": 1023,
+          "height": 528,
+          "parentClass": "xl:col-span-5",
+          "parentHeight": 528,
+          "siblings": 1,
+          "title": "Account Allocation",
+          "top": 495
+        },
+        {
+          "bottom": 1404,
+          "height": 365,
+          "parentClass": "xl:col-span-4",
+          "parentHeight": 365,
+          "siblings": 1,
+          "title": "Wallet",
+          "top": 1039
+        },
+        {
+          "bottom": 1399,
+          "height": 360,
+          "parentClass": "xl:col-span-4",
+          "parentHeight": 365,
+          "siblings": 1,
+          "title": "Upcoming Bills & Payments",
+          "top": 1039
+        },
+        {
+          "bottom": 1147,
+          "height": 108,
+          "parentClass": "flex flex-col gap-4",
+          "parentHeight": 340,
+          "siblings": 2,
+          "title": "Quick Transfer",
+          "top": 1039
+        },
+        {
+          "bottom": 1379,
+          "height": 216,
+          "parentClass": "flex flex-col gap-4",
+          "parentHeight": 340,
+          "siblings": 2,
+          "title": "Shortcuts",
+          "top": 1163
+        }
+      ]
+    }
+  },
+  {
+    "route": "finance-v1",
+    "result": {
+      "toolIcon": {
+        "_tag": "website",
+        "pageUrl": "http://127.0.0.1:3010/dashboard/finance-v1"
+      },
+      "value": [
+        {
+          "bottom": 298,
+          "height": 170,
+          "parentClass": "grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4",
+          "parentHeight": 170,
+          "siblings": 4,
+          "title": "Primary Account",
+          "top": 128
+        },
+        {
+          "bottom": 298,
+          "height": 170,
+          "parentClass": "grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4",
+          "parentHeight": 170,
+          "siblings": 4,
+          "title": "Net Worth",
+          "top": 128
+        },
+        {
+          "bottom": 298,
+          "height": 170,
+          "parentClass": "grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4",
+          "parentHeight": 170,
+          "siblings": 4,
+          "title": "Monthly Cash Flow",
+          "top": 128
+        },
+        {
+          "bottom": 298,
+          "height": 170,
+          "parentClass": "grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4",
+          "parentHeight": 170,
+          "siblings": 4,
+          "title": "Savings Rate",
+          "top": 128
+        },
+        {
+          "bottom": 812,
+          "height": 498,
+          "parentClass": "flex flex-col gap-4",
+          "parentHeight": 916,
+          "siblings": 2,
+          "title": "Cash Flow Overview",
+          "top": 314
+        },
+        {
+          "bottom": 1230,
+          "height": 402,
+          "parentClass": "grid grid-cols-1 gap-4 lg:grid-cols-2",
+          "parentHeight": 402,
+          "siblings": 2,
+          "title": "Spending Breakdown",
+          "top": 828
+        },
+        {
+          "bottom": 1230,
+          "height": 402,
+          "parentClass": "grid grid-cols-1 gap-4 lg:grid-cols-2",
+          "parentHeight": 402,
+          "siblings": 2,
+          "title": "Income Reliability",
+          "top": 828
+        },
+        {
+          "bottom": 1230,
+          "height": 916,
+          "parentClass": "grid grid-cols-1 gap-4 lg:grid-cols-[minmax(0,2fr)_minmax(320px,1fr)]",
+          "parentHeight": 916,
+          "siblings": 2,
+          "title": "My Card",
+          "top": 314
+        }
+      ]
+    }
+  },
+  {
+    "route": "analytics",
+    "result": {
+      "toolIcon": {
+        "_tag": "website",
+        "pageUrl": "http://127.0.0.1:3010/dashboard/analytics"
+      },
+      "value": [
+        {
+          "bottom": 324,
+          "height": 118,
+          "parentClass": "grid gap-3 sm:grid-cols-2 xl:grid-cols-5",
+          "parentHeight": 118,
+          "siblings": 5,
+          "title": "Unique Visitors",
+          "top": 206
+        },
+        {
+          "bottom": 324,
+          "height": 118,
+          "parentClass": "grid gap-3 sm:grid-cols-2 xl:grid-cols-5",
+          "parentHeight": 118,
+          "siblings": 5,
+          "title": "Sessions",
+          "top": 206
+        },
+        {
+          "bottom": 324,
+          "height": 118,
+          "parentClass": "grid gap-3 sm:grid-cols-2 xl:grid-cols-5",
+          "parentHeight": 118,
+          "siblings": 5,
+          "title": "Pageviews",
+          "top": 206
+        },
+        {
+          "bottom": 324,
+          "height": 118,
+          "parentClass": "grid gap-3 sm:grid-cols-2 xl:grid-cols-5",
+          "parentHeight": 118,
+          "siblings": 5,
+          "title": "Engagement Rate",
+          "top": 206
+        },
+        {
+          "bottom": 324,
+          "height": 118,
+          "parentClass": "grid gap-3 sm:grid-cols-2 xl:grid-cols-5",
+          "parentHeight": 118,
+          "siblings": 5,
+          "title": "Conversion Rate",
+          "top": 206
+        },
+        {
+          "bottom": 732,
+          "height": 392,
+          "parentClass": "xl:col-span-7",
+          "parentHeight": 392,
+          "siblings": 1,
+          "title": "Traffic Quality",
+          "top": 340
+        },
+        {
+          "bottom": 732,
+          "height": 392,
+          "parentClass": "xl:col-span-5",
+          "parentHeight": 392,
+          "siblings": 1,
+          "title": "Realtime Visitors",
+          "top": 340
+        },
+        {
+          "bottom": 1112,
+          "height": 364,
+          "parentClass": "xl:col-span-7",
+          "parentHeight": 364,
+          "siblings": 1,
+          "title": "Page Performance",
+          "top": 748
+        },
+        {
+          "bottom": 1112,
+          "height": 364,
+          "parentClass": "xl:col-span-5 xl:col-start-8",
+          "parentHeight": 364,
+          "siblings": 1,
+          "title": "Traffic Sources",
+          "top": 748
+        }
+      ]
+    }
+  },
+  {
+    "route": "analytics-v1",
+    "result": {
+      "toolIcon": {
+        "_tag": "website",
+        "pageUrl": "http://127.0.0.1:3010/dashboard/analytics-v1"
+      },
+      "value": [
+        {
+          "bottom": 352,
+          "height": 224,
+          "parentClass": "grid grid-cols-1 gap-4 xl:grid-cols-3",
+          "parentHeight": 224,
+          "siblings": 2,
+          "title": "Risk summary",
+          "top": 128
+        },
+        {
+          "bottom": 922,
+          "height": 546,
+          "parentClass": "flex min-w-0 flex-col gap-4 lg:col-span-2",
+          "parentHeight": 924,
+          "siblings": 2,
+          "title": "Forecast vs Target",
+          "top": 376
+        },
+        {
+          "bottom": 1300,
+          "height": 362,
+          "parentClass": "flex min-w-0 flex-col gap-4 lg:col-span-2",
+          "parentHeight": 924,
+          "siblings": 2,
+          "title": "Coverage Triage",
+          "top": 938
+        },
+        {
+          "bottom": 1300,
+          "height": 924,
+          "parentClass": "grid grid-cols-1 items-stretch gap-4 lg:grid-cols-3",
+          "parentHeight": 924,
+          "siblings": 2,
+          "title": "Manager Action Queue",
+          "top": 376
+        },
+        {
+          "bottom": 2138,
+          "height": 814,
+          "parentClass": "flex min-w-0 flex-col gap-4 md:gap-6",
+          "parentHeight": 2058,
+          "siblings": 3,
+          "title": "Revenue Risk Ledger",
+          "top": 1324
+        }
+      ]
+    }
+  },
+  {
+    "route": "productivity",
+    "result": {
+      "toolIcon": {
+        "_tag": "website",
+        "pageUrl": "http://127.0.0.1:3010/dashboard/productivity"
+      },
+      "value": [
+        {
+          "bottom": 282,
+          "height": 118,
+          "parentClass": "grid gap-3 sm:grid-cols-3",
+          "parentHeight": 118,
+          "siblings": 3,
+          "title": "Today",
+          "top": 164
+        },
+        {
+          "bottom": 282,
+          "height": 118,
+          "parentClass": "grid gap-3 sm:grid-cols-3",
+          "parentHeight": 118,
+          "siblings": 3,
+          "title": "This Week",
+          "top": 164
+        },
+        {
+          "bottom": 282,
+          "height": 118,
+          "parentClass": "grid gap-3 sm:grid-cols-3",
+          "parentHeight": 118,
+          "siblings": 3,
+          "title": "Focus",
+          "top": 164
+        },
+        {
+          "bottom": 800,
+          "height": 180,
+          "parentClass": "grid gap-3 md:grid-cols-3",
+          "parentHeight": 180,
+          "siblings": 3,
+          "title": "Q2 Roadmap",
+          "top": 620
+        },
+        {
+          "bottom": 800,
+          "height": 180,
+          "parentClass": "grid gap-3 md:grid-cols-3",
+          "parentHeight": 180,
+          "siblings": 3,
+          "title": "Website Redesign",
+          "top": 620
+        },
+        {
+          "bottom": 800,
+          "height": 180,
+          "parentClass": "grid gap-3 md:grid-cols-3",
+          "parentHeight": 180,
+          "siblings": 3,
+          "title": "Onboarding",
+          "top": 620
+        },
+        {
+          "bottom": 538,
+          "height": 458,
+          "parentClass": "grid min-w-0 items-start gap-4 sm:grid-cols-2 xl:grid-cols-1",
+          "parentHeight": 1067,
+          "siblings": 4,
+          "title": "Calendar",
+          "top": 80
+        },
+        {
+          "bottom": 686,
+          "height": 132,
+          "parentClass": "grid min-w-0 items-start gap-4 sm:grid-cols-2 xl:grid-cols-1",
+          "parentHeight": 1067,
+          "siblings": 4,
+          "title": "Focus",
+          "top": 554
+        },
+        {
+          "bottom": 967,
+          "height": 265,
+          "parentClass": "grid min-w-0 items-start gap-4 sm:grid-cols-2 xl:grid-cols-1",
+          "parentHeight": 1067,
+          "siblings": 4,
+          "title": "Recent Notes",
+          "top": 702
+        },
+        {
+          "bottom": 1147,
+          "height": 164,
+          "parentClass": "grid min-w-0 items-start gap-4 sm:grid-cols-2 xl:grid-cols-1",
+          "parentHeight": 1067,
+          "siblings": 4,
+          "title": "This Week",
+          "top": 983
+        }
+      ]
+    }
+  },
+  {
+    "route": "ecommerce",
+    "result": {
+      "toolIcon": {
+        "_tag": "website",
+        "pageUrl": "http://127.0.0.1:3010/dashboard/ecommerce"
+      },
+      "value": [
+        {
+          "bottom": 278,
+          "height": 128,
+          "parentClass": "grid min-w-0 gap-4 sm:grid-cols-2 xl:col-span-5",
+          "parentHeight": 416,
+          "siblings": 6,
+          "title": "Total Sales",
+          "top": 150
+        },
+        {
+          "bottom": 278,
+          "height": 128,
+          "parentClass": "grid min-w-0 gap-4 sm:grid-cols-2 xl:col-span-5",
+          "parentHeight": 416,
+          "siblings": 6,
+          "title": "Total Orders",
+          "top": 150
+        },
+        {
+          "bottom": 422,
+          "height": 128,
+          "parentClass": "grid min-w-0 gap-4 sm:grid-cols-2 xl:col-span-5",
+          "parentHeight": 416,
+          "siblings": 6,
+          "title": "Customer Growth",
+          "top": 294
+        },
+        {
+          "bottom": 422,
+          "height": 128,
+          "parentClass": "grid min-w-0 gap-4 sm:grid-cols-2 xl:col-span-5",
+          "parentHeight": 416,
+          "siblings": 6,
+          "title": "Average Order",
+          "top": 294
+        },
+        {
+          "bottom": 566,
+          "height": 128,
+          "parentClass": "grid min-w-0 gap-4 sm:grid-cols-2 xl:col-span-5",
+          "parentHeight": 416,
+          "siblings": 6,
+          "title": "Return Requests",
+          "top": 438
+        },
+        {
+          "bottom": 566,
+          "height": 128,
+          "parentClass": "grid min-w-0 gap-4 sm:grid-cols-2 xl:col-span-5",
+          "parentHeight": 416,
+          "siblings": 6,
+          "title": "Stock Accuracy",
+          "top": 438
+        },
+        {
+          "bottom": 566,
+          "height": 416,
+          "parentClass": "grid min-w-0 gap-4 xl:col-span-12 xl:grid-cols-12",
+          "parentHeight": 416,
+          "siblings": 2,
+          "title": "Sales Overview",
+          "top": 150
+        },
+        {
+          "bottom": 930,
+          "height": 348,
+          "parentClass": "min-w-0 xl:col-span-5",
+          "parentHeight": 348,
+          "siblings": 1,
+          "title": "Store Traffic",
+          "top": 582
+        },
+        {
+          "bottom": 930,
+          "height": 348,
+          "parentClass": "min-w-0 xl:col-span-7",
+          "parentHeight": 348,
+          "siblings": 1,
+          "title": "Traffic Sources",
+          "top": 582
+        },
+        {
+          "bottom": 1311,
+          "height": 365,
+          "parentClass": "min-w-0 xl:col-span-4",
+          "parentHeight": 365,
+          "siblings": 1,
+          "title": "Top Products",
+          "top": 946
+        },
+        {
+          "bottom": 1311,
+          "height": 365,
+          "parentClass": "min-w-0 xl:col-span-4",
+          "parentHeight": 365,
+          "siblings": 1,
+          "title": "Inventory",
+          "top": 946
+        },
+        {
+          "bottom": 1311,
+          "height": 365,
+          "parentClass": "min-w-0 xl:col-span-4",
+          "parentHeight": 365,
+          "siblings": 1,
+          "title": "Reviews",
+          "top": 946
+        },
+        {
+          "bottom": 2135,
+          "height": 808,
+          "parentClass": "min-w-0 xl:col-span-12",
+          "parentHeight": 808,
+          "siblings": 1,
+          "title": "Recent Orders",
+          "top": 1327
+        }
+      ]
+    }
+  },
+  {
+    "route": "academy",
+    "result": {
+      "toolIcon": {
+        "_tag": "website",
+        "pageUrl": "http://127.0.0.1:3010/dashboard/academy"
+      },
+      "value": [
+        {
+          "bottom": 290,
+          "height": 138,
+          "parentClass": "grid gap-4 md:grid-cols-2 xl:grid-cols-4",
+          "parentHeight": 138,
+          "siblings": 4,
+          "title": "Students Taught",
+          "top": 152
+        },
+        {
+          "bottom": 290,
+          "height": 138,
+          "parentClass": "grid gap-4 md:grid-cols-2 xl:grid-cols-4",
+          "parentHeight": 138,
+          "siblings": 4,
+          "title": "Avg. Attendance",
+          "top": 152
+        },
+        {
+          "bottom": 290,
+          "height": 138,
+          "parentClass": "grid gap-4 md:grid-cols-2 xl:grid-cols-4",
+          "parentHeight": 138,
+          "siblings": 4,
+          "title": "Assignments",
+          "top": 152
+        },
+        {
+          "bottom": 290,
+          "height": 138,
+          "parentClass": "grid gap-4 md:grid-cols-2 xl:grid-cols-4",
+          "parentHeight": 138,
+          "siblings": 4,
+          "title": "Classes Today",
+          "top": 152
+        },
+        {
+          "bottom": 927,
+          "height": 621,
+          "parentClass": "min-w-0 xl:col-span-5",
+          "parentHeight": 621,
+          "siblings": 1,
+          "title": "Class Schedule",
+          "top": 306
+        },
+        {
+          "bottom": 927,
+          "height": 621,
+          "parentClass": "min-w-0 xl:col-span-7",
+          "parentHeight": 621,
+          "siblings": 1,
+          "title": "Assignment Status",
+          "top": 306
+        },
+        {
+          "bottom": 1459,
+          "height": 516,
+          "parentClass": "min-w-0 xl:col-span-8",
+          "parentHeight": 516,
+          "siblings": 1,
+          "title": "Performance Highlights",
+          "top": 943
+        },
+        {
+          "bottom": 1459,
+          "height": 516,
+          "parentClass": "min-w-0 xl:col-span-4",
+          "parentHeight": 516,
+          "siblings": 1,
+          "title": "Upcoming Events",
+          "top": 943
+        }
+      ]
+    }
+  },
+  {
+    "route": "logistics",
+    "result": {
+      "toolIcon": {
+        "_tag": "website",
+        "pageUrl": "http://127.0.0.1:3010/dashboard/logistics"
+      },
+      "value": [
+        {
+          "bottom": 900,
+          "height": 844,
+          "parentClass": "h-full overflow-hidden",
+          "parentHeight": 844,
+          "siblings": 1,
+          "title": "Shipments",
+          "top": 56
+        }
+      ]
+    }
+  },
+  {
+    "route": "infrastructure",
+    "result": {
+      "toolIcon": {
+        "_tag": "website",
+        "pageUrl": "http://127.0.0.1:3010/dashboard/infrastructure"
+      },
+      "value": []
+    }
+  },
+  {
+    "route": "patient-monitoring",
+    "result": {
+      "toolIcon": {
+        "_tag": "website",
+        "pageUrl": "http://127.0.0.1:3010/dashboard/patient-monitoring"
+      },
+      "value": []
+    }
+  }
+]

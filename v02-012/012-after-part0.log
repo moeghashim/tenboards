@@ -1,0 +1,92 @@
+
+> tenboards@0.1.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url https://cdb9d22c-tenboards.mohanadgh.workers.dev --routes /chat,/mail,/,/dashboard/academy,/dashboard/calendar,/dashboard/coming-soon,/dashboard/default,/dashboard/file-manager,/dashboard/infrastructure,/dashboard/kanban,/dashboard/mail,/dashboard/productivity,/dashboard/profile,/dashboard/tasks,/dashboard/$,/auth/v1/login,/auth/v2/login,/dashboard/analytics-v1,/dashboard/default-v1 --output screenshots/012-after-part0
+
+PASS /chat light/desktop
+PASS /chat light/mobile
+PASS /chat dark/desktop
+PASS /chat dark/mobile
+PASS /mail light/desktop
+PASS /mail light/mobile
+PASS /mail dark/desktop
+PASS /mail dark/mobile
+PASS / light/desktop
+PASS / light/mobile
+PASS / dark/desktop
+PASS / dark/mobile
+PASS /dashboard/academy light/desktop
+PASS /dashboard/academy light/mobile
+PASS /dashboard/academy dark/desktop
+PASS /dashboard/academy dark/mobile
+FAIL /dashboard/calendar light/desktop
+page: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+FAIL /dashboard/calendar light/mobile
+page: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+FAIL /dashboard/calendar dark/desktop
+page: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+FAIL /dashboard/calendar dark/mobile
+page: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+PASS /dashboard/coming-soon light/desktop
+PASS /dashboard/coming-soon light/mobile
+PASS /dashboard/coming-soon dark/desktop
+PASS /dashboard/coming-soon dark/mobile
+PASS /dashboard/default light/desktop
+PASS /dashboard/default light/mobile
+PASS /dashboard/default dark/desktop
+PASS /dashboard/default dark/mobile
+PASS /dashboard/file-manager light/desktop
+PASS /dashboard/file-manager light/mobile
+PASS /dashboard/file-manager dark/desktop
+PASS /dashboard/file-manager dark/mobile
+PASS /dashboard/infrastructure light/desktop
+PASS /dashboard/infrastructure light/mobile
+PASS /dashboard/infrastructure dark/desktop
+PASS /dashboard/infrastructure dark/mobile
+PASS /dashboard/kanban light/desktop
+PASS /dashboard/kanban light/mobile
+PASS /dashboard/kanban dark/desktop
+PASS /dashboard/kanban dark/mobile
+PASS /dashboard/mail light/desktop
+PASS /dashboard/mail light/mobile
+PASS /dashboard/mail dark/desktop
+PASS /dashboard/mail dark/mobile
+FAIL /dashboard/productivity light/desktop
+page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+FAIL /dashboard/productivity light/mobile
+page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+FAIL /dashboard/productivity dark/desktop
+page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+FAIL /dashboard/productivity dark/mobile
+page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+PASS /dashboard/profile light/desktop
+PASS /dashboard/profile light/mobile
+PASS /dashboard/profile dark/desktop
+PASS /dashboard/profile dark/mobile
+PASS /dashboard/tasks light/desktop
+PASS /dashboard/tasks light/mobile
+PASS /dashboard/tasks dark/desktop
+PASS /dashboard/tasks dark/mobile
+PASS /dashboard/$ light/desktop
+PASS /dashboard/$ light/mobile
+PASS /dashboard/$ dark/desktop
+PASS /dashboard/$ dark/mobile
+PASS /auth/v1/login light/desktop
+PASS /auth/v1/login light/mobile
+PASS /auth/v1/login dark/desktop
+PASS /auth/v1/login dark/mobile
+FAIL /auth/v2/login light/desktop
+page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+FAIL /auth/v2/login light/mobile
+page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+FAIL /auth/v2/login dark/desktop
+page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+FAIL /auth/v2/login dark/mobile
+page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+PASS /dashboard/analytics-v1 light/desktop
+PASS /dashboard/analytics-v1 light/mobile
+PASS /dashboard/analytics-v1 dark/desktop
+PASS /dashboard/analytics-v1 dark/mobile
+PASS /dashboard/default-v1 light/desktop
+PASS /dashboard/default-v1 light/mobile
+PASS /dashboard/default-v1 dark/desktop
+PASS /dashboard/default-v1 dark/mobile

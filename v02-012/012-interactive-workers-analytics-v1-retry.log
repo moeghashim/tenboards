@@ -1,0 +1,8 @@
+
+> tenboards@0.1.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url https://c87d1f88-tenboards.mohanadgh.workers.dev --routes /dashboard/analytics-v1 --interactions --output screenshots/v02-012/interactive-workers-analytics-v1-retry
+
+PASS /dashboard/analytics-v1 light/desktop direct
+PASS /dashboard/analytics-v1 light/mobile direct
+PASS /dashboard/analytics-v1 dark/desktop direct
+PASS /dashboard/analytics-v1 dark/mobile direct

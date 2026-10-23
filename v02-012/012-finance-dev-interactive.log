@@ -1,0 +1,12 @@
+
+> tenboards@0.1.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://127.0.0.1:3010 --routes /dashboard/finance --interactions --output screenshots/v02-012/finance-dev-interactive
+
+FAIL /dashboard/finance light/desktop direct
+Finance layout/focus: {"overflow":false,"aligned":true,"outline":"none"}
+FAIL /dashboard/finance light/mobile direct
+Finance layout/focus: {"overflow":false,"aligned":true,"outline":"none"}
+FAIL /dashboard/finance dark/desktop direct
+Finance layout/focus: {"overflow":false,"aligned":true,"outline":"none"}
+FAIL /dashboard/finance dark/mobile direct
+Finance layout/focus: {"overflow":false,"aligned":true,"outline":"none"}

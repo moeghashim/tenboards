@@ -1,0 +1,104 @@
+
+> tenboards@0.1.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url https://cdb9d22c-tenboards.mohanadgh.workers.dev --routes /dashboard,/unauthorized,/auth/v2,/dashboard/analytics,/dashboard/chat,/dashboard/crm,/dashboard/ecommerce,/dashboard/finance,/dashboard/invoice,/dashboard/logistics,/dashboard/patient-monitoring,/dashboard/products,/dashboard/roles,/dashboard/users,/dashboard/,/auth/v1/register,/auth/v2/register,/dashboard/crm-v1,/dashboard/finance-v1 --output screenshots/012-after-part1
+
+PASS /dashboard light/desktop
+PASS /dashboard light/mobile
+PASS /dashboard dark/desktop
+PASS /dashboard dark/mobile
+PASS /unauthorized light/desktop
+PASS /unauthorized light/mobile
+PASS /unauthorized dark/desktop
+PASS /unauthorized dark/mobile
+PASS /auth/v2 light/desktop
+PASS /auth/v2 light/mobile
+PASS /auth/v2 dark/desktop
+PASS /auth/v2 dark/mobile
+PASS /dashboard/analytics light/desktop
+PASS /dashboard/analytics light/mobile
+PASS /dashboard/analytics dark/desktop
+PASS /dashboard/analytics dark/mobile
+PASS /dashboard/chat light/desktop
+PASS /dashboard/chat light/mobile
+PASS /dashboard/chat dark/desktop
+PASS /dashboard/chat dark/mobile
+PASS /dashboard/crm light/desktop
+FAIL /dashboard/crm light/mobile
+page.goto: Timeout 30000ms exceeded.
+Call log:
+[2m  - navigating to "https://cdb9d22c-tenboards.mohanadgh.workers.dev/dashboard/crm", waiting until "domcontentloaded"[22m
+
+PASS /dashboard/crm dark/desktop
+PASS /dashboard/crm dark/mobile
+PASS /dashboard/ecommerce light/desktop
+PASS /dashboard/ecommerce light/mobile
+PASS /dashboard/ecommerce dark/desktop
+PASS /dashboard/ecommerce dark/mobile
+FAIL /dashboard/finance light/desktop
+page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+FAIL /dashboard/finance light/mobile
+page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+FAIL /dashboard/finance dark/desktop
+page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+FAIL /dashboard/finance dark/mobile
+page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+FAIL /dashboard/invoice light/desktop
+page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+FAIL /dashboard/invoice light/mobile
+page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+FAIL /dashboard/invoice dark/desktop
+page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+FAIL /dashboard/invoice dark/mobile
+page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+PASS /dashboard/logistics light/desktop
+PASS /dashboard/logistics light/mobile
+PASS /dashboard/logistics dark/desktop
+PASS /dashboard/logistics dark/mobile
+FAIL /dashboard/patient-monitoring light/desktop
+page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+FAIL /dashboard/patient-monitoring light/mobile
+page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+FAIL /dashboard/patient-monitoring dark/desktop
+page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+FAIL /dashboard/patient-monitoring dark/mobile
+page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+PASS /dashboard/products light/desktop
+PASS /dashboard/products light/mobile
+PASS /dashboard/products dark/desktop
+PASS /dashboard/products dark/mobile
+PASS /dashboard/roles light/desktop
+PASS /dashboard/roles light/mobile
+PASS /dashboard/roles dark/desktop
+PASS /dashboard/roles dark/mobile
+PASS /dashboard/users light/desktop
+PASS /dashboard/users light/mobile
+PASS /dashboard/users dark/desktop
+PASS /dashboard/users dark/mobile
+PASS /dashboard/ light/desktop
+PASS /dashboard/ light/mobile
+PASS /dashboard/ dark/desktop
+PASS /dashboard/ dark/mobile
+PASS /auth/v1/register light/desktop
+PASS /auth/v1/register light/mobile
+PASS /auth/v1/register dark/desktop
+PASS /auth/v1/register dark/mobile
+FAIL /auth/v2/register light/desktop
+page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+FAIL /auth/v2/register light/mobile
+page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+FAIL /auth/v2/register dark/desktop
+page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+FAIL /auth/v2/register dark/mobile
+page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+PASS /dashboard/crm-v1 light/desktop
+PASS /dashboard/crm-v1 light/mobile
+PASS /dashboard/crm-v1 dark/desktop
+PASS /dashboard/crm-v1 dark/mobile
+FAIL /dashboard/finance-v1 light/desktop
+page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+FAIL /dashboard/finance-v1 light/mobile
+page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+FAIL /dashboard/finance-v1 dark/desktop
+page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+FAIL /dashboard/finance-v1 dark/mobile
+page: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.

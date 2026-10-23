@@ -1,0 +1,484 @@
+{
+  "baseURL": "https://c87d1f88-tenboards.mohanadgh.workers.dev/",
+  "hydrationDelayMs": 0,
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": false,
+  "interactions": true,
+  "results": [
+    {
+      "route": "/dashboard/academy",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_academy-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_academy-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Student achievement tooltip opens by keyboard focus",
+        "Escape dismisses tooltip",
+        "Gradebook demo action retains screen",
+        "Full course name and no page overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/academy",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_academy-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_academy-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Student achievement tooltip opens by keyboard focus",
+        "Escape dismisses tooltip",
+        "Gradebook demo action retains screen",
+        "Full course name and no page overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/academy",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_academy-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_academy-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Student achievement tooltip opens by keyboard focus",
+        "Escape dismisses tooltip",
+        "Gradebook demo action retains screen",
+        "Full course name and no page overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/academy",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_academy-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_academy-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Student achievement tooltip opens by keyboard focus",
+        "Escape dismisses tooltip",
+        "Gradebook demo action retains screen",
+        "Full course name and no page overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_analytics-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_analytics-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Last 7 days selected",
+        "Campaigns displays Spring Launch / Newsletter / Retargeting / Brand Search / Partners"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_analytics-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_analytics-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Last 7 days selected",
+        "Campaigns displays Spring Launch / Newsletter / Retargeting / Brand Search / Partners"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_analytics-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_analytics-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Last 7 days selected",
+        "Campaigns displays Spring Launch / Newsletter / Retargeting / Brand Search / Partners"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_analytics-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_analytics-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Last 7 days selected",
+        "Campaigns displays Spring Launch / Newsletter / Retargeting / Brand Search / Partners"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/ecommerce",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_ecommerce-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_ecommerce-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Last Month / Online Store selected",
+        "Returns filter, Space selects orders, Enter sorts dates",
+        "Order menu opens, Escape closes",
+        "No page-wide overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/ecommerce",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_ecommerce-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_ecommerce-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Last Month / Online Store selected",
+        "Returns filter, Space selects orders, Enter sorts dates",
+        "Order menu opens, Escape closes",
+        "No page-wide overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/ecommerce",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_ecommerce-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_ecommerce-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Last Month / Online Store selected",
+        "Returns filter, Space selects orders, Enter sorts dates",
+        "Order menu opens, Escape closes",
+        "No page-wide overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/ecommerce",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_ecommerce-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_ecommerce-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Last Month / Online Store selected",
+        "Returns filter, Space selects orders, Enter sorts dates",
+        "Order menu opens, Escape closes",
+        "No page-wide overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/infrastructure",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_infrastructure-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_infrastructure-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Enter collapses/reopens project",
+        "Named project/environment action menus open; Escape closes",
+        "All four fixture rows and empty project retained",
+        "Search remains a demo input; no page-wide overflow",
+        "Empty-project menu open"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/infrastructure",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_infrastructure-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_infrastructure-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Enter collapses/reopens project",
+        "Named project/environment action menus open; Escape closes",
+        "All four fixture rows and empty project retained",
+        "Search remains a demo input; no page-wide overflow",
+        "Empty-project menu open"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/infrastructure",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_infrastructure-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_infrastructure-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Enter collapses/reopens project",
+        "Named project/environment action menus open; Escape closes",
+        "All four fixture rows and empty project retained",
+        "Search remains a demo input; no page-wide overflow",
+        "Empty-project menu open"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/infrastructure",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_infrastructure-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_infrastructure-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Enter collapses/reopens project",
+        "Named project/environment action menus open; Escape closes",
+        "All four fixture rows and empty project retained",
+        "Search remains a demo input; no page-wide overflow",
+        "Empty-project menu open"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/logistics",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_logistics-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_logistics-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Enter selects second shipment and correct details",
+        "Route placeholder and Overview tabs preserved",
+        "Desktop split pane updated",
+        "No page-wide overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/logistics",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_logistics-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_logistics-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Enter selects second shipment and correct details",
+        "Route placeholder and Overview tabs preserved",
+        "Mobile sheet named; Escape closes and returns focus; Enter reopens",
+        "No page-wide overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/logistics",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_logistics-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_logistics-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Enter selects second shipment and correct details",
+        "Route placeholder and Overview tabs preserved",
+        "Desktop split pane updated",
+        "No page-wide overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/logistics",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_logistics-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_logistics-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Enter selects second shipment and correct details",
+        "Route placeholder and Overview tabs preserved",
+        "Mobile sheet named; Escape closes and returns focus; Enter reopens",
+        "No page-wide overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_patient-monitoring-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_patient-monitoring-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Real clock advances across second boundary",
+        "Reduced-motion trace stable",
+        "Normal-motion trace updates; runtime reduction pauses it",
+        "Keyboard acknowledgement persists; patient selection and event/trend tabs work",
+        "Footer keyboard focus and no page-wide overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_patient-monitoring-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_patient-monitoring-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Real clock advances across second boundary",
+        "Reduced-motion trace stable",
+        "Normal-motion trace updates; runtime reduction pauses it",
+        "Keyboard acknowledgement persists; patient selection and event/trend tabs work",
+        "Footer keyboard focus and no page-wide overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_patient-monitoring-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_patient-monitoring-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Real clock advances across second boundary",
+        "Reduced-motion trace stable",
+        "Normal-motion trace updates; runtime reduction pauses it",
+        "Keyboard acknowledgement persists; patient selection and event/trend tabs work",
+        "Footer keyboard focus and no page-wide overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_patient-monitoring-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_patient-monitoring-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Real clock advances across second boundary",
+        "Reduced-motion trace stable",
+        "Normal-motion trace updates; runtime reduction pauses it",
+        "Keyboard acknowledgement persists; patient selection and event/trend tabs work",
+        "Footer keyboard focus and no page-wide overflow"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/productivity",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_productivity-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_productivity-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Space completes first task",
+        "Tomorrow / Planning selected",
+        "Enter navigates to November; ArrowRight + Enter selects November 5",
+        "Focus Start retains existing 90:00 placeholder; Task period menu open"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/productivity",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_productivity-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_productivity-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Space completes first task",
+        "Tomorrow / Planning selected",
+        "Enter navigates to November; ArrowRight + Enter selects November 5",
+        "Focus Start retains existing 90:00 placeholder; Task period menu open"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/productivity",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_productivity-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_productivity-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Space completes first task",
+        "Tomorrow / Planning selected",
+        "Enter navigates to November; ArrowRight + Enter selects November 5",
+        "Focus Start retains existing 90:00 placeholder; Task period menu open"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/productivity",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_productivity-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_productivity-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Space completes first task",
+        "Tomorrow / Planning selected",
+        "Enter navigates to November; ArrowRight + Enter selects November 5",
+        "Focus Start retains existing 90:00 placeholder; Task period menu open"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics-v1",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_analytics-v1-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_analytics-v1-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": [
+        "page.waitForLoadState: Timeout 30000ms exceeded."
+      ]
+    },
+    {
+      "route": "/dashboard/analytics-v1",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_analytics-v1-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_analytics-v1-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Enterprise + Renewals filter count 2",
+        "Momentum selected",
+        "Risk ascending: Soylent Foods / 31 first"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics-v1",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_analytics-v1-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_analytics-v1-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Enterprise + Renewals filter count 2",
+        "Momentum selected",
+        "Risk ascending: Soylent Foods / 31 first"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics-v1",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_analytics-v1-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_analytics-v1-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Enterprise + Renewals filter count 2",
+        "Momentum selected",
+        "Risk ascending: Soylent Foods / 31 first"
+      ],
+      "errors": []
+    }
+  ]
+}

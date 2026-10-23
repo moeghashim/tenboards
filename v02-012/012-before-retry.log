@@ -1,0 +1,12 @@
+
+> tenboards@0.1.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://localhost:3001 --routes /dashboard/calendar,/dashboard/finance --output screenshots/012-before-retry
+
+PASS /dashboard/calendar light/desktop
+PASS /dashboard/calendar light/mobile
+PASS /dashboard/calendar dark/desktop
+PASS /dashboard/calendar dark/mobile
+PASS /dashboard/finance light/desktop
+PASS /dashboard/finance light/mobile
+PASS /dashboard/finance dark/desktop
+PASS /dashboard/finance dark/mobile

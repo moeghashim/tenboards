@@ -1,0 +1,50 @@
+{
+  "baseURL": "https://c87d1f88-tenboards.mohanadgh.workers.dev/",
+  "hydrationDelayMs": 0,
+  "preset": "graphite",
+  "timezone": "America/Chicago",
+  "reload": false,
+  "interactions": false,
+  "results": [
+    {
+      "route": "/dashboard/analytics",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_analytics-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_analytics-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_analytics-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/analytics",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_analytics-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    }
+  ]
+}

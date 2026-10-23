@@ -1,0 +1,146 @@
+[
+  {
+    "chart": "#1e40af",
+    "paths": [
+      {
+        "opacity": "1",
+        "stroke": "rgb(81, 91, 107)",
+        "strokeOpacity": "1"
+      },
+      {
+        "opacity": "1",
+        "stroke": "rgb(30, 64, 175)",
+        "strokeOpacity": "1"
+      }
+    ],
+    "preset": "default",
+    "primary": "#1e40af",
+    "theme": "light"
+  },
+  {
+    "chart": "#a9c2ff",
+    "paths": [
+      {
+        "opacity": "1",
+        "stroke": "rgb(176, 186, 203)",
+        "strokeOpacity": "1"
+      },
+      {
+        "opacity": "1",
+        "stroke": "rgb(169, 194, 255)",
+        "strokeOpacity": "1"
+      }
+    ],
+    "preset": "default",
+    "primary": "#a9c2ff",
+    "theme": "dark"
+  },
+  {
+    "chart": "#303948",
+    "paths": [
+      {
+        "opacity": "1",
+        "stroke": "rgb(81, 91, 107)",
+        "strokeOpacity": "1"
+      },
+      {
+        "opacity": "1",
+        "stroke": "rgb(48, 57, 72)",
+        "strokeOpacity": "1"
+      }
+    ],
+    "preset": "graphite",
+    "primary": "#303948",
+    "theme": "light"
+  },
+  {
+    "chart": "#d1d8e4",
+    "paths": [
+      {
+        "opacity": "1",
+        "stroke": "rgb(176, 186, 203)",
+        "strokeOpacity": "1"
+      },
+      {
+        "opacity": "1",
+        "stroke": "rgb(209, 216, 228)",
+        "strokeOpacity": "1"
+      }
+    ],
+    "preset": "graphite",
+    "primary": "#d1d8e4",
+    "theme": "dark"
+  },
+  {
+    "chart": "#115e59",
+    "paths": [
+      {
+        "opacity": "1",
+        "stroke": "rgb(81, 91, 107)",
+        "strokeOpacity": "1"
+      },
+      {
+        "opacity": "1",
+        "stroke": "rgb(17, 94, 89)",
+        "strokeOpacity": "1"
+      }
+    ],
+    "preset": "pine",
+    "primary": "#115e59",
+    "theme": "light"
+  },
+  {
+    "chart": "#5eead4",
+    "paths": [
+      {
+        "opacity": "1",
+        "stroke": "rgb(176, 186, 203)",
+        "strokeOpacity": "1"
+      },
+      {
+        "opacity": "1",
+        "stroke": "rgb(94, 234, 212)",
+        "strokeOpacity": "1"
+      }
+    ],
+    "preset": "pine",
+    "primary": "#5eead4",
+    "theme": "dark"
+  },
+  {
+    "chart": "#5b21b6",
+    "paths": [
+      {
+        "opacity": "1",
+        "stroke": "rgb(81, 91, 107)",
+        "strokeOpacity": "1"
+      },
+      {
+        "opacity": "1",
+        "stroke": "rgb(91, 33, 182)",
+        "strokeOpacity": "1"
+      }
+    ],
+    "preset": "iris",
+    "primary": "#5b21b6",
+    "theme": "light"
+  },
+  {
+    "chart": "#c4b5fd",
+    "paths": [
+      {
+        "opacity": "1",
+        "stroke": "rgb(176, 186, 203)",
+        "strokeOpacity": "1"
+      },
+      {
+        "opacity": "1",
+        "stroke": "rgb(196, 181, 253)",
+        "strokeOpacity": "1"
+      }
+    ],
+    "preset": "iris",
+    "primary": "#c4b5fd",
+    "theme": "dark"
+  }
+]

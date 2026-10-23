@@ -1,0 +1,8 @@
+
+> tenboards@0.1.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://127.0.0.1:3010 --routes /dashboard/ecommerce --output screenshots/v02-012/before-ecommerce-retry
+
+PASS /dashboard/ecommerce light/desktop direct
+PASS /dashboard/ecommerce light/mobile direct
+PASS /dashboard/ecommerce dark/desktop direct
+PASS /dashboard/ecommerce dark/mobile direct

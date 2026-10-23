@@ -1,0 +1,8 @@
+
+> tenboards@0.1.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url https://cdb9d22c-tenboards.mohanadgh.workers.dev --routes /dashboard/crm --output screenshots/012-after-retry
+
+PASS /dashboard/crm light/desktop
+PASS /dashboard/crm light/mobile
+PASS /dashboard/crm dark/desktop
+PASS /dashboard/crm dark/mobile

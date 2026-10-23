@@ -1,0 +1,8 @@
+
+> tenboards@0.1.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url https://c87d1f88-tenboards.mohanadgh.workers.dev --routes /dashboard/finance --interactions --output screenshots/v02-012/finance-workers-interactive-final
+
+PASS /dashboard/finance light/desktop direct
+PASS /dashboard/finance light/mobile direct
+PASS /dashboard/finance dark/desktop direct
+PASS /dashboard/finance dark/mobile direct

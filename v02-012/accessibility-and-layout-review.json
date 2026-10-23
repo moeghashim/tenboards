@@ -1,0 +1,50 @@
+{
+  "method": "Rendered CSS token measurement with check-contrast.ts; named keyboard interactions in screenshots.ts --interactions; visual review of full-page captures and DOM row geometry via T3 preview.",
+  "contrast": {
+    "checksPerEnvironment": 280,
+    "presets": [
+      "default",
+      "graphite",
+      "pine",
+      "iris"
+    ],
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "minimumTextRatio": 4.67,
+    "minimumControlFocusRatio": 3.41,
+    "meaningfulGraphics": "Opaque primary, muted, success, warning, danger and info strokes/fills on neutral cards are measured supported pairs. Decorative grids/separators are not meaningful boundaries."
+  },
+  "keyboardSpotChecks": [
+    "Finance: keyboard period menu, placeholder tab and return, named transfer field, actual Tab/Shift+Tab focus outline",
+    "E-commerce: order filter, checkbox selection, sorting, pagination and action menu",
+    "Academy: focusable student achievement popup and full score labels",
+    "Logistics: keyboard shipment selection, mobile sheet Escape and focus return",
+    "Infrastructure: group collapse, named project/environment action menus",
+    "Productivity: task checkbox and arrow-key calendar selection",
+    "Analytics: range/tab selection; Analytics V1 risk filter and sort",
+    "Patient Monitoring: keyboard acknowledgement, patient selection and event/trend views; clock movement and waveform path comparison under runtime motion preference changes"
+  ],
+  "visualCoverage": [
+    "Default/Default V1 solid, dashed and dotted lines with matching legends",
+    "CRM/CRM V1 labelled bars, pattern segments, donut labels and funnel labels",
+    "Finance signed cash-flow bars, readable breakdowns and labelled allocation segments",
+    "Analytics/Analytics V1 line/baseline distinction, traffic bars, forecast dot/target references",
+    "Productivity numeric progress labels and calendar focus",
+    "E-commerce revenue/profit marks, traffic shares, stock gauge and payment/fulfillment badges",
+    "Academy grouped submissions with data table and performance timelines with names/scores",
+    "Logistics endpoint captions with origin circle and destination square; explicit shipment statuses",
+    "Infrastructure resource values and severity/health text",
+    "Patient Monitoring labelled ECG/Pleth/Resp/ART traces, alarm text and numeric units"
+  ],
+  "layoutFinding": {
+    "route": "/dashboard/finance",
+    "beforeSpendingHeight": 396,
+    "beforeAllocationHeight": 528,
+    "afterBothHeights": 528,
+    "lowerRow": "Wallet, bills and stacked quick actions now share the same bottom edge",
+    "otherRoutes": "All other 13 routes inspected; common comparison rows aligned. Independent sidebar work streams retain content-driven height."
+  },
+  "limits": "Scoped contrast, visual and keyboard checks; not a blanket WCAG conformance claim. Existing demo actions and external Logistics basemap retained."
+}

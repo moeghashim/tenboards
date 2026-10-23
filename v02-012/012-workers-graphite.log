@@ -1,0 +1,65 @@
+
+> tenboards@0.1.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url https://c87d1f88-tenboards.mohanadgh.workers.dev --routes /dashboard/default,/dashboard/default-v1,/dashboard/crm,/dashboard/crm-v1,/dashboard/finance,/dashboard/finance-v1,/dashboard/analytics,/dashboard/analytics-v1,/dashboard/productivity,/dashboard/ecommerce,/dashboard/academy,/dashboard/logistics,/dashboard/infrastructure,/dashboard/patient-monitoring --preset graphite --output screenshots/v02-012/workers-graphite
+
+PASS /dashboard/academy light/desktop direct
+PASS /dashboard/academy light/mobile direct
+PASS /dashboard/academy dark/desktop direct
+PASS /dashboard/academy dark/mobile direct
+FAIL /dashboard/analytics light/desktop direct
+request: https://c87d1f88-tenboards.mohanadgh.workers.dev/dashboard/analytics net::ERR_TIMED_OUT
+page.goto: net::ERR_TIMED_OUT at https://c87d1f88-tenboards.mohanadgh.workers.dev/dashboard/analytics
+Call log:
+[2m  - navigating to "https://c87d1f88-tenboards.mohanadgh.workers.dev/dashboard/analytics", waiting until "domcontentloaded"[22m
+
+PASS /dashboard/analytics light/mobile direct
+PASS /dashboard/analytics dark/desktop direct
+PASS /dashboard/analytics dark/mobile direct
+PASS /dashboard/crm light/desktop direct
+PASS /dashboard/crm light/mobile direct
+PASS /dashboard/crm dark/desktop direct
+PASS /dashboard/crm dark/mobile direct
+PASS /dashboard/default light/desktop direct
+PASS /dashboard/default light/mobile direct
+PASS /dashboard/default dark/desktop direct
+PASS /dashboard/default dark/mobile direct
+PASS /dashboard/ecommerce light/desktop direct
+PASS /dashboard/ecommerce light/mobile direct
+PASS /dashboard/ecommerce dark/desktop direct
+PASS /dashboard/ecommerce dark/mobile direct
+PASS /dashboard/finance light/desktop direct
+PASS /dashboard/finance light/mobile direct
+PASS /dashboard/finance dark/desktop direct
+PASS /dashboard/finance dark/mobile direct
+PASS /dashboard/infrastructure light/desktop direct
+PASS /dashboard/infrastructure light/mobile direct
+PASS /dashboard/infrastructure dark/desktop direct
+PASS /dashboard/infrastructure dark/mobile direct
+PASS /dashboard/logistics light/desktop direct
+PASS /dashboard/logistics light/mobile direct
+PASS /dashboard/logistics dark/desktop direct
+PASS /dashboard/logistics dark/mobile direct
+PASS /dashboard/patient-monitoring light/desktop direct
+PASS /dashboard/patient-monitoring light/mobile direct
+PASS /dashboard/patient-monitoring dark/desktop direct
+PASS /dashboard/patient-monitoring dark/mobile direct
+PASS /dashboard/productivity light/desktop direct
+PASS /dashboard/productivity light/mobile direct
+PASS /dashboard/productivity dark/desktop direct
+PASS /dashboard/productivity dark/mobile direct
+PASS /dashboard/analytics-v1 light/desktop direct
+PASS /dashboard/analytics-v1 light/mobile direct
+PASS /dashboard/analytics-v1 dark/desktop direct
+PASS /dashboard/analytics-v1 dark/mobile direct
+PASS /dashboard/crm-v1 light/desktop direct
+PASS /dashboard/crm-v1 light/mobile direct
+PASS /dashboard/crm-v1 dark/desktop direct
+PASS /dashboard/crm-v1 dark/mobile direct
+PASS /dashboard/default-v1 light/desktop direct
+PASS /dashboard/default-v1 light/mobile direct
+PASS /dashboard/default-v1 dark/desktop direct
+PASS /dashboard/default-v1 dark/mobile direct
+PASS /dashboard/finance-v1 light/desktop direct
+PASS /dashboard/finance-v1 light/mobile direct
+PASS /dashboard/finance-v1 dark/desktop direct
+PASS /dashboard/finance-v1 dark/mobile direct
