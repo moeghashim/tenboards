@@ -10,32 +10,13 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import type { Shipment } from "./shipment-data";
 import { ShipmentRouteMap } from "./shipment-route-map";
+import { statusBadge, statusText } from "./shipment-status";
 
 const modeIcons = {
   air: Plane,
   land: Truck,
   sea: Ship,
 } as const;
-
-const progressRingClasses: Record<Shipment["status"], string> = {
-  Scheduled: "text-muted-foreground",
-  "In Transit": "text-primary",
-  "Out for Delivery": "text-primary",
-  Delivered: "text-green-600",
-  Delayed: "text-destructive",
-  "On Hold": "text-amber-500",
-  "Customs Hold": "text-amber-500",
-};
-
-const statusBadgeClasses: Record<Shipment["status"], string> = {
-  Scheduled: "border-muted bg-muted/50 text-muted-foreground",
-  "In Transit": "border-primary/20 bg-primary/10 text-primary",
-  "Out for Delivery": "border-primary/20 bg-primary/10 text-primary",
-  Delivered: "border-green-600/20 bg-green-600/10 text-green-600",
-  Delayed: "border-destructive/20 bg-destructive/10 text-destructive",
-  "On Hold": "border-amber-500/20 bg-amber-500/10 text-amber-600 dark:text-amber-400",
-  "Customs Hold": "border-amber-500/20 bg-amber-500/10 text-amber-600 dark:text-amber-400",
-};
 
 type ShipmentDetailsProps = {
   shipment: Shipment | null;
@@ -88,9 +69,9 @@ function ShipmentOverview({ shipment }: { shipment: Shipment }) {
           </Button>
         </div>
 
-        <div className="flex items-center gap-2 text-xs sm:text-sm">
-          <Badge variant="outline" className={cn("gap-1.5", statusBadgeClasses[shipment.status])}>
-            <span className={cn("size-1.5 rounded-full bg-current", progressRingClasses[shipment.status])} />
+        <div className="flex flex-wrap items-center gap-2 text-xs sm:text-sm">
+          <Badge variant="outline" className={cn("gap-1.5", statusBadge[shipment.status])}>
+            <span className={cn("size-1.5 rounded-full bg-current", statusText[shipment.status])} />
             {shipment.status}
           </Badge>
           <span className="text-muted-foreground">·</span>
@@ -130,7 +111,7 @@ function ShipmentOverview({ shipment }: { shipment: Shipment }) {
 
       <Separator />
 
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-4">
         <div className="flex items-start justify-between gap-4">
           <h2 className="font-medium">Cargo details</h2>
 
@@ -140,10 +121,10 @@ function ShipmentOverview({ shipment }: { shipment: Shipment }) {
           </Button>
         </div>
 
-        <div className="grid grid-cols-2 gap-x-4 gap-y-5 md:grid-cols-[1.35fr_1fr_1.1fr_1.15fr_1fr]">
+        <div className="grid grid-cols-2 gap-x-4 gap-y-5 xl:grid-cols-3">
           <div className="col-span-2 flex flex-col gap-1 md:col-span-1 md:gap-2">
-            <div className="text-muted-foreground text-xs leading-none md:invisible md:text-sm">Cargo</div>
-            <div className="text-sm leading-none whitespace-nowrap">{shipment.cargo}</div>
+            <div className="text-muted-foreground text-xs leading-none md:text-sm">Cargo</div>
+            <div className="text-sm leading-none wrap-break-word">{shipment.cargo}</div>
           </div>
 
           <div className="flex flex-col gap-2">
@@ -172,20 +153,18 @@ function ShipmentOverview({ shipment }: { shipment: Shipment }) {
 
       <Separator />
 
-      <Alert className="border-amber-200 bg-amber-50 text-amber-900 dark:border-amber-900 dark:bg-amber-950 dark:text-amber-50">
+      <Alert className="border-warning/30 bg-warning-surface text-warning">
         <AlertTriangleIcon />
         <AlertTitle>{shipment.handling.label}</AlertTitle>
         <AlertDescription className="space-y-2">
-          <div className="border-amber-900 leading-none text-amber-900 dark:border-amber-50 dark:text-amber-50">
-            {shipment.handling.note}
-          </div>
+          <div className="text-warning leading-snug">{shipment.handling.note}</div>
 
-          <Separator className="bg-amber-800 dark:bg-amber-50" />
+          <Separator className="bg-warning/30" />
 
           <div className="flex flex-wrap gap-2">
             {shipment.handling.tags.map(({ icon: TagIcon, label }) => (
               <Badge
-                className="bg-background/50 rounded-sm border-amber-200 text-amber-900 dark:border-amber-900 dark:text-amber-50"
+                className="bg-warning-surface text-warning border-warning/30 rounded-sm"
                 key={label}
                 variant="outline"
               >
@@ -203,7 +182,7 @@ function ShipmentOverview({ shipment }: { shipment: Shipment }) {
 export function ShipmentDetails({ shipment }: ShipmentDetailsProps) {
   if (!shipment) {
     return (
-      <div className="grid h-full min-h-0 grid-rows-[320px_1fr] overflow-hidden lg:grid-rows-[420px_1fr]">
+      <div className="grid h-full min-h-0 grid-rows-[minmax(160px,32vh)_1fr] overflow-hidden lg:grid-rows-[minmax(200px,40vh)_1fr]">
         <div className="min-h-0 overflow-hidden">
           <ShipmentRouteMap shipment={null} />
         </div>
@@ -215,7 +194,7 @@ export function ShipmentDetails({ shipment }: ShipmentDetailsProps) {
   }
 
   return (
-    <div className="grid h-full min-h-0 grid-rows-[320px_1fr] overflow-hidden lg:grid-rows-[420px_1fr]">
+    <div className="grid h-full min-h-0 grid-rows-[minmax(160px,32vh)_1fr] overflow-hidden lg:grid-rows-[minmax(200px,40vh)_1fr]">
       <div className="min-h-0 overflow-hidden">
         <ShipmentRouteMap shipment={shipment} />
       </div>
@@ -223,7 +202,7 @@ export function ShipmentDetails({ shipment }: ShipmentDetailsProps) {
         <div className="h-full min-h-0 py-2">
           <Tabs defaultValue="overview" className="h-full gap-0">
             <TabsList
-              className="w-full justify-start gap-2 border-b px-4 **:data-[slot=tabs-trigger]:text-xs sm:gap-4 sm:**:data-[slot=tabs-trigger]:text-sm"
+              className="h-auto w-full flex-wrap justify-start gap-2 border-b px-4 **:data-[slot=tabs-trigger]:text-xs sm:gap-4 sm:**:data-[slot=tabs-trigger]:text-sm"
               variant="line"
             >
               <TabsTrigger className="flex-none" value="overview">

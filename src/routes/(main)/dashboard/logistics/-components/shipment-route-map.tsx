@@ -171,28 +171,27 @@ export function ShipmentRouteMap({ shipment }: ShipmentRouteMapProps) {
   const { path, routePath, routePoints } = buildMapGeometry(shipment);
 
   return (
-    <div className="size-full min-h-0 overflow-hidden bg-[#d4dadc] dark:bg-[#2C353C]">
+    <div className="bg-muted relative size-full min-h-0 overflow-hidden">
       <svg
-        aria-label="Southeast Asia shipment region map"
-        className="block size-full bg-[#d4dadc] dark:bg-[#2C353C]"
+        aria-label={
+          shipment ? `Route from ${shipment.origin.display} to ${shipment.destination.display}` : "Shipment region map"
+        }
+        className="bg-muted block size-full"
         role="img"
         viewBox={`0 0 ${WIDTH} ${HEIGHT}`}
         preserveAspectRatio="xMidYMid meet"
       >
-        <rect height={HEIGHT} width={WIDTH} className="fill-[#d4dadc] dark:fill-[#2C353C]" />
+        <rect height={HEIGHT} width={WIDTH} className="fill-muted" />
         {land && (
           <path
             d={path(land as GeoPermissibleObjects) ?? undefined}
-            className="fill-[#fafaf8] dark:fill-[#0e0e0e]"
-            stroke="#f0dddd"
+            className="fill-card"
+            stroke="var(--border)"
             strokeWidth={0.8}
           />
         )}
         {borders && (
-          <path
-            d={path(borders as GeoPermissibleObjects) ?? undefined}
-            className="fill-none stroke-[#ebd6d8] dark:stroke-[#2C353C]"
-          />
+          <path d={path(borders as GeoPermissibleObjects) ?? undefined} className="stroke-border fill-none" />
         )}
         {routePath && (
           <path
@@ -206,15 +205,25 @@ export function ShipmentRouteMap({ shipment }: ShipmentRouteMapProps) {
         {routePoints.map(({ country, label, point }) =>
           point ? (
             <g key={label} transform={`translate(${point[0]}, ${point[1]})`}>
-              <circle className="fill-background stroke-primary" r={8} strokeWidth={3} />
+              {label === "Origin" ? (
+                <circle className="fill-background stroke-primary" r={8} strokeWidth={3} />
+              ) : (
+                <rect className="fill-background stroke-primary" x={-8} y={-8} width={16} height={16} strokeWidth={3} />
+              )}
               <circle className="fill-primary" r={3} />
-              <text className="fill-foreground text-[10px] font-medium" dy={-14} textAnchor="middle">
-                {country}
+              <text className="fill-foreground text-base font-medium" dy={-14} textAnchor="middle">
+                {label}: {country}
               </text>
             </g>
           ) : null,
         )}
       </svg>
+      {shipment && (
+        <div className="bg-card/95 text-foreground absolute inset-x-0 bottom-0 flex flex-wrap justify-between gap-2 border-t px-4 py-2 text-xs">
+          <span>Origin: {shipment.origin.display}</span>
+          <span>Destination: {shipment.destination.display}</span>
+        </div>
+      )}
     </div>
   );
 }
