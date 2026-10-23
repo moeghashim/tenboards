@@ -1,8 +1,18 @@
-import { Ellipsis } from "lucide-react";
-import { CartesianGrid, ComposedChart, Line, XAxis, YAxis } from "recharts";
+import { CartesianGrid, ComposedChart, Legend, Line, XAxis, YAxis } from "recharts";
 
-import { Card, CardAction, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { type ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
+import { CardContent } from "@/components/ui/card";
+import { ChartTooltip } from "@/components/ui/chart";
+import {
+  chartAxis,
+  chartGrid,
+  DashboardChart,
+  DashboardLegend,
+  DashboardTooltip,
+  seriesConfig,
+  useChartMotion,
+} from "@/lib/charts/theme";
+
+import { DashboardCard as Card, SectionHeader } from "../../-components/dashboard/cards";
 
 const qualitySeries = [
   { date: "2026-04-01T00:00:00.000Z", actualQuality: 0.4, baselineQuality: -1.2 },
@@ -91,16 +101,7 @@ const qualitySeries = [
   { date: "2026-04-28T16:00:00.000Z", actualQuality: 4.8, baselineQuality: 4.8 },
 ];
 
-const chartConfig = {
-  actualQuality: {
-    color: "var(--chart-3)",
-    label: "Actual quality",
-  },
-  baselineQuality: {
-    color: "var(--muted-foreground)",
-    label: "Baseline quality",
-  },
-} satisfies ChartConfig;
+const chartConfig = seriesConfig({ actualQuality: "Actual quality", baselineQuality: "Baseline quality" });
 
 const chartData = qualitySeries.map((item, index) => ({
   ...item,
@@ -116,20 +117,17 @@ function formatWeek(value: number) {
 }
 
 export function TrafficQuality() {
+  const motion = useChartMotion();
   return (
     <Card className="h-full">
-      <CardHeader>
-        <CardTitle className="font-normal">Traffic Quality</CardTitle>
-        <CardAction>
-          <Ellipsis className="size-4" />
-        </CardAction>
-      </CardHeader>
+      <SectionHeader title="Traffic Quality" />
 
       <CardContent>
-        <ChartContainer config={chartConfig} className="h-68 w-full">
+        <DashboardChart config={chartConfig} className="h-72 w-full sm:h-80">
           <ComposedChart data={chartData} margin={{ bottom: 0, left: 0, right: 0, top: 0 }}>
-            <CartesianGrid vertical={false} />
+            <CartesianGrid {...chartGrid} />
             <XAxis
+              {...chartAxis}
               dataKey="dayIndex"
               axisLine={false}
               domain={[1, 28]}
@@ -141,6 +139,7 @@ export function TrafficQuality() {
               type="number"
             />
             <YAxis
+              {...chartAxis}
               axisLine={false}
               domain={[-6, 6]}
               tickFormatter={(value) => `${value}%`}
@@ -149,19 +148,22 @@ export function TrafficQuality() {
               width={34}
             />
             <ChartTooltip
+              {...motion}
               cursor={false}
-              content={<ChartTooltipContent className="w-40" labelFormatter={() => "Traffic quality"} />}
+              content={<DashboardTooltip className="w-40" labelFormatter={() => "Traffic quality"} />}
             />
             <Line
+              {...motion}
               dataKey="baselineQuality"
               dot={false}
               stroke="var(--color-baselineQuality)"
-              strokeOpacity={0.65}
-              strokeDasharray="4 4"
-              strokeWidth={1.75}
+              strokeOpacity={1}
+              strokeDasharray={chartConfig.baselineQuality.strokeDasharray}
+              strokeWidth={2}
               type="linear"
             />
             <Line
+              {...motion}
               dataKey="actualQuality"
               dot={false}
               activeDot={{ r: 4 }}
@@ -169,8 +171,9 @@ export function TrafficQuality() {
               strokeWidth={2.5}
               type="linear"
             />
+            <Legend content={<DashboardLegend config={chartConfig} />} />
           </ComposedChart>
-        </ChartContainer>
+        </DashboardChart>
       </CardContent>
     </Card>
   );

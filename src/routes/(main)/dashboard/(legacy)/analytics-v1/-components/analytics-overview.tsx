@@ -9,12 +9,15 @@ import { Area, ComposedChart, XAxis, YAxis } from "recharts";
 import { DateRangePicker } from "@/components/date-range-picker";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { type ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
+import { CardContent } from "@/components/ui/card";
+import { type ChartConfig, ChartTooltip } from "@/components/ui/chart";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Command, CommandGroup, CommandItem, CommandList } from "@/components/ui/command";
 import { Label } from "@/components/ui/label";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { chartAxis, DashboardChart, DashboardTooltip, useChartMotion } from "@/lib/charts/theme";
+
+import { DashboardCard as Card, SectionHeader } from "../../../-components/dashboard/cards";
 
 type RiskView = "risk-view" | "momentum" | "quality";
 type FilterToggleKey = "enterpriseOnly" | "stalledOnly" | "overdueOnly" | "includeRenewals";
@@ -77,7 +80,7 @@ const RISK_SUMMARY_METRICS = [
 
 export function AnalyticsOverview() {
   const [dateRange, setDateRange] = React.useState<{ from: Date; to: Date }>(() => {
-    const to = startOfDay(new Date());
+    const to = startOfDay(new Date(2026, 9, 23));
     return { from: subDays(to, 29), to };
   });
   const [selectedFilters, setSelectedFilters] = React.useState<FilterToggleKey[]>(["includeRenewals"]);
@@ -129,8 +132,8 @@ function buildRevenueChartData(from: Date, to: Date) {
   const maxRevenue = 32_000;
   let currentRevenue = 27_500;
 
-  return days.map((day) => {
-    const nextRevenue = currentRevenue + Math.round((Math.random() - 0.45) * 4_000);
+  return days.map((day, index) => {
+    const nextRevenue = currentRevenue + Math.round((Math.sin(index * 2.4 + 1) * 0.5 + 0.05) * 4_000);
     currentRevenue = Math.max(minRevenue, Math.min(maxRevenue, nextRevenue));
 
     return {
@@ -141,6 +144,7 @@ function buildRevenueChartData(from: Date, to: Date) {
 }
 
 function SummaryRow({ revenueSeries }: { revenueSeries: Array<{ day: string; revenue: number }> }) {
+  const motion = useChartMotion();
   const revenueChartConfig = {
     revenue: {
       label: "Revenue",
@@ -159,11 +163,11 @@ function SummaryRow({ revenueSeries }: { revenueSeries: Array<{ day: string; rev
       <div className="min-w-0 space-y-2">
         <div>
           <div className="text-muted-foreground text-sm font-medium">Revenue</div>
-          <div className="text-3xl font-semibold tracking-tight tabular-nums sm:text-4xl">$1,248,000</div>
+          <div className="text-3xl font-medium tracking-tight tabular-nums">$1,248,000</div>
         </div>
         <div className="flex flex-wrap items-center gap-2">
-          <Badge variant="secondary">+9.4%</Badge>
-          <Badge variant="secondary">+$107,000</Badge>
+          <Badge className="bg-success/10 text-success">+9.4%</Badge>
+          <Badge className="bg-success/10 text-success">+$107,000</Badge>
         </div>
 
         <div className="text-muted-foreground flex flex-wrap items-center gap-2 text-sm">
@@ -173,34 +177,32 @@ function SummaryRow({ revenueSeries }: { revenueSeries: Array<{ day: string; rev
           </Badge>
         </div>
         <div>
-          <ChartContainer config={revenueChartConfig} className="h-10 w-full rounded-md border">
+          <DashboardChart config={revenueChartConfig} className="h-20 w-full sm:h-20">
             <ComposedChart data={revenueSeries} margin={{ left: 0, right: 0, top: 0, bottom: 0 }}>
-              <XAxis dataKey="day" hide />
-              <YAxis hide domain={[midpoint - halfRange, midpoint + halfRange]} />
-              <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
+              <XAxis {...chartAxis} dataKey="day" hide />
+              <YAxis {...chartAxis} hide domain={[midpoint - halfRange, midpoint + halfRange]} />
+              <ChartTooltip {...motion} cursor={false} content={<DashboardTooltip />} />
               <Area
+                {...motion}
                 dataKey="revenue"
                 type="natural"
                 fill="var(--color-revenue)"
-                fillOpacity={0.14}
+                fillOpacity={0.08}
                 stroke="var(--color-revenue)"
               />
             </ComposedChart>
-          </ChartContainer>
-          <span className="text-muted-foreground text-xs">Selected range</span>
+          </DashboardChart>
+          <span className="text-muted-foreground text-xs">Selected demo range</span>
         </div>
       </div>
 
-      <Card className="min-w-0 py-4 shadow-xs xl:col-span-2">
-        <CardHeader className="px-4">
-          <CardTitle>Risk summary</CardTitle>
-          <CardDescription>Core risk signals vs previous period</CardDescription>
-        </CardHeader>
+      <Card className="min-w-0 py-4  xl:col-span-2">
+        <SectionHeader title="Risk summary" description="Core risk signals vs previous period" />
         <CardContent className="grid grid-cols-1 gap-4 px-4 sm:grid-cols-2 xl:grid-cols-4 xl:gap-0 xl:divide-x xl:[&>div]:px-5 xl:[&>div:first-child]:pl-0 xl:[&>div:last-child]:pr-0">
           {RISK_SUMMARY_METRICS.map((item) => (
             <div key={item.key} className="min-w-0 space-y-1">
               <div className="text-muted-foreground text-sm">{item.label}</div>
-              <div className="text-2xl leading-tight font-semibold tabular-nums">{item.value}</div>
+              <div className="text-2xl leading-tight font-medium tabular-nums">{item.value}</div>
               <div className="text-muted-foreground text-xs">{item.comparatorLabel}</div>
             </div>
           ))}

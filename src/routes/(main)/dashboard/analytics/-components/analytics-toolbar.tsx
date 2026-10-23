@@ -23,7 +23,7 @@ export function AnalyticsToolbar() {
   return (
     <div className="flex items-center gap-2">
       <Select defaultValue="last-4-weeks" items={analyticsRangeItems}>
-        <SelectTrigger className="w-34">
+        <SelectTrigger aria-label="Analytics period" className="w-34">
           <SelectValue placeholder="Select range" />
         </SelectTrigger>
         <SelectContent>

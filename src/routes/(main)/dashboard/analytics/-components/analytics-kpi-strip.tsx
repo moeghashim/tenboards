@@ -1,142 +1,29 @@
-import { ArrowDownRight, ArrowUpRight, Ellipsis } from "lucide-react";
-
 import { Badge } from "@/components/ui/badge";
-import { Card, CardAction, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
+import { StatCard } from "../../-components/dashboard/cards";
+
+const metrics = [
+  { label: "Unique Visitors", value: "213.1k", previous: "207.3k", trend: "+2.8%", positive: true },
+  { label: "Sessions", value: "248.6k", previous: "243.5k", trend: "+2.1%", positive: true },
+  { label: "Pageviews", value: "547.9k", previous: "566.8k", trend: "−3.3%", positive: false },
+  { label: "Engagement Rate", value: "61.4%", previous: "58.9%", trend: "+4.2%", positive: true },
+  { label: "Conversion Rate", value: "8.4%", previous: "8.9%", trend: "−5.6%", positive: false },
+];
 export function AnalyticsKpiStrip() {
   return (
-    <div className="bg-card ring-foreground/10 overflow-hidden rounded-xl shadow-xs ring-1">
-      <div className="grid divide-y *:data-[slot=card]:rounded-none *:data-[slot=card]:ring-0 md:grid-cols-2 md:divide-x md:divide-y-0 xl:grid-cols-5">
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-sm font-normal">Unique Visitors</CardTitle>
-            <CardAction>
-              <Ellipsis className="size-4" />
-            </CardAction>
-          </CardHeader>
-          <CardContent className="flex flex-col gap-4">
-            <div className="flex items-center justify-between gap-4">
-              <div className="text-2xl leading-none tracking-tight">213.1k</div>
-              <Badge className="bg-green-500/10 text-green-700 dark:bg-green-500/15 dark:text-green-300">
-                <ArrowUpRight />
-                2.8%
-              </Badge>
-            </div>
-
-            <div className="text-muted-foreground flex items-center gap-2 text-xs">
-              <span>
-                from <span className="text-foreground">207.3k</span>
-              </span>
-              <span>•</span>
-              <span>last 4 weeks</span>
-            </div>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-sm font-normal">Sessions</CardTitle>
-            <CardAction>
-              <Ellipsis className="size-4" />
-            </CardAction>
-          </CardHeader>
-          <CardContent className="flex flex-col gap-4">
-            <div className="flex items-center justify-between gap-4">
-              <div className="text-2xl leading-none tracking-tight">248.6k</div>
-              <Badge className="bg-green-500/10 text-green-700 dark:bg-green-500/15 dark:text-green-300">
-                <ArrowUpRight />
-                2.1%
-              </Badge>
-            </div>
-
-            <div className="text-muted-foreground flex items-center gap-2 text-xs">
-              <span>
-                from <span className="text-foreground">243.5k</span>
-              </span>
-              <span>•</span>
-              <span>last 4 weeks</span>
-            </div>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-sm font-normal">Pageviews</CardTitle>
-            <CardAction>
-              <Ellipsis className="size-4" />
-            </CardAction>
-          </CardHeader>
-          <CardContent className="flex flex-col gap-4">
-            <div className="flex items-center justify-between gap-4">
-              <div className="text-2xl leading-none tracking-tight">547.9k</div>
-              <Badge className="bg-destructive/10 text-destructive">
-                <ArrowDownRight />
-                3.3%
-              </Badge>
-            </div>
-
-            <div className="text-muted-foreground flex items-center gap-2 text-xs">
-              <span>
-                from <span className="text-foreground">566.8k</span>
-              </span>
-              <span>•</span>
-              <span>last 4 weeks</span>
-            </div>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-sm font-normal">Engagement Rate</CardTitle>
-            <CardAction>
-              <Ellipsis className="size-4" />
-            </CardAction>
-          </CardHeader>
-          <CardContent className="flex flex-col gap-4">
-            <div className="flex items-center justify-between gap-4">
-              <div className="text-2xl leading-none tracking-tight">61.4%</div>
-              <Badge className="bg-green-500/10 text-green-700 dark:bg-green-500/15 dark:text-green-300">
-                <ArrowUpRight />
-                4.2%
-              </Badge>
-            </div>
-
-            <div className="text-muted-foreground flex items-center gap-2 text-xs">
-              <span>
-                from <span className="text-foreground">58.9%</span>
-              </span>
-              <span>•</span>
-              <span>last 4 weeks</span>
-            </div>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-sm font-normal">Conversion Rate</CardTitle>
-            <CardAction>
-              <Ellipsis className="size-4" />
-            </CardAction>
-          </CardHeader>
-          <CardContent className="flex flex-col gap-4">
-            <div className="flex items-center justify-between gap-4">
-              <div className="text-2xl leading-none tracking-tight">8.4%</div>
-              <Badge className="bg-destructive/10 text-destructive">
-                <ArrowDownRight />
-                5.6%
-              </Badge>
-            </div>
-
-            <div className="text-muted-foreground flex items-center gap-2 text-xs">
-              <span>
-                from <span className="text-foreground">8.9%</span>
-              </span>
-              <span>•</span>
-              <span>last 4 weeks</span>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
+    <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-5">
+      {metrics.map((m) => (
+        <StatCard
+          key={m.label}
+          density="compact"
+          label={m.label}
+          value={m.value}
+          help={`From ${m.previous} · last 4 weeks`}
+          trend={
+            <Badge className={m.positive ? "bg-success/10 text-success" : "bg-danger/10 text-danger"}>{m.trend}</Badge>
+          }
+        />
+      ))}
     </div>
   );
 }

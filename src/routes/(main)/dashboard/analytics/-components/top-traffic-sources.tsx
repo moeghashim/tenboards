@@ -1,9 +1,11 @@
-import { Ellipsis } from "lucide-react";
 import { Bar, BarChart, CartesianGrid, LabelList, type LabelProps, XAxis, YAxis } from "recharts";
 
-import { Card, CardAction, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { type ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
+import { CardContent } from "@/components/ui/card";
+import { type ChartConfig, ChartTooltip } from "@/components/ui/chart";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { chartAxis, DashboardChart, DashboardTooltip, useChartMotion } from "@/lib/charts/theme";
+
+import { DashboardCard as Card, SectionHeader } from "../../-components/dashboard/cards";
 
 const chartConfig = {
   visitors: {
@@ -61,8 +63,9 @@ const renderValueLabel = (props: LabelProps) => {
 };
 
 function TrafficSourceBarChart({ data }: { data: TrafficSourceDatum[] }) {
+  const motion = useChartMotion();
   return (
-    <ChartContainer config={chartConfig} className="h-64 w-full">
+    <DashboardChart config={chartConfig} className="h-64 w-full sm:h-64">
       <BarChart
         accessibilityLayer
         data={data}
@@ -73,27 +76,21 @@ function TrafficSourceBarChart({ data }: { data: TrafficSourceDatum[] }) {
         }}
       >
         <CartesianGrid horizontal={false} vertical={false} />
-        <YAxis dataKey="source" hide tickLine={false} tickMargin={10} type="category" />
-        <XAxis dataKey="visitors" hide type="number" />
-        <ChartTooltip cursor={false} content={<ChartTooltipContent indicator="line" />} />
-        <Bar barSize={40} dataKey="visitors" fill="var(--color-visitors)" fillOpacity={0.5} radius={8}>
-          <LabelList className="fill-foreground" dataKey="source" fontSize={14} offset={12} position="insideLeft" />
+        <YAxis {...chartAxis} dataKey="source" width={110} tickLine={false} tickMargin={8} type="category" />
+        <XAxis {...chartAxis} dataKey="visitors" hide type="number" />
+        <ChartTooltip {...motion} cursor={false} content={<DashboardTooltip indicator="line" />} />
+        <Bar {...motion} barSize={22} dataKey="visitors" fill="var(--color-visitors)" fillOpacity={1} radius={4}>
           <LabelList content={renderValueLabel} dataKey="label" />
         </Bar>
       </BarChart>
-    </ChartContainer>
+    </DashboardChart>
   );
 }
 
 export function TopTrafficSources() {
   return (
     <Card className="h-full gap-2">
-      <CardHeader>
-        <CardTitle className="font-normal">Traffic Sources</CardTitle>
-        <CardAction>
-          <Ellipsis className="size-4" />
-        </CardAction>
-      </CardHeader>
+      <SectionHeader title="Traffic Sources" />
 
       <CardContent className="px-0">
         <Tabs defaultValue="sources" className="flex flex-col gap-3">

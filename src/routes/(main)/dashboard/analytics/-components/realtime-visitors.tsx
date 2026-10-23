@@ -1,8 +1,10 @@
-import { Ellipsis } from "lucide-react";
 import { Bar, BarChart, type BarShapeProps, XAxis, YAxis } from "recharts";
 
-import { Card, CardAction, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { type ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
+import { CardContent } from "@/components/ui/card";
+import { type ChartConfig, ChartTooltip } from "@/components/ui/chart";
+import { chartAxis, DashboardChart, DashboardTooltip, useChartMotion } from "@/lib/charts/theme";
+
+import { DashboardCard as Card, SectionHeader } from "../../-components/dashboard/cards";
 
 const realtimeData = [
   { minute: 1, visitors: 0 },
@@ -39,7 +41,7 @@ const realtimeData = [
 
 const chartConfig = {
   visitors: {
-    color: "var(--chart-3)",
+    color: "var(--chart-1)",
     label: "Visitors",
   },
 } satisfies ChartConfig;
@@ -53,8 +55,8 @@ function RealtimeBarShape(props: BarShapeProps) {
   const yValue = Number(y);
   const visitors = barPayload?.visitors ?? 0;
   const fill = "var(--color-visitors)";
-  const fillOpacity = visitors >= 18 ? 0.95 : 0.4;
-  const baselineFill = visitors === 0 ? "var(--destructive)" : fill;
+  const fillOpacity = 1;
+  const baselineFill = visitors === 0 ? "var(--text-muted)" : fill;
   const baselineOpacity = visitors === 0 ? 1 : fillOpacity;
   const baselineY = yValue + barHeightValue - 2;
   const barGap = 4;
@@ -87,14 +89,10 @@ function RealtimeBarShape(props: BarShapeProps) {
 }
 
 export function RealtimeVisitors() {
+  const motion = useChartMotion();
   return (
     <Card className="h-full">
-      <CardHeader>
-        <CardTitle className="font-normal">Realtime Visitors</CardTitle>
-        <CardAction>
-          <Ellipsis className="size-4" />
-        </CardAction>
-      </CardHeader>
+      <SectionHeader title="Realtime Visitors" />
 
       <CardContent className="flex flex-col gap-4">
         <div className="flex items-end justify-between">
@@ -104,38 +102,57 @@ export function RealtimeVisitors() {
           </div>
           <div className="text-muted-foreground flex items-center gap-2 text-sm">
             <span className="relative flex size-2">
-              <span className="absolute inline-flex size-full animate-ping rounded-full bg-green-500 opacity-75" />
-              <span className="relative inline-flex size-2 rounded-full bg-green-500" />
+              <span className="relative inline-flex size-2 rounded-full bg-success" />
             </span>
             <span>Live</span>
           </div>
         </div>
-        <ChartContainer config={chartConfig} className="h-36 w-full">
+        <DashboardChart config={chartConfig} className="h-36 w-full sm:h-36">
           <BarChart data={realtimeData} margin={{ bottom: 0, left: 0, right: 0, top: 0 }} barCategoryGap={3}>
-            <XAxis dataKey="minute" hide />
-            <YAxis hide domain={[0, 22]} />
-            <ChartTooltip cursor={false} content={<ChartTooltipContent hideLabel />} />
-            <Bar dataKey="visitors" fill="var(--color-visitors)" shape={RealtimeBarShape} />
+            <XAxis {...chartAxis} dataKey="minute" hide />
+            <YAxis {...chartAxis} hide domain={[0, 22]} />
+            <ChartTooltip {...motion} cursor={false} content={<DashboardTooltip hideLabel />} />
+            <Bar {...motion} dataKey="visitors" fill="var(--color-visitors)" shape={RealtimeBarShape} />
           </BarChart>
-        </ChartContainer>
-        <div className="grid grid-cols-2">
-          <div className="border-border/50 flex items-center gap-3 border-r border-b pt-1 pr-5 pb-4">
-            <span aria-hidden="true" className="flag:US ring-foreground/10 shrink-0 rounded-xs text-lg ring-1" />
+        </DashboardChart>
+        <div className="grid grid-cols-1 sm:grid-cols-2">
+          <div className="border-border/50 flex items-center gap-3 sm:border-r border-b pt-1 pr-5 pb-4">
+            <span
+              aria-hidden="true"
+              className="bg-muted text-muted-foreground rounded border px-1.5 py-0.5 text-xs font-medium"
+            >
+              US
+            </span>
             <span className="min-w-0 flex-1 truncate text-sm">United States</span>
             <span className="text-sm tabular-nums">14</span>
           </div>
-          <div className="border-border/50 flex items-center gap-3 border-b pt-1 pb-4 pl-5">
-            <span aria-hidden="true" className="flag:GB ring-foreground/10 shrink-0 rounded-xs text-lg ring-1" />
+          <div className="border-border/50 flex items-center gap-3 border-b pt-1 pb-4 sm:pl-5">
+            <span
+              aria-hidden="true"
+              className="bg-muted text-muted-foreground rounded border px-1.5 py-0.5 text-xs font-medium"
+            >
+              GB
+            </span>
             <span className="min-w-0 flex-1 truncate text-sm">United Kingdom</span>
             <span className="text-sm tabular-nums">4</span>
           </div>
-          <div className="border-border/50 flex items-center gap-3 border-r pt-4 pr-5 pb-1">
-            <span aria-hidden="true" className="flag:CA ring-foreground/10 shrink-0 rounded-xs text-lg ring-1" />
+          <div className="border-border/50 flex items-center gap-3 sm:border-r pt-4 pr-5 pb-1">
+            <span
+              aria-hidden="true"
+              className="bg-muted text-muted-foreground rounded border px-1.5 py-0.5 text-xs font-medium"
+            >
+              CA
+            </span>
             <span className="min-w-0 flex-1 truncate text-sm">Canada</span>
             <span className="text-sm tabular-nums">3</span>
           </div>
-          <div className="flex items-center gap-3 pt-4 pb-1 pl-5">
-            <span aria-hidden="true" className="flag:IN ring-foreground/10 shrink-0 rounded-xs text-lg ring-1" />
+          <div className="flex items-center gap-3 pt-4 pb-1 sm:pl-5">
+            <span
+              aria-hidden="true"
+              className="bg-muted text-muted-foreground rounded border px-1.5 py-0.5 text-xs font-medium"
+            >
+              IN
+            </span>
             <span className="min-w-0 flex-1 truncate text-sm">India</span>
             <span className="text-sm tabular-nums">3</span>
           </div>
