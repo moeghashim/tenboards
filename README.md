@@ -199,6 +199,11 @@ All screens remain mock-data demos, including existing disabled and placeholder 
 
 ### Planned app pages (v0.3)
 
-The [app-page breakdown](dev/milestones/v0.3-app-pages/README.md) assigns all 38 current route-catalog entries plus root not-found/error states to page owners or final regression coverage. Mail and Chat each retain standalone and dashboard iframe routes; Auth includes four forms and the bare V2 layout. The external `/` remains a redirect to `/dashboard/default`, with no landing UI to restyle. Existing app-page content is unchanged by planning.
+The [app-page breakdown](dev/milestones/v0.3-app-pages/README.md) assigns all 38 current route-catalog entries plus root not-found/error states to page owners or final regression coverage. Mail and Chat each retain standalone and dashboard iframe routes; Auth includes four forms and the bare V2 layout. The external `/` remains a redirect to `/dashboard/default`, with no landing UI to restyle. Implementation progress is documented per task below.
 
-Calendar, Invoice, Auth V2 login and Auth V2 register each require a root-cause hydration fix verified on dev and Workers in light/dark at desktop/mobile. Owning tasks also replace remaining upstream-author demo identities; final acceptance scans all of `src/`, preserves legal attribution, checks every route across all four presets, and reconciles hydration history. The milestone remains planned until review and implementation; its unchecked acceptance criteria are not claims of shipped behavior.
+Calendar, Invoice, Auth V2 login and Auth V2 register each require a root-cause hydration fix verified on dev and Workers in light/dark at desktop/mobile. Owning tasks also replace remaining upstream-author demo identities; final acceptance scans all of `src/`, preserves legal attribution, checks every route across all four presets, and reconciles hydration history. Unchecked acceptance criteria are not claims of shipped behavior; task status and evidence track implementation separately from reviewer merge and deployment.
+
+
+### App-page foundation (v0.3 / 001)
+
+`dashboard/-components/app-pages/page-header.tsx` provides a presentation-only `PageHeader` with a required string `title`, optional string `description`, wrapping React `actions`, and optional layout `className`. It renders one semantic h1 at 24px, with wrapping titles and action groups. File Manager and Products use it while retaining query-driven file views and the product drawer; their grids and tables remain assigned to tasks 008/009. The upstream-author File Manager owner fixture is now Jordan Lee. Tasks and Invoice are intended later consumers. Existing dashboard cards, card-level headings and chart theme remain the shared APIs for their respective roles.

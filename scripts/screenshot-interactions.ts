@@ -2,6 +2,41 @@ import type { Page } from "playwright";
 
 // Opt-in interaction evidence for the dashboard batch. Never replace the runtime clock.
 export async function captureInteractions(page: Page, route: string): Promise<string[]> {
+  if (route === "/dashboard/file-manager" || route === "/dashboard/products") {
+    const title = page.getByRole("heading", { level: 1 });
+    const original = await title.textContent();
+    await title.evaluate((node) => {
+      node.textContent =
+        "Workspace documents and product catalog for international operations with a verylongunbrokentitlethatmustwrapwithoutclipping";
+    });
+    const fits = await title.evaluate((node) => {
+      const header = node.parentElement?.parentElement;
+      return header && header.scrollWidth <= header.clientWidth && node.scrollWidth <= node.clientWidth;
+    });
+    if (!fits) throw new Error("Long page heading clips");
+    await title.evaluate((node, value) => {
+      node.textContent = value;
+    }, original);
+    if (route === "/dashboard/file-manager") {
+      await page.getByRole("button", { name: "List View", exact: true }).press("Enter");
+      await page.waitForURL("**view=list");
+      await page.reload();
+      await page.getByRole("button", { name: "List View", exact: true }).waitFor();
+      if (!page.url().includes("view=list")) throw new Error("File view did not survive refresh");
+      await page.getByRole("button", { name: "Grid View", exact: true }).press("Enter");
+      await page.waitForURL("**view=grid");
+      return ["Long h1 wraps without clipping", "Keyboard file view links preserve query state through refresh"];
+    }
+    await page.getByRole("button", { name: "Add product", exact: true }).press("Enter");
+    await page.getByRole("dialog", { name: "Add product", exact: true }).waitFor();
+    await page.getByRole("textbox", { name: "Product name", exact: true }).fill("Demo catalog item");
+    await page.keyboard.press("Escape");
+    await page.getByRole("dialog", { name: "Add product", exact: true }).waitFor({ state: "hidden" });
+    await page.getByRole("button", { name: "Add product", exact: true }).press("Enter");
+    if (await page.getByRole("textbox", { name: "Product name", exact: true }).inputValue())
+      throw new Error("Drawer did not retain reset-on-close behavior");
+    return ["Long h1 wraps without clipping", "Keyboard drawer opens, Escape closes, form resets on reopen"];
+  }
   if (route === "/dashboard/finance") {
     const period = page.getByRole("combobox", { name: "Spending period", exact: true });
     await period.press("Enter");
