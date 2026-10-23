@@ -102,7 +102,7 @@ export function Roles({ roles }: { roles: Role[] }) {
             <Alert className="border-border bg-warning-surface text-warning [&_[data-slot=alert-description]]:text-warning">
               <AlertTriangle className="size-4" />
               <AlertTitle>Review required</AlertTitle>
-              <AlertDescription>3 roles have unreviewed permission changes.</AlertDescription>
+              <AlertDescription>{`${roles.filter((role) => role.status === "Needs review").length} roles have unreviewed permission changes.`}</AlertDescription>
               <AlertAction>
                 <Button size="sm" variant="link">
                   Review changes
