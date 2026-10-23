@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useMemo, useRef, useState } from "react";
 
 import { useTable } from "@tanstack/react-table";
 
@@ -19,7 +19,11 @@ export function Products() {
   const [products, setProducts] = useState(initialProducts);
   const [editor, setEditor] = useState<Product | null>(null);
 
-  const editProduct = useCallback((product: Product) => setEditor(product), []);
+  const editorTrigger = useRef<HTMLElement | null>(null);
+  const editProduct = useCallback((product: Product) => {
+    editorTrigger.current = document.querySelector<HTMLElement>(`button[data-product-id="${product.id}"]`);
+    setEditor(product);
+  }, []);
   const duplicateProduct = useCallback((product: Product) => {
     const id = crypto.randomUUID();
     setProducts((current) => [
@@ -68,12 +72,12 @@ export function Products() {
   return (
     <div className="flex min-h-0 min-w-0 flex-1 flex-col gap-4">
       <div className="flex shrink-0 flex-wrap items-center justify-between gap-3 px-4 md:px-6">
-        <InputGroup className="h-7 w-full rounded-[min(var(--radius-md),10px)] sm:w-64">
+        <InputGroup className="w-full sm:w-64">
           <InputGroupAddon>
             <Search />
           </InputGroupAddon>
           <InputGroupInput
-            className="h-7"
+            className="h-8"
             type="text"
             aria-label="Search products"
             placeholder="Search products…"
@@ -134,6 +138,7 @@ export function Products() {
       {editor && (
         <ProductForm
           product={editor}
+          returnFocus={editorTrigger}
           products={products}
           onClose={() => setEditor(null)}
           onSave={(product) => {

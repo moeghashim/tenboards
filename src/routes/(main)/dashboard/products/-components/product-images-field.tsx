@@ -98,14 +98,16 @@ export function ProductImagesField({ files, onChange, onBlur, inputRef, error }:
               key={`${file.name}-${file.size}-${file.lastModified}`}
               orientation="vertical"
               state={rejection ? "error" : "idle"}
-              className="w-40"
+              className="w-40 max-w-full"
             >
               <AttachmentMedia variant={url ? "image" : "icon"}>
                 {url && <img src={url} alt={file.name} width={160} height={160} />}
                 {rejection && <ImageOff aria-hidden="true" />}
               </AttachmentMedia>
               <AttachmentContent>
-                <AttachmentTitle title={file.name}>{file.name}</AttachmentTitle>
+                <AttachmentTitle className="[overflow-wrap:anywhere] whitespace-normal" title={file.name}>
+                  {file.name}
+                </AttachmentTitle>
                 <AttachmentDescription title={rejection}>
                   {rejection}
                   {!rejection && (
