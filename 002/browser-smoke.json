@@ -1,0 +1,44 @@
+{
+  "localDevelopment": {
+    "url": "http://127.0.0.1:3000/dashboard/default",
+    "title": "tenboards - Modern TanStack Start Dashboard Starter Template",
+    "hasDashboard": true,
+    "since": "2026-10-23T08:37:47.950Z",
+    "console": [
+      {
+        "level": "debug",
+        "text": "[vite] connecting...",
+        "timestamp": "2026-10-23T08:37:50.407Z",
+        "source": "console"
+      },
+      {
+        "level": "debug",
+        "text": "[vite] connected.",
+        "timestamp": "2026-10-23T08:37:50.411Z",
+        "source": "console"
+      }
+    ],
+    "failedRequests": []
+  },
+  "compiledWorker": {
+    "url": "http://localhost:4173/dashboard/default",
+    "title": "tenboards - Modern TanStack Start Dashboard Starter Template",
+    "hasDashboard": true,
+    "console": [],
+    "failedRequests": []
+  },
+  "liveWorker": {
+    "url": "https://tenboards.mohanadgh.workers.dev/dashboard/default",
+    "title": "tenboards - Modern TanStack Start Dashboard Starter Template",
+    "hasDashboard": true,
+    "console": [],
+    "failedRequests": []
+  },
+  "versionPreview": {
+    "url": "https://9913d738-tenboards.mohanadgh.workers.dev/dashboard/default",
+    "title": "tenboards - Modern TanStack Start Dashboard Starter Template",
+    "hasDashboard": true,
+    "console": [],
+    "failedRequests": []
+  }
+}
