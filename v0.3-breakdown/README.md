@@ -10,3 +10,5 @@ Planning baseline: main 1815a6b, package 0.2.0, 2026-10-23. Documentation only; 
 - Local T3 preview attempts encountered localhost connection refusal and generic navigation failure; CLI screenshots use the explicitly requested repository runner at 127.0.0.1:3000 and completed.
 
 These captures do not clear the locked Calendar/Invoice/Auth V2 Workers hydration findings or claim v0.3 implementation. All future task checklists remain unchecked.
+
+Workers preview: https://0e6430e9-tenboards.mohanadgh.workers.dev (alias https://pr-26-tenboards.mohanadgh.workers.dev). `workers-smoke/` passes 4/4 default-dashboard light/dark desktop/mobile cases with no console/page errors. Version upload only; production was not changed.
