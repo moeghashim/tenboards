@@ -1,6 +1,8 @@
 # Changelog
 
-## v0.4 — Optional local data layer (in review, unreleased)
+## v0.4 — Optional local data layer (2026-10-23)
+
+Release: [v0.4.0](https://github.com/moeghashim/tenboards/releases/tag/v0.4.0)
 
 - Route all data-bearing app pages and 14 dashboards through 22 typed GET reads with zero-config demo or actual local Docker Postgres 17.
 - Add normalized domain tables, ordered relationships, typed aggregate metrics, a linear Drizzle migration journal and repeatable transactional seeds.

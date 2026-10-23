@@ -102,7 +102,7 @@
     },
     {
       "id": "v0.4-data-layer",
-      "status": "in-progress",
+      "status": "done",
       "tasks": [
         "001-data-foundation",
         "002-people-profile",
@@ -114,14 +114,14 @@
         "008-data-layer-acceptance"
       ],
       "taskStatuses": {
-        "001-data-foundation": "review",
-        "002-people-profile": "review",
-        "003-commerce-data": "review",
-        "004-workspace-data": "review",
-        "005-communication-data": "review",
-        "006-core-dashboard-data": "review",
-        "007-operational-dashboard-data": "review",
-        "008-data-layer-acceptance": "review"
+        "001-data-foundation": "merged",
+        "002-people-profile": "merged",
+        "003-commerce-data": "merged",
+        "004-workspace-data": "merged",
+        "005-communication-data": "merged",
+        "006-core-dashboard-data": "merged",
+        "007-operational-dashboard-data": "merged",
+        "008-data-layer-acceptance": "merged"
       }
     }
   ]

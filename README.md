@@ -2,7 +2,7 @@
 
 An MIT-licensed dashboard template built with TanStack Start, React 19, TypeScript, Tailwind CSS v4, and shadcn/ui on Base UI.
 
-The full upstream screen catalog and demo-data relationships are retained, with neutral demo identities. **v0.1 is merged, deployed and closed**: the design system and shell follow [PLAN.md](PLAN.md). **v0.2 (all 14 dashboards restyled) is merged, deployed and closed** per [the dashboard task breakdown](dev/milestones/v0.2-dashboards/README.md). **v0.3 (all app pages restyled) is merged, deployed and released as [v0.3.0](https://github.com/moeghashim/tenboards/releases/tag/v0.3.0)** — [14 app-page tasks](dev/milestones/v0.3-app-pages/README.md) deliver a small shared header foundation, standalone/embedded Mail and Chat, Calendar, Kanban, Tasks, Invoice, File Manager, Products, Users/Roles, Profile, Auth V1/V2, system states, and full-route acceptance. Current milestone/task status is tracked in [dev/milestones.json](dev/milestones.json). Current screens are demonstrations. **v0.4 is in progress** — [8 data-layer tasks](dev/milestones/v0.4-data-layer/README.md) connect app pages and dashboards to Drizzle + optional local Docker Postgres 17. The implementation stack is in review; production stays in demo mode. Better Auth follows in v0.5 and production Neon/Hyperdrive setup in v0.6.
+The full upstream screen catalog and demo-data relationships are retained, with neutral demo identities. **v0.1 is merged, deployed and closed**: the design system and shell follow [PLAN.md](PLAN.md). **v0.2 (all 14 dashboards restyled) is merged, deployed and closed** per [the dashboard task breakdown](dev/milestones/v0.2-dashboards/README.md). **v0.3 (all app pages restyled) is merged, deployed and released as [v0.3.0](https://github.com/moeghashim/tenboards/releases/tag/v0.3.0)** — [14 app-page tasks](dev/milestones/v0.3-app-pages/README.md) deliver a small shared header foundation, standalone/embedded Mail and Chat, Calendar, Kanban, Tasks, Invoice, File Manager, Products, Users/Roles, Profile, Auth V1/V2, system states, and full-route acceptance. Current milestone/task status is tracked in [dev/milestones.json](dev/milestones.json). Current screens are demonstrations. **v0.4 (optional data layer) is merged, deployed and released as [v0.4.0](https://github.com/moeghashim/tenboards/releases/tag/v0.4.0)** — [8 data-layer tasks](dev/milestones/v0.4-data-layer/README.md) connect every app page and dashboard to Drizzle + optional local Docker Postgres 17; with no `DATABASE_URL` it runs in zero-config demo mode, and the live preview stays in demo mode. Better Auth follows in v0.5 and production Neon/Hyperdrive setup in v0.6.
 
 ## Run locally
 
@@ -293,15 +293,15 @@ The integrated v0.3 stack passes all 38 catalog entries on dev and Workers with 
 Run `npm run screenshots -- --base-url <url> --preset <default|graphite|pine|iris> --output <root>/<dev|workers>/<preset>` for each environment/preset. `node --experimental-strip-types scripts/report-route-coverage.ts --root <root> --retries <manifest.json>` verifies complete coverage and retains original errors alongside explicitly mapped reruns. `--interactions` on `/dashboard/default` verifies shell focus, preference persistence and reduced motion; dialog evidence uses the existing viewport so screenshot resizing cannot disturb focus.
 
 
-## Optional data layer (v0.4, in review)
+## Optional data layer (v0.4)
 
 All data-bearing app pages and all 14 dashboards now use 22 typed reads. Demo is the
 zero-config default; local Postgres is optional. The [data-layer guide](docs/data-layer.md)
 covers source selection, schemas, dates, seeding, migrations, domain ownership and
-adding a read. The eight implementation layers remain in review; production stays
-demo-only and the package remains v0.3.0 until the reviewer owns a release.
+adding a read. All eight implementation layers are merged and released as v0.4.0; production stays
+demo-only until v0.6.
 
-### Foundation (v0.4 / 001, in review)
+### Foundation (v0.4 / 001)
 
 Users and Roles now load through typed GET server functions. With `DATABASE_URL` unset, install, development, builds and Workers previews use demo records without opening a database connection. `DATA_SOURCE=demo` explicitly forces demo; any other configured value is rejected. A configured empty, malformed, unreachable or unmigrated database produces a visible load error, never silent demo fallback. Actions remain local demonstrations, with no auth or writes.
 
@@ -323,7 +323,7 @@ The example uses local-only port `54329`, database/user `tenboards`, password `t
 `npm run data:parity` compares actual demo and Postgres implementations with exact ordering and types. Layer 001 covered Users/Roles (two reads, six all/existing/missing scenarios); omitted registration and controlled mismatch tests fail nonzero. `node --env-file=.env --experimental-strip-types scripts/data-source-check.ts` verifies source selection and negative parity tests; its missing-schema case requires a separate local `tenboards_missing_schema` database with no migrations. Database/UI fault evidence is separate from clean smoke. Production remains demo-only until v0.6.
 
 
-### Profile and shell accounts (v0.4 / 002, in review)
+### Profile and shell accounts (v0.4 / 002)
 
 The dashboard parent loads demo accounts alongside the existing cookie preferences. Account selection remains local and resets on refresh; it does not establish a session. The former unused `rootUser` export is removed, and `src/data/users.ts` now contains only the account type. Shell accounts, directory members, informational roles and Jordan Lee's profile remain distinct datasets.
 
@@ -332,7 +332,7 @@ All six Profile tabs load normalized identity, contact, employment, time-off and
 `node --experimental-strip-types scripts/check-accounts.ts <base-url> <evidence-folder>` checks account-menu keyboard selection, Escape focus, refresh reset and cookie preferences across light/dark desktop/mobile. The existing Profile interaction captures cover all six tabs and document controls. Evidence belongs on `pr-assets`, never application branches.
 
 
-### Commerce reads (v0.4 / 003, in review)
+### Commerce reads (v0.4 / 003)
 
 Products, Invoice and the entire E-commerce dashboard now use typed server reads. Product categories/status options load with the catalog; local duplication/editing and validation-only Add remain unchanged. Invoice keeps pure arithmetic/paper helpers in its UI module and receives clients/taxes through a route-local context. Draft date offsets are stored as definitions and resolved from one request timestamp in UTC, including a +14-day due date. Reloading discards local product and invoice edits.
 
@@ -340,7 +340,7 @@ Store orders/customers, review records, traffic-source metadata, category/produc
 
 Cumulative parity covers seven reads and 26 scenarios, including product filters/missing records, order filtering, Invoice year/leap-day rollover and later requests after seeding. Upgrade with `db:migrate` and `db:seed`; no new dependency or write endpoint is added. `node --experimental-strip-types scripts/check-commerce-local.ts <base-url>...` verifies local edits reset after reload. Invoice's existing delayed-timezone/print interaction checks remain available through `npm run screenshots`.
 
-### Workspace reads (v0.4/004, in review)
+### Workspace reads (v0.4/004)
 
 Kanban, Tasks, Calendar and File Manager now load through the optional data source.
 Their local drag, filter, selection and star controls remain session-only. Kanban
@@ -350,7 +350,7 @@ time after hydration; Today and the now marker continue using the live clock.
 Migration `0005_abandoned_red_ghost.sql` extends the cumulative journal. Parity covers
 all workspace reads, empty/missing selections and month/year/leap-day timezone cases.
 
-### Communication reads (v0.4/005, in review)
+### Communication reads (v0.4/005)
 
 Mail and Chat use normalized read data for their standalone views and dashboard
 iframes, including accounts, counts, recipients, attachments, contacts and messages.
@@ -361,7 +361,7 @@ empty/removed records, and never represent authentication or persist messages.
 Migration `0006_useful_quentin_quire.sql` extends the journal; cumulative parity also
 checks later request dates against an unchanged seed.
 
-### Core dashboard reads (v0.4/006, in review)
+### Core dashboard reads (v0.4/006)
 
 Default, CRM, Finance and Analytics, including their distinct V1 routes, now load
 through four typed GET reads. Customer/proposal/opportunity/lead, financial
@@ -377,7 +377,7 @@ Finance statement dates retain explicit UTC semantics. Migrations
 Cumulative parity covers 17 reads / 107 scenarios, including current/V1, missing IDs,
 non-default ranges, leap days and year boundaries. Apply migrations and reseed when upgrading.
 
-### Operational dashboard reads (v0.4/007, in review)
+### Operational dashboard reads (v0.4/007)
 
 Productivity, Academy, Logistics, Infrastructure and Patient Monitoring now load
 normalized records through five typed GET reads. Projects/tasks/notes/goals/focus,
@@ -404,7 +404,7 @@ changes and empty states on the local dev server. Screenshot `--mask-live-clocks
 masks only Patient Monitoring's explicitly marked live clock, never patient data;
 normal reduced-motion snapshots preserve deterministic signal geometry.
 
-### Whole-application acceptance (v0.4/008, in review)
+### Whole-application acceptance (v0.4/008)
 
 The final source audit checks every canonical fixture owner and traverses runtime
 imports to reject client fixture dependencies. Chat's remaining tab counts and

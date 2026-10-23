@@ -1,6 +1,6 @@
 # v0.4 — Drizzle + Postgres data layer with demo-mode fallback
 
-Status: **approved; all eight implementation tasks in review**. The milestone remains in progress pending reviewer merges and release. Planning approval was merged as PR #41; the implementation stack is PRs #42–#49, in task order. [Final acceptance evidence](https://github.com/moeghashim/tenboards/tree/pr-assets/v04-008). Baseline: `origin/main` **a79ed1d**, 2026-10-23, package v0.3.0. PLAN.md is the canonical contract; its six v0.4 Decisions log rows override the older Neon wording in the roadmap/stack. Reference format: [v0.3 breakdown](../v0.3-app-pages/README.md), originally [PR #26](https://github.com/moeghashim/tenboards/pull/26).
+Status: **done — all eight tasks merged (PRs #42–#49), deployed and released as [v0.4.0](https://github.com/moeghashim/tenboards/releases/tag/v0.4.0)**. Planning approval was merged as PR #41; the implementation stack is PRs #42–#49, in task order. [Final acceptance evidence](https://github.com/moeghashim/tenboards/tree/pr-assets/v04-008). Baseline: `origin/main` **a79ed1d**, 2026-10-23, package v0.3.0. PLAN.md is the canonical contract; its six v0.4 Decisions log rows override the older Neon wording in the roadmap/stack. Reference format: [v0.3 breakdown](../v0.3-app-pages/README.md), originally [PR #26](https://github.com/moeghashim/tenboards/pull/26).
 
 ## Brief and boundaries
 
