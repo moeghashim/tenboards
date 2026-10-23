@@ -13,7 +13,6 @@ import { Cog, Download, Grid, Plus, Rows3, Search, SlidersHorizontal } from "luc
 import { Button } from "@/components/ui/button";
 import { Card, CardAction, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { InputGroup, InputGroupAddon, InputGroupInput } from "@/components/ui/input-group";
-import { Kbd } from "@/components/ui/kbd";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { dataTableFeatures } from "@/lib/data-table-features";
@@ -68,28 +67,33 @@ export function Users({ users }: { users: UserRow[] }) {
   const teamFilter = (table.getColumn("team")?.getFilterValue() as string | undefined) ?? filters.team[0];
   const statusFilter = (table.getColumn("status")?.getFilterValue() as string | undefined) ?? filters.status[0];
   const workspaceFilter =
-    (table.getColumn("workspace")?.getFilterValue() as string | undefined) ?? filters.workspace[0];
+    (table.getColumn("workspace")?.getFilterValue() as string[] | undefined)?.[0] ?? filters.workspace[0];
   const selectedCount = table.getFilteredSelectedRowModel().rows.length;
 
   function setColumnSelectFilter(columnId: string, value: string | null) {
-    table.getColumn(columnId)?.setFilterValue(!value || value === "All" ? undefined : value);
+    const filter = !value || value === "All" ? undefined : value;
+    // Table v9 array membership filters accept a list of candidate values.
+    table.getColumn(columnId)?.setFilterValue(columnId === "workspace" && filter ? [filter] : filter);
     table.setPageIndex(0);
   }
 
   return (
     <Card>
       <CardHeader className="border-b has-data-[slot=card-action]:grid-cols-1 md:has-data-[slot=card-action]:grid-cols-[1fr_auto]">
-        <CardTitle className="text-xl leading-none">Users</CardTitle>
+        <CardTitle>
+          <h1 className="text-2xl font-medium tracking-tight">Users</h1>
+        </CardTitle>
         <CardDescription className="max-w-sm leading-snug">
           Manage your organization members and their access.
         </CardDescription>
         <CardAction className="col-start-1 row-start-auto flex w-full flex-wrap justify-start gap-2 justify-self-stretch md:col-start-2 md:row-span-2 md:row-start-1 md:w-auto md:flex-nowrap md:justify-end md:justify-self-end">
-          <InputGroup className="h-7 w-full md:w-64">
+          <InputGroup className="w-full md:w-64">
             <InputGroupAddon align="inline-start">
               <Search className="size-3.5" />
             </InputGroupAddon>
             <InputGroupInput
-              className="h-7"
+              className="h-8"
+              aria-label="Search users"
               placeholder="Search users..."
               value={searchQuery}
               onChange={(event) => {
@@ -97,9 +101,6 @@ export function Users({ users }: { users: UserRow[] }) {
                 table.setPageIndex(0);
               }}
             />
-            <InputGroupAddon align="inline-end">
-              <Kbd className="h-4 text-[10px]">⌘K</Kbd>
-            </InputGroupAddon>
           </InputGroup>
           <Button variant="outline" size="sm">
             <SlidersHorizontal /> Hide
@@ -123,7 +124,7 @@ export function Users({ users }: { users: UserRow[] }) {
               value={roleFilter}
               onValueChange={(value) => setColumnSelectFilter("role", value)}
             >
-              <SelectTrigger size="sm">
+              <SelectTrigger size="sm" aria-label="Filter users by role">
                 <span className="text-muted-foreground">Role:</span>
                 <SelectValue />
               </SelectTrigger>
@@ -143,7 +144,7 @@ export function Users({ users }: { users: UserRow[] }) {
               value={teamFilter}
               onValueChange={(value) => setColumnSelectFilter("team", value)}
             >
-              <SelectTrigger size="sm">
+              <SelectTrigger size="sm" aria-label="Filter users by team">
                 <span className="text-muted-foreground">Team:</span>
                 <SelectValue />
               </SelectTrigger>
@@ -163,7 +164,7 @@ export function Users({ users }: { users: UserRow[] }) {
               value={statusFilter}
               onValueChange={(value) => setColumnSelectFilter("status", value)}
             >
-              <SelectTrigger size="sm">
+              <SelectTrigger size="sm" aria-label="Filter users by status">
                 <span className="text-muted-foreground">Status:</span>
                 <SelectValue />
               </SelectTrigger>
@@ -184,7 +185,7 @@ export function Users({ users }: { users: UserRow[] }) {
             value={workspaceFilter}
             onValueChange={(value) => setColumnSelectFilter("workspace", value)}
           >
-            <SelectTrigger size="sm">
+            <SelectTrigger size="sm" aria-label="Filter users by workspace">
               <span className="text-muted-foreground">Workspace:</span>
               <SelectValue />
             </SelectTrigger>
@@ -201,7 +202,9 @@ export function Users({ users }: { users: UserRow[] }) {
         </div>
 
         <div className="flex items-center justify-between gap-3 px-4">
-          <div className="text-muted-foreground text-sm tabular-nums">{selectedCount} selected</div>
+          <div className="text-muted-foreground text-sm tabular-nums" aria-live="polite">
+            {selectedCount} selected
+          </div>
 
           <Tabs defaultValue="list">
             <TabsList>

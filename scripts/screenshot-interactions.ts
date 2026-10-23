@@ -1,5 +1,6 @@
 import type { Page } from "playwright";
 
+import { captureDirectories } from "./screenshot-directories.ts";
 import { captureProducts } from "./screenshot-products.ts";
 
 // Opt-in interaction evidence for the dashboard batch. Never replace the runtime clock.
@@ -8,6 +9,8 @@ export async function captureInteractions(
   route: string,
   captureVariant: (name: string) => Promise<void>,
 ): Promise<string[]> {
+  if (route === "/dashboard/users" || route === "/dashboard/roles")
+    return captureDirectories(page, route, captureVariant);
   if (route === "/dashboard/products") return captureProducts(page, captureVariant);
   if (route === "/dashboard/invoice") {
     const paper = page.locator("form [data-print-paper]");
