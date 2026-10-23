@@ -240,3 +240,12 @@ Kanban keeps query-addressable Board, List and Table views, local task/column/ta
 Tasks uses the shared page heading and a compact table with wrapping titles, textual semantic status/priority badges, named selection/search controls and a visible mobile column menu. Search and combined filters retain local state; empty results explain how to recover, Reset is neutral, and selected-count feedback remains live. The inherited Base UI sorting/clear-filter callbacks and column-menu label grouping are corrected at their usage sites. Row actions remain demo placeholders; no task records or dependencies change.
 
 `npm run screenshots -- --routes /dashboard/tasks --interactions` checks the known search/status/priority result, row and page selection, empty/reset states, Asc/Desc ordering, column visibility, page sizes, pagination and both filter clear actions. It also captures selected and empty variants.
+
+
+### Invoice page (v0.3 / 007)
+
+Invoice uses the shared page heading, named date/client/adjustment controls, labelled responsive line items and a live balance beside the preview. Descriptions accept multiple lines; long addresses and references wrap on the white paper. Northwind Studio / Jordan Lee and reserved example domains replace upstream-author billing fixtures. Existing calculations, item ordering, add/remove/edit actions and placeholder Save/Send/Download actions remain local.
+
+The route loader creates fresh UTC civil-date defaults for each request and shares them with SSR and hydration. This replaces independent module clocks that disagreed across timezones; both dates remain editable. No warning suppression, SSR disabling or frozen clock is used. The existing print portal is hidden on screen and isolated for Letter printing, preventing a duplicate invoice from widening the mobile page. Preview height follows the actual paper content, and the footer flows after the totals.
+
+`npm run screenshots -- --routes /dashboard/invoice --reload --interactions --timezone Pacific/Kiritimati --hydration-delay-ms 1800` checks delayed direct/refresh hydration, both date edits, client selection, multiline items, quantity/price, add/remove/reorder/cancel, tax/discount calculations and preview/print agreement. The print variant exports a PDF beside its screenshot for page-fit verification. Repeat with `--base-url` on Workers and `--timezone America/Chicago`; captures and PDFs belong only on pr-assets or PR attachments.

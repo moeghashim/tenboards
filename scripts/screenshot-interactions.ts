@@ -6,6 +6,124 @@ export async function captureInteractions(
   route: string,
   captureVariant: (name: string) => Promise<void>,
 ): Promise<string[]> {
+  if (route === "/dashboard/invoice") {
+    const paper = page.locator("form [data-print-paper]");
+    await page.locator('[data-ready="true"]').waitFor();
+    await page.locator("[data-invoice-total]").getByText("$6,003.20", { exact: true }).waitFor();
+    const originalIssued = (await paper.textContent())?.match(/Issued: (\d{4}-\d{2}-\d{2})/)?.[1];
+    if (!originalIssued) throw new Error("Invoice initial civil date missing");
+    await page.getByRole("textbox", { name: "Reference Number", exact: true }).fill("NORTHWIND-DEMO-2026-0123");
+    await page.getByRole("button", { name: "Issued Date", exact: true }).press("Enter");
+    const next = new Date(`${originalIssued}T12:00:00`);
+    next.setDate(next.getDate() + 1);
+    const nextDay = `${next.getMonth() + 1}/${next.getDate()}/${next.getFullYear()}`;
+    const nextCivil = `${next.getFullYear()}-${String(next.getMonth() + 1).padStart(2, "0")}-${String(next.getDate()).padStart(2, "0")}`;
+    await page.locator(`[data-day="${nextDay}"]`).press("Enter");
+    await paper.getByText(`Issued: ${nextCivil}`, { exact: true }).waitFor();
+    const originalDue = (await paper.textContent())?.match(/Payment due: (\d{4}-\d{2}-\d{2})/)?.[1];
+    if (!originalDue) throw new Error("Invoice due date missing");
+    const due = new Date(`${originalDue}T12:00:00`);
+    due.setDate(due.getDate() + 1);
+    await page.getByRole("button", { name: "Due Date", exact: true }).press("Enter");
+    await page.locator(`[data-day="${due.getMonth() + 1}/${due.getDate()}/${due.getFullYear()}"]`).press("Enter");
+    const dueCivil = `${due.getFullYear()}-${String(due.getMonth() + 1).padStart(2, "0")}-${String(due.getDate()).padStart(2, "0")}`;
+    await paper.getByText(`Payment due: ${dueCivil}`, { exact: true }).waitFor();
+    await page.getByRole("combobox", { name: "Client", exact: true }).click();
+    await page.getByRole("option", { name: "Bright Enterprises", exact: true }).click();
+    await page
+      .getByRole("textbox", { name: "Item 1 description", exact: true })
+      .fill(
+        "Implementation and accessibility review\nDocumentation, handover and long-description coverage for the demo invoice.",
+      );
+    await page.getByRole("spinbutton", { name: "Item 1 quantity", exact: true }).fill("2");
+    await page.getByRole("spinbutton", { name: "Item 1 unit price", exact: true }).fill("125");
+    await page.getByRole("button", { name: "Add Item", exact: true }).click();
+    await page.getByRole("textbox", { name: "Item 4 description", exact: true }).fill("Follow-up review");
+    await page.getByRole("spinbutton", { name: "Item 4 quantity", exact: true }).fill("3");
+    await page.getByRole("spinbutton", { name: "Item 4 unit price", exact: true }).fill("80");
+    await page.getByRole("combobox", { name: "Tax", exact: true }).click();
+    await page.getByRole("option", { name: "GST (18%)", exact: true }).click();
+    await page.getByRole("combobox", { name: "Discount type", exact: true }).click();
+    await page.getByRole("option", { name: "Percent", exact: true }).click();
+    await page.getByRole("spinbutton", { name: "Discount value", exact: true }).fill("10");
+    await page.locator("[data-invoice-total]").getByText("$2,538.18", { exact: true }).waitFor();
+    await page.getByRole("button", { name: "Remove item 2", exact: true }).click();
+    await page.locator("[data-invoice-total]").getByText("$945.18", { exact: true }).waitFor();
+    const orderBefore = await page
+      .locator("[data-invoice-item]")
+      .evaluateAll((nodes) => nodes.map((node) => node.getAttribute("data-invoice-item")));
+    const drag = page.getByRole("button", { name: "Reorder item 1", exact: true });
+    await drag.scrollIntoViewIfNeeded();
+    await drag.press("Space");
+    await page.waitForTimeout(250);
+    await page.keyboard.press("ArrowDown");
+    await page.waitForTimeout(250);
+    await page.keyboard.press("Escape");
+    await page.waitForTimeout(250);
+    const orderCanceled = await page
+      .locator("[data-invoice-item]")
+      .evaluateAll((nodes) => nodes.map((node) => node.getAttribute("data-invoice-item")));
+    if (JSON.stringify(orderBefore) !== JSON.stringify(orderCanceled))
+      throw new Error("Invoice reorder cancellation changed items");
+    await drag.press("Space");
+    await page.waitForTimeout(250);
+    await page.keyboard.press("ArrowDown");
+    await page.waitForTimeout(250);
+    await page.keyboard.press("Space");
+    await page.waitForFunction(
+      (first) => document.querySelector("[data-invoice-item]")?.getAttribute("data-invoice-item") !== first,
+      orderBefore[0],
+    );
+    await page.locator("[data-invoice-total]").getByText("$945.18", { exact: true }).waitFor();
+    const print = page.locator("[data-print-root] [data-print-paper]");
+    if ((await print.textContent()) !== (await paper.textContent()))
+      throw new Error("Preview and print contents differ");
+    if (!(await print.textContent())?.includes("Issued by Jordan Lee")) throw new Error("Neutral print issuer missing");
+    const contrast = await paper.evaluate((node) => {
+      const canvas = document.createElement("canvas");
+      canvas.width = canvas.height = 1;
+      const ctx = canvas.getContext("2d");
+      if (!ctx) throw new Error("Missing color canvas");
+      const luminance = (value: string) => {
+        ctx.fillStyle = value;
+        ctx.fillRect(0, 0, 1, 1);
+        const channels = Array.from(ctx.getImageData(0, 0, 1, 1).data)
+          .slice(0, 3)
+          .map((c) => {
+            const s = c / 255;
+            return s <= 0.04045 ? s / 12.92 : ((s + 0.055) / 1.055) ** 2.4;
+          });
+        return channels[0] * 0.2126 + channels[1] * 0.7152 + channels[2] * 0.0722;
+      };
+      const bg = luminance(getComputedStyle(node).backgroundColor);
+      return [node, node.querySelector("footer"), node.querySelector(".bg-neutral-100")].map((el) => {
+        if (!el) throw new Error("Paper footer missing");
+        const fg = luminance(getComputedStyle(el).color);
+        const background = el.classList.contains("bg-neutral-100")
+          ? luminance(getComputedStyle(el).backgroundColor)
+          : bg;
+        return (Math.max(background, fg) + 0.05) / (Math.min(background, fg) + 0.05);
+      });
+    });
+    if (contrast.some((ratio) => ratio < 4.5)) throw new Error(`Invoice paper text contrast: ${contrast}`);
+    await page.getByRole("heading", { name: "Preview", exact: true }).scrollIntoViewIfNeeded();
+    await captureVariant("preview");
+    if (await page.evaluate(() => document.documentElement.scrollWidth > innerWidth))
+      throw new Error("Invoice document overflow");
+    await page.emulateMedia({ media: "print" });
+    await captureVariant("print");
+    await page.emulateMedia({ media: "screen" });
+    await page.evaluate(() => window.scrollTo(0, 0));
+    return [
+      `Date edited ${originalIssued} → ${nextCivil} as a civil date`,
+      "Client changed; multiline description and quantity/price edits",
+      "Add/remove items, GST 18%, discount 10%; totals $2,538.18 → $945.18",
+      "Keyboard reorder and cancellation preserve values/totals",
+      "Preview/print content agrees; Jordan Lee issuer",
+      `Paper text contrast ${contrast.map((r) => r.toFixed(2)).join(" / ")}:1`,
+      "Print PDF exported and screen portal hidden; no page overflow",
+    ];
+  }
   if (route === "/dashboard/tasks") {
     const search = page.getByRole("textbox", { name: "Filter tasks", exact: true });
     await search.fill("neural TCP");

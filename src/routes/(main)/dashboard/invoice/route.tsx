@@ -4,36 +4,37 @@ import { Save, Send } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 
+import { PageHeader } from "../-components/app-pages/page-header";
+import { createDefaultInvoiceValues } from "./-components/data";
 import { Invoice } from "./-components/invoice";
 
 export const Route = createFileRoute("/(main)/dashboard/invoice")({
+  loader: () => ({ defaultValues: createDefaultInvoiceValues(new Date().toISOString()) }),
   component: Page,
 });
 
 function Page() {
+  const { defaultValues } = Route.useLoaderData();
   return (
-    <div className="flex flex-col gap-6">
-      <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
-        <div className="flex flex-col gap-1">
-          <h1 className="text-3xl leading-none font-medium tracking-tight">Create New Invoice</h1>
-          <p className="text-muted-foreground text-sm">
-            Add invoice details, review the preview, and send it to your client.
-          </p>
-        </div>
+    <div className="flex min-w-0 flex-col gap-4">
+      <PageHeader
+        title="Create New Invoice"
+        description="Add invoice details and review the preview."
+        actions={
+          <div className="flex flex-wrap items-center gap-3">
+            <Button type="button" variant="outline">
+              <Save data-icon="inline-start" />
+              Save as Draft
+            </Button>
+            <Button type="button">
+              <Send data-icon="inline-start" />
+              Send Invoice
+            </Button>
+          </div>
+        }
+      />
 
-        <div className="flex flex-wrap items-center gap-3">
-          <Button type="button" variant="outline">
-            <Save data-icon="inline-start" />
-            Save as Draft
-          </Button>
-          <Button type="button">
-            <Send data-icon="inline-start" />
-            Send Invoice
-          </Button>
-        </div>
-      </div>
-
-      <Invoice />
+      <Invoice defaultValues={defaultValues} />
     </div>
   );
 }
