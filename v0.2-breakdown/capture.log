@@ -1,0 +1,170 @@
+
+> tenboards@0.1.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --routes /dashboard/default,/dashboard/crm,/dashboard/finance,/dashboard/analytics,/dashboard/productivity,/dashboard/ecommerce,/dashboard/academy,/dashboard/logistics,/dashboard/infrastructure,/dashboard/patient-monitoring,/dashboard/default-v1,/dashboard/crm-v1,/dashboard/finance-v1,/dashboard/analytics-v1 --output screenshots/v0.2-breakdown-local
+
+PASS /dashboard/academy light/desktop
+PASS /dashboard/academy light/mobile
+PASS /dashboard/academy dark/desktop
+PASS /dashboard/academy dark/mobile
+PASS /dashboard/analytics light/desktop
+PASS /dashboard/analytics light/mobile
+PASS /dashboard/analytics dark/desktop
+PASS /dashboard/analytics dark/mobile
+PASS /dashboard/crm light/desktop
+PASS /dashboard/crm light/mobile
+PASS /dashboard/crm dark/desktop
+PASS /dashboard/crm dark/mobile
+PASS /dashboard/default light/desktop
+PASS /dashboard/default light/mobile
+PASS /dashboard/default dark/desktop
+PASS /dashboard/default dark/mobile
+PASS /dashboard/ecommerce light/desktop
+PASS /dashboard/ecommerce light/mobile
+PASS /dashboard/ecommerce dark/desktop
+PASS /dashboard/ecommerce dark/mobile
+PASS /dashboard/finance light/desktop
+PASS /dashboard/finance light/mobile
+PASS /dashboard/finance dark/desktop
+PASS /dashboard/finance dark/mobile
+PASS /dashboard/infrastructure light/desktop
+PASS /dashboard/infrastructure light/mobile
+PASS /dashboard/infrastructure dark/desktop
+FAIL /dashboard/infrastructure dark/mobile
+request: https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400..700&display=swap net::ERR_TIMED_OUT
+console: Failed to load resource: net::ERR_TIMED_OUT
+request: https://fonts.googleapis.com/css2?family=Merriweather:wght@400..700&display=swap net::ERR_TIMED_OUT
+console: Failed to load resource: net::ERR_TIMED_OUT
+page.waitForLoadState: Timeout 30000ms exceeded.
+PASS /dashboard/logistics light/desktop
+PASS /dashboard/logistics light/mobile
+PASS /dashboard/logistics dark/desktop
+PASS /dashboard/logistics dark/mobile
+FAIL /dashboard/patient-monitoring light/desktop
+page: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <div data-slot="sidebar-wr..." style={{...}} className="group/side..." data-tsd-source="/src/route...">
+      <AppSidebar>
+      <SidebarInset className={"[html[da..."} data-tsd-source="/src/route...">
+        <main data-slot="sidebar-inset" className={"relative..."} data-tsd-source="/src/route...">
+          <ShellHeader>
+          <div className="min-h-0 mi..." data-tsd-source="/src/route...">
+            <OutletImpl data-tsd-source="/src/route...">
+              <MatchImpl routeId="/(main)/da...">
+                <MatchInnerImpl match={{id:"/(main...", ...}}>
+                  <Lazy>
+                    <Page>
+                      <div className="flex min-h..." data-content-padding="false" data-tsd-source="/src/route...">
+                        <div className="grid min-h..." data-tsd-source="/src/route...">
+                          <div>
+                          <div>
+                          <div className="text-muted..." data-tsd-source="/src/route...">
+                            <span className="whitespace..." data-tsd-source="/src/route...">
++                             06:09:32
+-                             06:09:31
+                            ...
+                        ...
+
+FAIL /dashboard/patient-monitoring light/mobile
+page: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <div data-slot="sidebar-wr..." style={{...}} className="group/side..." data-tsd-source="/src/route...">
+      <AppSidebar>
+      <SidebarInset className={"[html[da..."} data-tsd-source="/src/route...">
+        <main data-slot="sidebar-inset" className={"relative..."} data-tsd-source="/src/route...">
+          <ShellHeader>
+          <div className="min-h-0 mi..." data-tsd-source="/src/route...">
+            <OutletImpl data-tsd-source="/src/route...">
+              <MatchImpl routeId="/(main)/da...">
+                <MatchInnerImpl match={{id:"/(main...", ...}}>
+                  <Lazy>
+                    <Page>
+                      <div className="flex min-h..." data-content-padding="false" data-tsd-source="/src/route...">
+                        <div className="grid min-h..." data-tsd-source="/src/route...">
+                          <div>
+                          <div>
+                          <div className="text-muted..." data-tsd-source="/src/route...">
+                            <span className="whitespace..." data-tsd-source="/src/route...">
++                             06:09:36
+-                             06:09:35
+                            ...
+                        ...
+
+FAIL /dashboard/patient-monitoring dark/desktop
+page: Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <div data-slot="sidebar-wr..." style={{...}} className="group/side..." data-tsd-source="/src/route...">
+      <AppSidebar>
+      <SidebarInset className={"[html[da..."} data-tsd-source="/src/route...">
+        <main data-slot="sidebar-inset" className={"relative..."} data-tsd-source="/src/route...">
+          <ShellHeader>
+          <div className="min-h-0 mi..." data-tsd-source="/src/route...">
+            <OutletImpl data-tsd-source="/src/route...">
+              <MatchImpl routeId="/(main)/da...">
+                <MatchInnerImpl match={{id:"/(main...", ...}}>
+                  <Lazy>
+                    <Page>
+                      <div className="flex min-h..." data-content-padding="false" data-tsd-source="/src/route...">
+                        <div className="grid min-h..." data-tsd-source="/src/route...">
+                          <div>
+                          <div>
+                          <div className="text-muted..." data-tsd-source="/src/route...">
+                            <span className="whitespace..." data-tsd-source="/src/route...">
++                             06:09:40
+-                             06:09:39
+                            ...
+                        ...
+
+PASS /dashboard/patient-monitoring dark/mobile
+PASS /dashboard/productivity light/desktop
+PASS /dashboard/productivity light/mobile
+PASS /dashboard/productivity dark/desktop
+PASS /dashboard/productivity dark/mobile
+PASS /dashboard/analytics-v1 light/desktop
+PASS /dashboard/analytics-v1 light/mobile
+PASS /dashboard/analytics-v1 dark/desktop
+PASS /dashboard/analytics-v1 dark/mobile
+PASS /dashboard/crm-v1 light/desktop
+PASS /dashboard/crm-v1 light/mobile
+PASS /dashboard/crm-v1 dark/desktop
+PASS /dashboard/crm-v1 dark/mobile
+PASS /dashboard/default-v1 light/desktop
+PASS /dashboard/default-v1 light/mobile
+PASS /dashboard/default-v1 dark/desktop
+PASS /dashboard/default-v1 dark/mobile
+PASS /dashboard/finance-v1 light/desktop
+PASS /dashboard/finance-v1 light/mobile
+PASS /dashboard/finance-v1 dark/desktop
+PASS /dashboard/finance-v1 dark/mobile

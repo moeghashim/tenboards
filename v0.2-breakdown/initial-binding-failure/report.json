@@ -1,0 +1,566 @@
+{
+  "baseURL": "http://127.0.0.1:3000/",
+  "preset": "default",
+  "results": [
+    {
+      "route": "/dashboard/academy",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_academy-light-desktop.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/academy net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/academy\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/academy\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/academy",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_academy-light-mobile.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/academy net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/academy\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/academy\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/academy",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_academy-dark-desktop.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/academy net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/academy\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/academy\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/academy",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_academy-dark-mobile.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/academy net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/academy\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/academy\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/analytics",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_analytics-light-desktop.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/analytics net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/analytics\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/analytics\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/analytics",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_analytics-light-mobile.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/analytics net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/analytics\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/analytics\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/analytics",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_analytics-dark-desktop.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/analytics net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/analytics\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/analytics\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/analytics",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_analytics-dark-mobile.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/analytics net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/analytics\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/analytics\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/crm",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_crm-light-desktop.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/crm net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/crm\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/crm\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/crm",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_crm-light-mobile.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/crm net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/crm\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/crm\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/crm",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_crm-dark-desktop.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/crm net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/crm\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/crm\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/crm",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_crm-dark-mobile.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/crm net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/crm\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/crm\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_default-light-desktop.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/default net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/default\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/default\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_default-light-mobile.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/default net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/default\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/default\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_default-dark-desktop.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/default net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/default\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/default\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_default-dark-mobile.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/default net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/default\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/default\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/ecommerce",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_ecommerce-light-desktop.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/ecommerce net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/ecommerce\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/ecommerce\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/ecommerce",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_ecommerce-light-mobile.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/ecommerce net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/ecommerce\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/ecommerce\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/ecommerce",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_ecommerce-dark-desktop.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/ecommerce net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/ecommerce\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/ecommerce\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/ecommerce",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_ecommerce-dark-mobile.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/ecommerce net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/ecommerce\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/ecommerce\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/finance",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_finance-light-desktop.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/finance net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/finance\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/finance\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/finance",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_finance-light-mobile.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/finance net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/finance\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/finance\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/finance",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_finance-dark-desktop.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/finance net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/finance\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/finance\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/finance",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_finance-dark-mobile.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/finance net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/finance\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/finance\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/infrastructure",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_infrastructure-light-desktop.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/infrastructure net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/infrastructure\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/infrastructure\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/infrastructure",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_infrastructure-light-mobile.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/infrastructure net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/infrastructure\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/infrastructure\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/infrastructure",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_infrastructure-dark-desktop.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/infrastructure net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/infrastructure\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/infrastructure\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/infrastructure",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_infrastructure-dark-mobile.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/infrastructure net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/infrastructure\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/infrastructure\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/logistics",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_logistics-light-desktop.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/logistics net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/logistics\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/logistics\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/logistics",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_logistics-light-mobile.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/logistics net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/logistics\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/logistics\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/logistics",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_logistics-dark-desktop.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/logistics net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/logistics\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/logistics\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/logistics",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_logistics-dark-mobile.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/logistics net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/logistics\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/logistics\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_patient-monitoring-light-desktop.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/patient-monitoring net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/patient-monitoring\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/patient-monitoring\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_patient-monitoring-light-mobile.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/patient-monitoring net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/patient-monitoring\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/patient-monitoring\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_patient-monitoring-dark-desktop.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/patient-monitoring net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/patient-monitoring\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/patient-monitoring\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_patient-monitoring-dark-mobile.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/patient-monitoring net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/patient-monitoring\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/patient-monitoring\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/productivity",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_productivity-light-desktop.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/productivity net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/productivity\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/productivity\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/productivity",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_productivity-light-mobile.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/productivity net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/productivity\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/productivity\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/productivity",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_productivity-dark-desktop.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/productivity net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/productivity\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/productivity\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/productivity",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_productivity-dark-mobile.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/productivity net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/productivity\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/productivity\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/analytics-v1",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_analytics-v1-light-desktop.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/analytics-v1 net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/analytics-v1\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/analytics-v1\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/analytics-v1",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_analytics-v1-light-mobile.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/analytics-v1 net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/analytics-v1\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/analytics-v1\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/analytics-v1",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_analytics-v1-dark-desktop.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/analytics-v1 net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/analytics-v1\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/analytics-v1\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/analytics-v1",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_analytics-v1-dark-mobile.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/analytics-v1 net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/analytics-v1\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/analytics-v1\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/crm-v1",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_crm-v1-light-desktop.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/crm-v1 net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/crm-v1\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/crm-v1\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/crm-v1",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_crm-v1-light-mobile.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/crm-v1 net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/crm-v1\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/crm-v1\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/crm-v1",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_crm-v1-dark-desktop.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/crm-v1 net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/crm-v1\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/crm-v1\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/crm-v1",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_crm-v1-dark-mobile.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/crm-v1 net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/crm-v1\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/crm-v1\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/default-v1",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_default-v1-light-desktop.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/default-v1 net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/default-v1\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/default-v1\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/default-v1",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_default-v1-light-mobile.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/default-v1 net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/default-v1\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/default-v1\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/default-v1",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_default-v1-dark-desktop.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/default-v1 net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/default-v1\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/default-v1\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/default-v1",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_default-v1-dark-mobile.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/default-v1 net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/default-v1\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/default-v1\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/finance-v1",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_finance-v1-light-desktop.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/finance-v1 net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/finance-v1\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/finance-v1\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/finance-v1",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_finance-v1-light-mobile.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/finance-v1 net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/finance-v1\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/finance-v1\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/finance-v1",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_finance-v1-dark-desktop.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/finance-v1 net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/finance-v1\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/finance-v1\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/finance-v1",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_finance-v1-dark-mobile.png",
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/finance-v1 net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/finance-v1\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/finance-v1\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,340 @@
+
+> tenboards@0.1.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --routes /dashboard/default,/dashboard/crm,/dashboard/finance,/dashboard/analytics,/dashboard/productivity,/dashboard/ecommerce,/dashboard/academy,/dashboard/logistics,/dashboard/infrastructure,/dashboard/patient-monitoring,/dashboard/default-v1,/dashboard/crm-v1,/dashboard/finance-v1,/dashboard/analytics-v1 --output screenshots/v0.2-breakdown
+
+FAIL /dashboard/academy light/desktop
+request: http://127.0.0.1:3000/dashboard/academy net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/academy
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/academy", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/academy light/mobile
+request: http://127.0.0.1:3000/dashboard/academy net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/academy
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/academy", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/academy dark/desktop
+request: http://127.0.0.1:3000/dashboard/academy net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/academy
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/academy", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/academy dark/mobile
+request: http://127.0.0.1:3000/dashboard/academy net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/academy
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/academy", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/analytics light/desktop
+request: http://127.0.0.1:3000/dashboard/analytics net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/analytics
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/analytics", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/analytics light/mobile
+request: http://127.0.0.1:3000/dashboard/analytics net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/analytics
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/analytics", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/analytics dark/desktop
+request: http://127.0.0.1:3000/dashboard/analytics net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/analytics
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/analytics", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/analytics dark/mobile
+request: http://127.0.0.1:3000/dashboard/analytics net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/analytics
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/analytics", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/crm light/desktop
+request: http://127.0.0.1:3000/dashboard/crm net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/crm
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/crm", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/crm light/mobile
+request: http://127.0.0.1:3000/dashboard/crm net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/crm
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/crm", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/crm dark/desktop
+request: http://127.0.0.1:3000/dashboard/crm net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/crm
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/crm", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/crm dark/mobile
+request: http://127.0.0.1:3000/dashboard/crm net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/crm
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/crm", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/default light/desktop
+request: http://127.0.0.1:3000/dashboard/default net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/default
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/default", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/default light/mobile
+request: http://127.0.0.1:3000/dashboard/default net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/default
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/default", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/default dark/desktop
+request: http://127.0.0.1:3000/dashboard/default net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/default
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/default", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/default dark/mobile
+request: http://127.0.0.1:3000/dashboard/default net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/default
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/default", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/ecommerce light/desktop
+request: http://127.0.0.1:3000/dashboard/ecommerce net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/ecommerce
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/ecommerce", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/ecommerce light/mobile
+request: http://127.0.0.1:3000/dashboard/ecommerce net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/ecommerce
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/ecommerce", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/ecommerce dark/desktop
+request: http://127.0.0.1:3000/dashboard/ecommerce net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/ecommerce
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/ecommerce", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/ecommerce dark/mobile
+request: http://127.0.0.1:3000/dashboard/ecommerce net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/ecommerce
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/ecommerce", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/finance light/desktop
+request: http://127.0.0.1:3000/dashboard/finance net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/finance
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/finance", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/finance light/mobile
+request: http://127.0.0.1:3000/dashboard/finance net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/finance
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/finance", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/finance dark/desktop
+request: http://127.0.0.1:3000/dashboard/finance net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/finance
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/finance", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/finance dark/mobile
+request: http://127.0.0.1:3000/dashboard/finance net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/finance
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/finance", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/infrastructure light/desktop
+request: http://127.0.0.1:3000/dashboard/infrastructure net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/infrastructure
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/infrastructure", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/infrastructure light/mobile
+request: http://127.0.0.1:3000/dashboard/infrastructure net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/infrastructure
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/infrastructure", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/infrastructure dark/desktop
+request: http://127.0.0.1:3000/dashboard/infrastructure net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/infrastructure
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/infrastructure", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/infrastructure dark/mobile
+request: http://127.0.0.1:3000/dashboard/infrastructure net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/infrastructure
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/infrastructure", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/logistics light/desktop
+request: http://127.0.0.1:3000/dashboard/logistics net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/logistics
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/logistics", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/logistics light/mobile
+request: http://127.0.0.1:3000/dashboard/logistics net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/logistics
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/logistics", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/logistics dark/desktop
+request: http://127.0.0.1:3000/dashboard/logistics net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/logistics
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/logistics", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/logistics dark/mobile
+request: http://127.0.0.1:3000/dashboard/logistics net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/logistics
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/logistics", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/patient-monitoring light/desktop
+request: http://127.0.0.1:3000/dashboard/patient-monitoring net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/patient-monitoring
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/patient-monitoring", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/patient-monitoring light/mobile
+request: http://127.0.0.1:3000/dashboard/patient-monitoring net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/patient-monitoring
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/patient-monitoring", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/patient-monitoring dark/desktop
+request: http://127.0.0.1:3000/dashboard/patient-monitoring net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/patient-monitoring
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/patient-monitoring", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/patient-monitoring dark/mobile
+request: http://127.0.0.1:3000/dashboard/patient-monitoring net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/patient-monitoring
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/patient-monitoring", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/productivity light/desktop
+request: http://127.0.0.1:3000/dashboard/productivity net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/productivity
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/productivity", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/productivity light/mobile
+request: http://127.0.0.1:3000/dashboard/productivity net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/productivity
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/productivity", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/productivity dark/desktop
+request: http://127.0.0.1:3000/dashboard/productivity net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/productivity
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/productivity", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/productivity dark/mobile
+request: http://127.0.0.1:3000/dashboard/productivity net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/productivity
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/productivity", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/analytics-v1 light/desktop
+request: http://127.0.0.1:3000/dashboard/analytics-v1 net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/analytics-v1
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/analytics-v1", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/analytics-v1 light/mobile
+request: http://127.0.0.1:3000/dashboard/analytics-v1 net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/analytics-v1
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/analytics-v1", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/analytics-v1 dark/desktop
+request: http://127.0.0.1:3000/dashboard/analytics-v1 net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/analytics-v1
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/analytics-v1", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/analytics-v1 dark/mobile
+request: http://127.0.0.1:3000/dashboard/analytics-v1 net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/analytics-v1
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/analytics-v1", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/crm-v1 light/desktop
+request: http://127.0.0.1:3000/dashboard/crm-v1 net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/crm-v1
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/crm-v1", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/crm-v1 light/mobile
+request: http://127.0.0.1:3000/dashboard/crm-v1 net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/crm-v1
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/crm-v1", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/crm-v1 dark/desktop
+request: http://127.0.0.1:3000/dashboard/crm-v1 net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/crm-v1
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/crm-v1", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/crm-v1 dark/mobile
+request: http://127.0.0.1:3000/dashboard/crm-v1 net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/crm-v1
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/crm-v1", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/default-v1 light/desktop
+request: http://127.0.0.1:3000/dashboard/default-v1 net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/default-v1
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/default-v1", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/default-v1 light/mobile
+request: http://127.0.0.1:3000/dashboard/default-v1 net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/default-v1
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/default-v1", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/default-v1 dark/desktop
+request: http://127.0.0.1:3000/dashboard/default-v1 net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/default-v1
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/default-v1", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/default-v1 dark/mobile
+request: http://127.0.0.1:3000/dashboard/default-v1 net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/default-v1
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/default-v1", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/finance-v1 light/desktop
+request: http://127.0.0.1:3000/dashboard/finance-v1 net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/finance-v1
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/finance-v1", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/finance-v1 light/mobile
+request: http://127.0.0.1:3000/dashboard/finance-v1 net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/finance-v1
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/finance-v1", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/finance-v1 dark/desktop
+request: http://127.0.0.1:3000/dashboard/finance-v1 net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/finance-v1
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/finance-v1", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/finance-v1 dark/mobile
+request: http://127.0.0.1:3000/dashboard/finance-v1 net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/finance-v1
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/finance-v1", waiting until "domcontentloaded"[22m
+

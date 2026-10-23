@@ -1,0 +1,8 @@
+
+> tenboards@0.1.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --routes /dashboard/infrastructure --output screenshots/v0.2-breakdown-infrastructure-retry
+
+PASS /dashboard/infrastructure light/desktop
+PASS /dashboard/infrastructure light/mobile
+PASS /dashboard/infrastructure dark/desktop
+PASS /dashboard/infrastructure dark/mobile
