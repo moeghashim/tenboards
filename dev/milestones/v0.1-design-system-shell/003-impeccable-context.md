@@ -8,12 +8,12 @@ files: ["PRODUCT.md", "DESIGN.md", "AGENTS.md"]
 ---
 
 ## Acceptance criteria
-- [ ] Begin only after the user approves this breakdown.
-- [ ] Read the global Impeccable SKILL.md and run its context command from the repo root.
-- [ ] Produce PRODUCT.md through init and DESIGN.md through document/new-work, following PLAN §7 and Decisions log.
-- [ ] Record mode Operate, refined product UI, Geist Sans/Mono, and the locked sidebar reference.
-- [ ] Generate root AGENTS.md with workflow, prefactor inspection, test floor, decide/escalate matrix, protected paths, PR template, and Impeccable craft-floor + render requirements.
-- [ ] Reconcile useful upstream guidance without allowing it to override PLAN; build/check/typecheck pass.
+- [x] Begin only after the user approves this breakdown.
+- [x] Read the global Impeccable SKILL.md and run its context command from the repo root.
+- [x] Produce PRODUCT.md through init and DESIGN.md through document/new-work, following PLAN §7 and Decisions log.
+- [x] Record mode Operate, refined product UI, Geist Sans/Mono, and the locked sidebar reference.
+- [x] Generate root AGENTS.md with workflow, prefactor inspection, test floor, decide/escalate matrix, protected paths, PR template, and Impeccable craft-floor + render requirements.
+- [x] Reconcile useful upstream guidance without allowing it to override PLAN; build/check/typecheck pass.
 
 ## Suggested approach
 Read the actual sidebar reference and current rendered app. PLAN takes precedence over skill defaults. Keep PLAN.md and dev task content protected from generation.
