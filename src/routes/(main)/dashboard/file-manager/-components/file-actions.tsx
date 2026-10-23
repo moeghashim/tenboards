@@ -20,7 +20,7 @@ export function FileActions({ file, onToggleStar }: { file: FileManagerFile; onT
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-48" align="end">
         <DropdownMenuGroup>
-          <DropdownMenuItem onSelect={onToggleStar}>
+          <DropdownMenuItem onClick={onToggleStar}>
             <Star />
             {file.starred ? "Remove from starred" : "Add to starred"}
           </DropdownMenuItem>
