@@ -1,0 +1,52 @@
+{
+  "before": {
+    "cases": 8,
+    "errors": []
+  },
+  "demo": {
+    "cases": 12,
+    "errors": []
+  },
+  "db": {
+    "cases": 12,
+    "errors": [
+      {
+        "route": "/dashboard/default",
+        "theme": "light",
+        "viewport": "mobile",
+        "file": "_dashboard_default-light-mobile-interactive.png",
+        "controlsFile": "_dashboard_default-light-mobile-interactive-controls.png",
+        "phase": "direct",
+        "interactionNotes": [
+          "Sidebar expansion/names/visible 2px focus; palette arrows/Escape/focus return",
+          "Settings native radio/select keyboard access, focus trap/return; reduced motion <=1ms",
+          "Theme/preset/font state persists after refresh"
+        ],
+        "expectedDiagnostics": [],
+        "errors": [
+          "page.evaluate: TypeError: Cannot read properties of null (reading 'textContent')\n    at eval (eval at evaluate (:370:30), <anonymous>:2:54)\n    at UtilityScript.evaluate (<anonymous>:372:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"
+        ]
+      }
+    ]
+  },
+  "demo-final": {
+    "cases": 4,
+    "errors": []
+  },
+  "db-final": {
+    "cases": 4,
+    "errors": []
+  },
+  "db-default-retry": {
+    "cases": 4,
+    "errors": []
+  },
+  "no-docker": {
+    "cases": 12,
+    "errors": []
+  },
+  "workers-final": {
+    "cases": 24,
+    "errors": []
+  }
+}
