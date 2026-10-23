@@ -1,0 +1,370 @@
+{
+  "baseURL": "https://e44fe3f0-tenboards.mohanadgh.workers.dev/",
+  "hydrationDelayMs": 0,
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": true,
+  "interactions": true,
+  "results": [
+    {
+      "route": "/dashboard/default",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_default-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_default-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Sidebar expansion/names/visible 2px focus; palette arrows/Escape/focus return",
+        "Settings native radio/select keyboard access, focus trap/return; reduced motion <=1ms",
+        "Theme/preset/font state persists after refresh"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_default-light-desktop-refresh-interactive.png",
+      "controlsFile": "_dashboard_default-light-desktop-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Sidebar expansion/names/visible 2px focus; palette arrows/Escape/focus return",
+        "Settings native radio/select keyboard access, focus trap/return; reduced motion <=1ms",
+        "Theme/preset/font state persists after refresh"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_default-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_default-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Sidebar expansion/names/visible 2px focus; palette arrows/Escape/focus return",
+        "Settings native radio/select keyboard access, focus trap/return; reduced motion <=1ms",
+        "Theme/preset/font state persists after refresh"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_default-light-mobile-refresh-interactive.png",
+      "controlsFile": "_dashboard_default-light-mobile-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Sidebar expansion/names/visible 2px focus; palette arrows/Escape/focus return",
+        "Settings native radio/select keyboard access, focus trap/return; reduced motion <=1ms",
+        "Theme/preset/font state persists after refresh"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_default-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_default-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Sidebar expansion/names/visible 2px focus; palette arrows/Escape/focus return",
+        "Settings native radio/select keyboard access, focus trap/return; reduced motion <=1ms",
+        "Theme/preset/font state persists after refresh"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_default-dark-desktop-refresh-interactive.png",
+      "controlsFile": "_dashboard_default-dark-desktop-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Sidebar expansion/names/visible 2px focus; palette arrows/Escape/focus return",
+        "Settings native radio/select keyboard access, focus trap/return; reduced motion <=1ms",
+        "Theme/preset/font state persists after refresh"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_default-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_default-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Sidebar expansion/names/visible 2px focus; palette arrows/Escape/focus return",
+        "Settings native radio/select keyboard access, focus trap/return; reduced motion <=1ms",
+        "Theme/preset/font state persists after refresh"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_default-dark-mobile-refresh-interactive.png",
+      "controlsFile": "_dashboard_default-dark-mobile-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Sidebar expansion/names/visible 2px focus; palette arrows/Escape/focus return",
+        "Settings native radio/select keyboard access, focus trap/return; reduced motion <=1ms",
+        "Theme/preset/font state persists after refresh"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/roles",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_roles-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_roles-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "System/owner/status/search exact counts; system actions remain disabled; all three tabs",
+        "Empty recovery, named keyboard menus and local table scroll; no document overflow",
+        "Existing admin actions remain placeholders; no permission/auth mutations"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/roles",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_roles-light-desktop-refresh-interactive.png",
+      "controlsFile": "_dashboard_roles-light-desktop-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "System/owner/status/search exact counts; system actions remain disabled; all three tabs",
+        "Empty recovery, named keyboard menus and local table scroll; no document overflow",
+        "Existing admin actions remain placeholders; no permission/auth mutations"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/roles",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_roles-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_roles-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "System/owner/status/search exact counts; system actions remain disabled; all three tabs",
+        "Empty recovery, named keyboard menus and local table scroll; no document overflow",
+        "Existing admin actions remain placeholders; no permission/auth mutations"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/roles",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_roles-light-mobile-refresh-interactive.png",
+      "controlsFile": "_dashboard_roles-light-mobile-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "System/owner/status/search exact counts; system actions remain disabled; all three tabs",
+        "Empty recovery, named keyboard menus and local table scroll; no document overflow",
+        "Existing admin actions remain placeholders; no permission/auth mutations"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/roles",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_roles-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_roles-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "System/owner/status/search exact counts; system actions remain disabled; all three tabs",
+        "Empty recovery, named keyboard menus and local table scroll; no document overflow",
+        "Existing admin actions remain placeholders; no permission/auth mutations"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/roles",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_roles-dark-desktop-refresh-interactive.png",
+      "controlsFile": "_dashboard_roles-dark-desktop-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "System/owner/status/search exact counts; system actions remain disabled; all three tabs",
+        "Empty recovery, named keyboard menus and local table scroll; no document overflow",
+        "Existing admin actions remain placeholders; no permission/auth mutations"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/roles",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_roles-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_roles-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "System/owner/status/search exact counts; system actions remain disabled; all three tabs",
+        "Empty recovery, named keyboard menus and local table scroll; no document overflow",
+        "Existing admin actions remain placeholders; no permission/auth mutations"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/roles",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_roles-dark-mobile-refresh-interactive.png",
+      "controlsFile": "_dashboard_roles-dark-mobile-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "System/owner/status/search exact counts; system actions remain disabled; all three tabs",
+        "Empty recovery, named keyboard menus and local table scroll; no document overflow",
+        "Existing admin actions remain placeholders; no permission/auth mutations"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/users",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_users-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_users-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Combined role/team/status/workspace/search exact result; selection, page size and pagination",
+        "Empty recovery, named keyboard menus and local table scroll; no document overflow",
+        "Existing admin actions remain placeholders; no permission/auth mutations"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/users",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_users-light-desktop-refresh-interactive.png",
+      "controlsFile": "_dashboard_users-light-desktop-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Combined role/team/status/workspace/search exact result; selection, page size and pagination",
+        "Empty recovery, named keyboard menus and local table scroll; no document overflow",
+        "Existing admin actions remain placeholders; no permission/auth mutations"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/users",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_users-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_users-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Combined role/team/status/workspace/search exact result; selection, page size and pagination",
+        "Empty recovery, named keyboard menus and local table scroll; no document overflow",
+        "Existing admin actions remain placeholders; no permission/auth mutations"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/users",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_users-light-mobile-refresh-interactive.png",
+      "controlsFile": "_dashboard_users-light-mobile-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Combined role/team/status/workspace/search exact result; selection, page size and pagination",
+        "Empty recovery, named keyboard menus and local table scroll; no document overflow",
+        "Existing admin actions remain placeholders; no permission/auth mutations"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/users",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_users-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_users-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Combined role/team/status/workspace/search exact result; selection, page size and pagination",
+        "Empty recovery, named keyboard menus and local table scroll; no document overflow",
+        "Existing admin actions remain placeholders; no permission/auth mutations"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/users",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_users-dark-desktop-refresh-interactive.png",
+      "controlsFile": "_dashboard_users-dark-desktop-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Combined role/team/status/workspace/search exact result; selection, page size and pagination",
+        "Empty recovery, named keyboard menus and local table scroll; no document overflow",
+        "Existing admin actions remain placeholders; no permission/auth mutations"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/users",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_users-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_users-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Combined role/team/status/workspace/search exact result; selection, page size and pagination",
+        "Empty recovery, named keyboard menus and local table scroll; no document overflow",
+        "Existing admin actions remain placeholders; no permission/auth mutations"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/users",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_users-dark-mobile-refresh-interactive.png",
+      "controlsFile": "_dashboard_users-dark-mobile-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Combined role/team/status/workspace/search exact result; selection, page size and pagination",
+        "Empty recovery, named keyboard menus and local table scroll; no document overflow",
+        "Existing admin actions remain placeholders; no permission/auth mutations"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+
+> tenboards@0.3.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --routes /dashboard/roles --interactions --output screenshots/v04-001/demo-final
+
+PASS /dashboard/roles light/desktop direct
+PASS /dashboard/roles light/mobile direct
+PASS /dashboard/roles dark/desktop direct
+PASS /dashboard/roles dark/mobile direct

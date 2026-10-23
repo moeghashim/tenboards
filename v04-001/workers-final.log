@@ -1,0 +1,28 @@
+
+> tenboards@0.3.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url https://47c60a45-tenboards.mohanadgh.workers.dev --routes /dashboard/default,/dashboard/users,/dashboard/roles --interactions --reload --output screenshots/v04-001/workers-final
+
+PASS /dashboard/default light/desktop direct
+PASS /dashboard/default light/desktop refresh
+PASS /dashboard/default light/mobile direct
+PASS /dashboard/default light/mobile refresh
+PASS /dashboard/default dark/desktop direct
+PASS /dashboard/default dark/desktop refresh
+PASS /dashboard/default dark/mobile direct
+PASS /dashboard/default dark/mobile refresh
+PASS /dashboard/roles light/desktop direct
+PASS /dashboard/roles light/desktop refresh
+PASS /dashboard/roles light/mobile direct
+PASS /dashboard/roles light/mobile refresh
+PASS /dashboard/roles dark/desktop direct
+PASS /dashboard/roles dark/desktop refresh
+PASS /dashboard/roles dark/mobile direct
+PASS /dashboard/roles dark/mobile refresh
+PASS /dashboard/users light/desktop direct
+PASS /dashboard/users light/desktop refresh
+PASS /dashboard/users light/mobile direct
+PASS /dashboard/users light/mobile refresh
+PASS /dashboard/users dark/desktop direct
+PASS /dashboard/users dark/desktop refresh
+PASS /dashboard/users dark/mobile direct
+PASS /dashboard/users dark/mobile refresh

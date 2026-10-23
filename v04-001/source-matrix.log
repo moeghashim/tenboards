@@ -1,0 +1,485 @@
+PASS absent URL: read
+PASS configured database: read
+PASS forced demo: read
+PASS refused connection: Unable to load database data. Check the connection and migrations, then retry.
+PASS bad credentials: Unable to load database data. Check the connection and migrations, then retry.
+PASS missing schema: Unable to load database data. Check the connection and migrations, then retry.
+PASS empty configuration: Unable to load database data. Check the connection and migrations, then retry.
+PASS malformed configuration: Unable to load database data. Check the connection and migrations, then retry.
+PASS unsupported selector: Unsupported DATA_SOURCE. Use demo or leave it unset.
+PASS recovered database: read
+PASS negative --inject-mismatch: Parity failed: readUsers/all
++ actual - expected
+... Skipped lines
+
+  [
+    {
++     email: 'nico.arendt@sandbox.dev',
++     joinedDate: '13 May 2024, 6:35 PM',
++     lastActive: 25,
++     name: 'Nico Arendt',
++     role: 'Contributor',
+-     email: 'olivia.rhye@weblabs.studio',
+-     joinedDate: '24 Jun 2024, 9:23 AM',
+-     lastActive: 0,
+-     name: 'Olivia Rhye',
+-     role: 'Workspace Owner',
+      status: 'Active',
++     team: 'Customer Ops',
+-     team: 'Platform',
+      workspace: [
++       'Sandbox',
+-       'Weblabs Studio',
+        'Internal Tools'
+      ]
+    },
+    {
++     email: 'mia.romberg@weblabs.studio',
++     joinedDate: '29 Apr 2024, 11:55 AM',
++     lastActive: 129600,
++     name: 'Mia Romberg',
++     role: 'Billing Admin',
++     status: 'Pending invite',
++     team: 'Finance',
+-     email: 'phoenix.baker@weblabs.studio',
+-     joinedDate: '15 Mar 2023, 2:45 PM',
+-     lastActive: 5,
+-     name: 'Phoenix Baker',
+-     role: 'Admin',
+-     status: 'Active',
+-     team: 'Growth',
+      workspace: [
+        'Weblabs Studio'
+      ]
+    },
+    {
++     email: 'zahir.mcclure@internal.tools',
++     joinedDate: '07 Feb 2024, 7:20 PM',
+-     email: 'lana.steiner@acme.inc',
+-     joinedDate: '10 Apr 2022, 11:30 AM',
+-     lastActive: 20160,
+-     name: 'Lana Steiner',
+-     role: 'Billing Admin',
+-     status: 'Active',
+-     team: 'Revenue',
+-     workspace: [
+-       'Acme Inc.'
+-     ]
+-   },
+-   {
+-     email: 'demi.wilkinson@weblabs.studio',
+-     joinedDate: '28 Feb 2023, 6:15 PM',
+      lastActive: 60,
++     name: 'Zahir McClure',
+-     name: 'Demi Wilkinson',
+      role: 'Security Admin',
++     status: 'Active',
+-     status: 'Locked',
+      team: 'Internal Tools',
+      workspace: [
+-       'Weblabs Studio',
+        'Internal Tools'
+      ]
+    },
+    {
++     email: 'eve.lechner@acme.inc',
++     joinedDate: '01 Mar 2023, 10:10 AM',
++     lastActive: 43200,
++     name: 'Eve Lechner',
++     role: 'Read-only',
++     status: 'Suspended',
++     team: 'Finance',
+-     email: 'candice.wu@sandbox.dev',
+-     joinedDate: '19 May 2024, 7:55 AM',
+-     lastActive: 120,
+-     name: 'Candice Wu',
+-     role: 'Team Lead',
+-     status: 'Active',
+-     team: 'Customer Ops',
+      workspace: [
++       'Acme Inc.'
+-       'Sandbox'
+      ]
+    },
+    {
++     email: 'noah.pierre@weblabs.studio',
++     joinedDate: '18 Jun 2024, 4:50 PM',
++     lastActive: 7,
++     name: 'Noah Pierre',
+-     email: 'natali.craig@weblabs.studio',
+-     joinedDate: '03 Jan 2024, 12:05 PM',
+-     lastActive: 129600,
+-     name: 'Natali Craig',
+      role: 'Contributor',
++     status: 'Active',
++     team: 'Platform',
+-     status: 'Pending invite',
+-     team: 'Compliance',
+      workspace: [
+        'Weblabs Studio'
+      ]
+    },
+    {
++     email: 'sienna.hewitt@weblabs.studio',
++     joinedDate: '05 Dec 2023, 2:15 PM',
++     lastActive: 0,
++     name: 'Sienna Hewitt',
++     role: 'Admin',
+-     email: 'drew.cano@internal.tools',
+-     joinedDate: '21 Jul 2023, 8:40 PM',
+-     lastActive: 180,
+-     name: 'Drew Cano',
+-     role: 'Guest',
+      status: 'Active',
+      team: 'Internal Tools',
+      workspace: [
++       'Weblabs Studio',
+        'Internal Tools'
+      ]
+    },
+    {
++     email: 'rylee.howard@sandbox.dev',
++     joinedDate: '09 Sep 2023, 12:25 PM',
++     lastActive: 2880,
++     name: 'Rylee Howard',
++     role: 'Guest',
++     status: 'Locked',
++     team: 'Growth',
++     workspace: [
++       'Sandbox'
++     ]
++   },
++   {
++     email: 'rene.wells@acme.inc',
++     joinedDate: '11 Apr 2024, 9:05 AM',
++     lastActive: 18,
++     name: 'Rene Wells',
++     role: 'Team Lead',
++     status: 'Active',
+-     email: 'orlando.diggs@acme.inc',
+-     joinedDate: '16 Sep 2023, 3:25 PM',
+-     lastActive: 6,
+-     name: 'Orlando Diggs',
+-     role: 'Read-only',
+-     status: 'Deactivated',
+      team: 'Revenue',
+      workspace: [
+        'Acme Inc.'
+      ]
+    },
+    {
++     email: 'mollie.hall@weblabs.studio',
++     joinedDate: '26 Nov 2022, 3:40 PM',
++     lastActive: 30240,
++     name: 'Mollie Hall',
+-     email: 'andi.lane@weblabs.studio',
+-     joinedDate: '04 Nov 2022, 9:50 AM',
+-     lastActive: 12,
+-     name: 'Andi Lane',
+      role: 'Contributor',
++     status: 'Deactivated',
++     team: 'Platform',
+-     status: 'Active',
+-     team: 'People Ops',
+      workspace: [
+        'Weblabs Studio',
+-       'Sandbox'
+      ]
+    },
+    {
++     email: 'josh.miller@internal.tools',
++     joinedDate: '14 Jul 2023, 6:05 PM',
++     lastActive: 240,
++     name: 'Josh Miller',
++     role: 'Read-only',
+-     email: 'kate.morrison@weblabs.studio',
+-     joinedDate: '30 Dec 2023, 4:35 PM',
+-     lastActive: 30,
+-     name: 'Kate Morrison',
+-     role: 'Admin',
+      status: 'Active',
++     team: 'Compliance',
+-     team: 'Platform',
+      workspace: [
++       'Internal Tools'
+-       'Weblabs Studio'
+      ]
+    },
+    {
++     email: 'koray.okumus@weblabs.studio',
++     joinedDate: '22 May 2024, 8:30 AM',
++     lastActive: 10,
++     name: 'Koray Okumus',
++     role: 'Security Admin',
++     status: 'Active',
+-     email: 'alec.whitten@internal.tools',
+-     joinedDate: '12 Feb 2024, 10:20 AM',
+-     lastActive: 11520,
+-     name: 'Alec Whitten',
+-     role: 'Team Lead',
+-     status: 'Suspended',
+      team: 'Internal Tools',
+      workspace: [
++       'Weblabs Studio',
+        'Internal Tools'
+      ]
+    },
+    {
++     email: 'lori.bryson@acme.inc',
++     joinedDate: '02 Oct 2023, 11:15 AM',
++     lastActive: 45,
++     name: 'Lori Bryson',
++     role: 'Billing Admin',
+-     email: 'ariana.decker@weblabs.studio',
+-     joinedDate: '08 Aug 2023, 1:10 PM',
+-     lastActive: 1440,
+-     name: 'Ariana Decker',
+-     role: 'Contributor',
+      status: 'Active',
++     team: 'Finance',
+-     team: 'Growth',
+      workspace: [
++       'Acme Inc.'
+-       'Weblabs Studio'
+      ]
+    },
+    {
+      email: 'steven.tey@sandbox.dev',
+      joinedDate: '17 Jan 2024, 5:45 PM',
+...
+    {
++     email: 'ariana.decker@weblabs.studio',
++     joinedDate: '08 Aug 2023, 1:10 PM',
++     lastActive: 1440,
++     name: 'Ariana Decker',
++     role: 'Contributor',
+-     email: 'lori.bryson@acme.inc',
+-     joinedDate: '02 Oct 2023, 11:15 AM',
+-     lastActive: 45,
+-     name: 'Lori Bryson',
+-     role: 'Billing Admin',
+      status: 'Active',
++     team: 'Growth',
+-     team: 'Finance',
+      workspace: [
++       'Weblabs Studio'
+-       'Acme Inc.'
+      ]
+    },
+    {
++     email: 'alec.whitten@internal.tools',
++     joinedDate: '12 Feb 2024, 10:20 AM',
++     lastActive: 11520,
++     name: 'Alec Whitten',
++     role: 'Team Lead',
++     status: 'Suspended',
+-     email: 'koray.okumus@weblabs.studio',
+-     joinedDate: '22 May 2024, 8:30 AM',
+-     lastActive: 10,
+-     name: 'Koray Okumus',
+-     role: 'Security Admin',
+-     status: 'Active',
+      team: 'Internal Tools',
+      workspace: [
+-       'Weblabs Studio',
+        'Internal Tools'
+      ]
+    },
+    {
++     email: 'kate.morrison@weblabs.studio',
++     joinedDate: '30 Dec 2023, 4:35 PM',
++     lastActive: 30,
++     name: 'Kate Morrison',
++     role: 'Admin',
+-     email: 'josh.miller@internal.tools',
+-     joinedDate: '14 Jul 2023, 6:05 PM',
+-     lastActive: 240,
+-     name: 'Josh Miller',
+-     role: 'Read-only',
+      status: 'Active',
++     team: 'Platform',
+-     team: 'Compliance',
+      workspace: [
++       'Weblabs Studio'
+-       'Internal Tools'
+      ]
+    },
+    {
++     email: 'andi.lane@weblabs.studio',
++     joinedDate: '04 Nov 2022, 9:50 AM',
++     lastActive: 12,
++     name: 'Andi Lane',
+-     email: 'mollie.hall@weblabs.studio',
+-     joinedDate: '26 Nov 2022, 3:40 PM',
+-     lastActive: 30240,
+-     name: 'Mollie Hall',
+      role: 'Contributor',
++     status: 'Active',
++     team: 'People Ops',
+-     status: 'Deactivated',
+-     team: 'Platform',
+      workspace: [
+        'Weblabs Studio',
++       'Sandbox'
+      ]
+    },
+    {
++     email: 'orlando.diggs@acme.inc',
++     joinedDate: '16 Sep 2023, 3:25 PM',
++     lastActive: 6,
++     name: 'Orlando Diggs',
++     role: 'Read-only',
++     status: 'Deactivated',
+-     email: 'rene.wells@acme.inc',
+-     joinedDate: '11 Apr 2024, 9:05 AM',
+-     lastActive: 18,
+-     name: 'Rene Wells',
+-     role: 'Team Lead',
+-     status: 'Active',
+      team: 'Revenue',
+      workspace: [
+        'Acme Inc.'
+      ]
+    },
+    {
++     email: 'drew.cano@internal.tools',
++     joinedDate: '21 Jul 2023, 8:40 PM',
++     lastActive: 180,
++     name: 'Drew Cano',
+-     email: 'rylee.howard@sandbox.dev',
+-     joinedDate: '09 Sep 2023, 12:25 PM',
+-     lastActive: 2880,
+-     name: 'Rylee Howard',
+      role: 'Guest',
+-     status: 'Locked',
+-     team: 'Growth',
+-     workspace: [
+-       'Sandbox'
+-     ]
+-   },
+-   {
+-     email: 'sienna.hewitt@weblabs.studio',
+-     joinedDate: '05 Dec 2023, 2:15 PM',
+-     lastActive: 0,
+-     name: 'Sienna Hewitt',
+-     role: 'Admin',
+      status: 'Active',
+      team: 'Internal Tools',
+      workspace: [
+-       'Weblabs Studio',
+        'Internal Tools'
+      ]
+    },
+    {
++     email: 'natali.craig@weblabs.studio',
++     joinedDate: '03 Jan 2024, 12:05 PM',
++     lastActive: 129600,
++     name: 'Natali Craig',
+-     email: 'noah.pierre@weblabs.studio',
+-     joinedDate: '18 Jun 2024, 4:50 PM',
+-     lastActive: 7,
+-     name: 'Noah Pierre',
+      role: 'Contributor',
++     status: 'Pending invite',
++     team: 'Compliance',
+-     status: 'Active',
+-     team: 'Platform',
+      workspace: [
+        'Weblabs Studio'
+      ]
+    },
+    {
++     email: 'candice.wu@sandbox.dev',
++     joinedDate: '19 May 2024, 7:55 AM',
++     lastActive: 120,
++     name: 'Candice Wu',
++     role: 'Team Lead',
++     status: 'Active',
++     team: 'Customer Ops',
+-     email: 'eve.lechner@acme.inc',
+-     joinedDate: '01 Mar 2023, 10:10 AM',
+-     lastActive: 43200,
+-     name: 'Eve Lechner',
+-     role: 'Read-only',
+-     status: 'Suspended',
+-     team: 'Finance',
+      workspace: [
++       'Sandbox'
+-       'Acme Inc.'
+      ]
+    },
+    {
++     email: 'demi.wilkinson@weblabs.studio',
++     joinedDate: '28 Feb 2023, 6:15 PM',
+-     email: 'zahir.mcclure@internal.tools',
+-     joinedDate: '07 Feb 2024, 7:20 PM',
+      lastActive: 60,
++     name: 'Demi Wilkinson',
+-     name: 'Zahir McClure',
+      role: 'Security Admin',
++     status: 'Locked',
+-     status: 'Active',
+      team: 'Internal Tools',
+      workspace: [
++       'Weblabs Studio',
+        'Internal Tools'
+      ]
+    },
+    {
++     email: 'lana.steiner@acme.inc',
++     joinedDate: '10 Apr 2022, 11:30 AM',
++     lastActive: 20160,
++     name: 'Lana Steiner',
+-     email: 'mia.romberg@weblabs.studio',
+-     joinedDate: '29 Apr 2024, 11:55 AM',
+-     lastActive: 129600,
+-     name: 'Mia Romberg',
+      role: 'Billing Admin',
++     status: 'Active',
++     team: 'Revenue',
+-     status: 'Pending invite',
+-     team: 'Finance',
+      workspace: [
++       'Acme Inc.'
++     ]
++   },
++   {
++     email: 'phoenix.baker@weblabs.studio',
++     joinedDate: '15 Mar 2023, 2:45 PM',
++     lastActive: 5,
++     name: 'Phoenix Baker',
++     role: 'Admin',
++     status: 'Active',
++     team: 'Growth',
++     workspace: [
+        'Weblabs Studio'
+      ]
+    },
+    {
++     email: 'olivia.rhye@weblabs.studio',
++     joinedDate: '24 Jun 2024, 9:23 AM',
++     lastActive: 0,
++     name: 'Olivia Rhye',
++     role: 'Workspace Owner',
+-     email: 'nico.arendt@sandbox.dev',
+-     joinedDate: '13 May 2024, 6:35 PM',
+-     lastActive: 25,
+-     name: 'Nico Arendt',
+-     role: 'Contributor',
+      status: 'Active',
++     team: 'Platform',
+-     team: 'Customer Ops',
+      workspace: [
++       'Weblabs Studio',
+-       'Sandbox',
+        'Internal Tools'
+      ]
+    }
+  ]
+PASS negative --omit-registration: Parity failed: Every domain read must be registered exactly once
++ actual - expected
+
+  [
+    'roles:readRoles',
+-   'users:readUsers'
+  ]

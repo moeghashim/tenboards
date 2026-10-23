@@ -1,0 +1,30 @@
+scripts/data-source-browser.ts:69:51 lint/performance/useDomNodeTextContent  FIXABLE  ━━━━━━━━━━━━━━
+
+  ! innerText is not recommended for reading DOM node text.
+  
+    67 │             .getByRole("heading", { name: scenario.error ? "Something went wrong." : "Users", exact: true })
+    68 │             .waitFor();
+  > 69 │           const body = await page.locator("body").innerText();
+       │                                                   ^^^^^^^^^
+    70 │           if (scenario.error) {
+    71 │             assert.match(body, /Unable to load database data/);
+  
+  i innerText depends on rendered layout and CSS, so it can be slower and produce different results from the DOM tree's text content.
+  
+  i Use textContent when you want the node's text without rendered-text behavior.
+  
+  i Unsafe fix: Use textContent instead.
+  
+     67  67 │               .getByRole("heading", { name: scenario.error ? "Something went wrong." : "Users", exact: true })
+     68  68 │               .waitFor();
+     69     │ - ··········const·body·=·await·page.locator("body").innerText();
+         69 │ + ··········const·body·=·await·page.locator("body").textContent();
+     70  70 │             if (scenario.error) {
+     71  71 │               assert.match(body, /Unable to load database data/);
+  
+
+Skipped 2 suggested fixes.
+If you wish to apply the suggested (unsafe) fixes, use the command biome check --write --unsafe
+
+Checked 1 file in 540ms. Fixed 1 file.
+Found 1 warning.

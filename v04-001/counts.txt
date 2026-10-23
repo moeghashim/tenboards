@@ -1,0 +1,5 @@
+ users | roles | memberships | permissions 
+-------+-------+-------------+-------------
+    25 |    12 |          31 |          52
+(1 row)
+

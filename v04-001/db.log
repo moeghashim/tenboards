@@ -1,0 +1,20 @@
+
+> tenboards@0.3.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://127.0.0.1:3001 --routes /dashboard/default,/dashboard/users,/dashboard/roles --interactions --output screenshots/v04-001/db
+
+PASS /dashboard/default light/desktop direct
+FAIL /dashboard/default light/mobile direct
+page.evaluate: TypeError: Cannot read properties of null (reading 'textContent')
+    at eval (eval at evaluate (:370:30), <anonymous>:2:54)
+    at UtilityScript.evaluate (<anonymous>:372:16)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+PASS /dashboard/default dark/desktop direct
+PASS /dashboard/default dark/mobile direct
+PASS /dashboard/roles light/desktop direct
+PASS /dashboard/roles light/mobile direct
+PASS /dashboard/roles dark/desktop direct
+PASS /dashboard/roles dark/mobile direct
+PASS /dashboard/users light/desktop direct
+PASS /dashboard/users light/mobile direct
+PASS /dashboard/users dark/desktop direct
+PASS /dashboard/users dark/mobile direct

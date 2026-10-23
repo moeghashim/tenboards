@@ -1,0 +1,21 @@
+INSERT 0 1
+
+> tenboards@0.3.0 db:seed
+> node --env-file-if-exists=.env --experimental-strip-types scripts/database.ts seed
+
+.env not found. Continuing without it.
+Database seed completed.
+          name          
+------------------------
+ QA unrelated workspace
+(1 row)
+
+DELETE 1
+                             conname                             
+-----------------------------------------------------------------
+ role_permissions_role_display_roles_role_fk
+ workspace_memberships_userEmail_directory_users_email_fk
+ workspace_memberships_workspaceName_workspaces_name_fk
+ metric_dimensions_domain_series_pointKey_metric_points_domain_s
+(4 rows)
+

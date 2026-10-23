@@ -1,0 +1,29 @@
+UPDATE 1
+
+> tenboards@0.3.0 data:parity
+> node --env-file-if-exists=.env --experimental-strip-types scripts/data-parity.ts
+
+.env not found. Continuing without it.
+Parity failed: readUsers/all
++ actual - expected
+
+  [
+    {
+      email: 'olivia.rhye@weblabs.studio',
+      joinedDate: '24 Jun 2024, 9:23 AM',
+      lastActive: 0,
++     name: 'QA_DATABASE_CHANGE',
+-     name: 'Olivia Rhye',
+      role: 'Workspace Owner',
+      status: 'Active',
+      team: 'Platform',
+      workspace: [
+        'Weblabs Studio',
+
+Expected parity failure exit: 1
+
+> tenboards@0.3.0 db:seed
+> node --env-file-if-exists=.env --experimental-strip-types scripts/database.ts seed
+
+.env not found. Continuing without it.
+Database seed completed.

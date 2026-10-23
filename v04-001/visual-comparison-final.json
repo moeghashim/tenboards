@@ -1,0 +1,686 @@
+[
+  {
+    "file": "_dashboard_roles-light-mobile-interactive-system-actions.png",
+    "phase": "demo",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_users-light-desktop-interactive-selected.png",
+    "phase": "demo",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-dark-mobile-interactive-table-end.png",
+    "phase": "demo",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-dark-desktop-interactive-controls.png",
+    "phase": "demo",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_users-dark-desktop-interactive-table-end.png",
+    "phase": "demo",
+    "same": false,
+    "difference": [
+      398,
+      991,
+      401,
+      1461
+    ]
+  },
+  {
+    "file": "_dashboard_roles-light-mobile-interactive-permission-sets.png",
+    "phase": "demo",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_users-light-desktop-interactive-table-end.png",
+    "phase": "demo",
+    "same": false,
+    "difference": [
+      398,
+      1186,
+      401,
+      1592
+    ]
+  },
+  {
+    "file": "_dashboard_users-dark-desktop-interactive-selected.png",
+    "phase": "demo",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-light-desktop-interactive.png",
+    "phase": "demo",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-dark-mobile-interactive-permission-sets.png",
+    "phase": "demo",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-dark-desktop-interactive-table-end.png",
+    "phase": "demo",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-light-mobile-interactive-controls.png",
+    "phase": "demo",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-light-desktop-interactive-system-actions.png",
+    "phase": "demo",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_users-light-mobile-interactive-empty.png",
+    "phase": "demo",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-dark-desktop-interactive-permission-sets.png",
+    "phase": "demo",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-dark-mobile-interactive-system-actions.png",
+    "phase": "demo",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-dark-desktop-interactive-system-actions.png",
+    "phase": "demo",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-light-desktop-interactive-table-end.png",
+    "phase": "demo",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-light-mobile-interactive-empty.png",
+    "phase": "demo",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_users-dark-mobile-interactive.png",
+    "phase": "demo",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-dark-desktop-interactive.png",
+    "phase": "demo",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-light-desktop-interactive-filtered.png",
+    "phase": "demo",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_users-dark-mobile-interactive-selected.png",
+    "phase": "demo",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_users-light-mobile-interactive-selected.png",
+    "phase": "demo",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_users-light-mobile-interactive.png",
+    "phase": "demo",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_users-light-desktop-interactive.png",
+    "phase": "demo",
+    "same": false,
+    "difference": [
+      398,
+      666,
+      401,
+      1592
+    ]
+  },
+  {
+    "file": "_dashboard_roles-dark-mobile-interactive-controls.png",
+    "phase": "demo",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_users-dark-desktop-interactive-empty.png",
+    "phase": "demo",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_users-dark-desktop-interactive.png",
+    "phase": "demo",
+    "same": false,
+    "difference": [
+      398,
+      861,
+      401,
+      1396
+    ]
+  },
+  {
+    "file": "_dashboard_roles-dark-desktop-interactive-filtered.png",
+    "phase": "demo",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_users-dark-desktop-interactive-controls.png",
+    "phase": "demo",
+    "same": false,
+    "difference": [
+      398,
+      820,
+      401,
+      835
+    ]
+  },
+  {
+    "file": "_dashboard_users-dark-mobile-interactive-table-end.png",
+    "phase": "demo",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-light-mobile-interactive.png",
+    "phase": "demo",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-dark-desktop-interactive-empty.png",
+    "phase": "demo",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-light-desktop-interactive-empty.png",
+    "phase": "demo",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-dark-mobile-interactive-access-reviews.png",
+    "phase": "demo",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-dark-desktop-interactive-access-reviews.png",
+    "phase": "demo",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_users-light-desktop-interactive-controls.png",
+    "phase": "demo",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_users-light-mobile-interactive-table-end.png",
+    "phase": "demo",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-light-desktop-interactive-access-reviews.png",
+    "phase": "demo",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-dark-mobile-interactive-empty.png",
+    "phase": "demo",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_users-dark-mobile-interactive-empty.png",
+    "phase": "demo",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_users-light-mobile-interactive-controls.png",
+    "phase": "demo",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_users-dark-mobile-interactive-controls.png",
+    "phase": "demo",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-light-mobile-interactive-filtered.png",
+    "phase": "demo",
+    "same": false,
+    "difference": [
+      29,
+      458,
+      30,
+      459
+    ]
+  },
+  {
+    "file": "_dashboard_roles-dark-mobile-interactive-filtered.png",
+    "phase": "demo",
+    "same": false,
+    "difference": [
+      29,
+      375,
+      34,
+      459
+    ]
+  },
+  {
+    "file": "_dashboard_users-light-desktop-interactive-empty.png",
+    "phase": "demo",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-light-desktop-interactive-permission-sets.png",
+    "phase": "demo",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-light-mobile-interactive-table-end.png",
+    "phase": "demo",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-light-desktop-interactive-controls.png",
+    "phase": "demo",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-light-mobile-interactive-access-reviews.png",
+    "phase": "demo",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-dark-mobile-interactive.png",
+    "phase": "demo",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-light-mobile-interactive-system-actions.png",
+    "phase": "db",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_users-light-desktop-interactive-selected.png",
+    "phase": "db",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-dark-mobile-interactive-table-end.png",
+    "phase": "db",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-dark-desktop-interactive-controls.png",
+    "phase": "db",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_users-dark-desktop-interactive-table-end.png",
+    "phase": "db",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-light-mobile-interactive-permission-sets.png",
+    "phase": "db",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_users-light-desktop-interactive-table-end.png",
+    "phase": "db",
+    "same": false,
+    "difference": [
+      398,
+      991,
+      401,
+      1592
+    ]
+  },
+  {
+    "file": "_dashboard_users-dark-desktop-interactive-selected.png",
+    "phase": "db",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-light-desktop-interactive.png",
+    "phase": "db",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-dark-mobile-interactive-permission-sets.png",
+    "phase": "db",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-dark-desktop-interactive-table-end.png",
+    "phase": "db",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-light-mobile-interactive-controls.png",
+    "phase": "db",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-light-desktop-interactive-system-actions.png",
+    "phase": "db",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_users-light-mobile-interactive-empty.png",
+    "phase": "db",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-dark-desktop-interactive-permission-sets.png",
+    "phase": "db",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-dark-mobile-interactive-system-actions.png",
+    "phase": "db",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-dark-desktop-interactive-system-actions.png",
+    "phase": "db",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-light-desktop-interactive-table-end.png",
+    "phase": "db",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-light-mobile-interactive-empty.png",
+    "phase": "db",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_users-dark-mobile-interactive.png",
+    "phase": "db",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-dark-desktop-interactive.png",
+    "phase": "db",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-light-desktop-interactive-filtered.png",
+    "phase": "db",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_users-dark-mobile-interactive-selected.png",
+    "phase": "db",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_users-light-mobile-interactive-selected.png",
+    "phase": "db",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_users-light-mobile-interactive.png",
+    "phase": "db",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_users-light-desktop-interactive.png",
+    "phase": "db",
+    "same": false,
+    "difference": [
+      398,
+      666,
+      401,
+      1592
+    ]
+  },
+  {
+    "file": "_dashboard_roles-dark-mobile-interactive-controls.png",
+    "phase": "db",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_users-dark-desktop-interactive-empty.png",
+    "phase": "db",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_users-dark-desktop-interactive.png",
+    "phase": "db",
+    "same": false,
+    "difference": [
+      398,
+      861,
+      401,
+      1396
+    ]
+  },
+  {
+    "file": "_dashboard_roles-dark-desktop-interactive-filtered.png",
+    "phase": "db",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_users-dark-desktop-interactive-controls.png",
+    "phase": "db",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_users-dark-mobile-interactive-table-end.png",
+    "phase": "db",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-light-mobile-interactive.png",
+    "phase": "db",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-dark-desktop-interactive-empty.png",
+    "phase": "db",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-light-desktop-interactive-empty.png",
+    "phase": "db",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-dark-mobile-interactive-access-reviews.png",
+    "phase": "db",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-dark-desktop-interactive-access-reviews.png",
+    "phase": "db",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_users-light-desktop-interactive-controls.png",
+    "phase": "db",
+    "same": false,
+    "difference": [
+      398,
+      820,
+      401,
+      836
+    ]
+  },
+  {
+    "file": "_dashboard_users-light-mobile-interactive-table-end.png",
+    "phase": "db",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-light-desktop-interactive-access-reviews.png",
+    "phase": "db",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-dark-mobile-interactive-empty.png",
+    "phase": "db",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_users-dark-mobile-interactive-empty.png",
+    "phase": "db",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_users-light-mobile-interactive-controls.png",
+    "phase": "db",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_users-dark-mobile-interactive-controls.png",
+    "phase": "db",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-light-mobile-interactive-filtered.png",
+    "phase": "db",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-dark-mobile-interactive-filtered.png",
+    "phase": "db",
+    "same": false,
+    "difference": [
+      29,
+      375,
+      34,
+      459
+    ]
+  },
+  {
+    "file": "_dashboard_users-light-desktop-interactive-empty.png",
+    "phase": "db",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-light-desktop-interactive-permission-sets.png",
+    "phase": "db",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-light-mobile-interactive-table-end.png",
+    "phase": "db",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-light-desktop-interactive-controls.png",
+    "phase": "db",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-light-mobile-interactive-access-reviews.png",
+    "phase": "db",
+    "same": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_roles-dark-mobile-interactive.png",
+    "phase": "db",
+    "same": true,
+    "difference": null
+  }
+]
