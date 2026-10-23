@@ -2,7 +2,7 @@
 
 An MIT-licensed dashboard template built with TanStack Start, React 19, TypeScript, Tailwind CSS v4, and shadcn/ui on Base UI.
 
-The full upstream screen catalog and mock data are retained. **v0.1 is merged, deployed and closed**: the design system and shell follow [PLAN.md](PLAN.md). **v0.2 tasks 001–006 are merged and deployed; tasks 007–012 are implemented and awaiting review** following [the approved dashboard task breakdown](dev/milestones/v0.2-dashboards/README.md). Current milestone/task status is tracked in [dev/milestones.json](dev/milestones.json). Current screens are demonstrations; database and authentication integrations are later milestones.
+The full upstream screen catalog and mock data are retained. **v0.1 is merged, deployed and closed**: the design system and shell follow [PLAN.md](PLAN.md). **v0.2 (all 14 dashboards restyled) is merged, deployed and closed** per [the dashboard task breakdown](dev/milestones/v0.2-dashboards/README.md). **Next: v0.3** — app pages (mail, chat, calendar, kanban, invoice, file manager, products, users, roles, profile, auth, error pages). Current milestone/task status is tracked in [dev/milestones.json](dev/milestones.json). Current screens are demonstrations; database and authentication integrations are later milestones.
 
 ## Run locally
 
@@ -64,7 +64,7 @@ The unmodified import passed Biome with one existing `noArrayIndexKey` warning i
 
 **Live demo:** [tenboards.mohanadgh.workers.dev](https://tenboards.mohanadgh.workers.dev/dashboard/default).
 
-**Integrated v0.2 review preview:** [v02-012](https://v02-012-tenboards.mohanadgh.workers.dev/dashboard/default). Its immutable version URL and full 14-route evidence are recorded in the task 012 PR. This preview includes unmerged tasks 007–012 and does not replace production.
+**Live demo:** [tenboards.mohanadgh.workers.dev](https://tenboards.mohanadgh.workers.dev/dashboard/default) — redeployed from `main` after each merge.
 
 The Worker serves the existing mock-data demo. It has no database, authentication service, or secret bindings. Its only generated binding is `ASSETS` for static files. Production is redeployed from `main` by the reviewer after approved merges. Preview uploads do not change live traffic.
 
@@ -136,7 +136,7 @@ node --experimental-strip-types scripts/check-contrast.ts --presets default,grap
 
 Axe is not part of the existing tooling; the acceptance evidence identifies the semantic/keyboard checks actually run. [Task 012 evidence](https://github.com/moeghashim/tenboards/tree/pr-assets/012) holds the complete route matrix, logs, and smoke scripts. [Sidebar/reference comparison](https://github.com/moeghashim/tenboards/blob/pr-assets/008/sidebar-reference-comparison.png) records the locked reference comparison. Captures may contain inherited TanStack development-tool chrome.
 
-Current hydration status: Finance, Finance V1, Productivity and Patient Monitoring are resolved and verified on dev and Workers in the v0.2 review stack. Calendar, Invoice and Auth V2 login/register retain the recorded v0.1 waiver and required v0.3 fixes; those pages have not been restyled. Historical failures and linked resolutions remain in [dev/open-questions.md](dev/open-questions.md).
+Current hydration status: Finance, Finance V1, Productivity and Patient Monitoring are resolved and verified on dev and Workers (shipped in v0.2). Calendar, Invoice and Auth V2 login/register retain the recorded v0.1 waiver and required v0.3 fixes; those pages have not been restyled. Historical failures and linked resolutions remain in [dev/open-questions.md](dev/open-questions.md).
 
 
 ## Dashboard foundation (v0.2 / 001)

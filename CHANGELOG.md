@@ -1,6 +1,6 @@
 # Changelog
 
-## v0.2 — Dashboards (review candidate, 2026-10-23)
+## v0.2 — Dashboards (2026-10-23)
 
 - Unify all ten current dashboards and four legacy variants with shared compact cards, semantic states, responsive charts, readable legends and preserved demo workflows.
 - Replace upstream-author dashboard fixtures while retaining MIT notices and provenance.
@@ -10,7 +10,7 @@
 - Align Finance comparison-row heights and verify all 14 routes across four presets, two themes and two viewports on dev and Workers.
 - Retain mock data, placeholder/disabled actions and the existing external Logistics basemap. No runtime dependency or backend/auth integration is added. Calendar, Invoice and Auth V2 hydration fixes and app-page restyles remain v0.3 work.
 
-Tasks 001–006 are merged and deployed; 007–012 await Claude review and authorized merge. This entry describes the review candidate, not a completed production release.
+All 12 tasks are merged and deployed to https://tenboards.mohanadgh.workers.dev.
 
 ## v0.1 — Design system and shell (2026-10-23)
 

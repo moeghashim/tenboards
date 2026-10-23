@@ -34,7 +34,7 @@
     },
     {
       "id": "v0.2-dashboards",
-      "status": "in_review",
+      "status": "done",
       "tasks": [
         "001-dashboard-foundation",
         "002-default-dashboards",
@@ -56,12 +56,12 @@
         "004-finance-dashboards": "merged",
         "005-analytics-dashboards": "merged",
         "006-productivity-dashboard": "merged",
-        "007-ecommerce-dashboard": "in_review",
-        "008-academy-dashboard": "in_review",
-        "009-logistics-dashboard": "in_review",
-        "010-infrastructure-dashboard": "in_review",
-        "011-patient-monitoring-dashboard": "in_review",
-        "012-dashboard-acceptance": "in_review"
+        "007-ecommerce-dashboard": "merged",
+        "008-academy-dashboard": "merged",
+        "009-logistics-dashboard": "merged",
+        "010-infrastructure-dashboard": "merged",
+        "011-patient-monitoring-dashboard": "merged",
+        "012-dashboard-acceptance": "merged"
       }
     }
   ]
