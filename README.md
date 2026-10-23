@@ -131,3 +131,7 @@ Known upstream limitations remain separate from shell acceptance: Patient Monito
 `src/lib/charts/theme.tsx` composes the existing chart wrappers with responsive sizing, token-based axes/grid/cursor/tooltips/legends, explicit en-US numeric formatters, and `useChartMotion`. The hook starts without animation on both SSR and initial hydration, then observes reduced-motion changes; pass its props to every animated Recharts series. `seriesConfig` selects chart-1, chart-2, chart-4 and chart-5, avoiding Default's duplicate chart-3 color. Pair series with labels and dash patterns from their keyed `seriesConfig` entries; color alone is insufficient.
 
 `dashboard/-components/dashboard/cards.tsx` provides `DashboardCard` (12px compact / 16px standard), `SectionHeader`, and `StatCard`. These presentation APIs accept domain values, help, trends and actions without owning data or state. Default's metrics and customer-activity chart are the first consumers; the full dashboard restyle follows in task 002. Other dashboards and the protected UI wrappers remain intact.
+
+## Default dashboards (v0.2 / 002)
+
+Default and Default V1 use neutral KPI cards, semantic signed trends, and shared token-based charts with distinct legend line samples. Customer and proposal tables retain filtering, selection, pagination and detail actions; their full columns scroll inside the table on narrow screens. Legacy visitor range selection retains its 7-day mobile default and 3-month desktop default. Existing demo controls and distinct datasets remain intact; no backend behavior was added.

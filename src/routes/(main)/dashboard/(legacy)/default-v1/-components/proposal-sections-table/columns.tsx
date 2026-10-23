@@ -10,7 +10,7 @@ import { Area, AreaChart, CartesianGrid, XAxis } from "recharts";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { type ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
+import { ChartLegend, ChartTooltip } from "@/components/ui/chart";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
   Drawer,
@@ -36,6 +36,16 @@ import { Separator } from "@/components/ui/separator";
 import { TableCell, TableRow } from "@/components/ui/table";
 import { toast } from "@/components/ui/toast";
 import { useIsMobile } from "@/hooks/use-mobile";
+import {
+  chartAxis,
+  chartCursor,
+  chartGrid,
+  DashboardChart,
+  DashboardLegend,
+  DashboardTooltip,
+  seriesConfig,
+  useChartMotion,
+} from "@/lib/charts/theme";
 import type { DataTableFeatures } from "@/lib/data-table-features";
 
 import type { ProposalSectionsRow } from "./schema";
@@ -49,16 +59,7 @@ const chartData = [
   { month: "June", desktop: 214, mobile: 140 },
 ];
 
-const chartConfig = {
-  desktop: {
-    label: "Desktop",
-    color: "var(--primary)",
-  },
-  mobile: {
-    label: "Mobile",
-    color: "var(--primary)",
-  },
-} satisfies ChartConfig;
+const chartConfig = seriesConfig({ desktop: "Desktop", mobile: "Mobile" });
 
 const sectionTypeItems = [
   { value: "Table of Contents", label: "Table of Contents" },
@@ -108,6 +109,7 @@ function DragHandle() {
 
 function ProposalSectionDetailViewer({ item }: { item: ProposalSectionsRow }) {
   const isMobile = useIsMobile();
+  const motion = useChartMotion();
 
   return (
     <Drawer swipeDirection={isMobile ? "down" : "right"}>
@@ -122,7 +124,7 @@ function ProposalSectionDetailViewer({ item }: { item: ProposalSectionsRow }) {
         <div className="flex min-h-0 flex-1 flex-col gap-4 overflow-y-auto px-4 text-sm">
           {!isMobile && (
             <>
-              <ChartContainer config={chartConfig}>
+              <DashboardChart config={chartConfig}>
                 <AreaChart
                   accessibilityLayer
                   data={chartData}
@@ -131,34 +133,31 @@ function ProposalSectionDetailViewer({ item }: { item: ProposalSectionsRow }) {
                     right: 10,
                   }}
                 >
-                  <CartesianGrid vertical={false} />
-                  <XAxis
-                    dataKey="month"
-                    tickLine={false}
-                    axisLine={false}
-                    tickMargin={8}
-                    tickFormatter={(value) => value.slice(0, 3)}
-                    hide
-                  />
-                  <ChartTooltip cursor={false} content={<ChartTooltipContent indicator="dot" />} />
+                  <CartesianGrid {...chartGrid} />
+                  <XAxis dataKey="month" {...chartAxis} tickFormatter={(value) => value.slice(0, 3)} hide />
+                  <ChartTooltip cursor={chartCursor} {...motion} content={<DashboardTooltip indicator="dot" />} />
                   <Area
+                    {...motion}
+                    strokeWidth={2}
+                    strokeDasharray={chartConfig.mobile.strokeDasharray}
                     dataKey="mobile"
                     type="natural"
                     fill="var(--color-mobile)"
-                    fillOpacity={0.6}
+                    fillOpacity={0.08}
                     stroke="var(--color-mobile)"
-                    stackId="a"
                   />
                   <Area
+                    {...motion}
+                    strokeWidth={2}
                     dataKey="desktop"
                     type="natural"
                     fill="var(--color-desktop)"
-                    fillOpacity={0.4}
+                    fillOpacity={0.08}
                     stroke="var(--color-desktop)"
-                    stackId="a"
                   />
+                  <ChartLegend itemSorter={null} content={<DashboardLegend config={chartConfig} />} />
                 </AreaChart>
-              </ChartContainer>
+              </DashboardChart>
               <Separator />
               <div className="grid gap-2">
                 <div className="flex gap-2 leading-none font-medium">
@@ -324,11 +323,7 @@ export const proposalSectionsColumns: ColumnDef<DataTableFeatures, ProposalSecti
     header: "Status",
     cell: ({ row }) => (
       <Badge variant="outline" className="text-muted-foreground px-1.5">
-        {row.original.status === "Done" ? (
-          <CircleCheckIcon className="stroke-primary-foreground fill-green-500 dark:fill-green-600" />
-        ) : (
-          <LoaderIcon />
-        )}
+        {row.original.status === "Done" ? <CircleCheckIcon className="text-success" /> : <LoaderIcon />}
         {row.original.status}
       </Badge>
     ),

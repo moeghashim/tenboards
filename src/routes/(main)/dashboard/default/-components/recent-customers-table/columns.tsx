@@ -13,11 +13,11 @@ import type { RecentCustomerRow } from "./schema";
 function billingIcon(billing: string) {
   switch (billing) {
     case "Paid":
-      return <CircleCheckIcon className="stroke-primary-foreground fill-green-500 dark:fill-green-600" />;
+      return <CircleCheckIcon className="text-success" />;
     case "Pending":
       return <LoaderIcon />;
     case "Overdue":
-      return <CircleAlertIcon className="text-amber-600 dark:text-amber-500" />;
+      return <CircleAlertIcon className="text-warning" />;
     case "Trial":
       return <Clock3Icon className="text-muted-foreground" />;
     default:
