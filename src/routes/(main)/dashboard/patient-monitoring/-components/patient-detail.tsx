@@ -26,15 +26,15 @@ function TraceRow({ calibration, kind, label, lead, patient }: TraceRowProps) {
         <span
           className={cn(
             "text-sm font-medium",
-            kind === "ecg" && "text-lime-500 dark:text-lime-400",
-            kind === "pleth" && "text-cyan-500 dark:text-cyan-400",
-            kind === "respiration" && "text-amber-500 dark:text-amber-400",
-            kind === "arterial" && "text-red-500 dark:text-red-400",
+            kind === "ecg" && "text-success",
+            kind === "pleth" && "text-info",
+            kind === "respiration" && "text-warning",
+            kind === "arterial" && "text-danger",
           )}
         >
           {label}
         </span>
-        {calibration && <span className="text-muted-foreground text-[10px]">{calibration}</span>}
+        {calibration && <span className="text-muted-foreground text-xs">{calibration}</span>}
       </div>
       <VitalWaveform kind={kind} showGrid {...series} />
     </div>
@@ -56,22 +56,25 @@ function NumericVital({
 }) {
   return (
     <div className="border-border grid min-h-16 grid-cols-[minmax(0,1fr)_auto] items-center border-b px-3 py-1">
-      <div>
-        <div className={cn("text-sm font-medium", color)}>{label}</div>
-        <div className="text-muted-foreground text-[10px]">{limits}</div>
-      </div>
-      <div
-        className={cn("flex items-baseline gap-0.5 text-right text-4xl leading-none font-medium tabular-nums", color)}
+      <dt className={cn("text-sm font-medium", color)}>
+        {label}
+        <span className="text-muted-foreground block text-xs font-normal">{limits}</span>
+      </dt>
+      <dd
+        className={cn(
+          "flex flex-wrap items-baseline justify-end gap-1 text-right text-2xl leading-none font-medium tabular-nums",
+          color,
+        )}
       >
         {value} <span className="text-xs">{unit}</span>
-      </div>
+      </dd>
     </div>
   );
 }
 
 export function PatientDetail({ hasActiveAlarm, patient }: PatientDetailProps) {
   return (
-    <div className="grid min-w-0 xl:grid-cols-[minmax(0,1fr)_15.5rem]">
+    <div className="grid min-w-0 xl:grid-cols-[minmax(0,1fr)_17rem]">
       <div className="border-border xl:after:border-border min-w-0 after:hidden xl:grid xl:grid-rows-6 xl:border-r xl:after:block xl:after:border-b">
         <TraceRow calibration="25 mm/s · 10 mm/mV" kind="ecg" label="ECG II" lead="II" patient={patient} />
         <TraceRow calibration="25 mm/s · 10 mm/mV" kind="ecg" label="ECG V5" lead="V5" patient={patient} />
@@ -82,26 +85,14 @@ export function PatientDetail({ hasActiveAlarm, patient }: PatientDetailProps) {
 
       <dl className="xl:grid xl:grid-rows-6">
         <NumericVital
-          color={hasActiveAlarm ? "text-amber-500 dark:text-amber-400" : "text-lime-500 dark:text-lime-400"}
+          color={hasActiveAlarm ? "text-warning" : "text-success"}
           label="HR"
           limits="50–100"
           unit="bpm"
           value={patient.heartRate}
         />
-        <NumericVital
-          color="text-cyan-500 dark:text-cyan-400"
-          label="SpO₂"
-          limits="92–100"
-          unit="%"
-          value={patient.spo2}
-        />
-        <NumericVital
-          color="text-amber-500 dark:text-amber-400"
-          label="RR"
-          limits="8–30"
-          unit="/min"
-          value={patient.respirationRate}
-        />
+        <NumericVital color="text-info" label="SpO₂" limits="92–100" unit="%" value={patient.spo2} />
+        <NumericVital color="text-warning" label="RR" limits="8–30" unit="/min" value={patient.respirationRate} />
         <NumericVital
           color="text-foreground"
           label="NIBP"
@@ -110,7 +101,7 @@ export function PatientDetail({ hasActiveAlarm, patient }: PatientDetailProps) {
           value={patient.nibp}
         />
         <NumericVital
-          color="text-red-500 dark:text-red-400"
+          color="text-danger"
           label="ART"
           limits="80–140"
           unit={`(${patient.arterialMap})`}

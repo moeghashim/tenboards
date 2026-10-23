@@ -1,7 +1,8 @@
 import { cn } from "cn";
 import { CartesianGrid, Line, LineChart, YAxis } from "recharts";
 
-import { type ChartConfig, ChartContainer } from "@/components/ui/chart";
+import type { ChartConfig } from "@/components/ui/chart";
+import { DashboardChart } from "@/lib/charts/theme";
 
 import { getVerticalGridCoordinates } from "./chart-grid";
 
@@ -28,19 +29,19 @@ const waveformChartConfig = {
 } satisfies ChartConfig;
 
 const waveformClasses: Record<WaveformKind, string> = {
-  arterial: "text-red-500 dark:text-red-400",
-  ecg: "text-lime-500 dark:text-lime-400",
-  pleth: "text-cyan-500 dark:text-cyan-400",
-  respiration: "text-amber-500 dark:text-amber-400",
+  arterial: "text-danger",
+  ecg: "text-success",
+  pleth: "text-info",
+  respiration: "text-warning",
 };
 
 export function VitalWaveform({ ariaLabel, compact = false, data, domain, kind, showGrid }: VitalWaveformProps) {
   const horizontalCenter = (domain[0] + domain[1]) / 2;
 
   return (
-    <ChartContainer
+    <DashboardChart
       aria-label={ariaLabel}
-      className={cn("aspect-auto w-full", compact ? "h-9" : "h-full min-h-16", waveformClasses[kind])}
+      className={cn("aspect-auto w-full", compact ? "h-9 sm:h-9" : "h-full min-h-16 sm:h-full", waveformClasses[kind])}
       config={waveformChartConfig}
       initialDimension={compact ? { width: 280, height: 36 } : { width: 800, height: 64 }}
       role="img"
@@ -51,7 +52,7 @@ export function VitalWaveform({ ariaLabel, compact = false, data, domain, kind, 
             horizontal
             horizontalValues={[horizontalCenter]}
             stroke="var(--border)"
-            strokeOpacity={0.65}
+            strokeOpacity={1}
             strokeWidth={0.75}
             vertical
             verticalCoordinatesGenerator={getVerticalGridCoordinates}
@@ -63,10 +64,10 @@ export function VitalWaveform({ ariaLabel, compact = false, data, domain, kind, 
           dot={false}
           isAnimationActive={false}
           stroke="var(--color-signal)"
-          strokeWidth={compact ? 1.25 : 1.5}
+          strokeWidth={compact ? 1.5 : 2}
           type={kind === "ecg" ? "linear" : "monotoneX"}
         />
       </LineChart>
-    </ChartContainer>
+    </DashboardChart>
   );
 }
