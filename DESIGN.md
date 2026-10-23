@@ -2,30 +2,47 @@
 name: tenboards
 description: Refined product UI for a complete admin dashboard starter
 colors:
-  primary: "oklch(0.205 0 0)"
-  background: "oklch(1 0 0)"
-  foreground: "oklch(0.145 0 0)"
-  muted: "oklch(0.97 0 0)"
-  muted-foreground: "oklch(0.556 0 0)"
-  border: "oklch(0.922 0 0)"
+  primary: "#1e40af"
+  primary-dark: "#a9c2ff"
+  bg: "#f8f9fb"
+  surface: "#ffffff"
+  surface-raised: "#f0f2f5"
+  text: "#181c25"
+  text-muted: "#515b6b"
+  border: "#dbe0e8"
+  border-strong: "#788397"
+  bg-dark: "#111318"
+  surface-dark: "#191d25"
+  surface-raised-dark: "#252b36"
+  text-dark: "#f3f5f9"
+  text-muted-dark: "#b0bacb"
+  success: "#166534"
+  warning: "#854d0e"
+  danger: "#a81928"
+  info: "#1e40af"
 typography:
   body:
-    fontFamily: "Geist, sans-serif"
+    fontFamily: "Geist Variable, sans-serif"
     fontSize: "14px"
+  mono:
+    fontFamily: "Geist Mono Variable, monospace"
   title:
-    fontFamily: "Geist, sans-serif"
+    fontFamily: "Geist Variable, sans-serif"
     fontSize: "16px"
     fontWeight: 500
+    letterSpacing: "-0.025em"
 rounded:
-  lg: "10px"
-  xl: "14px"
+  sm: "4px"
+  md: "6px"
+  lg: "8px"
+  xl: "12px"
 spacing:
   compact: "12px"
   card: "16px"
 components:
   button-primary:
     backgroundColor: "{colors.primary}"
-    textColor: "{colors.background}"
+    textColor: "{colors.surface}"
     rounded: "{rounded.lg}"
     height: "32px"
 ---
@@ -36,19 +53,23 @@ components:
 
 **Creative North Star: "Refined product UI"** — the approved Linear/Vercel register in PLAN §7. Precision, scanability, and restraint serve dense administrative work. PLAN and its Decisions log win every conflict.
 
-This initial document distinguishes observed implementation from the approved target. The frontmatter records the current default light theme, not a claim that the token upgrade is complete. Task 005 replaces these tokens; task 007 replaces the inherited presets. Shell tasks 008–011 and screen work in v0.2/v0.3 remain separate.
+The frontmatter records the implemented task 005 tokens. The default combines cool neutral surfaces with a deep blue action accent. Task 007 replaces the inherited presets. Shell tasks 008–011 and screen work in v0.2/v0.3 remain separate.
 
 **Key Characteristics:** neutral-first surfaces, one action accent, crisp borders, compact data, restrained depth, and consistent control states.
 
 ## Colors
 
-The incumbent default is achromatic, with semantic shadcn variables in src/styles/styles.css and independent dark values under .dark. Presets currently override those variables. Do not claim inherited pairs are already verified accessible.
+src/styles/styles.css owns normative light and dark roles. Shadcn background/card/popover map to bg/surface, their foregrounds map to text, and muted/secondary/accent hover surfaces map to surface-raised. Because shadcn uses “accent” for hover fill, action-accent names the saturated primary action color. Border is a decorative separator; border-strong is the accessible input/control edge. Ring is the action color and an opaque 2px outline supplements inherited translucent focus rings.
 
-The approved target adds bg, surface, surface-raised, border, border-strong, text, text-muted, accent, success, warning, danger, and info roles in light/dark. Document supported text pairs and interactive focus contrast when implemented. Use one accent for actions and state, not decoration.
+Supported AA text pairs: text, text-muted (including placeholders), primary, success, warning, danger, and info on each of bg/surface/surface-raised; primary-foreground on primary (including existing 80% hover fills); each semantic foreground on its matching semantic surface. All require 4.5:1, even for large text. Ring and border-strong require 3:1 against all three neutral surfaces. No claim is made for arbitrary cross-role combinations or inherited hard-coded chart/page colors. Low-contrast decorative border is never the sole control boundary.
+
+Run `node --experimental-strip-types scripts/check-contrast.ts` against the dev server; `--presets` and `--base-url` support later preset/version checks. It resolves rendered CSS values, converts to sRGB, and checks WCAG relative luminance. Disabled controls retain native disabled semantics, pointer suppression, opacity, and cursor treatment; inactive controls are contrast-exempt, and their treatment must not be used for enabled explanatory text. Text selection and input carets use the primary pair.
+
+Preset primitives established here are graphite, pine, and iris, each with explicit light/dark action values. They are palette resources for 007; the old preset files remain unchanged in 005.
 
 ## Typography
 
-Geist Sans is already the preference default, loaded through the preserved font registry. Geist Mono is the approved monospace default for task 005. Establish the fixed 12/13/14/16/20/24/30 scale, tight heading tracking, and tabular metric numerals in that task. Font customization remains available.
+Geist Sans and Geist Mono are self-hosted through the approved Fontsource packages. The font registry retains every previous choice; default Geist stylesheets use local assets. Mono is loaded for code/data regardless of the chosen body face. The fixed scale is 12/13/14/16/20/24/30px; heading tracking is -0.025em. Tabular numerals are inherited globally so every metric aligns without per-widget edits.
 
 ## Layout
 
@@ -58,11 +79,11 @@ The app surfaces use **Operate** mode. Data density, scanability, native expecta
 
 ## Elevation & Depth
 
-Current cards use a thin foreground ring; some overlays and controls use inherited Tailwind shadows. The approved target is crisp 1px borders and subtle layered shadows. Task 005 establishes shared depth and 150–200ms motion tokens with reduced-motion support.
+Cards preserve their inherited thin border/ring structure. Low elevation uses two subtle offset layers; overlays use wider layered shadows. Shared durations are 150ms and 200ms with standard ease-out; Tailwind transitions default to 150ms. Reduced-motion media rules reduce all animations/transitions to near-instant and disable smooth scrolling. Dashboard composition and JS chart behavior remain outside this token layer.
 
 ## Shapes
 
-Current default radius is 10px, with proportional shadcn radius aliases. Move to a restrained scale in task 005 while preserving the aliases. The future floating sidebar intentionally uses a larger radius than dense controls.
+Default control radius is 8px; shadcn aliases use 4/6/8/12/16/20/24px. Cards use the 12px step. Spacing primitives are 4/8/12/16/24/32px on the existing Tailwind rhythm. The future floating sidebar intentionally uses a larger radius than dense controls.
 
 ## Components
 

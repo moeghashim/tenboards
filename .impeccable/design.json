@@ -12,6 +12,30 @@
         "name": "lg",
         "value": "1024px"
       }
+    ],
+    "motion": [
+      {
+        "name": "duration-fast",
+        "value": "150ms",
+        "purpose": "Control transitions"
+      },
+      {
+        "name": "duration-normal",
+        "value": "200ms",
+        "purpose": "Overlay transitions"
+      }
+    ],
+    "shadows": [
+      {
+        "name": "elevation-low",
+        "value": "0 1px 2px rgb(24 28 37 / 5%), 0 2px 4px rgb(24 28 37 / 3%)",
+        "purpose": "Low elevation"
+      },
+      {
+        "name": "elevation-overlay",
+        "value": "0 4px 12px rgb(24 28 37 / 8%), 0 12px 32px rgb(24 28 37 / 6%)",
+        "purpose": "Overlays"
+      }
     ]
   },
   "components": [

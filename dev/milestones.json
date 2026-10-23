@@ -21,7 +21,8 @@
         "001-import-upstream": "merged",
         "002-workers-preview": "merged",
         "003-impeccable-context": "in_review",
-        "004-visual-capture": "in_review"
+        "004-visual-capture": "in_review",
+        "005-design-tokens": "in_review"
       }
     }
   ]
