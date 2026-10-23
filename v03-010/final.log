@@ -1,0 +1,12 @@
+
+> tenboards@0.2.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://localhost:3000 --routes /dashboard/users,/dashboard/roles --output /private/tmp/tenboards-v03-evidence/v03-010/final
+
+PASS /dashboard/roles light/desktop direct
+PASS /dashboard/roles light/mobile direct
+PASS /dashboard/roles dark/desktop direct
+PASS /dashboard/roles dark/mobile direct
+PASS /dashboard/users light/desktop direct
+PASS /dashboard/users light/mobile direct
+PASS /dashboard/users dark/desktop direct
+PASS /dashboard/users dark/mobile direct

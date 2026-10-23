@@ -1,0 +1,56 @@
+
+> tenboards@0.2.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url https://6e2ad1c7-tenboards.mohanadgh.workers.dev --routes /dashboard/users,/dashboard/roles --interactions --output /private/tmp/tenboards-v03-evidence/v03-010/workers
+
+FAIL /dashboard/roles light/desktop direct
+locator.press: Error: strict mode violation: getByRole('option', { name: 'System', exact: true }) resolved to 2 elements:
+    1) <div role="option" tabindex="-1" data-selected="" data-highlighted="" aria-selected="true" data-slot="select-item" class="relative flex w-full cursor-default items-center gap-1.5 rounded-md py-1 pr-8 pl-1.5 text-sm outline-hidden select-none focus:bg-accent focus:text-accent-foreground not-data-[variant=destructive]:focus:**:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 *:[span]:las…>…</div> aka locator('#base-ui-_R_1jaj9aq_-list').getByRole('option', { name: 'System' })
+    2) <div role="option" tabindex="-1" aria-selected="false" data-slot="select-item" class="relative flex w-full cursor-default items-center gap-1.5 rounded-md py-1 pr-8 pl-1.5 text-sm outline-hidden select-none focus:bg-accent focus:text-accent-foreground not-data-[variant=destructive]:focus:**:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 *:[span]:last:flex *:[span]:last:items-center *:…>…</div> aka locator('#base-ui-_R_2jaj9aq_-list').getByRole('option', { name: 'System' })
+
+Call log:
+[2m  - waiting for getByRole('option', { name: 'System', exact: true })[22m
+
+FAIL /dashboard/roles light/mobile direct
+locator.press: Error: strict mode violation: getByRole('option', { name: 'System', exact: true }) resolved to 2 elements:
+    1) <div role="option" tabindex="-1" data-selected="" data-highlighted="" aria-selected="true" data-slot="select-item" class="relative flex w-full cursor-default items-center gap-1.5 rounded-md py-1 pr-8 pl-1.5 text-sm outline-hidden select-none focus:bg-accent focus:text-accent-foreground not-data-[variant=destructive]:focus:**:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 *:[span]:las…>…</div> aka locator('#base-ui-_R_1jaj9aq_-list').getByRole('option', { name: 'System' })
+    2) <div role="option" tabindex="-1" aria-selected="false" data-slot="select-item" class="relative flex w-full cursor-default items-center gap-1.5 rounded-md py-1 pr-8 pl-1.5 text-sm outline-hidden select-none focus:bg-accent focus:text-accent-foreground not-data-[variant=destructive]:focus:**:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 *:[span]:last:flex *:[span]:last:items-center *:…>…</div> aka locator('#base-ui-_R_2jaj9aq_-list').getByRole('option', { name: 'System' })
+
+Call log:
+[2m  - waiting for getByRole('option', { name: 'System', exact: true })[22m
+
+FAIL /dashboard/roles dark/desktop direct
+locator.press: Error: strict mode violation: getByRole('option', { name: 'System', exact: true }) resolved to 2 elements:
+    1) <div role="option" tabindex="-1" data-selected="" data-highlighted="" aria-selected="true" data-slot="select-item" class="relative flex w-full cursor-default items-center gap-1.5 rounded-md py-1 pr-8 pl-1.5 text-sm outline-hidden select-none focus:bg-accent focus:text-accent-foreground not-data-[variant=destructive]:focus:**:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 *:[span]:las…>…</div> aka locator('#base-ui-_R_1jaj9aq_-list').getByRole('option', { name: 'System' })
+    2) <div role="option" tabindex="-1" aria-selected="false" data-slot="select-item" class="relative flex w-full cursor-default items-center gap-1.5 rounded-md py-1 pr-8 pl-1.5 text-sm outline-hidden select-none focus:bg-accent focus:text-accent-foreground not-data-[variant=destructive]:focus:**:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 *:[span]:last:flex *:[span]:last:items-center *:…>…</div> aka locator('#base-ui-_R_2jaj9aq_-list').getByRole('option', { name: 'System' })
+
+Call log:
+[2m  - waiting for getByRole('option', { name: 'System', exact: true })[22m
+
+FAIL /dashboard/roles dark/mobile direct
+locator.press: Error: strict mode violation: getByRole('option', { name: 'System', exact: true }) resolved to 2 elements:
+    1) <div role="option" tabindex="-1" data-selected="" data-highlighted="" aria-selected="true" data-slot="select-item" class="relative flex w-full cursor-default items-center gap-1.5 rounded-md py-1 pr-8 pl-1.5 text-sm outline-hidden select-none focus:bg-accent focus:text-accent-foreground not-data-[variant=destructive]:focus:**:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 *:[span]:las…>…</div> aka locator('#base-ui-_R_1jaj9aq_-list').getByRole('option', { name: 'System' })
+    2) <div role="option" tabindex="-1" aria-selected="false" data-slot="select-item" class="relative flex w-full cursor-default items-center gap-1.5 rounded-md py-1 pr-8 pl-1.5 text-sm outline-hidden select-none focus:bg-accent focus:text-accent-foreground not-data-[variant=destructive]:focus:**:text-accent-foreground data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4 *:[span]:last:flex *:[span]:last:items-center *:…>…</div> aka locator('#base-ui-_R_2jaj9aq_-list').getByRole('option', { name: 'System' })
+
+Call log:
+[2m  - waiting for getByRole('option', { name: 'System', exact: true })[22m
+
+FAIL /dashboard/users light/desktop direct
+locator.check: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('checkbox', { name: 'Select Olivia Rhye', exact: true })[22m
+
+FAIL /dashboard/users light/mobile direct
+locator.check: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('checkbox', { name: 'Select Olivia Rhye', exact: true })[22m
+
+FAIL /dashboard/users dark/desktop direct
+locator.check: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('checkbox', { name: 'Select Olivia Rhye', exact: true })[22m
+
+FAIL /dashboard/users dark/mobile direct
+locator.check: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('checkbox', { name: 'Select Olivia Rhye', exact: true })[22m
+

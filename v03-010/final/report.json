@@ -1,0 +1,90 @@
+{
+  "baseURL": "http://localhost:3000/",
+  "hydrationDelayMs": 0,
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": false,
+  "interactions": false,
+  "results": [
+    {
+      "route": "/dashboard/roles",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_roles-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/roles",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_roles-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/roles",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_roles-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/roles",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_roles-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/users",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_users-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/users",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_users-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/users",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_users-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/users",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_users-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": []
+    }
+  ]
+}

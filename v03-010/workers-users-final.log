@@ -1,0 +1,8 @@
+
+> tenboards@0.2.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url https://2ab2c7df-tenboards.mohanadgh.workers.dev --routes /dashboard/users --interactions --output /private/tmp/tenboards-v03-evidence/v03-010/workers-users-final
+
+PASS /dashboard/users light/desktop direct
+PASS /dashboard/users light/mobile direct
+PASS /dashboard/users dark/desktop direct
+PASS /dashboard/users dark/mobile direct

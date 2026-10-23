@@ -1,0 +1,114 @@
+{
+  "baseURL": "http://localhost:3000/",
+  "hydrationDelayMs": 0,
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": false,
+  "interactions": true,
+  "results": [
+    {
+      "route": "/dashboard/roles",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_roles-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_roles-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "System/owner/status/search exact counts; system actions remain disabled; all three tabs",
+        "Empty recovery, named keyboard menus and local table scroll; no document overflow",
+        "Existing admin actions remain placeholders; no permission/auth mutations"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/roles",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_roles-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_roles-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "System/owner/status/search exact counts; system actions remain disabled; all three tabs",
+        "Empty recovery, named keyboard menus and local table scroll; no document overflow",
+        "Existing admin actions remain placeholders; no permission/auth mutations"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/roles",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_roles-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_roles-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "System/owner/status/search exact counts; system actions remain disabled; all three tabs",
+        "Empty recovery, named keyboard menus and local table scroll; no document overflow",
+        "Existing admin actions remain placeholders; no permission/auth mutations"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/roles",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_roles-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_roles-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "System/owner/status/search exact counts; system actions remain disabled; all three tabs",
+        "Empty recovery, named keyboard menus and local table scroll; no document overflow",
+        "Existing admin actions remain placeholders; no permission/auth mutations"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/users",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_users-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_users-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": [
+        "locator.press: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'Go to next page', exact: true })\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/users",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_users-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_users-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": [
+        "locator.press: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'Go to next page', exact: true })\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/users",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_users-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_users-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": [
+        "locator.press: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'Go to next page', exact: true })\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/users",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_users-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_users-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [],
+      "errors": [
+        "locator.press: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('link', { name: 'Go to next page', exact: true })\u001b[22m\n"
+      ]
+    }
+  ]
+}

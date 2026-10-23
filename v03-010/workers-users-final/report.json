@@ -1,0 +1,66 @@
+{
+  "baseURL": "https://2ab2c7df-tenboards.mohanadgh.workers.dev/",
+  "hydrationDelayMs": 0,
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": false,
+  "interactions": true,
+  "results": [
+    {
+      "route": "/dashboard/users",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_users-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_users-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Combined role/team/status/workspace/search exact result; selection, page size and pagination",
+        "Empty recovery, named keyboard menus and local table scroll; no document overflow",
+        "Existing admin actions remain placeholders; no permission/auth mutations"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/users",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_users-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_users-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Combined role/team/status/workspace/search exact result; selection, page size and pagination",
+        "Empty recovery, named keyboard menus and local table scroll; no document overflow",
+        "Existing admin actions remain placeholders; no permission/auth mutations"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/users",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_users-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_users-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Combined role/team/status/workspace/search exact result; selection, page size and pagination",
+        "Empty recovery, named keyboard menus and local table scroll; no document overflow",
+        "Existing admin actions remain placeholders; no permission/auth mutations"
+      ],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/users",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_users-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_users-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Combined role/team/status/workspace/search exact result; selection, page size and pagination",
+        "Empty recovery, named keyboard menus and local table scroll; no document overflow",
+        "Existing admin actions remain placeholders; no permission/auth mutations"
+      ],
+      "errors": []
+    }
+  ]
+}
