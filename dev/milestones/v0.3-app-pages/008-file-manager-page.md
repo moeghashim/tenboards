@@ -2,7 +2,7 @@
 id: "008"
 title: Restyle File Manager grid and list
 milestone: v0.3-app-pages
-status: planned
+status: review
 category: ui
 files: ["src/routes/(main)/dashboard/file-manager/", "README.md", "dev/milestones.json"]
 ---
@@ -23,15 +23,15 @@ Prefactor inspection: Inspect existing file-actions, grid/list metadata duplicat
 
 ## Acceptance criteria
 
-- [ ] Grid/list toggles, direct query URLs, reload, existing filters/actions and folder navigation retain their current behavior.
-- [ ] Long filenames and metadata remain available in both views; cards reflow and lists scroll locally on mobile; icon-only actions have names and visible focus.
-- [ ] Every file owner and any author-linked email/initial is neutral in both grid/list presentations.
-- [ ] Capture and inspect before/after with `npm run screenshots` for every affected URL in light/dark × desktop (1440×900)/mobile (390×844); attach a four-state comparison table per route plus meaningful interaction/variant states. Store captures, reports and logs only on `pr-assets` or PR attachments, never main. For foundation/acceptance, compare their limited changes and integrated baseline explicitly; do not invent visual changes.
-- [ ] `npm run build`, `npm run check` and `npm run typecheck` pass. Report inherited warnings separately from failures; baseline failures are not a passing gate.
-- [ ] Dev `/dashboard/default` and every owned route smoke without console errors; repeat on the Workers version preview, including iframe contents and refresh where relevant. Existing errors on an owned page cannot be waived.
-- [ ] Upload with `npm run preview:deploy -- --preview-alias pr-NNN` (actual PR number); include the version-specific preview URL and reusable alias in the PR. Never run `npm run deploy`.
-- [ ] Update root README.md for verified screens/behavior/commands/status and state `README: updated (sections …)` in the PR. Tick this file and update `dev/milestones.json` only from evidence.
-- [ ] Preserve keyboard access, accessible names, visible focus, reduced motion and all four presets. Check relevant changed foreground/background, status and meaningful graphic pairs for WCAG AA; record measured contrast for token/preset changes. Keep font/preferences registries, v0.1 shell and `src/components/ui/` intact. Reuse shared dashboard primitives and chart theme where applicable, without adding decorative charts.
+- [x] Grid/list toggles, direct query URLs, reload, existing filters/actions and folder navigation retain their current behavior.
+- [x] Long filenames and metadata remain available in both views; cards reflow and lists scroll locally on mobile; icon-only actions have names and visible focus.
+- [x] Every file owner and any author-linked email/initial is neutral in both grid/list presentations.
+- [x] Capture and inspect before/after with `npm run screenshots` for every affected URL in light/dark × desktop (1440×900)/mobile (390×844); attach a four-state comparison table per route plus meaningful interaction/variant states. Store captures, reports and logs only on `pr-assets` or PR attachments, never main. For foundation/acceptance, compare their limited changes and integrated baseline explicitly; do not invent visual changes.
+- [x] `npm run build`, `npm run check` and `npm run typecheck` pass. Report inherited warnings separately from failures; baseline failures are not a passing gate.
+- [x] Dev `/dashboard/default` and every owned route smoke without console errors; repeat on the Workers version preview, including iframe contents and refresh where relevant. Existing errors on an owned page cannot be waived.
+- [x] Upload with `npm run preview:deploy -- --preview-alias pr-NNN` (actual PR number); include the version-specific preview URL and reusable alias in the PR. Never run `npm run deploy`.
+- [x] Update root README.md for verified screens/behavior/commands/status and state `README: updated (sections …)` in the PR. Tick this file and update `dev/milestones.json` only from evidence.
+- [x] Preserve keyboard access, accessible names, visible focus, reduced motion and all four presets. Check relevant changed foreground/background, status and meaningful graphic pairs for WCAG AA; record measured contrast for token/preset changes. Keep font/preferences registries, v0.1 shell and `src/components/ui/` intact. Reuse shared dashboard primitives and chart theme where applicable, without adding decorative charts.
 
 ## Execution order and delivery
 

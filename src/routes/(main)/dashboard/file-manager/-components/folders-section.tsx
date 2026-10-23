@@ -17,7 +17,7 @@ export function FoldersSection({ folders }: { folders: FileManagerFolder[] }) {
   return (
     <section className="flex flex-col gap-2" aria-labelledby="folders-heading">
       <div className="flex items-center justify-between">
-        <h2 id="folders-heading" className="text-lg font-medium">
+        <h2 id="folders-heading" className="text-base font-medium">
           Folders
         </h2>
         <span className="text-muted-foreground text-sm">{folders.length} folders</span>
@@ -32,7 +32,7 @@ export function FoldersSection({ folders }: { folders: FileManagerFolder[] }) {
                     <Folder className="size-4.5" />
                   </div>
                   <div className="flex min-w-0 flex-col gap-1">
-                    <CardTitle className="truncate leading-none">{folder.name}</CardTitle>
+                    <CardTitle className="break-words leading-snug">{folder.name}</CardTitle>
                     <CardDescription className="text-xs">{folder.fileCount} files</CardDescription>
                   </div>
                 </div>
@@ -53,7 +53,7 @@ export function FoldersSection({ folders }: { folders: FileManagerFolder[] }) {
                   </DropdownMenu>
                 </CardAction>
               </CardHeader>
-              <CardContent className="text-muted-foreground flex items-center justify-between gap-3 text-xs">
+              <CardContent className="text-muted-foreground flex flex-wrap items-center justify-between gap-2 text-xs">
                 <div className="flex items-center gap-1.5">
                   <Clock className="size-3.5" />
                   <span>Updated {folder.updatedAt}</span>

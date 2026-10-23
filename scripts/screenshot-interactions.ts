@@ -575,10 +575,42 @@ export async function captureInteractions(
       await page.waitForURL("**view=list");
       await page.reload();
       await page.getByRole("button", { name: "List View", exact: true }).waitFor();
+      await page.waitForLoadState("networkidle");
       if (!page.url().includes("view=list")) throw new Error("File view did not survive refresh");
       await page.getByRole("button", { name: "Grid View", exact: true }).press("Enter");
       await page.waitForURL("**view=grid");
-      return ["Long h1 wraps without clipping", "Keyboard file view links preserve query state through refresh"];
+      await page.getByRole("button", { name: "Unstar Product roadmap 2027.pdf", exact: true }).press("Enter");
+      await page.getByRole("button", { name: "Star Product roadmap 2027.pdf", exact: true }).waitFor();
+      await page.getByRole("button", { name: "Actions for Product roadmap 2027.pdf", exact: true }).press("Enter");
+      await page.getByRole("menuitem", { name: "Add to starred", exact: true }).press("Enter");
+      await page.getByRole("button", { name: "Unstar Product roadmap 2027.pdf", exact: true }).waitFor();
+      await captureVariant("grid-starred");
+      await page.getByRole("button", { name: "List View", exact: true }).press("Enter");
+      const table = page.getByRole("table");
+      for (const label of ["Owner", "Modified", "Size"])
+        await table.getByRole("columnheader", { name: label, exact: true }).waitFor();
+      if ((await table.textContent())?.includes("AK")) throw new Error("Stale author initials");
+      await page.getByRole("button", { name: "Actions for Product roadmap 2027.pdf", exact: true }).press("Enter");
+      await page.getByRole("menuitem", { name: "Remove from starred", exact: true }).press("Enter");
+      await page.getByRole("button", { name: "Star Product roadmap 2027.pdf", exact: true }).waitFor();
+      const scroller = page.locator('[data-slot="table-container"]');
+      await scroller.evaluate((node) => {
+        node.scrollLeft = node.scrollWidth;
+      });
+      await captureVariant("list-metadata");
+      if (await page.evaluate(() => document.documentElement.scrollWidth > innerWidth))
+        throw new Error("File manager document overflow");
+      await page.getByRole("button", { name: "Filter & sort", exact: true }).press("Enter");
+      await page.getByRole("menuitemradio", { name: "Starred", exact: true }).press("Enter");
+      await page.getByRole("button", { name: "Actions for Brand assets", exact: true }).press("Enter");
+      await page.getByRole("menuitem", { name: "Open folder", exact: true }).press("Enter");
+      await page.getByRole("heading", { name: "My files", exact: true }).waitFor();
+      return [
+        "Long h1 wraps; keyboard view query survives refresh",
+        "Grid/list button and menu star actions work",
+        "All table metadata remains visible in local horizontal scroll; neutral initials",
+        "Existing folder/search/filter/upload placeholders preserved; no document overflow",
+      ];
     }
     await page.getByRole("button", { name: "Add product", exact: true }).press("Enter");
     await page.getByRole("dialog", { name: "Add product", exact: true }).waitFor();

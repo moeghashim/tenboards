@@ -21,15 +21,13 @@ export function FileGridView({ files }: { files: FileManagerFile[] }) {
         return (
           <Card key={file.id} size="sm" className="group/file">
             <CardContent>
-              <div className="bg-muted/50 relative flex h-36 items-center justify-center rounded-lg">
-                <FileIcon className="text-muted-foreground size-12" aria-hidden="true" />
+              <div className="bg-muted relative flex h-24 items-center justify-center rounded-lg">
+                <FileIcon className="text-muted-foreground size-8" aria-hidden="true" />
                 <Button
                   variant="secondary"
                   size="icon-sm"
-                  className={cn(
-                    "absolute top-2 right-2 opacity-0 group-hover/file:opacity-100 focus-visible:opacity-100",
-                    file.starred && "opacity-100",
-                  )}
+                  className={cn("absolute top-2 right-2", file.starred && "opacity-100")}
+                  aria-pressed={file.starred}
                   aria-label={file.starred ? `Unstar ${file.name}` : `Star ${file.name}`}
                   onClick={() => toggleStar(file.id)}
                 >
@@ -42,9 +40,11 @@ export function FileGridView({ files }: { files: FileManagerFile[] }) {
               </div>
             </CardContent>
             <CardHeader>
-              <CardTitle className="truncate">{file.name}</CardTitle>
-              <CardDescription className="truncate">
-                Modified {file.modifiedAt} by {file.owner}
+              <CardTitle className="min-w-0 break-words [overflow-wrap:anywhere]">{file.name}</CardTitle>
+              <CardDescription className="flex min-w-0 flex-col gap-1 text-xs">
+                <span className="break-words">{file.owner}</span>
+                <span>Modified {file.modifiedAt}</span>
+                {file.shared && <span>Shared</span>}
               </CardDescription>
               <CardAction>
                 <FileActions file={file} onToggleStar={() => toggleStar(file.id)} />

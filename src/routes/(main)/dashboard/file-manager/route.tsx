@@ -23,7 +23,7 @@ function Page() {
   const { view: activeView } = Route.useSearch();
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex min-w-0 flex-col gap-6">
       <PageHeader
         title="My files"
         description="Organize, share, and find workspace files."
@@ -42,9 +42,9 @@ function Page() {
       />
       <FileManagerToolbar />
       <FoldersSection folders={folders} />
-      <div className="flex flex-col gap-2">
-        <div className="flex items-center justify-between gap-4">
-          <h2 className="text-lg font-medium">All files</h2>
+      <div className="flex min-w-0 flex-col gap-3">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <h2 className="text-base font-medium">All files</h2>
           <ToggleGroup variant="outline" size="sm" spacing={0} value={[activeView]} aria-label="File view">
             <ToggleGroupItem
               value="grid"
