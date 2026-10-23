@@ -8,6 +8,7 @@ import { useFieldArray, useFormContext, useWatch } from "react-hook-form";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import { formatCurrency } from "@/lib/utils";
 
 import { getLineAmount, type InvoiceFormValues, type InvoiceLineItem } from "./data";
@@ -45,7 +46,7 @@ export function InvoiceItems() {
       </div>
 
       <div className="flex flex-col gap-2">
-        <div className="text-muted-foreground hidden items-center gap-2 px-1 text-xs font-medium md:grid md:grid-cols-[24px_minmax(0,1fr)_64px_112px_112px_32px]">
+        <div className="text-muted-foreground hidden items-center gap-2 px-1 text-xs font-medium 2xl:grid 2xl:grid-cols-[24px_minmax(0,1fr)_64px_96px_96px_32px]">
           <span />
           <span>Description</span>
           <span className="px-2">Units</span>
@@ -98,8 +99,9 @@ function SortableInvoiceItemRow({
   return (
     <div
       ref={ref}
+      data-invoice-item={id}
       className={cn(
-        "grid min-w-0 grid-cols-[24px_minmax(0,0.8fr)_minmax(0,1fr)_32px] items-center gap-2 rounded-lg md:grid-cols-[24px_minmax(0,1fr)_64px_112px_112px_32px]",
+        "grid min-w-0 grid-cols-[24px_minmax(0,0.8fr)_minmax(0,1fr)_32px] items-center gap-2 rounded-lg border p-3 2xl:grid-cols-[24px_minmax(0,1fr)_64px_96px_96px_32px]",
         isDragging && "relative z-10 opacity-50",
       )}
     >
@@ -108,39 +110,58 @@ function SortableInvoiceItemRow({
         type="button"
         variant="ghost"
         size="icon-sm"
-        className="text-muted-foreground -ml-2 cursor-grab active:cursor-grabbing"
-        aria-label={`Reorder ${id}`}
+        className="text-muted-foreground -ml-2 cursor-grab touch-none active:cursor-grabbing"
+        aria-label={`Reorder item ${index + 1}`}
       >
         <GripVertical />
       </Button>
-      <Input
-        className="min-w-0 text-sm max-md:col-span-3"
-        aria-label={`Item ${index + 1} description`}
-        {...register(`items.${index}.description` as const)}
-      />
-      <Input
-        type="number"
-        step="1"
-        className="text-sm max-md:col-start-2 max-md:row-start-2"
-        aria-label={`Item ${index + 1} quantity`}
-        {...register(`items.${index}.quantity` as const, { valueAsNumber: true })}
-      />
-      <Input
-        type="number"
-        step="0.01"
-        className="text-sm max-md:col-start-3 max-md:row-start-2"
-        aria-label={`Item ${index + 1} unit price`}
-        {...register(`items.${index}.unitPrice` as const, { valueAsNumber: true })}
-      />
-      <div className="min-w-0 text-right text-sm font-medium max-md:col-span-3 max-md:col-start-2 max-md:row-start-3 max-md:flex max-md:items-center max-md:justify-between max-md:text-left">
-        <span className="text-muted-foreground hidden max-md:inline">Line total</span>
+      <div className="min-w-0 max-2xl:col-span-3">
+        <label htmlFor={`${id}-description`} className="text-muted-foreground mb-1 block text-xs 2xl:sr-only">
+          Description
+        </label>
+        <Textarea
+          id={`${id}-description`}
+          rows={2}
+          className="min-h-16 min-w-0 resize-y text-sm"
+          aria-label={`Item ${index + 1} description`}
+          {...register(`items.${index}.description` as const)}
+        />
+      </div>
+      <div className="max-2xl:col-start-2 max-2xl:row-start-2">
+        <label htmlFor={`${id}-quantity`} className="text-muted-foreground mb-1 block text-xs 2xl:sr-only">
+          Units
+        </label>
+        <Input
+          id={`${id}-quantity`}
+          type="number"
+          step="1"
+          className="text-sm"
+          aria-label={`Item ${index + 1} quantity`}
+          {...register(`items.${index}.quantity` as const, { valueAsNumber: true })}
+        />
+      </div>
+      <div className="max-2xl:col-start-3 max-2xl:row-start-2">
+        <label htmlFor={`${id}-price`} className="text-muted-foreground mb-1 block text-xs 2xl:sr-only">
+          Unit price
+        </label>
+        <Input
+          id={`${id}-price`}
+          type="number"
+          step="0.01"
+          className="text-sm"
+          aria-label={`Item ${index + 1} unit price`}
+          {...register(`items.${index}.unitPrice` as const, { valueAsNumber: true })}
+        />
+      </div>
+      <div className="min-w-0 text-right text-sm font-medium max-2xl:col-span-3 max-2xl:col-start-2 max-2xl:row-start-3 max-2xl:flex max-2xl:items-center max-2xl:justify-between max-2xl:text-left">
+        <span className="text-muted-foreground hidden max-2xl:inline">Line total</span>
         <span>{formatInvoiceCurrency(getLineAmount(item))}</span>
       </div>
       <Button
         type="button"
         variant="ghost"
         size="icon-sm"
-        className="max-md:col-start-4 max-md:row-start-2"
+        className="max-2xl:col-start-4 max-2xl:row-start-2 max-2xl:self-end"
         aria-label={`Remove item ${index + 1}`}
         onClick={onRemove}
       >

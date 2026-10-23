@@ -1,0 +1,33 @@
+/* The mounted portal is only the print copy; it must not enlarge the screen document. */
+[data-print-root] {
+  display: none;
+}
+
+@page tenboards-invoice {
+  size: letter;
+  margin: 0;
+}
+
+@media print {
+  html:has([data-print-root]),
+  body:has([data-print-root]) {
+    width: auto;
+    height: auto;
+    margin: 0;
+    background: white;
+  }
+  body:has([data-print-root]) > :not([data-print-root]) {
+    display: none !important;
+  }
+  [data-print-root] {
+    display: block;
+    page: tenboards-invoice;
+    color-scheme: light;
+  }
+  [data-print-paper] {
+    print-color-adjust: exact;
+  }
+  [data-print-paper] footer {
+    break-inside: avoid;
+  }
+}

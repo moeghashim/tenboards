@@ -1,5 +1,3 @@
-import { addDays, format } from "date-fns";
-
 export interface InvoiceLineItem {
   id: string;
   description: string;
@@ -51,54 +49,60 @@ export interface InvoiceFormValues {
   items: InvoiceLineItem[];
 }
 
-const today = new Date();
-
-export const defaultInvoiceValues: InvoiceFormValues = {
-  referenceNumber: "FL-0425",
-  issuedDate: format(today, "yyyy-MM-dd"),
-  paymentDueDate: format(addDays(today, 14), "yyyy-MM-dd"),
-  from: {
-    name: "Weblabs Studio",
-    email: "hello@weblabs.studio",
-    phone: "+1-512-555-0184",
-    website: "weblabs.studio",
-    addressLines: ["214 Pixel Avenue", "Austin, TX 78701"],
-    taxId: "WS-1029384756",
-    paymentAccountName: "Mercury Business",
-    routingNumber: "084009519",
-    issuerName: "Arham Khan",
-  },
-  to: {
-    id: "aiy-cap",
-    name: "AIY Cap",
-    email: "finance@aiycap.com",
-    addressLines: ["One BKC, Bandra Kurla Complex", "Mumbai, Maharashtra 400051"],
-    taxId: "GSTIN-27AAICA9102K1Z7",
-  },
-  taxId: "vat",
-  discountType: "fixed",
-  discountValue: 40,
-  items: [
-    {
-      id: "hosting",
-      description: "Cloud hosting services",
-      quantity: 1,
-      unitPrice: 3500,
-    },
-    {
-      id: "analytics",
-      description: "Data analytics report",
-      quantity: 2,
-      unitPrice: 750,
-    },
-    {
-      id: "support",
-      description: "Technical support retainer",
-      quantity: 1,
-      unitPrice: 400,
-    },
-  ],
+const defaultClient: InvoiceToDetails = {
+  id: "aiy-cap",
+  name: "Cedar Works",
+  email: "billing@cedar.example.com",
+  addressLines: ["One BKC, Bandra Kurla Complex", "Mumbai, Maharashtra 400051"],
+  taxId: "GSTIN-27AAICA9102K1Z7",
 };
+
+// Draft defaults use the request's UTC civil date. Edited dates stay literal YYYY-MM-DD values.
+export function createDefaultInvoiceValues(renderedAt: string): InvoiceFormValues {
+  const issued = new Date(renderedAt);
+  const due = new Date(renderedAt);
+  due.setUTCDate(due.getUTCDate() + 14);
+  return {
+    referenceNumber: "FL-0425",
+    issuedDate: issued.toISOString().slice(0, 10),
+    paymentDueDate: due.toISOString().slice(0, 10),
+    from: {
+      name: "Northwind Studio",
+      email: "hello@northwind.example.com",
+      phone: "+1-512-555-0184",
+      website: "northwind.example.com",
+      addressLines: ["214 Pixel Avenue", "Austin, TX 78701"],
+      taxId: "NW-1029384756",
+      paymentAccountName: "Mercury Business",
+      routingNumber: "084009519",
+      issuerName: "Jordan Lee",
+    },
+    to: defaultClient,
+    taxId: "vat",
+    discountType: "fixed",
+    discountValue: 40,
+    items: [
+      {
+        id: "hosting",
+        description: "Cloud hosting services",
+        quantity: 1,
+        unitPrice: 3500,
+      },
+      {
+        id: "analytics",
+        description: "Data analytics report",
+        quantity: 2,
+        unitPrice: 750,
+      },
+      {
+        id: "support",
+        description: "Technical support retainer",
+        quantity: 1,
+        unitPrice: 400,
+      },
+    ],
+  };
+}
 
 export const invoiceTaxOptions: InvoiceTaxOption[] = [
   {
@@ -127,15 +131,15 @@ export const invoiceClients: InvoiceToDetails[] = [
   {
     id: "bright-enterprises",
     name: "Bright Enterprises",
-    email: "billing@brightenterprises.com",
+    email: "billing@bright.example.com",
     addressLines: ["450 Park Avenue South", "New York, NY 10016", "United States"],
     taxId: "US-EIN-84-2938475",
   },
-  defaultInvoiceValues.to,
+  defaultClient,
   {
     id: "northline-gmbh",
     name: "Northline GmbH",
-    email: "ap@northline.de",
+    email: "ap@northline.example.com",
     addressLines: ["Kastanienallee 32", "10435 Berlin", "Germany"],
     taxId: "DE-VAT-219384756",
   },

@@ -1,3 +1,4 @@
+import "./print-invoice.css";
 import * as React from "react";
 
 import { createPortal } from "react-dom";

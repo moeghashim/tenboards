@@ -79,6 +79,7 @@ function DatePicker({ id, value, onChange }: { id: string; value: string; onChan
         render={
           <Button
             id={id}
+            aria-label={id === "issued-date" ? "Issued Date" : "Due Date"}
             variant="outline"
             data-empty={!date}
             className="data-[empty=true]:text-muted-foreground w-full justify-between text-left font-normal"
@@ -88,7 +89,7 @@ function DatePicker({ id, value, onChange }: { id: string; value: string; onChan
         {date ? format(date, "PPP") : <span>Pick a date</span>}
         <CalendarIcon className="text-muted-foreground" />
       </PopoverTrigger>
-      <PopoverContent className="w-(--radix-popover-trigger-width) p-0" align="start">
+      <PopoverContent className="w-auto p-0" align="start">
         <Calendar
           className="w-full"
           mode="single"

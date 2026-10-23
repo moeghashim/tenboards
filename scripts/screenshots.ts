@@ -144,6 +144,12 @@ try {
             });
             if (values.interactions)
               interactionNotes = await captureInteractions(page, entry.route, async (variant) => {
+                if (variant === "print")
+                  await page.pdf({
+                    path: path.join(output, file.replace(".png", "-print.pdf")),
+                    preferCSSPageSize: true,
+                    printBackground: true,
+                  });
                 await page.screenshot({
                   path: path.join(output, file.replace(".png", `-${variant}.png`)),
                   fullPage: !variant.includes("drag"),

@@ -1,18 +1,18 @@
 import { FormProvider, useForm, useWatch } from "react-hook-form";
 
-import { defaultInvoiceValues, type InvoiceFormValues } from "./data";
+import type { InvoiceFormValues } from "./data";
 import { InvoiceForm } from "./invoice-form";
 import { InvoicePreview } from "./invoice-preview";
 
-export function Invoice() {
+export function Invoice({ defaultValues }: { defaultValues: InvoiceFormValues }) {
   const form = useForm<InvoiceFormValues>({
-    defaultValues: defaultInvoiceValues,
+    defaultValues,
   });
   const invoice = useWatch({ control: form.control }) as InvoiceFormValues;
 
   return (
     <FormProvider {...form}>
-      <form className="grid gap-5 xl:grid-cols-2" noValidate onSubmit={(event) => event.preventDefault()}>
+      <form className="grid min-w-0 gap-4 xl:grid-cols-2" noValidate onSubmit={(event) => event.preventDefault()}>
         <InvoiceForm />
         <InvoicePreview invoice={invoice} />
       </form>

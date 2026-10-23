@@ -24,7 +24,7 @@ export function InvoiceAdjustments() {
     <section className="flex flex-col gap-4">
       <h2 className="font-medium tracking-tight">Adjustments</h2>
 
-      <div className="grid gap-5 lg:grid-cols-[1fr_1.1fr]">
+      <div className="grid gap-4 2xl:grid-cols-[1fr_1.1fr]">
         <Controller
           control={control}
           name="taxId"
@@ -32,7 +32,7 @@ export function InvoiceAdjustments() {
             <Field className="gap-1">
               <FieldLabel className="text-xs">Tax</FieldLabel>
               <Select items={taxItems} value={field.value} onValueChange={field.onChange}>
-                <SelectTrigger className="h-10 w-full">
+                <SelectTrigger aria-label="Tax" className="w-full">
                   <SelectValue placeholder="Select tax" />
                 </SelectTrigger>
                 <SelectContent>
@@ -57,7 +57,7 @@ export function InvoiceAdjustments() {
               <Field className="gap-1">
                 <FieldLabel className="text-xs">Discount</FieldLabel>
                 <Select items={discountTypeItems} value={field.value} onValueChange={field.onChange}>
-                  <SelectTrigger className="h-10 w-full">
+                  <SelectTrigger aria-label="Discount type" className="w-full">
                     <SelectValue placeholder="Discount type" />
                   </SelectTrigger>
                   <SelectContent>
@@ -74,7 +74,7 @@ export function InvoiceAdjustments() {
             )}
           />
           <Field className="gap-1">
-            <FieldLabel className="text-xs opacity-0">Value</FieldLabel>
+            <FieldLabel className="text-xs">Value</FieldLabel>
             <InputGroup>
               <InputGroupInput
                 type="number"

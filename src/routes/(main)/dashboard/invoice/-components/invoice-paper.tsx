@@ -20,22 +20,22 @@ export function InvoicePaper({ invoice }: { invoice: InvoiceFormValues }) {
 
   return (
     <article
-      style={{ width: INVOICE_PAPER_WIDTH, height: INVOICE_PAPER_HEIGHT }}
+      style={{ width: INVOICE_PAPER_WIDTH, minHeight: INVOICE_PAPER_HEIGHT }}
       data-print-paper
-      className="relative flex flex-col gap-24 bg-neutral-50 px-12.25 py-11 font-mono text-neutral-950"
+      className="relative flex flex-col gap-8 bg-white px-12 py-10 font-sans [overflow-wrap:anywhere] text-neutral-950"
     >
-      <header className="flex flex-col gap-10">
-        <div className="grid grid-cols-2 items-start gap-14">
+      <header className="flex flex-col gap-6">
+        <div className="grid grid-cols-2 items-start gap-8">
           <svg className="size-12" viewBox="0 0 48 48" aria-hidden="true">
             <rect width="20" height="20" rx="3" fill="currentColor" />
             <rect x="28" width="20" height="20" rx="3" fill="currentColor" />
             <rect y="28" width="20" height="20" rx="3" fill="currentColor" />
             <rect x="28" y="28" width="20" height="20" rx="3" fill="currentColor" />
           </svg>
-          <h2 className="text-4xl tracking-widest uppercase">Invoice</h2>
+          <h2 className="text-3xl font-medium tracking-tight">Invoice</h2>
         </div>
 
-        <section className="grid grid-cols-2 gap-14 text-sm leading-relaxed">
+        <section className="grid grid-cols-2 gap-8 text-sm leading-relaxed">
           <div>
             <p>Reference: {invoice.referenceNumber}</p>
             <p>Issued: {invoice.issuedDate}</p>
@@ -48,9 +48,9 @@ export function InvoicePaper({ invoice }: { invoice: InvoiceFormValues }) {
           </div>
         </section>
 
-        <section className="grid grid-cols-2 gap-14 text-sm leading-relaxed">
+        <section className="grid grid-cols-2 gap-8 text-sm leading-relaxed">
           <div>
-            <p className="mb-4 font-semibold uppercase">From</p>
+            <p className="mb-2 font-medium">From</p>
             <p>{invoice.from.name}</p>
             {invoice.from.addressLines.map((line) => (
               <p key={line}>{line}</p>
@@ -58,7 +58,7 @@ export function InvoicePaper({ invoice }: { invoice: InvoiceFormValues }) {
             <p>Tax ID: {invoice.from.taxId}</p>
           </div>
           <div>
-            <p className="mb-4 font-semibold uppercase">Bill to</p>
+            <p className="mb-2 font-medium">Bill to</p>
             <p>{invoice.to.name}</p>
             {invoice.to.addressLines.map((line) => (
               <p key={line}>{line}</p>
@@ -70,7 +70,7 @@ export function InvoicePaper({ invoice }: { invoice: InvoiceFormValues }) {
 
       <div className="flex flex-col gap-5">
         <section className="text-sm">
-          <div className="grid grid-cols-[1fr_74px_116px_116px] bg-stone-200 px-3 py-3 font-semibold uppercase">
+          <div className="grid grid-cols-[1fr_74px_116px_116px] bg-neutral-100 px-3 py-3 font-medium">
             <span>Description</span>
             <span className="text-right">Units</span>
             <span className="text-right">Unit cost</span>
@@ -79,9 +79,9 @@ export function InvoicePaper({ invoice }: { invoice: InvoiceFormValues }) {
           {getInvoiceItems(invoice).map((item) => (
             <div
               key={item.id}
-              className="grid grid-cols-[1fr_74px_116px_116px] border-b border-[oklch(0.86_0_0)] px-3 py-4"
+              className="grid break-inside-avoid grid-cols-[minmax(0,1fr)_74px_116px_116px] border-b border-neutral-300 px-3 py-3"
             >
-              <span>{item.description}</span>
+              <span className="min-w-0 pr-3 break-words whitespace-pre-line">{item.description}</span>
               <span className="text-right">{item.quantity}</span>
               <span className="text-right">{formatInvoiceCurrency(item.unitPrice)}</span>
               <span className="text-right">{formatInvoiceCurrency(getLineAmount(item))}</span>
@@ -89,8 +89,8 @@ export function InvoicePaper({ invoice }: { invoice: InvoiceFormValues }) {
           ))}
         </section>
 
-        <div className="grid grid-cols-2 gap-14 text-sm leading-relaxed">
-          <section className="col-start-2 space-y-2">
+        <div className="grid grid-cols-2 gap-8 text-sm leading-relaxed">
+          <section className="col-start-2 break-inside-avoid space-y-2">
             <div>
               <div className="flex justify-between gap-8">
                 <span>Net amount</span>
@@ -109,7 +109,7 @@ export function InvoicePaper({ invoice }: { invoice: InvoiceFormValues }) {
             </div>
             <div className="border-y-2 border-current py-3">
               <div className="flex justify-between gap-8">
-                <span className="font-semibold uppercase">Balance due</span>
+                <span className="font-medium">Balance due</span>
                 <span className="font-semibold">{formatInvoiceCurrency(getInvoiceTotal(invoice))}</span>
               </div>
             </div>
@@ -117,7 +117,7 @@ export function InvoicePaper({ invoice }: { invoice: InvoiceFormValues }) {
         </div>
       </div>
 
-      <footer className="absolute right-12.25 bottom-11 left-12.25 grid grid-cols-2 gap-14 text-sm leading-relaxed text-neutral-500">
+      <footer className="mt-auto grid grid-cols-2 gap-8 pt-6 text-sm leading-relaxed text-neutral-600">
         <div>
           <p>{invoice.from.email}</p>
           <p>{invoice.from.phone}</p>

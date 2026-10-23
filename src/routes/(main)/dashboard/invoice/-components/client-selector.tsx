@@ -41,16 +41,16 @@ export function ClientSelector() {
                   }
                 }}
               >
-                <SelectTrigger className="w-full data-[size=default]:h-auto">
+                <SelectTrigger aria-label="Client" className="w-full data-[size=default]:h-auto">
                   <SelectValue placeholder="Select client">
-                    <div className="flex items-center gap-1.5">
+                    <div className="flex min-w-0 items-center gap-2">
                       <Avatar className="after:rounded-md">
                         <AvatarFallback className="bg-card text-foreground rounded-md">
                           {getInitials(selectedClient.name).slice(0, 2)}
                         </AvatarFallback>
                       </Avatar>
 
-                      <div className="text-left text-xs">
+                      <div className="min-w-0 text-left text-sm break-words whitespace-normal">
                         <div>{selectedClient.name}</div>
                         <div className="text-muted-foreground">{selectedClient.email}</div>
                       </div>
