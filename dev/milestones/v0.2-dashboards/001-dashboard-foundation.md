@@ -2,7 +2,7 @@
 id: "001"
 title: Establish shared chart theme and dashboard primitives
 milestone: v0.2-dashboards
-status: planned
+status: in_review
 category: ui
 files: ["src/lib/charts/", "src/routes/(main)/dashboard/-components/dashboard/", "src/routes/(main)/dashboard/default/-components/metric-cards.tsx", "src/routes/(main)/dashboard/default/-components/performance-overview.tsx", "DESIGN.md", "README.md", "dev/milestones.json"]
 ---
@@ -24,17 +24,17 @@ Prefactor inspection: Inspect repeated metric markup and existing ChartConfig/Ch
 
 ## Acceptance criteria
 
-- [ ] The shared theme covers Recharts colors from tokens for Default, Graphite, Pine and Iris in both light and dark, plus axis/grid/tooltip/legend styling, tabular numerals and reduced motion.
-- [ ] Series remain distinguishable when token values coincide (Default chart-1 and chart-3 currently match): use deliberate token selection and labels/dashes/markers, not color alone. Record contrast evidence for chart text and meaningful marks against their actual surfaces; decorative grids are not the only data cue.
-- [ ] KPI/stat card, section header and card-density primitives have typed composition APIs, semantic headings, optional trend/help/actions, long-label handling and responsive values. Do not force specialist map or waveform views into KPI cards.
-- [ ] Reduced motion disables Recharts JS animations as well as CSS motion, handles preference changes in guarded client code, and uses matching server/initial-client output. Existing chart tooltips/legends remain readable and keyboard access is preserved.
-- [ ] Inspect the Default integration in all four presets × light/dark × desktop/mobile, including tooltip and legend states; run the existing contrast script for all presets. No global shell/app-page restyle or primitive-wrapper edit.
-- [ ] Capture and inspect before/after screenshots with `npm run screenshots` for every affected route in light/dark × desktop (1440×900)/mobile (390×844); attach a four-state comparison table for each route. Store PNGs, reports and logs only on `pr-assets` or PR attachments, never main. Include meaningful interactive states beyond the initial capture.
-- [ ] `npm run build`, `npm run check` and `npm run typecheck` pass; report inherited warnings separately from failures.
-- [ ] Dev-server `/dashboard/default` smoke and all affected-route smoke checks pass without console errors; verify the same routes on the Workers version preview and retain diagnostics. Do not waive inherited errors on a route this task owns.
-- [ ] Upload with `npm run preview:deploy -- --preview-alias pr-NNN` (NNN is the actual PR number); include the version-specific preview URL and reusable alias in the PR. Never run `npm run deploy` or merge as implementer.
-- [ ] Update root README.md for the verified behavior/screens/usage/status delivered by this task; PR body states `README: updated (sections …)`. Update task acceptance and `dev/milestones.json` only from verification.
-- [ ] Preserve keyboard access, accessible names, visible focus and reduced motion. Verify all four presets in light/dark on affected content; record contrast evidence for changed chart/status/token pairings. Inspect existing Base UI wrappers; keep `src/components/ui/`, `src/components/calendar/`, shell/preferences and out-of-scope app pages intact.
+- [x] The shared theme covers Recharts colors from tokens for Default, Graphite, Pine and Iris in both light and dark, plus axis/grid/tooltip/legend styling, tabular numerals and reduced motion.
+- [x] Series remain distinguishable when token values coincide (Default chart-1 and chart-3 currently match): use deliberate token selection and labels/dashes/markers, not color alone. Record contrast evidence for chart text and meaningful marks against their actual surfaces; decorative grids are not the only data cue.
+- [x] KPI/stat card, section header and card-density primitives have typed composition APIs, semantic headings, optional trend/help/actions, long-label handling and responsive values. Do not force specialist map or waveform views into KPI cards.
+- [x] Reduced motion disables Recharts JS animations as well as CSS motion, handles preference changes in guarded client code, and uses matching server/initial-client output. Existing chart tooltips/legends remain readable and keyboard access is preserved.
+- [x] Inspect the Default integration in all four presets × light/dark × desktop/mobile, including tooltip and legend states; run the existing contrast script for all presets. No global shell/app-page restyle or primitive-wrapper edit.
+- [x] Capture and inspect before/after screenshots with `npm run screenshots` for every affected route in light/dark × desktop (1440×900)/mobile (390×844); attach a four-state comparison table for each route. Store PNGs, reports and logs only on `pr-assets` or PR attachments, never main. Include meaningful interactive states beyond the initial capture.
+- [x] `npm run build`, `npm run check` and `npm run typecheck` pass; report inherited warnings separately from failures.
+- [x] Dev-server `/dashboard/default` smoke and all affected-route smoke checks pass without console errors; verify the same routes on the Workers version preview and retain diagnostics. Do not waive inherited errors on a route this task owns.
+- [x] Upload with `npm run preview:deploy -- --preview-alias pr-NNN` (NNN is the actual PR number); include the version-specific preview URL and reusable alias in the PR. Never run `npm run deploy` or merge as implementer.
+- [x] Update root README.md for the verified behavior/screens/usage/status delivered by this task; PR body states `README: updated (sections …)`. Update task acceptance and `dev/milestones.json` only from verification.
+- [x] Preserve keyboard access, accessible names, visible focus and reduced motion. Verify all four presets in light/dark on affected content; record contrast evidence for changed chart/status/token pairings. Inspect existing Base UI wrappers; keep `src/components/ui/`, `src/components/calendar/`, shell/preferences and out-of-scope app pages intact.
 
 ## Execution order
 
