@@ -2,7 +2,7 @@
 id: "011"
 title: Restyle Patient Monitoring and fix hydration
 milestone: v0.2-dashboards
-status: planned
+status: in_review
 category: ui
 files: ["src/routes/(main)/dashboard/patient-monitoring/", "README.md", "dev/milestones.json"]
 ---
@@ -23,17 +23,17 @@ Prefactor inspection: Inspect clock formatting, use-realtime-tick/use-patient-vi
 
 ## Acceptance criteria
 
-- [ ] Patient Monitoring (`/dashboard/patient-monitoring`): no React #418 hydration error in dev or Workers preview, light/dark × desktop/mobile.
-- [ ] Direct navigation/refresh and delayed hydration across a second boundary show stable initial clock/vitals without suppressing warnings, disabling page SSR or freezing the validation clock.
-- [ ] Patient selection/detail navigation and footer controls remain accessible; units, values and status text do not truncate in mobile layouts.
-- [ ] Reduced motion handles continuous waveform/tick behavior, not only Recharts entrance animation; preserve access to current numeric readings and verify normal-motion updates separately.
-- [ ] Capture and inspect before/after screenshots with `npm run screenshots` for every affected route in light/dark × desktop (1440×900)/mobile (390×844); attach a four-state comparison table for each route. Store PNGs, reports and logs only on `pr-assets` or PR attachments, never main. Include meaningful interactive states beyond the initial capture.
-- [ ] `npm run build`, `npm run check` and `npm run typecheck` pass; report inherited warnings separately from failures.
-- [ ] Dev-server `/dashboard/default` smoke and all affected-route smoke checks pass without console errors; verify the same routes on the Workers version preview and retain diagnostics. Do not waive inherited errors on a route this task owns.
-- [ ] Upload with `npm run preview:deploy -- --preview-alias pr-NNN` (NNN is the actual PR number); include the version-specific preview URL and reusable alias in the PR. Never run `npm run deploy` or merge as implementer.
-- [ ] Update root README.md for the verified behavior/screens/usage/status delivered by this task; PR body states `README: updated (sections …)`. Update task acceptance and `dev/milestones.json` only from verification.
-- [ ] Preserve keyboard access, accessible names, visible focus and reduced motion. Verify all four presets in light/dark on affected content; record contrast evidence for changed chart/status/token pairings. Inspect existing Base UI wrappers; keep `src/components/ui/`, `src/components/calendar/`, shell/preferences and out-of-scope app pages intact.
-- [ ] Audit mock data, greeting copy, names, handles, emails and author-linked demo references in every owned route; replace `Arham Khan`/`Arham`/`arhamkhnz` identity references with neutral demo names and safe example addresses, preserving related fixture consistency. Record a scoped search even if no matches exist; leave out-of-scope pages and legal attribution unchanged.
+- [x] Patient Monitoring (`/dashboard/patient-monitoring`): no React #418 hydration error in dev or Workers preview, light/dark × desktop/mobile.
+- [x] Direct navigation/refresh and delayed hydration across a second boundary show stable initial clock/vitals without suppressing warnings, disabling page SSR or freezing the validation clock.
+- [x] Patient selection/detail navigation and footer controls remain accessible; units, values and status text do not truncate in mobile layouts.
+- [x] Reduced motion handles continuous waveform/tick behavior, not only Recharts entrance animation; preserve access to current numeric readings and verify normal-motion updates separately.
+- [x] Capture and inspect before/after screenshots with `npm run screenshots` for every affected route in light/dark × desktop (1440×900)/mobile (390×844); attach a four-state comparison table for each route. Store PNGs, reports and logs only on `pr-assets` or PR attachments, never main. Include meaningful interactive states beyond the initial capture.
+- [x] `npm run build`, `npm run check` and `npm run typecheck` pass; report inherited warnings separately from failures.
+- [x] Dev-server `/dashboard/default` smoke and all affected-route smoke checks pass without console errors; verify the same routes on the Workers version preview and retain diagnostics. Do not waive inherited errors on a route this task owns.
+- [x] Upload with `npm run preview:deploy -- --preview-alias pr-NNN` (NNN is the actual PR number); include the version-specific preview URL and reusable alias in the PR. Never run `npm run deploy` or merge as implementer.
+- [x] Update root README.md for the verified behavior/screens/usage/status delivered by this task; PR body states `README: updated (sections …)`. Update task acceptance and `dev/milestones.json` only from verification.
+- [x] Preserve keyboard access, accessible names, visible focus and reduced motion. Verify all four presets in light/dark on affected content; record contrast evidence for changed chart/status/token pairings. Inspect existing Base UI wrappers; keep `src/components/ui/`, `src/components/calendar/`, shell/preferences and out-of-scope app pages intact.
+- [x] Audit mock data, greeting copy, names, handles, emails and author-linked demo references in every owned route; replace `Arham Khan`/`Arham`/`arhamkhnz` identity references with neutral demo names and safe example addresses, preserving related fixture consistency. Record a scoped search even if no matches exist; leave out-of-scope pages and legal attribution unchanged.
 
 ## Execution order
 

@@ -2,6 +2,47 @@ import type { Page } from "playwright";
 
 // Opt-in interaction evidence for the dashboard batch. Never replace the runtime clock.
 export async function captureInteractions(page: Page, route: string): Promise<string[]> {
+  if (route === "/dashboard/patient-monitoring") {
+    const clock = page.locator("[data-monitoring-clock]");
+    const beforeClock = await clock.textContent();
+    const waveform = page
+      .getByRole("img", { name: "C01 II ecg waveform", exact: true })
+      .locator(".recharts-line-curve");
+    const reducedPath = await waveform.getAttribute("d");
+    await page.waitForTimeout(1200);
+    if (beforeClock === (await clock.textContent())) throw new Error("Live clock did not advance");
+    if (reducedPath !== (await waveform.getAttribute("d"))) throw new Error("Reduced-motion waveform moved");
+    await page.emulateMedia({ reducedMotion: "no-preference" });
+    await page.waitForTimeout(300);
+    const runningPath = await waveform.getAttribute("d");
+    await page.waitForTimeout(400);
+    if (runningPath === (await waveform.getAttribute("d"))) throw new Error("Normal-motion waveform did not update");
+    await page.emulateMedia({ reducedMotion: "reduce" });
+    await page.waitForTimeout(250);
+    const pausedPath = await waveform.getAttribute("d");
+    await page.waitForTimeout(300);
+    if (pausedPath !== (await waveform.getAttribute("d"))) throw new Error("Waveform did not pause after media change");
+    await page.getByRole("button", { name: "Acknowledge", exact: true }).press("Enter");
+    if (!(await page.getByRole("button", { name: "Acknowledged", exact: true }).isDisabled()))
+      throw new Error("Acknowledgement did not persist");
+    await page.getByRole("button", { name: "Open C01, Ethan Brooks", exact: true }).press("Enter");
+    await page.getByRole("tab", { name: "Event review", exact: true }).click();
+    await page
+      .getByRole("tabpanel", { name: "Event review", exact: true })
+      .getByText("Lead II selected", { exact: true })
+      .waitFor();
+    await page.getByRole("tab", { name: "Trends", exact: true }).click();
+    await page.getByRole("button", { name: "Print", exact: true }).focus();
+    if (await page.evaluate(() => document.documentElement.scrollWidth > innerWidth))
+      throw new Error("Page-wide overflow");
+    return [
+      "Real clock advances across second boundary",
+      "Reduced-motion trace stable",
+      "Normal-motion trace updates; runtime reduction pauses it",
+      "Keyboard acknowledgement persists; patient selection and event/trend tabs work",
+      "Footer keyboard focus and no page-wide overflow",
+    ];
+  }
   if (route === "/dashboard/infrastructure") {
     const group = page.getByRole("button", { name: "Weblabs Studio (Admin Console)", exact: true });
     await group.press("Enter");

@@ -1,7 +1,8 @@
 import { cn } from "cn";
 import { CartesianGrid, Line, LineChart, YAxis } from "recharts";
 
-import { type ChartConfig, ChartContainer } from "@/components/ui/chart";
+import type { ChartConfig } from "@/components/ui/chart";
+import { DashboardChart } from "@/lib/charts/theme";
 
 import { getInnerVerticalGridCoordinates } from "./chart-grid";
 import type { PatientRecord } from "./data";
@@ -27,16 +28,16 @@ const trendChartConfig = {
 } satisfies ChartConfig;
 
 const trendClasses: Record<TrendKind, string> = {
-  "heart-rate": "text-lime-500 dark:text-lime-400",
-  map: "text-red-500 dark:text-red-400",
-  spo2: "text-cyan-500 dark:text-cyan-400",
+  "heart-rate": "text-success",
+  map: "text-danger",
+  spo2: "text-info",
 };
 
 function VitalTrendChart({ ariaLabel, data, domain, kind, ticks }: VitalTrendChartProps) {
   return (
-    <ChartContainer
+    <DashboardChart
       aria-label={ariaLabel}
-      className={cn("aspect-auto h-full min-h-12 w-full border-r border-current", trendClasses[kind])}
+      className={cn("aspect-auto h-full min-h-12 w-full border-r border-current sm:h-full", trendClasses[kind])}
       config={trendChartConfig}
       initialDimension={{ width: 600, height: 48 }}
       role="img"
@@ -46,7 +47,7 @@ function VitalTrendChart({ ariaLabel, data, domain, kind, ticks }: VitalTrendCha
           horizontal
           horizontalValues={ticks.slice(1, -1)}
           stroke="var(--border)"
-          strokeOpacity={0.65}
+          strokeOpacity={1}
           strokeWidth={0.75}
           vertical
           verticalCoordinatesGenerator={getInnerVerticalGridCoordinates}
@@ -57,11 +58,11 @@ function VitalTrendChart({ ariaLabel, data, domain, kind, ticks }: VitalTrendCha
           dot={false}
           isAnimationActive={false}
           stroke="var(--color-value)"
-          strokeWidth={1.25}
+          strokeWidth={2}
           type="monotoneX"
         />
       </LineChart>
-    </ChartContainer>
+    </DashboardChart>
   );
 }
 
@@ -81,18 +82,18 @@ function TrendStrip({
   const series = usePatientTrendSeries({ kind, patient });
   const scale = [...series.ticks].reverse();
   const color = cn(
-    kind === "heart-rate" && "text-lime-500 dark:text-lime-400",
-    kind === "spo2" && "text-cyan-500 dark:text-cyan-400",
-    kind === "map" && "text-red-500 dark:text-red-400",
+    kind === "heart-rate" && "text-success",
+    kind === "spo2" && "text-info",
+    kind === "map" && "text-danger",
   );
 
   return (
     <div className="border-border grid min-h-12 grid-cols-[4rem_2rem_minmax(0,1fr)_2.5rem] items-stretch gap-1 border-b">
       <div className="flex flex-col justify-start p-2">
         <div className={cn("text-xs font-medium", color)}>{label}</div>
-        <div className="text-muted-foreground text-[10px]">{unit}</div>
+        <div className="text-muted-foreground text-xs">{unit}</div>
       </div>
-      <div className="text-muted-foreground flex h-full min-h-12 flex-col justify-between text-right text-[10px] tabular-nums">
+      <div className="text-muted-foreground flex h-full min-h-12 flex-col justify-between text-right text-xs tabular-nums">
         {scale.map((tick) => (
           <span key={tick}>{tick}</span>
         ))}
@@ -118,7 +119,7 @@ export function PatientTrends({ patient }: PatientTrendsProps) {
         <TrendStrip kind="map" label="MAP" patient={patient} unit="mmHg" value={patient.arterialMap} />
         <div className="grid grid-cols-[4rem_2rem_minmax(0,1fr)_2.5rem] gap-1 py-0.5">
           <div className="col-span-2" />
-          <div className="text-muted-foreground flex justify-between text-[10px] tabular-nums">
+          <div className="text-muted-foreground flex justify-between text-xs tabular-nums">
             <span>21:00</span>
             <span>22:00</span>
             <span>23:00</span>
@@ -131,7 +132,7 @@ export function PatientTrends({ patient }: PatientTrendsProps) {
         <div className="mb-2 text-xs font-medium">Recent events</div>
         <div className="flex flex-col gap-2">
           {patient.recentEvents.map((event) => (
-            <div className="grid grid-cols-[3rem_1fr] text-[11px]" key={`${event.time}-${event.label}`}>
+            <div className="grid grid-cols-[3rem_1fr] text-xs" key={`${event.time}-${event.label}`}>
               <span className="text-muted-foreground tabular-nums">{event.time}</span>
               <span>{event.label}</span>
             </div>

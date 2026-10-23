@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-import { format } from "date-fns";
 import { Network, Printer, Volume2 } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
@@ -10,13 +9,14 @@ import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip
 
 import { patients } from "./-components/data";
 import { PatientMonitoring } from "./-components/patient-monitoring";
+import { useMonitoringClock } from "./-components/use-realtime-tick";
 
 export const Route = createFileRoute("/(main)/dashboard/patient-monitoring")({
   component: Page,
 });
 
 function Page() {
-  const now = new Date();
+  const now = useMonitoringClock();
 
   return (
     <div
@@ -24,11 +24,13 @@ function Page() {
       data-content-padding="false"
     >
       <div className="grid min-h-10 grid-cols-[minmax(0,1fr)_auto] items-center gap-x-4 gap-y-2 px-2 py-2 text-sm lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] lg:py-0">
-        <div className="truncate lg:overflow-visible">CENTRAL PATIENT MONITORING</div>
+        <h1 className="text-base font-medium">Patient monitoring · Demo</h1>
         <div className="whitespace-nowrap">{patients.length} Patients</div>
-        <div className="text-muted-foreground col-span-2 flex items-center justify-between gap-5 lg:col-span-1 lg:justify-end">
-          <span className="whitespace-nowrap tabular-nums">
-            {format(now, "dd MMM yyyy")}&nbsp;&nbsp;{format(now, "HH:mm:ss")}
+        <div className="text-muted-foreground col-span-2 flex items-center justify-between gap-3 lg:col-span-1 lg:justify-end">
+          <span data-monitoring-clock className="text-xs whitespace-nowrap tabular-nums">
+            {now === null
+              ? "Connecting clock…"
+              : `${new Intl.DateTimeFormat("en-GB", { day: "2-digit", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit", second: "2-digit", timeZone: "UTC", hourCycle: "h23" }).format(now)} UTC`}
           </span>
           <Tooltip>
             <TooltipTrigger aria-label="Alarm audio enabled" className="inline-flex" type="button">
@@ -54,7 +56,7 @@ function Page() {
       <PatientMonitoring patients={patients} />
 
       <Separator />
-      <footer className="flex flex-wrap gap-2 p-2 *:data-[slot=button]:h-11 *:data-[slot=button]:min-w-32 *:data-[slot=button]:flex-1 *:data-[slot=button]:rounded-none">
+      <footer className="flex flex-wrap gap-2 p-2 *:data-[slot=button]:h-11 *:data-[slot=button]:min-w-32 *:data-[slot=button]:flex-1 *:data-[slot=button]:rounded-lg">
         <Button variant="outline">Main screen</Button>
         <Button variant="outline">Patient setup</Button>
         <Button variant="outline">Alarm review</Button>
@@ -68,7 +70,7 @@ function Page() {
           <Volume2 data-icon="inline-start" />
           Silence
         </Button>
-        <Badge className="text-muted-foreground h-11 min-w-44 flex-1 rounded-none" variant="outline">
+        <Badge className="text-muted-foreground h-11 min-w-44 flex-1 rounded-lg" variant="outline">
           Device C04 connected
         </Badge>
       </footer>

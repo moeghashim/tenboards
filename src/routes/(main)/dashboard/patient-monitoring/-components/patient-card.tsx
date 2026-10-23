@@ -29,14 +29,13 @@ export function PatientCard({ active, acknowledged, onSelect, patient }: Patient
       onClick={() => onSelect(patient.id)}
       type="button"
     >
-      <div className="flex w-full items-start justify-between gap-2">
-        <div className="truncate text-sm font-medium">
-          <span className={cn(hasActiveAlarm && "text-amber-500 dark:text-amber-400")}>{patient.bed}</span>{" "}
-          {patient.name}
+      <div className="flex w-full flex-wrap items-start justify-between gap-2">
+        <div className="text-sm font-medium wrap-break-word">
+          <span className={cn(hasActiveAlarm && "text-warning")}>{patient.bed}</span> {patient.name}
         </div>
         {hasActiveAlarm && (
           <Badge
-            className="h-auto shrink-0 rounded-none border-amber-500 text-[10px] text-amber-700 dark:border-amber-400 dark:text-amber-300"
+            className="border-warning/30 bg-warning-surface text-warning h-auto shrink-0 rounded-md text-xs"
             variant="outline"
           >
             HR HIGH {patient.heartRate}
@@ -50,21 +49,19 @@ export function PatientCard({ active, acknowledged, onSelect, patient }: Patient
 
       <dl className="divide-border mt-auto grid grid-cols-2 divide-x tabular-nums">
         <div className="pr-2">
-          <dt className="text-xs text-lime-500 dark:text-lime-400">HR</dt>
+          <dt className="text-success text-xs">HR</dt>
           <dd
             className={cn(
-              "text-right text-3xl leading-none font-medium text-lime-500 dark:text-lime-400",
-              hasActiveAlarm && "text-amber-500 dark:text-amber-400",
+              "text-success text-right text-2xl leading-none font-medium",
+              hasActiveAlarm && "text-warning",
             )}
           >
             {patient.heartRate}
           </dd>
         </div>
         <div className="pl-2">
-          <dt className="text-xs text-cyan-500 dark:text-cyan-400">SpO₂</dt>
-          <dd className="text-right text-3xl leading-none font-medium text-cyan-500 dark:text-cyan-400">
-            {patient.spo2}
-          </dd>
+          <dt className="text-info text-xs">SpO₂</dt>
+          <dd className="text-info text-right text-2xl leading-none font-medium">{patient.spo2}</dd>
         </div>
       </dl>
     </button>

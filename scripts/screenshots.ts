@@ -16,8 +16,12 @@ const { values } = parseArgs({
     timezone: { type: "string", default: "America/Chicago" },
     reload: { type: "boolean", default: false },
     interactions: { type: "boolean", default: false },
+    "hydration-delay-ms": { type: "string", default: "0" },
   },
 });
+const hydrationDelayMs = Number(values["hydration-delay-ms"]);
+if (!Number.isFinite(hydrationDelayMs) || hydrationDelayMs < 0 || hydrationDelayMs > 10000)
+  throw new Error("Hydration delay must be 0–10000 ms");
 const baseURL = new URL(values["base-url"]);
 // Validate the requested real timezone without replacing the runtime clock.
 new Intl.DateTimeFormat("en-US", { timeZone: values.timezone }).format();
@@ -69,6 +73,14 @@ try {
             locale: "en-US",
             timezoneId: values.timezone,
           });
+          let scriptsMayLoadAt = Date.now() + hydrationDelayMs;
+          if (hydrationDelayMs > 0)
+            await context.route("**/*", async (route) => {
+              const remaining = scriptsMayLoadAt - Date.now();
+              if (route.request().resourceType() === "script" && remaining > 0)
+                await new Promise((resolve) => setTimeout(resolve, remaining));
+              await route.continue();
+            });
           await context.addCookies([
             { name: "theme_mode", value: theme, url: baseURL.origin },
             { name: "theme_preset", value: values.preset, url: baseURL.origin },
@@ -97,6 +109,7 @@ try {
                 ),
               );
               await page.waitForLoadState("networkidle");
+              scriptsMayLoadAt = Date.now() + hydrationDelayMs;
               response = await page.reload({ waitUntil: "domcontentloaded" });
             }
             if (!response || response.status() !== (entry.status ?? 200)) {
@@ -166,7 +179,7 @@ try {
   await browser.close();
   await writeFile(
     path.join(output, "report.json"),
-    `${JSON.stringify({ baseURL, preset: values.preset, timezone: values.timezone, reload: values.reload, interactions: values.interactions, results }, null, 2)}\n`,
+    `${JSON.stringify({ baseURL, hydrationDelayMs, preset: values.preset, timezone: values.timezone, reload: values.reload, interactions: values.interactions, results }, null, 2)}\n`,
   );
 }
 if (results.some((result) => result.errors.length)) process.exitCode = 1;
