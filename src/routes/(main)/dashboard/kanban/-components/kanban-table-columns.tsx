@@ -9,7 +9,7 @@ import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectVa
 import type { DataTableFeatures } from "@/lib/data-table-features";
 import { getInitials } from "@/lib/utils";
 
-import { tagTones } from "./data";
+import { ownerTone, tagTones } from "./data";
 import { priorityBadgeConfig } from "./task-priority";
 import { statusIcons } from "./task-status";
 import type { Column, ColumnId, Task, TaskInsightLabel } from "./types";
@@ -135,7 +135,7 @@ export function createTaskTableColumns(
       size: 190,
       cell: ({ row }) => (
         <span className="flex items-center gap-1.5">
-          <Avatar className={cn("size-6 after:rounded-sm", row.original.owner.tone)}>
+          <Avatar className={cn("size-6 after:rounded-sm", ownerTone)}>
             <AvatarFallback className="rounded-sm text-xs" aria-hidden="true">
               {getInitials(row.original.owner.name)}
             </AvatarFallback>

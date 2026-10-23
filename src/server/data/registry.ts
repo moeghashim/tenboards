@@ -1,9 +1,13 @@
 import { dbAccounts, demoAccounts } from "./accounts.ts";
+import { dbCalendar, demoCalendar } from "./calendar.ts";
 import { dbEcommerce, demoEcommerce } from "./ecommerce.ts";
+import { dbFiles, demoFiles } from "./files.ts";
 import { dbInvoices, demoInvoices } from "./invoices.ts";
+import { dbKanban, demoKanban } from "./kanban.ts";
 import { dbProducts, demoProducts } from "./products.ts";
 import { dbProfile, demoProfile } from "./profile.ts";
 import { dbRoles, demoRoles } from "./roles.ts";
+import { dbTasks, demoTasks } from "./tasks.ts";
 import { dbUsers, demoUsers } from "./users.ts";
 
 // Each exported domain read owns all of its supported input/variant scenarios here.
@@ -28,6 +32,61 @@ function defineRead<Input, Output>(entry: {
 }
 
 export const readRegistry = [
+  defineRead({
+    module: "kanban",
+    read: "readKanban",
+    demo: demoKanban,
+    db: dbKanban,
+    scenarios: [
+      { name: "all", input: {} },
+      { name: "existing", input: { id: "tender-workflow-map" } },
+      { name: "missing", input: { id: "missing" } },
+    ],
+  }),
+  defineRead({
+    module: "tasks",
+    read: "readTasks",
+    demo: demoTasks,
+    db: dbTasks,
+    scenarios: [
+      { name: "all", input: {} },
+      { name: "existing", input: { id: "TASK-8782" } },
+      { name: "missing", input: { id: "missing" } },
+    ],
+  }),
+  defineRead({
+    module: "files",
+    read: "readFiles",
+    demo: demoFiles,
+    db: dbFiles,
+    scenarios: [
+      { name: "all", input: {} },
+      { name: "existing", input: { id: "product-roadmap" } },
+      { name: "missing", input: { id: "missing" } },
+    ],
+  }),
+  defineRead({
+    module: "calendar",
+    read: "readCalendar",
+    demo: demoCalendar,
+    db: dbCalendar,
+    scenarios: [
+      ...[
+        "2026-10-23T12:00:00Z",
+        "2026-12-31T23:59:59Z",
+        "2027-01-01T00:00:01Z",
+        "2028-02-29T23:59:59Z",
+        "2028-03-01T00:00:01Z",
+      ].flatMap((renderedAt) =>
+        ["UTC", "America/Chicago", "Pacific/Kiritimati"].map((timeZone) => ({
+          name: `${renderedAt}/${timeZone}`,
+          input: { renderedAt, timeZone },
+        })),
+      ),
+      { name: "existing", input: { renderedAt: "2026-10-23T12:00:00Z", id: "event-1" } },
+      { name: "missing", input: { renderedAt: "2026-10-23T12:00:00Z", id: "missing" } },
+    ],
+  }),
   defineRead({
     module: "users",
     read: "readUsers",

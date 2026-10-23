@@ -37,7 +37,6 @@ import {
 import { InputGroup, InputGroupAddon, InputGroupInput } from "@/components/ui/input-group";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-import { columnIds, columns } from "./data";
 import { KanbanColumn } from "./kanban-column";
 import { KanbanList } from "./kanban-list";
 import { KanbanListDnd } from "./kanban-list-dnd";
@@ -49,6 +48,7 @@ import type { BoardState, ColumnId, Task } from "./types";
 const kanbanRoute = getRouteApi("/(main)/dashboard/kanban");
 
 interface KanbanProps {
+  columns: readonly import("./types").Column[];
   initialBoard: BoardState;
 }
 
@@ -58,25 +58,26 @@ type TaskDragData = {
   columnId: ColumnId;
 };
 
-function isColumnId(value: unknown): value is ColumnId {
-  return typeof value === "string" && columnIds.includes(value as ColumnId);
-}
+export function Kanban({ initialBoard, columns }: KanbanProps) {
+  const columnIds = React.useMemo(() => columns.map((column) => column.id), [columns]);
+  function isColumnId(value: unknown): value is ColumnId {
+    return typeof value === "string" && columnIds.includes(value as ColumnId);
+  }
 
-function isTaskDragData(value: unknown): value is TaskDragData {
-  return (
-    typeof value === "object" &&
-    value !== null &&
-    "type" in value &&
-    value.type === "task" &&
-    "task" in value &&
-    typeof value.task === "object" &&
-    value.task !== null &&
-    "columnId" in value &&
-    isColumnId(value.columnId)
-  );
-}
+  function isTaskDragData(value: unknown): value is TaskDragData {
+    return (
+      typeof value === "object" &&
+      value !== null &&
+      "type" in value &&
+      value.type === "task" &&
+      "task" in value &&
+      typeof value.task === "object" &&
+      value.task !== null &&
+      "columnId" in value &&
+      isColumnId(value.columnId)
+    );
+  }
 
-export function Kanban({ initialBoard }: KanbanProps) {
   const { view } = kanbanRoute.useSearch();
   const navigate = kanbanRoute.useNavigate();
   const [board, setBoard] = React.useState<BoardState>(initialBoard);

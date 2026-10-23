@@ -13,8 +13,7 @@ import { EventCalendarViews } from "@/components/calendar/event-calendar-views";
 import { Button } from "@/components/ui/button";
 import { ButtonGroup } from "@/components/ui/button-group";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-
-import { createDemoEvents } from "./events-data";
+import { type CalendarData, projectEvents } from "@/server/data/calendar.types";
 
 const views = [
   { value: "dayGridMonth", label: "Month" },
@@ -22,17 +21,9 @@ const views = [
   { value: "timeGridDay", label: "Day" },
 ];
 
-const calendars = [
-  { value: "all", label: "All calendars" },
-  { value: "work", label: "Work" },
-  { value: "personal", label: "Personal" },
-  { value: "team", label: "Team" },
-  { value: "focus", label: "Focus time" },
-];
-
 const plugins = [dayGridPlugin, timeGridPlugin, listPlugin, interactionPlugin, multiMonthPlugin];
 
-export function Calendar({ renderedAt }: { renderedAt: string }) {
+export function Calendar({ renderedAt, templates, calendars }: CalendarData) {
   const [local, setLocal] = React.useState(false);
   const hydrated = React.useRef<boolean>(false);
   const now = React.useCallback(() => (hydrated.current ? new Date() : new Date(renderedAt)), [renderedAt]);
@@ -40,7 +31,10 @@ export function Calendar({ renderedAt }: { renderedAt: string }) {
     hydrated.current = true;
     setLocal(true);
   }, []);
-  const demoEvents = React.useMemo(() => createDemoEvents(new Date(renderedAt), local), [renderedAt, local]);
+  const demoEvents = React.useMemo(
+    () => projectEvents(templates, renderedAt, local ? Intl.DateTimeFormat().resolvedOptions().timeZone : "UTC"),
+    [renderedAt, local, templates],
+  );
   const controller = useCalendarController();
   const [eventCount, setEventCount] = React.useState(0);
   const [selectedCalendar, setSelectedCalendar] = React.useState(calendars[0].value);

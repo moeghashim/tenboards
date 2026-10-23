@@ -7,7 +7,7 @@ import { Progress } from "@/components/ui/progress";
 import { Separator } from "@/components/ui/separator";
 import { getInitials } from "@/lib/utils";
 
-import { tagTones } from "./data";
+import { ownerTone, tagTones } from "./data";
 import { priorityBadgeConfig } from "./task-priority";
 import type { ColumnId, Task, TaskInsightLabel } from "./types";
 
@@ -58,7 +58,7 @@ export function TaskCard({
       {!showBuildingDetails ? (
         <div className="flex flex-wrap items-center justify-between gap-2">
           <div className="flex items-center gap-1.5">
-            <Avatar className={cn("size-5 after:rounded-sm", owner.tone)}>
+            <Avatar className={cn("size-5 after:rounded-sm", ownerTone)}>
               <AvatarFallback className="rounded-sm text-xs">{getInitials(owner.name)}</AvatarFallback>
             </Avatar>
 
@@ -86,7 +86,7 @@ export function TaskCard({
               <span className="text-muted-foreground text-sm">Owner</span>
               <div className="flex items-center gap-1.5">
                 <span className="text-muted-foreground truncate text-sm">{owner.name}</span>
-                <Avatar className={cn("size-5 after:rounded-sm", owner.tone)}>
+                <Avatar className={cn("size-5 after:rounded-sm", ownerTone)}>
                   <AvatarFallback className="rounded-sm text-xs">{getInitials(owner.name)}</AvatarFallback>
                 </Avatar>
               </div>

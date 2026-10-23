@@ -27,7 +27,6 @@ export type TaskInsight = {
 
 export type TaskOwnerProfile = {
   name: string;
-  tone: string;
 };
 
 export type Task = {
