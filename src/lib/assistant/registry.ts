@@ -52,14 +52,16 @@ export const descriptions: Record<ComponentName, string> = {
   Chart: "Bar or line chart with a data table. At most 4 finite series and 50 matching points.",
 };
 // The same schemas/key ordering feed the server spec and React bindings. No React import here.
-export const specLibrary = createLibrary({
-  id: "tenboards-assistant-v1",
-  root: "Stack",
-  components: Object.entries(schemas).map(([name, props]) =>
-    defineComponent({ name, props, description: descriptions[name as ComponentName], component: null }),
-  ),
-});
-export const librarySpec = specLibrary.toSpec();
+export function getSpecLibrary() {
+  return createLibrary({
+    id: "tenboards-assistant-v1",
+    root: "Stack",
+    components: Object.entries(schemas).map(([name, props]) =>
+      defineComponent({ name, props, description: descriptions[name as ComponentName], component: null }),
+    ),
+  });
+}
+export const getLibrarySpec = () => getSpecLibrary().toSpec();
 export const promptOptions = {
   toolCalls: false,
   bindings: false,

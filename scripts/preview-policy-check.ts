@@ -22,6 +22,17 @@ for (const extra of [
 ])
   assert.throws(() => assertPreviewConfig({ ...previewSource, ...extra }));
 for (const key of [
+  "ANTHROPIC_API_KEY",
+  "ANTHROPIC_MODEL",
+  "OPENAI_API_KEY",
+  "OPENAI_MODEL",
+  "XAI_API_KEY",
+  "XAI_MODEL",
+  "META_API_KEY",
+  "META_MODEL",
+  "GOOGLE_GENERATIVE_AI_API_KEY",
+  "GOOGLE_GENERATIVE_AI_MODEL",
+  "ASSISTANT_ORIGIN",
   "DATABASE_URL",
   "HYPERDRIVE",
   "BETTER_AUTH_SECRET",
@@ -45,7 +56,7 @@ for (const type of ["hyperdrive", "service", "secret_text", "plain_text", "secre
   );
 console.log("PASS preview exact target, config/remote allowlists and environment contamination negatives");
 for (const file of [".dev.vars.preview-fixture", ".wrangler/preview/.env"]) {
-  await writeFile(file, "BETTER_AUTH_SECRET=NONSECRET_FIXTURE", { flag: "wx" });
+  await writeFile(file, "META_API_KEY=SYNTHETIC_ASSISTANT_KEY", { flag: "wx" });
   try {
     await assert.rejects(assertPreviewInputs);
   } finally {

@@ -3,7 +3,7 @@ import { Component, type ReactNode, useMemo, useState } from "react";
 import { inspectLanguage } from "@/lib/assistant/language";
 
 import { Renderer } from "./openui";
-import { assistantLibrary } from "./registry";
+import { getAssistantLibrary } from "./registry";
 
 export class ResponseBoundary extends Component<{ children: ReactNode }, { failed: boolean }> {
   state = { failed: false };
@@ -20,12 +20,13 @@ export class ResponseBoundary extends Component<{ children: ReactNode }, { faile
 }
 function ValidatedResponse({ response }: { response: string }) {
   const [failed, setFailed] = useState(false);
+  const library = useMemo(getAssistantLibrary, []);
   return failed ? (
     <p role="status">This response could not be displayed safely. Try again.</p>
   ) : (
     <Renderer
       response={response}
-      library={assistantLibrary}
+      library={library}
       isStreaming={false}
       publishObservability={false}
       onError={(errors) => {

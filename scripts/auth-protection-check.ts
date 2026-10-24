@@ -33,14 +33,17 @@ for (const file of await readdir("src", { recursive: true })) {
     if (source.includes("@/server/data/")) {
       assert.ok(source.indexOf("await requireSession()") < source.indexOf('await import("@/server/data/'));
       rpc.push({ file: `/src/${file}`, name });
-    } else if (file === "lib/auth/account-functions.ts" && name === "getAccountDetails") {
+    } else if (
+      (file === "lib/auth/account-functions.ts" && name === "getAccountDetails") ||
+      (file === "lib/assistant/server-functions.ts" && name === "getAssistantConfig")
+    ) {
       rpc.push({ file: `/src/${file}`, name });
     } else if (file === "lib/auth/account-functions.ts" && name === "revokeAccountSession") {
       assert.match(source, /revokeOwnedSession/);
     } else assert.ok(allowedPublic.has(name), `Unclassified server function ${file}:${name}`);
   }
 }
-assert.equal(rpc.length, 23);
+assert.equal(rpc.length, 24);
 const tree = await readFile("src/routeTree.gen.ts", "utf8");
 const fullPaths = tree.match(/export interface FileRoutesByFullPath \{([\s\S]*?)\n\}/)?.[1];
 assert.ok(fullPaths);

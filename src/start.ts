@@ -7,7 +7,7 @@ const configurationBoundary = createMiddleware().server(async ({ next }) => {
   const invalidConfiguration = () =>
     new Response("Authentication/data configuration is invalid. Check your server environment.", {
       status: 503,
-      headers: { "Cache-Control": "no-store" },
+      headers: { "Cache-Control": "private, no-store", "X-Content-Type-Options": "nosniff" },
     });
   return withRuntimeRequest(
     getRequest(),

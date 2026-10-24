@@ -2,6 +2,9 @@
 
 ## Unreleased — v0.7 Assistant foundation
 
+- Add guarded Assistant streaming for five direct provider adapters, server-only configuration, exact Origin/session checks, bounded input/output/deadlines and atomic DB or bounded local admission. Preview guard rejects AI configuration; adopter secrets preparation keeps keys outside builds.
+
+
 - Add a native AI Assistant next to unchanged Chat with recorded summaries, comparisons and accessible charts.
 - Bound and validate a read-only OpenUI vocabulary before rendering; exclude actions, tools, URLs and raw markup.
 - Keep conversation state transient, with Send, Stop and New conversation. No provider access in this layer.

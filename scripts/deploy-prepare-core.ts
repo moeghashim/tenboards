@@ -1,3 +1,9 @@
+import {
+  type AssistantEnvironment,
+  assistantConfiguration,
+  canonicalOrigin,
+  providers,
+} from "../src/server/assistant/config.server.ts";
 import assert from "node:assert/strict";
 import { randomBytes } from "node:crypto";
 import { realpath, writeFile } from "node:fs/promises";
@@ -45,7 +51,9 @@ export function assertDeploymentConfig(config: unknown, expectedName: string) {
         if (key === "vars") {
           assert.ok(child && typeof child === "object" && !Array.isArray(child));
           assert.ok(
-            !Object.keys(child).some((name) => /DATABASE|HYPERDRIVE|DATA_SOURCE|AUTH|GOOGLE|GITHUB/i.test(name)),
+            !Object.keys(child).some((name) =>
+              /DATABASE|HYPERDRIVE|DATA_SOURCE|AUTH|GOOGLE|GITHUB|ANTHROPIC|OPENAI|XAI|META|ASSISTANT/i.test(name),
+            ),
           );
         }
         inspect(child);
@@ -68,11 +76,27 @@ export async function externalSecretsPath(filename: string, root = process.cwd()
   return path.join(parent, path.basename(filename));
 }
 
-export async function createDeploymentSecrets(filename: string, url: string, root = process.cwd()) {
+export async function createDeploymentSecrets(
+  filename: string,
+  url: string,
+  root = process.cwd(),
+  assistantEnv: AssistantEnvironment = process.env,
+) {
   const destination = await externalSecretsPath(filename, root);
   const secrets = { BETTER_AUTH_SECRET: randomBytes(48).toString("base64url"), BETTER_AUTH_URL: deploymentURL(url) };
+  const configured = assistantConfiguration(assistantEnv);
+  canonicalOrigin(
+    { ...assistantEnv, ...secrets, DATABASE_URL: "postgres://synthetic:synthetic@localhost/validation" },
+    url,
+    configured.length > 0,
+  );
+  const assistant: Record<string, string> = {};
+  for (const entry of providers)
+    for (const key of [entry.key, entry.override])
+      if (assistantEnv[key] !== undefined) assistant[key] = assistantEnv[key]!;
+  if (assistantEnv.ASSISTANT_ORIGIN !== undefined) assistant.ASSISTANT_ORIGIN = assistantEnv.ASSISTANT_ORIGIN;
   // Exclusive creation rejects existing files and symlinks; never rotate an existing secret implicitly.
-  await writeFile(destination, JSON.stringify(secrets, null, 2), { mode: 0o600, flag: "wx" });
+  await writeFile(destination, JSON.stringify({ ...secrets, ...assistant }, null, 2), { mode: 0o600, flag: "wx" });
   return destination;
 }
 

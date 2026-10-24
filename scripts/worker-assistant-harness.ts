@@ -1,0 +1,64 @@
+// Test-only egress barrier around the actual compiled application. Not imported by production.
+// @ts-expect-error Generated module has no declaration.
+import app from "../.output/server/index.mjs";
+import { providers } from "../src/server/assistant/config.server.ts";
+import { type WireCase, wireResponse } from "./assistant-wire-fixtures.ts";
+
+let calls = 0;
+let cancelled = 0;
+let violations = 0;
+const outputRequests: {
+  provider: string;
+  model: string;
+  explicitKey: boolean;
+  storageDisabled: boolean;
+  noTools: boolean;
+  cap: boolean;
+  instructions: boolean;
+}[] = [];
+globalThis.fetch = async (input, init) => {
+  const url = new URL(input instanceof Request ? input.url : String(input));
+  const id =
+    url.hostname === "api.anthropic.com"
+      ? "anthropic"
+      : url.hostname === "api.openai.com"
+        ? "openai"
+        : url.hostname === "api.x.ai"
+          ? "xai"
+          : url.hostname === "api.meta.ai"
+            ? "meta"
+            : url.hostname === "generativelanguage.googleapis.com"
+              ? "google"
+              : undefined;
+  if (!id) {
+    violations++;
+    throw new Error("Test blocked unexpected egress.");
+  }
+  calls++;
+  const headers = new Headers(init?.headers);
+  const key = [...headers.values()].find((value) => value.includes("synthetic-v07-")) ?? "";
+  const mode = (key.split("synthetic-v07-")[1]?.split("-")[1] as WireCase) ?? "success";
+  const body = JSON.parse(String(init?.body));
+  outputRequests.push({
+    provider: id,
+    model: body.model ?? providers.find((p) => p.id === id)!.model,
+    explicitKey: key.includes(`synthetic-v07-${id}-`),
+    storageDisabled: !["openai", "xai"].includes(id) || body.store === false,
+    noTools: !body.tools?.length,
+    cap: body.max_tokens === 4096 || body.max_output_tokens === 4096 || body.generationConfig?.maxOutputTokens === 4096,
+    instructions: JSON.stringify(body).includes("Stack"),
+  });
+  return wireResponse(id, mode, init?.signal, () => {
+    cancelled++;
+  });
+};
+export default {
+  fetch(request: Request, env: unknown, context: unknown) {
+    const url = new URL(request.url);
+    if (url.pathname === "/__assistant_probe") return Response.json({ calls, cancelled, violations, outputRequests });
+    const scoped = { ...(env as Record<string, unknown>) };
+    const mode = request.headers.get("x-v07-case") ?? "success";
+    for (const entry of providers) if (scoped[entry.key]) scoped[entry.key] = `synthetic-v07-${entry.id}-${mode}`;
+    return app.fetch(request, scoped, context);
+  },
+};

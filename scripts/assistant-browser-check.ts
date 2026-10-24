@@ -15,6 +15,9 @@ try {
       desktop: { width: 1440, height: 900 },
       mobile: { width: 390, height: 844 },
     })) {
+      // The real POST counts recorded admissions too. Isolate each mode in a fresh fixed window.
+      if (process.env.ASSISTANT_ENDPOINT_TEST === "1")
+        await new Promise((resolve) => setTimeout(resolve, 61000 - (Date.now() % 60000)));
       const context = await browser.newContext({ viewport, colorScheme: theme, reducedMotion: "reduce" });
       await cacheCaptureFonts(context);
       await context.addCookies([{ name: "theme_mode", value: theme, url: baseURL }]);
@@ -39,8 +42,8 @@ try {
       const registryProof = await page.evaluate(async () => {
         const rendererPath = "/src/routes/(main)/dashboard/assistant/-components/registry.tsx";
         const schemaPath = "/src/lib/assistant/registry.ts";
-        const { assistantLibrary, validateEvaluatedProps } = await import(rendererPath);
-        const { librarySpec } = await import(schemaPath);
+        const { getAssistantLibrary, validateEvaluatedProps } = await import(rendererPath);
+        const { getLibrarySpec } = await import(schemaPath);
         let rejected = 0;
         for (const [name, props] of [
           ["Text", { text: "valid", dangerouslySetInnerHTML: { __html: "<script>bad</script>" } }],
@@ -68,7 +71,10 @@ try {
           }
         }
         validateEvaluatedProps("Text", { text: "<script>escaped</script>" });
-        return { rejected, specMatches: JSON.stringify(assistantLibrary.toSpec()) === JSON.stringify(librarySpec) };
+        return {
+          rejected,
+          specMatches: JSON.stringify(getAssistantLibrary().toSpec()) === JSON.stringify(getLibrarySpec()),
+        };
       });
       assert.deepEqual(registryProof, { rejected: 6, specMatches: true });
 

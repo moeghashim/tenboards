@@ -2,7 +2,7 @@ import { createParser, generateSystemPrompt } from "@openuidev/lang-core";
 
 import { inspectLanguage } from "../src/lib/assistant/language.ts";
 import { examples, recordedReplies, recordedStream } from "../src/lib/assistant/recorded.ts";
-import { bytes, librarySpec, promptOptions, schemas, specLibrary } from "../src/lib/assistant/registry.ts";
+import { bytes, getLibrarySpec, getSpecLibrary, promptOptions, schemas } from "../src/lib/assistant/registry.ts";
 import { consumeStream, encodeEvent } from "../src/lib/assistant/transport.ts";
 import assert from "node:assert/strict";
 
@@ -11,7 +11,7 @@ const check = (condition: unknown) => {
   assert.ok(condition);
   passed++;
 };
-const parser = createParser(specLibrary.toJSONSchema(), "Stack");
+const parser = createParser(getSpecLibrary().toJSONSchema(), "Stack");
 for (const [id, source] of Object.entries({
   ...recordedReplies,
   numbers: 'root = Stack([Table(["Value"], [[-12.5], [1e-3], [2E+2], [-0.25]])])',
@@ -70,9 +70,9 @@ check(
     series: Array.from({ length: 5 }, () => ({ label: "x", values: [1] })),
   }).success,
 );
-const system = generateSystemPrompt({ library: librarySpec, promptOptions });
+const system = generateSystemPrompt({ library: getLibrarySpec(), promptOptions });
 check(bytes(system) <= 32768);
-check(Object.keys(librarySpec.components).length === 8);
+check(Object.keys(getLibrarySpec().components).length === 8);
 const source = 'root = Stack([Text("Café 🙂 漢字")])';
 const chunks = [...encodeEvent({ v: 1, type: "text-delta", text: source }), ...encodeEvent({ v: 1, type: "finish" })];
 for (const width of [1, 2, 3, 7, 101]) {

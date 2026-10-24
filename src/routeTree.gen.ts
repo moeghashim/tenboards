@@ -14,6 +14,7 @@ import { Route as mainChatRouteRouteImport } from './routes/(main)/chat/route'
 import { Route as mainDashboardRouteRouteImport } from './routes/(main)/dashboard/route'
 import { Route as mainMailRouteRouteImport } from './routes/(main)/mail/route'
 import { Route as mainUnauthorizedRouteImport } from './routes/(main)/unauthorized'
+import { Route as ApiAssistantRouteImport } from './routes/api/assistant'
 import { Route as mainAuthV2RouteRouteImport } from './routes/(main)/auth/v2/route'
 import { Route as mainDashboardIndexRouteImport } from './routes/(main)/dashboard/index'
 import { Route as mainDashboardSplatRouteImport } from './routes/(main)/dashboard/$'
@@ -73,6 +74,11 @@ const mainMailRouteRoute = mainMailRouteRouteImport.update({
 const mainUnauthorizedRoute = mainUnauthorizedRouteImport.update({
   id: '/(main)/unauthorized',
   path: '/unauthorized',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAssistantRoute = ApiAssistantRouteImport.update({
+  id: '/api/assistant',
+  path: '/api/assistant',
   getParentRoute: () => rootRouteImport,
 } as any)
 const mainAuthV2RouteRoute = mainAuthV2RouteRouteImport.update({
@@ -274,6 +280,7 @@ export interface FileRoutesByFullPath {
   '/dashboard': typeof mainDashboardRouteRouteWithChildren
   '/mail': typeof mainMailRouteRoute
   '/unauthorized': typeof mainUnauthorizedRoute
+  '/api/assistant': typeof ApiAssistantRoute
   '/': typeof externalIndexRoute
   '/auth/v2': typeof mainAuthV2RouteRouteWithChildren
   '/dashboard/academy': typeof mainDashboardAcademyRouteRoute
@@ -315,6 +322,7 @@ export interface FileRoutesByTo {
   '/chat': typeof mainChatRouteRoute
   '/mail': typeof mainMailRouteRoute
   '/unauthorized': typeof mainUnauthorizedRoute
+  '/api/assistant': typeof ApiAssistantRoute
   '/': typeof externalIndexRoute
   '/auth/v2': typeof mainAuthV2RouteRouteWithChildren
   '/dashboard/academy': typeof mainDashboardAcademyRouteRoute
@@ -358,6 +366,7 @@ export interface FileRoutesById {
   '/(main)/dashboard': typeof mainDashboardRouteRouteWithChildren
   '/(main)/mail': typeof mainMailRouteRoute
   '/(main)/unauthorized': typeof mainUnauthorizedRoute
+  '/api/assistant': typeof ApiAssistantRoute
   '/(external)/': typeof externalIndexRoute
   '/(main)/auth/v2': typeof mainAuthV2RouteRouteWithChildren
   '/(main)/dashboard/academy': typeof mainDashboardAcademyRouteRoute
@@ -402,6 +411,7 @@ export interface FileRouteTypes {
     | '/dashboard'
     | '/mail'
     | '/unauthorized'
+    | '/api/assistant'
     | '/'
     | '/auth/v2'
     | '/dashboard/academy'
@@ -443,6 +453,7 @@ export interface FileRouteTypes {
     | '/chat'
     | '/mail'
     | '/unauthorized'
+    | '/api/assistant'
     | '/'
     | '/auth/v2'
     | '/dashboard/academy'
@@ -485,6 +496,7 @@ export interface FileRouteTypes {
     | '/(main)/dashboard'
     | '/(main)/mail'
     | '/(main)/unauthorized'
+    | '/api/assistant'
     | '/(external)/'
     | '/(main)/auth/v2'
     | '/(main)/dashboard/academy'
@@ -528,6 +540,7 @@ export interface RootRouteChildren {
   mainDashboardRouteRoute: typeof mainDashboardRouteRouteWithChildren
   mainMailRouteRoute: typeof mainMailRouteRoute
   mainUnauthorizedRoute: typeof mainUnauthorizedRoute
+  ApiAssistantRoute: typeof ApiAssistantRoute
   externalIndexRoute: typeof externalIndexRoute
   mainAuthV2RouteRoute: typeof mainAuthV2RouteRouteWithChildren
   mainDashboardAnalyticsV1Route: typeof mainDashboardAnalyticsV1Route
@@ -574,6 +587,13 @@ declare module '@tanstack/react-router' {
       path: '/unauthorized'
       fullPath: '/unauthorized'
       preLoaderRoute: typeof mainUnauthorizedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/assistant': {
+      id: '/api/assistant'
+      path: '/api/assistant'
+      fullPath: '/api/assistant'
+      preLoaderRoute: typeof ApiAssistantRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/(main)/auth/v2': {
@@ -903,6 +923,7 @@ const rootRouteChildren: RootRouteChildren = {
   mainDashboardRouteRoute: mainDashboardRouteRouteWithChildren,
   mainMailRouteRoute: mainMailRouteRoute,
   mainUnauthorizedRoute: mainUnauthorizedRoute,
+  ApiAssistantRoute: ApiAssistantRoute,
   externalIndexRoute: externalIndexRoute,
   mainAuthV2RouteRoute: mainAuthV2RouteRouteWithChildren,
   mainDashboardAnalyticsV1Route: mainDashboardAnalyticsV1Route,

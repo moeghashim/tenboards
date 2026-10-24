@@ -1,20 +1,20 @@
-import type { AuthEnvironment } from "../lib/auth/config.ts";
+import type { RuntimeEnvironment } from "./assistant/config.server.ts";
 import { databaseUrl } from "./data/source-config.ts";
 import { AsyncLocalStorage } from "node:async_hooks";
 
-export type RuntimeBindings = AuthEnvironment & { HYPERDRIVE?: unknown };
+export type RuntimeBindings = RuntimeEnvironment & { HYPERDRIVE?: unknown };
 type RuntimeRequest = Request & {
   runtime?: { cloudflare?: { env: RuntimeBindings } };
 };
 type RequestScope = {
-  env: AuthEnvironment;
+  env: RuntimeEnvironment;
   resources: Map<symbol, unknown>;
   cleanup: (() => Promise<void>)[];
 };
 const requests = new AsyncLocalStorage<RequestScope>();
 
 // Resolve once at the request boundary. Never merge Worker bindings with process.env.
-export function resolveEnvironment(bindings: RuntimeBindings): AuthEnvironment {
+export function resolveEnvironment(bindings: RuntimeBindings): RuntimeEnvironment {
   if (bindings.DATA_SOURCE === "demo" || !("HYPERDRIVE" in bindings)) return { ...bindings };
   const binding = bindings.HYPERDRIVE;
   if (
@@ -31,7 +31,7 @@ export function resolveEnvironment(bindings: RuntimeBindings): AuthEnvironment {
   return env;
 }
 
-export function runtimeEnvironment(): AuthEnvironment {
+export function runtimeEnvironment(): RuntimeEnvironment {
   return requests.getStore()?.env ?? process.env;
 }
 
@@ -46,7 +46,7 @@ export async function withRuntimeRequest<T>(
 ): Promise<T> {
   const cloudflare = request.runtime?.cloudflare;
   if (!cloudflare) return next();
-  let env: AuthEnvironment;
+  let env: RuntimeEnvironment;
   try {
     env = resolveEnvironment(cloudflare.env);
     env.REQUIRE_AUTH_ORIGIN = !["localhost", "127.0.0.1", "[::1]"].includes(new URL(request.url).hostname);
