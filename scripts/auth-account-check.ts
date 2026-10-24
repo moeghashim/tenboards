@@ -172,7 +172,7 @@ try {
   await page.getByText("Session revoked.", { exact: true }).waitFor();
   assert.equal((await callRpc(other, dataFile, "loadData", "GET")).ok, false);
   await other.goto(`${server.baseURL}/dashboard/tasks`, { waitUntil: "domcontentloaded" });
-  assert.equal(new URL(other.url()).pathname, "/auth/v1/login");
+  assert.equal(new URL(other.url()).pathname, "/auth/v2/login");
   assert.equal(
     (await callRpc(page, rpcFile, "revokeAccountSession", "POST", { id: target.id })).result.status,
     "unavailable",
@@ -210,7 +210,7 @@ try {
   await page.getByRole("button", { name: "Refresh sessions", exact: true }).click();
   await page.getByRole("button", { name: "Sign in again", exact: true }).waitFor();
   await page.getByRole("button", { name: "Sign in again", exact: true }).click();
-  await page.waitForURL((url) => url.pathname === "/auth/v1/login");
+  await page.waitForURL((url) => url.pathname === "/auth/v2/login");
   assert.equal(new URL(page.url()).searchParams.get("redirect"), "/dashboard/profile?tab=account");
   pass("Fresh-session requirement has working signout/re-login return flow without auth loop");
   await login(a, emailA, newPassword);
@@ -251,7 +251,7 @@ try {
   pass("Account service/network failure displays retry and recovers with real data");
   await page.getByRole("button", { name: "Revoke current session", exact: true }).click();
   await page.getByRole("button", { name: "Confirm revocation", exact: true }).click();
-  await page.waitForURL((url) => url.pathname === "/auth/v1/login");
+  await page.waitForURL((url) => url.pathname === "/auth/v2/login");
   assert.equal(await (await a.request.get(`${server.baseURL}/api/auth/get-session`)).json(), null);
   assert.ok(!(await a.cookies()).some((c) => c.name === "better-auth.session_token"));
   assert.equal((await callRpc(page, dataFile, "loadData", "GET")).ok, false);

@@ -11,7 +11,7 @@ const loadData = createServerFn({ method: "GET" }).handler(async () => {
   await requireSession();
   const { requestReference } = await import("@/server/request-reference.server");
   const { readDefault } = await import("@/server/data/default");
-  return readDefault({ variant: "current", renderedAt: requestReference() });
+  return readDefault({ renderedAt: requestReference() });
 });
 
 export const Route = createFileRoute("/(main)/dashboard/default")({

@@ -22,7 +22,7 @@ const loadData = createServerFn({ method: "GET" }).handler(async () => {
   await requireSession();
   const { requestReference } = await import("@/server/request-reference.server");
   const { readFinance } = await import("@/server/data/finance");
-  return readFinance({ variant: "current", renderedAt: requestReference() });
+  return readFinance({ renderedAt: requestReference() });
 });
 
 export const Route = createFileRoute("/(main)/dashboard/finance")({

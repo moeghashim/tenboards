@@ -19,21 +19,19 @@ try {
     ["db", [dbDefault, dbCrm, dbFinance, dbAnalytics]],
   ] as const) {
     const [defaults, crm, finance, analytics] = reads;
-    for (const variant of ["current", "v1"] as const) {
-      const input = { variant, renderedAt, id: "missing" };
+    {
+      const input = { renderedAt, id: "missing" };
       const a = await defaults(input),
         b = await crm(input),
         c = await finance(input),
         d = await analytics(input);
-      assert.equal(a.current.recordsCustomers.length + a.v1.recordsProposals.length, 0);
-      assert.equal(b.current.recordsOpportunities.length + b.v1.crmConfigRecentLeadsData.length, 0);
-      assert.equal(c.current.walletWalletCards.length + c.v1.cardOverviewUpcomingPayments.length, 0);
-      assert.equal(d.current.topPagesPages.length + d.v1.analyticsActionsRiskLedgerLedgerRows.length, 0);
-      for (const read of reads) await assert.rejects(() => read({ variant, renderedAt: "not-a-date" }));
-      await assert.rejects(() => analytics({ variant, renderedAt, from: "2026-10-07", to: "2026-10-01" }));
-      await assert.rejects(() => analytics({ variant, renderedAt, from: "2026-02-29", to: "2026-03-01" }));
+      assert.equal(a.current.recordsCustomers.length, 0);
+      assert.equal(b.current.recordsOpportunities.length, 0);
+      assert.equal(c.current.walletWalletCards.length, 0);
+      assert.equal(d.current.topPagesPages.length, 0);
+      for (const read of reads) await assert.rejects(() => read({ renderedAt: "not-a-date" }));
     }
-    console.log(`PASS ${source}: both variants return empty missing-ID records and reject invalid dates/ranges`);
+    console.log(`PASS ${source}: current screens return empty missing-ID records and reject invalid timestamps`);
   }
 } finally {
   await closeDatabase();

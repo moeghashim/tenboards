@@ -19,7 +19,7 @@ const loadData = createServerFn({ method: "GET" }).handler(async () => {
   await requireSession();
   const { requestReference } = await import("@/server/request-reference.server");
   const { readAnalytics } = await import("@/server/data/analytics");
-  return readAnalytics({ variant: "current", renderedAt: requestReference() });
+  return readAnalytics({ renderedAt: requestReference() });
 });
 
 export const Route = createFileRoute("/(main)/dashboard/analytics")({

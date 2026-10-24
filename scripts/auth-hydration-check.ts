@@ -31,8 +31,6 @@ try {
         mobile: { width: 390, height: 844 },
       }))
         for (const route of [
-          "/auth/v1/login",
-          "/auth/v1/register",
           "/auth/v2/login",
           "/auth/v2/register",
           "/dashboard/default",

@@ -1,7 +1,7 @@
 import type { Page } from "playwright";
 
 import { captureAuth } from "./screenshot-auth.ts";
-import { captureAnalyticsRange, captureCore } from "./screenshot-core.ts";
+import { captureCore } from "./screenshot-core.ts";
 import { captureDirectories } from "./screenshot-directories.ts";
 import { captureProducts } from "./screenshot-products.ts";
 import { captureProfile } from "./screenshot-profile.ts";
@@ -17,8 +17,7 @@ export async function captureInteractions(
   if (["/", "/dashboard", "/dashboard/"].includes(route)) return captureSystem(page, route, captureVariant);
   if (route === "/dashboard/default")
     return [...(await captureShell(page, captureVariant)), ...(await captureCore(page, route, captureVariant))];
-  if (["/dashboard/default-v1", "/dashboard/crm", "/dashboard/crm-v1", "/dashboard/finance-v1"].includes(route))
-    return captureCore(page, route, captureVariant);
+  if (route === "/dashboard/crm") return captureCore(page, route, captureVariant);
   if (route.startsWith("qa:") || ["/dashboard/coming-soon", "/dashboard/$", "/unauthorized"].includes(route))
     return captureSystem(page, route, captureVariant);
   if (route.startsWith("/auth/")) return captureAuth(page, route, captureVariant);
@@ -866,22 +865,6 @@ export async function captureInteractions(
       "Last 7 days selected",
       "Campaigns displays Spring Launch / Newsletter / Retargeting / Brand Search / Partners",
     ];
-  }
-  if (route === "/dashboard/analytics-v1") {
-    await captureAnalyticsRange(page, captureVariant);
-    await page.getByRole("button", { name: /Filters/ }).click();
-    await page.getByText("Enterprise only", { exact: true }).click();
-    await page.keyboard.press("Escape");
-    await page.getByRole("button", { name: /^Filters\s*2$/ }).waitFor();
-    await page.getByText("Enterprise · Renewals", { exact: true }).waitFor();
-    await page.getByRole("combobox").filter({ hasText: "Risk view" }).click();
-    await page.getByRole("option", { name: /Momentum/ }).click();
-    await page.getByRole("combobox").filter({ hasText: "Momentum" }).waitFor();
-    await page.getByRole("button", { name: "Risk Ladder", exact: true }).click();
-    const firstRow = await page.locator("tbody tr").first().textContent();
-    if (!firstRow?.includes("Soylent Foods") || !firstRow.includes("31"))
-      throw new Error(`Unexpected sorted row: ${firstRow}`);
-    return ["Enterprise + Renewals filter count 2", "Momentum selected", "Risk ascending: Soylent Foods / 31 first"];
   }
   throw new Error(`No interaction scenario for ${route}. Use an explicit supported --routes subset.`);
 }

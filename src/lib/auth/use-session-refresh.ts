@@ -17,7 +17,7 @@ export function useSessionRefresh(enabled: boolean) {
         const state = await getAuthState();
         if (!disposed && state.mode === "auth" && !state.user) {
           const destination = authDestination(window.location.pathname + window.location.search + window.location.hash);
-          window.location.replace(`/auth/v1/login?redirect=${encodeURIComponent(destination)}`);
+          window.location.replace(`/auth/v2/login?redirect=${encodeURIComponent(destination)}`);
         }
       } catch {
         // A fresh server document reports an unavailable service; never downgrade

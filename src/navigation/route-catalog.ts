@@ -128,36 +128,12 @@ export const captureRoutes = [
     ready: "Total Revenue",
   },
   {
-    route: "/auth/v1/login",
-    path: "/auth/v1/login",
-  },
-  {
-    route: "/auth/v1/register",
-    path: "/auth/v1/register",
-  },
-  {
     route: "/auth/v2/login",
     path: "/auth/v2/login",
   },
   {
     route: "/auth/v2/register",
     path: "/auth/v2/register",
-  },
-  {
-    route: "/dashboard/analytics-v1",
-    path: "/dashboard/analytics-v1",
-  },
-  {
-    route: "/dashboard/crm-v1",
-    path: "/dashboard/crm-v1",
-  },
-  {
-    route: "/dashboard/default-v1",
-    path: "/dashboard/default-v1",
-  },
-  {
-    route: "/dashboard/finance-v1",
-    path: "/dashboard/finance-v1",
   },
 ] as const satisfies readonly { route: string; path: string; ready?: string; status?: number }[];
 

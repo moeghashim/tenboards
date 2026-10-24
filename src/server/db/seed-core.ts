@@ -5,42 +5,16 @@ import { seedMetricCollection } from "./seed-metrics.ts";
 
 type Transaction = Parameters<Parameters<ReturnType<typeof getDatabase>["transaction"]>[0]>[0];
 
-import { current as analyticsCurrent, v1 as analyticsV1 } from "./fixtures/analytics.ts";
-import { current as crmCurrent, v1 as crmV1 } from "./fixtures/crm.ts";
-import { current as defaultCurrent, v1 as defaultV1 } from "./fixtures/default.ts";
-import { current as financeCurrent, v1 as financeV1 } from "./fixtures/finance.ts";
+import { current as analyticsCurrent } from "./fixtures/analytics.ts";
+import { current as crmCurrent } from "./fixtures/crm.ts";
+import { current as defaultCurrent } from "./fixtures/default.ts";
+import { current as financeCurrent } from "./fixtures/finance.ts";
 export async function seedCore(tx: Transaction) {
-  for (const [position, item] of analyticsV1.coverageAssignment.entries()) {
-    const row = { ...item, position };
-    await tx
-      .insert(s.analyticsCoverageAssignments)
-      .values(row)
-      .onConflictDoUpdate({ target: s.analyticsCoverageAssignments.id, set: row });
-  }
-  for (const [position, item] of defaultV1.reviewers.entries()) {
-    const row = { ...item, position };
-    await tx.insert(s.defaultReviewers).values(row).onConflictDoUpdate({ target: s.defaultReviewers.value, set: row });
-  }
-
   await seedMetricCollection(
     tx,
     "core-default",
     "current.performanceOverviewChartValues",
     defaultCurrent.performanceOverviewChartValues,
-    "count",
-  );
-  await seedMetricCollection(
-    tx,
-    "core-default",
-    "v1.chartAreaInteractiveChartData",
-    defaultV1.chartAreaInteractiveChartData,
-    "count",
-  );
-  await seedMetricCollection(
-    tx,
-    "core-default",
-    "v1.proposalSectionsTableColumnsChartData",
-    defaultV1.proposalSectionsTableColumnsChartData,
     "count",
   );
   await seedMetricCollection(tx, "core-crm", "current.kpiCardsMetrics", crmCurrent.kpiCardsMetrics, "count");
@@ -51,106 +25,6 @@ export async function seedCore(tx: Transaction) {
     crmCurrent.pipelineActivityPipelineChartValues.map((value) => ({ value })),
     "count",
   );
-  await seedMetricCollection(tx, "core-crm", "v1.crmConfigLeadsChartData", crmV1.crmConfigLeadsChartData, "count");
-  await seedMetricCollection(
-    tx,
-    "core-crm",
-    "v1.crmConfigProposalsChartData",
-    crmV1.crmConfigProposalsChartData,
-    "count",
-  );
-  await seedMetricCollection(
-    tx,
-    "core-crm",
-    "v1.crmConfigRevenueChartData",
-    crmV1.crmConfigRevenueChartData,
-    "currency",
-  );
-  await seedMetricCollection(
-    tx,
-    "core-crm",
-    "v1.crmConfigLeadsBySourceChartData",
-    crmV1.crmConfigLeadsBySourceChartData,
-    "count",
-  );
-  for (const [position, item] of crmV1.crmConfigProjectRevenueChartData.entries()) {
-    const row = {
-      recordKey: String(position),
-      position,
-      name: item.name,
-      actual: String(item.actual),
-      target: String(item.target),
-      remaining: String(item.remaining),
-    };
-    await tx
-      .insert(s.crmV1CrmConfigProjectRevenueChartData)
-      .values(row)
-      .onConflictDoUpdate({ target: s.crmV1CrmConfigProjectRevenueChartData.recordKey, set: row });
-  }
-  await seedMetricCollection(
-    tx,
-    "core-crm",
-    "v1.crmConfigSalesPipelineChartData",
-    crmV1.crmConfigSalesPipelineChartData,
-    "count",
-  );
-  for (const [position, item] of crmV1.crmConfigRegionSalesData.entries()) {
-    const growthFormat = splitMetric(item.growth);
-    const growthPart = growthFormat.parts[0];
-    if (!growthPart || growthFormat.parts.length !== 1) throw new Error("Expected a scalar measure");
-    const row = {
-      recordKey: String(position),
-      position,
-      region: item.region,
-      sales: String(item.sales),
-      percentage: String(item.percentage),
-      growth: growthPart.value,
-      growthTemplate: growthFormat.template,
-      growthPrefix: growthPart.prefix,
-      growthDecimals: growthPart.decimals,
-      growthGrouped: growthPart.grouped,
-      growthScale: growthPart.scale,
-      growthLeadingDecimal: growthPart.leadingDecimal,
-      growthUnit: growthPart.unit,
-      isPositive: item.isPositive,
-    };
-    await tx
-      .insert(s.crmV1CrmConfigRegionSalesData)
-      .values(row)
-      .onConflictDoUpdate({ target: s.crmV1CrmConfigRegionSalesData.recordKey, set: row });
-  }
-  for (const [position, item] of crmV1.crmConfigActionItems.entries()) {
-    const row = {
-      recordKey: String(item.id),
-      position,
-      id: String(item.id),
-      title: item.title,
-      desc: item.desc,
-      due: item.due,
-      priority: item.priority,
-      checked: item.checked,
-    };
-    await tx
-      .insert(s.crmV1CrmConfigActionItems)
-      .values(row)
-      .onConflictDoUpdate({ target: s.crmV1CrmConfigActionItems.recordKey, set: row });
-  }
-  for (const [position, item] of crmV1.crmConfigRecentLeadsData.entries()) {
-    const row = {
-      recordKey: String(item.id),
-      position,
-      id: item.id,
-      name: item.name,
-      company: item.company,
-      status: item.status,
-      source: item.source,
-      lastActivity: item.lastActivity,
-    };
-    await tx
-      .insert(s.crmV1CrmConfigRecentLeadsData)
-      .values(row)
-      .onConflictDoUpdate({ target: s.crmV1CrmConfigRecentLeadsData.recordKey, set: row });
-  }
   await seedMetricCollection(
     tx,
     "core-finance",
@@ -268,35 +142,6 @@ export async function seedCore(tx: Transaction) {
       .values(row)
       .onConflictDoUpdate({ target: s.financeCurrentQuickActionsContacts.recordKey, set: row });
   }
-  for (const [position, item] of financeV1.cardOverviewUpcomingPayments.entries()) {
-    const row = {
-      recordKey: String(item.id),
-      position,
-      id: String(item.id),
-      icon: item.icon,
-      title: item.title,
-      amount: String(item.amount),
-      date: item.date,
-    };
-    await tx
-      .insert(s.financeV1CardOverviewUpcomingPayments)
-      .values(row)
-      .onConflictDoUpdate({ target: s.financeV1CardOverviewUpcomingPayments.recordKey, set: row });
-  }
-  await seedMetricCollection(
-    tx,
-    "core-finance",
-    "v1.cashFlowOverviewChartData",
-    financeV1.cashFlowOverviewChartData,
-    "currency",
-  );
-  await seedMetricCollection(
-    tx,
-    "core-finance",
-    "v1.spendingBreakdownExpenses",
-    financeV1.spendingBreakdownExpenses,
-    "currency",
-  );
   await seedMetricCollection(
     tx,
     "core-analytics",
@@ -421,56 +266,6 @@ export async function seedCore(tx: Transaction) {
     analyticsCurrent.trafficQualityQualitySeries,
     "percent",
   );
-  await seedMetricCollection(
-    tx,
-    "core-analytics",
-    "v1.analyticsOverviewRiskSummaryMetrics",
-    analyticsV1.analyticsOverviewRiskSummaryMetrics,
-    "count",
-  );
-  await seedMetricCollection(
-    tx,
-    "core-analytics",
-    "v1.analyticsDriversForecastTargetChartData",
-    analyticsV1.analyticsDriversForecastTargetChartData,
-    "percent",
-  );
-  for (const [position, item] of analyticsV1.analyticsActionsRiskLedgerLedgerRows.entries()) {
-    const row = {
-      recordKey: String(item.id),
-      position,
-      id: String(item.id),
-      account: item.account,
-      dealId: item.dealId,
-      stage: item.stage,
-      blocker: item.blocker,
-      owner: item.owner,
-      idleDays: String(item.idleDays),
-      closeVariance: item.closeVariance,
-      priority: item.priority,
-      nextAction: item.nextAction,
-      riskScore: String(item.riskScore),
-    };
-    await tx
-      .insert(s.analyticsV1AnalyticsActionsRiskLedgerLedgerRows)
-      .values(row)
-      .onConflictDoUpdate({ target: s.analyticsV1AnalyticsActionsRiskLedgerLedgerRows.recordKey, set: row });
-  }
-  for (const [position, item] of analyticsV1.analyticsActionsManagerQueueNextInterventions.entries()) {
-    const row = {
-      recordKey: String(position),
-      position,
-      dealId: item.dealId,
-      priority: item.priority,
-      owner: item.owner,
-      risk: String(item.risk),
-      recommendation: item.recommendation,
-    };
-    await tx
-      .insert(s.analyticsV1AnalyticsActionsManagerQueueNextInterventions)
-      .values(row)
-      .onConflictDoUpdate({ target: s.analyticsV1AnalyticsActionsManagerQueueNextInterventions.recordKey, set: row });
-  }
   for (const [position, item] of defaultCurrent.recordsCustomers.entries()) {
     const row = {
       recordKey: String(item.id),
@@ -487,23 +282,6 @@ export async function seedCore(tx: Transaction) {
       .insert(s.defaultCurrentRecordsCustomers)
       .values(row)
       .onConflictDoUpdate({ target: s.defaultCurrentRecordsCustomers.recordKey, set: row });
-  }
-  for (const [position, item] of defaultV1.recordsProposals.entries()) {
-    const row = {
-      recordKey: String(item.id),
-      position,
-      id: String(item.id),
-      header: item.header,
-      type: item.type,
-      status: item.status,
-      target: item.target,
-      limit: item.limit,
-      reviewer: item.reviewer,
-    };
-    await tx
-      .insert(s.defaultV1RecordsProposals)
-      .values(row)
-      .onConflictDoUpdate({ target: s.defaultV1RecordsProposals.recordKey, set: row });
   }
   for (const [position, item] of crmCurrent.recordsOpportunities.entries()) {
     const valueFormat = splitMetric(item.value);
@@ -547,21 +325,6 @@ export async function seedCore(tx: Transaction) {
   );
   await seedMetricCollection(
     tx,
-    "core-default",
-    "v1.proposalSectionsTableColumnsSummary",
-    defaultV1.proposalSectionsTableColumnsSummary,
-    "count",
-  );
-  await seedMetricCollection(
-    tx,
-    "core-default",
-    "v1.proposalSectionsTableTableSummary",
-    defaultV1.proposalSectionsTableTableSummary,
-    "count",
-  );
-  await seedMetricCollection(tx, "core-default", "v1.sectionCardsSummary", defaultV1.sectionCardsSummary, "count");
-  await seedMetricCollection(
-    tx,
     "core-crm",
     "current.pipelineActivitySummary",
     crmCurrent.pipelineActivitySummary,
@@ -583,9 +346,6 @@ export async function seedCore(tx: Transaction) {
       .values(row)
       .onConflictDoUpdate({ target: s.crmCurrentTaskRemindersSummary.recordKey, set: row });
   }
-  await seedMetricCollection(tx, "core-crm", "v1.insightCardsSummary", crmV1.insightCardsSummary, "count");
-  await seedMetricCollection(tx, "core-crm", "v1.operationalCardsSummary", crmV1.operationalCardsSummary, "count");
-  await seedMetricCollection(tx, "core-crm", "v1.overviewCardsSummary", crmV1.overviewCardsSummary, "count");
   await seedMetricCollection(
     tx,
     "core-finance",
@@ -601,74 +361,6 @@ export async function seedCore(tx: Transaction) {
     "currency",
   );
   await seedMetricCollection(tx, "core-finance", "current.pageSummary", financeCurrent.pageSummary, "count");
-  for (const [position, item] of financeV1.cardOverviewSummary.entries()) {
-    const value5Format = splitMetric(item.value5);
-    const value5Part = value5Format.parts[0];
-    if (!value5Part || value5Format.parts.length !== 1) throw new Error("Expected a scalar measure");
-    const value6Format = splitMetric(item.value6);
-    const value6Part = value6Format.parts[0];
-    if (!value6Part || value6Format.parts.length !== 1) throw new Error("Expected a scalar measure");
-    const row = {
-      cardType: item.cardType,
-      brandIcon: item.brandIcon,
-      networkIcon: item.networkIcon,
-      recordKey: String(position),
-      position,
-      value1: item.value1,
-      value2: item.value2,
-      value3: item.value3,
-      value4: item.value4,
-      value5: value5Part.value,
-      value5Template: value5Format.template,
-      value5Prefix: value5Part.prefix,
-      value5Decimals: value5Part.decimals,
-      value5Grouped: value5Part.grouped,
-      value5Scale: value5Part.scale,
-      value5LeadingDecimal: value5Part.leadingDecimal,
-      value5Unit: value5Part.unit,
-      value6: value6Part.value,
-      value6Template: value6Format.template,
-      value6Prefix: value6Part.prefix,
-      value6Decimals: value6Part.decimals,
-      value6Grouped: value6Part.grouped,
-      value6Scale: value6Part.scale,
-      value6LeadingDecimal: value6Part.leadingDecimal,
-      value6Unit: value6Part.unit,
-    };
-    await tx
-      .insert(s.financeV1CardOverviewSummary)
-      .values(row)
-      .onConflictDoUpdate({ target: s.financeV1CardOverviewSummary.recordKey, set: row });
-  }
-  await seedMetricCollection(
-    tx,
-    "core-finance",
-    "v1.incomeReliabilitySummary",
-    financeV1.incomeReliabilitySummary,
-    "count",
-  );
-  await seedMetricCollection(
-    tx,
-    "core-finance",
-    "v1.kpisMonthlyCashFlowSummary",
-    financeV1.kpisMonthlyCashFlowSummary,
-    "currency",
-  );
-  await seedMetricCollection(tx, "core-finance", "v1.kpisNetWorthSummary", financeV1.kpisNetWorthSummary, "count");
-  await seedMetricCollection(
-    tx,
-    "core-finance",
-    "v1.kpisPrimaryAccountSummary",
-    financeV1.kpisPrimaryAccountSummary,
-    "count",
-  );
-  await seedMetricCollection(
-    tx,
-    "core-finance",
-    "v1.kpisSavingsRateSummary",
-    financeV1.kpisSavingsRateSummary,
-    "count",
-  );
   await seedMetricCollection(
     tx,
     "core-analytics",
@@ -685,75 +377,11 @@ export async function seedCore(tx: Transaction) {
   }
   await seedMetricCollection(
     tx,
-    "core-analytics",
-    "v1.analyticsActionsManagerQueueSummary",
-    analyticsV1.analyticsActionsManagerQueueSummary,
-    "count",
-  );
-  await seedMetricCollection(
-    tx,
-    "core-analytics",
-    "v1.analyticsActionsRiskLedgerSummary",
-    analyticsV1.analyticsActionsRiskLedgerSummary,
-    "count",
-  );
-  await seedMetricCollection(
-    tx,
-    "core-analytics",
-    "v1.analyticsDriversCoverageTriageSummary",
-    analyticsV1.analyticsDriversCoverageTriageSummary,
-    "count",
-  );
-  await seedMetricCollection(
-    tx,
-    "core-analytics",
-    "v1.analyticsDriversForecastTargetSummary",
-    analyticsV1.analyticsDriversForecastTargetSummary,
-    "percent",
-  );
-  await seedMetricCollection(
-    tx,
-    "core-analytics",
-    "v1.analyticsOverviewSummary",
-    analyticsV1.analyticsOverviewSummary,
-    "count",
-  );
-  await seedMetricCollection(
-    tx,
-    "core-analytics",
-    "v1.analyticsDriversCoverageTriageLeverOptions",
-    analyticsV1.analyticsDriversCoverageTriageLeverOptions,
-    "count",
-  );
-  await seedMetricCollection(
-    tx,
-    "core-analytics",
-    "v1.analyticsOverviewRevenueModel",
-    analyticsV1.analyticsOverviewRevenueModel,
-    "currency",
-    { frequency: "ratio", phase: "ratio", amplitude: "ratio", bias: "ratio" },
-  );
-  for (const [position, item] of analyticsV1.analyticsOverviewDateRange.entries()) {
-    const row = { recordKey: String(item.id), position, id: item.id, from: item.from, to: item.to };
-    await tx
-      .insert(s.analyticsV1AnalyticsOverviewDateRange)
-      .values(row)
-      .onConflictDoUpdate({ target: s.analyticsV1AnalyticsOverviewDateRange.recordKey, set: row });
-  }
-  await seedMetricCollection(
-    tx,
     "core-default",
     "current.performanceOverviewTiming",
     defaultCurrent.performanceOverviewTiming,
     "duration",
   );
-  for (const [position, item] of defaultV1.chartAreaInteractiveReference.entries()) {
-    const row = { recordKey: String(item.id), position, id: item.id, date: item.date };
-    await tx
-      .insert(s.defaultV1ChartAreaInteractiveReference)
-      .values(row)
-      .onConflictDoUpdate({ target: s.defaultV1ChartAreaInteractiveReference.recordKey, set: row });
-  }
   await seedMetricCollection(
     tx,
     "core-crm",

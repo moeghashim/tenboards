@@ -38,7 +38,7 @@ for (const [label, google, github, extra] of [
     const context = await browser.newContext({ extraHTTPHeaders: testHeaders });
     await cacheCaptureFonts(context);
     const page = await context.newPage();
-    for (const variant of ["v1", "v2"])
+    for (const variant of ["v2"])
       for (const mode of ["login", "register"]) {
         await page.goto(`${server.baseURL}/auth/${variant}/${mode}`, { waitUntil: "domcontentloaded" });
         assert.equal(await page.getByRole("button", { name: "Continue with Google" }).count(), google ? 1 : 0);

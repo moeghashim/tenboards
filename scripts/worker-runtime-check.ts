@@ -126,7 +126,7 @@ try {
     assert.equal(await (await users[0].api.get("/api/auth/get-session")).json(), null);
     const guarded = await users[0].api.get("/dashboard/default", { maxRedirects: 0 });
     assert.equal(guarded.status(), 307);
-    assert.match(guarded.headers().location, /^\/auth\/v1\/login\?redirect=/);
+    assert.match(guarded.headers().location, /^\/auth\/v2\/login\?redirect=/);
     pass("later DB loss fails closed, recovers, revoked session loses protected access");
   } finally {
     for (const user of users) {
@@ -159,7 +159,7 @@ try {
         scenarios++;
       }
     }
-    assert.equal(scenarios, 130);
+    assert.equal(scenarios, 104);
     pass(`workerd HTTP parity: ${readRegistry.length} reads/${scenarios} scenarios`);
   } finally {
     await harness.stop();

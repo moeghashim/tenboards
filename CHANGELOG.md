@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.6.1 — Legacy removal (draft)
+
+- Remove the Legacy sidebar/palette group, four V1 dashboard screens and Auth V1 forms; retain ten dashboards and Auth V2.
+- Permanently redirect all six retired URLs with validated return destinations; use V2 for guards, links, sign-out and OAuth errors.
+- Remove V1-only components, data queries, fixtures, seeds and 26 parity scenarios. Add migration `0014_remove_legacy.sql` to drop 13 exclusive tables and V1 metric rows without editing shipped migrations.
+- Preserve current-screen data and v0.5 security boundaries; cover fresh/populated upgrades, repeated migrate/seed, 22 reads / 104 parity scenarios and redirect regressions.
+
 ## v0.6 — Template deployment readiness (2026-10-24)
 
 Released as [v0.6.0](https://github.com/moeghashim/tenboards/releases/tag/v0.6.0). The project stays a zero-config live demo; adopters supply their own database. No project-owned Neon provisioning or hosted cutover is claimed.

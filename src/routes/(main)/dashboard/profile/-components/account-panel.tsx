@@ -11,7 +11,7 @@ import { authClient, authError } from "@/lib/auth/client";
 import { accountName } from "@/lib/auth/name";
 
 type ReadyAccount = Extract<AccountDetails, { status: "ready" }>;
-const accountReturn = "/auth/v1/login?redirect=%2Fdashboard%2Fprofile%3Ftab%3Daccount";
+const accountReturn = "/auth/v2/login?redirect=%2Fdashboard%2Fprofile%3Ftab%3Daccount";
 
 function Reauthenticate() {
   const [error, setError] = useState("");

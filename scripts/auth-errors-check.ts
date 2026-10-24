@@ -42,7 +42,7 @@ try {
   await page.getByRole("button", { name: "Register", exact: true }).click();
   await page.getByText("Unable to register with this email. Try signing in.").waitFor();
   pass("duplicate registration safe inline error");
-  await visit(`/auth/v1/login?redirect=${encodeURIComponent("//evil.example")}`);
+  await visit(`/auth/v2/login?redirect=${encodeURIComponent("//evil.example")}`);
   await page.getByLabel("Email Address", { exact: true }).fill(email);
   await page.getByLabel("Password", { exact: true }).fill(password);
   await page.route("**/api/auth/sign-in/email", (route) => route.abort("failed"));

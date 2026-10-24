@@ -157,6 +157,14 @@
         "003-ops-docs-acceptance": "merged",
         "004-production-cutover": "merged"
       }
+    },
+    {
+      "id": "v0.6.1-legacy-removal",
+      "status": "review",
+      "tasks": ["001-remove-legacy"],
+      "taskStatuses": {
+        "001-remove-legacy": "review"
+      }
     }
   ]
 }

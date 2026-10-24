@@ -115,7 +115,7 @@ export async function checkDeployment(
       throw new Error("Session identity is missing or invalid.");
     return { id: value.user.id, email: value.user.email };
   }
-  for (const route of ["/auth/v1/login", "/auth/v1/register", "/auth/v2/login", "/auth/v2/register", "/unauthorized"]) {
+  for (const route of ["/auth/v2/login", "/auth/v2/register", "/unauthorized"]) {
     const response = await send(route);
     status(response, 200, route);
     if (!response.headers.get("content-type")?.includes("text/html")) throw new Error(`${route}: expected HTML.`);
@@ -135,7 +135,7 @@ export async function checkDeployment(
     const destination = new URL(location, origin);
     if (
       destination.origin !== origin ||
-      destination.pathname !== "/auth/v1/login" ||
+      destination.pathname !== "/auth/v2/login" ||
       destination.searchParams.get("redirect") !== "/dashboard/default" ||
       destination.hash
     )

@@ -3,7 +3,7 @@ import postgres from "postgres";
 
 import { callRpc, localDatabase, startTestServer, testHeaders, testSecret } from "./auth-test-support.ts";
 import { cacheCaptureFonts } from "./screenshot-assets.ts";
-import { captureRoutes } from "./screenshot-routes.ts";
+import { captureRoutes, httpRoutes } from "./screenshot-routes.ts";
 import assert from "node:assert/strict";
 import { mkdir, readdir, readFile } from "node:fs/promises";
 
@@ -15,15 +15,7 @@ const pass = (name: string) => {
   cases++;
   console.log(`PASS ${name}`);
 };
-const publicRoutes = new Set([
-  "/unauthorized",
-  "/auth/v2",
-  "/auth/v1/login",
-  "/auth/v1/register",
-  "/auth/v2/login",
-  "/auth/v2/register",
-  "/dashboard/$",
-]);
+const publicRoutes = new Set(["/unauthorized", "/auth/v2", "/auth/v2/login", "/auth/v2/register", "/dashboard/$"]);
 const protectedRoutes = captureRoutes.filter(({ route }) => !publicRoutes.has(route));
 const rpc: { file: string; name: string }[] = [];
 const allowedPublic = new Set([
@@ -47,12 +39,12 @@ for (const file of await readdir("src", { recursive: true })) {
     } else assert.ok(allowedPublic.has(name), `Unclassified server function ${file}:${name}`);
   }
 }
-assert.equal(rpc.length, 27);
+assert.equal(rpc.length, 23);
 const tree = await readFile("src/routeTree.gen.ts", "utf8");
 const fullPaths = tree.match(/export interface FileRoutesByFullPath \{([\s\S]*?)\n\}/)?.[1];
 assert.ok(fullPaths);
 for (const [, path] of fullPaths.matchAll(/'([^']+)':/g))
-  assert.ok(path === "/api/auth/$" || captureRoutes.some((r) => r.route === path), `Unclassified route ${path}`);
+  assert.ok(httpRoutes.includes(path) || captureRoutes.some((r) => r.route === path), `Unclassified route ${path}`);
 pass(
   `Inventory: ${captureRoutes.length} visual routes, HTTP auth handler, ${rpc.length} protected read functions, one owned session mutation and five public preference/bootstrap functions`,
 );
@@ -72,14 +64,14 @@ try {
   page.setDefaultTimeout(15000);
   for (const { path } of protectedRoutes) {
     await page.goto(server.baseURL + path, { waitUntil: "domcontentloaded" });
-    assert.equal(new URL(page.url()).pathname, "/auth/v1/login", path);
+    assert.equal(new URL(page.url()).pathname, "/auth/v2/login", path);
     await page.reload({ waitUntil: "domcontentloaded" });
-    assert.equal(new URL(page.url()).pathname, "/auth/v1/login");
+    assert.equal(new URL(page.url()).pathname, "/auth/v2/login");
     await page.waitForFunction(() => !!window.__TSR_ROUTER__);
     await page.evaluate(async (href) => {
       await window.__TSR_ROUTER__?.navigate({ href });
     }, path);
-    assert.equal(new URL(page.url()).pathname, "/auth/v1/login");
+    assert.equal(new URL(page.url()).pathname, "/auth/v2/login");
     pass(`Anonymous SSR/refresh/client navigation ${path}`);
   }
   for (const path of [
@@ -91,7 +83,7 @@ try {
     assert.equal(await page.getByRole("button", { name: /Demo account:|Signed in as/ }).count(), 0);
     pass(`Public system/auth ${path}: no account shell`);
   }
-  await page.goto(`${server.baseURL}/auth/v1/login`, { waitUntil: "domcontentloaded" });
+  await page.goto(`${server.baseURL}/auth/v2/login`, { waitUntil: "domcontentloaded" });
   for (const item of rpc) {
     const result = await callRpc(page, item.file, item.name, "GET");
     assert.equal(result.ok, false, item.file);
@@ -149,7 +141,7 @@ try {
       await db`update auth_session set expires_at = now() - interval '1 minute' where user_id = ${user.id}`;
     else await db`delete from auth_session where user_id = ${user.id}`;
     const invalidPage = await invalid.newPage();
-    await invalidPage.goto(`${server.baseURL}/auth/v1/login`, { waitUntil: "domcontentloaded" });
+    await invalidPage.goto(`${server.baseURL}/auth/v2/login`, { waitUntil: "domcontentloaded" });
     for (const item of rpc) {
       const result = await callRpc(invalidPage, item.file, item.name, "GET");
       assert.equal(result.ok, false, item.file);
@@ -160,14 +152,14 @@ try {
     if (state === "expired" || state === "revoked") {
       for (const { path } of protectedRoutes) {
         await invalidPage.goto(server.baseURL + path, { waitUntil: "domcontentloaded" });
-        assert.equal(new URL(invalidPage.url()).pathname, "/auth/v1/login");
+        assert.equal(new URL(invalidPage.url()).pathname, "/auth/v2/login");
         await invalidPage.reload({ waitUntil: "domcontentloaded" });
-        assert.equal(new URL(invalidPage.url()).pathname, "/auth/v1/login");
+        assert.equal(new URL(invalidPage.url()).pathname, "/auth/v2/login");
         await invalidPage.waitForFunction(() => !!window.__TSR_ROUTER__);
         await invalidPage.evaluate(async (href) => {
           await window.__TSR_ROUTER__?.navigate({ href });
         }, path);
-        assert.equal(new URL(invalidPage.url()).pathname, "/auth/v1/login");
+        assert.equal(new URL(invalidPage.url()).pathname, "/auth/v2/login");
         pass(`${state} SSR/refresh/client navigation ${path}`);
       }
     }
@@ -208,7 +200,7 @@ try {
   await authenticated.frameLocator("iframe").getByText("Inbox", { exact: true }).first().waitFor();
   await db`delete from auth_session where user_id = ${user.id}`;
   await authenticated.locator("iframe").evaluate((el: HTMLIFrameElement) => el.contentWindow?.location.reload());
-  await authenticated.waitForURL((url) => url.pathname === "/auth/v1/login");
+  await authenticated.waitForURL((url) => url.pathname === "/auth/v2/login");
   assert.equal(new URL(authenticated.url()).searchParams.get("redirect"), "/dashboard/mail");
   pass("Expired iframe escapes to top-level login with wrapper return path");
   await signed.request.post(`${server.baseURL}/api/auth/sign-in/email`, {
@@ -225,13 +217,13 @@ try {
   await otherView.waitForTimeout(100);
   await openMenu();
   await authenticated.getByRole("menuitem", { name: "Sign out", exact: true }).click();
-  await authenticated.waitForURL("**/auth/v1/login");
+  await authenticated.waitForURL("**/auth/v2/login");
   await authenticated.goto(`${server.baseURL}/dashboard/default`, { waitUntil: "domcontentloaded" });
-  assert.equal(new URL(authenticated.url()).pathname, "/auth/v1/login");
+  assert.equal(new URL(authenticated.url()).pathname, "/auth/v2/login");
   pass("Shell sign-out clears session and next protected document redirects");
   await otherView.bringToFront();
   await otherView.evaluate(() => window.dispatchEvent(new Event("focus")));
-  await otherView.waitForURL((url) => url.pathname === "/auth/v1/login");
+  await otherView.waitForURL((url) => url.pathname === "/auth/v2/login");
   pass("Another open view drops revoked authority on refocus");
   await anonymous.close();
   await signed.close();
