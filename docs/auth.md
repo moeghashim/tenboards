@@ -352,3 +352,13 @@ All route guards, session refreshes, sign-out destinations, account return links
 Run `node --experimental-strip-types scripts/legacy-redirect-check.ts` against a seeded local test database to check all six aliases, safe/hostile return parameters and browser/guard behavior. Current protected read coverage is 22 app-data functions plus Account details (23); owned-session mutations remain independently checked.
 
 The v0.6.1 Node rerun passes 426 scenarios across 12 suites; compiled Worker auth passes 245 protection, 15 account and 12 security cases. Removed-screen coverage is retired while credential/cookie, return-path, provider, error, ownership and failure-mode categories remain. Reports and original reruns are in [pr-assets/v061-001](https://github.com/moeghashim/tenboards/tree/pr-assets/v061-001).
+
+## v0.8 project boundaries
+
+Home, Projects index, the project layout and all five views remain under the dashboard route guard. Every new project/workspace/navigation server function independently checks `requireSession` before reading data. The shell requests summaries only inside the guarded dashboard layout; the root command palette consumes loader data and makes no protected project request on an auth/public surface. Navigation query recovery does not catch authentication failures.
+
+Projects and sample membership are shared display data for signed-in users, not a tenancy or ACL implementation. My tasks identifies Jordan Lee as the sample member rather than claiming the session user's assignments. There are no task/file/member/favorite mutation endpoints. Existing account ownership, origin, cookie, provider, rate-limit and session-revocation rules remain unchanged.
+
+The legacy Kanban/Tasks/Calendar/File Manager aliases recheck the app guard and issue 308 only after authorization. Login-return follows the original local URL and fragment through the canonical redirect; unknown legacy search keys are discarded. `/`, dashboard index and invalid auth-return fallback resolve to `/dashboard/home`; validated return destinations still win.
+
+Run `scripts/project-access-check.ts` in Node and with `AUTH_TEST_RUNTIME=workerd` against a built local Worker for malformed/cross-project/missing IDs, independent RPC denial, cache headers and revocation. `project-redirect-check.ts` covers 80 demo/auth redirect cases; `legacy-redirect-check.ts` retains the 96 V1 cases. The integrated inventory is 27 guarded read functions (including account details), plus the existing owned-session mutation and five public bootstrap/preference functions. Full local suites do not claim hosted DB/Hyperdrive or provider round-trip acceptance.

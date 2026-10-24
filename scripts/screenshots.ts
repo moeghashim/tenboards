@@ -13,6 +13,7 @@ const { values } = parseArgs({
   options: {
     "base-url": { type: "string", default: "http://127.0.0.1:3000" },
     routes: { type: "string" },
+    "project-id": { type: "string", default: "sample-operations" },
     search: { type: "string" },
     output: { type: "string", default: "screenshots" },
     preset: { type: "string", default: "default" },
@@ -48,10 +49,23 @@ const stale = captureRoutes.filter((entry) => !generatedRoutes.includes(entry.ro
 if (missing.length || stale.length) {
   throw new Error(`Route inventory mismatch: missing=${JSON.stringify(missing)}, stale=${JSON.stringify(stale)}`);
 }
+const projectNames: Record<string, string> = {
+  "sample-operations": "Operations rollout",
+  "sample-docs": "Documentation refresh",
+  "sample-empty": "Research queue",
+};
+const projectId = values["project-id"];
+if (!Object.hasOwn(projectNames, projectId))
+  throw new Error("Capture project must be sample-operations, sample-docs or sample-empty.");
 const requested = values.routes?.split(",");
-const selected: Array<{ route: string; path: string; ready?: string; status?: number }> = captureRoutes.filter(
-  (entry) => !requested || requested.includes(entry.route),
-);
+const selected: Array<{ route: string; path: string; ready?: string; status?: number }> = captureRoutes
+  .filter((entry) => !requested || requested.includes(entry.route))
+  .map((entry) => ({ ...entry }));
+for (const entry of selected)
+  if (entry.route.includes("$projectId")) {
+    entry.path = entry.path.replace("sample-operations", projectId);
+    entry.ready = projectNames[projectId];
+  }
 const unknown = requested?.filter(
   (route) => !httpRoutes.includes(route) && !captureRoutes.some((entry) => entry.route === route),
 );
@@ -281,7 +295,7 @@ try {
   await browser.close();
   await writeFile(
     path.join(output, "report.json"),
-    `${JSON.stringify({ baseURL, fontAssets: "exact public responses cached between contexts", maskedLiveClocks: values["mask-live-clocks"], reference, search: values.search, hydrationDelayMs, preset: values.preset, timezone: values.timezone, reload: values.reload, interactions: values.interactions, sidebarStates: values["sidebar-states"], results }, null, 2)}\n`,
+    `${JSON.stringify({ baseURL, projectId, fontAssets: "exact public responses cached between contexts", maskedLiveClocks: values["mask-live-clocks"], reference, search: values.search, hydrationDelayMs, preset: values.preset, timezone: values.timezone, reload: values.reload, interactions: values.interactions, sidebarStates: values["sidebar-states"], results }, null, 2)}\n`,
   );
 }
 if (results.some((result) => result.errors.length)) process.exitCode = 1;

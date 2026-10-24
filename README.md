@@ -378,8 +378,8 @@ Cumulative parity covers seven reads and 26 scenarios, including product filters
 ### Workspace reads (v0.4/004)
 
 Kanban, Tasks, Calendar and File Manager now load through the optional data source.
-Their local drag, filter, selection and star controls remain session-only. Kanban
-and the Tasks ledger retain separate records. Calendar stores typed relative event
+Those legacy readers and records remain for provenance/parity; v0.8 project views use the canonical read-only task domain and remove the old drag/status/star compositions. The original Kanban
+and Tasks ledger records remain separately traceable. Calendar stores typed relative event
 definitions, resolves one request timestamp for SSR, then adopts browser-local civil
 time after hydration; Today and the now marker continue using the live clock.
 Migration `0005_abandoned_red_ghost.sql` extends the cumulative journal. Parity covers
@@ -560,3 +560,15 @@ Run `scripts/project-navigation-check.ts` for disclosure/rail/mobile/palette/sto
 Workspace Home is the landing page, per the locked 2026-10-25 PLAN decision. `/`, `/dashboard` and `/dashboard/` retain their existing 307/replace redirect mechanism and lead to `/dashboard/home`. Missing or unsafe post-sign-in/OAuth return values fall back to Home; validated destinations still win. `/dashboard/default` remains the revenue dashboard under Dashboards. The consolidated Kanban Board is read-only: the former local drag-and-drop interaction has been removed, and tasks cannot be moved or reordered.
 
 With the three sample projects, the demo card counts **35 enabled concrete dashboard destinations**, including AI Assistant and all 15 project views; aliases are excluded.
+
+## Projects integrated acceptance (v0.8 / 006)
+
+The six v0.8 layers are stacked for review; they do not constitute a merged release. Claude owns review, merge/rebase, production deployment and release. Package version and release tags remain unchanged. The application uses the v0.6.2 compact system; no additional runtime dependency or hosted service was introduced.
+
+The capture inventory contains 36 visual route patterns and 14 HTTP/redirect-only routes. Dynamic project patterns resolve to the concrete `sample-operations` fixture by default. Use `--project-id sample-docs` or `--project-id sample-empty` with the five project route patterns to capture the secondary/empty projects. Only those three known fixture IDs are accepted. Reports record the selected project and each case's diagnostics; the actual app clock remains live. For example:
+
+```sh
+npm run screenshots -- --base-url http://localhost:3277 --preset pine --project-id sample-docs --routes '/dashboard/projects/$projectId/overview,/dashboard/projects/$projectId/board,/dashboard/projects/$projectId/list,/dashboard/projects/$projectId/timeline,/dashboard/projects/$projectId/files' --output screenshots/v08-project-docs
+```
+
+Integrated acceptance combines the full retained-route Default/Graphite/Pine/Iris matrix (light/dark × desktop/mobile), the secondary/empty project matrix, focused task/navigation/workspace interactions and delayed real-clock Calendar/Home checks. Node/compiled workerd verify guards and failure recovery, 29-read/211-scenario parity and migration preservation. Navigation tests also exercise all sidebar layout/collapse combinations and real isolated DB error/empty recovery. Evidence and a consolidated report belong on `pr-assets/v08-006`; screenshots never enter the implementation branch.

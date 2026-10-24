@@ -8,13 +8,13 @@
 
 - Replace inherited generated ledger titles with neutral operations-rollout tasks; repeat seeds preserve IDs and update both legacy and canonical copies.
 
-- Complete project Overview, Timeline (Gantt/table/Calendar) and Files with validated index redirects, bounded civil-date ranges, separate unscheduled work and read-only existing-component adapters. Extend parity to 204 scenarios.
-
-- Add guarded project Board/List routes, project switching, canonical read-only details, URL filters and bounded pagination; retain existing standalone views.
-
-- Add the read-only Projects data foundation with additive migration/backfill, explicit legacy mappings, synthetic memberships, canonical tasks, labels, subtasks, file/calendar links and sample activity.
-- Add seven bounded project/workspace reads and extend demo/DB parity to 29 reads / 202 scenarios. Navigation consolidation remains pending.
-- Make local test ports configurable for concurrent isolated worktrees.
+- Add a read-only workspace Home and searchable Projects index, with complete Overview, Board, List, Timeline and Files for each project.
+- Share canonical tasks, scoped totals and request-relative sample dates across demo and database sources; preserve adopter dates, legacy rows and auth data through additive migration/backfill. Parity covers 29 reads / 211 scenarios.
+- Use compact shared Select/ToggleGroup controls, avatar assignees, semantic status/priority cues, short task keys, KPI cards and live search. Timeline offers Gantt/Table/Calendar with a Today marker, bounded active range, status bars and collapsible unscheduled work.
+- Add guarded nested project navigation, bounded localStorage disclosure persistence, named rail popovers, mobile sheet behavior and project-qualified command-palette destinations.
+- Consolidate Kanban, Tasks, Calendar and File Manager into permanent guarded redirects; remove obsolete editable page compositions. Root/dashboard/auth fallbacks now use `/dashboard/home`; validated return destinations still win.
+- Verify auth/RPC guards, migration preservation, Node/local workerd parity, redirect chains, keyboard/focus, real-clock hydration and the retained-route/project capture matrix across all four presets.
+- Add explicit seeded-project selection to screenshot tooling and update usage/data/auth documentation. Review draft only: no version bump, tag, release, merge or production deployment.
 
 ## v0.7.0 — AI Assistant (2026-10-25)
 
