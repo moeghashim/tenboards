@@ -10,6 +10,8 @@ import { Invoice } from "./-components/invoice";
 import { InvoiceContext } from "./-components/invoice-context";
 
 const loadInvoice = createServerFn({ method: "GET" }).handler(async () => {
+  const { requireSession } = await import("@/lib/auth/session.server");
+  await requireSession();
   const { requestReference } = await import("@/server/request-reference.server");
   const { readInvoices } = await import("@/server/data/invoices");
   const data = await readInvoices({ renderedAt: requestReference() });

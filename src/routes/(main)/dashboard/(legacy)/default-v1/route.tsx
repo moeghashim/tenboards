@@ -7,6 +7,8 @@ import { ProposalSectionsTable } from "./-components/proposal-sections-table/tab
 import { SectionCards } from "./-components/section-cards";
 
 const loadData = createServerFn({ method: "GET" }).handler(async () => {
+  const { requireSession } = await import("@/lib/auth/session.server");
+  await requireSession();
   const { requestReference } = await import("@/server/request-reference.server");
   const { readDefault } = await import("@/server/data/default");
   return readDefault({ variant: "v1", renderedAt: requestReference() });

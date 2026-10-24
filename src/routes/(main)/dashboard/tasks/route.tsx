@@ -5,6 +5,8 @@ import { PageHeader } from "../-components/app-pages/page-header";
 import { Tasks } from "./-components/tasks";
 
 const loadData = createServerFn({ method: "GET" }).handler(async () => {
+  const { requireSession } = await import("@/lib/auth/session.server");
+  await requireSession();
   const { readTasks } = await import("@/server/data/tasks");
   return readTasks();
 });

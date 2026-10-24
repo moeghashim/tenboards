@@ -2,6 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { createServerFn } from "@tanstack/react-start";
 
 import { SidebarProvider } from "@/components/ui/sidebar";
+import { requireAppRoute } from "@/lib/auth/app-route";
+import { useSessionRefresh } from "@/lib/auth/use-session-refresh";
 import { getValueFromCookie } from "@/server/server-actions";
 
 import { MailComponent } from "./-components/mail";
@@ -10,12 +12,15 @@ import { MailSidebar } from "./-components/mail-sidebar";
 import { MailProvider } from "./-components/use-mail";
 
 const loadData = createServerFn({ method: "GET" }).handler(async () => {
+  const { requireSession } = await import("@/lib/auth/session.server");
+  await requireSession();
   const { requestReference } = await import("@/server/request-reference.server");
   const { readMail } = await import("@/server/data/mail");
   return readMail({ renderedAt: requestReference() });
 });
 
 export const Route = createFileRoute("/(main)/mail")({
+  beforeLoad: requireAppRoute,
   loader: async () => {
     const [layoutCookie, data] = await Promise.all([getValueFromCookie(MAIL_LAYOUT_COOKIE), loadData()]);
 
@@ -28,6 +33,8 @@ export const Route = createFileRoute("/(main)/mail")({
 });
 
 function Page() {
+  const { auth } = Route.useRouteContext();
+  useSessionRefresh(auth.mode === "auth");
   const { defaultLayout, data } = Route.useLoaderData();
   const mails = data.mails;
 

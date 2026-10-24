@@ -4,6 +4,8 @@ import { createServerFn } from "@tanstack/react-start";
 import { Calendar } from "./-components/calendar";
 
 const loadData = createServerFn({ method: "GET" }).handler(async () => {
+  const { requireSession } = await import("@/lib/auth/session.server");
+  await requireSession();
   const { requestReference } = await import("@/server/request-reference.server");
   const { readCalendar } = await import("@/server/data/calendar");
   return readCalendar({ renderedAt: requestReference() });

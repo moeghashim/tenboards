@@ -2,7 +2,7 @@
 id: "003"
 title: Protect all app entry points and show the signed-in shell user
 milestone: v0.5-auth
-status: todo
+status: review
 category: auth
 files: ["src/lib/auth/", "src/routes/(main)/dashboard/", "src/routes/(main)/mail/route.tsx", "src/routes/(main)/chat/route.tsx", "src/routes/(external)/index.tsx", "src/routes/__root.tsx", "src/server/server-actions.ts", "scripts/auth-protection-check.ts", "README.md", "docs/auth.md", "dev/milestones.json"]
 ---
@@ -25,14 +25,14 @@ Prefactor inspection: reuse one `beforeLoad` helper on the existing dashboard/Ma
 
 ## Acceptance criteria
 
-- [ ] Every row of the milestone route matrix passes on direct SSR, refresh and client navigation: all 14 current/legacy dashboards, all app pages including Coming Soon, `/mail`, `/chat`, both dashboard wrappers and root/dashboard aliases. Signed-out requests reach canonical login with a validated attempted destination before app data is rendered or fetched successfully.
-- [ ] Every callable app-data server function independently checks the actual request session before invoking a read. Audit all 22 read domains and their multiple route/variant call sites, including shell accounts, Profile, legacy dashboards and standalone Mail/Chat. Signed-out/expired/revoked/tampered requests reject safely even when invoked directly without a route guard; valid requests succeed.
-- [ ] Auth screens, bare V2, `/unauthorized`, root error/not-found and dashboard splat remain public. Public error rendering does not execute protected account/data loaders or leak cached data. Do not exempt a broad dashboard prefix; actual app paths remain protected. Auth service errors fail closed rather than becoming null/demo sessions.
-- [ ] Keep the auth handler public with library endpoint checks; retain safe mode/session bootstrap and allowlisted UI preferences. Audit unrelated server functions for bypasses without adding RBAC or changing v0.4 domain parity/CLI semantics.
-- [ ] Auth-on header account control uses current name/email/initials and working Sign out, with no demo switching. Demo mode retains the existing demo menu/accounts. Preserve menu accessible names, keyboard selection, Escape/focus return and narrow-screen layout; long names/emails do not break the header.
-- [ ] Account menu links to Profile; 004 changes its destination to the new account tab when that tab exists. Do not ship a dead account-tab link in this layer. Sign-out clears route/user data and the next protected request fails; other open views revalidate on navigation/refocus rather than retaining authority from a stale client session.
-- [ ] Both standalone documents and iframe wrappers require a session. Valid same-origin cookies reach the inner document; signed-out direct iframe URLs cannot disclose data. Expiration while a wrapper is open yields a usable login flow, not an iframe redirect loop. Existing theme/preset/focus and layout cookies work in both modes.
-- [ ] Responses carrying identity/app data are not publicly cached. Existing v0.4 reads/seed output and all demo behaviors remain intact; no directory role, sample Profile or selected demo account becomes an auth identity.
+- [x] Every row of the milestone route matrix passes on direct SSR, refresh and client navigation: all 14 current/legacy dashboards, all app pages including Coming Soon, `/mail`, `/chat`, both dashboard wrappers and root/dashboard aliases. Signed-out requests reach canonical login with a validated attempted destination before app data is rendered or fetched successfully.
+- [x] Every callable app-data server function independently checks the actual request session before invoking a read. Audit all 22 read domains and their multiple route/variant call sites, including shell accounts, Profile, legacy dashboards and standalone Mail/Chat. Signed-out/expired/revoked/tampered requests reject safely even when invoked directly without a route guard; valid requests succeed.
+- [x] Auth screens, bare V2, `/unauthorized`, root error/not-found and dashboard splat remain public. Public error rendering does not execute protected account/data loaders or leak cached data. Do not exempt a broad dashboard prefix; actual app paths remain protected. Auth service errors fail closed rather than becoming null/demo sessions.
+- [x] Keep the auth handler public with library endpoint checks; retain safe mode/session bootstrap and allowlisted UI preferences. Audit unrelated server functions for bypasses without adding RBAC or changing v0.4 domain parity/CLI semantics.
+- [x] Auth-on header account control uses current name/email/initials and working Sign out, with no demo switching. Demo mode retains the existing demo menu/accounts. Preserve menu accessible names, keyboard selection, Escape/focus return and narrow-screen layout; long names/emails do not break the header.
+- [x] Account menu links to Profile; 004 changes its destination to the new account tab when that tab exists. Do not ship a dead account-tab link in this layer. Sign-out clears route/user data and the next protected request fails; other open views revalidate on navigation/refocus rather than retaining authority from a stale client session.
+- [x] Both standalone documents and iframe wrappers require a session. Valid same-origin cookies reach the inner document; signed-out direct iframe URLs cannot disclose data. Expiration while a wrapper is open yields a usable login flow, not an iframe redirect loop. Existing theme/preset/focus and layout cookies work in both modes.
+- [x] Responses carrying identity/app data are not publicly cached. Existing v0.4 reads/seed output and all demo behaviors remain intact; no directory role, sample Profile or selected demo account becomes an auth identity.
 
 ## Tests
 

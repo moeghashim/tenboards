@@ -13,6 +13,8 @@ import { PerformanceHighlights } from "./-components/performance-highlights";
 import { UpcomingEvents } from "./-components/upcoming-events";
 
 const loadData = createServerFn({ method: "GET" }).handler(async () => {
+  const { requireSession } = await import("@/lib/auth/session.server");
+  await requireSession();
   const { readAcademy } = await import("@/server/data/academy");
   return readAcademy();
 });

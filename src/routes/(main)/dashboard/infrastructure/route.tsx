@@ -10,6 +10,8 @@ import { ProjectEnvironments } from "./-components/project-environments";
 import "@/styles/flag-icons/flags.css";
 
 const loadData = createServerFn({ method: "GET" }).handler(async () => {
+  const { requireSession } = await import("@/lib/auth/session.server");
+  await requireSession();
   const { readInfrastructure } = await import("@/server/data/infrastructure");
   return readInfrastructure();
 });

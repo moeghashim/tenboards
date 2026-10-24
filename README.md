@@ -434,3 +434,7 @@ Store all logs/reports/images on `pr-assets` or PR attachments, never main.
 ## Optional authentication
 
 No secret keeps the existing open demo, including when data comes from Postgres. Optional local auth requires a migrated Docker DB source, a generated private `BETTER_AUTH_SECRET`, and an exact `BETTER_AUTH_URL` (localhost:3000 fallback). Google/GitHub each require a complete server-side client ID/secret pair. Secret plus forced demo fails explicitly. Follow [docs/auth.md](docs/auth.md) for setup, callbacks, configuration/security boundaries and test commands. The new `0012` migration leaves v0.4 data/seeds intact. Production stays demo-only until v0.6.
+
+### Protected local application (v0.5 layer 003)
+
+With optional local authentication enabled, all dashboards (including legacy variants), app pages and standalone/embedded Mail and Chat require a current session. Every app-data server function also checks the request independently. Auth/system pages stay public; dashboard 404s load no account shell. The header shows the signed-in name/email with Profile and Sign out; no-secret demo mode keeps demo switching. Session changes are checked on navigation/refocus, and expired iframes return to a usable top-level login. This is authentication for shared template data, not RBAC or per-user data ownership. See [the protection matrix](docs/auth.md#application-protection-matrix).

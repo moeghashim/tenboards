@@ -23,7 +23,10 @@ import { LayoutControls } from "../header/layout-controls";
 import { NavMain } from "./nav-main";
 import { SupportCard } from "./support-card";
 
-export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+export function AppSidebar({
+  authenticated = false,
+  ...props
+}: React.ComponentProps<typeof Sidebar> & { authenticated?: boolean }) {
   const router = useRouter();
   const { setOpenMobile } = useSidebar();
   useEffect(() => router.subscribe("onResolved", () => setOpenMobile(false)), [router, setOpenMobile]);
@@ -62,7 +65,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         </nav>
       </SidebarContent>
       <SidebarFooter className="gap-3 p-3">
-        <SupportCard />
+        <SupportCard authenticated={authenticated} />
         <div className="flex items-center gap-1 group-data-[collapsible=icon]:flex-col">
           <LayoutControls sidebar />
           <div className="ml-auto flex group-data-[collapsible=icon]:hidden">

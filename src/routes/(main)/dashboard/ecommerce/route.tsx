@@ -17,6 +17,8 @@ import { TopProducts } from "./-components/top-products";
 import { TrafficSources } from "./-components/traffic-sources";
 
 const loadEcommerce = createServerFn({ method: "GET" }).handler(async () => {
+  const { requireSession } = await import("@/lib/auth/session.server");
+  await requireSession();
   const { readEcommerce } = await import("@/server/data/ecommerce");
   return readEcommerce();
 });

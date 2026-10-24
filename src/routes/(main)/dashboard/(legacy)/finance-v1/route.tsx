@@ -14,6 +14,8 @@ import { SavingsRate } from "./-components/kpis/savings-rate";
 import { SpendingBreakdown } from "./-components/spending-breakdown";
 
 const loadData = createServerFn({ method: "GET" }).handler(async () => {
+  const { requireSession } = await import("@/lib/auth/session.server");
+  await requireSession();
   const { requestReference } = await import("@/server/request-reference.server");
   const { readFinance } = await import("@/server/data/finance");
   return readFinance({ variant: "v1", renderedAt: requestReference() });

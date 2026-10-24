@@ -8,6 +8,8 @@ import { Logistics } from "./-components/logistics";
 import "@/styles/flag-icons/flags.css";
 
 const loadData = createServerFn({ method: "GET" }).handler(async () => {
+  const { requireSession } = await import("@/lib/auth/session.server");
+  await requireSession();
   const { readLogistics } = await import("@/server/data/logistics");
   return readLogistics();
 });

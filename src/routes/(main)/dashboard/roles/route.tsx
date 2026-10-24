@@ -4,6 +4,8 @@ import { createServerFn } from "@tanstack/react-start";
 import { Roles } from "./-components/roles";
 
 const loadRoles = createServerFn({ method: "GET" }).handler(async () => {
+  const { requireSession } = await import("@/lib/auth/session.server");
+  await requireSession();
   const { readRoles } = await import("@/server/data/roles");
   return readRoles();
 });
