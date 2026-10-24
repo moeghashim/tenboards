@@ -55,11 +55,17 @@ try {
           external.push(req.url());
       });
       let mode = "success";
+      let metadataRequests = 0;
+      page.on("request", (req) => {
+        if (new URL(req.url()).pathname.includes("_server")) metadataRequests++;
+      });
       const requests: { provider?: string; messages: { role: string; content: string }[] }[] = [];
       await page.route("**/api/assistant", async (route) => {
         requests.push(route.request().postDataJSON());
         if (mode === "rate")
           return route.fulfill({ status: 429, headers: { "Retry-After": "2" }, body: '{"error":"rate"}' });
+        if (mode === "unavailable" || mode === "configuration")
+          return route.fulfill({ status: 503, body: JSON.stringify({ error: mode }) });
         if (mode === "expired") return route.fulfill({ status: 401, body: '{"error":"unauthorized"}' });
         if (mode === "malicious")
           return route.fulfill({
@@ -142,6 +148,22 @@ try {
       await page.waitForTimeout(2200);
       assert.equal(requests.length, count);
       assert.ok(await page.getByRole("button", { name: "Send", exact: true }).isEnabled());
+      mode = "unavailable";
+      const metadataBeforeOutage = metadataRequests;
+      await input.press("Enter");
+      await page
+        .getByText("The Assistant is unavailable. Try again when the service is ready.", { exact: true })
+        .waitFor();
+      await page.waitForLoadState("networkidle");
+      assert.equal(metadataRequests, metadataBeforeOutage, "Outages must not refresh provider configuration");
+      assert.equal(await input.inputValue(), "Retry draft");
+      await page.screenshot({ path: `${output}/${theme}-${size}-unavailable.png`, fullPage: true });
+      mode = "configuration";
+      await input.press("Enter");
+      await page.getByText(/provider configuration changed or is unavailable/).waitFor();
+      await page.waitForLoadState("networkidle");
+      assert.ok(metadataRequests > metadataBeforeOutage, "Configuration errors must refresh metadata");
+      await page.screenshot({ path: `${output}/${theme}-${size}-configuration.png`, fullPage: true });
       mode = "malicious";
       await input.press("Enter");
       await page.getByText(/reply or request was not supported/).waitFor();
@@ -171,7 +193,7 @@ try {
       await page.screenshot({ path: `${output}/${theme}-${size}-provider-error.png`, fullPage: true });
       await context.setExtraHTTPHeaders({ "x-v07-providers": "openai" });
       await page.getByRole("button", { name: "Send", exact: true }).click();
-      await page.getByText(/selected provider was removed/).waitFor();
+      await page.getByText(/Available providers changed/).waitFor();
       assert.equal(await picker.inputValue(), "");
       assert.ok(await page.getByRole("button", { name: "Send", exact: true }).isDisabled());
       const noFallback = requests.length;
@@ -200,6 +222,11 @@ try {
       assert.equal(await page.locator("article").count(), 0);
       assert.equal(await input.inputValue(), "");
       assert.ok(await input.isDisabled());
+      assert.ok(
+        await page
+          .getByRole("link", { name: "Sign in to continue", exact: true })
+          .evaluate((el) => el === document.activeElement),
+      );
       await page.screenshot({ path: `${output}/${theme}-${size}-session-ended.png`, fullPage: true });
       await page.reload();
       assert.equal(await page.locator("article").count(), 0);

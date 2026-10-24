@@ -5,6 +5,7 @@ import {
   initialConversation,
   conversationReducer as reduce,
   requestHistory,
+  responseFailure,
   retryDeadline,
   type Turn,
 } from "../src/routes/(main)/dashboard/assistant/-components/conversation.ts";
@@ -58,3 +59,28 @@ console.log(
   "PASS context whole-pair trimming, byte/message/escaped JSON caps, oversized latest blocks, stopped/error never replay",
 );
 console.log("PASS Retry-After delta/date/default and safe error allowlist");
+
+for (const code of ["unavailable", "configuration", "provider"] as const)
+  assert.equal(await responseFailure(new Response(JSON.stringify({ error: code }), { status: 503 })), code);
+assert.equal(
+  await responseFailure(new Response('{"error":"<script>secret</script>"}', { status: 503 })),
+  "unavailable",
+);
+assert.equal(await responseFailure(new Response("not JSON", { status: 429 })), "rate");
+assert.equal(await responseFailure(new Response("x".repeat(1025), { status: 503 })), "unavailable");
+let cancelled = false;
+assert.equal(
+  await responseFailure(
+    new Response(
+      new ReadableStream({
+        cancel() {
+          cancelled = true;
+        },
+      }),
+      { status: 503 },
+    ),
+  ),
+  "unavailable",
+);
+assert.ok(cancelled);
+console.log("PASS bounded allowlisted HTTP error codes distinguish outages/configuration and cancel stalled bodies");

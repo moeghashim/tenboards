@@ -25,6 +25,37 @@ export const failureCopy: Record<FailureCode, string> = {
 export function failureCode(value: unknown): FailureCode {
   return typeof value === "string" && Object.hasOwn(failureCopy, value) ? (value as FailureCode) : "unavailable";
 }
+// Error bodies are untrusted too: accept only a tiny, time-bounded code envelope.
+export async function responseFailure(response: Response): Promise<FailureCode> {
+  const fallback = failureCode(
+    ({ 429: "rate", 400: "invalid", 403: "origin", 413: "limit", 408: "timeout" } as Record<number, string>)[
+      response.status
+    ],
+  );
+  const reader = response.body?.getReader();
+  if (!reader) return fallback;
+  const timer = setTimeout(() => void reader.cancel().catch(() => undefined), 2000);
+  try {
+    const decoder = new TextDecoder();
+    let text = "";
+    let size = 0;
+    for (;;) {
+      const chunk = await reader.read();
+      if (chunk.done) break;
+      size += chunk.value.byteLength;
+      if (size > 1024) return fallback;
+      text += decoder.decode(chunk.value, { stream: true });
+    }
+    const body: unknown = JSON.parse(text + decoder.decode());
+    return body && typeof body === "object" && "error" in body ? failureCode(body.error) : fallback;
+  } catch {
+    return fallback;
+  } finally {
+    clearTimeout(timer);
+    await reader.cancel().catch(() => undefined);
+    reader.releaseLock();
+  }
+}
 export type Turn = {
   id: number;
   prompt: string;

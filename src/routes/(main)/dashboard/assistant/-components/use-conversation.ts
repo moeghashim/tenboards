@@ -6,7 +6,14 @@ import { getAssistantConfig } from "@/lib/assistant/server-functions";
 import { consumeStream, StreamFailure } from "@/lib/assistant/transport";
 import { getAuthState } from "@/lib/auth/server-functions";
 
-import { conversationReducer, failureCode, initialConversation, requestHistory, retryDeadline } from "./conversation";
+import {
+  conversationReducer,
+  failureCode,
+  initialConversation,
+  requestHistory,
+  responseFailure,
+  retryDeadline,
+} from "./conversation";
 
 export function useConversation(initialConfig: AssistantConfig) {
   const [config, setConfig] = useState(initialConfig);
@@ -25,6 +32,7 @@ export function useConversation(initialConfig: AssistantConfig) {
   const generation = useRef(0);
   const composer = useRef<HTMLTextAreaElement>(null);
   const stopButton = useRef<HTMLButtonElement>(null);
+  const signIn = useRef<HTMLAnchorElement>(null);
   const follow = useRef<boolean>(true);
   const end = useRef<HTMLDivElement>(null);
   const busy = state.turns.at(-1)?.status === "streaming";
@@ -40,8 +48,11 @@ export function useConversation(initialConfig: AssistantConfig) {
     setContextNotice(false);
     setRefreshing(false);
     if (sessionLost) setExpired(true);
-    composer.current?.focus();
+    else composer.current?.focus();
   }, []);
+  useEffect(() => {
+    if (expired) signIn.current?.focus();
+  }, [expired]);
   useEffect(() => {
     const hide = () => clear();
     window.addEventListener("pagehide", hide);
@@ -143,16 +154,12 @@ export function useConversation(initialConfig: AssistantConfig) {
         return;
       }
       if (!response.ok) {
-        const safe = failureCode(
-          ({ 429: "rate", 400: "invalid", 403: "origin", 413: "limit", 408: "timeout" } as Record<number, string>)[
-            response.status
-          ] ?? "configuration",
-        );
+        const safe = await responseFailure(response);
+        if (generation.current !== id) return;
         if (safe === "rate") {
           setNow(Date.now());
           setRetryAt(retryDeadline(response.headers.get("Retry-After")));
         }
-        await response.body?.cancel();
         throw new StreamFailure(safe);
       }
       if (!response.body) throw new StreamFailure("unavailable");
@@ -193,7 +200,7 @@ export function useConversation(initialConfig: AssistantConfig) {
       setSelectionRequired(false);
     },
     selectionRequired,
-    useRecorded: () => {
+    chooseRecorded: () => {
       setProvider(undefined);
       setSelectionRequired(false);
     },
@@ -209,6 +216,7 @@ export function useConversation(initialConfig: AssistantConfig) {
     blocked,
     composer,
     stopButton,
+    signIn,
     end,
     clear,
     stop,
