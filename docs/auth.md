@@ -275,7 +275,7 @@ HTTP in a separate test-only Worker entry. That harness is not in production out
 Existing protection/account/security suites discover the compiled RPC manifest;
 they do not rely on Vite RPC IDs. Node regressions remain separately labeled.
 Provider consent, hosted TLS/pooling/cache and Cloudflare's actual proxy/IP
-rewriting require task 004; local Hyperdrive emulation proves none of those.
+rewriting require verification on your own deployment; local Hyperdrive emulation proves none of those.
 
 The runtime probe compares only presence/equality: Nitro request bindings,
 `cloudflare:workers` and populated `process.env` agree for the runtime string
@@ -309,7 +309,7 @@ Workers configure only `cf-connecting-ip`, which Cloudflare overwrites at ingres
 Forwarded, x-forwarded-for and x-real-ip cannot change the bucket. Missing/invalid
 trusted IPs share a conservative per-path bucket instead of bypassing limits.
 IPv6 uses the library's /64 grouping. Local workerd tests inject controlled reserved
-addresses; actual Cloudflare header rewriting is a task 004 check. Node keeps its
+addresses; actual Cloudflare header rewriting is an adopter deployment check. Node keeps its
 existing Better Auth development IP behavior; do not expose Node dev as production.
 Auth tests use distinct reserved IP fixtures across independent suites and retain
 real limits. The two-Worker concurrency test uses one shared IP and admits exactly
@@ -338,7 +338,7 @@ it immediately before the real built Worker entry. This adapter is excluded from
 production/preview builds; it changes no auth guard. Initial proxy-fixture failure
 and the corrected passing test are retained in task 002 evidence.
 
-## Production smoke and cutover
+## Your deployment smoke and promotion
 
 [The operations runbook](deploy.md) keeps code, binding and both launch secrets in
 one staged version before changing traffic. Do not set a secret on binding-less
@@ -346,5 +346,5 @@ live code or deploy a DB/auth-off intermediate version.
 `npm run deploy:check -- <origin>` performs only GETs by default and validates the
 actual redirect/status/null private session. Use `--demo` for isolated previews;
 only explicit `--auth-roundtrip` creates a throwaway account, whose retained email
-and exact-match reviewer cleanup are documented. All passwords/cookies stay in
+and exact-match cleanup are documented. All passwords/cookies stay in
 memory. Normal GET traffic still updates the database limiter's counters.

@@ -2,7 +2,7 @@
 
 An MIT-licensed dashboard template built with TanStack Start, React 19, TypeScript, Tailwind CSS v4, and shadcn/ui on Base UI.
 
-The full upstream screen catalog and demo-data relationships are retained, with neutral demo identities. **v0.1 is merged, deployed and closed**: the design system and shell follow [PLAN.md](PLAN.md). **v0.2 (all 14 dashboards restyled) is merged, deployed and closed** per [the dashboard task breakdown](dev/milestones/v0.2-dashboards/README.md). **v0.3 (all app pages restyled) is merged, deployed and released as [v0.3.0](https://github.com/moeghashim/tenboards/releases/tag/v0.3.0)** — [14 app-page tasks](dev/milestones/v0.3-app-pages/README.md) deliver a small shared header foundation, standalone/embedded Mail and Chat, Calendar, Kanban, Tasks, Invoice, File Manager, Products, Users/Roles, Profile, Auth V1/V2, system states, and full-route acceptance. Current milestone/task status is tracked in [dev/milestones.json](dev/milestones.json). Current screens are demonstrations. **v0.4 (optional data layer) is merged, deployed and released as [v0.4.0](https://github.com/moeghashim/tenboards/releases/tag/v0.4.0)** — [8 data-layer tasks](dev/milestones/v0.4-data-layer/README.md) connect every app page and dashboard to Drizzle + optional local Docker Postgres 17; with no `DATABASE_URL` it runs in zero-config demo mode, and the live preview stays in demo mode. **v0.5 (Better Auth) is merged, deployed and released as [v0.5.0](https://github.com/moeghashim/tenboards/releases/tag/v0.5.0)** — [5 auth tasks](dev/milestones/v0.5-auth/README.md). The foundation adds optional server-only auth configuration, isolated tables, HTTP/session boundaries and validated UI-cookie RPCs. V1/V2 support real email/password signup/login and optional Google/GitHub initiation. App routes and data functions enforce sessions; the signed-in shell links to Profile Account & security for name/password/session management. Integrated acceptance includes 486 passing real-Postgres auth scenarios, fresh/incremental migrations and unchanged 22-read/130-scenario data parity. **v0.6 (production Cloudflare) is in progress** — [4 production tasks](dev/milestones/v0.6-production/README.md) cover the Workers database runtime, isolated demo previews, production auth hardening, operations and reviewer-owned Neon cutover. Production stays demo-only until cutover; tasks 001–003 deliver the runtime, isolated previews, hardening and operations tooling; production cutover remains reviewer-owned.
+The full upstream screen catalog and demo-data relationships are retained, with neutral demo identities. **v0.1 is merged, deployed and closed**: the design system and shell follow [PLAN.md](PLAN.md). **v0.2 (all 14 dashboards restyled) is merged, deployed and closed** per [the dashboard task breakdown](dev/milestones/v0.2-dashboards/README.md). **v0.3 (all app pages restyled) is merged, deployed and released as [v0.3.0](https://github.com/moeghashim/tenboards/releases/tag/v0.3.0)** — [14 app-page tasks](dev/milestones/v0.3-app-pages/README.md) deliver a small shared header foundation, standalone/embedded Mail and Chat, Calendar, Kanban, Tasks, Invoice, File Manager, Products, Users/Roles, Profile, Auth V1/V2, system states, and full-route acceptance. Current milestone/task status is tracked in [dev/milestones.json](dev/milestones.json). Current screens are demonstrations. **v0.4 (optional data layer) is merged, deployed and released as [v0.4.0](https://github.com/moeghashim/tenboards/releases/tag/v0.4.0)** — [8 data-layer tasks](dev/milestones/v0.4-data-layer/README.md) connect every app page and dashboard to Drizzle + optional local Docker Postgres 17; with no `DATABASE_URL` it runs in zero-config demo mode, and the live preview stays in demo mode. **v0.5 (Better Auth) is merged, deployed and released as [v0.5.0](https://github.com/moeghashim/tenboards/releases/tag/v0.5.0)** — [5 auth tasks](dev/milestones/v0.5-auth/README.md). The foundation adds optional server-only auth configuration, isolated tables, HTTP/session boundaries and validated UI-cookie RPCs. V1/V2 support real email/password signup/login and optional Google/GitHub initiation. App routes and data functions enforce sessions; the signed-in shell links to Profile Account & security for name/password/session management. Integrated acceptance includes 486 passing real-Postgres auth scenarios, fresh/incremental migrations and unchanged 22-read/130-scenario data parity. **v0.6 (template deployment readiness) is ready for release** — [4 readiness tasks](dev/milestones/v0.6-production/README.md) deliver the Workers database runtime, isolated demo previews, auth hardening and adopter deployment tooling. Tasks 001–003 are merged; task 004 is in review. The [live site](https://tenboards.mohanadgh.workers.dev) intentionally remains a zero-config demo. Hosted Neon/Hyperdrive behavior is verified locally in workerd only; adopters connect and verify their own database.
 
 ## Run locally
 
@@ -25,7 +25,7 @@ Open [the default dashboard](http://localhost:3000/dashboard/default).
 - `npm run check` / `npm run check:fix` — Biome lint, imports, and formatting.
 - `npm run typecheck` — TypeScript (`tsc --noEmit`).
 - `npm run db:generate` — generate the next reviewed Drizzle migration; no DB required.
-- `npm run db:migrate` — apply committed migrations to an explicit local Postgres URL; reviewer remote operations require `-- --allow-remote` and direct TLS URL.
+- `npm run db:migrate` — apply committed migrations to an explicit local Postgres URL; remote operations require `-- --allow-remote` and direct TLS URL.
 - `npm run db:seed` — transactionally upsert canonical demo records, local-only by default; the same explicit remote opt-in applies.
 - `npm run data:parity` — compare every demo/DB read against seeded local Postgres.
 - `npm run screenshots` — capture route/preset/theme/viewport evidence (optional `--reference` for identical request dates).
@@ -36,7 +36,17 @@ Open [the default dashboard](http://localhost:3000/dashboard/default).
 - `npm run worker:dev -- --binding` — compiled local Worker with Docker Hyperdrive emulation; omit `--binding` for demo/URL fallback.
 - `npm run worker:test` — local workerd runtime/concurrency/recovery and 22-read/130-scenario parity checks on a fresh review database.
 - `npm run worker:auth` / `npm run worker:security` — compiled route/account/security regressions and two-Worker distributed limiter checks.
+- `npm run deploy:prepare -- --name <worker-name> --url <https-origin> [--secrets-file <external-path>]` — clean build/config validation and optional private secrets; prints staging commands without network operations.
 - `npm run deploy:check -- <origin>` — read-only auth-on production smoke; `--demo` explicitly selects preview expectations, `--auth-roundtrip` explicitly creates one throwaway account.
+
+## Deploy with your own database
+
+Follow the [deployment quick path](docs/deploy.md#quick-path) to connect your own
+Neon project through Hyperdrive with caching disabled, migrate/seed it, and stage
+code, binding and auth secrets in one version before promotion. `deploy:prepare`
+validates the generated configuration and can create a private secrets file.
+Your hosted database must always have auth enabled. The project's live site stays
+a demo; local workerd checks do not claim hosted Neon/Hyperdrive acceptance.
 
 ## Included screens
 
@@ -100,7 +110,7 @@ npm run preview:deploy -- --preview-alias pr-NNN
 
 The preview command uses a deliberately separate source/config generator, not a production name override. It rejects local dotenv/dev-vars files and DB/auth/provider/build-override environment, strips build subprocess inputs, disables Nitro production config generation, and checks the final generated config and remote version/secret inventory before upload. Move local `.env*`/`.dev.vars*` files outside the checkout first (keep `.env.example`). No production binding can enter via Nitro array merging. On first use only, add `--initialize` to create the separate demo Worker; normal runs refuse a missing Worker. Never upload PR versions to `tenboards`.
 
-The root config keeps its real Hyperdrive slot commented until reviewer cutover. Without binding and secret it deploys as demo; a secret without database configuration returns 503. Never set a production secret on a binding-less live version; [the reviewer runbook](docs/deploy.md) stages a complete version atomically with `wrangler versions upload --secrets-file`, then promotes it to 100%.
+The root config keeps its Hyperdrive slot commented for the live demo; activate it only for your own database deployment. Without binding and secret it deploys as demo; a secret without database configuration returns 503. Never set a production secret on a binding-less live version; [the deployment runbook](docs/deploy.md) stages a complete version atomically with `wrangler versions upload --secrets-file`, then promotes it to 100%.
 
 Copy the returned version-specific URL into the PR body. The optional alias gives a reusable URL for that PR; uploading a version does not replace the live deployment. Preview URLs are public demo URLs. No GitHub Actions secrets or automated deployments are configured.
 
@@ -113,7 +123,7 @@ Install the approved browser tooling once with `npx playwright install chromium`
 ```sh
 npm run screenshots
 npm run screenshots -- --routes /dashboard/default,/auth/v1/login --output screenshots/before
-npm run screenshots -- --base-url https://pr-012-tenboards.mohanadgh.workers.dev --output screenshots/after
+npm run screenshots -- --base-url https://pr-012-tenboards-preview.<account-subdomain>.workers.dev --output screenshots/after
 npm run screenshots -- --list
 ```
 
@@ -130,7 +140,7 @@ The original tenboards mark pairs a solid upright with an open board, reading as
 
 `public/brand/mark.svg` and `wordmark.svg` are vector masters (the wordmark outlines the bundled SIL-OFL Geist face). `favicon.svg`, ICO/16/32px PNGs, the 180px touch icon, and 192/512px app icons share the same original silhouette. `public/brand/og.svg` is the 1200×630 social-image source for `public/og.png`. PNG/ICO derivatives were rendered locally from these authored vectors, with no stock or third-party logo. Preserve the font package license when redistributing its font files.
 
-Social metadata uses the canonical production `/og.png` URL; the asset becomes live when the reviewer deploys this merged layer. For PR review, inspect `/og.png` on that PR's version URL. Favicons and the manifest use origin-relative URLs and work on version previews.
+Social metadata, favicons and the manifest use origin-relative asset URLs, so a fork does not point to this project's live host. Set `APP_CONFIG.meta.image` in `src/config/app-config.ts` to `https://<worker-name>.<account-subdomain>.workers.dev/og.png` if your social crawler requires an absolute image URL. Inspect `/og.png` on your deployment or PR preview.
 
 ## Shell usage and acceptance
 
@@ -307,7 +317,7 @@ All data-bearing app pages and all 14 dashboards now use 22 typed reads. Demo is
 zero-config default; local Postgres is optional. The [data-layer guide](docs/data-layer.md)
 covers source selection, schemas, dates, seeding, migrations, domain ownership and
 adding a read. All eight implementation layers are merged and released as v0.4.0; production stays
-demo-only until v0.6.
+demo-only; adopters can connect their own database.
 
 ### Foundation (v0.4 / 001)
 
@@ -328,7 +338,7 @@ The example uses local-only port `54329`, database/user `tenboards`, password `t
 
 `npm run db:generate` creates reviewed Drizzle SQL under `src/server/db/migrations/`. Migrations are cumulative. The transactional seed upserts stable directory email/role keys, replaces only those fixtures' ordered children, and preserves unrelated parent records. Directory role labels and the informational Roles list remain distinct. Aggregate chart series have a typed decimal metric-points contract; entity lists use normalized tables.
 
-`npm run data:parity` compares actual demo and Postgres implementations with exact ordering and types. Layer 001 covered Users/Roles (two reads, six all/existing/missing scenarios); omitted registration and controlled mismatch tests fail nonzero. `node --env-file=.env --experimental-strip-types scripts/data-source-check.ts` verifies source selection and negative parity tests; its missing-schema case requires a separate local `tenboards_missing_schema` database with no migrations. Database/UI fault evidence is separate from clean smoke. Production remains demo-only until v0.6.
+`npm run data:parity` compares actual demo and Postgres implementations with exact ordering and types. Layer 001 covered Users/Roles (two reads, six all/existing/missing scenarios); omitted registration and controlled mismatch tests fail nonzero. `node --env-file=.env --experimental-strip-types scripts/data-source-check.ts` verifies source selection and negative parity tests; its missing-schema case requires a separate local `tenboards_missing_schema` database with no migrations. Database/UI fault evidence is separate from clean smoke. Production remains demo-only; adopters can connect their own database.
 
 
 ### Profile and shell accounts (v0.4 / 002)
@@ -441,7 +451,7 @@ Store all logs/reports/images on `pr-assets` or PR attachments, never main.
 
 ## Optional authentication
 
-No secret keeps the existing open demo, including when data comes from Postgres. Optional local auth requires a migrated Docker DB source, a generated private `BETTER_AUTH_SECRET`, and an exact `BETTER_AUTH_URL` (localhost:3000 fallback). Google/GitHub each require a complete server-side client ID/secret pair. Secret plus forced demo fails explicitly. Follow [docs/auth.md](docs/auth.md) for setup, callbacks, configuration/security boundaries and test commands. The new `0012` migration leaves v0.4 data/seeds intact. Production stays demo-only until v0.6.
+No secret keeps the existing open demo, including when data comes from Postgres. Optional local auth requires a migrated Docker DB source, a generated private `BETTER_AUTH_SECRET`, and an exact `BETTER_AUTH_URL` (localhost:3000 fallback). Google/GitHub each require a complete server-side client ID/secret pair. Secret plus forced demo fails explicitly. Follow [docs/auth.md](docs/auth.md) for setup, callbacks, configuration/security boundaries and test commands. The new `0012` migration leaves v0.4 data/seeds intact. The hosted demo intentionally stays database-free; use the [deployment guide](docs/deploy.md) for your own database.
 
 ### Protected local application (v0.5 layer 003)
 
@@ -473,7 +483,7 @@ tasks remain in review; no production auth or milestone release is implied.
 
 ### Workers runtime readiness (v0.6 task 001)
 
-The compiled Worker now uses request-scoped database and Better Auth instances, a shared effective runtime environment, and successful-only auth-storage readiness memoization. Builds need no secrets. Node retains its pooled client; zero-env and forced demo remain connection-free. See [local setup, tests and evidence boundaries](docs/auth.md#local-workers-runtime-v06-task-001). Local workerd verification does not claim hosted Neon/Hyperdrive acceptance. Task 002 adds isolated preview tooling and database rate limits; task 003 verifies operations readiness; reviewer cutover/release remain pending.
+The compiled Worker now uses request-scoped database and Better Auth instances, a shared effective runtime environment, and successful-only auth-storage readiness memoization. Builds need no secrets. Node retains its pooled client; zero-env and forced demo remain connection-free. See [local setup, tests and evidence boundaries](docs/auth.md#local-workers-runtime-v06-task-001). Local workerd verification does not claim hosted Neon/Hyperdrive acceptance. Task 002 adds isolated preview tooling and database rate limits; task 003 verifies operations readiness; task 004 completes adopter guidance and preparation tooling; release remains reviewer-owned.
 
 ### Preview isolation and auth hardening (v0.6 task 002)
 
@@ -481,6 +491,6 @@ Migration `0013_wandering_midnight.sql` adds only `auth_rate_limit`. Better Auth
 
 ### Production operations readiness (v0.6 task 003)
 
-Follow [docs/deploy.md](docs/deploy.md) for local rehearsal, reviewer-only Neon/Hyperdrive setup, guarded direct migrations, atomic code/binding/secret staging, read-only smoke, optional account round-trip, rollback/data recovery and later OAuth. Production remains demo until task 004; no v0.6 release is claimed. No production connection or secret is needed for local acceptance. The default deployment check makes no account writes; the optional flag reports the retained throwaway identity and signs out its sessions. Cleanup is an exact-match reviewer database operation, not a new public API.
+Follow [docs/deploy.md](docs/deploy.md) for local rehearsal, your own Neon/Hyperdrive setup, guarded direct migrations, atomic code/binding/secret staging, read-only smoke, optional account round-trip, rollback/data recovery and later OAuth. The live site remains demo-only; v0.6 is ready for release pending task 004 review. No production connection or secret is needed for local acceptance. The default deployment check makes no account writes; the optional flag reports the retained throwaway identity and signs out its sessions. Cleanup is an exact-match database operation, not a new public API.
 
-[Task 003 local acceptance and capture reports](https://github.com/moeghashim/tenboards/tree/pr-assets/v06-003) record the exact isolated preview and evidence boundaries; hosted cutover checks remain task 004.
+[Task 003 local acceptance and capture reports](https://github.com/moeghashim/tenboards/tree/pr-assets/v06-003) record the exact isolated preview and evidence boundaries; hosted checks belong to each adopter; task 004 adds template preparation and onboarding.

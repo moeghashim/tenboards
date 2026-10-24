@@ -7,6 +7,8 @@ import { startWorker } from "./worker-test-support.ts";
 import assert from "node:assert/strict";
 import { spawnSync } from "node:child_process";
 
+await import("./deploy-prepare-test.ts");
+
 const remote = "postgresql://review:PRIVATE_MARKER@ep-review.example.test/review?sslmode=require";
 assert.throws(() => databaseCommandTarget({ DATABASE_URL: remote }, false));
 assert.equal(databaseCommandTarget({ DATABASE_URL: remote }, true), remote);

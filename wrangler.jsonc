@@ -5,7 +5,8 @@
   "compatibility_flags": ["nodejs_compat"],
   "workers_dev": true,
   "preview_urls": true
-  // Reviewer cutover only: add the real nonsecret ID, with query caching disabled.
-  // No active binding (and no auth secret) means the pre-cutover demo.
-  // , "hyperdrive": [{ "binding": "HYPERDRIVE", "id": "REVIEWER_REAL_ID" }]
+  // To use your database, set your Worker name above and add your real nonsecret ID.
+  // Disable Hyperdrive caching; follow docs/deploy.md to stage binding + auth together.
+  // No active binding and no auth secret keeps the zero-config demo.
+  // , "hyperdrive": [{ "binding": "HYPERDRIVE", "id": "YOUR_REAL_HYPERDRIVE_ID" }]
 }

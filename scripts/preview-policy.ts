@@ -1,5 +1,6 @@
+import { assertNoLocalEnvironmentFiles, cleanBuildEnvironment as baseBuildEnvironment } from "./build-environment.ts";
 import assert from "node:assert/strict";
-import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 export const previewSource = {
@@ -38,26 +39,11 @@ export function assertPreviewEnvironment(env: NodeJS.ProcessEnv) {
 }
 export async function assertPreviewInputs() {
   assertPreviewEnvironment(process.env);
-  for (const directory of [".", path.dirname(previewConfigPath)]) {
-    const files = await readdir(directory).catch((error: NodeJS.ErrnoException) => {
-      if (error.code === "ENOENT") return [];
-      throw error;
-    });
-    if (files.some((file) => (/^\.env(?:\.|$)/.test(file) && file !== ".env.example") || file.startsWith(".dev.vars")))
-      throw new Error("Preview build rejected: move local dotenv/dev-vars files out of the repository first.");
-  }
+  await assertNoLocalEnvironmentFiles([".", path.dirname(previewConfigPath)]);
   assertPreviewConfig(JSON.parse(await readFile("wrangler.preview.jsonc", "utf8")));
 }
 export function cleanBuildEnvironment(): NodeJS.ProcessEnv {
-  const env: NodeJS.ProcessEnv = {};
-  for (const key of ["PATH", "HOME", "TMPDIR", "TMP", "TEMP", "SystemRoot"])
-    if (process.env[key]) env[key] = process.env[key];
-  return {
-    ...env,
-    TENBOARDS_PREVIEW_BUILD: "1",
-    WRANGLER_SEND_METRICS: "false",
-    CLOUDFLARE_LOAD_DEV_VARS_FROM_DOT_ENV: "false",
-  };
+  return { ...baseBuildEnvironment(), TENBOARDS_PREVIEW_BUILD: "1" };
 }
 export async function generatePreviewConfig() {
   await mkdir(path.dirname(previewConfigPath), { recursive: true });
