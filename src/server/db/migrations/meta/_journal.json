@@ -99,6 +99,13 @@
       "when": 1792853598939,
       "tag": "0013_wandering_midnight",
       "breakpoints": true
+    },
+    {
+      "idx": 14,
+      "version": "7",
+      "when": 1792861585833,
+      "tag": "0014_remove_legacy",
+      "breakpoints": true
     }
   ]
 }

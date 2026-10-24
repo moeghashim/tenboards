@@ -9,5 +9,5 @@ export function DataProvider({ data, children }: { data: AnalyticsData; children
 export function useDashboardData() {
   const data = useContext(Context);
   if (!data) throw new Error("Missing dashboard data");
-  return { ...data.current, renderedAt: data.renderedAt, projection: data.projection };
+  return { ...data.current, renderedAt: data.renderedAt };
 }

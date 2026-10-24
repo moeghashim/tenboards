@@ -12,7 +12,7 @@ const loadData = createServerFn({ method: "GET" }).handler(async () => {
   await requireSession();
   const { requestReference } = await import("@/server/request-reference.server");
   const { readCrm } = await import("@/server/data/crm");
-  return readCrm({ variant: "current", renderedAt: requestReference() });
+  return readCrm({ renderedAt: requestReference() });
 });
 
 export const Route = createFileRoute("/(main)/dashboard/crm")({

@@ -15,13 +15,14 @@ const db = postgres(localDatabase);
 const emails: string[] = [];
 let cases = 0;
 try {
-  for (const variant of ["v1", "v2"]) {
+  for (const entry of ["guard", "login"]) {
+    const variant = "v2";
     const context = await browser.newContext({ extraHTTPHeaders: testHeaders });
     await cacheCaptureFonts(context);
     const page = await context.newPage();
     const destination = "/dashboard/tasks?search=guard-return#task-table";
     const url =
-      variant === "v1"
+      entry === "guard"
         ? destination
         : `/auth/v2/login?redirect=${encodeURIComponent(destination.split("#")[0])}#task-table`;
     await page.goto(server.baseURL + url, { waitUntil: "domcontentloaded" });

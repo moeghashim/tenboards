@@ -6,7 +6,7 @@ Zero configuration remains the first-run path: `npm install && npm run dev` need
 
 The foundation uses **better-auth 1.7.12**, its bundled `better-auth/adapters/drizzle` export, the existing lazy postgres.js client and explicit `auth_user`, `auth_session`, `auth_account`, `auth_verification` tables. Migration `0012_watery_sugar_man.sql` appends to the unchanged v0.4 journal. There is no startup migration/seed or seeded auth identity. The v0.4 directory, roles and employee Profile are sample data, not authentication or authorization records.
 
-Layers 001–004 provide HTTP/session/configuration boundaries, real V1/V2 entry flows, protected application routes, signed-in shell identity and account/security controls. Hosted auth remains deferred to v0.6.
+Layers 001–004 provide HTTP/session/configuration boundaries, real Auth V2 entry flows, protected application routes, signed-in shell identity and account/security controls. Hosted auth remains deferred to v0.6.
 
 ## Local setup
 
@@ -63,19 +63,19 @@ The generic cookie RPC is now limited to validated preference names/values, with
 
 `node --experimental-strip-types scripts/auth-config-check.ts` checks configuration/provider decisions, real DB signup/session/signout/cookie semantics, reseed preservation and a forced-demo TCP sentinel. `node --experimental-strip-types scripts/auth-cookie-check.ts` calls the actual HTTP RPCs with hostile cookie names/options and valid UI preferences. Both use the installed Playwright tooling, generated throwaway credentials, and no committed storage state. `DATABASE_URL` may select another explicit local test DB; otherwise the compose URL is used.
 
-Run `npm run data:parity` with the local URL: all 22 v0.4 reads and 130 scenarios remain unchanged. Run `npm run db:generate` to check drift; apply/repeat migrations explicitly. If configuration fails, check the source, private secret and exact origin. If auth storage fails, check Docker availability and migrations. Never fix a DB error by silently selecting demo while a secret is set.
+Run `npm run data:parity` with the local URL: all 22 domain reads and 104 retained scenarios pass (26 V1-only scenarios were removed in v0.6.1). Run `npm run db:generate` to check drift; apply/repeat migrations explicitly. If configuration fails, check the source, private secret and exact origin. If auth storage fails, check Docker availability and migrations. Never fix a DB error by silently selecting demo while a secret is set.
 
 Official references checked against installed APIs: [TanStack integration](https://www.better-auth.com/docs/integrations/tanstack), [Drizzle adapter](https://www.better-auth.com/docs/adapters/drizzle), [cookies](https://www.better-auth.com/docs/concepts/cookies), [sessions](https://www.better-auth.com/docs/concepts/session-management), [rate limits](https://www.better-auth.com/docs/concepts/rate-limit), [Start server routes](https://tanstack.com/start/latest/docs/framework/react/guide/server-routes) and [middleware](https://tanstack.com/start/latest/docs/framework/react/guide/middleware). The adapter docs show a separate package; the installed bundled export supports this approved dependency boundary.
 
 ## Sign in and return destinations
 
-Both V1 and V2 share the credential forms. Auth-on registration asks for a trimmed name (1–100 characters), email, password (8–128 characters) and matching confirmation. Demo retains the original field set and gives a safe Demo only acknowledgement; it never echoes passwords, submits to auth endpoints or creates a session. Google and GitHub remain decorative in demo; in auth mode only complete configured pairs appear, with no empty provider divider.
+Auth V2 owns the login and registration forms. Auth-on registration asks for a trimmed name (1–100 characters), email, password (8–128 characters) and matching confirmation. Demo retains the original field set and gives a safe Demo only acknowledgement; it never echoes passwords, submits to auth endpoints or creates a session. Google and GitHub remain decorative in demo; in auth mode only complete configured pairs appear, with no empty provider divider.
 
 Login's initially unchecked **Remember me** explicitly selects a session-only cookie. Checked login, signup and OAuth use the library's persistent seven-day policy described above. Failed submissions retain non-secret input, show safe inline feedback and permit retry; pending actions prevent duplicate submissions. Credential success replaces the document to clear router/user state and revalidate the destination. OAuth follows the library-owned authorize redirect. Provider denial returns to the same supported form variant with safe retry feedback.
 
 A single pure validator accepts only normalized relative application destinations with one leading slash. It rejects absolute/protocol-relative URLs, backslashes, controls, encoded path separators/double encoding, path normalization tricks, and auth/API loops. It preserves legitimate query/hash values, including nested query URLs that are data rather than the navigation target. Invalid/missing values fall back to `/dashboard/default`; unknown app paths go to the public 404. Login/register cross-links and already-signed-in visits use the same validation. Better Auth's supported before hook validates callback/new-user/error destinations again before OAuth state is created; provider state/cookie validation remains library-owned. Credential forms own their one post-success navigation and omit the library's automatic email callback redirect.
 
-`node --experimental-strip-types scripts/auth-redirect-check.ts`, `scripts/auth-flows-check.ts` and `scripts/auth-provider-check.ts` provide adversarial redirect, real-DB browser flow and provider configuration/authorize URL tests. No provider consent or token exchange is claimed. Shared client sign-out returns to canonical `/auth/v1/login` only after server success; the signed-in shell exposes Sign out and Profile.
+`node --experimental-strip-types scripts/auth-redirect-check.ts`, `scripts/auth-flows-check.ts` and `scripts/auth-provider-check.ts` provide adversarial redirect, real-DB browser flow and provider configuration/authorize URL tests. No provider consent or token exchange is claimed. Shared client sign-out returns to canonical `/auth/v2/login` only after server success; the signed-in shell exposes Sign out and Profile.
 
 Error/pending verification: `node --experimental-strip-types scripts/auth-errors-check.ts` checks duplicate registration, network failure/retry, a delayed real request with duplicate-submit prevention, and enabled limiter 429/recovery. It never replaces a server success with a mock.
 
@@ -84,15 +84,15 @@ Error/pending verification: `node --experimental-strip-types scripts/auth-errors
 | Boundary | Rule |
 | --- | --- |
 | `/`, `/dashboard`, `/dashboard/` | Aliases normalize into the guarded dashboard flow |
-| All 14 current/legacy dashboards and all app pages, including Coming Soon | Dashboard ancestor checks the actual request session before loading |
+| All 10 current dashboards and all app pages, including Coming Soon | Dashboard ancestor checks the actual request session before loading |
 | `/dashboard/mail`, `/dashboard/chat` | Dashboard guard protects each wrapper |
 | `/mail`, `/chat` | Each standalone document independently checks its session; same-origin iframe requests share cookies |
-| Four auth forms and bare `/auth/v2` | Public; signed-in form visits return to a validated application destination |
+| Two auth forms and bare `/auth/v2` | Public; signed-in form visits return to a validated application destination |
 | `/unauthorized`, root error/404, dashboard splat | Public; the exact splat renders without the protected shell/account loader |
 | `/api/auth/$` | Public dispatcher, with Better Auth's own endpoint/origin/session checks |
 | Safe mode/session bootstrap and four preference/layout functions | Public, minimal projection and strict cookie allowlists |
 | Account details / session revoke | Current-session projection / strict same-origin owned-ID mutation (see Account & security) |
-| All 26 application-data functions across 22 v0.4 domains | Independent `requireSession` before importing/invoking a domain read, including shell accounts and legacy variants |
+| All 22 application-data functions across 22 v0.4 domains | Independent `requireSession` before importing/invoking a domain read, including shell accounts |
 
 Auth-on identity is the current session's name/email/initials; demo switching stays demo-only. The menu links directly to Profile’s Account & security tab. A fresh document after sign-out drops router caches; each navigation checks authority again and refocus checks server state. Storage failures surface as failures, never anonymous/demo success. Identity/data responses use `Cache-Control: private, no-store`.
 
@@ -121,10 +121,6 @@ domain read; direct CLI parity remains independent of HTTP sessions.
 | Route owner | Callable read | Domain |
 | --- | --- | --- |
 | `/chat` | `loadData` | `chat` |
-| `/dashboard/analytics-v1` | `loadData` | `analytics` |
-| `/dashboard/crm-v1` | `loadData` | `crm` |
-| `/dashboard/default-v1` | `loadData` | `default` |
-| `/dashboard/finance-v1` | `loadData` | `finance` |
 | `/dashboard/academy` | `loadData` | `academy` |
 | `/dashboard/analytics` | `loadData` | `analytics` |
 | `/dashboard/calendar` | `loadData` | `calendar` |
@@ -177,10 +173,10 @@ The suite creates an explicitly test-owned empty database for the missing-schema
 case; the local test role needs CREATE DATABASE, as the compose role has. It never
 resets a shared database. Tests delete only their exact test-owned auth users.
 
-The migration check compares v0.5.0 migration files byte-for-byte, creates fresh and
+The migration check compares all shipped migration files at `f45e813` byte-for-byte, creates fresh and
 upgrade test databases, applies/repeats migrations and seed, and runs all 22 reads /
-130 scenarios in each. Those fresh test-owned databases are dropped after the checks. Fetch
-the `v0.5.0` tag in a shallow checkout before running this check. The bundle check
+104 scenarios in each. Those fresh test-owned databases are dropped after the checks. Fetch
+the `f45e813` base in a shallow checkout before running this check. The bundle check
 builds with private random sentinels, scans browser/server artifacts without
 printing their values, then always restores a zero-env build. It does not deploy.
 
@@ -191,19 +187,19 @@ explicit retries belong alongside final reports; screenshots/logs remain off mai
 
 Manual real-provider validation requires your own provider registration and a
 private complete credential pair. Register the exact callback URLs above, initiate
-from either form variant, complete consent, and verify the callback returns to the
+from either V2 form, complete consent, and verify the callback returns to the
 intended relative app destination with a real session. Repeat denial and sign-out.
 Automated dummy-pair tests deliberately stop at the provider authorize redirect.
 
 
 ## Verified security evidence (v0.5 review)
 
-The final `npm run auth:test` report has **486/486 scenarios across 12 suites**:
+The historical v0.5 `npm run auth:test` report had **486/486 scenarios across 12 suites**:
 config 31, cookie allowlist 23, service 5, redirect policy 28, browser return-path 4,
 credential flows 30, provider matrix 42, error/rate-limit 5, protection 283,
-account 15, demo Profile 8 and security 12. The return-path cases cover V1/V2
+account 15, demo Profile 8 and security 12. The return-path cases now cover Auth V2 through guarded and direct entry; the historical v0.5 run covered V1/V2
 pathname, query and fragment through login/register switching and real signup.
-The V1 switch link now consumes the same hydrated destination as its form.
+The retained V2 switch links consume the same hydrated destination as their forms.
 
 | Security requirement | Verified evidence and limits |
 | --- | --- |
@@ -270,7 +266,7 @@ DATABASE_URL=<separate-local-review-url> npm run data:parity
 
 The Worker suite tests demo/DB/auth configuration, runtime-only secrets, recovery
 and readiness memoization, sequential/overlapping users, signup/signin/signout,
-origin/redirect rejection, revocation and all 22 reads / 130 parity scenarios over
+origin/redirect rejection, revocation and all 22 reads / 104 parity scenarios over
 HTTP in a separate test-only Worker entry. That harness is not in production output.
 Existing protection/account/security suites discover the compiled RPC manifest;
 they do not rely on Vite RPC IDs. Node regressions remain separately labeled.
@@ -348,3 +344,11 @@ actual redirect/status/null private session. Use `--demo` for isolated previews;
 only explicit `--auth-roundtrip` creates a throwaway account, whose retained email
 and exact-match cleanup are documented. All passwords/cookies stay in
 memory. Normal GET traffic still updates the database limiter's counters.
+
+## v0.6.1 canonical entry points
+
+All route guards, session refreshes, sign-out destinations, account return links and OAuth error callbacks target `/auth/v2/login` or `/auth/v2/register`. The old V1 forms are redirect-only routes with HTTP 308 and the existing `authDestination` validator. Invalid destinations fall back to `/dashboard/default`; valid pathname/search/hash destinations survive. Dashboard V1 aliases redirect outside the authenticated layout; the current destination then applies its normal guard and callable reads still require a session. No auth storage, cookie policy, rate limit, provider or session ownership rule changes.
+
+Run `node --experimental-strip-types scripts/legacy-redirect-check.ts` against a seeded local test database to check all six aliases, safe/hostile return parameters and browser/guard behavior. Current protected read coverage is 22 app-data functions plus Account details (23); owned-session mutations remain independently checked.
+
+The v0.6.1 Node rerun passes 426 scenarios across 12 suites; compiled Worker auth passes 245 protection, 15 account and 12 security cases. Removed-screen coverage is retired while credential/cookie, return-path, provider, error, ownership and failure-mode categories remain. Reports and original reruns are in [pr-assets/v061-001](https://github.com/moeghashim/tenboards/tree/pr-assets/v061-001).

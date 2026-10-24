@@ -40,7 +40,7 @@ export function AuthFlow({
         const parent = window.top.location;
         if (parent.origin === window.location.origin) {
           const target = authDestination(parent.pathname + parent.search + parent.hash);
-          parent.replace(`/auth/v1/login?redirect=${encodeURIComponent(target)}`);
+          parent.replace(`/auth/v2/login?redirect=${encodeURIComponent(target)}`);
         }
       } catch {
         /* Cross-origin embedding has no authority to navigate its parent. */

@@ -20,5 +20,5 @@ export function finishSignIn(destination: unknown) {
 export async function signOut() {
   const result = await authClient.signOut();
   if (result.error) throw new Error(authError(result.error));
-  window.location.replace("/auth/v1/login");
+  window.location.replace("/auth/v2/login");
 }

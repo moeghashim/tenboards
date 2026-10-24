@@ -28,6 +28,11 @@ export async function captureShell(page: Page, capture: (name: string) => Promis
         ).length,
     );
   if (unlabeled) throw new Error("Unlabeled sidebar controls");
+  await sidebar.getByRole("link", { name: "Products", exact: true }).waitFor({ state: "hidden" });
+  await sidebar.locator('[data-slot="sidebar-content"]').evaluate((node) => {
+    node.scrollTop = node.scrollHeight;
+  });
+  await capture("shell-sidebar");
   const search = sidebar.getByRole("button", { name: "Search pages (Command or Control K)" });
   await search.press("Enter");
   const palette = page.getByRole("dialog", { name: "Go to a page" });
@@ -35,7 +40,15 @@ export async function captureShell(page: Page, capture: (name: string) => Promis
   const input = page.getByRole("combobox", { name: "Search pages" });
   await input.fill("finance");
   await page.keyboard.press("ArrowDown");
-  if (!(await input.getAttribute("aria-activedescendant"))) throw new Error("Palette keyboard selection missing");
+  await page.waitForFunction(
+    () => {
+      const input = document.querySelector('[role="combobox"][aria-label="Search pages"]');
+      const id = input?.getAttribute("aria-activedescendant");
+      return !!id && document.getElementById(id)?.getAttribute("aria-selected") === "true";
+    },
+    undefined,
+    { timeout: 3000 },
+  );
   await capture("shell-palette");
   await page.keyboard.press("Escape");
   await palette.waitFor({ state: "hidden" });

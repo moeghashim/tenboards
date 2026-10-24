@@ -33,7 +33,7 @@ for (const mode of [
       res.end("PRIVATE_ERROR_MARKER");
       return;
     }
-    if (mode === "public-redirect" && req.url === "/auth/v1/login") {
+    if (mode === "public-redirect" && req.url === "/auth/v2/login") {
       res.writeHead(302, { location: "https://evil.example" });
       res.end();
       return;
@@ -50,8 +50,8 @@ for (const mode of [
         res.writeHead(307, {
           location:
             mode === "unsafe-redirect"
-              ? "https://evil.example/auth/v1/login?redirect=/dashboard/default"
-              : "/auth/v1/login?redirect=%2Fdashboard%2Fdefault",
+              ? "https://evil.example/auth/v2/login?redirect=/dashboard/default"
+              : "/auth/v2/login?redirect=%2Fdashboard%2Fdefault",
         });
       res.end("<html>dashboard</html>");
     } else if (req.url === "/deployment-check-missing-route") {

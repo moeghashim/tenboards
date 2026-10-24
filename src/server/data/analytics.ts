@@ -1,7 +1,7 @@
 import { asc } from "drizzle-orm";
 import { z } from "zod";
 
-import { current, v1 } from "../db/fixtures/analytics.ts";
+import { current } from "../db/fixtures/analytics.ts";
 import type { AnalyticsData } from "./analytics.types.ts";
 import { projectAnalytics } from "./core-projectors.ts";
 import { loadMetricCollections } from "./metric-collections.ts";
@@ -9,29 +9,20 @@ import { joinMetric, type MetricUnit } from "./metric-projection.ts";
 import { readSource } from "./source.ts";
 
 const inputSchema = z.object({
-  variant: z.enum(["current", "v1"]),
   renderedAt: z.iso.datetime(),
   id: z.string().optional(),
-  from: z.iso.date().optional(),
-  to: z.iso.date().optional(),
 });
 type Input = z.infer<typeof inputSchema>;
 export async function demoAnalytics(input: Input): Promise<AnalyticsData> {
-  const { variant, renderedAt } = inputSchema.parse(input);
-  return projectAnalytics(structuredClone({ current, v1, variant, renderedAt }), input);
+  const { renderedAt } = inputSchema.parse(input);
+  return projectAnalytics(structuredClone({ current, renderedAt }), input);
 }
 export async function dbAnalytics(input: Input): Promise<AnalyticsData> {
-  const { variant, renderedAt } = inputSchema.parse(input);
+  const { renderedAt } = inputSchema.parse(input);
   const { getDatabase } = await import("../db/client.server.ts");
   const s = await import("../db/core-entity-schema.ts");
   const db = getDatabase();
   const metrics = await loadMetricCollections("core-analytics");
-  const coverageAssignment = (
-    await db
-      .select()
-      .from(s.analyticsCoverageAssignments)
-      .orderBy(asc(s.analyticsCoverageAssignments.position), asc(s.analyticsCoverageAssignments.id))
-  ).map(({ id, owner, focus, due }) => ({ id, owner, focus, due }));
   const topPagesPages = (
     await db
       .select()
@@ -137,42 +128,6 @@ export async function dbAnalytics(input: Input): Promise<AnalyticsData> {
     source: row.source,
     visitors: Number(row.visitors),
   }));
-  const analyticsActionsRiskLedgerLedgerRows = (
-    await db
-      .select()
-      .from(s.analyticsV1AnalyticsActionsRiskLedgerLedgerRows)
-      .orderBy(
-        asc(s.analyticsV1AnalyticsActionsRiskLedgerLedgerRows.position),
-        asc(s.analyticsV1AnalyticsActionsRiskLedgerLedgerRows.recordKey),
-      )
-  ).map((row) => ({
-    id: Number(row.id),
-    account: row.account,
-    dealId: row.dealId,
-    stage: row.stage,
-    blocker: row.blocker,
-    owner: row.owner,
-    idleDays: Number(row.idleDays),
-    closeVariance: row.closeVariance,
-    priority: row.priority,
-    nextAction: row.nextAction,
-    riskScore: Number(row.riskScore),
-  }));
-  const analyticsActionsManagerQueueNextInterventions = (
-    await db
-      .select()
-      .from(s.analyticsV1AnalyticsActionsManagerQueueNextInterventions)
-      .orderBy(
-        asc(s.analyticsV1AnalyticsActionsManagerQueueNextInterventions.position),
-        asc(s.analyticsV1AnalyticsActionsManagerQueueNextInterventions.recordKey),
-      )
-  ).map((row) => ({
-    dealId: row.dealId,
-    priority: row.priority,
-    owner: row.owner,
-    risk: Number(row.risk),
-    recommendation: row.recommendation,
-  }));
   const pageSummary = (
     await db
       .select()
@@ -181,22 +136,8 @@ export async function dbAnalytics(input: Input): Promise<AnalyticsData> {
   ).map((row) => ({
     value1: row.value1,
   }));
-  const analyticsOverviewDateRange = (
-    await db
-      .select()
-      .from(s.analyticsV1AnalyticsOverviewDateRange)
-      .orderBy(
-        asc(s.analyticsV1AnalyticsOverviewDateRange.position),
-        asc(s.analyticsV1AnalyticsOverviewDateRange.recordKey),
-      )
-  ).map((row) => ({
-    id: row.id,
-    from: row.from,
-    to: row.to,
-  }));
   return projectAnalytics(
     {
-      variant,
       renderedAt,
       current: {
         analyticsKpiStripMetrics: (metrics["current.analyticsKpiStripMetrics"] ??
@@ -212,30 +153,6 @@ export async function dbAnalytics(input: Input): Promise<AnalyticsData> {
         realtimeVisitorsSummary: (metrics["current.realtimeVisitorsSummary"] ??
           []) as AnalyticsData["current"]["realtimeVisitorsSummary"],
         pageSummary: pageSummary,
-      },
-      v1: {
-        coverageAssignment,
-        analyticsOverviewRiskSummaryMetrics: (metrics["v1.analyticsOverviewRiskSummaryMetrics"] ??
-          []) as AnalyticsData["v1"]["analyticsOverviewRiskSummaryMetrics"],
-        analyticsDriversForecastTargetChartData: (metrics["v1.analyticsDriversForecastTargetChartData"] ??
-          []) as AnalyticsData["v1"]["analyticsDriversForecastTargetChartData"],
-        analyticsActionsRiskLedgerLedgerRows: analyticsActionsRiskLedgerLedgerRows,
-        analyticsActionsManagerQueueNextInterventions: analyticsActionsManagerQueueNextInterventions,
-        analyticsActionsManagerQueueSummary: (metrics["v1.analyticsActionsManagerQueueSummary"] ??
-          []) as AnalyticsData["v1"]["analyticsActionsManagerQueueSummary"],
-        analyticsActionsRiskLedgerSummary: (metrics["v1.analyticsActionsRiskLedgerSummary"] ??
-          []) as AnalyticsData["v1"]["analyticsActionsRiskLedgerSummary"],
-        analyticsDriversCoverageTriageSummary: (metrics["v1.analyticsDriversCoverageTriageSummary"] ??
-          []) as AnalyticsData["v1"]["analyticsDriversCoverageTriageSummary"],
-        analyticsDriversForecastTargetSummary: (metrics["v1.analyticsDriversForecastTargetSummary"] ??
-          []) as AnalyticsData["v1"]["analyticsDriversForecastTargetSummary"],
-        analyticsOverviewSummary: (metrics["v1.analyticsOverviewSummary"] ??
-          []) as AnalyticsData["v1"]["analyticsOverviewSummary"],
-        analyticsDriversCoverageTriageLeverOptions: (metrics["v1.analyticsDriversCoverageTriageLeverOptions"] ??
-          []) as AnalyticsData["v1"]["analyticsDriversCoverageTriageLeverOptions"],
-        analyticsOverviewRevenueModel: (metrics["v1.analyticsOverviewRevenueModel"] ??
-          []) as AnalyticsData["v1"]["analyticsOverviewRevenueModel"],
-        analyticsOverviewDateRange: analyticsOverviewDateRange,
       },
     },
     input,

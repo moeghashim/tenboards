@@ -94,18 +94,17 @@ form choices, chart geometry and preference registries remain UI code.
 | `calendar` / `readCalendar` | Typed relative event definitions |
 | `mail` / `readMail` | Standalone Mail and dashboard iframe; accounts/messages/attachments |
 | `chat` / `readChat` | Standalone Chat and dashboard iframe; contacts/messages/reactions |
-| `default` / `readDefault` | Current customer dashboard and distinct V1 proposals |
-| `crm` / `readCrm` | Current opportunities and distinct V1 leads/actions |
-| `finance` / `readFinance` | Current/V1 accounts/cards/transactions/payments and metrics |
-| `analytics` / `readAnalytics` | Current/V1 visitor/page/source/campaign/risk/range models |
+| `default` / `readDefault` | Customer dashboard |
+| `crm` / `readCrm` | Opportunities dashboard |
+| `finance` / `readFinance` | Accounts/cards/transactions and metrics |
+| `analytics` / `readAnalytics` | Visitor/page/source/campaign models |
 | `productivity` / `readProductivity` | Tasks/projects/notes/goals/focus/quote and civil day |
 | `academy` / `readAcademy` | Classes/rooms/schedules/assignments/events/achievements |
 | `logistics` / `readLogistics` | Customers/shipments/cargo/tracking/handling/locations |
 | `infrastructure` / `readInfrastructure` | Organizations/projects/environments/resources |
 | `patients` / `readPatients` | Beds/identities/clinical baselines/alarms/events/settings |
 
-There are 22 registered reads and 130 parity scenarios. Current/V1 dashboard inputs
-are separate scenarios of the owning read, not merged datasets. Auth/system/error
+There are 22 registered reads and 104 parity scenarios. v0.6.1 removes 26 V1-only scenarios: Default 8, CRM 6, Finance 6 and Analytics 6. Retained screen coverage is unchanged. Auth/system/error
 routes and redirects have no persisted app-domain data. Mail/Chat dashboard aliases
 load their standalone source through iframes. The shared dashboard account loader
 also covers non-data dashboard states.
@@ -147,8 +146,7 @@ Invoice and Mail store typed offsets/definitions and resolve one serialized
 request reference on each read. Seeding never bakes today's rendered dates into
 those definitions. Calendar adopts browser-local month/wall time after hydration;
 Today and its now marker keep the real clock. Month-end CRM labels preserve
-clamped month subtraction. Analytics V1's range generator is owned by the data
-layer and runs from loaded model parameters.
+clamped month subtraction.
 
 Patient Monitoring alone retains client-simulated waveform/trend/tick computation
 in `waveform-data.ts`, `realtime-utils.ts`, `use-patient-vital-series.ts` and
@@ -183,7 +181,7 @@ unchanged schema must report no changes.
 identical inputs/context, compares exact results/types/order and verifies caller
 mutation cannot contaminate subsequent reads. Its inventory matches every exported
 `readX` function; omissions, DB failures and mismatches fail nonzero. It covers
-missing IDs, filters, current/V1 variants, later request times after seed, leap days,
+missing IDs, filters, later request times after seed, leap days,
 year/month rollover and date ranges. Negative controls:
 
 ```sh
@@ -249,7 +247,7 @@ Migration `0012_watery_sugar_man.sql` appends four isolated auth tables after v0
 unchanged `0011`. Auth is optional: DB without a secret remains open; a secret adds
 route and callable-function session enforcement. Domain reads still have no writes
 or identity selection and CLI parity calls them without an HTTP session. All 22
-reads/130 baseline scenarios remain the v0.4 contract. Sample directory roles and
+reads remain; v0.6.1 reduces 130 baseline scenarios to 104 by removing only retired V1 coverage. Sample directory roles and
 Profile employment data are not authorization or account records. Seeds never
 create passwords/auth users and preserve existing auth records. Auth mutations go
 through Better Auth and never update these business tables.
@@ -281,3 +279,11 @@ missing/duplicate TLS settings, known pooler endpoints and Hyperdrive binding in
 Parity/auth suites remain local-only. These commands apply additive migrations and
 idempotent fixture upserts; they do not reset schemas or create default auth users.
 See [the deployment runbook](deploy.md) for ordering, backup/recovery and cutover.
+
+## v0.6.1 legacy cleanup
+
+`0014_remove_legacy.sql` is a new migration after the unchanged shipped journal. It drops 13 tables used exclusively by V1 screens: four CRM tables, two Finance tables, three Analytics V1 tables, two Default V1 tables, `default_proposal_reviewers` and `analytics_coverage_assignments`. It deletes `v1.%` series only for the four core dashboard domains, removing dependent metric dimensions before points. Shared metric tables and all current-screen data remain.
+
+The four core reads no longer accept a variant or return/load V1 payloads. V1 fixtures, seed statements, route server functions and range-specific projectors are deleted. Shared civil-date helpers used by Academy and Productivity remain.
+
+`node --experimental-strip-types scripts/auth-migration-check.ts` creates and drops test-owned databases for fresh and populated upgrade paths from `f45e813`. It compares retained rows, verifies all 13 tables and V1 metric rows are gone, repeats migrations/seed, and runs 22-read/104-scenario parity on each. This migration intentionally deletes retired template data; take a backup before upgrading an adopted installation that may contain customized V1 data.

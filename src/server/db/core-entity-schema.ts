@@ -1,48 +1,4 @@
 import { boolean, integer, numeric, pgTable, text } from "drizzle-orm/pg-core";
-export const crmV1CrmConfigProjectRevenueChartData = pgTable("crm_v1_project_revenue_chart_data", {
-  recordKey: text().primaryKey(),
-  position: integer().notNull(),
-  name: text().notNull(),
-  actual: numeric({ precision: 24, scale: 6 }).notNull(),
-  target: numeric({ precision: 24, scale: 6 }).notNull(),
-  remaining: numeric({ precision: 24, scale: 6 }).notNull(),
-});
-export const crmV1CrmConfigRegionSalesData = pgTable("crm_v1_region_sales_data", {
-  recordKey: text().primaryKey(),
-  position: integer().notNull(),
-  region: text().notNull(),
-  sales: numeric({ precision: 24, scale: 6 }).notNull(),
-  percentage: numeric({ precision: 24, scale: 6 }).notNull(),
-  growth: numeric({ precision: 24, scale: 6 }).notNull(),
-  growthTemplate: text().notNull(),
-  growthPrefix: text().notNull(),
-  growthDecimals: integer().notNull(),
-  growthGrouped: boolean().notNull(),
-  growthScale: integer().notNull(),
-  growthLeadingDecimal: boolean().notNull(),
-  growthUnit: text().notNull(),
-  isPositive: boolean().notNull(),
-});
-export const crmV1CrmConfigActionItems = pgTable("crm_v1_action_items", {
-  recordKey: text().primaryKey(),
-  position: integer().notNull(),
-  id: numeric({ precision: 24, scale: 6 }).notNull(),
-  title: text().notNull(),
-  desc: text().notNull(),
-  due: text().notNull(),
-  priority: text().notNull(),
-  checked: boolean().notNull(),
-});
-export const crmV1CrmConfigRecentLeadsData = pgTable("crm_v1_recent_leads_data", {
-  recordKey: text().primaryKey(),
-  position: integer().notNull(),
-  id: text().notNull(),
-  name: text().notNull(),
-  company: text().notNull(),
-  status: text().notNull(),
-  source: text().notNull(),
-  lastActivity: text().notNull(),
-});
 export const financeCurrentBalanceDistributionCardBalanceData = pgTable("finance_current_balance_data", {
   recordKey: text().primaryKey(),
   position: integer().notNull(),
@@ -104,15 +60,6 @@ export const financeCurrentQuickActionsContacts = pgTable("finance_current_conta
   position: integer().notNull(),
   id: numeric({ precision: 24, scale: 6 }).notNull(),
   initials: text().notNull(),
-});
-export const financeV1CardOverviewUpcomingPayments = pgTable("finance_v1_upcoming_payments", {
-  recordKey: text().primaryKey(),
-  position: integer().notNull(),
-  id: numeric({ precision: 24, scale: 6 }).notNull(),
-  icon: text().notNull(),
-  title: text().notNull(),
-  amount: numeric({ precision: 24, scale: 6 }).notNull(),
-  date: text().notNull(),
 });
 export const analyticsCurrentTopPagesPages = pgTable("analytics_current_pages", {
   recordKey: text().primaryKey(),
@@ -178,30 +125,6 @@ export const analyticsCurrentTopTrafficSourcesReferrersData = pgTable("analytics
   source: text().notNull(),
   visitors: numeric({ precision: 24, scale: 6 }).notNull(),
 });
-export const analyticsV1AnalyticsActionsRiskLedgerLedgerRows = pgTable("analytics_v1_ledger_rows", {
-  recordKey: text().primaryKey(),
-  position: integer().notNull(),
-  id: numeric({ precision: 24, scale: 6 }).notNull(),
-  account: text().notNull(),
-  dealId: text().notNull(),
-  stage: text().notNull(),
-  blocker: text().notNull(),
-  owner: text().notNull(),
-  idleDays: numeric({ precision: 24, scale: 6 }).notNull(),
-  closeVariance: text().notNull(),
-  priority: text(),
-  nextAction: text().notNull(),
-  riskScore: numeric({ precision: 24, scale: 6 }).notNull(),
-});
-export const analyticsV1AnalyticsActionsManagerQueueNextInterventions = pgTable("analytics_v1_next_interventions", {
-  recordKey: text().primaryKey(),
-  position: integer().notNull(),
-  dealId: text().notNull(),
-  priority: text().notNull(),
-  owner: text().notNull(),
-  risk: numeric({ precision: 24, scale: 6 }).notNull(),
-  recommendation: text().notNull(),
-});
 export const defaultCurrentRecordsCustomers = pgTable("default_current_customers", {
   recordKey: text().primaryKey(),
   position: integer().notNull(),
@@ -212,17 +135,6 @@ export const defaultCurrentRecordsCustomers = pgTable("default_current_customers
   status: text().notNull(),
   billing: text().notNull(),
   joined: text().notNull(),
-});
-export const defaultV1RecordsProposals = pgTable("default_v1_proposals", {
-  recordKey: text().primaryKey(),
-  position: integer().notNull(),
-  id: numeric({ precision: 24, scale: 6 }).notNull(),
-  header: text().notNull(),
-  type: text().notNull(),
-  status: text().notNull(),
-  target: text().notNull(),
-  limit: text().notNull(),
-  reviewer: text().notNull(),
 });
 export const crmCurrentRecordsOpportunities = pgTable("crm_current_opportunities", {
   recordKey: text().primaryKey(),
@@ -251,68 +163,14 @@ export const crmCurrentTaskRemindersSummary = pgTable("crm_current_summary", {
   value5: text().notNull(),
   value6: text().notNull(),
 });
-export const financeV1CardOverviewSummary = pgTable("finance_v1_summary", {
-  cardType: text().notNull().default(""),
-  brandIcon: text().notNull().default(""),
-  networkIcon: text().notNull().default(""),
-  recordKey: text().primaryKey(),
-  position: integer().notNull(),
-  value1: text().notNull(),
-  value2: text().notNull(),
-  value3: text().notNull(),
-  value4: text().notNull(),
-  value5: numeric({ precision: 24, scale: 6 }).notNull(),
-  value5Template: text().notNull(),
-  value5Prefix: text().notNull(),
-  value5Decimals: integer().notNull(),
-  value5Grouped: boolean().notNull(),
-  value5Scale: integer().notNull(),
-  value5LeadingDecimal: boolean().notNull(),
-  value5Unit: text().notNull(),
-  value6: numeric({ precision: 24, scale: 6 }).notNull(),
-  value6Template: text().notNull(),
-  value6Prefix: text().notNull(),
-  value6Decimals: integer().notNull(),
-  value6Grouped: boolean().notNull(),
-  value6Scale: integer().notNull(),
-  value6LeadingDecimal: boolean().notNull(),
-  value6Unit: text().notNull(),
-});
 export const analyticsCurrentPageSummary = pgTable("analytics_current_summary", {
   recordKey: text().primaryKey(),
   position: integer().notNull(),
   value1: text().notNull(),
-});
-export const analyticsV1AnalyticsOverviewDateRange = pgTable("analytics_v1_date_range", {
-  recordKey: text().primaryKey(),
-  position: integer().notNull(),
-  id: text().notNull(),
-  from: text().notNull(),
-  to: text().notNull(),
-});
-export const defaultV1ChartAreaInteractiveReference = pgTable("default_v1_reference", {
-  recordKey: text().primaryKey(),
-  position: integer().notNull(),
-  id: text().notNull(),
-  date: text().notNull(),
 });
 export const financeCurrentStatementReference = pgTable("finance_current_reference", {
   recordKey: text().primaryKey(),
   position: integer().notNull(),
   id: text().notNull(),
   date: text().notNull(),
-});
-
-export const defaultReviewers = pgTable("default_proposal_reviewers", {
-  value: text().primaryKey(),
-  label: text().notNull(),
-  position: integer().notNull(),
-});
-
-export const analyticsCoverageAssignments = pgTable("analytics_coverage_assignments", {
-  id: text().primaryKey(),
-  position: integer().notNull(),
-  owner: text().notNull(),
-  focus: text().notNull(),
-  due: text().notNull(),
 });

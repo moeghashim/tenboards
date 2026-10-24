@@ -39,15 +39,15 @@ import { Route as mainDashboardProfileRouteRouteImport } from './routes/(main)/d
 import { Route as mainDashboardRolesRouteRouteImport } from './routes/(main)/dashboard/roles/route'
 import { Route as mainDashboardTasksRouteRouteImport } from './routes/(main)/dashboard/tasks/route'
 import { Route as mainDashboardUsersRouteRouteImport } from './routes/(main)/dashboard/users/route'
+import { Route as mainDashboardAnalyticsV1RouteImport } from './routes/(main)/dashboard_.analytics-v1'
+import { Route as mainDashboardCrmV1RouteImport } from './routes/(main)/dashboard_.crm-v1'
+import { Route as mainDashboardDefaultV1RouteImport } from './routes/(main)/dashboard_.default-v1'
+import { Route as mainDashboardFinanceV1RouteImport } from './routes/(main)/dashboard_.finance-v1'
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
 import { Route as mainAuthV1LoginRouteRouteImport } from './routes/(main)/auth/v1/login/route'
 import { Route as mainAuthV1RegisterRouteRouteImport } from './routes/(main)/auth/v1/register/route'
 import { Route as mainAuthV2LoginRouteRouteImport } from './routes/(main)/auth/v2/login/route'
 import { Route as mainAuthV2RegisterRouteRouteImport } from './routes/(main)/auth/v2/register/route'
-import { Route as mainDashboardlegacyAnalyticsV1RouteRouteImport } from './routes/(main)/dashboard/(legacy)/analytics-v1/route'
-import { Route as mainDashboardlegacyCrmV1RouteRouteImport } from './routes/(main)/dashboard/(legacy)/crm-v1/route'
-import { Route as mainDashboardlegacyDefaultV1RouteRouteImport } from './routes/(main)/dashboard/(legacy)/default-v1/route'
-import { Route as mainDashboardlegacyFinanceV1RouteRouteImport } from './routes/(main)/dashboard/(legacy)/finance-v1/route'
 
 const externalIndexRoute = externalIndexRouteImport.update({
   id: '/(external)/',
@@ -215,6 +215,27 @@ const mainDashboardUsersRouteRoute = mainDashboardUsersRouteRouteImport.update({
   path: '/users',
   getParentRoute: () => mainDashboardRouteRoute,
 } as any)
+const mainDashboardAnalyticsV1Route =
+  mainDashboardAnalyticsV1RouteImport.update({
+    id: '/(main)/dashboard_/analytics-v1',
+    path: '/dashboard/analytics-v1',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const mainDashboardCrmV1Route = mainDashboardCrmV1RouteImport.update({
+  id: '/(main)/dashboard_/crm-v1',
+  path: '/dashboard/crm-v1',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const mainDashboardDefaultV1Route = mainDashboardDefaultV1RouteImport.update({
+  id: '/(main)/dashboard_/default-v1',
+  path: '/dashboard/default-v1',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const mainDashboardFinanceV1Route = mainDashboardFinanceV1RouteImport.update({
+  id: '/(main)/dashboard_/finance-v1',
+  path: '/dashboard/finance-v1',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiAuthSplatRoute = ApiAuthSplatRouteImport.update({
   id: '/api/auth/$',
   path: '/api/auth/$',
@@ -240,30 +261,6 @@ const mainAuthV2RegisterRouteRoute = mainAuthV2RegisterRouteRouteImport.update({
   path: '/register',
   getParentRoute: () => mainAuthV2RouteRoute,
 } as any)
-const mainDashboardlegacyAnalyticsV1RouteRoute =
-  mainDashboardlegacyAnalyticsV1RouteRouteImport.update({
-    id: '/(legacy)/analytics-v1',
-    path: '/analytics-v1',
-    getParentRoute: () => mainDashboardRouteRoute,
-  } as any)
-const mainDashboardlegacyCrmV1RouteRoute =
-  mainDashboardlegacyCrmV1RouteRouteImport.update({
-    id: '/(legacy)/crm-v1',
-    path: '/crm-v1',
-    getParentRoute: () => mainDashboardRouteRoute,
-  } as any)
-const mainDashboardlegacyDefaultV1RouteRoute =
-  mainDashboardlegacyDefaultV1RouteRouteImport.update({
-    id: '/(legacy)/default-v1',
-    path: '/default-v1',
-    getParentRoute: () => mainDashboardRouteRoute,
-  } as any)
-const mainDashboardlegacyFinanceV1RouteRoute =
-  mainDashboardlegacyFinanceV1RouteRouteImport.update({
-    id: '/(legacy)/finance-v1',
-    path: '/finance-v1',
-    getParentRoute: () => mainDashboardRouteRoute,
-  } as any)
 
 export interface FileRoutesByFullPath {
   '/chat': typeof mainChatRouteRoute
@@ -295,16 +292,16 @@ export interface FileRoutesByFullPath {
   '/dashboard/tasks': typeof mainDashboardTasksRouteRoute
   '/dashboard/users': typeof mainDashboardUsersRouteRoute
   '/dashboard/$': typeof mainDashboardSplatRoute
+  '/dashboard/analytics-v1': typeof mainDashboardAnalyticsV1Route
+  '/dashboard/crm-v1': typeof mainDashboardCrmV1Route
+  '/dashboard/default-v1': typeof mainDashboardDefaultV1Route
+  '/dashboard/finance-v1': typeof mainDashboardFinanceV1Route
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/dashboard/': typeof mainDashboardIndexRoute
   '/auth/v1/login': typeof mainAuthV1LoginRouteRoute
   '/auth/v1/register': typeof mainAuthV1RegisterRouteRoute
   '/auth/v2/login': typeof mainAuthV2LoginRouteRoute
   '/auth/v2/register': typeof mainAuthV2RegisterRouteRoute
-  '/dashboard/analytics-v1': typeof mainDashboardlegacyAnalyticsV1RouteRoute
-  '/dashboard/crm-v1': typeof mainDashboardlegacyCrmV1RouteRoute
-  '/dashboard/default-v1': typeof mainDashboardlegacyDefaultV1RouteRoute
-  '/dashboard/finance-v1': typeof mainDashboardlegacyFinanceV1RouteRoute
 }
 export interface FileRoutesByTo {
   '/chat': typeof mainChatRouteRoute
@@ -335,16 +332,16 @@ export interface FileRoutesByTo {
   '/dashboard/tasks': typeof mainDashboardTasksRouteRoute
   '/dashboard/users': typeof mainDashboardUsersRouteRoute
   '/dashboard/$': typeof mainDashboardSplatRoute
+  '/dashboard/analytics-v1': typeof mainDashboardAnalyticsV1Route
+  '/dashboard/crm-v1': typeof mainDashboardCrmV1Route
+  '/dashboard/default-v1': typeof mainDashboardDefaultV1Route
+  '/dashboard/finance-v1': typeof mainDashboardFinanceV1Route
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/dashboard': typeof mainDashboardIndexRoute
   '/auth/v1/login': typeof mainAuthV1LoginRouteRoute
   '/auth/v1/register': typeof mainAuthV1RegisterRouteRoute
   '/auth/v2/login': typeof mainAuthV2LoginRouteRoute
   '/auth/v2/register': typeof mainAuthV2RegisterRouteRoute
-  '/dashboard/analytics-v1': typeof mainDashboardlegacyAnalyticsV1RouteRoute
-  '/dashboard/crm-v1': typeof mainDashboardlegacyCrmV1RouteRoute
-  '/dashboard/default-v1': typeof mainDashboardlegacyDefaultV1RouteRoute
-  '/dashboard/finance-v1': typeof mainDashboardlegacyFinanceV1RouteRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -377,16 +374,16 @@ export interface FileRoutesById {
   '/(main)/dashboard/tasks': typeof mainDashboardTasksRouteRoute
   '/(main)/dashboard/users': typeof mainDashboardUsersRouteRoute
   '/(main)/dashboard/$': typeof mainDashboardSplatRoute
+  '/(main)/dashboard_/analytics-v1': typeof mainDashboardAnalyticsV1Route
+  '/(main)/dashboard_/crm-v1': typeof mainDashboardCrmV1Route
+  '/(main)/dashboard_/default-v1': typeof mainDashboardDefaultV1Route
+  '/(main)/dashboard_/finance-v1': typeof mainDashboardFinanceV1Route
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/(main)/dashboard/': typeof mainDashboardIndexRoute
   '/(main)/auth/v1/login': typeof mainAuthV1LoginRouteRoute
   '/(main)/auth/v1/register': typeof mainAuthV1RegisterRouteRoute
   '/(main)/auth/v2/login': typeof mainAuthV2LoginRouteRoute
   '/(main)/auth/v2/register': typeof mainAuthV2RegisterRouteRoute
-  '/(main)/dashboard/(legacy)/analytics-v1': typeof mainDashboardlegacyAnalyticsV1RouteRoute
-  '/(main)/dashboard/(legacy)/crm-v1': typeof mainDashboardlegacyCrmV1RouteRoute
-  '/(main)/dashboard/(legacy)/default-v1': typeof mainDashboardlegacyDefaultV1RouteRoute
-  '/(main)/dashboard/(legacy)/finance-v1': typeof mainDashboardlegacyFinanceV1RouteRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -420,16 +417,16 @@ export interface FileRouteTypes {
     | '/dashboard/tasks'
     | '/dashboard/users'
     | '/dashboard/$'
+    | '/dashboard/analytics-v1'
+    | '/dashboard/crm-v1'
+    | '/dashboard/default-v1'
+    | '/dashboard/finance-v1'
     | '/api/auth/$'
     | '/dashboard/'
     | '/auth/v1/login'
     | '/auth/v1/register'
     | '/auth/v2/login'
     | '/auth/v2/register'
-    | '/dashboard/analytics-v1'
-    | '/dashboard/crm-v1'
-    | '/dashboard/default-v1'
-    | '/dashboard/finance-v1'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/chat'
@@ -460,16 +457,16 @@ export interface FileRouteTypes {
     | '/dashboard/tasks'
     | '/dashboard/users'
     | '/dashboard/$'
+    | '/dashboard/analytics-v1'
+    | '/dashboard/crm-v1'
+    | '/dashboard/default-v1'
+    | '/dashboard/finance-v1'
     | '/api/auth/$'
     | '/dashboard'
     | '/auth/v1/login'
     | '/auth/v1/register'
     | '/auth/v2/login'
     | '/auth/v2/register'
-    | '/dashboard/analytics-v1'
-    | '/dashboard/crm-v1'
-    | '/dashboard/default-v1'
-    | '/dashboard/finance-v1'
   id:
     | '__root__'
     | '/(main)/chat'
@@ -501,16 +498,16 @@ export interface FileRouteTypes {
     | '/(main)/dashboard/tasks'
     | '/(main)/dashboard/users'
     | '/(main)/dashboard/$'
+    | '/(main)/dashboard_/analytics-v1'
+    | '/(main)/dashboard_/crm-v1'
+    | '/(main)/dashboard_/default-v1'
+    | '/(main)/dashboard_/finance-v1'
     | '/api/auth/$'
     | '/(main)/dashboard/'
     | '/(main)/auth/v1/login'
     | '/(main)/auth/v1/register'
     | '/(main)/auth/v2/login'
     | '/(main)/auth/v2/register'
-    | '/(main)/dashboard/(legacy)/analytics-v1'
-    | '/(main)/dashboard/(legacy)/crm-v1'
-    | '/(main)/dashboard/(legacy)/default-v1'
-    | '/(main)/dashboard/(legacy)/finance-v1'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -520,6 +517,10 @@ export interface RootRouteChildren {
   mainUnauthorizedRoute: typeof mainUnauthorizedRoute
   externalIndexRoute: typeof externalIndexRoute
   mainAuthV2RouteRoute: typeof mainAuthV2RouteRouteWithChildren
+  mainDashboardAnalyticsV1Route: typeof mainDashboardAnalyticsV1Route
+  mainDashboardCrmV1Route: typeof mainDashboardCrmV1Route
+  mainDashboardDefaultV1Route: typeof mainDashboardDefaultV1Route
+  mainDashboardFinanceV1Route: typeof mainDashboardFinanceV1Route
   ApiAuthSplatRoute: typeof ApiAuthSplatRoute
   mainAuthV1LoginRouteRoute: typeof mainAuthV1LoginRouteRoute
   mainAuthV1RegisterRouteRoute: typeof mainAuthV1RegisterRouteRoute
@@ -737,6 +738,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof mainDashboardUsersRouteRouteImport
       parentRoute: typeof mainDashboardRouteRoute
     }
+    '/(main)/dashboard_/analytics-v1': {
+      id: '/(main)/dashboard_/analytics-v1'
+      path: '/dashboard/analytics-v1'
+      fullPath: '/dashboard/analytics-v1'
+      preLoaderRoute: typeof mainDashboardAnalyticsV1RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(main)/dashboard_/crm-v1': {
+      id: '/(main)/dashboard_/crm-v1'
+      path: '/dashboard/crm-v1'
+      fullPath: '/dashboard/crm-v1'
+      preLoaderRoute: typeof mainDashboardCrmV1RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(main)/dashboard_/default-v1': {
+      id: '/(main)/dashboard_/default-v1'
+      path: '/dashboard/default-v1'
+      fullPath: '/dashboard/default-v1'
+      preLoaderRoute: typeof mainDashboardDefaultV1RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(main)/dashboard_/finance-v1': {
+      id: '/(main)/dashboard_/finance-v1'
+      path: '/dashboard/finance-v1'
+      fullPath: '/dashboard/finance-v1'
+      preLoaderRoute: typeof mainDashboardFinanceV1RouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/auth/$': {
       id: '/api/auth/$'
       path: '/api/auth/$'
@@ -772,34 +801,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof mainAuthV2RegisterRouteRouteImport
       parentRoute: typeof mainAuthV2RouteRoute
     }
-    '/(main)/dashboard/(legacy)/analytics-v1': {
-      id: '/(main)/dashboard/(legacy)/analytics-v1'
-      path: '/analytics-v1'
-      fullPath: '/dashboard/analytics-v1'
-      preLoaderRoute: typeof mainDashboardlegacyAnalyticsV1RouteRouteImport
-      parentRoute: typeof mainDashboardRouteRoute
-    }
-    '/(main)/dashboard/(legacy)/crm-v1': {
-      id: '/(main)/dashboard/(legacy)/crm-v1'
-      path: '/crm-v1'
-      fullPath: '/dashboard/crm-v1'
-      preLoaderRoute: typeof mainDashboardlegacyCrmV1RouteRouteImport
-      parentRoute: typeof mainDashboardRouteRoute
-    }
-    '/(main)/dashboard/(legacy)/default-v1': {
-      id: '/(main)/dashboard/(legacy)/default-v1'
-      path: '/default-v1'
-      fullPath: '/dashboard/default-v1'
-      preLoaderRoute: typeof mainDashboardlegacyDefaultV1RouteRouteImport
-      parentRoute: typeof mainDashboardRouteRoute
-    }
-    '/(main)/dashboard/(legacy)/finance-v1': {
-      id: '/(main)/dashboard/(legacy)/finance-v1'
-      path: '/finance-v1'
-      fullPath: '/dashboard/finance-v1'
-      preLoaderRoute: typeof mainDashboardlegacyFinanceV1RouteRouteImport
-      parentRoute: typeof mainDashboardRouteRoute
-    }
   }
 }
 
@@ -828,10 +829,6 @@ interface mainDashboardRouteRouteChildren {
   mainDashboardUsersRouteRoute: typeof mainDashboardUsersRouteRoute
   mainDashboardSplatRoute: typeof mainDashboardSplatRoute
   mainDashboardIndexRoute: typeof mainDashboardIndexRoute
-  mainDashboardlegacyAnalyticsV1RouteRoute: typeof mainDashboardlegacyAnalyticsV1RouteRoute
-  mainDashboardlegacyCrmV1RouteRoute: typeof mainDashboardlegacyCrmV1RouteRoute
-  mainDashboardlegacyDefaultV1RouteRoute: typeof mainDashboardlegacyDefaultV1RouteRoute
-  mainDashboardlegacyFinanceV1RouteRoute: typeof mainDashboardlegacyFinanceV1RouteRoute
 }
 
 const mainDashboardRouteRouteChildren: mainDashboardRouteRouteChildren = {
@@ -860,13 +857,6 @@ const mainDashboardRouteRouteChildren: mainDashboardRouteRouteChildren = {
   mainDashboardUsersRouteRoute: mainDashboardUsersRouteRoute,
   mainDashboardSplatRoute: mainDashboardSplatRoute,
   mainDashboardIndexRoute: mainDashboardIndexRoute,
-  mainDashboardlegacyAnalyticsV1RouteRoute:
-    mainDashboardlegacyAnalyticsV1RouteRoute,
-  mainDashboardlegacyCrmV1RouteRoute: mainDashboardlegacyCrmV1RouteRoute,
-  mainDashboardlegacyDefaultV1RouteRoute:
-    mainDashboardlegacyDefaultV1RouteRoute,
-  mainDashboardlegacyFinanceV1RouteRoute:
-    mainDashboardlegacyFinanceV1RouteRoute,
 }
 
 const mainDashboardRouteRouteWithChildren =
@@ -893,6 +883,10 @@ const rootRouteChildren: RootRouteChildren = {
   mainUnauthorizedRoute: mainUnauthorizedRoute,
   externalIndexRoute: externalIndexRoute,
   mainAuthV2RouteRoute: mainAuthV2RouteRouteWithChildren,
+  mainDashboardAnalyticsV1Route: mainDashboardAnalyticsV1Route,
+  mainDashboardCrmV1Route: mainDashboardCrmV1Route,
+  mainDashboardDefaultV1Route: mainDashboardDefaultV1Route,
+  mainDashboardFinanceV1Route: mainDashboardFinanceV1Route,
   ApiAuthSplatRoute: ApiAuthSplatRoute,
   mainAuthV1LoginRouteRoute: mainAuthV1LoginRouteRoute,
   mainAuthV1RegisterRouteRoute: mainAuthV1RegisterRouteRoute,

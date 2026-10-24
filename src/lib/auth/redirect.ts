@@ -35,6 +35,6 @@ export function authSearch(search: Record<string, unknown>): { redirect?: string
 }
 export function authErrorCallback(value: unknown, destination: string) {
   const path = typeof value === "string" ? value.split("?", 1)[0] : "";
-  const safePath = /^\/auth\/v[12]\/(login|register)$/.test(path) ? path : "/auth/v1/login";
+  const safePath = /^\/auth\/v2\/(login|register)$/.test(path) ? path : "/auth/v2/login";
   return `${safePath}?${new URLSearchParams({ redirect: authDestination(destination), error: "oauth" })}`;
 }

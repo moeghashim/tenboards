@@ -34,7 +34,8 @@ const pass = (name: string) => {
 const destination = "/dashboard/tasks?search=auth-test#table";
 try {
   await mkdir(evidenceDir, { recursive: true });
-  for (const variant of ["v1", "v2"]) {
+  for (const remember of [false, true]) {
+    const variant = "v2";
     const context = await browser.newContext({ extraHTTPHeaders: testHeaders });
     await cacheCaptureFonts(context);
     context.setDefaultTimeout(15000);
@@ -77,7 +78,7 @@ try {
       const moduleURL = "/src/lib/auth/client.ts";
       await (await import(moduleURL)).signOut();
     });
-    await page.waitForURL("**/auth/v1/login");
+    await page.waitForURL("**/auth/v2/login");
     assert.equal(await (await context.request.get(`${server.baseURL}/api/auth/get-session`)).json(), null);
     pass(`${variant} client sign-out invalidates session`);
     await visit(page, `${server.baseURL}/auth/${variant}/login?redirect=${encodeURIComponent(destination)}`);
@@ -88,12 +89,12 @@ try {
     assert.equal(await page.getByLabel("Email Address", { exact: true }).inputValue(), email);
     pass(`${variant} inline server error preserves email`);
     await page.getByLabel("Password", { exact: true }).fill(password);
-    if (variant === "v2") await page.getByRole("checkbox", { name: "Remember me", exact: true }).check();
+    if (remember) await page.getByRole("checkbox", { name: "Remember me", exact: true }).check();
     await page.getByRole("button", { name: "Login", exact: true }).click();
     await page.waitForURL((url) => url.pathname + url.search + url.hash === destination);
     const cookie = (await context.cookies()).find((c) => c.name === "better-auth.session_token");
     assert.ok(cookie);
-    assert.equal(cookie.expires === -1, variant === "v1");
+    assert.equal(cookie.expires === -1, !remember);
     pass(`${variant} login and remember-me persistence`);
     await context.close();
     await delay(10200); // Keep the real 3/10s email limiter enabled.
@@ -108,7 +109,7 @@ try {
     })) {
       await page.setViewportSize(viewport);
       await capture.addCookies([{ name: "theme_mode", value: theme, url: server.baseURL }]);
-      for (const variant of ["v1", "v2"])
+      for (const variant of ["v2"])
         for (const mode of ["login", "register"]) {
           const errors: string[] = [];
           const listener = (error: Error) => errors.push(error.message);

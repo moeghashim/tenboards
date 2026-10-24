@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 import { useNavigate } from "@tanstack/react-router";
 
@@ -11,7 +11,7 @@ import type { AppPath } from "@/navigation/sidebar/sidebar-items";
 
 const aliasRoutes = new Set(["/", "/dashboard", "/dashboard/", "/auth/v2"]);
 const searchRoutes = routeCatalog.filter((item) => !aliasRoutes.has(item.route));
-const groups = ["Dashboards", "Pages", "Legacy", "Other screens", "Misc"];
+const groups = ["Dashboards", "Pages", "Other screens", "Misc"];
 
 export function CommandPalette() {
   const [open, setOpen] = useState(false);
@@ -64,6 +64,32 @@ export function CommandPalette() {
     };
   }, [open]);
 
+  const connectInput = useCallback((field: HTMLInputElement | null) => {
+    input.current = field;
+    const command = field?.closest("[cmdk-root]");
+    if (!field || !command) return;
+    // cmdk can omit the active descendant when filtering leaves one already-selected
+    // item. Keep the combobox's accessible target aligned with the rendered selection.
+    const syncSelection = () => {
+      const selected = command.querySelector('[cmdk-item][aria-selected="true"]');
+      const id = selected?.id;
+      if (id && field.getAttribute("aria-activedescendant") !== id) field.setAttribute("aria-activedescendant", id);
+      else if (!id && field.hasAttribute("aria-activedescendant")) field.removeAttribute("aria-activedescendant");
+    };
+    const observer = new MutationObserver(syncSelection);
+    observer.observe(command, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+      attributeFilter: ["aria-selected", "aria-activedescendant"],
+    });
+    syncSelection();
+    return () => {
+      observer.disconnect();
+      input.current = null;
+    };
+  }, []);
+
   const select = (item: (typeof routeCatalog)[number]) => {
     setOpen(false);
     setQuery("");
@@ -95,7 +121,7 @@ export function CommandPalette() {
           className="[&_[data-slot=input-group]:focus-within]:outline-ring min-h-0 rounded-none! p-2 [&_[data-slot=input-group]:focus-within]:[outline:2px_solid_var(--ring)] [&_[data-slot=input-group]:focus-within]:outline-offset-2"
         >
           <CommandInput
-            ref={input}
+            ref={connectInput}
             className="focus-visible:outline-none!"
             aria-label="Search pages"
             placeholder="Search pages…"
