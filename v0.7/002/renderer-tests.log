@@ -1,0 +1,18 @@
+
+> tenboards@0.6.2 assistant:test
+> node --experimental-strip-types scripts/assistant-check.ts
+
+file:///Users/moeghashim/tenboards-v07/node_modules/@openuidev/lang-core/dist/index.mjs:1598
+	const usesActionExpression = Object.values(spec.components).some((c) => c.signature?.includes("ActionExpression") || RESTRICTED_SLOT.test(c.signature ?? ""));
+	                                    ^
+
+TypeError: Cannot convert undefined or null to object
+    at Object.values (<anonymous>)
+    at generatePrompt (file:///Users/moeghashim/tenboards-v07/node_modules/@openuidev/lang-core/dist/index.mjs:1598:38)
+    at generateSystemPrompt (file:///Users/moeghashim/tenboards-v07/node_modules/@openuidev/lang-core/dist/index.mjs:1685:18)
+    at file:///Users/moeghashim/tenboards-v07/scripts/assistant-check.ts:73:16
+    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)
+    at async node:internal/modules/esm/loader:647:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+
+Node.js v24.21.0

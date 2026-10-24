@@ -1,0 +1,25 @@
+
+> tenboards@0.6.2 assistant:server
+> node --experimental-strip-types scripts/assistant-server-check.ts
+
+PASS provider defaults, order, models, safe DTO, canonical origin configuration
+PASS strict roles/fields, UTF8/body/history bounds, stalled input cancellation, memory TTL/cap and spoofed IP
+PASS 45 actual adapter wire cases, explicit keys/endpoints/tokens, storage off, split UTF8, safe failures, no retries, cancellation
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+  assert.ok(output.includes(`"code":"${expected}"`))
+
+    at file:///Users/moeghashim/tenboards-v07/scripts/assistant-server-check.ts:213:10 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v24.21.0

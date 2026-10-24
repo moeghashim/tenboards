@@ -1,0 +1,14 @@
+
+> tenboards@0.6.2 typecheck
+> tsc --noEmit
+
+scripts/assistant-check.ts(73,16): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(spec: SystemPromptSpec): string', gave the following error.
+    Type '() => PromptSpec' is not assignable to type 'LibrarySpec'.
+  Overload 2 of 2, '(spec: PromptSpec): string', gave the following error.
+    Object literal may only specify known properties, and 'library' does not exist in type 'PromptSpec'.
+src/server/assistant/prompt.ts(7,24): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(spec: SystemPromptSpec): string', gave the following error.
+    Type '() => PromptSpec' is not assignable to type 'LibrarySpec'.
+  Overload 2 of 2, '(spec: PromptSpec): string', gave the following error.
+    Object literal may only specify known properties, and 'library' does not exist in type 'PromptSpec'.

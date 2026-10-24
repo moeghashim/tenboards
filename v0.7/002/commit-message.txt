@@ -1,0 +1,7 @@
+feat(assistant): guard direct provider streams and request admission
+
+Add five pinned adapters, private metadata, canonical origins, session guards, atomic DB quotas and bounded input/output lifetimes. Exercise synthetic provider wires on Node and compiled workerd; keep previews recorded-only.
+
+Signed-off-by: Moe Ghashim <mohanadgh@gmail.com>
+
+Co-Authored-By: GPT-6-Astra <noreply@openai.com>

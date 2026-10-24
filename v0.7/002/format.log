@@ -1,0 +1,428 @@
+src/routes/(main)/dashboard/assistant/-components/assistant.tsx:120:27 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    118 │                 disabled={busy}
+    119 │                 onChange={(event) => setProvider(event.target.value as ProviderId)}
+  > 120 │                 className="border-input bg-background max-w-full rounded-md border px-2 py-1 text-sm focus-visible:outline-2 focus-visible:outline-ring"
+        │                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    121 │               >
+    122 │                 {config.providers.map((item) => (
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+    118 118 │                   disabled={busy}
+    119 119 │                   onChange={(event) => setProvider(event.target.value as ProviderId)}
+    120     │ - ················className="border-input·bg-background·max-w-full·rounded-md·border·px-2·py-1·text-sm·focus-visible:outline-2·focus-visible:outline-ring"
+        120 │ + ················className="border-input·bg-background·focus-visible:outline-ring·max-w-full·rounded-md·border·px-2·py-1·text-sm·focus-visible:outline-2"
+    121 121 │                 >
+    122 122 │                   {config.providers.map((item) => (
+  
+
+src/routes/(main)/dashboard/assistant/-components/assistant.tsx:158:32 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    156 │                 <div className="bg-muted ml-auto max-w-prose rounded-xl px-4 py-3">
+    157 │                   <p className="mb-1 font-medium">You</p>
+  > 158 │                   <p className="whitespace-pre-wrap break-words">{turn.prompt}</p>
+        │                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    159 │                 </div>
+    160 │                 <div className="min-w-0 space-y-3">
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+    156 156 │                   <div className="bg-muted ml-auto max-w-prose rounded-xl px-4 py-3">
+    157 157 │                     <p className="mb-1 font-medium">You</p>
+    158     │ - ··················<p·className="whitespace-pre-wrap·break-words">{turn.prompt}</p>
+        158 │ + ··················<p·className="break-words·whitespace-pre-wrap">{turn.prompt}</p>
+    159 159 │                   </div>
+    160 160 │                   <div className="min-w-0 space-y-3">
+  
+
+src/routes/(main)/dashboard/assistant/-components/registry.tsx:161:27 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    159 │     }
+    160 │     case "Text":
+  > 161 │       return <p className="max-w-prose whitespace-pre-wrap break-words">{schemas.Text.parse(props).text}</p>;
+        │                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    162 │     case "Card": {
+    163 │       const p = schemas.Card.parse(props);
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+    159 159 │       }
+    160 160 │       case "Text":
+    161     │ - ······return·<p·className="max-w-prose·whitespace-pre-wrap·break-words">{schemas.Text.parse(props).text}</p>;
+        161 │ + ······return·<p·className="max-w-prose·break-words·whitespace-pre-wrap">{schemas.Text.parse(props).text}</p>;
+    162 162 │       case "Card": {
+    163 163 │         const p = schemas.Card.parse(props);
+  
+
+src/routes/(main)/dashboard/assistant/-components/assistant.tsx:236:17 lint/style/noNestedTernary ━━━━━━━━━━
+
+  ! Do not nest ternary expressions.
+  
+    234 │           <p className="sr-only" role="status" aria-live="polite">
+    235 │             {busy
+  > 236 │               ? selected
+        │                 ^^^^^^^^
+  > 237 │                 ? "Preparing a reply."
+  > 238 │                 : "Preparing a recorded reply."
+        │                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    239 │               : turns.length
+    240 │                 ? `Response ${turns.at(-1)?.status}.`
+  
+  i Nesting ternary expressions can make code more difficult to understand.
+  
+  i Convert nested ternary expression into if-else statements or separate the conditions to make the logic easier to understand.
+  
+
+src/routes/(main)/dashboard/assistant/-components/registry.tsx:59:34 lint/suspicious/noArrayIndexKey ━━━━━━━━━━
+
+  ! Avoid using the index of an array as key property in an element.
+  
+    57 │           <TableRow>
+    58 │             {columns.map((column, i) => (
+  > 59 │               <TableHead key={`${i}-${column}`}>{column}</TableHead>
+       │                                  ^
+    60 │             ))}
+    61 │           </TableRow>
+  
+  i This is the source of the key value.
+  
+    56 │         <TableHeader>
+    57 │           <TableRow>
+  > 58 │             {columns.map((column, i) => (
+       │                                   ^
+    59 │               <TableHead key={`${i}-${column}`}>{column}</TableHead>
+    60 │             ))}
+  
+  i The order of the items may change, and this also affects performances and component state.
+  
+  i Check the React documentation. 
+  
+
+src/routes/(main)/dashboard/assistant/-components/registry.tsx:65:28 lint/suspicious/noArrayIndexKey ━━━━━━━━━━
+
+  ! Avoid using the index of an array as key property in an element.
+  
+    63 │         <TableBody>
+    64 │           {rows.map((row, i) => (
+  > 65 │             <TableRow key={i}>
+       │                            ^
+    66 │               {row.map((cell, j) => (
+    67 │                 <TableCell key={j}>{cell}</TableCell>
+  
+  i This is the source of the key value.
+  
+    62 │         </TableHeader>
+    63 │         <TableBody>
+  > 64 │           {rows.map((row, i) => (
+       │                           ^
+    65 │             <TableRow key={i}>
+    66 │               {row.map((cell, j) => (
+  
+  i The order of the items may change, and this also affects performances and component state.
+  
+  i Check the React documentation. 
+  
+
+src/routes/(main)/dashboard/assistant/-components/registry.tsx:67:33 lint/suspicious/noArrayIndexKey ━━━━━━━━━━
+
+  ! Avoid using the index of an array as key property in an element.
+  
+    65 │             <TableRow key={i}>
+    66 │               {row.map((cell, j) => (
+  > 67 │                 <TableCell key={j}>{cell}</TableCell>
+       │                                 ^
+    68 │               ))}
+    69 │             </TableRow>
+  
+  i This is the source of the key value.
+  
+    64 │           {rows.map((row, i) => (
+    65 │             <TableRow key={i}>
+  > 66 │               {row.map((cell, j) => (
+       │                               ^
+    67 │                 <TableCell key={j}>{cell}</TableCell>
+    68 │               ))}
+  
+  i The order of the items may change, and this also affects performances and component state.
+  
+  i Check the React documentation. 
+  
+
+src/routes/(main)/dashboard/assistant/-components/registry.tsx:95:29 lint/suspicious/noArrayIndexKey ━━━━━━━━━━
+
+  ! Avoid using the index of an array as key property in an element.
+  
+    93 │             <Legend content={<DashboardLegend config={config} />} />
+    94 │             {series.map((_, i) => (
+  > 95 │               <Bar key={`s${i}`} dataKey={`s${i}`} fill={chartSeries[i].color} {...motion} />
+       │                             ^
+    96 │             ))}
+    97 │           </BarChart>
+  
+  i This is the source of the key value.
+  
+    92 │             <Tooltip content={<DashboardTooltip />} cursor={chartCursor} {...motion} />
+    93 │             <Legend content={<DashboardLegend config={config} />} />
+  > 94 │             {series.map((_, i) => (
+       │                             ^
+    95 │               <Bar key={`s${i}`} dataKey={`s${i}`} fill={chartSeries[i].color} {...motion} />
+    96 │             ))}
+  
+  i The order of the items may change, and this also affects performances and component state.
+  
+  i Check the React documentation. 
+  
+
+src/routes/(main)/dashboard/assistant/-components/registry.tsx:107:26 lint/suspicious/noArrayIndexKey ━━━━━━━━━━
+
+  ! Avoid using the index of an array as key property in an element.
+  
+    105 │             {series.map((_, i) => (
+    106 │               <Line
+  > 107 │                 key={`s${i}`}
+        │                          ^
+    108 │                 dataKey={`s${i}`}
+    109 │                 stroke={chartSeries[i].color}
+  
+  i This is the source of the key value.
+  
+    103 │             <Tooltip content={<DashboardTooltip />} cursor={chartCursor} {...motion} />
+    104 │             <Legend content={<DashboardLegend config={config} />} />
+  > 105 │             {series.map((_, i) => (
+        │                             ^
+    106 │               <Line
+    107 │                 key={`s${i}`}
+  
+  i The order of the items may change, and this also affects performances and component state.
+  
+  i Check the React documentation. 
+  
+
+src/routes/(main)/dashboard/assistant/-components/registry.tsx:153:23 lint/suspicious/noArrayIndexKey ━━━━━━━━━━
+
+  ! Avoid using the index of an array as key property in an element.
+  
+    151 │         <div className="min-w-0 space-y-5">
+    152 │           {p.children.map((child, i) => (
+  > 153 │             <div key={i} className="min-w-0">
+        │                       ^
+    154 │               {renderNode(child)}
+    155 │             </div>
+  
+  i This is the source of the key value.
+  
+    150 │       return (
+    151 │         <div className="min-w-0 space-y-5">
+  > 152 │           {p.children.map((child, i) => (
+        │                                   ^
+    153 │             <div key={i} className="min-w-0">
+    154 │               {renderNode(child)}
+  
+  i The order of the items may change, and this also affects performances and component state.
+  
+  i Check the React documentation. 
+  
+
+src/routes/(main)/dashboard/assistant/-components/registry.tsx:173:25 lint/suspicious/noArrayIndexKey ━━━━━━━━━━
+
+  ! Avoid using the index of an array as key property in an element.
+  
+    171 │           <CardContent className="space-y-4">
+    172 │             {p.children.map((child, i) => (
+  > 173 │               <div key={i}>{renderNode(child)}</div>
+        │                         ^
+    174 │             ))}
+    175 │           </CardContent>
+  
+  i This is the source of the key value.
+  
+    170 │           </CardHeader>
+    171 │           <CardContent className="space-y-4">
+  > 172 │             {p.children.map((child, i) => (
+        │                                     ^
+    173 │               <div key={i}>{renderNode(child)}</div>
+    174 │             ))}
+  
+  i The order of the items may change, and this also affects performances and component state.
+  
+  i Check the React documentation. 
+  
+
+src/routes/(main)/dashboard/assistant/-components/registry.tsx:197:22 lint/suspicious/noArrayIndexKey ━━━━━━━━━━
+
+  ! Avoid using the index of an array as key property in an element.
+  
+    195 │         <ul className="list-disc space-y-2 pl-5">
+    196 │           {schemas.List.parse(props).items.map((item, i) => (
+  > 197 │             <li key={i} className="break-words">
+        │                      ^
+    198 │               {item}
+    199 │             </li>
+  
+  i This is the source of the key value.
+  
+    194 │       return (
+    195 │         <ul className="list-disc space-y-2 pl-5">
+  > 196 │           {schemas.List.parse(props).items.map((item, i) => (
+        │                                                       ^
+    197 │             <li key={i} className="break-words">
+    198 │               {item}
+  
+  i The order of the items may change, and this also affects performances and component state.
+  
+  i Check the React documentation. 
+  
+
+src/routes/(main)/dashboard/assistant/-components/safe-response.tsx:14:12 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━
+
+  ! This condition is always falsy.
+  
+    12 │   }
+    13 │   render() {
+  > 14 │     return this.state.failed ? (
+       │            ^^^^^^^^^^^^^^^^^
+    15 │       <p role="status">This response could not be displayed. Try another example.</p>
+    16 │     ) : (
+  
+  i The value's type can never be truthy, so this check is redundant.
+  
+  i Remove the condition and the code it guards, or check the value you meant to test.
+  
+
+src/server/assistant/input.ts:47:12 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! This condition is always truthy.
+  
+    45 │     let size = 0;
+    46 │     let body = "";
+  > 47 │     while (true) {
+       │            ^^^^
+    48 │       if (request.signal.aborted) throw new AssistantError("invalid", 400);
+    49 │       const part = await reader.read();
+  
+  i The value's type can never be falsy, so this check is redundant.
+  
+  i Remove the condition, or check the value you meant to test.
+  
+
+src/server/assistant/input.ts:36:38 lint/suspicious/noEmptyBlockStatements ━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Unexpected empty block.
+  
+    34 │   let timeout = false;
+    35 │   const cancel = () => {
+  > 36 │     void reader.cancel().catch(() => {});
+       │                                      ^^
+    37 │   };
+    38 │   const timer = setTimeout(() => {
+  
+  i Empty blocks are usually the result of an incomplete refactoring. Remove the empty block or add a comment inside it if it is intentional.
+  
+
+src/server/assistant/input.ts:63:38 lint/suspicious/noEmptyBlockStatements ━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Unexpected empty block.
+  
+    61 │     clearTimeout(timer);
+    62 │     request.signal.removeEventListener("abort", cancel);
+  > 63 │     void reader.cancel().catch(() => {});
+       │                                      ^^
+    64 │     reader.releaseLock();
+    65 │   }
+  
+  i Empty blocks are usually the result of an incomplete refactoring. Remove the empty block or add a comment inside it if it is intentional.
+  
+
+src/server/assistant/providers.server.ts:29:48 lint/suspicious/noEmptyBlockStatements ━━━━━━━━━━━━━━
+
+  × Unexpected empty block.
+  
+    27 │     const response = await upstream(input, { ...init, signal: combined, redirect: "error" });
+    28 │     if (!response.ok || !response.body || !response.headers.get("content-type")?.includes("text/event-stream")) {
+  > 29 │       void response.body?.cancel().catch(() => {});
+       │                                                ^^
+    30 │       throw new AssistantError("provider");
+    31 │     }
+  
+  i Empty blocks are usually the result of an incomplete refactoring. Remove the empty block or add a comment inside it if it is intentional.
+  
+
+src/server/assistant/providers.server.ts:36:40 lint/suspicious/noEmptyBlockStatements ━━━━━━━━━━━━━━
+
+  × Unexpected empty block.
+  
+    34 │     let done = false;
+    35 │     const cancel = () => {
+  > 36 │       void reader.cancel().catch(() => {});
+       │                                        ^^
+    37 │     };
+    38 │     combined.addEventListener("abort", cancel, { once: true });
+  
+  i Empty blocks are usually the result of an incomplete refactoring. Remove the empty block or add a comment inside it if it is intentional.
+  
+
+src/server/assistant/stream.ts:21:53 lint/suspicious/noEmptyBlockStatements ━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Unexpected empty block.
+  
+    19 │   let timer: ReturnType<typeof setTimeout>;
+    20 │   let total: ReturnType<typeof setTimeout>;
+  > 21 │   let finish: (event?: StreamEvent) => void = () => {};
+       │                                                     ^^
+    22 │   const disconnect = () => finish({ v: 1, type: "error", code: "unavailable" });
+    23 │   return new ReadableStream<Uint8Array>(
+  
+  i Empty blocks are usually the result of an incomplete refactoring. Remove the empty block or add a comment inside it if it is intentional.
+  
+
+src/server/assistant/stream.ts:33:45 lint/suspicious/noEmptyBlockStatements ━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Unexpected empty block.
+  
+    31 │           requestSignal.removeEventListener("abort", disconnect);
+    32 │           abort.abort();
+  > 33 │           void reader?.cancel().catch(() => {});
+       │                                             ^^
+    34 │           if (event) {
+    35 │             controller.enqueue(encodeEvent(event));
+  
+  i Empty blocks are usually the result of an incomplete refactoring. Remove the empty block or add a comment inside it if it is intentional.
+  
+
+Skipped 5 suggested fixes.
+If you wish to apply the suggested (unsafe) fixes, use the command biome check --write --unsafe
+
+Checked 23 files in 523ms. Fixed 14 files.
+Found 6 errors.
+Found 11 warnings.
+Found 3 infos.
+check ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Some errors were emitted while applying fixes.
+  
+

@@ -1,0 +1,160 @@
+scripts/assistant-wire-fixtures.ts:15:62 lint/style/noNestedTernary ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Do not nest ternary expressions.
+  
+    13 │ const frame = (value: unknown) => `data: ${JSON.stringify(value)}\n\n`;
+    14 │ export function providerWire(id: ProviderId, mode: WireCase = "success") {
+  > 15 │   const text = mode === "empty" || mode === "refusal" ? "" : mode === "oversize" ? "x".repeat(65537) : mockOutput;
+       │                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    16 │   if (mode === "malformed") return "data: {INVALID\n\n";
+    17 │   let chunks: string[];
+  
+  i Nesting ternary expressions can make code more difficult to understand.
+  
+  i Convert nested ternary expression into if-else statements or separate the conditions to make the logic easier to understand.
+  
+
+scripts/deploy-prepare-core.ts:96:61 lint/style/noNonNullAssertion ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+  
+    94 │   for (const entry of providers)
+    95 │     for (const key of [entry.key, entry.override])
+  > 96 │       if (assistantEnv[key] !== undefined) assistant[key] = assistantEnv[key]!;
+       │                                                             ^^^^^^^^^^^^^^^^^^
+    97 │   if (assistantEnv.ASSISTANT_ORIGIN !== undefined) assistant.ASSISTANT_ORIGIN = assistantEnv.ASSISTANT_ORIGIN;
+    98 │   // Exclusive creation rejects existing files and symlinks; never rotate an existing secret implicitly.
+  
+  i A non-null assertion tells TypeScript to ignore a possible null or undefined value. If the value is missing at runtime, the code fails with an error that the compiler could not catch.
+  
+  i Check that the value is defined before using it, for example with an if statement or optional chaining, instead of asserting it.
+  
+
+scripts/worker-assistant-harness.ts:24:9 lint/style/noNestedTernary ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Do not nest ternary expressions.
+  
+    22 │     url.hostname === "api.anthropic.com"
+    23 │       ? "anthropic"
+  > 24 │       : url.hostname === "api.openai.com"
+       │         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  > 25 │         ? "openai"
+        ...
+  > 31 │               ? "google"
+  > 32 │               : undefined;
+       │               ^^^^^^^^^^^
+    33 │   if (!id) {
+    34 │     violations++;
+  
+  i Nesting ternary expressions can make code more difficult to understand.
+  
+  i Convert nested ternary expression into if-else statements or separate the conditions to make the logic easier to understand.
+  
+
+scripts/worker-assistant-harness.ts:26:11 lint/style/noNestedTernary ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Do not nest ternary expressions.
+  
+    24 │       : url.hostname === "api.openai.com"
+    25 │         ? "openai"
+  > 26 │         : url.hostname === "api.x.ai"
+       │           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  > 27 │           ? "xai"
+        ...
+  > 31 │               ? "google"
+  > 32 │               : undefined;
+       │               ^^^^^^^^^^^
+    33 │   if (!id) {
+    34 │     violations++;
+  
+  i Nesting ternary expressions can make code more difficult to understand.
+  
+  i Convert nested ternary expression into if-else statements or separate the conditions to make the logic easier to understand.
+  
+
+scripts/worker-assistant-harness.ts:28:13 lint/style/noNestedTernary ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Do not nest ternary expressions.
+  
+    26 │         : url.hostname === "api.x.ai"
+    27 │           ? "xai"
+  > 28 │           : url.hostname === "api.meta.ai"
+       │             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  > 29 │             ? "meta"
+  > 30 │             : url.hostname === "generativelanguage.googleapis.com"
+  > 31 │               ? "google"
+  > 32 │               : undefined;
+       │               ^^^^^^^^^^^
+    33 │   if (!id) {
+    34 │     violations++;
+  
+  i Nesting ternary expressions can make code more difficult to understand.
+  
+  i Convert nested ternary expression into if-else statements or separate the conditions to make the logic easier to understand.
+  
+
+scripts/worker-assistant-harness.ts:30:15 lint/style/noNestedTernary ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Do not nest ternary expressions.
+  
+    28 │           : url.hostname === "api.meta.ai"
+    29 │             ? "meta"
+  > 30 │             : url.hostname === "generativelanguage.googleapis.com"
+       │               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  > 31 │               ? "google"
+  > 32 │               : undefined;
+       │               ^^^^^^^^^^^
+    33 │   if (!id) {
+    34 │     violations++;
+  
+  i Nesting ternary expressions can make code more difficult to understand.
+  
+  i Convert nested ternary expression into if-else statements or separate the conditions to make the logic easier to understand.
+  
+
+scripts/worker-assistant-harness.ts:44:26 lint/style/noNonNullAssertion  FIXABLE  ━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+  
+    42 │   outputRequests.push({
+    43 │     provider: id,
+  > 44 │     model: body.model ?? providers.find((p) => p.id === id)!.model,
+       │                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    45 │     explicitKey: key.includes(`synthetic-v07-${id}-`),
+    46 │     storageDisabled: !["openai", "xai"].includes(id) || body.store === false,
+  
+  i A non-null assertion tells TypeScript to ignore a possible null or undefined value. If the value is missing at runtime, the code fails with an error that the compiler could not catch.
+  
+  i Check that the value is defined before using it, for example with an if statement or optional chaining, instead of asserting it.
+  
+  i Unsafe fix: Replace with optional chain operator ?. This operator includes runtime checks, so it is safer than the compile-only non-null assertion operator
+  
+    42 42 │     outputRequests.push({
+    43 43 │       provider: id,
+    44    │ - ····model:·body.model·??·providers.find((p)·=>·p.id·===·id)!.model,
+       44 │ + ····model:·body.model·??·providers.find((p)·=>·p.id·===·id)?.model,
+    45 45 │       explicitKey: key.includes(`synthetic-v07-${id}-`),
+    46 46 │       storageDisabled: !["openai", "xai"].includes(id) || body.store === false,
+  
+
+src/server/assistant/input.ts:49:12 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! This condition is always truthy.
+  
+    47 │     let size = 0;
+    48 │     let body = "";
+  > 49 │     while (true) {
+       │            ^^^^
+    50 │       if (request.signal.aborted) throw new AssistantError("invalid", 400);
+    51 │       const part = await reader.read();
+  
+  i The value's type can never be falsy, so this check is redundant.
+  
+  i Remove the condition, or check the value you meant to test.
+  
+
+Skipped 2 suggested fixes.
+If you wish to apply the suggested (unsafe) fixes, use the command biome check --write --unsafe
+
+Checked 16 files in 544ms. Fixed 12 files.
+Found 8 warnings.

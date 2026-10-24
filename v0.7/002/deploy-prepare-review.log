@@ -1,0 +1,8 @@
+npm error Missing script: "deploy:prepare:test"
+npm error
+npm error Did you mean this?
+npm error   npm run deploy:prepare # run the "deploy:prepare" package script
+npm error
+npm error To see a list of scripts, run:
+npm error   npm run
+npm error A complete log of this run can be found in: /Users/moeghashim/.npm/_logs/2026-10-24T19_52_52_520Z-debug-0.log

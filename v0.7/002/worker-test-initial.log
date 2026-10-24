@@ -1,0 +1,26 @@
+
+> tenboards@0.6.2 assistant:worker
+> node --experimental-strip-types scripts/assistant-worker-check.ts
+
+PASS Node actual endpoint recorded SSE, method/Origin/content/role guards, private headers and conservative IP quota
+PASS workerd actual compiled endpoint: 40 intercepted provider wire cases, DTO SSR has all models and no synthetic keys
+PASS workerd five real 20s first-content deadlines, disconnect, explicit runtime keys, storage/tools/caps, zero unexpected egress
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+0 !== 10
+
+    at file:///Users/moeghashim/tenboards-v07/scripts/assistant-worker-check.ts:68:10
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5) {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 0,
+  expected: 10,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.21.0

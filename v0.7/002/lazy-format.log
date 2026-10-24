@@ -1,0 +1,274 @@
+src/routes/(main)/dashboard/assistant/-components/registry.tsx:161:27 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    159 │     }
+    160 │     case "Text":
+  > 161 │       return <p className="max-w-prose whitespace-pre-wrap break-words">{schemas.Text.parse(props).text}</p>;
+        │                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    162 │     case "Card": {
+    163 │       const p = schemas.Card.parse(props);
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+    159 159 │       }
+    160 160 │       case "Text":
+    161     │ - ······return·<p·className="max-w-prose·whitespace-pre-wrap·break-words">{schemas.Text.parse(props).text}</p>;
+        161 │ + ······return·<p·className="max-w-prose·break-words·whitespace-pre-wrap">{schemas.Text.parse(props).text}</p>;
+    162 162 │       case "Card": {
+    163 163 │         const p = schemas.Card.parse(props);
+  
+
+scripts/assistant-browser-check.ts:101:54 lint/performance/useDomNodeTextContent  FIXABLE  ━━━━━━━━━━
+
+  ! innerText is not recommended for reading DOM node text.
+  
+     99 │           .waitFor()
+    100 │           .catch(async (error) => {
+  > 101 │             console.error(await page.locator("main").innerText(), errors);
+        │                                                      ^^^^^^^^^
+    102 │             await page.screenshot({ path: `${output}/failure.png` });
+    103 │             throw error;
+  
+  i innerText depends on rendered layout and CSS, so it can be slower and produce different results from the DOM tree's text content.
+  
+  i Use textContent when you want the node's text without rendered-text behavior.
+  
+  i Unsafe fix: Use textContent instead.
+  
+     99  99 │             .waitFor()
+    100 100 │             .catch(async (error) => {
+    101     │ - ············console.error(await·page.locator("main").innerText(),·errors);
+        101 │ + ············console.error(await·page.locator("main").textContent(),·errors);
+    102 102 │               await page.screenshot({ path: `${output}/failure.png` });
+    103 103 │               throw error;
+  
+
+src/routes/(main)/dashboard/assistant/-components/registry.tsx:59:34 lint/suspicious/noArrayIndexKey ━━━━━━━━━━
+
+  ! Avoid using the index of an array as key property in an element.
+  
+    57 │           <TableRow>
+    58 │             {columns.map((column, i) => (
+  > 59 │               <TableHead key={`${i}-${column}`}>{column}</TableHead>
+       │                                  ^
+    60 │             ))}
+    61 │           </TableRow>
+  
+  i This is the source of the key value.
+  
+    56 │         <TableHeader>
+    57 │           <TableRow>
+  > 58 │             {columns.map((column, i) => (
+       │                                   ^
+    59 │               <TableHead key={`${i}-${column}`}>{column}</TableHead>
+    60 │             ))}
+  
+  i The order of the items may change, and this also affects performances and component state.
+  
+  i Check the React documentation. 
+  
+
+src/routes/(main)/dashboard/assistant/-components/registry.tsx:65:28 lint/suspicious/noArrayIndexKey ━━━━━━━━━━
+
+  ! Avoid using the index of an array as key property in an element.
+  
+    63 │         <TableBody>
+    64 │           {rows.map((row, i) => (
+  > 65 │             <TableRow key={i}>
+       │                            ^
+    66 │               {row.map((cell, j) => (
+    67 │                 <TableCell key={j}>{cell}</TableCell>
+  
+  i This is the source of the key value.
+  
+    62 │         </TableHeader>
+    63 │         <TableBody>
+  > 64 │           {rows.map((row, i) => (
+       │                           ^
+    65 │             <TableRow key={i}>
+    66 │               {row.map((cell, j) => (
+  
+  i The order of the items may change, and this also affects performances and component state.
+  
+  i Check the React documentation. 
+  
+
+src/routes/(main)/dashboard/assistant/-components/registry.tsx:67:33 lint/suspicious/noArrayIndexKey ━━━━━━━━━━
+
+  ! Avoid using the index of an array as key property in an element.
+  
+    65 │             <TableRow key={i}>
+    66 │               {row.map((cell, j) => (
+  > 67 │                 <TableCell key={j}>{cell}</TableCell>
+       │                                 ^
+    68 │               ))}
+    69 │             </TableRow>
+  
+  i This is the source of the key value.
+  
+    64 │           {rows.map((row, i) => (
+    65 │             <TableRow key={i}>
+  > 66 │               {row.map((cell, j) => (
+       │                               ^
+    67 │                 <TableCell key={j}>{cell}</TableCell>
+    68 │               ))}
+  
+  i The order of the items may change, and this also affects performances and component state.
+  
+  i Check the React documentation. 
+  
+
+src/routes/(main)/dashboard/assistant/-components/registry.tsx:95:29 lint/suspicious/noArrayIndexKey ━━━━━━━━━━
+
+  ! Avoid using the index of an array as key property in an element.
+  
+    93 │             <Legend content={<DashboardLegend config={config} />} />
+    94 │             {series.map((_, i) => (
+  > 95 │               <Bar key={`s${i}`} dataKey={`s${i}`} fill={chartSeries[i].color} {...motion} />
+       │                             ^
+    96 │             ))}
+    97 │           </BarChart>
+  
+  i This is the source of the key value.
+  
+    92 │             <Tooltip content={<DashboardTooltip />} cursor={chartCursor} {...motion} />
+    93 │             <Legend content={<DashboardLegend config={config} />} />
+  > 94 │             {series.map((_, i) => (
+       │                             ^
+    95 │               <Bar key={`s${i}`} dataKey={`s${i}`} fill={chartSeries[i].color} {...motion} />
+    96 │             ))}
+  
+  i The order of the items may change, and this also affects performances and component state.
+  
+  i Check the React documentation. 
+  
+
+src/routes/(main)/dashboard/assistant/-components/registry.tsx:107:26 lint/suspicious/noArrayIndexKey ━━━━━━━━━━
+
+  ! Avoid using the index of an array as key property in an element.
+  
+    105 │             {series.map((_, i) => (
+    106 │               <Line
+  > 107 │                 key={`s${i}`}
+        │                          ^
+    108 │                 dataKey={`s${i}`}
+    109 │                 stroke={chartSeries[i].color}
+  
+  i This is the source of the key value.
+  
+    103 │             <Tooltip content={<DashboardTooltip />} cursor={chartCursor} {...motion} />
+    104 │             <Legend content={<DashboardLegend config={config} />} />
+  > 105 │             {series.map((_, i) => (
+        │                             ^
+    106 │               <Line
+    107 │                 key={`s${i}`}
+  
+  i The order of the items may change, and this also affects performances and component state.
+  
+  i Check the React documentation. 
+  
+
+src/routes/(main)/dashboard/assistant/-components/registry.tsx:153:23 lint/suspicious/noArrayIndexKey ━━━━━━━━━━
+
+  ! Avoid using the index of an array as key property in an element.
+  
+    151 │         <div className="min-w-0 space-y-5">
+    152 │           {p.children.map((child, i) => (
+  > 153 │             <div key={i} className="min-w-0">
+        │                       ^
+    154 │               {renderNode(child)}
+    155 │             </div>
+  
+  i This is the source of the key value.
+  
+    150 │       return (
+    151 │         <div className="min-w-0 space-y-5">
+  > 152 │           {p.children.map((child, i) => (
+        │                                   ^
+    153 │             <div key={i} className="min-w-0">
+    154 │               {renderNode(child)}
+  
+  i The order of the items may change, and this also affects performances and component state.
+  
+  i Check the React documentation. 
+  
+
+src/routes/(main)/dashboard/assistant/-components/registry.tsx:173:25 lint/suspicious/noArrayIndexKey ━━━━━━━━━━
+
+  ! Avoid using the index of an array as key property in an element.
+  
+    171 │           <CardContent className="space-y-4">
+    172 │             {p.children.map((child, i) => (
+  > 173 │               <div key={i}>{renderNode(child)}</div>
+        │                         ^
+    174 │             ))}
+    175 │           </CardContent>
+  
+  i This is the source of the key value.
+  
+    170 │           </CardHeader>
+    171 │           <CardContent className="space-y-4">
+  > 172 │             {p.children.map((child, i) => (
+        │                                     ^
+    173 │               <div key={i}>{renderNode(child)}</div>
+    174 │             ))}
+  
+  i The order of the items may change, and this also affects performances and component state.
+  
+  i Check the React documentation. 
+  
+
+src/routes/(main)/dashboard/assistant/-components/registry.tsx:197:22 lint/suspicious/noArrayIndexKey ━━━━━━━━━━
+
+  ! Avoid using the index of an array as key property in an element.
+  
+    195 │         <ul className="list-disc space-y-2 pl-5">
+    196 │           {schemas.List.parse(props).items.map((item, i) => (
+  > 197 │             <li key={i} className="break-words">
+        │                      ^
+    198 │               {item}
+    199 │             </li>
+  
+  i This is the source of the key value.
+  
+    194 │       return (
+    195 │         <ul className="list-disc space-y-2 pl-5">
+  > 196 │           {schemas.List.parse(props).items.map((item, i) => (
+        │                                                       ^
+    197 │             <li key={i} className="break-words">
+    198 │               {item}
+  
+  i The order of the items may change, and this also affects performances and component state.
+  
+  i Check the React documentation. 
+  
+
+src/routes/(main)/dashboard/assistant/-components/safe-response.tsx:14:12 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━
+
+  ! This condition is always falsy.
+  
+    12 │   }
+    13 │   render() {
+  > 14 │     return this.state.failed ? (
+       │            ^^^^^^^^^^^^^^^^^
+    15 │       <p role="status">This response could not be displayed. Try another example.</p>
+    16 │     ) : (
+  
+  i The value's type can never be truthy, so this check is redundant.
+  
+  i Remove the condition and the code it guards, or check the value you meant to test.
+  
+
+Skipped 2 suggested fixes.
+If you wish to apply the suggested (unsafe) fixes, use the command biome check --write --unsafe
+
+Checked 7 files in 534ms. Fixed 4 files.
+Found 10 warnings.
+Found 1 info.

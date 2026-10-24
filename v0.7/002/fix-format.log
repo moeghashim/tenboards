@@ -1,0 +1,118 @@
+src/routes/(main)/dashboard/assistant/-components/assistant.tsx:160:32 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    158 │                 <div className="bg-muted ml-auto max-w-prose rounded-xl px-4 py-3">
+    159 │                   <p className="mb-1 font-medium">You</p>
+  > 160 │                   <p className="whitespace-pre-wrap break-words">{turn.prompt}</p>
+        │                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    161 │                 </div>
+    162 │                 <div className="min-w-0 space-y-3">
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+    158 158 │                   <div className="bg-muted ml-auto max-w-prose rounded-xl px-4 py-3">
+    159 159 │                     <p className="mb-1 font-medium">You</p>
+    160     │ - ··················<p·className="whitespace-pre-wrap·break-words">{turn.prompt}</p>
+        160 │ + ··················<p·className="break-words·whitespace-pre-wrap">{turn.prompt}</p>
+    161 161 │                   </div>
+    162 162 │                   <div className="min-w-0 space-y-3">
+  
+
+scripts/assistant-worker-check.ts:24:24 lint/style/noNonNullAssertion ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+  
+    22 │   assert.match(response.headers.get("cache-control") ?? "", /private, no-store/);
+    23 │   assert.equal(response.headers.get("x-content-type-options"), "nosniff");
+  > 24 │   return consumeStream(response.body!, new AbortController().signal, () => {
+       │                        ^^^^^^^^^^^^^^
+    25 │     /* Inspect final response below. */
+    26 │   });
+  
+  i A non-null assertion tells TypeScript to ignore a possible null or undefined value. If the value is missing at runtime, the code fails with an error that the compiler could not catch.
+  
+  i Check that the value is defined before using it, for example with an if statement or optional chaining, instead of asserting it.
+  
+
+scripts/assistant-worker-check.ts:118:12 lint/style/noNonNullAssertion  FIXABLE  ━━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+  
+    116 │   const responses = await Promise.all(
+    117 │     Array.from({ length: 16 }, (_, n) =>
+  > 118 │       post((n % 2 ? first : second)!.baseURL, payload, { "cf-connecting-ip": "198.19.8.1" }),
+        │            ^^^^^^^^^^^^^^^^^^^^^^^^^
+    119 │     ),
+    120 │   );
+  
+  i A non-null assertion tells TypeScript to ignore a possible null or undefined value. If the value is missing at runtime, the code fails with an error that the compiler could not catch.
+  
+  i Check that the value is defined before using it, for example with an if statement or optional chaining, instead of asserting it.
+  
+  i Unsafe fix: Replace with optional chain operator ?. This operator includes runtime checks, so it is safer than the compile-only non-null assertion operator
+  
+    116 116 │     const responses = await Promise.all(
+    117 117 │       Array.from({ length: 16 }, (_, n) =>
+    118     │ - ······post((n·%·2·?·first·:·second)!.baseURL,·payload,·{·"cf-connecting-ip":·"198.19.8.1"·}),
+        118 │ + ······post((n·%·2·?·first·:·second)?.baseURL,·payload,·{·"cf-connecting-ip":·"198.19.8.1"·}),
+    119 119 │       ),
+    120 120 │     );
+  
+
+scripts/deploy-prepare-core.ts:96:55 lint/style/noNonNullAssertion  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+  
+    94 │   for (const entry of providers)
+    95 │     for (const key of [entry.key, entry.override])
+  > 96 │       if (assistantEnv[key]?.trim()) assistant[key] = assistantEnv[key]!.trim();
+       │                                                       ^^^^^^^^^^^^^^^^^^
+    97 │   if (assistantEnv.ASSISTANT_ORIGIN?.trim()) assistant.ASSISTANT_ORIGIN = assistantEnv.ASSISTANT_ORIGIN.trim();
+    98 │   // Exclusive creation rejects existing files and symlinks; never rotate an existing secret implicitly.
+  
+  i A non-null assertion tells TypeScript to ignore a possible null or undefined value. If the value is missing at runtime, the code fails with an error that the compiler could not catch.
+  
+  i Check that the value is defined before using it, for example with an if statement or optional chaining, instead of asserting it.
+  
+  i Unsafe fix: Replace with optional chain operator ?. This operator includes runtime checks, so it is safer than the compile-only non-null assertion operator
+  
+     94  94 │     for (const entry of providers)
+     95  95 │       for (const key of [entry.key, entry.override])
+     96     │ - ······if·(assistantEnv[key]?.trim())·assistant[key]·=·assistantEnv[key]!.trim();
+         96 │ + ······if·(assistantEnv[key]?.trim())·assistant[key]·=·assistantEnv[key]?.trim();
+     97  97 │     if (assistantEnv.ASSISTANT_ORIGIN?.trim()) assistant.ASSISTANT_ORIGIN = assistantEnv.ASSISTANT_ORIGIN.trim();
+     98  98 │     // Exclusive creation rejects existing files and symlinks; never rotate an existing secret implicitly.
+  
+
+src/routes/(main)/dashboard/assistant/-components/assistant.tsx:238:17 lint/style/noNestedTernary ━━━━━━━━━━
+
+  ! Do not nest ternary expressions.
+  
+    236 │           <p className="sr-only" role="status" aria-live="polite">
+    237 │             {busy
+  > 238 │               ? selected
+        │                 ^^^^^^^^
+  > 239 │                 ? "Preparing a reply."
+  > 240 │                 : "Preparing a recorded reply."
+        │                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    241 │               : turns.length
+    242 │                 ? `Response ${turns.at(-1)?.status}.`
+  
+  i Nesting ternary expressions can make code more difficult to understand.
+  
+  i Convert nested ternary expression into if-else statements or separate the conditions to make the logic easier to understand.
+  
+
+Skipped 3 suggested fixes.
+If you wish to apply the suggested (unsafe) fixes, use the command biome check --write --unsafe
+
+Checked 7 files in 939ms. Fixed 3 files.
+Found 4 warnings.
+Found 1 info.

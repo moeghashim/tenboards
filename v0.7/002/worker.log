@@ -1,0 +1,21 @@
+
+> tenboards@0.6.2 worker:test
+> node --experimental-strip-types scripts/worker-runtime-check.ts
+
+PASS binding precedence/invalid binding/forced-demo resolver
+PASS zero-env demo
+PASS forced demo
+PASS DB without auth
+PASS secret without DB
+PASS secret with forced demo
+PASS unsupported source
+PASS malformed secret
+PASS malformed canonical URL
+PASS unreachable DB
+PASS binding-free URL fallback
+PASS same-isolate readiness failures retry; recovery succeeds; success memoized
+PASS sequential and overlapping distinct-user requests, DB reads, private sessions
+PASS credential flows, cookies, forged origin and unsafe redirect
+PASS later DB loss fails closed, recovers, revoked session loses protected access
+PASS runtime bindings/string secret: request = cloudflare:workers = populated process.env (presence/equality only)
+PASS workerd HTTP parity: 22 reads/104 scenarios

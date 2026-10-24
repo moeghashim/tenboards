@@ -1,0 +1,46 @@
+scripts/assistant-worker-check.ts:24:24 lint/style/noNonNullAssertion ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+  
+    22 │   assert.match(response.headers.get("cache-control") ?? "", /private, no-store/);
+    23 │   assert.equal(response.headers.get("x-content-type-options"), "nosniff");
+  > 24 │   return consumeStream(response.body!, new AbortController().signal, () => {
+       │                        ^^^^^^^^^^^^^^
+    25 │     /* Inspect final response below. */
+    26 │   });
+  
+  i A non-null assertion tells TypeScript to ignore a possible null or undefined value. If the value is missing at runtime, the code fails with an error that the compiler could not catch.
+  
+  i Check that the value is defined before using it, for example with an if statement or optional chaining, instead of asserting it.
+  
+
+scripts/assistant-worker-check.ts:107:12 lint/style/noNonNullAssertion  FIXABLE  ━━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+  
+    105 │   const responses = await Promise.all(
+    106 │     Array.from({ length: 16 }, (_, n) =>
+  > 107 │       post((n % 2 ? first : second)!.baseURL, payload, { "cf-connecting-ip": "198.19.8.1" }),
+        │            ^^^^^^^^^^^^^^^^^^^^^^^^^
+    108 │     ),
+    109 │   );
+  
+  i A non-null assertion tells TypeScript to ignore a possible null or undefined value. If the value is missing at runtime, the code fails with an error that the compiler could not catch.
+  
+  i Check that the value is defined before using it, for example with an if statement or optional chaining, instead of asserting it.
+  
+  i Unsafe fix: Replace with optional chain operator ?. This operator includes runtime checks, so it is safer than the compile-only non-null assertion operator
+  
+    105 105 │     const responses = await Promise.all(
+    106 106 │       Array.from({ length: 16 }, (_, n) =>
+    107     │ - ······post((n·%·2·?·first·:·second)!.baseURL,·payload,·{·"cf-connecting-ip":·"198.19.8.1"·}),
+        107 │ + ······post((n·%·2·?·first·:·second)?.baseURL,·payload,·{·"cf-connecting-ip":·"198.19.8.1"·}),
+    108 108 │       ),
+    109 109 │     );
+  
+
+Skipped 1 suggested fixes.
+If you wish to apply the suggested (unsafe) fixes, use the command biome check --write --unsafe
+
+Checked 2 files in 596ms. Fixed 2 files.
+Found 2 warnings.
