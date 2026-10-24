@@ -2,7 +2,7 @@
 id: "002"
 title: Project shell and re-scoped Board/List views
 milestone: v0.8-projects
-status: todo
+status: in-review
 category: ui
 files: ["src/routes/(main)/dashboard/projects/", "src/routes/(main)/dashboard/kanban/", "src/routes/(main)/dashboard/tasks/", "src/navigation/route-catalog.ts", "src/server/data/", "scripts/", "README.md", "dev/milestones.json"]
 ---
@@ -34,15 +34,15 @@ Run Impeccable context once from the task worktree, inspect incumbent renders an
 
 ## Acceptance criteria
 
-- [ ] Add /dashboard/projects/$projectId layout plus /board and /list with guarded GET loaders; project validation returns authorized not-found for missing IDs. All server functions use requireSession and validated project input.
-- [ ] Reuse existing presentation through small adapters with canonical statuses, IDs, assignees, labels, due dates, subtasks and comment counts. Board and List show the same scoped dataset and consistent counts, including canceled and unassigned tasks.
-- [ ] Implement project identity/breadcrumb and only links to completed views. No unfinished Overview index redirect or dead tab. Static route inventory gains concrete default-project capture paths and secondary/empty/missing supplemental checks; generate routeTree, never hand-edit it.
-- [ ] Search/status/assignee/priority/label filters, stable sorting and bounded pagination/continuation work without mutating source records. Scope local state by project so navigation cannot retain another project's tasks.
-- [ ] Remove DnD, completion checkboxes, Add/Edit/Delete and inert mutation controls from project views; read-only task detail disclosure is named, keyboard reachable and returns focus. Keep old URL behavior until 005.
-- [ ] Board scrolls locally or stacks/filter-narrows on mobile with all tasks reachable; List preserves labeled fields and readable rows. Empty/loading/error/long-title/many-label cases are usable and do not cause page overflow.
-- [ ] Use merged compact tokens, semantic status text, visible focus and reduced motion; preserve protected UI/calendar wrappers, preferences and SSR. No new dependency.
-- [ ] Capture before/after existing Kanban/Tasks plus new destinations and default shell in light/dark desktop/mobile, inspect renders and record no hydration/console errors. New-route before evidence is labeled shell/404, not a fabricated earlier design.
-- [ ] README states these project views are available directly while consolidation/navigation remains pending; status and evidence match this layer.
+- [x] Add /dashboard/projects/$projectId layout plus /board and /list with guarded GET loaders; project validation returns authorized not-found for missing IDs. All server functions use requireSession and validated project input.
+- [x] Reuse existing presentation through small adapters with canonical statuses, IDs, assignees, labels, due dates, subtasks and comment counts. Board and List show the same scoped dataset and consistent counts, including canceled and unassigned tasks.
+- [x] Implement project identity/breadcrumb and only links to completed views. No unfinished Overview index redirect or dead tab. Static route inventory gains concrete default-project capture paths and secondary/empty/missing supplemental checks; generate routeTree, never hand-edit it.
+- [x] Search/status/assignee/priority/label filters, stable sorting and bounded pagination/continuation work without mutating source records. Scope local state by project so navigation cannot retain another project's tasks.
+- [x] Remove DnD, completion checkboxes, Add/Edit/Delete and inert mutation controls from project views; read-only task detail disclosure is named, keyboard reachable and returns focus. Keep old URL behavior until 005.
+- [x] Board scrolls locally or stacks/filter-narrows on mobile with all tasks reachable; List preserves labeled fields and readable rows. Empty/loading/error/long-title/many-label cases are usable and do not cause page overflow.
+- [x] Use merged compact tokens, semantic status text, visible focus and reduced motion; preserve protected UI/calendar wrappers, preferences and SSR. No new dependency.
+- [x] Capture before/after existing Kanban/Tasks plus new destinations and default shell in light/dark desktop/mobile, inspect renders and record no hydration/console errors. New-route before evidence is labeled shell/404, not a fabricated earlier design.
+- [x] README states these project views are available directly while consolidation/navigation remains pending; status and evidence match this layer.
 
 ## Tests
 

@@ -79,7 +79,7 @@ try {
             document.documentElement.scrollHeight <=
             Math.max(
               window.innerHeight,
-              Math.ceil(document.querySelector("main")!.getBoundingClientRect().bottom + window.scrollY),
+              Math.ceil((document.querySelector("main")?.getBoundingClientRect().bottom ?? 0) + window.scrollY),
             ) +
               1,
         ),
