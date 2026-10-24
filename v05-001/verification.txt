@@ -1,0 +1,12 @@
+Baseline: origin/main e2ac2ec (PR #50 squash of approved planning commit 35164d0).
+Prefactor: reused selectSource/getDatabase; isolated pure auth configuration and safe DTOs; runtime-limited cookie RPC inputs.
+Better Auth 1.7.12 is the only added direct runtime dependency; bundled Drizzle adapter.
+Migration: 0012_watery_sugar_man after untouched 0011. Existing DB upgraded; dedicated fresh DB migrated; repeat migration and seed passed; generation reports no drift.
+Parity: 22 reads / 130 scenarios passing.
+Auth config/HTTP: 31 scenarios; cookie direct RPC: 23 scenarios; service modes: 5 scenarios.
+Forced demo: actual TCP sentinel connection count 0. Workers only ASSETS binding; disabled auth GET/POST; no DB/auth environment.
+Client asset audit: no BETTER_AUTH_SECRET, postgres URL, drizzleAdapter or auth_account matches. Source graph audit passed.
+Build/check/typecheck passed. Inherited Biome: 1 highlighter warning, 10 infos. Inherited route CLI circular dependency warning; Base UI mixed transition/animation warning observed. npm audit reports 6 moderate/2 high dependency advisories; no forced upgrades.
+Initial screenshot failure used IPv4 while Vite listened on IPv6 localhost; corrected localhost retry passed all eight shell/Mail cases. Before/after are visually unchanged; no UI content/tokens edited.
+Original cookie harness failures are retained; final uses the installed TanStack wire codec/default plugins and actual direct HTTP calls, including positive controls. Final 23/23 passes.
+Production never deployed. Intermediate auth layer does not yet protect routes/forms; 003 supplies route and data authority.

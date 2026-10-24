@@ -1,0 +1,12 @@
+
+> tenboards@0.4.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://localhost:3000 --routes /dashboard/default,/mail --output screenshots/v05-001/before-retry
+
+PASS /mail light/desktop direct
+PASS /mail light/mobile direct
+PASS /mail dark/desktop direct
+PASS /mail dark/mobile direct
+PASS /dashboard/default light/desktop direct
+PASS /dashboard/default light/mobile direct
+PASS /dashboard/default dark/desktop direct
+PASS /dashboard/default dark/mobile direct

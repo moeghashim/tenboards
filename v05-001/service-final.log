@@ -1,0 +1,3 @@
+PASS zero environment
+PASS DB without secret
+PASS unreachable auth DB
