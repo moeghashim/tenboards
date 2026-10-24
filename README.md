@@ -8,6 +8,8 @@ Ten current dashboards and the retained app pages share a compact design system,
 
 **v0.7 (AI Assistant) is planned, not implemented** — [the milestone contract and three tasks](dev/milestones/v0.7-assistant/README.md) cover a separate Assistant page, safe OpenUI rendering, optional server-configured providers and recorded zero-config replies. Existing Chat stays unchanged. The live demo and PR previews will remain recorded-only; adopters supply their own provider keys.
 
+**v0.8 (Projects workspace) is planned, not implemented** — [the milestone contract and six tasks](dev/milestones/v0.8-projects/README.md) cover workspace Home, a Projects index, nested project navigation and read-only Overview/Board/List/Timeline/Files views. Kanban, Tasks, Calendar and File Manager will consolidate into project views with permanent legacy redirects. Both v0.7 and v0.8 proceed independently after rebasing onto v0.6.2 compact density; the reviewer reconciles shared shell files. Current routes and behavior are unchanged by this planning PR.
+
 ## Run locally
 
 Use Node 22+ and npm. No environment variables or database are required.

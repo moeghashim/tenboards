@@ -176,6 +176,26 @@
         "002-provider-streaming-endpoint": "todo",
         "003-picker-conversation-acceptance": "todo"
       }
+    },
+    {
+      "id": "v0.8-projects",
+      "status": "planned",
+      "tasks": [
+        "001-project-data-foundation",
+        "002-project-board-list",
+        "003-project-overview-timeline-files",
+        "004-workspace-home-projects-index",
+        "005-project-navigation-consolidation",
+        "006-projects-acceptance"
+      ],
+      "taskStatuses": {
+        "001-project-data-foundation": "todo",
+        "002-project-board-list": "todo",
+        "003-project-overview-timeline-files": "todo",
+        "004-workspace-home-projects-index": "todo",
+        "005-project-navigation-consolidation": "todo",
+        "006-projects-acceptance": "todo"
+      }
     }
   ]
 }
