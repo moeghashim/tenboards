@@ -1,0 +1,8 @@
+
+> tenboards@0.6.2 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://localhost:3270 --routes /dashboard/projects/$projectId/timeline --output screenshots/v08-003/final-timeline
+
+PASS /dashboard/projects/$projectId/timeline light/desktop direct
+PASS /dashboard/projects/$projectId/timeline light/mobile direct
+PASS /dashboard/projects/$projectId/timeline dark/desktop direct
+PASS /dashboard/projects/$projectId/timeline dark/mobile direct

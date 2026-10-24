@@ -1,0 +1,5 @@
+
+> tenboards@0.6.2 typecheck
+> tsc --noEmit
+
+src/routes/(main)/dashboard/projects/-components/project-timeline.tsx(37,11): error TS6133: 'events' is declared but its value is never read.

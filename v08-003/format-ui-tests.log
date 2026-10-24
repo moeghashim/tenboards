@@ -1,0 +1,51 @@
+scripts/project-views-check.ts:100:20 lint/style/useTemplate  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  i Template literals are preferred over string concatenation.
+  
+     98 │       await p.getByLabel("Search files").fill("");
+     99 │       await p.screenshot({ path: `${out}/files-${theme}-${size}.png`, fullPage: true });
+  > 100 │       await p.goto(base + "/dashboard/projects/sample-empty/timeline?mode=calendar", { waitUntil: "networkidle" });
+        │                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    101 │       await p.getByRole("heading", { name: "Research queue", exact: true }).waitFor();
+    102 │       await p.getByText(/No matching tasks/).waitFor();
+  
+  i Template literals are easier to read than a chain of + operators and quotes, and they avoid mistakes with spaces and escaped quotes.
+  
+  i Unsafe fix: Use a template literal.
+  
+     98  98 │         await p.getByLabel("Search files").fill("");
+     99  99 │         await p.screenshot({ path: `${out}/files-${theme}-${size}.png`, fullPage: true });
+    100     │ - ······await·p.goto(base·+·"/dashboard/projects/sample-empty/timeline?mode=calendar",·{·waitUntil:·"networkidle"·});
+        100 │ + ······await·p.goto(`${base}/dashboard/projects/sample-empty/timeline?mode=calendar`,·{·waitUntil:·"networkidle"·});
+    101 101 │         await p.getByRole("heading", { name: "Research queue", exact: true }).waitFor();
+    102 102 │         await p.getByText(/No matching tasks/).waitFor();
+  
+
+scripts/project-views-check.ts:121:18 lint/style/useTemplate  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  i Template literals are preferred over string concatenation.
+  
+    119 │       errors: string[] = [];
+    120 │     p.on("pageerror", (e) => errors.push(e.message));
+  > 121 │     await p.goto(base + "/dashboard/projects/sample-operations/timeline?mode=calendar", { waitUntil: "networkidle" });
+        │                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    122 │     await p.getByText(/Local time/).waitFor();
+    123 │     await p.reload({ waitUntil: "networkidle" });
+  
+  i Template literals are easier to read than a chain of + operators and quotes, and they avoid mistakes with spaces and escaped quotes.
+  
+  i Unsafe fix: Use a template literal.
+  
+    119 119 │         errors: string[] = [];
+    120 120 │       p.on("pageerror", (e) => errors.push(e.message));
+    121     │ - ····await·p.goto(base·+·"/dashboard/projects/sample-operations/timeline?mode=calendar",·{·waitUntil:·"networkidle"·});
+        121 │ + ····await·p.goto(`${base}/dashboard/projects/sample-operations/timeline?mode=calendar`,·{·waitUntil:·"networkidle"·});
+    122 122 │       await p.getByText(/Local time/).waitFor();
+    123 123 │       await p.reload({ waitUntil: "networkidle" });
+  
+
+Skipped 2 suggested fixes.
+If you wish to apply the suggested (unsafe) fixes, use the command biome check --write --unsafe
+
+Checked 2 files in 387ms. Fixed 2 files.
+Found 2 infos.

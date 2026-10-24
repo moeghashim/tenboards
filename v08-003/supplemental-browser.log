@@ -1,0 +1,4 @@
+T3 collaborative browser, final source, live development server3270:
+PASS Files at320CSSpx: PDF filter3/11; queryroadmap1/11; clearingquery3/11. Documentwidth320,scrollWidth320.
+PASS Timeline Gantt at320CSSpx: documentwidth320,scrollWidth320; chartlocalviewport286,scrollWidth960; unscheduledlocalheight8662 insideboundedregion; activeTimeline retainedwithquery.
+PASS Timeline CSS200%zoom at1440: body/mainwidth1440,documentscrollWidth1440. Effective720CSSpx layout also inspected.

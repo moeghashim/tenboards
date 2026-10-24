@@ -1,0 +1,113 @@
+src/routes/(main)/dashboard/projects/$projectId/overview.tsx:62:34 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    60 │                 <li key={t.id} className="flex flex-wrap justify-between gap-2 py-3">
+    61 │                   <div className="min-w-0 flex-1">
+  > 62 │                     <p className="break-words font-medium">{t.title}</p>
+       │                                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+    63 │                     <p className="text-muted-foreground text-xs">
+    64 │                       {statusLabels[t.status]} · {t.assignee?.name ?? "Unassigned"}
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+     60  60 │                   <li key={t.id} className="flex flex-wrap justify-between gap-2 py-3">
+     61  61 │                     <div className="min-w-0 flex-1">
+     62     │ - ····················<p·className="break-words·font-medium">{t.title}</p>
+         62 │ + ····················<p·className="font-medium·break-words">{t.title}</p>
+     63  63 │                       <p className="text-muted-foreground text-xs">
+     64  64 │                         {statusLabels[t.status]} · {t.assignee?.name ?? "Unassigned"}
+  
+
+src/routes/(main)/dashboard/projects/-components/project-timeline.tsx:229:40 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    227 │               {rows.map(({ task: t, span }) => (
+    228 │                 <TableRow key={t.id} data-schedule-id={t.id}>
+  > 229 │                   <TableCell className="min-w-56 max-w-96 break-words whitespace-normal">{t.title}</TableCell>
+        │                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    230 │                   <TableCell>{statusLabels[t.status]}</TableCell>
+    231 │                   <TableCell>{t.assignee?.name ?? "Unassigned"}</TableCell>
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+    227 227 │                 {rows.map(({ task: t, span }) => (
+    228 228 │                   <TableRow key={t.id} data-schedule-id={t.id}>
+    229     │ - ··················<TableCell·className="min-w-56·max-w-96·break-words·whitespace-normal">{t.title}</TableCell>
+        229 │ + ··················<TableCell·className="max-w-96·min-w-56·break-words·whitespace-normal">{t.title}</TableCell>
+    230 230 │                     <TableCell>{statusLabels[t.status]}</TableCell>
+    231 231 │                     <TableCell>{t.assignee?.name ?? "Unassigned"}</TableCell>
+  
+
+src/routes/(main)/dashboard/projects/-components/project-timeline.tsx:274:34 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    272 │                 >
+    273 │                   <div className="space-y-1 pr-3">
+  > 274 │                     <p className="break-words font-medium">{t.title}</p>
+        │                                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+    275 │                     <p className="text-muted-foreground text-xs">
+    276 │                       {statusLabels[t.status]} · {t.assignee?.name ?? "Unassigned"}
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+    272 272 │                   >
+    273 273 │                     <div className="space-y-1 pr-3">
+    274     │ - ····················<p·className="break-words·font-medium">{t.title}</p>
+        274 │ + ····················<p·className="font-medium·break-words">{t.title}</p>
+    275 275 │                       <p className="text-muted-foreground text-xs">
+    276 276 │                         {statusLabels[t.status]} · {t.assignee?.name ?? "Unassigned"}
+  
+
+src/routes/(main)/dashboard/projects/-components/project-timeline.tsx:354:44 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    352 │                   {events.map((e) => (
+    353 │                     <TableRow key={e.id} data-event-id={e.id}>
+  > 354 │                       <TableCell className="min-w-56 max-w-80 break-words whitespace-normal">{e.title}</TableCell>
+        │                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    355 │                       <TableCell>Calendar event</TableCell>
+    356 │                       <TableCell>Not assigned</TableCell>
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+    352 352 │                     {events.map((e) => (
+    353 353 │                       <TableRow key={e.id} data-event-id={e.id}>
+    354     │ - ······················<TableCell·className="min-w-56·max-w-80·break-words·whitespace-normal">{e.title}</TableCell>
+        354 │ + ······················<TableCell·className="max-w-80·min-w-56·break-words·whitespace-normal">{e.title}</TableCell>
+    355 355 │                         <TableCell>Calendar event</TableCell>
+    356 356 │                         <TableCell>Not assigned</TableCell>
+  
+
+Skipped 4 suggested fixes.
+If you wish to apply the suggested (unsafe) fixes, use the command biome check --write --unsafe
+
+Checked 18 files in 497ms. Fixed 1 file.
+Found 4 infos.

@@ -1,0 +1,95 @@
+
+> tenboards@0.6.2 auth:test
+> node --experimental-strip-types scripts/auth-test.ts
+
+
+=== Auth suite: config ===
+PASS auth-off configuration
+PASS auth-off configuration
+PASS auth-off configuration
+PASS auth-off configuration
+PASS auth-off configuration
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS provider pair matrix
+PASS provider pair matrix
+PASS provider pair matrix
+PASS provider pair matrix
+PASS forced demo HTTP + auth disabled: zero TCP connections
+PASS real signup + persistent host-only HttpOnly cookie
+PASS DB-backed session roundtrip
+PASS forged origin rejected
+PASS signout invalidates session
+PASS unchecked remember me: session-only cookie
+PASS reseed preserves auth identity
+Auth foundation: 31/31 passing.
+
+=== Auth suite: cookie ===
+Cookie HTTP boundary: 23/23 passing.
+
+=== Auth suite: service ===
+PASS zero environment
+PASS DB without secret
+PASS unreachable auth DB
+PASS missing auth schema
+PASS recovered auth DB
+
+=== Auth suite: redirect ===
+Redirect validator: 28/28 passing.
+
+=== Auth suite: return ===
+PASS v2 recovered fragment survives login/register cross-links
+PASS v2 real signup returns to protected pathname/search/hash
+PASS v2 recovered fragment survives login/register cross-links
+PASS v2 real signup returns to protected pathname/search/hash
+Auth return paths: 4/4 passing.
+
+=== Auth suite: flows ===
+PASS v2 validation and first-field focus
+HTTP /api/auth/sign-up/email: 200
+PASS v2 signup persists session and pathname/search/hash
+PASS v2 no credential echo
+PASS v2 signed-in auth redirect
+HTTP /api/auth/sign-out: 200
+PASS v2 client sign-out invalidates session
+HTTP /api/auth/sign-in/email: 401
+PASS v2 inline server error preserves email
+HTTP /api/auth/sign-in/email: 200
+PASS v2 login and remember-me persistence
+PASS v2 validation and first-field focus
+HTTP /api/auth/sign-up/email: 200
+PASS v2 signup persists session and pathname/search/hash
+PASS v2 no credential echo
+PASS v2 signed-in auth redirect
+HTTP /api/auth/sign-out: 200
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+page.waitForURL: Timeout 20000ms exceeded.
+=========================== logs ===========================
+waiting for navigation to "**/auth/v2/login" until "load"
+  navigated to "http://localhost:3280/dashboard/profile"
+  navigated to "http://localhost:3280/auth/v2/login?redirect=%2Fdashboard%2Fprofile"
+  navigated to "http://localhost:3280/auth/v2/login?redirect=%2Fdashboard%2Fprofile"
+============================================================
+    at /Users/moeghashim/tenboards-v08/scripts/auth-flows-check.ts:82:16 {
+  log: [],
+  name: 'TimeoutError'
+}
+
+Node.js v24.21.0
+FAIL auth suite flows: exit 1
