@@ -1,5 +1,7 @@
 # v0.6.2 — Compact density
 
+Status: **done — merged as #65 and released as [v0.6.2](https://github.com/moeghashim/tenboards/releases/tag/v0.6.2)**.
+
 Task: 001 — Compact density. Approved contract: PLAN.md Decisions log, “v0.6.2 compact density” (2026-10-24), from main `54c8d70`. Branch: `feat/v0.6.2/001-compact-density`; base main; one layer. Status: in review. [PR #65](https://github.com/moeghashim/tenboards/pull/65). Rebased onto `cc3c5e7` to preserve concurrently merged README/milestone plans; application changes are unchanged.
 
 Make the whole template about 8–12% more compact through shared tokens/primitives in Impeccable Operate mode. Compact becomes the single default; no density preference. Preserve screen composition, behavior, font/preferences registries, protected UI/calendar implementations and production isolation.

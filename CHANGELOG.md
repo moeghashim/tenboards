@@ -1,6 +1,8 @@
 # Changelog
 
-## v0.6.2 — Compact density (draft)
+## v0.6.2 — Compact density (2026-10-24)
+
+Released as [v0.6.2](https://github.com/moeghashim/tenboards/releases/tag/v0.6.2).
 
 - Make compact the shared default: 13px content text, smaller headings/KPIs, 28px desktop controls, 14px standard card padding, tighter tables/gaps, 36px sidebar rows and a 48px desktop header.
 - Preserve the 16px rem root, chart/calendar geometry, 12px metadata, 24px minimum button targets, focus/contrast and reduced motion. Mobile retains larger spacing and controls.
