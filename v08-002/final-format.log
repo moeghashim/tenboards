@@ -1,0 +1,30 @@
+scripts/project-ui-check.ts:82:25 lint/style/noNonNullAssertion  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+  
+    80 │             Math.max(
+    81 │               window.innerHeight,
+  > 82 │               Math.ceil(document.querySelector("main")!.getBoundingClientRect().bottom + window.scrollY),
+       │                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    83 │             ) +
+    84 │               1,
+  
+  i A non-null assertion tells TypeScript to ignore a possible null or undefined value. If the value is missing at runtime, the code fails with an error that the compiler could not catch.
+  
+  i Check that the value is defined before using it, for example with an if statement or optional chaining, instead of asserting it.
+  
+  i Unsafe fix: Replace with optional chain operator ?. This operator includes runtime checks, so it is safer than the compile-only non-null assertion operator
+  
+     80  80 │               Math.max(
+     81  81 │                 window.innerHeight,
+     82     │ - ··············Math.ceil(document.querySelector("main")!.getBoundingClientRect().bottom·+·window.scrollY),
+         82 │ + ··············Math.ceil(document.querySelector("main")?.getBoundingClientRect().bottom·+·window.scrollY),
+     83  83 │               ) +
+     84  84 │                 1,
+  
+
+Skipped 1 suggested fixes.
+If you wish to apply the suggested (unsafe) fixes, use the command biome check --write --unsafe
+
+Checked 10 files in 473ms. Fixed 1 file.
+Found 1 warning.

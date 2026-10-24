@@ -1,0 +1,19 @@
+
+> tenboards@0.6.2 worker:security
+> node --experimental-strip-types scripts/worker-rate-limit-check.ts
+
+PASS hosted auth requires explicit canonical non-loopback HTTPS origin
+PASS database count shared by two Worker instances and restart; forwarding spoof cannot bypass 3/10s sign-in limit
+PASS concurrent first-insert/increment race admits exactly 3 of 12 across two Workers
+PASS missing/invalid trusted IP shares conservative per-path bucket; spoofed forwarding chains ignored
+PASS Retry-After window recovers without resetting/disabling limits
+PASS exact runtime origin rejects forged credential write
+file:///Users/moeghashim/tenboards-v08/scripts/worker-test-support.ts:98
+    throw new Error("Local Worker failed to start (details redacted).");
+          ^
+
+Error: Local Worker failed to start (details redacted).
+    at startWorker (file:///Users/moeghashim/tenboards-v08/scripts/worker-test-support.ts:98:11)
+    at async file:///Users/moeghashim/tenboards-v08/scripts/worker-rate-limit-check.ts:86:11
+
+Node.js v24.21.0

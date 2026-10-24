@@ -1,0 +1,28 @@
+
+> tenboards@0.6.2 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://localhost:3270 --routes /dashboard/default,/dashboard/kanban,/dashboard/tasks,/dashboard/projects/$projectId,/dashboard/projects/$projectId/board,/dashboard/projects/$projectId/list --output screenshots/v08-002/after
+
+PASS /dashboard/projects/$projectId light/desktop direct
+PASS /dashboard/projects/$projectId light/mobile direct
+PASS /dashboard/projects/$projectId dark/desktop direct
+PASS /dashboard/projects/$projectId dark/mobile direct
+PASS /dashboard/projects/$projectId/board light/desktop direct
+PASS /dashboard/projects/$projectId/board light/mobile direct
+PASS /dashboard/projects/$projectId/board dark/desktop direct
+PASS /dashboard/projects/$projectId/board dark/mobile direct
+PASS /dashboard/projects/$projectId/list light/desktop direct
+PASS /dashboard/projects/$projectId/list light/mobile direct
+PASS /dashboard/projects/$projectId/list dark/desktop direct
+PASS /dashboard/projects/$projectId/list dark/mobile direct
+PASS /dashboard/default light/desktop direct
+PASS /dashboard/default light/mobile direct
+PASS /dashboard/default dark/desktop direct
+PASS /dashboard/default dark/mobile direct
+PASS /dashboard/kanban light/desktop direct
+PASS /dashboard/kanban light/mobile direct
+PASS /dashboard/kanban dark/desktop direct
+PASS /dashboard/kanban dark/mobile direct
+PASS /dashboard/tasks light/desktop direct
+PASS /dashboard/tasks light/mobile direct
+PASS /dashboard/tasks dark/desktop direct
+PASS /dashboard/tasks dark/mobile direct

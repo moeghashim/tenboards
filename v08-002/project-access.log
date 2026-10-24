@@ -1,0 +1,18 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: The input did not match the regular expression /auth\/v2\/login/. Input:
+
+'/dashboard/projects/sample-docs/board?query=&sort=position&offset=0&limit=100'
+
+    at file:///Users/moeghashim/tenboards-v08/scripts/project-access-check.ts:31:12 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: '/dashboard/projects/sample-docs/board?query=&sort=position&offset=0&limit=100',
+  expected: /auth\/v2\/login/,
+  operator: 'match',
+  diff: 'simple'
+}
+
+Node.js v24.21.0

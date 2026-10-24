@@ -1,0 +1,9 @@
+PASS Demo tab=account: original six tabs, safe selection, no auth endpoint/account RPC
+PASS Demo tab=unknown: original six tabs, safe selection, no auth endpoint/account RPC
+PASS Demo tab=overview: original six tabs, safe selection, no auth endpoint/account RPC
+PASS Demo tab=personal: original six tabs, safe selection, no auth endpoint/account RPC
+PASS Demo tab=employment: original six tabs, safe selection, no auth endpoint/account RPC
+PASS Demo tab=compensation: original six tabs, safe selection, no auth endpoint/account RPC
+PASS Demo tab=time-off: original six tabs, safe selection, no auth endpoint/account RPC
+PASS Demo tab=documents: original six tabs, safe selection, no auth endpoint/account RPC
+Profile demo: 8/8 passing.
