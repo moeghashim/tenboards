@@ -1,0 +1,8 @@
+
+> tenboards@0.6.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url https://0dcf7bed-tenboards-preview.mohanadgh.workers.dev --routes /dashboard/default --output screenshots/v07-plan/workers
+
+PASS /dashboard/default light/desktop direct
+PASS /dashboard/default light/mobile direct
+PASS /dashboard/default dark/desktop direct
+PASS /dashboard/default dark/mobile direct

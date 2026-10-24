@@ -1,0 +1,8 @@
+
+> tenboards@0.6.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://127.0.0.1:3017 --routes /dashboard/default --output screenshots/v07-plan/dev
+
+PASS /dashboard/default light/desktop direct
+PASS /dashboard/default light/mobile direct
+PASS /dashboard/default dark/desktop direct
+PASS /dashboard/default dark/mobile direct
