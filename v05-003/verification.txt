@@ -1,0 +1,11 @@
+v0.5 task 003 verification
+Immutable preview: https://300990a6-tenboards.mohanadgh.workers.dev
+Alias: https://pr-53-tenboards.mohanadgh.workers.dev
+Build: preview:deploy invokes npm run build, passed. Worker only ASSETS binding.
+Check/typecheck passed; inherited highlighter warning + 10 Biome infos; third-party bundler directives, Node fs.Stats, route circular-import warnings.
+Protection: 216/216, final protection-complete.log. All 38 visual routes + auth HTTP route classified, 26 protected data functions, 5 public bootstrap/preference functions.
+No/valid/expired/revoked/tampered cookies; private no-store headers; direct/refresh/client-navigation; iframe expiry; shell signout/refocus; keyboard focus; 12 authenticated four-state shell captures.
+Configuration 31/31; services 5/5; parity 22 reads/130 scenarios; source audit passed.
+Original failed logs retained: inventory count typo (27 vs actual 26), hydration click readiness, asynchronous menu focus restoration, refocus before page effects/foreground readiness. Corrected test harness passes. No auth bypass or disabled rate limit.
+Before: 12 local shell/iframe cases plus 4 public-404 cases from parent immutable preview. After/Workers: 16 cases each; see report.json.
+No new migration/dependency/token changes in this layer. All auth credentials generated in memory; only test-owned identities cleaned up.

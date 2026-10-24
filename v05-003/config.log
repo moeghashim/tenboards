@@ -1,0 +1,32 @@
+PASS auth-off configuration
+PASS auth-off configuration
+PASS auth-off configuration
+PASS auth-off configuration
+PASS auth-off configuration
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS provider pair matrix
+PASS provider pair matrix
+PASS provider pair matrix
+PASS provider pair matrix
+PASS forced demo HTTP + auth disabled: zero TCP connections
+PASS real signup + persistent host-only HttpOnly cookie
+PASS DB-backed session roundtrip
+PASS forged origin rejected
+PASS signout invalidates session
+PASS unchecked remember me: session-only cookie
+PASS reseed preserves auth identity
+Auth foundation: 31/31 passing.

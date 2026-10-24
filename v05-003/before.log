@@ -1,0 +1,16 @@
+
+> tenboards@0.4.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://localhost:3000 --routes /dashboard/default,/dashboard/mail,/dashboard/chat --output screenshots/v05-003/before
+
+PASS /dashboard/chat light/desktop direct
+PASS /dashboard/chat light/mobile direct
+PASS /dashboard/chat dark/desktop direct
+PASS /dashboard/chat dark/mobile direct
+PASS /dashboard/default light/desktop direct
+PASS /dashboard/default light/mobile direct
+PASS /dashboard/default dark/desktop direct
+PASS /dashboard/default dark/mobile direct
+PASS /dashboard/mail light/desktop direct
+PASS /dashboard/mail light/mobile direct
+PASS /dashboard/mail dark/desktop direct
+PASS /dashboard/mail dark/mobile direct

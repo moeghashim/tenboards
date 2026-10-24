@@ -1,0 +1,221 @@
+PASS Inventory: 38 visual routes, HTTP auth handler, 26 protected functions and five public preference/bootstrap functions
+PASS Anonymous SSR/refresh/client navigation /chat
+PASS Anonymous SSR/refresh/client navigation /dashboard
+PASS Anonymous SSR/refresh/client navigation /mail
+PASS Anonymous SSR/refresh/client navigation /
+PASS Anonymous SSR/refresh/client navigation /dashboard/academy
+PASS Anonymous SSR/refresh/client navigation /dashboard/analytics
+PASS Anonymous SSR/refresh/client navigation /dashboard/calendar
+PASS Anonymous SSR/refresh/client navigation /dashboard/chat
+PASS Anonymous SSR/refresh/client navigation /dashboard/coming-soon
+PASS Anonymous SSR/refresh/client navigation /dashboard/crm
+PASS Anonymous SSR/refresh/client navigation /dashboard/default
+PASS Anonymous SSR/refresh/client navigation /dashboard/ecommerce
+PASS Anonymous SSR/refresh/client navigation /dashboard/file-manager
+PASS Anonymous SSR/refresh/client navigation /dashboard/finance
+PASS Anonymous SSR/refresh/client navigation /dashboard/infrastructure
+PASS Anonymous SSR/refresh/client navigation /dashboard/invoice
+PASS Anonymous SSR/refresh/client navigation /dashboard/kanban
+PASS Anonymous SSR/refresh/client navigation /dashboard/logistics
+PASS Anonymous SSR/refresh/client navigation /dashboard/mail
+PASS Anonymous SSR/refresh/client navigation /dashboard/patient-monitoring
+PASS Anonymous SSR/refresh/client navigation /dashboard/productivity
+PASS Anonymous SSR/refresh/client navigation /dashboard/products
+PASS Anonymous SSR/refresh/client navigation /dashboard/profile
+PASS Anonymous SSR/refresh/client navigation /dashboard/roles
+PASS Anonymous SSR/refresh/client navigation /dashboard/tasks
+PASS Anonymous SSR/refresh/client navigation /dashboard/users
+PASS Anonymous SSR/refresh/client navigation /dashboard/
+PASS Anonymous SSR/refresh/client navigation /dashboard/analytics-v1
+PASS Anonymous SSR/refresh/client navigation /dashboard/crm-v1
+PASS Anonymous SSR/refresh/client navigation /dashboard/default-v1
+PASS Anonymous SSR/refresh/client navigation /dashboard/finance-v1
+PASS Public system/auth /unauthorized: no account shell
+PASS Public system/auth /auth/v2: no account shell
+PASS Public system/auth /dashboard/capture-not-found: no account shell
+PASS Public system/auth /auth/v1/login: no account shell
+PASS Public system/auth /auth/v1/register: no account shell
+PASS Public system/auth /auth/v2/login: no account shell
+PASS Public system/auth /auth/v2/register: no account shell
+PASS Public system/auth /missing-root-page: no account shell
+PASS No-cookie direct RPC /src/routes/(main)/mail/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/route.tsx:getAccounts
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/users/route.tsx:loadUsers
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/tasks/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/roles/route.tsx:loadRoles
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/profile/route.tsx:loadProfile
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/products/route.tsx:loadCatalog
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/productivity/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/patient-monitoring/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/logistics/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/kanban/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/invoice/route.tsx:loadInvoice
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/infrastructure/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/finance/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/file-manager/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/ecommerce/route.tsx:loadEcommerce
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/default/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/crm/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/calendar/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/analytics/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/academy/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/(legacy)/finance-v1/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/(legacy)/default-v1/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/(legacy)/crm-v1/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/(legacy)/analytics-v1/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/chat/route.tsx:loadData
+PASS Valid SSR/refresh/client navigation /chat
+PASS Valid SSR/refresh/client navigation /dashboard
+PASS Valid SSR/refresh/client navigation /mail
+PASS Valid SSR/refresh/client navigation /
+PASS Valid SSR/refresh/client navigation /dashboard/academy
+PASS Valid SSR/refresh/client navigation /dashboard/analytics
+PASS Valid SSR/refresh/client navigation /dashboard/calendar
+PASS Valid SSR/refresh/client navigation /dashboard/chat
+PASS Valid SSR/refresh/client navigation /dashboard/coming-soon
+PASS Valid SSR/refresh/client navigation /dashboard/crm
+PASS Valid SSR/refresh/client navigation /dashboard/default
+PASS Valid SSR/refresh/client navigation /dashboard/ecommerce
+PASS Valid SSR/refresh/client navigation /dashboard/file-manager
+PASS Valid SSR/refresh/client navigation /dashboard/finance
+PASS Valid SSR/refresh/client navigation /dashboard/infrastructure
+PASS Valid SSR/refresh/client navigation /dashboard/invoice
+PASS Valid SSR/refresh/client navigation /dashboard/kanban
+PASS Valid SSR/refresh/client navigation /dashboard/logistics
+PASS Valid SSR/refresh/client navigation /dashboard/mail
+PASS Valid SSR/refresh/client navigation /dashboard/patient-monitoring
+PASS Valid SSR/refresh/client navigation /dashboard/productivity
+PASS Valid SSR/refresh/client navigation /dashboard/products
+PASS Valid SSR/refresh/client navigation /dashboard/profile
+PASS Valid SSR/refresh/client navigation /dashboard/roles
+PASS Valid SSR/refresh/client navigation /dashboard/tasks
+PASS Valid SSR/refresh/client navigation /dashboard/users
+PASS Valid SSR/refresh/client navigation /dashboard/
+PASS Valid SSR/refresh/client navigation /dashboard/analytics-v1
+PASS Valid SSR/refresh/client navigation /dashboard/crm-v1
+PASS Valid SSR/refresh/client navigation /dashboard/default-v1
+PASS Valid SSR/refresh/client navigation /dashboard/finance-v1
+PASS Valid direct RPC /src/routes/(main)/mail/route.tsx:loadData
+PASS Valid direct RPC /src/routes/(main)/dashboard/route.tsx:getAccounts
+PASS Valid direct RPC /src/routes/(main)/dashboard/users/route.tsx:loadUsers
+PASS Valid direct RPC /src/routes/(main)/dashboard/tasks/route.tsx:loadData
+PASS Valid direct RPC /src/routes/(main)/dashboard/roles/route.tsx:loadRoles
+PASS Valid direct RPC /src/routes/(main)/dashboard/profile/route.tsx:loadProfile
+PASS Valid direct RPC /src/routes/(main)/dashboard/products/route.tsx:loadCatalog
+PASS Valid direct RPC /src/routes/(main)/dashboard/productivity/route.tsx:loadData
+PASS Valid direct RPC /src/routes/(main)/dashboard/patient-monitoring/route.tsx:loadData
+PASS Valid direct RPC /src/routes/(main)/dashboard/logistics/route.tsx:loadData
+PASS Valid direct RPC /src/routes/(main)/dashboard/kanban/route.tsx:loadData
+PASS Valid direct RPC /src/routes/(main)/dashboard/invoice/route.tsx:loadInvoice
+PASS Valid direct RPC /src/routes/(main)/dashboard/infrastructure/route.tsx:loadData
+PASS Valid direct RPC /src/routes/(main)/dashboard/finance/route.tsx:loadData
+PASS Valid direct RPC /src/routes/(main)/dashboard/file-manager/route.tsx:loadData
+PASS Valid direct RPC /src/routes/(main)/dashboard/ecommerce/route.tsx:loadEcommerce
+PASS Valid direct RPC /src/routes/(main)/dashboard/default/route.tsx:loadData
+PASS Valid direct RPC /src/routes/(main)/dashboard/crm/route.tsx:loadData
+PASS Valid direct RPC /src/routes/(main)/dashboard/calendar/route.tsx:loadData
+PASS Valid direct RPC /src/routes/(main)/dashboard/analytics/route.tsx:loadData
+PASS Valid direct RPC /src/routes/(main)/dashboard/academy/route.tsx:loadData
+PASS Valid direct RPC /src/routes/(main)/dashboard/(legacy)/finance-v1/route.tsx:loadData
+PASS Valid direct RPC /src/routes/(main)/dashboard/(legacy)/default-v1/route.tsx:loadData
+PASS Valid direct RPC /src/routes/(main)/dashboard/(legacy)/crm-v1/route.tsx:loadData
+PASS Valid direct RPC /src/routes/(main)/dashboard/(legacy)/analytics-v1/route.tsx:loadData
+PASS Valid direct RPC /src/routes/(main)/chat/route.tsx:loadData
+PASS tampered direct RPC /src/routes/(main)/mail/route.tsx:loadData
+PASS tampered direct RPC /src/routes/(main)/dashboard/route.tsx:getAccounts
+PASS tampered direct RPC /src/routes/(main)/dashboard/users/route.tsx:loadUsers
+PASS tampered direct RPC /src/routes/(main)/dashboard/tasks/route.tsx:loadData
+PASS tampered direct RPC /src/routes/(main)/dashboard/roles/route.tsx:loadRoles
+PASS tampered direct RPC /src/routes/(main)/dashboard/profile/route.tsx:loadProfile
+PASS tampered direct RPC /src/routes/(main)/dashboard/products/route.tsx:loadCatalog
+PASS tampered direct RPC /src/routes/(main)/dashboard/productivity/route.tsx:loadData
+PASS tampered direct RPC /src/routes/(main)/dashboard/patient-monitoring/route.tsx:loadData
+PASS tampered direct RPC /src/routes/(main)/dashboard/logistics/route.tsx:loadData
+PASS tampered direct RPC /src/routes/(main)/dashboard/kanban/route.tsx:loadData
+PASS tampered direct RPC /src/routes/(main)/dashboard/invoice/route.tsx:loadInvoice
+PASS tampered direct RPC /src/routes/(main)/dashboard/infrastructure/route.tsx:loadData
+PASS tampered direct RPC /src/routes/(main)/dashboard/finance/route.tsx:loadData
+PASS tampered direct RPC /src/routes/(main)/dashboard/file-manager/route.tsx:loadData
+PASS tampered direct RPC /src/routes/(main)/dashboard/ecommerce/route.tsx:loadEcommerce
+PASS tampered direct RPC /src/routes/(main)/dashboard/default/route.tsx:loadData
+PASS tampered direct RPC /src/routes/(main)/dashboard/crm/route.tsx:loadData
+PASS tampered direct RPC /src/routes/(main)/dashboard/calendar/route.tsx:loadData
+PASS tampered direct RPC /src/routes/(main)/dashboard/analytics/route.tsx:loadData
+PASS tampered direct RPC /src/routes/(main)/dashboard/academy/route.tsx:loadData
+PASS tampered direct RPC /src/routes/(main)/dashboard/(legacy)/finance-v1/route.tsx:loadData
+PASS tampered direct RPC /src/routes/(main)/dashboard/(legacy)/default-v1/route.tsx:loadData
+PASS tampered direct RPC /src/routes/(main)/dashboard/(legacy)/crm-v1/route.tsx:loadData
+PASS tampered direct RPC /src/routes/(main)/dashboard/(legacy)/analytics-v1/route.tsx:loadData
+PASS tampered direct RPC /src/routes/(main)/chat/route.tsx:loadData
+PASS expired direct RPC /src/routes/(main)/mail/route.tsx:loadData
+PASS expired direct RPC /src/routes/(main)/dashboard/route.tsx:getAccounts
+PASS expired direct RPC /src/routes/(main)/dashboard/users/route.tsx:loadUsers
+PASS expired direct RPC /src/routes/(main)/dashboard/tasks/route.tsx:loadData
+PASS expired direct RPC /src/routes/(main)/dashboard/roles/route.tsx:loadRoles
+PASS expired direct RPC /src/routes/(main)/dashboard/profile/route.tsx:loadProfile
+PASS expired direct RPC /src/routes/(main)/dashboard/products/route.tsx:loadCatalog
+PASS expired direct RPC /src/routes/(main)/dashboard/productivity/route.tsx:loadData
+PASS expired direct RPC /src/routes/(main)/dashboard/patient-monitoring/route.tsx:loadData
+PASS expired direct RPC /src/routes/(main)/dashboard/logistics/route.tsx:loadData
+PASS expired direct RPC /src/routes/(main)/dashboard/kanban/route.tsx:loadData
+PASS expired direct RPC /src/routes/(main)/dashboard/invoice/route.tsx:loadInvoice
+PASS expired direct RPC /src/routes/(main)/dashboard/infrastructure/route.tsx:loadData
+PASS expired direct RPC /src/routes/(main)/dashboard/finance/route.tsx:loadData
+PASS expired direct RPC /src/routes/(main)/dashboard/file-manager/route.tsx:loadData
+PASS expired direct RPC /src/routes/(main)/dashboard/ecommerce/route.tsx:loadEcommerce
+PASS expired direct RPC /src/routes/(main)/dashboard/default/route.tsx:loadData
+PASS expired direct RPC /src/routes/(main)/dashboard/crm/route.tsx:loadData
+PASS expired direct RPC /src/routes/(main)/dashboard/calendar/route.tsx:loadData
+PASS expired direct RPC /src/routes/(main)/dashboard/analytics/route.tsx:loadData
+PASS expired direct RPC /src/routes/(main)/dashboard/academy/route.tsx:loadData
+PASS expired direct RPC /src/routes/(main)/dashboard/(legacy)/finance-v1/route.tsx:loadData
+PASS expired direct RPC /src/routes/(main)/dashboard/(legacy)/default-v1/route.tsx:loadData
+PASS expired direct RPC /src/routes/(main)/dashboard/(legacy)/crm-v1/route.tsx:loadData
+PASS expired direct RPC /src/routes/(main)/dashboard/(legacy)/analytics-v1/route.tsx:loadData
+PASS expired direct RPC /src/routes/(main)/chat/route.tsx:loadData
+PASS revoked direct RPC /src/routes/(main)/mail/route.tsx:loadData
+PASS revoked direct RPC /src/routes/(main)/dashboard/route.tsx:getAccounts
+PASS revoked direct RPC /src/routes/(main)/dashboard/users/route.tsx:loadUsers
+PASS revoked direct RPC /src/routes/(main)/dashboard/tasks/route.tsx:loadData
+PASS revoked direct RPC /src/routes/(main)/dashboard/roles/route.tsx:loadRoles
+PASS revoked direct RPC /src/routes/(main)/dashboard/profile/route.tsx:loadProfile
+PASS revoked direct RPC /src/routes/(main)/dashboard/products/route.tsx:loadCatalog
+PASS revoked direct RPC /src/routes/(main)/dashboard/productivity/route.tsx:loadData
+PASS revoked direct RPC /src/routes/(main)/dashboard/patient-monitoring/route.tsx:loadData
+PASS revoked direct RPC /src/routes/(main)/dashboard/logistics/route.tsx:loadData
+PASS revoked direct RPC /src/routes/(main)/dashboard/kanban/route.tsx:loadData
+PASS revoked direct RPC /src/routes/(main)/dashboard/invoice/route.tsx:loadInvoice
+PASS revoked direct RPC /src/routes/(main)/dashboard/infrastructure/route.tsx:loadData
+PASS revoked direct RPC /src/routes/(main)/dashboard/finance/route.tsx:loadData
+PASS revoked direct RPC /src/routes/(main)/dashboard/file-manager/route.tsx:loadData
+PASS revoked direct RPC /src/routes/(main)/dashboard/ecommerce/route.tsx:loadEcommerce
+PASS revoked direct RPC /src/routes/(main)/dashboard/default/route.tsx:loadData
+PASS revoked direct RPC /src/routes/(main)/dashboard/crm/route.tsx:loadData
+PASS revoked direct RPC /src/routes/(main)/dashboard/calendar/route.tsx:loadData
+PASS revoked direct RPC /src/routes/(main)/dashboard/analytics/route.tsx:loadData
+PASS revoked direct RPC /src/routes/(main)/dashboard/academy/route.tsx:loadData
+PASS revoked direct RPC /src/routes/(main)/dashboard/(legacy)/finance-v1/route.tsx:loadData
+PASS revoked direct RPC /src/routes/(main)/dashboard/(legacy)/default-v1/route.tsx:loadData
+PASS revoked direct RPC /src/routes/(main)/dashboard/(legacy)/crm-v1/route.tsx:loadData
+PASS revoked direct RPC /src/routes/(main)/dashboard/(legacy)/analytics-v1/route.tsx:loadData
+PASS revoked direct RPC /src/routes/(main)/chat/route.tsx:loadData
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+false !== true
+
+    at file:///Users/moeghashim/tenboards/scripts/auth-protection-check.ts:175:16
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at process.processImmediate (node:internal/timers:541:9) {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.21.0

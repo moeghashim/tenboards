@@ -1,0 +1,513 @@
+
+> tenboards@0.4.0 check
+> biome check
+
+scripts/auth-protection-check.ts:85:19 lint/style/useTemplate  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  i Template literals are preferred over string concatenation.
+  
+    83 │     pass(`Public system/auth ${path}: no account shell`);
+    84 │   }
+  > 85 │   await page.goto(server.baseURL + "/auth/v1/login");
+       │                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    86 │   for (const item of rpc) {
+    87 │     const result = await callRpc(page, item.file, item.name, "GET");
+  
+  i Template literals are easier to read than a chain of + operators and quotes, and they avoid mistakes with spaces and escaped quotes.
+  
+  i Unsafe fix: Use a template literal.
+  
+     83  83 │       pass(`Public system/auth ${path}: no account shell`);
+     84  84 │     }
+     85     │ - ··await·page.goto(server.baseURL·+·"/auth/v1/login");
+         85 │ + ··await·page.goto(`${server.baseURL}/auth/v1/login`);
+     86  86 │     for (const item of rpc) {
+     87  87 │       const result = await callRpc(page, item.file, item.name, "GET");
+  
+
+scripts/auth-protection-check.ts:94:46 lint/style/useTemplate  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  i Template literals are preferred over string concatenation.
+  
+    92 │   const signed = await browser.newContext();
+    93 │   await cacheCaptureFonts(signed);
+  > 94 │   const response = await signed.request.post(server.baseURL + "/api/auth/sign-up/email", {
+       │                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    95 │     headers: { origin: server.baseURL },
+    96 │     data: { email, password, name: "Alexandra Longname Authentication Example" },
+  
+  i Template literals are easier to read than a chain of + operators and quotes, and they avoid mistakes with spaces and escaped quotes.
+  
+  i Unsafe fix: Use a template literal.
+  
+     92  92 │     const signed = await browser.newContext();
+     93  93 │     await cacheCaptureFonts(signed);
+     94     │ - ··const·response·=·await·signed.request.post(server.baseURL·+·"/api/auth/sign-up/email",·{
+         94 │ + ··const·response·=·await·signed.request.post(`${server.baseURL}/api/auth/sign-up/email`,·{
+     95  95 │       headers: { origin: server.baseURL },
+     96  96 │       data: { email, password, name: "Alexandra Longname Authentication Example" },
+  
+
+scripts/auth-protection-check.ts:114:28 lint/style/useTemplate  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  i Template literals are preferred over string concatenation.
+  
+    112 │     pass(`Valid SSR/refresh/client navigation ${path}`);
+    113 │   }
+  > 114 │   await authenticated.goto(server.baseURL + "/dashboard/default");
+        │                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    115 │   for (const item of rpc) {
+    116 │     const result = await callRpc(authenticated, item.file, item.name, "GET");
+  
+  i Template literals are easier to read than a chain of + operators and quotes, and they avoid mistakes with spaces and escaped quotes.
+  
+  i Unsafe fix: Use a template literal.
+  
+    112 112 │       pass(`Valid SSR/refresh/client navigation ${path}`);
+    113 113 │     }
+    114     │ - ··await·authenticated.goto(server.baseURL·+·"/dashboard/default");
+        114 │ + ··await·authenticated.goto(`${server.baseURL}/dashboard/default`);
+    115 115 │     for (const item of rpc) {
+    116 116 │       const result = await callRpc(authenticated, item.file, item.name, "GET");
+  
+
+scripts/auth-protection-check.ts:127:53 lint/style/useTemplate  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  i Template literals are preferred over string concatenation.
+  
+    125 │       const cookie = (await invalid.cookies()).find((c) => c.name === "better-auth.session_token");
+    126 │       assert.ok(cookie);
+  > 127 │       await invalid.addCookies([{ ...cookie, value: cookie.value + "tampered" }]);
+        │                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+    128 │     } else if (state === "expired")
+    129 │       await db`update auth_session set expires_at = now() - interval '1 minute' where user_id = ${user.id}`;
+  
+  i Template literals are easier to read than a chain of + operators and quotes, and they avoid mistakes with spaces and escaped quotes.
+  
+  i Unsafe fix: Use a template literal.
+  
+    125 125 │         const cookie = (await invalid.cookies()).find((c) => c.name === "better-auth.session_token");
+    126 126 │         assert.ok(cookie);
+    127     │ - ······await·invalid.addCookies([{·...cookie,·value:·cookie.value·+·"tampered"·}]);
+        127 │ + ······await·invalid.addCookies([{·...cookie,·value:·`${cookie.value}tampered`·}]);
+    128 128 │       } else if (state === "expired")
+    129 129 │         await db`update auth_session set expires_at = now() - interval '1 minute' where user_id = ${user.id}`;
+  
+
+scripts/auth-protection-check.ts:132:28 lint/style/useTemplate  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  i Template literals are preferred over string concatenation.
+  
+    130 │     else await db`delete from auth_session where user_id = ${user.id}`;
+    131 │     const invalidPage = await invalid.newPage();
+  > 132 │     await invalidPage.goto(server.baseURL + "/auth/v1/login");
+        │                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    133 │     for (const item of rpc) {
+    134 │       const result = await callRpc(invalidPage, item.file, item.name, "GET");
+  
+  i Template literals are easier to read than a chain of + operators and quotes, and they avoid mistakes with spaces and escaped quotes.
+  
+  i Unsafe fix: Use a template literal.
+  
+    130 130 │       else await db`delete from auth_session where user_id = ${user.id}`;
+    131 131 │       const invalidPage = await invalid.newPage();
+    132     │ - ····await·invalidPage.goto(server.baseURL·+·"/auth/v1/login");
+        132 │ + ····await·invalidPage.goto(`${server.baseURL}/auth/v1/login`);
+    133 133 │       for (const item of rpc) {
+    134 134 │         const result = await callRpc(invalidPage, item.file, item.name, "GET");
+  
+
+scripts/auth-protection-check.ts:141:29 lint/style/useTemplate  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  i Template literals are preferred over string concatenation.
+  
+    139 │     await invalid.close();
+    140 │   }
+  > 141 │   await signed.request.post(server.baseURL + "/api/auth/sign-in/email", {
+        │                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    142 │     headers: { origin: server.baseURL },
+    143 │     data: { email, password },
+  
+  i Template literals are easier to read than a chain of + operators and quotes, and they avoid mistakes with spaces and escaped quotes.
+  
+  i Unsafe fix: Use a template literal.
+  
+    139 139 │       await invalid.close();
+    140 140 │     }
+    141     │ - ··await·signed.request.post(server.baseURL·+·"/api/auth/sign-in/email",·{
+        141 │ + ··await·signed.request.post(`${server.baseURL}/api/auth/sign-in/email`,·{
+    142 142 │       headers: { origin: server.baseURL },
+    143 143 │       data: { email, password },
+  
+
+scripts/auth-protection-check.ts:145:28 lint/style/useTemplate  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  i Template literals are preferred over string concatenation.
+  
+    143 │     data: { email, password },
+    144 │   });
+  > 145 │   await authenticated.goto(server.baseURL + "/dashboard/default");
+        │                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    146 │   await mkdir("screenshots/v05-003/auth", { recursive: true });
+    147 │   for (const theme of ["light", "dark"] as const)
+  
+  i Template literals are easier to read than a chain of + operators and quotes, and they avoid mistakes with spaces and escaped quotes.
+  
+  i Unsafe fix: Use a template literal.
+  
+    143 143 │       data: { email, password },
+    144 144 │     });
+    145     │ - ··await·authenticated.goto(server.baseURL·+·"/dashboard/default");
+        145 │ + ··await·authenticated.goto(`${server.baseURL}/dashboard/default`);
+    146 146 │     await mkdir("screenshots/v05-003/auth", { recursive: true });
+    147 147 │     for (const theme of ["light", "dark"] as const)
+  
+
+scripts/auth-protection-check.ts:173:28 lint/style/useTemplate  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  i Template literals are preferred over string concatenation.
+  
+    171 │       }
+    172 │     }
+  > 173 │   await authenticated.goto(server.baseURL + "/dashboard/mail");
+        │                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    174 │   await authenticated.frameLocator("iframe").getByText("Inbox", { exact: true }).first().waitFor();
+    175 │   await db`delete from auth_session where user_id = ${user.id}`;
+  
+  i Template literals are easier to read than a chain of + operators and quotes, and they avoid mistakes with spaces and escaped quotes.
+  
+  i Unsafe fix: Use a template literal.
+  
+    171 171 │         }
+    172 172 │       }
+    173     │ - ··await·authenticated.goto(server.baseURL·+·"/dashboard/mail");
+        173 │ + ··await·authenticated.goto(`${server.baseURL}/dashboard/mail`);
+    174 174 │     await authenticated.frameLocator("iframe").getByText("Inbox", { exact: true }).first().waitFor();
+    175 175 │     await db`delete from auth_session where user_id = ${user.id}`;
+  
+
+scripts/auth-protection-check.ts:180:29 lint/style/useTemplate  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  i Template literals are preferred over string concatenation.
+  
+    178 │   assert.equal(new URL(authenticated.url()).searchParams.get("redirect"), "/dashboard/mail");
+    179 │   pass("Expired iframe escapes to top-level login with wrapper return path");
+  > 180 │   await signed.request.post(server.baseURL + "/api/auth/sign-in/email", {
+        │                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    181 │     headers: { origin: server.baseURL },
+    182 │     data: { email, password },
+  
+  i Template literals are easier to read than a chain of + operators and quotes, and they avoid mistakes with spaces and escaped quotes.
+  
+  i Unsafe fix: Use a template literal.
+  
+    178 178 │     assert.equal(new URL(authenticated.url()).searchParams.get("redirect"), "/dashboard/mail");
+    179 179 │     pass("Expired iframe escapes to top-level login with wrapper return path");
+    180     │ - ··await·signed.request.post(server.baseURL·+·"/api/auth/sign-in/email",·{
+        180 │ + ··await·signed.request.post(`${server.baseURL}/api/auth/sign-in/email`,·{
+    181 181 │       headers: { origin: server.baseURL },
+    182 182 │       data: { email, password },
+  
+
+scripts/auth-protection-check.ts:184:28 lint/style/useTemplate  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  i Template literals are preferred over string concatenation.
+  
+    182 │     data: { email, password },
+    183 │   });
+  > 184 │   await authenticated.goto(server.baseURL + "/dashboard/default");
+        │                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    185 │   await authenticated.getByRole("button", { name: `Signed in as ${user.name}` }).click();
+    186 │   await authenticated.getByRole("menuitem", { name: "Sign out", exact: true }).click();
+  
+  i Template literals are easier to read than a chain of + operators and quotes, and they avoid mistakes with spaces and escaped quotes.
+  
+  i Unsafe fix: Use a template literal.
+  
+    182 182 │       data: { email, password },
+    183 183 │     });
+    184     │ - ··await·authenticated.goto(server.baseURL·+·"/dashboard/default");
+        184 │ + ··await·authenticated.goto(`${server.baseURL}/dashboard/default`);
+    185 185 │     await authenticated.getByRole("button", { name: `Signed in as ${user.name}` }).click();
+    186 186 │     await authenticated.getByRole("menuitem", { name: "Sign out", exact: true }).click();
+  
+
+scripts/auth-protection-check.ts:188:28 lint/style/useTemplate  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  i Template literals are preferred over string concatenation.
+  
+    186 │   await authenticated.getByRole("menuitem", { name: "Sign out", exact: true }).click();
+    187 │   await authenticated.waitForURL("**/auth/v1/login");
+  > 188 │   await authenticated.goto(server.baseURL + "/dashboard/default");
+        │                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    189 │   assert.equal(new URL(authenticated.url()).pathname, "/auth/v1/login");
+    190 │   pass("Shell sign-out clears session and next protected document redirects");
+  
+  i Template literals are easier to read than a chain of + operators and quotes, and they avoid mistakes with spaces and escaped quotes.
+  
+  i Unsafe fix: Use a template literal.
+  
+    186 186 │     await authenticated.getByRole("menuitem", { name: "Sign out", exact: true }).click();
+    187 187 │     await authenticated.waitForURL("**/auth/v1/login");
+    188     │ - ··await·authenticated.goto(server.baseURL·+·"/dashboard/default");
+        188 │ + ··await·authenticated.goto(`${server.baseURL}/dashboard/default`);
+    189 189 │     assert.equal(new URL(authenticated.url()).pathname, "/auth/v1/login");
+    190 190 │     pass("Shell sign-out clears session and next protected document redirects");
+  
+
+src/routes/(main)/dashboard/(legacy)/analytics-v1/-components/analytics-actions-risk-ledger.tsx:141:11 lint/complexity/noUselessFragments  FIXABLE  ━━━━━━━━━━
+
+  i This fragment is unnecessary.
+  
+    139 │         description="Accounts under pressure with blocker, next action, and owner responsibility."
+    140 │         actions={
+  > 141 │           <>
+        │           ^^
+  > 142 │             <Badge variant="outline" className="font-medium tabular-nums">
+  > 143 │               {LEDGER_ROWS.length} Accounts
+  > 144 │             </Badge>
+  > 145 │           </>
+        │           ^^^
+    146 │         }
+    147 │       />
+  
+  i A fragment is redundant if it contains only one child, or if it is the child of a html element, and is not a keyed fragment.
+  
+  i Unsafe fix: Remove the Fragment
+  
+    138 138 │           title="Revenue Risk Ledger"
+    139 139 │           description="Accounts under pressure with blocker, next action, and owner responsibility."
+    140     │ - ········actions={
+    141     │ - ··········<>
+    142     │ - ············<Badge·variant="outline"·className="font-medium·tabular-nums">
+        140 │ + ········actions={<Badge·variant="outline"·className="font-medium·tabular-nums">
+    143 141 │                 {LEDGER_ROWS.length} Accounts
+    144     │ - ············</Badge>
+    145     │ - ··········</>
+    146     │ - ········}
+        142 │ + ············</Badge>}
+    147 143 │         />
+    148 144 │   
+  
+
+src/routes/(main)/dashboard/(legacy)/analytics-v1/-components/analytics-overview.tsx:163:23 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    161 │       </div>
+    162 │ 
+  > 163 │       <Card className="min-w-0 py-4  xl:col-span-2">
+        │                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    164 │         <SectionHeader title="Risk summary" description="Core risk signals vs previous period" />
+    165 │         <CardContent className="grid grid-cols-1 gap-4 px-4 sm:grid-cols-2 xl:grid-cols-4 xl:gap-0 xl:divide-x xl:[&>div]:px-5 xl:[&>div:first-child]:pl-0 xl:[&>div:last-child]:pr-0">
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+    161 161 │         </div>
+    162 162 │   
+    163     │ - ······<Card·className="min-w-0·py-4··xl:col-span-2">
+        163 │ + ······<Card·className="min-w-0·py-4·xl:col-span-2">
+    164 164 │           <SectionHeader title="Risk summary" description="Core risk signals vs previous period" />
+    165 165 │           <CardContent className="grid grid-cols-1 gap-4 px-4 sm:grid-cols-2 xl:grid-cols-4 xl:gap-0 xl:divide-x xl:[&>div]:px-5 xl:[&>div:first-child]:pl-0 xl:[&>div:last-child]:pr-0">
+  
+
+src/routes/(main)/dashboard/-components/header/signed-in-account.tsx:38:24 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    36 │       >
+    37 │         <div className="space-y-1 px-2 py-2">
+  > 38 │           <p className="wrap-anywhere font-medium">{user.name}</p>
+       │                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    39 │           <p className="text-muted-foreground wrap-anywhere text-xs">{user.email}</p>
+    40 │         </div>
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+    36 36 │         >
+    37 37 │           <div className="space-y-1 px-2 py-2">
+    38    │ - ··········<p·className="wrap-anywhere·font-medium">{user.name}</p>
+       38 │ + ··········<p·className="font-medium·wrap-anywhere">{user.name}</p>
+    39 39 │             <p className="text-muted-foreground wrap-anywhere text-xs">{user.email}</p>
+    40 40 │           </div>
+  
+
+src/routes/(main)/dashboard/-components/header/signed-in-account.tsx:39:24 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    37 │         <div className="space-y-1 px-2 py-2">
+    38 │           <p className="wrap-anywhere font-medium">{user.name}</p>
+  > 39 │           <p className="text-muted-foreground wrap-anywhere text-xs">{user.email}</p>
+       │                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    40 │         </div>
+    41 │         <DropdownMenuSeparator />
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+    37 37 │           <div className="space-y-1 px-2 py-2">
+    38 38 │             <p className="wrap-anywhere font-medium">{user.name}</p>
+    39    │ - ··········<p·className="text-muted-foreground·wrap-anywhere·text-xs">{user.email}</p>
+       39 │ + ··········<p·className="text-muted-foreground·text-xs·wrap-anywhere">{user.email}</p>
+    40 40 │           </div>
+    41 41 │           <DropdownMenuSeparator />
+  
+
+src/routes/(main)/dashboard/analytics/-components/realtime-visitors.tsx:77:31 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    75 │           <div className="text-muted-foreground flex items-center gap-2 text-sm">
+    76 │             <span className="relative flex size-2">
+  > 77 │               <span className="relative inline-flex size-2 rounded-full bg-success" />
+       │                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    78 │             </span>
+    79 │             <span>Live</span>
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+     75  75 │             <div className="text-muted-foreground flex items-center gap-2 text-sm">
+     76  76 │               <span className="relative flex size-2">
+     77     │ - ··············<span·className="relative·inline-flex·size-2·rounded-full·bg-success"·/>
+         77 │ + ··············<span·className="bg-success·relative·inline-flex·size-2·rounded-full"·/>
+     78  78 │               </span>
+     79  79 │               <span>Live</span>
+  
+
+src/routes/(main)/dashboard/analytics/-components/realtime-visitors.tsx:91:26 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    89 │         </DashboardChart>
+    90 │         <div className="grid grid-cols-1 sm:grid-cols-2">
+  > 91 │           <div className="border-border/50 flex items-center gap-3 sm:border-r border-b pt-1 pr-5 pb-4">
+       │                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    92 │             <span
+    93 │               aria-hidden="true"
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+     89  89 │           </DashboardChart>
+     90  90 │           <div className="grid grid-cols-1 sm:grid-cols-2">
+     91     │ - ··········<div·className="border-border/50·flex·items-center·gap-3·sm:border-r·border-b·pt-1·pr-5·pb-4">
+         91 │ + ··········<div·className="border-border/50·flex·items-center·gap-3·border-b·pt-1·pr-5·pb-4·sm:border-r">
+     92  92 │               <span
+     93  93 │                 aria-hidden="true"
+  
+
+src/routes/(main)/dashboard/analytics/-components/realtime-visitors.tsx:111:26 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    109 │             <span className="text-sm tabular-nums">{summary.value3}</span>
+    110 │           </div>
+  > 111 │           <div className="border-border/50 flex items-center gap-3 sm:border-r pt-4 pr-5 pb-1">
+        │                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    112 │             <span
+    113 │               aria-hidden="true"
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+    109 109 │               <span className="text-sm tabular-nums">{summary.value3}</span>
+    110 110 │             </div>
+    111     │ - ··········<div·className="border-border/50·flex·items-center·gap-3·sm:border-r·pt-4·pr-5·pb-1">
+        111 │ + ··········<div·className="border-border/50·flex·items-center·gap-3·pt-4·pr-5·pb-1·sm:border-r">
+    112 112 │               <span
+    113 113 │                 aria-hidden="true"
+  
+
+src/lib/highlighter.tsx:96:20 lint/suspicious/noArrayIndexKey ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Avoid using the index of an array as key property in an element.
+  
+    94 │           line.map((token, index) => (
+    95 │             <span
+  > 96 │               key={index}
+       │                    ^^^^^
+    97 │               style={token.htmlStyle as React.CSSProperties}
+    98 │               className="text-(--shiki-light) dark:text-(--shiki-dark)"
+  
+  i This is the source of the key value.
+  
+    92 │       return {
+    93 │         lines: tokens.map((line) =>
+  > 94 │           line.map((token, index) => (
+       │                            ^^^^^
+    95 │             <span
+    96 │               key={index}
+  
+  i The order of the items may change, and this also affects performances and component state.
+  
+  i Check the React documentation. 
+  
+
+scripts/auth-protection-check.ts format ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Formatter would have printed the following content:
+  
+     70  70 │       assert.equal(new URL(page.url()).pathname, "/auth/v1/login");
+     71  71 │       await page.waitForFunction(() => !!window.__TSR_ROUTER__);
+     72     │ - ····await·page.evaluate(async·(href)·=>·{·await·window.__TSR_ROUTER__?.navigate({·href·});·},·path);
+         72 │ + ····await·page.evaluate(async·(href)·=>·{
+         73 │ + ······await·window.__TSR_ROUTER__?.navigate({·href·});
+         74 │ + ····},·path);
+     73  75 │       assert.equal(new URL(page.url()).pathname, "/auth/v1/login");
+     74  76 │       pass(`Anonymous SSR/refresh/client navigation ${path}`);
+    ······· │ 
+    108 110 │       assert.ok(!new URL(authenticated.url()).pathname.startsWith("/auth/"), path);
+    109 111 │       await authenticated.waitForFunction(() => !!window.__TSR_ROUTER__);
+    110     │ - ····await·authenticated.evaluate(async·(href)·=>·{·await·window.__TSR_ROUTER__?.navigate({·href·});·},·path);
+        112 │ + ····await·authenticated.evaluate(async·(href)·=>·{
+        113 │ + ······await·window.__TSR_ROUTER__?.navigate({·href·});
+        114 │ + ····},·path);
+    111 115 │       assert.ok(!new URL(authenticated.url()).pathname.startsWith("/auth/"), path);
+    112 116 │       pass(`Valid SSR/refresh/client navigation ${path}`);
+  
+
+The number of diagnostics exceeds the limit allowed. Use --max-diagnostics to increase it.
+Diagnostics not shown: 5.
+Checked 453 files in 705ms. No fixes applied.
+Found 1 error.
+Found 1 warning.
+Found 23 infos.
+check ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Some errors were emitted while running checks.
+  
+
