@@ -516,7 +516,7 @@ Open `/dashboard/projects/sample-operations/board` or `/dashboard/projects/sampl
 
 The existing Kanban and Tasks URLs redirect permanently to the default project. The project shell has one project-qualified header breadcrumb, status, member avatars and progress, and links Overview, Board, List, Timeline and Files; workspace Home/index, nested sidebar navigation and project-qualified palette search are available. Unknown projects return an authorized 404. `/`, `/dashboard` and auth-success fallback retain `/dashboard/default`.
 
-Run `node --experimental-strip-types scripts/project-ui-check.ts http://localhost:3270` for project switching, filters, pagination, details/focus and responsive checks. `scripts/project-access-check.ts` checks route/RPC denial, validation, project scope and revocation against an isolated local auth database; `AUTH_TEST_RUNTIME=worker` exercises the Worker build.
+Run `node --experimental-strip-types scripts/project-ui-check.ts http://localhost:3270` for project switching, filters, pagination, details/focus and responsive checks. `scripts/project-access-check.ts` checks route/RPC denial, validation, project scope and revocation against an isolated local auth database; `AUTH_TEST_RUNTIME=workerd` exercises the Worker build.
 
 ## Project Overview, Timeline and Files (v0.8 / 003)
 

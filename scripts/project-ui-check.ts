@@ -33,7 +33,10 @@ try {
         .locator("[data-task-id]")
         .evaluateAll((nodes) => nodes.map((n) => n.getAttribute("data-task-id")).sort());
       assert.equal(board.length, 5);
-      await page.getByRole("link", { name: "List", exact: true }).click();
+      await page
+        .getByRole("navigation", { name: "Project views" })
+        .getByRole("link", { name: "List", exact: true })
+        .click();
       await page.getByRole("table", { name: "Project tasks" }).waitFor();
       const list = await page
         .locator("[data-task-id]")
@@ -78,7 +81,10 @@ try {
       await page.getByRole("combobox", { name: "Project", exact: true }).click();
       await page.getByRole("option", { name: "Operations rollout", exact: true }).click();
       await page.getByRole("heading", { name: "Operations rollout", exact: true }).waitFor();
-      await page.getByRole("link", { name: "Board", exact: true }).click();
+      await page
+        .getByRole("navigation", { name: "Project views" })
+        .getByRole("link", { name: "Board", exact: true })
+        .click();
       await page.waitForFunction(() => document.querySelectorAll("[data-task-id]").length === 117);
       assert.equal(
         await page.evaluate(
