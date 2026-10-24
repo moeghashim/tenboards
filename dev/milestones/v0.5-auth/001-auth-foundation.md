@@ -2,7 +2,7 @@
 id: "001"
 title: Establish Better Auth configuration, storage and session boundary
 milestone: v0.5-auth
-status: todo
+status: review
 category: auth
 files: ["package.json", "package-lock.json", ".env.example", "src/lib/auth/", "src/server/db/client.server.ts", "src/server/db/schema.ts", "src/server/db/migrations/", "drizzle.config.ts", "src/server/server-actions.ts", "src/lib/preferences/preferences-storage.ts", "src/routes/(main)/mail/route.tsx", "src/routes/api/auth/$.ts", "scripts/screenshot-routes.ts", "scripts/screenshots.ts", "scripts/report-route-coverage.ts", "scripts/auth-config-check.ts", "docs/auth.md", "README.md", "dev/milestones.json"]
 ---
@@ -27,15 +27,15 @@ Prefactor inspection: `selectSource` already owns the v0.4 rule and `getDatabase
 
 ## Acceptance criteria
 
-- [ ] Read the linked current official integration/cookies/server-route/adapter docs and verify APIs against the installed Better Auth version; record that version and dependency decision. Use `better-auth/adapters/drizzle` on the existing postgres.js-backed Drizzle client; escalate any additional direct runtime dependency before installation.
-- [ ] Implement every row of the milestone configuration/provider matrices. No secret means auth off even with DB; secret plus non-DB source produces an explicit safe startup/config error before serving an open app. Invalid/unreachable/unmigrated auth configuration fails closed. No env values appear in errors.
-- [ ] Define `BETTER_AUTH_URL`, documented localhost fallback, exact trusted origin and secret validation; only server-side config reads credentials. Return provider booleans, never credential pairs. Email/password is enabled whenever auth is on; incomplete OAuth pairs disable only that provider.
-- [ ] Add `auth_user`, `auth_session`, `auth_account`, `auth_verification` with correct Better Auth model mappings, indexes/relations and committed SQL/journal metadata. Fresh and incremental migrations work; v0.4 schemas/seeds/data are unchanged and reseeding preserves auth records. No auto-migration, sample auth identity or credential seed.
-- [ ] Mount `/api/auth/$` GET/POST through TanStack Start and preserve request/response headers and cookies. Auth-off returns a safe disabled response without initializing auth/DB. Use supported cookie propagation for server APIs that set cookies; keep cookie cache disabled for immediate revocation.
-- [ ] Expose a safe mode/session server function using request headers and Better Auth server APIs, plus an internal require-session helper for later guards. Distinguish demo, signed-out, signed-in and service-error states; no raw tokens, credential-account fields or ORM objects in bootstrap DTOs. No global per-user state.
-- [ ] Runtime-allowlist existing preference/Mail-layout cookie names, values and options. Forged direct calls cannot read or overwrite auth cookies, arbitrary cookies or cookie attributes. Existing theme/preset/font/sidebar/Mail layout persistence still works; registries remain intact.
-- [ ] Verify cookie flags, exact trusted origins and intact CSRF defaults; record selected rate-limit behavior. Audit client bundles with test sentinels. Zero-env install/dev/build and Workers version preview require no DB/auth environment or connection attempt.
-- [ ] Add explicit HTTP-route classification to existing screenshot/coverage inventory without losing a visual route; existing default smoke remains runnable. Document optional auth setup in `.env.example`, README and initial `docs/auth.md`; no production secret/binding is configured.
+- [x] Read the linked current official integration/cookies/server-route/adapter docs and verify APIs against the installed Better Auth version; record that version and dependency decision. Use `better-auth/adapters/drizzle` on the existing postgres.js-backed Drizzle client; escalate any additional direct runtime dependency before installation.
+- [x] Implement every row of the milestone configuration/provider matrices. No secret means auth off even with DB; secret plus non-DB source produces an explicit safe startup/config error before serving an open app. Invalid/unreachable/unmigrated auth configuration fails closed. No env values appear in errors.
+- [x] Define `BETTER_AUTH_URL`, documented localhost fallback, exact trusted origin and secret validation; only server-side config reads credentials. Return provider booleans, never credential pairs. Email/password is enabled whenever auth is on; incomplete OAuth pairs disable only that provider.
+- [x] Add `auth_user`, `auth_session`, `auth_account`, `auth_verification` with correct Better Auth model mappings, indexes/relations and committed SQL/journal metadata. Fresh and incremental migrations work; v0.4 schemas/seeds/data are unchanged and reseeding preserves auth records. No auto-migration, sample auth identity or credential seed.
+- [x] Mount `/api/auth/$` GET/POST through TanStack Start and preserve request/response headers and cookies. Auth-off returns a safe disabled response without initializing auth/DB. Use supported cookie propagation for server APIs that set cookies; keep cookie cache disabled for immediate revocation.
+- [x] Expose a safe mode/session server function using request headers and Better Auth server APIs, plus an internal require-session helper for later guards. Distinguish demo, signed-out, signed-in and service-error states; no raw tokens, credential-account fields or ORM objects in bootstrap DTOs. No global per-user state.
+- [x] Runtime-allowlist existing preference/Mail-layout cookie names, values and options. Forged direct calls cannot read or overwrite auth cookies, arbitrary cookies or cookie attributes. Existing theme/preset/font/sidebar/Mail layout persistence still works; registries remain intact.
+- [x] Verify cookie flags, exact trusted origins and intact CSRF defaults; record selected rate-limit behavior. Audit client bundles with test sentinels. Zero-env install/dev/build and Workers version preview require no DB/auth environment or connection attempt.
+- [x] Add explicit HTTP-route classification to existing screenshot/coverage inventory without losing a visual route; existing default smoke remains runnable. Document optional auth setup in `.env.example`, README and initial `docs/auth.md`; no production secret/binding is configured.
 
 ## Tests
 
