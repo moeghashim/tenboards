@@ -2,7 +2,7 @@ import { chromium } from "playwright";
 
 import { cacheCaptureFonts } from "./screenshot-assets.ts";
 import { captureInteractions } from "./screenshot-interactions.ts";
-import { captureRoutes } from "./screenshot-routes.ts";
+import { captureRoutes, httpRoutes } from "./screenshot-routes.ts";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { parseArgs } from "node:util";
@@ -36,7 +36,9 @@ const generated = await readFile("src/routeTree.gen.ts", "utf8");
 const routeBlock = generated.split("export interface FileRoutesByFullPath {")[1]?.split("\n}")[0];
 if (!routeBlock) throw new Error("Missing generated route inventory. Run npm run generate-routes.");
 const generatedRoutes = [...routeBlock.matchAll(/^\s*'([^']+)':/gm)].map((match) => match[1]);
-const missing = generatedRoutes.filter((route) => !captureRoutes.some((entry) => entry.route === route));
+const missing = generatedRoutes.filter(
+  (route) => !httpRoutes.includes(route) && !captureRoutes.some((entry) => entry.route === route),
+);
 const stale = captureRoutes.filter((entry) => !generatedRoutes.includes(entry.route));
 if (missing.length || stale.length) {
   throw new Error(`Route inventory mismatch: missing=${JSON.stringify(missing)}, stale=${JSON.stringify(stale)}`);
@@ -45,7 +47,9 @@ const requested = values.routes?.split(",");
 const selected: Array<{ route: string; path: string; ready?: string; status?: number }> = captureRoutes.filter(
   (entry) => !requested || requested.includes(entry.route),
 );
-const unknown = requested?.filter((route) => !captureRoutes.some((entry) => entry.route === route));
+const unknown = requested?.filter(
+  (route) => !httpRoutes.includes(route) && !captureRoutes.some((entry) => entry.route === route),
+);
 if (unknown?.length || !selected.length) throw new Error(`Unknown/empty route subset: ${unknown?.join(",")}`);
 if (values.boundaries)
   selected.push(

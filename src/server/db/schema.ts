@@ -87,6 +87,7 @@ export const metricDimensions = pgTable(
   ],
 );
 
+export * from "./auth-schema.ts";
 export * from "./commerce-schema.ts";
 export * from "./communications-schema.ts";
 export * from "./core-entity-schema.ts";

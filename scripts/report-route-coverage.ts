@@ -1,4 +1,4 @@
-import { captureRoutes } from "./screenshot-routes.ts";
+import { captureRoutes, httpRoutes } from "./screenshot-routes.ts";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { parseArgs } from "node:util";
@@ -23,7 +23,10 @@ const block = generated.split("export interface FileRoutesByFullPath {")[1]?.spl
 if (!block) throw new Error("Generated inventory missing");
 const routes = [...block.matchAll(/^\s*'([^']+)':/gm)].map((match) => match[1]);
 const catalog: string[] = captureRoutes.map((entry) => entry.route);
-if (routes.length !== catalog.length || routes.some((route) => !catalog.includes(route)))
+if (
+  routes.length !== catalog.length + httpRoutes.length ||
+  routes.some((route) => !catalog.includes(route) && !httpRoutes.includes(route))
+)
   throw new Error("Generated routes and capture catalog differ");
 const presets = ["default", "graphite", "pine", "iris"];
 const expected = catalog.flatMap((route) =>

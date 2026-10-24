@@ -49,7 +49,7 @@
   },
   "overrides": [
     {
-      "includes": ["src/routes/**/$*.tsx"],
+      "includes": ["src/routes/**/$*.tsx", "src/routes/**/$*.ts"],
       "linter": {
         "rules": {
           "style": {

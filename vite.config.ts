@@ -6,6 +6,10 @@ import viteReact from "@vitejs/plugin-react";
 import { nitro } from "nitro/vite";
 import { defineConfig } from "vite";
 
+import { authConfiguration } from "./src/lib/auth/config.ts";
+
+authConfiguration(process.env);
+
 const config = defineConfig(({ command }) => ({
   resolve: { tsconfigPaths: true },
   plugins: [
