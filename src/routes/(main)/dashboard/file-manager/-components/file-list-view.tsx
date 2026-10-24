@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import { cn } from "cn";
-import { Star } from "lucide-react";
+import { Star, UsersRound } from "lucide-react";
 
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
@@ -49,7 +49,12 @@ export function FileListView({ files, readOnly = false }: { files: FileManagerFi
                         <span className="[overflow-wrap:anywhere] break-words">{file.name}</span>
                       </Button>
                     )}
-                    {file.shared && <Badge variant="outline">{readOnly ? "Shared sample" : "Shared"}</Badge>}
+                    {file.shared &&
+                      (readOnly ? (
+                        <UsersRound className="text-muted-foreground size-4" role="img" aria-label="Shared" />
+                      ) : (
+                        <Badge variant="outline">Shared</Badge>
+                      ))}
                   </div>
                 </TableCell>
                 <TableCell>
@@ -65,8 +70,8 @@ export function FileListView({ files, readOnly = false }: { files: FileManagerFi
                 <TableCell>
                   <div className="flex items-center justify-end">
                     {readOnly ? (
-                      <span className="text-muted-foreground text-xs">
-                        {file.starred ? "Starred sample" : "Not starred"}
+                      <span className="text-warning">
+                        {file.starred && <Star className="size-4 fill-current" role="img" aria-label="Starred" />}
                       </span>
                     ) : (
                       <Button

@@ -78,6 +78,7 @@ try {
       await page.getByRole("combobox", { name: "Project", exact: true }).click();
       await page.getByRole("option", { name: "Operations rollout", exact: true }).click();
       await page.getByRole("heading", { name: "Operations rollout", exact: true }).waitFor();
+      await page.getByRole("link", { name: "Board", exact: true }).click();
       await page.waitForFunction(() => document.querySelectorAll("[data-task-id]").length === 117);
       assert.equal(
         await page.evaluate(

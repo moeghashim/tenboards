@@ -73,7 +73,7 @@ export function FoldersSection({ folders, readOnly = false }: { folders: FileMan
             </EmptyMedia>
             <EmptyTitle>No folders yet</EmptyTitle>
             <EmptyDescription>
-              {readOnly ? "This project has no sample folder summaries." : "Create a folder to organize your files."}
+              {readOnly ? "No folders in this project." : "Create a folder to organize your files."}
             </EmptyDescription>
           </EmptyHeader>
         </Empty>

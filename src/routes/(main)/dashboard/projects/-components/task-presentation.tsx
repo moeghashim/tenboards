@@ -38,7 +38,7 @@ export function TaskPriority({ priority }: { priority: Priority }) {
 }
 export function PersonAvatar({ person }: { person: Person | null }) {
   return (
-    <Avatar size="sm" aria-label={person?.name ?? "Unassigned"}>
+    <Avatar size="sm" role="img" aria-label={person?.name ?? "Unassigned"}>
       <AvatarFallback>{person?.initials ?? <UserRound className="size-3.5" aria-hidden="true" />}</AvatarFallback>
     </Avatar>
   );

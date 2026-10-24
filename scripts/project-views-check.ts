@@ -38,43 +38,64 @@ try {
       await p.getByText("Upcoming work", { exact: true }).waitFor();
       await p.screenshot({ path: `${out}/overview-${theme}-${size}.png`, fullPage: true });
       await visit("/dashboard/projects/sample-docs/timeline");
-      const mode = p.getByLabel("Timeline mode");
-      assert.equal(await mode.inputValue(), size === "mobile" ? "table" : "gantt");
+      const mode = p.getByRole("group", { name: "Timeline mode", exact: true });
+      assert.equal(
+        await mode
+          .getByRole("button", { name: size === "mobile" ? "Table" : "Gantt", exact: true })
+          .getAttribute("aria-pressed"),
+        "true",
+      );
+      assert.equal(await p.locator("main select").count(), 0);
       const ids = () =>
         p.locator("[data-schedule-id]").evaluateAll((ns) => ns.map((n) => n.getAttribute("data-schedule-id")));
       const original = await ids();
       assert.equal(original.length, 4);
-      await mode.selectOption("table");
-      await p.waitForURL(/mode=table/);
+      if (size !== "mobile") {
+        await mode.getByRole("button", { name: "Table", exact: true }).click();
+        await p.waitForURL(/mode=table/);
+      }
       await p
         .getByRole("table")
         .filter({ has: p.getByRole("columnheader", { name: "Task", exact: true }) })
         .waitFor();
       assert.deepEqual(await ids(), original);
       await p.screenshot({ path: `${out}/table-${theme}-${size}.png`, fullPage: true });
-      await mode.selectOption("gantt");
+      await mode.getByRole("button", { name: "Gantt", exact: true }).click();
       await p.waitForURL(/mode=gantt/);
       await p.getByRole("region", { name: "Gantt chart, scroll horizontally", exact: true }).waitFor();
       assert.deepEqual(await ids(), original);
       await p.screenshot({ path: `${out}/gantt-${theme}-${size}.png`, fullPage: true });
+      assert.ok(await p.locator("[data-today-marker]").count());
+      await p.getByRole("button", { name: "Unscheduled (1)", exact: true }).click();
+      assert.equal((await ids()).length, 5);
+      await p.getByRole("button", { name: "Unscheduled (1)", exact: true }).click();
+      const initialStart = await p.getByLabel("Schedule range start").inputValue();
       const next = p.getByRole("button", { name: "Next schedule range" });
       await next.focus();
       await p.keyboard.press("Enter");
-      await p.waitForURL(/start=2026-07-18/);
       await p.waitForFunction(
-        () => document.querySelector<HTMLInputElement>("#schedule-start")?.value === "2026-07-18",
+        (initial) => document.querySelector<HTMLInputElement>("#schedule-start")?.value !== initial,
+        initialStart,
       );
+      assert.equal(await p.locator("[data-schedule-id]").count(), 0, "out-of-range tasks are hidden");
       await p.getByRole("button", { name: "Previous schedule range" }).focus();
       await p.keyboard.press("Enter");
-      await p.waitForURL(/start=2026-06-20/);
-      await p.getByLabel("Schedule scale").selectOption("months");
+      await p.waitForFunction(
+        (initial) => document.querySelector<HTMLInputElement>("#schedule-start")?.value === initial,
+        initialStart,
+      );
+      await p
+        .getByRole("group", { name: "Schedule scale", exact: true })
+        .getByRole("button", { name: "Months", exact: true })
+        .click();
       await p.waitForURL(/scale=months/);
-      await p.getByLabel("Visible periods").selectOption("12");
+      await p.getByRole("combobox", { name: "Visible periods", exact: true }).click();
+      await p.getByRole("option", { name: "12", exact: true }).click();
       await p.waitForURL(/periods=12/);
       await p.getByRole("button", { name: "Today", exact: true }).focus();
       await p.keyboard.press("Enter");
       await p.waitForFunction(() => !new URL(location.href).searchParams.get("start")?.startsWith("2026-06"));
-      await mode.selectOption("calendar");
+      await mode.getByRole("button", { name: "Calendar", exact: true }).click();
       await p.waitForURL(/mode=calendar/);
       await p.getByRole("region", { name: "Project calendar", exact: true }).waitFor();
       assert.equal(await p.getByRole("link", { name: "Timeline", exact: true }).getAttribute("aria-current"), "page");
@@ -92,7 +113,10 @@ try {
       await p.getByRole("link", { name: "Files", exact: true }).click();
       await p.getByLabel("File display").waitFor();
       assert.equal(await p.getByRole("button", { name: /Upload|Download|Share|Delete|Unstar|Star / }).count(), 0);
-      await p.getByLabel("File display").selectOption("list");
+      await p
+        .getByRole("group", { name: "File display", exact: true })
+        .getByRole("button", { name: "List", exact: true })
+        .click();
       await p.waitForURL(/view=list/);
       assert.equal(await p.getByRole("link", { name: "Files", exact: true }).getAttribute("aria-current"), "page");
       await p.getByLabel("Search files").fill("no-such-file");
@@ -101,13 +125,20 @@ try {
       await p.screenshot({ path: `${out}/files-${theme}-${size}.png`, fullPage: true });
       await p.goto(`${base}/dashboard/projects/sample-operations/timeline?mode=gantt`, { waitUntil: "networkidle" });
       const unscheduled = p.getByRole("region", { name: "Unscheduled tasks, scroll vertically", exact: true });
-      await unscheduled.focus();
-      await p.keyboard.press("End");
-      await p.waitForFunction(() => {
-        const el = document.querySelector('[aria-label="Unscheduled tasks, scroll vertically"]');
-        return el && el.scrollTop > 0 && el.scrollTop + el.clientHeight >= el.scrollHeight - 2;
-      });
-      assert.equal(await unscheduled.locator("li").count(), 96);
+      assert.equal(await unscheduled.isVisible(), false);
+      await p.getByRole("button", { name: "Unscheduled (3)", exact: true }).click();
+      await unscheduled.waitFor();
+      assert.equal(await unscheduled.locator("li").count(), 3);
+      await p.getByLabel("Search schedule", { exact: true }).fill("Salary Excel import");
+      await p.waitForURL(/query=Salary/);
+      await p.waitForFunction(
+        () =>
+          document.querySelectorAll("[data-schedule-id]").length === 1 &&
+          document.querySelector("[data-schedule-id]")?.getAttribute("data-schedule-id") ===
+            "board:salary-excel-import",
+      );
+      await p.getByRole("button", { name: "Reset filters", exact: true }).click();
+      await p.waitForURL((url) => !url.searchParams.get("query"));
       const chart = p.getByRole("region", { name: "Gantt chart, scroll horizontally", exact: true });
       const aligned = await chart.evaluate((el) => {
         const grid = el.firstElementChild;
