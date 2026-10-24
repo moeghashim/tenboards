@@ -1,0 +1,35 @@
+src/lib/auth/redirect.ts:9:9 lint/suspicious/noControlCharactersInRegex ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Unexpected control character in a regular expression.
+  
+     7 │     !value.startsWith("/") ||
+     8 │     value.startsWith("//") ||
+   > 9 │     /[\\\u0000-\u001f\u007f]/.test(value)
+       │         ^^^^^^
+    10 │   )
+    11 │     return DEFAULT_AUTH_DESTINATION;
+  
+  i Control characters are unusual and potentially incorrect inputs, so they are disallowed.
+  
+
+src/lib/auth/redirect.ts:9:16 lint/suspicious/noControlCharactersInRegex ━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Unexpected control character in a regular expression.
+  
+     7 │     !value.startsWith("/") ||
+     8 │     value.startsWith("//") ||
+   > 9 │     /[\\\u0000-\u001f\u007f]/.test(value)
+       │                ^^^^^^
+    10 │   )
+    11 │     return DEFAULT_AUTH_DESTINATION;
+  
+  i Control characters are unusual and potentially incorrect inputs, so they are disallowed.
+  
+
+Checked 19 files in 506ms. Fixed 1 file.
+Found 2 errors.
+check ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Some errors were emitted while applying fixes.
+  
+

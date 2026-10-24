@@ -1,0 +1,20 @@
+
+> tenboards@0.4.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url https://11598d47-tenboards.mohanadgh.workers.dev --routes /auth/v2/login,/auth/v2/register --timezone Pacific/Kiritimati --reload --hydration-delay-ms 1800 --output screenshots/v05-002/clock-workers
+
+PASS /auth/v2/login light/desktop direct
+PASS /auth/v2/login light/desktop refresh
+PASS /auth/v2/login light/mobile direct
+PASS /auth/v2/login light/mobile refresh
+PASS /auth/v2/login dark/desktop direct
+PASS /auth/v2/login dark/desktop refresh
+PASS /auth/v2/login dark/mobile direct
+PASS /auth/v2/login dark/mobile refresh
+PASS /auth/v2/register light/desktop direct
+PASS /auth/v2/register light/desktop refresh
+PASS /auth/v2/register light/mobile direct
+PASS /auth/v2/register light/mobile refresh
+PASS /auth/v2/register dark/desktop direct
+PASS /auth/v2/register dark/desktop refresh
+PASS /auth/v2/register dark/mobile direct
+PASS /auth/v2/register dark/mobile refresh

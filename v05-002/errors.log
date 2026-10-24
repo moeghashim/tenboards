@@ -1,0 +1,6 @@
+PASS duplicate registration safe inline error
+PASS network failure preserves non-secret input and permits retry
+PASS duplicate submit blocked; retry succeeds at safe fallback
+PASS enabled local sensitive-endpoint limiter returns 429
+PASS rate window recovers without disabling limiter
+Auth error/pending/rate checks: 5/5 passing.

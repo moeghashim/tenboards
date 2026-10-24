@@ -1,0 +1,41 @@
+PASS none v1/login controls
+PASS none v1/register controls
+PASS none v2/login controls
+PASS none v2/register controls
+PASS none google direct initiation rejected
+PASS none github direct initiation rejected
+PASS google v1/login controls
+PASS google v1/register controls
+PASS google v2/login controls
+PASS google v2/register controls
+PASS google google real authorize URL/state/callback
+PASS google github direct initiation rejected
+PASS github v1/login controls
+PASS github v1/register controls
+PASS github v2/login controls
+PASS github v2/register controls
+PASS github google direct initiation rejected
+PASS github github real authorize URL/state/callback
+PASS both v1/login controls
+PASS both v1/register controls
+PASS both v2/login controls
+PASS both v2/register controls
+PASS both google real authorize URL/state/callback
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+429 !== 403
+
+    at file:///Users/moeghashim/tenboards/scripts/auth-provider-check.ts:83:16 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 429,
+  expected: 403,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.21.0

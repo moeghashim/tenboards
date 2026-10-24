@@ -1,0 +1,64 @@
+
+> tenboards@0.4.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://localhost:3000 --routes /auth/v1/login,/auth/v1/register,/auth/v2/login,/auth/v2/register,/auth/v2 --output screenshots/v05-002/before
+
+PASS /auth/v2 light/desktop direct
+PASS /auth/v2 light/mobile direct
+PASS /auth/v2 dark/desktop direct
+FAIL /auth/v2 dark/mobile direct
+console: Failed to load resource: the server responded with a status of 500 ()
+PASS /auth/v1/login light/desktop direct
+PASS /auth/v1/login light/mobile direct
+PASS /auth/v1/login dark/desktop direct
+PASS /auth/v1/login dark/mobile direct
+PASS /auth/v1/register light/desktop direct
+PASS /auth/v1/register light/mobile direct
+PASS /auth/v1/register dark/desktop direct
+PASS /auth/v1/register dark/mobile direct
+FAIL /auth/v2/login light/desktop direct
+request: http://localhost:3000/__tsd/console-pipe/sse net::ERR_INCOMPLETE_CHUNKED_ENCODING
+console: Failed to load resource: net::ERR_INCOMPLETE_CHUNKED_ENCODING
+request: http://localhost:3000/__tsd/console-pipe net::ERR_CONNECTION_REFUSED
+console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+FAIL /auth/v2/login light/mobile direct
+request: http://localhost:3000/auth/v2/login net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/auth/v2/login
+Call log:
+[2m  - navigating to "http://localhost:3000/auth/v2/login", waiting until "domcontentloaded"[22m
+
+FAIL /auth/v2/login dark/desktop direct
+request: http://localhost:3000/auth/v2/login net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/auth/v2/login
+Call log:
+[2m  - navigating to "http://localhost:3000/auth/v2/login", waiting until "domcontentloaded"[22m
+
+FAIL /auth/v2/login dark/mobile direct
+request: http://localhost:3000/auth/v2/login net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/auth/v2/login
+Call log:
+[2m  - navigating to "http://localhost:3000/auth/v2/login", waiting until "domcontentloaded"[22m
+
+FAIL /auth/v2/register light/desktop direct
+request: http://localhost:3000/auth/v2/register net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/auth/v2/register
+Call log:
+[2m  - navigating to "http://localhost:3000/auth/v2/register", waiting until "domcontentloaded"[22m
+
+FAIL /auth/v2/register light/mobile direct
+request: http://localhost:3000/auth/v2/register net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/auth/v2/register
+Call log:
+[2m  - navigating to "http://localhost:3000/auth/v2/register", waiting until "domcontentloaded"[22m
+
+FAIL /auth/v2/register dark/desktop direct
+request: http://localhost:3000/auth/v2/register net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/auth/v2/register
+Call log:
+[2m  - navigating to "http://localhost:3000/auth/v2/register", waiting until "domcontentloaded"[22m
+
+FAIL /auth/v2/register dark/mobile direct
+request: http://localhost:3000/auth/v2/register net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/auth/v2/register
+Call log:
+[2m  - navigating to "http://localhost:3000/auth/v2/register", waiting until "domcontentloaded"[22m
+

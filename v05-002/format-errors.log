@@ -1,0 +1,28 @@
+scripts/auth-errors-check.ts:45:15 lint/style/useTemplate  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  i Template literals are preferred over string concatenation.
+  
+    43 │   await page.getByText("Unable to register with this email. Try signing in.").waitFor();
+    44 │   pass("duplicate registration safe inline error");
+  > 45 │   await visit("/auth/v1/login?redirect=" + encodeURIComponent("//evil.example"));
+       │               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    46 │   await page.getByLabel("Email Address", { exact: true }).fill(email);
+    47 │   await page.getByLabel("Password", { exact: true }).fill(password);
+  
+  i Template literals are easier to read than a chain of + operators and quotes, and they avoid mistakes with spaces and escaped quotes.
+  
+  i Unsafe fix: Use a template literal.
+  
+    43 43 │     await page.getByText("Unable to register with this email. Try signing in.").waitFor();
+    44 44 │     pass("duplicate registration safe inline error");
+    45    │ - ··await·visit("/auth/v1/login?redirect="·+·encodeURIComponent("//evil.example"));
+       45 │ + ··await·visit(`/auth/v1/login?redirect=${encodeURIComponent("//evil.example")}`);
+    46 46 │     await page.getByLabel("Email Address", { exact: true }).fill(email);
+    47 47 │     await page.getByLabel("Password", { exact: true }).fill(password);
+  
+
+Skipped 2 suggested fixes.
+If you wish to apply the suggested (unsafe) fixes, use the command biome check --write --unsafe
+
+Checked 1 file in 614ms. Fixed 1 file.
+Found 1 info.

@@ -1,0 +1,21 @@
+PASS v1 validation and first-field focus
+HTTP /api/auth/sign-up/email: 200
+PASS v1 signup persists session and pathname/search/hash
+PASS v1 no credential echo
+PASS v1 signed-in auth redirect
+HTTP /api/auth/sign-out: 200
+PASS v1 client sign-out invalidates session
+HTTP /api/auth/sign-in/email: 401
+PASS v1 inline server error preserves email
+HTTP /api/auth/sign-in/email: 200
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+page.waitForURL: net::ERR_ABORTED; maybe frame was detached?
+=========================== logs ===========================
+waiting for navigation until "load"
+============================================================
+    at /Users/moeghashim/tenboards/scripts/auth-flows-check.ts:89:16
+
+Node.js v24.21.0

@@ -1,0 +1,8 @@
+Layer 002 on 001 commit 41ac28e; exactly one task commit.
+Owned checks: credential/browser flows 30/30; provider matrix 42/42; redirect validator 28/28; duplicate/network/pending/rate tests 5/5.
+Real Docker Postgres 17; test-owned users cleaned up; 22 reads/130 v0.4 parity cases pass.
+Provider evidence uses dummy pairs only, actual generated authorize URL, host/callback/state persisted in DB and safe return destination; disabled providers reject with 404. Forged external callback rejected by intact origin checks (403). No external provider round-trip.
+Build/check/typecheck pass; inherited Biome 1 warning/10 infos. Same inherited generator/fs.Stats/Base UI warnings as 001. No new runtime dependency.
+Before: before-sequential, 20/20. Demo after + interactions/default smoke: demo-final, 24/24. Auth forms + validation errors: auth/ images, 16 states + 16 error captures. Workers demo: workers, 24/24. V2 delayed direct/refresh: clock-dev, clock-workers, clock-workers-chicago, 16 each. Clocks are real, server Kiritimati/browser Chicago and Workers opposite browser zones. No SSR disabling or suppression.
+Original harness timing failures and duplicate navigation failure retained; credential forms now omit library automatic callback redirect and navigate once after success. API callback validation uses supported Better Auth before hooks. Final real-flow run passes.
+Production unchanged. Layer 003 adds enforceable app/data guards; layers 001–002 alone are not a secured deployment.

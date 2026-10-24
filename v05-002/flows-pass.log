@@ -1,0 +1,39 @@
+PASS v1 validation and first-field focus
+HTTP /api/auth/sign-up/email: 200
+PASS v1 signup persists session and pathname/search/hash
+PASS v1 no credential echo
+PASS v1 signed-in auth redirect
+HTTP /api/auth/sign-out: 200
+PASS v1 client sign-out invalidates session
+HTTP /api/auth/sign-in/email: 401
+PASS v1 inline server error preserves email
+HTTP /api/auth/sign-in/email: 200
+PASS v1 login and remember-me persistence
+PASS v2 validation and first-field focus
+HTTP /api/auth/sign-up/email: 200
+PASS v2 signup persists session and pathname/search/hash
+PASS v2 no credential echo
+PASS v2 signed-in auth redirect
+HTTP /api/auth/sign-out: 200
+PASS v2 client sign-out invalidates session
+HTTP /api/auth/sign-in/email: 401
+PASS v2 inline server error preserves email
+HTTP /api/auth/sign-in/email: 200
+PASS v2 login and remember-me persistence
+PASS v1/login light/desktop + errors/providers hidden
+PASS v1/register light/desktop + errors/providers hidden
+PASS v2/login light/desktop + errors/providers hidden
+PASS v2/register light/desktop + errors/providers hidden
+PASS v1/login light/mobile + errors/providers hidden
+PASS v1/register light/mobile + errors/providers hidden
+PASS v2/login light/mobile + errors/providers hidden
+PASS v2/register light/mobile + errors/providers hidden
+PASS v1/login dark/desktop + errors/providers hidden
+PASS v1/register dark/desktop + errors/providers hidden
+PASS v2/login dark/desktop + errors/providers hidden
+PASS v2/register dark/desktop + errors/providers hidden
+PASS v1/login dark/mobile + errors/providers hidden
+PASS v1/register dark/mobile + errors/providers hidden
+PASS v2/login dark/mobile + errors/providers hidden
+PASS v2/register dark/mobile + errors/providers hidden
+Auth flows: 30/30 passing.

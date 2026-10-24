@@ -1,0 +1,28 @@
+
+> tenboards@0.4.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://localhost:3000 --routes /auth/v1/login,/auth/v1/register,/auth/v2/login,/auth/v2/register,/auth/v2,/dashboard/default --output screenshots/v05-002/after-demo
+
+PASS /auth/v2 light/desktop direct
+PASS /auth/v2 light/mobile direct
+PASS /auth/v2 dark/desktop direct
+PASS /auth/v2 dark/mobile direct
+PASS /dashboard/default light/desktop direct
+PASS /dashboard/default light/mobile direct
+PASS /dashboard/default dark/desktop direct
+PASS /dashboard/default dark/mobile direct
+PASS /auth/v1/login light/desktop direct
+PASS /auth/v1/login light/mobile direct
+PASS /auth/v1/login dark/desktop direct
+PASS /auth/v1/login dark/mobile direct
+PASS /auth/v1/register light/desktop direct
+PASS /auth/v1/register light/mobile direct
+PASS /auth/v1/register dark/desktop direct
+PASS /auth/v1/register dark/mobile direct
+PASS /auth/v2/login light/desktop direct
+PASS /auth/v2/login light/mobile direct
+PASS /auth/v2/login dark/desktop direct
+PASS /auth/v2/login dark/mobile direct
+PASS /auth/v2/register light/desktop direct
+PASS /auth/v2/register light/mobile direct
+PASS /auth/v2/register dark/desktop direct
+PASS /auth/v2/register dark/mobile direct

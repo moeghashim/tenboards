@@ -1,0 +1,22 @@
+PASS none v1/login controls
+PASS none v1/register controls
+PASS none v2/login controls
+PASS none v2/register controls
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+404 !== 400
+
+    at file:///Users/moeghashim/tenboards/scripts/auth-provider-check.ts:61:28 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 404,
+  expected: 400,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.21.0
