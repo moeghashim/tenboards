@@ -1,0 +1,57 @@
+{
+  "baseURL": "http://127.0.0.1:3000/",
+  "fontAssets": "exact public responses cached between contexts",
+  "maskedLiveClocks": false,
+  "hydrationDelayMs": 0,
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": false,
+  "interactions": false,
+  "sidebarStates": false,
+  "results": [
+    {
+      "route": "/dashboard/calendar",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_calendar-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/calendar",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_calendar-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/calendar",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_calendar-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/calendar",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_calendar-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    }
+  ]
+}

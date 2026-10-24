@@ -1,0 +1,12 @@
+
+> tenboards@0.6.1 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url https://a30400b5-tenboards-preview.mohanadgh.workers.dev --routes /dashboard/default,/auth/v2/login --density --output screenshots/review2/preview-smoke
+
+PASS /dashboard/default light/desktop direct
+PASS /dashboard/default light/mobile direct
+PASS /dashboard/default dark/desktop direct
+PASS /dashboard/default dark/mobile direct
+PASS /auth/v2/login light/desktop direct
+PASS /auth/v2/login light/mobile direct
+PASS /auth/v2/login dark/desktop direct
+PASS /auth/v2/login dark/mobile direct

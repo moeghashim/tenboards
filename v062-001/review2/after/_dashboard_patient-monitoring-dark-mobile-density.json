@@ -1,0 +1,196 @@
+[
+  {
+    "url": "http://127.0.0.1:3000/dashboard/patient-monitoring",
+    "clippedSelectValues": [],
+    "overflowingCards": [],
+    "root": "16px",
+    "spacing": "0.25rem",
+    "viewport": 390,
+    "documentWidth": 390,
+    "scale": {
+      "xs": "12px",
+      "sm": "13px",
+      "base": "14px",
+      "lg": "16px",
+      "xl": "18px",
+      "2xl": "21px",
+      "3xl": "26px"
+    },
+    "samples": {
+      "body": [
+        {
+          "text": "Toggle SidebarWorkspace/Patient MonitoringSearch⌘KGitHubDUPatient moni",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 2182,
+          "width": 390,
+          "padding": "0px",
+          "gap": "normal"
+        }
+      ],
+      "header": [
+        {
+          "text": "Toggle SidebarWorkspace/Patient MonitoringSearch⌘KGitHubDU",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 56,
+          "width": 390,
+          "padding": "0px 16px",
+          "gap": "12px"
+        },
+        {
+          "text": "TanStack DevtoolsPluginsMarketplaceSEO",
+          "font": "14px",
+          "lineHeight": "18px",
+          "height": 36,
+          "width": 390,
+          "padding": "0px 0px 0px 12px",
+          "gap": "4px"
+        }
+      ],
+      "main > div": [
+        {
+          "text": "Patient monitoring · Demo10 Patients24 Oct 2026, 18:54:46 UTCC01 Ethan",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 2126,
+          "width": 390,
+          "padding": "0px",
+          "gap": "normal"
+        }
+      ],
+      "[data-slot=card]": [],
+      "[data-slot=card-header]": [],
+      "[data-slot=card-content]": [],
+      "[data-slot=table-body] tr": [],
+      "[data-slot=table-cell]": [],
+      "[data-slot=sidebar-menu-button]": [],
+      "[data-slot=button]": [
+        {
+          "text": "Search⌘K",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 32,
+          "width": 32,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 32,
+          "width": 32,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "Acknowledge",
+          "font": "12.8px",
+          "lineHeight": "18px",
+          "height": 28,
+          "width": 103.40625,
+          "padding": "0px 10px",
+          "gap": "4px"
+        },
+        {
+          "text": "Main screen",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 44,
+          "width": 183,
+          "padding": "0px 10px",
+          "gap": "6px"
+        },
+        {
+          "text": "Patient setup",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 44,
+          "width": 183,
+          "padding": "0px 10px",
+          "gap": "6px"
+        },
+        {
+          "text": "Alarm review",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 44,
+          "width": 183,
+          "padding": "0px 10px",
+          "gap": "6px"
+        }
+      ],
+      "[data-slot=input]": [],
+      "[data-slot=select-trigger]": [],
+      "h1": [
+        {
+          "text": "Patient monitoring · Demo",
+          "font": "14px",
+          "lineHeight": "20px",
+          "height": 20,
+          "width": 290.6875,
+          "padding": "0px",
+          "gap": "normal"
+        }
+      ],
+      "h2": [],
+      "[data-slot=chart]": [
+        {
+          "text": "[data-chart=chart-_R_8ar9aq_] {\n  --color-signal: currentColor;\n}\n\n\n.d",
+          "font": "12px",
+          "lineHeight": "16px",
+          "height": 36,
+          "width": 178,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "[data-chart=chart-_R_8ir9aq_] {\n  --color-signal: currentColor;\n}\n\n\n.d",
+          "font": "12px",
+          "lineHeight": "16px",
+          "height": 36,
+          "width": 179,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "[data-chart=chart-_R_8qr9aq_] {\n  --color-signal: currentColor;\n}\n\n\n.d",
+          "font": "12px",
+          "lineHeight": "16px",
+          "height": 36,
+          "width": 178,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "[data-chart=chart-_R_92r9aq_] {\n  --color-signal: currentColor;\n}\n\n\n.d",
+          "font": "12px",
+          "lineHeight": "16px",
+          "height": 36,
+          "width": 179,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "[data-chart=chart-_R_9ar9aq_] {\n  --color-signal: currentColor;\n}\n\n\n.d",
+          "font": "12px",
+          "lineHeight": "16px",
+          "height": 36,
+          "width": 178,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "[data-chart=chart-_R_9ir9aq_] {\n  --color-signal: currentColor;\n}\n\n\n.d",
+          "font": "12px",
+          "lineHeight": "16px",
+          "height": 36,
+          "width": 179,
+          "padding": "0px",
+          "gap": "normal"
+        }
+      ]
+    }
+  }
+]

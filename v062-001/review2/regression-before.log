@@ -1,0 +1,23 @@
+0 font/theme/viewport combinations passed
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: geist-light-desktop: select labels fit
++ actual - expected
+
++ [
++   'All segments'
++ ]
+- []
+
+    at file:///Users/moeghashim/tenboards/scripts/density-check.ts:103:18 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: [ 'All segments' ],
+  expected: [],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.21.0

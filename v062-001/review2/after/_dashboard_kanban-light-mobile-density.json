@@ -1,0 +1,187 @@
+[
+  {
+    "url": "http://127.0.0.1:3000/dashboard/kanban?view=board",
+    "clippedSelectValues": [],
+    "overflowingCards": [],
+    "root": "16px",
+    "spacing": "0.25rem",
+    "viewport": 390,
+    "documentWidth": 390,
+    "scale": {
+      "xs": "12px",
+      "sm": "13px",
+      "base": "14px",
+      "lg": "16px",
+      "xl": "18px",
+      "2xl": "21px",
+      "3xl": "26px"
+    },
+    "samples": {
+      "body": [
+        {
+          "text": "Toggle SidebarWorkspace/KanbanSearch⌘KGitHubDUKanbanBoardListTableFilt",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 844,
+          "width": 390,
+          "padding": "0px",
+          "gap": "normal"
+        }
+      ],
+      "header": [
+        {
+          "text": "Toggle SidebarWorkspace/KanbanSearch⌘KGitHubDU",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 56,
+          "width": 390,
+          "padding": "0px 16px",
+          "gap": "12px"
+        },
+        {
+          "text": "TanStack DevtoolsPluginsMarketplaceSEO",
+          "font": "14px",
+          "lineHeight": "18px",
+          "height": 36,
+          "width": 390,
+          "padding": "0px 0px 0px 12px",
+          "gap": "4px"
+        }
+      ],
+      "main > div": [
+        {
+          "text": "KanbanBoardListTableFilterSortAdd taskIdeas5 tasksTender workflow mapH",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 788,
+          "width": 390,
+          "padding": "0px",
+          "gap": "normal"
+        }
+      ],
+      "[data-slot=card]": [],
+      "[data-slot=card-header]": [],
+      "[data-slot=card-content]": [],
+      "[data-slot=table-body] tr": [],
+      "[data-slot=table-cell]": [],
+      "[data-slot=sidebar-menu-button]": [],
+      "[data-slot=button]": [
+        {
+          "text": "Search⌘K",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 32,
+          "width": 32,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 32,
+          "width": 32,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "Filter",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 32,
+          "width": 103.625,
+          "padding": "0px 10px 0px 8px",
+          "gap": "6px"
+        },
+        {
+          "text": "Sort",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 32,
+          "width": 103.625,
+          "padding": "0px 10px 0px 8px",
+          "gap": "6px"
+        },
+        {
+          "text": "Add task",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 32,
+          "width": 96.75,
+          "padding": "0px 10px 0px 8px",
+          "gap": "6px"
+        },
+        {
+          "text": "",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 24,
+          "width": 24,
+          "padding": "0px",
+          "gap": "normal"
+        }
+      ],
+      "[data-slot=input]": [],
+      "[data-slot=select-trigger]": [],
+      "h1": [
+        {
+          "text": "Kanban",
+          "font": "21px",
+          "lineHeight": "28px",
+          "height": 28,
+          "width": 71.421875,
+          "padding": "0px",
+          "gap": "normal"
+        }
+      ],
+      "h2": [
+        {
+          "text": "Ideas",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 18,
+          "width": 55.40625,
+          "padding": "0px",
+          "gap": "8px"
+        },
+        {
+          "text": "Planned",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 18,
+          "width": 71.484375,
+          "padding": "0px",
+          "gap": "8px"
+        },
+        {
+          "text": "Building",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 18,
+          "width": 70.9375,
+          "padding": "0px",
+          "gap": "8px"
+        },
+        {
+          "text": "QA",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 18,
+          "width": 41.53125,
+          "padding": "0px",
+          "gap": "8px"
+        },
+        {
+          "text": "Shipped",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 18,
+          "width": 72.1875,
+          "padding": "0px",
+          "gap": "8px"
+        }
+      ],
+      "[data-slot=chart]": []
+    }
+  }
+]

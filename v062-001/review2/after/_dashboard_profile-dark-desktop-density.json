@@ -1,0 +1,242 @@
+[
+  {
+    "url": "http://127.0.0.1:3000/dashboard/profile",
+    "clippedSelectValues": [],
+    "overflowingCards": [],
+    "root": "16px",
+    "spacing": "0.21875rem",
+    "viewport": 1440,
+    "documentWidth": 1440,
+    "scale": {
+      "xs": "12px",
+      "sm": "13px",
+      "base": "14px",
+      "lg": "16px",
+      "xl": "18px",
+      "2xl": "21px",
+      "3xl": "26px"
+    },
+    "samples": {
+      "body": [
+        {
+          "text": "tenboardsToggle SidebarSearch⌘KHomeFile ManagerEmailChatCalendarTasksD",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 900,
+          "width": 1440,
+          "padding": "0px",
+          "gap": "normal"
+        }
+      ],
+      "header": [
+        {
+          "text": "Toggle SidebarWorkspace/ProfileSearch⌘KGitHubDU",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 48,
+          "width": 1152,
+          "padding": "0px 21px",
+          "gap": "10.5px"
+        },
+        {
+          "text": "TanStack DevtoolsPluginsMarketplaceSEO",
+          "font": "14px",
+          "lineHeight": "18px",
+          "height": 36,
+          "width": 1440,
+          "padding": "0px 0px 0px 16px",
+          "gap": "8px"
+        }
+      ],
+      "main > div": [
+        {
+          "text": "DashboardPeopleEmployee directoryJordan LeeProfile detailsProfile 92% ",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 852,
+          "width": 1152,
+          "padding": "0px",
+          "gap": "normal"
+        }
+      ],
+      "[data-slot=card]": [],
+      "[data-slot=card-header]": [],
+      "[data-slot=card-content]": [],
+      "[data-slot=table-body] tr": [],
+      "[data-slot=table-cell]": [],
+      "[data-slot=sidebar-menu-button]": [
+        {
+          "text": "Home",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 36,
+          "width": 241,
+          "padding": "7px 10px",
+          "gap": "10px"
+        },
+        {
+          "text": "File Manager",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 36,
+          "width": 241,
+          "padding": "7px 10px",
+          "gap": "10px"
+        },
+        {
+          "text": "Email",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 36,
+          "width": 241,
+          "padding": "7px 10px",
+          "gap": "10px"
+        },
+        {
+          "text": "Chat",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 36,
+          "width": 241,
+          "padding": "7px 10px",
+          "gap": "10px"
+        },
+        {
+          "text": "Calendar",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 36,
+          "width": 241,
+          "padding": "7px 10px",
+          "gap": "10px"
+        },
+        {
+          "text": "Tasks",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 36,
+          "width": 241,
+          "padding": "7px 10px",
+          "gap": "10px"
+        }
+      ],
+      "[data-slot=button]": [
+        {
+          "text": "Search⌘K",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 36,
+          "width": 234,
+          "padding": "0px 8.75px",
+          "gap": "7px"
+        },
+        {
+          "text": "",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 24.5,
+          "width": 24.5,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 24.5,
+          "width": 24.5,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 24.5,
+          "width": 24.5,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 28,
+          "width": 28,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "GitHub",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 28,
+          "width": 28,
+          "padding": "0px",
+          "gap": "normal"
+        }
+      ],
+      "[data-slot=input]": [],
+      "[data-slot=select-trigger]": [],
+      "h1": [
+        {
+          "text": "Jordan Lee",
+          "font": "21px",
+          "lineHeight": "28px",
+          "height": 28,
+          "width": 405.1875,
+          "padding": "0px",
+          "gap": "normal"
+        }
+      ],
+      "h2": [
+        {
+          "text": "About",
+          "font": "14px",
+          "lineHeight": "20px",
+          "height": 20,
+          "width": 800,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "Work details",
+          "font": "14px",
+          "lineHeight": "20px",
+          "height": 20,
+          "width": 800,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "Reporting line",
+          "font": "14px",
+          "lineHeight": "14px",
+          "height": 14,
+          "width": 91.625,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "Record status",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 18,
+          "width": 239,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "Upcoming events",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 18,
+          "width": 239,
+          "padding": "0px",
+          "gap": "normal"
+        }
+      ],
+      "[data-slot=chart]": []
+    }
+  }
+]

@@ -1,0 +1,134 @@
+[
+  {
+    "url": "http://127.0.0.1:3000/dashboard/logistics",
+    "clippedSelectValues": [],
+    "overflowingCards": [],
+    "root": "16px",
+    "spacing": "0.25rem",
+    "viewport": 390,
+    "documentWidth": 390,
+    "scale": {
+      "xs": "12px",
+      "sm": "13px",
+      "base": "14px",
+      "lg": "16px",
+      "xl": "18px",
+      "2xl": "21px",
+      "3xl": "26px"
+    },
+    "samples": {
+      "body": [
+        {
+          "text": "Toggle SidebarWorkspace/LogisticsSearch⌘KGitHubDUShipmentsAll (156)In ",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 844,
+          "width": 390,
+          "padding": "0px",
+          "gap": "normal"
+        }
+      ],
+      "header": [
+        {
+          "text": "Toggle SidebarWorkspace/LogisticsSearch⌘KGitHubDU",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 56,
+          "width": 390,
+          "padding": "0px 16px",
+          "gap": "12px"
+        },
+        {
+          "text": "TanStack DevtoolsPluginsMarketplaceSEO",
+          "font": "14px",
+          "lineHeight": "18px",
+          "height": 36,
+          "width": 390,
+          "padding": "0px 0px 0px 12px",
+          "gap": "4px"
+        }
+      ],
+      "main > div": [
+        {
+          "text": "ShipmentsAll (156)In Transit (32)Delivered (98)Delayed (9)#SDA-01-2401",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 788,
+          "width": 390,
+          "padding": "0px",
+          "gap": "normal"
+        }
+      ],
+      "[data-slot=card]": [
+        {
+          "text": "ShipmentsAll (156)In Transit (32)Delivered (98)Delayed (9)#SDA-01-2401",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 788,
+          "width": 390,
+          "padding": "16px 0px",
+          "gap": "16px"
+        }
+      ],
+      "[data-slot=card-header]": [
+        {
+          "text": "Shipments",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 28,
+          "width": 390,
+          "padding": "0px 16px",
+          "gap": "4px"
+        }
+      ],
+      "[data-slot=card-content]": [
+        {
+          "text": "All (156)In Transit (32)Delivered (98)Delayed (9)#SDA-01-2401In Transi",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 712,
+          "width": 390,
+          "padding": "0px",
+          "gap": "16px"
+        }
+      ],
+      "[data-slot=table-body] tr": [],
+      "[data-slot=table-cell]": [],
+      "[data-slot=sidebar-menu-button]": [],
+      "[data-slot=button]": [
+        {
+          "text": "Search⌘K",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 32,
+          "width": 32,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 32,
+          "width": 32,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 28,
+          "width": 28,
+          "padding": "0px",
+          "gap": "normal"
+        }
+      ],
+      "[data-slot=input]": [],
+      "[data-slot=select-trigger]": [],
+      "h1": [],
+      "h2": [],
+      "[data-slot=chart]": []
+    }
+  }
+]

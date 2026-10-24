@@ -1,0 +1,800 @@
+[
+  {
+    "surface": "settings",
+    "results": [
+      {
+        "count": 22,
+        "documentWidth": 1440,
+        "font": "geist",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 22,
+        "documentWidth": 1440,
+        "font": "inter",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 22,
+        "documentWidth": 1440,
+        "font": "notoSans",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 22,
+        "documentWidth": 1440,
+        "font": "nunitoSans",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 22,
+        "documentWidth": 1440,
+        "font": "figtree",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 22,
+        "documentWidth": 1440,
+        "font": "roboto",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 22,
+        "documentWidth": 1440,
+        "font": "raleway",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 22,
+        "documentWidth": 1440,
+        "font": "dmSans",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 22,
+        "documentWidth": 1440,
+        "font": "publicSans",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 22,
+        "documentWidth": 1440,
+        "font": "outfit",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 22,
+        "documentWidth": 1440,
+        "font": "geistMono",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 22,
+        "documentWidth": 1440,
+        "font": "geistPixelSquare",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 22,
+        "documentWidth": 1440,
+        "font": "jetBrainsMono",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 22,
+        "documentWidth": 1440,
+        "font": "notoSerif",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 22,
+        "documentWidth": 1440,
+        "font": "robotoSlab",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 22,
+        "documentWidth": 1440,
+        "font": "merriweather",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 22,
+        "documentWidth": 1440,
+        "font": "lora",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 22,
+        "documentWidth": 1440,
+        "font": "playfairDisplay",
+        "loaded": true,
+        "problems": []
+      }
+    ],
+    "route": "/dashboard/default",
+    "width": 1440
+  },
+  {
+    "surface": "settings",
+    "results": [
+      {
+        "count": 22,
+        "documentWidth": 1280,
+        "font": "geist",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 22,
+        "documentWidth": 1280,
+        "font": "inter",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 22,
+        "documentWidth": 1280,
+        "font": "notoSans",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 22,
+        "documentWidth": 1280,
+        "font": "nunitoSans",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 22,
+        "documentWidth": 1280,
+        "font": "figtree",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 22,
+        "documentWidth": 1280,
+        "font": "roboto",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 22,
+        "documentWidth": 1280,
+        "font": "raleway",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 22,
+        "documentWidth": 1280,
+        "font": "dmSans",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 22,
+        "documentWidth": 1280,
+        "font": "publicSans",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 22,
+        "documentWidth": 1280,
+        "font": "outfit",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 22,
+        "documentWidth": 1280,
+        "font": "geistMono",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 22,
+        "documentWidth": 1280,
+        "font": "geistPixelSquare",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 22,
+        "documentWidth": 1280,
+        "font": "jetBrainsMono",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 22,
+        "documentWidth": 1280,
+        "font": "notoSerif",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 22,
+        "documentWidth": 1280,
+        "font": "robotoSlab",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 22,
+        "documentWidth": 1280,
+        "font": "merriweather",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 22,
+        "documentWidth": 1280,
+        "font": "lora",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 22,
+        "documentWidth": 1280,
+        "font": "playfairDisplay",
+        "loaded": true,
+        "problems": []
+      }
+    ],
+    "route": "/dashboard/default",
+    "width": 1280
+  },
+  {
+    "surface": "settings",
+    "results": [
+      {
+        "count": 20,
+        "documentWidth": 390,
+        "font": "geist",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 20,
+        "documentWidth": 390,
+        "font": "inter",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 20,
+        "documentWidth": 390,
+        "font": "notoSans",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 20,
+        "documentWidth": 390,
+        "font": "nunitoSans",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 20,
+        "documentWidth": 390,
+        "font": "figtree",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 20,
+        "documentWidth": 390,
+        "font": "roboto",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 20,
+        "documentWidth": 390,
+        "font": "raleway",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 20,
+        "documentWidth": 390,
+        "font": "dmSans",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 20,
+        "documentWidth": 390,
+        "font": "publicSans",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 20,
+        "documentWidth": 390,
+        "font": "outfit",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 20,
+        "documentWidth": 390,
+        "font": "geistMono",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 20,
+        "documentWidth": 390,
+        "font": "geistPixelSquare",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 20,
+        "documentWidth": 390,
+        "font": "jetBrainsMono",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 20,
+        "documentWidth": 390,
+        "font": "notoSerif",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 20,
+        "documentWidth": 390,
+        "font": "robotoSlab",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 20,
+        "documentWidth": 390,
+        "font": "merriweather",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 20,
+        "documentWidth": 390,
+        "font": "lora",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 20,
+        "documentWidth": 390,
+        "font": "playfairDisplay",
+        "loaded": true,
+        "problems": []
+      }
+    ],
+    "route": "/dashboard/default",
+    "width": 390
+  },
+  {
+    "surface": "add-product",
+    "results": [
+      {
+        "count": 40,
+        "documentWidth": 1440,
+        "font": "geist",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 40,
+        "documentWidth": 1440,
+        "font": "inter",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 40,
+        "documentWidth": 1440,
+        "font": "notoSans",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 40,
+        "documentWidth": 1440,
+        "font": "nunitoSans",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 40,
+        "documentWidth": 1440,
+        "font": "figtree",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 40,
+        "documentWidth": 1440,
+        "font": "roboto",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 40,
+        "documentWidth": 1440,
+        "font": "raleway",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 40,
+        "documentWidth": 1440,
+        "font": "dmSans",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 40,
+        "documentWidth": 1440,
+        "font": "publicSans",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 40,
+        "documentWidth": 1440,
+        "font": "outfit",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 40,
+        "documentWidth": 1440,
+        "font": "geistMono",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 40,
+        "documentWidth": 1440,
+        "font": "geistPixelSquare",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 40,
+        "documentWidth": 1440,
+        "font": "jetBrainsMono",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 40,
+        "documentWidth": 1440,
+        "font": "notoSerif",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 40,
+        "documentWidth": 1440,
+        "font": "robotoSlab",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 40,
+        "documentWidth": 1440,
+        "font": "merriweather",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 40,
+        "documentWidth": 1440,
+        "font": "lora",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 40,
+        "documentWidth": 1440,
+        "font": "playfairDisplay",
+        "loaded": true,
+        "problems": []
+      }
+    ],
+    "route": "/dashboard/products",
+    "width": 1440
+  },
+  {
+    "surface": "add-product",
+    "results": [
+      {
+        "count": 40,
+        "documentWidth": 1280,
+        "font": "geist",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 40,
+        "documentWidth": 1280,
+        "font": "inter",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 40,
+        "documentWidth": 1280,
+        "font": "notoSans",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 40,
+        "documentWidth": 1280,
+        "font": "nunitoSans",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 40,
+        "documentWidth": 1280,
+        "font": "figtree",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 40,
+        "documentWidth": 1280,
+        "font": "roboto",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 40,
+        "documentWidth": 1280,
+        "font": "raleway",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 40,
+        "documentWidth": 1280,
+        "font": "dmSans",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 40,
+        "documentWidth": 1280,
+        "font": "publicSans",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 40,
+        "documentWidth": 1280,
+        "font": "outfit",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 40,
+        "documentWidth": 1280,
+        "font": "geistMono",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 40,
+        "documentWidth": 1280,
+        "font": "geistPixelSquare",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 40,
+        "documentWidth": 1280,
+        "font": "jetBrainsMono",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 40,
+        "documentWidth": 1280,
+        "font": "notoSerif",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 40,
+        "documentWidth": 1280,
+        "font": "robotoSlab",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 40,
+        "documentWidth": 1280,
+        "font": "merriweather",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 40,
+        "documentWidth": 1280,
+        "font": "lora",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 40,
+        "documentWidth": 1280,
+        "font": "playfairDisplay",
+        "loaded": true,
+        "problems": []
+      }
+    ],
+    "route": "/dashboard/products",
+    "width": 1280
+  },
+  {
+    "surface": "add-product",
+    "results": [
+      {
+        "count": 41,
+        "documentWidth": 390,
+        "font": "geist",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 41,
+        "documentWidth": 390,
+        "font": "inter",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 41,
+        "documentWidth": 390,
+        "font": "notoSans",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 41,
+        "documentWidth": 390,
+        "font": "nunitoSans",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 41,
+        "documentWidth": 390,
+        "font": "figtree",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 41,
+        "documentWidth": 390,
+        "font": "roboto",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 41,
+        "documentWidth": 390,
+        "font": "raleway",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 41,
+        "documentWidth": 390,
+        "font": "dmSans",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 41,
+        "documentWidth": 390,
+        "font": "publicSans",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 41,
+        "documentWidth": 390,
+        "font": "outfit",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 41,
+        "documentWidth": 390,
+        "font": "geistMono",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 41,
+        "documentWidth": 390,
+        "font": "geistPixelSquare",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 41,
+        "documentWidth": 390,
+        "font": "jetBrainsMono",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 41,
+        "documentWidth": 390,
+        "font": "notoSerif",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 41,
+        "documentWidth": 390,
+        "font": "robotoSlab",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 41,
+        "documentWidth": 390,
+        "font": "merriweather",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 41,
+        "documentWidth": 390,
+        "font": "lora",
+        "loaded": true,
+        "problems": []
+      },
+      {
+        "count": 41,
+        "documentWidth": 390,
+        "font": "playfairDisplay",
+        "loaded": true,
+        "problems": []
+      }
+    ],
+    "route": "/dashboard/products",
+    "width": 390
+  }
+]

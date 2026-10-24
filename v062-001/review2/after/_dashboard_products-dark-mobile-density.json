@@ -1,0 +1,279 @@
+[
+  {
+    "url": "http://127.0.0.1:3000/dashboard/products",
+    "clippedSelectValues": [],
+    "overflowingCards": [],
+    "root": "16px",
+    "spacing": "0.25rem",
+    "viewport": 390,
+    "documentWidth": 390,
+    "scale": {
+      "xs": "12px",
+      "sm": "13px",
+      "base": "14px",
+      "lg": "16px",
+      "xl": "18px",
+      "2xl": "21px",
+      "3xl": "26px"
+    },
+    "samples": {
+      "body": [
+        {
+          "text": "Toggle SidebarWorkspace/ProductsSearch⌘KGitHubDUProductsManage your ca",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 844,
+          "width": 390,
+          "padding": "0px",
+          "gap": "normal"
+        }
+      ],
+      "header": [
+        {
+          "text": "Toggle SidebarWorkspace/ProductsSearch⌘KGitHubDU",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 56,
+          "width": 390,
+          "padding": "0px 16px",
+          "gap": "12px"
+        },
+        {
+          "text": "TanStack DevtoolsPluginsMarketplaceSEO",
+          "font": "14px",
+          "lineHeight": "18px",
+          "height": 36,
+          "width": 390,
+          "padding": "0px 0px 0px 12px",
+          "gap": "4px"
+        }
+      ],
+      "main > div": [
+        {
+          "text": "ProductsManage your catalog, inventory, pricing, and product availabil",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 788,
+          "width": 390,
+          "padding": "0px",
+          "gap": "normal"
+        }
+      ],
+      "[data-slot=card]": [],
+      "[data-slot=card-header]": [],
+      "[data-slot=card-content]": [],
+      "[data-slot=table-body] tr": [
+        {
+          "text": "Organic Cotton Crew TeeCL-TEE-101ClothingActive184 in stock$29.001,248",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 48,
+          "width": 1120,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "Relaxed Linen ShirtCL-SHT-102ClothingActive52 in stock$68.00436",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 48,
+          "width": 1120,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "Everyday Straight JeansCL-JNS-103ClothingActive76 in stock$89.00682",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 48,
+          "width": 1120,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "Merino Wool CardiganCL-KNT-104ClothingDraftOut of stock$129.000",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 48,
+          "width": 1120,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "Court Leather SneakersFW-SNK-201FootwearActive38 in stock$119.00824",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 48,
+          "width": 1120,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "Trail Running ShoesFW-RUN-202FootwearActive7 in stock · Low stock$145.",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 48,
+          "width": 1120,
+          "padding": "0px",
+          "gap": "normal"
+        }
+      ],
+      "[data-slot=table-cell]": [
+        {
+          "text": "",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 48,
+          "width": 56,
+          "padding": "8px 0px",
+          "gap": "normal"
+        },
+        {
+          "text": "Organic Cotton Crew Tee",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 48,
+          "width": 256,
+          "padding": "8px 16px",
+          "gap": "normal"
+        },
+        {
+          "text": "CL-TEE-101",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 48,
+          "width": 104.421875,
+          "padding": "8px 16px",
+          "gap": "normal"
+        },
+        {
+          "text": "Clothing",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 48,
+          "width": 123.890625,
+          "padding": "8px 16px",
+          "gap": "normal"
+        },
+        {
+          "text": "Active",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 48,
+          "width": 117.203125,
+          "padding": "8px 16px",
+          "gap": "normal"
+        },
+        {
+          "text": "184 in stock",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 48,
+          "width": 171.40625,
+          "padding": "8px 16px",
+          "gap": "normal"
+        }
+      ],
+      "[data-slot=sidebar-menu-button]": [],
+      "[data-slot=button]": [
+        {
+          "text": "Search⌘K",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 32,
+          "width": 32,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 32,
+          "width": 32,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 28,
+          "width": 28,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "1",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 28,
+          "width": 28,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "2",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 28,
+          "width": 28,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "3",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 28,
+          "width": 28,
+          "padding": "0px",
+          "gap": "normal"
+        }
+      ],
+      "[data-slot=input]": [],
+      "[data-slot=select-trigger]": [
+        {
+          "text": "All statuses▼",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 28,
+          "width": 144,
+          "padding": "8px 8px 8px 10px",
+          "gap": "6px"
+        },
+        {
+          "text": "All categories▼",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 28,
+          "width": 176,
+          "padding": "8px 8px 8px 10px",
+          "gap": "6px"
+        },
+        {
+          "text": "10▼",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 28,
+          "width": 64,
+          "padding": "8px 8px 8px 10px",
+          "gap": "6px"
+        }
+      ],
+      "h1": [
+        {
+          "text": "Products",
+          "font": "21px",
+          "lineHeight": "26.25px",
+          "height": 26.25,
+          "width": 358,
+          "padding": "0px",
+          "gap": "normal"
+        }
+      ],
+      "h2": [],
+      "[data-slot=chart]": []
+    }
+  }
+]

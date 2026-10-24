@@ -1,0 +1,377 @@
+{
+  "baseURL": "http://127.0.0.1:3000/",
+  "fontAssets": "exact public responses cached between contexts",
+  "maskedLiveClocks": false,
+  "hydrationDelayMs": 0,
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": false,
+  "interactions": false,
+  "sidebarStates": true,
+  "results": [
+    {
+      "route": "/dashboard/crm",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_crm-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [
+        "Captured expanded/collapsed desktop navigation or open/closed mobile sheet"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/crm",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_crm-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [
+        "Captured expanded/collapsed desktop navigation or open/closed mobile sheet"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/crm",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_crm-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [
+        "Captured expanded/collapsed desktop navigation or open/closed mobile sheet"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/crm",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_crm-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [
+        "Captured expanded/collapsed desktop navigation or open/closed mobile sheet"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_default-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [
+        "Captured expanded/collapsed desktop navigation or open/closed mobile sheet"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_default-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [
+        "Captured expanded/collapsed desktop navigation or open/closed mobile sheet"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_default-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [
+        "Captured expanded/collapsed desktop navigation or open/closed mobile sheet"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_default-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [
+        "Captured expanded/collapsed desktop navigation or open/closed mobile sheet"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/finance",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_finance-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [
+        "Captured expanded/collapsed desktop navigation or open/closed mobile sheet"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/finance",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_finance-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [
+        "Captured expanded/collapsed desktop navigation or open/closed mobile sheet"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/finance",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_finance-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [
+        "Captured expanded/collapsed desktop navigation or open/closed mobile sheet"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/finance",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_finance-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [
+        "Captured expanded/collapsed desktop navigation or open/closed mobile sheet"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/kanban",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_kanban-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [
+        "Captured expanded/collapsed desktop navigation or open/closed mobile sheet"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/kanban",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_kanban-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [
+        "Captured expanded/collapsed desktop navigation or open/closed mobile sheet"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/kanban",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_kanban-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [
+        "Captured expanded/collapsed desktop navigation or open/closed mobile sheet"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/kanban",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_kanban-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [
+        "Captured expanded/collapsed desktop navigation or open/closed mobile sheet"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/mail",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_mail-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [
+        "Captured expanded/collapsed desktop navigation or open/closed mobile sheet"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/mail",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_mail-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [
+        "Captured expanded/collapsed desktop navigation or open/closed mobile sheet"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/mail",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_mail-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [
+        "Captured expanded/collapsed desktop navigation or open/closed mobile sheet"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/mail",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_mail-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [
+        "Captured expanded/collapsed desktop navigation or open/closed mobile sheet"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/profile",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_profile-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [
+        "Captured expanded/collapsed desktop navigation or open/closed mobile sheet"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/profile",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_profile-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [
+        "Captured expanded/collapsed desktop navigation or open/closed mobile sheet"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/profile",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_profile-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [
+        "Captured expanded/collapsed desktop navigation or open/closed mobile sheet"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/profile",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_profile-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [
+        "Captured expanded/collapsed desktop navigation or open/closed mobile sheet"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/tasks",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_tasks-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [
+        "Captured expanded/collapsed desktop navigation or open/closed mobile sheet"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/tasks",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_tasks-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [
+        "Captured expanded/collapsed desktop navigation or open/closed mobile sheet"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/tasks",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_tasks-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [
+        "Captured expanded/collapsed desktop navigation or open/closed mobile sheet"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/tasks",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_tasks-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [
+        "Captured expanded/collapsed desktop navigation or open/closed mobile sheet"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    }
+  ]
+}

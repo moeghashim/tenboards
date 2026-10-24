@@ -1,0 +1,444 @@
+{
+  "default": [
+    {
+      "i": 0,
+      "name": "3 months▼",
+      "labels": [
+        "3 months"
+      ]
+    },
+    {
+      "i": 1,
+      "name": "All segments▼",
+      "labels": [
+        "All segments",
+        "Paid",
+        "Organic"
+      ]
+    },
+    {
+      "i": 2,
+      "name": "10▼",
+      "labels": [
+        "10",
+        "20",
+        "30",
+        "40",
+        "50"
+      ]
+    }
+  ],
+  "crm": [
+    {
+      "i": 0,
+      "name": "Pipeline period",
+      "labels": [
+        "Last 30 days",
+        "Last quarter",
+        "Last 12 months"
+      ]
+    }
+  ],
+  "finance": [
+    {
+      "i": 0,
+      "name": "Spending period",
+      "labels": [
+        "Weekly",
+        "Monthly",
+        "Yearly"
+      ]
+    },
+    {
+      "i": 1,
+      "name": "Account currency",
+      "labels": [
+        "Euro Balance",
+        "GBP Balance",
+        "USD Balance"
+      ]
+    }
+  ],
+  "analytics": [
+    {
+      "i": 0,
+      "name": "Analytics period",
+      "labels": [
+        "Last 7 days",
+        "Last 4 weeks",
+        "Last 3 months",
+        "Year to date"
+      ]
+    }
+  ],
+  "productivity": [
+    {
+      "i": 0,
+      "name": "Task period",
+      "labels": [
+        "Today",
+        "Tomorrow",
+        "This Week"
+      ]
+    },
+    {
+      "i": 1,
+      "name": "Project status",
+      "labels": [
+        "Active",
+        "Planning",
+        "Completed"
+      ]
+    }
+  ],
+  "ecommerce": [
+    {
+      "i": 0,
+      "name": "Store period",
+      "labels": [
+        "This Month",
+        "Last Month",
+        "Last 30 Days",
+        "Year to Date"
+      ]
+    },
+    {
+      "i": 1,
+      "name": "Sales channel",
+      "labels": [
+        "All Channels",
+        "Online Store",
+        "Marketplace",
+        "Social",
+        "Retail"
+      ]
+    }
+  ],
+  "users": [
+    {
+      "i": 0,
+      "name": "Filter users by role",
+      "labels": [
+        "All",
+        "Workspace Owner",
+        "Admin",
+        "Billing Admin",
+        "Security Admin",
+        "Team Lead",
+        "Contributor",
+        "Guest",
+        "Read-only"
+      ]
+    },
+    {
+      "i": 1,
+      "name": "Filter users by team",
+      "labels": [
+        "All",
+        "Platform",
+        "Growth",
+        "Revenue",
+        "Customer Ops",
+        "Internal Tools",
+        "Compliance",
+        "People Ops",
+        "Finance"
+      ]
+    },
+    {
+      "i": 2,
+      "name": "Filter users by status",
+      "labels": [
+        "All",
+        "Active",
+        "Pending invite",
+        "Deactivated",
+        "Locked",
+        "Suspended"
+      ]
+    },
+    {
+      "i": 3,
+      "name": "Filter users by workspace",
+      "labels": [
+        "All",
+        "Weblabs Studio",
+        "Sandbox",
+        "Internal Tools",
+        "Acme Inc."
+      ]
+    },
+    {
+      "i": 4,
+      "name": "10▼",
+      "labels": [
+        "10",
+        "20",
+        "30",
+        "40",
+        "50"
+      ]
+    }
+  ],
+  "products": [
+    {
+      "i": 0,
+      "name": "Filter product status",
+      "labels": [
+        "All statuses",
+        "Active",
+        "Draft",
+        "Archived"
+      ]
+    },
+    {
+      "i": 1,
+      "name": "Filter product category",
+      "labels": [
+        "All categories",
+        "Clothing",
+        "Footwear",
+        "Accessories",
+        "Home & living",
+        "Beauty",
+        "Electronics"
+      ]
+    },
+    {
+      "i": 2,
+      "name": "10▼",
+      "labels": [
+        "10",
+        "25",
+        "50",
+        "100"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "i": 0,
+      "name": "Rows per page",
+      "labels": [
+        "10",
+        "20",
+        "30",
+        "40",
+        "50"
+      ]
+    }
+  ],
+  "invoice": [
+    {
+      "i": 0,
+      "name": "Client",
+      "labels": [
+        "Bright Enterprises",
+        "Cedar Works",
+        "Northline GmbH"
+      ]
+    },
+    {
+      "i": 1,
+      "name": "Tax",
+      "labels": [
+        "GST (18%)",
+        "VAT (12%)",
+        "Service Tax (10%)",
+        "No Tax (0%)"
+      ]
+    },
+    {
+      "i": 2,
+      "name": "Discount type",
+      "labels": [
+        "Fixed amount",
+        "Percent"
+      ]
+    }
+  ],
+  "roles": [
+    {
+      "i": 0,
+      "name": "Filter roles by type",
+      "labels": [
+        "All",
+        "System",
+        "Custom"
+      ]
+    },
+    {
+      "i": 1,
+      "name": "Filter roles by owner",
+      "labels": [
+        "All",
+        "System",
+        "Jane Doe",
+        "Alex Kim",
+        "Chris Lee"
+      ]
+    },
+    {
+      "i": 2,
+      "name": "Filter roles by status",
+      "labels": [
+        "All",
+        "Active",
+        "Needs review"
+      ]
+    },
+    {
+      "i": 3,
+      "name": "Roles rows per page",
+      "labels": [
+        "12",
+        "24",
+        "48"
+      ]
+    }
+  ],
+  "calendar": [
+    {
+      "i": 0,
+      "name": "Calendar",
+      "labels": [
+        "All calendars",
+        "Work",
+        "Personal",
+        "Team",
+        "Focus time"
+      ]
+    },
+    {
+      "i": 1,
+      "name": "Calendar view",
+      "labels": [
+        "Month",
+        "Week",
+        "Day"
+      ]
+    }
+  ],
+  "kanban?view=table": [
+    {
+      "i": 0,
+      "name": "Change status for Tender workflow map",
+      "labels": [
+        "Ideas",
+        "Planned",
+        "Building",
+        "QA",
+        "Shipped"
+      ]
+    },
+    {
+      "i": 1,
+      "name": "Change status for License strategy research",
+      "labels": [
+        "Ideas",
+        "Planned",
+        "Building",
+        "QA",
+        "Shipped"
+      ]
+    },
+    {
+      "i": 2,
+      "name": "Change status for Backup and restore plan",
+      "labels": [
+        "Ideas",
+        "Planned",
+        "Building",
+        "QA",
+        "Shipped"
+      ]
+    },
+    {
+      "i": 3,
+      "name": "Change status for Work order allocation model",
+      "labels": [
+        "Ideas",
+        "Planned",
+        "Building",
+        "QA",
+        "Shipped"
+      ]
+    },
+    {
+      "i": 4,
+      "name": "Change status for Future sync notes",
+      "labels": [
+        "Ideas",
+        "Planned",
+        "Building",
+        "QA",
+        "Shipped"
+      ]
+    },
+    {
+      "i": 5,
+      "name": "Change status for Electron app shell",
+      "labels": [
+        "Ideas",
+        "Planned",
+        "Building",
+        "QA",
+        "Shipped"
+      ]
+    },
+    {
+      "i": 6,
+      "name": "Change status for Secure preload API",
+      "labels": [
+        "Ideas",
+        "Planned",
+        "Building",
+        "QA",
+        "Shipped"
+      ]
+    },
+    {
+      "i": 7,
+      "name": "Change status for Party and employee records",
+      "labels": [
+        "Ideas",
+        "Planned",
+        "Building",
+        "QA",
+        "Shipped"
+      ]
+    },
+    {
+      "i": 8,
+      "name": "Change status for Generated documents index",
+      "labels": [
+        "Ideas",
+        "Planned",
+        "Building",
+        "QA",
+        "Shipped"
+      ]
+    },
+    {
+      "i": 9,
+      "name": "Change status for SQLite and Drizzle schema",
+      "labels": [
+        "Ideas",
+        "Planned",
+        "Building",
+        "QA",
+        "Shipped"
+      ]
+    },
+    {
+      "i": 10,
+      "name": "10▼",
+      "labels": [
+        "10",
+        "25",
+        "50",
+        "100"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+
+> tenboards@0.6.1 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --routes /dashboard/default,/dashboard/tasks,/auth/v2/login --reload --hydration-delay-ms 1200 --interactions --output screenshots/review2/hydration
+
+PASS /dashboard/default light/desktop direct
+PASS /dashboard/default light/desktop refresh
+FAIL /dashboard/default light/mobile direct
+locator.waitFor: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('[data-mobile="true"]') to be visible[22m
+
+PASS /dashboard/default light/mobile refresh
+PASS /dashboard/default dark/desktop direct
+PASS /dashboard/default dark/desktop refresh
+PASS /dashboard/default dark/mobile direct
+PASS /dashboard/default dark/mobile refresh
+PASS /dashboard/tasks light/desktop direct
+PASS /dashboard/tasks light/desktop refresh
+PASS /dashboard/tasks light/mobile direct
+PASS /dashboard/tasks light/mobile refresh
+PASS /dashboard/tasks dark/desktop direct
+PASS /dashboard/tasks dark/desktop refresh
+PASS /dashboard/tasks dark/mobile direct
+PASS /dashboard/tasks dark/mobile refresh
+PASS /auth/v2/login light/desktop direct
+PASS /auth/v2/login light/desktop refresh
+PASS /auth/v2/login light/mobile direct
+PASS /auth/v2/login light/mobile refresh
+PASS /auth/v2/login dark/desktop direct
+PASS /auth/v2/login dark/desktop refresh
+PASS /auth/v2/login dark/mobile direct
+PASS /auth/v2/login dark/mobile refresh
