@@ -2,7 +2,7 @@
 id: "001"
 title: Project model, additive backfill, seeds and parity
 milestone: v0.8-projects
-status: todo
+status: in-review
 category: data
 files: ["src/server/db/project-schema.ts", "src/server/db/migrations/", "src/server/db/fixtures/", "src/server/db/seed-projects.ts", "src/server/data/", "scripts/", "docs/data.md", "README.md", "dev/milestones.json"]
 ---

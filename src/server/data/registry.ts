@@ -17,6 +17,22 @@ import { dbPatients, demoPatients } from "./patients.ts";
 import { dbProductivity, demoProductivity } from "./productivity.ts";
 import { dbProducts, demoProducts } from "./products.ts";
 import { dbProfile, demoProfile } from "./profile.ts";
+import {
+  dbProject,
+  dbProjectActivity,
+  dbProjectFiles,
+  dbProjects,
+  dbProjectTasks,
+  dbProjectTimeline,
+  dbWorkspaceHome,
+  demoProject,
+  demoProjectActivity,
+  demoProjectFiles,
+  demoProjects,
+  demoProjectTasks,
+  demoProjectTimeline,
+  demoWorkspaceHome,
+} from "./projects.ts";
 import { dbRoles, demoRoles } from "./roles.ts";
 import { dbTasks, demoTasks } from "./tasks.ts";
 import { dbUsers, demoUsers } from "./users.ts";
@@ -44,6 +60,116 @@ function defineRead<Input, Output>(entry: {
 }
 
 export const readRegistry = [
+  defineRead({
+    module: "projects",
+    read: "readProjects",
+    demo: demoProjects,
+    db: dbProjects,
+    scenarios: [
+      { name: "all", input: {} },
+      { name: "status", input: { status: "active" } },
+      { name: "search", input: { query: "Documentation" } },
+    ],
+  }),
+  defineRead({
+    module: "projects",
+    read: "readProject",
+    demo: demoProject,
+    db: dbProject,
+    scenarios: [
+      ...["sample-operations", "sample-docs", "sample-empty", "missing"].map((projectId) => ({
+        name: projectId,
+        input: { projectId },
+      })),
+    ],
+  }),
+  defineRead({
+    module: "projects",
+    read: "readProjectTasks",
+    demo: demoProjectTasks,
+    db: dbProjectTasks,
+    scenarios: [
+      ...["sample-operations", "sample-docs", "sample-empty", "missing"].map((projectId) => ({
+        name: projectId,
+        input: { projectId },
+      })),
+      ...(["backlog", "todo", "in-progress", "review", "done", "canceled"] as const).map((status) => ({
+        name: status,
+        input: { projectId: "sample-operations", status },
+      })),
+      { name: "priority", input: { projectId: "sample-operations", priority: "high" } },
+      { name: "due-sort", input: { projectId: "sample-operations", sort: "dueDate" } },
+      { name: "title-sort", input: { projectId: "sample-docs", sort: "title" } },
+      { name: "paged", input: { projectId: "sample-operations", offset: 10, limit: 10 } },
+      { name: "unassigned", input: { projectId: "sample-operations", assigneeId: null } },
+      { name: "label", input: { projectId: "sample-docs", label: "verification" } },
+      { name: "wrong-project", input: { projectId: "sample-docs", id: "board:tender-workflow-map" } },
+      {
+        name: "combined",
+        input: { projectId: "sample-docs", query: "guide", assigneeId: "board:maya", status: "in-progress" },
+      },
+    ],
+  }),
+  defineRead({
+    module: "projects",
+    read: "readProjectTimeline",
+    demo: demoProjectTimeline,
+    db: dbProjectTimeline,
+    scenarios: [
+      ...["sample-operations", "sample-docs", "sample-empty", "missing"].flatMap((projectId) =>
+        [
+          "2026-06-20T12:00:00Z",
+          "2026-12-31T23:59:59Z",
+          "2028-02-29T23:59:59Z",
+          "2026-03-08T08:01:00Z",
+          "2026-11-01T07:01:00Z",
+        ].flatMap((renderedAt) =>
+          ["UTC", "America/Chicago", "Pacific/Kiritimati"].map((timeZone) => ({
+            name: `${projectId}/${renderedAt}/${timeZone}`,
+            input: { projectId, renderedAt, timeZone },
+          })),
+        ),
+      ),
+    ],
+  }),
+  defineRead({
+    module: "projects",
+    read: "readProjectFiles",
+    demo: demoProjectFiles,
+    db: dbProjectFiles,
+    scenarios: [
+      ...["sample-operations", "sample-docs", "sample-empty", "missing"].map((projectId) => ({
+        name: projectId,
+        input: { projectId },
+      })),
+      { name: "wrong-project", input: { projectId: "sample-docs", id: "product-roadmap" } },
+      { name: "existing", input: { projectId: "sample-operations", id: "product-roadmap" } },
+    ],
+  }),
+  defineRead({
+    module: "projects",
+    read: "readProjectActivity",
+    demo: demoProjectActivity,
+    db: dbProjectActivity,
+    scenarios: [
+      ...["sample-operations", "sample-docs", "sample-empty", "missing"].map((projectId) => ({
+        name: projectId,
+        input: { projectId },
+      })),
+    ],
+  }),
+  defineRead({
+    module: "projects",
+    read: "readWorkspaceHome",
+    demo: demoWorkspaceHome,
+    db: dbWorkspaceHome,
+    scenarios: [
+      ...["board:jordan", "board:maya", "missing"].map((memberId) => ({
+        name: memberId,
+        input: { memberId, renderedAt: "2026-06-20T12:00:00Z" },
+      })),
+    ],
+  }),
   defineRead({
     module: "productivity",
     read: "readProductivity",

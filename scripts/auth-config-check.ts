@@ -1,6 +1,6 @@
 import { authConfiguration } from "../src/lib/auth/config.ts";
 import { assertSafeError, localDatabase, startTestServer, testSecret } from "./auth-test-support.ts";
-import { testOrigin } from "./test-port.ts";
+import { testOrigin, testSentinelPort } from "./test-port.ts";
 import assert from "node:assert/strict";
 import { createServer } from "node:net";
 
@@ -65,7 +65,7 @@ for (const [google, github] of [
   assert.equal(!!config.providers.github, github);
   pass("provider pair matrix");
 }
-const sentinelPort = Number(process.env.TEST_SENTINEL_PORT ?? 54328);
+const sentinelPort = testSentinelPort();
 let connections = 0;
 const sentinel = createServer((socket) => {
   connections++;
