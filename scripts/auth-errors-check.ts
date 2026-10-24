@@ -3,13 +3,14 @@ import postgres from "postgres";
 
 import { localDatabase, startTestServer, testHeaders, testSecret } from "./auth-test-support.ts";
 import { cacheCaptureFonts } from "./screenshot-assets.ts";
+import { testOrigin } from "./test-port.ts";
 import assert from "node:assert/strict";
 import { setTimeout as delay } from "node:timers/promises";
 
 const server = await startTestServer({
   DATABASE_URL: localDatabase,
   BETTER_AUTH_SECRET: testSecret(),
-  BETTER_AUTH_URL: "http://localhost:3011",
+  BETTER_AUTH_URL: testOrigin("http://localhost:3011"),
 });
 const browser = await chromium.launch();
 const db = postgres(localDatabase);

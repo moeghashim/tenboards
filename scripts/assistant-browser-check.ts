@@ -1,0 +1,127 @@
+import { chromium } from "playwright";
+
+import { cacheCaptureFonts } from "./screenshot-assets.ts";
+import assert from "node:assert/strict";
+import { mkdir } from "node:fs/promises";
+
+const baseURL = process.env.ASSISTANT_TEST_URL ?? "http://127.0.0.1:3170";
+const output = process.env.ASSISTANT_EVIDENCE_ROOT ?? "screenshots/v07-001/interaction";
+await mkdir(output, { recursive: true });
+const browser = await chromium.launch();
+try {
+  for (const theme of ["light", "dark"] as const)
+    for (const [size, viewport] of Object.entries({
+      desktop: { width: 1440, height: 900 },
+      mobile: { width: 390, height: 844 },
+    })) {
+      const context = await browser.newContext({ viewport, colorScheme: theme, reducedMotion: "reduce" });
+      await cacheCaptureFonts(context);
+      await context.addCookies([{ name: "theme_mode", value: theme, url: baseURL }]);
+      const page = await context.newPage();
+      const errors: string[] = [];
+      page.on("pageerror", (error) => errors.push(error.message));
+      page.on("console", (message) => {
+        if (message.type() === "error") errors.push(message.text());
+      });
+      const external: string[] = [];
+      page.on("request", (request) => {
+        if (new URL(request.url()).origin !== baseURL && !/fonts\.(googleapis|gstatic)\.com/.test(request.url()))
+          external.push(new URL(request.url()).hostname);
+      });
+      await page.goto(`${baseURL}/dashboard/assistant`);
+      await page.waitForFunction(() =>
+        Array.from(document.querySelectorAll("body *")).some((node) =>
+          Object.keys(node).some((key) => key.startsWith("__reactFiber$")),
+        ),
+      );
+      await page.waitForLoadState("networkidle");
+      const registryProof = await page.evaluate(async () => {
+        const rendererPath = "/src/routes/(main)/dashboard/assistant/-components/registry.tsx";
+        const schemaPath = "/src/lib/assistant/registry.ts";
+        const { assistantLibrary, validateEvaluatedProps } = await import(rendererPath);
+        const { librarySpec } = await import(schemaPath);
+        let rejected = 0;
+        for (const [name, props] of [
+          ["Text", { text: "valid", dangerouslySetInnerHTML: { __html: "<script>bad</script>" } }],
+          [
+            "Card",
+            {
+              title: "bad",
+              children: [{ type: "element", typeName: "Text", partial: false, props: { text: { html: "bad" } } }],
+            },
+          ],
+          [
+            "Stack",
+            {
+              children: [{ type: "element", typeName: "iframe", partial: false, props: { src: "https://evil.test" } }],
+            },
+          ],
+          ["Stack", { children: [{ type: "element", typeName: "Text", partial: true, props: { text: "partial" } }] }],
+          ["Badge", { label: "bad", tone: "javascript:bad" }],
+          ["Chart", { title: "bad", kind: "bar", labels: ["x"], series: [{ label: "x", values: [NaN] }] }],
+        ]) {
+          try {
+            validateEvaluatedProps(name, props);
+          } catch {
+            rejected++;
+          }
+        }
+        validateEvaluatedProps("Text", { text: "<script>escaped</script>" });
+        return { rejected, specMatches: JSON.stringify(assistantLibrary.toSpec()) === JSON.stringify(librarySpec) };
+      });
+      assert.deepEqual(registryProof, { rejected: 6, specMatches: true });
+
+      await page.getByRole("button", { name: "Summarize a sample launch" }).waitFor();
+      await page.waitForLoadState("networkidle");
+      await page.screenshot({ path: `${output}/${theme}-${size}-empty.png`, fullPage: true });
+      for (const [label, ready] of [
+        ["Summarize a sample launch", "Launch snapshot"],
+        ["Compare sample plans", "Sample plans"],
+        ["Chart a sample week", "Sample review trend"],
+      ]) {
+        await page.getByRole("button", { name: label, exact: true }).click();
+        await page
+          .getByText("Recorded demo · completed", { exact: true })
+          .waitFor()
+          .catch(async (error) => {
+            console.error(await page.locator("main").innerText(), errors);
+            await page.screenshot({ path: `${output}/failure.png` });
+            throw error;
+          });
+        await page.getByText(ready, { exact: true }).first().waitFor();
+        assert.equal(await page.locator("[data-openui-devtools-auto-mount]").count(), 0);
+        assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth));
+        await page.screenshot({
+          path: `${output}/${theme}-${size}-${label.split(" ")[0].toLowerCase()}.png`,
+          fullPage: true,
+        });
+        await page.getByRole("button", { name: "New conversation", exact: true }).click();
+      }
+      const input = page.getByRole("textbox", { name: "Message", exact: true });
+      await input.fill("two lines");
+      await input.press("Shift+Enter");
+      assert.equal(await input.inputValue(), "two lines\n");
+      await input.evaluate((node) =>
+        node.dispatchEvent(new KeyboardEvent("keydown", { key: "Enter", bubbles: true, isComposing: true })),
+      );
+      assert.equal(await page.locator("article").count(), 0);
+      await input.press("Enter");
+      await page.getByRole("button", { name: "Stop", exact: true }).click();
+      await page.getByText("Response stopped. This reply is incomplete.", { exact: true }).waitFor();
+      await page.getByRole("button", { name: "New conversation", exact: true }).click();
+      await page.getByRole("button", { name: "Chart a sample week", exact: true }).click();
+      await page.getByRole("button", { name: "New conversation", exact: true }).click();
+      await page.waitForTimeout(600);
+      assert.equal(await page.locator("article").count(), 0);
+      await page.reload();
+      assert.equal(await page.locator("article").count(), 0);
+      assert.deepEqual(external, []);
+      assert.deepEqual(errors, []);
+      await context.close();
+      console.log(
+        `PASS Assistant recorded examples, no egress, IME, Stop/clear races, reload, overflow, console ${theme}/${size}`,
+      );
+    }
+} finally {
+  await browser.close();
+}

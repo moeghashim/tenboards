@@ -2,14 +2,24 @@ import postgres from "postgres";
 
 import { authConfiguration } from "../src/lib/auth/config.ts";
 import { assertSafeError, localDatabase, testSecret } from "./auth-test-support.ts";
+import { testOrigin } from "./test-port.ts";
 import { startWorker } from "./worker-test-support.ts";
 import assert from "node:assert/strict";
 import { setTimeout as delay } from "node:timers/promises";
 
 const db = postgres(localDatabase, { max: 1 });
-const env = { DATABASE_URL: localDatabase, BETTER_AUTH_SECRET: testSecret(), BETTER_AUTH_URL: "http://localhost:3031" };
+const env = {
+  DATABASE_URL: localDatabase,
+  BETTER_AUTH_SECRET: testSecret(),
+  BETTER_AUTH_URL: testOrigin("http://localhost:3031"),
+};
 const pass = (s: string) => console.log(`PASS ${s}`);
-for (const BETTER_AUTH_URL of [undefined, "http://localhost:3031", "https://localhost:3031", "http://example.test"])
+for (const BETTER_AUTH_URL of [
+  undefined,
+  testOrigin("http://localhost:3031"),
+  testOrigin("https://localhost:3031"),
+  "http://example.test",
+])
   assert.throws(() => authConfiguration({ ...env, BETTER_AUTH_URL, REQUIRE_AUTH_ORIGIN: true }));
 assert.ok(
   authConfiguration({ ...env, BETTER_AUTH_URL: "https://tenboards.example.workers.dev", REQUIRE_AUTH_ORIGIN: true })

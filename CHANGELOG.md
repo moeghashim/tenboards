@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased — v0.7 Assistant foundation
+
+- Add a native AI Assistant next to unchanged Chat with recorded summaries, comparisons and accessible charts.
+- Bound and validate a read-only OpenUI vocabulary before rendering; exclude actions, tools, URLs and raw markup.
+- Keep conversation state transient, with Send, Stop and New conversation. No provider access in this layer.
+- Pin OpenUI 1.0.1, disable install/runtime telemetry and add adversarial stream/renderer checks.
+- Allow isolated auth/Worker test ports without changing default ports.
+
 ## v0.6.2 — Compact density (2026-10-24)
 
 Released as [v0.6.2](https://github.com/moeghashim/tenboards/releases/tag/v0.6.2).

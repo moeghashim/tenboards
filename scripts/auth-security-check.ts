@@ -10,6 +10,7 @@ import {
   testSecret,
 } from "./auth-test-support.ts";
 import { cacheCaptureFonts } from "./screenshot-assets.ts";
+import { testOrigin } from "./test-port.ts";
 import assert from "node:assert/strict";
 
 let cases = 0;
@@ -20,7 +21,7 @@ const pass = (label: string) => {
 // Wrangler rewrites URL-related headers containing its local proxy host.
 // A reserved canonical host preserves HTTPS-origin/header semantics in this probe.
 const secureOrigin =
-  process.env.AUTH_TEST_RUNTIME === "workerd" ? "https://secure.example.test" : "https://localhost:3011";
+  process.env.AUTH_TEST_RUNTIME === "workerd" ? "https://secure.example.test" : testOrigin("https://localhost:3011");
 const secret = testSecret();
 const password = testSecret();
 const db = postgres(localDatabase);
@@ -58,7 +59,11 @@ try {
     "HTTPS canonical configuration issues actual Secure/HttpOnly/host-only/Lax cookie (loopback HTTP transport checks headers only)",
   );
   await server.stop();
-  const config = { DATABASE_URL: localDatabase, BETTER_AUTH_SECRET: secret, BETTER_AUTH_URL: "http://localhost:3011" };
+  const config = {
+    DATABASE_URL: localDatabase,
+    BETTER_AUTH_SECRET: secret,
+    BETTER_AUTH_URL: testOrigin("http://localhost:3011"),
+  };
   server = await startTestServer(config);
   const context = await browser.newContext({ extraHTTPHeaders: testHeaders });
   await cacheCaptureFonts(context);

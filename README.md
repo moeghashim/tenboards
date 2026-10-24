@@ -8,7 +8,7 @@ Ten current dashboards and the retained app pages share a compact design system,
 
 **v0.6.2 (compact density) is merged, deployed and released as [v0.6.2](https://github.com/moeghashim/tenboards/releases/tag/v0.6.2)** tightens the shared desktop typography, controls, cards, tables and shell. Content uses 13px text, default desktop controls are 28px, and the header is 48px. Toolbar selects and tabs retain content-based minimum widths so wider font choices keep their labels readable. Mobile keeps larger control/spacing defaults; all fonts, presets and sidebar styles remain available. There is one compact default, with no additional preference. See the [density contract](dev/milestones/v0.6.2-compact-density/README.md) and [design system](DESIGN.md).
 
-**v0.7 (AI Assistant) is planned, not implemented** — [the milestone contract and three tasks](dev/milestones/v0.7-assistant/README.md) cover a separate Assistant page, safe OpenUI rendering, optional server-configured providers and recorded zero-config replies. Existing Chat stays unchanged. The live demo and PR previews will remain recorded-only; adopters supply their own provider keys.
+**v0.7 task 001 (recorded Assistant foundation) is implemented for review** — `/dashboard/assistant` sits immediately after Chat and streams labeled illustrative replies through a bounded, read-only OpenUI registry. Try summaries, plan comparisons and charts with data-table alternatives; Send, Stop and New conversation keep state only in the mounted view. No model or provider endpoint is connected in this layer. Existing Chat stays unchanged. The live demo and PR previews remain recorded-only. See [the milestone contract](dev/milestones/v0.7-assistant/README.md).
 
 **v0.8 (Projects workspace) is planned, not implemented** — [the milestone contract and six tasks](dev/milestones/v0.8-projects/README.md) cover workspace Home, a Projects index, nested project navigation and read-only Overview/Board/List/Timeline/Files views. Kanban, Tasks, Calendar and File Manager will consolidate into project views with permanent legacy redirects. Both v0.7 and v0.8 proceed independently after rebasing onto v0.6.2 compact density; the reviewer reconciles shared shell files. Current routes and behavior are unchanged by this planning PR.
 
@@ -19,11 +19,13 @@ Use Node 22+ and npm. No environment variables or database are required.
 ```sh
 git clone https://github.com/moeghashim/tenboards.git
 cd tenboards
-npm install
+OPENUI_TELEMETRY_DISABLED=1 DO_NOT_TRACK=1 npm install
 npm run dev
 ```
 
 Open [the default dashboard](http://localhost:3000/dashboard/default).
+
+OpenUI install telemetry must remain disabled (`OPENUI_TELEMETRY_DISABLED=1` or `DO_NOT_TRACK=1`). The Assistant disables its runtime inspector and observability; recorded replies make no provider requests.
 
 ## Commands
 
@@ -31,6 +33,8 @@ Open [the default dashboard](http://localhost:3000/dashboard/default).
 - `npm run build` — production client and server build.
 - `npm run preview` — preview the compiled Worker locally with Wrangler.
 - `npm run check` / `npm run check:fix` — Biome lint, imports, and formatting.
+- `npm run assistant:test` — bounded language/registry/stream checks; `npm run assistant:browser` runs recorded interaction checks against `ASSISTANT_TEST_URL` (default port 3170).
+- Set `TEST_PORT_OFFSET` when running auth/Worker regression suites in parallel worktrees; for example `160` maps 3011/3021/3031–3033 to 3171/3181/3191–3193. Supply an isolated local `DATABASE_URL`.
 - `npm run typecheck` — TypeScript (`tsc --noEmit`).
 - `npm run db:generate` — generate the next reviewed Drizzle migration; no DB required.
 - `npm run db:migrate` — apply committed migrations to an explicit local Postgres URL; remote operations require `-- --allow-remote` and direct TLS URL.

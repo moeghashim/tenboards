@@ -4,6 +4,7 @@ import postgres from "postgres";
 import { callRpc, localDatabase, startTestServer, testHeaders, testSecret } from "./auth-test-support.ts";
 import { cacheCaptureFonts } from "./screenshot-assets.ts";
 import { captureRoutes, httpRoutes } from "./screenshot-routes.ts";
+import { testOrigin } from "./test-port.ts";
 import assert from "node:assert/strict";
 import { mkdir, readdir, readFile } from "node:fs/promises";
 
@@ -52,7 +53,7 @@ const db = postgres(localDatabase);
 const server = await startTestServer({
   DATABASE_URL: localDatabase,
   BETTER_AUTH_SECRET: testSecret(),
-  BETTER_AUTH_URL: "http://localhost:3011",
+  BETTER_AUTH_URL: testOrigin("http://localhost:3011"),
 });
 const browser = await chromium.launch();
 const email = `protection-${Date.now()}@example.test`;

@@ -1,6 +1,7 @@
 import postgres from "postgres";
 
 import { assertSafeError, localDatabase, startTestServer, testSecret } from "./auth-test-support.ts";
+import { testOrigin } from "./test-port.ts";
 import assert from "node:assert/strict";
 
 // A fresh test-owned empty database; removed after the suite.
@@ -32,7 +33,7 @@ try {
     const server = await startTestServer({
       DATABASE_URL,
       BETTER_AUTH_SECRET: auth ? testSecret() : undefined,
-      BETTER_AUTH_URL: "http://localhost:3011",
+      BETTER_AUTH_URL: testOrigin("http://localhost:3011"),
     });
     try {
       const response = await server.api.get("/api/auth/get-session");

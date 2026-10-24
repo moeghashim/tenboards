@@ -1,5 +1,6 @@
 import {
   Banknote,
+  Bot,
   Calendar,
   ChartBar,
   CheckSquare,
@@ -161,6 +162,12 @@ export const sidebarItems: NavGroup[] = [
         title: "Chat",
         url: "/dashboard/chat",
         icon: MessageSquare,
+      },
+      {
+        id: "assistant",
+        title: "AI Assistant",
+        url: "/dashboard/assistant",
+        icon: Bot,
       },
       {
         id: "calendar",
