@@ -1,0 +1,5 @@
+PASS manifest covers every legacy fixture exactly once
+PASS scope, missing/empty, filters, pagination, canceled metrics, dates and calendar exclusive ends
+PASS DB-only sentinel, same-project and enum/date/count constraints, repeat seed preservation
+PASS populated additive upgrade, repeated migration/seed, adopter and auth preservation
+PASS configured schema failure never substitutes fixtures; recovery retains empty project
