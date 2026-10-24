@@ -56,3 +56,5 @@ Depends on planning approval and merged v0.6.2; rebase/reinspect before implemen
 One approved task per branch/PR; declare any stack and layer compare URL. Conventional commit with DCO sign-off and final `Co-Authored-By: GPT-6-Astra <noreply@openai.com>` trailer. Claude reviews and alone merges.
 
 Verification: [PR #67 evidence](https://github.com/moeghashim/tenboards/tree/pr-assets/v08-001). Node and workerd parity: 29 reads / 202 scenarios; Node auth: 426; Worker auth: 272; legacy redirects: 96. Build/check/typecheck and four-state dev/preview default smoke pass. Remains in review pending Claude.
+
+Round 2 verification: [evidence](https://github.com/moeghashim/tenboards/tree/pr-assets/v08-001-round2). Request-relative demo/DB dates and mostly scheduled sample work verified at UTC day, leap-day and year boundaries. Build/check/typecheck, default dev/preview four-state smoke, Node auth 426, Node/Worker parity 29 reads / 208 scenarios, Worker auth/security, project migration checks and 96 legacy redirects pass. Preview: https://82f202d4-tenboards-preview.mohanadgh.workers.dev (alias pr-67). Status remains in review.
