@@ -104,7 +104,7 @@ Upstream scripts kept (`dev`, `build`, `preview`, `check`, `check:fix`, `generat
 | **v0.3** | Restyle app pages: mail, chat, calendar, kanban, invoice, file manager, products, users, roles, profile, auth, error/404/unauthorized |
 | **v0.4** | Drizzle + Neon data layer with demo-mode fallback |
 | **v0.5** | Better Auth |
-| **v0.6** | Production Cloudflare setup: Hyperdrive → Neon, secrets, custom domain (base Workers deploy already exists from v0.1) |
+| **v0.6** | Production Cloudflare setup: Hyperdrive → Neon, secrets, auth on in production, isolated demo previews (custom domain dropped; see Decisions log) |
 | Later | RBAC + multi-tenant, i18n/RTL, real CRUD, tests + CI — each requires its own planning round |
 
 ## 9. Confirmed defaults (locked)
@@ -156,6 +156,12 @@ Upstream scripts kept (`dev`, `build`, `preview`, `check`, `check:fix`, `generat
 | v0.5 account flows | Sign up, sign in (with remember me), sign out, profile edits (name, change password for credential accounts) and an active-sessions list with revoke. Out of scope: forgot/reset password, email verification, 2FA, RBAC, orgs, admin user management | Locked by user 2026-10-24 |
 | v0.5 auth screens | Auth V1 and V2 login/register both submit to Better Auth through the shared form components; the shell header shows the signed-in user and a working sign-out in place of demo accounts | Locked by user 2026-10-24 |
 | v0.5 implementation | `better-auth` with its Drizzle adapter on the existing postgres.js client; auth tables in committed migrations, named so they never collide with the v0.4 demo `users`/directory tables, which stay unchanged. Auth state is read through Better Auth server APIs and TanStack Start server functions. Production stays in demo mode with no auth secret until v0.6 | Reviewer decision |
+| v0.6 production host | Production stays on the Cloudflare Workers URL `tenboards.mohanadgh.workers.dev`; no custom domain in v0.6. `tenboards.pages.dev` was considered and dropped because Cloudflare now routes new Pages projects to Workers, and getting a pages.dev URL means forcing the legacy Pages product | Locked by user 2026-10-24 |
+| v0.6 database provisioning | The user creates the Neon project and supplies its direct connection string only at cutover. The reviewer creates the Hyperdrive config from it, sets Worker secrets, and runs migrations and seed against Neon directly. No connection string or secret is ever committed; the Hyperdrive config ID is not a secret and is committed in `wrangler.jsonc` | Locked by user 2026-10-24 |
+| v0.6 production mode | Production runs with the db source plus auth on: Neon seeded with the demo fixtures, `BETTER_AUTH_SECRET` and `BETTER_AUTH_URL` set as Worker secrets, and open sign-up. Every signed-in user sees the shared seeded data (v0.5 rule: no per-user ownership). Better Auth rate limiting is on, with storage that works across Worker isolates | Locked by user 2026-10-24 (mode); rate-limit storage reviewer decision |
+| v0.6 OAuth | Production is email + password only. Google and GitHub stay hidden until their key pairs are added as Worker secrets later; docs explain how | Locked by user 2026-10-24 |
+| v0.6 runtime | postgres.js runs in workerd with `nodejs_compat`. A `HYPERDRIVE` binding's connection string wins over `DATABASE_URL`. Database clients are scoped per request on Workers, because Workers cannot reuse I/O across requests, while Node dev keeps its pooled client. Hyperdrive query caching is disabled so session and auth reads are never stale. The per-request auth-storage check is memoized per isolate once it succeeds | Reviewer decision |
+| v0.6 previews | PR previews must never reach production data or secrets. Implementer previews deploy to a separate demo-only Worker, `tenboards-preview`, with no Hyperdrive binding and no auth secret, replacing `wrangler versions upload` on the production Worker, whose versions share production bindings and secrets | Reviewer decision |
 | Deferred | RBAC/multi-tenant, i18n/RTL, real CRUD, tests+CI — not before v0.6, each needs planning | Locked |
 | Defaults 1–10 | As listed in §9 | Locked by user ("lock all") |
 
