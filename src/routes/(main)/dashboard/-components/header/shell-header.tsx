@@ -8,6 +8,7 @@ import { SearchTrigger } from "@/components/navigation/search-trigger";
 import { SidebarTrigger, useSidebar } from "@/components/ui/sidebar";
 import type { DemoAccount } from "@/data/users";
 import type { AuthState } from "@/lib/auth/types";
+import { type ProjectNavigationData, projectLocation } from "@/navigation/project-destinations";
 import { projectRouteTitle, routeCatalog } from "@/navigation/route-catalog";
 
 import { AccountSwitcher } from "./account-switcher";
@@ -27,8 +28,18 @@ export function ShellHeader({ identity }: { identity: ShellIdentity }) {
     select: (state) =>
       state.matches.find((match) => match.routeId === "/(main)/dashboard/projects/$projectId")?.loaderData?.project,
   });
+  const navigation = useRouterState({
+    select: (s) =>
+      (
+        s.matches.find((m) => m.routeId === "/(main)/dashboard")?.loaderData as
+          | { navigation?: ProjectNavigationData }
+          | undefined
+      )?.navigation,
+  });
+  const projectName =
+    project?.name ?? navigation?.projects.find((p) => p.id === projectLocation(path)?.projectId)?.name;
   const view = path.split("/").filter(Boolean).at(-1) ?? "overview";
-  const projectTitle = project ? `Projects / ${project.name} / ${view[0].toUpperCase() + view.slice(1)}` : undefined;
+  const projectTitle = projectName ? `Projects / ${projectName} / ${view[0].toUpperCase() + view.slice(1)}` : undefined;
   const title =
     projectTitle ??
     routeCatalog.find((item) => item.path === path)?.label ??

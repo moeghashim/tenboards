@@ -7,7 +7,7 @@ import listPlugin from "@fullcalendar/react/list";
 import multiMonthPlugin from "@fullcalendar/react/multimonth";
 import timeGridPlugin from "@fullcalendar/react/timegrid";
 import { differenceInCalendarDays } from "date-fns";
-import { Calendar as CalendarIcon, ChevronLeft, ChevronRight, Plus, XIcon } from "lucide-react";
+import { ChevronLeft, ChevronRight, XIcon } from "lucide-react";
 
 import { EventCalendarViews } from "@/components/calendar/event-calendar-views";
 import { Button } from "@/components/ui/button";
@@ -28,11 +28,8 @@ const plugins = [dayGridPlugin, timeGridPlugin, listPlugin, interactionPlugin, m
 export function Calendar({
   renderedAt,
   templates,
-  calendars,
-  readOnly = false,
   taskEvents = noTaskEvents,
 }: CalendarData & {
-  readOnly?: boolean;
   taskEvents?: { id: string; title: string; start: string; end: string; allDay: boolean }[];
 }) {
   const [local, setLocal] = React.useState(false);
@@ -51,7 +48,6 @@ export function Calendar({
   );
   const controller = useCalendarController();
   const [eventCount, setEventCount] = React.useState(0);
-  const [selectedCalendar, setSelectedCalendar] = React.useState(calendars[0]?.value ?? "");
   const [dateInfo, setDateInfo] = React.useState(() => {
     const initial = new Date(renderedAt);
 
@@ -60,7 +56,7 @@ export function Calendar({
       days: new Date(Date.UTC(initial.getUTCFullYear(), initial.getUTCMonth() + 1, 0)).getUTCDate(),
     };
   });
-  const Title = readOnly ? "h3" : "h1";
+
   const title = dateInfo.title;
   const days = dateInfo.days;
 
@@ -68,36 +64,13 @@ export function Calendar({
     <div className="bg-card text-card-foreground flex min-w-0 flex-col overflow-hidden rounded-xl border">
       <div className="flex flex-col gap-4 border-b p-4 lg:flex-row lg:items-center lg:justify-between">
         <div className="flex min-w-0 shrink-0 flex-col gap-1">
-          <Title className="text-2xl font-medium tracking-tight">{title}</Title>
+          <h3 className="text-2xl font-medium tracking-tight">{title}</h3>
           <p className="text-muted-foreground text-sm">
             {days} days · {eventCount} events · {local ? "Local time" : "UTC"}
           </p>
         </div>
 
         <div className="flex flex-wrap items-center gap-2">
-          {!readOnly && calendars.length > 0 && (
-            <Select
-              value={selectedCalendar}
-              onValueChange={(value) => {
-                if (value !== null) setSelectedCalendar(value);
-              }}
-              items={calendars}
-            >
-              <SelectTrigger aria-label="Calendar" className="w-full sm:w-auto">
-                <CalendarIcon />
-                <SelectValue />
-              </SelectTrigger>
-              <SelectContent align="start" alignItemWithTrigger={false}>
-                <SelectGroup>
-                  {calendars.map((calendar) => (
-                    <SelectItem key={calendar.value} value={calendar.value}>
-                      {calendar.label}
-                    </SelectItem>
-                  ))}
-                </SelectGroup>
-              </SelectContent>
-            </Select>
-          )}
           <ButtonGroup>
             <Button size="icon" aria-label="Previous period" variant="outline" onClick={() => controller.prev()}>
               <ChevronLeft />
@@ -129,12 +102,6 @@ export function Calendar({
               </SelectGroup>
             </SelectContent>
           </Select>
-          {!readOnly && (
-            <Button>
-              <Plus />
-              Add event
-            </Button>
-          )}
         </div>
       </div>
 

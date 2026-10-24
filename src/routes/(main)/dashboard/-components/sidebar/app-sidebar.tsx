@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-import { Link, useRouter } from "@tanstack/react-router";
+import { Link, useRouter, useRouterState } from "@tanstack/react-router";
 
 import { BookOpen, CircleHelp, MessageCircle } from "lucide-react";
 import { useShallow } from "zustand/react/shallow";
@@ -16,18 +16,26 @@ import {
   SidebarTrigger,
   useSidebar,
 } from "@/components/ui/sidebar";
+import type { ProjectNavigationData } from "@/navigation/project-destinations";
 import { sidebarItems } from "@/navigation/sidebar/sidebar-items";
 import { usePreferencesStore } from "@/stores/preferences/preferences-provider";
 
 import { LayoutControls } from "../header/layout-controls";
 import { NavMain } from "./nav-main";
+import { useProjectExpansion } from "./project-expansion";
 import { SupportCard } from "./support-card";
 
 export function AppSidebar({
   authenticated = false,
+  navigation,
   ...props
-}: React.ComponentProps<typeof Sidebar> & { authenticated?: boolean }) {
+}: React.ComponentProps<typeof Sidebar> & { authenticated?: boolean; navigation: ProjectNavigationData }) {
   const router = useRouter();
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const expansion = useProjectExpansion(
+    navigation.projects.map((p) => p.id),
+    pathname,
+  );
   const { setOpenMobile } = useSidebar();
   useEffect(() => router.subscribe("onResolved", () => setOpenMobile(false)), [router, setOpenMobile]);
   const { sidebarVariant, sidebarCollapsible, isSynced } = usePreferencesStore(
@@ -46,7 +54,7 @@ export function AppSidebar({
       <SidebarHeader className="shell-sidebar-header gap-4 p-4">
         <div className="flex items-center gap-2">
           <Link
-            to="/dashboard/default"
+            to="/dashboard/home"
             aria-label="tenboards home"
             className="flex min-w-0 flex-1 items-center gap-3 rounded-lg group-data-[collapsible=icon]:hidden"
           >
@@ -61,11 +69,11 @@ export function AppSidebar({
       </SidebarHeader>
       <SidebarContent className="gap-1 px-3">
         <nav aria-label="Main navigation">
-          <NavMain items={sidebarItems} />
+          <NavMain items={sidebarItems} navigation={navigation} expansion={expansion} />
         </nav>
       </SidebarContent>
       <SidebarFooter className="gap-3 p-3">
-        <SupportCard authenticated={authenticated} />
+        <SupportCard authenticated={authenticated} projects={navigation.projects} />
         <div className="flex items-center gap-1 group-data-[collapsible=icon]:flex-col">
           <LayoutControls sidebar />
           <div className="ml-auto flex group-data-[collapsible=icon]:hidden">

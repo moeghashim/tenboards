@@ -1,27 +1,18 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { createServerFn } from "@tanstack/react-start";
+import { createFileRoute, redirect } from "@tanstack/react-router";
 
-import { PageHeader } from "../-components/app-pages/page-header";
-import { Tasks } from "./-components/tasks";
+import { requireAppRoute } from "@/lib/auth/app-route";
 
-const loadData = createServerFn({ method: "GET" }).handler(async () => {
-  const { requireSession } = await import("@/lib/auth/session.server");
-  await requireSession();
-  const { readTasks } = await import("@/server/data/tasks");
-  return readTasks();
-});
-
+import { searchSchema } from "../projects/-components/project-search";
 export const Route = createFileRoute("/(main)/dashboard/tasks")({
-  loader: () => loadData(),
-  component: Page,
+  beforeLoad: async ({ location }) => {
+    await requireAppRoute({ location });
+    throw redirect({
+      to: "/dashboard/projects/$projectId/list",
+      params: { projectId: "sample-operations" },
+      search: searchSchema.parse({ limit: 10 }),
+      hash: location.hash,
+      statusCode: 308,
+      replace: true,
+    });
+  },
 });
-
-function Page() {
-  const tasks = Route.useLoaderData();
-  return (
-    <div className="flex flex-col gap-4">
-      <PageHeader title="Tasks" description="Here's a list of your tasks for this month." />
-      <Tasks data={tasks} />
-    </div>
-  );
-}

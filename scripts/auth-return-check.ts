@@ -51,9 +51,15 @@ try {
     await page.getByLabel("Password", { exact: true }).fill(password);
     await page.getByLabel("Confirm Password", { exact: true }).fill(password);
     await page.getByRole("button", { name: "Register", exact: true }).click();
-    await page.waitForURL((url) => url.pathname + url.search + url.hash === destination, {
-      waitUntil: "domcontentloaded",
-    });
+    await page.waitForURL(
+      (url) =>
+        url.pathname === "/dashboard/projects/sample-operations/list" &&
+        url.hash === "#task-table" &&
+        !url.searchParams.has("search"),
+      {
+        waitUntil: "domcontentloaded",
+      },
+    );
     assert.equal(
       (await (await context.request.get(`${server.baseURL}/api/auth/get-session`)).json()).user.email,
       email,

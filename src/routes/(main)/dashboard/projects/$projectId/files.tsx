@@ -8,10 +8,10 @@ import { Input } from "@/components/ui/input";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { requireAppRoute } from "@/lib/auth/app-route";
 
-import { fileKindLabels } from "../../file-manager/-components/data";
-import { FileGridView } from "../../file-manager/-components/file-grid-view";
-import { FileListView } from "../../file-manager/-components/file-list-view";
-import { FoldersSection } from "../../file-manager/-components/folders-section";
+import { fileKindLabels } from "../-components/file-manager/data";
+import { FileGridView } from "../-components/file-manager/file-grid-view";
+import { FileListView } from "../-components/file-manager/file-list-view";
+import { FoldersSection } from "../-components/file-manager/folders-section";
 import { ProjectError, ProjectPending } from "../-components/project-boundaries";
 import { ProjectSelect } from "../-components/project-controls";
 import { loadProjectFiles } from "../-components/project-view-functions";
@@ -82,15 +82,14 @@ function Files() {
           <ToggleGroupItem value="list">List</ToggleGroupItem>
         </ToggleGroup>
       </div>
-      {!query && !kind && <FoldersSection folders={data.folders} readOnly />}
+      {!query && !kind && <FoldersSection folders={data.folders} />}
       <div className="flex items-center justify-between">
         <h3 className="font-medium">{query || kind ? "Search results" : "All files"}</h3>
         <p className="text-muted-foreground text-sm" role="status">
           {files.length} {files.length === 1 ? "file" : "files"}
         </p>
       </div>
-      {files.length > 0 &&
-        (view === "grid" ? <FileGridView files={files} readOnly /> : <FileListView files={files} readOnly />)}
+      {files.length > 0 && (view === "grid" ? <FileGridView files={files} /> : <FileListView files={files} />)}
       {!files.length && (
         <p className="text-muted-foreground">
           No matching files in {project?.name}. Clear search or choose another file type.

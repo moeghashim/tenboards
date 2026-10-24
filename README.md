@@ -269,25 +269,17 @@ Standalone tenboards Chat and its dashboard iframe use neutral conversation/thre
 
 ### Calendar page (v0.3 / 004)
 
-Calendar retains Month/Week/Day, Today/previous/next, demo calendar selection and more-events popovers. The card surface, named controls, full-contrast today marker and wrapping event titles use existing tokens. Month/week grids scroll horizontally within the calendar on small screens; Day fills the available width. Two additional demo meetings provide a crowded-day example, and the birthday fixture is Jordan Lee.
-
-A route-loader request timestamp is shared by SSR and hydration with an explicit initial UTC timezone; after hydration, the calendar adopts browser-local time and its real live clock. Civil-date demo events derive from that shared month instead of a module-startup clock. This fixes the demonstrated server/browser disagreement about today's cell without disabling SSR, suppressing warnings or freezing time. Calendar adapters remain intact. Add event and calendar filtering retain their existing placeholder behavior.
-
-`npm run screenshots -- --routes /dashboard/calendar --reload --interactions --timezone Pacific/Kiritimati --hydration-delay-ms 1800` verifies local Today, real now-marker positioning, views/navigation and crowded-day popovers. Interaction runs also save Week/Day/Month variant captures. Use `--base-url` to repeat on Workers.
+The former Calendar page now redirects to `/dashboard/projects/sample-operations/timeline?mode=calendar`. Read-only Month/Week/Day, Today/previous/next and more-events popovers retain their existing calendar adapters. SSR uses the serialized request UTC clock and adopts local time after hydration. Project schedule tests cover delayed real-clock hydration across timezones; there is no Add event or calendar-filter placeholder.
 
 
 ### Kanban page (v0.3 / 005)
 
-Kanban keeps query-addressable Board, List and Table views, local task/column/table ordering, cancellation rollback and table status edits. The compact toolbar, wrapping task content, textual priority badges and neutral team/owner treatments use semantic tokens; Jordan Lee replaces the author owner in every view and drag overlay. Board/table scrolling remains local on mobile, and empty columns show “No tasks.” Search/filter/sort/create controls retain their existing placeholder behavior.
-
-`npm run screenshots -- --routes /dashboard/kanban --search view=list --reload` captures a query-selected view (use `view=board` or `view=table` as needed). `--interactions` exercises keyboard moves/cancellation, desktop pointer movement, column/list/table ordering, status edits and empty-column states; it saves each view and the drag overlay. Active-drag captures preserve animation and viewport size so taking evidence does not end the gesture. Failed captures now also attempt a diagnostic PNG.
+The former Kanban page now redirects to the default project Board. Legacy `view=list` and `view=table` select the project List. Canonical Board/List use real filters and shared read-only tasks; legacy drag/drop, column reordering and status-edit composition has been removed. See the v0.8 sections below for controls and verification.
 
 
 ### Tasks page (v0.3 / 006)
 
-Tasks uses the shared page heading and a compact table with wrapping titles, textual semantic status/priority badges, named selection/search controls and a visible mobile column menu. Search and combined filters retain local state; empty results explain how to recover, Reset is neutral, and selected-count feedback remains live. The inherited Base UI sorting/clear-filter callbacks and column-menu label grouping are corrected at their usage sites. Row actions remain demo placeholders; no task records or dependencies change.
-
-`npm run screenshots -- --routes /dashboard/tasks --interactions` checks the known search/status/priority result, row and page selection, empty/reset states, Asc/Desc ordering, column visibility, page sizes, pagination and both filter clear actions. It also captures selected and empty variants.
+The former Tasks page now redirects to the default project List, discarding unvalidated legacy search. The project List exposes bounded URL filtering, task details and consistent status, priority and assignee presentation; it has no task mutation controls.
 
 
 ### Invoice page (v0.3 / 007)
@@ -301,7 +293,7 @@ The route loader creates fresh UTC civil-date defaults for each request and shar
 
 ### File Manager (v0.3 / 008)
 
-File Manager retains query-selected Grid/List views and compact folders. Filenames wrap; cards expose owner, date and sharing metadata, and mobile tables scroll locally with every column intact. Star buttons are always visible and expose pressed state; the menu uses the Base UI click callback. Neutral demo owners and matching initials appear in both views. Stars retain their view-local state and reset when remounting, as before. Search/filter, folder navigation, upload, download/share/trash remain demo placeholders. `npm run screenshots -- --base-url http://localhost:3000 --routes /dashboard/file-manager --reload --interactions` verifies query refresh, button/menu stars and mobile metadata.
+The former File Manager now redirects to default-project Files, retaining only validated `view=grid|list`. Project-owned file/folder presentation uses icons, avatar owners and read-only star/share metadata. Search/type filters work on scoped records. Legacy star toggles and upload/download/share/trash placeholders have been removed.
 
 
 ### Products (v0.3 / 009)
@@ -512,7 +504,7 @@ Follow [docs/deploy.md](docs/deploy.md) for local rehearsal, your own Neon/Hyper
 
 ## Projects data foundation (v0.8 / 001)
 
-The additive Projects model is available to server consumers; Board/List now consume it through guarded server functions; navigation consolidation is pending. `0015_project_foundation.sql` preserves the legacy workspace and auth tables and backfills canonical, namespaced tasks plus project file/calendar links. Run `npm run db:migrate` and `npm run db:seed` for local upgrades. Demo and database reads share validated contracts, with 29 registered reads / 211 parity scenarios.
+The additive Projects model is available to server consumers; Board/List now consume it through guarded server functions; navigation is integrated. `0015_project_foundation.sql` preserves the legacy workspace and auth tables and backfills canonical, namespaced tasks plus project file/calendar links. Run `npm run db:migrate` and `npm run db:seed` for local upgrades. Demo and database reads share validated contracts, with 29 registered reads / 211 parity scenarios.
 
 The original samples are Operations rollout (`sample-operations`), Documentation refresh (`sample-docs`) and the empty Research queue (`sample-empty`). Synthetic membership is display metadata, not an account or permission boundary. Both Kanban and ledger records remain traceable, including canceled tasks. Sample dates are projected from one stored anchor onto the request’s UTC day, identically in demo and DB modes. Both populated projects include overdue, today and upcoming work; most tasks have authored schedule spans. Adopter rows retain their actual dates. See [project data and migration details](docs/data.md).
 
@@ -522,9 +514,9 @@ The original samples are Operations rollout (`sample-operations`), Documentation
 
 Open `/dashboard/projects/sample-operations/board` or `/dashboard/projects/sample-operations/list` directly. The project selector also offers Documentation refresh and the empty Research queue. Board and List share canonical task IDs, statuses (including canceled), assignees, labels, due dates, subtasks and counts. Search, status/assignee/priority/label filters, sort and bounded pages use validated URL state; Board loads every matching task across bounded server reads; only List paginates (10/20/50 rows). Default search values are omitted from Board/List URLs. Progress states the eligible task denominator and the excluded canceled count; tasks without subtasks display an em dash. Search updates after a short typing pause. Filters use the shared Select controls. Compact Board cards omit empty counts and use circular assignee avatars, semantic priority badges, status dots and short task keys; List shares these cues. Task details open the existing keyboard-accessible dialog. There is no task creation, drag/drop, completion or edit endpoint.
 
-The existing Kanban and Tasks URLs still work. The project shell has one project-qualified header breadcrumb, status, member avatars and progress, and links Overview, Board, List, Timeline and Files; workspace Home/index and sidebar/palette consolidation ship in later layers. Unknown projects return an authorized 404. `/`, `/dashboard` and auth-success fallback retain `/dashboard/default`.
+The existing Kanban and Tasks URLs redirect permanently to the default project. The project shell has one project-qualified header breadcrumb, status, member avatars and progress, and links Overview, Board, List, Timeline and Files; workspace Home/index, nested sidebar navigation and project-qualified palette search are available. Unknown projects return an authorized 404. `/`, `/dashboard` and auth-success fallback retain `/dashboard/default`.
 
-Run `node --experimental-strip-types scripts/project-ui-check.ts http://localhost:3270` for project switching, filters, pagination, details/focus and responsive checks. `scripts/project-access-check.ts` checks route/RPC denial, validation, project scope and revocation against an isolated local auth database; `AUTH_TEST_RUNTIME=workerd` exercises the Worker build.
+Run `node --experimental-strip-types scripts/project-ui-check.ts http://localhost:3270` for project switching, filters, pagination, details/focus and responsive checks. `scripts/project-access-check.ts` checks route/RPC denial, validation, project scope and revocation against an isolated local auth database; `AUTH_TEST_RUNTIME=worker` exercises the Worker build.
 
 ## Project Overview, Timeline and Files (v0.8 / 003)
 
@@ -532,7 +524,7 @@ Run `node --experimental-strip-types scripts/project-ui-check.ts http://localhos
 
 `/timeline` offers segmented Gantt/Table/Calendar modes, with Table after mobile hydration unless a mode was explicitly chosen. Weeks/Months, 1–12 periods, date input and previous/next/Today controls change presentation without reloading task data. The initial range includes today and the project’s active span within the bounded range. Status-colored bars and a vertical Today marker align with the date axis. Rows outside the range are hidden in both chart and table; unscheduled work is available in a collapsible group below them. Search updates after a typing pause. Calendar reuses Month/Week/Day with project events and dated tasks, without Add event. Task dates and deadline metrics share the serialized request’s UTC day; event templates retain the existing UTC-to-local hydration behavior. Task/event identities are distinct and inclusive task ends become exclusive all-day calendar ends.
 
-`/files?view=grid|list` reuses the current file/folder displays with real local search/type filters. File-type icons, a read-only star marker and shared icons replace explanatory metadata labels. Grid/List uses a segmented switch; file types use the shared Select. Folder summaries remain display metadata; all loaded files remain at project root. There is no upload, download, share, rename or delete service. Old Calendar/File Manager URLs remain available until task005.
+`/files?view=grid|list` reuses the current file/folder displays with real local search/type filters. File-type icons, a read-only star marker and shared icons replace explanatory metadata labels. Grid/List uses a segmented switch; file types use the shared Select. Folder summaries remain display metadata; all loaded files remain at project root. There is no upload, download, share, rename or delete service. Old Calendar/File Manager URLs redirect to Timeline Calendar mode and project Files.
 
 `node --experimental-strip-types scripts/project-schedule-check.ts` tests civil-day spans, clipping, invalid inputs and timezone edges. `scripts/project-views-check.ts http://localhost:3270` covers all five links, index redirect, schedule identity, responsive/keyboard controls, Calendar modes, file filtering, empty projects and delayed direct/refresh hydration. Data parity is 29 reads / 211 scenarios.
 
@@ -544,6 +536,23 @@ Project progress uses completed / (total − canceled), with both the denominato
 
 `/dashboard/projects` provides debounced name/description search, a shared status Select, stable project ordering, progress, target dates and member summaries. No matching results can be reset, and the empty Research queue remains a real project with zero work. Both destinations and their server reads are independently guarded and read-only. The project summary card is shared with Home; no new runtime dependency or density override is introduced.
 
-Home and Projects are direct destinations until navigation consolidation in task 005. `/`, `/dashboard`, `/dashboard/` and the safe auth fallback still open `/dashboard/default`; the existing Default dashboard remains available.
-
 On desktop, Recent activity sits beneath My tasks beside Upcoming deadlines, keeping both work columns balanced; mobile keeps tasks, deadlines, progress and activity in reading order. Home and index cards share the project header’s eligible-task progress and readable member initials. Project breadcrumbs link Projects → project Overview → current view, with `aria-current` on the view. Default index search values are omitted from links.
+
+Primary navigation and the brand link open Home and Projects. `/`, `/dashboard`, `/dashboard/` and the safe auth fallback still open `/dashboard/default`; the existing Default dashboard remains available.
+
+## Project navigation and consolidation (v0.8 / 005)
+
+Primary navigation is Home → Projects → Email → Chat, with Assistant immediately after Chat when that feature is present. Default remains under Dashboards. The brand opens `/dashboard/home`; `/`, `/dashboard`, `/dashboard/` and auth fallback continue to `/dashboard/default`. Guarded summaries populate the Projects section and project-qualified command palette without fetching project data on public root/auth surfaces. Exploration counts include concrete project views, excluding aliases.
+
+Project buttons disclose Overview, Board, List, Timeline and Files. The active child matches an exact project/view; rail triggers open named keyboard-accessible popovers. Mobile disclosure keeps the sheet open, while navigation closes it. `tenboards:project-nav:v1` stores only expanded known IDs (maximum 50) in localStorage. Initial render opens the active ancestor, restores/prunes storage after hydration, tolerates corrupt/disabled storage, and opens an ancestor on project entry. Manual collapse persists across views of the same project until leaving and re-entering. Existing layout cookies remain unchanged.
+
+| Legacy URL | Permanent destination | Retained search |
+| --- | --- | --- |
+| `/dashboard/kanban` | `/dashboard/projects/sample-operations/board` | `view=list` or `table` selects `/list`; other values select Board |
+| `/dashboard/tasks` | `/dashboard/projects/sample-operations/list` | None |
+| `/dashboard/calendar` | `/dashboard/projects/sample-operations/timeline` | Explicit `mode=calendar` |
+| `/dashboard/file-manager` | `/dashboard/projects/sample-operations/files` | Valid `view=list|grid`, default grid |
+
+Redirects use 308 with replacement navigation and retained fragments. Auth may first send an unauthenticated request to login; authorized requests then follow the permanent redirect. Unknown keys are discarded. Unknown project IDs return authorized not-found rather than default-project data. Legacy workspace rows remain intact; only obsolete page compositions were removed.
+
+Run `scripts/project-navigation-check.ts` for disclosure/rail/mobile/palette/storage/layout checks and `scripts/project-redirect-check.ts` for demo/auth HTTP/client/query/hash/trailing-slash/revocation checks using Node's `--experimental-strip-types`. Capture patterns use concrete `sample-operations` paths in `src/navigation/route-catalog.ts`; redirect-only aliases are in `scripts/screenshot-routes.ts`. Secondary and empty projects are covered separately. Capture output belongs on `pr-assets`, not main.

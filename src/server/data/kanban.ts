@@ -1,7 +1,7 @@
 import { asc, eq } from "drizzle-orm";
 import { z } from "zod";
 
-import type { BoardState, Column } from "../../routes/(main)/dashboard/kanban/-components/types.ts";
+import type { BoardState, Column } from "../../routes/(main)/dashboard/projects/-components/kanban/types.ts";
 import { columns, initialBoard } from "../db/fixtures/kanban.ts";
 import { readSource } from "./source.ts";
 

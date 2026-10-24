@@ -14,6 +14,7 @@ import { getDashboardLayout } from "@/server/server-actions";
 
 import { ShellHeader } from "./-components/header/shell-header";
 import { AppSidebar } from "./-components/sidebar/app-sidebar";
+import { loadProjectNavigation } from "./projects/-components/workspace-functions";
 
 const getAccounts = createServerFn({ method: "GET" }).handler(async () => {
   const { requireSession } = await import("@/lib/auth/session.server");
@@ -35,7 +36,7 @@ export const Route = createFileRoute("/(main)/dashboard")({
       auth.mode === "auth" && auth.user
         ? { mode: "auth" as const, user: auth.user }
         : { mode: "demo" as const, accounts: await getAccounts() };
-    return { ...layout, identity };
+    return { ...layout, identity, navigation: await loadProjectNavigation() };
   },
   component: DashboardLayout,
 });
@@ -57,7 +58,12 @@ function DashboardLayout() {
         } as CSSProperties
       }
     >
-      <AppSidebar authenticated={identity.mode === "auth"} variant={variant} collapsible={collapsible} />
+      <AppSidebar
+        navigation={data.navigation}
+        authenticated={identity.mode === "auth"}
+        variant={variant}
+        collapsible={collapsible}
+      />
       <SidebarInset
         className={cn(
           "[html[data-content-layout=centered]_&>*]:mx-auto",

@@ -1,22 +1,18 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { createServerFn } from "@tanstack/react-start";
+import { createFileRoute, redirect } from "@tanstack/react-router";
 
-import { Calendar } from "./-components/calendar";
+import { requireAppRoute } from "@/lib/auth/app-route";
 
-const loadData = createServerFn({ method: "GET" }).handler(async () => {
-  const { requireSession } = await import("@/lib/auth/session.server");
-  await requireSession();
-  const { requestReference } = await import("@/server/request-reference.server");
-  const { readCalendar } = await import("@/server/data/calendar");
-  return readCalendar({ renderedAt: requestReference() });
-});
-
+import { timelineSearch } from "../projects/-components/timeline-search";
 export const Route = createFileRoute("/(main)/dashboard/calendar")({
-  loader: () => loadData(),
-  component: Page,
+  beforeLoad: async ({ location }) => {
+    await requireAppRoute({ location });
+    throw redirect({
+      to: "/dashboard/projects/$projectId/timeline",
+      params: { projectId: "sample-operations" },
+      search: timelineSearch.parse({ mode: "calendar" }),
+      hash: location.hash,
+      statusCode: 308,
+      replace: true,
+    });
+  },
 });
-
-function Page() {
-  const data = Route.useLoaderData();
-  return <Calendar {...data} />;
-}

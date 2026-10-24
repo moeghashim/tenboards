@@ -28,7 +28,7 @@ const emails: string[] = [];
 const password = testSecret();
 const newPassword = testSecret();
 const rpcFile = "/src/lib/auth/account-functions.ts";
-const dataFile = "/src/routes/(main)/dashboard/tasks/route.tsx";
+const dataFile = "/src/routes/(main)/dashboard/projects/-components/workspace-functions.ts";
 async function visit(page: Page) {
   await page.goto(`${server.baseURL}/dashboard/profile?tab=account`, { waitUntil: "domcontentloaded" });
   await page.getByLabel("Name", { exact: true }).waitFor();
@@ -171,7 +171,7 @@ try {
     .click();
   await page.getByRole("button", { name: "Confirm revocation", exact: true }).click();
   await page.getByText("Session revoked.", { exact: true }).waitFor();
-  assert.equal((await callRpc(other, dataFile, "loadData", "GET")).ok, false);
+  assert.equal((await callRpc(other, dataFile, "loadProjectNavigation", "GET")).ok, false);
   await other.goto(`${server.baseURL}/dashboard/tasks`, { waitUntil: "domcontentloaded" });
   assert.equal(new URL(other.url()).pathname, "/auth/v2/login");
   assert.equal(
@@ -194,7 +194,7 @@ try {
   await page.getByText("Password changed. Other browsers have been signed out.", { exact: true }).waitFor();
   assert.equal(await page.getByLabel("New password", { exact: true }).inputValue(), "");
   assert.equal((await get(page)).sessions.length, 1);
-  assert.equal((await callRpc(other, dataFile, "loadData", "GET")).ok, false);
+  assert.equal((await callRpc(other, dataFile, "loadProjectNavigation", "GET")).ok, false);
   const currentState = await a.storageState();
   await delay(10200);
   const old = await a2.request.post(`${server.baseURL}/api/auth/sign-in/email`, {
@@ -255,7 +255,7 @@ try {
   await page.waitForURL((url) => url.pathname === "/auth/v2/login");
   assert.equal(await (await a.request.get(`${server.baseURL}/api/auth/get-session`)).json(), null);
   assert.ok(!(await a.cookies()).some((c) => c.name === "better-auth.session_token"));
-  assert.equal((await callRpc(page, dataFile, "loadData", "GET")).ok, false);
+  assert.equal((await callRpc(page, dataFile, "loadProjectNavigation", "GET")).ok, false);
   pass("Current-session revoke propagates cleared cookie and invalidates direct RPC");
   assert.deepEqual(errors, []);
   await a.close();

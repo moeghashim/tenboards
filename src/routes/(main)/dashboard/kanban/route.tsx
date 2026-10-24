@@ -1,28 +1,24 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { createServerFn } from "@tanstack/react-start";
+import { createFileRoute, redirect } from "@tanstack/react-router";
 
-import { Kanban } from "./-components/kanban";
+import { requireAppRoute } from "@/lib/auth/app-route";
 
-const loadData = createServerFn({ method: "GET" }).handler(async () => {
-  const { requireSession } = await import("@/lib/auth/session.server");
-  await requireSession();
-  const { readKanban } = await import("@/server/data/kanban");
-  return readKanban();
-});
-
+import { searchSchema } from "../projects/-components/project-search";
 export const Route = createFileRoute("/(main)/dashboard/kanban")({
-  validateSearch: (search: Record<string, unknown>): { view: "board" | "list" | "table" } => ({
-    view: search.view === "list" || search.view === "table" ? search.view : "board",
-  }),
-  loader: () => loadData(),
-  component: Page,
+  beforeLoad: async ({ location }) => {
+    const view = (location.search as Record<string, unknown>).view;
+    await requireAppRoute({ location });
+    throw redirect({
+      to:
+        view === "list" || view === "table"
+          ? "/dashboard/projects/$projectId/list"
+          : "/dashboard/projects/$projectId/board",
+      params: { projectId: "sample-operations" },
+      search: searchSchema.parse({
+        limit: view === "list" || view === "table" ? 10 : 100,
+      }),
+      hash: location.hash,
+      statusCode: 308,
+      replace: true,
+    });
+  },
 });
-
-function Page() {
-  const { board: initialBoard, columns } = Route.useLoaderData();
-  return (
-    <div data-content-padding="false">
-      <Kanban initialBoard={initialBoard} columns={columns} />
-    </div>
-  );
-}

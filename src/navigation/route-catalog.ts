@@ -1,7 +1,7 @@
 import { sidebarItems } from "./sidebar/sidebar-items.ts";
 
 // Explicit coverage contract. Compare against generated metadata on every capture run.
-// Dynamic project routes use concrete capture paths; palette integration belongs to consolidation.
+// Dynamic project routes use concrete capture paths and guarded palette destinations.
 export const captureRoutes = [
   { route: "/dashboard/assistant", path: "/dashboard/assistant", ready: "What would you like to explore?" },
   { route: "/dashboard/home/", path: "/dashboard/home", ready: "My tasks" },
@@ -67,10 +67,6 @@ export const captureRoutes = [
     path: "/dashboard/analytics",
   },
   {
-    route: "/dashboard/calendar",
-    path: "/dashboard/calendar",
-  },
-  {
     route: "/dashboard/chat",
     path: "/dashboard/chat",
   },
@@ -92,10 +88,6 @@ export const captureRoutes = [
     path: "/dashboard/ecommerce",
   },
   {
-    route: "/dashboard/file-manager",
-    path: "/dashboard/file-manager",
-  },
-  {
     route: "/dashboard/finance",
     path: "/dashboard/finance",
   },
@@ -106,10 +98,6 @@ export const captureRoutes = [
   {
     route: "/dashboard/invoice",
     path: "/dashboard/invoice",
-  },
-  {
-    route: "/dashboard/kanban",
-    path: "/dashboard/kanban",
   },
   {
     route: "/dashboard/logistics",
@@ -138,10 +126,6 @@ export const captureRoutes = [
   {
     route: "/dashboard/roles",
     path: "/dashboard/roles",
-  },
-  {
-    route: "/dashboard/tasks",
-    path: "/dashboard/tasks",
   },
   {
     route: "/dashboard/users",
@@ -188,7 +172,7 @@ const extraLabels: Record<string, string> = {
 export const routeCatalog = captureRoutes
   .filter((entry) => !entry.route.includes("$projectId"))
   .map((entry) => {
-    const nav = navRoutes.find((item) => item.url === entry.route);
+    const nav = navRoutes.find((item) => item.url === entry.route.replace(/\/$/, ""));
     return {
       ...entry,
       label: extraLabels[entry.route] ?? nav?.title ?? entry.route,
@@ -197,7 +181,7 @@ export const routeCatalog = captureRoutes
     };
   });
 
-// Interim labels for direct project routes; guarded project-qualified shell navigation ships in 005.
+// Fallback for pending/error project loaders; successful headers use the guarded project name.
 export function projectRouteTitle(path: string) {
   const match = path.match(/^\/dashboard\/projects\/[^/]+(?:\/(overview|board|list|timeline|files))?\/?$/);
   if (!match) return undefined;

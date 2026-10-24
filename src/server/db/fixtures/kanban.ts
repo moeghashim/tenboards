@@ -2,7 +2,7 @@ import type {
   BoardState,
   Column,
   TaskOwnerProfile,
-} from "../../../routes/(main)/dashboard/kanban/-components/types.ts";
+} from "../../../routes/(main)/dashboard/projects/-components/kanban/types.ts";
 export const columns = [
   { id: "ideas", title: "Ideas" },
   { id: "planned", title: "Planned" },

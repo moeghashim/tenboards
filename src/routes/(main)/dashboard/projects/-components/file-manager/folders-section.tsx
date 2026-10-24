@@ -1,19 +1,11 @@
-import { Clock, Folder, MoreVertical } from "lucide-react";
+import { Clock, Folder } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
-import { Card, CardAction, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuGroup,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Empty, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from "@/components/ui/empty";
 
 import type { FileManagerFolder } from "./data";
 
-export function FoldersSection({ folders, readOnly = false }: { folders: FileManagerFolder[]; readOnly?: boolean }) {
+export function FoldersSection({ folders }: { folders: FileManagerFolder[] }) {
   return (
     <section className="flex flex-col gap-2" aria-labelledby="folders-heading">
       <div className="flex items-center justify-between">
@@ -36,24 +28,6 @@ export function FoldersSection({ folders, readOnly = false }: { folders: FileMan
                     <CardDescription className="text-xs">{folder.fileCount} files</CardDescription>
                   </div>
                 </div>
-                {!readOnly && (
-                  <CardAction>
-                    <DropdownMenu>
-                      <DropdownMenuTrigger
-                        render={<Button variant="ghost" size="icon-sm" aria-label={`Actions for ${folder.name}`} />}
-                      >
-                        <MoreVertical />
-                      </DropdownMenuTrigger>
-                      <DropdownMenuContent align="end">
-                        <DropdownMenuGroup>
-                          <DropdownMenuItem>Open folder</DropdownMenuItem>
-                          <DropdownMenuItem>Copy share link</DropdownMenuItem>
-                          <DropdownMenuItem>Rename</DropdownMenuItem>
-                        </DropdownMenuGroup>
-                      </DropdownMenuContent>
-                    </DropdownMenu>
-                  </CardAction>
-                )}
               </CardHeader>
               <CardContent className="text-muted-foreground flex flex-wrap items-center justify-between gap-2 text-xs">
                 <div className="flex items-center gap-1.5">
@@ -72,9 +46,7 @@ export function FoldersSection({ folders, readOnly = false }: { folders: FileMan
               <Folder />
             </EmptyMedia>
             <EmptyTitle>No folders yet</EmptyTitle>
-            <EmptyDescription>
-              {readOnly ? "No folders in this project." : "Create a folder to organize your files."}
-            </EmptyDescription>
+            <EmptyDescription>No folders in this project.</EmptyDescription>
           </EmptyHeader>
         </Empty>
       )}

@@ -1,4 +1,4 @@
-import type { Task } from "../../../routes/(main)/dashboard/tasks/-components/data.ts";
+import type { Task } from "../../../routes/(main)/dashboard/projects/-components/tasks/data.ts";
 export const tasks: Task[] = [
   {
     id: "TASK-8782",

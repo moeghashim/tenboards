@@ -2,21 +2,33 @@ import { useEffect, useState } from "react";
 
 import { useRouterState } from "@tanstack/react-router";
 
+import { type NavigationProject, projectPath, projectViews } from "@/navigation/project-destinations";
 import { sidebarItems } from "@/navigation/sidebar/sidebar-items";
 
-const demoPaths = new Set(
+const staticPaths = new Set(
   sidebarItems
     .flatMap((group) => group.items.flatMap((item) => item.subItems ?? [item]))
     .filter((item) => !item.disabled && item.url.startsWith("/dashboard/"))
     .map((item) => item.url),
 );
 
-export function SupportCard({ authenticated = false }: { authenticated?: boolean }) {
+export function SupportCard({
+  authenticated = false,
+  projects,
+}: {
+  authenticated?: boolean;
+  projects: NavigationProject[];
+}) {
+  const pathsKey = JSON.stringify([
+    ...staticPaths,
+    ...projects.flatMap((p) => projectViews.map((v) => projectPath(p.id, v.id))),
+  ]);
+  const demoPaths = new Set<string>(JSON.parse(pathsKey));
   const path = useRouterState({ select: (state) => state.location.pathname });
   const [visited, setVisited] = useState<Set<string>>(() => new Set());
   useEffect(() => {
-    if ([...demoPaths].some((url) => url === path)) setVisited((previous) => new Set([...previous, path]));
-  }, [path]);
+    if ((JSON.parse(pathsKey) as string[]).includes(path)) setVisited((previous) => new Set([...previous, path]));
+  }, [path, pathsKey]);
   return (
     <div className="space-y-2 rounded-xl border p-3 group-data-[collapsible=icon]:hidden">
       <div className="text-sm">{authenticated ? "Sample workspace" : "Demo mode"}</div>

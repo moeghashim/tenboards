@@ -27,3 +27,19 @@ export const loadProjectsIndex = createServerFn({ method: "GET" })
       ),
     };
   });
+
+export const loadProjectNavigation = createServerFn({ method: "GET" }).handler(async () => {
+  const { requireSession } = await import("@/lib/auth/session.server");
+  await requireSession();
+  const { readProjects } = await import("@/server/data/projects");
+  const { requestReference } = await import("@/server/request-reference.server");
+  try {
+    const projects = await readProjects({ renderedAt: requestReference() });
+    return {
+      projects: projects.map(({ id, name, status, favorite }) => ({ id, name, status, favorite })),
+      error: false,
+    };
+  } catch {
+    return { projects: [], error: true };
+  }
+});
