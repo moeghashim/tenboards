@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+
 import { cn } from "cn";
 import { BadgeCheck, CalendarDays, FileText, type LucideIcon, MessageSquare, Paperclip } from "lucide-react";
 
@@ -21,8 +23,11 @@ export function TaskCard({
   task,
   columnId,
   isOverlay = false,
+  footer,
 }: {
-  task: Task;
+  task: Pick<Task, "title" | "description" | "priority" | "dueDate" | "owner" | "insights"> &
+    Partial<Pick<Task, "progress" | "team">>;
+  footer?: ReactNode;
   columnId?: ColumnId;
   isOverlay?: boolean;
 }) {
@@ -79,7 +84,7 @@ export function TaskCard({
               <span className="leading-none">Progress</span>
               <span className="leading-none tabular-nums">{task.progress}%</span>
             </div>
-            <Progress value={task.progress} aria-label={`${task.title} progress`} />
+            <Progress value={task.progress ?? null} aria-label={`${task.title} progress`} />
           </div>
           <div className="flex flex-col gap-1.5">
             <div className="flex items-start justify-between gap-3">
@@ -104,7 +109,10 @@ export function TaskCard({
               <span className="text-muted-foreground text-sm">Team</span>
               <Badge
                 variant="secondary"
-                className={cn("rounded-md border-transparent px-2 font-medium", tagTones[task.team])}
+                className={cn(
+                  "rounded-md border-transparent px-2 font-medium",
+                  task.team ? tagTones[task.team] : undefined,
+                )}
               >
                 {task.team}
               </Badge>
@@ -139,6 +147,7 @@ export function TaskCard({
           </div>
         ) : null}
       </div>
+      {footer}
     </article>
   );
 }

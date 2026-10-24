@@ -8,7 +8,7 @@ import { SearchTrigger } from "@/components/navigation/search-trigger";
 import { SidebarTrigger, useSidebar } from "@/components/ui/sidebar";
 import type { DemoAccount } from "@/data/users";
 import type { AuthState } from "@/lib/auth/types";
-import { routeCatalog } from "@/navigation/route-catalog";
+import { projectRouteTitle, routeCatalog } from "@/navigation/route-catalog";
 
 import { AccountSwitcher } from "./account-switcher";
 import { GitHubRepositoriesMenu } from "./github-repositories-menu";
@@ -20,7 +20,7 @@ type ShellIdentity = { mode: "demo"; accounts: DemoAccount[] } | { mode: "auth";
 
 export function ShellHeader({ identity }: { identity: ShellIdentity }) {
   const path = useRouterState({ select: (state) => state.location.pathname });
-  const title = routeCatalog.find((item) => item.path === path)?.label ?? "Page not found";
+  const title = routeCatalog.find((item) => item.path === path)?.label ?? projectRouteTitle(path) ?? "Page not found";
   const { open, isMobile } = useSidebar();
   const toggleRef = useRef<HTMLButtonElement>(null);
   const toggleHadFocus = useRef(false);
