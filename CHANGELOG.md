@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.6 — Production runtime readiness (draft, unreleased)
+
+Tasks 001–003 are implementation readiness only. Reviewer task 004, hosted acceptance, production cutover and v0.6.0 release remain pending.
+
+- Scope Workers database and Better Auth instances to requests, preserving Node pooling and zero-config demo. Resolve Hyperdrive before direct URL and memoize only successful auth readiness.
+- Isolate PR previews on demo-only `tenboards-preview`, with clean builds and config/remote binding and secret guards before upload.
+- Add database-backed auth rate limits through migration `0013`, trusted Cloudflare IP policy, required hosted canonical HTTPS origin and Retry-After responses.
+- Add explicit remote/TLS migration and seed opt-in, read-only deployment smoke with optional account round-trip, and a reviewer runbook for atomic code/binding/secret staging and rollback.
+- Verify Node regressions, local workerd data/auth/concurrency/security, additive migration parity and full route/preset/hydration evidence. Local emulation does not prove hosted Neon/Hyperdrive pooling, TLS, cache or proxy behavior.
+
 ## v0.5 — Optional local authentication (2026-10-24)
 
 Release: [v0.5.0](https://github.com/moeghashim/tenboards/releases/tag/v0.5.0)
