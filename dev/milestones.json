@@ -141,6 +141,22 @@
         "004-account-sessions": "merged",
         "005-auth-acceptance": "merged"
       }
+    },
+    {
+      "id": "v0.6-production",
+      "status": "planned",
+      "tasks": [
+        "001-workers-database-runtime",
+        "002-preview-isolation-hardening",
+        "003-ops-docs-acceptance",
+        "004-production-cutover"
+      ],
+      "taskStatuses": {
+        "001-workers-database-runtime": "todo",
+        "002-preview-isolation-hardening": "todo",
+        "003-ops-docs-acceptance": "todo",
+        "004-production-cutover": "todo"
+      }
     }
   ]
 }

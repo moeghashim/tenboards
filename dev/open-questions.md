@@ -1,5 +1,13 @@
 # Open questions
 
+## 2026-10-24 — v0.6 production access and preview-rule reconciliation
+
+**Status: pending access for task 004 only; no unresolved product decision.** The six v0.6 PLAN Decisions log rows are the contract. The user creates Neon and supplies its direct connection URL only at cutover; reviewer Claude Opus 5.5 then provisions Hyperdrive, sets secrets, migrates/seeds, commits the nonsecret binding ID, deploys and releases. Do not request or record that URL in this planning PR. Tasks 001–003 can proceed after approval without production credentials; task 004 pauses until the handoff. See the [milestone contract](milestones/v0.6-production/README.md#open-questions-and-conflicts) and [reviewer-owned task](milestones/v0.6-production/004-production-cutover.md).
+
+**Preview conflict: resolved by PLAN precedence; tooling update pending task 002.** Current AGENTS/CONTRIBUTING and `preview:deploy` still describe version uploads on `tenboards`. The newer v0.6 previews decision requires `tenboards-preview` with no database bindings or secrets and wins immediately. Do not upload new PR versions to production using the stale command. This documentation-only planning PR cites an explicitly labeled existing immutable demo baseline. Task 001 must use an interim reviewed binding-free configuration targeting `tenboards-preview` for its version-preview gate, or record that gate as blocked; task 002 makes the isolated target permanent and updates contributor wording. No implementation or preview provisioning is authorized in this planning PR.
+
+Technical gates belong to their tasks: 001 proves Nitro binding/request propagation and auth/DB lifetimes; 002 proves preview configuration isolation and shared limiter storage; 003 verifies remote migration opt-in and safe secret/deployment/rollback ordering. A failure requiring scope expansion or a new dependency must be logged here and pause dependent work. Existing trusted-origin and enabled in-memory limiter behavior are preserved/hardened, not treated as missing features. No change to PLAN is proposed.
+
 ## 2026-10-23 — v0.1 / 012 full-matrix clock hydration blocker
 
 **Current status: resolved.** This historical finding is closed by the scoped v0.2/v0.3 fixes and the complete task 014 reconciliation below; original diagnosis and waiver history are retained.
