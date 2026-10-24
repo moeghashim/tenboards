@@ -1,0 +1,12 @@
+PASS HTTPS canonical configuration issues actual Secure/HttpOnly/host-only/Lax cookie (loopback HTTP transport checks headers only)
+PASS Real session refresh extends DB expiry and propagates persistent HttpOnly cookie
+PASS Forged Origin rejected: update-user
+PASS Forged Origin rejected: change-password
+PASS Forged Origin rejected: sign-out
+PASS Forged Origin rejected: revoke-session
+PASS SSR and account projection omit credentials/tokens/hashes/connection strings and are private no-store
+PASS Session mutation rejects extra identity fields and GET without revoking current session
+PASS Previously valid cookie fails closed during DB outage; no signed-out/demo downgrade
+PASS Same valid cookie recovers after DB configuration restoration
+PASS Signout emits cookie expiry and removes DB authority
+Auth security: 11/11 passing.

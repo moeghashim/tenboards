@@ -1,0 +1,30 @@
+[
+  {
+    "name": "auth-default",
+    "code": 0
+  },
+  {
+    "name": "auth-graphite",
+    "code": 0
+  },
+  {
+    "name": "auth-iris",
+    "code": 0
+  },
+  {
+    "name": "auth-pine",
+    "code": 0
+  },
+  {
+    "name": "variants",
+    "code": 0
+  },
+  {
+    "name": "hydration-Chicago",
+    "code": 0
+  },
+  {
+    "name": "hydration-Kiritimati",
+    "code": 0
+  }
+]

@@ -1,0 +1,167 @@
+{
+  "passing": true,
+  "sourceFiles": 461,
+  "canonicalFixtures": [
+    "academy",
+    "accounts",
+    "analytics",
+    "calendar",
+    "chat",
+    "crm",
+    "default",
+    "ecommerce",
+    "files",
+    "finance",
+    "infrastructure",
+    "invoices",
+    "kanban",
+    "logistics",
+    "mail",
+    "patients",
+    "productivity",
+    "products",
+    "profile",
+    "roles",
+    "tasks",
+    "users"
+  ],
+  "registeredReads": [
+    "readProductivity",
+    "readAcademy",
+    "readLogistics",
+    "readInfrastructure",
+    "readPatients",
+    "readDefault",
+    "readCrm",
+    "readFinance",
+    "readAnalytics",
+    "readMail",
+    "readChat",
+    "readKanban",
+    "readTasks",
+    "readFiles",
+    "readCalendar",
+    "readUsers",
+    "readRoles",
+    "readAccounts",
+    "readProfile",
+    "readProducts",
+    "readInvoices",
+    "readEcommerce"
+  ],
+  "scenarios": 130,
+  "loaderReads": [
+    {
+      "file": "src/routes/(main)/chat/route.tsx",
+      "module": "chat"
+    },
+    {
+      "file": "src/routes/(main)/dashboard/(legacy)/analytics-v1/route.tsx",
+      "module": "analytics"
+    },
+    {
+      "file": "src/routes/(main)/dashboard/(legacy)/crm-v1/route.tsx",
+      "module": "crm"
+    },
+    {
+      "file": "src/routes/(main)/dashboard/(legacy)/default-v1/route.tsx",
+      "module": "default"
+    },
+    {
+      "file": "src/routes/(main)/dashboard/(legacy)/finance-v1/route.tsx",
+      "module": "finance"
+    },
+    {
+      "file": "src/routes/(main)/dashboard/academy/route.tsx",
+      "module": "academy"
+    },
+    {
+      "file": "src/routes/(main)/dashboard/analytics/route.tsx",
+      "module": "analytics"
+    },
+    {
+      "file": "src/routes/(main)/dashboard/calendar/route.tsx",
+      "module": "calendar"
+    },
+    {
+      "file": "src/routes/(main)/dashboard/crm/route.tsx",
+      "module": "crm"
+    },
+    {
+      "file": "src/routes/(main)/dashboard/default/route.tsx",
+      "module": "default"
+    },
+    {
+      "file": "src/routes/(main)/dashboard/ecommerce/route.tsx",
+      "module": "ecommerce"
+    },
+    {
+      "file": "src/routes/(main)/dashboard/file-manager/route.tsx",
+      "module": "files"
+    },
+    {
+      "file": "src/routes/(main)/dashboard/finance/route.tsx",
+      "module": "finance"
+    },
+    {
+      "file": "src/routes/(main)/dashboard/infrastructure/route.tsx",
+      "module": "infrastructure"
+    },
+    {
+      "file": "src/routes/(main)/dashboard/invoice/route.tsx",
+      "module": "invoices"
+    },
+    {
+      "file": "src/routes/(main)/dashboard/kanban/route.tsx",
+      "module": "kanban"
+    },
+    {
+      "file": "src/routes/(main)/dashboard/logistics/route.tsx",
+      "module": "logistics"
+    },
+    {
+      "file": "src/routes/(main)/dashboard/patient-monitoring/route.tsx",
+      "module": "patients"
+    },
+    {
+      "file": "src/routes/(main)/dashboard/productivity/route.tsx",
+      "module": "productivity"
+    },
+    {
+      "file": "src/routes/(main)/dashboard/products/route.tsx",
+      "module": "products"
+    },
+    {
+      "file": "src/routes/(main)/dashboard/profile/route.tsx",
+      "module": "profile"
+    },
+    {
+      "file": "src/routes/(main)/dashboard/roles/route.tsx",
+      "module": "roles"
+    },
+    {
+      "file": "src/routes/(main)/dashboard/route.tsx",
+      "module": "accounts"
+    },
+    {
+      "file": "src/routes/(main)/dashboard/tasks/route.tsx",
+      "module": "tasks"
+    },
+    {
+      "file": "src/routes/(main)/dashboard/users/route.tsx",
+      "module": "users"
+    },
+    {
+      "file": "src/routes/(main)/mail/route.tsx",
+      "module": "mail"
+    }
+  ],
+  "clientFixtureViolations": [],
+  "clientSignalExceptions": [
+    "waveform-data.ts",
+    "realtime-utils.ts",
+    "use-patient-vital-series.ts",
+    "use-realtime-tick.ts"
+  ],
+  "manualAudit": "Companion literal/array evidence classifies UI configuration, geometry and signal labels; no business records are excluded by filename."
+}

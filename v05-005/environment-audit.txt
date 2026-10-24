@@ -1,0 +1,9 @@
+DATABASE_URL: absent from capture/deploy shell environment
+DATA_SOURCE: absent from capture/deploy shell environment
+BETTER_AUTH_SECRET: absent from capture/deploy shell environment
+BETTER_AUTH_URL: absent from capture/deploy shell environment
+GOOGLE_CLIENT_ID: absent from capture/deploy shell environment
+GOOGLE_CLIENT_SECRET: absent from capture/deploy shell environment
+GITHUB_CLIENT_ID: absent from capture/deploy shell environment
+GITHUB_CLIENT_SECRET: absent from capture/deploy shell environment
+Root .env absent. Matrix checkouts contain no .env. DB matrix sets only DATABASE_URL and TZ explicitly.

@@ -1,0 +1,8 @@
+
+> tenboards@0.4.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://localhost:3003 --preset graphite --routes /dashboard/chat --output /Users/moeghashim/tenboards/screenshots/v05-005/matrix/retries/db-graphite-chat
+
+PASS /dashboard/chat light/desktop direct
+PASS /dashboard/chat light/mobile direct
+PASS /dashboard/chat dark/desktop direct
+PASS /dashboard/chat dark/mobile direct

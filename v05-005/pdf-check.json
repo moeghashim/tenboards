@@ -1,0 +1,74 @@
+[
+  {
+    "file": "matrix/supplement/db/variants/_dashboard_invoice-dark-desktop-interactive-print.pdf",
+    "pages": 1,
+    "expectedTotal": true,
+    "longDescription": true
+  },
+  {
+    "file": "matrix/supplement/db/variants/_dashboard_invoice-dark-mobile-interactive-print.pdf",
+    "pages": 1,
+    "expectedTotal": true,
+    "longDescription": true
+  },
+  {
+    "file": "matrix/supplement/db/variants/_dashboard_invoice-light-desktop-interactive-print.pdf",
+    "pages": 1,
+    "expectedTotal": true,
+    "longDescription": true
+  },
+  {
+    "file": "matrix/supplement/db/variants/_dashboard_invoice-light-mobile-interactive-print.pdf",
+    "pages": 1,
+    "expectedTotal": true,
+    "longDescription": true
+  },
+  {
+    "file": "matrix/supplement/dev/variants/_dashboard_invoice-dark-desktop-interactive-print.pdf",
+    "pages": 1,
+    "expectedTotal": true,
+    "longDescription": true
+  },
+  {
+    "file": "matrix/supplement/dev/variants/_dashboard_invoice-dark-mobile-interactive-print.pdf",
+    "pages": 1,
+    "expectedTotal": true,
+    "longDescription": true
+  },
+  {
+    "file": "matrix/supplement/dev/variants/_dashboard_invoice-light-desktop-interactive-print.pdf",
+    "pages": 1,
+    "expectedTotal": true,
+    "longDescription": true
+  },
+  {
+    "file": "matrix/supplement/dev/variants/_dashboard_invoice-light-mobile-interactive-print.pdf",
+    "pages": 1,
+    "expectedTotal": true,
+    "longDescription": true
+  },
+  {
+    "file": "matrix/supplement/workers/variants/_dashboard_invoice-dark-desktop-interactive-print.pdf",
+    "pages": 1,
+    "expectedTotal": true,
+    "longDescription": true
+  },
+  {
+    "file": "matrix/supplement/workers/variants/_dashboard_invoice-dark-mobile-interactive-print.pdf",
+    "pages": 1,
+    "expectedTotal": true,
+    "longDescription": true
+  },
+  {
+    "file": "matrix/supplement/workers/variants/_dashboard_invoice-light-desktop-interactive-print.pdf",
+    "pages": 1,
+    "expectedTotal": true,
+    "longDescription": true
+  },
+  {
+    "file": "matrix/supplement/workers/variants/_dashboard_invoice-light-mobile-interactive-print.pdf",
+    "pages": 1,
+    "expectedTotal": true,
+    "longDescription": true
+  }
+]

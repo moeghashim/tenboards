@@ -1,0 +1,16 @@
+{
+  "baseURL": "https://ad11a46d-tenboards.mohanadgh.workers.dev",
+  "binding": "ASSETS only (preview-final.log)",
+  "results": [
+    {
+      "path": "/dashboard/default",
+      "status": 200
+    },
+    {
+      "path": "/api/auth/get-session",
+      "status": 404
+    }
+  ],
+  "checks": "Mozilla-UA Python HTTP and T3 browser fetch agree",
+  "earlierProbe": "Initial default-UA Python probe assertion failed; status not retained. Explicit UA retry and browser fetch both passed."
+}

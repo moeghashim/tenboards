@@ -1,0 +1,12 @@
+[
+  {
+    "path": "/dashboard/default",
+    "status": 200,
+    "bodyPreview": "<!DOCTYPE html><html lang=\"en\" data-theme-mode=\"light\" data-theme-preset=\"default\" data-content-layout=\"centered\" data-navbar-style=\"sticky\" data-sidebar-varian"
+  },
+  {
+    "path": "/api/auth/get-session",
+    "status": 404,
+    "bodyPreview": "{\"message\":\"Authentication is disabled in this demo.\"}"
+  }
+]

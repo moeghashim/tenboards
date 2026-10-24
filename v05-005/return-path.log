@@ -1,0 +1,5 @@
+PASS v1 recovered fragment survives login/register cross-links
+PASS v1 real signup returns to protected pathname/search/hash
+PASS v2 recovered fragment survives login/register cross-links
+PASS v2 real signup returns to protected pathname/search/hash
+Auth return paths: 4/4 passing.

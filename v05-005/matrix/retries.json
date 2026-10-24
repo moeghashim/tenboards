@@ -1,0 +1,47 @@
+[
+  {
+    "environment": "dev",
+    "preset": "default",
+    "report": "supplement/dev/auth-default/report.json"
+  },
+  {
+    "environment": "dev",
+    "preset": "graphite",
+    "report": "supplement/dev/auth-graphite/report.json"
+  },
+  {
+    "environment": "dev",
+    "preset": "pine",
+    "report": "supplement/dev/auth-pine/report.json"
+  },
+  {
+    "environment": "dev",
+    "preset": "iris",
+    "report": "supplement/dev/auth-iris/report.json"
+  },
+  {
+    "environment": "db",
+    "preset": "default",
+    "report": "supplement/db/auth-default/report.json"
+  },
+  {
+    "environment": "db",
+    "preset": "graphite",
+    "report": "supplement/db/auth-graphite/report.json"
+  },
+  {
+    "environment": "db",
+    "preset": "pine",
+    "report": "supplement/db/auth-pine/report.json"
+  },
+  {
+    "environment": "db",
+    "preset": "iris",
+    "report": "supplement/db/auth-iris/report.json"
+  },
+  {
+    "environment": "db",
+    "preset": "graphite",
+    "report": "retries/db-graphite-chat/report.json"
+  }
+]

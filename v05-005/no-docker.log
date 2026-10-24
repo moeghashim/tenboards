@@ -1,0 +1,8 @@
+ Container tenboards-postgres-1 Stopping 
+ Container tenboards-postgres-1 Stopped 
+ Container tenboards-postgres-1 Starting 
+ Container tenboards-postgres-1 Started 
+ Container tenboards-postgres-1 Waiting 
+ Container tenboards-postgres-1 Healthy 
+PASS zero-env with project Postgres stopped: /dashboard/default 200
+PASS zero-env with project Postgres stopped: /api/auth/get-session 404

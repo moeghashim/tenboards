@@ -1,0 +1,809 @@
+{
+  "baseURL": "http://localhost:3003/",
+  "fontAssets": "exact public responses cached between contexts",
+  "maskedLiveClocks": false,
+  "hydrationDelayMs": 0,
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": false,
+  "interactions": true,
+  "results": [
+    {
+      "route": "/dashboard/chat",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_chat-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_chat-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Iframe preset/theme and no page overflow",
+        "Conversation selection, multiline composer and note tab",
+        "Profile Escape and trigger focus return",
+        "Mobile back returns row focus; hidden list/thread/contact panels inert",
+        "Existing sends/search/filter remain demo behavior"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/chat",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_chat-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_chat-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Iframe preset/theme and no page overflow",
+        "Conversation selection, multiline composer and note tab",
+        "Profile Escape and trigger focus return",
+        "Mobile back returns row focus; hidden list/thread/contact panels inert",
+        "Existing sends/search/filter remain demo behavior"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/chat",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_chat-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_chat-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Iframe preset/theme and no page overflow",
+        "Conversation selection, multiline composer and note tab",
+        "Profile Escape and trigger focus return",
+        "Mobile back returns row focus; hidden list/thread/contact panels inert",
+        "Existing sends/search/filter remain demo behavior"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/chat",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_chat-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_chat-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Iframe preset/theme and no page overflow",
+        "Conversation selection, multiline composer and note tab",
+        "Profile Escape and trigger focus return",
+        "Mobile back returns row focus; hidden list/thread/contact panels inert",
+        "Existing sends/search/filter remain demo behavior"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_default-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_default-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Sidebar expansion/names/visible 2px focus; palette arrows/Escape/focus return",
+        "Settings native radio/select keyboard access, focus trap/return; reduced motion <=1ms",
+        "Theme/preset/font state persists after refresh",
+        "Customer search empty/reset; segment selector remains local"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_default-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_default-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Sidebar expansion/names/visible 2px focus; palette arrows/Escape/focus return",
+        "Settings native radio/select keyboard access, focus trap/return; reduced motion <=1ms",
+        "Theme/preset/font state persists after refresh",
+        "Customer search empty/reset; segment selector remains local"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_default-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_default-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Sidebar expansion/names/visible 2px focus; palette arrows/Escape/focus return",
+        "Settings native radio/select keyboard access, focus trap/return; reduced motion <=1ms",
+        "Theme/preset/font state persists after refresh",
+        "Customer search empty/reset; segment selector remains local"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_default-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_default-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Sidebar expansion/names/visible 2px focus; palette arrows/Escape/focus return",
+        "Settings native radio/select keyboard access, focus trap/return; reduced motion <=1ms",
+        "Theme/preset/font state persists after refresh",
+        "Customer search empty/reset; segment selector remains local"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/invoice",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_invoice-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_invoice-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Date edited 2026-10-24 → 2026-10-25 as a civil date",
+        "Client changed; multiline description and quantity/price edits",
+        "Add/remove items, GST 18%, discount 10%; totals $2,538.18 → $945.18",
+        "Keyboard reorder and cancellation preserve values/totals",
+        "Preview/print content agrees; Jordan Lee issuer",
+        "Paper text contrast 19.80 / 7.81 / 18.16:1",
+        "Print PDF exported and screen portal hidden; no page overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/invoice",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_invoice-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_invoice-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Date edited 2026-10-24 → 2026-10-25 as a civil date",
+        "Client changed; multiline description and quantity/price edits",
+        "Add/remove items, GST 18%, discount 10%; totals $2,538.18 → $945.18",
+        "Keyboard reorder and cancellation preserve values/totals",
+        "Preview/print content agrees; Jordan Lee issuer",
+        "Paper text contrast 19.80 / 7.81 / 18.16:1",
+        "Print PDF exported and screen portal hidden; no page overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/invoice",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_invoice-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_invoice-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Date edited 2026-10-24 → 2026-10-25 as a civil date",
+        "Client changed; multiline description and quantity/price edits",
+        "Add/remove items, GST 18%, discount 10%; totals $2,538.18 → $945.18",
+        "Keyboard reorder and cancellation preserve values/totals",
+        "Preview/print content agrees; Jordan Lee issuer",
+        "Paper text contrast 19.80 / 7.81 / 18.16:1",
+        "Print PDF exported and screen portal hidden; no page overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/invoice",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_invoice-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_invoice-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Date edited 2026-10-24 → 2026-10-25 as a civil date",
+        "Client changed; multiline description and quantity/price edits",
+        "Add/remove items, GST 18%, discount 10%; totals $2,538.18 → $945.18",
+        "Keyboard reorder and cancellation preserve values/totals",
+        "Preview/print content agrees; Jordan Lee issuer",
+        "Paper text contrast 19.80 / 7.81 / 18.16:1",
+        "Print PDF exported and screen portal hidden; no page overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/mail",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_mail-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_mail-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Standalone/iframe theme and preset match; no page overflow",
+        "Keyboard selection, attachments and reply menu/composer",
+        "Resizable panels persist layout cookie; empty selection and reselection",
+        "Existing search/filter/send actions remain demo placeholders"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/mail",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_mail-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_mail-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Standalone/iframe theme and preset match; no page overflow",
+        "Keyboard selection, attachments and reply menu/composer",
+        "Mobile Escape restores row focus; drawer reopens",
+        "Existing search/filter/send actions remain demo placeholders"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/mail",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_mail-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_mail-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Standalone/iframe theme and preset match; no page overflow",
+        "Keyboard selection, attachments and reply menu/composer",
+        "Resizable panels persist layout cookie; empty selection and reselection",
+        "Existing search/filter/send actions remain demo placeholders"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/mail",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_mail-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_mail-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Standalone/iframe theme and preset match; no page overflow",
+        "Keyboard selection, attachments and reply menu/composer",
+        "Mobile Escape restores row focus; drawer reopens",
+        "Existing search/filter/send actions remain demo placeholders"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/profile",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_profile-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_profile-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "All six tabs keyboard reachable and captured; no page overflow",
+        "Neutral name, emails, initials and updater; coherent emergency contact",
+        "Header menu Escape restores focus; mail link matches demo identity",
+        "Document metadata/actions scroll locally; restricted state is explicitly demo-only"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/profile",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_profile-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_profile-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "All six tabs keyboard reachable and captured; no page overflow",
+        "Neutral name, emails, initials and updater; coherent emergency contact",
+        "Header menu Escape restores focus; mail link matches demo identity",
+        "Document metadata/actions scroll locally; restricted state is explicitly demo-only"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/profile",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_profile-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_profile-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "All six tabs keyboard reachable and captured; no page overflow",
+        "Neutral name, emails, initials and updater; coherent emergency contact",
+        "Header menu Escape restores focus; mail link matches demo identity",
+        "Document metadata/actions scroll locally; restricted state is explicitly demo-only"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/profile",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_profile-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_profile-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "All six tabs keyboard reachable and captured; no page overflow",
+        "Neutral name, emails, initials and updater; coherent emergency contact",
+        "Header menu Escape restores focus; mail link matches demo identity",
+        "Document metadata/actions scroll locally; restricted state is explicitly demo-only"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/tasks",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_tasks-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_tasks-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Search + Todo + High returns TASK-7839; Space selects row",
+        "No results and Reset preserve selected count",
+        "Asc/Desc sorting and column visibility",
+        "Page size 20, next/previous and desktop first/last pages",
+        "Both filter Clear actions work; row action menu remains demo",
+        "No page overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/tasks",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_tasks-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_tasks-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Search + Todo + High returns TASK-7839; Space selects row",
+        "No results and Reset preserve selected count",
+        "Asc/Desc sorting and column visibility",
+        "Page size 20, next/previous and desktop first/last pages",
+        "Both filter Clear actions work; row action menu remains demo",
+        "No page overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/tasks",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_tasks-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_tasks-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Search + Todo + High returns TASK-7839; Space selects row",
+        "No results and Reset preserve selected count",
+        "Asc/Desc sorting and column visibility",
+        "Page size 20, next/previous and desktop first/last pages",
+        "Both filter Clear actions work; row action menu remains demo",
+        "No page overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/tasks",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_tasks-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_tasks-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Search + Todo + High returns TASK-7839; Space selects row",
+        "No results and Reset preserve selected count",
+        "Asc/Desc sorting and column visibility",
+        "Page size 20, next/previous and desktop first/last pages",
+        "Both filter Clear actions work; row action menu remains demo",
+        "No page overflow"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v1/login",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_auth_v1_login-light-desktop-interactive.png",
+      "controlsFile": "_auth_v1_login-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Labels, masked passwords and email/current/new-password autofill verified",
+        "Empty and mismatched-password errors; error association and local demo submission verified",
+        "Google remains demo-only; keyboard crosslink works",
+        "360×500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v1/login",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_auth_v1_login-light-mobile-interactive.png",
+      "controlsFile": "_auth_v1_login-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Labels, masked passwords and email/current/new-password autofill verified",
+        "Empty and mismatched-password errors; error association and local demo submission verified",
+        "Google remains demo-only; keyboard crosslink works",
+        "360×500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v1/login",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_auth_v1_login-dark-desktop-interactive.png",
+      "controlsFile": "_auth_v1_login-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Labels, masked passwords and email/current/new-password autofill verified",
+        "Empty and mismatched-password errors; error association and local demo submission verified",
+        "Google remains demo-only; keyboard crosslink works",
+        "360×500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v1/login",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_auth_v1_login-dark-mobile-interactive.png",
+      "controlsFile": "_auth_v1_login-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Labels, masked passwords and email/current/new-password autofill verified",
+        "Empty and mismatched-password errors; error association and local demo submission verified",
+        "Google remains demo-only; keyboard crosslink works",
+        "360×500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v1/register",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_auth_v1_register-light-desktop-interactive.png",
+      "controlsFile": "_auth_v1_register-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Labels, masked passwords and email/current/new-password autofill verified",
+        "Empty and mismatched-password errors; error association and local demo submission verified",
+        "Google remains demo-only; keyboard crosslink works",
+        "360×500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v1/register",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_auth_v1_register-light-mobile-interactive.png",
+      "controlsFile": "_auth_v1_register-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Labels, masked passwords and email/current/new-password autofill verified",
+        "Empty and mismatched-password errors; error association and local demo submission verified",
+        "Google remains demo-only; keyboard crosslink works",
+        "360×500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v1/register",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_auth_v1_register-dark-desktop-interactive.png",
+      "controlsFile": "_auth_v1_register-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Labels, masked passwords and email/current/new-password autofill verified",
+        "Empty and mismatched-password errors; error association and local demo submission verified",
+        "Google remains demo-only; keyboard crosslink works",
+        "360×500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v1/register",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_auth_v1_register-dark-mobile-interactive.png",
+      "controlsFile": "_auth_v1_register-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Labels, masked passwords and email/current/new-password autofill verified",
+        "Empty and mismatched-password errors; error association and local demo submission verified",
+        "Google remains demo-only; keyboard crosslink works",
+        "360×500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v2/login",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_auth_v2_login-light-desktop-interactive.png",
+      "controlsFile": "_auth_v2_login-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Labels, masked passwords and email/current/new-password autofill verified",
+        "Empty and mismatched-password errors; error association and local demo submission verified",
+        "Google remains demo-only; keyboard crosslink works",
+        "360×500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v2/login",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_auth_v2_login-light-mobile-interactive.png",
+      "controlsFile": "_auth_v2_login-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Labels, masked passwords and email/current/new-password autofill verified",
+        "Empty and mismatched-password errors; error association and local demo submission verified",
+        "Google remains demo-only; keyboard crosslink works",
+        "360×500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v2/login",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_auth_v2_login-dark-desktop-interactive.png",
+      "controlsFile": "_auth_v2_login-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Labels, masked passwords and email/current/new-password autofill verified",
+        "Empty and mismatched-password errors; error association and local demo submission verified",
+        "Google remains demo-only; keyboard crosslink works",
+        "360×500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v2/login",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_auth_v2_login-dark-mobile-interactive.png",
+      "controlsFile": "_auth_v2_login-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Labels, masked passwords and email/current/new-password autofill verified",
+        "Empty and mismatched-password errors; error association and local demo submission verified",
+        "Google remains demo-only; keyboard crosslink works",
+        "360×500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v2/register",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_auth_v2_register-light-desktop-interactive.png",
+      "controlsFile": "_auth_v2_register-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Labels, masked passwords and email/current/new-password autofill verified",
+        "Empty and mismatched-password errors; error association and local demo submission verified",
+        "Google remains demo-only; keyboard crosslink works",
+        "360×500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v2/register",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_auth_v2_register-light-mobile-interactive.png",
+      "controlsFile": "_auth_v2_register-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Labels, masked passwords and email/current/new-password autofill verified",
+        "Empty and mismatched-password errors; error association and local demo submission verified",
+        "Google remains demo-only; keyboard crosslink works",
+        "360×500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v2/register",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_auth_v2_register-dark-desktop-interactive.png",
+      "controlsFile": "_auth_v2_register-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Labels, masked passwords and email/current/new-password autofill verified",
+        "Empty and mismatched-password errors; error association and local demo submission verified",
+        "Google remains demo-only; keyboard crosslink works",
+        "360×500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v2/register",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_auth_v2_register-dark-mobile-interactive.png",
+      "controlsFile": "_auth_v2_register-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Labels, masked passwords and email/current/new-password autofill verified",
+        "Empty and mismatched-password errors; error association and local demo submission verified",
+        "Google remains demo-only; keyboard crosslink works",
+        "360×500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "qa:root-not-found",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "qa_root-not-found-light-desktop-interactive.png",
+      "controlsFile": "qa_root-not-found-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Distinct system heading and no page overflow",
+        "Existing recovery link navigates by keyboard when provided"
+      ],
+      "expectedDiagnostics": [
+        "console: Failed to load resource: the server responded with a status of 404 ()"
+      ],
+      "errors": []
+    },
+    {
+      "route": "qa:root-not-found",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "qa_root-not-found-light-mobile-interactive.png",
+      "controlsFile": "qa_root-not-found-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Distinct system heading and no page overflow",
+        "Existing recovery link navigates by keyboard when provided"
+      ],
+      "expectedDiagnostics": [
+        "console: Failed to load resource: the server responded with a status of 404 ()"
+      ],
+      "errors": []
+    },
+    {
+      "route": "qa:root-not-found",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "qa_root-not-found-dark-desktop-interactive.png",
+      "controlsFile": "qa_root-not-found-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Distinct system heading and no page overflow",
+        "Existing recovery link navigates by keyboard when provided"
+      ],
+      "expectedDiagnostics": [
+        "console: Failed to load resource: the server responded with a status of 404 ()"
+      ],
+      "errors": []
+    },
+    {
+      "route": "qa:root-not-found",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "qa_root-not-found-dark-mobile-interactive.png",
+      "controlsFile": "qa_root-not-found-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Distinct system heading and no page overflow",
+        "Existing recovery link navigates by keyboard when provided"
+      ],
+      "expectedDiagnostics": [
+        "console: Failed to load resource: the server responded with a status of 404 ()"
+      ],
+      "errors": []
+    },
+    {
+      "route": "qa:root-error",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "qa_root-error-light-desktop-interactive.png",
+      "controlsFile": "qa_root-error-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Actual root boundary caught an ephemeral QA component fault; keyboard Try again restored dashboard",
+        "Expected QA exception isolated; production error text is generic; no app error trigger"
+      ],
+      "expectedDiagnostics": [
+        "console: %o\n\n%s\n\n%s\n Error: QA_ONLY_ROOT_ERROR\n    at target.options.component (eval at evaluate (:370:30), <anonymous>:10:15)\n    at Object.react_stack_bottom_frame (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:14142:12)\n    at renderWithHooks (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:4400:19)\n    at updateFunctionComponent (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:5775:16)\n    at beginWork (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:6391:20)\n    at runWithFiberInDEV (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:944:66)\n    at performUnitOfWork (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:9148:92)\n    at workLoopSync (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:9044:37)\n    at renderRootSync (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:9028:6)\n    at performWorkOnRoot (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:8715:27) The above error occurred in one of your React components. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.",
+        "console: %o\n\n%s\n\n%s\n Error: QA_ONLY_ROOT_ERROR\n    at target.options.component (eval at evaluate (:370:30), <anonymous>:10:15)\n    at Object.react_stack_bottom_frame (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:14142:12)\n    at renderWithHooks (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:4400:19)\n    at updateFunctionComponent (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:5775:16)\n    at beginWork (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:6391:20)\n    at runWithFiberInDEV (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:944:66)\n    at performUnitOfWork (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:9148:92)\n    at workLoopSync (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:9044:37)\n    at renderRootSync (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:9028:6)\n    at performWorkOnRoot (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:8715:27) The above error occurred in one of your React components. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary."
+      ],
+      "errors": []
+    },
+    {
+      "route": "qa:root-error",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "qa_root-error-light-mobile-interactive.png",
+      "controlsFile": "qa_root-error-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Actual root boundary caught an ephemeral QA component fault; keyboard Try again restored dashboard",
+        "Expected QA exception isolated; production error text is generic; no app error trigger"
+      ],
+      "expectedDiagnostics": [
+        "console: %o\n\n%s\n\n%s\n Error: QA_ONLY_ROOT_ERROR\n    at target.options.component (eval at evaluate (:370:30), <anonymous>:10:15)\n    at Object.react_stack_bottom_frame (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:14142:12)\n    at renderWithHooks (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:4400:19)\n    at updateFunctionComponent (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:5775:16)\n    at beginWork (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:6391:20)\n    at runWithFiberInDEV (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:944:66)\n    at performUnitOfWork (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:9148:92)\n    at workLoopSync (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:9044:37)\n    at renderRootSync (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:9028:6)\n    at performWorkOnRoot (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:8715:27) The above error occurred in one of your React components. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.",
+        "console: %o\n\n%s\n\n%s\n Error: QA_ONLY_ROOT_ERROR\n    at target.options.component (eval at evaluate (:370:30), <anonymous>:10:15)\n    at Object.react_stack_bottom_frame (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:14142:12)\n    at renderWithHooks (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:4400:19)\n    at updateFunctionComponent (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:5775:16)\n    at beginWork (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:6391:20)\n    at runWithFiberInDEV (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:944:66)\n    at performUnitOfWork (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:9148:92)\n    at workLoopSync (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:9044:37)\n    at renderRootSync (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:9028:6)\n    at performWorkOnRoot (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:8715:27) The above error occurred in one of your React components. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary."
+      ],
+      "errors": []
+    },
+    {
+      "route": "qa:root-error",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "qa_root-error-dark-desktop-interactive.png",
+      "controlsFile": "qa_root-error-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Actual root boundary caught an ephemeral QA component fault; keyboard Try again restored dashboard",
+        "Expected QA exception isolated; production error text is generic; no app error trigger"
+      ],
+      "expectedDiagnostics": [
+        "console: %o\n\n%s\n\n%s\n Error: QA_ONLY_ROOT_ERROR\n    at target.options.component (eval at evaluate (:370:30), <anonymous>:10:15)\n    at Object.react_stack_bottom_frame (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:14142:12)\n    at renderWithHooks (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:4400:19)\n    at updateFunctionComponent (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:5775:16)\n    at beginWork (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:6391:20)\n    at runWithFiberInDEV (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:944:66)\n    at performUnitOfWork (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:9148:92)\n    at workLoopSync (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:9044:37)\n    at renderRootSync (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:9028:6)\n    at performWorkOnRoot (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:8715:27) The above error occurred in one of your React components. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.",
+        "console: %o\n\n%s\n\n%s\n Error: QA_ONLY_ROOT_ERROR\n    at target.options.component (eval at evaluate (:370:30), <anonymous>:10:15)\n    at Object.react_stack_bottom_frame (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:14142:12)\n    at renderWithHooks (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:4400:19)\n    at updateFunctionComponent (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:5775:16)\n    at beginWork (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:6391:20)\n    at runWithFiberInDEV (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:944:66)\n    at performUnitOfWork (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:9148:92)\n    at workLoopSync (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:9044:37)\n    at renderRootSync (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:9028:6)\n    at performWorkOnRoot (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:8715:27) The above error occurred in one of your React components. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary."
+      ],
+      "errors": []
+    },
+    {
+      "route": "qa:root-error",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "qa_root-error-dark-mobile-interactive.png",
+      "controlsFile": "qa_root-error-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Actual root boundary caught an ephemeral QA component fault; keyboard Try again restored dashboard",
+        "Expected QA exception isolated; production error text is generic; no app error trigger"
+      ],
+      "expectedDiagnostics": [
+        "console: %o\n\n%s\n\n%s\n Error: QA_ONLY_ROOT_ERROR\n    at target.options.component (eval at evaluate (:370:30), <anonymous>:10:15)\n    at Object.react_stack_bottom_frame (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:14142:12)\n    at renderWithHooks (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:4400:19)\n    at updateFunctionComponent (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:5775:16)\n    at beginWork (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:6391:20)\n    at runWithFiberInDEV (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:944:66)\n    at performUnitOfWork (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:9148:92)\n    at workLoopSync (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:9044:37)\n    at renderRootSync (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:9028:6)\n    at performWorkOnRoot (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:8715:27) The above error occurred in one of your React components. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.",
+        "console: %o\n\n%s\n\n%s\n Error: QA_ONLY_ROOT_ERROR\n    at target.options.component (eval at evaluate (:370:30), <anonymous>:10:15)\n    at Object.react_stack_bottom_frame (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:14142:12)\n    at renderWithHooks (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:4400:19)\n    at updateFunctionComponent (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:5775:16)\n    at beginWork (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:6391:20)\n    at runWithFiberInDEV (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:944:66)\n    at performUnitOfWork (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:9148:92)\n    at workLoopSync (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:9044:37)\n    at renderRootSync (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:9028:6)\n    at performWorkOnRoot (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:8715:27) The above error occurred in one of your React components. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.",
+        "console: %o\n\n%s\n\n%s\n Error: QA_ONLY_ROOT_ERROR\n    at target.options.component (eval at evaluate (:370:30), <anonymous>:10:15)\n    at Object.react_stack_bottom_frame (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:14142:12)\n    at renderWithHooks (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:4400:19)\n    at updateFunctionComponent (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:5775:16)\n    at beginWork (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:6391:20)\n    at runWithFiberInDEV (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:944:66)\n    at performUnitOfWork (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:9148:92)\n    at workLoopSync (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:9044:37)\n    at renderRootSync (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:9028:6)\n    at performWorkOnRoot (http://localhost:3003/node_modules/.vite/deps/react-dom_client.js?v=c17d83d4:8715:27) The above error occurred in one of your React components. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary."
+      ],
+      "errors": []
+    }
+  ]
+}

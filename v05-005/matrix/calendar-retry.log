@@ -1,0 +1,12 @@
+
+> tenboards@0.4.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://localhost:3002 --routes /dashboard/calendar --reload --hydration-delay-ms 1800 --timezone America/Chicago --output /Users/moeghashim/tenboards/screenshots/v05-005/matrix/retries/dev-calendar-Chicago
+
+PASS /dashboard/calendar light/desktop direct
+PASS /dashboard/calendar light/desktop refresh
+PASS /dashboard/calendar light/mobile direct
+PASS /dashboard/calendar light/mobile refresh
+PASS /dashboard/calendar dark/desktop direct
+PASS /dashboard/calendar dark/desktop refresh
+PASS /dashboard/calendar dark/mobile direct
+PASS /dashboard/calendar dark/mobile refresh

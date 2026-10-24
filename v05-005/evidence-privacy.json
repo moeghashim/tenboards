@@ -1,0 +1,11 @@
+{
+  "filesScanned": 122,
+  "patterns": [
+    "database_url",
+    "raw_session_cookie",
+    "secret_assignment",
+    "private_json"
+  ],
+  "findings": [],
+  "passing": true
+}

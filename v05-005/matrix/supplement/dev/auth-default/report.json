@@ -1,0 +1,100 @@
+{
+  "baseURL": "http://localhost:3002/",
+  "fontAssets": "exact public responses cached between contexts",
+  "maskedLiveClocks": false,
+  "hydrationDelayMs": 0,
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": false,
+  "interactions": false,
+  "results": [
+    {
+      "route": "/auth/v1/login",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_auth_v1_login-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v1/login",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_auth_v1_login-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v1/login",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_auth_v1_login-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v1/login",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_auth_v1_login-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v1/register",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_auth_v1_register-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v1/register",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_auth_v1_register-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v1/register",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_auth_v1_register-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v1/register",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_auth_v1_register-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    }
+  ]
+}

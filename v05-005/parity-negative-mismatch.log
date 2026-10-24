@@ -1,0 +1,21 @@
+
+> tenboards@0.4.0 data:parity
+> node --env-file-if-exists=.env --experimental-strip-types scripts/data-parity.ts --inject-mismatch
+
+.env not found. Continuing without it.
+Parity failed: readProductivity/all
++ actual - expected
+
+  {
++   day: 'QA_MISMATCH',
+-   day: {
+-     date: '2026-10-23',
+-     greeting: 'Good morning, Jordan.',
+-     label: 'October 23, 2026'
+-   },
+    focus: {
+      duration: '90:00',
+      id: 'current',
+      minutes: 90,
+      position: 0,
+

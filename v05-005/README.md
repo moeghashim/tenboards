@@ -1,0 +1,39 @@
+# v0.5 / 005 acceptance evidence
+
+Implementation layer 005 is based on task 004 commit `3ea85364c65597593610f44185bfa94fa5e5201e`. The only runtime delta is V1 login/register switch links consuming the form's hydrated validated destination, preserving fragments after a protected redirect. Final version preview: https://ad11a46d-tenboards.mohanadgh.workers.dev ; alias https://pr-55-tenboards.mohanadgh.workers.dev . Both remain zero-secret demos. All five tasks remain in review; Claude owns merges and release.
+
+## Verified gates
+
+- `build-final.log`, `check-final.log`, `typecheck-final.log`: final runtime build, Biome and TypeScript pass. Status-only edits have a separate `check-status-final.log`.
+- `auth-suite-verified.log`: **486/486**, twelve real-Docker-Postgres-17 suites: config 31, UI cookies 23, service 5, redirects 28, browser return paths 4, flows 30, providers 42, errors/rate limit 5, protection 283, account 15, demo Profile 8, security 12. Private generated secrets never appear in this evidence. No saved browser storage state.
+- `migrations-final.log`: fresh and actual v0.4.0 incremental DBs, 13 cumulative migrations, repeat migrate/seed, unchanged old SQL, preserved old rows, 22 reads/130 scenarios each. Only new migration: `0012_watery_sugar_man.sql`, introduced by task 001. Test-owned databases are retained for inspection; no shared DB reset.
+- `parity-final.log`: 22 reads/130 cases pass after all auth mutations. `parity-negative-*-verified.log` and `parity-negative-exits.txt`: mismatch and omission each exit 1 as intended. `drift.log`: no schema changes. `source-audit-final.log`: source boundary check passes.
+- `bundle-audit-final.log`: 435 built artifacts omit generated private sentinels; browser assets exclude server DB/auth implementation; final build restored to zero env. `no-docker.log`: first run with the project Postgres stopped. `environment-audit.txt`, `preview-final.log`, `worker-smoke.json`: no auth/DB/provider deploy settings, ASSETS-only Worker, default 200 and auth-disabled 404. Forced-demo zero TCP connections are in the config suite.
+- `coverage.json`: 38 visual routes, one separately tested HTTP API exclusion, all four presets × light/dark × desktop/mobile, 608 per environment / **1,824 baseline cases**. Original DB Chat failure is resolved by an explicit four-state retry. See `matrix/retries.json`.
+- `supplemental-coverage.json`: **588/588** supplemental cases: 144 query/tab/iframe/print/public-system, 60 clock/motion, and **384 delayed direct/refresh hydration** cases. Includes exact original failures and retry references.
+- `pdf-check.json`: all twelve Invoice print PDFs are one page and retain the expected $945.18 total and long description. Poppler rendered originals were visually inspected; app print code was not changed.
+- `evidence-privacy.json`: text evidence scan for connection strings, session-cookie values, secret assignments and private JSON values. Screenshots were visually inspected; forms conceal passwords and contain only test-owned identities.
+
+## Capture provenance and visual inspection
+
+`matrix/dev` is no-env local demo (port 3002); `matrix/db` is local DB with no auth secret (port 3003); `matrix/workers` is the final version above. Each local capture server runs in a detached task-004 checkout with its own dependencies/Vite cache. After the baseline run, the three final V1 source files were copied into both checkouts, and both forms were recaptured in every preset/four-state combination (`matrix/supplement/{dev,db}/auth-*`, 64 cases). All other runtime files are identical. Final Workers baseline and all supplemental scenarios include the V1 fix. The real browser return-path suite separately proves its behavior.
+
+All twelve preset baseline sets, all demo/auth four-state captures, supplemental query/tab/iframe/print/public-system variants, live-clock/reduced-motion interactions, and delayed direct/refresh captures were reviewed through contact sheets with original PNGs available beside reports. `inspection/` contains the review sheets and rendered print pages. Auth renders live in `auth/{flows,protection,account}`. Intended full-stack demo changes are the decorative GitHub action and safe credential-free acknowledgements. Authentication adds name fields, signed-in identity and account/session controls only when enabled. No tokens, business-data masks, frozen clocks, SSR disabling or blanket pixel tolerance were added. Some preference interaction captures intentionally end in the newly selected theme.
+
+Hydration uses a 1,800 ms JS delay, both Chicago and Kiritimati, direct and refresh, and all eight historical routes. Both local SSR servers use Kiritimati. Browser timezones are recorded per report. The clock/motion suite verifies clocks actually advance and reduced-motion pauses/resumes traces; Calendar today/now and keyboard/focus remain active.
+
+## Original failures, explicit recovery
+
+- `migrations.log`: `spawnSync git ENOBUFS` from buffering the v0.4 archive. The checker now archives directly to a file; final fresh/upgrade run passes.
+- `auth-suite-final.log`: provider `page.goto: Timeout 30000ms exceeded` waiting for full load. Functional tests now wait for DOM and hydrated controls; `auth-suite-verified.log` passes all 486. Screenshot tooling's strict checks are unchanged.
+- `matrix/db/graphite/report.json`: Chat light/mobile `page.waitForLoadState: Timeout 30000ms exceeded`. `matrix/retries/db-graphite-chat` passes all four states, with unchanged arguments except narrowed routes/output.
+- `matrix/workers-pre-return-fix`: superseded version c974e410 had two Patient Monitoring timeouts (Pine dark/mobile and Iris dark/desktop). Original reports/logs and failed PNGs are published; successful superseded PNGs remain local. The final ad11a46d version was recaptured completely: 608/608 first-pass success.
+- `matrix/supplement/dev/hydration-Chicago/report.json`: Calendar dark/desktop direct returned 500; Vite recorded `Internal server error: read ECONNRESET` in `matrix-dev.log`. Its immediate refresh passed, and `matrix/retries/dev-calendar-Chicago` passes all eight direct/refresh states with identical delay/timezone. The original result remains unchanged.
+- `worker-smoke.json`: initial default-UA Python probe assertion failed without retaining status; explicit Mozilla-UA HTTP retry and T3 browser fetch agree on 200/404. Full final Workers captures pass.
+- Induced parity mismatch/omission, unreachable/unmigrated DB, forged origins, revoked sessions and rate-limit 429 are expected negative controls, not failed gates.
+
+## Security scope and remaining authority
+
+Verified: exact-origin/CSRF rejection, hostile return paths, actual cookie flags/expiry/refresh/clearing, DB-authoritative session revocation, per-function access checks, cross-user rejection, forced other-session revocation after password change, safe DTOs/private no-store, UI-cookie allowlist, enabled 429/recovery, and redacted bundles/evidence. HTTPS canonical config emits Secure headers tested over loopback HTTP; this is not a hosted TLS auth test. Limiting is per-process memory; custom server API wrappers are outside the Better Auth HTTP limiter. Email verification and automatic account linking are disabled. Dummy Google/GitHub pairs prove buttons and real authorize URLs/state/callback; no live consent or provider token exchange was attempted. Hosted DB/Hyperdrive, distributed limits/proxy policy and production auth remain v0.6.
+
+Inherited warnings are separate: Biome highlighter warning and ten infos, dependency `use client` directives, Node fs.Stats deprecation / route CLI circular import, Base UI mixed animation/transition, and dev instrumentation's FullCalendar `data-tsd-source` warning. Repeated migrations also emit expected existing-schema/relation notices. No unresolved product/access question; no implementer merge, production deploy, version bump or release.

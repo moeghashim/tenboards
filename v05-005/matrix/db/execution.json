@@ -1,0 +1,18 @@
+[
+  {
+    "preset": "default",
+    "code": 0
+  },
+  {
+    "preset": "graphite",
+    "code": 1
+  },
+  {
+    "preset": "iris",
+    "code": 0
+  },
+  {
+    "preset": "pine",
+    "code": 0
+  }
+]

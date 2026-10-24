@@ -1,0 +1,90 @@
+{
+  "environments": {
+    "dev": {
+      "variants": {
+        "cases": 48,
+        "passing": true,
+        "report": "matrix/supplement/dev/variants/report.json"
+      },
+      "clocks-motion": {
+        "cases": 20,
+        "passing": true,
+        "report": "matrix/supplement/dev/clocks-motion/report.json"
+      },
+      "hydration-Chicago": {
+        "cases": 64,
+        "passing": true,
+        "report": "matrix/supplement/dev/hydration-Chicago/report.json"
+      },
+      "hydration-Kiritimati": {
+        "cases": 64,
+        "passing": true,
+        "report": "matrix/supplement/dev/hydration-Kiritimati/report.json"
+      }
+    },
+    "db": {
+      "variants": {
+        "cases": 48,
+        "passing": true,
+        "report": "matrix/supplement/db/variants/report.json"
+      },
+      "clocks-motion": {
+        "cases": 20,
+        "passing": true,
+        "report": "matrix/supplement/db/clocks-motion/report.json"
+      },
+      "hydration-Chicago": {
+        "cases": 64,
+        "passing": true,
+        "report": "matrix/supplement/db/hydration-Chicago/report.json"
+      },
+      "hydration-Kiritimati": {
+        "cases": 64,
+        "passing": true,
+        "report": "matrix/supplement/db/hydration-Kiritimati/report.json"
+      }
+    },
+    "workers": {
+      "variants": {
+        "cases": 48,
+        "passing": true,
+        "report": "matrix/supplement/workers/variants/report.json"
+      },
+      "clocks-motion": {
+        "cases": 20,
+        "passing": true,
+        "report": "matrix/supplement/workers/clocks-motion/report.json"
+      },
+      "hydration-Chicago": {
+        "cases": 64,
+        "passing": true,
+        "report": "matrix/supplement/workers/hydration-Chicago/report.json"
+      },
+      "hydration-Kiritimati": {
+        "cases": 64,
+        "passing": true,
+        "report": "matrix/supplement/workers/hydration-Kiritimati/report.json"
+      }
+    }
+  },
+  "originalFailures": [
+    {
+      "environment": "dev",
+      "group": "hydration-Chicago",
+      "case": [
+        "/dashboard/calendar",
+        "dark",
+        "desktop",
+        "direct"
+      ],
+      "errors": [
+        "console: Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+        "Unexpected HTTP status 500"
+      ],
+      "retry": "matrix/retries/dev-calendar-Chicago/report.json"
+    }
+  ],
+  "passing": true,
+  "total": 588,
+  "hydrationCases": 384
+}
