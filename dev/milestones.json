@@ -138,7 +138,7 @@
         "001-auth-foundation": "review",
         "002-auth-flows": "review",
         "003-protection-shell": "review",
-        "004-account-sessions": "todo",
+        "004-account-sessions": "review",
         "005-auth-acceptance": "todo"
       }
     }

@@ -1,3 +1,5 @@
+import { useEffect, useRef } from "react";
+
 import { createFileRoute } from "@tanstack/react-router";
 import { createServerFn } from "@tanstack/react-start";
 
@@ -13,6 +15,7 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
+import { AccountPanel } from "./-components/account-panel";
 import { ProfileDocuments } from "./-components/profile-documents";
 import { EmploymentDetails } from "./-components/profile-employment-details";
 import { ProfileHeader } from "./-components/profile-header";
@@ -30,13 +33,34 @@ const loadProfile = createServerFn({ method: "GET" }).handler(async () => {
   return profile;
 });
 
+const profileTabs = ["overview", "personal", "employment", "compensation", "time-off", "documents", "account"] as const;
+type ProfileTab = (typeof profileTabs)[number];
+
 export const Route = createFileRoute("/(main)/dashboard/profile")({
+  validateSearch: (search: Record<string, unknown>): { tab?: ProfileTab } => ({
+    tab: profileTabs.includes(search.tab as ProfileTab) ? (search.tab as ProfileTab) : undefined,
+  }),
   loader: () => loadProfile(),
   component: Page,
 });
 
 function Page() {
   const profile = Route.useLoaderData();
+  const { app } = Route.useRouteContext();
+  const authenticated = app?.auth.mode === "auth";
+  const { tab } = Route.useSearch();
+  const navigate = Route.useNavigate();
+  const tabStrip = useRef<HTMLDivElement>(null);
+  const selected = tab === "account" && !authenticated ? "overview" : (tab ?? "overview");
+  useEffect(() => {
+    const strip = tabStrip.current;
+    const active = strip?.querySelectorAll('[role="tab"]')[profileTabs.indexOf(selected)];
+    if (!strip || !active) return;
+    const bounds = strip.getBoundingClientRect();
+    const target = active.getBoundingClientRect();
+    if (target.left < bounds.left) strip.scrollLeft += target.left - bounds.left;
+    else if (target.right > bounds.right) strip.scrollLeft += target.right - bounds.right;
+  }, [selected]);
   return (
     <div className="flex min-w-0 flex-col gap-4 py-4" data-content-padding="false">
       <Breadcrumb className="px-4 md:px-6">
@@ -62,10 +86,22 @@ function Page() {
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
+      {authenticated && (
+        <p className="text-muted-foreground px-4 text-sm md:px-6">
+          The employee record and its six tabs contain sample data. Manage your sign-in identity in Account &amp;
+          security.
+        </p>
+      )}
       <ProfileHeader profile={profile} />
 
-      <Tabs className="min-h-0 flex-1 gap-0" defaultValue="overview">
-        <div className="touch-pan-x scrollbar-none overflow-x-auto overscroll-x-contain border-y">
+      <Tabs
+        className="min-h-0 flex-1 gap-0"
+        value={selected}
+        onValueChange={(value) => {
+          void navigate({ search: { tab: value === "overview" ? undefined : (value as ProfileTab) }, replace: true });
+        }}
+      >
+        <div ref={tabStrip} className="touch-pan-x scrollbar-none overflow-x-auto overscroll-x-contain border-y">
           <TabsList
             className="w-max min-w-full justify-start gap-4 px-4 *:data-[slot=tabs-trigger]:flex-none"
             variant="line"
@@ -76,10 +112,16 @@ function Page() {
             <TabsTrigger value="compensation">Compensation</TabsTrigger>
             <TabsTrigger value="time-off">Time off</TabsTrigger>
             <TabsTrigger value="documents">Documents</TabsTrigger>
+            {authenticated && <TabsTrigger value="account">Account &amp; security</TabsTrigger>}
           </TabsList>
         </div>
 
         <div className="px-4 md:px-6">
+          {authenticated && (
+            <TabsContent className="py-6" value="account">
+              <AccountPanel />
+            </TabsContent>
+          )}
           <TabsContent value="overview">
             <div className="grid lg:grid-cols-[minmax(0,1fr)_auto_18rem]">
               <div className="py-4 lg:pr-6">

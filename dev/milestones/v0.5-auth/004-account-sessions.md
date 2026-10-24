@@ -2,7 +2,7 @@
 id: "004"
 title: Add Profile account settings and active-session management
 milestone: v0.5-auth
-status: todo
+status: review
 category: auth
 files: ["src/routes/(main)/dashboard/profile/", "src/routes/(main)/dashboard/-components/header/", "src/lib/auth/", "scripts/auth-account-check.ts", "README.md", "docs/auth.md", "dev/milestones.json"]
 ---
@@ -24,14 +24,14 @@ Prefactor inspection: Profile already has a loader-backed sample record and six 
 
 ## Acceptance criteria
 
-- [ ] Add auth-only seventh Account & security tab, directly addressable via validated `?tab=account` and shell menu link. Default remains Overview; existing six tabs/data/actions remain intact. Demo retains six tabs and safely handles the account query without any auth calls. Clearly distinguish Your sign-in account from sample employee content.
-- [ ] Current user's name is editable with trimmed, nonempty, bounded validation; email is read-only. Save has pending/error/success states, persists through Better Auth, survives reload and refreshes header initials/name. No supplied user ID can select another identity or a v0.4 record.
-- [ ] Detect credential capability using server-side account information; never serialize password hashes/provider tokens. Credential users can change password with current/new/confirm fields and server-aligned validation. OAuth-only users see explanatory text, no password-setting/reset controls. Wrong current password and fresh-session requirements produce safe recoverable feedback.
-- [ ] Successful password change invalidates the old credential, accepts the new credential and revokes other sessions. Follow the documented current-session outcome; clear password inputs and refresh session state. Do not add forgot/reset, verification, email changes or account-linking flows.
-- [ ] List only the caller's active sessions with safe IDs, available device/browser description, creation/expiry and Current session marker. No raw token, OAuth credential, fingerprinting service or new parser dependency. Present loading, failure/retry and empty/expired states; wrap rows/actions on mobile.
-- [ ] Revoke validates current session and same-origin mutation request, resolves the supplied session ID within that user's active list, then calls Better Auth. Reject cross-user/forged IDs; handle already-revoked rows safely. A different browser's next protected request fails immediately; current-session revoke follows sign-out and clears stale UI state.
-- [ ] Cookie-setting server API calls propagate Set-Cookie correctly; custom server-function mutation boundaries do not rely on client guards or assume Better Auth HTTP origin/rate checks apply automatically. Keep credential/name mutations on the Better Auth HTTP client path, document any wrapper protection explicitly.
-- [ ] Forms have labels, field errors, focus recovery, pending announcements and success feedback. Revocation confirmation names the target session and is keyboard operable. Preserve light/dark, reduced motion, supported tokens, all six original tabs and shell geometry.
+- [x] Add auth-only seventh Account & security tab, directly addressable via validated `?tab=account` and shell menu link. Default remains Overview; existing six tabs/data/actions remain intact. Demo retains six tabs and safely handles the account query without any auth calls. Clearly distinguish Your sign-in account from sample employee content.
+- [x] Current user's name is editable with trimmed, nonempty, bounded validation; email is read-only. Save has pending/error/success states, persists through Better Auth, survives reload and refreshes header initials/name. No supplied user ID can select another identity or a v0.4 record.
+- [x] Detect credential capability using server-side account information; never serialize password hashes/provider tokens. Credential users can change password with current/new/confirm fields and server-aligned validation. OAuth-only users see explanatory text, no password-setting/reset controls. Wrong current password and fresh-session requirements produce safe recoverable feedback.
+- [x] Successful password change invalidates the old credential, accepts the new credential and revokes other sessions. Follow the documented current-session outcome; clear password inputs and refresh session state. Do not add forgot/reset, verification, email changes or account-linking flows.
+- [x] List only the caller's active sessions with safe IDs, available device/browser description, creation/expiry and Current session marker. No raw token, OAuth credential, fingerprinting service or new parser dependency. Present loading, failure/retry and empty/expired states; wrap rows/actions on mobile.
+- [x] Revoke validates current session and same-origin mutation request, resolves the supplied session ID within that user's active list, then calls Better Auth. Reject cross-user/forged IDs; handle already-revoked rows safely. A different browser's next protected request fails immediately; current-session revoke follows sign-out and clears stale UI state.
+- [x] Cookie-setting server API calls propagate Set-Cookie correctly; custom server-function mutation boundaries do not rely on client guards or assume Better Auth HTTP origin/rate checks apply automatically. Keep credential/name mutations on the Better Auth HTTP client path, document any wrapper protection explicitly.
+- [x] Forms have labels, field errors, focus recovery, pending announcements and success feedback. Revocation confirmation names the target session and is keyboard operable. Preserve light/dark, reduced motion, supported tokens, all six original tabs and shell geometry.
 
 ## Tests
 

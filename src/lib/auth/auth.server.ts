@@ -7,6 +7,7 @@ import { sql } from "drizzle-orm";
 import { authAccount, authSession, authUser, authVerification } from "../../server/db/auth-schema.ts";
 import { getDatabase } from "../../server/db/client.server.ts";
 import { authConfiguration } from "./config.ts";
+import { accountName } from "./name.ts";
 import { authDestination, authErrorCallback } from "./redirect.ts";
 
 function createAuth(config: Extract<ReturnType<typeof authConfiguration>, { enabled: true }>) {
@@ -33,13 +34,26 @@ function createAuth(config: Extract<ReturnType<typeof authConfiguration>, { enab
     },
     hooks: {
       before: createAuthMiddleware(async (ctx) => {
-        if (!["/sign-in/social", "/sign-in/email", "/sign-up/email"].includes(ctx.path)) return;
+        if (
+          !["/sign-in/social", "/sign-in/email", "/sign-up/email", "/update-user", "/change-password"].includes(
+            ctx.path,
+          )
+        )
+          return;
         const body = { ...ctx.body };
-        if (ctx.path === "/sign-up/email") {
-          if (typeof body.name !== "string" || !body.name.trim() || body.name.trim().length > 100)
+        if (ctx.path === "/sign-up/email" || ctx.path === "/update-user") {
+          const name = accountName(body.name);
+          if (!name)
             throw new APIError("BAD_REQUEST", { code: "INVALID_NAME", message: "Enter a name of 1–100 characters." });
-          body.name = body.name.trim();
+          if (ctx.path === "/update-user" && Object.keys(body).some((key) => key !== "name"))
+            throw new APIError("BAD_REQUEST", {
+              code: "INVALID_ACCOUNT_UPDATE",
+              message: "Only your name can be updated here.",
+            });
+          body.name = name;
         }
+        // Apply the account policy even when a caller bypasses our form.
+        if (ctx.path === "/change-password") body.revokeOtherSessions = true;
         if (ctx.path === "/sign-in/social" || body.callbackURL !== undefined)
           body.callbackURL = authDestination(body.callbackURL);
         if (ctx.path === "/sign-in/social") {

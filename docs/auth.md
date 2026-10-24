@@ -6,7 +6,7 @@ Zero configuration remains the first-run path: `npm install && npm run dev` need
 
 The foundation uses **better-auth 1.7.12**, its bundled `better-auth/adapters/drizzle` export, the existing lazy postgres.js client and explicit `auth_user`, `auth_session`, `auth_account`, `auth_verification` tables. Migration `0012_watery_sugar_man.sql` appends to the unchanged v0.4 journal. There is no startup migration/seed or seeded auth identity. The v0.4 directory, roles and employee Profile are sample data, not authentication or authorization records.
 
-Layers 001–003 provide HTTP/session/configuration boundaries, real V1/V2 entry flows, protected application routes and signed-in shell identity. Account/security controls arrive in 004. Hosted auth remains deferred to v0.6.
+Layers 001–004 provide HTTP/session/configuration boundaries, real V1/V2 entry flows, protected application routes, signed-in shell identity and account/security controls. Hosted auth remains deferred to v0.6.
 
 ## Local setup
 
@@ -89,10 +89,23 @@ Error/pending verification: `node --experimental-strip-types scripts/auth-errors
 | `/unauthorized`, root error/404, dashboard splat | Public; the exact splat renders without the protected shell/account loader |
 | `/api/auth/$` | Public dispatcher, with Better Auth's own endpoint/origin/session checks |
 | Safe mode/session bootstrap and four preference/layout functions | Public, minimal projection and strict cookie allowlists |
+| Account details / session revoke | Current-session projection / strict same-origin owned-ID mutation (see Account & security) |
 | All 26 application-data functions across 22 v0.4 domains | Independent `requireSession` before importing/invoking a domain read, including shell accounts and legacy variants |
 
-Auth-on identity is the current session's name/email/initials; demo switching stays demo-only. The menu links to Profile. A fresh document after sign-out drops router caches; each navigation checks authority again and refocus checks server state. Storage failures surface as failures, never anonymous/demo success. Identity/data responses use `Cache-Control: private, no-store`.
+Auth-on identity is the current session's name/email/initials; demo switching stays demo-only. The menu links directly to Profile’s Account & security tab. A fresh document after sign-out drops router caches; each navigation checks authority again and refocus checks server state. Storage failures surface as failures, never anonymous/demo success. Identity/data responses use `Cache-Control: private, no-store`.
 
 An expired embedded Mail/Chat document moves its same-origin parent to canonical login with the validated wrapper return path. Direct standalone navigation remains protected. The browser-retained fragment is added to the validated return destination after hydration. No auth token is stored in client application state.
 
 `scripts/auth-protection-check.ts` audits every generated visual/HTTP route and callable server function, then exercises anonymous/valid SSR, refresh and client navigation, all direct RPCs with no/valid/tampered/expired/revoked sessions, public system pages, shell sign-out and iframe expiration. Authentication grants access to shared template data; it does not confer directory roles or ownership of sample business records.
+
+## Account & security
+
+`/dashboard/profile?tab=account` is auth-only; demo maps that query to Overview without loading account data. The six sample employee tabs remain separate from **Your sign-in account**. Known Profile tab values are validated; unknown values fall back to Overview. Only the current session supplies identity. Name changes trim to 1–100 characters; email is read-only. The HTTP update-user hook permits only the name field and rejects supplied IDs/email/other fields.
+
+Name/password mutations use Better Auth's HTTP client, retaining library origin checks and HTTP rate limiting. Password changes verify the current password and enforce `revokeOtherSessions:true` server-side, even for a direct request. In 1.7.12 this revokes all old sessions, creates a new current session, and sets its cookie; the UI clears password fields and refreshes sessions. Old credentials fail immediately. The server projects credential capability from account provider metadata; no hash or provider token reaches the account UI. Provider-only accounts have no password/reset controls.
+
+The safe session projection contains ID, bounded plain user-agent description (or an unavailable fallback), creation/expiry and a current-session marker. It contains no bearer token or IP. Better Auth's session-list API requires a session created within the default one-day fresh window. The UI handles `SESSION_NOT_FRESH` with a sign-out then canonical re-login to the account tab, avoiding an already-signed-in redirect loop. Password validation itself uses the library's authoritative-session/current-password boundary.
+
+The custom POST revoke function validates a strict ID-only input, requires an exact configured Origin, checks the actual request session, and resolves the ID within that user's active session list before passing its internal token to Better Auth. Foreign, forged and stale IDs return an unavailable result without a write. Current-session revocation uses library sign-out and the final `tanstackStartCookies` plugin propagates cookie clearing; the client replaces the document. A different browser's next protected route/RPC fails immediately. These custom wrappers do not claim the Better Auth HTTP limiter; they perform their own origin/ownership checks. Identity/session responses are private and no-store.
+
+`scripts/auth-account-check.ts` uses two real users and independent browser contexts for name persistence, ownership/origin rejection, other/current revocation, password rotation, stale/fresh sessions, retry and four-state account/confirmation/error captures. Its provider-only capability fixture uses Better Auth's supported adapter operations on a test-owned identity after credential signup; it does not represent a completed OAuth login. Cleanup deletes only those test-owned users.

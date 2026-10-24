@@ -37,17 +37,21 @@ for (const file of await readdir("src", { recursive: true })) {
     if (source.includes("@/server/data/")) {
       assert.ok(source.indexOf("await requireSession()") < source.indexOf('await import("@/server/data/'));
       rpc.push({ file: `/src/${file}`, name });
+    } else if (file === "lib/auth/account-functions.ts" && name === "getAccountDetails") {
+      rpc.push({ file: `/src/${file}`, name });
+    } else if (file === "lib/auth/account-functions.ts" && name === "revokeAccountSession") {
+      assert.match(source, /revokeOwnedSession/);
     } else assert.ok(allowedPublic.has(name), `Unclassified server function ${file}:${name}`);
   }
 }
-assert.equal(rpc.length, 26);
+assert.equal(rpc.length, 27);
 const tree = await readFile("src/routeTree.gen.ts", "utf8");
 const fullPaths = tree.match(/export interface FileRoutesByFullPath \{([\s\S]*?)\n\}/)?.[1];
 assert.ok(fullPaths);
 for (const [, path] of fullPaths.matchAll(/'([^']+)':/g))
   assert.ok(path === "/api/auth/$" || captureRoutes.some((r) => r.route === path), `Unclassified route ${path}`);
 pass(
-  `Inventory: ${captureRoutes.length} visual routes, HTTP auth handler, ${rpc.length} protected functions and five public preference/bootstrap functions`,
+  `Inventory: ${captureRoutes.length} visual routes, HTTP auth handler, ${rpc.length} protected read functions, one owned session mutation and five public preference/bootstrap functions`,
 );
 const db = postgres(localDatabase);
 const server = await startTestServer({
@@ -64,9 +68,9 @@ try {
   const page = await anonymous.newPage();
   page.setDefaultTimeout(15000);
   for (const { path } of protectedRoutes) {
-    await page.goto(server.baseURL + path);
+    await page.goto(server.baseURL + path, { waitUntil: "domcontentloaded" });
     assert.equal(new URL(page.url()).pathname, "/auth/v1/login", path);
-    await page.reload();
+    await page.reload({ waitUntil: "domcontentloaded" });
     assert.equal(new URL(page.url()).pathname, "/auth/v1/login");
     await page.waitForFunction(() => !!window.__TSR_ROUTER__);
     await page.evaluate(async (href) => {
@@ -79,12 +83,12 @@ try {
     ...captureRoutes.filter((r) => publicRoutes.has(r.route)).map((r) => r.path),
     "/missing-root-page",
   ]) {
-    await page.goto(server.baseURL + path);
+    await page.goto(server.baseURL + path, { waitUntil: "domcontentloaded" });
     assert.equal(new URL(page.url()).pathname, path);
     assert.equal(await page.getByRole("button", { name: /Demo account:|Signed in as/ }).count(), 0);
     pass(`Public system/auth ${path}: no account shell`);
   }
-  await page.goto(`${server.baseURL}/auth/v1/login`);
+  await page.goto(`${server.baseURL}/auth/v1/login`, { waitUntil: "domcontentloaded" });
   for (const item of rpc) {
     const result = await callRpc(page, item.file, item.name, "GET");
     assert.equal(result.ok, false, item.file);
@@ -112,9 +116,9 @@ try {
   const errors: string[] = [];
   authenticated.on("pageerror", (e) => errors.push(e.message));
   for (const { path } of protectedRoutes) {
-    await authenticated.goto(server.baseURL + path);
+    await authenticated.goto(server.baseURL + path, { waitUntil: "domcontentloaded" });
     assert.ok(!new URL(authenticated.url()).pathname.startsWith("/auth/"), path);
-    await authenticated.reload();
+    await authenticated.reload({ waitUntil: "domcontentloaded" });
     assert.ok(!new URL(authenticated.url()).pathname.startsWith("/auth/"), path);
     await authenticated.waitForFunction(() => !!window.__TSR_ROUTER__);
     await authenticated.evaluate(async (href) => {
@@ -123,7 +127,7 @@ try {
     assert.ok(!new URL(authenticated.url()).pathname.startsWith("/auth/"), path);
     pass(`Valid SSR/refresh/client navigation ${path}`);
   }
-  await authenticated.goto(`${server.baseURL}/dashboard/default`);
+  await authenticated.goto(`${server.baseURL}/dashboard/default`, { waitUntil: "domcontentloaded" });
   for (const item of rpc) {
     const result = await callRpc(authenticated, item.file, item.name, "GET");
     assert.equal(result.ok, true, item.file);
@@ -142,7 +146,7 @@ try {
       await db`update auth_session set expires_at = now() - interval '1 minute' where user_id = ${user.id}`;
     else await db`delete from auth_session where user_id = ${user.id}`;
     const invalidPage = await invalid.newPage();
-    await invalidPage.goto(`${server.baseURL}/auth/v1/login`);
+    await invalidPage.goto(`${server.baseURL}/auth/v1/login`, { waitUntil: "domcontentloaded" });
     for (const item of rpc) {
       const result = await callRpc(invalidPage, item.file, item.name, "GET");
       assert.equal(result.ok, false, item.file);
@@ -156,7 +160,7 @@ try {
     headers: { origin: server.baseURL },
     data: { email, password },
   });
-  await authenticated.goto(`${server.baseURL}/dashboard/default`);
+  await authenticated.goto(`${server.baseURL}/dashboard/default`, { waitUntil: "domcontentloaded" });
   await mkdir("screenshots/v05-003/auth", { recursive: true });
   for (const theme of ["light", "dark"] as const)
     for (const [size, viewport] of Object.entries({
@@ -166,7 +170,7 @@ try {
       await signed.addCookies([{ name: "theme_mode", value: theme, url: server.baseURL }]);
       await authenticated.setViewportSize(viewport);
       for (const path of ["/dashboard/default", "/dashboard/mail", "/dashboard/chat"]) {
-        await authenticated.goto(server.baseURL + path);
+        await authenticated.goto(server.baseURL + path, { waitUntil: "domcontentloaded" });
         await authenticated.evaluate(() => document.fonts.ready);
         await authenticated.waitForTimeout(1800);
         await openMenu();
@@ -183,7 +187,7 @@ try {
         pass(`Authenticated shell/iframe menu focus ${path} ${theme}/${size}`);
       }
     }
-  await authenticated.goto(`${server.baseURL}/dashboard/mail`);
+  await authenticated.goto(`${server.baseURL}/dashboard/mail`, { waitUntil: "domcontentloaded" });
   await authenticated.frameLocator("iframe").getByText("Inbox", { exact: true }).first().waitFor();
   await db`delete from auth_session where user_id = ${user.id}`;
   await authenticated.locator("iframe").evaluate((el: HTMLIFrameElement) => el.contentWindow?.location.reload());
@@ -194,9 +198,9 @@ try {
     headers: { origin: server.baseURL },
     data: { email, password },
   });
-  await authenticated.goto(`${server.baseURL}/dashboard/default`);
+  await authenticated.goto(`${server.baseURL}/dashboard/default`, { waitUntil: "domcontentloaded" });
   const otherView = await signed.newPage();
-  await otherView.goto(`${server.baseURL}/dashboard/tasks`);
+  await otherView.goto(`${server.baseURL}/dashboard/tasks`, { waitUntil: "domcontentloaded" });
   await otherView.waitForFunction(() => {
     const button = document.querySelector('[aria-label^="Signed in as"]');
     return button && Object.keys(button).some((key) => key.startsWith("__reactProps"));
@@ -205,7 +209,7 @@ try {
   await openMenu();
   await authenticated.getByRole("menuitem", { name: "Sign out", exact: true }).click();
   await authenticated.waitForURL("**/auth/v1/login");
-  await authenticated.goto(`${server.baseURL}/dashboard/default`);
+  await authenticated.goto(`${server.baseURL}/dashboard/default`, { waitUntil: "domcontentloaded" });
   assert.equal(new URL(authenticated.url()).pathname, "/auth/v1/login");
   pass("Shell sign-out clears session and next protected document redirects");
   await otherView.bringToFront();
