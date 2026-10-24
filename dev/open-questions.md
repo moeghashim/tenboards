@@ -145,3 +145,5 @@ Any runtime dependency, tenancy/auth-policy change, destructive migration, confl
 ## 2026-10-24 — v0.7 review-round-2 local verification infrastructure
 
 Resolved infrastructure interruption: host storage exhaustion caused ENOSPC screenshot writes and made Docker/Postgres unavailable during regression testing. No unrelated files or workspaces were deleted. After storage recovered, verification resumed using an isolated local PostgreSQL 17 cluster on 127.0.0.1:3189 with tenboards_v07_r2 and tenboards_v07_assistant_r2 databases. Interrupted logs remain in the PR evidence; successful reruns are identified separately. No application/backend change was made in response.
+
+Preview verification interruption: Cloudflare initially returned error 100146 for newly uploaded version IDs, and one retry failed during inventory inspection. The guarded uploader was not weakened. Delayed read-only verification confirms the refreshed preview versions have only ASSETS and no secrets; hosted demo checks pass. Original failure logs and recovery evidence are retained on pr-assets. This affected preview verification only, not production.
