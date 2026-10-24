@@ -166,6 +166,16 @@
         "001-remove-legacy": "merged",
         "002-collapsed-header-toggle": "merged"
       }
+    },
+    {
+      "id": "v0.7-assistant",
+      "status": "planned",
+      "tasks": ["001-assistant-foundation", "002-provider-streaming-endpoint", "003-picker-conversation-acceptance"],
+      "taskStatuses": {
+        "001-assistant-foundation": "todo",
+        "002-provider-streaming-endpoint": "todo",
+        "003-picker-conversation-acceptance": "todo"
+      }
     }
   ]
 }
