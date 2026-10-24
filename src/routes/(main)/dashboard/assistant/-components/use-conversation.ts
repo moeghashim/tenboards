@@ -34,7 +34,20 @@ export function useConversation(initialConfig: AssistantConfig) {
   const stopButton = useRef<HTMLButtonElement>(null);
   const signIn = useRef<HTMLAnchorElement>(null);
   const follow = useRef<boolean>(true);
-  const end = useRef<HTMLDivElement>(null);
+  const transcript = useRef<HTMLDivElement>(null);
+  const [away, setAway] = useState(false);
+  const jumpToLatest = useCallback(() => {
+    follow.current = true;
+    setAway(false);
+    const node = transcript.current;
+    if (node) node.scrollTop = node.scrollHeight;
+  }, []);
+  const trackScroll = useCallback(() => {
+    const node = transcript.current;
+    if (!node) return;
+    follow.current = node.scrollHeight - node.clientHeight - node.scrollTop < 160;
+    setAway(!follow.current);
+  }, []);
   const busy = state.turns.at(-1)?.status === "streaming";
   const remaining = Math.max(0, Math.ceil((retryAt - now) / 1000));
   const blocked = busy || expired || refreshing || selectionRequired || remaining > 0;
@@ -44,6 +57,8 @@ export function useConversation(initialConfig: AssistantConfig) {
     active.current = null;
     dispatch({ type: "clear", generation: id });
     setInput("");
+    follow.current = true;
+    setAway(false);
     setError("");
     setContextNotice(false);
     setRefreshing(false);
@@ -56,16 +71,11 @@ export function useConversation(initialConfig: AssistantConfig) {
   useEffect(() => {
     const hide = () => clear();
     window.addEventListener("pagehide", hide);
-    const track = () => {
-      follow.current = document.documentElement.scrollHeight - innerHeight - scrollY < 160;
-    };
-    window.addEventListener("scroll", track, { passive: true });
     return () => {
       generation.current++;
       active.current?.abort();
       active.current = null;
       window.removeEventListener("pagehide", hide);
-      window.removeEventListener("scroll", track);
     };
   }, [clear]);
   useEffect(() => {
@@ -79,8 +89,20 @@ export function useConversation(initialConfig: AssistantConfig) {
     return () => clearInterval(timer);
   }, [retryAt]);
   useEffect(() => {
-    if (follow.current && state.turns.length) end.current?.scrollIntoView({ block: "end", behavior: "instant" });
-  }, [state.turns]);
+    // Observe rendered blocks as well as chunks: a chart can finish laying out later.
+    const node = transcript.current;
+    const content = node?.firstElementChild;
+    if (!node || !content) return;
+    const observer = new ResizeObserver(() => {
+      if (follow.current) node.scrollTop = node.scrollHeight;
+    });
+    observer.observe(content);
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+  useEffect(() => {
+    if (follow.current && state.turns.length) jumpToLatest();
+  }, [state.turns, jumpToLatest]);
   async function refresh(id: number) {
     if (generation.current !== id) return;
     setRefreshing(true);
@@ -217,7 +239,10 @@ export function useConversation(initialConfig: AssistantConfig) {
     composer,
     stopButton,
     signIn,
-    end,
+    transcript,
+    trackScroll,
+    away,
+    jumpToLatest,
     clear,
     stop,
     send,

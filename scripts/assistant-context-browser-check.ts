@@ -6,7 +6,7 @@ import assert from "node:assert/strict";
 import { mkdir } from "node:fs/promises";
 
 const base = process.env.ASSISTANT_TEST_URL ?? "http://127.0.0.1:3170";
-const output = "screenshots/v07-003/context";
+const output = process.env.ASSISTANT_EVIDENCE_ROOT ?? "screenshots/v07-003/context";
 await mkdir(output, { recursive: true });
 const browser = await chromium.launch();
 try {
@@ -85,7 +85,9 @@ try {
       await input.fill("Delayed follow-up");
       await input.press("Enter");
       await page.getByRole("button", { name: "Stop", exact: true }).waitFor();
-      await page.evaluate(() => window.scrollTo(0, 0));
+      await page.locator("[data-assistant-scroll]").evaluate((node) => {
+        node.scrollTop = 0;
+      });
       await page.waitForTimeout(150);
       release();
       gate = undefined;
@@ -94,7 +96,18 @@ try {
         .last()
         .getByText(/ · completed$/)
         .waitFor();
-      assert.ok(await page.evaluate(() => scrollY < 20), "Completion moved a reader away from older output");
+      assert.ok(
+        await page.locator("[data-assistant-scroll]").evaluate((node) => node.scrollTop < 20),
+        "Completion moved a reader away from older output",
+      );
+      await page.getByRole("button", { name: "Jump to latest", exact: true }).click();
+      await page.waitForFunction(() => {
+        const node = document.querySelector("[data-assistant-scroll]")!;
+        return node.scrollHeight - node.clientHeight - node.scrollTop < 2;
+      });
+      assert.equal(await page.getByRole("button", { name: "Jump to latest", exact: true }).count(), 0);
+      const composerBounds = await input.boundingBox();
+      assert.ok(composerBounds && composerBounds.y >= 0 && composerBounds.y + composerBounds.height < viewport.height);
       await page.screenshot({ path: `${output}/${theme}-${size}-reader-scroll-preserved.png` });
       const storage = await page.evaluate(() => ({
         local: Object.values(localStorage).join(""),

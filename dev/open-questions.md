@@ -141,3 +141,7 @@ Status: **proposed implementation choices for planning review; no unresolved PLA
 - **Existing context drift:** Impeccable reports a stale design sidecar; PRODUCT/DESIGN also contain historical milestone language. Neither overrides current PLAN/code. No unrelated context refresh is included; `impeccable document` can refresh the sidecar separately if requested.
 
 Any runtime dependency, tenancy/auth-policy change, destructive migration, conflicting compact requirement or missing required access discovered during implementation must be recorded here and dependent work paused. Local isolated Postgres/workerd plus a demo-only preview suffice; no hosted database credential is required for this plan.
+
+## 2026-10-24 — v0.7 review-round-2 local verification infrastructure
+
+Resolved infrastructure interruption: host storage exhaustion caused ENOSPC screenshot writes and made Docker/Postgres unavailable during regression testing. No unrelated files or workspaces were deleted. After storage recovered, verification resumed using an isolated local PostgreSQL 17 cluster on 127.0.0.1:3189 with tenboards_v07_r2 and tenboards_v07_assistant_r2 databases. Interrupted logs remain in the PR evidence; successful reruns are identified separately. No application/backend change was made in response.

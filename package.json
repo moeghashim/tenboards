@@ -32,6 +32,7 @@
     "deploy:check": "node --experimental-strip-types scripts/deploy-check.ts",
     "deploy:prepare": "node --experimental-strip-types scripts/deploy-prepare.ts",
     "assistant:test": "node --experimental-strip-types scripts/assistant-check.ts",
+    "assistant:ui": "node --experimental-strip-types scripts/assistant-ui-check.ts",
     "assistant:browser": "node --experimental-strip-types scripts/assistant-browser-check.ts",
     "assistant:server": "node --experimental-strip-types scripts/assistant-server-check.ts",
     "assistant:worker": "node --experimental-strip-types scripts/assistant-worker-check.ts",

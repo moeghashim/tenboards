@@ -8,7 +8,12 @@ Ten current dashboards and the retained app pages share a compact design system,
 
 **v0.6.2 (compact density) is merged, deployed and released as [v0.6.2](https://github.com/moeghashim/tenboards/releases/tag/v0.6.2)** tightens the shared desktop typography, controls, cards, tables and shell. Content uses 13px text, default desktop controls are 28px, and the header is 48px. Toolbar selects and tabs retain content-based minimum widths so wider font choices keep their labels readable. Mobile keeps larger control/spacing defaults; all fonts, presets and sidebar styles remain available. There is one compact default, with no additional preference. See the [density contract](dev/milestones/v0.6.2-compact-density/README.md) and [design system](DESIGN.md).
 
-**v0.7 tasks 001–003 are implemented for review** — `/dashboard/assistant` sits immediately after Chat and streams bounded read-only summaries, tables and charts. Zero keys gives recorded examples; adopters can configure Anthropic, OpenAI, xAI, Meta or Google with server-only keys and model overrides. Both modes use a guarded, limited POST endpoint with cancellation. Send, Stop, Regenerate and New conversation keep bounded history only in the mounted view, with safe errors, explicit provider recovery and Retry-After. Existing Chat stays unchanged. Live demo and PR previews remain recorded-only. See [Assistant setup, limits and privacy](docs/assistant.md) and [the milestone contract](dev/milestones/v0.7-assistant/README.md).
+**v0.7 tasks 001–003 are implemented for review** — `/dashboard/assistant` sits immediately after Chat and streams bounded read-only summaries, tables and charts. Zero keys gives recorded examples; adopters can configure Anthropic, OpenAI, xAI, Meta or Google with server-only keys and model overrides. Both modes use a guarded, limited POST endpoint with cancellation. Send, Stop, Copy reply, Regenerate and New conversation keep bounded history only in the mounted view, with safe errors, explicit provider recovery and Retry-After. Existing Chat stays unchanged. Live demo and PR previews remain recorded-only. See [Assistant setup, limits and privacy](docs/assistant.md) and [the milestone contract](dev/milestones/v0.7-assistant/README.md).
+
+The Assistant presents a centered conversation, suggestion cards and a single auto-growing composer anchored below the transcript, including safe-area spacing on mobile. Generated metrics, tables and charts share the compact dashboard card styling.
+The configured provider/model selector sits in the composer's bottom toolbar and remains disabled during a reply.
+
+The Assistant follows new replies until you scroll up; Jump to latest resumes following. Enter sends, Shift+Enter inserts a newline, and the composer grows from one to eight rows. Copy and Regenerate are available below the latest reply.
 
 **v0.8 (Projects workspace) is planned, not implemented** — [the milestone contract and six tasks](dev/milestones/v0.8-projects/README.md) cover workspace Home, a Projects index, nested project navigation and read-only Overview/Board/List/Timeline/Files views. Kanban, Tasks, Calendar and File Manager will consolidate into project views with permanent legacy redirects. Both v0.7 and v0.8 proceed independently after rebasing onto v0.6.2 compact density; the reviewer reconciles shared shell files. Current routes and behavior are unchanged by this planning PR.
 
@@ -33,6 +38,7 @@ OpenUI install telemetry must remain disabled (`OPENUI_TELEMETRY_DISABLED=1` or 
 - `npm run build` — production client and server build.
 - `npm run preview` — preview the compiled Worker locally with Wrangler.
 - `npm run check` / `npm run check:fix` — Biome lint, imports, and formatting.
+- `npm run assistant:ui` — four-state composer, copy, stop/regenerate and scroll-follow checks, with empty/streaming/completed captures.
 - `npm run assistant:conversation` / `assistant:lifecycle` / `assistant:context` / `assistant:modes` — bounded history, configured UI recovery, scrolling and Node/Worker configuration acceptance using synthetic fixtures.
 - `npm run assistant:server` / `npm run assistant:worker` — synthetic provider-wire, endpoint and isolated admission/auth checks on Node and compiled workerd.
 - `npm run assistant:test` — bounded language/registry/stream checks; `npm run assistant:browser` runs recorded interaction checks against `ASSISTANT_TEST_URL` (default port 3170).
@@ -503,6 +509,3 @@ Migration `0013_wandering_midnight.sql` adds only `auth_rate_limit`. Better Auth
 Follow [docs/deploy.md](docs/deploy.md) for local rehearsal, your own Neon/Hyperdrive setup, guarded direct migrations, atomic code/binding/secret staging, read-only smoke, optional account round-trip, rollback/data recovery and later OAuth. The live site remains demo-only; v0.6 is released as v0.6.0. No production connection or secret is needed for local acceptance. The default deployment check makes no account writes; the optional flag reports the retained throwaway identity and signs out its sessions. Cleanup is an exact-match database operation, not a new public API.
 
 [Task 003 local acceptance and capture reports](https://github.com/moeghashim/tenboards/tree/pr-assets/v06-003) record the exact isolated preview and evidence boundaries; hosted checks belong to each adopter; task 004 adds template preparation and onboarding.
-
-The Assistant presents a centered conversation, suggestion cards and a single auto-growing composer anchored below the transcript, including safe-area spacing on mobile. Generated metrics, tables and charts share the compact dashboard card styling.
-The configured provider/model selector sits in the composer's bottom toolbar and remains disabled during a reply.

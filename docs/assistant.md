@@ -72,3 +72,7 @@ Official model/protocol references rechecked 2026-10-24: [Anthropic catalog](htt
 - Timeout/size limit: shorten the request; a truncated reply is incomplete. For context limits, start a new conversation.
 - 429: wait for Retry-After. New conversation does not reset the server budget; public adopters need appropriate shared ingress budgets.
 - Session ended/service unavailable: sign in again when prompted, or restore configured auth/DB service. The app never downgrades an auth failure to open demo access.
+
+### Conversation controls
+
+The bottom composer grows from one to eight rows. Enter sends; Shift+Enter inserts a newline. Its toolbar contains the enabled provider/model selector (or Recorded demo badge) and Send, which becomes Stop during a reply. Copy reply and Regenerate sit below the latest assistant turn. Scrolling up pauses following; Jump to latest returns to new output. New conversation clears the view, and its tooltip explains that leaving or reloading also clears it.
