@@ -2,7 +2,7 @@
 id: "001"
 title: Establish request-scoped Workers database and auth runtime
 milestone: v0.6-production
-status: review
+status: merged
 category: runtime
 files: ["wrangler.jsonc", "vite.config.ts", "src/server/db/client.server.ts", "src/server/data/source.ts", "src/server/", "src/lib/auth/", "src/start.ts", "scripts/auth-test-support.ts", "scripts/auth-*.ts", "scripts/data-parity.ts", "scripts/", ".gitignore", ".env.example", "docs/auth.md", "docs/data-layer.md", "README.md", "dev/milestones.json"]
 ---

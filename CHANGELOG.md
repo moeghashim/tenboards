@@ -1,8 +1,8 @@
 # Changelog
 
-## v0.6 — Template deployment readiness (draft, unreleased)
+## v0.6 — Template deployment readiness (2026-10-24)
 
-Ready for release after task 004 review; version bump, tag and publication remain reviewer-owned. The project stays a zero-config live demo; adopters supply their own database. No project-owned Neon provisioning or hosted cutover is claimed.
+Released as [v0.6.0](https://github.com/moeghashim/tenboards/releases/tag/v0.6.0). The project stays a zero-config live demo; adopters supply their own database. No project-owned Neon provisioning or hosted cutover is claimed.
 
 - Scope Workers database and Better Auth instances to requests, preserving Node pooling and zero-config demo. Resolve Hyperdrive before direct URL and memoize only successful auth readiness.
 - Isolate PR previews on demo-only `tenboards-preview`, with clean builds and config/remote binding and secret guards before upload.

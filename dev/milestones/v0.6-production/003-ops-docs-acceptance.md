@@ -2,7 +2,7 @@
 id: "003"
 title: Document operations and verify production readiness
 milestone: v0.6-production
-status: review
+status: merged
 category: validation
 files: ["docs/deploy.md", "docs/auth.md", "docs/data-layer.md", "scripts/database.ts", "scripts/deploy-check.ts", "scripts/auth-*.ts", "scripts/", "package.json", "README.md", "CHANGELOG.md", ".env.example", ".gitignore", "dev/milestones/v0.6-production/", "dev/milestones.json", "dev/open-questions.md"]
 ---

@@ -2,7 +2,7 @@
 id: "004"
 title: Template deployment readiness
 milestone: v0.6-production
-status: review
+status: merged
 category: operations
 files: ["scripts/deploy-prepare*.ts", "scripts/build-environment.ts", "scripts/preview-policy.ts", "scripts/operations-check.ts", "scripts/worker-rate-limit-check.ts", "src/config/app-config.ts", "wrangler.jsonc", "docs/deploy.md", "docs/auth.md", "README.md", "CHANGELOG.md", "package.json", "dev/milestones/v0.6-production/", "dev/milestones.json", "dev/open-questions.md"]
 ---

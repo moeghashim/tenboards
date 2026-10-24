@@ -1,6 +1,6 @@
 # v0.6 — Cloudflare template readiness
 
-Status: **ready for release after task 004 review — tasks 001–003 merged (#57, #60, #59); task 004 in review**. Original planning baseline: `272ee7b`, 2026-10-24, following v0.5.0. [PLAN.md](../../../PLAN.md) is the canonical contract. Its **v0.6 template readiness** decision (bb3c62a, 2026-10-24) supersedes the provisioning and production-mode rows: no project-owned Neon, and the live Worker stays a zero-config demo. The runtime, OAuth and isolated-preview decisions still apply.
+Status: **done — all four tasks merged (#57, #60, #59, #61) and released as [v0.6.0](https://github.com/moeghashim/tenboards/releases/tag/v0.6.0)**. Original planning baseline: `272ee7b`, 2026-10-24, following v0.5.0. [PLAN.md](../../../PLAN.md) is the canonical contract. Its **v0.6 template readiness** decision (bb3c62a, 2026-10-24) supersedes the provisioning and production-mode rows: no project-owned Neon, and the live Worker stays a zero-config demo. The runtime, OAuth and isolated-preview decisions still apply.
 
 ## Brief and boundaries
 
@@ -74,7 +74,7 @@ Tasks 001–003 verify locally; 004 validates adopter preparation and documents 
 - [x] Production limiter trusts Cloudflare's overwritten client-IP header, not client-supplied forwarding chains. Local tests use controlled headers; Node development remains supported. Existing credential mutations keep their Better Auth HTTP boundary; direct API calls are not claimed to be rate-limited.
 - [x] Exact trusted origin comes from validated runtime `BETTER_AUTH_URL`; non-loopback auth cannot silently use localhost. Preserve CSRF/origin checks, safe redirect validation, HttpOnly/Secure/host-only cookies and current-user session ownership. Reject forged origins and tampered/revoked sessions.
 - [x] Auth requested with broken DB/config/schema fails closed, including after readiness memoization. Cache only successful readiness; no global pending I/O shared across requests and no sticky failure that prevents recovery.
-- [ ] Fresh/incremental migrations and idempotent fixture seed preserve auth records. No default passwords or seeded auth identities. Adopters enable open signup and shared data knowingly; no per-user ownership claim.
+- [x] Fresh/incremental migrations and idempotent fixture seed preserve auth records. No default passwords or seeded auth identities. Adopters enable open signup and shared data knowingly; no per-user ownership claim.
 - [x] Smoke defaults are read-only. Optional account checks use unique throwaway credentials, redact them, sign out/revoke their sessions and document retained test-account cleanup without adding a public account-deletion feature.
 
 ## Definition of Done
@@ -85,7 +85,7 @@ Tasks 001–003 verify locally; 004 validates adopter preparation and documents 
 - [x] `docs/deploy.md` and `npm run deploy:check -- <url>` are implemented and verified; remote migrate/seed requires explicit opt-in. README, auth/data guides and CHANGELOG v0.6 draft match delivered behavior.
 - [x] Build/check/typecheck, dev default smoke, demo and authenticated workerd acceptance, hydration regression and required four-state evidence pass. Artifacts live only on `pr-assets`/PR attachments.
 - [x] Task 004 documents your deployment quick path, supplies a tested clean-build/config/private-secret preparation helper, and updates README/CHANGELOG/status with verified evidence. No project-owned Neon or hosted cutover gate. [Task 004 evidence](https://github.com/moeghashim/tenboards/tree/pr-assets/v06-004) verifies preparation, the full local test floor, database cleanup and isolated preview.
-- [ ] After review, Claude merges and publishes v0.6.0. No implementer merge, production deployment, version bump/tag or release.
+- [x] After review, Claude merges and publishes v0.6.0. No implementer merge, production deployment, version bump/tag or release.
 
 ## Template deployment runbook outline
 

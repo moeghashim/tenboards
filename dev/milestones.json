@@ -144,7 +144,7 @@
     },
     {
       "id": "v0.6-production",
-      "status": "in-progress",
+      "status": "done",
       "tasks": [
         "001-workers-database-runtime",
         "002-preview-isolation-hardening",
@@ -155,7 +155,7 @@
         "001-workers-database-runtime": "merged",
         "002-preview-isolation-hardening": "merged",
         "003-ops-docs-acceptance": "merged",
-        "004-production-cutover": "review"
+        "004-production-cutover": "merged"
       }
     }
   ]

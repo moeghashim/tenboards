@@ -2,7 +2,7 @@
 id: "002"
 title: Isolate demo previews and harden production authentication
 milestone: v0.6-production
-status: review
+status: merged
 category: security
 files: ["wrangler.jsonc", "vite.config.ts", "package.json", "scripts/", "src/lib/auth/", "src/server/db/auth-schema.ts", "src/server/db/schema.ts", "src/server/db/migrations/", "src/start.ts", "drizzle.config.ts", "AGENTS.md", "CONTRIBUTING.md", "README.md", "docs/auth.md", ".gitignore", "dev/milestones.json"]
 ---
