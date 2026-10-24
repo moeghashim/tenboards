@@ -12,6 +12,8 @@ const config = defineConfig(({ command }) => {
   // Builds contain no deployment credentials; validate Node development only.
   if (command !== "build") authConfiguration(process.env);
   return {
+    // Isolated preview builds cannot load local dotenv files or root deploy bindings.
+    envDir: process.env.TENBOARDS_PREVIEW_BUILD === "1" ? ".wrangler/preview-empty-env" : undefined,
     resolve: { tsconfigPaths: true },
     plugins: [
       devtools({
@@ -25,7 +27,10 @@ const config = defineConfig(({ command }) => {
       tailwindcss(),
       tanstackStart(),
       // Preserve zero-config Node development; build and preview the Worker with Wrangler.
-      nitro({ preset: command === "build" ? "cloudflare-module" : undefined }),
+      nitro({
+        preset: command === "build" ? "cloudflare-module" : undefined,
+        cloudflare: { deployConfig: process.env.TENBOARDS_PREVIEW_BUILD !== "1" },
+      }),
       viteReact(),
     ],
   };

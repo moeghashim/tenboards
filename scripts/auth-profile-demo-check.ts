@@ -1,6 +1,6 @@
 import { chromium } from "playwright";
 
-import { startTestServer } from "./auth-test-support.ts";
+import { startTestServer, testHeaders } from "./auth-test-support.ts";
 import { cacheCaptureFonts } from "./screenshot-assets.ts";
 import assert from "node:assert/strict";
 
@@ -8,7 +8,7 @@ const server = await startTestServer();
 const browser = await chromium.launch();
 let cases = 0;
 try {
-  const context = await browser.newContext();
+  const context = await browser.newContext({ extraHTTPHeaders: testHeaders });
   await cacheCaptureFonts(context);
   const page = await context.newPage();
   let authRequests = 0;

@@ -12,10 +12,15 @@ export const testSecret = () => randomBytes(48).toString("base64url");
 export const localDatabase =
   process.env.DATABASE_URL ?? "postgresql://tenboards:tenboards_local@127.0.0.1:54329/tenboards";
 databaseUrl({ DATABASE_URL: localDatabase }, true);
+export const testHeaders = { "cf-connecting-ip": "", "x-forwarded-for": "" };
 export async function startTestServer(overrides: NodeJS.ProcessEnv = {}, port = 3011) {
+  const address = `198.18.${randomBytes(1)[0]}.${randomBytes(1)[0]}`;
+  testHeaders["cf-connecting-ip"] = address;
+  testHeaders["x-forwarded-for"] = address;
   if (process.env.AUTH_TEST_RUNTIME === "workerd")
     return startWorker(overrides, {
       port,
+      headers: testHeaders,
       binding: !!overrides.DATABASE_URL && !overrides.DATABASE_URL.includes(":1/"),
     });
   const baseURL = `http://localhost:${port}`;
@@ -50,7 +55,7 @@ export async function startTestServer(overrides: NodeJS.ProcessEnv = {}, port = 
       await delay(250);
     }
   }
-  const api = await request.newContext({ baseURL, extraHTTPHeaders: { origin: baseURL } });
+  const api = await request.newContext({ baseURL, extraHTTPHeaders: { ...testHeaders, origin: baseURL } });
   return {
     baseURL,
     api,

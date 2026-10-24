@@ -4,7 +4,7 @@ import { APIError, createAuthMiddleware } from "better-auth/api";
 import { tanstackStartCookies } from "better-auth/tanstack-start";
 import { sql } from "drizzle-orm";
 
-import { authAccount, authSession, authUser, authVerification } from "../../server/db/auth-schema.ts";
+import { authAccount, authRateLimit, authSession, authUser, authVerification } from "../../server/db/auth-schema.ts";
 import { getDatabase } from "../../server/db/client.server.ts";
 import { runtimeEnvironment, workerRequestScope } from "../../server/runtime.server.ts";
 import { authConfiguration } from "./config.ts";
@@ -24,6 +24,7 @@ function createAuth(config: Extract<ReturnType<typeof authConfiguration>, { enab
         session: authSession,
         account: authAccount,
         verification: authVerification,
+        rateLimit: authRateLimit,
       },
     }),
     emailAndPassword: { enabled: true, minPasswordLength: 8, maxPasswordLength: 128 },
@@ -66,8 +67,12 @@ function createAuth(config: Extract<ReturnType<typeof authConfiguration>, { enab
     },
     account: { accountLinking: { enabled: false } },
     session: { cookieCache: { enabled: false } },
-    rateLimit: { enabled: true, storage: "memory", window: 10, max: 100 },
-    advanced: { useSecureCookies: config.baseURL.startsWith("https://") },
+    rateLimit: { enabled: true, storage: "database", window: 10, max: 100 },
+    advanced: {
+      useSecureCookies: config.baseURL.startsWith("https://"),
+      // Cloudflare overwrites this header. Never trust a caller's forwarding chain.
+      ...(workerRequestScope() ? { ipAddress: { ipAddressHeaders: ["cf-connecting-ip"] } } : {}),
+    },
     logger: { disabled: true },
     telemetry: { enabled: false },
     plugins: [tanstackStartCookies()],
@@ -97,7 +102,9 @@ export async function assertAuthStorage() {
   if (storageReady) return;
   try {
     // Even a signed-out request must fail closed when auth storage is missing.
-    await getDatabase().execute(sql`select 1 from auth_user, auth_session, auth_account, auth_verification limit 0`);
+    await getDatabase().execute(
+      sql`select 1 from auth_user, auth_session, auth_account, auth_verification, auth_rate_limit limit 0`,
+    );
     storageReady = true;
   } catch {
     throw new Error(AUTH_SERVICE_ERROR);
@@ -109,6 +116,8 @@ export async function handleAuth(request: Request) {
     if (!auth) return Response.json({ message: "Authentication is disabled in this demo." }, { status: 404 });
     const response = await auth.handler(request);
     response.headers.set("Cache-Control", "private, no-store");
+    const retryAfter = response.headers.get("X-Retry-After");
+    if (response.status === 429 && retryAfter) response.headers.set("Retry-After", retryAfter);
     if (response.status >= 500) return Response.json({ message: AUTH_SERVICE_ERROR }, { status: 503 });
     return response;
   } catch {

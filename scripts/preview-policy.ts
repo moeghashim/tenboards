@@ -1,0 +1,78 @@
+import assert from "node:assert/strict";
+import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
+import path from "node:path";
+
+export const previewSource = {
+  $schema: "node_modules/wrangler/config-schema.json",
+  name: "tenboards-preview",
+  compatibility_date: "2026-10-23",
+  compatibility_flags: ["nodejs_compat"],
+  workers_dev: true,
+  preview_urls: true,
+  main: ".output/server/index.mjs",
+  assets: { binding: "ASSETS", directory: ".output/public" },
+  no_bundle: true,
+  rules: [{ type: "ESModule", globs: ["**/*.mjs", "**/*.js"] }],
+};
+export const previewConfigPath = path.resolve(".wrangler/preview/wrangler.json");
+export function assertPreviewConfig(config: unknown, generated = false) {
+  const expected = structuredClone(previewSource);
+  if (generated) {
+    expected.$schema = path.resolve(previewSource.$schema);
+    expected.main = path.resolve(previewSource.main);
+    expected.assets.directory = path.resolve(previewSource.assets.directory);
+  }
+  try {
+    assert.deepEqual(config, expected);
+  } catch {
+    throw new Error("Preview configuration rejected: only the exact tenboards-preview ASSETS-only target is allowed.");
+  }
+}
+export function assertPreviewEnvironment(env: NodeJS.ProcessEnv) {
+  const forbidden =
+    /^(?:DATABASE_URL|HYPERDRIVE|DATA_SOURCE|BETTER_AUTH_|GOOGLE_CLIENT_|GITHUB_CLIENT_|VITE_|NITRO_|WRANGLER_ENV|CLOUDFLARE_ENV|NODE_OPTIONS|TENBOARDS_PREVIEW_BUILD)/;
+  if (Object.keys(env).some((key) => forbidden.test(key) && env[key] !== undefined))
+    throw new Error(
+      "Preview build rejected: database/auth/provider/build override environment is present. Unset it first.",
+    );
+}
+export async function assertPreviewInputs() {
+  assertPreviewEnvironment(process.env);
+  for (const directory of [".", path.dirname(previewConfigPath)]) {
+    const files = await readdir(directory).catch((error: NodeJS.ErrnoException) => {
+      if (error.code === "ENOENT") return [];
+      throw error;
+    });
+    if (files.some((file) => (/^\.env(?:\.|$)/.test(file) && file !== ".env.example") || file.startsWith(".dev.vars")))
+      throw new Error("Preview build rejected: move local dotenv/dev-vars files out of the repository first.");
+  }
+  assertPreviewConfig(JSON.parse(await readFile("wrangler.preview.jsonc", "utf8")));
+}
+export function cleanBuildEnvironment(): NodeJS.ProcessEnv {
+  const env: NodeJS.ProcessEnv = {};
+  for (const key of ["PATH", "HOME", "TMPDIR", "TMP", "TEMP", "SystemRoot"])
+    if (process.env[key]) env[key] = process.env[key];
+  return {
+    ...env,
+    TENBOARDS_PREVIEW_BUILD: "1",
+    WRANGLER_SEND_METRICS: "false",
+    CLOUDFLARE_LOAD_DEV_VARS_FROM_DOT_ENV: "false",
+  };
+}
+export async function generatePreviewConfig() {
+  await mkdir(path.dirname(previewConfigPath), { recursive: true });
+  const config = structuredClone(previewSource);
+  config.$schema = path.resolve(config.$schema);
+  config.main = path.resolve(config.main);
+  config.assets.directory = path.resolve(config.assets.directory);
+  assertPreviewConfig(config, true);
+  await writeFile(previewConfigPath, JSON.stringify(config, null, 2));
+  return config;
+}
+export function assertRemotePreviewBindings(bindings: unknown) {
+  try {
+    assert.deepEqual(bindings, [{ name: "ASSETS", type: "assets" }]);
+  } catch {
+    throw new Error("Preview upload rejected: remote version has unexpected bindings (details redacted).");
+  }
+}

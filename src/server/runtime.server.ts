@@ -49,6 +49,7 @@ export async function withRuntimeRequest<T>(
   let env: AuthEnvironment;
   try {
     env = resolveEnvironment(cloudflare.env);
+    env.REQUIRE_AUTH_ORIGIN = !["localhost", "127.0.0.1", "[::1]"].includes(new URL(request.url).hostname);
   } catch (error) {
     if (invalidConfiguration) return invalidConfiguration();
     throw error;
