@@ -33,15 +33,15 @@ Inspect workspace-schema.ts, seed-workspace.ts, the four workspace domain reader
 
 ## Acceptance criteria
 
-- [ ] Add projects, synthetic people/members, canonical tasks, labels, subtasks, activity and project file/calendar relations with stable keys, same-project constraints, indexes, validated enums, dates and counts. Auth identities remain separate.
-- [ ] Use the next free additive migration after rebasing; fresh and populated upgrades backfill board/ledger/file/calendar records without dropping old tables, losing adopter rows or touching auth data. Preserve shipped migrations.
-- [ ] Map every existing fixture exactly once according to the README, with namespaced task IDs, explicit status/date/owner mappings and source traceability. Retain canceled tasks and null unknown metadata. Default, secondary and empty projects use original tenboards data only.
-- [ ] Seed transactionally and idempotently in dependency order; repeat migrate/seed does not duplicate links or wipe unrelated/adopter/auth records. Existing fixtures and reads retain their parity during rollout.
-- [ ] Implement readProjects/readProject/readProjectTasks/readProjectTimeline/readProjectFiles/readProjectActivity/readWorkspaceHome through readSource with equivalent demo/DB validation, deterministic ordering and bounded results. DB joins use project predicates before serialization; missing project differs from empty project.
-- [ ] Shared metrics, sample-member My tasks, date semantics, pagination and calendar projections follow the README. Do not parse formatted legacy dates at runtime or assume file-folder relations from names.
-- [ ] Register every new exported read and meaningful scenario; cover second/empty/missing/wrong-project cases, mappings, filters, dates, counts and ties. Add DB-only sentinel coverage to prove reads do not substitute fixtures; preserve existing 22-read/104-scenario floor.
-- [ ] Exercise reads in local Node and compiled workerd through test-only harnesses excluded from production. Any added server function independently calls requireSession; test direct denied/revoked requests, invalid input and configured DB failure without fixture fallback.
-- [ ] Update data/migration docs and README with implemented schema/read capabilities only; task status remains in review until reviewed. No claim that project screens are already shipped.
+- [x] Add projects, synthetic people/members, canonical tasks, labels, subtasks, activity and project file/calendar relations with stable keys, same-project constraints, indexes, validated enums, dates and counts. Auth identities remain separate.
+- [x] Use the next free additive migration after rebasing; fresh and populated upgrades backfill board/ledger/file/calendar records without dropping old tables, losing adopter rows or touching auth data. Preserve shipped migrations.
+- [x] Map every existing fixture exactly once according to the README, with namespaced task IDs, explicit status/date/owner mappings and source traceability. Retain canceled tasks and null unknown metadata. Default, secondary and empty projects use original tenboards data only.
+- [x] Seed transactionally and idempotently in dependency order; repeat migrate/seed does not duplicate links or wipe unrelated/adopter/auth records. Existing fixtures and reads retain their parity during rollout.
+- [x] Implement readProjects/readProject/readProjectTasks/readProjectTimeline/readProjectFiles/readProjectActivity/readWorkspaceHome through readSource with equivalent demo/DB validation, deterministic ordering and bounded results. DB joins use project predicates before serialization; missing project differs from empty project.
+- [x] Shared metrics, sample-member My tasks, date semantics, pagination and calendar projections follow the README. Do not parse formatted legacy dates at runtime or assume file-folder relations from names.
+- [x] Register every new exported read and meaningful scenario; cover second/empty/missing/wrong-project cases, mappings, filters, dates, counts and ties. Add DB-only sentinel coverage to prove reads do not substitute fixtures; preserve existing 22-read/104-scenario floor.
+- [x] Exercise reads in local Node and compiled workerd through test-only harnesses excluded from production. Any added server function independently calls requireSession; test direct denied/revoked requests, invalid input and configured DB failure without fixture fallback.
+- [x] Update data/migration docs and README with implemented schema/read capabilities only; task status remains in review until reviewed. No claim that project screens are already shipped.
 
 ## Tests
 
@@ -54,3 +54,5 @@ Every task passes `npm run build`, `npm run check`, `npm run typecheck` and dev 
 Depends on planning approval and merged v0.6.2; rebase/reinspect before implementation. Blocks 002. Hand off DTOs, mapping manifest, default IDs, registered scenarios and migration evidence. No hosted access is needed.
 
 One approved task per branch/PR; declare any stack and layer compare URL. Conventional commit with DCO sign-off and final `Co-Authored-By: GPT-6-Astra <noreply@openai.com>` trailer. Claude reviews and alone merges.
+
+Verification: [PR #67 evidence](https://github.com/moeghashim/tenboards/tree/pr-assets/v08-001). Node and workerd parity: 29 reads / 202 scenarios; Node auth: 426; Worker auth: 272; legacy redirects: 96. Build/check/typecheck and four-state dev/preview default smoke pass. Remains in review pending Claude.

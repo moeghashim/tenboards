@@ -148,12 +148,20 @@ try {
     await db.transaction(seedWorkspace);
     await upgrade`insert into ledger_tasks(id,position,title,status,label,priority) values('adopter-v08',999,'Adopter retained','canceled','custom','low')`;
     await upgrade`insert into auth_user(id,name,email,email_verified,created_at,updated_at) values('adopter-v08','Adopter','v08@example.test',false,now(),now())`;
+    await upgrade`insert into board_tasks select 'adopter-board-v08',"columnId",position,title,description,priority,'Unknown date',progress,"ownerId",team from board_tasks limit 1`;
+    await upgrade`insert into workspace_files select 'adopter-file-v08',position,name,kind,size,"ownerId","modifiedAt",starred from workspace_files limit 1`;
+    await upgrade`insert into file_shares values('adopter-file-v08',false)`;
     await migrate(db, { migrationsFolder: "src/server/db/migrations" });
     assert.equal(
       (await upgrade`select count(*)::int n from project_tasks`)[0].n,
-      tasks.length + Object.values(initialBoard).flat().length + 1,
+      tasks.length + Object.values(initialBoard).flat().length + 2,
     );
     assert.equal((await upgrade`select status from project_tasks where id='ledger:adopter-v08'`)[0].status, "canceled");
+    assert.equal(
+      (await upgrade`select "dueDate" from project_tasks where id='board:adopter-board-v08'`)[0].dueDate,
+      null,
+    );
+    assert.equal((await upgrade`select count(*)::int n from project_files where "fileId"='adopter-file-v08'`)[0].n, 1);
     await db.transaction(seedProjects);
     await migrate(db, { migrationsFolder: "src/server/db/migrations" });
     await db.transaction(seedProjects);
