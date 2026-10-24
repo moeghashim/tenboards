@@ -1,9 +1,11 @@
 # Optional local data layer
 
-v0.4 is in review. Production and version previews remain demonstration Workers;
-Neon hosting and Hyperdrive belong to v0.6. Authentication belongs to v0.5.
-All forms, selection, drag/reorder, alarm acknowledgement, invoice edits and message
-controls remain local demonstrations. No read function writes data, authorizes a
+v0.4 is released. Production and version previews remain demonstration Workers;
+Neon hosting and Hyperdrive belong to v0.6. v0.5 adds optional local authentication
+on this database source; see [the auth guide](auth.md). Business-data forms,
+selection, drag/reorder, alarm acknowledgement, invoice edits and message controls
+remain local demonstrations. Auth forms and account/session controls persist real
+auth records when a private secret enables local auth. No read function writes data, authorizes a
 user, establishes a session, sends a message or connects a medical feed.
 
 ## Start without a database
@@ -20,6 +22,8 @@ Open `http://localhost:3000/dashboard/default`. With no `.env`, `DATABASE_URL` o
 The dev script uses Node's `--env-file-if-exists=.env`; inherited shell variables
 still take precedence. To return to demo after setting up a DB, set
 `DATA_SOURCE=demo` in the shell or local `.env`, or remove the DB configuration.
+Also unset `BETTER_AUTH_SECRET`: a nonempty secret requires the real DB source and
+intentionally rejects forced demo or a missing DB.
 
 ## Opt into Postgres 17
 
@@ -67,7 +71,8 @@ that a page is using Postgres merely because a URL exists: forced demo wins.
 ## Read boundary and ownership
 
 Each route calls a GET TanStack Start server function from its loader. Server
-handlers import `src/server/data/<domain>.ts`; components receive serializable
+handlers independently require the actual session in auth mode before importing
+`src/server/data/<domain>.ts`; components receive serializable
 loader data through typed props or a route-local context. Domain modules expose
 `readX`, `demoX` and `dbX`; the selector chooses the actual implementation. DB client
 construction and queries are lazy and server-only. Components/state stores never
@@ -76,7 +81,7 @@ form choices, chart geometry and preference registries remain UI code.
 
 | Module / exported read | Consumers and records |
 | --- | --- |
-| `accounts` / `readAccounts` | Dashboard parent and account switcher; no session |
+| `accounts` / `readAccounts` | Demo shell accounts; auth-on header uses the real session identity instead |
 | `users` / `readUsers` | Directory, workspaces and memberships |
 | `roles` / `readRoles` | Informational roles and ordered permissions |
 | `profile` / `readProfile` | Six Profile tabs, contact/employment/documents/time off |
@@ -237,3 +242,14 @@ DB secret, binding, Neon instance, Hyperdrive pool or production persistence. A
 future hosted integration must separately define credentials, pooling, deployment,
 authentication/authorization and operational safeguards. Do not treat local seed
 commands or the public demo UI as production administration tools.
+
+## Auth tables and preserved domain ownership
+
+Migration `0012_watery_sugar_man.sql` appends four isolated auth tables after v0.4's
+unchanged `0011`. Auth is optional: DB without a secret remains open; a secret adds
+route and callable-function session enforcement. Domain reads still have no writes
+or identity selection and CLI parity calls them without an HTTP session. All 22
+reads/130 baseline scenarios remain the v0.4 contract. Sample directory roles and
+Profile employment data are not authorization or account records. Seeds never
+create passwords/auth users and preserve existing auth records. Auth mutations go
+through Better Auth and never update these business tables.

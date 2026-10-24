@@ -1,10 +1,11 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 
 import { Brand } from "@/components/brand/brand";
 import { loadAuthRoute } from "@/lib/auth/auth-route";
 import { authSearch } from "@/lib/auth/redirect";
 
 import { AuthFlow } from "../../-components/auth-flow";
+import { AuthSwitchLink } from "../../-components/auth-switch-link";
 import { LoginForm } from "../../-components/login-form";
 import { ProviderControls } from "../../-components/social-auth/provider-controls";
 
@@ -46,14 +47,7 @@ function LoginV1() {
               <LoginForm />
               <ProviderControls />
               <p className="text-muted-foreground text-center text-xs">
-                Don&apos;t have an account?{" "}
-                <Link
-                  to="/auth/v1/register"
-                  search={{ redirect: destination }}
-                  className="text-primary focus-visible:outline-ring rounded-sm underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-4"
-                >
-                  Register
-                </Link>
+                Don&apos;t have an account? <AuthSwitchLink to="/auth/v1/register">Register</AuthSwitchLink>
               </p>
             </div>
           </div>

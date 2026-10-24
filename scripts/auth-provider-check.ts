@@ -40,7 +40,7 @@ for (const [label, google, github, extra] of [
     const page = await context.newPage();
     for (const variant of ["v1", "v2"])
       for (const mode of ["login", "register"]) {
-        await page.goto(`${server.baseURL}/auth/${variant}/${mode}`);
+        await page.goto(`${server.baseURL}/auth/${variant}/${mode}`, { waitUntil: "domcontentloaded" });
         assert.equal(await page.getByRole("button", { name: "Continue with Google" }).count(), google ? 1 : 0);
         assert.equal(await page.getByRole("button", { name: "Continue with GitHub" }).count(), github ? 1 : 0);
         console.log(`PASS ${label} ${variant}/${mode} controls`);

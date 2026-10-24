@@ -8,7 +8,7 @@ import { mkdir } from "node:fs/promises";
 import { setTimeout as delay } from "node:timers/promises";
 
 async function visit(page: Page, url: string) {
-  await page.goto(url);
+  await page.goto(url, { waitUntil: "domcontentloaded" });
   if (await page.locator("form").count())
     await page.waitForFunction(() => {
       const form = document.querySelector("form");
@@ -23,6 +23,9 @@ const server = await startTestServer({
 const browser = await chromium.launch();
 const emails: string[] = [];
 const db = postgres(localDatabase);
+const evidenceDir = process.env.AUTH_EVIDENCE_ROOT
+  ? `${process.env.AUTH_EVIDENCE_ROOT}/flows`
+  : "screenshots/v05-002/auth";
 let cases = 0;
 const pass = (name: string) => {
   cases++;
@@ -30,7 +33,7 @@ const pass = (name: string) => {
 };
 const destination = "/dashboard/tasks?search=auth-test#table";
 try {
-  await mkdir("screenshots/v05-002/auth", { recursive: true });
+  await mkdir(evidenceDir, { recursive: true });
   for (const variant of ["v1", "v2"]) {
     const context = await browser.newContext();
     await cacheCaptureFonts(context);
@@ -115,13 +118,15 @@ try {
           assert.equal(await page.getByRole("button", { name: "Continue with Google" }).count(), 0);
           assert.equal(await page.getByRole("button", { name: "Continue with GitHub" }).count(), 0);
           assert.equal(await page.getByText("Or continue with", { exact: true }).count(), 0);
+          await page.evaluate(() => document.fonts.ready);
           await page.screenshot({
-            path: `screenshots/v05-002/auth/${variant}-${mode}-${theme}-${viewportName}.png`,
+            path: `${evidenceDir}/${variant}-${mode}-${theme}-${viewportName}.png`,
             fullPage: true,
           });
           await page.getByRole("button", { name: mode === "login" ? "Login" : "Register", exact: true }).click();
+          await page.evaluate(() => document.fonts.ready);
           await page.screenshot({
-            path: `screenshots/v05-002/auth/${variant}-${mode}-errors-${theme}-${viewportName}.png`,
+            path: `${evidenceDir}/${variant}-${mode}-errors-${theme}-${viewportName}.png`,
             fullPage: true,
           });
           assert.deepEqual(errors, []);

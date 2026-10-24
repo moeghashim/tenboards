@@ -45,6 +45,8 @@ Email/password is always enabled in auth mode, with an 8–128 character passwor
 
 Register `${BETTER_AUTH_URL}/api/auth/callback/google` and `${BETTER_AUTH_URL}/api/auth/callback/github` with their respective providers (omit a trailing slash on the configured origin). Google uses the library's default OpenID/profile/email scopes; GitHub requests `read:user` and `user:email`. Credentials stay server-side; only enabled booleans are projected to the UI. No live credentials are available for automated verification: dummy pairs test authorize URL/state/callback generation, not a provider consent round-trip. Real-provider round-trip validation requires the operator's own app registration and credentials.
 
+For the default local origin, the exact callbacks are `http://localhost:3000/api/auth/callback/google` and `http://localhost:3000/api/auth/callback/github`. A different port/origin requires matching provider registrations.
+
 ## Session and security boundary
 
 `/api/auth/$` forwards GET/POST to Better Auth; disabled mode returns 404 without initializing the auth instance or DB. Library responses preserve Set-Cookie. Server APIs use `tanstackStartCookies` last in the plugin list. Safe bootstrap exposes only mode/provider flags and user ID/name/email; it does not return tokens, hashes or account credentials. Service errors are distinct from a signed-out session.
@@ -109,3 +111,119 @@ The safe session projection contains ID, bounded plain user-agent description (o
 The custom POST revoke function validates a strict ID-only input, requires an exact configured Origin, checks the actual request session, and resolves the ID within that user's active session list before passing its internal token to Better Auth. Foreign, forged and stale IDs return an unavailable result without a write. Current-session revocation uses library sign-out and the final `tanstackStartCookies` plugin propagates cookie clearing; the client replaces the document. A different browser's next protected route/RPC fails immediately. These custom wrappers do not claim the Better Auth HTTP limiter; they perform their own origin/ownership checks. Identity/session responses are private and no-store.
 
 `scripts/auth-account-check.ts` uses two real users and independent browser contexts for name persistence, ownership/origin rejection, other/current revocation, password rotation, stale/fresh sessions, retry and four-state account/confirmation/error captures. Its provider-only capability fixture uses Better Auth's supported adapter operations on a test-owned identity after credential signup; it does not represent a completed OAuth login. Cleanup deletes only those test-owned users.
+
+## Callable function inventory
+
+The acceptance inventory fails on unclassified route or function additions. The
+following application reads each assert the request session before invoking a
+domain read; direct CLI parity remains independent of HTTP sessions.
+
+| Route owner | Callable read | Domain |
+| --- | --- | --- |
+| `/chat` | `loadData` | `chat` |
+| `/dashboard/analytics-v1` | `loadData` | `analytics` |
+| `/dashboard/crm-v1` | `loadData` | `crm` |
+| `/dashboard/default-v1` | `loadData` | `default` |
+| `/dashboard/finance-v1` | `loadData` | `finance` |
+| `/dashboard/academy` | `loadData` | `academy` |
+| `/dashboard/analytics` | `loadData` | `analytics` |
+| `/dashboard/calendar` | `loadData` | `calendar` |
+| `/dashboard/crm` | `loadData` | `crm` |
+| `/dashboard/default` | `loadData` | `default` |
+| `/dashboard/ecommerce` | `loadEcommerce` | `ecommerce` |
+| `/dashboard/file-manager` | `loadData` | `files` |
+| `/dashboard/finance` | `loadData` | `finance` |
+| `/dashboard/infrastructure` | `loadData` | `infrastructure` |
+| `/dashboard/invoice` | `loadInvoice` | `invoices` |
+| `/dashboard/kanban` | `loadData` | `kanban` |
+| `/dashboard/logistics` | `loadData` | `logistics` |
+| `/dashboard/patient-monitoring` | `loadData` | `patients` |
+| `/dashboard/productivity` | `loadData` | `productivity` |
+| `/dashboard/products` | `loadCatalog` | `products` |
+| `/dashboard/profile` | `loadProfile` | `profile` |
+| `/dashboard/roles` | `loadRoles` | `roles` |
+| `/dashboard` | `getAccounts` | `accounts` |
+| `/dashboard/tasks` | `loadData` | `tasks` |
+| `/dashboard/users` | `loadUsers` | `users` |
+| `/mail` | `loadData` | `mail` |
+
+`getAccountDetails` adds a 27th protected read with safe account/session projection.
+`revokeAccountSession` is the separate POST-only owned-session mutation. Both
+independently check server session authority. Five public functions are explicitly
+classified: `getAuthState` (minimal bootstrap), `getValueFromCookieServer` (validated
+Mail layout), `setValueToCookieServer` (preference allowlist), `getPreferenceServer`
+and `getDashboardLayoutServer` (non-sensitive UI preferences). No caller-supplied
+identity controls an app read or account mutation.
+
+## Repeatable acceptance
+
+Start the compose Postgres 17 service and run migrations/seed before:
+
+```sh
+npm run auth:test
+npm run data:parity
+node --experimental-strip-types scripts/auth-migration-check.ts
+node --experimental-strip-types scripts/auth-bundle-check.ts
+npm run check
+npm run typecheck
+npm run build
+```
+
+`auth:test` runs the focused Playwright/HTTP suites sequentially with generated
+throwaway credentials and isolated browser contexts. It uses the compose URL by
+default, or an explicit local `DATABASE_URL`. Stop another Vite server in the same
+checkout before running it; use a separate checkout for concurrent capture servers.
+The suite creates an explicitly test-owned empty database for the missing-schema
+case; the local test role needs CREATE DATABASE, as the compose role has. It never
+resets a shared database. Tests delete only their exact test-owned auth users.
+
+The migration check compares v0.4.0 migration files byte-for-byte, creates fresh and
+upgrade test databases, applies/repeats migrations and seed, and runs all 22 reads /
+130 scenarios in each. Those test databases remain available for inspection. Fetch
+the `v0.4.0` tag in a shallow checkout before running this check. The bundle check
+builds with private random sentinels, scans browser/server artifacts without
+printing their values, then always restores a zero-env build. It does not deploy.
+
+Auth captures default to `screenshots/v05-005/auth` under the suite; override
+`AUTH_EVIDENCE_ROOT` for a private local evidence directory. Never publish storage
+state, credentials or logs containing raw auth responses. Original failures and
+explicit retries belong alongside final reports; screenshots/logs remain off main.
+
+Manual real-provider validation requires your own provider registration and a
+private complete credential pair. Register the exact callback URLs above, initiate
+from either form variant, complete consent, and verify the callback returns to the
+intended relative app destination with a real session. Repeat denial and sign-out.
+Automated dummy-pair tests deliberately stop at the provider authorize redirect.
+
+
+## Verified security evidence (v0.5 review)
+
+The final `npm run auth:test` report has **486/486 scenarios across 12 suites**:
+config 31, cookie allowlist 23, service 5, redirect policy 28, browser return-path 4,
+credential flows 30, provider matrix 42, error/rate-limit 5, protection 283,
+account 15, demo Profile 8 and security 12. The return-path cases cover V1/V2
+pathname, query and fragment through login/register switching and real signup.
+The V1 switch link now consumes the same hydrated destination as its form.
+
+| Security requirement | Verified evidence and limits |
+| --- | --- |
+| Actual cookie attributes | Signup, remember-me, refresh, sign-out and current-session revoke inspect real headers/browser cookies and DB authority. HTTPS canonical configuration emits Secure/HttpOnly/host-only/Path `/`/SameSite Lax cookies; the automated Secure-header test uses loopback HTTP transport and does not claim a TLS deployment test. Cookie caching stays disabled. |
+| Exact origins and redirects | Forged-origin credential/account/session writes reject; the custom revoke wrapper rejects missing/foreign origins and supplied identity. Adversarial redirect policy and real provider initiation enforce the canonical callback and library state handling. |
+| Rate limiting | Enabled local Better Auth HTTP limiting returns 429 and recovers after its window. General 100/10 seconds and sensitive email sign-in/signup 3/10 seconds are in-memory per process. Custom server API wrappers are not covered by that HTTP limiter; production distribution/proxy policy remains v0.6. |
+| Authority and revocation | All 31 protected route cases cover signed-out/valid/expired/revoked SSR, refresh and client navigation. All 27 protected reads cover absent/valid/tampered/expired/revoked direct calls; the separate session mutation checks ownership and exact origin. Password changes cannot opt out of revoking other sessions. |
+| Safe output | Minimal identity/session DTOs and SSR responses omit passwords, hashes, tokens and connection strings; private/no-store is asserted. Builds with generated private sentinels are scanned, then restored to zero-env output. Published evidence is scanned separately. |
+| UI cookies | 23 allowlist cases reject arbitrary/auth cookie names, invalid values/options and forged direct calls; legitimate preferences remain available. |
+| Password and identity policy | Better Auth owns hashing/current-password verification. Email verification and automatic account linking remain disabled; sample employee/directory users are never auth identities. |
+
+Evidence is on [pr-assets/v05-005](https://github.com/moeghashim/tenboards/tree/pr-assets/v05-005),
+including original failed runs and explicit retries. No real-provider consent or
+hosted database deployment was performed. Workers previews and production remain
+demo-only; final review, ordered merges and release belong to Claude Opus 5.5.
+
+Demo regression reconciles 1,824 baseline cases (608 per environment) and 588
+supplemental cases across no-env local, DB/auth-off local and Workers. The latter
+includes 384 delayed hydration cases on all eight historical routes, both timezones,
+and direct/refresh. [Baseline coverage](https://github.com/moeghashim/tenboards/blob/pr-assets/v05-005/coverage.json)
+and [supplemental coverage](https://github.com/moeghashim/tenboards/blob/pr-assets/v05-005/supplemental-coverage.json)
+retain original failures and explicit passing retries. Authenticated four-state
+forms, shell/account states and twelve print PDFs were inspected separately.

@@ -56,9 +56,9 @@ export async function startTestServer(overrides: NodeJS.ProcessEnv = {}, port = 
   };
 }
 export function assertSafeError(text: string) {
-  assert.doesNotMatch(
-    text,
-    /postgres(?:ql)?:\/\/|SELECT |INSERT |password authentication|client_secret|BETTER_AUTH_SECRET=/i,
+  assert.ok(
+    !/postgres(?:ql)?:\/\/|SELECT |INSERT |password authentication|client_secret|BETTER_AUTH_SECRET=/i.test(text),
+    "Response leaked protected server details.",
   );
 }
 

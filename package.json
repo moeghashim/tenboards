@@ -23,6 +23,7 @@
     "db:generate": "drizzle-kit generate",
     "db:migrate": "node --env-file-if-exists=.env --experimental-strip-types scripts/database.ts migrate",
     "db:seed": "node --env-file-if-exists=.env --experimental-strip-types scripts/database.ts seed",
+    "auth:test": "node --experimental-strip-types scripts/auth-test.ts",
     "data:parity": "node --env-file-if-exists=.env --experimental-strip-types scripts/data-parity.ts"
   },
   "lint-staged": {

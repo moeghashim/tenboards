@@ -7,6 +7,9 @@ import assert from "node:assert/strict";
 import { mkdir } from "node:fs/promises";
 import { setTimeout as delay } from "node:timers/promises";
 
+const evidenceDir = process.env.AUTH_EVIDENCE_ROOT
+  ? `${process.env.AUTH_EVIDENCE_ROOT}/account`
+  : "screenshots/v05-004/auth";
 let cases = 0;
 const pass = (name: string) => {
   cases++;
@@ -26,11 +29,11 @@ const newPassword = testSecret();
 const rpcFile = "/src/lib/auth/account-functions.ts";
 const dataFile = "/src/routes/(main)/dashboard/tasks/route.tsx";
 async function visit(page: Page) {
-  await page.goto(`${server.baseURL}/dashboard/profile?tab=account`);
+  await page.goto(`${server.baseURL}/dashboard/profile?tab=account`, { waitUntil: "domcontentloaded" });
   await page.getByLabel("Name", { exact: true }).waitFor();
 }
 try {
-  await mkdir("screenshots/v05-004/auth", { recursive: true });
+  await mkdir(evidenceDir, { recursive: true });
   const a = await browser.newContext({ reducedMotion: "reduce", userAgent: "Account test browser A" });
   const a2 = await browser.newContext({ reducedMotion: "reduce", userAgent: "Account test browser B" });
   const b = await browser.newContext({ reducedMotion: "reduce", userAgent: "Different user's browser" });
@@ -130,12 +133,12 @@ try {
       await page.evaluate(() => document.fonts.ready);
       await page.evaluate(() => window.scrollTo(0, 0));
       assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
-      await page.screenshot({ path: `screenshots/v05-004/auth/account-${theme}-${size}.png`, fullPage: true });
+      await page.screenshot({ path: `${evidenceDir}/account-${theme}-${size}.png`, fullPage: true });
       await page.getByRole("button", { name: "Change password", exact: true }).click();
       await page.getByText("Enter your current password.", { exact: true }).waitFor();
       await page.evaluate(() => window.scrollTo(0, 0));
       assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
-      await page.screenshot({ path: `screenshots/v05-004/auth/error-${theme}-${size}.png`, fullPage: true });
+      await page.screenshot({ path: `${evidenceDir}/error-${theme}-${size}.png`, fullPage: true });
       await page
         .locator(`[data-session-id="${target.id}"]`)
         .getByRole("button", { name: "Revoke session", exact: true })
@@ -144,7 +147,7 @@ try {
       await page.waitForFunction(() => document.activeElement?.textContent === "Cancel");
       await page.evaluate(() => window.scrollTo(0, 0));
       assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
-      await page.screenshot({ path: `screenshots/v05-004/auth/confirm-${theme}-${size}.png`, fullPage: true });
+      await page.screenshot({ path: `${evidenceDir}/confirm-${theme}-${size}.png`, fullPage: true });
       await page.keyboard.press("Enter");
       await page.waitForFunction(() => document.activeElement?.textContent === "Revoke session");
       pass(`Account/error/confirmation ${theme}/${size} with keyboard focus recovery`);
@@ -156,7 +159,7 @@ try {
   await page.getByRole("button", { name: "Confirm revocation", exact: true }).click();
   await page.getByText("Session revoked.", { exact: true }).waitFor();
   assert.equal((await callRpc(other, dataFile, "loadData", "GET")).ok, false);
-  await other.goto(`${server.baseURL}/dashboard/tasks`);
+  await other.goto(`${server.baseURL}/dashboard/tasks`, { waitUntil: "domcontentloaded" });
   assert.equal(new URL(other.url()).pathname, "/auth/v1/login");
   assert.equal(
     (await callRpc(page, rpcFile, "revokeAccountSession", "POST", { id: target.id })).result.status,

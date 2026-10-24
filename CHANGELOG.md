@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.5 — Optional local authentication (in review, unreleased)
+
+- Add optional Better Auth with isolated Drizzle/Postgres auth tables and cumulative migration `0012`; zero-secret local and Workers demos remain available.
+- Connect shared V1/V2 signup/login, explicit remember-me persistence, optional Google/GitHub initiation and validated app return destinations.
+- Protect application routes and every callable app-data read; keep auth/system states public and validate generic UI-cookie RPCs.
+- Show the real signed-in identity, sign-out and Account & security in the shell. Add name editing, credential password rotation and owned-session listing/revocation while preserving the sample Profile tabs.
+- Add real-Docker Playwright authentication/security acceptance, configuration/provider/protection matrices, migration/bundle checks and optional-auth onboarding. Authentication grants shared template access; it does not add RBAC or business-data ownership.
+- Production auth/Neon/Hyperdrive remain deferred to v0.6. No version bump, tag or release is made by this implementation stack.
+
 ## v0.4 — Optional local data layer (2026-10-23)
 
 Release: [v0.4.0](https://github.com/moeghashim/tenboards/releases/tag/v0.4.0)
