@@ -349,7 +349,7 @@ memory. Normal GET traffic still updates the database limiter's counters.
 
 All route guards, session refreshes, sign-out destinations, account return links and OAuth error callbacks target `/auth/v2/login` or `/auth/v2/register`. The old V1 forms are redirect-only routes with HTTP 308 and the existing `authDestination` validator. Invalid destinations fall back to `/dashboard/home`; valid pathname/search/hash destinations survive. Dashboard V1 aliases redirect outside the authenticated layout; the current destination then applies its normal guard and callable reads still require a session. No auth storage, cookie policy, rate limit, provider or session ownership rule changes.
 
-Run `node --experimental-strip-types scripts/legacy-redirect-check.ts` against a seeded local test database to check all six aliases, safe/hostile return parameters and browser/guard behavior. Current protected read coverage is 22 app-data functions plus Account details (23); owned-session mutations remain independently checked.
+Run `node --experimental-strip-types scripts/legacy-redirect-check.ts` against a seeded local test database to check all six aliases, safe/hostile return parameters and browser/guard behavior. At the v0.6.1 release, protected read coverage was 22 app-data functions plus Account details (23); owned-session mutations remain independently checked.
 
 The v0.6.1 Node rerun passes 426 scenarios across 12 suites; compiled Worker auth passes 245 protection, 15 account and 12 security cases. Removed-screen coverage is retired while credential/cookie, return-path, provider, error, ownership and failure-mode categories remain. Reports and original reruns are in [pr-assets/v061-001](https://github.com/moeghashim/tenboards/tree/pr-assets/v061-001).
 

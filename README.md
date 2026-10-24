@@ -85,7 +85,7 @@ The 10 dashboards share the dashboard/chart presentation contract.
 | Infrastructure | `/dashboard/infrastructure` |
 | Patient Monitoring | `/dashboard/patient-monitoring` |
 
-The app sitemap also includes Home, Projects, AI Assistant, Products, Users, Roles, Profile, Mail, Chat, Invoice, Coming Soon and error/permission states. Kanban, Tasks, Calendar and File Manager now redirect into project views. Standalone `/mail` and `/chat` retain `/dashboard/mail` and `/dashboard/chat` iframe aliases. Authentication uses `/auth/v2/login` and `/auth/v2/register`; bare `/auth/v2` remains layout-only. With no secret the forms are visual demos; optional auth enables real accounts/sessions. The [route catalog](src/navigation/route-catalog.ts) enumerates 36 visual routes, including indexes and system states.
+The app sitemap also includes Home, Projects, AI Assistant, project Overview/Board/List/Timeline/Files, Products, Users, Roles, Profile, Mail, Chat, Invoice, Coming Soon and error/permission states. Legacy Kanban, Tasks, Calendar and File Manager URLs are guarded permanent aliases to project views. Standalone `/mail` and `/chat` retain `/dashboard/mail` and `/dashboard/chat` iframe aliases. Authentication uses `/auth/v2/login` and `/auth/v2/register`; bare `/auth/v2` remains layout-only. With no secret the forms are visual demos; optional auth enables real accounts/sessions. The [route catalog](src/navigation/route-catalog.ts) enumerates 36 visual route patterns, including indexes and system states.
 
 `/dashboard/default-v1`, `/dashboard/crm-v1`, `/dashboard/finance-v1` and `/dashboard/analytics-v1` return HTTP 308 to the matching current dashboard. `/auth/v1/login` and `/auth/v1/register` return HTTP 308 to Auth V2. Redirects preserve a validated `redirect` query (unsafe values fall back to `/dashboard/home`); destination pages enforce their existing guards. Redirect-only URLs are absent from sidebar/search and are tested separately from the screenshot catalog.
 
@@ -150,7 +150,7 @@ npm run screenshots -- --routes /dashboard/home --sidebar-states --output screen
 npm run screenshots -- --list
 ```
 
-The default captures every retained route in light/dark at desktop 1440×900 and mobile 390×844. `src/navigation/route-catalog.ts` is the shared 36-route visual inventory, re-exported by `scripts/screenshot-routes.ts` and checked against generated route metadata; missing/stale routes and unknown subsets fail before launch. The dashboard splat uses `/dashboard/capture-not-found` to exercise its not-found state; project-ID route patterns use the concrete sample-operations project for captures. Root/index redirects are captured at their destination; six retired V1 aliases are covered by the dedicated redirect checks. `--preset` selects a valid preset for the same four-state matrix. `--sidebar-states` adds expanded/collapsed desktop captures and open/closed mobile-sheet captures on shell routes. Run `node --experimental-strip-types scripts/sidebar-toggle-check.ts` to verify every allowed sidebar style/collapse mode and preset in both themes and viewports; add `--ssr --base-url <built-preview-url>` to check initial markup with JavaScript disabled.
+The default captures every retained route in light/dark at desktop 1440×900 and mobile 390×844. `src/navigation/route-catalog.ts` is the shared 36-route visual inventory, re-exported by `scripts/screenshot-routes.ts` and checked against generated route metadata; missing/stale routes and unknown subsets fail before launch. The dashboard splat uses `/dashboard/capture-not-found` to exercise its not-found state; project-ID routes use `sample-operations` by default, with `--project-id sample-docs|sample-empty` for the secondary and empty fixtures. Root/index redirects are captured at their destination; six retired V1 aliases and four consolidated workspace aliases are covered by dedicated redirect checks. `--preset` selects a valid preset for the same four-state matrix. `--sidebar-states` adds expanded/collapsed desktop captures and open/closed mobile-sheet captures on shell routes. Run `node --experimental-strip-types scripts/sidebar-toggle-check.ts` to verify every allowed sidebar style/collapse mode and preset in both themes and viewports; add `--ssr --base-url <built-preview-url>` to check initial markup with JavaScript disabled.
 
 Captures wait for React hydration, fonts, network idle, images, JS chart settling, and stable content. Reduced motion is emulated and screenshot animations are disabled. Console errors, page errors, failed requests, unexpected HTTP status, and capture failures are recorded in `report.json` and cause a nonzero exit. The hydration check uses React's DOM binding marker; revisit it if React's renderer changes. Application clocks are never frozen. For v0.4 comparisons, pass the same `--reference` ISO timestamp to serialize identical date inputs; the real monitoring clock can be narrowly masked with `--mask-live-clocks`.
 
@@ -254,7 +254,7 @@ Calendar, Invoice and both Auth V2 forms have passed their separate hydration ga
 
 ### App-page foundation (v0.3 / 001)
 
-`dashboard/-components/app-pages/page-header.tsx` provides a presentation-only `PageHeader` with a required string `title`, optional string `description`, wrapping React `actions`, and optional layout `className`. It renders one semantic h1 at 24px, with wrapping titles and action groups. File Manager and Products use it while retaining query-driven file views and the product drawer; their grids and tables remain assigned to tasks 008/009. The upstream-author File Manager owner fixture is now Jordan Lee. Tasks and Invoice are intended later consumers. Existing dashboard cards, card-level headings and chart theme remain the shared APIs for their respective roles.
+`dashboard/-components/app-pages/page-header.tsx` provides a presentation-only `PageHeader` with a required string `title`, optional string `description`, wrapping React `actions`, and optional layout `className`. It renders one semantic h1 at the compact 21px scale, with wrapping titles and action groups. File Manager and Products use it while retaining query-driven file views and the product drawer; their grids and tables remain assigned to tasks 008/009. The upstream-author File Manager owner fixture is now Jordan Lee. Tasks and Invoice are intended later consumers. Existing dashboard cards, card-level headings and chart theme remain the shared APIs for their respective roles.
 
 
 ### Mail pages (v0.3 / 002)
@@ -438,8 +438,8 @@ the operational migration. The v0.6.1 registry retained 22 reads / 104 scenarios
 Fresh Postgres 17 and an upgrade beginning with the actual layer 001 schema/seed
 both pass, including repeated seeds and deliberate parity failures.
 
-The current screenshot catalog contains 32 visual routes × four presets × two themes × two
-viewports: 608 cases per source. Run each source/preset with the same `--reference`
+The current screenshot catalog contains 35 visual routes × four presets × two themes × two
+viewports: 560 visual cases per source, plus 13 HTTP-only route checks. Run each source/preset with the same `--reference`
 ISO timestamp and `--mask-live-clocks`; neither option freezes the runtime clock.
 The reference becomes a validated, read-only request header for date-relative
 loaders. Without it, requests use real time. Invalid headers are ignored. Masks

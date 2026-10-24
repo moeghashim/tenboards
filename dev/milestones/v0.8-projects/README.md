@@ -1,6 +1,6 @@
 # v0.8 — Projects workspace
 
-Status: **in progress; tasks 001–005 in review, task 006 pending**. Inspection baseline: `origin/main` at `cc3c5e7`, 2026-10-24. [PLAN.md](../../../PLAN.md) and its Decisions log are authoritative, particularly **v0.8 projects workspace**, **v0.8 page consolidation**, **v0.7/v0.8 sequencing**, and **v0.6.2 compact density**. Planning precedent: [v0.7 / PR #62](https://github.com/moeghashim/tenboards/pull/62) and [v0.6 / PR #56](https://github.com/moeghashim/tenboards/pull/56). This PR proposes implementation contracts; unchecked boxes do not claim delivered behavior.
+Status: **in progress; tasks 001–006 in review; reviewer approval and integration pending**. Inspection baseline: `origin/main` at `cc3c5e7`, 2026-10-24. [PLAN.md](../../../PLAN.md) and its Decisions log are authoritative, particularly **v0.8 projects workspace**, **v0.8 page consolidation**, **v0.7/v0.8 sequencing**, and **v0.6.2 compact density**. Planning precedent: [v0.7 / PR #62](https://github.com/moeghashim/tenboards/pull/62) and [v0.6 / PR #56](https://github.com/moeghashim/tenboards/pull/56). This PR proposes implementation contracts; unchecked boxes do not claim delivered behavior.
 
 ## Brief and boundaries
 
@@ -187,3 +187,7 @@ Every implementation task runs `npm run build`, `npm run check`, `npm run typech
 ## Questions and reconciliation
 
 No unresolved PLAN conflict or missing access blocks this planning draft. Proposed choices requiring planning review (not claims of new user decisions) are recorded in [dev/open-questions.md](../../open-questions.md): Home entry/auth destinations resolved by the locked 2026-10-25 PLAN row; versioned disclosure-only localStorage; normalize independent Kanban/ledger records without losing canceled tasks; Calendar as a Timeline mode; and reorder consolidation after usable destinations. Any later request for tenancy/CRUD, a runtime package, source reuse, changed auth policy or incompatible density requirement is a scope decision: log it and pause dependent implementation. Existing sidecar/product chronology drift is not repaired by this PR.
+
+## Historical implementation verification — 2026-10-24
+
+Tasks 001–006 are implemented and verified in the declared stack #67 → #69 → #71 → #73 → #74 → #75. [Task006 evidence](https://github.com/moeghashim/tenboards/blob/pr-assets/v08-006/acceptance.md) consolidates local Node/workerd/auth/data/migration/redirect checks, 720 retry-resolved visual cases, 192 sidebar cases and 36 immutable-preview captures. Task statuses remain in-review and the milestone remains in-progress until Claude's review/integration. The first Definition of Done item remains unchecked for that reason. No merge, production deployment or release was performed. That verification used main 3703f76/v0.6.2 before v0.7 merged. Round-4 integration verification against f228231 is recorded separately below.

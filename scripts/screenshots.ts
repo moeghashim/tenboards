@@ -247,6 +247,8 @@ try {
               await page.waitForTimeout(150);
             }
             if (stable < 3) throw new Error("Content did not stabilize before capture.");
+            if (await page.locator("vite-error-overlay").count())
+              throw new Error("Vite error overlay is present; this capture is not valid evidence.");
             // Full-page capture can resize the viewport and dismiss anchored menus.
             if (controlsFile)
               await page.screenshot({
