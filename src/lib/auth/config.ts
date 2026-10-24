@@ -1,4 +1,4 @@
-import { type DataEnvironment, databaseUrl, selectSource } from "../../server/data/source.ts";
+import { type DataEnvironment, databaseUrl, selectSource } from "../../server/data/source-config.ts";
 
 export type AuthEnvironment = DataEnvironment & {
   BETTER_AUTH_SECRET?: string;

@@ -6,6 +6,7 @@ import { sql } from "drizzle-orm";
 
 import { authAccount, authSession, authUser, authVerification } from "../../server/db/auth-schema.ts";
 import { getDatabase } from "../../server/db/client.server.ts";
+import { runtimeEnvironment, workerRequestScope } from "../../server/runtime.server.ts";
 import { authConfiguration } from "./config.ts";
 import { accountName } from "./name.ts";
 import { authDestination, authErrorCallback } from "./redirect.ts";
@@ -73,18 +74,31 @@ function createAuth(config: Extract<ReturnType<typeof authConfiguration>, { enab
   });
 }
 let instance: ReturnType<typeof createAuth> | undefined;
+const authKey = Symbol("request auth");
 export function getAuth() {
-  const config = authConfiguration(process.env);
+  const config = authConfiguration(runtimeEnvironment());
   if (!config.enabled) return null;
+  const scope = workerRequestScope();
+  if (scope) {
+    let auth = scope.resources.get(authKey) as ReturnType<typeof createAuth> | undefined;
+    if (!auth) {
+      auth = createAuth(config);
+      scope.resources.set(authKey, auth);
+    }
+    return auth;
+  }
   instance ??= createAuth(config);
   return instance;
 }
 export const AUTH_SERVICE_ERROR =
   "Authentication is unavailable. Check the database connection and migrations, then retry.";
+let storageReady = false;
 export async function assertAuthStorage() {
+  if (storageReady) return;
   try {
     // Even a signed-out request must fail closed when auth storage is missing.
     await getDatabase().execute(sql`select 1 from auth_user, auth_session, auth_account, auth_verification limit 0`);
+    storageReady = true;
   } catch {
     throw new Error(AUTH_SERVICE_ERROR);
   }
@@ -93,7 +107,6 @@ export async function handleAuth(request: Request) {
   try {
     const auth = getAuth();
     if (!auth) return Response.json({ message: "Authentication is disabled in this demo." }, { status: 404 });
-    await assertAuthStorage();
     const response = await auth.handler(request);
     response.headers.set("Cache-Control", "private, no-store");
     if (response.status >= 500) return Response.json({ message: AUTH_SERVICE_ERROR }, { status: 503 });

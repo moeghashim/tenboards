@@ -75,10 +75,11 @@ try {
       const parity = run("data:parity").toString();
       assert.ok(parity.includes('"reads":22,"scenarios":130,"passing":true'));
       console.log(
-        `PASS ${mode}: ${journal.entries.length} migrations, repeat migrate/seed, 22 reads/130 scenarios; retained test database ${name}`,
+        `PASS ${mode}: ${journal.entries.length} migrations, repeat migrate/seed, 22 reads/130 scenarios; test database removed`,
       );
     } finally {
       await sql.end();
+      await admin`drop database ${admin(name)} with (force)`;
     }
   }
 } finally {

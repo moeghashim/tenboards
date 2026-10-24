@@ -253,3 +253,21 @@ reads/130 baseline scenarios remain the v0.4 contract. Sample directory roles an
 Profile employment data are not authorization or account records. Seeds never
 create passwords/auth users and preserve existing auth records. Auth mutations go
 through Better Auth and never update these business tables.
+
+## Workers connection lifetime (v0.6 task 001)
+
+Data reads use the same effective request environment as authentication. A valid
+`HYPERDRIVE.connectionString` takes precedence over `DATABASE_URL`; an invalid
+binding cannot fall through to a valid URL. `DATA_SOURCE=demo` remains connection
+free. Workers reuse a client only within one request (max 1); Node retains its
+lazy pool (max 4) and explicit CLI shutdown. Worker request cleanup closes sockets,
+while Hyperdrive owns hosted pooling. Do not infer hosted TLS or cache correctness
+from the local emulator. See [local runtime and tests](auth.md#local-workers-runtime-v06-task-001).
+
+Nitro defaults `cloudflare.nodeCompat` to true and already emitted `nodejs_compat`
+before v0.6. The root Wrangler source now states that intent explicitly. Nitro
+merges overrides, configured Wrangler values, source config and defaults using
+`defu` (arrays can survive/merge); generated output retains date `2026-10-23`,
+`index.mjs`, ASSETS and ESModule rules. Never edit generated output. The local
+test config explicitly selects `local`; the independent preview source config
+selects `tenboards-preview` and cannot inherit root production bindings.

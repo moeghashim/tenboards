@@ -2,7 +2,7 @@
 
 An MIT-licensed dashboard template built with TanStack Start, React 19, TypeScript, Tailwind CSS v4, and shadcn/ui on Base UI.
 
-The full upstream screen catalog and demo-data relationships are retained, with neutral demo identities. **v0.1 is merged, deployed and closed**: the design system and shell follow [PLAN.md](PLAN.md). **v0.2 (all 14 dashboards restyled) is merged, deployed and closed** per [the dashboard task breakdown](dev/milestones/v0.2-dashboards/README.md). **v0.3 (all app pages restyled) is merged, deployed and released as [v0.3.0](https://github.com/moeghashim/tenboards/releases/tag/v0.3.0)** — [14 app-page tasks](dev/milestones/v0.3-app-pages/README.md) deliver a small shared header foundation, standalone/embedded Mail and Chat, Calendar, Kanban, Tasks, Invoice, File Manager, Products, Users/Roles, Profile, Auth V1/V2, system states, and full-route acceptance. Current milestone/task status is tracked in [dev/milestones.json](dev/milestones.json). Current screens are demonstrations. **v0.4 (optional data layer) is merged, deployed and released as [v0.4.0](https://github.com/moeghashim/tenboards/releases/tag/v0.4.0)** — [8 data-layer tasks](dev/milestones/v0.4-data-layer/README.md) connect every app page and dashboard to Drizzle + optional local Docker Postgres 17; with no `DATABASE_URL` it runs in zero-config demo mode, and the live preview stays in demo mode. **v0.5 (Better Auth) is merged, deployed and released as [v0.5.0](https://github.com/moeghashim/tenboards/releases/tag/v0.5.0)** — [5 auth tasks](dev/milestones/v0.5-auth/README.md). The foundation adds optional server-only auth configuration, isolated tables, HTTP/session boundaries and validated UI-cookie RPCs. V1/V2 support real email/password signup/login and optional Google/GitHub initiation. App routes and data functions enforce sessions; the signed-in shell links to Profile Account & security for name/password/session management. Integrated acceptance includes 486 passing real-Postgres auth scenarios, fresh/incremental migrations and unchanged 22-read/130-scenario data parity. **v0.6 (production Cloudflare) is planned** — [4 production tasks](dev/milestones/v0.6-production/README.md) cover the Workers database runtime, isolated demo previews, production auth hardening, operations and reviewer-owned Neon cutover. Production stays demo-only until cutover; no v0.6 implementation is included in the planning PR.
+The full upstream screen catalog and demo-data relationships are retained, with neutral demo identities. **v0.1 is merged, deployed and closed**: the design system and shell follow [PLAN.md](PLAN.md). **v0.2 (all 14 dashboards restyled) is merged, deployed and closed** per [the dashboard task breakdown](dev/milestones/v0.2-dashboards/README.md). **v0.3 (all app pages restyled) is merged, deployed and released as [v0.3.0](https://github.com/moeghashim/tenboards/releases/tag/v0.3.0)** — [14 app-page tasks](dev/milestones/v0.3-app-pages/README.md) deliver a small shared header foundation, standalone/embedded Mail and Chat, Calendar, Kanban, Tasks, Invoice, File Manager, Products, Users/Roles, Profile, Auth V1/V2, system states, and full-route acceptance. Current milestone/task status is tracked in [dev/milestones.json](dev/milestones.json). Current screens are demonstrations. **v0.4 (optional data layer) is merged, deployed and released as [v0.4.0](https://github.com/moeghashim/tenboards/releases/tag/v0.4.0)** — [8 data-layer tasks](dev/milestones/v0.4-data-layer/README.md) connect every app page and dashboard to Drizzle + optional local Docker Postgres 17; with no `DATABASE_URL` it runs in zero-config demo mode, and the live preview stays in demo mode. **v0.5 (Better Auth) is merged, deployed and released as [v0.5.0](https://github.com/moeghashim/tenboards/releases/tag/v0.5.0)** — [5 auth tasks](dev/milestones/v0.5-auth/README.md). The foundation adds optional server-only auth configuration, isolated tables, HTTP/session boundaries and validated UI-cookie RPCs. V1/V2 support real email/password signup/login and optional Google/GitHub initiation. App routes and data functions enforce sessions; the signed-in shell links to Profile Account & security for name/password/session management. Integrated acceptance includes 486 passing real-Postgres auth scenarios, fresh/incremental migrations and unchanged 22-read/130-scenario data parity. **v0.6 (production Cloudflare) is in progress** — [4 production tasks](dev/milestones/v0.6-production/README.md) cover the Workers database runtime, isolated demo previews, production auth hardening, operations and reviewer-owned Neon cutover. Production stays demo-only until cutover; task 001 establishes the local Workers runtime; production cutover remains reviewer-owned.
 
 ## Run locally
 
@@ -32,7 +32,9 @@ Open [the default dashboard](http://localhost:3000/dashboard/default).
 - `npm run generate-routes` — regenerate file-based routes.
 - `npm run generate:presets` — regenerate the preset registry.
 - `npm run deploy` — reviewer-only build and production deployment after approved merges.
-- `npm run preview:deploy -- --preview-alias pr-NNN` — build and upload a version preview without changing live traffic.
+- `npm run preview:deploy` — superseded pending task 002; do not run the old production-target command. Use the isolated task-001 procedure below.
+- `npm run worker:dev -- --binding` — compiled local Worker with Docker Hyperdrive emulation; omit `--binding` for demo/URL fallback.
+- `npm run worker:test` — local workerd runtime/concurrency/recovery and 22-read/130-scenario parity checks on a fresh review database.
 
 ## Included screens
 
@@ -70,7 +72,7 @@ The unmodified import passed Biome with one existing `noArrayIndexKey` warning i
 
 **Live demo:** [tenboards.mohanadgh.workers.dev](https://tenboards.mohanadgh.workers.dev/dashboard/default) — redeployed from `main` after each merge.
 
-The Worker serves the existing mock-data demo. It has no database, authentication service, or secret bindings. Its only generated binding is `ASSETS` for static files. Production is redeployed from `main` by the reviewer after approved merges. Preview uploads do not change live traffic.
+The Worker serves the existing mock-data demo. It has no database, authentication service, or secret bindings. Its only generated binding is `ASSETS` for static files. Production is redeployed from `main` by the reviewer after approved merges. Preview uploads target only the separate demo-only `tenboards-preview` Worker. They do not change production traffic.
 
 The build uses Nitro's `cloudflare-module` preset. `wrangler.jsonc` owns the Worker name, compatibility date, and public live/preview URL settings. Nitro generates `.output/server/wrangler.json` and `.wrangler/deploy/config.json`, including the server entry, assets binding, module rules, and Node compatibility flag. Do not hand-edit or commit generated output, or pass the root config explicitly to deploy (Wrangler follows Nitro's generated config redirect).
 
@@ -91,8 +93,11 @@ npm run deploy
 For each PR, from its branch:
 
 ```sh
-npm run preview:deploy -- --preview-alias pr-NNN
+npm run build
+npx wrangler versions upload --config wrangler.preview.jsonc --preview-alias pr-NNN
 ```
+
+For the first use only, initialize the separate demo Worker with `npx wrangler deploy --config wrangler.preview.jsonc`; then upload its version. Review the source config as ASSETS-only and confirm `npx wrangler secret list --config wrangler.preview.jsonc` is empty. Task 002 replaces this interim reviewed procedure with guarded tooling. Never upload PR versions to `tenboards`.
 
 Copy the returned version-specific URL into the PR body. The optional alias gives a reusable URL for that PR; uploading a version does not replace the live deployment. Preview URLs are public demo URLs. No GitHub Actions secrets or automated deployments are configured.
 
@@ -462,3 +467,7 @@ with original failures and explicit retries retained. Four-state auth/account re
 and all twelve invoice print PDFs were inspected. See the [evidence index](https://github.com/moeghashim/tenboards/tree/pr-assets/v05-005)
 and [security evidence](docs/auth.md#verified-security-evidence-v05-review). All five
 tasks remain in review; no production auth or milestone release is implied.
+
+### Workers runtime readiness (v0.6 task 001)
+
+The compiled Worker now uses request-scoped database and Better Auth instances, a shared effective runtime environment, and successful-only auth-storage readiness memoization. Builds need no secrets. Node retains its pooled client; zero-env and forced demo remain connection-free. See [local setup, tests and evidence boundaries](docs/auth.md#local-workers-runtime-v06-task-001). Local workerd verification does not claim hosted Neon/Hyperdrive acceptance. Tasks 002–004 and v0.6 release remain pending.

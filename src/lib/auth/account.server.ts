@@ -1,5 +1,6 @@
 import { getRequestHeaders, setResponseHeader } from "@tanstack/react-start/server";
 
+import { runtimeEnvironment } from "../../server/runtime.server.ts";
 import { AUTH_SERVICE_ERROR, getAuth } from "./auth.server.ts";
 import { authConfiguration } from "./config.ts";
 import { requireSession } from "./session.server.ts";
@@ -52,7 +53,7 @@ export async function readAccountDetails(): Promise<AccountDetails | null> {
 
 export async function revokeOwnedSession(id: string) {
   setResponseHeader("Cache-Control", "private, no-store");
-  const config = authConfiguration(process.env);
+  const config = authConfiguration(runtimeEnvironment());
   const headers = getRequestHeaders();
   if (!config.enabled || headers.get("origin") !== config.baseURL)
     throw new Error("This request must come from your sign-in site.");

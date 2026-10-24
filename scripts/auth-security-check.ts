@@ -10,6 +10,10 @@ const pass = (label: string) => {
   cases++;
   console.log(`PASS ${label}`);
 };
+// Wrangler rewrites URL-related headers containing its local proxy host.
+// A reserved canonical host preserves HTTPS-origin/header semantics in this probe.
+const secureOrigin =
+  process.env.AUTH_TEST_RUNTIME === "workerd" ? "https://secure.example.test" : "https://localhost:3011";
 const secret = testSecret();
 const password = testSecret();
 const db = postgres(localDatabase);
@@ -17,14 +21,14 @@ const emails: string[] = [];
 let server = await startTestServer({
   DATABASE_URL: localDatabase,
   BETTER_AUTH_SECRET: secret,
-  BETTER_AUTH_URL: "https://localhost:3011",
+  BETTER_AUTH_URL: secureOrigin,
 });
 const browser = await chromium.launch();
 try {
   const secureEmail = `secure-cookie-${Date.now()}@example.test`;
   emails.push(secureEmail);
   const secure = await server.api.post("/api/auth/sign-up/email", {
-    headers: { origin: "https://localhost:3011" },
+    headers: { origin: secureOrigin },
     data: { email: secureEmail, password, name: "Secure cookie fixture" },
   });
   assert.equal(secure.status(), 200);

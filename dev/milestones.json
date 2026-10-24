@@ -144,7 +144,7 @@
     },
     {
       "id": "v0.6-production",
-      "status": "planned",
+      "status": "in-progress",
       "tasks": [
         "001-workers-database-runtime",
         "002-preview-isolation-hardening",
@@ -152,7 +152,7 @@
         "004-production-cutover"
       ],
       "taskStatuses": {
-        "001-workers-database-runtime": "todo",
+        "001-workers-database-runtime": "review",
         "002-preview-isolation-hardening": "todo",
         "003-ops-docs-acceptance": "todo",
         "004-production-cutover": "todo"
