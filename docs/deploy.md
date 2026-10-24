@@ -1,39 +1,295 @@
-# Production deployment and operations
+# Deploy with your own database
 
-Status: v0.6 implementation is in review. Production cutover, hosted acceptance,
-version bump/tag and release are **task 004, reviewer-owned**. Implementers never
-provision Hyperdrive, set production secrets, upload versions to `tenboards`, or
-run `npm run deploy`. The user creates Neon and supplies its direct URL privately
-only at cutover; lack of that URL does not block local implementation acceptance.
+Connect your fork to Neon through Cloudflare Hyperdrive, then publish a complete
+Worker with email/password authentication and shared sample data. Allow about
+15 minutes once your Cloudflare and Neon accounts are ready; account setup and
+build time can add to that. You need Node 22+, npm and a private Bash terminal.
 
-## Targets and credentials
+This repository's own live demo intentionally stays in demo mode.
 
-| Target | Selected command/config | Database/auth |
-| --- | --- | --- |
-| Node development | `npm run dev`, optional ignored `.env` | Docker URL, optional local auth |
-| Local workerd | `npm run worker:dev -- --binding`; helper selects `--env local --local` | Ignored localConnectionString to Docker, ignored local secret; never remote dev |
-| PR preview | `npm run preview:deploy -- --preview-alias pr-NNN` generates `.wrangler/preview/wrangler.json` | Exact `tenboards-preview`, ASSETS only, no secrets |
-| Production | Reviewer selects freshly generated `.output/server/wrangler.json` and verifies `name=tenboards` | Real HYPERDRIVE ID, auth on, canonical HTTPS origin |
+The Hyperdrive→Postgres runtime path is verified **locally in workerd only**.
+Hosted Neon TLS/pooling, Cloudflare proxy behavior and remote caching have not
+been verified by this project; you verify them for your deployment below.
 
-Never pass the root `wrangler.jsonc` as an entry config: Nitro generates its entry,
-assets and module settings. The preview CLI deliberately bypasses the production
-config and redirect. Build production output afresh before production operations;
-a preview build is not production output. Do not hand-edit generated files.
+## Quick path
 
-Use a private workstation/session, `set +x`, `umask 077`, and private files outside
-the repository. Do not paste credentials into PRs, chat, shell history, command
-logs or screenshots. Wrangler logs can include binding/configuration details on
-failure; inspect them privately and publish only redacted metadata. Keep OAuth
-pairs absent for launch. Do not put DATABASE_URL in production Worker secrets:
-only the Hyperdrive binding supplies its runtime connection.
+Replace every `<placeholder>` with your own value. The numbered details below
+follow this same order and explain the safety checks.
 
-## Local rehearsal (implementer-safe)
+1. Fork, clone and run `npm ci`; set `name` in `wrangler.jsonc` to `<worker-name>`.
+   Log in with `npx wrangler login`. If this Worker is new, create a binding-free,
+   secret-free Hello World Worker with that name in the Cloudflare dashboard first.
+2. Create a Neon project; copy its **direct**, non-pooled TLS connection URL.
+3. Privately run `wrangler hyperdrive create` with `--caching-disabled` (command below).
+4. Put the returned nonsecret ID in the source `wrangler.jsonc` HYPERDRIVE binding.
+5. Run `db:migrate` and `db:seed` against the direct Neon URL with `-- --allow-remote`.
+6. Prepare your clean build and private secrets file:
 
-```sh
+   ```bash
+   set +x
+   umask 077
+   export TENBOARDS_OPS_DIR="$(mktemp -d "${TMPDIR:-/tmp}/tenboards-deploy.XXXXXX")"
+   npm run deploy:prepare -- --name '<worker-name>' \
+     --url 'https://<worker-name>.<account-subdomain>.workers.dev' \
+     --secrets-file "$TENBOARDS_OPS_DIR/worker-secrets.json"
+   ```
+
+7. Inspect your existing version/secret inventory, then follow the helper's printed
+   commands: one `versions upload --secrets-file`, inspect/check that candidate,
+   and `versions deploy <candidate>@100%` only after it passes.
+8. Run `npm run deploy:check -- https://<worker-name>.<account-subdomain>.workers.dev`.
+9. Optionally enable OAuth later; keep a compatible rollback version and a separate
+   database recovery point.
+
+**Never set secrets on a binding-less live version. Never run your hosted database
+with auth off.** Do not use `wrangler secret put`, `secret bulk` or `npm run deploy`
+as an intermediate setup step: they can change live traffic before code, binding
+and secrets are ready together. Keep automatic deployment disabled during setup.
+
+## 1. Fork and name your Worker
+
+Fork this repository, clone your fork, and install its pinned tooling:
+
+```bash
+git clone https://github.com/<your-account>/<your-fork>.git
+cd <your-fork>
+npm ci
+npx wrangler login
+```
+
+Change only the `name` field in source `wrangler.jsonc` to your chosen Worker name.
+Keep `nodejs_compat`, `workers_dev` and `preview_urls` enabled. Find your account's
+workers.dev subdomain in Cloudflare Workers & Pages; your canonical origin will be
+`https://<worker-name>.<account-subdomain>.workers.dev`. Social metadata defaults to
+`/og.png`; for crawlers requiring an absolute URL, set `APP_CONFIG.meta.image` in
+`src/config/app-config.ts` to your origin plus `/og.png`.
+
+The pinned Wrangler requires an existing Worker for `versions upload`. For a new
+name, use Cloudflare Workers & Pages → Create application → Hello World, choose
+that name and deploy the placeholder **without bindings or secrets**. This only
+establishes the Worker; it does not expose database data. Do not attach Hyperdrive
+or auth secrets in the dashboard. If the Worker already exists, retain its current
+known-good version and inspect its bindings/secrets before changing anything.
+
+Use a private session with `set +x` and `umask 077`. Never paste credentials into
+Git, PRs, chat, shell history, screenshots or public logs. Wrangler errors may
+include configuration details; inspect logs privately and share redacted facts.
+
+## 2. Create Neon and copy its direct URL
+
+Create your Neon project, database and role in your chosen region. In its Connect
+dialog disable connection pooling and copy the direct Postgres URL, including
+`sslmode=require`. Do not use the `-pooler` hostname. Before changing an existing
+database, verify its migration history/schema and create a recovery point or Neon
+branch; seeding upserts the template's shared sample records.
+
+Read the URL without echoing it or putting it in shell history:
+
+```bash
+set +x
+umask 077
+read -r -s -p 'Neon direct TLS URL: ' TENBOARDS_DIRECT_DATABASE_URL
+```
+
+## 3. Create Hyperdrive with caching disabled
+
+```bash
+npx wrangler hyperdrive create '<worker-name>-database' \
+  --connection-string "$TENBOARDS_DIRECT_DATABASE_URL" \
+  --caching-disabled --sslmode require --update-config=false
+npx wrangler hyperdrive get <hyperdrive-id>
+```
+
+The expanded connection argument is sensitive; run this privately and do not
+publish raw command logs. Confirm the returned configuration has caching disabled:
+query caching is unsafe for sessions and revocation. Local emulation ignores the
+remote cache setting. See [Cloudflare's Neon setup](https://developers.cloudflare.com/hyperdrive/examples/connect-to-postgres/postgres-database-providers/neon/)
+and [Hyperdrive configuration](https://developers.cloudflare.com/hyperdrive/get-started/).
+
+## 4. Add the binding ID to source configuration
+
+Replace the commented slot in `wrangler.jsonc` with the real 32-hex ID:
+
+```jsonc
+"hyperdrive": [{ "binding": "HYPERDRIVE", "id": "<hyperdrive-id>" }]
+```
+
+Add the separating comma after `preview_urls`. The ID is nonsecret and may be
+committed. Never commit the connection URL, secrets or `localConnectionString`.
+Do not put `DATABASE_URL` in Worker secrets or DB/auth/provider values in `vars`;
+the binding supplies the runtime connection. Keep OAuth pairs absent for launch.
+
+## 5. Migrate and seed directly
+
+```bash
+DATABASE_URL="$TENBOARDS_DIRECT_DATABASE_URL" npm run db:migrate -- --allow-remote
+DATABASE_URL="$TENBOARDS_DIRECT_DATABASE_URL" npm run db:seed -- --allow-remote
+unset TENBOARDS_DIRECT_DATABASE_URL
+```
+
+Remote commands require explicit opt-in, a direct URL and TLS. They reject known
+pooling endpoints; do not migrate through Hyperdrive. Repeating both commands is
+safe: migrations track history and seeds transactionally upsert fixtures without
+resetting schemas or adding default auth accounts. Existing auth identities stay
+separate from sample directory users. Verify the intended database before each
+run; auth grants access to shared data, not tenancy or per-user business ownership.
+
+## 6. Prepare the build and secrets
+
+Run the `deploy:prepare` command in the quick path from your repository root.
+Move local `.env*` and `.dev.vars*` files outside the repository first (keep
+`.env.example`). The helper filters inherited environment variables, rejects
+local dotenv/dev-vars inputs and builds without credentials. It checks the
+**generated** `.output/server/wrangler.json` against `--name`, requires
+`nodejs_compat` and exactly one HYPERDRIVE binding with a nonzero 32-hex ID, and
+rejects `localConnectionString` and DB/auth/provider vars. It cannot verify that
+an ID exists or that remote caching is disabled; that is step 3.
+
+`--url` is required and must be your exact public HTTPS origin. With
+`--secrets-file`, the helper creates a new file outside the repository with mode
+0600 containing a random `BETTER_AUTH_SECRET` and your `BETTER_AUTH_URL`. It never
+prints the secret values, follows no existing destination symlink, and refuses to
+overwrite a file. Its parent directory must already exist. The helper contacts
+neither Cloudflare nor a database; it only builds, validates and prints next commands.
+
+On later deployments, **omit `--secrets-file` to build/validate without generating
+new secrets** and use your existing private file in the upload command. Do not
+rotate your auth secret accidentally. Store it in your private secret manager;
+remove the temporary file when you finish. A new secret can invalidate sessions.
+
+Always select `.output/server/wrangler.json` for the following commands; Nitro
+provides the entry, assets and module settings. Never hand-edit generated output
+or use root `wrangler.jsonc` as the deployment entry. Prepare afresh after any
+source change or preview build.
+
+## 7. Upload one complete version, check it, then promote
+
+Record your known-good version before proceeding:
+
+```bash
+export TENBOARDS_DEPLOY_CONFIG='.output/server/wrangler.json'
+npx wrangler deployments list --config "$TENBOARDS_DEPLOY_CONFIG"
+npx wrangler versions list --config "$TENBOARDS_DEPLOY_CONFIG"
+npx wrangler secret list --config "$TENBOARDS_DEPLOY_CONFIG"
+npx wrangler versions view <known-good-version-id> --config "$TENBOARDS_DEPLOY_CONFIG" --json
+```
+
+For first setup, the existing placeholder/demo must have no database binding or
+secrets. Abort if inventories are unexpected. Later, preserve the existing auth
+secret pair and compatible binding. Secrets omitted from an upload file are
+preserved, so inspect the prior inventory rather than assuming it is empty.
+[Cloudflare documents atomic code/secret upload](https://developers.cloudflare.com/workers/configuration/secrets/#upload-secrets-alongside-code).
+
+```bash
+npx wrangler versions upload --config "$TENBOARDS_DEPLOY_CONFIG" \
+  --secrets-file "$TENBOARDS_OPS_DIR/worker-secrets.json"
+read -r -p 'Candidate version ID: ' TENBOARDS_CANDIDATE_VERSION
+read -r -p 'Candidate immutable origin: ' TENBOARDS_CANDIDATE_ORIGIN
+npx wrangler versions view "$TENBOARDS_CANDIDATE_VERSION" --config "$TENBOARDS_DEPLOY_CONFIG" --json
+npm run deploy:check -- "$TENBOARDS_CANDIDATE_ORIGIN"
+```
+
+Use the full version ID and immutable URL returned by Wrangler. Confirm the
+candidate has ASSETS, your real HYPERDRIVE ID and exactly the two launch auth secret
+names, with no OAuth or direct DB URL. The candidate uses your **canonical** origin
+for auth, not its version URL; do not run signup or `--auth-roundtrip` on the
+candidate origin. Version URLs share bindings and data; they are not isolated PR
+previews. Stop if any check fails. After success, promote the whole version:
+
+```bash
+npx wrangler versions deploy "$TENBOARDS_CANDIDATE_VERSION@100%" \
+  --config "$TENBOARDS_DEPLOY_CONFIG" --yes
+```
+
+Do not split traffic between a demo and authenticated code. Never create a hybrid
+with auth/no binding (503) or binding/no auth (public data). Keep code, binding and
+both auth secrets together, including later rotations or OAuth additions.
+
+## 8. Check your live deployment
+
+```bash
+npm run deploy:check -- 'https://<worker-name>.<account-subdomain>.workers.dev'
+# Optional explicit account write, on the canonical origin only:
+npm run deploy:check -- 'https://<worker-name>.<account-subdomain>.workers.dev' --auth-roundtrip
+```
+
+The default check sends bounded GETs to all four auth forms, public Unauthorized
+and 404 pages, the signed-out dashboard redirect and the null private/no-store
+session endpoint. It rejects demo/auth-off, unsafe redirects, malformed sessions
+and server errors, follows no cross-origin redirects and replays no cookies.
+GETs have at most two attempts, eight seconds each; POSTs are never retried.
+Requests can update rate-limit counters, but default smoke requests no account or
+business-data writes. `--demo` explicitly selects demo expectations and cannot be
+combined with `--auth-roundtrip`.
+
+The optional round-trip keeps random credentials/cookies in memory, signs up,
+signs out, signs in, checks identity/protected access and signs out again. It
+reports a retained unique `@example.test` email, also after an ambiguous network
+failure. To clean up, connect privately to your direct database, verify that exact
+email and creation time, then delete **only that disposable auth_user row** in a
+transaction. Foreign keys cascade its auth accounts/sessions; never delete sample
+users or run wildcard cleanup. There is no public account-delete endpoint.
+
+```sql
+BEGIN;
+SELECT id, email, created_at FROM auth_user WHERE email = :'smoke_email';
+-- Confirm this is the one reported disposable account before deleting.
+DELETE FROM auth_user WHERE email = :'smoke_email';
+COMMIT;
+```
+
+Also verify signup/login/logout, current/other-session revocation, concurrent
+users, protected app/data access, seeded records, exact origin, Secure/HttpOnly/Lax
+cookies, hidden OAuth, cache disabled and a separate binding-free PR preview.
+Inspect light/dark desktop/mobile pages for console/hydration errors. Exercise
+limiter saturation and deliberate database failures only on isolated local data.
+Record your version/revision and redacted results; local tests cannot establish
+hosted pooling, TLS, cache or proxy behavior for you.
+
+## 9. Optional OAuth, then rollback and recovery
+
+Launch uses email/password with open signup. To enable providers later, register
+Google/GitHub apps with callbacks
+`https://<worker-name>.<account-subdomain>.workers.dev/api/auth/callback/google`
+and `https://<worker-name>.<account-subdomain>.workers.dev/api/auth/callback/github`.
+Add complete `GOOGLE_CLIENT_ID`/`GOOGLE_CLIENT_SECRET` or
+`GITHUB_CLIENT_ID`/`GITHUB_CLIENT_SECRET` pairs to your private secrets file,
+retaining the existing auth secret, URL and binding. Repeat the complete version
+upload/check/promotion workflow. Incomplete pairs remain hidden. Verify real
+consent/denial flows on your canonical origin and both auth variants. See
+[auth boundaries and limiter limitations](auth.md).
+
+Before every promotion, retain a compatible known-good version and verify its
+binding IDs, secret names and schema expectations. If smoke fails:
+
+```bash
+npx wrangler rollback <known-good-version-id> --config "$TENBOARDS_DEPLOY_CONFIG" \
+  --message 'Revert failed deployment'
+npm run deploy:check -- 'https://<worker-name>.<account-subdomain>.workers.dev'
+```
+
+Prefer an auth-on rollback. If returning to an older demo, first confirm it has
+neither binding nor auth secret, then check with `--demo`. For an initial Hello
+World placeholder, verify its original response manually; it cannot pass the
+application checker. A different auth secret may invalidate sessions. Never
+construct a partial auth/binding rollback.
+
+Worker rollback does **not** reverse migrations, seed upserts or deleted external
+resources. Keep needed resources; assess schema compatibility even though shipped
+migrations are additive. Restore from your verified Neon recovery point/branch or
+backup as a separate operation; stop dependent writes and obtain your deployment
+owner's data-recovery approval before replacing live data. See [Cloudflare rollback
+constraints](https://developers.cloudflare.com/workers/versions-and-deployments/rollbacks/).
+
+## Local rehearsal and isolated previews
+
+You can rehearse without Cloudflare or Neon credentials. The supplied Docker
+service uses Postgres 17 on port 54329. Choose a unique, test-owned database name:
+
+```bash
 docker compose up -d
-# Create a fresh test-owned database, choose a unique name; port 54329.
-docker compose exec -T postgres createdb -U tenboards tenboards_review_example
-export DATABASE_URL='postgresql://tenboards:tenboards_local@127.0.0.1:54329/tenboards_review_example'
+docker compose exec -T postgres createdb -U tenboards tenboards_readiness_example
+export DATABASE_URL='postgresql://tenboards:tenboards_local@127.0.0.1:54329/tenboards_readiness_example'
 npm run db:migrate
 npm run db:seed
 npm run build
@@ -46,232 +302,24 @@ npm run worker:auth
 npm run worker:security
 node --experimental-strip-types scripts/operations-check.ts
 node --experimental-strip-types scripts/deploy-check-test.ts
-node --experimental-strip-types scripts/cutover-order-check.ts # local --dry-run only
-# Stop test servers before deleting only this test-owned database.
+node --experimental-strip-types scripts/cutover-order-check.ts # local dry-run only
+# Stop test servers, then drop only this test-owned database.
 unset DATABASE_URL
-docker compose exec -T postgres dropdb -U tenboards tenboards_review_example
+docker compose exec -T postgres dropdb -U tenboards tenboards_readiness_example
 ```
 
-The operations test applies/repeats default and `--allow-remote` commands on its
-own fresh Docker database, then drops it. Remote target parsing/TLS/opt-in rejection
-is tested without connecting to a remote server. Test commands and parity remain
-local-only. `--allow-remote` belongs only to migration/seed, accepts direct Postgres
-URLs, requires TLS for non-loopback hosts and rejects known pooling endpoints.
-No command resets schemas or seeds default auth accounts.
+The operations check includes deployment-preparation validation, remote opt-in/TLS
+rejection without remote connections, repeated migrations/seeds in its own fresh
+Docker database, read-only/account smoke and incomplete deployment rejection.
+It drops its own database. Node auth and parity tests remain local-only.
 
-Local workerd rehearses the relevant ordering states: old no-binding/no-secret
-demo; new DB+auth version; rejection of secret-only and DB/auth-off production
-expectations; return to the old demo expectation. Local emulation does not test
-Cloudflare's deployment control plane, Neon TLS/pooling, real proxy headers or
-Hyperdrive cache configuration. The reviewer verifies those in task 004.
+Run `npm run dev` without DB/auth configuration and smoke `/dashboard/default`;
+`npm run screenshots -- --routes /dashboard/default` captures its four states.
+For local Workers, `npm run worker:dev -- --binding` selects `--env local --local`
+and an ignored Docker connection; it never uses remote dev.
 
-## Reviewer cutover: provision and prepare without changing traffic
-
-The following commands are **reviewer-only**, not executed by tasks 001–003.
-Use a Bash session. Start from reviewed clean main after all three implementation
-layers merge. Task 004's real binding commit must not trigger the routine main
-deploy until the complete secret-bearing version below is ready.
-
-```bash
-set +x
-umask 077
-git switch main
-git pull --ff-only
-test -z "$(git status --porcelain)"
-npm ci
-export TENBOARDS_OPS_DIR="$(mktemp -d "${TMPDIR:-/tmp}/tenboards-cutover.XXXXXX")"
-# User supplies Neon DIRECT URL, not its -pooler hostname; include sslmode=require.
-read -r -s -p 'Neon direct TLS URL: ' TENBOARDS_DIRECT_DATABASE_URL
-```
-
-The user creates a Neon project/database/role in the chosen region. Confirm the
-direct URL reaches the intended database, and establish a Neon recovery point or
-branch before altering an existing database. Store credentials only in the private
-operator session. For an existing database, verify its migration history/schema
-and the intended shared fixture upserts before proceeding.
-
-```bash
-# Reviewer-only production Hyperdrive creation. The expanded argument is sensitive;
-# run privately, with tracing off; do not publish raw command logs.
-npx wrangler hyperdrive create tenboards-production \
-  --connection-string "$TENBOARDS_DIRECT_DATABASE_URL" --caching-disabled --sslmode require --update-config=false
-```
-
-Record the returned **nonsecret** ID. Inspect the Hyperdrive configuration with
-`npx wrangler hyperdrive get <REAL_ID>` and confirm caching is disabled. Caching is
-unsafe for session revocation; localConnectionString ignores cache settings and
-cannot prove this. [Cloudflare documents the cache flag and local limit](https://developers.cloudflare.com/hyperdrive/get-started/).
-
-The reviewer activates the commented HYPERDRIVE slot in source `wrangler.jsonc`
-with that real ID, using the task 004 reviewed commit and prescribed sign-off.
-Never commit the direct URL, localConnectionString or secret. Merge that commit
-through reviewer authority; withhold ordinary deployment until the steps below.
-
-```bash
-# Mutating database operations: direct Neon URL only, explicit remote consent.
-DATABASE_URL="$TENBOARDS_DIRECT_DATABASE_URL" npm run db:migrate -- --allow-remote
-DATABASE_URL="$TENBOARDS_DIRECT_DATABASE_URL" npm run db:seed -- --allow-remote
-# Repeatability check on the same intended target; no destructive resets.
-DATABASE_URL="$TENBOARDS_DIRECT_DATABASE_URL" npm run db:migrate -- --allow-remote
-DATABASE_URL="$TENBOARDS_DIRECT_DATABASE_URL" npm run db:seed -- --allow-remote
-unset TENBOARDS_DIRECT_DATABASE_URL
-
-# Generate only the two launch secrets into a private file; values are not printed.
-node --input-type=module <<'NODE'
-import { randomBytes } from 'node:crypto';
-import { writeFileSync } from 'node:fs';
-import { join } from 'node:path';
-writeFileSync(join(process.env.TENBOARDS_OPS_DIR, 'worker-secrets.json'), JSON.stringify({
-  BETTER_AUTH_SECRET: randomBytes(48).toString('base64url'),
-  BETTER_AUTH_URL: 'https://tenboards.mohanadgh.workers.dev'
-}), { mode: 0o600, flag: 'wx' });
-NODE
-
-# No DB/auth/provider environment or dotenv files are needed for this build.
-npm run build
-export TENBOARDS_PRODUCTION_CONFIG='.output/server/wrangler.json'
-node --input-type=module <<'NODE'
-import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
-const config = JSON.parse(readFileSync(process.env.TENBOARDS_PRODUCTION_CONFIG, 'utf8'));
-assert.equal(config.name, 'tenboards');
-assert.equal(config.compatibility_date, '2026-10-23');
-assert.ok(config.compatibility_flags.includes('nodejs_compat'));
-assert.equal(config.hyperdrive?.length, 1);
-assert.equal(config.hyperdrive[0].binding, 'HYPERDRIVE');
-assert.match(config.hyperdrive[0].id, /^[a-f0-9]{32}$/i);
-assert.notEqual(config.hyperdrive[0].id, '0'.repeat(32));
-assert.ok(!config.hyperdrive[0].localConnectionString);
-assert.ok(!Object.keys(config.vars ?? {}).some(k => /DATABASE|AUTH|GOOGLE|GITHUB/.test(k)));
-console.log('PASS intended production target, real binding and compatibility; values redacted.');
-NODE
-npx wrangler deployments list --config "$TENBOARDS_PRODUCTION_CONFIG" --json > "$TENBOARDS_OPS_DIR/deployments-before.json"
-npx wrangler versions list --config "$TENBOARDS_PRODUCTION_CONFIG" --json > "$TENBOARDS_OPS_DIR/versions-before.json"
-npx wrangler secret list --config "$TENBOARDS_PRODUCTION_CONFIG"
-```
-
-Record the currently deployed known-good version and inspect it with
-`npx wrangler versions view <KNOWN_GOOD_ID> --config "$TENBOARDS_PRODUCTION_CONFIG" --json`.
-Before initial cutover it must be the binding-less, secret-less demo. Abort on
-unexpected secrets/bindings or an unexplained deployment. Keep resources needed
-by rollback; document whether the rollback target is demo or auth-on.
-
-## Atomic code/binding/secret staging, then promotion
-
-**Do not run `wrangler secret put` or `secret bulk` first.** They can deploy a new
-live version; a secret on the current binding-less code would return 503. Likewise,
-do not deploy a DB binding without auth: that exposes shared data publicly.
-Use one upload that contains code, the real binding and both secrets. Cloudflare
-supports `--secrets-file` on versions upload; omitted secrets are preserved, which
-is why the prior empty inventory must be verified. [Secret deployment behavior](https://developers.cloudflare.com/workers/configuration/secrets/#upload-secrets-alongside-code).
-
-```bash
-# Reviewer-only production VERSION upload: live demo remains unchanged.
-npx wrangler versions upload --config "$TENBOARDS_PRODUCTION_CONFIG" \
-  --secrets-file "$TENBOARDS_OPS_DIR/worker-secrets.json" \
-  --message 'v0.6 complete DB+auth cutover candidate'
-# Record the returned full version ID and immutable URL, without secret values.
-read -r -p 'Candidate version ID: ' TENBOARDS_CANDIDATE_VERSION
-read -r -p 'Candidate immutable origin: ' TENBOARDS_CANDIDATE_ORIGIN
-npx wrangler versions view "$TENBOARDS_CANDIDATE_VERSION" --config "$TENBOARDS_PRODUCTION_CONFIG" --json
-npm run deploy:check -- "$TENBOARDS_CANDIDATE_ORIGIN"
-# Candidate must contain ASSETS + real HYPERDRIVE + exactly the two launch secret names.
-# Candidate's configured canonical origin remains production, not its version URL.
-# Run no signup there: origin checks intentionally reject a version-origin write.
-
-# Reviewer-only traffic change: switch directly from demo to the complete auth version.
-npx wrangler versions deploy "$TENBOARDS_CANDIDATE_VERSION@100%" \
-  --config "$TENBOARDS_PRODUCTION_CONFIG" --yes
-npm run deploy:check -- https://tenboards.mohanadgh.workers.dev
-# Explicit, optional account write; requires deliberate reviewer selection.
-npm run deploy:check -- https://tenboards.mohanadgh.workers.dev --auth-roundtrip
-```
-
-Do not use a percentage split between old demo and new authenticated code. After
-promotion, verify email signup/login/logout, current and other-session revocation,
-concurrent distinct users, all app/data guards, shared seeded records, exact origin,
-Secure/HttpOnly/Lax cookies, disabled OAuth, limiter persistence/429/recovery, cache
-disabled, timezone/hydration and binding-free previews. These are hosted acceptance
-checks, not claims from local emulation. Record the exact main revision/version and
-redacted evidence before marking task 004 complete.
-
-For later compatible main deploys, keep the existing binding and secret pair intact;
-reviewer `npm run deploy` is then valid. Secret rotations/OAuth changes must stage
-compatible code/bindings/secrets together using the same versions workflow.
-
-## Deployment checker and retained test accounts
-
-`npm run deploy:check -- <origin>` sends bounded GET requests only: all four forms,
-public Unauthorized, a public 404, signed-out dashboard redirect (inspected, not
-followed) and exactly null signed-out session with private/no-store. It rejects
-demo/auth-off, 500s, unsafe redirects, malformed sessions and invalid origins.
-Each GET has at most two attempts, eight seconds per attempt; POSTs are never
-retried. It never forwards cookies to another origin or logs response bodies.
-Normal HTTP requests may update the server's rate-limit counters; “read-only” means
-no account/business-data mutation is requested.
-
-`--demo` explicitly expects dashboard access and the disabled auth 404, including
-`tenboards-preview`. It cannot be combined with `--auth-roundtrip`. The latter
-requires HTTPS (loopback exception for tests), keeps random credentials/cookies
-only in memory, creates one unique `@example.test` account, signs out, signs back
-in, verifies identity and protected access, and signs out again. It reports the
-retained account email, including potentially retained accounts after a network
-failure. There is intentionally no new public account-delete endpoint.
-
-Reviewer cleanup: use the direct database connection privately, identify exactly
-the reported email and its created-at timestamp, then delete **only that disposable
-auth_user row** in a transaction after confirming it is the smoke account. Existing
-foreign keys cascade its auth sessions/accounts. Never delete directory/sample
-users or use a wildcard cleanup against production. Example for psql (credentials
-supplied privately, not committed):
-
-```sql
-BEGIN;
-SELECT id, email, created_at FROM auth_user WHERE email = :'smoke_email';
--- Verify the one reported throwaway identity before this exact-match DELETE.
-DELETE FROM auth_user WHERE email = :'smoke_email';
-COMMIT;
-```
-
-## Rollback and data recovery
-
-Record a known-good compatible version before each promotion. On a failed smoke,
-inspect the target version's binding IDs, secret names and schema expectations,
-then the reviewer can run:
-
-```bash
-npx wrangler rollback <KNOWN_GOOD_VERSION_ID> --config "$TENBOARDS_PRODUCTION_CONFIG" \
-  --message 'Revert failed v0.6 deployment'
-# Auth-on target: default check. Pre-cutover binding-less demo target: --demo.
-npm run deploy:check -- https://tenboards.mohanadgh.workers.dev
-```
-
-For the initial cutover fallback, run that final check with `--demo` only after
-confirming the selected prior version has neither DB binding nor auth secret.
-Never construct a hybrid version with auth secret/no binding or DB/auth-off. An
-older version with a different auth secret may invalidate sessions; document that
-tradeoff. Future rollback should prefer the last known-good auth-on version.
-
-`wrangler rollback` does not reverse Neon migrations, undo seed upserts, restore
-accounts or restore deleted external resources. All shipped migrations here are
-additive, but assess compatibility each time. Use the previously verified Neon
-recovery point/branch or backup for data recovery as a separate reviewer operation;
-stop dependent writes and obtain the appropriate data-recovery approval before
-replacing live data. [Cloudflare rollback resource constraints](https://developers.cloudflare.com/workers/versions-and-deployments/rollbacks/).
-
-Keep the private secret file available only as long as the operation requires;
-store the production secret in the approved private secret store, then remove the
-temporary file/directory. Never commit it. Finalize task 004/README/CHANGELOG,
-bump package metadata to 0.6.0, create the signed-off release commit/tag and publish
-v0.6.0 only after reviewer hosted acceptance. Tasks 001–003 do not perform release.
-
-## Optional OAuth later
-
-Launch is email/password-only with open signup and shared template data. There is
-no tenancy or per-user business-data ownership. Later, register Google/GitHub apps
-with callbacks `https://tenboards.mohanadgh.workers.dev/api/auth/callback/google`
-and `/api/auth/callback/github`. Stage complete GOOGLE_CLIENT_ID/GOOGLE_CLIENT_SECRET
-or GITHUB_CLIENT_ID/GITHUB_CLIENT_SECRET pairs with the existing auth secret/base
-URL and binding; incomplete pairs remain hidden. Verify real consent/denial flows
-on the canonical origin and both auth variants before considering them enabled.
-Keep preview inventories empty. See [auth boundaries and limiter limitations](auth.md).
+PR uploads use only `npm run preview:deploy -- --preview-alias pr-NNN` and its
+separate demo-only `tenboards-preview` Worker, with ASSETS and no bindings/secrets.
+Its guarded config deliberately bypasses your deployment bindings. Keep its remote
+inventory empty of secrets and DB access; a version URL of your database Worker
+is not a safe substitute. See [contributor rules](../CONTRIBUTING.md).

@@ -152,10 +152,10 @@
         "004-production-cutover"
       ],
       "taskStatuses": {
-        "001-workers-database-runtime": "review",
-        "002-preview-isolation-hardening": "review",
-        "003-ops-docs-acceptance": "review",
-        "004-production-cutover": "todo"
+        "001-workers-database-runtime": "merged",
+        "002-preview-isolation-hardening": "merged",
+        "003-ops-docs-acceptance": "merged",
+        "004-production-cutover": "review"
       }
     }
   ]

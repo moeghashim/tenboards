@@ -29,7 +29,8 @@
     "worker:test": "node --experimental-strip-types scripts/worker-runtime-check.ts",
     "worker:auth": "node --experimental-strip-types scripts/worker-auth-test.ts",
     "worker:security": "node --experimental-strip-types scripts/worker-rate-limit-check.ts",
-    "deploy:check": "node --experimental-strip-types scripts/deploy-check.ts"
+    "deploy:check": "node --experimental-strip-types scripts/deploy-check.ts",
+    "deploy:prepare": "node --experimental-strip-types scripts/deploy-prepare.ts"
   },
   "lint-staged": {
     "*.{js,ts,jsx,tsx}": ["biome check --write --no-errors-on-unmatched"]

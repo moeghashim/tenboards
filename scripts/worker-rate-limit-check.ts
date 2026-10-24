@@ -12,7 +12,7 @@ const pass = (s: string) => console.log(`PASS ${s}`);
 for (const BETTER_AUTH_URL of [undefined, "http://localhost:3031", "https://localhost:3031", "http://example.test"])
   assert.throws(() => authConfiguration({ ...env, BETTER_AUTH_URL, REQUIRE_AUTH_ORIGIN: true }));
 assert.ok(
-  authConfiguration({ ...env, BETTER_AUTH_URL: "https://tenboards.mohanadgh.workers.dev", REQUIRE_AUTH_ORIGIN: true })
+  authConfiguration({ ...env, BETTER_AUTH_URL: "https://tenboards.example.workers.dev", REQUIRE_AUTH_ORIGIN: true })
     .enabled,
 );
 pass("hosted auth requires explicit canonical non-loopback HTTPS origin");

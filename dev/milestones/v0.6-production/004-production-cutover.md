@@ -1,41 +1,49 @@
 ---
 id: "004"
-title: Provision production and release v0.6.0
+title: Template deployment readiness
 milestone: v0.6-production
-status: todo
+status: review
 category: operations
-files: ["wrangler.jsonc", "docs/deploy.md", "README.md", "CHANGELOG.md", "package.json", "package-lock.json", "dev/milestones/v0.6-production/", "dev/milestones.json", "dev/open-questions.md"]
+files: ["scripts/deploy-prepare*.ts", "scripts/build-environment.ts", "scripts/preview-policy.ts", "scripts/operations-check.ts", "scripts/worker-rate-limit-check.ts", "src/config/app-config.ts", "wrangler.jsonc", "docs/deploy.md", "docs/auth.md", "README.md", "CHANGELOG.md", "package.json", "dev/milestones/v0.6-production/", "dev/milestones.json", "dev/open-questions.md"]
 ---
 
 ## Goal and scope
 
-**Reviewer-owned: Claude Opus 5.5. Not an implementer assignment.** After 001–003 are reviewed/merged and the user supplies the direct Neon URL, activate db+auth on `tenboards.mohanadgh.workers.dev`, verify production and release v0.6.0. The user creates the Neon project; reviewer owns Hyperdrive, secrets, migration/seed, binding-ID commit, merge/deploy and release.
+Make tenboards ready for template adopters to connect their own Neon database and
+publish a complete authenticated Cloudflare Worker. PLAN's **v0.6 template
+readiness** decision (2026-10-24, bb3c62a) supersedes the former project provisioning
+and production-mode requirements and explicitly authorizes this task rewrite.
+The repository's live Worker stays a zero-config demo. No project-owned Neon,
+Hyperdrive, production secrets or production upload is required or authorized.
 
-## Files and ownership
-
-- Production `wrangler.jsonc`: reviewer commits real nonsecret HYPERDRIVE ID; no URL/secrets or local binding settings.
-- External production operations: reviewer executes the approved runbook against Neon and `tenboards`, with query caching disabled and OAuth absent.
-- Deployment docs, README, CHANGELOG, package release metadata and acceptance/status: reviewer records actual outcome and release evidence. No code redesign or new features.
+GPT-6-Astra implements this task on `feat/v0.6/004-template-deploy-readiness` in one
+PR to main. Claude Opus 5.5 reviews and owns merge/release. No implementer merge,
+production deployment, version bump, tag or release.
 
 ## Before implementation
 
-Review 003's runbook, migration compatibility, exact target configuration, preview isolation and rollback/version plan. No prefactor is planned: this is operational execution of already reviewed code. If a runtime bug appears, record it and route a scoped fix/review instead of improvising production changes.
+Inspect deployment scripts and build isolation before editing. Share the existing
+preview clean-build environment allowlist and dotenv-file rejection as a small
+behavior-preserving prefactor. Keep config validation/private-file creation in a
+pure/local helper seam for focused tests. Preserve existing preview targeting and
+all application/auth behavior; add no runtime dependency.
 
 ## Acceptance criteria
 
-- [ ] All prerequisite task PRs are merged, main build/check/typecheck pass, reviewer has approved evidence and the user has supplied Neon direct connection securely. Do not paste credentials in Git, PRs or evidence.
-- [ ] Reviewer creates/verifies Hyperdrive with query caching disabled; records nonsecret ID and binding name only. Migrate and seed Neon directly using reviewed remote opt-in; verify schema/data and auth preservation.
-- [ ] Reviewer sets runtime BETTER_AUTH_SECRET and canonical BETTER_AUTH_URL on production only, with no OAuth pairs, no forced demo and no accidental no-secret DB state. Activate committed real binding ID through reviewed main; follow staged secret/version ordering.
-- [ ] Reviewer deploys main to exact host `tenboards.mohanadgh.workers.dev`; record revision/version and known-good rollback target. No Pages/custom domain or implementer production deployment.
-- [ ] Read-only deploy smoke passes, followed by explicit throwaway signup/signin/signout and session/protected-route checks. Verify shared seeded data, immediate revocation, actual HTTPS cookie/origin behavior, hidden OAuth and cache-disabled Hyperdrive. Redact all account/session material; account cleanup follows the runbook.
-- [ ] Independently verify `tenboards-preview` still has no secrets/database bindings and remains demo-only; production deployment has not changed the preview target or trusted preview origins.
-- [ ] Inspect production public/authenticated affected screens in light/dark × desktop/mobile without console/hydration errors. Upload redacted evidence to pr-assets/attachments, including generated-config/binding facts and exact smoke commands/results.
-- [ ] Finalize deployment guide, README and CHANGELOG; update task/milestone acceptance only for verified outcomes. Reviewer bumps package metadata, tags and publishes v0.6.0 with release notes. Close the pending Neon-access entry without recording the URL.
+- [x] Generalize `docs/deploy.md` to address you with Worker/URL placeholders, one live-demo note, a short quick path and ordered detailed Neon/Hyperdrive/migrate/seed/secrets/candidate/promotion/check/OAuth/rollback steps. Preserve no-secret-only and no-DB/auth-off warnings and state local-only workerd verification honestly.
+- [x] Add `npm run deploy:prepare`: clean build, expected Worker name and nodejs_compat validation, exactly one real-format nonzero 32-hex HYPERDRIVE ID, no localConnectionString or DB/auth vars; optional exclusive 0600 secrets outside the repository with random BETTER_AUTH_SECRET and required canonical --url. Print next commands without executing Cloudflare/database operations or exposing secret contents.
+- [x] Test invalid configuration, environment isolation, private secret-file safety and command ordering in the existing scripts style; include preparation tests in the operations check. Replace adopter-facing hardcoded production-origin fixtures with example hosts.
+- [x] Update README deployment guidance/live-demo/release-ready status, draft CHANGELOG v0.6, milestone references/runbook/DoD and task 004 review status. Keep PLAN and release metadata unchanged.
+- [ ] On a fresh local Docker database at port 54329, pass build/check/typecheck, auth:test, data:parity, worker:test, worker:auth, worker:security, operations-check and deploy-check-test. Drop the test database afterward. Record inherited warnings separately.
+- [ ] Pass dev `/dashboard/default` smoke without console errors and `npm run screenshots`; publish redacted light/dark × desktop/mobile evidence or explain the nonvisual exemption. Include an immutable `tenboards-preview` URL plus `pr-NNN` alias in the PR.
 
-## Tests
+## Verification and handoff
 
-Preflight build/check/typecheck and dev default smoke plus 003's accepted local evidence. Hosted deploy:check default and opt-in account path, protected data/session checks and four-state production captures. Compare actual remote Hyperdrive cache setting, secret names and preview isolation to the runbook. On failure, pause release, retain safe diagnostics and execute reviewer-owned compatible rollback; retest afterward. Do not run destructive fault injection or limiter saturation against shared production users.
+Record exact commands and evidence in the PR and the verification note below.
+Hosted Hyperdrive→Neon pooling/TLS/cache/proxy behavior remains unverified: local
+workerd tests are the readiness evidence, and adopters verify their own live
+installation. No live database/account is created to close this milestone.
 
-## Dependencies and handoff
-
-Depends on merged 001–003 and user-provided Neon access at cutover. This access gate is logged in dev/open-questions.md and blocks only 004. GPT-6-Astra must stop before this task; Claude alone executes merges, production deployment/rollback and release under the existing delegated authority.
+Depends on merged tasks 001–003 (PRs #57, #60, #59). No Neon-access gate remains.
+The reviewer may release v0.6 after readiness review; package/tag/release changes
+are separate reviewer work.
