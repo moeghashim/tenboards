@@ -1,0 +1,47 @@
+**Verdict: SHIP.** M1 is fixed and the fixes didn't introduce any regressions. I made no edits, ran no tests and started no servers. I read the `aea8161..c25f58a` diff and looked at the post-fix captures. Remote HEAD is `c25f58a`.
+
+## Prior findings
+
+**M1 (outages shown as configuration errors): resolved.**
+- **Client:** `responseFailure` (`src/routes/(main)/dashboard/assistant/-components/conversation.ts:29-58`) reads at most 1 KiB of the error body for at most 2 s, then passes `body.error` through the existing `failureCode` allowlist.
+- **Fallback:** if the body is malformed, too large, stalled or holds an unknown code, it falls back to the status map. Unmapped statuses now fall back to `unavailable`, not `configuration`.
+- **Matches the server:** `errorResponse` in `src/server/assistant/errors.ts` sends exactly `{ error: safe.code }`.
+- **Generation check:** it runs again after the body read (`use-conversation.ts:158`), so a Stop or New conversation during that read is a no-op. A Stop during the read also aborts the fetch, so the read fails into the fallback and doesn't hang.
+- **Refresh:** only `provider`, `configuration` and `invalid` trigger a metadata refresh.
+- **Tests:** unit tests cover distinguishing the codes, a disallowed code, malformed and oversized bodies, and stalled-body cancellation. The lifecycle check confirms the metadata request count stays the same on `unavailable` and goes up on `configuration`.
+- **Captures:** `lifecycle/*-unavailable.png` and `*-configuration.png` show the two different messages with the draft kept.
+
+**L1 (focus lost on session end): resolved.** `clear(true)` no longer focuses the disabled composer, and an effect keyed on `expired` focuses the sign-in link. The lifecycle check asserts the link has focus. `dark-desktop-session-ended.png` shows a visible focus ring on "Sign in to continue."
+
+**L2 ("Offer New conversation" was only text): resolved.** The composer error now has an inline New conversation button next to it (`assistant.tsx:189-197`), using `clear()`, which returns focus to the composer. The only source of that error is a `requestHistory` throw, which is always a context error, so the button is always relevant. `context/light-desktop-oversized-context.png` shows it beside the error.
+
+**L3 (context trim stops one step early): accepted as kept.** Blocking instead of trimming is allowed by the task, and it never silently drops the latest exchange.
+
+**L4 (copy and naming): resolved.** The copy is now "Available providers changed.", which is accurate in the Recorded demo case, and `useRecorded` is renamed to `chooseRecorded`.
+
+**L5 (evidence realism): resolved.** The leftover `light-desktop-failure.png` is gone. The PR body still needs to say that the 401 capture is injected in the demo shell, while real auth revocation is covered in `modes-final.log`.
+
+**L6 (relative `.ts` imports): accepted.** This is confined to one route-local helper. The note in PR Decisions is still pending.
+
+## Regressions
+
+None found. Two non-blocking notes:
+- For a 401, `responseFailure` is never called because the session path handles it earlier. That's correct; the 401 mapping is just unused.
+- The floating badge in the context capture is the inherited dev-only TanStack badge. It isn't in the production preview.
+
+## Impeccable verdict pass
+
+**verdict**
+- M1 resolved: the unavailable and configuration captures show different, accurate next steps.
+- L1 resolved: the session-ended captures show focus on the sign-in link.
+- L2 resolved: the oversized-context capture shows the inline New conversation action at the same compact density.
+- L4 resolved: the copy is changed.
+- L5 resolved: the leftover PNG is removed.
+- L3 and L6 are deliberate and documented.
+- No design regressions: the new button reuses the existing outline Button, no tokens changed, and `.impeccable/design.json` is correctly unchanged. The `DESIGN.md` edits now describe the shipped layout, focus behaviour and where pre-send errors appear.
+
+**remaining:** clear. Still to finish, but not blocking: the PR-body wording for L5 and L6, and uploading the evidence.
+
+disposition: ship
+
+This "ship" covers the r1 findings scored above, not a fresh review of the whole screen. PR #72 is ready to squash-merge after #68 and #70 land, in that order; the merge, release and production redeploy are mine.
