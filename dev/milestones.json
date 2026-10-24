@@ -160,11 +160,11 @@
     },
     {
       "id": "v0.6.1-legacy-removal",
-      "status": "review",
+      "status": "done",
       "tasks": ["001-remove-legacy", "002-collapsed-header-toggle"],
       "taskStatuses": {
         "001-remove-legacy": "merged",
-        "002-collapsed-header-toggle": "review"
+        "002-collapsed-header-toggle": "merged"
       }
     }
   ]

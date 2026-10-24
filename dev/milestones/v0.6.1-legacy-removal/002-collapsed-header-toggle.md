@@ -1,6 +1,6 @@
 # 002 — Collapsed header toggle
 
-Status: review
+Status: merged (#64)
 Base: `origin/main` at `28cdc56` (PR #63). Branch: `feat/v0.6.1/002-collapsed-header-toggle`.
 Authority: explicit user task approval, 2026-10-24; PLAN §7 and its preview/reviewer decisions remain in force.
 

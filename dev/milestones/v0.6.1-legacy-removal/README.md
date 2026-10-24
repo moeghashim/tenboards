@@ -1,11 +1,13 @@
 # v0.6.1 — Legacy removal
 
+Status: **done — tasks 001 (#63) and 002 (#64) merged; released as [v0.6.1](https://github.com/moeghashim/tenboards/releases/tag/v0.6.1)**.
+
 ## Tasks
 
 | Task | Status | Contract |
 | --- | --- | --- |
 | 001 — Remove legacy dashboards and Auth V1 | Merged (#63) | Acceptance below |
-| 002 — Collapsed header toggle | Review (#64) | [Task contract](002-collapsed-header-toggle.md) |
+| 002 — Collapsed header toggle | Merged (#64) | [Task contract](002-collapsed-header-toggle.md) |
 
 Task 002 removes the duplicate header opener for desktop icon rails while preserving mobile and fully hidden off-canvas openers, focus, shortcuts and SSR. Build/check/typecheck, 96 hydrated combinations, 96 server-rendered cookie combinations and before/after screenshots pass. [PR #64](https://github.com/moeghashim/tenboards/pull/64) links the isolated version preview and [pr-assets evidence](https://github.com/moeghashim/tenboards/tree/pr-assets/v061-002).
 
