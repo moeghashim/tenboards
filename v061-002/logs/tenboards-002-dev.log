@@ -1,0 +1,60 @@
+
+> tenboards@0.1.0 dev
+> vite dev --port 3000 --host 0.0.0.0
+
+ℹ Using cloudflare-dev emulation in development mode.
+
+ WARN  miniflare@5.20261019.2-beta is installed in /Users/moeghashim/tenboards/ but the miniflare dev runner requires ^4. Please update it if you run into issues.
+
+Miniflare runner init error: MiniflareCoreError [ERR_VALIDATION]: Unexpected options passed to `new Miniflare()` constructor:
+✖ Unrecognized keys: "modules", "defaultPersistRoot", "rootPath", "compatibilityDate", "compatibilityFlags", "unsafeDirectSockets", "script", "scriptPath", "modulesRoot", "unsafeEvalBinding", "serviceBindings", "unsafeUseModuleFallbackService"
+✖ Invalid input: expected array, received undefined
+  → at workers
+    at validateOptions (/Users/moeghashim/tenboards/node_modules/miniflare/dist/src/index.js:136641:24)
+    at new _Miniflare (/Users/moeghashim/tenboards/node_modules/miniflare/dist/src/index.js:137028:38)
+    at #initAsync (file:///Users/moeghashim/tenboards/node_modules/env-runner/dist/_chunks/miniflare-runner.mjs:1301:22) {
+  code: 'ERR_VALIDATION',
+  cause: [Getter]
+}
+[nitro] ℹ Restarting env runner... 
+Miniflare runner init error: MiniflareCoreError [ERR_VALIDATION]: Unexpected options passed to `new Miniflare()` constructor:
+✖ Unrecognized keys: "modules", "defaultPersistRoot", "rootPath", "compatibilityDate", "compatibilityFlags", "unsafeDirectSockets", "script", "scriptPath", "modulesRoot", "unsafeEvalBinding", "serviceBindings", "unsafeUseModuleFallbackService"
+✖ Invalid input: expected array, received undefined
+  → at workers
+    at validateOptions (/Users/moeghashim/tenboards/node_modules/miniflare/dist/src/index.js:136641:24)
+    at new _Miniflare (/Users/moeghashim/tenboards/node_modules/miniflare/dist/src/index.js:137028:38)
+    at #initAsync (file:///Users/moeghashim/tenboards/node_modules/env-runner/dist/_chunks/miniflare-runner.mjs:1301:22) {
+  code: 'ERR_VALIDATION',
+  cause: [Getter]
+}
+[nitro] ℹ Restarting env runner... 
+Miniflare runner init error: MiniflareCoreError [ERR_VALIDATION]: Unexpected options passed to `new Miniflare()` constructor:
+✖ Unrecognized keys: "modules", "defaultPersistRoot", "rootPath", "compatibilityDate", "compatibilityFlags", "unsafeDirectSockets", "script", "scriptPath", "modulesRoot", "unsafeEvalBinding", "serviceBindings", "unsafeUseModuleFallbackService"
+✖ Invalid input: expected array, received undefined
+  → at workers
+    at validateOptions (/Users/moeghashim/tenboards/node_modules/miniflare/dist/src/index.js:136641:24)
+    at new _Miniflare (/Users/moeghashim/tenboards/node_modules/miniflare/dist/src/index.js:137028:38)
+    at #initAsync (file:///Users/moeghashim/tenboards/node_modules/env-runner/dist/_chunks/miniflare-runner.mjs:1301:22) {
+  code: 'ERR_VALIDATION',
+  cause: [Getter]
+}
+[nitro] ℹ Restarting env runner... 
+Miniflare runner init error: MiniflareCoreError [ERR_VALIDATION]: Unexpected options passed to `new Miniflare()` constructor:
+✖ Unrecognized keys: "modules", "defaultPersistRoot", "rootPath", "compatibilityDate", "compatibilityFlags", "unsafeDirectSockets", "script", "scriptPath", "modulesRoot", "unsafeEvalBinding", "serviceBindings", "unsafeUseModuleFallbackService"
+✖ Invalid input: expected array, received undefined
+  → at workers
+    at validateOptions (/Users/moeghashim/tenboards/node_modules/miniflare/dist/src/index.js:136641:24)
+    at new _Miniflare (/Users/moeghashim/tenboards/node_modules/miniflare/dist/src/index.js:137028:38)
+    at #initAsync (file:///Users/moeghashim/tenboards/node_modules/env-runner/dist/_chunks/miniflare-runner.mjs:1301:22) {
+  code: 'ERR_VALIDATION',
+  cause: [Getter]
+}
+
+[nitro]  ERROR  Env runner failed after 3 retries. 
+
+
+  VITE v8.3.5  ready in 700 ms
+
+  ➜  Local:   http://localhost:3000/
+  ➜  Network: http://192.168.1.186:3000/   en1
+  ➜  Network: http://100.107.237.86:3000/  utun4

@@ -1,0 +1,17 @@
+0 sidebar combinations passed
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+locator.evaluate: Error: strict mode violation: locator('header') resolved to 2 elements:
+    1) <header data-tsd-source="/src/routes/(main)/dashboard/-components/header/shell-header.tsx:40:5" class="bg-background flex h-14 shrink-0 items-center gap-3 border-b px-4 md:px-6 [html[data-navbar-style=sticky]_&]:sticky [html[data-navbar-style=sticky]_&]:top-0 [html[data-navbar-style=sticky]_&]:z-20">…</header> aka getByText('Toggle SidebarWorkspace/')
+    2) <header tabindex="-1" data-tsd-surface="" class="go3543664389" aria-label="TanStack Devtools" data-testid="workbench-header">…</header> aka getByTestId('workbench-header')
+
+Call log:
+[2m  - waiting for locator('header')[22m
+
+    at /Users/moeghashim/tenboards/scripts/sidebar-toggle-check.ts:61:48 {
+  log: [ "  - waiting for locator('header')" ]
+}
+
+Node.js v24.21.0

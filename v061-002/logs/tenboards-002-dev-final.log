@@ -1,0 +1,428 @@
+
+> tenboards@0.1.0 dev
+> vite dev --port 3000 --host 0.0.0.0
+
+ℹ Using cloudflare-dev emulation in development mode.
+3:37:13 AM [vite] (client) Re-optimizing dependencies because lockfile has changed
+
+  VITE v8.3.5  ready in 1025 ms
+
+  ➜  Local:   http://localhost:3000/
+  ➜  Network: http://192.168.1.186:3000/   en1
+  ➜  Network: http://100.107.237.86:3000/  utun4
+ReferenceError: module is not defined
+    at runInlinedModule (runInlinedModule:6:3)
+    at WorkerdModuleEvaluator.runInlinedModule (Users/moeghashim/tenboards/node_modules/nitro/dist/runtime/internal/vite/dev-worker.mjs:20:11)
+    at ModuleRunner.directRequest (Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js:1281:80)
+    at async ModuleRunner.cachedRequest (Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js:1188:73)
+ReferenceError: module is not defined
+    at runInlinedModule (runInlinedModule:6:3)
+    ... 2 lines matching cause stack trace ...
+    at async ModuleRunner.cachedRequest (Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js:1188:73) {
+  cause: ReferenceError: module is not defined
+      at runInlinedModule (runInlinedModule:6:3)
+      at WorkerdModuleEvaluator.runInlinedModule (Users/moeghashim/tenboards/node_modules/nitro/dist/runtime/internal/vite/dev-worker.mjs:20:11)
+      at ModuleRunner.directRequest (Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js:1281:80)
+      at async ModuleRunner.cachedRequest (Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js:1188:73),
+  status: 500,
+  statusText: undefined,
+  headers: undefined,
+  data: undefined,
+  body: undefined,
+  unhandled: true
+}
+YOUCH:CORE: parsing source ReferenceError: module is not defined
+    at runInlinedModule (runInlinedModule:6:3)
+    ... 2 lines matching cause stack trace ...
+    at async ModuleRunner.cachedRequest (Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js:1188:73) {
+  cause: ReferenceError: module is not defined
+      at runInlinedModule (runInlinedModule:6:3)
+      at WorkerdModuleEvaluator.runInlinedModule (Users/moeghashim/tenboards/node_modules/nitro/dist/runtime/internal/vite/dev-worker.mjs:20:11)
+      at ModuleRunner.directRequest (Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js:1281:80)
+      at async ModuleRunner.cachedRequest (Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js:1188:73),
+  status: 500,
+  statusText: undefined,
+  headers: undefined,
+  data: undefined,
+  body: undefined,
+  unhandled: true
+}
+
+YOUCH:CORE: error normalized to ReferenceError: module is not defined
+    at runInlinedModule (runInlinedModule:6:3)
+    ... 2 lines matching cause stack trace ...
+    at async ModuleRunner.cachedRequest (Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js:1188:73) {
+  cause: ReferenceError: module is not defined
+      at runInlinedModule (runInlinedModule:6:3)
+      at WorkerdModuleEvaluator.runInlinedModule (Users/moeghashim/tenboards/node_modules/nitro/dist/runtime/internal/vite/dev-worker.mjs:20:11)
+      at ModuleRunner.directRequest (Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js:1281:80)
+      at async ModuleRunner.cachedRequest (Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js:1188:73),
+  status: 500,
+  statusText: undefined,
+  headers: undefined,
+  data: undefined,
+  body: undefined,
+  unhandled: true
+}
+
+YOUCH:CORE: stack frame {
+  functionName: 'runInlinedModule',
+  args: undefined,
+  fileName: 'runInlinedModule',
+  lineNumber: 6,
+  columnNumber: 3,
+  raw: '    at runInlinedModule (runInlinedModule:6:3)',
+  type: 'app',
+  fileType: 'fs',
+  source: undefined
+}
+
+YOUCH:CORE: stack frame {
+  functionName: 'WorkerdModuleEvaluator.runInlinedModule',
+  args: undefined,
+  fileName: 'Users/moeghashim/tenboards/node_modules/nitro/dist/runtime/internal/vite/dev-worker.mjs',
+  lineNumber: 20,
+  columnNumber: 11,
+  raw: '    at WorkerdModuleEvaluator.runInlinedModule (Users/moeghashim/tenboards/node_modules/nitro/dist/runtime/internal/vite/dev-worker.mjs:20:11)',
+  type: 'module',
+  fileType: 'fs',
+  source: undefined
+}
+
+YOUCH:CORE: stack frame {
+  functionName: 'ModuleRunner.directRequest',
+  args: undefined,
+  fileName: 'Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js',
+  lineNumber: 1281,
+  columnNumber: 80,
+  raw: '    at ModuleRunner.directRequest (Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js:1281:80)',
+  type: 'module',
+  fileType: 'fs',
+  source: undefined
+}
+
+YOUCH:CORE: stack frame {
+  functionName: 'async ModuleRunner.cachedRequest',
+  args: undefined,
+  fileName: 'Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js',
+  lineNumber: 1188,
+  columnNumber: 73,
+  raw: '    at async ModuleRunner.cachedRequest (Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js:1188:73)',
+  type: 'module',
+  fileType: 'fs',
+  source: undefined
+}
+
+YOUCH:CORE: parsing source ReferenceError: module is not defined
+    at runInlinedModule (runInlinedModule:6:3)
+    at WorkerdModuleEvaluator.runInlinedModule (Users/moeghashim/tenboards/node_modules/nitro/dist/runtime/internal/vite/dev-worker.mjs:20:11)
+    at ModuleRunner.directRequest (Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js:1281:80)
+    at async ModuleRunner.cachedRequest (Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js:1188:73)
+
+YOUCH:CORE: error normalized to ReferenceError: module is not defined
+    at runInlinedModule (runInlinedModule:6:3)
+    at WorkerdModuleEvaluator.runInlinedModule (Users/moeghashim/tenboards/node_modules/nitro/dist/runtime/internal/vite/dev-worker.mjs:20:11)
+    at ModuleRunner.directRequest (Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js:1281:80)
+    at async ModuleRunner.cachedRequest (Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js:1188:73)
+
+YOUCH:CORE: stack frame {
+  functionName: 'runInlinedModule',
+  args: undefined,
+  fileName: 'runInlinedModule',
+  lineNumber: 6,
+  columnNumber: 3,
+  raw: '    at runInlinedModule (runInlinedModule:6:3)',
+  type: 'app',
+  fileType: 'fs',
+  source: undefined
+}
+
+YOUCH:CORE: stack frame {
+  functionName: 'WorkerdModuleEvaluator.runInlinedModule',
+  args: undefined,
+  fileName: 'Users/moeghashim/tenboards/node_modules/nitro/dist/runtime/internal/vite/dev-worker.mjs',
+  lineNumber: 20,
+  columnNumber: 11,
+  raw: '    at WorkerdModuleEvaluator.runInlinedModule (Users/moeghashim/tenboards/node_modules/nitro/dist/runtime/internal/vite/dev-worker.mjs:20:11)',
+  type: 'module',
+  fileType: 'fs',
+  source: undefined
+}
+
+YOUCH:CORE: stack frame {
+  functionName: 'ModuleRunner.directRequest',
+  args: undefined,
+  fileName: 'Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js',
+  lineNumber: 1281,
+  columnNumber: 80,
+  raw: '    at ModuleRunner.directRequest (Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js:1281:80)',
+  type: 'module',
+  fileType: 'fs',
+  source: undefined
+}
+
+YOUCH:CORE: stack frame {
+  functionName: 'async ModuleRunner.cachedRequest',
+  args: undefined,
+  fileName: 'Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js',
+  lineNumber: 1188,
+  columnNumber: 73,
+  raw: '    at async ModuleRunner.cachedRequest (Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js:1188:73)',
+  type: 'module',
+  fileType: 'fs',
+  source: undefined
+}
+
+YOUCH:CORE: parsing source [module is not defined
+at runInlinedModule (runInlinedModule:6:3)
+at WorkerdModuleEvaluator.runInlinedModule (Users/moeghashim/tenboards/node_modules/nitro/dist/runtime/internal/vite/dev-worker.mjs:20:11)
+at ModuleRunner.directRequest (Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js:1281:80)
+at async ModuleRunner.cachedRequest (Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js:1188:73)] {
+  cause: [module is not defined
+  at runInlinedModule (runInlinedModule:6:3)
+  at WorkerdModuleEvaluator.runInlinedModule (Users/moeghashim/tenboards/node_modules/nitro/dist/runtime/internal/vite/dev-worker.mjs:20:11)
+  at ModuleRunner.directRequest (Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js:1281:80)
+  at async ModuleRunner.cachedRequest (Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js:1188:73)],
+  status: 500,
+  statusText: undefined,
+  headers: undefined,
+  data: undefined,
+  body: undefined,
+  unhandled: true
+}
+
+YOUCH:CORE: error normalized to [module is not defined
+at runInlinedModule (runInlinedModule:6:3)
+at WorkerdModuleEvaluator.runInlinedModule (Users/moeghashim/tenboards/node_modules/nitro/dist/runtime/internal/vite/dev-worker.mjs:20:11)
+at ModuleRunner.directRequest (Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js:1281:80)
+at async ModuleRunner.cachedRequest (Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js:1188:73)] {
+  cause: [module is not defined
+  at runInlinedModule (runInlinedModule:6:3)
+  at WorkerdModuleEvaluator.runInlinedModule (Users/moeghashim/tenboards/node_modules/nitro/dist/runtime/internal/vite/dev-worker.mjs:20:11)
+  at ModuleRunner.directRequest (Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js:1281:80)
+  at async ModuleRunner.cachedRequest (Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js:1188:73)],
+  status: 500,
+  statusText: undefined,
+  headers: undefined,
+  data: undefined,
+  body: undefined,
+  unhandled: true
+}
+
+YOUCH:CORE: reading contents for source file runInlinedModule
+
+YOUCH:CORE: Unable to read source file runInlinedModule, error no such file or directory, readAll '/bundle/runInlinedModule'
+
+YOUCH:CORE: stack frame {
+  functionName: 'runInlinedModule',
+  args: undefined,
+  fileName: 'runInlinedModule',
+  lineNumber: 6,
+  columnNumber: 3,
+  raw: 'at runInlinedModule (runInlinedModule:6:3)',
+  type: 'app',
+  fileType: 'fs',
+  source: undefined
+}
+
+YOUCH:CORE: reading contents for source file Users/moeghashim/tenboards/node_modules/nitro/dist/runtime/internal/vite/dev-worker.mjs
+
+YOUCH:CORE: Unable to read source file Users/moeghashim/tenboards/node_modules/nitro/dist/runtime/internal/vite/dev-worker.mjs, error no such file or directory, readAll '/bundle/Users/moeghashim/tenboards/node_modules/nitro/dist/runtime/internal/vite/dev-worker.mjs'
+
+YOUCH:CORE: stack frame {
+  functionName: 'WorkerdModuleEvaluator.runInlinedModule',
+  args: undefined,
+  fileName: 'Users/moeghashim/tenboards/node_modules/nitro/dist/runtime/internal/vite/dev-worker.mjs',
+  lineNumber: 20,
+  columnNumber: 11,
+  raw: 'at WorkerdModuleEvaluator.runInlinedModule (Users/moeghashim/tenboards/node_modules/nitro/dist/runtime/internal/vite/dev-worker.mjs:20:11)',
+  type: 'module',
+  fileType: 'fs',
+  source: undefined
+}
+
+YOUCH:CORE: reading contents for source file Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js
+
+YOUCH:CORE: Unable to read source file Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js, error no such file or directory, readAll '/bundle/Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js'
+
+YOUCH:CORE: stack frame {
+  functionName: 'ModuleRunner.directRequest',
+  args: undefined,
+  fileName: 'Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js',
+  lineNumber: 1281,
+  columnNumber: 80,
+  raw: 'at ModuleRunner.directRequest (Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js:1281:80)',
+  type: 'module',
+  fileType: 'fs',
+  source: undefined
+}
+
+YOUCH:CORE: reading contents for source file Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js
+
+YOUCH:CORE: Unable to read source file Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js, error no such file or directory, readAll '/bundle/Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js'
+
+YOUCH:CORE: stack frame {
+  functionName: 'async ModuleRunner.cachedRequest',
+  args: undefined,
+  fileName: 'Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js',
+  lineNumber: 1188,
+  columnNumber: 73,
+  raw: 'at async ModuleRunner.cachedRequest (Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js:1188:73)',
+  type: 'module',
+  fileType: 'fs',
+  source: undefined
+}
+
+error [request error] [GET] http://127.0.0.1:60903/dashboard/default
+
+ 
+[31mℹ HTTPError: module is not defined[39m
+
+ ⁃ at runInlinedModule [33m(runInlinedModule:6:3)[39m
+ ⁃ at WorkerdModuleEvaluator.runInlinedModule [33m(Users/moeghashim/tenboards/node_modules/nitro/dist/runtime/internal/vite/dev-worker.mjs:20:11)[39m
+ ⁃ at ModuleRunner.directRequest [33m(Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js:1281:80)[39m
+ ⁃ at async ModuleRunner.cachedRequest [33m(Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js:1188:73)[39m
+
+[31m[CAUSE][39m
+ReferenceError {
+  stack: 'module is not defined\n' +
+  'at runInlinedModule (runInlinedModule:6:3)\n' +
+  'at WorkerdModuleEvaluator.runInlinedModule (Users/moeghashim/tenboards/node_modules/nitro/dist/runtime/internal/vite/dev-worker.mjs:20:11)\n' +
+  'at ModuleRunner.directRequest (Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js:1281:80)\n' +
+  'at async ModuleRunner.cachedRequest (Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js:1188:73)',
+  message: 'module is not defined',
+}
+
+YOUCH:CORE: parsing source [module is not defined
+at runInlinedModule (runInlinedModule:6:3)
+at WorkerdModuleEvaluator.runInlinedModule (Users/moeghashim/tenboards/node_modules/nitro/dist/runtime/internal/vite/dev-worker.mjs:20:11)
+at ModuleRunner.directRequest (Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js:1281:80)
+at async ModuleRunner.cachedRequest (Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js:1188:73)] {
+  cause: [module is not defined
+  at runInlinedModule (runInlinedModule:6:3)
+  at WorkerdModuleEvaluator.runInlinedModule (Users/moeghashim/tenboards/node_modules/nitro/dist/runtime/internal/vite/dev-worker.mjs:20:11)
+  at ModuleRunner.directRequest (Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js:1281:80)
+  at async ModuleRunner.cachedRequest (Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js:1188:73)],
+  status: 500,
+  statusText: undefined,
+  headers: undefined,
+  data: undefined,
+  body: undefined,
+  unhandled: true
+}
+
+YOUCH:CORE: error normalized to [module is not defined
+at runInlinedModule (runInlinedModule:6:3)
+at WorkerdModuleEvaluator.runInlinedModule (Users/moeghashim/tenboards/node_modules/nitro/dist/runtime/internal/vite/dev-worker.mjs:20:11)
+at ModuleRunner.directRequest (Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js:1281:80)
+at async ModuleRunner.cachedRequest (Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js:1188:73)] {
+  cause: [module is not defined
+  at runInlinedModule (runInlinedModule:6:3)
+  at WorkerdModuleEvaluator.runInlinedModule (Users/moeghashim/tenboards/node_modules/nitro/dist/runtime/internal/vite/dev-worker.mjs:20:11)
+  at ModuleRunner.directRequest (Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js:1281:80)
+  at async ModuleRunner.cachedRequest (Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js:1188:73)],
+  status: 500,
+  statusText: undefined,
+  headers: undefined,
+  data: undefined,
+  body: undefined,
+  unhandled: true
+}
+
+YOUCH:CORE: reading contents for source file runInlinedModule
+
+YOUCH:CORE: Unable to read source file runInlinedModule, error no such file or directory, readAll '/bundle/runInlinedModule'
+
+YOUCH:CORE: stack frame {
+  functionName: 'runInlinedModule',
+  args: undefined,
+  fileName: 'runInlinedModule',
+  lineNumber: 6,
+  columnNumber: 3,
+  raw: 'at runInlinedModule (runInlinedModule:6:3)',
+  type: 'app',
+  fileType: 'fs',
+  source: undefined
+}
+
+YOUCH:CORE: reading contents for source file Users/moeghashim/tenboards/node_modules/nitro/dist/runtime/internal/vite/dev-worker.mjs
+
+YOUCH:CORE: Unable to read source file Users/moeghashim/tenboards/node_modules/nitro/dist/runtime/internal/vite/dev-worker.mjs, error no such file or directory, readAll '/bundle/Users/moeghashim/tenboards/node_modules/nitro/dist/runtime/internal/vite/dev-worker.mjs'
+
+YOUCH:CORE: stack frame {
+  functionName: 'WorkerdModuleEvaluator.runInlinedModule',
+  args: undefined,
+  fileName: 'Users/moeghashim/tenboards/node_modules/nitro/dist/runtime/internal/vite/dev-worker.mjs',
+  lineNumber: 20,
+  columnNumber: 11,
+  raw: 'at WorkerdModuleEvaluator.runInlinedModule (Users/moeghashim/tenboards/node_modules/nitro/dist/runtime/internal/vite/dev-worker.mjs:20:11)',
+  type: 'module',
+  fileType: 'fs',
+  source: undefined
+}
+
+YOUCH:CORE: reading contents for source file Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js
+
+YOUCH:CORE: Unable to read source file Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js, error no such file or directory, readAll '/bundle/Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js'
+
+YOUCH:CORE: stack frame {
+  functionName: 'ModuleRunner.directRequest',
+  args: undefined,
+  fileName: 'Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js',
+  lineNumber: 1281,
+  columnNumber: 80,
+  raw: 'at ModuleRunner.directRequest (Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js:1281:80)',
+  type: 'module',
+  fileType: 'fs',
+  source: undefined
+}
+
+YOUCH:CORE: reading contents for source file Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js
+
+YOUCH:CORE: Unable to read source file Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js, error no such file or directory, readAll '/bundle/Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js'
+
+YOUCH:CORE: stack frame {
+  functionName: 'async ModuleRunner.cachedRequest',
+  args: undefined,
+  fileName: 'Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js',
+  lineNumber: 1188,
+  columnNumber: 73,
+  raw: 'at async ModuleRunner.cachedRequest (Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js:1188:73)',
+  type: 'module',
+  fileType: 'fs',
+  source: undefined
+}
+
+LOG #nitro/virtual/error-handler:17:7
+ →  Error: no such file or directory, readAll '/Users/moeghashim/tenboards/node_modules/nitro/dist/node_modules/youch/build/public/layout/style.css'
+    at node-internal:internal_fs_sync:365:21
+    at Module.readFileSync (node-internal:internal_fs_sync:366:7)
+    at node-internal:internal_fs_promises:373:37
+    at Promise.try (<anonymous>)
+    at readFile (node-internal:internal_fs_promises:373:23)
+    at Layout.getStyles (runInlinedModule:17:86)
+    at Templates.#collectStylesAndScripts (runInlinedModule:86:60)
+    at Templates.#tmplToHTML (runInlinedModule:97:38)
+    at Templates.toHTML (runInlinedModule:116:38)
+    at Youch.toHTML (runInlinedModule:209:25) {
+  syscall: 'readAll',
+  code: 'ENOENT',
+  path: '/Users/moeghashim/tenboards/node_modules/nitro/dist/node_modules/youch/build/public/layout/style.css'
+}
+[module is not defined
+at runInlinedModule (runInlinedModule:6:3)
+at WorkerdModuleEvaluator.runInlinedModule (Users/moeghashim/tenboards/node_modules/nitro/dist/runtime/internal/vite/dev-worker.mjs:20:11)
+at ModuleRunner.directRequest (Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js:1281:80)
+at async ModuleRunner.cachedRequest (Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js:1188:73)] {
+  cause: [module is not defined
+  at runInlinedModule (runInlinedModule:6:3)
+  at WorkerdModuleEvaluator.runInlinedModule (Users/moeghashim/tenboards/node_modules/nitro/dist/runtime/internal/vite/dev-worker.mjs:20:11)
+  at ModuleRunner.directRequest (Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js:1281:80)
+  at async ModuleRunner.cachedRequest (Users/moeghashim/tenboards/node_modules/vite/dist/node/module-runner.js:1188:73)],
+  status: 500,
+  statusText: undefined,
+  headers: undefined,
+  data: undefined,
+  body: undefined,
+  unhandled: true
+}

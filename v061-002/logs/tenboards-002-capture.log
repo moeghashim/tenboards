@@ -1,0 +1,24 @@
+
+> tenboards@0.5.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://localhost:3000 --routes /dashboard/default,/auth/v1/login,/auth/v2/login,/auth/v1/register,/auth/v2/register --output screenshots/v06-002/after --hydration-delay-ms 1200
+
+PASS /dashboard/default light/desktop direct
+PASS /dashboard/default light/mobile direct
+PASS /dashboard/default dark/desktop direct
+PASS /dashboard/default dark/mobile direct
+PASS /auth/v1/login light/desktop direct
+PASS /auth/v1/login light/mobile direct
+PASS /auth/v1/login dark/desktop direct
+PASS /auth/v1/login dark/mobile direct
+PASS /auth/v1/register light/desktop direct
+PASS /auth/v1/register light/mobile direct
+PASS /auth/v1/register dark/desktop direct
+PASS /auth/v1/register dark/mobile direct
+PASS /auth/v2/login light/desktop direct
+PASS /auth/v2/login light/mobile direct
+PASS /auth/v2/login dark/desktop direct
+PASS /auth/v2/login dark/mobile direct
+PASS /auth/v2/register light/desktop direct
+PASS /auth/v2/register light/mobile direct
+PASS /auth/v2/register dark/desktop direct
+PASS /auth/v2/register dark/mobile direct

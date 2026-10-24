@@ -1,0 +1,8 @@
+
+> tenboards@0.6.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --routes /dashboard/default --sidebar-states --output screenshots/v061-002/after
+
+PASS /dashboard/default light/desktop direct
+PASS /dashboard/default light/mobile direct
+PASS /dashboard/default dark/desktop direct
+PASS /dashboard/default dark/mobile direct
