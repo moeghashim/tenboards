@@ -2,7 +2,7 @@
 id: "002"
 title: Connect shared V1 and V2 sign-in and registration flows
 milestone: v0.5-auth
-status: review
+status: merged
 category: auth
 files: ["src/lib/auth/", "src/routes/(main)/auth/-components/", "src/routes/(main)/auth/v1/", "src/routes/(main)/auth/v2/", "scripts/auth-flows-check.ts", "README.md", "docs/auth.md", "dev/milestones.json"]
 ---

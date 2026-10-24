@@ -1,6 +1,6 @@
 # v0.5 — Better Auth
 
-Status: **review — tasks 001–005 implemented and verified; Claude review, ordered merges and release pending**. Baseline: `origin/main` **201eb01**, 2026-10-24, released v0.4.0. [PLAN.md](../../../PLAN.md) is the canonical contract; its six v0.5 Decisions log rows win. Format and delivery precedent: [v0.4](../v0.4-data-layer/README.md), planning [PR #41](https://github.com/moeghashim/tenboards/pull/41). Verified implementation criteria below are checked against [acceptance evidence](https://github.com/moeghashim/tenboards/tree/pr-assets/v05-005); the milestone remains in review.
+Status: **done — all five tasks merged (PRs #51–#55), deployed and released as [v0.5.0](https://github.com/moeghashim/tenboards/releases/tag/v0.5.0)**. Planning approval was merged as PR #50. Baseline: `origin/main` **201eb01**, 2026-10-24, released v0.4.0. [PLAN.md](../../../PLAN.md) is the canonical contract; its six v0.5 Decisions log rows win. Format and delivery precedent: [v0.4](../v0.4-data-layer/README.md), planning [PR #41](https://github.com/moeghashim/tenboards/pull/41). Verified implementation criteria below are checked against [acceptance evidence](https://github.com/moeghashim/tenboards/tree/pr-assets/v05-005); the milestone remains in review.
 
 ## Brief and boundaries
 
@@ -88,7 +88,7 @@ Active-session rows show available device/browser information as plain text with
 - [x] Shell identity/sign-out and Profile account name/password/session flows work for the current user, without mutating v0.4 data or adding RBAC.
 - [x] Security checklist, real-DB Playwright auth tests, full-catalog demo regression, four-state UI evidence and clean build/check/typecheck/Workers smoke pass.
 - [x] README auth onboarding/status, `docs/auth.md`, aligned `docs/data-layer.md`, CHANGELOG v0.5 and evidence-backed acceptance/status are complete. No implementer version bump/tag/release.
-- [ ] Claude Opus 5.5 reviews and merges each approved task, then owns main redeploy and milestone release; GPT-6-Astra never merges or deploys production.
+- [x] Claude Opus 5.5 reviews and merges each approved task, then owns main redeploy and milestone release; GPT-6-Astra never merges or deploys production.
 
 ## Security checklist
 

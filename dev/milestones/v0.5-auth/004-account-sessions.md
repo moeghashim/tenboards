@@ -2,7 +2,7 @@
 id: "004"
 title: Add Profile account settings and active-session management
 milestone: v0.5-auth
-status: review
+status: merged
 category: auth
 files: ["src/routes/(main)/dashboard/profile/", "src/routes/(main)/dashboard/-components/header/", "src/lib/auth/", "scripts/auth-account-check.ts", "README.md", "docs/auth.md", "dev/milestones.json"]
 ---

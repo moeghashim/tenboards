@@ -2,7 +2,7 @@
 id: "001"
 title: Establish Better Auth configuration, storage and session boundary
 milestone: v0.5-auth
-status: review
+status: merged
 category: auth
 files: ["package.json", "package-lock.json", ".env.example", "src/lib/auth/", "src/server/db/client.server.ts", "src/server/db/schema.ts", "src/server/db/migrations/", "drizzle.config.ts", "src/server/server-actions.ts", "src/lib/preferences/preferences-storage.ts", "src/routes/(main)/mail/route.tsx", "src/routes/api/auth/$.ts", "scripts/screenshot-routes.ts", "scripts/screenshots.ts", "scripts/report-route-coverage.ts", "scripts/auth-config-check.ts", "docs/auth.md", "README.md", "dev/milestones.json"]
 ---

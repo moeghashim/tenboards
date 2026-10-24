@@ -1,6 +1,8 @@
 # Changelog
 
-## v0.5 — Optional local authentication (in review, unreleased)
+## v0.5 — Optional local authentication (2026-10-24)
+
+Release: [v0.5.0](https://github.com/moeghashim/tenboards/releases/tag/v0.5.0)
 
 - Add optional Better Auth with isolated Drizzle/Postgres auth tables and cumulative migration `0012`; zero-secret local and Workers demos remain available.
 - Connect shared V1/V2 signup/login, explicit remember-me persistence, optional Google/GitHub initiation and validated app return destinations.

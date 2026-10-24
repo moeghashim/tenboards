@@ -126,7 +126,7 @@
     },
     {
       "id": "v0.5-auth",
-      "status": "review",
+      "status": "done",
       "tasks": [
         "001-auth-foundation",
         "002-auth-flows",
@@ -135,11 +135,11 @@
         "005-auth-acceptance"
       ],
       "taskStatuses": {
-        "001-auth-foundation": "review",
-        "002-auth-flows": "review",
-        "003-protection-shell": "review",
-        "004-account-sessions": "review",
-        "005-auth-acceptance": "review"
+        "001-auth-foundation": "merged",
+        "002-auth-flows": "merged",
+        "003-protection-shell": "merged",
+        "004-account-sessions": "merged",
+        "005-auth-acceptance": "merged"
       }
     }
   ]

@@ -2,7 +2,7 @@
 id: "003"
 title: Protect all app entry points and show the signed-in shell user
 milestone: v0.5-auth
-status: review
+status: merged
 category: auth
 files: ["src/lib/auth/", "src/routes/(main)/dashboard/", "src/routes/(main)/mail/route.tsx", "src/routes/(main)/chat/route.tsx", "src/routes/(external)/index.tsx", "src/routes/__root.tsx", "src/server/server-actions.ts", "scripts/auth-protection-check.ts", "README.md", "docs/auth.md", "dev/milestones.json"]
 ---

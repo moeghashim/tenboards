@@ -2,7 +2,7 @@
 id: "005"
 title: Verify auth end to end and document optional onboarding
 milestone: v0.5-auth
-status: review
+status: merged
 category: validation
 files: ["scripts/auth-*.ts", "scripts/screenshots.ts", "scripts/screenshot-routes.ts", "scripts/report-route-coverage.ts", "package.json", "docs/auth.md", "docs/data-layer.md", ".env.example", "README.md", "CHANGELOG.md", "dev/milestones/v0.5-auth/", "dev/milestones.json", "dev/open-questions.md"]
 ---
