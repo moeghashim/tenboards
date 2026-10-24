@@ -5,7 +5,7 @@ import { Bar, BarChart, CartesianGrid, Legend, Line, LineChart, Tooltip, XAxis, 
 import { z } from "zod";
 
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { CardContent } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { type ComponentName, descriptions, limits, schemas } from "@/lib/assistant/registry";
 import {
@@ -19,6 +19,8 @@ import {
   seriesConfig,
   useChartMotion,
 } from "@/lib/charts/theme";
+
+import { DashboardCard, SectionHeader, StatCard } from "../../-components/dashboard/cards";
 
 const element = z
   .object({
@@ -51,12 +53,14 @@ function DataTable({
 }: z.infer<typeof schemas.Table> & { label?: string }) {
   return (
     // biome-ignore lint/a11y/noNoninteractiveTabindex: Keyboard users scroll this bounded table region.
-    <section className="max-w-full overflow-x-auto rounded-lg border" tabIndex={0} aria-label={label}>
+    <section className="max-w-full overflow-x-auto" tabIndex={0} aria-label={label}>
       <Table>
         <TableHeader>
           <TableRow>
             {columns.map((column, i) => (
-              <TableHead key={`${i}-${column}`}>{column}</TableHead>
+              <TableHead className="h-8 px-3" key={`${i}-${column}`}>
+                {column}
+              </TableHead>
             ))}
           </TableRow>
         </TableHeader>
@@ -64,7 +68,9 @@ function DataTable({
           {rows.map((row, i) => (
             <TableRow key={i}>
               {row.map((cell, j) => (
-                <TableCell key={j}>{cell}</TableCell>
+                <TableCell className="px-3 py-2" key={j}>
+                  {cell}
+                </TableCell>
               ))}
             </TableRow>
           ))}
@@ -81,47 +87,49 @@ function ResponseChart({ title, kind, labels, series }: z.infer<typeof schemas.C
     ...Object.fromEntries(series.map((item, n) => [`s${n}`, item.values[index]])),
   }));
   return (
-    <section className="min-w-0 space-y-3" aria-label={title}>
-      <h3 className="font-medium">{title}</h3>
-      <DashboardChart config={config} className="h-56 sm:h-64">
-        {kind === "bar" ? (
-          <BarChart data={data} accessibilityLayer>
-            <CartesianGrid {...chartGrid} />
-            <XAxis dataKey="label" {...chartAxis} />
-            <YAxis {...chartAxis} />
-            <Tooltip content={<DashboardTooltip />} cursor={chartCursor} {...motion} />
-            <Legend content={<DashboardLegend config={config} />} />
-            {series.map((_, i) => (
-              <Bar key={`s${i}`} dataKey={`s${i}`} fill={chartSeries[i].color} {...motion} />
-            ))}
-          </BarChart>
-        ) : (
-          <LineChart data={data} accessibilityLayer>
-            <CartesianGrid {...chartGrid} />
-            <XAxis dataKey="label" {...chartAxis} />
-            <YAxis {...chartAxis} />
-            <Tooltip content={<DashboardTooltip />} cursor={chartCursor} {...motion} />
-            <Legend content={<DashboardLegend config={config} />} />
-            {series.map((_, i) => (
-              <Line
-                key={`s${i}`}
-                dataKey={`s${i}`}
-                stroke={chartSeries[i].color}
-                strokeDasharray={chartSeries[i].strokeDasharray}
-                strokeWidth={2}
-                dot
-                {...motion}
-              />
-            ))}
-          </LineChart>
-        )}
-      </DashboardChart>
-      <DataTable
-        label={`${title} data`}
-        columns={["Period", ...series.map((item) => item.label)]}
-        rows={labels.map((label, i) => [label, ...series.map((item) => item.values[i])])}
-      />
-    </section>
+    <DashboardCard density="compact" aria-label={title}>
+      <SectionHeader title={title} level={3} />
+      <CardContent className="space-y-3">
+        <DashboardChart config={config} className="h-56 sm:h-64">
+          {kind === "bar" ? (
+            <BarChart data={data} accessibilityLayer>
+              <CartesianGrid {...chartGrid} />
+              <XAxis dataKey="label" {...chartAxis} />
+              <YAxis {...chartAxis} />
+              <Tooltip content={<DashboardTooltip />} cursor={chartCursor} {...motion} />
+              <Legend content={<DashboardLegend config={config} />} />
+              {series.map((_, i) => (
+                <Bar key={`s${i}`} dataKey={`s${i}`} fill={chartSeries[i].color} {...motion} />
+              ))}
+            </BarChart>
+          ) : (
+            <LineChart data={data} accessibilityLayer>
+              <CartesianGrid {...chartGrid} />
+              <XAxis dataKey="label" {...chartAxis} />
+              <YAxis {...chartAxis} />
+              <Tooltip content={<DashboardTooltip />} cursor={chartCursor} {...motion} />
+              <Legend content={<DashboardLegend config={config} />} />
+              {series.map((_, i) => (
+                <Line
+                  key={`s${i}`}
+                  dataKey={`s${i}`}
+                  stroke={chartSeries[i].color}
+                  strokeDasharray={chartSeries[i].strokeDasharray}
+                  strokeWidth={2}
+                  dot
+                  {...motion}
+                />
+              ))}
+            </LineChart>
+          )}
+        </DashboardChart>
+        <DataTable
+          label={`${title} data`}
+          columns={["Period", ...series.map((item) => item.label)]}
+          rows={labels.map((label, i) => [label, ...series.map((item) => item.values[i])])}
+        />
+      </CardContent>
+    </DashboardCard>
   );
 }
 const toneClasses = {
@@ -162,29 +170,24 @@ function RegisteredNode({
     case "Card": {
       const p = schemas.Card.parse(props);
       return (
-        <Card>
-          <CardHeader>
-            <CardTitle>
-              <h3>{p.title}</h3>
-            </CardTitle>
-          </CardHeader>
+        <DashboardCard
+          density="compact"
+          className="[&_[data-slot=card]]:rounded-none [&_[data-slot=card]]:bg-transparent [&_[data-slot=card]]:ring-0 [&_[data-slot=card]]:shadow-none [&_[data-slot=card]]:py-0 [&_[data-slot=card]_[data-slot=card-content]]:px-0 [&_[data-slot=card]_[data-slot=card-header]]:px-0"
+        >
+          <SectionHeader title={p.title} level={3} />
           <CardContent className="space-y-4">
             {p.children.map((child, i) => (
-              <div key={i}>{renderNode(child)}</div>
+              <div key={i} className="min-w-0">
+                {renderNode(child)}
+              </div>
             ))}
           </CardContent>
-        </Card>
+        </DashboardCard>
       );
     }
     case "Stat": {
       const p = schemas.Stat.parse(props);
-      return (
-        <dl className="space-y-1">
-          <dt className="text-muted-foreground">{p.label}</dt>
-          <dd className="text-xl font-medium tabular-nums">{p.value}</dd>
-          <dd className="text-muted-foreground text-xs">{p.detail}</dd>
-        </dl>
-      );
+      return <StatCard label={p.label} value={p.value} help={p.detail} level={3} density="compact" />;
     }
     case "Badge": {
       const p = schemas.Badge.parse(props);
@@ -202,7 +205,11 @@ function RegisteredNode({
       );
     case "Table": {
       const p = schemas.Table.parse(props);
-      return <DataTable columns={p.columns} rows={p.rows} />;
+      return (
+        <DashboardCard density="compact" className="overflow-hidden">
+          <DataTable columns={p.columns} rows={p.rows} />
+        </DashboardCard>
+      );
     }
     case "Chart": {
       const p = schemas.Chart.parse(props);

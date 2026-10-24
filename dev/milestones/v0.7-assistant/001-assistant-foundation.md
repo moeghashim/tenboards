@@ -42,3 +42,5 @@ Run build/check/typecheck, dev default smoke and `npm run screenshots` for Assis
 ## Dependencies and handoff
 
 Depends on planning approval, merged planning PR and the v0.6.1 legacy-removal implementation mandated by main's f45e813 decision. cad4896 remains the inspection baseline; reinspect current routes/guards before starting and preserve Auth V2 as canonical. Blocks 002, then 003. Handoff the registry/spec, stream envelope, fixtures and cancellation seam. The temporary recorded source is client-local; 002 supplies a guarded POST for both sources. Additional runtime packages, inability to enforce renderer limits or required shared-component edits must be escalated; do not weaken safety to make the renderer work.
+
+Review round 2 UI verification (2026-10-24): build/check/typecheck, four-state Assistant/default smoke, recorded browser interactions and bounded renderer tests pass. Shell/registry refinement is ready for reviewer assessment; status remains review. Evidence is published with PR #68.

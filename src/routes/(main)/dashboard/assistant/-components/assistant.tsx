@@ -1,16 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 
-import { ArrowUp, Plus, Square } from "lucide-react";
-
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
 import { inspectLanguage } from "@/lib/assistant/language";
-import { examples, recordedStream } from "@/lib/assistant/recorded";
+import { recordedStream } from "@/lib/assistant/recorded";
 import { bytes } from "@/lib/assistant/registry";
 import { consumeStream } from "@/lib/assistant/transport";
 
-import { PageHeader } from "../../-components/app-pages/page-header";
+import { AssistantSurface, Composer, ConversationTurn, Welcome } from "./presentation";
 import { SafeResponse } from "./safe-response";
 
 type Turn = { id: number; prompt: string; text: string; status: "streaming" | "completed" | "stopped" | "error" };
@@ -21,6 +16,7 @@ export function Assistant() {
   const active = useRef<AbortController | null>(null);
   const generation = useRef(0);
   const composer = useRef<HTMLTextAreaElement>(null);
+  const stopButton = useRef<HTMLButtonElement>(null);
   const busy = turns.at(-1)?.status === "streaming";
   useEffect(
     () => () => {
@@ -56,7 +52,7 @@ export function Assistant() {
     } finally {
       if (generation.current === id) {
         active.current = null;
-        if (document.activeElement?.textContent === "Stop") composer.current?.focus();
+        if (document.activeElement === stopButton.current) composer.current?.focus();
       }
     }
   }
@@ -70,123 +66,63 @@ export function Assistant() {
     composer.current?.focus();
   }
   return (
-    <div className="flex min-h-[calc(100svh-7rem)] min-w-0 flex-col gap-5">
-      <PageHeader
-        title="AI Assistant"
-        description="Explore answers as summaries, tables and charts."
-        actions={
-          <Button variant="outline" onClick={clear}>
-            <Plus />
-            New conversation
-          </Button>
-        }
-      />
-      <div className="flex w-full max-w-4xl flex-1 flex-col gap-5">
-        <div className="flex flex-wrap items-center gap-2">
-          <Badge variant="secondary">Recorded demo</Badge>
-          <p className="text-muted-foreground text-xs">Sample replies · No model is connected</p>
-        </div>
-        <div className="min-w-0 flex-1 space-y-6">
+    <AssistantSurface clear={clear}>
+      <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-4 md:px-6">
+        <div
+          className="mx-auto flex min-h-full w-full max-w-[752px] flex-col gap-7 py-5"
+          role="log"
+          aria-label="Conversation"
+          aria-live="polite"
+          aria-busy={busy}
+        >
           {turns.length === 0 ? (
-            <section className="space-y-4 py-6">
-              <h2 className="text-lg font-medium">Try an example</h2>
-              <p className="text-muted-foreground max-w-prose">
-                These recorded replies use illustrative data. They cannot read or change your workspace.
-              </p>
-              <div className="flex flex-col items-start gap-2">
-                {examples.map((example) => (
-                  <Button key={example.id} variant="outline" onClick={() => void send(example.prompt)}>
-                    {example.label}
-                  </Button>
-                ))}
-              </div>
-            </section>
+            <Welcome send={(prompt) => void send(prompt)} disabled={busy} />
           ) : (
             turns.map((turn) => (
-              <article key={turn.id} className="min-w-0 space-y-4">
-                <div className="bg-muted ml-auto max-w-prose rounded-xl px-4 py-3">
-                  <p className="mb-1 font-medium">You</p>
-                  <p className="whitespace-pre-wrap break-words">{turn.prompt}</p>
-                </div>
-                <div className="min-w-0 space-y-3">
-                  <p className="text-muted-foreground text-xs">Recorded demo · {turn.status}</p>
-                  {turn.status !== "error" && (turn.text || turn.status === "streaming") && (
-                    <SafeResponse
-                      text={turn.text}
-                      complete={turn.status === "completed"}
-                      pending={turn.status === "streaming"}
-                    />
-                  )}
-                  {turn.status === "stopped" && (
-                    <p className="text-muted-foreground">Response stopped. This reply is incomplete.</p>
-                  )}
-                  {turn.status === "error" && (
-                    <p className="text-danger">The reply could not be completed. Try an example again.</p>
-                  )}
-                </div>
-              </article>
+              <ConversationTurn key={turn.id} prompt={turn.prompt} attribution={`Recorded demo · ${turn.status}`}>
+                {turn.status !== "error" && (
+                  <SafeResponse
+                    text={turn.text}
+                    complete={turn.status === "completed"}
+                    pending={turn.status === "streaming"}
+                  />
+                )}
+                {turn.status === "stopped" && (
+                  <p className="text-muted-foreground">Response stopped. This reply is incomplete.</p>
+                )}
+                {turn.status === "error" && (
+                  <p className="text-danger">The reply could not be completed. Try an example again.</p>
+                )}
+              </ConversationTurn>
             ))
           )}
         </div>
-        <form
-          className="bg-background sticky bottom-0 space-y-2 border-t py-3"
-          onSubmit={(event) => {
-            event.preventDefault();
-            void send();
-          }}
-        >
-          <label htmlFor="assistant-message" className="font-medium">
-            Message
-          </label>
-          <Textarea
-            ref={composer}
-            id="assistant-message"
-            value={input}
-            onChange={(event) => setInput(event.target.value)}
-            placeholder="Ask a question or try an example…"
-            className="max-h-48 resize-y"
-            onKeyDown={(event) => {
-              if (event.key === "Enter" && !event.shiftKey && !event.nativeEvent.isComposing && event.keyCode !== 229) {
-                event.preventDefault();
-                void send();
-              }
-            }}
-          />
-          {error && (
-            <p role="alert" className="text-danger">
-              {error}
-            </p>
-          )}
-          <div className="flex items-center justify-between gap-3">
-            <p className="text-muted-foreground text-xs">Conversation clears when you leave or reload.</p>
-            {busy ? (
-              <Button
-                type="button"
-                variant="outline"
-                onClick={() => {
-                  active.current?.abort();
-                  composer.current?.focus();
-                }}
-              >
-                <Square />
-                Stop
-              </Button>
-            ) : (
-              <Button type="submit" disabled={!input.trim()}>
-                <ArrowUp />
-                Send
-              </Button>
-            )}
-          </div>
-          <p className="sr-only" role="status" aria-live="polite">
-            {busy
-              ? "Preparing a recorded reply."
-              : turns.length
-                ? `Response ${turns.at(-1)?.status}.`
-                : "Ready for a message."}
-          </p>
-        </form>
       </div>
-    </div>
+      <Composer
+        input={input}
+        setInput={setInput}
+        send={() => void send()}
+        stop={() => {
+          active.current?.abort();
+          composer.current?.focus();
+        }}
+        busy={busy}
+        composer={composer}
+        stopButton={stopButton}
+      >
+        {error && (
+          <p role="alert" className="text-danger">
+            {error}
+          </p>
+        )}
+      </Composer>
+      <p className="sr-only" role="status">
+        {busy
+          ? "Preparing a recorded reply."
+          : turns.length
+            ? `Response ${turns.at(-1)?.status}.`
+            : "Ready for a message."}
+      </p>
+    </AssistantSurface>
   );
 }

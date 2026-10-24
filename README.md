@@ -501,3 +501,5 @@ Migration `0013_wandering_midnight.sql` adds only `auth_rate_limit`. Better Auth
 Follow [docs/deploy.md](docs/deploy.md) for local rehearsal, your own Neon/Hyperdrive setup, guarded direct migrations, atomic code/binding/secret staging, read-only smoke, optional account round-trip, rollback/data recovery and later OAuth. The live site remains demo-only; v0.6 is released as v0.6.0. No production connection or secret is needed for local acceptance. The default deployment check makes no account writes; the optional flag reports the retained throwaway identity and signs out its sessions. Cleanup is an exact-match database operation, not a new public API.
 
 [Task 003 local acceptance and capture reports](https://github.com/moeghashim/tenboards/tree/pr-assets/v06-003) record the exact isolated preview and evidence boundaries; hosted checks belong to each adopter; task 004 adds template preparation and onboarding.
+
+The Assistant presents a centered conversation, suggestion cards and a single auto-growing composer anchored below the transcript, including safe-area spacing on mobile. Generated metrics, tables and charts share the compact dashboard card styling.

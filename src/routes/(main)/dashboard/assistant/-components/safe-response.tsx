@@ -50,7 +50,17 @@ export function SafeResponse({
         The response contained unsupported content. Try another example.
       </p>
     );
-  if (!result.response) return pending ? <p className="text-muted-foreground">Preparing response…</p> : null;
+  if (!result.response)
+    return pending ? (
+      <p className="text-muted-foreground flex items-center gap-2">
+        <span aria-hidden="true" className="flex gap-1 motion-safe:animate-pulse">
+          <span className="size-1 rounded-full bg-current" />
+          <span className="size-1 rounded-full bg-current" />
+          <span className="size-1 rounded-full bg-current" />
+        </span>
+        Preparing response…
+      </p>
+    ) : null;
   return (
     <ResponseBoundary key={result.response}>
       <ValidatedResponse response={result.response} />
