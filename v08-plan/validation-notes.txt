@@ -1,0 +1,11 @@
+Planning-only evidence at cc3c5e7; no runtime source changes.
+PASS npm ci, npm run build, npm run check, npm run typecheck.
+PASS fresh dev default smoke 4/4, zero console/page errors; all four renders inspected.
+PASS unchanged baseline immutable preview 530b083a default smoke 4/4, zero console/page errors.
+Preview is the existing isolated tenboards-preview version from PR #64, not a v0.8 implementation deployment. No cloud upload or production mutation was performed.
+First check run found formatting in dev/milestones.json; formatted that file and reran successfully.
+Inherited check diagnostics: src/lib/highlighter.tsx array-index-key warning plus eight infos.
+Inherited npm ci diagnostics: two esbuild-kit deprecations, eight audit findings (six moderate/two high), install-script policy notices. Lockfile/dependencies untouched.
+T3 collaborative browser reached local default. Its console history also contained Electron sandbox/preloadScripts initialization errors predating local navigation; these were app-host diagnostics. Repository Chromium captures independently report zero page/console errors.
+No new contrast claim: no tokens/styles/components changed. No project implementation, DB migration/parity/auth or v0.8 runtime acceptance is claimed.
+Commit hook passed: generated presets unchanged; inherited Node fs.Stats deprecation.
