@@ -1,0 +1,56 @@
+---
+id: "001"
+title: Project model, additive backfill, seeds and parity
+milestone: v0.8-projects
+status: todo
+category: data
+files: ["src/server/db/project-schema.ts", "src/server/db/migrations/", "src/server/db/fixtures/", "src/server/db/seed-projects.ts", "src/server/data/", "scripts/", "docs/data.md", "README.md", "dev/milestones.json"]
+---
+
+## Goal and scope
+
+Establish the common read-only Projects data contract before routes depend on it. Follow the milestone README model, explicit legacy mappings, metric definitions and security matrix. No UI, route consolidation, auth-policy change or runtime dependency.
+
+Follow the [milestone contract](README.md), PLAN Decisions and AGENTS. All acceptance below is pending implementation.
+
+## Files and ownership
+
+- `src/server/db/project-schema.ts`
+- `src/server/db/migrations/`
+- `src/server/db/fixtures/`
+- `src/server/db/seed-projects.ts`
+- `src/server/data/`
+- `scripts/`
+- `docs/data.md`
+- `README.md`
+- `dev/milestones.json`
+
+Changes stay within the named task. Shared route metadata is generated only by the existing tool; protected UI/calendar wrappers and PLAN stay intact. README/status changes belong to the same PR.
+
+## Before implementation
+
+Inspect workspace-schema.ts, seed-workspace.ts, the four workspace domain readers, registry.ts, source.ts and request-scoped DB client. Extract pure shared DTOs/projectors and explicit mapping tables only where they remove route-type coupling or duplicate normalization. Keep old readers compatible; do not refactor unrelated data domains.
+
+## Acceptance criteria
+
+- [ ] Add projects, synthetic people/members, canonical tasks, labels, subtasks, activity and project file/calendar relations with stable keys, same-project constraints, indexes, validated enums, dates and counts. Auth identities remain separate.
+- [ ] Use the next free additive migration after rebasing; fresh and populated upgrades backfill board/ledger/file/calendar records without dropping old tables, losing adopter rows or touching auth data. Preserve shipped migrations.
+- [ ] Map every existing fixture exactly once according to the README, with namespaced task IDs, explicit status/date/owner mappings and source traceability. Retain canceled tasks and null unknown metadata. Default, secondary and empty projects use original tenboards data only.
+- [ ] Seed transactionally and idempotently in dependency order; repeat migrate/seed does not duplicate links or wipe unrelated/adopter/auth records. Existing fixtures and reads retain their parity during rollout.
+- [ ] Implement readProjects/readProject/readProjectTasks/readProjectTimeline/readProjectFiles/readProjectActivity/readWorkspaceHome through readSource with equivalent demo/DB validation, deterministic ordering and bounded results. DB joins use project predicates before serialization; missing project differs from empty project.
+- [ ] Shared metrics, sample-member My tasks, date semantics, pagination and calendar projections follow the README. Do not parse formatted legacy dates at runtime or assume file-folder relations from names.
+- [ ] Register every new exported read and meaningful scenario; cover second/empty/missing/wrong-project cases, mappings, filters, dates, counts and ties. Add DB-only sentinel coverage to prove reads do not substitute fixtures; preserve existing 22-read/104-scenario floor.
+- [ ] Exercise reads in local Node and compiled workerd through test-only harnesses excluded from production. Any added server function independently calls requireSession; test direct denied/revoked requests, invalid input and configured DB failure without fixture fallback.
+- [ ] Update data/migration docs and README with implemented schema/read capabilities only; task status remains in review until reviewed. No claim that project screens are already shipped.
+
+## Tests
+
+Run the common test floor, npm run data:parity against isolated local Postgres, fresh/populated/repeat migration-seed checks and the relevant auth/workerd harnesses. Inspect row preservation and source coverage, not only fixture equality. Keep local DB setup isolated from other worktrees and never use hosted credentials. Nonvisual exemption applies to schema/read work; fresh four-state default smoke and isolated demo preview still required.
+
+Every task passes `npm run build`, `npm run check`, `npm run typecheck` and dev `/dashboard/default` smoke without console errors. Attach a demo-only immutable preview and alias; use only `npm run preview:deploy -- --preview-alias pr-NNN`. Evidence stays on pr-assets/PR attachments. Report inherited warnings separately.
+
+## Dependencies and handoff
+
+Depends on planning approval and merged v0.6.2; rebase/reinspect before implementation. Blocks 002. Hand off DTOs, mapping manifest, default IDs, registered scenarios and migration evidence. No hosted access is needed.
+
+One approved task per branch/PR; declare any stack and layer compare URL. Conventional commit with DCO sign-off and final `Co-Authored-By: GPT-6-Astra <noreply@openai.com>` trailer. Claude reviews and alone merges.
