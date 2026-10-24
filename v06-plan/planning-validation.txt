@@ -1,0 +1,11 @@
+PASS: baseline origin/main 272ee7be8d3a409cb1d6803a5c64a6bd1add7da5; branch docs/v0.6/000-milestone-plan.
+PASS: milestone README plus four task contracts; planned milestone, four todo statuses, implementation criteria unchecked, frontmatter/sections and relative links valid.
+PASS: PLAN, application source, scripts, config, dependencies and existing task contracts unchanged.
+PASS: npm run build; npm run check (one inherited warning, ten infos); npm run typecheck; npx biome check dev/milestones.json; git diff --check.
+PASS: local dev /dashboard/default smoke 4/4 light/dark x desktop/mobile, no console/page errors; captures inspected.
+PASS: existing immutable v0.5 Worker baseline ad11a46d /dashboard/default smoke 4/4, no console/page errors. This is not a new v0.6 preview deployment.
+T3 browser: local environment-port navigation failed; retry with http://127.0.0.1:3016/dashboard/default also failed (net::ERR_CONNECTION_REFUSED). Required repository screenshot suite reached the local server and passed all four cases. T3 public Worker navigation/snapshot passed with no console entries.
+Inherited diagnostics: Biome src/lib/highlighter.tsx array-index-key warning and ten infos; dependency module-level directive build warnings. No code was changed to suppress diagnostics.
+No auth/parity/workerd/Neon implementation tests claimed by this planning-only PR. No cloud deploy, new Worker, secret or database operation performed.
+Open access gate: user supplies Neon direct URL at task 004 only. Preview instruction conflict is resolved by newer PLAN precedence; task 002 updates tooling/docs. Task 001 must obtain an isolated demo preview, never use the production upload target.
+PASS: documentation commit 3781063 has DCO sign-off and final GPT-6-Astra co-author trailer. Commit hook only reported inherited fs.Stats deprecation; generated presets unchanged.
