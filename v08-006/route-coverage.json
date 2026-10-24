@@ -1,0 +1,336 @@
+{
+  "catalogCount": 35,
+  "routes": [
+    {
+      "route": "/dashboard/home/",
+      "path": "/dashboard/home",
+      "ready": "My tasks"
+    },
+    {
+      "route": "/dashboard/projects/",
+      "path": "/dashboard/projects",
+      "ready": "Projects"
+    },
+    {
+      "route": "/dashboard/projects/$projectId/overview",
+      "path": "/dashboard/projects/sample-operations/overview",
+      "ready": "Operations rollout"
+    },
+    {
+      "route": "/dashboard/projects/$projectId/timeline",
+      "path": "/dashboard/projects/sample-operations/timeline",
+      "ready": "Operations rollout"
+    },
+    {
+      "route": "/dashboard/projects/$projectId/files",
+      "path": "/dashboard/projects/sample-operations/files",
+      "ready": "Operations rollout"
+    },
+    {
+      "route": "/dashboard/projects/$projectId/board",
+      "path": "/dashboard/projects/sample-operations/board",
+      "ready": "Operations rollout"
+    },
+    {
+      "route": "/dashboard/projects/$projectId/list",
+      "path": "/dashboard/projects/sample-operations/list",
+      "ready": "Operations rollout"
+    },
+    {
+      "route": "/chat",
+      "path": "/chat"
+    },
+    {
+      "route": "/dashboard",
+      "path": "/dashboard",
+      "ready": "Total Revenue"
+    },
+    {
+      "route": "/mail",
+      "path": "/mail"
+    },
+    {
+      "route": "/unauthorized",
+      "path": "/unauthorized"
+    },
+    {
+      "route": "/",
+      "path": "/",
+      "ready": "Total Revenue"
+    },
+    {
+      "route": "/auth/v2",
+      "path": "/auth/v2"
+    },
+    {
+      "route": "/dashboard/academy",
+      "path": "/dashboard/academy"
+    },
+    {
+      "route": "/dashboard/analytics",
+      "path": "/dashboard/analytics"
+    },
+    {
+      "route": "/dashboard/chat",
+      "path": "/dashboard/chat"
+    },
+    {
+      "route": "/dashboard/coming-soon",
+      "path": "/dashboard/coming-soon"
+    },
+    {
+      "route": "/dashboard/crm",
+      "path": "/dashboard/crm"
+    },
+    {
+      "route": "/dashboard/default",
+      "path": "/dashboard/default",
+      "ready": "Total Revenue"
+    },
+    {
+      "route": "/dashboard/ecommerce",
+      "path": "/dashboard/ecommerce"
+    },
+    {
+      "route": "/dashboard/finance",
+      "path": "/dashboard/finance"
+    },
+    {
+      "route": "/dashboard/infrastructure",
+      "path": "/dashboard/infrastructure"
+    },
+    {
+      "route": "/dashboard/invoice",
+      "path": "/dashboard/invoice"
+    },
+    {
+      "route": "/dashboard/logistics",
+      "path": "/dashboard/logistics"
+    },
+    {
+      "route": "/dashboard/mail",
+      "path": "/dashboard/mail"
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "path": "/dashboard/patient-monitoring"
+    },
+    {
+      "route": "/dashboard/productivity",
+      "path": "/dashboard/productivity"
+    },
+    {
+      "route": "/dashboard/products",
+      "path": "/dashboard/products"
+    },
+    {
+      "route": "/dashboard/profile",
+      "path": "/dashboard/profile"
+    },
+    {
+      "route": "/dashboard/roles",
+      "path": "/dashboard/roles"
+    },
+    {
+      "route": "/dashboard/users",
+      "path": "/dashboard/users"
+    },
+    {
+      "route": "/dashboard/$",
+      "path": "/dashboard/capture-not-found"
+    },
+    {
+      "route": "/dashboard/",
+      "path": "/dashboard/",
+      "ready": "Total Revenue"
+    },
+    {
+      "route": "/auth/v2/login",
+      "path": "/auth/v2/login"
+    },
+    {
+      "route": "/auth/v2/register",
+      "path": "/auth/v2/register"
+    }
+  ],
+  "expectedPerEnvironment": 560,
+  "expectedTotal": 560,
+  "actualTotal": 560,
+  "pass": true,
+  "reports": [
+    {
+      "environment": "dev",
+      "preset": "default",
+      "baseURL": "http://localhost:3277/",
+      "file": "dev/default/report.json",
+      "expected": 140,
+      "actual": 140,
+      "pass": true,
+      "missing": [],
+      "unexpected": [],
+      "duplicates": [],
+      "originalErrors": [
+        {
+          "route": "/auth/v2/login",
+          "theme": "light",
+          "viewport": "desktop",
+          "file": "_auth_v2_login-light-desktop.png",
+          "controlsFile": null,
+          "phase": "direct",
+          "interactionNotes": [],
+          "expectedDiagnostics": [],
+          "errors": [
+            "page.evaluate: Execution context was destroyed, most likely because of a navigation"
+          ]
+        }
+      ],
+      "retries": [
+        {
+          "report": "retries/default/report.json",
+          "cases": 4,
+          "errors": []
+        },
+        {
+          "report": "retries/default-invoice-profile/report.json",
+          "cases": 8,
+          "errors": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "environment": "dev",
+      "preset": "graphite",
+      "baseURL": "http://localhost:3277/",
+      "file": "dev/graphite/report.json",
+      "expected": 140,
+      "actual": 140,
+      "pass": true,
+      "missing": [],
+      "unexpected": [],
+      "duplicates": [],
+      "originalErrors": [
+        {
+          "route": "/unauthorized",
+          "theme": "light",
+          "viewport": "mobile",
+          "file": "_unauthorized-light-mobile.png",
+          "controlsFile": null,
+          "phase": "direct",
+          "interactionNotes": [],
+          "expectedDiagnostics": [],
+          "errors": [
+            "page.evaluate: Execution context was destroyed, most likely because of a navigation"
+          ]
+        }
+      ],
+      "retries": [
+        {
+          "report": "retries/graphite/report.json",
+          "cases": 4,
+          "errors": []
+        },
+        {
+          "report": "retries/graphite-invoice-profile/report.json",
+          "cases": 8,
+          "errors": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "environment": "dev",
+      "preset": "pine",
+      "baseURL": "http://localhost:3277/",
+      "file": "dev/pine/report.json",
+      "expected": 140,
+      "actual": 140,
+      "pass": true,
+      "missing": [],
+      "unexpected": [],
+      "duplicates": [],
+      "originalErrors": [
+        {
+          "route": "/dashboard/projects/$projectId/overview",
+          "theme": "dark",
+          "viewport": "mobile",
+          "file": "_dashboard_projects__projectId_overview-dark-mobile.png",
+          "controlsFile": null,
+          "phase": "direct",
+          "interactionNotes": [],
+          "expectedDiagnostics": [],
+          "errors": [
+            "page.evaluate: Execution context was destroyed, most likely because of a navigation"
+          ]
+        }
+      ],
+      "retries": [
+        {
+          "report": "retries/pine/report.json",
+          "cases": 4,
+          "errors": []
+        },
+        {
+          "report": "retries/pine-invoice-profile/report.json",
+          "cases": 8,
+          "errors": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "environment": "dev",
+      "preset": "iris",
+      "baseURL": "http://localhost:3277/",
+      "file": "dev/iris/report.json",
+      "expected": 140,
+      "actual": 140,
+      "pass": true,
+      "missing": [],
+      "unexpected": [],
+      "duplicates": [],
+      "originalErrors": [
+        {
+          "route": "/dashboard/logistics",
+          "theme": "light",
+          "viewport": "desktop",
+          "file": "_dashboard_logistics-light-desktop.png",
+          "controlsFile": null,
+          "phase": "direct",
+          "interactionNotes": [],
+          "expectedDiagnostics": [],
+          "errors": [
+            "console: Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+            "Unexpected HTTP status 500"
+          ]
+        },
+        {
+          "route": "/dashboard/users",
+          "theme": "dark",
+          "viewport": "desktop",
+          "file": "_dashboard_users-dark-desktop.png",
+          "controlsFile": null,
+          "phase": "direct",
+          "interactionNotes": [],
+          "expectedDiagnostics": [],
+          "errors": [
+            "page.evaluate: TypeError: Cannot read properties of null (reading 'textContent')\n    at eval (eval at evaluate (:370:30), <anonymous>:2:54)\n    at UtilityScript.evaluate (<anonymous>:372:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"
+          ]
+        }
+      ],
+      "retries": [
+        {
+          "report": "retries/iris/report.json",
+          "cases": 8,
+          "errors": []
+        },
+        {
+          "report": "retries/iris-invoice-profile/report.json",
+          "cases": 8,
+          "errors": []
+        }
+      ],
+      "errors": []
+    }
+  ]
+}

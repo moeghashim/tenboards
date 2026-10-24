@@ -1,0 +1,8 @@
+
+> tenboards@0.6.2 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://localhost:3277 --preset pine --routes /dashboard/projects/$projectId/overview --output screenshots/v08-006/retries/pine
+
+PASS /dashboard/projects/$projectId/overview light/desktop direct
+PASS /dashboard/projects/$projectId/overview light/mobile direct
+PASS /dashboard/projects/$projectId/overview dark/desktop direct
+PASS /dashboard/projects/$projectId/overview dark/mobile direct

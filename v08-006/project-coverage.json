@@ -1,0 +1,121 @@
+{
+  "expectedTotal": 160,
+  "actualTotal": 160,
+  "pass": true,
+  "reports": [
+    {
+      "preset": "default",
+      "projectId": "sample-docs",
+      "file": "projects/default/sample-docs/report.json",
+      "cases": 20,
+      "originalErrors": [
+        {
+          "route": "/dashboard/projects/$projectId/list",
+          "theme": "light",
+          "viewport": "mobile",
+          "file": "_dashboard_projects__projectId_list-light-mobile.png",
+          "controlsFile": null,
+          "phase": "direct",
+          "interactionNotes": [],
+          "expectedDiagnostics": [],
+          "errors": [
+            "page.evaluate: Execution context was destroyed, most likely because of a navigation"
+          ]
+        }
+      ],
+      "retries": [
+        "retries/default-docs-list/report.json"
+      ],
+      "errors": [],
+      "pass": true
+    },
+    {
+      "preset": "default",
+      "projectId": "sample-empty",
+      "file": "projects/default/sample-empty/report.json",
+      "cases": 20,
+      "originalErrors": [],
+      "retries": [],
+      "errors": [],
+      "pass": true
+    },
+    {
+      "preset": "graphite",
+      "projectId": "sample-docs",
+      "file": "projects/graphite/sample-docs/report.json",
+      "cases": 20,
+      "originalErrors": [],
+      "retries": [],
+      "errors": [],
+      "pass": true
+    },
+    {
+      "preset": "graphite",
+      "projectId": "sample-empty",
+      "file": "projects/graphite/sample-empty/report.json",
+      "cases": 20,
+      "originalErrors": [],
+      "retries": [],
+      "errors": [],
+      "pass": true
+    },
+    {
+      "preset": "pine",
+      "projectId": "sample-docs",
+      "file": "projects/pine/sample-docs/report.json",
+      "cases": 20,
+      "originalErrors": [],
+      "retries": [],
+      "errors": [],
+      "pass": true
+    },
+    {
+      "preset": "pine",
+      "projectId": "sample-empty",
+      "file": "projects/pine/sample-empty/report.json",
+      "cases": 20,
+      "originalErrors": [],
+      "retries": [
+        "retries/pine-empty-files/report.json"
+      ],
+      "errors": [],
+      "pass": true
+    },
+    {
+      "preset": "iris",
+      "projectId": "sample-docs",
+      "file": "projects/iris/sample-docs/report.json",
+      "cases": 20,
+      "originalErrors": [
+        {
+          "route": "/dashboard/projects/$projectId/list",
+          "theme": "light",
+          "viewport": "mobile",
+          "file": "_dashboard_projects__projectId_list-light-mobile.png",
+          "controlsFile": null,
+          "phase": "direct",
+          "interactionNotes": [],
+          "expectedDiagnostics": [],
+          "errors": [
+            "page.evaluate: Execution context was destroyed, most likely because of a navigation"
+          ]
+        }
+      ],
+      "retries": [
+        "retries/iris-docs-list/report.json"
+      ],
+      "errors": [],
+      "pass": true
+    },
+    {
+      "preset": "iris",
+      "projectId": "sample-empty",
+      "file": "projects/iris/sample-empty/report.json",
+      "cases": 20,
+      "originalErrors": [],
+      "retries": [],
+      "errors": [],
+      "pass": true
+    }
+  ]
+}

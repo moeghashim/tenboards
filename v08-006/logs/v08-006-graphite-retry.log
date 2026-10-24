@@ -1,0 +1,8 @@
+
+> tenboards@0.6.2 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://localhost:3277 --preset graphite --routes /unauthorized --output screenshots/v08-006/retries/graphite
+
+PASS /unauthorized light/desktop direct
+PASS /unauthorized light/mobile direct
+PASS /unauthorized dark/desktop direct
+PASS /unauthorized dark/mobile direct

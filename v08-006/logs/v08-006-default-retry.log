@@ -1,0 +1,8 @@
+
+> tenboards@0.6.2 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://localhost:3277 --preset default --routes /auth/v2/login --output screenshots/v08-006/retries/default
+
+PASS /auth/v2/login light/desktop direct
+PASS /auth/v2/login light/mobile direct
+PASS /auth/v2/login dark/desktop direct
+PASS /auth/v2/login dark/mobile direct

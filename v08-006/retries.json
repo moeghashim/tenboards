@@ -1,0 +1,42 @@
+[
+  {
+    "environment": "dev",
+    "preset": "default",
+    "report": "retries/default/report.json"
+  },
+  {
+    "environment": "dev",
+    "preset": "graphite",
+    "report": "retries/graphite/report.json"
+  },
+  {
+    "environment": "dev",
+    "preset": "pine",
+    "report": "retries/pine/report.json"
+  },
+  {
+    "environment": "dev",
+    "preset": "iris",
+    "report": "retries/iris/report.json"
+  },
+  {
+    "environment": "dev",
+    "preset": "default",
+    "report": "retries/default-invoice-profile/report.json"
+  },
+  {
+    "environment": "dev",
+    "preset": "graphite",
+    "report": "retries/graphite-invoice-profile/report.json"
+  },
+  {
+    "environment": "dev",
+    "preset": "pine",
+    "report": "retries/pine-invoice-profile/report.json"
+  },
+  {
+    "environment": "dev",
+    "preset": "iris",
+    "report": "retries/iris-invoice-profile/report.json"
+  }
+]

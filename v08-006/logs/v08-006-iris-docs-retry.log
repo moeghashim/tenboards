@@ -1,0 +1,8 @@
+
+> tenboards@0.6.2 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://localhost:3277 --preset iris --project-id sample-docs --routes /dashboard/projects/$projectId/list --output screenshots/v08-006/retries/iris-docs-list
+
+PASS /dashboard/projects/$projectId/list light/desktop direct
+PASS /dashboard/projects/$projectId/list light/mobile direct
+PASS /dashboard/projects/$projectId/list dark/desktop direct
+PASS /dashboard/projects/$projectId/list dark/mobile direct

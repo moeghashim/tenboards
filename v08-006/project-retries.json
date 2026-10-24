@@ -1,0 +1,17 @@
+[
+  {
+    "preset": "default",
+    "projectId": "sample-docs",
+    "report": "retries/default-docs-list/report.json"
+  },
+  {
+    "preset": "iris",
+    "projectId": "sample-docs",
+    "report": "retries/iris-docs-list/report.json"
+  },
+  {
+    "preset": "pine",
+    "projectId": "sample-empty",
+    "report": "retries/pine-empty-files/report.json"
+  }
+]

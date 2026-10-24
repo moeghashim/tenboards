@@ -1,0 +1,12 @@
+
+> tenboards@0.6.2 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://localhost:3277 --preset graphite --routes /dashboard/invoice,/dashboard/profile --output screenshots/v08-006/retries/graphite-invoice-profile
+
+PASS /dashboard/invoice light/desktop direct
+PASS /dashboard/invoice light/mobile direct
+PASS /dashboard/invoice dark/desktop direct
+PASS /dashboard/invoice dark/mobile direct
+PASS /dashboard/profile light/desktop direct
+PASS /dashboard/profile light/mobile direct
+PASS /dashboard/profile dark/desktop direct
+PASS /dashboard/profile dark/mobile direct

@@ -1,0 +1,26 @@
+PASS sidebar/icon/default/light/desktop hydrated
+PASS sidebar/icon/default/light/mobile hydrated
+PASS sidebar/icon/default/dark/desktop hydrated
+PASS sidebar/icon/default/dark/mobile hydrated
+PASS sidebar/icon/graphite/light/desktop hydrated
+PASS sidebar/icon/graphite/light/mobile hydrated
+PASS sidebar/icon/graphite/dark/desktop hydrated
+7 sidebar combinations passed
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: sidebar/icon/graphite/dark/mobile
+
+500 !== 200
+
+    at file:///Users/moeghashim/tenboards-v08/scripts/sidebar-toggle-check.ts:49:22 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 500,
+  expected: 200,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.21.0
