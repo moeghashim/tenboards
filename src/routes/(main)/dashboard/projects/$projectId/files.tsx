@@ -79,11 +79,11 @@ function Files() {
           <ToggleGroupItem value="list">List</ToggleGroupItem>
         </ToggleGroup>
       </div>
-      <FoldersSection folders={data.folders} readOnly />
+      {!query && !kind && <FoldersSection folders={data.folders} readOnly />}
       <div className="flex items-center justify-between">
-        <h3 className="font-medium">All files</h3>
+        <h3 className="font-medium">{query || kind ? "Search results" : "All files"}</h3>
         <p className="text-muted-foreground text-sm" role="status">
-          {files.length} files
+          {files.length} {files.length === 1 ? "file" : "files"}
         </p>
       </div>
       {files.length > 0 &&

@@ -121,6 +121,7 @@ try {
       assert.equal(await p.getByRole("link", { name: "Files", exact: true }).getAttribute("aria-current"), "page");
       await p.getByLabel("Search files").fill("no-such-file");
       await p.getByText(/No matching files in Documentation refresh/).waitFor();
+      assert.equal(await p.getByRole("heading", { name: "Folders", exact: true }).count(), 0);
       await p.getByLabel("Search files").fill("");
       await p.screenshot({ path: `${out}/files-${theme}-${size}.png`, fullPage: true });
       await p.goto(`${base}/dashboard/projects/sample-operations/timeline?mode=gantt`, { waitUntil: "networkidle" });

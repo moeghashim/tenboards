@@ -61,7 +61,7 @@ function ProjectShell() {
             {project.status.replaceAll("-", " ")}
           </Badge>
           <span className="text-muted-foreground text-sm">{project.metrics.total} tasks</span>
-          <AvatarGroup role="group" aria-label="Project members">
+          <AvatarGroup className="-space-x-1" role="group" aria-label="Project members">
             {project.members.slice(0, 5).map((person) => (
               <PersonAvatar key={person.id} person={person} />
             ))}
