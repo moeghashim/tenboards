@@ -1,153 +1,53 @@
-import { useEffect, useRef, useState } from "react";
+import { ArrowUp, Plus, RotateCcw, Square } from "lucide-react";
 
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { NativeSelect, NativeSelectOption } from "@/components/ui/native-select";
+import { Textarea } from "@/components/ui/textarea";
 import type { AssistantConfig, ProviderId } from "@/lib/assistant/config";
-import { inspectLanguage } from "@/lib/assistant/language";
-import { bytes } from "@/lib/assistant/registry";
-import { consumeStream } from "@/lib/assistant/transport";
+import { examples } from "@/lib/assistant/recorded";
 
-import { AssistantSurface, Composer, ConversationTurn, RecordedPicker, Welcome } from "./presentation";
+import { PageHeader } from "../../-components/app-pages/page-header";
+import { failureCopy } from "./conversation";
 import { SafeResponse } from "./safe-response";
+import { useConversation } from "./use-conversation";
 
-type Turn = {
-  attribution: string;
-  id: number;
-  prompt: string;
-  text: string;
-  status: "streaming" | "completed" | "stopped" | "error";
-};
 export function Assistant({ config }: { config: AssistantConfig }) {
-  const [provider, setProvider] = useState<ProviderId | undefined>(config.providers[0]?.id);
-  const selected = config.providers.find((item) => item.id === provider);
-  const [input, setInput] = useState("");
-  const [turns, setTurns] = useState<Turn[]>([]);
-  const [error, setError] = useState("");
-  const active = useRef<AbortController | null>(null);
-  const generation = useRef(0);
-  const composer = useRef<HTMLTextAreaElement>(null);
-  const stopButton = useRef<HTMLButtonElement>(null);
-  const busy = turns.at(-1)?.status === "streaming";
-  useEffect(
-    () => () => {
-      generation.current++;
-      active.current?.abort();
-    },
-    [],
-  );
-  async function send(prompt = input) {
-    if (active.current || !prompt.trim()) return;
-    if (bytes(prompt) > 8192) {
-      setError("Keep your message under 8 KiB. Shorten it and try again.");
-      return;
-    }
-    const id = ++generation.current;
-    const controller = new AbortController();
-    active.current = controller;
-    setError("");
-    setInput("");
-    composer.current?.focus();
-    setTurns((previous) => [
-      ...previous,
-      {
-        id,
-        prompt,
-        text: "",
-        status: "streaming",
-        attribution: selected ? `${selected.name} · ${selected.model}` : "Recorded demo",
-      },
-    ]);
-    const update = (patch: Partial<Turn>) => {
-      if (generation.current === id)
-        setTurns((previous) => previous.map((turn) => (turn.id === id ? { ...turn, ...patch } : turn)));
-    };
-    try {
-      const response = await fetch("/api/assistant", {
-        method: "POST",
-        credentials: "same-origin",
-        signal: controller.signal,
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ provider, messages: [{ role: "user", content: prompt }] }),
-      });
-      if (!response.ok || !response.body) throw new Error("Assistant unavailable.");
-      const text = await consumeStream(response.body, controller.signal, (text) => update({ text }));
-      update({ text, status: inspectLanguage(text, true).status === "ready" ? "completed" : "error" });
-    } catch {
-      update({ status: controller.signal.aborted ? "stopped" : "error" });
-    } finally {
-      if (generation.current === id) {
-        active.current = null;
-        if (document.activeElement === stopButton.current) composer.current?.focus();
-      }
-    }
-  }
-  function clear() {
-    generation.current++;
-    active.current?.abort();
-    active.current = null;
-    setTurns([]);
-    setInput("");
-    setError("");
-    composer.current?.focus();
-  }
+  const conversation = useConversation(config);
+  const { turns, input, setInput, error, busy, composer, selected, provider, send, clear } = conversation;
   return (
-    <AssistantSurface clear={clear}>
-      <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-4 md:px-6">
-        <div
-          className="mx-auto flex min-h-full w-full max-w-[752px] flex-col gap-7 py-5"
-          role="log"
-          aria-label="Conversation"
-          aria-live="polite"
-          aria-busy={busy}
-        >
-          {turns.length === 0 ? (
-            <Welcome send={(prompt) => void send(prompt)} disabled={busy} />
-          ) : (
-            turns.map((turn) => (
-              <ConversationTurn key={turn.id} prompt={turn.prompt} attribution={`${turn.attribution} · ${turn.status}`}>
-                {turn.status !== "error" && (
-                  <SafeResponse
-                    text={turn.text}
-                    complete={turn.status === "completed"}
-                    pending={turn.status === "streaming"}
-                  />
-                )}
-                {turn.status === "stopped" && (
-                  <p className="text-muted-foreground">Response stopped. This reply is incomplete.</p>
-                )}
-                {turn.status === "error" && (
-                  <p className="text-danger">The reply could not be completed. Try an example again.</p>
-                )}
-              </ConversationTurn>
-            ))
-          )}
-        </div>
-      </div>
-      <Composer
-        input={input}
-        setInput={setInput}
-        send={() => void send()}
-        stop={() => {
-          active.current?.abort();
-          composer.current?.focus();
-        }}
-        busy={busy}
-        composer={composer}
-        stopButton={stopButton}
-        toolbar={
-          config.providers.length ? (
+    <div className="flex min-h-[calc(100svh-7rem)] min-w-0 flex-col gap-5">
+      <PageHeader
+        title="AI Assistant"
+        description="Explore answers as summaries, tables and charts."
+        actions={
+          <Button variant="outline" onClick={() => clear()}>
+            <Plus />
+            New conversation
+          </Button>
+        }
+      />
+      <div className="flex w-full max-w-4xl flex-1 flex-col gap-5">
+        <div className="flex flex-wrap items-center gap-2">
+          {conversation.config.providers.length ? (
             <>
-              <label htmlFor="assistant-provider" className="sr-only">
+              <label htmlFor="assistant-provider" className="text-sm font-medium">
                 Provider
               </label>
               <NativeSelect
                 id="assistant-provider"
-                value={provider}
-                disabled={busy}
-                onChange={(event) => setProvider(event.target.value as ProviderId)}
+                value={provider ?? ""}
+                disabled={busy || conversation.expired || conversation.refreshing}
+                onChange={(event) => conversation.select(event.target.value as ProviderId)}
                 className="max-w-full"
                 size="sm"
               >
-                {config.providers.map((item) => (
+                {conversation.selectionRequired && (
+                  <NativeSelectOption value="" disabled>
+                    Choose a provider
+                  </NativeSelectOption>
+                )}
+                {conversation.config.providers.map((item) => (
                   <NativeSelectOption key={item.id} value={item.id}>
                     {item.name} · {item.model}
                   </NativeSelectOption>
@@ -155,23 +55,178 @@ export function Assistant({ config }: { config: AssistantConfig }) {
               </NativeSelect>
             </>
           ) : (
-            <RecordedPicker />
-          )
-        }
-      >
-        {error && (
-          <p role="alert" className="text-danger">
-            {error}
+            <>
+              <Badge variant="secondary">Recorded demo</Badge>
+              <p className="text-muted-foreground text-xs">Sample replies · No model is connected</p>
+            </>
+          )}
+        </div>
+        {conversation.selectionRequired && (
+          <p role="status" className="text-muted-foreground">
+            Available providers changed.{" "}
+            {conversation.config.providers.length
+              ? "Choose an available provider before sending."
+              : "No model is connected."}
+            {!conversation.config.providers.length && (
+              <Button variant="outline" onClick={conversation.chooseRecorded}>
+                Use recorded demo
+              </Button>
+            )}
           </p>
         )}
-      </Composer>
-      <p className="sr-only" role="status">
-        {busy
-          ? "Preparing a recorded reply."
-          : turns.length
-            ? `Response ${turns.at(-1)?.status}.`
-            : "Ready for a message."}
-      </p>
-    </AssistantSurface>
+        {conversation.refreshing && (
+          <p role="status" className="text-muted-foreground">
+            Checking available providers…
+          </p>
+        )}
+        {conversation.expired && (
+          <p role="alert">
+            Your session ended. The conversation has been cleared.{" "}
+            <a
+              ref={conversation.signIn}
+              className="underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-ring"
+              href="/auth/v2/login?redirect=%2Fdashboard%2Fassistant"
+            >
+              Sign in to continue
+            </a>
+            .
+          </p>
+        )}
+        {conversation.contextNotice && (
+          <p role="status" className="text-muted-foreground">
+            Older complete exchanges were left out to fit the context limit. They remain visible here.
+          </p>
+        )}
+        <div className="min-w-0 flex-1 space-y-6">
+          {turns.length === 0 ? (
+            <section className="space-y-4 py-6">
+              <h2 className="text-lg font-medium">Try an example</h2>
+              <p className="text-muted-foreground max-w-prose">
+                {selected
+                  ? "Ask a question or use an illustrative example. The Assistant cannot read or change your workspace."
+                  : "These recorded replies use illustrative data. They cannot read or change your workspace."}
+              </p>
+              <div className="flex flex-col items-start gap-2">
+                {examples.map((example) => (
+                  <Button
+                    key={example.id}
+                    disabled={conversation.blocked}
+                    variant="outline"
+                    onClick={() => void send(example.prompt)}
+                  >
+                    {example.label}
+                  </Button>
+                ))}
+              </div>
+            </section>
+          ) : (
+            turns.map((turn) => (
+              <article key={turn.id} className="min-w-0 space-y-4">
+                <div className="bg-muted ml-auto max-w-prose rounded-xl px-4 py-3">
+                  <p className="mb-1 font-medium">You</p>
+                  <p className="whitespace-pre-wrap break-words">{turn.prompt}</p>
+                </div>
+                <div className="min-w-0 space-y-3">
+                  <p className="text-muted-foreground text-xs">
+                    {turn.attribution} · {turn.status}
+                  </p>
+                  {turn.status !== "error" && (turn.text || turn.status === "streaming") && (
+                    <SafeResponse
+                      text={turn.text}
+                      complete={turn.status === "completed"}
+                      pending={turn.status === "streaming"}
+                    />
+                  )}
+                  {turn.status === "stopped" && (
+                    <p className="text-muted-foreground">Response stopped. This reply is incomplete.</p>
+                  )}
+                  {turn.status === "error" && (
+                    <p role="alert" className="text-danger">
+                      {failureCopy[turn.error ?? "unavailable"]}
+                    </p>
+                  )}
+                </div>
+              </article>
+            ))
+          )}
+        </div>
+        {turns.length > 0 && (
+          <div className="flex flex-wrap items-center gap-3">
+            <Button variant="outline" disabled={conversation.blocked} onClick={conversation.regenerate}>
+              <RotateCcw />
+              Regenerate
+            </Button>
+            <p className="text-muted-foreground text-xs">
+              Replaces the latest reply. Stopped and failed replies are not reused.
+            </p>
+          </div>
+        )}
+        <form
+          className="bg-background sticky bottom-0 space-y-2 border-t py-3"
+          onSubmit={(event) => {
+            event.preventDefault();
+            void send();
+          }}
+        >
+          <label htmlFor="assistant-message" className="font-medium">
+            Message
+          </label>
+          <Textarea
+            ref={composer}
+            id="assistant-message"
+            disabled={conversation.expired}
+            value={input}
+            onChange={(event) => setInput(event.target.value)}
+            placeholder="Ask a question or try an example…"
+            className="max-h-48 resize-y"
+            onKeyDown={(event) => {
+              if (event.key === "Enter" && !event.shiftKey && !event.nativeEvent.isComposing && event.keyCode !== 229) {
+                event.preventDefault();
+                void send();
+              }
+            }}
+          />
+          {error && (
+            <div className="flex flex-wrap items-center gap-2">
+              <p role="alert" className="text-danger">
+                {error}
+              </p>
+              <Button type="button" variant="outline" onClick={() => clear()}>
+                New conversation
+              </Button>
+            </div>
+          )}
+          {conversation.remaining > 0 && (
+            <p className="text-muted-foreground text-xs">
+              Try again in {conversation.remaining}s. No request will be sent automatically.
+            </p>
+          )}
+          <div className="flex items-center justify-between gap-3">
+            <p className="text-muted-foreground text-xs">Conversation clears when you leave or reload.</p>
+            {busy ? (
+              <Button type="button" variant="outline" ref={conversation.stopButton} onClick={conversation.stop}>
+                <Square />
+                Stop
+              </Button>
+            ) : (
+              <Button type="submit" disabled={!input.trim() || conversation.blocked}>
+                <ArrowUp />
+                Send
+              </Button>
+            )}
+          </div>
+          <p className="sr-only" role="status" aria-live="polite">
+            {busy
+              ? selected
+                ? "Preparing a reply."
+                : "Preparing a recorded reply."
+              : turns.length
+                ? `Response ${turns.at(-1)?.status}.`
+                : "Ready for a message."}
+          </p>
+        </form>
+        <div ref={conversation.end} />
+      </div>
+    </div>
   );
 }

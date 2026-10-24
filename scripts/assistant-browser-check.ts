@@ -98,7 +98,7 @@ try {
           .getByText("Recorded demo · completed", { exact: true })
           .waitFor()
           .catch(async (error) => {
-            console.error(await page.locator("main").innerText(), errors);
+            console.error("Recorded browser assertion failed; inspect the synthetic screenshot evidence.");
             await page.screenshot({ path: `${output}/failure.png` });
             throw error;
           });

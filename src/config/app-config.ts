@@ -1,8 +1,8 @@
-import packageJson from "../../package.json";
+import { version } from "../../package.json";
 
 export const APP_CONFIG = {
   name: "tenboards",
-  version: packageJson.version,
+  version,
   copyright: (year: number) => `© ${year}, tenboards.`,
   meta: {
     // Set an absolute URL on your own origin if your social crawler requires it.

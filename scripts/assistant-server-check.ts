@@ -9,7 +9,7 @@ import {
 import { readInput, requestSchema } from "../src/server/assistant/input.ts";
 import { createMemoryLimiter, limiterKey, trustedIP } from "../src/server/assistant/limiter.server.ts";
 import { providerStream } from "../src/server/assistant/providers.server.ts";
-import { boundedStream, type SourceEvent } from "../src/server/assistant/stream.ts";
+import { boundedStream, deadlines, type SourceEvent } from "../src/server/assistant/stream.ts";
 import { mockOutput, type WireCase, wireResponse } from "./assistant-wire-fixtures.ts";
 import assert from "node:assert/strict";
 
@@ -239,3 +239,23 @@ const body = boundedStream(
 assert.ok((await new Response(body).text()).includes('"code":"timeout"'));
 assert.ok(upstreamAborted);
 console.log("PASS visible-output cap, token truncation, tool rejection, one terminal event and idle cancellation");
+
+assert.deepEqual(deadlines, { first: 20000, idle: 15000, total: 60000 });
+let totalCancelled = false;
+const totalBody = boundedStream(
+  (signal) =>
+    new ReadableStream({
+      async pull(c) {
+        await new Promise((resolve) => setTimeout(resolve, 3));
+        if (!signal.aborted) c.enqueue({ type: "text-delta", text: " " });
+      },
+      cancel() {
+        totalCancelled = true;
+      },
+    }),
+  new AbortController().signal,
+  { first: 100, idle: 100, total: 30 },
+);
+assert.ok((await new Response(totalBody).text()).includes('"code":"timeout"'));
+assert.ok(totalCancelled);
+console.log("PASS exact deadline constants and total cancellation despite continuous text");

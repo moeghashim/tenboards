@@ -27,6 +27,9 @@ const read = async (response: Response) => {
 };
 const node = await startTestServer({}, 3016);
 try {
+  await (await fetch(`${node.baseURL}/dashboard/assistant`)).text();
+  const remaining = 60000 - (Date.now() % 60000);
+  if (remaining < 20000) await new Promise((resolve) => setTimeout(resolve, remaining + 50));
   assert.ok((await read(await post(node.baseURL))).includes("Recorded fallback"));
   for (const origin of ["null", "https://other.test", `${node.baseURL}/`, ""])
     assert.equal((await post(node.baseURL, payload, { Origin: origin })).status, 403);
@@ -61,7 +64,17 @@ try {
   assert.ok(!html.includes("synthetic-v07-"));
   for (const entry of providers) assert.ok(html.includes(entry.model));
   for (const entry of providers) {
-    for (const mode of ["success", "empty", "refusal", "malformed", "429", "500", "truncated", "oversize"]) {
+    for (const mode of [
+      "success",
+      "empty",
+      "refusal",
+      "malformed",
+      "429",
+      "500",
+      "truncated",
+      "oversize",
+      "wireoverflow",
+    ]) {
       const response = await post(worker.baseURL, { ...payload, provider: entry.id }, { "x-v07-case": mode });
       if (mode === "success") assert.equal(await read(response), mockOutput, entry.id);
       else {
@@ -74,7 +87,7 @@ try {
     }
   }
   console.log(
-    "PASS workerd actual compiled endpoint: 40 intercepted provider wire cases, DTO SSR has all models and no synthetic keys",
+    "PASS workerd actual compiled endpoint: 45 intercepted provider wire cases, DTO SSR has all models and no synthetic keys",
   );
   await Promise.all(
     providers.map(async (entry) => {
@@ -83,6 +96,15 @@ try {
       assert.ok(text.includes('"code":"timeout"'), entry.id);
     }),
   );
+  await Promise.all(
+    ["idle", "heartbeat"].map(async (mode) => {
+      const response = await post(worker.baseURL, { ...payload, provider: "meta" }, { "x-v07-case": mode });
+      const text = await response.text();
+      assert.equal((text.match(/"type":"error"/g) ?? []).length, 1);
+      assert.ok(text.includes('"code":"timeout"'));
+    }),
+  );
+  console.log("PASS workerd real 15s inter-content idle and 60s total deadline despite continuing visible content");
   const controller = new AbortController();
   const pending = post(
     worker.baseURL,
@@ -95,7 +117,8 @@ try {
   await new Promise((resolve) => setTimeout(resolve, 500));
   const probe = await (await fetch(`${worker.baseURL}/__assistant_probe`)).json();
   assert.equal(probe.violations, 0);
-  assert.equal(probe.calls, 46);
+  assert.equal(probe.calls, 53);
+  assert.equal(probe.leaks, 0);
   assert.ok(probe.cancelled >= 5);
   for (const request of probe.outputRequests)
     assert.ok(request.explicitKey && request.storageDisabled && request.noTools && request.cap && request.instructions);
@@ -113,6 +136,11 @@ try {
   await db`insert into auth_rate_limit (id,key,count,last_request) values ('v07-auth-sentinel','v07-auth-sentinel',1,1) on conflict (key) do nothing`;
   first = await startWorker({ DATABASE_URL: localDatabase }, { port: 3016, binding: true });
   second = await startWorker({ DATABASE_URL: localDatabase }, { port: 3017, binding: true });
+  await Promise.all(
+    [first, second].map(async (server) => (await fetch(`${server.baseURL}/dashboard/assistant`)).text()),
+  );
+  const remaining = 60000 - (Date.now() % 60000);
+  if (remaining < 30000) await new Promise((resolve) => setTimeout(resolve, remaining + 50));
   const responses = await Promise.all(
     Array.from({ length: 16 }, (_, n) =>
       post((n % 2 ? first : second)!.baseURL, payload, { "cf-connecting-ip": "198.19.8.1" }),

@@ -34,7 +34,11 @@
     "assistant:test": "node --experimental-strip-types scripts/assistant-check.ts",
     "assistant:browser": "node --experimental-strip-types scripts/assistant-browser-check.ts",
     "assistant:server": "node --experimental-strip-types scripts/assistant-server-check.ts",
-    "assistant:worker": "node --experimental-strip-types scripts/assistant-worker-check.ts"
+    "assistant:worker": "node --experimental-strip-types scripts/assistant-worker-check.ts",
+    "assistant:conversation": "node --experimental-strip-types scripts/assistant-conversation-check.ts",
+    "assistant:lifecycle": "node --experimental-strip-types scripts/assistant-lifecycle-browser-check.ts",
+    "assistant:context": "node --experimental-strip-types scripts/assistant-context-browser-check.ts",
+    "assistant:modes": "node --experimental-strip-types scripts/assistant-modes-check.ts"
   },
   "lint-staged": {
     "*.{js,ts,jsx,tsx}": ["biome check --write --no-errors-on-unmatched"]

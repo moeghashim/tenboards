@@ -14,7 +14,11 @@ export const localDatabase =
   process.env.DATABASE_URL ?? "postgresql://tenboards:tenboards_local@127.0.0.1:54329/tenboards";
 databaseUrl({ DATABASE_URL: localDatabase }, true);
 export const testHeaders = { "cf-connecting-ip": "", "x-forwarded-for": "" };
-export async function startTestServer(overrides: NodeJS.ProcessEnv = {}, port = 3011) {
+export async function startTestServer(
+  overrides: NodeJS.ProcessEnv = {},
+  port = 3011,
+  options: { assistantMock?: boolean } = {},
+) {
   const address = `198.18.${randomBytes(1)[0]}.${randomBytes(1)[0]}`;
   testHeaders["cf-connecting-ip"] = address;
   testHeaders["x-forwarded-for"] = address;
@@ -28,7 +32,16 @@ export async function startTestServer(overrides: NodeJS.ProcessEnv = {}, port = 
   const baseURL = `http://localhost:${nodePort}`;
   const child = spawn(
     process.execPath,
-    ["node_modules/vite/bin/vite.js", "dev", "--port", String(nodePort), "--strictPort"],
+    [
+      ...(options.assistantMock
+        ? ["--experimental-strip-types", "--import", "./scripts/node-assistant-harness.ts"]
+        : []),
+      "node_modules/vite/bin/vite.js",
+      "dev",
+      "--port",
+      String(nodePort),
+      "--strictPort",
+    ],
     {
       env: {
         ...process.env,
@@ -40,14 +53,31 @@ export async function startTestServer(overrides: NodeJS.ProcessEnv = {}, port = 
         GOOGLE_CLIENT_SECRET: undefined,
         GITHUB_CLIENT_ID: undefined,
         GITHUB_CLIENT_SECRET: undefined,
+        ANTHROPIC_API_KEY: undefined,
+        ANTHROPIC_MODEL: undefined,
+        OPENAI_API_KEY: undefined,
+        OPENAI_MODEL: undefined,
+        XAI_API_KEY: undefined,
+        XAI_MODEL: undefined,
+        META_API_KEY: undefined,
+        META_MODEL: undefined,
+        GOOGLE_GENERATIVE_AI_API_KEY: undefined,
+        GOOGLE_GENERATIVE_AI_MODEL: undefined,
+        ASSISTANT_ORIGIN: undefined,
         ...overrides,
       },
       stdio: ["ignore", "pipe", "pipe"],
     },
   );
-  // Never save server output: errors may contain request material from third-party tooling.
-  child.stdout.resume();
-  child.stderr.resume();
+  // Keep only a bounded in-memory scan window; never persist or print server output.
+  let diagnosticTail = "";
+  let leaked = false;
+  for (const stream of [child.stdout, child.stderr])
+    stream.on("data", (chunk: Buffer) => {
+      diagnosticTail = (diagnosticTail + chunk.toString()).slice(-16384);
+      if (/synthetic-v07-|SYNTHETIC_USER_PROMPT|Synthetic Café|Authorization: Bearer/i.test(diagnosticTail))
+        leaked = true;
+    });
   for (let attempt = 0; attempt < 120; attempt++) {
     if (child.exitCode !== null) throw new Error("Test server failed to start (configuration rejected).");
     try {
@@ -61,6 +91,7 @@ export async function startTestServer(overrides: NodeJS.ProcessEnv = {}, port = 
   return {
     baseURL,
     api,
+    hasDiagnosticLeak: () => leaked,
     async stop() {
       await api.dispose();
       child.kill("SIGTERM");
