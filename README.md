@@ -6,6 +6,8 @@ Ten current dashboards and the retained app pages share a compact design system,
 
 **v0.6.1 (legacy removal) is merged, deployed and released as [v0.6.1](https://github.com/moeghashim/tenboards/releases/tag/v0.6.1)**: the four V1 dashboards and Auth V1 forms are retired. Six old URLs permanently redirect to their current equivalents; Auth V2 is the only sign-in UI, and the collapsed desktop sidebar no longer shows a duplicate header toggle. The [collapsed-header-toggle task](dev/milestones/v0.6.1-legacy-removal/002-collapsed-header-toggle.md), [milestone overview](dev/milestones/v0.6.1-legacy-removal/README.md) and [milestone status](dev/milestones.json) track acceptance. The v0.5 authentication/session/security boundaries remain in place.
 
+**v0.7 (AI Assistant) is planned, not implemented** — [the milestone contract and three tasks](dev/milestones/v0.7-assistant/README.md) cover a separate Assistant page, safe OpenUI rendering, optional server-configured providers and recorded zero-config replies. Existing Chat stays unchanged. The live demo and PR previews will remain recorded-only; adopters supply their own provider keys.
+
 ## Run locally
 
 Use Node 22+ and npm. No environment variables or database are required.
