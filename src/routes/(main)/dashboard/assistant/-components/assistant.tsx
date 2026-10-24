@@ -6,7 +6,7 @@ import { inspectLanguage } from "@/lib/assistant/language";
 import { bytes } from "@/lib/assistant/registry";
 import { consumeStream } from "@/lib/assistant/transport";
 
-import { AssistantSurface, Composer, ConversationTurn, Welcome, RecordedPicker } from "./presentation";
+import { AssistantSurface, Composer, ConversationTurn, RecordedPicker, Welcome } from "./presentation";
 import { SafeResponse } from "./safe-response";
 
 type Turn = {
@@ -133,7 +133,31 @@ export function Assistant({ config }: { config: AssistantConfig }) {
         busy={busy}
         composer={composer}
         stopButton={stopButton}
-        toolbar={config.providers.length ? <><label htmlFor="assistant-provider" className="sr-only">Provider</label><NativeSelect id="assistant-provider" value={provider} disabled={busy} onChange={(event) => setProvider(event.target.value as ProviderId)} className="max-w-full" size="sm">{config.providers.map((item) => <NativeSelectOption key={item.id} value={item.id}>{item.name} · {item.model}</NativeSelectOption>)}</NativeSelect></> : <RecordedPicker />}
+        toolbar={
+          config.providers.length ? (
+            <>
+              <label htmlFor="assistant-provider" className="sr-only">
+                Provider
+              </label>
+              <NativeSelect
+                id="assistant-provider"
+                value={provider}
+                disabled={busy}
+                onChange={(event) => setProvider(event.target.value as ProviderId)}
+                className="max-w-full"
+                size="sm"
+              >
+                {config.providers.map((item) => (
+                  <NativeSelectOption key={item.id} value={item.id}>
+                    {item.name} · {item.model}
+                  </NativeSelectOption>
+                ))}
+              </NativeSelect>
+            </>
+          ) : (
+            <RecordedPicker />
+          )
+        }
       >
         {error && (
           <p role="alert" className="text-danger">

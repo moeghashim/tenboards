@@ -504,3 +504,4 @@ Follow [docs/deploy.md](docs/deploy.md) for local rehearsal, your own Neon/Hyper
 [Task 003 local acceptance and capture reports](https://github.com/moeghashim/tenboards/tree/pr-assets/v06-003) record the exact isolated preview and evidence boundaries; hosted checks belong to each adopter; task 004 adds template preparation and onboarding.
 
 The Assistant presents a centered conversation, suggestion cards and a single auto-growing composer anchored below the transcript, including safe-area spacing on mobile. Generated metrics, tables and charts share the compact dashboard card styling.
+The configured provider/model selector sits in the composer's bottom toolbar and remains disabled during a reply.

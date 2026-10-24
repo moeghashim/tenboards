@@ -48,3 +48,5 @@ Capture affected Assistant/default/Chat routes light/dark × desktop/mobile; ret
 ## Dependencies and handoff
 
 Depends on merged 001; blocks 003. Handoff tested metadata and stream contracts, sanitized error taxonomy, effective model/retention choices, exact limits and mock harness. A global no-DB paid quota, extra runtime dependency, new storage or auth-policy change is not silently added; record and pause dependent work if requested. No real account access is necessary for this task; adopter entitlement checks remain adopter-owned.
+
+Review round 2: rebased onto the refined 001 shell; provider selector integrated into the composer toolbar. Backend source remains unchanged from the prior branch head. Build/check/typecheck and four-state Assistant/default smoke rerun for this layer; final-stack backend regressions are linked from PR #70. Status remains review, pending reviewer assessment.
