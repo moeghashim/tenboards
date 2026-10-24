@@ -1,0 +1,205 @@
+[
+  {
+    "url": "http://127.0.0.1:3000/dashboard/mail",
+    "overflowingCards": [],
+    "root": "16px",
+    "spacing": "0.25rem",
+    "viewport": 390,
+    "documentWidth": 390,
+    "scale": {
+      "xs": "12px",
+      "sm": "13px",
+      "base": "14px",
+      "lg": "16px",
+      "xl": "18px",
+      "2xl": "21px",
+      "3xl": "26px"
+    },
+    "samples": {
+      "body": [
+        {
+          "text": "Toggle SidebarWorkspace/EmailSearch⌘KGitHubDUMail previewThis iframe s",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 844,
+          "width": 390,
+          "padding": "0px",
+          "gap": "normal"
+        }
+      ],
+      "header": [
+        {
+          "text": "Toggle SidebarWorkspace/EmailSearch⌘KGitHubDU",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 56,
+          "width": 390,
+          "padding": "0px 16px",
+          "gap": "12px"
+        },
+        {
+          "text": "TanStack DevtoolsPluginsMarketplaceSEO",
+          "font": "14px",
+          "lineHeight": "18px",
+          "height": 36,
+          "width": 390,
+          "padding": "0px 0px 0px 12px",
+          "gap": "4px"
+        }
+      ],
+      "main > div": [
+        {
+          "text": "Mail previewThis iframe shows the standalone mail screen. Open it in f",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 788,
+          "width": 390,
+          "padding": "16px",
+          "gap": "normal"
+        }
+      ],
+      "[data-slot=card]": [],
+      "[data-slot=card-header]": [],
+      "[data-slot=card-content]": [],
+      "[data-slot=table-body] tr": [],
+      "[data-slot=table-cell]": [],
+      "[data-slot=sidebar-menu-button]": [],
+      "[data-slot=button]": [
+        {
+          "text": "Search⌘K",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 32,
+          "width": 32,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 32,
+          "width": 32,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 28,
+          "width": 28,
+          "padding": "0px",
+          "gap": "normal"
+        }
+      ],
+      "[data-slot=input]": [],
+      "[data-slot=select-trigger]": [],
+      "h1": [
+        {
+          "text": "Mail preview",
+          "font": "14px",
+          "lineHeight": "17.5px",
+          "height": 17.5,
+          "width": 318,
+          "padding": "0px",
+          "gap": "normal"
+        }
+      ],
+      "h2": [],
+      "[data-slot=chart]": []
+    }
+  },
+  {
+    "url": "http://127.0.0.1:3000/mail",
+    "overflowingCards": [],
+    "root": "16px",
+    "spacing": "0.25rem",
+    "viewport": 356,
+    "documentWidth": 356,
+    "scale": {
+      "xs": "12px",
+      "sm": "13px",
+      "base": "14px",
+      "lg": "16px",
+      "xl": "18px",
+      "2xl": "21px",
+      "3xl": "26px"
+    },
+    "samples": {
+      "body": [
+        {
+          "text": "Toggle SidebarInboxPinned (4)WWilliam SmithMeeting Tomorrow24 minutes ",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 683,
+          "width": 356,
+          "padding": "0px",
+          "gap": "normal"
+        }
+      ],
+      "header": [
+        {
+          "text": "TanStack DevtoolsPluginsMarketplaceSEO",
+          "font": "14px",
+          "lineHeight": "18px",
+          "height": 36,
+          "width": 356,
+          "padding": "0px 0px 0px 4px",
+          "gap": "2px"
+        }
+      ],
+      "main > div": [],
+      "[data-slot=card]": [],
+      "[data-slot=card-header]": [],
+      "[data-slot=card-content]": [],
+      "[data-slot=table-body] tr": [],
+      "[data-slot=table-cell]": [],
+      "[data-slot=sidebar-menu-button]": [],
+      "[data-slot=button]": [
+        {
+          "text": "",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 28,
+          "width": 28,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 28,
+          "width": 28,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 28,
+          "width": 28,
+          "padding": "0px",
+          "gap": "normal"
+        }
+      ],
+      "[data-slot=input]": [],
+      "[data-slot=select-trigger]": [],
+      "h1": [
+        {
+          "text": "Inbox",
+          "font": "18px",
+          "lineHeight": "18px",
+          "height": 18,
+          "width": 44.71875,
+          "padding": "0px",
+          "gap": "normal"
+        }
+      ],
+      "h2": [],
+      "[data-slot=chart]": []
+    }
+  }
+]

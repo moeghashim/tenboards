@@ -1,0 +1,34 @@
+
+> tenboards@0.6.1 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --routes /dashboard/default,/dashboard/tasks,/auth/v2/login --reload --hydration-delay-ms 1200 --interactions --output screenshots/density/interactions
+
+PASS /dashboard/default light/desktop direct
+PASS /dashboard/default light/desktop refresh
+PASS /dashboard/default light/mobile direct
+PASS /dashboard/default light/mobile refresh
+PASS /dashboard/default dark/desktop direct
+FAIL /dashboard/default dark/desktop refresh
+locator.elementHandle: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('dialog', { name: 'Make it your workspace' })[22m
+[2m    - locator resolved to visible <div data-open="" role="dialog" tabindex="-1" id="_R_5n5aq_" data-side="right" data-base-ui-focusable="" data-slot="sheet-content" aria-label="Layout settings" aria-labelledby="base-ui-_r_1u_" aria-describedby="base-ui-_r_1v_" data-tsd-source="/src/routes/(main)/dashboard/-components/header/layout-controls.tsx:152:7" class="fixed z-50 flex flex-col bg-popover bg-clip-padding text-sm text-popover-foreground shadow-lg transition duration-200 ease-in-out data-ending-style:opacity-0 data-starting-style…>…</div>[22m
+
+PASS /dashboard/default dark/mobile direct
+PASS /dashboard/default dark/mobile refresh
+PASS /dashboard/tasks light/desktop direct
+PASS /dashboard/tasks light/desktop refresh
+PASS /dashboard/tasks light/mobile direct
+PASS /dashboard/tasks light/mobile refresh
+PASS /dashboard/tasks dark/desktop direct
+PASS /dashboard/tasks dark/desktop refresh
+PASS /dashboard/tasks dark/mobile direct
+PASS /dashboard/tasks dark/mobile refresh
+PASS /auth/v2/login light/desktop direct
+PASS /auth/v2/login light/desktop refresh
+PASS /auth/v2/login light/mobile direct
+FAIL /auth/v2/login light/mobile refresh
+console: Encountered a script tag while rendering React component. Scripts inside React components are never executed when rendering on the client. Consider using template tag instead (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template).
+PASS /auth/v2/login dark/desktop direct
+PASS /auth/v2/login dark/desktop refresh
+PASS /auth/v2/login dark/mobile direct
+PASS /auth/v2/login dark/mobile refresh

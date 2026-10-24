@@ -1,0 +1,325 @@
+[
+  {
+    "url": "http://127.0.0.1:3000/dashboard/tasks",
+    "root": "16px",
+    "spacing": "0.25rem",
+    "viewport": 1440,
+    "documentWidth": 1440,
+    "scale": {
+      "xs": "12px",
+      "label": "16px",
+      "sm": "14px",
+      "base": "16px",
+      "lg": "18px",
+      "xl": "20px",
+      "2xl": "24px",
+      "3xl": "30px"
+    },
+    "samples": {
+      "body": [
+        {
+          "text": "tenboardsToggle SidebarSearch⌘KHomeFile ManagerEmailChatCalendarTasksD",
+          "font": "16px",
+          "lineHeight": "24px",
+          "height": 900,
+          "width": 1440,
+          "padding": "0px",
+          "gap": "normal"
+        }
+      ],
+      "header": [
+        {
+          "text": "Toggle SidebarWorkspace/TasksSearch⌘KGitHubDU",
+          "font": "16px",
+          "lineHeight": "24px",
+          "height": 56,
+          "width": 1152,
+          "padding": "0px 24px",
+          "gap": "12px"
+        },
+        {
+          "text": "TanStack DevtoolsPluginsMarketplaceSEO",
+          "font": "14px",
+          "lineHeight": "21px",
+          "height": 36,
+          "width": 1440,
+          "padding": "0px 0px 0px 16px",
+          "gap": "8px"
+        }
+      ],
+      "main > div": [
+        {
+          "text": "TasksHere's a list of your tasks for this month.StatusPriorityViewTask",
+          "font": "16px",
+          "lineHeight": "24px",
+          "height": 844,
+          "width": 1152,
+          "padding": "24px",
+          "gap": "normal"
+        }
+      ],
+      "[data-slot=card]": [],
+      "[data-slot=card-header]": [],
+      "[data-slot=card-content]": [],
+      "[data-slot=table-body] tr": [
+        {
+          "text": "TASK-8782DocumentationYou can't compress the program without quantifyi",
+          "font": "14px",
+          "lineHeight": "20px",
+          "height": 57,
+          "width": 1102,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "TASK-7878DocumentationTry to calculate the EXE feed, maybe it will ind",
+          "font": "14px",
+          "lineHeight": "20px",
+          "height": 45,
+          "width": 1102,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "TASK-7839BugWe need to bypass the neural TCP card!TodoHighActions for ",
+          "font": "14px",
+          "lineHeight": "20px",
+          "height": 45,
+          "width": 1102,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "TASK-5562FeatureThe SAS interface is down, bypass the open-source pixe",
+          "font": "14px",
+          "lineHeight": "20px",
+          "height": 57,
+          "width": 1102,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "TASK-8686FeatureI'll parse the wireless SSL protocol, that should driv",
+          "font": "14px",
+          "lineHeight": "20px",
+          "height": 45,
+          "width": 1102,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "TASK-1280BugUse the digital TLS panel, then you can transmit the hapti",
+          "font": "14px",
+          "lineHeight": "20px",
+          "height": 45,
+          "width": 1102,
+          "padding": "0px",
+          "gap": "normal"
+        }
+      ],
+      "[data-slot=table-cell]": [
+        {
+          "text": "",
+          "font": "14px",
+          "lineHeight": "20px",
+          "height": 57,
+          "width": 32,
+          "padding": "8px 0px 8px 16px",
+          "gap": "normal"
+        },
+        {
+          "text": "TASK-8782",
+          "font": "14px",
+          "lineHeight": "20px",
+          "height": 57,
+          "width": 112,
+          "padding": "8px 16px",
+          "gap": "normal"
+        },
+        {
+          "text": "DocumentationYou can't compress the program without quantifying the op",
+          "font": "14px",
+          "lineHeight": "20px",
+          "height": 57,
+          "width": 653.578125,
+          "padding": "8px 16px",
+          "gap": "normal"
+        },
+        {
+          "text": "In Progress",
+          "font": "14px",
+          "lineHeight": "20px",
+          "height": 57,
+          "width": 131.5,
+          "padding": "8px 16px",
+          "gap": "normal"
+        },
+        {
+          "text": "Medium",
+          "font": "14px",
+          "lineHeight": "20px",
+          "height": 57,
+          "width": 112.921875,
+          "padding": "8px 16px",
+          "gap": "normal"
+        },
+        {
+          "text": "Actions for TASK-8782",
+          "font": "14px",
+          "lineHeight": "20px",
+          "height": 57,
+          "width": 60,
+          "padding": "8px 16px",
+          "gap": "normal"
+        }
+      ],
+      "[data-slot=sidebar-menu-button]": [
+        {
+          "text": "Home",
+          "font": "14px",
+          "lineHeight": "20px",
+          "height": 40,
+          "width": 238,
+          "padding": "8px 12px",
+          "gap": "12px"
+        },
+        {
+          "text": "File Manager",
+          "font": "14px",
+          "lineHeight": "20px",
+          "height": 40,
+          "width": 238,
+          "padding": "8px 12px",
+          "gap": "12px"
+        },
+        {
+          "text": "Email",
+          "font": "14px",
+          "lineHeight": "20px",
+          "height": 40,
+          "width": 238,
+          "padding": "8px 12px",
+          "gap": "12px"
+        },
+        {
+          "text": "Chat",
+          "font": "14px",
+          "lineHeight": "20px",
+          "height": 40,
+          "width": 238,
+          "padding": "8px 12px",
+          "gap": "12px"
+        },
+        {
+          "text": "Calendar",
+          "font": "14px",
+          "lineHeight": "20px",
+          "height": 40,
+          "width": 238,
+          "padding": "8px 12px",
+          "gap": "12px"
+        },
+        {
+          "text": "Tasks",
+          "font": "14px",
+          "lineHeight": "20px",
+          "height": 40,
+          "width": 238,
+          "padding": "8px 12px",
+          "gap": "12px"
+        }
+      ],
+      "[data-slot=button]": [
+        {
+          "text": "Search⌘K",
+          "font": "14px",
+          "lineHeight": "20px",
+          "height": 40,
+          "width": 230,
+          "padding": "0px 10px",
+          "gap": "8px"
+        },
+        {
+          "text": "",
+          "font": "14px",
+          "lineHeight": "20px",
+          "height": 28,
+          "width": 28,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "",
+          "font": "14px",
+          "lineHeight": "20px",
+          "height": 28,
+          "width": 28,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "",
+          "font": "14px",
+          "lineHeight": "20px",
+          "height": 28,
+          "width": 28,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "",
+          "font": "14px",
+          "lineHeight": "20px",
+          "height": 32,
+          "width": 32,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "GitHub",
+          "font": "14px",
+          "lineHeight": "20px",
+          "height": 32,
+          "width": 32,
+          "padding": "0px",
+          "gap": "normal"
+        }
+      ],
+      "[data-slot=input]": [
+        {
+          "text": "",
+          "font": "14px",
+          "lineHeight": "20px",
+          "height": 32,
+          "width": 256,
+          "padding": "4px 10px",
+          "gap": "normal"
+        }
+      ],
+      "[data-slot=select-trigger]": [
+        {
+          "text": "10▼",
+          "font": "14px",
+          "lineHeight": "20px",
+          "height": 32,
+          "width": 72,
+          "padding": "8px 8px 8px 10px",
+          "gap": "6px"
+        }
+      ],
+      "h1": [
+        {
+          "text": "Tasks",
+          "font": "24px",
+          "lineHeight": "30px",
+          "height": 30,
+          "width": 1104,
+          "padding": "0px",
+          "gap": "normal"
+        }
+      ],
+      "h2": [],
+      "[data-slot=chart]": []
+    }
+  }
+]

@@ -1,0 +1,142 @@
+[
+  {
+    "url": "http://127.0.0.1:3000/auth/v2/login",
+    "root": "16px",
+    "spacing": "0.25rem",
+    "viewport": 1440,
+    "documentWidth": 1440,
+    "scale": {
+      "xs": "12px",
+      "label": "16px",
+      "sm": "14px",
+      "base": "16px",
+      "lg": "18px",
+      "xl": "20px",
+      "2xl": "24px",
+      "3xl": "30px"
+    },
+    "samples": {
+      "body": [
+        {
+          "text": "Don't have an account? RegisterLogin to your accountEnter your details",
+          "font": "16px",
+          "lineHeight": "24px",
+          "height": 900,
+          "width": 1440,
+          "padding": "0px",
+          "gap": "normal"
+        }
+      ],
+      "header": [
+        {
+          "text": "TanStack DevtoolsPluginsMarketplaceSEO",
+          "font": "14px",
+          "lineHeight": "21px",
+          "height": 36,
+          "width": 1440,
+          "padding": "0px 0px 0px 16px",
+          "gap": "8px"
+        }
+      ],
+      "main > div": [
+        {
+          "text": "Don't have an account? RegisterLogin to your accountEnter your details",
+          "font": "16px",
+          "lineHeight": "24px",
+          "height": 900,
+          "width": 720,
+          "padding": "0px",
+          "gap": "normal"
+        }
+      ],
+      "[data-slot=card]": [],
+      "[data-slot=card-header]": [],
+      "[data-slot=card-content]": [],
+      "[data-slot=table-body] tr": [],
+      "[data-slot=table-cell]": [],
+      "[data-slot=sidebar-menu-button]": [],
+      "[data-slot=button]": [
+        {
+          "text": "GoogleContinue with Google",
+          "font": "14px",
+          "lineHeight": "20px",
+          "height": 32,
+          "width": 384,
+          "padding": "0px 10px",
+          "gap": "6px"
+        },
+        {
+          "text": "GitHubContinue with GitHub",
+          "font": "14px",
+          "lineHeight": "20px",
+          "height": 32,
+          "width": 384,
+          "padding": "0px 10px",
+          "gap": "6px"
+        },
+        {
+          "text": "Login",
+          "font": "14px",
+          "lineHeight": "20px",
+          "height": 32,
+          "width": 384,
+          "padding": "0px 10px",
+          "gap": "6px"
+        }
+      ],
+      "[data-slot=input]": [
+        {
+          "text": "",
+          "font": "14px",
+          "lineHeight": "20px",
+          "height": 32,
+          "width": 384,
+          "padding": "4px 10px",
+          "gap": "normal"
+        },
+        {
+          "text": "",
+          "font": "14px",
+          "lineHeight": "20px",
+          "height": 32,
+          "width": 384,
+          "padding": "4px 10px",
+          "gap": "normal"
+        }
+      ],
+      "[data-slot=select-trigger]": [],
+      "h1": [
+        {
+          "text": "Login to your account",
+          "font": "24px",
+          "lineHeight": "32px",
+          "height": 32,
+          "width": 384,
+          "padding": "0px",
+          "gap": "normal"
+        }
+      ],
+      "h2": [
+        {
+          "text": "Ready to launch?",
+          "font": "16px",
+          "lineHeight": "24px",
+          "height": 24,
+          "width": 300,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "Need help?",
+          "font": "16px",
+          "lineHeight": "24px",
+          "height": 24,
+          "width": 300,
+          "padding": "0px",
+          "gap": "normal"
+        }
+      ],
+      "[data-slot=chart]": []
+    }
+  }
+]

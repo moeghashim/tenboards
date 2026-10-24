@@ -1,0 +1,536 @@
+[
+  {
+    "url": "http://127.0.0.1:3000/dashboard/crm",
+    "root": "16px",
+    "spacing": "0.21875rem",
+    "viewport": 1440,
+    "documentWidth": 1440,
+    "scale": {
+      "xs": "12px",
+      "label": "13px",
+      "sm": "13px",
+      "base": "14px",
+      "lg": "16px",
+      "xl": "18px",
+      "2xl": "21px",
+      "3xl": "26px"
+    },
+    "samples": {
+      "body": [
+        {
+          "text": "tenboardsToggle SidebarSearch⌘KHomeFile ManagerEmailChatCalendarTasksD",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 1522,
+          "width": 1440,
+          "padding": "0px",
+          "gap": "normal"
+        }
+      ],
+      "header": [
+        {
+          "text": "Toggle SidebarWorkspace/CRMSearch⌘KGitHubDU",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 48,
+          "width": 1152,
+          "padding": "0px 21px",
+          "gap": "10.5px"
+        },
+        {
+          "text": "TanStack DevtoolsPluginsMarketplaceSEO",
+          "font": "14px",
+          "lineHeight": "18px",
+          "height": 36,
+          "width": 1440,
+          "padding": "0px 0px 0px 16px",
+          "gap": "8px"
+        }
+      ],
+      "main > div": [
+        {
+          "text": "Pipeline OverviewKeep tabs on lead quality, open opportunities, and co",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 1474,
+          "width": 1152,
+          "padding": "21px",
+          "gap": "normal"
+        }
+      ],
+      "[data-slot=card]": [
+        {
+          "text": "Lead Pipeline Value$284,500+12%$254,200 last month",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 114,
+          "width": 267,
+          "padding": "14px 0px",
+          "gap": "14px"
+        },
+        {
+          "text": "Qualified Lead Rate28.4%-2.5%30.9% last month",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 114,
+          "width": 267,
+          "padding": "14px 0px",
+          "gap": "14px"
+        },
+        {
+          "text": "Open Opportunities42+735 last month",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 114,
+          "width": 267,
+          "padding": "14px 0px",
+          "gap": "14px"
+        },
+        {
+          "text": "Lead-to-Deal Rate18.1%+1.6%16.5% last month",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 114,
+          "width": 267,
+          "padding": "14px 0px",
+          "gap": "14px"
+        },
+        {
+          "text": "Qualified Lead FlowLast 12 months▼\n [data-chart=chart-_R_cj9aq_] {\n  -",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 386.5,
+          "width": 1110,
+          "padding": "14px 0px",
+          "gap": "14px"
+        },
+        {
+          "text": "Upcoming MeetingsView Calendar08:4509:0010:0010:20Product demo with Ti",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 145.5,
+          "width": 735.328125,
+          "padding": "14px 0px",
+          "gap": "14px"
+        }
+      ],
+      "[data-slot=card-header]": [
+        {
+          "text": "Pipeline OverviewKeep tabs on lead quality, open opportunities, and co",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 41.5,
+          "width": 1110,
+          "padding": "0px",
+          "gap": "10.5px"
+        },
+        {
+          "text": "Lead Pipeline Value",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 18,
+          "width": 267,
+          "padding": "0px 14px",
+          "gap": "3.5px"
+        },
+        {
+          "text": "Qualified Lead Rate",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 18,
+          "width": 267,
+          "padding": "0px 14px",
+          "gap": "3.5px"
+        },
+        {
+          "text": "Open Opportunities",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 18,
+          "width": 267,
+          "padding": "0px 14px",
+          "gap": "3.5px"
+        },
+        {
+          "text": "Lead-to-Deal Rate",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 18,
+          "width": 267,
+          "padding": "0px 14px",
+          "gap": "3.5px"
+        },
+        {
+          "text": "Qualified Lead FlowLast 12 months▼",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 24.5,
+          "width": 1110,
+          "padding": "0px 14px",
+          "gap": "10.5px"
+        }
+      ],
+      "[data-slot=card-content]": [
+        {
+          "text": "$284,500+12%$254,200 last month",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 54,
+          "width": 267,
+          "padding": "0px 14px",
+          "gap": "3.5px"
+        },
+        {
+          "text": "28.4%-2.5%30.9% last month",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 54,
+          "width": 267,
+          "padding": "0px 14px",
+          "gap": "3.5px"
+        },
+        {
+          "text": "42+735 last month",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 54,
+          "width": 267,
+          "padding": "0px 14px",
+          "gap": "3.5px"
+        },
+        {
+          "text": "18.1%+1.6%16.5% last month",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 54,
+          "width": 267,
+          "padding": "0px 14px",
+          "gap": "3.5px"
+        },
+        {
+          "text": "[data-chart=chart-_R_cj9aq_] {\n  --color-qualified: var(--chart-2);\n}\n",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 320,
+          "width": 1110,
+          "padding": "0px 14px",
+          "gap": "normal"
+        },
+        {
+          "text": "08:4509:0010:0010:20Product demo with TimNorthwind Studio",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 79,
+          "width": 735.328125,
+          "padding": "0px 14px",
+          "gap": "normal"
+        }
+      ],
+      "[data-slot=table-body] tr": [
+        {
+          "text": "OP-1842Asteron BioworksProposal Sent1On Track$42,000Edit opportunity",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 50,
+          "width": 1110,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "OP-1841BlueHaven SystemsDiscovery1On Hold$18,500Edit opportunity",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 50,
+          "width": 1110,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "OP-1840Cinder HealthNegotiation1At Risk$63,000Edit opportunity",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 50,
+          "width": 1110,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "OP-1839Drift ManufacturingQualified1At Risk$26,400Edit opportunity",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 50,
+          "width": 1110,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "OP-1838Everline FreightProposal Sent1Needs Review$58,900Edit opportuni",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 50,
+          "width": 1110,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "OP-1837Fieldstone CapitalDiscovery1On Track$31,200Edit opportunity",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 50,
+          "width": 1110,
+          "padding": "0px",
+          "gap": "normal"
+        }
+      ],
+      "[data-slot=table-cell]": [
+        {
+          "text": "",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 50,
+          "width": 42.734375,
+          "padding": "10.5px 0px 10.5px 14px",
+          "gap": "normal"
+        },
+        {
+          "text": "OP-1842",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 50,
+          "width": 122.4375,
+          "padding": "10.5px 14px",
+          "gap": "normal"
+        },
+        {
+          "text": "Asteron Bioworks",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 50,
+          "width": 247.46875,
+          "padding": "10.5px 14px",
+          "gap": "normal"
+        },
+        {
+          "text": "Proposal Sent",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 50,
+          "width": 192.84375,
+          "padding": "10.5px 14px",
+          "gap": "normal"
+        },
+        {
+          "text": "1",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 50,
+          "width": 109.796875,
+          "padding": "10.5px 14px",
+          "gap": "normal"
+        },
+        {
+          "text": "On Track",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 50,
+          "width": 188.71875,
+          "padding": "10.5px 14px",
+          "gap": "normal"
+        }
+      ],
+      "[data-slot=sidebar-menu-button]": [
+        {
+          "text": "Home",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 36,
+          "width": 241,
+          "padding": "7px 10px",
+          "gap": "10px"
+        },
+        {
+          "text": "File Manager",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 36,
+          "width": 241,
+          "padding": "7px 10px",
+          "gap": "10px"
+        },
+        {
+          "text": "Email",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 36,
+          "width": 241,
+          "padding": "7px 10px",
+          "gap": "10px"
+        },
+        {
+          "text": "Chat",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 36,
+          "width": 241,
+          "padding": "7px 10px",
+          "gap": "10px"
+        },
+        {
+          "text": "Calendar",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 36,
+          "width": 241,
+          "padding": "7px 10px",
+          "gap": "10px"
+        },
+        {
+          "text": "Tasks",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 36,
+          "width": 241,
+          "padding": "7px 10px",
+          "gap": "10px"
+        }
+      ],
+      "[data-slot=button]": [
+        {
+          "text": "Search⌘K",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 36,
+          "width": 234,
+          "padding": "0px 8.75px",
+          "gap": "7px"
+        },
+        {
+          "text": "",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 24.5,
+          "width": 24.5,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 24.5,
+          "width": 24.5,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 24.5,
+          "width": 24.5,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 28,
+          "width": 28,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "GitHub",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 28,
+          "width": 28,
+          "padding": "0px",
+          "gap": "normal"
+        }
+      ],
+      "[data-slot=input]": [
+        {
+          "text": "",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 24.5,
+          "width": 182,
+          "padding": "3.5px 8.75px",
+          "gap": "normal"
+        }
+      ],
+      "[data-slot=select-trigger]": [
+        {
+          "text": "Last 12 months▼",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 24.5,
+          "width": 129.84375,
+          "padding": "7px 7px 7px 8.75px",
+          "gap": "5.25px"
+        }
+      ],
+      "h1": [],
+      "h2": [
+        {
+          "text": "Pipeline Overview",
+          "font": "14px",
+          "lineHeight": "20px",
+          "height": 20,
+          "width": 1110,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "Qualified Lead Flow",
+          "font": "14px",
+          "lineHeight": "20px",
+          "height": 20,
+          "width": 941.65625,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "Upcoming Meetings",
+          "font": "14px",
+          "lineHeight": "20px",
+          "height": 20,
+          "width": 578.421875,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "Monthly Proposal Goal",
+          "font": "14px",
+          "lineHeight": "20px",
+          "height": 20,
+          "width": 332.65625,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "Recent Opportunities",
+          "font": "14px",
+          "lineHeight": "20px",
+          "height": 20,
+          "width": 712.984375,
+          "padding": "0px",
+          "gap": "normal"
+        }
+      ],
+      "[data-slot=chart]": [
+        {
+          "text": "[data-chart=chart-_R_cj9aq_] {\n  --color-qualified: var(--chart-2);\n}\n",
+          "font": "12px",
+          "lineHeight": "16px",
+          "height": 320,
+          "width": 716.65625,
+          "padding": "0px",
+          "gap": "normal"
+        }
+      ]
+    }
+  }
+]

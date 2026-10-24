@@ -1,0 +1,12 @@
+
+> tenboards@0.6.1 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --routes /dashboard/kanban,/dashboard/mail --interactions --density --output screenshots/density/corrected-interactions
+
+PASS /dashboard/kanban light/desktop direct
+PASS /dashboard/kanban light/mobile direct
+PASS /dashboard/kanban dark/desktop direct
+PASS /dashboard/kanban dark/mobile direct
+PASS /dashboard/mail light/desktop direct
+PASS /dashboard/mail light/mobile direct
+PASS /dashboard/mail dark/desktop direct
+PASS /dashboard/mail dark/mobile direct

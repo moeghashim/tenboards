@@ -1,0 +1,269 @@
+{
+  "baseURL": "http://127.0.0.1:3000/",
+  "fontAssets": "exact public responses cached between contexts",
+  "maskedLiveClocks": false,
+  "hydrationDelayMs": 1200,
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": true,
+  "interactions": true,
+  "sidebarStates": false,
+  "results": [
+    {
+      "route": "/dashboard/default",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_default-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_default-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Sidebar expansion/names/visible 2px focus; palette arrows/Escape/focus return",
+        "Settings native radio/select keyboard access, focus trap/return; reduced motion <=1ms",
+        "Theme/preset/font state persists after refresh",
+        "Customer search empty/reset; segment selector remains local"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_default-light-desktop-refresh-interactive.png",
+      "controlsFile": "_dashboard_default-light-desktop-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Sidebar expansion/names/visible 2px focus; palette arrows/Escape/focus return",
+        "Settings native radio/select keyboard access, focus trap/return; reduced motion <=1ms",
+        "Theme/preset/font state persists after refresh",
+        "Customer search empty/reset; segment selector remains local"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_default-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_default-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Sidebar expansion/names/visible 2px focus; palette arrows/Escape/focus return",
+        "Settings native radio/select keyboard access, focus trap/return; reduced motion <=1ms",
+        "Theme/preset/font state persists after refresh",
+        "Customer search empty/reset; segment selector remains local"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_default-light-mobile-refresh-interactive.png",
+      "controlsFile": "_dashboard_default-light-mobile-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Sidebar expansion/names/visible 2px focus; palette arrows/Escape/focus return",
+        "Settings native radio/select keyboard access, focus trap/return; reduced motion <=1ms",
+        "Theme/preset/font state persists after refresh",
+        "Customer search empty/reset; segment selector remains local"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_default-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_default-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Sidebar expansion/names/visible 2px focus; palette arrows/Escape/focus return",
+        "Settings native radio/select keyboard access, focus trap/return; reduced motion <=1ms",
+        "Theme/preset/font state persists after refresh",
+        "Customer search empty/reset; segment selector remains local"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_default-dark-desktop-refresh-interactive.png",
+      "controlsFile": "_dashboard_default-dark-desktop-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Sidebar expansion/names/visible 2px focus; palette arrows/Escape/focus return",
+        "Settings native radio/select keyboard access, focus trap/return; reduced motion <=1ms",
+        "Theme/preset/font state persists after refresh",
+        "Customer search empty/reset; segment selector remains local"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_default-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_default-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Sidebar expansion/names/visible 2px focus; palette arrows/Escape/focus return",
+        "Settings native radio/select keyboard access, focus trap/return; reduced motion <=1ms",
+        "Theme/preset/font state persists after refresh",
+        "Customer search empty/reset; segment selector remains local"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_default-dark-mobile-refresh-interactive.png",
+      "controlsFile": "_dashboard_default-dark-mobile-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Sidebar expansion/names/visible 2px focus; palette arrows/Escape/focus return",
+        "Settings native radio/select keyboard access, focus trap/return; reduced motion <=1ms",
+        "Theme/preset/font state persists after refresh",
+        "Customer search empty/reset; segment selector remains local"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v2/login",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_auth_v2_login-light-desktop-interactive.png",
+      "controlsFile": "_auth_v2_login-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Labels, masked passwords and email/current/new-password autofill verified",
+        "Empty and mismatched-password errors; error association and local demo submission verified",
+        "Google remains demo-only; keyboard crosslink works",
+        "360×500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v2/login",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_auth_v2_login-light-desktop-refresh-interactive.png",
+      "controlsFile": "_auth_v2_login-light-desktop-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Labels, masked passwords and email/current/new-password autofill verified",
+        "Empty and mismatched-password errors; error association and local demo submission verified",
+        "Google remains demo-only; keyboard crosslink works",
+        "360×500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v2/login",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_auth_v2_login-light-mobile-interactive.png",
+      "controlsFile": "_auth_v2_login-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Labels, masked passwords and email/current/new-password autofill verified",
+        "Empty and mismatched-password errors; error association and local demo submission verified",
+        "Google remains demo-only; keyboard crosslink works",
+        "360×500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v2/login",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_auth_v2_login-light-mobile-refresh-interactive.png",
+      "controlsFile": "_auth_v2_login-light-mobile-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Labels, masked passwords and email/current/new-password autofill verified",
+        "Empty and mismatched-password errors; error association and local demo submission verified",
+        "Google remains demo-only; keyboard crosslink works",
+        "360×500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v2/login",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_auth_v2_login-dark-desktop-interactive.png",
+      "controlsFile": "_auth_v2_login-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Labels, masked passwords and email/current/new-password autofill verified",
+        "Empty and mismatched-password errors; error association and local demo submission verified",
+        "Google remains demo-only; keyboard crosslink works",
+        "360×500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v2/login",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_auth_v2_login-dark-desktop-refresh-interactive.png",
+      "controlsFile": "_auth_v2_login-dark-desktop-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Labels, masked passwords and email/current/new-password autofill verified",
+        "Empty and mismatched-password errors; error association and local demo submission verified",
+        "Google remains demo-only; keyboard crosslink works",
+        "360×500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v2/login",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_auth_v2_login-dark-mobile-interactive.png",
+      "controlsFile": "_auth_v2_login-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Labels, masked passwords and email/current/new-password autofill verified",
+        "Empty and mismatched-password errors; error association and local demo submission verified",
+        "Google remains demo-only; keyboard crosslink works",
+        "360×500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v2/login",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_auth_v2_login-dark-mobile-refresh-interactive.png",
+      "controlsFile": "_auth_v2_login-dark-mobile-refresh-interactive-controls.png",
+      "phase": "refresh",
+      "interactionNotes": [
+        "Labels, masked passwords and email/current/new-password autofill verified",
+        "Empty and mismatched-password errors; error association and local demo submission verified",
+        "Google remains demo-only; keyboard crosslink works",
+        "360×500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    }
+  ]
+}

@@ -1,0 +1,453 @@
+[
+  {
+    "url": "http://127.0.0.1:3000/dashboard/finance",
+    "root": "16px",
+    "spacing": "0.21875rem",
+    "viewport": 1440,
+    "documentWidth": 1440,
+    "scale": {
+      "xs": "12px",
+      "label": "13px",
+      "sm": "13px",
+      "base": "14px",
+      "lg": "16px",
+      "xl": "18px",
+      "2xl": "21px",
+      "3xl": "26px"
+    },
+    "samples": {
+      "body": [
+        {
+          "text": "tenboardsToggle SidebarSearch⌘KHomeFile ManagerEmailChatCalendarTasksD",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 1300.25,
+          "width": 1440,
+          "padding": "0px",
+          "gap": "normal"
+        }
+      ],
+      "header": [
+        {
+          "text": "Toggle SidebarWorkspace/FinanceSearch⌘KGitHubDU",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 48,
+          "width": 1152,
+          "padding": "0px 21px",
+          "gap": "10.5px"
+        },
+        {
+          "text": "TanStack DevtoolsPluginsMarketplaceSEO",
+          "font": "14px",
+          "lineHeight": "18px",
+          "height": 36,
+          "width": 1440,
+          "padding": "0px 0px 0px 16px",
+          "gap": "8px"
+        }
+      ],
+      "main > div": [
+        {
+          "text": "Personal FinancesDemo statement · October 23, 2026DashboardAccountsTra",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 1252.25,
+          "width": 1152,
+          "padding": "21px",
+          "gap": "normal"
+        }
+      ],
+      "[data-slot=card]": [
+        {
+          "text": "Net worth$128.4K+8.4%+$9.8K vs last month",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 114,
+          "width": 267,
+          "padding": "14px 0px",
+          "gap": "14px"
+        },
+        {
+          "text": "Available cash$12.8K+3.2%$410 above your 30-day average",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 114,
+          "width": 267,
+          "padding": "14px 0px",
+          "gap": "14px"
+        },
+        {
+          "text": "Monthly spend$2,140+6.1%$124 more than last month",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 114,
+          "width": 267,
+          "padding": "14px 0px",
+          "gap": "14px"
+        },
+        {
+          "text": "Savings rate28%+2.4%Up from 25.6% last month",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 114,
+          "width": 267,
+          "padding": "14px 0px",
+          "gap": "14px"
+        },
+        {
+          "text": "Income sourcesPrimary salary · 68%$4,560.00Freelance projects · 21%$1,",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 163.25,
+          "width": 548,
+          "padding": "14px 0px",
+          "gap": "14px"
+        },
+        {
+          "text": "Spending OverviewWeekly▼\n [data-chart=chart-_R_jaj9aq_] {\n  --color-ex",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 504,
+          "width": 641.65625,
+          "padding": "14px 0px",
+          "gap": "14px"
+        }
+      ],
+      "[data-slot=card-header]": [
+        {
+          "text": "Net worth",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 18,
+          "width": 267,
+          "padding": "0px 14px",
+          "gap": "3.5px"
+        },
+        {
+          "text": "Available cash",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 18,
+          "width": 267,
+          "padding": "0px 14px",
+          "gap": "3.5px"
+        },
+        {
+          "text": "Monthly spend",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 18,
+          "width": 267,
+          "padding": "0px 14px",
+          "gap": "3.5px"
+        },
+        {
+          "text": "Savings rate",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 18,
+          "width": 267,
+          "padding": "0px 14px",
+          "gap": "3.5px"
+        },
+        {
+          "text": "Income sources",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 20,
+          "width": 548,
+          "padding": "0px 14px",
+          "gap": "10.5px"
+        },
+        {
+          "text": "Spending OverviewWeekly▼",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 24.5,
+          "width": 641.65625,
+          "padding": "0px 14px",
+          "gap": "10.5px"
+        }
+      ],
+      "[data-slot=card-content]": [
+        {
+          "text": "$128.4K+8.4%+$9.8K vs last month",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 54,
+          "width": 267,
+          "padding": "0px 14px",
+          "gap": "3.5px"
+        },
+        {
+          "text": "$12.8K+3.2%$410 above your 30-day average",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 54,
+          "width": 267,
+          "padding": "0px 14px",
+          "gap": "3.5px"
+        },
+        {
+          "text": "$2,140+6.1%$124 more than last month",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 54,
+          "width": 267,
+          "padding": "0px 14px",
+          "gap": "3.5px"
+        },
+        {
+          "text": "28%+2.4%Up from 25.6% last month",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 54,
+          "width": 267,
+          "padding": "0px 14px",
+          "gap": "3.5px"
+        },
+        {
+          "text": "Primary salary · 68%$4,560.00Freelance projects · 21%$1,412.00Dividend",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 101.25,
+          "width": 548,
+          "padding": "0px 14px",
+          "gap": "normal"
+        },
+        {
+          "text": "[data-chart=chart-_R_jaj9aq_] {\n  --color-expense: var(--chart-1);\n  -",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 437.5,
+          "width": 641.65625,
+          "padding": "0px 14px",
+          "gap": "normal"
+        }
+      ],
+      "[data-slot=table-body] tr": [],
+      "[data-slot=table-cell]": [],
+      "[data-slot=sidebar-menu-button]": [
+        {
+          "text": "Home",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 36,
+          "width": 241,
+          "padding": "7px 10px",
+          "gap": "10px"
+        },
+        {
+          "text": "File Manager",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 36,
+          "width": 241,
+          "padding": "7px 10px",
+          "gap": "10px"
+        },
+        {
+          "text": "Email",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 36,
+          "width": 241,
+          "padding": "7px 10px",
+          "gap": "10px"
+        },
+        {
+          "text": "Chat",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 36,
+          "width": 241,
+          "padding": "7px 10px",
+          "gap": "10px"
+        },
+        {
+          "text": "Calendar",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 36,
+          "width": 241,
+          "padding": "7px 10px",
+          "gap": "10px"
+        },
+        {
+          "text": "Tasks",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 36,
+          "width": 241,
+          "padding": "7px 10px",
+          "gap": "10px"
+        }
+      ],
+      "[data-slot=button]": [
+        {
+          "text": "Search⌘K",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 36,
+          "width": 234,
+          "padding": "0px 8.75px",
+          "gap": "7px"
+        },
+        {
+          "text": "",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 24.5,
+          "width": 24.5,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 24.5,
+          "width": 24.5,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 24.5,
+          "width": 24.5,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 28,
+          "width": 28,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "GitHub",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 28,
+          "width": 28,
+          "padding": "0px",
+          "gap": "normal"
+        }
+      ],
+      "[data-slot=input]": [],
+      "[data-slot=select-trigger]": [
+        {
+          "text": "Weekly▼",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 24.5,
+          "width": 98,
+          "padding": "7px 7px 7px 8.75px",
+          "gap": "5.25px"
+        },
+        {
+          "text": "USD Balance▼",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 24.5,
+          "width": 126,
+          "padding": "7px 7px 7px 8.75px",
+          "gap": "5.25px"
+        }
+      ],
+      "h1": [
+        {
+          "text": "Personal Finances",
+          "font": "26px",
+          "lineHeight": "32px",
+          "height": 32,
+          "width": 1110,
+          "padding": "0px",
+          "gap": "normal"
+        }
+      ],
+      "h2": [
+        {
+          "text": "Net worth",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 18,
+          "width": 239,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "Available cash",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 18,
+          "width": 239,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "Monthly spend",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 18,
+          "width": 239,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "Savings rate",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 18,
+          "width": 239,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "Income sources",
+          "font": "14px",
+          "lineHeight": "20px",
+          "height": 20,
+          "width": 520,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "Credit score updated",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 18,
+          "width": 120.71875,
+          "padding": "0px",
+          "gap": "normal"
+        }
+      ],
+      "[data-slot=chart]": [
+        {
+          "text": "[data-chart=chart-_R_jaj9aq_] {\n  --color-expense: var(--chart-1);\n  -",
+          "font": "12px",
+          "lineHeight": "16px",
+          "height": 437.5,
+          "width": 613.65625,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "[data-chart=chart-_R_1laj9aq_] {\n  --color-investment: var(--chart-1);",
+          "font": "12px",
+          "lineHeight": "16px",
+          "height": 256,
+          "width": 426.328125,
+          "padding": "0px",
+          "gap": "normal"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,11 @@
+Assessment B final preview verification, 2026-10-24
+URL: https://6795e7df-tenboards-preview.mohanadgh.workers.dev
+Fresh explicit T3 tab: tab_12. Reviewed Default, Kanban, Mail at 1280x800; Kanban additionally390x844.
+Kanban desktop: first card y220 height149.25 bottom369.25; second y379.75 (10.5px gap). Sortable min-height:auto. No overlap. documentWidth1280=viewport1280.
+Mail: all17 sampled visible preview paragraphs computed13px inside same-origin iframe.
+Overlay preflight: document.title mutation and inline script append executed successfully.
+Started impeccable live-server background pid99887 port8400. Appended http://localhost:8400/detect.js; onerror returned script-load-error. No detector overlay or browser detector results available.
+Requested presentation through preview_open open:true/show:true; tool still reported visible:false. Do not claim user-visible overlay.
+Stopped server using live-server stop --keep-inject; confirmed Stopped live server on port8400. Navigation removed injected preflight/script tags. No project HTML edit.
+First Default snapshot had Electron host sandbox startup errors (binding.startupData preloadScripts null); these are browser-host diagnostics, not application errors. App screenshots and DOM inspected successfully.
+CLI detector remains original zero findings [] in detector.json. Not rerun.

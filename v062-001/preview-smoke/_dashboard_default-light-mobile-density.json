@@ -1,0 +1,490 @@
+[
+  {
+    "url": "https://6795e7df-tenboards-preview.mohanadgh.workers.dev/dashboard/default",
+    "overflowingCards": [],
+    "root": "16px",
+    "spacing": ".25rem",
+    "viewport": 390,
+    "documentWidth": 390,
+    "scale": {
+      "xs": "12px",
+      "sm": "13px",
+      "base": "14px",
+      "lg": "16px",
+      "xl": "18px",
+      "2xl": "21px",
+      "3xl": "26px"
+    },
+    "samples": {
+      "body": [
+        {
+          "text": "Toggle SidebarWorkspace/DefaultSearch⌘KGitHubDUTotal Revenue$1,250.00+",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 1970.5,
+          "width": 390,
+          "padding": "0px",
+          "gap": "normal"
+        }
+      ],
+      "header": [
+        {
+          "text": "Toggle SidebarWorkspace/DefaultSearch⌘KGitHubDU",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 56,
+          "width": 390,
+          "padding": "0px 16px",
+          "gap": "12px"
+        }
+      ],
+      "main > div": [
+        {
+          "text": "Total Revenue$1,250.00+12.5%Visitors for the last 6 monthsNew Customer",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 1914.5,
+          "width": 390,
+          "padding": "16px",
+          "gap": "normal"
+        }
+      ],
+      "[data-slot=card]": [
+        {
+          "text": "Total Revenue$1,250.00+12.5%Visitors for the last 6 months",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 114.25,
+          "width": 358,
+          "padding": "16px 0px",
+          "gap": "16px"
+        },
+        {
+          "text": "New Customers1,234-20%Acquisition needs attention",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 114.25,
+          "width": 358,
+          "padding": "16px 0px",
+          "gap": "16px"
+        },
+        {
+          "text": "Active Accounts45,678+12.5%Engagement exceeds targets",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 114.25,
+          "width": 358,
+          "padding": "16px 0px",
+          "gap": "16px"
+        },
+        {
+          "text": "Growth Rate4.5%+4.5%Meets growth projections",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 114.25,
+          "width": 358,
+          "padding": "16px 0px",
+          "gap": "16px"
+        },
+        {
+          "text": "Customer ActivityCustomer activity for the last 3 monthsLast 3 months3",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 422,
+          "width": 358,
+          "padding": "16px 0px",
+          "gap": "16px"
+        },
+        {
+          "text": "18,426 CustomersRecent customer records with plan, billing, status, an",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 923.5,
+          "width": 358,
+          "padding": "16px 0px",
+          "gap": "16px"
+        }
+      ],
+      "[data-slot=card-header]": [
+        {
+          "text": "Total Revenue",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 18,
+          "width": 358,
+          "padding": "0px 16px",
+          "gap": "4px"
+        },
+        {
+          "text": "New Customers",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 18,
+          "width": 358,
+          "padding": "0px 16px",
+          "gap": "4px"
+        },
+        {
+          "text": "Active Accounts",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 18,
+          "width": 358,
+          "padding": "0px 16px",
+          "gap": "4px"
+        },
+        {
+          "text": "Growth Rate",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 18,
+          "width": 358,
+          "padding": "0px 16px",
+          "gap": "4px"
+        },
+        {
+          "text": "Customer ActivityCustomer activity for the last 3 monthsLast 3 months3",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 118,
+          "width": 358,
+          "padding": "0px 16px",
+          "gap": "12px"
+        },
+        {
+          "text": "18,426 CustomersRecent customer records with plan, billing, status, an",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 60,
+          "width": 358,
+          "padding": "0px 16px",
+          "gap": "12px"
+        }
+      ],
+      "[data-slot=card-content]": [
+        {
+          "text": "$1,250.00+12.5%Visitors for the last 6 months",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 48.25,
+          "width": 358,
+          "padding": "0px 16px",
+          "gap": "4px"
+        },
+        {
+          "text": "1,234-20%Acquisition needs attention",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 48.25,
+          "width": 358,
+          "padding": "0px 16px",
+          "gap": "4px"
+        },
+        {
+          "text": "45,678+12.5%Engagement exceeds targets",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 48.25,
+          "width": 358,
+          "padding": "0px 16px",
+          "gap": "4px"
+        },
+        {
+          "text": "4.5%+4.5%Meets growth projections",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 48.25,
+          "width": 358,
+          "padding": "0px 16px",
+          "gap": "4px"
+        },
+        {
+          "text": "[data-chart=chart-_R_2j9aq_] {\n  --color-newCustomers: var(--chart-1);",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 256,
+          "width": 358,
+          "padding": "0px 16px",
+          "gap": "normal"
+        },
+        {
+          "text": "StatusJoined dateBillingSortCustomerStatusBillingPlanJoinedSarah Parke",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 815.5,
+          "width": 358,
+          "padding": "0px 16px",
+          "gap": "normal"
+        }
+      ],
+      "[data-slot=table-body] tr": [
+        {
+          "text": "Sarah Parker#18425SubscribedPaidEnterprise30th April 2026at 10:25 AM",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 57,
+          "width": 760,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "Michael Brown#18424InactivePendingGrowth29th April 2026at 10:08 AM",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 57,
+          "width": 760,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "Linda Chen#18423UnsubscribedOverduePro28th April 2026at 9:51 AM",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 57,
+          "width": 760,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "David Lee#18422SubscribedTrialStarter27th April 2026at 9:34 AM",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 57,
+          "width": 760,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "Emily White#18421InactivePaidEnterprise26th April 2026at 9:17 AM",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 57,
+          "width": 760,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "Jessica Wong#18420UnsubscribedPendingGrowth25th April 2026at 9:00 AM",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 57,
+          "width": 760,
+          "padding": "0px",
+          "gap": "normal"
+        }
+      ],
+      "[data-slot=table-cell]": [
+        {
+          "text": "",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 57,
+          "width": 35.34375,
+          "padding": "10px 0px 10px 12px",
+          "gap": "normal"
+        },
+        {
+          "text": "Sarah Parker#18425",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 57,
+          "width": 194,
+          "padding": "10px 12px",
+          "gap": "normal"
+        },
+        {
+          "text": "Subscribed",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 57,
+          "width": 145.359375,
+          "padding": "10px 12px",
+          "gap": "normal"
+        },
+        {
+          "text": "Paid",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 57,
+          "width": 127.703125,
+          "padding": "10px 12px",
+          "gap": "normal"
+        },
+        {
+          "text": "Enterprise",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 57,
+          "width": 106.609375,
+          "padding": "10px 12px",
+          "gap": "normal"
+        },
+        {
+          "text": "30th April 2026at 10:25 AM",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 57,
+          "width": 150.984375,
+          "padding": "10px 12px",
+          "gap": "normal"
+        }
+      ],
+      "[data-slot=sidebar-menu-button]": [],
+      "[data-slot=button]": [
+        {
+          "text": "Search⌘K",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 32,
+          "width": 32,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 32,
+          "width": 32,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "View report",
+          "font": "12.8px",
+          "lineHeight": "18px",
+          "height": 28,
+          "width": 90.96875,
+          "padding": "0px 10px",
+          "gap": "4px"
+        },
+        {
+          "text": "Export",
+          "font": "12.8px",
+          "lineHeight": "18px",
+          "height": 28,
+          "width": 79.421875,
+          "padding": "0px 10px",
+          "gap": "4px"
+        },
+        {
+          "text": "Go to previous page",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 32,
+          "width": 32,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "Go to next page",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 32,
+          "width": 32,
+          "padding": "0px",
+          "gap": "normal"
+        }
+      ],
+      "[data-slot=input]": [
+        {
+          "text": "",
+          "font": "16px",
+          "lineHeight": "20px",
+          "height": 28,
+          "width": 326,
+          "padding": "4px 10px 4px 32px",
+          "gap": "normal"
+        }
+      ],
+      "[data-slot=select-trigger]": [
+        {
+          "text": "3 months▼",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 28,
+          "width": 112,
+          "padding": "8px 8px 8px 10px",
+          "gap": "6px"
+        },
+        {
+          "text": "All segments▼",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 28,
+          "width": 128,
+          "padding": "8px 8px 8px 10px",
+          "gap": "6px"
+        }
+      ],
+      "h1": [],
+      "h2": [
+        {
+          "text": "Total Revenue",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 18,
+          "width": 326,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "New Customers",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 18,
+          "width": 326,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "Active Accounts",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 18,
+          "width": 326,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "Growth Rate",
+          "font": "13px",
+          "lineHeight": "18px",
+          "height": 18,
+          "width": 326,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "Customer Activity",
+          "font": "14px",
+          "lineHeight": "20px",
+          "height": 20,
+          "width": 326,
+          "padding": "0px",
+          "gap": "normal"
+        },
+        {
+          "text": "18,426 Customers",
+          "font": "14px",
+          "lineHeight": "20px",
+          "height": 20,
+          "width": 234.578125,
+          "padding": "0px",
+          "gap": "normal"
+        }
+      ],
+      "[data-slot=chart]": [
+        {
+          "text": "[data-chart=chart-_R_2j9aq_] {\n  --color-newCustomers: var(--chart-1);",
+          "font": "12px",
+          "lineHeight": "16px",
+          "height": 256,
+          "width": 326,
+          "padding": "0px",
+          "gap": "normal"
+        }
+      ]
+    }
+  }
+]

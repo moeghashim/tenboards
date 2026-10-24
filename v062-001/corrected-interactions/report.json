@@ -1,0 +1,145 @@
+{
+  "baseURL": "http://127.0.0.1:3000/",
+  "fontAssets": "exact public responses cached between contexts",
+  "maskedLiveClocks": false,
+  "hydrationDelayMs": 0,
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": false,
+  "interactions": true,
+  "sidebarStates": false,
+  "results": [
+    {
+      "route": "/dashboard/kanban",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_kanban-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_kanban-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Query Board/List/Table selections and list/table refresh",
+        "Keyboard task move and Escape rollback; desktop pointer move",
+        "Keyboard column and table ordering; list/table cancellation",
+        "Table status edit reflected in board; empty QA column",
+        "Local horizontal scrolling and neutral owner across all views"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/kanban",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_kanban-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_kanban-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Query Board/List/Table selections and list/table refresh",
+        "Keyboard task move and Escape rollback; desktop pointer move",
+        "Keyboard column and table ordering; list/table cancellation",
+        "Table status edit reflected in board; empty QA column",
+        "Local horizontal scrolling and neutral owner across all views"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/kanban",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_kanban-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_kanban-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Query Board/List/Table selections and list/table refresh",
+        "Keyboard task move and Escape rollback; desktop pointer move",
+        "Keyboard column and table ordering; list/table cancellation",
+        "Table status edit reflected in board; empty QA column",
+        "Local horizontal scrolling and neutral owner across all views"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/kanban",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_kanban-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_kanban-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Query Board/List/Table selections and list/table refresh",
+        "Keyboard task move and Escape rollback; desktop pointer move",
+        "Keyboard column and table ordering; list/table cancellation",
+        "Table status edit reflected in board; empty QA column",
+        "Local horizontal scrolling and neutral owner across all views"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/mail",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_mail-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_mail-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Standalone/iframe theme and preset match; no page overflow",
+        "Keyboard selection, attachments and reply menu/composer",
+        "Resizable panels persist layout cookie; empty selection and reselection",
+        "Existing search/filter/send actions remain demo placeholders"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/mail",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_mail-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_mail-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Standalone/iframe theme and preset match; no page overflow",
+        "Keyboard selection, attachments and reply menu/composer",
+        "Mobile Escape restores row focus; drawer reopens",
+        "Existing search/filter/send actions remain demo placeholders"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/mail",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_mail-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_mail-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Standalone/iframe theme and preset match; no page overflow",
+        "Keyboard selection, attachments and reply menu/composer",
+        "Resizable panels persist layout cookie; empty selection and reselection",
+        "Existing search/filter/send actions remain demo placeholders"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/mail",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_mail-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_mail-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Standalone/iframe theme and preset match; no page overflow",
+        "Keyboard selection, attachments and reply menu/composer",
+        "Mobile Escape restores row focus; drawer reopens",
+        "Existing search/filter/send actions remain demo placeholders"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    }
+  ]
+}
