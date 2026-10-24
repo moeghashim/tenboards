@@ -1,0 +1,105 @@
+tenboards@0.6.2 /Users/moeghashim/tenboards-v07
+├─┬ @base-ui/react@1.9.0
+│ ├─┬ @base-ui/utils@0.5.0
+│ │ └── react@19.3.1 deduped
+│ ├─┬ @floating-ui/react-dom@2.1.9
+│ │ └── react@19.3.1 deduped
+│ ├── react@19.3.1 deduped
+│ └─┬ use-sync-external-store@1.7.0
+│   └── react@19.3.1 deduped
+├─┬ @dnd-kit/react@0.5.1
+│ └── react@19.3.1 deduped
+├─┬ @fullcalendar/react@7.1.3
+│ └── react@19.3.1 deduped
+├─┬ @hookform/resolvers@5.9.2
+│ └── zod@4.6.7 deduped
+├─┬ @openuidev/lang-core@1.0.1
+│ ├─┬ @modelcontextprotocol/sdk@1.32.1
+│ │ └── zod@4.6.7 deduped
+│ └── zod@4.6.7 deduped
+├─┬ @openuidev/react-lang@1.0.1
+│ ├─┬ @openuidev/devtools@0.3.0
+│ │ ├── @openuidev/observability@0.0.4 deduped
+│ │ ├── @openuidev/react-lang@1.0.1 deduped
+│ │ └── react@19.3.1 deduped
+│ ├── @openuidev/lang-core@1.0.1 deduped
+│ ├── @openuidev/observability@0.0.4
+│ ├── react@19.3.1 deduped
+│ └── zod@4.6.7 deduped
+├─┬ @shadcn/react@0.3.1
+│ └── react@19.3.1 deduped
+├─┬ @tanstack/react-devtools@0.10.13
+│ └── react@19.3.1 deduped
+├─┬ @tanstack/react-router-devtools@1.167.2
+│ └── react@19.3.1 deduped
+├─┬ @tanstack/react-router-ssr-query@1.167.3
+│ ├─┬ @tanstack/react-query@5.104.5
+│ │ └── react@19.3.1 deduped
+│ └── react@19.3.1 deduped
+├─┬ @tanstack/react-router@1.170.45
+│ ├─┬ @tanstack/react-store@0.11.2
+│ │ └── react@19.3.1 deduped
+│ └── react@19.3.1 deduped
+├─┬ @tanstack/react-start@1.169.3
+│ ├─┬ @tanstack/react-start-client@1.168.43
+│ │ └── react@19.3.1 deduped
+│ ├─┬ @tanstack/react-start-rsc@0.1.64
+│ │ └── react@19.3.1 deduped
+│ ├─┬ @tanstack/react-start-server@1.167.51
+│ │ └── react@19.3.1 deduped
+│ ├─┬ @tanstack/start-plugin-core@1.171.54
+│ │ └── zod@4.6.7 deduped
+│ └── react@19.3.1 deduped
+├─┬ @tanstack/react-table@9.3.1
+│ └── react@19.3.1 deduped
+├─┬ @tanstack/router-cli@1.167.45
+│ └─┬ @tanstack/router-generator@1.167.45
+│   └── zod@4.6.7 deduped
+├─┬ @tanstack/router-plugin@1.168.47
+│ └── zod@4.6.7 deduped
+├─┬ better-auth@1.7.12
+│ ├─┬ @better-auth/core@1.7.12
+│ │ └── zod@4.6.7 deduped
+│ ├─┬ better-call@1.4.4
+│ │ └── zod@4.6.7 deduped
+│ ├── react@19.3.1 deduped
+│ └── zod@4.6.7 deduped
+├─┬ cmdk@1.1.1
+│ ├─┬ @radix-ui/react-compose-refs@1.1.5
+│ │ └── react@19.3.1 deduped
+│ ├─┬ @radix-ui/react-dialog@1.3.1
+│ │ └── react@19.3.1 deduped
+│ ├─┬ @radix-ui/react-id@1.1.4
+│ │ └── react@19.3.1 deduped
+│ ├─┬ @radix-ui/react-primitive@2.2.0
+│ │ └── react@19.3.1 deduped
+│ └── react@19.3.1 deduped
+├─┬ embla-carousel-react@8.6.0
+│ └── react@19.3.1 deduped
+├─┬ input-otp@1.5.0
+│ └── react@19.3.1 deduped
+├─┬ lucide-react@1.61.0
+│ └── react@19.3.1 deduped
+├─┬ react-day-picker@10.0.2
+│ └── react@19.3.1 deduped
+├─┬ react-dom@19.3.1
+│ └── react@19.3.1 deduped
+├─┬ react-hook-form@7.90.0
+│ └── react@19.3.1 deduped
+├─┬ react-resizable-panels@4.14.8
+│ └── react@19.3.1 deduped
+├── react@19.3.1
+├─┬ recharts@3.8.0
+│ ├─┬ @reduxjs/toolkit@2.13.0
+│ │ └── react@19.3.1 deduped
+│ ├─┬ react-redux@9.3.0
+│ │ └── react@19.3.1 deduped
+│ └── react@19.3.1 deduped
+├─┬ shadcn@4.22.1
+│ ├─┬ @shadcn/registry@0.2.0
+│ │ └── zod@4.6.7 deduped
+│ └── zod@4.6.7 deduped
+├── zod@4.6.7
+└─┬ zustand@5.0.15
+  └── react@19.3.1 deduped
+

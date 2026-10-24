@@ -1,0 +1,191 @@
+{
+  "baseURL": "http://127.0.0.1:3170/",
+  "fontAssets": "exact public responses cached between contexts",
+  "maskedLiveClocks": false,
+  "hydrationDelayMs": 0,
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": false,
+  "interactions": false,
+  "sidebarStates": false,
+  "results": [
+    {
+      "route": "/dashboard/assistant",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_assistant-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/assistant",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_assistant-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/assistant",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_assistant-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/assistant",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_assistant-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/chat",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_chat-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/chat",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_chat-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/chat",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_chat-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/chat",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_chat-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/chat",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_chat-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": [
+        "console: %o\n\n%s\n\n%s\n TypeError: Failed to fetch\n    at http://127.0.0.1:3170/node_modules/@tanstack/start-client-core/dist/esm/client-rpc/serverFnFetcher.js?v=c88501dc:92:27\n    at getResponse (http://127.0.0.1:3170/node_modules/@tanstack/start-client-core/dist/esm/client-rpc/serverFnFetcher.js?v=c88501dc:135:20)\n    at serverFnFetcher (http://127.0.0.1:3170/node_modules/@tanstack/start-client-core/dist/esm/client-rpc/serverFnFetcher.js?v=c88501dc:92:9)\n    at async client (http://127.0.0.1:3170/node_modules/@tanstack/start-client-core/dist/esm/createServerFn.js?v=c88501dc:188:17)\n    at async callNextMiddleware (http://127.0.0.1:3170/node_modules/@tanstack/start-client-core/dist/esm/createServerFn.js?v=c88501dc:117:14)\n    at async executeMiddleware (http://127.0.0.1:3170/node_modules/@tanstack/start-client-core/dist/esm/createServerFn.js?v=c88501dc:143:10)\n    at async Object.assign (http://127.0.0.1:3170/node_modules/@tanstack/start-client-core/dist/esm/createServerFn.js?v=c88501dc:44:20)\n    at async requireAppRoute (http://127.0.0.1:3170/src/lib/auth/app-route.ts:5:15)\n    at async contextualize (http://127.0.0.1:3170/node_modules/@tanstack/router-core/dist/esm/load-client.js?v=c88501dc:176:19)\n    at async executeClientLane (http://127.0.0.1:3170/node_modules/@tanstack/router-core/dist/esm/load-client.js?v=c88501dc:654:19) The above error occurred in the <MatchInnerImpl> component. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary."
+      ]
+    },
+    {
+      "route": "/dashboard/chat",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_chat-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/chat",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_chat-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/chat",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_chat-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_default-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_default-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_default-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_default-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    }
+  ]
+}

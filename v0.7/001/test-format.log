@@ -1,0 +1,30 @@
+scripts/assistant-browser-check.ts:87:54 lint/performance/useDomNodeTextContent  FIXABLE  ━━━━━━━━━━
+
+  ! innerText is not recommended for reading DOM node text.
+  
+    85 │           .waitFor()
+    86 │           .catch(async (error) => {
+  > 87 │             console.error(await page.locator("main").innerText(), errors);
+       │                                                      ^^^^^^^^^
+    88 │             await page.screenshot({ path: `${output}/failure.png` });
+    89 │             throw error;
+  
+  i innerText depends on rendered layout and CSS, so it can be slower and produce different results from the DOM tree's text content.
+  
+  i Use textContent when you want the node's text without rendered-text behavior.
+  
+  i Unsafe fix: Use textContent instead.
+  
+     85  85 │             .waitFor()
+     86  86 │             .catch(async (error) => {
+     87     │ - ············console.error(await·page.locator("main").innerText(),·errors);
+         87 │ + ············console.error(await·page.locator("main").textContent(),·errors);
+     88  88 │               await page.screenshot({ path: `${output}/failure.png` });
+     89  89 │               throw error;
+  
+
+Skipped 1 suggested fixes.
+If you wish to apply the suggested (unsafe) fixes, use the command biome check --write --unsafe
+
+Checked 2 files in 2s. Fixed 1 file.
+Found 1 warning.

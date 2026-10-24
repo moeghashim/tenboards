@@ -1,0 +1,36 @@
+
+> tenboards@0.6.2 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://127.0.0.1:3170 --routes /dashboard/assistant,/dashboard/default,/dashboard/chat,/chat --output screenshots/v07-001/after
+
+PASS /dashboard/assistant light/desktop direct
+PASS /dashboard/assistant light/mobile direct
+PASS /dashboard/assistant dark/desktop direct
+PASS /dashboard/assistant dark/mobile direct
+PASS /chat light/desktop direct
+PASS /chat light/mobile direct
+PASS /chat dark/desktop direct
+PASS /chat dark/mobile direct
+FAIL /dashboard/chat light/desktop direct
+console: %o
+
+%s
+
+%s
+ TypeError: Failed to fetch
+    at http://127.0.0.1:3170/node_modules/@tanstack/start-client-core/dist/esm/client-rpc/serverFnFetcher.js?v=c88501dc:92:27
+    at getResponse (http://127.0.0.1:3170/node_modules/@tanstack/start-client-core/dist/esm/client-rpc/serverFnFetcher.js?v=c88501dc:135:20)
+    at serverFnFetcher (http://127.0.0.1:3170/node_modules/@tanstack/start-client-core/dist/esm/client-rpc/serverFnFetcher.js?v=c88501dc:92:9)
+    at async client (http://127.0.0.1:3170/node_modules/@tanstack/start-client-core/dist/esm/createServerFn.js?v=c88501dc:188:17)
+    at async callNextMiddleware (http://127.0.0.1:3170/node_modules/@tanstack/start-client-core/dist/esm/createServerFn.js?v=c88501dc:117:14)
+    at async executeMiddleware (http://127.0.0.1:3170/node_modules/@tanstack/start-client-core/dist/esm/createServerFn.js?v=c88501dc:143:10)
+    at async Object.assign (http://127.0.0.1:3170/node_modules/@tanstack/start-client-core/dist/esm/createServerFn.js?v=c88501dc:44:20)
+    at async requireAppRoute (http://127.0.0.1:3170/src/lib/auth/app-route.ts:5:15)
+    at async contextualize (http://127.0.0.1:3170/node_modules/@tanstack/router-core/dist/esm/load-client.js?v=c88501dc:176:19)
+    at async executeClientLane (http://127.0.0.1:3170/node_modules/@tanstack/router-core/dist/esm/load-client.js?v=c88501dc:654:19) The above error occurred in the <MatchInnerImpl> component. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.
+PASS /dashboard/chat light/mobile direct
+PASS /dashboard/chat dark/desktop direct
+PASS /dashboard/chat dark/mobile direct
+PASS /dashboard/default light/desktop direct
+PASS /dashboard/default light/mobile direct
+PASS /dashboard/default dark/desktop direct
+PASS /dashboard/default dark/mobile direct

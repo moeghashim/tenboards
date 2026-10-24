@@ -1,0 +1,51 @@
+
+> tenboards@0.6.2 auth:test
+> node --experimental-strip-types scripts/auth-test.ts
+
+
+=== Auth suite: config ===
+PASS auth-off configuration
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
++ actual - expected
+
++ 'http://localhost:3000'
+- 'http://localhost:3160'
+                     ^
+
+    at file:///Users/moeghashim/tenboards-v07/scripts/auth-config-check.ts:63:10
+    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)
+    at async node:internal/modules/esm/loader:647:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 'http://localhost:3000',
+  expected: 'http://localhost:3160',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.21.0
+PASS auth-off configuration
+PASS auth-off configuration
+PASS auth-off configuration
+PASS auth-off configuration
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+FAIL auth suite config: exit 1

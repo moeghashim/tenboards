@@ -1,0 +1,6 @@
+
+> tenboards@0.6.2 db:seed
+> node --env-file-if-exists=.env --experimental-strip-types scripts/database.ts seed
+
+.env not found. Continuing without it.
+Database seed completed.

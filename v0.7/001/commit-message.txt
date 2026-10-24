@@ -1,0 +1,7 @@
+fix(assistant): bound reference expansion and preserve interaction focus
+
+Address finish-review parser limits, split numbers, chart conventions and state copy. Verify malicious renderer recovery and four-state navigation and focus evidence.
+
+Signed-off-by: Moe Ghashim <mohanadgh@gmail.com>
+
+Co-Authored-By: GPT-6-Astra <noreply@openai.com>
