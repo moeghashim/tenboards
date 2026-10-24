@@ -15,7 +15,7 @@ The configured provider/model selector sits in the composer's bottom toolbar and
 
 The Assistant follows new replies until you scroll up; Jump to latest resumes following. Enter sends, Shift+Enter inserts a newline, and the composer grows from one to eight rows. Copy and Regenerate are available below the latest reply.
 
-**v0.8 (Projects workspace) is in progress** — the data foundation and all five direct read-only project views are implemented. [The milestone contract](dev/milestones/v0.8-projects/README.md) tracks the remaining workspace Home/index, navigation consolidation and final acceptance. Existing standalone routes and the default landing remain available.
+**v0.8 (Projects workspace) is in progress** — the data foundation, workspace Home/Projects index, and all five direct read-only project views are implemented. [The milestone contract](dev/milestones/v0.8-projects/README.md) tracks the remaining navigation consolidation and final acceptance. Existing standalone routes and the default landing remain available.
 
 ## Run locally
 
@@ -537,3 +537,11 @@ Run `node --experimental-strip-types scripts/project-ui-check.ts http://localhos
 `node --experimental-strip-types scripts/project-schedule-check.ts` tests civil-day spans, clipping, invalid inputs and timezone edges. `scripts/project-views-check.ts http://localhost:3270` covers all five links, index redirect, schedule identity, responsive/keyboard controls, Calendar modes, file filtering, empty projects and delayed direct/refresh hydration. Data parity is 29 reads / 211 scenarios.
 
 Project progress uses completed / (total − canceled), with both the denominator and canceled exclusions shown. Overview shows Canceled separately; Overdue is explicitly a subset of Open. Header member initials have spacing so adjacent avatars do not cover them. Files search uses the “File name” hint. Default Timeline/Files search values are omitted from URLs; explicit display choices still round-trip.
+
+## Workspace Home and Projects (v0.8 / 004)
+
+`/dashboard/home` is the cross-project workspace summary. Its greeting uses a serialized request clock and adopts local time after hydration; the four metrics show open tasks, overdue open tasks, completed tasks and active/at-risk projects. My tasks explicitly belongs to **Jordan Lee, the sample member**, in both demo and authenticated modes. It does not map assignments or membership to the signed-in user. My tasks and upcoming deadlines show at most ten rows with exact totals; each row opens its owning project List, and project progress/activity links open that project's Overview. Sample due dates use the same request UTC day as all project views.
+
+`/dashboard/projects` provides debounced name/description search, a shared status Select, stable project ordering, progress, target dates and member summaries. No matching results can be reset, and the empty Research queue remains a real project with zero work. Both destinations and their server reads are independently guarded and read-only. The project summary card is shared with Home; no new runtime dependency or density override is introduced.
+
+Home and Projects are direct destinations until navigation consolidation in task 005. `/`, `/dashboard`, `/dashboard/` and the safe auth fallback still open `/dashboard/default`; the existing Default dashboard remains available.
