@@ -1,12 +1,13 @@
 import { getRequestHeaders, setResponseHeader } from "@tanstack/react-start/server";
 
+import { runtimeEnvironment } from "../../server/runtime.server.ts";
 import { AUTH_SERVICE_ERROR, assertAuthStorage, getAuth } from "./auth.server.ts";
 import { authConfiguration } from "./config.ts";
 import type { AuthState } from "./types.ts";
 
 export async function readAuthState(): Promise<AuthState> {
   setResponseHeader("Cache-Control", "private, no-store");
-  const config = authConfiguration(process.env);
+  const config = authConfiguration(runtimeEnvironment());
   if (!config.enabled) return { mode: "demo", user: null, providers: { google: false, github: false } };
   try {
     await assertAuthStorage();

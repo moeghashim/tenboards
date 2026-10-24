@@ -8,25 +8,27 @@ import { defineConfig } from "vite";
 
 import { authConfiguration } from "./src/lib/auth/config.ts";
 
-authConfiguration(process.env);
-
-const config = defineConfig(({ command }) => ({
-  resolve: { tsconfigPaths: true },
-  plugins: [
-    devtools({
-      injectSource: {
-        enabled: true,
-        ignore: {
-          components: ["FullCalendar"],
+const config = defineConfig(({ command }) => {
+  // Builds contain no deployment credentials; validate Node development only.
+  if (command !== "build") authConfiguration(process.env);
+  return {
+    resolve: { tsconfigPaths: true },
+    plugins: [
+      devtools({
+        injectSource: {
+          enabled: true,
+          ignore: {
+            components: ["FullCalendar"],
+          },
         },
-      },
-    }),
-    tailwindcss(),
-    tanstackStart(),
-    // Preserve zero-config Node development; build and preview the Worker with Wrangler.
-    nitro({ preset: command === "build" ? "cloudflare-module" : undefined }),
-    viteReact(),
-  ],
-}));
+      }),
+      tailwindcss(),
+      tanstackStart(),
+      // Preserve zero-config Node development; build and preview the Worker with Wrangler.
+      nitro({ preset: command === "build" ? "cloudflare-module" : undefined }),
+      viteReact(),
+    ],
+  };
+});
 
 export default config;

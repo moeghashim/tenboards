@@ -179,7 +179,7 @@ resets a shared database. Tests delete only their exact test-owned auth users.
 
 The migration check compares v0.4.0 migration files byte-for-byte, creates fresh and
 upgrade test databases, applies/repeats migrations and seed, and runs all 22 reads /
-130 scenarios in each. Those test databases remain available for inspection. Fetch
+130 scenarios in each. Those fresh test-owned databases are dropped after the checks. Fetch
 the `v0.4.0` tag in a shallow checkout before running this check. The bundle check
 builds with private random sentinels, scans browser/server artifacts without
 printing their values, then always restores a zero-env build. It does not deploy.
@@ -227,3 +227,61 @@ and direct/refresh. [Baseline coverage](https://github.com/moeghashim/tenboards/
 and [supplemental coverage](https://github.com/moeghashim/tenboards/blob/pr-assets/v05-005/supplemental-coverage.json)
 retain original failures and explicit passing retries. Authenticated four-state
 forms, shell/account states and twelve print PDFs were inspected separately.
+
+## Local Workers runtime (v0.6 task 001)
+
+`npm run build` is credential-independent. `npm run worker:dev` starts the compiled
+Nitro app with local Wrangler, selected `--env local`, and an ignored per-port test
+configuration. With no environment it is a demo. To use Docker, put a **local**
+`DATABASE_URL` in `.env`, migrate/seed it, then use `npm run worker:dev -- --binding`.
+This supplies a local-only Hyperdrive `localConnectionString`; its zero ID is never
+uploaded. Without `--binding`, the same command exercises `DATABASE_URL` fallback.
+For auth, set a private random `BETTER_AUTH_SECRET` and
+`BETTER_AUTH_URL=http://localhost:3021`. `.dev.vars*` and `.wrangler/` are ignored;
+the helper deletes its temporary config/secrets on normal exit. Never copy these
+files into an artifact or use `--remote`.
+
+Nitro 3.0.260903-beta augments the request with `runtime.cloudflare.env`; Start's
+`getRequest()` preserves it through request middleware, HTTP auth handlers and
+server functions. Our AsyncLocalStorage scope resolves that binding object once,
+without mutating global environment. `HYPERDRIVE.connectionString` wins over
+`DATABASE_URL`; invalid configured bindings fail closed. Forced demo ignores all
+connections, but a nonempty auth secret with demo is still invalid. Node scripts
+retain their lazy pool and `closeDatabase()` lifecycle. Worker requests own both
+their postgres.js/Drizzle client and Better Auth adapter/instance, reuse them only
+inside that request, and close the client after request processing. No session
+identity is cached globally.
+
+Readiness retains only a successful boolean, never a pending I/O promise or a
+rejection. Concurrent first requests may each check schema. Failures retry on the
+next request; later session/database failures still fail closed. HTTP handling
+uses middleware readiness and session helpers use that same memoized policy.
+
+Run these against a fresh test-owned Docker database, then drop it:
+
+```sh
+DATABASE_URL=<local-review-url> npm run worker:test
+AUTH_TEST_RUNTIME=workerd DATABASE_URL=<local-review-url> node --experimental-strip-types scripts/auth-protection-check.ts
+AUTH_TEST_RUNTIME=workerd DATABASE_URL=<local-review-url> node --experimental-strip-types scripts/auth-account-check.ts
+AUTH_TEST_RUNTIME=workerd DATABASE_URL=<local-review-url> node --experimental-strip-types scripts/auth-security-check.ts
+DATABASE_URL=<separate-local-review-url> npm run auth:test
+DATABASE_URL=<separate-local-review-url> npm run data:parity
+```
+
+The Worker suite tests demo/DB/auth configuration, runtime-only secrets, recovery
+and readiness memoization, sequential/overlapping users, signup/signin/signout,
+origin/redirect rejection, revocation and all 22 reads / 130 parity scenarios over
+HTTP in a separate test-only Worker entry. That harness is not in production output.
+Existing protection/account/security suites discover the compiled RPC manifest;
+they do not rely on Vite RPC IDs. Node regressions remain separately labeled.
+Provider consent, hosted TLS/pooling/cache and Cloudflare's actual proxy/IP
+rewriting require task 004; local Hyperdrive emulation proves none of those.
+
+The runtime probe compares only presence/equality: Nitro request bindings,
+`cloudflare:workers` and populated `process.env` agree for the runtime string
+secret. The application uses request bindings, not either global alternative.
+No unconditional `cloudflare:workers` import enters Node scripts or development.
+
+Worker Secure-cookie probes use a reserved HTTPS canonical host over loopback HTTP
+to avoid Wrangler proxy rewriting of localhost URL-related headers. This checks
+actual response cookie flags, not TLS transport. The v0.5 Node probe is unchanged.

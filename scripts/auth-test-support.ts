@@ -1,14 +1,23 @@
 import { request } from "playwright";
 
+import { databaseUrl } from "../src/server/data/source.ts";
+import { startWorker } from "./worker-test-support.ts";
 import assert from "node:assert/strict";
 import { spawn } from "node:child_process";
 import { randomBytes } from "node:crypto";
+import { readdir, readFile } from "node:fs/promises";
 import { setTimeout as delay } from "node:timers/promises";
 
 export const testSecret = () => randomBytes(48).toString("base64url");
 export const localDatabase =
   process.env.DATABASE_URL ?? "postgresql://tenboards:tenboards_local@127.0.0.1:54329/tenboards";
+databaseUrl({ DATABASE_URL: localDatabase }, true);
 export async function startTestServer(overrides: NodeJS.ProcessEnv = {}, port = 3011) {
+  if (process.env.AUTH_TEST_RUNTIME === "workerd")
+    return startWorker(overrides, {
+      port,
+      binding: !!overrides.DATABASE_URL && !overrides.DATABASE_URL.includes(":1/"),
+    });
   const baseURL = `http://localhost:${port}`;
   const child = spawn(
     process.execPath,
@@ -71,11 +80,23 @@ export async function callRpc(
   data?: unknown,
   origin?: string,
 ) {
-  const source = await (await page.request.get(new URL(file, page.url()).href)).text();
-  const ids = [...source.matchAll(/createClientRpc\("([^"]+)"\)/g)].map((m) => m[1]);
-  const id = ids.find(
-    (value) => JSON.parse(Buffer.from(value, "base64url").toString()).export === `${name}_createServerFn_handler`,
-  );
+  let id: string | undefined;
+  if (process.env.AUTH_TEST_RUNTIME === "workerd") {
+    for (const chunk of await readdir(".output/server/_ssr")) {
+      if (!chunk.endsWith(".mjs")) continue;
+      const source = await readFile(`.output/server/_ssr/${chunk}`, "utf8");
+      for (const match of source.matchAll(
+        /createServerRpc\(\{\s*id: "([^"]+)",\s*name: "([^"]+)",\s*filename: "([^"]+)"/g,
+      ))
+        if (match[2] === name && `/${match[3]}` === file) id = match[1];
+    }
+  } else {
+    const source = await (await page.request.get(new URL(file, page.url()).href)).text();
+    const ids = [...source.matchAll(/createClientRpc\("([^"]+)"\)/g)].map((m) => m[1]);
+    id = ids.find(
+      (value) => JSON.parse(Buffer.from(value, "base64url").toString()).export === `${name}_createServerFn_handler`,
+    );
+  }
   if (!id) throw new Error(`RPC not found: ${name}`);
   const rpcURL = new URL(`/_serverFn/${id}`, page.url());
   // Use Start's installed wire codec, not its runtime-context-dependent client wrapper.
