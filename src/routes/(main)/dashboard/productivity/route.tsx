@@ -13,6 +13,8 @@ import { TasksSection } from "./-components/tasks-section";
 import { WeeklySummaryCard } from "./-components/weekly-summary-card";
 
 const loadData = createServerFn({ method: "GET" }).handler(async () => {
+  const { requireSession } = await import("@/lib/auth/session.server");
+  await requireSession();
   const { readProductivity } = await import("@/server/data/productivity");
   return readProductivity();
 });

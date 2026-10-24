@@ -95,6 +95,7 @@ export async function callRpc(
   });
   const { createDefaultSerovalPlugins } = await import("@tanstack/react-router/ssr/client");
   const result = fromCrossJSON(await response.json(), { refs: new Map(), plugins: createDefaultSerovalPlugins() });
-  if (result?.error) return { ok: false, message: result.error.message, result: undefined };
-  return { ok: true, result: result?.result, message: undefined };
+  const cacheControl = response.headers()["cache-control"];
+  if (result?.error) return { ok: false, message: result.error.message, result: undefined, cacheControl };
+  return { ok: true, result: result?.result, message: undefined, cacheControl };
 }

@@ -7,6 +7,8 @@ import { CatalogContext } from "./-components/catalog-context";
 import { Products } from "./-components/products";
 
 const loadCatalog = createServerFn({ method: "GET" }).handler(async () => {
+  const { requireSession } = await import("@/lib/auth/session.server");
+  await requireSession();
   const { readProducts } = await import("@/server/data/products");
   return readProducts();
 });

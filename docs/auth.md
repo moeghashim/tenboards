@@ -6,7 +6,7 @@ Zero configuration remains the first-run path: `npm install && npm run dev` need
 
 The foundation uses **better-auth 1.7.12**, its bundled `better-auth/adapters/drizzle` export, the existing lazy postgres.js client and explicit `auth_user`, `auth_session`, `auth_account`, `auth_verification` tables. Migration `0012_watery_sugar_man.sql` appends to the unchanged v0.4 journal. There is no startup migration/seed or seeded auth identity. The v0.4 directory, roles and employee Profile are sample data, not authentication or authorization records.
 
-Layers 001–002 provide HTTP/session/configuration boundaries and real V1/V2 credential/provider entry flows. App guards and account UI are subsequent layers; do not expose auth-on intermediate layers publicly.
+Layers 001–003 provide HTTP/session/configuration boundaries, real V1/V2 entry flows, protected application routes and signed-in shell identity. Account/security controls arrive in 004. Hosted auth remains deferred to v0.6.
 
 ## Local setup
 
@@ -73,6 +73,26 @@ Login's initially unchecked **Remember me** explicitly selects a session-only co
 
 A single pure validator accepts only normalized relative application destinations with one leading slash. It rejects absolute/protocol-relative URLs, backslashes, controls, encoded path separators/double encoding, path normalization tricks, and auth/API loops. It preserves legitimate query/hash values, including nested query URLs that are data rather than the navigation target. Invalid/missing values fall back to `/dashboard/default`; unknown app paths go to the public 404. Login/register cross-links and already-signed-in visits use the same validation. Better Auth's supported before hook validates callback/new-user/error destinations again before OAuth state is created; provider state/cookie validation remains library-owned. Credential forms own their one post-success navigation and omit the library's automatic email callback redirect.
 
-`node --experimental-strip-types scripts/auth-redirect-check.ts`, `scripts/auth-flows-check.ts` and `scripts/auth-provider-check.ts` provide adversarial redirect, real-DB browser flow and provider configuration/authorize URL tests. No provider consent or token exchange is claimed. Shared client sign-out returns to canonical `/auth/v1/login` only after server success; the shell entry arrives in 003.
+`node --experimental-strip-types scripts/auth-redirect-check.ts`, `scripts/auth-flows-check.ts` and `scripts/auth-provider-check.ts` provide adversarial redirect, real-DB browser flow and provider configuration/authorize URL tests. No provider consent or token exchange is claimed. Shared client sign-out returns to canonical `/auth/v1/login` only after server success; the signed-in shell exposes Sign out and Profile.
 
 Error/pending verification: `node --experimental-strip-types scripts/auth-errors-check.ts` checks duplicate registration, network failure/retry, a delayed real request with duplicate-submit prevention, and enabled limiter 429/recovery. It never replaces a server success with a mock.
+
+## Application protection matrix
+
+| Boundary | Rule |
+| --- | --- |
+| `/`, `/dashboard`, `/dashboard/` | Aliases normalize into the guarded dashboard flow |
+| All 14 current/legacy dashboards and all app pages, including Coming Soon | Dashboard ancestor checks the actual request session before loading |
+| `/dashboard/mail`, `/dashboard/chat` | Dashboard guard protects each wrapper |
+| `/mail`, `/chat` | Each standalone document independently checks its session; same-origin iframe requests share cookies |
+| Four auth forms and bare `/auth/v2` | Public; signed-in form visits return to a validated application destination |
+| `/unauthorized`, root error/404, dashboard splat | Public; the exact splat renders without the protected shell/account loader |
+| `/api/auth/$` | Public dispatcher, with Better Auth's own endpoint/origin/session checks |
+| Safe mode/session bootstrap and four preference/layout functions | Public, minimal projection and strict cookie allowlists |
+| All 26 application-data functions across 22 v0.4 domains | Independent `requireSession` before importing/invoking a domain read, including shell accounts and legacy variants |
+
+Auth-on identity is the current session's name/email/initials; demo switching stays demo-only. The menu links to Profile. A fresh document after sign-out drops router caches; each navigation checks authority again and refocus checks server state. Storage failures surface as failures, never anonymous/demo success. Identity/data responses use `Cache-Control: private, no-store`.
+
+An expired embedded Mail/Chat document moves its same-origin parent to canonical login with the validated wrapper return path. Direct standalone navigation remains protected. The browser-retained fragment is added to the validated return destination after hydration. No auth token is stored in client application state.
+
+`scripts/auth-protection-check.ts` audits every generated visual/HTTP route and callable server function, then exercises anonymous/valid SSR, refresh and client navigation, all direct RPCs with no/valid/tampered/expired/revoked sessions, public system pages, shell sign-out and iframe expiration. Authentication grants access to shared template data; it does not confer directory roles or ownership of sample business records.

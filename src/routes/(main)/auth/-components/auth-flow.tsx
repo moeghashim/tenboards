@@ -1,4 +1,4 @@
-import { createContext, type ReactNode, useContext, useRef, useState } from "react";
+import { createContext, type ReactNode, useContext, useEffect, useRef, useState } from "react";
 
 import { authClient, authError, finishSignIn } from "@/lib/auth/client";
 import { authDestination, authErrorCallback } from "@/lib/auth/redirect";
@@ -16,7 +16,7 @@ const FlowContext = createContext<{
 } | null>(null);
 export function AuthFlow({
   auth,
-  destination,
+  destination: initialDestination,
   oauthError,
   children,
 }: {
@@ -25,6 +25,28 @@ export function AuthFlow({
   oauthError?: boolean;
   children: ReactNode;
 }) {
+  const [destination, setDestination] = useState(initialDestination);
+  useEffect(() => {
+    if (auth.mode !== "auth") return;
+    // HTTP redirects cannot carry the incoming fragment in their query. Browsers
+    // retain it on the login document, so add it after hydration and revalidate.
+    setDestination(
+      authDestination(
+        initialDestination.includes("#") ? initialDestination : initialDestination + window.location.hash,
+      ),
+    );
+    if (window.top && window.top !== window) {
+      try {
+        const parent = window.top.location;
+        if (parent.origin === window.location.origin) {
+          const target = authDestination(parent.pathname + parent.search + parent.hash);
+          parent.replace(`/auth/v1/login?redirect=${encodeURIComponent(target)}`);
+        }
+      } catch {
+        /* Cross-origin embedding has no authority to navigate its parent. */
+      }
+    }
+  }, [auth.mode, initialDestination]);
   const submitting = useRef<boolean>(false);
   const [pending, setPending] = useState(false);
   const [error, setError] = useState(

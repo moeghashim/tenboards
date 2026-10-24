@@ -13,6 +13,8 @@ import { PatientMonitoring } from "./-components/patient-monitoring";
 import { useMonitoringClock } from "./-components/use-realtime-tick";
 
 const loadData = createServerFn({ method: "GET" }).handler(async () => {
+  const { requireSession } = await import("@/lib/auth/session.server");
+  await requireSession();
   const { readPatients } = await import("@/server/data/patients");
   return readPatients();
 });

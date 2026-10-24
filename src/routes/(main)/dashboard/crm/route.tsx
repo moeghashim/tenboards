@@ -8,6 +8,8 @@ import { PipelineActivity } from "./-components/pipeline-activity";
 import { TaskReminders } from "./-components/task-reminders";
 
 const loadData = createServerFn({ method: "GET" }).handler(async () => {
+  const { requireSession } = await import("@/lib/auth/session.server");
+  await requireSession();
   const { requestReference } = await import("@/server/request-reference.server");
   const { readCrm } = await import("@/server/data/crm");
   return readCrm({ variant: "current", renderedAt: requestReference() });

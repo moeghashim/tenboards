@@ -4,6 +4,8 @@ import { createServerFn } from "@tanstack/react-start";
 import { Kanban } from "./-components/kanban";
 
 const loadData = createServerFn({ method: "GET" }).handler(async () => {
+  const { requireSession } = await import("@/lib/auth/session.server");
+  await requireSession();
   const { readKanban } = await import("@/server/data/kanban");
   return readKanban();
 });

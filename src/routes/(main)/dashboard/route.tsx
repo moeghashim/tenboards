@@ -8,26 +8,43 @@ import { createServerFn } from "@tanstack/react-start";
 import { cn } from "cn";
 
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
+import { requireAppRoute } from "@/lib/auth/app-route";
+import { useSessionRefresh } from "@/lib/auth/use-session-refresh";
 import { getDashboardLayout } from "@/server/server-actions";
 
 import { ShellHeader } from "./-components/header/shell-header";
 import { AppSidebar } from "./-components/sidebar/app-sidebar";
 
 const getAccounts = createServerFn({ method: "GET" }).handler(async () => {
+  const { requireSession } = await import("@/lib/auth/session.server");
+  await requireSession();
   const { readAccounts } = await import("@/server/data/accounts");
   return readAccounts();
 });
 
 export const Route = createFileRoute("/(main)/dashboard")({
-  loader: async () => {
-    const [layout, accounts] = await Promise.all([getDashboardLayout(), getAccounts()]);
-    return { ...layout, accounts };
+  beforeLoad: async ({ location, matches }) => {
+    if (matches.at(-1)?.routeId === "/(main)/dashboard/$") return { app: null };
+    return { app: await requireAppRoute({ location }) };
+  },
+  loader: async ({ context }) => {
+    if (!context.app) return null;
+    const { auth } = context.app;
+    const layout = await getDashboardLayout();
+    const identity =
+      auth.mode === "auth" && auth.user
+        ? { mode: "auth" as const, user: auth.user }
+        : { mode: "demo" as const, accounts: await getAccounts() };
+    return { ...layout, identity };
   },
   component: DashboardLayout,
 });
 
 function DashboardLayout() {
-  const { defaultOpen, variant, collapsible, accounts } = Route.useLoaderData();
+  const data = Route.useLoaderData();
+  useSessionRefresh(data?.identity.mode === "auth");
+  if (!data) return <Outlet />;
+  const { defaultOpen, variant, collapsible, identity } = data;
 
   return (
     <SidebarProvider
@@ -40,7 +57,7 @@ function DashboardLayout() {
         } as CSSProperties
       }
     >
-      <AppSidebar variant={variant} collapsible={collapsible} />
+      <AppSidebar authenticated={identity.mode === "auth"} variant={variant} collapsible={collapsible} />
       <SidebarInset
         className={cn(
           "[html[data-content-layout=centered]_&>*]:mx-auto",
@@ -51,7 +68,7 @@ function DashboardLayout() {
           "min-w-0 overflow-x-clip",
         )}
       >
-        <ShellHeader accounts={accounts} />
+        <ShellHeader identity={identity} />
         {/* Pages can set data-content-padding="false" to render full-bleed app layouts. */}
         <div className="min-h-0 min-w-0 flex-1 overflow-x-hidden p-4 has-data-[content-padding=false]:p-0 md:p-6 md:has-data-[content-padding=false]:p-0">
           <Outlet />

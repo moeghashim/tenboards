@@ -4,6 +4,8 @@ import { createServerFn } from "@tanstack/react-start";
 import { Users } from "./-components/users";
 
 const loadUsers = createServerFn({ method: "GET" }).handler(async () => {
+  const { requireSession } = await import("@/lib/auth/session.server");
+  await requireSession();
   const { readUsers } = await import("@/server/data/users");
   return readUsers();
 });

@@ -15,6 +15,8 @@ import { TrafficQuality } from "./-components/traffic-quality";
 import "@/styles/flag-icons/flags.css";
 
 const loadData = createServerFn({ method: "GET" }).handler(async () => {
+  const { requireSession } = await import("@/lib/auth/session.server");
+  await requireSession();
   const { requestReference } = await import("@/server/request-reference.server");
   const { readAnalytics } = await import("@/server/data/analytics");
   return readAnalytics({ variant: "current", renderedAt: requestReference() });

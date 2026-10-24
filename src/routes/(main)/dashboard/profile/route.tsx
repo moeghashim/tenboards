@@ -22,6 +22,8 @@ import { ProfileStatusSidebar } from "./-components/profile-status-sidebar";
 import { TimeOffDetails } from "./-components/profile-time-off-details";
 
 const loadProfile = createServerFn({ method: "GET" }).handler(async () => {
+  const { requireSession } = await import("@/lib/auth/session.server");
+  await requireSession();
   const { readProfile } = await import("@/server/data/profile");
   const profile = await readProfile();
   if (!profile) throw new Error("Profile data is unavailable. Check the seed and retry.");

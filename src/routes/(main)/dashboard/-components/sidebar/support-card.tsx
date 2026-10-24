@@ -11,7 +11,7 @@ const demoPaths = new Set(
     .map((item) => item.url),
 );
 
-export function SupportCard() {
+export function SupportCard({ authenticated = false }: { authenticated?: boolean }) {
   const path = useRouterState({ select: (state) => state.location.pathname });
   const [visited, setVisited] = useState<Set<string>>(() => new Set());
   useEffect(() => {
@@ -19,7 +19,7 @@ export function SupportCard() {
   }, [path]);
   return (
     <div className="space-y-2 rounded-xl border p-3 group-data-[collapsible=icon]:hidden">
-      <div className="text-sm">Demo mode</div>
+      <div className="text-sm">{authenticated ? "Sample workspace" : "Demo mode"}</div>
       <p className="text-muted-foreground text-xs">
         Sample data · {visited.size} of {demoPaths.size} pages explored
       </p>
