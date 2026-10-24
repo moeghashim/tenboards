@@ -1,6 +1,7 @@
 import { chromium } from "playwright";
 
 import { cacheCaptureFonts } from "./screenshot-assets.ts";
+import { measureDensity } from "./screenshot-density.ts";
 import assert from "node:assert/strict";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { parseArgs } from "node:util";
@@ -94,7 +95,19 @@ try {
           assert.deepEqual(metrics.tinyText, [], `${label}: metadata floor`);
           assert.deepEqual(errors, [], `${label}: console/hydration`);
           await page.screenshot({ path: `${values.output}/${label}.png`, fullPage: true });
-          results.push({ label, metrics, errors });
+          // The task table alone cannot catch fixed-width dashboard selects.
+          await page.goto(new URL("/dashboard/default", baseURL).href);
+          await page.waitForLoadState("networkidle");
+          await page.evaluate(() => document.fonts.ready);
+          const dashboard = await measureDensity(page);
+          assert.deepEqual(
+            dashboard.flatMap((frame) => frame.clippedSelectValues),
+            [],
+            `${label}: select labels fit`,
+          );
+          assert.deepEqual(errors, [], `${label}: dashboard console/hydration`);
+          await page.screenshot({ path: `${values.output}/${label}-default.png`, fullPage: true });
+          results.push({ label, metrics, dashboard, errors });
           console.log(`PASS ${label}`);
         } finally {
           await context.close();

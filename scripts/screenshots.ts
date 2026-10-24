@@ -187,6 +187,10 @@ try {
             });
             if (values.density) {
               const density = await measureDensity(page);
+              if (density.some((frame) => frame.clippedSelectValues.length))
+                throw new Error(
+                  `Clipped select values: ${JSON.stringify(density.map((frame) => frame.clippedSelectValues))}`,
+                );
               await writeFile(
                 path.join(output, file.replace(".png", "-density.json")),
                 `${JSON.stringify(density, null, 2)}\n`,

@@ -57,6 +57,14 @@ export async function measureDensity(page: Page) {
           }),
         );
         return {
+          clippedSelectValues: Array.from(document.querySelectorAll('[data-slot="select-value"]'))
+            .filter((value) => {
+              if (!value.getClientRects().length || value.children.length) return false;
+              const range = document.createRange();
+              range.selectNodeContents(value);
+              return range.getBoundingClientRect().width > value.getBoundingClientRect().width + 0.75;
+            })
+            .map((value) => value.textContent),
           overflowingCards: Array.from(document.querySelectorAll("[data-task-id]"))
             .filter((card) => {
               const inner = card.firstElementChild;

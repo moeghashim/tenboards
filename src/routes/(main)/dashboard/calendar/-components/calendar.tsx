@@ -67,7 +67,7 @@ export function Calendar({ renderedAt, templates, calendars }: CalendarData) {
             }}
             items={calendars}
           >
-            <SelectTrigger aria-label="Calendar" className="w-full sm:w-44">
+            <SelectTrigger aria-label="Calendar" className="w-full sm:w-auto">
               <CalendarIcon />
               <SelectValue />
             </SelectTrigger>

@@ -240,9 +240,19 @@
    Checkbox/radio/switch wrappers already supply larger pseudo-element hit areas.
    Do not match generic role=button: draggable cards need their intrinsic flex
    minimum, otherwise bounded Kanban columns shrink cards over their content. */
-:is(button, [data-slot="button"], [data-slot="select-trigger"], [data-slot="input"]) {
-  min-height: 1.5rem;
-  min-width: 1.5rem;
+@layer base {
+  :is(button, [data-slot="button"], [data-slot="select-trigger"], [data-slot="input"]) {
+    min-height: 1.5rem;
+    min-width: 1.5rem;
+  }
+}
+
+/* Compact spacing must not shrink labels into their chevrons or adjacent tabs.
+   Full-width form selects retain their wrapping layout; toolbar selects grow
+   to their selected value, including wider font choices. */
+[data-slot="select-trigger"]:not(.w-full),
+[data-slot="tabs-trigger"] {
+  min-width: max-content;
 }
 
 /* Initials are labels, including inherited 10px avatar usages. */

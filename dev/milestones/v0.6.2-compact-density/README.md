@@ -30,6 +30,12 @@ Build/check/typecheck pass, with inherited dependency build advisories and Biome
 
 Independent Impeccable critique found and verified fixes for generic role-target minimums shrinking Kanban cards and inherited 12px Mail body text. Final verdict: coherent compact hierarchy, legible charts, preserved mobile spacing; no remaining density-specific visual correction. The detector returned zero findings. Browser overlay injection was unavailable because the collaborative browser could not fetch the local detector; live preview and screenshot inspection supplied the visual evidence. Existing mobile table scroll discoverability remains a follow-up, not a layout change here.
 
+## Review round 2 verification
+
+Review round 2: corrected Customer Activity select clipping and the same wider-font failures in Analytics, Products and Calendar. Toolbar selects/tabs now preserve their intrinsic label width; the target floor no longer overrides larger usage-site minimums. Compact heights and spacing remain unchanged. The audit covers all ten dashboards, Users, Products, Tasks, Invoice, Profile, Mail, Roles, Calendar, Kanban and File Manager at 1440/1280/390px in all 18 fonts, plus settings and the add-product form. No remaining trigger clipping or page overflow was measured. Full-width form controls keep their responsive layout; protected wrappers are unchanged.
+
+[Round 2 preview](https://a30400b5-tenboards-preview.mohanadgh.workers.dev) · [round 2 evidence](https://github.com/moeghashim/tenboards/tree/pr-assets/v062-001/review2). Build/check/typecheck, 72 dev + 72 preview font cases (now checking both Tasks and Default), 96 hydrated + 96 SSR sidebar cases, 52 route captures, 28 shell captures, delayed hydration and Kanban/Mail interactions, and eight preview smoke cases pass after documented Calendar-navigation/sidebar-timeout reruns. The new clipping assertion fails against the previous preview on “All segments,” confirming regression coverage. Milestone remains in review; Claude retains merge authority.
+
 ## Before → after (CSS px)
 
 | Element | Before | Compact desktop | Mobile |
