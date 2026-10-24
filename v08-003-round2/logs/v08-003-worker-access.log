@@ -1,0 +1,1 @@
+PASS worker: denied/direct guarded RPCs, unknown-project auth boundary, DB scope/empty/missing, malformed/filter bounds, private cache, revocation

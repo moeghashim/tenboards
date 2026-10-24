@@ -1,0 +1,18 @@
+PASS light/desktop: validated index,5views,overview,schedule identity,mobile default,keyboard ranges,12months,live Today,Calendar modes,readonly files/filter,empty calendar and console
+PASS light/mobile: validated index,5views,overview,schedule identity,mobile default,keyboard ranges,12months,live Today,Calendar modes,readonly files/filter,empty calendar and console
+node:internal/fs/promises:1345
+  return new FileHandle(await PromisePrototypeThen(
+                        ^
+
+Error: ENOSPC: no space left on device, open 'screenshots/v08-003-round2/interactions/overview-dark-desktop.png'
+    at async open (node:internal/fs/promises:1345:25)
+    at async Object.writeFile (node:internal/fs/promises:1965:14)
+    at async _Page.screenshot (/Users/moeghashim/tenboards-v08/node_modules/playwright-core/lib/coreBundle.js:63324:11)
+    at async file:///Users/moeghashim/tenboards-v08/scripts/project-views-check.ts:39:7 {
+  errno: -28,
+  code: 'ENOSPC',
+  syscall: 'open',
+  path: 'screenshots/v08-003-round2/interactions/overview-dark-desktop.png'
+}
+
+Node.js v24.21.0

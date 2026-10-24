@@ -1,0 +1,11 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+page.waitForFunction: Timeout 30000ms exceeded.
+    at /Users/moeghashim/tenboards-v08/scripts/project-views-check.ts:132:15 {
+  log: [],
+  name: 'TimeoutError'
+}
+
+Node.js v24.21.0

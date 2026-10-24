@@ -1,0 +1,50 @@
+
+> tenboards@0.6.2 auth:test
+> node --experimental-strip-types scripts/auth-test.ts
+
+
+=== Auth suite: config ===
+PASS auth-off configuration
+PASS auth-off configuration
+PASS auth-off configuration
+PASS auth-off configuration
+PASS auth-off configuration
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS provider pair matrix
+PASS provider pair matrix
+PASS provider pair matrix
+PASS provider pair matrix
+PASS forced demo HTTP + auth disabled: zero TCP connections
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+503 !== 200
+
+    at file:///Users/moeghashim/tenboards-v08/scripts/auth-config-check.ts:102:10 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 503,
+  expected: 200,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.21.0
+FAIL auth suite config: exit 1

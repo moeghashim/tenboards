@@ -1,0 +1,126 @@
+
+> tenboards@0.6.2 auth:test
+> node --experimental-strip-types scripts/auth-test.ts
+
+
+=== Auth suite: config ===
+PASS auth-off configuration
+PASS auth-off configuration
+PASS auth-off configuration
+PASS auth-off configuration
+PASS auth-off configuration
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS provider pair matrix
+PASS provider pair matrix
+PASS provider pair matrix
+PASS provider pair matrix
+PASS forced demo HTTP + auth disabled: zero TCP connections
+PASS real signup + persistent host-only HttpOnly cookie
+PASS DB-backed session roundtrip
+PASS forged origin rejected
+PASS signout invalidates session
+PASS unchecked remember me: session-only cookie
+PASS reseed preserves auth identity
+Auth foundation: 31/31 passing.
+
+=== Auth suite: cookie ===
+Cookie HTTP boundary: 23/23 passing.
+
+=== Auth suite: service ===
+PASS zero environment
+PASS DB without secret
+PASS unreachable auth DB
+PASS missing auth schema
+PASS recovered auth DB
+
+=== Auth suite: redirect ===
+Redirect validator: 28/28 passing.
+
+=== Auth suite: return ===
+PASS v2 recovered fragment survives login/register cross-links
+PASS v2 real signup returns to protected pathname/search/hash
+PASS v2 recovered fragment survives login/register cross-links
+PASS v2 real signup returns to protected pathname/search/hash
+Auth return paths: 4/4 passing.
+
+=== Auth suite: flows ===
+PASS v2 validation and first-field focus
+HTTP /api/auth/sign-up/email: 200
+PASS v2 signup persists session and pathname/search/hash
+PASS v2 no credential echo
+PASS v2 signed-in auth redirect
+HTTP /api/auth/sign-out: 200
+PASS v2 client sign-out invalidates session
+HTTP /api/auth/sign-in/email: 401
+PASS v2 inline server error preserves email
+HTTP /api/auth/sign-in/email: 200
+PASS v2 login and remember-me persistence
+PASS v2 validation and first-field focus
+HTTP /api/auth/sign-up/email: 200
+PASS v2 signup persists session and pathname/search/hash
+PASS v2 no credential echo
+PASS v2 signed-in auth redirect
+HTTP /api/auth/sign-out: 200
+PASS v2 client sign-out invalidates session
+HTTP /api/auth/sign-in/email: 401
+PASS v2 inline server error preserves email
+HTTP /api/auth/sign-in/email: 200
+PASS v2 login and remember-me persistence
+PASS v2/login light/desktop + errors/providers hidden
+PASS v2/register light/desktop + errors/providers hidden
+PASS v2/login light/mobile + errors/providers hidden
+PASS v2/register light/mobile + errors/providers hidden
+PASS v2/login dark/desktop + errors/providers hidden
+PASS v2/register dark/desktop + errors/providers hidden
+PASS v2/login dark/mobile + errors/providers hidden
+PASS v2/register dark/mobile + errors/providers hidden
+Auth flows: 22/22 passing.
+
+=== Auth suite: provider ===
+PASS none v2/login controls
+PASS none v2/register controls
+PASS none google direct initiation rejected
+PASS none github direct initiation rejected
+PASS google v2/login controls
+PASS google v2/register controls
+PASS google google real authorize URL/state/callback
+PASS google github direct initiation rejected
+PASS github v2/login controls
+PASS github v2/register controls
+PASS github google direct initiation rejected
+PASS github github real authorize URL/state/callback
+PASS both v2/login controls
+PASS both v2/register controls
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+503 !== 200
+
+    at file:///Users/moeghashim/tenboards-v08/scripts/auth-provider-check.ts:64:16 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 503,
+  expected: 200,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.21.0
+FAIL auth suite provider: exit 1

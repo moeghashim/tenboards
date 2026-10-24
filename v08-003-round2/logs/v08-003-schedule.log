@@ -1,0 +1,3 @@
+PASS UTC: civil spans, DST/leap/year edges, missing/same/reversed dates, clipping/bounds, long title, identity and request timezone projection
+PASS America/Chicago: civil spans, DST/leap/year edges, missing/same/reversed dates, clipping/bounds, long title, identity and request timezone projection
+PASS Pacific/Kiritimati: civil spans, DST/leap/year edges, missing/same/reversed dates, clipping/bounds, long title, identity and request timezone projection

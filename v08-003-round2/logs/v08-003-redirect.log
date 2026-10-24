@@ -1,0 +1,3 @@
+PASS all six permanent redirects, validated query, browser destination and auth guard (demo)
+PASS all six permanent redirects, validated query, browser destination and auth guard (auth)
+Legacy redirects: 96/96 passing.

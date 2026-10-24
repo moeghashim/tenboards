@@ -1,0 +1,7 @@
+PASS light/desktop: validated index,5views,overview,schedule identity,mobile default,keyboard ranges,12months,live Today,Calendar modes,readonly files/filter,empty calendar and console
+PASS light/mobile: validated index,5views,overview,schedule identity,mobile default,keyboard ranges,12months,live Today,Calendar modes,readonly files/filter,empty calendar and console
+PASS dark/desktop: validated index,5views,overview,schedule identity,mobile default,keyboard ranges,12months,live Today,Calendar modes,readonly files/filter,empty calendar and console
+PASS dark/mobile: validated index,5views,overview,schedule identity,mobile default,keyboard ranges,12months,live Today,Calendar modes,readonly files/filter,empty calendar and console
+PASS delayed direct/refresh Calendar hydration UTC
+PASS delayed direct/refresh Calendar hydration America/Chicago
+PASS delayed direct/refresh Calendar hydration Pacific/Kiritimati
