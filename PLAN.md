@@ -105,6 +105,7 @@ Upstream scripts kept (`dev`, `build`, `preview`, `check`, `check:fix`, `generat
 | **v0.4** | Drizzle + Neon data layer with demo-mode fallback |
 | **v0.5** | Better Auth |
 | **v0.6** | Production-ready template: Workers runtime for Hyperdrive → Neon, adopter deploy runbook, rate limiting, isolated demo previews; the live demo stays demo (see Decisions log) |
+| **v0.7** | AI Assistant page: OpenUI generative UI with a provider picker (Anthropic, OpenAI, xAI, Meta, Google) and recorded zero-config replies |
 | Later | RBAC + multi-tenant, i18n/RTL, real CRUD, tests + CI — each requires its own planning round |
 
 ## 9. Confirmed defaults (locked)
@@ -163,6 +164,9 @@ Upstream scripts kept (`dev`, `build`, `preview`, `check`, `check:fix`, `generat
 | v0.6 OAuth | Production is email + password only. Google and GitHub stay hidden until their key pairs are added as Worker secrets later; docs explain how | Locked by user 2026-10-24 |
 | v0.6 runtime | postgres.js runs in workerd with `nodejs_compat`. A `HYPERDRIVE` binding's connection string wins over `DATABASE_URL`. Database clients are scoped per request on Workers, because Workers cannot reuse I/O across requests, while Node dev keeps its pooled client. Hyperdrive query caching is disabled so session and auth reads are never stale. The per-request auth-storage check is memoized per isolate once it succeeds | Reviewer decision |
 | v0.6 previews | PR previews must never reach production data or secrets. Implementer previews deploy to a separate demo-only Worker, `tenboards-preview`, with no Hyperdrive binding and no auth secret, replacing `wrangler versions upload` on the production Worker, whose versions share production bindings and secrets | Reviewer decision |
+| v0.7 assistant page | New AI Assistant app page, added to the sidebar next to Chat. The existing person-to-person Chat demo stays unchanged. Replies stream as generative UI through OpenUI (`@openuidev/react-lang`, MIT), rendered only from a registry of tenboards' own shadcn/Base UI components, so output matches DESIGN.md. OpenUI's pre-1.0 `react-ui` chat kit is not used | Locked by user 2026-10-24 (page); component approach reviewer decision |
+| v0.7 providers | The user picks from Anthropic (Claude), OpenAI, xAI (Grok), Meta (Muse Spark, through Meta's OpenAI-compatible Model API) and Google (Gemini). Each provider is enabled only when its server-side API key is set, and only enabled providers appear in the picker. Default model per provider is configurable by env. Keys never reach the browser | Locked by user 2026-10-24 (provider set); env/picker detail reviewer decision |
+| v0.7 zero-config and safety | With no provider key, the Assistant runs on recorded sample replies so the demo works with no setup, the same as other pages. The streaming endpoint runs on Workers, requires a session when auth is on, is rate-limited, caps prompt and output size, and treats model output as untrusted: it renders only registry components with validated props, no raw HTML, scripts or arbitrary URLs. This repo's live demo stays on recorded replies (template-not-provisioned rule). The SDK and provider packages are approved new runtime dependencies, with versions chosen in planning | Reviewer decision |
 | Deferred | RBAC/multi-tenant, i18n/RTL, real CRUD, tests+CI — not before v0.6, each needs planning | Locked |
 | Defaults 1–10 | As listed in §9 | Locked by user ("lock all") |
 
