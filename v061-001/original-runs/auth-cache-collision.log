@@ -1,0 +1,308 @@
+
+> tenboards@0.6.0 auth:test
+> node --experimental-strip-types scripts/auth-test.ts
+
+
+=== Auth suite: config ===
+PASS auth-off configuration
+PASS auth-off configuration
+PASS auth-off configuration
+PASS auth-off configuration
+PASS auth-off configuration
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS provider pair matrix
+PASS provider pair matrix
+PASS provider pair matrix
+PASS provider pair matrix
+PASS forced demo HTTP + auth disabled: zero TCP connections
+PASS real signup + persistent host-only HttpOnly cookie
+PASS DB-backed session roundtrip
+PASS forged origin rejected
+PASS signout invalidates session
+PASS unchecked remember me: session-only cookie
+PASS reseed preserves auth identity
+Auth foundation: 31/31 passing.
+
+=== Auth suite: cookie ===
+Cookie HTTP boundary: 23/23 passing.
+
+=== Auth suite: service ===
+PASS zero environment
+PASS DB without secret
+PASS unreachable auth DB
+PASS missing auth schema
+PASS recovered auth DB
+
+=== Auth suite: redirect ===
+Redirect validator: 28/28 passing.
+
+=== Auth suite: return ===
+PASS v2 recovered fragment survives login/register cross-links
+PASS v2 real signup returns to protected pathname/search/hash
+PASS v2 recovered fragment survives login/register cross-links
+PASS v2 real signup returns to protected pathname/search/hash
+Auth return paths: 4/4 passing.
+
+=== Auth suite: flows ===
+PASS v2 validation and first-field focus
+HTTP /api/auth/sign-up/email: 200
+PASS v2 signup persists session and pathname/search/hash
+PASS v2 no credential echo
+PASS v2 signed-in auth redirect
+HTTP /api/auth/sign-out: 200
+PASS v2 client sign-out invalidates session
+HTTP /api/auth/sign-in/email: 401
+PASS v2 inline server error preserves email
+HTTP /api/auth/sign-in/email: 200
+PASS v2 login and remember-me persistence
+PASS v2 validation and first-field focus
+HTTP /api/auth/sign-up/email: 200
+PASS v2 signup persists session and pathname/search/hash
+PASS v2 no credential echo
+PASS v2 signed-in auth redirect
+HTTP /api/auth/sign-out: 200
+PASS v2 client sign-out invalidates session
+HTTP /api/auth/sign-in/email: 401
+PASS v2 inline server error preserves email
+HTTP /api/auth/sign-in/email: 200
+PASS v2 login and remember-me persistence
+PASS v2/login light/desktop + errors/providers hidden
+PASS v2/register light/desktop + errors/providers hidden
+PASS v2/login light/mobile + errors/providers hidden
+PASS v2/register light/mobile + errors/providers hidden
+PASS v2/login dark/desktop + errors/providers hidden
+PASS v2/register dark/desktop + errors/providers hidden
+PASS v2/login dark/mobile + errors/providers hidden
+PASS v2/register dark/mobile + errors/providers hidden
+Auth flows: 22/22 passing.
+
+=== Auth suite: provider ===
+PASS none v2/login controls
+PASS none v2/register controls
+PASS none google direct initiation rejected
+PASS none github direct initiation rejected
+PASS google v2/login controls
+PASS google v2/register controls
+PASS google google real authorize URL/state/callback
+PASS google github direct initiation rejected
+PASS github v2/login controls
+PASS github v2/register controls
+PASS github google direct initiation rejected
+PASS github github real authorize URL/state/callback
+PASS both v2/login controls
+PASS both v2/register controls
+PASS both google real authorize URL/state/callback
+PASS both github real authorize URL/state/callback
+PASS partial-google v2/login controls
+PASS partial-google v2/register controls
+PASS partial-google google direct initiation rejected
+PASS partial-google github direct initiation rejected
+PASS partial-github v2/login controls
+PASS partial-github v2/register controls
+PASS partial-github google direct initiation rejected
+PASS partial-github github direct initiation rejected
+PASS blank-halves v2/login controls
+PASS blank-halves v2/register controls
+PASS blank-halves google direct initiation rejected
+PASS blank-halves github direct initiation rejected
+Provider matrix: 28/28 passing. Dummy credentials; no provider round-trip attempted.
+
+=== Auth suite: errors ===
+PASS duplicate registration safe inline error
+PASS network failure preserves non-secret input and permits retry
+PASS duplicate submit blocked; retry succeeds at safe fallback
+PASS enabled local sensitive-endpoint limiter returns 429
+PASS rate window recovers without disabling limiter
+Auth error/pending/rate checks: 5/5 passing.
+
+=== Auth suite: protection ===
+PASS Inventory: 32 visual routes, HTTP auth handler, 23 protected read functions, one owned session mutation and five public preference/bootstrap functions
+PASS Anonymous SSR/refresh/client navigation /chat
+PASS Anonymous SSR/refresh/client navigation /dashboard
+PASS Anonymous SSR/refresh/client navigation /mail
+PASS Anonymous SSR/refresh/client navigation /
+PASS Anonymous SSR/refresh/client navigation /dashboard/academy
+PASS Anonymous SSR/refresh/client navigation /dashboard/analytics
+PASS Anonymous SSR/refresh/client navigation /dashboard/calendar
+PASS Anonymous SSR/refresh/client navigation /dashboard/chat
+PASS Anonymous SSR/refresh/client navigation /dashboard/coming-soon
+PASS Anonymous SSR/refresh/client navigation /dashboard/crm
+PASS Anonymous SSR/refresh/client navigation /dashboard/default
+PASS Anonymous SSR/refresh/client navigation /dashboard/ecommerce
+PASS Anonymous SSR/refresh/client navigation /dashboard/file-manager
+PASS Anonymous SSR/refresh/client navigation /dashboard/finance
+PASS Anonymous SSR/refresh/client navigation /dashboard/infrastructure
+PASS Anonymous SSR/refresh/client navigation /dashboard/invoice
+PASS Anonymous SSR/refresh/client navigation /dashboard/kanban
+PASS Anonymous SSR/refresh/client navigation /dashboard/logistics
+PASS Anonymous SSR/refresh/client navigation /dashboard/mail
+PASS Anonymous SSR/refresh/client navigation /dashboard/patient-monitoring
+PASS Anonymous SSR/refresh/client navigation /dashboard/productivity
+PASS Anonymous SSR/refresh/client navigation /dashboard/products
+PASS Anonymous SSR/refresh/client navigation /dashboard/profile
+PASS Anonymous SSR/refresh/client navigation /dashboard/roles
+PASS Anonymous SSR/refresh/client navigation /dashboard/tasks
+PASS Anonymous SSR/refresh/client navigation /dashboard/users
+PASS Anonymous SSR/refresh/client navigation /dashboard/
+PASS Public system/auth /unauthorized: no account shell
+PASS Public system/auth /auth/v2: no account shell
+PASS Public system/auth /dashboard/capture-not-found: no account shell
+PASS Public system/auth /auth/v2/login: no account shell
+PASS Public system/auth /auth/v2/register: no account shell
+PASS Public system/auth /missing-root-page: no account shell
+PASS No-cookie direct RPC /src/routes/(main)/mail/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/route.tsx:getAccounts
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/users/route.tsx:loadUsers
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/tasks/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/roles/route.tsx:loadRoles
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/profile/route.tsx:loadProfile
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/products/route.tsx:loadCatalog
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/productivity/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/patient-monitoring/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/logistics/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/kanban/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/invoice/route.tsx:loadInvoice
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/infrastructure/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/finance/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/file-manager/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/ecommerce/route.tsx:loadEcommerce
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/default/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/crm/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/calendar/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/analytics/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/academy/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/chat/route.tsx:loadData
+PASS No-cookie direct RPC /src/lib/auth/account-functions.ts:getAccountDetails
+PASS Valid SSR/refresh/client navigation /chat
+PASS Valid SSR/refresh/client navigation /dashboard
+PASS Valid SSR/refresh/client navigation /mail
+PASS Valid SSR/refresh/client navigation /
+PASS Valid SSR/refresh/client navigation /dashboard/academy
+PASS Valid SSR/refresh/client navigation /dashboard/analytics
+PASS Valid SSR/refresh/client navigation /dashboard/calendar
+PASS Valid SSR/refresh/client navigation /dashboard/chat
+PASS Valid SSR/refresh/client navigation /dashboard/coming-soon
+PASS Valid SSR/refresh/client navigation /dashboard/crm
+PASS Valid SSR/refresh/client navigation /dashboard/default
+PASS Valid SSR/refresh/client navigation /dashboard/ecommerce
+PASS Valid SSR/refresh/client navigation /dashboard/file-manager
+PASS Valid SSR/refresh/client navigation /dashboard/finance
+PASS Valid SSR/refresh/client navigation /dashboard/infrastructure
+PASS Valid SSR/refresh/client navigation /dashboard/invoice
+PASS Valid SSR/refresh/client navigation /dashboard/kanban
+PASS Valid SSR/refresh/client navigation /dashboard/logistics
+PASS Valid SSR/refresh/client navigation /dashboard/mail
+PASS Valid SSR/refresh/client navigation /dashboard/patient-monitoring
+PASS Valid SSR/refresh/client navigation /dashboard/productivity
+PASS Valid SSR/refresh/client navigation /dashboard/products
+PASS Valid SSR/refresh/client navigation /dashboard/profile
+PASS Valid SSR/refresh/client navigation /dashboard/roles
+PASS Valid SSR/refresh/client navigation /dashboard/tasks
+PASS Valid SSR/refresh/client navigation /dashboard/users
+PASS Valid SSR/refresh/client navigation /dashboard/
+PASS Valid direct RPC /src/routes/(main)/mail/route.tsx:loadData
+PASS Valid direct RPC /src/routes/(main)/dashboard/route.tsx:getAccounts
+PASS Valid direct RPC /src/routes/(main)/dashboard/users/route.tsx:loadUsers
+PASS Valid direct RPC /src/routes/(main)/dashboard/tasks/route.tsx:loadData
+PASS Valid direct RPC /src/routes/(main)/dashboard/roles/route.tsx:loadRoles
+PASS Valid direct RPC /src/routes/(main)/dashboard/profile/route.tsx:loadProfile
+PASS Valid direct RPC /src/routes/(main)/dashboard/products/route.tsx:loadCatalog
+PASS Valid direct RPC /src/routes/(main)/dashboard/productivity/route.tsx:loadData
+PASS Valid direct RPC /src/routes/(main)/dashboard/patient-monitoring/route.tsx:loadData
+PASS Valid direct RPC /src/routes/(main)/dashboard/logistics/route.tsx:loadData
+PASS Valid direct RPC /src/routes/(main)/dashboard/kanban/route.tsx:loadData
+PASS Valid direct RPC /src/routes/(main)/dashboard/invoice/route.tsx:loadInvoice
+PASS Valid direct RPC /src/routes/(main)/dashboard/infrastructure/route.tsx:loadData
+PASS Valid direct RPC /src/routes/(main)/dashboard/finance/route.tsx:loadData
+PASS Valid direct RPC /src/routes/(main)/dashboard/file-manager/route.tsx:loadData
+PASS Valid direct RPC /src/routes/(main)/dashboard/ecommerce/route.tsx:loadEcommerce
+PASS Valid direct RPC /src/routes/(main)/dashboard/default/route.tsx:loadData
+PASS Valid direct RPC /src/routes/(main)/dashboard/crm/route.tsx:loadData
+PASS Valid direct RPC /src/routes/(main)/dashboard/calendar/route.tsx:loadData
+PASS Valid direct RPC /src/routes/(main)/dashboard/analytics/route.tsx:loadData
+PASS Valid direct RPC /src/routes/(main)/dashboard/academy/route.tsx:loadData
+PASS Valid direct RPC /src/routes/(main)/chat/route.tsx:loadData
+PASS Valid direct RPC /src/lib/auth/account-functions.ts:getAccountDetails
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
++ actual - expected
+
++ [
++   "Cannot read properties of null (reading 'use')",
++   "Cannot read properties of null (reading 'use')",
++   "Cannot read properties of null (reading 'use')",
++   "Cannot read properties of null (reading 'use')",
++   "Cannot read properties of null (reading 'use')",
++   "Cannot read properties of null (reading 'use')",
++   "Cannot read properties of null (reading 'use')",
++   "Cannot read properties of null (reading 'use')",
++   "Cannot read properties of null (reading 'use')",
++   "Cannot read properties of null (reading 'use')",
++   "Cannot read properties of null (reading 'use')",
++   "Cannot read properties of null (reading 'use')",
++   "Cannot read properties of null (reading 'use')",
++   "Cannot read properties of null (reading 'use')",
++   "Cannot read properties of null (reading 'use')",
++   "Cannot read properties of null (reading 'use')",
++   "Cannot read properties of null (reading 'use')",
++   "Cannot read properties of null (reading 'use')",
++   "Cannot read properties of null (reading 'use')",
++   "Cannot read properties of null (reading 'use')",
++   "Cannot read properties of null (reading 'use')",
++   "Cannot read properties of null (reading 'use')",
++   "Cannot read properties of null (reading 'use')"
++ ]
+- []
+
+    at file:///Users/moeghashim/tenboards-legacy/scripts/auth-protection-check.ts:133:10 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: [
+    "Cannot read properties of null (reading 'use')",
+    "Cannot read properties of null (reading 'use')",
+    "Cannot read properties of null (reading 'use')",
+    "Cannot read properties of null (reading 'use')",
+    "Cannot read properties of null (reading 'use')",
+    "Cannot read properties of null (reading 'use')",
+    "Cannot read properties of null (reading 'use')",
+    "Cannot read properties of null (reading 'use')",
+    "Cannot read properties of null (reading 'use')",
+    "Cannot read properties of null (reading 'use')",
+    "Cannot read properties of null (reading 'use')",
+    "Cannot read properties of null (reading 'use')",
+    "Cannot read properties of null (reading 'use')",
+    "Cannot read properties of null (reading 'use')",
+    "Cannot read properties of null (reading 'use')",
+    "Cannot read properties of null (reading 'use')",
+    "Cannot read properties of null (reading 'use')",
+    "Cannot read properties of null (reading 'use')",
+    "Cannot read properties of null (reading 'use')",
+    "Cannot read properties of null (reading 'use')",
+    "Cannot read properties of null (reading 'use')",
+    "Cannot read properties of null (reading 'use')",
+    "Cannot read properties of null (reading 'use')"
+  ],
+  expected: [],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.21.0
+FAIL auth suite protection: exit 1

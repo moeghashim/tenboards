@@ -1,0 +1,11 @@
+
+> tenboards@0.6.0 worker:security
+> node --experimental-strip-types scripts/worker-rate-limit-check.ts
+
+PASS hosted auth requires explicit canonical non-loopback HTTPS origin
+PASS database count shared by two Worker instances and restart; forwarding spoof cannot bypass 3/10s sign-in limit
+PASS concurrent first-insert/increment race admits exactly 3 of 12 across two Workers
+PASS missing/invalid trusted IP shares conservative per-path bucket; spoofed forwarding chains ignored
+PASS Retry-After window recovers without resetting/disabling limits
+PASS exact runtime origin rejects forged credential write
+PASS missing limiter storage fails safely before/after readiness; same-isolate recovery; no memory fallback

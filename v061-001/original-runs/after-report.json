@@ -1,0 +1,203 @@
+{
+  "baseURL": "http://localhost:3037/",
+  "fontAssets": "exact public responses cached between contexts",
+  "maskedLiveClocks": false,
+  "hydrationDelayMs": 0,
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": false,
+  "interactions": true,
+  "results": [
+    {
+      "route": "/dashboard/default",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_default-light-desktop-interactive.png",
+      "controlsFile": "_dashboard_default-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": [
+        "Palette keyboard selection missing"
+      ]
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_default-light-mobile-interactive.png",
+      "controlsFile": "_dashboard_default-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": [
+        "Palette keyboard selection missing"
+      ]
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_default-dark-desktop-interactive.png",
+      "controlsFile": "_dashboard_default-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": [
+        "Palette keyboard selection missing"
+      ]
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_default-dark-mobile-interactive.png",
+      "controlsFile": "_dashboard_default-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": [
+        "Palette keyboard selection missing"
+      ]
+    },
+    {
+      "route": "/auth/v2/login",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_auth_v2_login-light-desktop-interactive.png",
+      "controlsFile": "_auth_v2_login-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Labels, masked passwords and email/current/new-password autofill verified",
+        "Empty and mismatched-password errors; error association and local demo submission verified",
+        "Google remains demo-only; keyboard crosslink works",
+        "360×500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v2/login",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_auth_v2_login-light-mobile-interactive.png",
+      "controlsFile": "_auth_v2_login-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Labels, masked passwords and email/current/new-password autofill verified",
+        "Empty and mismatched-password errors; error association and local demo submission verified",
+        "Google remains demo-only; keyboard crosslink works",
+        "360×500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v2/login",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_auth_v2_login-dark-desktop-interactive.png",
+      "controlsFile": "_auth_v2_login-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Labels, masked passwords and email/current/new-password autofill verified",
+        "Empty and mismatched-password errors; error association and local demo submission verified",
+        "Google remains demo-only; keyboard crosslink works",
+        "360×500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v2/login",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_auth_v2_login-dark-mobile-interactive.png",
+      "controlsFile": "_auth_v2_login-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Labels, masked passwords and email/current/new-password autofill verified",
+        "Empty and mismatched-password errors; error association and local demo submission verified",
+        "Google remains demo-only; keyboard crosslink works",
+        "360×500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+      ],
+      "expectedDiagnostics": [],
+      "errors": [
+        "console: Failed to load resource: the server responded with a status of 504 (Outdated Optimize Dep)",
+        "page: Failed to fetch dynamically imported module: http://localhost:3037/node_modules/@tanstack/react-start/dist/plugin/default-entry/client.tsx",
+        "console: Failed to load resource: the server responded with a status of 504 (Outdated Optimize Dep)",
+        "console: Failed to load resource: the server responded with a status of 504 (Outdated Optimize Dep)"
+      ]
+    },
+    {
+      "route": "/auth/v2/register",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_auth_v2_register-light-desktop-interactive.png",
+      "controlsFile": "_auth_v2_register-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Labels, masked passwords and email/current/new-password autofill verified",
+        "Empty and mismatched-password errors; error association and local demo submission verified",
+        "Google remains demo-only; keyboard crosslink works",
+        "360×500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+      ],
+      "expectedDiagnostics": [],
+      "errors": [
+        "console: Failed to load resource: the server responded with a status of 404 ()",
+        "console: Failed to load resource: the server responded with a status of 404 ()"
+      ]
+    },
+    {
+      "route": "/auth/v2/register",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_auth_v2_register-light-mobile-interactive.png",
+      "controlsFile": "_auth_v2_register-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Labels, masked passwords and email/current/new-password autofill verified",
+        "Empty and mismatched-password errors; error association and local demo submission verified",
+        "Google remains demo-only; keyboard crosslink works",
+        "360×500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/auth/v2/register",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_auth_v2_register-dark-desktop-interactive.png",
+      "controlsFile": "_auth_v2_register-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Labels, masked passwords and email/current/new-password autofill verified",
+        "Empty and mismatched-password errors; error association and local demo submission verified",
+        "Google remains demo-only; keyboard crosslink works",
+        "360×500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+      ],
+      "expectedDiagnostics": [],
+      "errors": [
+        "console: Failed to load resource: the server responded with a status of 404 ()",
+        "console: Failed to load resource: the server responded with a status of 404 ()"
+      ]
+    },
+    {
+      "route": "/auth/v2/register",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_auth_v2_register-dark-mobile-interactive.png",
+      "controlsFile": "_auth_v2_register-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Labels, masked passwords and email/current/new-password autofill verified",
+        "Empty and mismatched-password errors; error association and local demo submission verified",
+        "Google remains demo-only; keyboard crosslink works",
+        "360×500 viewport has reachable controls/footer without collisions or page overflow; real UTC copyright year verified"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    }
+  ]
+}
