@@ -1,0 +1,483 @@
+
+> tenboards@0.5.0 auth:test
+> node --experimental-strip-types scripts/auth-test.ts
+
+
+=== Auth suite: config ===
+PASS auth-off configuration
+PASS auth-off configuration
+PASS auth-off configuration
+PASS auth-off configuration
+PASS auth-off configuration
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS invalid configuration rejected
+PASS provider pair matrix
+PASS provider pair matrix
+PASS provider pair matrix
+PASS provider pair matrix
+PASS forced demo HTTP + auth disabled: zero TCP connections
+PASS real signup + persistent host-only HttpOnly cookie
+PASS DB-backed session roundtrip
+PASS forged origin rejected
+PASS signout invalidates session
+PASS unchecked remember me: session-only cookie
+PASS reseed preserves auth identity
+Auth foundation: 31/31 passing.
+
+=== Auth suite: cookie ===
+Cookie HTTP boundary: 23/23 passing.
+
+=== Auth suite: service ===
+PASS zero environment
+PASS DB without secret
+PASS unreachable auth DB
+PASS missing auth schema
+PASS recovered auth DB
+
+=== Auth suite: redirect ===
+Redirect validator: 28/28 passing.
+
+=== Auth suite: return ===
+PASS v1 recovered fragment survives login/register cross-links
+PASS v1 real signup returns to protected pathname/search/hash
+PASS v2 recovered fragment survives login/register cross-links
+PASS v2 real signup returns to protected pathname/search/hash
+Auth return paths: 4/4 passing.
+
+=== Auth suite: flows ===
+PASS v1 validation and first-field focus
+HTTP /api/auth/sign-up/email: 200
+PASS v1 signup persists session and pathname/search/hash
+PASS v1 no credential echo
+PASS v1 signed-in auth redirect
+HTTP /api/auth/sign-out: 200
+PASS v1 client sign-out invalidates session
+HTTP /api/auth/sign-in/email: 401
+PASS v1 inline server error preserves email
+HTTP /api/auth/sign-in/email: 200
+PASS v1 login and remember-me persistence
+PASS v2 validation and first-field focus
+HTTP /api/auth/sign-up/email: 200
+PASS v2 signup persists session and pathname/search/hash
+PASS v2 no credential echo
+PASS v2 signed-in auth redirect
+HTTP /api/auth/sign-out: 200
+PASS v2 client sign-out invalidates session
+HTTP /api/auth/sign-in/email: 401
+PASS v2 inline server error preserves email
+HTTP /api/auth/sign-in/email: 200
+PASS v2 login and remember-me persistence
+PASS v1/login light/desktop + errors/providers hidden
+PASS v1/register light/desktop + errors/providers hidden
+PASS v2/login light/desktop + errors/providers hidden
+PASS v2/register light/desktop + errors/providers hidden
+PASS v1/login light/mobile + errors/providers hidden
+PASS v1/register light/mobile + errors/providers hidden
+PASS v2/login light/mobile + errors/providers hidden
+PASS v2/register light/mobile + errors/providers hidden
+PASS v1/login dark/desktop + errors/providers hidden
+PASS v1/register dark/desktop + errors/providers hidden
+PASS v2/login dark/desktop + errors/providers hidden
+PASS v2/register dark/desktop + errors/providers hidden
+PASS v1/login dark/mobile + errors/providers hidden
+PASS v1/register dark/mobile + errors/providers hidden
+PASS v2/login dark/mobile + errors/providers hidden
+PASS v2/register dark/mobile + errors/providers hidden
+Auth flows: 30/30 passing.
+
+=== Auth suite: provider ===
+PASS none v1/login controls
+PASS none v1/register controls
+PASS none v2/login controls
+PASS none v2/register controls
+PASS none google direct initiation rejected
+PASS none github direct initiation rejected
+PASS google v1/login controls
+PASS google v1/register controls
+PASS google v2/login controls
+PASS google v2/register controls
+PASS google google real authorize URL/state/callback
+PASS google github direct initiation rejected
+PASS github v1/login controls
+PASS github v1/register controls
+PASS github v2/login controls
+PASS github v2/register controls
+PASS github google direct initiation rejected
+PASS github github real authorize URL/state/callback
+PASS both v1/login controls
+PASS both v1/register controls
+PASS both v2/login controls
+PASS both v2/register controls
+PASS both google real authorize URL/state/callback
+PASS both github real authorize URL/state/callback
+PASS partial-google v1/login controls
+PASS partial-google v1/register controls
+PASS partial-google v2/login controls
+PASS partial-google v2/register controls
+PASS partial-google google direct initiation rejected
+PASS partial-google github direct initiation rejected
+PASS partial-github v1/login controls
+PASS partial-github v1/register controls
+PASS partial-github v2/login controls
+PASS partial-github v2/register controls
+PASS partial-github google direct initiation rejected
+PASS partial-github github direct initiation rejected
+PASS blank-halves v1/login controls
+PASS blank-halves v1/register controls
+PASS blank-halves v2/login controls
+PASS blank-halves v2/register controls
+PASS blank-halves google direct initiation rejected
+PASS blank-halves github direct initiation rejected
+Provider matrix: 42/42 passing. Dummy credentials; no provider round-trip attempted.
+
+=== Auth suite: errors ===
+PASS duplicate registration safe inline error
+PASS network failure preserves non-secret input and permits retry
+PASS duplicate submit blocked; retry succeeds at safe fallback
+PASS enabled local sensitive-endpoint limiter returns 429
+PASS rate window recovers without disabling limiter
+Auth error/pending/rate checks: 5/5 passing.
+
+=== Auth suite: protection ===
+PASS Inventory: 38 visual routes, HTTP auth handler, 27 protected read functions, one owned session mutation and five public preference/bootstrap functions
+PASS Anonymous SSR/refresh/client navigation /chat
+PASS Anonymous SSR/refresh/client navigation /dashboard
+PASS Anonymous SSR/refresh/client navigation /mail
+PASS Anonymous SSR/refresh/client navigation /
+PASS Anonymous SSR/refresh/client navigation /dashboard/academy
+PASS Anonymous SSR/refresh/client navigation /dashboard/analytics
+PASS Anonymous SSR/refresh/client navigation /dashboard/calendar
+PASS Anonymous SSR/refresh/client navigation /dashboard/chat
+PASS Anonymous SSR/refresh/client navigation /dashboard/coming-soon
+PASS Anonymous SSR/refresh/client navigation /dashboard/crm
+PASS Anonymous SSR/refresh/client navigation /dashboard/default
+PASS Anonymous SSR/refresh/client navigation /dashboard/ecommerce
+PASS Anonymous SSR/refresh/client navigation /dashboard/file-manager
+PASS Anonymous SSR/refresh/client navigation /dashboard/finance
+PASS Anonymous SSR/refresh/client navigation /dashboard/infrastructure
+PASS Anonymous SSR/refresh/client navigation /dashboard/invoice
+PASS Anonymous SSR/refresh/client navigation /dashboard/kanban
+PASS Anonymous SSR/refresh/client navigation /dashboard/logistics
+PASS Anonymous SSR/refresh/client navigation /dashboard/mail
+PASS Anonymous SSR/refresh/client navigation /dashboard/patient-monitoring
+PASS Anonymous SSR/refresh/client navigation /dashboard/productivity
+PASS Anonymous SSR/refresh/client navigation /dashboard/products
+PASS Anonymous SSR/refresh/client navigation /dashboard/profile
+PASS Anonymous SSR/refresh/client navigation /dashboard/roles
+PASS Anonymous SSR/refresh/client navigation /dashboard/tasks
+PASS Anonymous SSR/refresh/client navigation /dashboard/users
+PASS Anonymous SSR/refresh/client navigation /dashboard/
+PASS Anonymous SSR/refresh/client navigation /dashboard/analytics-v1
+PASS Anonymous SSR/refresh/client navigation /dashboard/crm-v1
+PASS Anonymous SSR/refresh/client navigation /dashboard/default-v1
+PASS Anonymous SSR/refresh/client navigation /dashboard/finance-v1
+PASS Public system/auth /unauthorized: no account shell
+PASS Public system/auth /auth/v2: no account shell
+PASS Public system/auth /dashboard/capture-not-found: no account shell
+PASS Public system/auth /auth/v1/login: no account shell
+PASS Public system/auth /auth/v1/register: no account shell
+PASS Public system/auth /auth/v2/login: no account shell
+PASS Public system/auth /auth/v2/register: no account shell
+PASS Public system/auth /missing-root-page: no account shell
+PASS No-cookie direct RPC /src/routes/(main)/mail/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/route.tsx:getAccounts
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/users/route.tsx:loadUsers
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/tasks/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/roles/route.tsx:loadRoles
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/profile/route.tsx:loadProfile
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/products/route.tsx:loadCatalog
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/productivity/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/patient-monitoring/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/logistics/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/kanban/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/invoice/route.tsx:loadInvoice
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/infrastructure/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/finance/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/file-manager/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/ecommerce/route.tsx:loadEcommerce
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/default/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/crm/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/calendar/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/analytics/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/academy/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/(legacy)/finance-v1/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/(legacy)/default-v1/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/(legacy)/crm-v1/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/(legacy)/analytics-v1/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/chat/route.tsx:loadData
+PASS No-cookie direct RPC /src/lib/auth/account-functions.ts:getAccountDetails
+PASS Valid SSR/refresh/client navigation /chat
+PASS Valid SSR/refresh/client navigation /dashboard
+PASS Valid SSR/refresh/client navigation /mail
+PASS Valid SSR/refresh/client navigation /
+PASS Valid SSR/refresh/client navigation /dashboard/academy
+PASS Valid SSR/refresh/client navigation /dashboard/analytics
+PASS Valid SSR/refresh/client navigation /dashboard/calendar
+PASS Valid SSR/refresh/client navigation /dashboard/chat
+PASS Valid SSR/refresh/client navigation /dashboard/coming-soon
+PASS Valid SSR/refresh/client navigation /dashboard/crm
+PASS Valid SSR/refresh/client navigation /dashboard/default
+PASS Valid SSR/refresh/client navigation /dashboard/ecommerce
+PASS Valid SSR/refresh/client navigation /dashboard/file-manager
+PASS Valid SSR/refresh/client navigation /dashboard/finance
+PASS Valid SSR/refresh/client navigation /dashboard/infrastructure
+PASS Valid SSR/refresh/client navigation /dashboard/invoice
+PASS Valid SSR/refresh/client navigation /dashboard/kanban
+PASS Valid SSR/refresh/client navigation /dashboard/logistics
+PASS Valid SSR/refresh/client navigation /dashboard/mail
+PASS Valid SSR/refresh/client navigation /dashboard/patient-monitoring
+PASS Valid SSR/refresh/client navigation /dashboard/productivity
+PASS Valid SSR/refresh/client navigation /dashboard/products
+PASS Valid SSR/refresh/client navigation /dashboard/profile
+PASS Valid SSR/refresh/client navigation /dashboard/roles
+PASS Valid SSR/refresh/client navigation /dashboard/tasks
+PASS Valid SSR/refresh/client navigation /dashboard/users
+PASS Valid SSR/refresh/client navigation /dashboard/
+PASS Valid SSR/refresh/client navigation /dashboard/analytics-v1
+PASS Valid SSR/refresh/client navigation /dashboard/crm-v1
+PASS Valid SSR/refresh/client navigation /dashboard/default-v1
+PASS Valid SSR/refresh/client navigation /dashboard/finance-v1
+PASS Valid direct RPC /src/routes/(main)/mail/route.tsx:loadData
+PASS Valid direct RPC /src/routes/(main)/dashboard/route.tsx:getAccounts
+PASS Valid direct RPC /src/routes/(main)/dashboard/users/route.tsx:loadUsers
+PASS Valid direct RPC /src/routes/(main)/dashboard/tasks/route.tsx:loadData
+PASS Valid direct RPC /src/routes/(main)/dashboard/roles/route.tsx:loadRoles
+PASS Valid direct RPC /src/routes/(main)/dashboard/profile/route.tsx:loadProfile
+PASS Valid direct RPC /src/routes/(main)/dashboard/products/route.tsx:loadCatalog
+PASS Valid direct RPC /src/routes/(main)/dashboard/productivity/route.tsx:loadData
+PASS Valid direct RPC /src/routes/(main)/dashboard/patient-monitoring/route.tsx:loadData
+PASS Valid direct RPC /src/routes/(main)/dashboard/logistics/route.tsx:loadData
+PASS Valid direct RPC /src/routes/(main)/dashboard/kanban/route.tsx:loadData
+PASS Valid direct RPC /src/routes/(main)/dashboard/invoice/route.tsx:loadInvoice
+PASS Valid direct RPC /src/routes/(main)/dashboard/infrastructure/route.tsx:loadData
+PASS Valid direct RPC /src/routes/(main)/dashboard/finance/route.tsx:loadData
+PASS Valid direct RPC /src/routes/(main)/dashboard/file-manager/route.tsx:loadData
+PASS Valid direct RPC /src/routes/(main)/dashboard/ecommerce/route.tsx:loadEcommerce
+PASS Valid direct RPC /src/routes/(main)/dashboard/default/route.tsx:loadData
+PASS Valid direct RPC /src/routes/(main)/dashboard/crm/route.tsx:loadData
+PASS Valid direct RPC /src/routes/(main)/dashboard/calendar/route.tsx:loadData
+PASS Valid direct RPC /src/routes/(main)/dashboard/analytics/route.tsx:loadData
+PASS Valid direct RPC /src/routes/(main)/dashboard/academy/route.tsx:loadData
+PASS Valid direct RPC /src/routes/(main)/dashboard/(legacy)/finance-v1/route.tsx:loadData
+PASS Valid direct RPC /src/routes/(main)/dashboard/(legacy)/default-v1/route.tsx:loadData
+PASS Valid direct RPC /src/routes/(main)/dashboard/(legacy)/crm-v1/route.tsx:loadData
+PASS Valid direct RPC /src/routes/(main)/dashboard/(legacy)/analytics-v1/route.tsx:loadData
+PASS Valid direct RPC /src/routes/(main)/chat/route.tsx:loadData
+PASS Valid direct RPC /src/lib/auth/account-functions.ts:getAccountDetails
+PASS tampered direct RPC /src/routes/(main)/mail/route.tsx:loadData
+PASS tampered direct RPC /src/routes/(main)/dashboard/route.tsx:getAccounts
+PASS tampered direct RPC /src/routes/(main)/dashboard/users/route.tsx:loadUsers
+PASS tampered direct RPC /src/routes/(main)/dashboard/tasks/route.tsx:loadData
+PASS tampered direct RPC /src/routes/(main)/dashboard/roles/route.tsx:loadRoles
+PASS tampered direct RPC /src/routes/(main)/dashboard/profile/route.tsx:loadProfile
+PASS tampered direct RPC /src/routes/(main)/dashboard/products/route.tsx:loadCatalog
+PASS tampered direct RPC /src/routes/(main)/dashboard/productivity/route.tsx:loadData
+PASS tampered direct RPC /src/routes/(main)/dashboard/patient-monitoring/route.tsx:loadData
+PASS tampered direct RPC /src/routes/(main)/dashboard/logistics/route.tsx:loadData
+PASS tampered direct RPC /src/routes/(main)/dashboard/kanban/route.tsx:loadData
+PASS tampered direct RPC /src/routes/(main)/dashboard/invoice/route.tsx:loadInvoice
+PASS tampered direct RPC /src/routes/(main)/dashboard/infrastructure/route.tsx:loadData
+PASS tampered direct RPC /src/routes/(main)/dashboard/finance/route.tsx:loadData
+PASS tampered direct RPC /src/routes/(main)/dashboard/file-manager/route.tsx:loadData
+PASS tampered direct RPC /src/routes/(main)/dashboard/ecommerce/route.tsx:loadEcommerce
+PASS tampered direct RPC /src/routes/(main)/dashboard/default/route.tsx:loadData
+PASS tampered direct RPC /src/routes/(main)/dashboard/crm/route.tsx:loadData
+PASS tampered direct RPC /src/routes/(main)/dashboard/calendar/route.tsx:loadData
+PASS tampered direct RPC /src/routes/(main)/dashboard/analytics/route.tsx:loadData
+PASS tampered direct RPC /src/routes/(main)/dashboard/academy/route.tsx:loadData
+PASS tampered direct RPC /src/routes/(main)/dashboard/(legacy)/finance-v1/route.tsx:loadData
+PASS tampered direct RPC /src/routes/(main)/dashboard/(legacy)/default-v1/route.tsx:loadData
+PASS tampered direct RPC /src/routes/(main)/dashboard/(legacy)/crm-v1/route.tsx:loadData
+PASS tampered direct RPC /src/routes/(main)/dashboard/(legacy)/analytics-v1/route.tsx:loadData
+PASS tampered direct RPC /src/routes/(main)/chat/route.tsx:loadData
+PASS tampered direct RPC /src/lib/auth/account-functions.ts:getAccountDetails
+PASS expired direct RPC /src/routes/(main)/mail/route.tsx:loadData
+PASS expired direct RPC /src/routes/(main)/dashboard/route.tsx:getAccounts
+PASS expired direct RPC /src/routes/(main)/dashboard/users/route.tsx:loadUsers
+PASS expired direct RPC /src/routes/(main)/dashboard/tasks/route.tsx:loadData
+PASS expired direct RPC /src/routes/(main)/dashboard/roles/route.tsx:loadRoles
+PASS expired direct RPC /src/routes/(main)/dashboard/profile/route.tsx:loadProfile
+PASS expired direct RPC /src/routes/(main)/dashboard/products/route.tsx:loadCatalog
+PASS expired direct RPC /src/routes/(main)/dashboard/productivity/route.tsx:loadData
+PASS expired direct RPC /src/routes/(main)/dashboard/patient-monitoring/route.tsx:loadData
+PASS expired direct RPC /src/routes/(main)/dashboard/logistics/route.tsx:loadData
+PASS expired direct RPC /src/routes/(main)/dashboard/kanban/route.tsx:loadData
+PASS expired direct RPC /src/routes/(main)/dashboard/invoice/route.tsx:loadInvoice
+PASS expired direct RPC /src/routes/(main)/dashboard/infrastructure/route.tsx:loadData
+PASS expired direct RPC /src/routes/(main)/dashboard/finance/route.tsx:loadData
+PASS expired direct RPC /src/routes/(main)/dashboard/file-manager/route.tsx:loadData
+PASS expired direct RPC /src/routes/(main)/dashboard/ecommerce/route.tsx:loadEcommerce
+PASS expired direct RPC /src/routes/(main)/dashboard/default/route.tsx:loadData
+PASS expired direct RPC /src/routes/(main)/dashboard/crm/route.tsx:loadData
+PASS expired direct RPC /src/routes/(main)/dashboard/calendar/route.tsx:loadData
+PASS expired direct RPC /src/routes/(main)/dashboard/analytics/route.tsx:loadData
+PASS expired direct RPC /src/routes/(main)/dashboard/academy/route.tsx:loadData
+PASS expired direct RPC /src/routes/(main)/dashboard/(legacy)/finance-v1/route.tsx:loadData
+PASS expired direct RPC /src/routes/(main)/dashboard/(legacy)/default-v1/route.tsx:loadData
+PASS expired direct RPC /src/routes/(main)/dashboard/(legacy)/crm-v1/route.tsx:loadData
+PASS expired direct RPC /src/routes/(main)/dashboard/(legacy)/analytics-v1/route.tsx:loadData
+PASS expired direct RPC /src/routes/(main)/chat/route.tsx:loadData
+PASS expired direct RPC /src/lib/auth/account-functions.ts:getAccountDetails
+PASS expired SSR/refresh/client navigation /chat
+PASS expired SSR/refresh/client navigation /dashboard
+PASS expired SSR/refresh/client navigation /mail
+PASS expired SSR/refresh/client navigation /
+PASS expired SSR/refresh/client navigation /dashboard/academy
+PASS expired SSR/refresh/client navigation /dashboard/analytics
+PASS expired SSR/refresh/client navigation /dashboard/calendar
+PASS expired SSR/refresh/client navigation /dashboard/chat
+PASS expired SSR/refresh/client navigation /dashboard/coming-soon
+PASS expired SSR/refresh/client navigation /dashboard/crm
+PASS expired SSR/refresh/client navigation /dashboard/default
+PASS expired SSR/refresh/client navigation /dashboard/ecommerce
+PASS expired SSR/refresh/client navigation /dashboard/file-manager
+PASS expired SSR/refresh/client navigation /dashboard/finance
+PASS expired SSR/refresh/client navigation /dashboard/infrastructure
+PASS expired SSR/refresh/client navigation /dashboard/invoice
+PASS expired SSR/refresh/client navigation /dashboard/kanban
+PASS expired SSR/refresh/client navigation /dashboard/logistics
+PASS expired SSR/refresh/client navigation /dashboard/mail
+PASS expired SSR/refresh/client navigation /dashboard/patient-monitoring
+PASS expired SSR/refresh/client navigation /dashboard/productivity
+PASS expired SSR/refresh/client navigation /dashboard/products
+PASS expired SSR/refresh/client navigation /dashboard/profile
+PASS expired SSR/refresh/client navigation /dashboard/roles
+PASS expired SSR/refresh/client navigation /dashboard/tasks
+PASS expired SSR/refresh/client navigation /dashboard/users
+PASS expired SSR/refresh/client navigation /dashboard/
+PASS expired SSR/refresh/client navigation /dashboard/analytics-v1
+PASS expired SSR/refresh/client navigation /dashboard/crm-v1
+PASS expired SSR/refresh/client navigation /dashboard/default-v1
+PASS expired SSR/refresh/client navigation /dashboard/finance-v1
+PASS revoked direct RPC /src/routes/(main)/mail/route.tsx:loadData
+PASS revoked direct RPC /src/routes/(main)/dashboard/route.tsx:getAccounts
+PASS revoked direct RPC /src/routes/(main)/dashboard/users/route.tsx:loadUsers
+PASS revoked direct RPC /src/routes/(main)/dashboard/tasks/route.tsx:loadData
+PASS revoked direct RPC /src/routes/(main)/dashboard/roles/route.tsx:loadRoles
+PASS revoked direct RPC /src/routes/(main)/dashboard/profile/route.tsx:loadProfile
+PASS revoked direct RPC /src/routes/(main)/dashboard/products/route.tsx:loadCatalog
+PASS revoked direct RPC /src/routes/(main)/dashboard/productivity/route.tsx:loadData
+PASS revoked direct RPC /src/routes/(main)/dashboard/patient-monitoring/route.tsx:loadData
+PASS revoked direct RPC /src/routes/(main)/dashboard/logistics/route.tsx:loadData
+PASS revoked direct RPC /src/routes/(main)/dashboard/kanban/route.tsx:loadData
+PASS revoked direct RPC /src/routes/(main)/dashboard/invoice/route.tsx:loadInvoice
+PASS revoked direct RPC /src/routes/(main)/dashboard/infrastructure/route.tsx:loadData
+PASS revoked direct RPC /src/routes/(main)/dashboard/finance/route.tsx:loadData
+PASS revoked direct RPC /src/routes/(main)/dashboard/file-manager/route.tsx:loadData
+PASS revoked direct RPC /src/routes/(main)/dashboard/ecommerce/route.tsx:loadEcommerce
+PASS revoked direct RPC /src/routes/(main)/dashboard/default/route.tsx:loadData
+PASS revoked direct RPC /src/routes/(main)/dashboard/crm/route.tsx:loadData
+PASS revoked direct RPC /src/routes/(main)/dashboard/calendar/route.tsx:loadData
+PASS revoked direct RPC /src/routes/(main)/dashboard/analytics/route.tsx:loadData
+PASS revoked direct RPC /src/routes/(main)/dashboard/academy/route.tsx:loadData
+PASS revoked direct RPC /src/routes/(main)/dashboard/(legacy)/finance-v1/route.tsx:loadData
+PASS revoked direct RPC /src/routes/(main)/dashboard/(legacy)/default-v1/route.tsx:loadData
+PASS revoked direct RPC /src/routes/(main)/dashboard/(legacy)/crm-v1/route.tsx:loadData
+PASS revoked direct RPC /src/routes/(main)/dashboard/(legacy)/analytics-v1/route.tsx:loadData
+PASS revoked direct RPC /src/routes/(main)/chat/route.tsx:loadData
+PASS revoked direct RPC /src/lib/auth/account-functions.ts:getAccountDetails
+PASS revoked SSR/refresh/client navigation /chat
+PASS revoked SSR/refresh/client navigation /dashboard
+PASS revoked SSR/refresh/client navigation /mail
+PASS revoked SSR/refresh/client navigation /
+PASS revoked SSR/refresh/client navigation /dashboard/academy
+PASS revoked SSR/refresh/client navigation /dashboard/analytics
+PASS revoked SSR/refresh/client navigation /dashboard/calendar
+PASS revoked SSR/refresh/client navigation /dashboard/chat
+PASS revoked SSR/refresh/client navigation /dashboard/coming-soon
+PASS revoked SSR/refresh/client navigation /dashboard/crm
+PASS revoked SSR/refresh/client navigation /dashboard/default
+PASS revoked SSR/refresh/client navigation /dashboard/ecommerce
+PASS revoked SSR/refresh/client navigation /dashboard/file-manager
+PASS revoked SSR/refresh/client navigation /dashboard/finance
+PASS revoked SSR/refresh/client navigation /dashboard/infrastructure
+PASS revoked SSR/refresh/client navigation /dashboard/invoice
+PASS revoked SSR/refresh/client navigation /dashboard/kanban
+PASS revoked SSR/refresh/client navigation /dashboard/logistics
+PASS revoked SSR/refresh/client navigation /dashboard/mail
+PASS revoked SSR/refresh/client navigation /dashboard/patient-monitoring
+PASS revoked SSR/refresh/client navigation /dashboard/productivity
+PASS revoked SSR/refresh/client navigation /dashboard/products
+PASS revoked SSR/refresh/client navigation /dashboard/profile
+PASS revoked SSR/refresh/client navigation /dashboard/roles
+PASS revoked SSR/refresh/client navigation /dashboard/tasks
+PASS revoked SSR/refresh/client navigation /dashboard/users
+PASS revoked SSR/refresh/client navigation /dashboard/
+PASS revoked SSR/refresh/client navigation /dashboard/analytics-v1
+PASS revoked SSR/refresh/client navigation /dashboard/crm-v1
+PASS revoked SSR/refresh/client navigation /dashboard/default-v1
+PASS revoked SSR/refresh/client navigation /dashboard/finance-v1
+PASS Authenticated shell/iframe menu focus /dashboard/default light/desktop
+PASS Authenticated shell/iframe menu focus /dashboard/mail light/desktop
+PASS Authenticated shell/iframe menu focus /dashboard/chat light/desktop
+PASS Authenticated shell/iframe menu focus /dashboard/default light/mobile
+PASS Authenticated shell/iframe menu focus /dashboard/mail light/mobile
+PASS Authenticated shell/iframe menu focus /dashboard/chat light/mobile
+PASS Authenticated shell/iframe menu focus /dashboard/default dark/desktop
+PASS Authenticated shell/iframe menu focus /dashboard/mail dark/desktop
+PASS Authenticated shell/iframe menu focus /dashboard/chat dark/desktop
+PASS Authenticated shell/iframe menu focus /dashboard/default dark/mobile
+PASS Authenticated shell/iframe menu focus /dashboard/mail dark/mobile
+PASS Authenticated shell/iframe menu focus /dashboard/chat dark/mobile
+PASS Expired iframe escapes to top-level login with wrapper return path
+PASS Shell sign-out clears session and next protected document redirects
+PASS Another open view drops revoked authority on refocus
+Auth protection: 283/283 passing.
+
+=== Auth suite: account ===
+PASS Current-user account/session projections contain only safe fields; two users isolated
+PASS Trimmed name save persists/reloads, refreshes header, validates/focuses and leaves other identity unchanged
+PASS Direct name bounds and supplied identity/email fields rejected server-side
+PASS Cross-user/forged session IDs and forged/missing origins cannot revoke any session
+PASS Account/error/confirmation light/desktop with keyboard focus recovery
+PASS Account/error/confirmation light/mobile with keyboard focus recovery
+PASS Account/error/confirmation dark/desktop with keyboard focus recovery
+PASS Account/error/confirmation dark/mobile with keyboard focus recovery
+PASS Owned other-session revoke invalidates route and direct RPC; stale ID handled safely
+PASS Password confirmation/current-password errors are inline and recoverable
+PASS Password change rotates current session, clears inputs, revokes other sessions, rejects old and accepts new password
+PASS Fresh-session requirement has working signout/re-login return flow without auth loop
+PASS Provider-only supported adapter fixture hides password controls; no real OAuth round-trip claimed
+PASS Account service/network failure displays retry and recovers with real data
+PASS Current-session revoke propagates cleared cookie and invalidates direct RPC
+Auth accounts: 15/15 passing.
+
+=== Auth suite: profile-demo ===
+PASS Demo tab=account: original six tabs, safe selection, no auth endpoint/account RPC
+PASS Demo tab=unknown: original six tabs, safe selection, no auth endpoint/account RPC
+PASS Demo tab=overview: original six tabs, safe selection, no auth endpoint/account RPC
+PASS Demo tab=personal: original six tabs, safe selection, no auth endpoint/account RPC
+PASS Demo tab=employment: original six tabs, safe selection, no auth endpoint/account RPC
+PASS Demo tab=compensation: original six tabs, safe selection, no auth endpoint/account RPC
+PASS Demo tab=time-off: original six tabs, safe selection, no auth endpoint/account RPC
+PASS Demo tab=documents: original six tabs, safe selection, no auth endpoint/account RPC
+Profile demo: 8/8 passing.
+
+=== Auth suite: security ===
+PASS HTTPS canonical configuration issues actual Secure/HttpOnly/host-only/Lax cookie (loopback HTTP transport checks headers only)
+PASS Real session refresh extends DB expiry and propagates persistent HttpOnly cookie
+PASS Forged Origin rejected: update-user
+PASS Forged Origin rejected: change-password
+PASS Forged Origin rejected: sign-out
+PASS Forged Origin rejected: revoke-session
+PASS SSR and account projection omit credentials/tokens/hashes/connection strings and are private no-store
+PASS Session mutation rejects extra identity fields and GET without revoking current session
+PASS Previously valid cookie fails closed during DB outage; no signed-out/demo downgrade
+PASS Same valid cookie recovers after DB configuration restoration
+PASS Direct password change cannot opt out of other-session revocation; current cookie rotates
+PASS Signout emits cookie expiry and removes DB authority
+Auth security: 12/12 passing.
+{"suites":12,"scenarios":486,"passing":true}

@@ -1,0 +1,11 @@
+{
+  "worker": "tenboards-preview",
+  "version": "f70a72ed-ef0b-4ac3-a487-7de8344ae852",
+  "bindings": [
+    {
+      "name": "ASSETS",
+      "type": "assets"
+    }
+  ],
+  "secrets": []
+}
