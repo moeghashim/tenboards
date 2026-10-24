@@ -1,0 +1,28 @@
+
+> tenboards@0.5.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --routes /dashboard/default --reference 2026-10-24T12:00:00.000Z --output screenshots/v06-004/before
+
+FAIL /dashboard/default light/desktop direct
+request: http://127.0.0.1:3000/dashboard/default net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/default
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/default", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/default light/mobile direct
+request: http://127.0.0.1:3000/dashboard/default net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/default
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/default", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/default dark/desktop direct
+request: http://127.0.0.1:3000/dashboard/default net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/default
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/default", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/default dark/mobile direct
+request: http://127.0.0.1:3000/dashboard/default net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/default
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/default", waiting until "domcontentloaded"[22m
+

@@ -1,0 +1,11 @@
+
+> tenboards@0.5.0 deploy:check
+> node --experimental-strip-types scripts/deploy-check.ts https://ed61566f-tenboards-preview.mohanadgh.workers.dev --demo
+
+PASS public /auth/v1/login
+PASS public /auth/v1/register
+PASS public /auth/v2/login
+PASS public /auth/v2/register
+PASS public /unauthorized
+PASS demo mode, public 404, protected behavior and signed-out session
+PASS read-only deployment check; no account writes requested.

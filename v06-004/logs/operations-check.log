@@ -1,0 +1,32 @@
+PASS deploy preparation: valid adopter config and 27 invalid configs; errors redacted
+PASS clean env/dotenv rejection, HTTPS target, private external 0600 secrets, random values, no overwrite/symlink escape, safe ordered commands
+PASS CLI missing/invalid flags fail before build without exposing values
+PASS remote migrate/seed rejected without opt-in; explicit direct TLS targets validated; errors redacted
+PASS default and explicit-opt-in migrate/seed repeat successfully on fresh isolated Docker target; no auth identities seeded
+PASS public /auth/v1/login
+PASS public /auth/v1/register
+PASS public /auth/v2/login
+PASS public /auth/v2/register
+PASS public /unauthorized
+PASS auth-on mode, public 404, protected behavior and signed-out session
+PASS read-only deployment check; no account writes requested.
+PASS real workerd default smoke creates no accounts
+PASS public /auth/v1/login
+PASS public /auth/v1/register
+PASS public /auth/v2/login
+PASS public /auth/v2/register
+PASS public /unauthorized
+PASS auth-on mode, public 404, protected behavior and signed-out session
+PASS explicit signup/signout/signin/session/protected-access round-trip; sessions signed out.
+Retained or potentially retained throwaway account: deploy-check-1792858814151-b42850e8a53f@example.test. Use the documented reviewer cleanup procedure.
+PASS explicit round-trip retains exactly its throwaway account but no sessions; local cleanup verified
+PASS public /auth/v1/login
+PASS public /auth/v1/register
+PASS public /auth/v2/login
+PASS public /auth/v2/register
+PASS public /unauthorized
+PASS demo mode, public 404, protected behavior and signed-out session
+PASS read-only deployment check; no account writes requested.
+PASS local demo accepted only with explicit demo expectation; no false production success
+PASS incomplete cutover state rejected by production smoke: secret without binding
+PASS incomplete cutover state rejected by production smoke: database without auth

@@ -1,0 +1,9 @@
+{
+  "port": 54329,
+  "testOwnedDatabases": [
+    "tenboards_v06_004_1792858303",
+    "tenboards_v06_004_worker_1792858647"
+  ],
+  "remaining": 0,
+  "sharedDockerService": "left running"
+}

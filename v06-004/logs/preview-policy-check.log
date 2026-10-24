@@ -1,0 +1,3 @@
+PASS preview exact target, config/remote allowlists and environment contamination negatives
+PASS root/generated-config dotenv contamination rejected before upload
+PASS real preview build with production Hyperdrive/URL fixture: no inherited bindings or vars

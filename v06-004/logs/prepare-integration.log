@@ -1,0 +1,21 @@
+
+> tenboards@0.5.0 deploy:prepare
+> node --experimental-strip-types scripts/deploy-prepare.ts --name adopter-readiness-fixture --url https://adopter.example.workers.dev --secrets-file /var/folders/28/jpf5lgdn0635bdx2yw0kljnc0000gn/T/tenboards-adopter-bw9_jl0e/secrets.json
+
+PASS clean build and deployment config. No Cloudflare or database operation performed.
+Created private 0600 secrets file outside the repository; values are not printed.
+Run these commands in Bash after reviewing docs/deploy.md; preparation has not executed them:
+# Inspect existing deployments/secrets first; see docs/deploy.md for a first Worker.
+npx wrangler deployments list --config .output/server/wrangler.json
+npx wrangler versions list --config .output/server/wrangler.json
+npx wrangler secret list --config .output/server/wrangler.json
+npx wrangler versions upload --config .output/server/wrangler.json --secrets-file '/private/var/folders/28/jpf5lgdn0635bdx2yw0kljnc0000gn/T/tenboards-adopter-bw9_jl0e/secrets.json'
+read -r -p 'Candidate version ID: ' TENBOARDS_CANDIDATE_VERSION
+read -r -p 'Candidate immutable origin: ' TENBOARDS_CANDIDATE_ORIGIN
+npx wrangler versions view "$TENBOARDS_CANDIDATE_VERSION" --config .output/server/wrangler.json --json
+npm run deploy:check -- "$TENBOARDS_CANDIDATE_ORIGIN"
+# Only after candidate checks pass; verify ASSETS, HYPERDRIVE and both auth secret names.
+npx wrangler versions deploy "$TENBOARDS_CANDIDATE_VERSION@100%" --config .output/server/wrangler.json --yes
+npm run deploy:check -- 'https://adopter.example.workers.dev'
+
+PASS full copied-fork fixture, generated config, 0600 secrets and output/env redaction; no cloud/database calls; temporary fixture removed.

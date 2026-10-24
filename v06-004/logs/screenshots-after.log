@@ -1,0 +1,8 @@
+
+> tenboards@0.5.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://localhost:3000 --routes /dashboard/default --reference 2026-10-24T12:00:00.000Z --output screenshots/v06-004/after
+
+PASS /dashboard/default light/desktop direct
+PASS /dashboard/default light/mobile direct
+PASS /dashboard/default dark/desktop direct
+PASS /dashboard/default dark/mobile direct

@@ -1,0 +1,50 @@
+[
+  {
+    "command": "npm run build",
+    "exit": 0,
+    "seconds": 3.1,
+    "log": "build.log"
+  },
+  {
+    "command": "npm run check",
+    "exit": 0,
+    "seconds": 0.9,
+    "log": "check.log"
+  },
+  {
+    "command": "npm run typecheck",
+    "exit": 0,
+    "seconds": 5.9,
+    "log": "typecheck.log"
+  },
+  {
+    "command": "npm run db:migrate",
+    "exit": 0,
+    "seconds": 0.5,
+    "log": "migrate.log"
+  },
+  {
+    "command": "npm run db:seed",
+    "exit": 0,
+    "seconds": 9.7,
+    "log": "seed.log"
+  },
+  {
+    "command": "npm run auth:test",
+    "exit": 0,
+    "seconds": 252.9,
+    "log": "auth-test.log"
+  },
+  {
+    "command": "npm run data:parity",
+    "exit": 0,
+    "seconds": 1.2,
+    "log": "data-parity.log"
+  },
+  {
+    "command": "npm run worker:test",
+    "exit": 1,
+    "seconds": 5.5,
+    "log": "worker-test.log"
+  }
+]

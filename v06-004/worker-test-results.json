@@ -1,0 +1,56 @@
+[
+  {
+    "command": "npm run build",
+    "exit": 0,
+    "seconds": 2.5,
+    "log": "build-stable.log"
+  },
+  {
+    "command": "npm run db:migrate",
+    "exit": 0,
+    "seconds": 0.5,
+    "log": "migrate-worker.log"
+  },
+  {
+    "command": "npm run db:seed",
+    "exit": 0,
+    "seconds": 9.2,
+    "log": "seed-worker.log"
+  },
+  {
+    "command": "npm run worker:test",
+    "exit": 0,
+    "seconds": 35.6,
+    "log": "worker-test-retry.log"
+  },
+  {
+    "command": "npm run worker:auth",
+    "exit": 0,
+    "seconds": 73.7,
+    "log": "worker-auth.log"
+  },
+  {
+    "command": "npm run worker:security",
+    "exit": 0,
+    "seconds": 14.3,
+    "log": "worker-security.log"
+  },
+  {
+    "command": "node --experimental-strip-types scripts/operations-check.ts",
+    "exit": 0,
+    "seconds": 34.1,
+    "log": "operations-check.log"
+  },
+  {
+    "command": "node --experimental-strip-types scripts/deploy-check-test.ts",
+    "exit": 0,
+    "seconds": 0.8,
+    "log": "deploy-check-test.log"
+  },
+  {
+    "command": "node --experimental-strip-types scripts/cutover-order-check.ts",
+    "exit": 0,
+    "seconds": 0.8,
+    "log": "cutover-order-check.log"
+  }
+]

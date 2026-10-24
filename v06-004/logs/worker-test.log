@@ -1,0 +1,17 @@
+
+> tenboards@0.5.0 worker:test
+> node --experimental-strip-types scripts/worker-runtime-check.ts
+
+PASS binding precedence/invalid binding/forced-demo resolver
+PASS zero-env demo
+PASS forced demo
+PASS DB without auth
+file:///Users/moeghashim/tenboards/scripts/worker-test-support.ts:97
+    throw new Error("Local Worker failed to start (details redacted).");
+          ^
+
+Error: Local Worker failed to start (details redacted).
+    at startWorker (file:///Users/moeghashim/tenboards/scripts/worker-test-support.ts:97:11)
+    at async file:///Users/moeghashim/tenboards/scripts/worker-runtime-check.ts:41:20
+
+Node.js v24.21.0
