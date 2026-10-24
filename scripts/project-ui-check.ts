@@ -100,7 +100,12 @@ try {
       assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1), true);
       await page.getByLabel("Status", { exact: true }).selectOption("canceled");
       await page.waitForURL(/status=canceled/);
-      await page.waitForFunction(() => document.querySelectorAll("[data-task-id]").length > 0);
+      await page.waitForFunction(() => document.querySelectorAll("[data-task-id]").length === 19);
+      await page
+        .getByRole("region", { name: "Task status columns, scroll horizontally", exact: true })
+        .evaluate((node) => {
+          node.scrollLeft = node.scrollWidth;
+        });
       assert.equal(new URL(page.url()).searchParams.get("offset"), "0");
       await page.screenshot({ path: `${output}/canceled-${theme}-${size}.png`, fullPage: true });
       assert.deepEqual(errors, []);
