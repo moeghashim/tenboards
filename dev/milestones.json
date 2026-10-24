@@ -126,7 +126,7 @@
     },
     {
       "id": "v0.5-auth",
-      "status": "in-progress",
+      "status": "review",
       "tasks": [
         "001-auth-foundation",
         "002-auth-flows",
@@ -139,7 +139,7 @@
         "002-auth-flows": "review",
         "003-protection-shell": "review",
         "004-account-sessions": "review",
-        "005-auth-acceptance": "todo"
+        "005-auth-acceptance": "review"
       }
     }
   ]

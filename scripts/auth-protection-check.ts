@@ -7,6 +7,9 @@ import { captureRoutes } from "./screenshot-routes.ts";
 import assert from "node:assert/strict";
 import { mkdir, readdir, readFile } from "node:fs/promises";
 
+const evidenceDir = process.env.AUTH_EVIDENCE_ROOT
+  ? `${process.env.AUTH_EVIDENCE_ROOT}/protection`
+  : "screenshots/v05-003/auth";
 let cases = 0;
 const pass = (name: string) => {
   cases++;
@@ -154,6 +157,20 @@ try {
       assert.match(result.cacheControl, /private.*no-store/);
       pass(`${state} direct RPC ${item.file}:${item.name}`);
     }
+    if (state === "expired" || state === "revoked") {
+      for (const { path } of protectedRoutes) {
+        await invalidPage.goto(server.baseURL + path, { waitUntil: "domcontentloaded" });
+        assert.equal(new URL(invalidPage.url()).pathname, "/auth/v1/login");
+        await invalidPage.reload({ waitUntil: "domcontentloaded" });
+        assert.equal(new URL(invalidPage.url()).pathname, "/auth/v1/login");
+        await invalidPage.waitForFunction(() => !!window.__TSR_ROUTER__);
+        await invalidPage.evaluate(async (href) => {
+          await window.__TSR_ROUTER__?.navigate({ href });
+        }, path);
+        assert.equal(new URL(invalidPage.url()).pathname, "/auth/v1/login");
+        pass(`${state} SSR/refresh/client navigation ${path}`);
+      }
+    }
     await invalid.close();
   }
   await signed.request.post(`${server.baseURL}/api/auth/sign-in/email`, {
@@ -161,7 +178,7 @@ try {
     data: { email, password },
   });
   await authenticated.goto(`${server.baseURL}/dashboard/default`, { waitUntil: "domcontentloaded" });
-  await mkdir("screenshots/v05-003/auth", { recursive: true });
+  await mkdir(evidenceDir, { recursive: true });
   for (const theme of ["light", "dark"] as const)
     for (const [size, viewport] of Object.entries({
       desktop: { width: 1440, height: 900 },
@@ -177,7 +194,7 @@ try {
         await authenticated.getByRole("menuitem", { name: "Sign out", exact: true }).waitFor();
         assert.equal(await authenticated.getByText("Demo accounts", { exact: true }).count(), 0);
         await authenticated.screenshot({
-          path: `screenshots/v05-003/auth/${path.replaceAll("/", "_")}-${theme}-${size}.png`,
+          path: `${evidenceDir}/${path.replaceAll("/", "_")}-${theme}-${size}.png`,
           fullPage: true,
         });
         await authenticated.keyboard.press("Escape");

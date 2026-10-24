@@ -29,7 +29,7 @@ try {
   await cacheCaptureFonts(context);
   const page = await context.newPage();
   async function visit(path: string) {
-    await page.goto(server.baseURL + path);
+    await page.goto(server.baseURL + path, { waitUntil: "domcontentloaded" });
     await page.waitForFunction(() =>
       Object.keys(document.querySelector("form") ?? {}).some((key) => key.startsWith("__reactProps")),
     );

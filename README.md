@@ -2,7 +2,7 @@
 
 An MIT-licensed dashboard template built with TanStack Start, React 19, TypeScript, Tailwind CSS v4, and shadcn/ui on Base UI.
 
-The full upstream screen catalog and demo-data relationships are retained, with neutral demo identities. **v0.1 is merged, deployed and closed**: the design system and shell follow [PLAN.md](PLAN.md). **v0.2 (all 14 dashboards restyled) is merged, deployed and closed** per [the dashboard task breakdown](dev/milestones/v0.2-dashboards/README.md). **v0.3 (all app pages restyled) is merged, deployed and released as [v0.3.0](https://github.com/moeghashim/tenboards/releases/tag/v0.3.0)** — [14 app-page tasks](dev/milestones/v0.3-app-pages/README.md) deliver a small shared header foundation, standalone/embedded Mail and Chat, Calendar, Kanban, Tasks, Invoice, File Manager, Products, Users/Roles, Profile, Auth V1/V2, system states, and full-route acceptance. Current milestone/task status is tracked in [dev/milestones.json](dev/milestones.json). Current screens are demonstrations. **v0.4 (optional data layer) is merged, deployed and released as [v0.4.0](https://github.com/moeghashim/tenboards/releases/tag/v0.4.0)** — [8 data-layer tasks](dev/milestones/v0.4-data-layer/README.md) connect every app page and dashboard to Drizzle + optional local Docker Postgres 17; with no `DATABASE_URL` it runs in zero-config demo mode, and the live preview stays in demo mode. **v0.5 (Better Auth) is in implementation** — [5 auth tasks](dev/milestones/v0.5-auth/README.md). The foundation adds optional server-only auth configuration, isolated tables, HTTP/session boundaries and validated UI-cookie RPCs. V1/V2 support real email/password signup/login and optional Google/GitHub initiation. App routes and data functions enforce sessions; the signed-in shell links to Profile Account & security for name/password/session management. Integrated acceptance is the remaining layer. Production Neon/Hyperdrive setup follows in v0.6, and production stays demo-only until then.
+The full upstream screen catalog and demo-data relationships are retained, with neutral demo identities. **v0.1 is merged, deployed and closed**: the design system and shell follow [PLAN.md](PLAN.md). **v0.2 (all 14 dashboards restyled) is merged, deployed and closed** per [the dashboard task breakdown](dev/milestones/v0.2-dashboards/README.md). **v0.3 (all app pages restyled) is merged, deployed and released as [v0.3.0](https://github.com/moeghashim/tenboards/releases/tag/v0.3.0)** — [14 app-page tasks](dev/milestones/v0.3-app-pages/README.md) deliver a small shared header foundation, standalone/embedded Mail and Chat, Calendar, Kanban, Tasks, Invoice, File Manager, Products, Users/Roles, Profile, Auth V1/V2, system states, and full-route acceptance. Current milestone/task status is tracked in [dev/milestones.json](dev/milestones.json). Current screens are demonstrations. **v0.4 (optional data layer) is merged, deployed and released as [v0.4.0](https://github.com/moeghashim/tenboards/releases/tag/v0.4.0)** — [8 data-layer tasks](dev/milestones/v0.4-data-layer/README.md) connect every app page and dashboard to Drizzle + optional local Docker Postgres 17; with no `DATABASE_URL` it runs in zero-config demo mode, and the live preview stays in demo mode. **v0.5 (Better Auth) is in review** — [5 auth tasks](dev/milestones/v0.5-auth/README.md). The foundation adds optional server-only auth configuration, isolated tables, HTTP/session boundaries and validated UI-cookie RPCs. V1/V2 support real email/password signup/login and optional Google/GitHub initiation. App routes and data functions enforce sessions; the signed-in shell links to Profile Account & security for name/password/session management. Integrated acceptance includes 486 passing real-Postgres auth scenarios, fresh/incremental migrations and unchanged 22-read/130-scenario data parity. Production Neon/Hyperdrive setup follows in v0.6, and production stays demo-only until then.
 
 ## Run locally
 
@@ -325,7 +325,7 @@ The example uses local-only port `54329`, database/user `tenboards`, password `t
 
 ### Profile and shell accounts (v0.4 / 002)
 
-The dashboard parent loads demo accounts alongside the existing cookie preferences. Account selection remains local and resets on refresh; it does not establish a session. The former unused `rootUser` export is removed, and `src/data/users.ts` now contains only the account type. Shell accounts, directory members, informational roles and Jordan Lee's profile remain distinct datasets.
+In demo mode the dashboard parent loads demo accounts alongside the existing cookie preferences; auth mode uses the actual signed-in identity. Account selection remains local and resets on refresh; it does not establish a session. The former unused `rootUser` export is removed, and `src/data/users.ts` now contains only the account type. Shell accounts, directory members, informational roles and Jordan Lee's profile remain distinct datasets.
 
 All six Profile tabs load normalized identity, contact, employment, time-off and ordered document records, including manager/updater attribution and the previously inline completion, verification and record-status fields. Restricted-compensation and action behavior remain demonstration-only. Cumulative parity covers four reads and twelve scenarios, including missing-account empty arrays and missing-profile null. Apply the new cumulative migrations and rerun `db:seed` when upgrading an existing local database.
 
@@ -442,3 +442,23 @@ With optional local authentication enabled, all dashboards (including legacy var
 ### Your sign-in account (v0.5 layer 004)
 
 In local auth mode, open the account menu → **Account & security**, or `/dashboard/profile?tab=account`. Edit your name, view your read-only email, change a credential password, and revoke active browser sessions. Password changes sign out other sessions and replace this browser's session. Provider-only accounts manage passwords with their provider. Session management may ask you to sign in again after the fresh-session window. The original six Profile tabs still describe a sample employee; demo mode keeps those six tabs only.
+
+### Authentication acceptance commands
+
+After starting optional local Docker Postgres and running `npm run db:migrate` and
+`npm run db:seed`, run `npm run auth:test`. It exercises real credentials, session
+cookies, providers' authorize redirects, all route/data-function guards, account
+changes and owned-session revocation. No real OAuth credentials or live provider
+round-trip are required. `AUTH_EVIDENCE_ROOT` selects the private capture directory.
+See [repeatable acceptance](docs/auth.md#repeatable-acceptance) for fresh/upgrade
+migration checks, bundle redaction checks and test-database lifecycle. Production
+and all Worker previews remain zero-secret demos; Claude owns review/merge/release.
+
+Integrated v0.5 acceptance passes **486/486 auth scenarios**, **22 reads / 130 parity
+scenarios**, and **1,824 baseline + 588 supplemental capture cases** across no-env
+local demo, local DB/auth-off and Workers demo. Supplemental coverage includes all
+384 delayed direct/refresh hydration cases across eight routes and Chicago/Kiritimati,
+with original failures and explicit retries retained. Four-state auth/account renders
+and all twelve invoice print PDFs were inspected. See the [evidence index](https://github.com/moeghashim/tenboards/tree/pr-assets/v05-005)
+and [security evidence](docs/auth.md#verified-security-evidence-v05-review). All five
+tasks remain in review; no production auth or milestone release is implied.

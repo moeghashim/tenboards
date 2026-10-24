@@ -102,11 +102,11 @@ try {
     .filter((h) => h.name.toLowerCase() === "set-cookie")
     .map((h) => h.value)
     .join(";");
-  assert.match(cookies, /HttpOnly/i);
-  assert.match(cookies, /SameSite=Lax/i);
-  assert.match(cookies, /Path=\//i);
-  assert.doesNotMatch(cookies, /Domain=/i);
-  assert.match(cookies, /Max-Age=604800/i);
+  assert.ok(/HttpOnly/i.test(cookies), "Required cookie attribute missing.");
+  assert.ok(/SameSite=Lax/i.test(cookies), "Required cookie attribute missing.");
+  assert.ok(/Path=\//i.test(cookies), "Required cookie attribute missing.");
+  assert.ok(!/Domain=/i.test(cookies), "Unexpected cookie attribute.");
+  assert.ok(/Max-Age=604800/i.test(cookies), "Required cookie attribute missing.");
   pass("real signup + persistent host-only HttpOnly cookie");
   const session = await server.api.get("/api/auth/get-session");
   assert.equal(session.status(), 200);
@@ -126,7 +126,7 @@ try {
       .find((h) => h.name.toLowerCase() === "set-cookie" && h.value.startsWith("better-auth.session_token="))?.value ??
     "";
   assert.ok(sessionCookie);
-  assert.doesNotMatch(sessionCookie, /Max-Age=|Expires=/i);
+  assert.ok(!/Max-Age=|Expires=/i.test(sessionCookie), "Unexpected cookie attribute.");
   pass("unchecked remember me: session-only cookie");
   const { default: postgres } = await import("postgres");
   const db = postgres(localDatabase);
