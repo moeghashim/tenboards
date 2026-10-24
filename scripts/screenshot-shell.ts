@@ -1,5 +1,22 @@
 import type { Page } from "playwright";
 
+// Capture both desktop navigation states, or the open/closed mobile sheet.
+// Keep this usable before a shell change as well as after it.
+export async function captureSidebarStates(page: Page, capture: (state: string) => Promise<void>): Promise<string[]> {
+  const mobile = (page.viewportSize()?.width ?? 1440) < 768;
+  const headerToggle = page.locator("header").getByRole("button", { name: "Toggle Sidebar", exact: true });
+  if (mobile) await headerToggle.press("Enter");
+  const sidebar = page.locator(mobile ? '[data-mobile="true"]' : '[data-slot="sidebar-inner"]');
+  await sidebar.waitFor();
+  await capture("expanded");
+  await sidebar.getByRole("button", { name: "Toggle Sidebar", exact: true }).press("Enter");
+  if (mobile) await sidebar.waitFor({ state: "hidden" });
+  else await page.locator('[data-slot="sidebar"][data-state="collapsed"]').waitFor();
+  await capture("collapsed");
+  if (!mobile) await sidebar.getByRole("button", { name: "Toggle Sidebar", exact: true }).press("Enter");
+  return ["Captured expanded/collapsed desktop navigation or open/closed mobile sheet"];
+}
+
 export async function captureShell(page: Page, capture: (name: string) => Promise<void>): Promise<string[]> {
   const mobile = (page.viewportSize()?.width ?? 1440) < 768;
   const theme = await page.locator("html").getAttribute("class");

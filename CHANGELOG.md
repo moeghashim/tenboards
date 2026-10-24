@@ -2,6 +2,8 @@
 
 ## v0.6.1 — Legacy removal (draft)
 
+- Hide the duplicate header toggle for collapsed desktop icon rails across all sidebar styles; retain mobile and hidden off-canvas openers, breadcrumb alignment, shortcuts and focus handoff.
+
 - Remove the Legacy sidebar/palette group, four V1 dashboard screens and Auth V1 forms; retain ten dashboards and Auth V2.
 - Permanently redirect all six retired URLs with validated return destinations; use V2 for guards, links, sign-out and OAuth errors.
 - Remove V1-only components, data queries, fixtures, seeds and 26 parity scenarios. Add migration `0014_remove_legacy.sql` to drop 13 exclusive tables and V1 metric rows without editing shipped migrations.

@@ -4,7 +4,7 @@ An MIT-licensed dashboard template built with TanStack Start, React 19, TypeScri
 
 Ten current dashboards and the retained app pages share a compact design system, neutral demo identities and optional Postgres/Better Auth integration. Milestones v0.1–v0.6 are merged and released; [v0.6.0](https://github.com/moeghashim/tenboards/releases/tag/v0.6.0) delivers Workers database support, isolated demo previews and adopter deployment tooling. The [live site](https://tenboards.mohanadgh.workers.dev) intentionally stays a zero-config demo; adopters connect and verify their own database.
 
-**v0.6.1 legacy removal is in review**: the four V1 dashboards and Auth V1 forms are retired. Six old URLs permanently redirect to their current equivalents; Auth V2 is the only sign-in UI. The [task contract](dev/milestones/v0.6.1-legacy-removal/README.md) and [milestone status](dev/milestones.json) track acceptance. The v0.5 authentication/session/security boundaries remain in place.
+**v0.6.1 shell follow-up is in review**: legacy removal is merged; the four V1 dashboards and Auth V1 forms are retired. Six old URLs permanently redirect to their current equivalents; Auth V2 is the only sign-in UI. The [collapsed-header-toggle task](dev/milestones/v0.6.1-legacy-removal/002-collapsed-header-toggle.md), [milestone overview](dev/milestones/v0.6.1-legacy-removal/README.md) and [milestone status](dev/milestones.json) track acceptance. The v0.5 authentication/session/security boundaries remain in place.
 
 ## Run locally
 
@@ -128,10 +128,11 @@ Install the approved browser tooling once with `npx playwright install chromium`
 npm run screenshots
 npm run screenshots -- --routes /dashboard/default,/auth/v2/login --output screenshots/before
 npm run screenshots -- --base-url https://pr-012-tenboards-preview.<account-subdomain>.workers.dev --output screenshots/after
+npm run screenshots -- --routes /dashboard/default --sidebar-states --output screenshots/sidebar
 npm run screenshots -- --list
 ```
 
-The default captures every retained route in light/dark at desktop 1440×900 and mobile 390×844. `src/navigation/route-catalog.ts` is the shared 32-route visual inventory, re-exported by `scripts/screenshot-routes.ts` and checked against generated route metadata; missing/stale routes and unknown subsets fail before launch. The dashboard splat uses `/dashboard/capture-not-found` to exercise its not-found state; there are no entity-ID routes needing demo records. Root/index redirects are captured at their destination; six retired V1 aliases are covered by the dedicated redirect checks. `--preset` selects a valid preset for the same four-state matrix.
+The default captures every retained route in light/dark at desktop 1440×900 and mobile 390×844. `src/navigation/route-catalog.ts` is the shared 32-route visual inventory, re-exported by `scripts/screenshot-routes.ts` and checked against generated route metadata; missing/stale routes and unknown subsets fail before launch. The dashboard splat uses `/dashboard/capture-not-found` to exercise its not-found state; there are no entity-ID routes needing demo records. Root/index redirects are captured at their destination; six retired V1 aliases are covered by the dedicated redirect checks. `--preset` selects a valid preset for the same four-state matrix. `--sidebar-states` adds expanded/collapsed desktop captures and open/closed mobile-sheet captures on shell routes. Run `node --experimental-strip-types scripts/sidebar-toggle-check.ts` to verify every allowed sidebar style/collapse mode and preset in both themes and viewports; add `--ssr --base-url <built-preview-url>` to check initial markup with JavaScript disabled.
 
 Captures wait for React hydration, fonts, network idle, images, JS chart settling, and stable content. Reduced motion is emulated and screenshot animations are disabled. Console errors, page errors, failed requests, unexpected HTTP status, and capture failures are recorded in `report.json` and cause a nonzero exit. The hydration check uses React's DOM binding marker; revisit it if React's renderer changes. Application clocks are never frozen. For v0.4 comparisons, pass the same `--reference` ISO timestamp to serialize identical date inputs; the real monitoring clock can be narrowly masked with `--mask-live-clocks`.
 
@@ -149,6 +150,8 @@ Social metadata, favicons and the manifest use origin-relative asset URLs, so a 
 ## Shell usage and acceptance
 
 The floating sidebar keeps a viewport-height panel while long pages scroll. Primary links, collapsible route sections, icon-only collapse, and the mobile sheet share the same navigation. The demo status card counts distinct enabled `/dashboard/*` sidebar pages (25 total) visited since the sidebar mounted; the count resets on reload or when the mobile sheet remounts; it does not represent a subscription, saved progress, or server data.
+
+Desktop icon rails own the expand/collapse control; the header hides its redundant toggle and aligns the breadcrumb at its normal padding. Expanded desktop navigation also keeps its existing sidebar control. The header opener remains on mobile and when desktop “Hide” mode moves the whole sidebar off-canvas. **⌘B / Ctrl+B** still toggles navigation. When a focused header opener becomes hidden after reopening desktop navigation or resizing to desktop, focus moves to the sidebar toggle.
 
 Open search from the sidebar, the mobile header, or **⌘K / Ctrl+K** on any retained route. Arrow keys choose results; Enter opens a page; Escape closes and restores focus. The shared catalog exposes 34 searchable screens; the remaining four catalog entries cover redirects and the auth layout route. Pressing the shortcut again closes search. Other visible dialogs, alert dialogs, menus, and listboxes retain the shortcut (the mobile navigation sheet excepted); text-field focus alone does not suppress it. The bare `/auth/v2` path is an inherited layout-only screen; its login/register children are the searchable destinations.
 

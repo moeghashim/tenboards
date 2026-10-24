@@ -2,6 +2,13 @@
 .tenboards-shell {
   background: var(--bg);
 }
+/* Use the provider's server-rendered sidebar state, not a hydration-time viewport check.
+   Off-canvas navigation still needs its header opener; mobile always needs it. */
+@media (min-width: 48rem) {
+  .tenboards-shell:has(> [data-slot="sidebar"][data-collapsible="icon"]) .shell-header-sidebar-trigger {
+    display: none;
+  }
+}
 .tenboards-shell > [data-slot="sidebar"] {
   position: sticky;
   top: 0;

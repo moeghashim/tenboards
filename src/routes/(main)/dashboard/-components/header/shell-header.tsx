@@ -1,3 +1,5 @@
+import { useLayoutEffect, useRef } from "react";
+
 import { useRouterState } from "@tanstack/react-router";
 
 import { cn } from "cn";
@@ -19,10 +21,35 @@ type ShellIdentity = { mode: "demo"; accounts: DemoAccount[] } | { mode: "auth";
 export function ShellHeader({ identity }: { identity: ShellIdentity }) {
   const path = useRouterState({ select: (state) => state.location.pathname });
   const title = routeCatalog.find((item) => item.path === path)?.label ?? "Page not found";
-  const { open } = useSidebar();
+  const { open, isMobile } = useSidebar();
+  const toggleRef = useRef<HTMLButtonElement>(null);
+  const toggleHadFocus = useRef(false);
+
+  useLayoutEffect(() => {
+    const toggle = toggleRef.current;
+    // Reopening off-canvas navigation or crossing the desktop breakpoint can
+    // hide the focused opener. Hand focus to the sidebar's own control.
+    if (!isMobile && toggleHadFocus.current && toggle && (open || !toggle.getClientRects().length)) {
+      toggle
+        .closest('[data-slot="sidebar-wrapper"]')
+        ?.querySelector<HTMLButtonElement>('[data-slot="sidebar"] [data-slot="sidebar-trigger"]')
+        ?.focus({ preventScroll: true });
+      toggleHadFocus.current = false;
+    }
+  }, [open, isMobile]);
+
   return (
     <header className="bg-background flex h-14 shrink-0 items-center gap-3 border-b px-4 md:px-6 [html[data-navbar-style=sticky]_&]:sticky [html[data-navbar-style=sticky]_&]:top-0 [html[data-navbar-style=sticky]_&]:z-20">
-      <SidebarTrigger className={cn("shrink-0", open && "md:hidden")} />
+      <SidebarTrigger
+        ref={toggleRef}
+        className={cn("shell-header-sidebar-trigger shrink-0", open && "md:hidden")}
+        onFocus={() => {
+          toggleHadFocus.current = true;
+        }}
+        onBlur={() => {
+          if (toggleRef.current?.getClientRects().length) toggleHadFocus.current = false;
+        }}
+      />
       <div className="flex min-w-0 flex-1 items-center gap-2 text-sm">
         <span className="text-muted-foreground hidden shrink-0 sm:inline">Workspace</span>
         <span className="text-muted-foreground hidden sm:inline" aria-hidden="true">
