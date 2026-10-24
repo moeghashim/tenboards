@@ -1,12 +1,13 @@
 import { z } from "zod";
 
 import { projectEvents } from "./calendar.types.ts";
+import { sampleActivity, sampleProject } from "./project-sample.ts";
 import { dbRepository, demoRepository, type ProjectRepository } from "./projects.repository.ts";
 import {
   boundedId,
   projectInput,
   projectStatuses,
-  SAMPLE_DATE,
+  requestDate,
   SAMPLE_MEMBER,
   type TaskInput,
   taskCalendarEvents,
@@ -15,25 +16,31 @@ import {
 import { readSource } from "./source.ts";
 
 const projectsInput = z
-  .object({ status: z.enum(projectStatuses).optional(), query: z.string().max(200).optional() })
+  .object({
+    status: z.enum(projectStatuses).optional(),
+    query: z.string().max(200).optional(),
+    renderedAt: z.iso.datetime().optional(),
+  })
   .strict();
 const filesInput = projectInput.extend({ id: boundedId.optional() });
 const activityInput = projectInput.extend({ limit: z.number().int().min(1).max(50).default(20) });
 const timelineInput = taskInput.extend({ renderedAt: z.iso.datetime(), timeZone: z.string().max(80).default("UTC") });
 const homeInput = z.object({ memberId: boundedId.default(SAMPLE_MEMBER), renderedAt: z.iso.datetime() }).strict();
 async function project(repository: ProjectRepository, input: z.input<typeof projectInput>) {
-  const { projectId } = projectInput.parse(input),
+  const { projectId, renderedAt } = projectInput.parse(input),
+    today = requestDate(renderedAt),
     row = await repository.project(projectId);
   if (!row) return null;
   return {
-    ...row,
+    ...sampleProject(row, today),
     members: await repository.members(projectId),
-    metrics: await repository.metrics(projectId),
-    sampleDate: SAMPLE_DATE,
+    metrics: await repository.metrics(projectId, today),
+    sampleDate: today,
   };
 }
 async function projects(repository: ProjectRepository, input: z.input<typeof projectsInput> = {}) {
   const q = projectsInput.parse(input),
+    today = requestDate(q.renderedAt),
     rows = await repository.projects();
   return Promise.all(
     rows
@@ -43,10 +50,10 @@ async function projects(repository: ProjectRepository, input: z.input<typeof pro
           (!q.query || `${p.name} ${p.description}`.toLowerCase().includes(q.query.toLowerCase())),
       )
       .map(async (p) => ({
-        ...p,
+        ...sampleProject(p, today),
         members: await repository.members(p.id),
-        metrics: await repository.metrics(p.id),
-        sampleDate: SAMPLE_DATE,
+        metrics: await repository.metrics(p.id, today),
+        sampleDate: today,
       })),
   );
 }
@@ -64,12 +71,13 @@ async function files(repository: ProjectRepository, input: z.input<typeof filesI
 async function activity(repository: ProjectRepository, input: z.input<typeof activityInput>) {
   const q = activityInput.parse(input);
   if (!(await repository.project(q.projectId))) return null;
-  return repository.activity(q.projectId, q.limit);
+  const today = requestDate(q.renderedAt);
+  return (await repository.activity(q.projectId, q.limit)).map((row) => sampleActivity(row, today));
 }
 async function timeline(repository: ProjectRepository, input: z.input<typeof timelineInput>) {
   const { renderedAt, timeZone, ...q } = timelineInput.parse(input);
   new Intl.DateTimeFormat("en-US", { timeZone }).format(new Date(renderedAt));
-  const result = await tasks(repository, q);
+  const result = await tasks(repository, { ...q, renderedAt });
   if (!result) return null;
   const calendar = await repository.calendar(q.projectId);
   return {
@@ -83,22 +91,26 @@ async function timeline(repository: ProjectRepository, input: z.input<typeof tim
 }
 async function home(repository: ProjectRepository, input: z.input<typeof homeInput>) {
   const q = homeInput.parse(input),
-    summaries = await projects(repository);
+    today = requestDate(q.renderedAt),
+    summaries = await projects(repository, { renderedAt: q.renderedAt });
   async function section(kind: "mine" | "upcoming") {
-    const refs = await repository.homeTasks(q.memberId, kind);
-    return (await Promise.all(refs.map((ref) => repository.tasks({ ...ref, limit: 10 })))).flatMap((b) => b.items);
+    const refs = await repository.homeTasks(q.memberId, kind, today);
+    return (
+      await Promise.all(refs.map((ref) => repository.tasks({ ...ref, limit: 10, renderedAt: q.renderedAt })))
+    ).flatMap((b) => b.items);
   }
   return {
     renderedAt: q.renderedAt,
-    sampleDate: SAMPLE_DATE,
+    sampleDate: today,
     sampleMember: q.memberId,
     projects: summaries,
-    metrics: await repository.metrics(),
+    metrics: await repository.metrics(undefined, today),
     activeProjects: summaries.filter((p) => p.status === "active" || p.status === "at-risk").length,
     myTasks: await section("mine"),
     upcoming: await section("upcoming"),
     activity: (await Promise.all(summaries.map((p) => repository.activity(p.id, 10))))
       .flat()
+      .map((row) => sampleActivity(row, today))
       .sort((a, b) => b.occurredAt.localeCompare(a.occurredAt) || b.id.localeCompare(a.id))
       .slice(0, 10),
   };

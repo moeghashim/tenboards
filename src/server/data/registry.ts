@@ -98,6 +98,12 @@ export const readRegistry = [
         input: { projectId: "sample-operations", status },
       })),
       { name: "priority", input: { projectId: "sample-operations", priority: "high" } },
+      ...["2026-10-24T12:00:00Z", "2028-02-29T23:59:59Z", "2027-01-01T00:00:00Z"].flatMap((renderedAt) =>
+        ["sample-operations", "sample-docs"].map((projectId) => ({
+          name: `request-date/${projectId}/${renderedAt}`,
+          input: { projectId, renderedAt },
+        })),
+      ),
       { name: "due-sort", input: { projectId: "sample-operations", sort: "dueDate" } },
       { name: "title-sort", input: { projectId: "sample-docs", sort: "title" } },
       { name: "paged", input: { projectId: "sample-operations", offset: 10, limit: 10 } },

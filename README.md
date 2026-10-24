@@ -408,7 +408,7 @@ checks later request dates against an unchanged seed.
 
 Default, CRM, Finance and Analytics load through four typed GET reads. Customer/opportunity, financial account/card/transaction and analytics page/source/campaign records use normalized tables. KPI and chart measures use ordered typed metric points with display metadata; chart colors, geometry and placeholder controls remain local. No action writes to the DB. CRM month labels share the request reference; Finance statement dates retain UTC semantics.
 
-v0.6.1 removes the V1 payloads, queries, fixtures, seeds, range projectors and 26 V1-only parity scenarios. Migration `0014_remove_legacy.sql` drops 13 exclusive tables and deletes only V1 metric rows; shipped migrations remain intact. Apply `db:migrate` and `db:seed` when upgrading. After the Projects foundation, current parity is 29 reads / 202 scenarios. `node --experimental-strip-types scripts/auth-migration-check.ts` verifies fresh and populated upgrades, retained rows and repeat migrate/seed; `scripts/legacy-redirect-check.ts` checks all six aliases in demo and auth modes.
+v0.6.1 removes the V1 payloads, queries, fixtures, seeds, range projectors and 26 V1-only parity scenarios. Migration `0014_remove_legacy.sql` drops 13 exclusive tables and deletes only V1 metric rows; shipped migrations remain intact. Apply `db:migrate` and `db:seed` when upgrading. After the Projects foundation, current parity is 29 reads / 208 scenarios. `node --experimental-strip-types scripts/auth-migration-check.ts` verifies fresh and populated upgrades, retained rows and repeat migrate/seed; `scripts/legacy-redirect-check.ts` checks all six aliases in demo and auth modes.
 
 ### Operational dashboard reads (v0.4/007)
 
@@ -442,7 +442,7 @@ normal reduced-motion snapshots preserve deterministic signal geometry.
 The final source audit checks every canonical fixture owner and traverses runtime
 imports to reject client fixture dependencies. Chat's remaining tab counts and
 thread date now belong to the Chat read; migration `0011_blushing_siren.sql` follows
-the operational migration. The v0.6.1 registry retained 22 reads / 104 scenarios; the Projects foundation extends it to 29 reads / 202 scenarios.
+the operational migration. The v0.6.1 registry retained 22 reads / 104 scenarios; the Projects foundation extends it to 29 reads / 208 scenarios.
 Fresh Postgres 17 and an upgrade beginning with the actual layer 001 schema/seed
 both pass, including repeated seeds and deliberate parity failures.
 
@@ -512,8 +512,8 @@ Follow [docs/deploy.md](docs/deploy.md) for local rehearsal, your own Neon/Hyper
 
 ## Projects data foundation (v0.8 / 001)
 
-The additive Projects model is available to server consumers; project screens and navigation are not yet shipped in this layer. `0015_project_foundation.sql` preserves the legacy workspace and auth tables and backfills canonical, namespaced tasks plus project file/calendar links. Run `npm run db:migrate` and `npm run db:seed` for local upgrades. Demo and database reads share validated contracts, with 29 registered reads / 202 parity scenarios.
+The additive Projects model is available to server consumers; project screens and navigation are not yet shipped in this layer. `0015_project_foundation.sql` preserves the legacy workspace and auth tables and backfills canonical, namespaced tasks plus project file/calendar links. Run `npm run db:migrate` and `npm run db:seed` for local upgrades. Demo and database reads share validated contracts, with 29 registered reads / 208 parity scenarios.
 
-The original samples are Operations rollout (`sample-operations`), Documentation refresh (`sample-docs`) and the empty Research queue (`sample-empty`). Synthetic membership is display metadata, not an account or permission boundary. Both Kanban and ledger records remain traceable, including canceled tasks. Dates use the explicitly authored 2026 sample year; deadline metrics use the labeled 2026-06-20 reporting date. See [project data and migration details](docs/data.md).
+The original samples are Operations rollout (`sample-operations`), Documentation refresh (`sample-docs`) and the empty Research queue (`sample-empty`). Synthetic membership is display metadata, not an account or permission boundary. Both Kanban and ledger records remain traceable, including canceled tasks. Sample dates are projected from one stored anchor onto the request’s UTC day, identically in demo and DB modes. Both populated projects include overdue, today and upcoming work; most tasks have authored schedule spans. Adopter rows retain their actual dates. See [project data and migration details](docs/data.md).
 
 `node --experimental-strip-types scripts/project-check.ts` verifies mappings, scope, pagination, constraints, DB-only sentinels and populated/repeated upgrades against a local database whose name contains `_v08_`. Test ports can be isolated with `AUTH_TEST_PORT`, `WORKER_TEST_PORT`, `SECURITY_TEST_PORT` (reserves three consecutive ports), and `AUTH_SENTINEL_PORT`. `TEST_DATABASE_INFIX=v08` isolates temporary auth database names. These are test tooling settings, not runtime configuration.

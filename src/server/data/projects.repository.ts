@@ -5,12 +5,13 @@ import { files, folders } from "../db/fixtures/files.ts";
 import * as f from "../db/fixtures/projects.ts";
 import * as s from "../db/project-schema.ts";
 import * as w from "../db/workspace-schema.ts";
+import { sampleDayOffset, sampleTask, sampleTaskIds } from "./project-sample.ts";
 import {
   isOpen,
   type Member,
   type Metrics,
   type Project,
-  SAMPLE_DATE,
+  requestDate,
   type Task,
   type TaskInput,
   taskInput,
@@ -27,6 +28,11 @@ function required<T>(value: T | undefined): T {
 async function database() {
   return (await import("../db/client.server.ts")).getDatabase();
 }
+// Apply the same sample-only date projection before DB filtering, ordering and aggregation.
+function dueDate(today: string) {
+  const t = s.projectTasks;
+  return sql<string>`case when ${inArray(t.id, sampleTaskIds)} then (${t.dueDate}::date + ${sampleDayOffset(today)}::int) else ${t.dueDate} end`;
+}
 export const demoRepository = {
   async projects() {
     return structuredClone(f.projects).sort(order);
@@ -40,12 +46,19 @@ export const demoRepository = {
       .map((m) => ({ ...required(f.people.find((p) => p.id === m.personId)), role: m.role, position: m.position }))
       .sort(order);
   },
-  async metrics(projectId?: string) {
-    return taskMetrics(f.projectTasks.filter((t) => projectId === undefined || t.projectId === projectId));
+  async metrics(projectId?: string, today = requestDate()) {
+    return taskMetrics(
+      f.projectTasks
+        .filter((t) => projectId === undefined || t.projectId === projectId)
+        .map((t) => sampleTask(t, today)),
+      today,
+    );
   },
   async tasks(input: TaskInput) {
     const q = taskInput.parse(input);
+    const today = requestDate(q.renderedAt);
     const rows = f.projectTasks
+      .map((t) => sampleTask(t, today))
       .filter(
         (t) =>
           t.projectId === q.projectId &&
@@ -100,11 +113,14 @@ export const demoRepository = {
       calendars: links.length ? calendars : [],
     });
   },
-  async homeTasks(memberId: string, kind: "mine" | "upcoming") {
+  async homeTasks(memberId: string, kind: "mine" | "upcoming", today = requestDate()) {
     const rows =
       kind === "mine"
         ? f.projectTasks.filter((t) => t.assigneeId === memberId && isOpen(t)).sort(order)
-        : upcoming(f.projectTasks);
+        : upcoming(
+            f.projectTasks.map((t) => sampleTask(t, today)),
+            today,
+          );
     return rows.slice(0, 10).map((t) => ({ projectId: t.projectId, id: t.id }));
   },
   async activity(projectId: string, limit: number) {
@@ -143,7 +159,7 @@ export const dbRepository = {
       .orderBy(asc(s.projectMembers.position), asc(s.projectPeople.id))
       .limit(100);
   },
-  async metrics(projectId?: string): Promise<Metrics> {
+  async metrics(projectId?: string, today = requestDate()): Promise<Metrics> {
     const t = s.projectTasks;
     const [row] = await (await database())
       .select({
@@ -151,7 +167,7 @@ export const dbRepository = {
         completed: sql<number>`count(*) filter (where ${t.status} = 'done')`.mapWith(Number),
         canceled: sql<number>`count(*) filter (where ${t.status} = 'canceled')`.mapWith(Number),
         overdue:
-          sql<number>`count(*) filter (where ${t.status} not in ('done','canceled') and ${t.dueDate} < ${SAMPLE_DATE})`.mapWith(
+          sql<number>`count(*) filter (where ${t.status} not in ('done','canceled') and ${dueDate(today)} < ${today})`.mapWith(
             Number,
           ),
       })
@@ -165,6 +181,7 @@ export const dbRepository = {
   },
   async tasks(input: TaskInput): Promise<{ total: number; items: Task[] }> {
     const q = taskInput.parse(input),
+      today = requestDate(q.renderedAt),
       db = await database(),
       t = s.projectTasks;
     const escaped = q.query?.replace(/[\\%_]/g, "\\$&");
@@ -192,9 +209,11 @@ export const dbRepository = {
           ),
     );
     const [total] = await db.select({ value: count() }).from(t).where(where);
-    const sortColumn = { position: asc(t.position), dueDate: asc(t.dueDate), title: asc(sql`lower(${t.title})`) }[
-      q.sort
-    ];
+    const sortColumn = {
+      position: asc(t.position),
+      dueDate: asc(dueDate(today)),
+      title: asc(sql`lower(${t.title})`),
+    }[q.sort];
     const rows = await db
       .select({ task: t, assignee: s.projectPeople })
       .from(t)
@@ -218,7 +237,7 @@ export const dbRepository = {
     return {
       total: total.value,
       items: rows.map(({ task, assignee }) => ({
-        ...task,
+        ...sampleTask(task, today),
         assignee,
         labels: labels
           .filter((l) => l.taskId === task.id)
@@ -287,7 +306,7 @@ export const dbRepository = {
       : [];
     return { templates: rows.map(({ template: { position: _, ...t } }) => t), calendars };
   },
-  async homeTasks(memberId: string, kind: "mine" | "upcoming") {
+  async homeTasks(memberId: string, kind: "mine" | "upcoming", today = requestDate()) {
     const t = s.projectTasks;
     return (await database())
       .select({ projectId: t.projectId, id: t.id })
@@ -295,10 +314,10 @@ export const dbRepository = {
       .where(
         and(
           notInArray(t.status, ["done", "canceled"]),
-          kind === "mine" ? eq(t.assigneeId, memberId) : gte(t.dueDate, SAMPLE_DATE),
+          kind === "mine" ? eq(t.assigneeId, memberId) : gte(dueDate(today), today),
         ),
       )
-      .orderBy(kind === "mine" ? asc(t.position) : asc(t.dueDate), asc(t.id))
+      .orderBy(kind === "mine" ? asc(t.position) : asc(dueDate(today)), asc(t.id))
       .limit(10);
   },
   async activity(projectId: string, limit: number) {

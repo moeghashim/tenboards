@@ -99,7 +99,30 @@ try {
   assert.throws(() => inclusiveDuration("2026-06-20", "2026-06-19"));
   assert.throws(() => addCivilDays("2026-02-30", 1));
   const timeline = await demoProjectTimeline({ projectId: "sample-docs", renderedAt: "2026-06-20T12:00:00Z" });
-  assert.equal(timeline?.taskEvents.find((t) => t.id === "sample:review-checklist")?.end, "2026-06-25");
+  assert.equal(timeline?.taskEvents.find((t) => t.id === "sample:review-checklist")?.end, "2026-06-21");
+  for (const renderedAt of ["2026-10-24T12:00:00Z", "2028-02-29T23:59:59Z", "2027-01-01T00:00:00Z"]) {
+    const today = renderedAt.slice(0, 10);
+    for (const projectId of ["sample-operations", "sample-docs"]) {
+      const demo = await demoProjectTasks({ projectId, renderedAt });
+      const db = await dbProjectTasks({ projectId, renderedAt });
+      assert.deepEqual(demo, db);
+      assert.ok(demo);
+      const open = demo.items.filter((t) => !["done", "canceled"].includes(t.status));
+      assert.ok(
+        open.some((t) => t.dueDate === today),
+        "work due today",
+      );
+      assert.ok(
+        open.some((t) => t.dueDate && t.dueDate < today),
+        "overdue work",
+      );
+      assert.ok(
+        open.some((t) => t.dueDate && t.dueDate > today && t.dueDate <= addCivilDays(today, 7)),
+        "work this week",
+      );
+      assert.ok(demo.items.filter((t) => t.startDate).length >= demo.items.length * 0.8, "mostly scheduled");
+    }
+  }
   pass("scope, missing/empty, filters, pagination, canceled metrics, dates and calendar exclusive ends");
   await getDatabase().insert(projectTasks).values({
     id: "sentinel:v08",

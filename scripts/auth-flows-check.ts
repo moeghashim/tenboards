@@ -79,7 +79,11 @@ try {
       const moduleURL = "/src/lib/auth/client.ts";
       await (await import(moduleURL)).signOut();
     });
-    await page.waitForURL("**/auth/v2/login");
+    // The revoked-route guard may win the sign-out navigation race and retain
+    // the protected return path. Both routes must still end at local login.
+    await page.waitForURL((url) => url.origin === server.baseURL && url.pathname === "/auth/v2/login");
+    const signOutReturn = new URL(page.url()).searchParams.get("redirect");
+    assert.ok(signOutReturn === null || signOutReturn === "/dashboard/profile");
     assert.equal(await (await context.request.get(`${server.baseURL}/api/auth/get-session`)).json(), null);
     pass(`${variant} client sign-out invalidates session`);
     await visit(page, `${server.baseURL}/auth/${variant}/login?redirect=${encodeURIComponent(destination)}`);

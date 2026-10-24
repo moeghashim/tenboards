@@ -12,7 +12,8 @@ export const boundedId = z
   .max(120)
   .regex(/^[a-zA-Z0-9:_-]+$/);
 export const civilDate = z.iso.date();
-export const projectInput = z.object({ projectId: boundedId }).strict();
+export const requestDate = (renderedAt = new Date().toISOString()) => z.iso.datetime().parse(renderedAt).slice(0, 10);
+export const projectInput = z.object({ projectId: boundedId, renderedAt: z.iso.datetime().optional() }).strict();
 export const taskInput = projectInput.extend({
   id: boundedId.optional(),
   status: z.enum(taskStatuses).optional(),
@@ -71,7 +72,7 @@ export type Metrics = {
   overdue: number;
   progress: number;
 };
-export function taskMetrics(tasks: Pick<ProjectTask, "status" | "dueDate">[]): Metrics {
+export function taskMetrics(tasks: Pick<ProjectTask, "status" | "dueDate">[], today = SAMPLE_DATE): Metrics {
   const completed = tasks.filter((t) => t.status === "done").length;
   const canceled = tasks.filter((t) => t.status === "canceled").length;
   const open = tasks.filter(isOpen);
@@ -80,16 +81,16 @@ export function taskMetrics(tasks: Pick<ProjectTask, "status" | "dueDate">[]): M
     open: open.length,
     completed,
     canceled,
-    overdue: open.filter((t) => t.dueDate !== null && t.dueDate < SAMPLE_DATE).length,
+    overdue: open.filter((t) => t.dueDate !== null && t.dueDate < today).length,
     progress: tasks.length === canceled ? 0 : Math.round((100 * completed) / (tasks.length - canceled)),
   };
 }
 export function isOpen(task: { status: TaskStatus }) {
   return task.status !== "done" && task.status !== "canceled";
 }
-export function upcoming<T extends Pick<ProjectTask, "status" | "dueDate" | "id">>(tasks: T[]) {
+export function upcoming<T extends Pick<ProjectTask, "status" | "dueDate" | "id">>(tasks: T[], today = SAMPLE_DATE) {
   return tasks
-    .filter((t) => isOpen(t) && t.dueDate !== null && t.dueDate >= SAMPLE_DATE)
+    .filter((t) => isOpen(t) && t.dueDate !== null && t.dueDate >= today)
     .sort((a, b) => (a.dueDate ?? "").localeCompare(b.dueDate ?? "") || a.id.localeCompare(b.id));
 }
 // Civil arithmetic uses UTC calendar fields, never local elapsed hours across DST.

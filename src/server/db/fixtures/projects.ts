@@ -1,9 +1,11 @@
 import {
+  addCivilDays,
   DEFAULT_PROJECT,
   type Person,
   type Project,
   type ProjectTask,
   priorities,
+  SAMPLE_DATE,
   type TaskStatus,
 } from "../../data/projects.types.ts";
 import { files } from "./files.ts";
@@ -15,7 +17,7 @@ export const projects: Project[] = [
   {
     id: DEFAULT_PROJECT,
     name: "Operations rollout",
-    description: "A shared sample workspace for coordinating operational tooling and its rollout.",
+    description: "Coordinate operational tooling, review milestones and prepare the rollout.",
     status: "active",
     startDate: "2026-06-01",
     dueDate: "2026-07-06",
@@ -78,8 +80,8 @@ export const projectTasks: ProjectTask[] = [
       description: task.description,
       priority,
       position,
-      startDate: null,
-      endDate: null,
+      startDate: addCivilDays(mapping.dueDate, -3 - (position % 5)),
+      endDate: mapping.dueDate,
       commentCount: task.insights.find((i) => i.label === "Comments")?.count ?? 0,
       attachmentCount: task.insights.find((i) => i.label === "Attachments")?.count ?? 0,
       documentCount: task.insights.find((i) => i.label === "Documents")?.count ?? 0,
@@ -98,9 +100,9 @@ export const projectTasks: ProjectTask[] = [
       description: "",
       priority: priorities.find((p) => p === task.priority) ?? "medium",
       assigneeId: null,
-      dueDate: null,
-      startDate: null,
-      endDate: null,
+      dueDate: position % 23 === 22 ? null : addCivilDays(SAMPLE_DATE, (position % 21) - 6),
+      startDate: position % 23 === 22 ? null : addCivilDays(SAMPLE_DATE, (position % 21) - 10),
+      endDate: position % 23 === 22 ? null : addCivilDays(SAMPLE_DATE, (position % 21) - 6),
       position: board.length + position,
       commentCount: 0,
       attachmentCount: 0,
@@ -110,10 +112,11 @@ export const projectTasks: ProjectTask[] = [
   }),
   ...(
     [
-      ["setup-guide", "Verify the clean install guide", "in-progress", "2026-06-15", "2026-06-23", "board:maya"],
+      ["setup-guide", "Verify the clean install guide", "in-progress", "2026-06-15", "2026-06-19", "board:maya"],
       ["route-map", "Map the starter routes", "done", "2026-06-15", "2026-06-18", "board:jordan"],
-      ["review-checklist", "Review the publishing checklist", "todo", "2026-06-24", "2026-06-24", "board:jordan"],
+      ["review-checklist", "Review the publishing checklist", "todo", "2026-06-20", "2026-06-20", "board:jordan"],
       ["glossary", "Draft a short glossary", "backlog", null, null, null],
+      ["examples", "Refresh the usage examples", "todo", "2026-06-20", "2026-06-23", "board:maya"],
     ] as const
   ).map(([sourceId, title, status, startDate, endDate, assigneeId], position) => ({
     id: `sample:${sourceId}`,
@@ -208,7 +211,7 @@ export const activity = [
     fileId: null,
     kind: "milestone" as const,
     occurredAt: "2026-06-20T09:00:00Z",
-    detail: "Reviewed the rollout sequence with the sample team.",
+    detail: "Reviewed the rollout sequence with the team.",
     position: 0,
   },
   {
