@@ -1,0 +1,6 @@
+
+> tenboards@0.6.2 generate-routes
+> tsr generate
+
+(node:51902) Warning: Accessing non-existent property 'replaceRouteChunk' of module exports inside circular dependency
+(Use `node --trace-warnings ...` to show where the warning was created)

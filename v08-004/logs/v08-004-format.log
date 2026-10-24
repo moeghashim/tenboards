@@ -1,0 +1,162 @@
+scripts/workspace-ui-check.ts:27:23 lint/style/useTemplate  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  i Template literals are preferred over string concatenation.
+  
+    25 │         if (m.type() === "error") errors.push(m.text());
+    26 │       });
+  > 27 │       await page.goto(base + "/dashboard/home", { waitUntil: "networkidle" });
+       │                       ^^^^^^^^^^^^^^^^^^^^^^^^
+    28 │       await page.getByRole("heading", { name: /Good morning|Good afternoon|Good evening/ }).waitFor();
+    29 │       const home = await demoWorkspaceHome({ renderedAt: new Date().toISOString() });
+  
+  i Template literals are easier to read than a chain of + operators and quotes, and they avoid mistakes with spaces and escaped quotes.
+  
+  i Unsafe fix: Use a template literal.
+  
+     25  25 │           if (m.type() === "error") errors.push(m.text());
+     26  26 │         });
+     27     │ - ······await·page.goto(base·+·"/dashboard/home",·{·waitUntil:·"networkidle"·});
+         27 │ + ······await·page.goto(`${base}/dashboard/home`,·{·waitUntil:·"networkidle"·});
+     28  28 │         await page.getByRole("heading", { name: /Good morning|Good afternoon|Good evening/ }).waitFor();
+     29  29 │         const home = await demoWorkspaceHome({ renderedAt: new Date().toISOString() });
+  
+
+scripts/workspace-ui-check.ts:49:23 lint/style/useTemplate  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  i Template literals are preferred over string concatenation.
+  
+    47 │       await page.waitForURL(/\/projects\/sample-.*\/list/);
+    48 │       await page.getByRole("heading", { name: "Operations rollout", exact: true }).waitFor();
+  > 49 │       await page.goto(base + "/dashboard/projects", { waitUntil: "networkidle" });
+       │                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    50 │       await page.getByRole("heading", { name: "Projects", exact: true }).waitFor();
+    51 │       assert.equal(await page.locator('main a[href$="/overview"]').count(), 3);
+  
+  i Template literals are easier to read than a chain of + operators and quotes, and they avoid mistakes with spaces and escaped quotes.
+  
+  i Unsafe fix: Use a template literal.
+  
+     47  47 │         await page.waitForURL(/\/projects\/sample-.*\/list/);
+     48  48 │         await page.getByRole("heading", { name: "Operations rollout", exact: true }).waitFor();
+     49     │ - ······await·page.goto(base·+·"/dashboard/projects",·{·waitUntil:·"networkidle"·});
+         49 │ + ······await·page.goto(`${base}/dashboard/projects`,·{·waitUntil:·"networkidle"·});
+     50  50 │         await page.getByRole("heading", { name: "Projects", exact: true }).waitFor();
+     51  51 │         assert.equal(await page.locator('main a[href$="/overview"]').count(), 3);
+  
+
+scripts/workspace-ui-check.ts:59:23 lint/style/useTemplate  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  i Template literals are preferred over string concatenation.
+  
+    57 │       await page.keyboard.press("Enter");
+    58 │       await page.waitForURL(/sample-docs\/overview/);
+  > 59 │       await page.goto(base + "/dashboard/projects", { waitUntil: "networkidle" });
+       │                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    60 │       await page.getByRole("combobox", { name: "Project status", exact: true }).click();
+    61 │       await page.getByRole("option", { name: "Planning", exact: true }).click();
+  
+  i Template literals are easier to read than a chain of + operators and quotes, and they avoid mistakes with spaces and escaped quotes.
+  
+  i Unsafe fix: Use a template literal.
+  
+     57  57 │         await page.keyboard.press("Enter");
+     58  58 │         await page.waitForURL(/sample-docs\/overview/);
+     59     │ - ······await·page.goto(base·+·"/dashboard/projects",·{·waitUntil:·"networkidle"·});
+         59 │ + ······await·page.goto(`${base}/dashboard/projects`,·{·waitUntil:·"networkidle"·});
+     60  60 │         await page.getByRole("combobox", { name: "Project status", exact: true }).click();
+     61  61 │         await page.getByRole("option", { name: "Planning", exact: true }).click();
+  
+
+scripts/workspace-ui-check.ts:72:23 lint/style/useTemplate  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  i Template literals are preferred over string concatenation.
+  
+    70 │       await page.waitForURL(/sample-empty\/overview/);
+    71 │       await page.getByText("No upcoming work in Research queue.", { exact: true }).waitFor();
+  > 72 │       await page.goto(base + "/dashboard/home", { waitUntil: "networkidle" });
+       │                       ^^^^^^^^^^^^^^^^^^^^^^^^
+    73 │       assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), true);
+    74 │       await page.screenshot({ path: `${out}/home-${theme}-${size}.png`, fullPage: true });
+  
+  i Template literals are easier to read than a chain of + operators and quotes, and they avoid mistakes with spaces and escaped quotes.
+  
+  i Unsafe fix: Use a template literal.
+  
+     70  70 │         await page.waitForURL(/sample-empty\/overview/);
+     71  71 │         await page.getByText("No upcoming work in Research queue.", { exact: true }).waitFor();
+     72     │ - ······await·page.goto(base·+·"/dashboard/home",·{·waitUntil:·"networkidle"·});
+         72 │ + ······await·page.goto(`${base}/dashboard/home`,·{·waitUntil:·"networkidle"·});
+     73  73 │         assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), true);
+     74  74 │         await page.screenshot({ path: `${out}/home-${theme}-${size}.png`, fullPage: true });
+  
+
+scripts/workspace-ui-check.ts:91:18 lint/style/useTemplate  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  i Template literals are preferred over string concatenation.
+  
+    89 │       errors: string[] = [];
+    90 │     p.on("pageerror", (e) => errors.push(e.message));
+  > 91 │     await p.goto(base + "/dashboard/home", { waitUntil: "networkidle" });
+       │                  ^^^^^^^^^^^^^^^^^^^^^^^^
+    92 │     await p.reload({ waitUntil: "networkidle" });
+    93 │     await p.getByRole("heading", { name: /Good morning|Good afternoon|Good evening/ }).waitFor();
+  
+  i Template literals are easier to read than a chain of + operators and quotes, and they avoid mistakes with spaces and escaped quotes.
+  
+  i Unsafe fix: Use a template literal.
+  
+     89  89 │         errors: string[] = [];
+     90  90 │       p.on("pageerror", (e) => errors.push(e.message));
+     91     │ - ····await·p.goto(base·+·"/dashboard/home",·{·waitUntil:·"networkidle"·});
+         91 │ + ····await·p.goto(`${base}/dashboard/home`,·{·waitUntil:·"networkidle"·});
+     92  92 │       await p.reload({ waitUntil: "networkidle" });
+     93  93 │       await p.getByRole("heading", { name: /Good morning|Good afternoon|Good evening/ }).waitFor();
+  
+
+scripts/workspace-ui-check.ts:36:80 lint/performance/useDomNodeTextContent  FIXABLE  ━━━━━━━━━━━━━━━
+
+  ! innerText is not recommended for reading DOM node text.
+  
+    34 │         ["Active projects", home.activeProjects],
+    35 │       ] as const) {
+  > 36 │         assert.ok((await page.getByRole("group", { name: label, exact: true }).innerText()).includes(String(count)));
+       │                                                                                ^^^^^^^^^
+    37 │       }
+    38 │       await page.getByText("Jordan Lee · sample member", { exact: true }).waitFor();
+  
+  i innerText depends on rendered layout and CSS, so it can be slower and produce different results from the DOM tree's text content.
+  
+  i Use textContent when you want the node's text without rendered-text behavior.
+  
+  i Unsafe fix: Use textContent instead.
+  
+     34  34 │           ["Active projects", home.activeProjects],
+     35  35 │         ] as const) {
+     36     │ - ········assert.ok((await·page.getByRole("group",·{·name:·label,·exact:·true·}).innerText()).includes(String(count)));
+         36 │ + ········assert.ok((await·page.getByRole("group",·{·name:·label,·exact:·true·}).textContent()).includes(String(count)));
+     37  37 │         }
+     38  38 │         await page.getByText("Jordan Lee · sample member", { exact: true }).waitFor();
+  
+
+src/routes/(main)/dashboard/home/index.tsx:93:45 lint/style/noNestedTernary ━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Do not nest ternary expressions.
+  
+    91 │   const home = Route.useLoaderData(),
+    92 │     hour = new Date(home.renderedAt).getUTCHours(),
+  > 93 │     greeting = hour < 12 ? "Good morning" : hour < 18 ? "Good afternoon" : "Good evening";
+       │                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    94 │   const member = home.projects.flatMap((p) => p.members).find((m) => m.id === home.sampleMember);
+    95 │   return (
+  
+  i Nesting ternary expressions can make code more difficult to understand.
+  
+  i Convert nested ternary expression into if-else statements or separate the conditions to make the logic easier to understand.
+  
+
+Skipped 12 suggested fixes.
+If you wish to apply the suggested (unsafe) fixes, use the command biome check --write --unsafe
+
+Checked 12 files in 943ms. Fixed 10 files.
+Found 2 warnings.
+Found 5 infos.
