@@ -1,0 +1,374 @@
+{
+  "catalogCount": 38,
+  "routes": [
+    {
+      "route": "/chat",
+      "path": "/chat"
+    },
+    {
+      "route": "/dashboard",
+      "path": "/dashboard",
+      "ready": "Total Revenue"
+    },
+    {
+      "route": "/mail",
+      "path": "/mail"
+    },
+    {
+      "route": "/unauthorized",
+      "path": "/unauthorized"
+    },
+    {
+      "route": "/",
+      "path": "/",
+      "ready": "Total Revenue"
+    },
+    {
+      "route": "/auth/v2",
+      "path": "/auth/v2"
+    },
+    {
+      "route": "/dashboard/academy",
+      "path": "/dashboard/academy"
+    },
+    {
+      "route": "/dashboard/analytics",
+      "path": "/dashboard/analytics"
+    },
+    {
+      "route": "/dashboard/calendar",
+      "path": "/dashboard/calendar"
+    },
+    {
+      "route": "/dashboard/chat",
+      "path": "/dashboard/chat"
+    },
+    {
+      "route": "/dashboard/coming-soon",
+      "path": "/dashboard/coming-soon"
+    },
+    {
+      "route": "/dashboard/crm",
+      "path": "/dashboard/crm"
+    },
+    {
+      "route": "/dashboard/default",
+      "path": "/dashboard/default",
+      "ready": "Total Revenue"
+    },
+    {
+      "route": "/dashboard/ecommerce",
+      "path": "/dashboard/ecommerce"
+    },
+    {
+      "route": "/dashboard/file-manager",
+      "path": "/dashboard/file-manager"
+    },
+    {
+      "route": "/dashboard/finance",
+      "path": "/dashboard/finance"
+    },
+    {
+      "route": "/dashboard/infrastructure",
+      "path": "/dashboard/infrastructure"
+    },
+    {
+      "route": "/dashboard/invoice",
+      "path": "/dashboard/invoice"
+    },
+    {
+      "route": "/dashboard/kanban",
+      "path": "/dashboard/kanban"
+    },
+    {
+      "route": "/dashboard/logistics",
+      "path": "/dashboard/logistics"
+    },
+    {
+      "route": "/dashboard/mail",
+      "path": "/dashboard/mail"
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "path": "/dashboard/patient-monitoring"
+    },
+    {
+      "route": "/dashboard/productivity",
+      "path": "/dashboard/productivity"
+    },
+    {
+      "route": "/dashboard/products",
+      "path": "/dashboard/products"
+    },
+    {
+      "route": "/dashboard/profile",
+      "path": "/dashboard/profile"
+    },
+    {
+      "route": "/dashboard/roles",
+      "path": "/dashboard/roles"
+    },
+    {
+      "route": "/dashboard/tasks",
+      "path": "/dashboard/tasks"
+    },
+    {
+      "route": "/dashboard/users",
+      "path": "/dashboard/users"
+    },
+    {
+      "route": "/dashboard/$",
+      "path": "/dashboard/capture-not-found"
+    },
+    {
+      "route": "/dashboard/",
+      "path": "/dashboard/",
+      "ready": "Total Revenue"
+    },
+    {
+      "route": "/auth/v1/login",
+      "path": "/auth/v1/login"
+    },
+    {
+      "route": "/auth/v1/register",
+      "path": "/auth/v1/register"
+    },
+    {
+      "route": "/auth/v2/login",
+      "path": "/auth/v2/login"
+    },
+    {
+      "route": "/auth/v2/register",
+      "path": "/auth/v2/register"
+    },
+    {
+      "route": "/dashboard/analytics-v1",
+      "path": "/dashboard/analytics-v1"
+    },
+    {
+      "route": "/dashboard/crm-v1",
+      "path": "/dashboard/crm-v1"
+    },
+    {
+      "route": "/dashboard/default-v1",
+      "path": "/dashboard/default-v1"
+    },
+    {
+      "route": "/dashboard/finance-v1",
+      "path": "/dashboard/finance-v1"
+    }
+  ],
+  "expectedPerEnvironment": 608,
+  "expectedTotal": 1216,
+  "actualTotal": 1216,
+  "pass": true,
+  "reports": [
+    {
+      "environment": "dev",
+      "preset": "default",
+      "baseURL": "http://localhost:3000/",
+      "file": "dev/default/report.json",
+      "expected": 152,
+      "actual": 152,
+      "pass": true,
+      "missing": [],
+      "unexpected": [],
+      "duplicates": [],
+      "originalErrors": [
+        {
+          "route": "/dashboard/logistics",
+          "theme": "light",
+          "viewport": "desktop",
+          "file": "_dashboard_logistics-light-desktop.png",
+          "controlsFile": null,
+          "phase": "direct",
+          "interactionNotes": [],
+          "expectedDiagnostics": [],
+          "errors": [
+            "request: https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json net::ERR_TIMED_OUT",
+            "console: Failed to load resource: net::ERR_TIMED_OUT",
+            "console: %cLOG%c %cGo to Source: http://localhost:3000/__tsd/open-source?source=%2Fsrc%2Froutes%2F(main)%2Fdashboard%2Flogistics%2F-components%2Fshipment-route-map.tsx%3A160%3A9%c \n →  color:#A0A color:#FFF color:#55F color:#FFF TypeError: Failed to fetch\n    at loadMap (http://localhost:3000/src/routes/(main)/dashboard/logistics/-components/shipment-route-map.tsx:83:28)\n    at http://localhost:3000/src/routes/(main)/dashboard/logistics/-components/shipment-route-map.tsx:104:8\n    at Object.react_stack_bottom_frame (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=68ee8cc4:14178:13)\n    at runWithFiberInDEV (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=68ee8cc4:944:66)\n    at commitHookEffectListMount (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=68ee8cc4:6901:153)\n    at commitHookPassiveMountEffects (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=68ee8cc4:6936:55)\n    at reconnectPassiveEffects (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=68ee8cc4:8401:6)\n    at recursivelyTraverseReconnectPassiveEffects (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=68ee8cc4:8388:5)\n    at reconnectPassiveEffects (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=68ee8cc4:8413:14)\n    at recursivelyTraverseReconnectPassiveEffects (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=68ee8cc4:8388:5)",
+            "request: https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json net::ERR_TIMED_OUT",
+            "console: Failed to load resource: net::ERR_TIMED_OUT",
+            "console: %cLOG%c %cGo to Source: http://localhost:3000/__tsd/open-source?source=%2Fsrc%2Froutes%2F(main)%2Fdashboard%2Flogistics%2F-components%2Fshipment-route-map.tsx%3A160%3A9%c \n →  color:#A0A color:#FFF color:#55F color:#FFF TypeError: Failed to fetch\n    at loadMap (http://localhost:3000/src/routes/(main)/dashboard/logistics/-components/shipment-route-map.tsx:83:28)\n    at http://localhost:3000/src/routes/(main)/dashboard/logistics/-components/shipment-route-map.tsx:104:8\n    at Object.react_stack_bottom_frame (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=68ee8cc4:14178:13)\n    at runWithFiberInDEV (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=68ee8cc4:944:66)\n    at commitHookEffectListMount (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=68ee8cc4:6901:153)\n    at commitHookPassiveMountEffects (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=68ee8cc4:6936:55)\n    at reconnectPassiveEffects (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=68ee8cc4:8401:6)\n    at recursivelyTraverseReconnectPassiveEffects (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=68ee8cc4:8388:5)\n    at reconnectPassiveEffects (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=68ee8cc4:8413:14)\n    at recursivelyTraverseReconnectPassiveEffects (http://localhost:3000/node_modules/.vite/deps/react-dom_client.js?v=68ee8cc4:8388:5)"
+          ]
+        }
+      ],
+      "retries": [
+        {
+          "report": "retries/dev-default/report.json",
+          "cases": 4,
+          "errors": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "environment": "dev",
+      "preset": "graphite",
+      "baseURL": "http://localhost:3000/",
+      "file": "dev/graphite/report.json",
+      "expected": 152,
+      "actual": 152,
+      "pass": true,
+      "missing": [],
+      "unexpected": [],
+      "duplicates": [],
+      "originalErrors": [],
+      "retries": [],
+      "errors": []
+    },
+    {
+      "environment": "dev",
+      "preset": "pine",
+      "baseURL": "http://localhost:3000/",
+      "file": "dev/pine/report.json",
+      "expected": 152,
+      "actual": 152,
+      "pass": true,
+      "missing": [],
+      "unexpected": [],
+      "duplicates": [],
+      "originalErrors": [],
+      "retries": [],
+      "errors": []
+    },
+    {
+      "environment": "dev",
+      "preset": "iris",
+      "baseURL": "http://localhost:3000/",
+      "file": "dev/iris/report.json",
+      "expected": 152,
+      "actual": 152,
+      "pass": true,
+      "missing": [],
+      "unexpected": [],
+      "duplicates": [],
+      "originalErrors": [
+        {
+          "route": "/dashboard/mail",
+          "theme": "light",
+          "viewport": "mobile",
+          "file": "_dashboard_mail-light-mobile.png",
+          "controlsFile": null,
+          "phase": "direct",
+          "interactionNotes": [],
+          "expectedDiagnostics": [],
+          "errors": [
+            "page.waitForLoadState: Timeout 30000ms exceeded."
+          ]
+        }
+      ],
+      "retries": [
+        {
+          "report": "retries/dev-iris/report.json",
+          "cases": 4,
+          "errors": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "environment": "workers",
+      "preset": "default",
+      "baseURL": "https://b890f943-tenboards-preview.mohanadgh.workers.dev/",
+      "file": "workers/default/report.json",
+      "expected": 152,
+      "actual": 152,
+      "pass": true,
+      "missing": [],
+      "unexpected": [],
+      "duplicates": [],
+      "originalErrors": [
+        {
+          "route": "/dashboard/finance",
+          "theme": "light",
+          "viewport": "desktop",
+          "file": "_dashboard_finance-light-desktop.png",
+          "controlsFile": null,
+          "phase": "direct",
+          "interactionNotes": [],
+          "expectedDiagnostics": [],
+          "errors": [
+            "request: https://b890f943-tenboards-preview.mohanadgh.workers.dev/dashboard/finance net::ERR_TIMED_OUT",
+            "page.goto: net::ERR_TIMED_OUT at https://b890f943-tenboards-preview.mohanadgh.workers.dev/dashboard/finance\nCall log:\n\u001b[2m  - navigating to \"https://b890f943-tenboards-preview.mohanadgh.workers.dev/dashboard/finance\", waiting until \"domcontentloaded\"\u001b[22m\n"
+          ]
+        }
+      ],
+      "retries": [
+        {
+          "report": "retries/workers-default/report.json",
+          "cases": 4,
+          "errors": []
+        }
+      ],
+      "errors": []
+    },
+    {
+      "environment": "workers",
+      "preset": "graphite",
+      "baseURL": "https://b890f943-tenboards-preview.mohanadgh.workers.dev/",
+      "file": "workers/graphite/report.json",
+      "expected": 152,
+      "actual": 152,
+      "pass": true,
+      "missing": [],
+      "unexpected": [],
+      "duplicates": [],
+      "originalErrors": [],
+      "retries": [],
+      "errors": []
+    },
+    {
+      "environment": "workers",
+      "preset": "pine",
+      "baseURL": "https://b890f943-tenboards-preview.mohanadgh.workers.dev/",
+      "file": "workers/pine/report.json",
+      "expected": 152,
+      "actual": 152,
+      "pass": true,
+      "missing": [],
+      "unexpected": [],
+      "duplicates": [],
+      "originalErrors": [],
+      "retries": [],
+      "errors": []
+    },
+    {
+      "environment": "workers",
+      "preset": "iris",
+      "baseURL": "https://b890f943-tenboards-preview.mohanadgh.workers.dev/",
+      "file": "workers/iris/report.json",
+      "expected": 152,
+      "actual": 152,
+      "pass": true,
+      "missing": [],
+      "unexpected": [],
+      "duplicates": [],
+      "originalErrors": [
+        {
+          "route": "/chat",
+          "theme": "dark",
+          "viewport": "mobile",
+          "file": "_chat-dark-mobile.png",
+          "controlsFile": null,
+          "phase": "direct",
+          "interactionNotes": [],
+          "expectedDiagnostics": [],
+          "errors": [
+            "request: https://b890f943-tenboards-preview.mohanadgh.workers.dev/chat net::ERR_TIMED_OUT",
+            "page.goto: net::ERR_TIMED_OUT at https://b890f943-tenboards-preview.mohanadgh.workers.dev/chat\nCall log:\n\u001b[2m  - navigating to \"https://b890f943-tenboards-preview.mohanadgh.workers.dev/chat\", waiting until \"domcontentloaded\"\u001b[22m\n"
+          ]
+        }
+      ],
+      "retries": [
+        {
+          "report": "retries/workers-iris/report.json",
+          "cases": 4,
+          "errors": []
+        }
+      ],
+      "errors": []
+    }
+  ]
+}

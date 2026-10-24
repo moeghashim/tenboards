@@ -1,0 +1,8 @@
+
+> tenboards@0.5.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url https://b890f943-tenboards-preview.mohanadgh.workers.dev --routes /dashboard/finance --preset default --reference 2026-10-24T12:00:00.000Z --mask-live-clocks --output screenshots/v06-003/matrix/retries/workers-default
+
+PASS /dashboard/finance light/desktop direct
+PASS /dashboard/finance light/mobile direct
+PASS /dashboard/finance dark/desktop direct
+PASS /dashboard/finance dark/mobile direct

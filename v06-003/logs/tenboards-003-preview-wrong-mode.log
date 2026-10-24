@@ -1,0 +1,10 @@
+
+> tenboards@0.5.0 deploy:check
+> node --experimental-strip-types scripts/deploy-check.ts https://b890f943-tenboards-preview.mohanadgh.workers.dev
+
+PASS public /auth/v1/login
+PASS public /auth/v1/register
+PASS public /auth/v2/login
+PASS public /auth/v2/register
+PASS public /unauthorized
+Signed-out dashboard must redirect; auth may be disabled.

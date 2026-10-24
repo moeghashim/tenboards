@@ -1,0 +1,55 @@
+{
+  "pass": true,
+  "historicalCases": 256,
+  "authenticatedCases": 96,
+  "reports": [
+    {
+      "report": "hydration/dev/chicago/report.json",
+      "cases": 64,
+      "originalErrors": [],
+      "retryReports": [],
+      "errors": [],
+      "pass": true
+    },
+    {
+      "report": "hydration/dev/kiritimati/report.json",
+      "cases": 64,
+      "originalErrors": [
+        {
+          "route": "/auth/v2/login",
+          "theme": "light",
+          "viewport": "mobile",
+          "file": "_auth_v2_login-light-mobile.png",
+          "controlsFile": null,
+          "phase": "direct",
+          "interactionNotes": [],
+          "expectedDiagnostics": [],
+          "errors": [
+            "page.evaluate: TypeError: Cannot read properties of null (reading 'textContent')\n    at eval (eval at evaluate (:370:30), <anonymous>:2:54)\n    at UtilityScript.evaluate (<anonymous>:372:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"
+          ]
+        }
+      ],
+      "retryReports": [
+        "hydration/retries/dev-kiritimati/report.json"
+      ],
+      "errors": [],
+      "pass": true
+    },
+    {
+      "report": "hydration/workers/chicago/report.json",
+      "cases": 64,
+      "originalErrors": [],
+      "retryReports": [],
+      "errors": [],
+      "pass": true
+    },
+    {
+      "report": "hydration/workers/kiritimati/report.json",
+      "cases": 64,
+      "originalErrors": [],
+      "retryReports": [],
+      "errors": [],
+      "pass": true
+    }
+  ]
+}

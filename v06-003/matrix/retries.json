@@ -1,0 +1,22 @@
+[
+  {
+    "environment": "dev",
+    "preset": "default",
+    "report": "retries/dev-default/report.json"
+  },
+  {
+    "environment": "workers",
+    "preset": "default",
+    "report": "retries/workers-default/report.json"
+  },
+  {
+    "environment": "workers",
+    "preset": "iris",
+    "report": "retries/workers-iris/report.json"
+  },
+  {
+    "environment": "dev",
+    "preset": "iris",
+    "report": "retries/dev-iris/report.json"
+  }
+]

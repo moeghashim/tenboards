@@ -1,0 +1,12 @@
+
+> tenboards@0.5.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://localhost:3000 --routes /auth/v2/login --reload --hydration-delay-ms 1800 --mask-live-clocks --timezone Pacific/Kiritimati --output screenshots/v06-003/hydration/retries/dev-kiritimati
+
+PASS /auth/v2/login light/desktop direct
+PASS /auth/v2/login light/desktop refresh
+PASS /auth/v2/login light/mobile direct
+PASS /auth/v2/login light/mobile refresh
+PASS /auth/v2/login dark/desktop direct
+PASS /auth/v2/login dark/desktop refresh
+PASS /auth/v2/login dark/mobile direct
+PASS /auth/v2/login dark/mobile refresh

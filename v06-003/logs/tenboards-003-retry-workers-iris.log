@@ -1,0 +1,8 @@
+
+> tenboards@0.5.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url https://b890f943-tenboards-preview.mohanadgh.workers.dev --routes /chat --preset iris --reference 2026-10-24T12:00:00.000Z --mask-live-clocks --output screenshots/v06-003/matrix/retries/workers-iris
+
+PASS /chat light/desktop direct
+PASS /chat light/mobile direct
+PASS /chat dark/desktop direct
+PASS /chat dark/mobile direct

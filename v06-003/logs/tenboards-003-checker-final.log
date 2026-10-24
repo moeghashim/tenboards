@@ -1,0 +1,10 @@
+PASS invalid/credential-bearing deployment targets rejected
+PASS deployment checker auth: bounded GET-only requests, no cookie replay or body leakage
+PASS deployment checker demo: bounded GET-only requests, no cookie replay or body leakage
+PASS deployment checker wrong-mode: bounded GET-only requests, no cookie replay or body leakage
+PASS deployment checker unsafe-redirect: bounded GET-only requests, no cookie replay or body leakage
+PASS deployment checker invalid-session: bounded GET-only requests, no cookie replay or body leakage
+PASS deployment checker bad-cache: bounded GET-only requests, no cookie replay or body leakage
+PASS deployment checker public-redirect: bounded GET-only requests, no cookie replay or body leakage
+PASS deployment checker server-error: bounded GET-only requests, no cookie replay or body leakage
+PASS deployment checker timeout: bounded GET-only requests, no cookie replay or body leakage
