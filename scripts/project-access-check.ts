@@ -43,7 +43,7 @@ try {
   await page.getByRole("heading", { name: "Documentation refresh", exact: true }).waitFor();
   const tasks = await callRpc(page, file, "loadProjectTasks", "GET", { projectId: "sample-docs" });
   assert.equal(tasks.ok, true);
-  assert.equal(tasks.result.total, 4);
+  assert.equal(tasks.result.total, 5);
   assert.ok(tasks.result.items.every((t: { projectId: string }) => t.projectId === "sample-docs"));
   assert.match(tasks.cacheControl, /private.*no-store/);
   for (const input of [{ projectId: "sample-docs", id: "board:tender-workflow-map" }, { projectId: "sample-empty" }]) {
