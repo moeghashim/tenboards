@@ -7,27 +7,37 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Field, FieldContent, FieldError, FieldGroup, FieldLabel } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { toast } from "@/components/ui/toast";
+import { authClient } from "@/lib/auth/client";
 
-const formSchema = z.object({
-  email: z.email({ message: "Please enter a valid email address." }),
-  password: z.string().min(6, { message: "Password must be at least 6 characters." }),
-  remember: z.boolean().optional(),
-});
+import { AuthFeedback, useAuthFlow } from "./auth-flow";
 
-const onSubmit = (data: z.infer<typeof formSchema>) => {
-  toast.add({
-    title: "You submitted the following values",
-    description: (
-      <span className="bg-muted text-foreground mt-2 block max-w-full overflow-x-auto rounded-md p-3 text-xs">
-        <code className="break-all whitespace-pre-wrap">{JSON.stringify(data, null, 2)}</code>
-      </span>
-    ),
+const formSchema = (real: boolean) =>
+  z.object({
+    email: z.email({ message: "Please enter a valid email address." }),
+    password: z
+      .string()
+      .min(real ? 1 : 6, { message: real ? "Enter your password." : "Password must be at least 6 characters." }),
+    remember: z.boolean().optional(),
   });
-};
 
 export function LoginForm() {
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const { auth, pending, submit } = useAuthFlow();
+  const real = auth.mode === "auth";
+  const onSubmit = async (data: z.infer<ReturnType<typeof formSchema>>) => {
+    if (!real) {
+      toast.add({ title: "Demo only", description: "This demonstration creates no account or session." });
+      return;
+    }
+    await submit(() =>
+      authClient.signIn.email({
+        email: data.email,
+        password: data.password,
+        rememberMe: data.remember ?? false,
+      }),
+    );
+  };
+  const form = useForm<z.infer<ReturnType<typeof formSchema>>>({
+    resolver: zodResolver(formSchema(real)),
     defaultValues: {
       email: "",
       password: "",
@@ -90,7 +100,7 @@ export function LoginForm() {
               />
               <FieldContent>
                 <FieldLabel htmlFor="login-remember" className="font-normal">
-                  Remember me for 30 days
+                  {real ? "Remember me" : "Remember me for 30 days"}
                 </FieldLabel>
                 {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
               </FieldContent>
@@ -98,8 +108,9 @@ export function LoginForm() {
           )}
         />
       </FieldGroup>
-      <Button className="w-full" type="submit">
-        Login
+      <AuthFeedback />
+      <Button className="w-full" type="submit" disabled={pending}>
+        {pending ? "Signing in…" : "Login"}
       </Button>
     </form>
   );

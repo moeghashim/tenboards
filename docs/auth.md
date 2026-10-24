@@ -6,7 +6,7 @@ Zero configuration remains the first-run path: `npm install && npm run dev` need
 
 The foundation uses **better-auth 1.7.12**, its bundled `better-auth/adapters/drizzle` export, the existing lazy postgres.js client and explicit `auth_user`, `auth_session`, `auth_account`, `auth_verification` tables. Migration `0012_watery_sugar_man.sql` appends to the unchanged v0.4 journal. There is no startup migration/seed or seeded auth identity. The v0.4 directory, roles and employee Profile are sample data, not authentication or authorization records.
 
-This initial foundation layer provides HTTP/session/configuration boundaries. Real forms, app guards and account UI are subsequent layers; it is not yet a secured application. Do not expose auth-on intermediate layers publicly.
+Layers 001–002 provide HTTP/session/configuration boundaries and real V1/V2 credential/provider entry flows. App guards and account UI are subsequent layers; do not expose auth-on intermediate layers publicly.
 
 ## Local setup
 
@@ -64,3 +64,15 @@ The generic cookie RPC is now limited to validated preference names/values, with
 Run `npm run data:parity` with the local URL: all 22 v0.4 reads and 130 scenarios remain unchanged. Run `npm run db:generate` to check drift; apply/repeat migrations explicitly. If configuration fails, check the source, private secret and exact origin. If auth storage fails, check Docker availability and migrations. Never fix a DB error by silently selecting demo while a secret is set.
 
 Official references checked against installed APIs: [TanStack integration](https://www.better-auth.com/docs/integrations/tanstack), [Drizzle adapter](https://www.better-auth.com/docs/adapters/drizzle), [cookies](https://www.better-auth.com/docs/concepts/cookies), [sessions](https://www.better-auth.com/docs/concepts/session-management), [rate limits](https://www.better-auth.com/docs/concepts/rate-limit), [Start server routes](https://tanstack.com/start/latest/docs/framework/react/guide/server-routes) and [middleware](https://tanstack.com/start/latest/docs/framework/react/guide/middleware). The adapter docs show a separate package; the installed bundled export supports this approved dependency boundary.
+
+## Sign in and return destinations
+
+Both V1 and V2 share the credential forms. Auth-on registration asks for a trimmed name (1–100 characters), email, password (8–128 characters) and matching confirmation. Demo retains the original field set and gives a safe Demo only acknowledgement; it never echoes passwords, submits to auth endpoints or creates a session. Google and GitHub remain decorative in demo; in auth mode only complete configured pairs appear, with no empty provider divider.
+
+Login's initially unchecked **Remember me** explicitly selects a session-only cookie. Checked login, signup and OAuth use the library's persistent seven-day policy described above. Failed submissions retain non-secret input, show safe inline feedback and permit retry; pending actions prevent duplicate submissions. Credential success replaces the document to clear router/user state and revalidate the destination. OAuth follows the library-owned authorize redirect. Provider denial returns to the same supported form variant with safe retry feedback.
+
+A single pure validator accepts only normalized relative application destinations with one leading slash. It rejects absolute/protocol-relative URLs, backslashes, controls, encoded path separators/double encoding, path normalization tricks, and auth/API loops. It preserves legitimate query/hash values, including nested query URLs that are data rather than the navigation target. Invalid/missing values fall back to `/dashboard/default`; unknown app paths go to the public 404. Login/register cross-links and already-signed-in visits use the same validation. Better Auth's supported before hook validates callback/new-user/error destinations again before OAuth state is created; provider state/cookie validation remains library-owned. Credential forms own their one post-success navigation and omit the library's automatic email callback redirect.
+
+`node --experimental-strip-types scripts/auth-redirect-check.ts`, `scripts/auth-flows-check.ts` and `scripts/auth-provider-check.ts` provide adversarial redirect, real-DB browser flow and provider configuration/authorize URL tests. No provider consent or token exchange is claimed. Shared client sign-out returns to canonical `/auth/v1/login` only after server success; the shell entry arrives in 003.
+
+Error/pending verification: `node --experimental-strip-types scripts/auth-errors-check.ts` checks duplicate registration, network failure/retry, a delayed real request with duplicate-submit prevention, and enabled limiter 429/recovery. It never replaces a server success with a mock.

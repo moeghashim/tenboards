@@ -4,19 +4,23 @@ import { getRouteApi, Link } from "@tanstack/react-router";
 
 import { Globe } from "lucide-react";
 
-import { GoogleButton } from "../../-components/social-auth/google-button";
+import { useAuthFlow } from "../../-components/auth-flow";
+import { ProviderControls } from "../../-components/social-auth/provider-controls";
 
 const route = getRouteApi("/(main)/auth/v2");
 
 export function AuthFrame({ mode, children }: { mode: "login" | "register"; children: ReactNode }) {
   const { copyright } = route.useLoaderData();
+  const { auth, destination } = useAuthFlow();
   const login = mode === "login";
+  const demoDescription = login ? "Enter your details to try the demo." : "Enter your details to explore the demo.";
   return (
     <div className="flex min-h-dvh flex-1 flex-col gap-8 px-6 py-6 sm:px-10">
       <nav aria-label="Account" className="text-muted-foreground text-right text-sm">
         {login ? "Don't have an account? " : "Already have an account? "}
         <Link
           className="text-foreground focus-visible:outline-ring rounded-sm underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-4"
+          search={{ redirect: destination }}
           to={login ? "/auth/v2/register" : "/auth/v2/login"}
         >
           {login ? "Register" : "Login"}
@@ -26,16 +30,11 @@ export function AuthFrame({ mode, children }: { mode: "login" | "register"; chil
         <div className="space-y-2">
           <h1 className="text-2xl font-medium">{login ? "Login to your account" : "Create your account"}</h1>
           <p className="text-muted-foreground text-sm">
-            {login ? "Enter your details to try the demo." : "Enter your details to explore the demo."}
+            {auth.mode === "auth" ? "Enter your details to continue." : demoDescription}
           </p>
         </div>
         <div className="space-y-4">
-          <GoogleButton className="w-full" variant="outline" />
-          <div className="text-muted-foreground flex items-center gap-3 text-xs">
-            <span className="bg-border h-px flex-1" />
-            Or continue with
-            <span className="bg-border h-px flex-1" />
-          </div>
+          <ProviderControls divider />
           {children}
         </div>
       </div>
