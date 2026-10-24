@@ -4,6 +4,7 @@ import { requireAppRoute } from "@/lib/auth/app-route";
 
 import { PageHeader } from "../../-components/app-pages/page-header";
 import { ProjectError, ProjectMissing, ProjectPending } from "../-components/project-boundaries";
+import { ProjectSelect } from "../-components/project-controls";
 import { loadProject } from "../-components/project-functions";
 import { searchSchema } from "../-components/project-search";
 export const Route = createFileRoute("/(main)/dashboard/projects/$projectId")({
@@ -35,27 +36,18 @@ function ProjectShell() {
         title={project.name}
         description={project.description}
         actions={
-          <label className="flex items-center gap-2 text-sm">
-            Project
-            <select
-              aria-label="Project"
-              className="border-border-strong bg-background h-8 max-w-64 rounded-lg border px-2"
-              value={project.id}
-              onChange={(event) =>
-                void navigate({
-                  to: "/dashboard/projects/$projectId/board",
-                  params: { projectId: event.target.value },
-                  search: searchSchema.parse({}),
-                })
-              }
-            >
-              {projects.map((p) => (
-                <option key={p.id} value={p.id}>
-                  {p.name}
-                </option>
-              ))}
-            </select>
-          </label>
+          <ProjectSelect
+            label="Project"
+            value={project.id}
+            options={projects.map((p) => ({ value: p.id, label: p.name }))}
+            onChange={(projectId) =>
+              void navigate({
+                to: "/dashboard/projects/$projectId/board",
+                params: { projectId },
+                search: searchSchema.parse({}),
+              })
+            }
+          />
         }
       />
       <p className="text-muted-foreground text-sm">

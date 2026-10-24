@@ -24,10 +24,12 @@ export function TaskCard({
   columnId,
   isOverlay = false,
   footer,
+  taskKey,
 }: {
   task: Pick<Task, "title" | "description" | "priority" | "dueDate" | "owner" | "insights"> &
     Partial<Pick<Task, "progress" | "team">>;
   footer?: ReactNode;
+  taskKey?: string;
   columnId?: ColumnId;
   isOverlay?: boolean;
 }) {
@@ -57,17 +59,17 @@ export function TaskCard({
             {task.priority}
           </Badge>
         </div>
-        <p className="text-muted-foreground text-sm leading-5 break-words">{task.description}</p>
+        {!taskKey && <p className="text-muted-foreground text-sm leading-5 break-words">{task.description}</p>}
       </div>
 
       {!showBuildingDetails ? (
         <div className="flex flex-wrap items-center justify-between gap-2">
           <div className="flex items-center gap-1.5">
-            <Avatar className={cn("size-5 after:rounded-sm", ownerTone)}>
-              <AvatarFallback className="rounded-sm text-xs">{getInitials(owner.name)}</AvatarFallback>
+            <Avatar size="sm" className={ownerTone} aria-label={owner.name}>
+              <AvatarFallback className="text-xs">{getInitials(owner.name)}</AvatarFallback>
             </Avatar>
 
-            <span className="text-muted-foreground text-sm">{owner.name}</span>
+            <span className={taskKey ? "sr-only" : "text-muted-foreground text-sm"}>{owner.name}</span>
           </div>
 
           <div className="text-muted-foreground flex min-w-0 items-center gap-1.5">
@@ -91,8 +93,8 @@ export function TaskCard({
               <span className="text-muted-foreground text-sm">Owner</span>
               <div className="flex items-center gap-1.5">
                 <span className="text-muted-foreground truncate text-sm">{owner.name}</span>
-                <Avatar className={cn("size-5 after:rounded-sm", ownerTone)}>
-                  <AvatarFallback className="rounded-sm text-xs">{getInitials(owner.name)}</AvatarFallback>
+                <Avatar size="sm" className={ownerTone} aria-label={owner.name}>
+                  <AvatarFallback className="text-xs">{getInitials(owner.name)}</AvatarFallback>
                 </Avatar>
               </div>
             </div>
@@ -121,9 +123,10 @@ export function TaskCard({
         </div>
       ) : null}
 
-      <Separator />
+      {(isDone || task.insights.some((i) => i.count > 0)) && <Separator />}
 
-      <div>
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        {taskKey && <span className="text-muted-foreground text-xs">{taskKey}</span>}
         {isDone ? (
           <div className="text-success flex items-center gap-1 text-sm font-medium">
             <BadgeCheck className="size-4" />
@@ -133,17 +136,19 @@ export function TaskCard({
 
         {!isDone ? (
           <div className="text-muted-foreground flex items-center gap-3 text-sm">
-            {task.insights.map((insight) => {
-              const Icon = taskInsightIcons[insight.label];
+            {task.insights
+              .filter((insight) => insight.count > 0)
+              .map((insight) => {
+                const Icon = taskInsightIcons[insight.label];
 
-              return (
-                <span key={insight.label} className="flex items-center gap-1.5 text-sm">
-                  <Icon className="size-3.5" />
-                  {insight.count}
-                  <span className="sr-only"> {insight.label.toLowerCase()}</span>
-                </span>
-              );
-            })}
+                return (
+                  <span key={insight.label} className="flex items-center gap-1.5 text-sm">
+                    <Icon className="size-3.5" />
+                    {insight.count}
+                    <span className="sr-only"> {insight.label.toLowerCase()}</span>
+                  </span>
+                );
+              })}
           </div>
         ) : null}
       </div>

@@ -7,8 +7,9 @@ export const loadProject = createServerFn({ method: "GET" })
     const { requireSession } = await import("@/lib/auth/session.server");
     await requireSession();
     const { readProject, readProjects } = await import("@/server/data/projects");
-    const project = await readProject(data);
-    return { project, projects: project ? await readProjects() : [] };
+    const renderedAt = new Date().toISOString();
+    const project = await readProject({ ...data, renderedAt });
+    return { project, projects: project ? await readProjects({ renderedAt }) : [] };
   });
 export const loadProjectTasks = createServerFn({ method: "GET" })
   .validator((data: TaskInput) => data)

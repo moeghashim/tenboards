@@ -28,20 +28,24 @@ try {
         await page.getByRole("heading", { name: "Documentation refresh", exact: true }).waitFor();
       };
       await visit("/dashboard/projects/sample-docs/board");
+      assert.equal(await page.locator("main select").count(), 0);
       const board = await page
         .locator("[data-task-id]")
         .evaluateAll((nodes) => nodes.map((n) => n.getAttribute("data-task-id")).sort());
-      assert.equal(board.length, 4);
+      assert.equal(board.length, 5);
       await page.getByRole("link", { name: "List", exact: true }).click();
       await page.getByRole("table", { name: "Project tasks" }).waitFor();
       const list = await page
         .locator("[data-task-id]")
         .evaluateAll((nodes) => nodes.map((n) => n.getAttribute("data-task-id")).sort());
       assert.deepEqual(list, board);
+      assert.ok(!((await page.locator("main").textContent()) ?? "").includes("sample:setup-guide"));
+      assert.ok(((await page.locator("main").textContent()) ?? "").includes("DOC-100"));
       assert.equal(await page.locator('[draggable="true"]').count(), 0);
       assert.equal(await page.getByRole("checkbox").count(), 0);
       assert.equal(await page.getByRole("button", { name: /Add task|Edit|Delete|Save/ }).count(), 0);
-      await page.getByLabel("Status", { exact: true }).selectOption("done");
+      await page.getByRole("combobox", { name: "Status", exact: true }).click();
+      await page.getByRole("option", { name: "Done", exact: true }).click();
       await page.waitForURL(/status=done/);
       await page.waitForFunction(() => document.querySelectorAll("[data-task-id]").length === 1);
       assert.deepEqual(
@@ -49,14 +53,14 @@ try {
         ["sample:route-map"],
       );
       await page.getByRole("button", { name: "Reset filters" }).click();
-      await page.waitForFunction(() => document.querySelectorAll("[data-task-id]").length === 4);
+      await page.waitForFunction(() => document.querySelectorAll("[data-task-id]").length === 5);
       await page.getByLabel("Search tasks", { exact: true }).fill("unfindable");
-      await page.getByRole("button", { name: "Apply search" }).click();
+
       await page.getByText("No matching tasks", { exact: true }).waitFor();
       await page.getByRole("button", { name: "Reset filters" }).click();
-      await page.waitForFunction(() => document.querySelectorAll("[data-task-id]").length === 4);
+      await page.waitForFunction(() => document.querySelectorAll("[data-task-id]").length === 5);
       await page.getByLabel("Label", { exact: true }).fill("verification");
-      await page.getByRole("button", { name: "Apply search" }).click();
+
       await page.waitForFunction(() => document.querySelectorAll("[data-task-id]").length === 1);
       const detail = page.getByRole("button", { name: "Details for Verify the clean install guide" });
       await detail.focus();
@@ -66,11 +70,13 @@ try {
       await page.keyboard.press("Escape");
       await page.getByRole("dialog").waitFor({ state: "hidden" });
       assert.equal(await detail.evaluate((node) => node === document.activeElement), true);
-      await page.getByLabel("Project", { exact: true }).selectOption("sample-empty");
+      await page.getByRole("combobox", { name: "Project", exact: true }).click();
+      await page.getByRole("option", { name: "Research queue", exact: true }).click();
       await page.getByRole("heading", { name: "Research queue", exact: true }).waitFor();
       assert.equal(await page.locator("[data-task-id]").count(), 0);
       assert.ok(!new URL(page.url()).searchParams.has("label"));
-      await page.getByLabel("Project", { exact: true }).selectOption("sample-operations");
+      await page.getByRole("combobox", { name: "Project", exact: true }).click();
+      await page.getByRole("option", { name: "Operations rollout", exact: true }).click();
       await page.getByRole("heading", { name: "Operations rollout", exact: true }).waitFor();
       await page.waitForFunction(() => document.querySelectorAll("[data-task-id]").length === 100);
       assert.equal(
@@ -98,7 +104,8 @@ try {
         .evaluateAll((nodes) => nodes.map((n) => n.getAttribute("data-task-id")));
       assert.equal(new Set([...first, ...second]).size, 117);
       assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1), true);
-      await page.getByLabel("Status", { exact: true }).selectOption("canceled");
+      await page.getByRole("combobox", { name: "Status", exact: true }).click();
+      await page.getByRole("option", { name: "Canceled", exact: true }).click();
       await page.waitForURL(/status=canceled/);
       await page.waitForFunction(() => document.querySelectorAll("[data-task-id]").length === 19);
       await page

@@ -9,7 +9,8 @@ import {
 } from "@/components/ui/dialog";
 import type { Task } from "@/server/data/projects.types";
 
-import { displayDate, statusLabels } from "./project-search";
+import { displayDate } from "./project-search";
+import { TaskAssignee, TaskPriority, TaskStatusLabel, taskKey } from "./task-presentation";
 export function ProjectTaskDetail({ task }: { task: Task }) {
   return (
     <Dialog>
@@ -23,19 +24,25 @@ export function ProjectTaskDetail({ task }: { task: Task }) {
         </DialogHeader>
         <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 text-sm">
           <dt className="text-muted-foreground">Status</dt>
-          <dd>{statusLabels[task.status]}</dd>
+          <dd>
+            <TaskStatusLabel status={task.status} />
+          </dd>
+          <dt className="text-muted-foreground">Priority</dt>
+          <dd>
+            <TaskPriority priority={task.priority} />
+          </dd>
           <dt className="text-muted-foreground">Assignee</dt>
-          <dd>{task.assignee?.name ?? "Unassigned"}</dd>
+          <dd>
+            <TaskAssignee person={task.assignee} />
+          </dd>
           <dt className="text-muted-foreground">Due</dt>
           <dd>{displayDate(task.dueDate)}</dd>
           <dt className="text-muted-foreground">Labels</dt>
           <dd className="break-words">{task.labels.join(", ") || "None"}</dd>
           <dt className="text-muted-foreground">Comments</dt>
           <dd>{task.commentCount}</dd>
-          <dt className="text-muted-foreground">Source</dt>
-          <dd className="break-all">
-            {task.sourceKind}: {task.sourceId}
-          </dd>
+          <dt className="text-muted-foreground">Task</dt>
+          <dd>{taskKey(task)}</dd>
         </dl>
         <section className="space-y-2">
           <h3 className="font-medium">
@@ -54,9 +61,6 @@ export function ProjectTaskDetail({ task }: { task: Task }) {
             <p className="text-muted-foreground">No subtasks.</p>
           )}
         </section>
-        <p className="text-muted-foreground text-xs">
-          Read-only sample. Attachment and document counts are metadata, not downloads.
-        </p>
       </DialogContent>
     </Dialog>
   );
