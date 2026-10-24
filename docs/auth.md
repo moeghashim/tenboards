@@ -337,3 +337,14 @@ The missing-header case therefore uses a separate local test adapter that strips
 it immediately before the real built Worker entry. This adapter is excluded from
 production/preview builds; it changes no auth guard. Initial proxy-fixture failure
 and the corrected passing test are retained in task 002 evidence.
+
+## Production smoke and cutover
+
+[The operations runbook](deploy.md) keeps code, binding and both launch secrets in
+one staged version before changing traffic. Do not set a secret on binding-less
+live code or deploy a DB/auth-off intermediate version.
+`npm run deploy:check -- <origin>` performs only GETs by default and validates the
+actual redirect/status/null private session. Use `--demo` for isolated previews;
+only explicit `--auth-roundtrip` creates a throwaway account, whose retained email
+and exact-match reviewer cleanup are documented. All passwords/cookies stay in
+memory. Normal GET traffic still updates the database limiter's counters.

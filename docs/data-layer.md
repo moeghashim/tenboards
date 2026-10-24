@@ -271,3 +271,13 @@ merges overrides, configured Wrangler values, source config and defaults using
 `index.mjs`, ASSETS and ESModule rules. Never edit generated output. The local
 test config explicitly selects `local`; the independent preview source config
 selects `tenboards-preview` and cannot inherit root production bindings.
+
+## Direct operational targets
+
+Migration/seed keep their explicit local-only default. Reviewer Neon operations
+require `npm run db:migrate -- --allow-remote` and `npm run db:seed -- --allow-remote`,
+with a direct TLS DATABASE_URL supplied privately. The target validator rejects
+missing/duplicate TLS settings, known pooler endpoints and Hyperdrive binding input.
+Parity/auth suites remain local-only. These commands apply additive migrations and
+idempotent fixture upserts; they do not reset schemas or create default auth users.
+See [the deployment runbook](deploy.md) for ordering, backup/recovery and cutover.

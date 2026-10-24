@@ -1,6 +1,6 @@
 # v0.6 — Production Cloudflare
 
-Status: **in progress — tasks 001–002 in review; tasks 003–004 are todo**. Baseline: `origin/main` **272ee7b** (`272ee7be8d3a409cb1d6803a5c64a6bd1add7da5`), 2026-10-24, following released v0.5.0. [PLAN.md](../../../PLAN.md) is the canonical contract; its six **v0.6 production host / database provisioning / production mode / OAuth / runtime / previews** Decisions log rows win. Precedent: [v0.5](../v0.5-auth/README.md), planning [PR #50](https://github.com/moeghashim/tenboards/pull/50), and [v0.4 planning PR #41](https://github.com/moeghashim/tenboards/pull/41).
+Status: **in progress — tasks 001–003 in review; task 004 is todo**. Baseline: `origin/main` **272ee7b** (`272ee7be8d3a409cb1d6803a5c64a6bd1add7da5`), 2026-10-24, following released v0.5.0. [PLAN.md](../../../PLAN.md) is the canonical contract; its six **v0.6 production host / database provisioning / production mode / OAuth / runtime / previews** Decisions log rows win. Precedent: [v0.5](../v0.5-auth/README.md), planning [PR #50](https://github.com/moeghashim/tenboards/pull/50), and [v0.4 planning PR #41](https://github.com/moeghashim/tenboards/pull/41).
 
 ## Brief and boundaries
 
@@ -64,26 +64,26 @@ Checked 2026-10-24 against official docs and the installed lockfile packages. Re
 
 ## Security checklist
 
-Owners 001–003 verify locally; 004 repeats hosted checks. Boxes remain unchecked until evidence exists.
+Owners 001–003 verify locally; 004 repeats hosted checks. Checked items have [local and isolated-preview evidence](https://github.com/moeghashim/tenboards/tree/pr-assets/v06-003). Remote cache configuration and production cutover remain unchecked; local emulation does not establish hosted acceptance.
 
-- [ ] Preview build, upload and deployed Worker are demonstrably database/secret-free, including inherited bindings, local env files and provider keys. Production data cannot be reached from previews; no wildcard production trust for preview URLs.
-- [ ] Runtime-only secrets/connection strings never appear in Git, browser bundles, HTML, logs, errors or published evidence. Ignore local Wrangler secret/config files; publish redacted facts, never raw environment dumps, cookies or auth storage state.
-- [ ] Request-scoped DB and Better Auth instances cannot share a prior request's socket, headers, identity or session. Sequential and overlapping requests with different users pass; Node pooling and zero-config demo remain intact.
+- [x] Preview build, upload and deployed Worker are demonstrably database/secret-free, including inherited bindings, local env files and provider keys. Production data cannot be reached from previews; no wildcard production trust for preview URLs.
+- [x] Runtime-only secrets/connection strings never appear in Git, browser bundles, HTML, logs, errors or published evidence. Ignore local Wrangler secret/config files; publish redacted facts, never raw environment dumps, cookies or auth storage state.
+- [x] Request-scoped DB and Better Auth instances cannot share a prior request's socket, headers, identity or session. Sequential and overlapping requests with different users pass; Node pooling and zero-config demo remain intact.
 - [ ] Hyperdrive caching is disabled in the actual remote configuration. Auth cookie caching remains disabled; session revocation is effective on the next protected request. Private/no-store behavior remains intact.
-- [ ] Rate-limit counters persist outside isolates in an isolated `auth_rate_limit` table, with reviewed migration/model mapping and missing-table failure checks. Test two instances sharing a DB, 429/recovery and concurrent requests; document measured limitations rather than promising strict atomic limits without proof.
-- [ ] Production limiter trusts Cloudflare's overwritten client-IP header, not client-supplied forwarding chains. Local tests use controlled headers; Node development remains supported. Existing credential mutations keep their Better Auth HTTP boundary; direct API calls are not claimed to be rate-limited.
-- [ ] Exact trusted origin comes from validated runtime `BETTER_AUTH_URL`; non-loopback auth cannot silently use localhost. Preserve CSRF/origin checks, safe redirect validation, HttpOnly/Secure/host-only cookies and current-user session ownership. Reject forged origins and tampered/revoked sessions.
-- [ ] Auth requested with broken DB/config/schema fails closed, including after readiness memoization. Cache only successful readiness; no global pending I/O shared across requests and no sticky failure that prevents recovery.
+- [x] Rate-limit counters persist outside isolates in an isolated `auth_rate_limit` table, with reviewed migration/model mapping and missing-table failure checks. Test two instances sharing a DB, 429/recovery and concurrent requests; document measured limitations rather than promising strict atomic limits without proof.
+- [x] Production limiter trusts Cloudflare's overwritten client-IP header, not client-supplied forwarding chains. Local tests use controlled headers; Node development remains supported. Existing credential mutations keep their Better Auth HTTP boundary; direct API calls are not claimed to be rate-limited.
+- [x] Exact trusted origin comes from validated runtime `BETTER_AUTH_URL`; non-loopback auth cannot silently use localhost. Preserve CSRF/origin checks, safe redirect validation, HttpOnly/Secure/host-only cookies and current-user session ownership. Reject forged origins and tampered/revoked sessions.
+- [x] Auth requested with broken DB/config/schema fails closed, including after readiness memoization. Cache only successful readiness; no global pending I/O shared across requests and no sticky failure that prevents recovery.
 - [ ] Fresh/incremental migrations and idempotent fixture seed preserve auth records. No default passwords or seeded auth identities. Production enables open signup and shared data knowingly; no per-user ownership claim.
-- [ ] Smoke defaults are read-only. Optional account checks use unique throwaway credentials, redact them, sign out/revoke their sessions and document retained test-account cleanup without adding a public account-deletion feature.
+- [x] Smoke defaults are read-only. Optional account checks use unique throwaway credentials, redact them, sign out/revoke their sessions and document retained test-account cleanup without adding a public account-deletion feature.
 
 ## Definition of Done
 
-- [ ] All configuration matrix cases pass on Node and local workerd, with request-scope/concurrency and runtime-secret proof, plus baseline data parity and the defined Worker subset.
-- [ ] `tenboards-preview` serves demo-only immutable/alias previews; build/upload guards and contributor docs prevent uploads to the production Worker.
-- [ ] Auth rate limiting uses migrated cross-isolate database storage, exact runtime origins and verified IP handling; the security checklist has evidence.
-- [ ] `docs/deploy.md` and `npm run deploy:check -- <url>` are implemented and verified; remote migrate/seed requires explicit opt-in. README, auth/data guides and CHANGELOG v0.6 draft match delivered behavior.
-- [ ] Build/check/typecheck, dev default smoke, demo and authenticated workerd acceptance, hydration regression and required four-state evidence pass. Artifacts live only on `pr-assets`/PR attachments.
+- [x] All configuration matrix cases pass on Node and local workerd, with request-scope/concurrency and runtime-secret proof, plus baseline data parity and the defined Worker subset.
+- [x] `tenboards-preview` serves demo-only immutable/alias previews; build/upload guards and contributor docs prevent uploads to the production Worker.
+- [x] Auth rate limiting uses migrated cross-isolate database storage, exact runtime origins and verified IP handling; the security checklist has evidence.
+- [x] `docs/deploy.md` and `npm run deploy:check -- <url>` are implemented and verified; remote migrate/seed requires explicit opt-in. README, auth/data guides and CHANGELOG v0.6 draft match delivered behavior.
+- [x] Build/check/typecheck, dev default smoke, demo and authenticated workerd acceptance, hydration regression and required four-state evidence pass. Artifacts live only on `pr-assets`/PR attachments.
 - [ ] Reviewer receives the user's Neon URL, performs task 004 from approved main, verifies hosted auth/data/cache/isolation, updates acceptance/status and publishes v0.6.0. No implementer merge, production deploy, version bump/tag or release.
 
 ## Cutover runbook outline
