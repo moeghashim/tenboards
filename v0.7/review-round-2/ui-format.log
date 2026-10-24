@@ -1,0 +1,87 @@
+scripts/assistant-ui-check.ts:62:22 lint/style/noNonNullAssertion  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+  
+    60 │       assert.equal(await log.getAttribute("aria-live"), "polite");
+    61 │       await page.screenshot({ path: `${output}/${theme}-${size}-empty.png` });
+  > 62 │       const oneRow = (await input.boundingBox())!.height;
+       │                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    63 │       await input.fill(Array.from({ length: 12 }, () => "A line").join("\n"));
+    64 │       const manyRows = (await input.boundingBox())!.height;
+  
+  i A non-null assertion tells TypeScript to ignore a possible null or undefined value. If the value is missing at runtime, the code fails with an error that the compiler could not catch.
+  
+  i Check that the value is defined before using it, for example with an if statement or optional chaining, instead of asserting it.
+  
+  i Unsafe fix: Replace with optional chain operator ?. This operator includes runtime checks, so it is safer than the compile-only non-null assertion operator
+  
+     60  60 │         assert.equal(await log.getAttribute("aria-live"), "polite");
+     61  61 │         await page.screenshot({ path: `${output}/${theme}-${size}-empty.png` });
+     62     │ - ······const·oneRow·=·(await·input.boundingBox())!.height;
+         62 │ + ······const·oneRow·=·(await·input.boundingBox())?.height;
+     63  63 │         await input.fill(Array.from({ length: 12 }, () => "A line").join("\n"));
+     64  64 │         const manyRows = (await input.boundingBox())!.height;
+  
+
+scripts/assistant-ui-check.ts:64:24 lint/style/noNonNullAssertion  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+  
+    62 │       const oneRow = (await input.boundingBox())!.height;
+    63 │       await input.fill(Array.from({ length: 12 }, () => "A line").join("\n"));
+  > 64 │       const manyRows = (await input.boundingBox())!.height;
+       │                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    65 │       const metrics = await input.evaluate((el) => ({
+    66 │         line: Number.parseFloat(getComputedStyle(el).lineHeight),
+  
+  i A non-null assertion tells TypeScript to ignore a possible null or undefined value. If the value is missing at runtime, the code fails with an error that the compiler could not catch.
+  
+  i Check that the value is defined before using it, for example with an if statement or optional chaining, instead of asserting it.
+  
+  i Unsafe fix: Replace with optional chain operator ?. This operator includes runtime checks, so it is safer than the compile-only non-null assertion operator
+  
+     62  62 │         const oneRow = (await input.boundingBox())!.height;
+     63  63 │         await input.fill(Array.from({ length: 12 }, () => "A line").join("\n"));
+     64     │ - ······const·manyRows·=·(await·input.boundingBox())!.height;
+         64 │ + ······const·manyRows·=·(await·input.boundingBox())?.height;
+     65  65 │         const metrics = await input.evaluate((el) => ({
+     66  66 │           line: Number.parseFloat(getComputedStyle(el).lineHeight),
+  
+
+scripts/assistant-ui-check.ts:119:20 lint/style/noNonNullAssertion ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+  
+    117 │       await jump.click();
+    118 │       await page.waitForFunction(() => {
+  > 119 │         const el = document.querySelector("[data-assistant-scroll]")!;
+        │                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    120 │         return el.scrollHeight - el.clientHeight - el.scrollTop < 2;
+    121 │       });
+  
+  i A non-null assertion tells TypeScript to ignore a possible null or undefined value. If the value is missing at runtime, the code fails with an error that the compiler could not catch.
+  
+  i Check that the value is defined before using it, for example with an if statement or optional chaining, instead of asserting it.
+  
+
+scripts/assistant-ui-check.ts:123:22 lint/style/noNonNullAssertion ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+  
+    121 │       });
+    122 │       assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth && scrollY === 0));
+  > 123 │       const bounds = (await page.locator("form").boundingBox())!;
+        │                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    124 │       assert.ok(Math.abs(bounds.y + bounds.height - viewport.height) < 2);
+    125 │       assert.deepEqual(errors, []);
+  
+  i A non-null assertion tells TypeScript to ignore a possible null or undefined value. If the value is missing at runtime, the code fails with an error that the compiler could not catch.
+  
+  i Check that the value is defined before using it, for example with an if statement or optional chaining, instead of asserting it.
+  
+
+Skipped 2 suggested fixes.
+If you wish to apply the suggested (unsafe) fixes, use the command biome check --write --unsafe
+
+Checked 1 file in 536ms. Fixed 1 file.
+Found 4 warnings.

@@ -1,0 +1,8 @@
+
+> tenboards@0.6.2 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url https://8cafcdb4-tenboards-preview.mohanadgh.workers.dev --routes /dashboard/assistant --output screenshots/v07-r2/before-hosted
+
+PASS /dashboard/assistant light/desktop direct
+PASS /dashboard/assistant light/mobile direct
+PASS /dashboard/assistant dark/desktop direct
+PASS /dashboard/assistant dark/mobile direct

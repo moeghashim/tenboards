@@ -1,0 +1,47 @@
+
+> tenboards@0.6.2 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://127.0.0.1:3170 --routes /dashboard/assistant,/dashboard/default --output screenshots/v07-r2/before
+
+PASS /dashboard/assistant light/desktop direct
+PASS /dashboard/assistant light/mobile direct
+PASS /dashboard/assistant dark/desktop direct
+FAIL /dashboard/assistant dark/mobile direct
+console: Failed to load resource: the server responded with a status of 500 ()
+console: %o
+
+%s
+
+%s
+ Error: Failed to load url /src/lib/assistant/server-functions.ts?tss-serverfn-split (resolved id: /Users/moeghashim/tenboards-v07/src/lib/assistant/server-functions.ts?tss-serverfn-split). Does the file exist?
+    at Object.deserialize (http://127.0.0.1:3170/node_modules/@tanstack/router-core/dist/esm/ssr/serializer/ShallowErrorPlugin.js?v=c88501dc:27:10)
+    at deserializePlugin (http://127.0.0.1:3170/node_modules/seroval/dist/dev/index.js?v=c88501dc:1585:76)
+    at deserialize$1 (http://127.0.0.1:3170/node_modules/seroval/dist/dev/index.js?v=c88501dc:1700:19)
+    at assignProperty (http://127.0.0.1:3170/node_modules/seroval/dist/dev/index.js?v=c88501dc:1434:84)
+    at deserializeProperties (http://127.0.0.1:3170/node_modules/seroval/dist/dev/index.js?v=c88501dc:1458:87)
+    at deserializeObject (http://127.0.0.1:3170/node_modules/seroval/dist/dev/index.js?v=c88501dc:1463:2)
+    at deserialize$1 (http://127.0.0.1:3170/node_modules/seroval/dist/dev/index.js?v=c88501dc:1686:19)
+    at deserializeTop (http://127.0.0.1:3170/node_modules/seroval/dist/dev/index.js?v=c88501dc:1719:10)
+    at fromCrossJSON (http://127.0.0.1:3170/node_modules/seroval/dist/dev/index.js?v=c88501dc:2951:9)
+    at deserialize (http://127.0.0.1:3170/node_modules/@tanstack/start-client-core/dist/esm/client-rpc/serverFnFetcher.js?v=c88501dc:39:10) The above error occurred in the <MatchInnerImpl> component. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.
+console: %c[Server]%c color: #9333ea; font-weight: bold; color: inherit; {name: Error, message: Failed to load url /src/lib/assistant/server-funct…ions.ts?tss-serverfn-split). Does the file exist?, stack: Error: Failed to load url /src/lib/assistant/serve…e_modules/vite/dist/node/chunks/node.js:25373:13)}
+console: %o
+
+%s
+
+%s
+ Error: Failed to load url /src/lib/assistant/server-functions.ts?tss-serverfn-split (resolved id: /Users/moeghashim/tenboards-v07/src/lib/assistant/server-functions.ts?tss-serverfn-split). Does the file exist?
+    at Object.deserialize (http://127.0.0.1:3170/node_modules/@tanstack/router-core/dist/esm/ssr/serializer/ShallowErrorPlugin.js?v=c88501dc:27:10)
+    at deserializePlugin (http://127.0.0.1:3170/node_modules/seroval/dist/dev/index.js?v=c88501dc:1585:76)
+    at deserialize$1 (http://127.0.0.1:3170/node_modules/seroval/dist/dev/index.js?v=c88501dc:1700:19)
+    at assignProperty (http://127.0.0.1:3170/node_modules/seroval/dist/dev/index.js?v=c88501dc:1434:84)
+    at deserializeProperties (http://127.0.0.1:3170/node_modules/seroval/dist/dev/index.js?v=c88501dc:1458:87)
+    at deserializeObject (http://127.0.0.1:3170/node_modules/seroval/dist/dev/index.js?v=c88501dc:1463:2)
+    at deserialize$1 (http://127.0.0.1:3170/node_modules/seroval/dist/dev/index.js?v=c88501dc:1686:19)
+    at deserializeTop (http://127.0.0.1:3170/node_modules/seroval/dist/dev/index.js?v=c88501dc:1719:10)
+    at fromCrossJSON (http://127.0.0.1:3170/node_modules/seroval/dist/dev/index.js?v=c88501dc:2951:9)
+    at deserialize (http://127.0.0.1:3170/node_modules/@tanstack/start-client-core/dist/esm/client-rpc/serverFnFetcher.js?v=c88501dc:39:10) The above error occurred in the <MatchInnerImpl> component. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.
+console: %c[Server]%c color: #9333ea; font-weight: bold; color: inherit; {name: Error, message: Failed to load url /src/lib/assistant/server-funct…ions.ts?tss-serverfn-split). Does the file exist?, stack: Error: Failed to load url /src/lib/assistant/serve…e_modules/vite/dist/node/chunks/node.js:25373:13)}
+PASS /dashboard/default light/desktop direct
+PASS /dashboard/default light/mobile direct
+PASS /dashboard/default dark/desktop direct
+PASS /dashboard/default dark/mobile direct

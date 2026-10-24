@@ -1,0 +1,4 @@
+PASS light/desktop: Enter/Shift+Enter, 1–8 rows, pre-token indicator, Stop, regenerate, copy, paused/resumed scrolling, fixed composer, log, zero console errors
+PASS light/mobile: Enter/Shift+Enter, 1–8 rows, pre-token indicator, Stop, regenerate, copy, paused/resumed scrolling, fixed composer, log, zero console errors
+PASS dark/desktop: Enter/Shift+Enter, 1–8 rows, pre-token indicator, Stop, regenerate, copy, paused/resumed scrolling, fixed composer, log, zero console errors
+PASS dark/mobile: Enter/Shift+Enter, 1–8 rows, pre-token indicator, Stop, regenerate, copy, paused/resumed scrolling, fixed composer, log, zero console errors

@@ -1,0 +1,453 @@
+
+> tenboards@0.6.2 check
+> biome check
+
+src/routes/(main)/dashboard/analytics/route.tsx:44:31 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    42 │       <Tabs defaultValue="overview" className="flex min-w-0 flex-col gap-4">
+    43 │         <div className="flex flex-wrap items-center justify-between gap-3">
+  > 44 │           <TabsList className="group-data-horizontal/tabs:h-auto max-w-full flex-wrap justify-start gap-1 [&_[role=tab]]:h-7">
+       │                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    45 │             <TabsTrigger value="overview">Overview</TabsTrigger>
+    46 │             <TabsTrigger value="audience">Audience</TabsTrigger>
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+     42  42 │         <Tabs defaultValue="overview" className="flex min-w-0 flex-col gap-4">
+     43  43 │           <div className="flex flex-wrap items-center justify-between gap-3">
+     44     │ - ··········<TabsList·className="group-data-horizontal/tabs:h-auto·max-w-full·flex-wrap·justify-start·gap-1·[&_[role=tab]]:h-7">
+         44 │ + ··········<TabsList·className="max-w-full·flex-wrap·justify-start·gap-1·group-data-horizontal/tabs:h-auto·[&_[role=tab]]:h-7">
+     45  45 │               <TabsTrigger value="overview">Overview</TabsTrigger>
+     46  46 │               <TabsTrigger value="audience">Audience</TabsTrigger>
+  
+
+src/routes/(main)/dashboard/assistant/-components/registry.tsx:169:27 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    167 │     }
+    168 │     case "Text":
+  > 169 │       return <p className="max-w-prose whitespace-pre-wrap break-words">{schemas.Text.parse(props).text}</p>;
+        │                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    170 │     case "Card": {
+    171 │       const p = schemas.Card.parse(props);
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+    167 167 │       }
+    168 168 │       case "Text":
+    169     │ - ······return·<p·className="max-w-prose·whitespace-pre-wrap·break-words">{schemas.Text.parse(props).text}</p>;
+        169 │ + ······return·<p·className="max-w-prose·break-words·whitespace-pre-wrap">{schemas.Text.parse(props).text}</p>;
+    170 170 │       case "Card": {
+    171 171 │         const p = schemas.Card.parse(props);
+  
+
+src/routes/(main)/dashboard/assistant/-components/registry.tsx:175:21 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    173 │         <DashboardCard
+    174 │           density="compact"
+  > 175 │           className="[&_[data-slot=card]]:rounded-none [&_[data-slot=card]]:bg-transparent [&_[data-slot=card]]:ring-0 [&_[data-slot=card]]:shadow-none [&_[data-slot=card]]:py-0 [&_[data-slot=card]_[data-slot=card-content]]:px-0 [&_[data-slot=card]_[data-slot=card-header]]:px-0"
+        │                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    176 │         >
+    177 │           <SectionHeader title={p.title} level={3} />
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+    173 173 │           <DashboardCard
+    174 174 │             density="compact"
+    175     │ - ··········className="[&_[data-slot=card]]:rounded-none·[&_[data-slot=card]]:bg-transparent·[&_[data-slot=card]]:ring-0·[&_[data-slot=card]]:shadow-none·[&_[data-slot=card]]:py-0·[&_[data-slot=card]_[data-slot=card-content]]:px-0·[&_[data-slot=card]_[data-slot=card-header]]:px-0"
+        175 │ + ··········className="[&_[data-slot=card]]:rounded-none·[&_[data-slot=card]]:bg-transparent·[&_[data-slot=card]]:py-0·[&_[data-slot=card]]:shadow-none·[&_[data-slot=card]]:ring-0·[&_[data-slot=card]_[data-slot=card-content]]:px-0·[&_[data-slot=card]_[data-slot=card-header]]:px-0"
+    176 176 │           >
+    177 177 │             <SectionHeader title={p.title} level={3} />
+  
+
+scripts/assistant-browser-check.ts:95:54 lint/performance/useDomNodeTextContent  FIXABLE  ━━━━━━━━━━
+
+  ! innerText is not recommended for reading DOM node text.
+  
+    93 │           .waitFor()
+    94 │           .catch(async (error) => {
+  > 95 │             console.error(await page.locator("main").innerText(), errors);
+       │                                                      ^^^^^^^^^
+    96 │             await page.screenshot({ path: `${output}/failure.png` });
+    97 │             throw error;
+  
+  i innerText depends on rendered layout and CSS, so it can be slower and produce different results from the DOM tree's text content.
+  
+  i Use textContent when you want the node's text without rendered-text behavior.
+  
+  i Unsafe fix: Use textContent instead.
+  
+     93  93 │             .waitFor()
+     94  94 │             .catch(async (error) => {
+     95     │ - ············console.error(await·page.locator("main").innerText(),·errors);
+         95 │ + ············console.error(await·page.locator("main").textContent(),·errors);
+     96  96 │               await page.screenshot({ path: `${output}/failure.png` });
+     97  97 │               throw error;
+  
+
+src/lib/assistant/language.ts:60:14 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! This condition is always truthy.
+  
+    58 │         return result;
+    59 │       }
+  > 60 │       while (true) {
+       │              ^^^^
+    61 │         result.push(value(depth + 1));
+    62 │         skip();
+  
+  i The value's type can never be falsy, so this check is redundant.
+  
+  i Remove the condition, or check the value you meant to test.
+  
+
+src/lib/assistant/language.ts:78:14 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! This condition is always truthy.
+  
+    76 │         return result;
+    77 │       }
+  > 78 │       while (true) {
+       │              ^^^^
+    79 │         const key = source[offset] === '"' ? value(depth + 1) : identifier();
+    80 │         if (
+  
+  i The value's type can never be falsy, so this check is redundant.
+  
+  i Remove the condition, or check the value you meant to test.
+  
+
+src/lib/assistant/language.ts:119:12 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! This condition is always truthy.
+  
+    117 │       return { call: name, args };
+    118 │     }
+  > 119 │     while (true) {
+        │            ^^^^
+    120 │       args.push(value(depth + 1));
+    121 │       skip();
+  
+  i The value's type can never be falsy, so this check is redundant.
+  
+  i Remove the condition, or check the value you meant to test.
+  
+
+src/lib/assistant/language.ts:131:12 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! This condition is always truthy.
+  
+    129 │   let pending = false;
+    130 │   try {
+  > 131 │     while (true) {
+        │            ^^^^
+    132 │       skip();
+    133 │       if (offset === source.length) break;
+  
+  i The value's type can never be falsy, so this check is redundant.
+  
+  i Remove the condition, or check the value you meant to test.
+  
+
+src/lib/assistant/language.ts:204:9 lint/complexity/useOptionalChain  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━
+
+  ! Change to an optional chain.
+  
+    202 │       }
+    203 │     if (!root && unresolved && !complete) return { status: "pending", response: null };
+  > 204 │     if (!root || root.name !== "Stack" || (complete && unresolved)) throw new Invalid();
+        │         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    205 │     return { status: pending || unresolved ? "pending" : "ready", response: `root = ${serialize(root)}` };
+    206 │   } catch {
+  
+  i An optional chain is shorter, and it avoids repeating the same expression in each check.
+  
+  i Unsafe fix: Change to an optional chain.
+  
+    202 202 │         }
+    203 203 │       if (!root && unresolved && !complete) return { status: "pending", response: null };
+    204     │ - ····if·(!root·||·root.name·!==·"Stack"·||·(complete·&&·unresolved))·throw·new·Invalid();
+        204 │ + ····if·(root?.name·!==·"Stack"·||·(complete·&&·unresolved))·throw·new·Invalid();
+    205 205 │       return { status: pending || unresolved ? "pending" : "ready", response: `root = ${serialize(root)}` };
+    206 206 │     } catch {
+  
+
+src/lib/assistant/recorded.ts:17:54 lint/style/noNestedTernary ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Do not nest ternary expressions.
+  
+    15 │ };
+    16 │ export function recordedReply(prompt: string) {
+  > 17 │   const key = /chart|week/i.test(prompt) ? "chart" : /table|plan|compare/i.test(prompt) ? "table" : "overview";
+       │                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    18 │   const matched = examples.some((example) => example.prompt.toLowerCase() === prompt.trim().toLowerCase());
+    19 │   return matched
+  
+  i Nesting ternary expressions can make code more difficult to understand.
+  
+  i Convert nested ternary expression into if-else statements or separate the conditions to make the logic easier to understand.
+  
+
+src/lib/assistant/transport.ts:41:12 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! This condition is always truthy.
+  
+    39 │   signal.addEventListener("abort", cancel, { once: true });
+    40 │   try {
+  > 41 │     while (true) {
+       │            ^^^^
+    42 │       signal.throwIfAborted();
+    43 │       const part = await reader.read();
+  
+  i The value's type can never be falsy, so this check is redundant.
+  
+  i Remove the condition, or check the value you meant to test.
+  
+
+src/lib/highlighter.tsx:96:20 lint/suspicious/noArrayIndexKey ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Avoid using the index of an array as key property in an element.
+  
+    94 │           line.map((token, index) => (
+    95 │             <span
+  > 96 │               key={index}
+       │                    ^^^^^
+    97 │               style={token.htmlStyle as React.CSSProperties}
+    98 │               className="text-(--shiki-light) dark:text-(--shiki-dark)"
+  
+  i This is the source of the key value.
+  
+    92 │       return {
+    93 │         lines: tokens.map((line) =>
+  > 94 │           line.map((token, index) => (
+       │                            ^^^^^
+    95 │             <span
+    96 │               key={index}
+  
+  i The order of the items may change, and this also affects performances and component state.
+  
+  i Check the React documentation. 
+  
+
+src/routes/(main)/dashboard/assistant/-components/assistant.tsx:122:13 lint/style/noNestedTernary ━━━━━━━━━━
+
+  ! Do not nest ternary expressions.
+  
+    120 │         {busy
+    121 │           ? "Preparing a recorded reply."
+  > 122 │           : turns.length
+        │             ^^^^^^^^^^^^
+  > 123 │             ? `Response ${turns.at(-1)?.status}.`
+  > 124 │             : "Ready for a message."}
+        │             ^^^^^^^^^^^^^^^^^^^^^^^^
+    125 │       </p>
+    126 │     </AssistantSurface>
+  
+  i Nesting ternary expressions can make code more difficult to understand.
+  
+  i Convert nested ternary expression into if-else statements or separate the conditions to make the logic easier to understand.
+  
+
+src/routes/(main)/dashboard/assistant/-components/registry.tsx:61:55 lint/suspicious/noArrayIndexKey ━━━━━━━━━━
+
+  ! Avoid using the index of an array as key property in an element.
+  
+    59 │           <TableRow>
+    60 │             {columns.map((column, i) => (
+  > 61 │               <TableHead className="h-8 px-3" key={`${i}-${column}`}>
+       │                                                       ^
+    62 │                 {column}
+    63 │               </TableHead>
+  
+  i This is the source of the key value.
+  
+    58 │         <TableHeader>
+    59 │           <TableRow>
+  > 60 │             {columns.map((column, i) => (
+       │                                   ^
+    61 │               <TableHead className="h-8 px-3" key={`${i}-${column}`}>
+    62 │                 {column}
+  
+  i The order of the items may change, and this also affects performances and component state.
+  
+  i Check the React documentation. 
+  
+
+src/routes/(main)/dashboard/assistant/-components/registry.tsx:69:28 lint/suspicious/noArrayIndexKey ━━━━━━━━━━
+
+  ! Avoid using the index of an array as key property in an element.
+  
+    67 │         <TableBody>
+    68 │           {rows.map((row, i) => (
+  > 69 │             <TableRow key={i}>
+       │                            ^
+    70 │               {row.map((cell, j) => (
+    71 │                 <TableCell className="px-3 py-2" key={j}>
+  
+  i This is the source of the key value.
+  
+    66 │         </TableHeader>
+    67 │         <TableBody>
+  > 68 │           {rows.map((row, i) => (
+       │                           ^
+    69 │             <TableRow key={i}>
+    70 │               {row.map((cell, j) => (
+  
+  i The order of the items may change, and this also affects performances and component state.
+  
+  i Check the React documentation. 
+  
+
+src/routes/(main)/dashboard/assistant/-components/registry.tsx:71:55 lint/suspicious/noArrayIndexKey ━━━━━━━━━━
+
+  ! Avoid using the index of an array as key property in an element.
+  
+    69 │             <TableRow key={i}>
+    70 │               {row.map((cell, j) => (
+  > 71 │                 <TableCell className="px-3 py-2" key={j}>
+       │                                                       ^
+    72 │                   {cell}
+    73 │                 </TableCell>
+  
+  i This is the source of the key value.
+  
+    68 │           {rows.map((row, i) => (
+    69 │             <TableRow key={i}>
+  > 70 │               {row.map((cell, j) => (
+       │                               ^
+    71 │                 <TableCell className="px-3 py-2" key={j}>
+    72 │                   {cell}
+  
+  i The order of the items may change, and this also affects performances and component state.
+  
+  i Check the React documentation. 
+  
+
+src/routes/(main)/dashboard/assistant/-components/registry.tsx:102:31 lint/suspicious/noArrayIndexKey ━━━━━━━━━━
+
+  ! Avoid using the index of an array as key property in an element.
+  
+    100 │               <Legend content={<DashboardLegend config={config} />} />
+    101 │               {series.map((_, i) => (
+  > 102 │                 <Bar key={`s${i}`} dataKey={`s${i}`} fill={chartSeries[i].color} {...motion} />
+        │                               ^
+    103 │               ))}
+    104 │             </BarChart>
+  
+  i This is the source of the key value.
+  
+     99 │               <Tooltip content={<DashboardTooltip />} cursor={chartCursor} {...motion} />
+    100 │               <Legend content={<DashboardLegend config={config} />} />
+  > 101 │               {series.map((_, i) => (
+        │                               ^
+    102 │                 <Bar key={`s${i}`} dataKey={`s${i}`} fill={chartSeries[i].color} {...motion} />
+    103 │               ))}
+  
+  i The order of the items may change, and this also affects performances and component state.
+  
+  i Check the React documentation. 
+  
+
+src/routes/(main)/dashboard/assistant/-components/registry.tsx:114:28 lint/suspicious/noArrayIndexKey ━━━━━━━━━━
+
+  ! Avoid using the index of an array as key property in an element.
+  
+    112 │               {series.map((_, i) => (
+    113 │                 <Line
+  > 114 │                   key={`s${i}`}
+        │                            ^
+    115 │                   dataKey={`s${i}`}
+    116 │                   stroke={chartSeries[i].color}
+  
+  i This is the source of the key value.
+  
+    110 │               <Tooltip content={<DashboardTooltip />} cursor={chartCursor} {...motion} />
+    111 │               <Legend content={<DashboardLegend config={config} />} />
+  > 112 │               {series.map((_, i) => (
+        │                               ^
+    113 │                 <Line
+    114 │                   key={`s${i}`}
+  
+  i The order of the items may change, and this also affects performances and component state.
+  
+  i Check the React documentation. 
+  
+
+src/routes/(main)/dashboard/assistant/-components/registry.tsx:161:23 lint/suspicious/noArrayIndexKey ━━━━━━━━━━
+
+  ! Avoid using the index of an array as key property in an element.
+  
+    159 │         <div className="min-w-0 space-y-5">
+    160 │           {p.children.map((child, i) => (
+  > 161 │             <div key={i} className="min-w-0">
+        │                       ^
+    162 │               {renderNode(child)}
+    163 │             </div>
+  
+  i This is the source of the key value.
+  
+    158 │       return (
+    159 │         <div className="min-w-0 space-y-5">
+  > 160 │           {p.children.map((child, i) => (
+        │                                   ^
+    161 │             <div key={i} className="min-w-0">
+    162 │               {renderNode(child)}
+  
+  i The order of the items may change, and this also affects performances and component state.
+  
+  i Check the React documentation. 
+  
+
+src/routes/(main)/dashboard/assistant/-components/registry.tsx:180:25 lint/suspicious/noArrayIndexKey ━━━━━━━━━━
+
+  ! Avoid using the index of an array as key property in an element.
+  
+    178 │           <CardContent className="space-y-4">
+    179 │             {p.children.map((child, i) => (
+  > 180 │               <div key={i} className="min-w-0">
+        │                         ^
+    181 │                 {renderNode(child)}
+    182 │               </div>
+  
+  i This is the source of the key value.
+  
+    177 │           <SectionHeader title={p.title} level={3} />
+    178 │           <CardContent className="space-y-4">
+  > 179 │             {p.children.map((child, i) => (
+        │                                     ^
+    180 │               <div key={i} className="min-w-0">
+    181 │                 {renderNode(child)}
+  
+  i The order of the items may change, and this also affects performances and component state.
+  
+  i Check the React documentation. 
+  
+
+The number of diagnostics exceeds the limit allowed. Use --max-diagnostics to increase it.
+Diagnostics not shown: 12.
+Checked 481 files in 864ms. No fixes applied.
+Found 19 warnings.
+Found 13 infos.

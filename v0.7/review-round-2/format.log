@@ -1,0 +1,86 @@
+src/routes/(main)/dashboard/assistant/-components/presentation.tsx:95:22 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    93 │       <div className="bg-muted ml-auto w-fit max-w-full rounded-xl px-4 py-3 sm:max-w-[85%]">
+    94 │         <span className="sr-only">You: </span>
+  > 95 │         <p className="whitespace-pre-wrap break-words">{prompt}</p>
+       │                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    96 │       </div>
+    97 │       <div className="min-w-0 space-y-3">
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+     93  93 │         <div className="bg-muted ml-auto w-fit max-w-full rounded-xl px-4 py-3 sm:max-w-[85%]">
+     94  94 │           <span className="sr-only">You: </span>
+     95     │ - ········<p·className="whitespace-pre-wrap·break-words">{prompt}</p>
+         95 │ + ········<p·className="break-words·whitespace-pre-wrap">{prompt}</p>
+     96  96 │         </div>
+     97  97 │         <div className="min-w-0 space-y-3">
+  
+
+src/routes/(main)/dashboard/assistant/-components/presentation.tsx:153:24 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    151 │       <div className="mx-auto w-full max-w-[752px] space-y-2">
+    152 │         {children}
+  > 153 │         <div className="border-input bg-card rounded-xl border p-2 focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-ring">
+        │                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    154 │           <label htmlFor="assistant-message" className="sr-only">
+    155 │             Message
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+    151 151 │         <div className="mx-auto w-full max-w-[752px] space-y-2">
+    152 152 │           {children}
+    153     │ - ········<div·className="border-input·bg-card·rounded-xl·border·p-2·focus-within:outline-2·focus-within:outline-offset-2·focus-within:outline-ring">
+        153 │ + ········<div·className="border-input·bg-card·focus-within:outline-ring·rounded-xl·border·p-2·focus-within:outline-2·focus-within:outline-offset-2">
+    154 154 │             <label htmlFor="assistant-message" className="sr-only">
+    155 155 │               Message
+  
+
+src/routes/(main)/dashboard/assistant/-components/presentation.tsx:165:23 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    163 │             onChange={(event) => setInput(event.target.value)}
+    164 │             placeholder="Ask a question…"
+  > 165 │             className="min-h-0 max-h-[calc(8lh+1rem)] resize-none rounded-none border-0 bg-transparent leading-6 shadow-none focus-visible:ring-0 focus-visible:!outline-none dark:bg-transparent"
+        │                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    166 │             onKeyDown={(event) => {
+    167 │               if (event.key === "Enter" && !event.shiftKey && !event.nativeEvent.isComposing && event.keyCode !== 229) {
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+    163 163 │               onChange={(event) => setInput(event.target.value)}
+    164 164 │               placeholder="Ask a question…"
+    165     │ - ············className="min-h-0·max-h-[calc(8lh+1rem)]·resize-none·rounded-none·border-0·bg-transparent·leading-6·shadow-none·focus-visible:ring-0·focus-visible:!outline-none·dark:bg-transparent"
+        165 │ + ············className="max-h-[calc(8lh+1rem)]·min-h-0·resize-none·rounded-none·border-0·bg-transparent·leading-6·shadow-none·focus-visible:ring-0·focus-visible:!outline-none·dark:bg-transparent"
+    166 166 │               onKeyDown={(event) => {
+    167 167 │                 if (event.key === "Enter" && !event.shiftKey && !event.nativeEvent.isComposing && event.keyCode !== 229) {
+  
+
+Skipped 3 suggested fixes.
+If you wish to apply the suggested (unsafe) fixes, use the command biome check --write --unsafe
+
+Checked 1 file in 552ms. No fixes applied.
+Found 3 infos.

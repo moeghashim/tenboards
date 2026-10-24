@@ -1,0 +1,14 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+locator.getAttribute: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('log', { name: 'Conversation' })[22m
+
+    at /Users/moeghashim/tenboards-v07/scripts/assistant-ui-check.ts:56:30 {
+  log: [ "  - waiting for getByRole('log', { name: 'Conversation' })" ],
+  name: 'TimeoutError'
+}
+
+Node.js v24.21.0

@@ -1,0 +1,12 @@
+
+> tenboards@0.6.2 assistant:context
+> node --experimental-strip-types scripts/assistant-context-browser-check.ts
+
+PASS visible whole-pair context pruning, local UTF8 cap, oversized latest stays visible and blocks replay
+PASS reader scroll preserved, transient history absent from storage/cookies/URL, navigation clears, no page errors
+PASS visible whole-pair context pruning, local UTF8 cap, oversized latest stays visible and blocks replay
+PASS reader scroll preserved, transient history absent from storage/cookies/URL, navigation clears, no page errors
+PASS visible whole-pair context pruning, local UTF8 cap, oversized latest stays visible and blocks replay
+PASS reader scroll preserved, transient history absent from storage/cookies/URL, navigation clears, no page errors
+PASS visible whole-pair context pruning, local UTF8 cap, oversized latest stays visible and blocks replay
+PASS reader scroll preserved, transient history absent from storage/cookies/URL, navigation clears, no page errors

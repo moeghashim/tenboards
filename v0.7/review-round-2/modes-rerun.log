@@ -1,0 +1,14 @@
+
+> tenboards@0.6.2 assistant:modes
+> node --experimental-strip-types scripts/assistant-modes-check.ts
+
+PASS Node no-env: actual Assistant route/config/protocol boundary, synthetic-only, safe bootstrap
+file:///Users/moeghashim/tenboards-v07/scripts/auth-test-support.ts:82
+    if (child.exitCode !== null) throw new Error("Test server failed to start (configuration rejected).");
+                                       ^
+
+Error: Test server failed to start (configuration rejected).
+    at startTestServer (file:///Users/moeghashim/tenboards-v07/scripts/auth-test-support.ts:82:40)
+    at async file:///Users/moeghashim/tenboards-v07/scripts/assistant-modes-check.ts:26:20
+
+Node.js v24.21.0

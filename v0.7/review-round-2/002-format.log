@@ -1,0 +1,21 @@
+src/routes/(main)/dashboard/assistant/-components/assistant.tsx:171:13 lint/style/noNestedTernary ━━━━━━━━━━
+
+  ! Do not nest ternary expressions.
+  
+    169 │         {busy
+    170 │           ? "Preparing a recorded reply."
+  > 171 │           : turns.length
+        │             ^^^^^^^^^^^^
+  > 172 │             ? `Response ${turns.at(-1)?.status}.`
+  > 173 │             : "Ready for a message."}
+        │             ^^^^^^^^^^^^^^^^^^^^^^^^
+    174 │       </p>
+    175 │     </AssistantSurface>
+  
+  i Nesting ternary expressions can make code more difficult to understand.
+  
+  i Convert nested ternary expression into if-else statements or separate the conditions to make the logic easier to understand.
+  
+
+Checked 1 file in 916ms. Fixed 1 file.
+Found 1 warning.

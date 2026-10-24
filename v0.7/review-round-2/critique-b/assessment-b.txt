@@ -1,0 +1,29 @@
+Assessment B — independent detector/browser evidence
+Target: src/routes/(main)/dashboard/assistant/-components
+URL: http://127.0.0.1:3170/dashboard/assistant
+Fresh browser tab: tab_1c (closed after assessment)
+
+CLI: bundled impeccable detect --json target; exit 0; JSON []; 0 findings, 0 rules, no locations. Repeated once after initial HMR settled; final detect.json is current result.
+
+Browser: viewed desktop 1280x800 dark empty; mobile 390x844 empty/reply in light and dark. Injected http://localhost:3197/detect.js after successful document.title/script mutation preflight. Live global detector functions present and console findings emitted. Rescanned same page in four representative states.
+
+Stable browser findings:
+- Empty, light and dark: 1 icon-tile-stack finding. 48x48 icon tile above H2 "What would you like to explore?"; presentation.tsx:51–55. Correct geometry detection, stylistic/advisory; the bot identifies the assistant and is not a demonstrated usability failure.
+- Table reply, light and dark: 1 skipped-heading finding. H1 "AI Assistant" is followed directly by H3 "Sample plans", without H2. registry.tsx:177 passes level={3}; chart section uses level={3} at line 91. Genuine semantic hierarchy issue, P2. DOM evidence independently confirms only visible headings H1/H3.
+- A scan directly after changing emulated appearance briefly reported two low-contrast findings (New conversation and TD, 1.1:1/1.0:1). A settled scan removed both, computed text returned rgb(243,245,249), and stable dark screenshot is readable. Treat these as transient appearance/scan artifacts, not persistent contrast defects. Transient screenshot retained separately for provenance.
+
+Other browser evidence:
+- No horizontal page overflow at 390px. Table is 334px wide within its 334px container. Textarea has a linked "Message" label despite snapshot interactive-element name being blank.
+- Recorded demo disclosure appears both in empty copy and completed reply attribution; ready/completed status text exists in a role=status region.
+- Copy reply and Regenerate measure 28x28 CSS px; Send is 32x32. Small for comfortable mobile touch use (44px target recommendation); do not label this a proven WCAG 2.2 minimum-target failure.
+- Development-only TanStack floating button overlaps Send at mobile viewport. This is a dev-preview limitation, not evidence of production obstruction.
+- No console error entries seen. One /api/assistant network event was reported net::ERR_ABORTED while the recorded response completed visibly; no functional failure inferred from that event alone.
+
+Overlay/cleanup:
+- Helper help inspected; explicit --port=3197 supported and used. PID 38952, started detached. All ports remained in allowed 3170–3199 range.
+- Source HTML never edited. Helper resolved git root despite evidence-directory cwd and wrote .impeccable/live state; stop --keep-inject succeeded, then empty helper directories were removed. .impeccable/design.json preserved. Port 3197 connection refused (errno 61) after stop.
+- Browser open/show attempted only after mutable preflight, but preview_status continued visible:false. Injection and rendered overlay verified through native snapshots; no claim of a user-visible presented tab.
+- Own tab closed. Emulated appearance reset to system. Attempt to restore initial persisted dark preference via two clicks only completed the first click (system-to-light); second click failed. Current shared preference may need restoration by parent. No product files changed by B.
+- Final cleanup/disk limitation: parent reported machine disk full; no extra cache deletions attempted.
+
+Evidence: detect.json; mobile-empty-light/dark.png and JSON; mobile-reply-light/dark.png and JSON; mobile-reply-dark-transient.png and JSON; live-server-start.json; live-server-stop.txt.

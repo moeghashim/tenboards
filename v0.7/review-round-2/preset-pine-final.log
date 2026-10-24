@@ -1,0 +1,36 @@
+
+> tenboards@0.6.2 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://127.0.0.1:3170 --routes /dashboard/assistant,/dashboard/default,/dashboard/chat,/chat --preset pine --reload --output screenshots/v07-r2/presets/pine
+
+PASS /dashboard/assistant light/desktop direct
+PASS /dashboard/assistant light/desktop refresh
+PASS /dashboard/assistant light/mobile direct
+PASS /dashboard/assistant light/mobile refresh
+PASS /dashboard/assistant dark/desktop direct
+PASS /dashboard/assistant dark/desktop refresh
+PASS /dashboard/assistant dark/mobile direct
+PASS /dashboard/assistant dark/mobile refresh
+PASS /chat light/desktop direct
+PASS /chat light/desktop refresh
+PASS /chat light/mobile direct
+PASS /chat light/mobile refresh
+PASS /chat dark/desktop direct
+PASS /chat dark/desktop refresh
+PASS /chat dark/mobile direct
+PASS /chat dark/mobile refresh
+PASS /dashboard/chat light/desktop direct
+PASS /dashboard/chat light/desktop refresh
+PASS /dashboard/chat light/mobile direct
+PASS /dashboard/chat light/mobile refresh
+PASS /dashboard/chat dark/desktop direct
+PASS /dashboard/chat dark/desktop refresh
+PASS /dashboard/chat dark/mobile direct
+PASS /dashboard/chat dark/mobile refresh
+PASS /dashboard/default light/desktop direct
+PASS /dashboard/default light/desktop refresh
+PASS /dashboard/default light/mobile direct
+PASS /dashboard/default light/mobile refresh
+PASS /dashboard/default dark/desktop direct
+PASS /dashboard/default dark/desktop refresh
+PASS /dashboard/default dark/mobile direct
+PASS /dashboard/default dark/mobile refresh

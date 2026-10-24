@@ -1,0 +1,20 @@
+
+> tenboards@0.6.2 assistant:browser
+> node --experimental-strip-types scripts/assistant-browser-check.ts
+
+node:internal/fs/promises:1345
+  return new FileHandle(await PromisePrototypeThen(
+                        ^
+
+Error: ENOSPC: no space left on device, open 'screenshots/v07-r2/recorded/light-desktop-empty.png'
+    at async open (node:internal/fs/promises:1345:25)
+    at async Object.writeFile (node:internal/fs/promises:1965:14)
+    at async _Page.screenshot (/Users/moeghashim/tenboards-v07/node_modules/playwright-core/lib/coreBundle.js:63324:11)
+    at async file:///Users/moeghashim/tenboards-v07/scripts/assistant-browser-check.ts:83:7 {
+  errno: -28,
+  code: 'ENOSPC',
+  syscall: 'open',
+  path: 'screenshots/v07-r2/recorded/light-desktop-empty.png'
+}
+
+Node.js v24.21.0

@@ -1,0 +1,57 @@
+{
+  "baseURL": "https://8cafcdb4-tenboards-preview.mohanadgh.workers.dev/",
+  "fontAssets": "exact public responses cached between contexts",
+  "maskedLiveClocks": false,
+  "hydrationDelayMs": 0,
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": false,
+  "interactions": false,
+  "sidebarStates": false,
+  "results": [
+    {
+      "route": "/dashboard/assistant",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_assistant-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/assistant",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_assistant-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/assistant",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_assistant-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/assistant",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_assistant-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    }
+  ]
+}

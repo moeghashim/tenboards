@@ -1,0 +1,444 @@
+src/routes/(main)/dashboard/assistant/-components/assistant.tsx:65:27 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    63 │               <a
+    64 │                 ref={conversation.signIn}
+  > 65 │                 className="underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-ring"
+       │                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    66 │                 href="/auth/v2/login?redirect=%2Fdashboard%2Fassistant"
+    67 │               >
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+     63  63 │                 <a
+     64  64 │                   ref={conversation.signIn}
+     65     │ - ················className="underline·underline-offset-4·focus-visible:outline-2·focus-visible:outline-ring"
+         65 │ + ················className="focus-visible:outline-ring·underline·underline-offset-4·focus-visible:outline-2"
+     66  66 │                   href="/auth/v2/login?redirect=%2Fdashboard%2Fassistant"
+     67  67 │                 >
+  
+
+src/routes/(main)/dashboard/assistant/-components/presentation.tsx:95:22 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    93 │       <div className="bg-muted ml-auto w-fit max-w-full rounded-xl px-4 py-3 sm:max-w-[85%]">
+    94 │         <span className="sr-only">You: </span>
+  > 95 │         <p className="whitespace-pre-wrap break-words">{prompt}</p>
+       │                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    96 │       </div>
+    97 │       <div className="min-w-0 space-y-3">
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+     93  93 │         <div className="bg-muted ml-auto w-fit max-w-full rounded-xl px-4 py-3 sm:max-w-[85%]">
+     94  94 │           <span className="sr-only">You: </span>
+     95     │ - ········<p·className="whitespace-pre-wrap·break-words">{prompt}</p>
+         95 │ + ········<p·className="break-words·whitespace-pre-wrap">{prompt}</p>
+     96  96 │         </div>
+     97  97 │         <div className="min-w-0 space-y-3">
+  
+
+src/routes/(main)/dashboard/assistant/-components/presentation.tsx:153:24 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    151 │       <div className="mx-auto w-full max-w-[752px] space-y-2">
+    152 │         {children}
+  > 153 │         <div className="border-input bg-card rounded-xl border p-2 focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-ring">
+        │                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    154 │           <label htmlFor="assistant-message" className="sr-only">
+    155 │             Message
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+    151 151 │         <div className="mx-auto w-full max-w-[752px] space-y-2">
+    152 152 │           {children}
+    153     │ - ········<div·className="border-input·bg-card·rounded-xl·border·p-2·focus-within:outline-2·focus-within:outline-offset-2·focus-within:outline-ring">
+        153 │ + ········<div·className="border-input·bg-card·focus-within:outline-ring·rounded-xl·border·p-2·focus-within:outline-2·focus-within:outline-offset-2">
+    154 154 │             <label htmlFor="assistant-message" className="sr-only">
+    155 155 │               Message
+  
+
+src/routes/(main)/dashboard/assistant/-components/presentation.tsx:165:23 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    163 │             onChange={(event) => setInput(event.target.value)}
+    164 │             placeholder="Ask a question…"
+  > 165 │             className="min-h-0 max-h-[calc(8lh+1rem)] resize-none rounded-none border-0 bg-transparent leading-6 shadow-none focus-visible:ring-0 focus-visible:!outline-none dark:bg-transparent"
+        │                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    166 │             onKeyDown={(event) => {
+    167 │               if (event.key === "Enter" && !event.shiftKey && !event.nativeEvent.isComposing && event.keyCode !== 229) {
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+    163 163 │               onChange={(event) => setInput(event.target.value)}
+    164 164 │               placeholder="Ask a question…"
+    165     │ - ············className="min-h-0·max-h-[calc(8lh+1rem)]·resize-none·rounded-none·border-0·bg-transparent·leading-6·shadow-none·focus-visible:ring-0·focus-visible:!outline-none·dark:bg-transparent"
+        165 │ + ············className="max-h-[calc(8lh+1rem)]·min-h-0·resize-none·rounded-none·border-0·bg-transparent·leading-6·shadow-none·focus-visible:ring-0·focus-visible:!outline-none·dark:bg-transparent"
+    166 166 │               onKeyDown={(event) => {
+    167 167 │                 if (event.key === "Enter" && !event.shiftKey && !event.nativeEvent.isComposing && event.keyCode !== 229) {
+  
+
+src/routes/(main)/dashboard/assistant/-components/registry.tsx:169:27 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    167 │     }
+    168 │     case "Text":
+  > 169 │       return <p className="max-w-prose whitespace-pre-wrap break-words">{schemas.Text.parse(props).text}</p>;
+        │                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    170 │     case "Card": {
+    171 │       const p = schemas.Card.parse(props);
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+    167 167 │       }
+    168 168 │       case "Text":
+    169     │ - ······return·<p·className="max-w-prose·whitespace-pre-wrap·break-words">{schemas.Text.parse(props).text}</p>;
+        169 │ + ······return·<p·className="max-w-prose·break-words·whitespace-pre-wrap">{schemas.Text.parse(props).text}</p>;
+    170 170 │       case "Card": {
+    171 171 │         const p = schemas.Card.parse(props);
+  
+
+src/routes/(main)/dashboard/assistant/-components/registry.tsx:175:21 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    173 │         <DashboardCard
+    174 │           density="compact"
+  > 175 │           className="[&_[data-slot=card]]:rounded-none [&_[data-slot=card]]:bg-transparent [&_[data-slot=card]]:ring-0 [&_[data-slot=card]]:shadow-none [&_[data-slot=card]]:py-0 [&_[data-slot=card]_[data-slot=card-content]]:px-0 [&_[data-slot=card]_[data-slot=card-header]]:px-0"
+        │                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    176 │         >
+    177 │           <SectionHeader title={p.title} level={3} />
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+    173 173 │           <DashboardCard
+    174 174 │             density="compact"
+    175     │ - ··········className="[&_[data-slot=card]]:rounded-none·[&_[data-slot=card]]:bg-transparent·[&_[data-slot=card]]:ring-0·[&_[data-slot=card]]:shadow-none·[&_[data-slot=card]]:py-0·[&_[data-slot=card]_[data-slot=card-content]]:px-0·[&_[data-slot=card]_[data-slot=card-header]]:px-0"
+        175 │ + ··········className="[&_[data-slot=card]]:rounded-none·[&_[data-slot=card]]:bg-transparent·[&_[data-slot=card]]:py-0·[&_[data-slot=card]]:shadow-none·[&_[data-slot=card]]:ring-0·[&_[data-slot=card]_[data-slot=card-content]]:px-0·[&_[data-slot=card]_[data-slot=card-header]]:px-0"
+    176 176 │           >
+    177 177 │             <SectionHeader title={p.title} level={3} />
+  
+
+scripts/assistant-context-browser-check.ts:105:22 lint/style/noNonNullAssertion ━━━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+  
+    103 │       await page.getByRole("button", { name: "Jump to latest", exact: true }).click();
+    104 │       await page.waitForFunction(() => {
+  > 105 │         const node = document.querySelector("[data-assistant-scroll]")!;
+        │                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    106 │         return node.scrollHeight - node.clientHeight - node.scrollTop < 2;
+    107 │       });
+  
+  i A non-null assertion tells TypeScript to ignore a possible null or undefined value. If the value is missing at runtime, the code fails with an error that the compiler could not catch.
+  
+  i Check that the value is defined before using it, for example with an if statement or optional chaining, instead of asserting it.
+  
+
+src/routes/(main)/dashboard/assistant/-components/assistant.tsx:22:64 lint/performance/useDomNodeTextContent  FIXABLE  ━━━━━━━━━━
+
+  ! innerText is not recommended for reading DOM node text.
+  
+    20 │   async function copy() {
+    21 │     try {
+  > 22 │       await navigator.clipboard.writeText(latestReply.current?.innerText ?? "");
+       │                                                                ^^^^^^^^^
+    23 │       setCopyStatus("Reply copied.");
+    24 │     } catch {
+  
+  i innerText depends on rendered layout and CSS, so it can be slower and produce different results from the DOM tree's text content.
+  
+  i Use textContent when you want the node's text without rendered-text behavior.
+  
+  i Unsafe fix: Use textContent instead.
+  
+     20  20 │     async function copy() {
+     21  21 │       try {
+     22     │ - ······await·navigator.clipboard.writeText(latestReply.current?.innerText·??·"");
+         22 │ + ······await·navigator.clipboard.writeText(latestReply.current?.textContent·??·"");
+     23  23 │         setCopyStatus("Reply copied.");
+     24  24 │       } catch {
+  
+
+src/routes/(main)/dashboard/assistant/-components/assistant.tsx:207:13 lint/style/noNestedTernary ━━━━━━━━━━
+
+  ! Do not nest ternary expressions.
+  
+    205 │       <p className="sr-only" role="status" aria-live="polite">
+    206 │         {busy
+  > 207 │           ? selected
+        │             ^^^^^^^^
+  > 208 │             ? "Preparing a reply."
+  > 209 │             : "Preparing a recorded reply."
+        │             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    210 │           : turns.length
+    211 │             ? `Response ${latest?.status}.`
+  
+  i Nesting ternary expressions can make code more difficult to understand.
+  
+  i Convert nested ternary expression into if-else statements or separate the conditions to make the logic easier to understand.
+  
+
+src/routes/(main)/dashboard/assistant/-components/registry.tsx:61:55 lint/suspicious/noArrayIndexKey ━━━━━━━━━━
+
+  ! Avoid using the index of an array as key property in an element.
+  
+    59 │           <TableRow>
+    60 │             {columns.map((column, i) => (
+  > 61 │               <TableHead className="h-8 px-3" key={`${i}-${column}`}>
+       │                                                       ^
+    62 │                 {column}
+    63 │               </TableHead>
+  
+  i This is the source of the key value.
+  
+    58 │         <TableHeader>
+    59 │           <TableRow>
+  > 60 │             {columns.map((column, i) => (
+       │                                   ^
+    61 │               <TableHead className="h-8 px-3" key={`${i}-${column}`}>
+    62 │                 {column}
+  
+  i The order of the items may change, and this also affects performances and component state.
+  
+  i Check the React documentation. 
+  
+
+src/routes/(main)/dashboard/assistant/-components/registry.tsx:69:28 lint/suspicious/noArrayIndexKey ━━━━━━━━━━
+
+  ! Avoid using the index of an array as key property in an element.
+  
+    67 │         <TableBody>
+    68 │           {rows.map((row, i) => (
+  > 69 │             <TableRow key={i}>
+       │                            ^
+    70 │               {row.map((cell, j) => (
+    71 │                 <TableCell className="px-3 py-2" key={j}>
+  
+  i This is the source of the key value.
+  
+    66 │         </TableHeader>
+    67 │         <TableBody>
+  > 68 │           {rows.map((row, i) => (
+       │                           ^
+    69 │             <TableRow key={i}>
+    70 │               {row.map((cell, j) => (
+  
+  i The order of the items may change, and this also affects performances and component state.
+  
+  i Check the React documentation. 
+  
+
+src/routes/(main)/dashboard/assistant/-components/registry.tsx:71:55 lint/suspicious/noArrayIndexKey ━━━━━━━━━━
+
+  ! Avoid using the index of an array as key property in an element.
+  
+    69 │             <TableRow key={i}>
+    70 │               {row.map((cell, j) => (
+  > 71 │                 <TableCell className="px-3 py-2" key={j}>
+       │                                                       ^
+    72 │                   {cell}
+    73 │                 </TableCell>
+  
+  i This is the source of the key value.
+  
+    68 │           {rows.map((row, i) => (
+    69 │             <TableRow key={i}>
+  > 70 │               {row.map((cell, j) => (
+       │                               ^
+    71 │                 <TableCell className="px-3 py-2" key={j}>
+    72 │                   {cell}
+  
+  i The order of the items may change, and this also affects performances and component state.
+  
+  i Check the React documentation. 
+  
+
+src/routes/(main)/dashboard/assistant/-components/registry.tsx:102:31 lint/suspicious/noArrayIndexKey ━━━━━━━━━━
+
+  ! Avoid using the index of an array as key property in an element.
+  
+    100 │               <Legend content={<DashboardLegend config={config} />} />
+    101 │               {series.map((_, i) => (
+  > 102 │                 <Bar key={`s${i}`} dataKey={`s${i}`} fill={chartSeries[i].color} {...motion} />
+        │                               ^
+    103 │               ))}
+    104 │             </BarChart>
+  
+  i This is the source of the key value.
+  
+     99 │               <Tooltip content={<DashboardTooltip />} cursor={chartCursor} {...motion} />
+    100 │               <Legend content={<DashboardLegend config={config} />} />
+  > 101 │               {series.map((_, i) => (
+        │                               ^
+    102 │                 <Bar key={`s${i}`} dataKey={`s${i}`} fill={chartSeries[i].color} {...motion} />
+    103 │               ))}
+  
+  i The order of the items may change, and this also affects performances and component state.
+  
+  i Check the React documentation. 
+  
+
+src/routes/(main)/dashboard/assistant/-components/registry.tsx:114:28 lint/suspicious/noArrayIndexKey ━━━━━━━━━━
+
+  ! Avoid using the index of an array as key property in an element.
+  
+    112 │               {series.map((_, i) => (
+    113 │                 <Line
+  > 114 │                   key={`s${i}`}
+        │                            ^
+    115 │                   dataKey={`s${i}`}
+    116 │                   stroke={chartSeries[i].color}
+  
+  i This is the source of the key value.
+  
+    110 │               <Tooltip content={<DashboardTooltip />} cursor={chartCursor} {...motion} />
+    111 │               <Legend content={<DashboardLegend config={config} />} />
+  > 112 │               {series.map((_, i) => (
+        │                               ^
+    113 │                 <Line
+    114 │                   key={`s${i}`}
+  
+  i The order of the items may change, and this also affects performances and component state.
+  
+  i Check the React documentation. 
+  
+
+src/routes/(main)/dashboard/assistant/-components/registry.tsx:161:23 lint/suspicious/noArrayIndexKey ━━━━━━━━━━
+
+  ! Avoid using the index of an array as key property in an element.
+  
+    159 │         <div className="min-w-0 space-y-5">
+    160 │           {p.children.map((child, i) => (
+  > 161 │             <div key={i} className="min-w-0">
+        │                       ^
+    162 │               {renderNode(child)}
+    163 │             </div>
+  
+  i This is the source of the key value.
+  
+    158 │       return (
+    159 │         <div className="min-w-0 space-y-5">
+  > 160 │           {p.children.map((child, i) => (
+        │                                   ^
+    161 │             <div key={i} className="min-w-0">
+    162 │               {renderNode(child)}
+  
+  i The order of the items may change, and this also affects performances and component state.
+  
+  i Check the React documentation. 
+  
+
+src/routes/(main)/dashboard/assistant/-components/registry.tsx:180:25 lint/suspicious/noArrayIndexKey ━━━━━━━━━━
+
+  ! Avoid using the index of an array as key property in an element.
+  
+    178 │           <CardContent className="space-y-4">
+    179 │             {p.children.map((child, i) => (
+  > 180 │               <div key={i} className="min-w-0">
+        │                         ^
+    181 │                 {renderNode(child)}
+    182 │               </div>
+  
+  i This is the source of the key value.
+  
+    177 │           <SectionHeader title={p.title} level={3} />
+    178 │           <CardContent className="space-y-4">
+  > 179 │             {p.children.map((child, i) => (
+        │                                     ^
+    180 │               <div key={i} className="min-w-0">
+    181 │                 {renderNode(child)}
+  
+  i The order of the items may change, and this also affects performances and component state.
+  
+  i Check the React documentation. 
+  
+
+src/routes/(main)/dashboard/assistant/-components/registry.tsx:200:22 lint/suspicious/noArrayIndexKey ━━━━━━━━━━
+
+  ! Avoid using the index of an array as key property in an element.
+  
+    198 │         <ul className="list-disc space-y-2 pl-5">
+    199 │           {schemas.List.parse(props).items.map((item, i) => (
+  > 200 │             <li key={i} className="break-words">
+        │                      ^
+    201 │               {item}
+    202 │             </li>
+  
+  i This is the source of the key value.
+  
+    197 │       return (
+    198 │         <ul className="list-disc space-y-2 pl-5">
+  > 199 │           {schemas.List.parse(props).items.map((item, i) => (
+        │                                                       ^
+    200 │             <li key={i} className="break-words">
+    201 │               {item}
+  
+  i The order of the items may change, and this also affects performances and component state.
+  
+  i Check the React documentation. 
+  
+
+src/routes/(main)/dashboard/assistant/-components/safe-response.tsx:14:12 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━
+
+  ! This condition is always falsy.
+  
+    12 │   }
+    13 │   render() {
+  > 14 │     return this.state.failed ? (
+       │            ^^^^^^^^^^^^^^^^^
+    15 │       <p role="status">This response could not be displayed. Try another example.</p>
+    16 │     ) : (
+  
+  i The value's type can never be truthy, so this check is redundant.
+  
+  i Remove the condition and the code it guards, or check the value you meant to test.
+  
+
+Skipped 7 suggested fixes.
+If you wish to apply the suggested (unsafe) fixes, use the command biome check --write --unsafe
+
+Checked 9 files in 510ms. Fixed 2 files.
+Found 12 warnings.
+Found 6 infos.

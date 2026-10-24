@@ -1,0 +1,12 @@
+
+> tenboards@0.6.2 assistant:worker
+> node --experimental-strip-types scripts/assistant-worker-check.ts
+
+PASS Node actual endpoint recorded SSE, method/Origin/content/role guards, private headers and conservative IP quota
+PASS workerd actual compiled endpoint: 45 intercepted provider wire cases, DTO SSR has all models and no synthetic keys
+PASS workerd real 15s inter-content idle and 60s total deadline despite continuing visible content
+PASS workerd five real 20s first-content deadlines, disconnect, explicit runtime keys, storage/tools/caps, zero unexpected egress
+Concurrent admission HTTP counts { '200': 10, '429': 6, '500': 0, '503': 0 }
+PASS two Worker DB atomic race exactly10/16, restart persistence, own-key cleanup, DB outage/recovery without fallback
+PASS auth-on endpoint anonymous/revoked fails before dispatch, valid cookie dispatches once
+PASS authenticated 10/user independent of IP and shared 30/IP across four distinct users; denied requests never dispatch

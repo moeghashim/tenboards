@@ -1,0 +1,44 @@
+
+> tenboards@0.6.2 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://127.0.0.1:3170 --routes /dashboard/assistant,/dashboard/default,/dashboard/chat,/chat --preset graphite --reload --output screenshots/v07-r2/presets/graphite
+
+FAIL /dashboard/assistant light/desktop direct
+ENOSPC: no space left on device, write
+FAIL /dashboard/assistant light/desktop refresh
+ENOSPC: no space left on device, open '/Users/moeghashim/tenboards-v07/screenshots/v07-r2/presets/graphite/_dashboard_assistant-light-desktop-refresh.png'
+FAIL /dashboard/assistant light/mobile direct
+ENOSPC: no space left on device, open '/Users/moeghashim/tenboards-v07/screenshots/v07-r2/presets/graphite/_dashboard_assistant-light-mobile.png'
+FAIL /dashboard/assistant light/mobile refresh
+ENOSPC: no space left on device, open '/Users/moeghashim/tenboards-v07/screenshots/v07-r2/presets/graphite/_dashboard_assistant-light-mobile-refresh.png'
+FAIL /dashboard/assistant dark/desktop direct
+ENOSPC: no space left on device, open '/Users/moeghashim/tenboards-v07/screenshots/v07-r2/presets/graphite/_dashboard_assistant-dark-desktop.png'
+FAIL /dashboard/assistant dark/desktop refresh
+ENOSPC: no space left on device, open '/Users/moeghashim/tenboards-v07/screenshots/v07-r2/presets/graphite/_dashboard_assistant-dark-desktop-refresh.png'
+PASS /dashboard/assistant dark/mobile direct
+FAIL /dashboard/assistant dark/mobile refresh
+ENOSPC: no space left on device, write
+FAIL /chat light/desktop direct
+ENOSPC: no space left on device, write
+PASS /chat light/desktop refresh
+PASS /chat light/mobile direct
+PASS /chat light/mobile refresh
+PASS /chat dark/desktop direct
+PASS /chat dark/desktop refresh
+PASS /chat dark/mobile direct
+PASS /chat dark/mobile refresh
+PASS /dashboard/chat light/desktop direct
+PASS /dashboard/chat light/desktop refresh
+PASS /dashboard/chat light/mobile direct
+PASS /dashboard/chat light/mobile refresh
+PASS /dashboard/chat dark/desktop direct
+PASS /dashboard/chat dark/desktop refresh
+PASS /dashboard/chat dark/mobile direct
+PASS /dashboard/chat dark/mobile refresh
+PASS /dashboard/default light/desktop direct
+PASS /dashboard/default light/desktop refresh
+PASS /dashboard/default light/mobile direct
+PASS /dashboard/default light/mobile refresh
+PASS /dashboard/default dark/desktop direct
+PASS /dashboard/default dark/desktop refresh
+PASS /dashboard/default dark/mobile direct
+PASS /dashboard/default dark/mobile refresh
