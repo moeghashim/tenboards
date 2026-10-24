@@ -1,0 +1,14 @@
+PASS Node no-env: actual Assistant route/config/protocol boundary, synthetic-only, safe bootstrap
+PASS Node live: actual Assistant route/config/protocol boundary, synthetic-only, safe bootstrap
+PASS Node forced-demo: actual Assistant route/config/protocol boundary, synthetic-only, safe bootstrap
+PASS Node db-open: actual Assistant route/config/protocol boundary, synthetic-only, safe bootstrap
+PASS Node auth: actual Assistant route/config/protocol boundary, synthetic-only, safe bootstrap
+file:///Users/moeghashim/tenboards-v07/scripts/auth-test-support.ts:76
+    if (child.exitCode !== null) throw new Error("Test server failed to start (configuration rejected).");
+                                       ^
+
+Error: Test server failed to start (configuration rejected).
+    at startTestServer (file:///Users/moeghashim/tenboards-v07/scripts/auth-test-support.ts:76:40)
+    at async file:///Users/moeghashim/tenboards-v07/scripts/assistant-modes-check.ts:24:11
+
+Node.js v24.21.0

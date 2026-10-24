@@ -1,0 +1,68 @@
+scripts/assistant-modes-check.ts:55:42 lint/style/noNonNullAssertion ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+  
+    53 │         const response = await post("openai", cookie);
+    54 │         assert.equal(response.status, 200);
+  > 55 │         assert.equal(await consumeStream(response.body!, new AbortController().signal, () => {}), mockOutput);
+       │                                          ^^^^^^^^^^^^^^
+    56 │         await server.api.post("/api/auth/sign-out", { data: {} });
+    57 │         assert.equal((await post("openai", cookie)).status, 401);
+  
+  i A non-null assertion tells TypeScript to ignore a possible null or undefined value. If the value is missing at runtime, the code fails with an error that the compiler could not catch.
+  
+  i Check that the value is defined before using it, for example with an if statement or optional chaining, instead of asserting it.
+  
+
+scripts/assistant-modes-check.ts:71:46 lint/style/noNonNullAssertion ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+  
+    69 │             const r = await post(provider.id);
+    70 │             assert.equal(r.status, 200);
+  > 71 │             assert.equal(await consumeStream(r.body!, new AbortController().signal, () => {}), mockOutput);
+       │                                              ^^^^^^^
+    72 │           }
+    73 │       }
+  
+  i A non-null assertion tells TypeScript to ignore a possible null or undefined value. If the value is missing at runtime, the code fails with an error that the compiler could not catch.
+  
+  i Check that the value is defined before using it, for example with an if statement or optional chaining, instead of asserting it.
+  
+
+scripts/assistant-modes-check.ts:55:94 lint/suspicious/noEmptyBlockStatements ━━━━━━━━━━━━━━━━━━━━━━
+
+  × Unexpected empty block.
+  
+    53 │         const response = await post("openai", cookie);
+    54 │         assert.equal(response.status, 200);
+  > 55 │         assert.equal(await consumeStream(response.body!, new AbortController().signal, () => {}), mockOutput);
+       │                                                                                              ^^
+    56 │         await server.api.post("/api/auth/sign-out", { data: {} });
+    57 │         assert.equal((await post("openai", cookie)).status, 401);
+  
+  i Empty blocks are usually the result of an incomplete refactoring. Remove the empty block or add a comment inside it if it is intentional.
+  
+
+scripts/assistant-modes-check.ts:71:91 lint/suspicious/noEmptyBlockStatements ━━━━━━━━━━━━━━━━━━━━━━
+
+  × Unexpected empty block.
+  
+    69 │             const r = await post(provider.id);
+    70 │             assert.equal(r.status, 200);
+  > 71 │             assert.equal(await consumeStream(r.body!, new AbortController().signal, () => {}), mockOutput);
+       │                                                                                           ^^
+    72 │           }
+    73 │       }
+  
+  i Empty blocks are usually the result of an incomplete refactoring. Remove the empty block or add a comment inside it if it is intentional.
+  
+
+Checked 2 files in 1375ms. Fixed 2 files.
+Found 2 errors.
+Found 2 warnings.
+check ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Some errors were emitted while applying fixes.
+  
+

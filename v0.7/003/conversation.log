@@ -1,0 +1,3 @@
+PASS generation reducer: late chunk/error/start ignored; regenerate replaces latest; clear invalidates history
+PASS context whole-pair trimming, byte/message/escaped JSON caps, oversized latest blocks, stopped/error never replay
+PASS Retry-After delta/date/default and safe error allowlist

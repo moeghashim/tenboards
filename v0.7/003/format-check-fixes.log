@@ -1,0 +1,34 @@
+scripts/assistant-modes-check.ts:64:31 lint/style/noNonNullAssertion ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+  
+    62 │         assert.equal(response.status, 200);
+    63 │         assert.equal(
+  > 64 │           await consumeStream(response.body!, new AbortController().signal, () => {
+       │                               ^^^^^^^^^^^^^^
+    65 │             /* Test observes the final state. */
+    66 │           }),
+  
+  i A non-null assertion tells TypeScript to ignore a possible null or undefined value. If the value is missing at runtime, the code fails with an error that the compiler could not catch.
+  
+  i Check that the value is defined before using it, for example with an if statement or optional chaining, instead of asserting it.
+  
+
+scripts/assistant-modes-check.ts:85:35 lint/style/noNonNullAssertion ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+  
+    83 │             assert.equal(r.status, 200);
+    84 │             assert.equal(
+  > 85 │               await consumeStream(r.body!, new AbortController().signal, () => {
+       │                                   ^^^^^^^
+    86 │                 /* Test observes the final state. */
+    87 │               }),
+  
+  i A non-null assertion tells TypeScript to ignore a possible null or undefined value. If the value is missing at runtime, the code fails with an error that the compiler could not catch.
+  
+  i Check that the value is defined before using it, for example with an if statement or optional chaining, instead of asserting it.
+  
+
+Checked 3 files in 946ms. Fixed 2 files.
+Found 2 warnings.

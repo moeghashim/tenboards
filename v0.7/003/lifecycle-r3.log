@@ -1,0 +1,6 @@
+PASS five single-key SSR/hydrated pickers expose exactly one effective model and no synthetic keys/prompts
+PASS history/regenerate/Stop/clear race, safe errors, Retry-After no retry, removed provider no fallback, session clear, focus/overflow light/desktop
+PASS history/regenerate/Stop/clear race, safe errors, Retry-After no retry, removed provider no fallback, session clear, focus/overflow light/mobile
+PASS history/regenerate/Stop/clear race, safe errors, Retry-After no retry, removed provider no fallback, session clear, focus/overflow dark/desktop
+PASS history/regenerate/Stop/clear race, safe errors, Retry-After no retry, removed provider no fallback, session clear, focus/overflow dark/mobile
+PASS compiled provider egress barrier and application console sentinel sinks

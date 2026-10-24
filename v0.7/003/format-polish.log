@@ -1,0 +1,34 @@
+scripts/assistant-modes-check.ts:86:35 lint/style/noNonNullAssertion ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+  
+    84 │             assert.equal(r.status, 200);
+    85 │             assert.equal(
+  > 86 │               await consumeStream(r.body!, new AbortController().signal, () => {
+       │                                   ^^^^^^^
+    87 │                 /* Test observes the final state. */
+    88 │               }),
+  
+  i A non-null assertion tells TypeScript to ignore a possible null or undefined value. If the value is missing at runtime, the code fails with an error that the compiler could not catch.
+  
+  i Check that the value is defined before using it, for example with an if statement or optional chaining, instead of asserting it.
+  
+
+scripts/assistant-wire-fixtures.ts:19:62 lint/style/noNestedTernary ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Do not nest ternary expressions.
+  
+    17 │ const frame = (value: unknown) => `data: ${JSON.stringify(value)}\n\n`;
+    18 │ export function providerWire(id: ProviderId, mode: WireCase = "success") {
+  > 19 │   const text = mode === "empty" || mode === "refusal" ? "" : mode === "oversize" ? "x".repeat(65537) : mockOutput;
+       │                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    20 │   if (mode === "malformed") return "data: {INVALID\n\n";
+    21 │   let chunks: string[];
+  
+  i Nesting ternary expressions can make code more difficult to understand.
+  
+  i Convert nested ternary expression into if-else statements or separate the conditions to make the logic easier to understand.
+  
+
+Checked 4 files in 484ms. Fixed 1 file.
+Found 2 warnings.

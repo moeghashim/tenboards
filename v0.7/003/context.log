@@ -1,0 +1,17 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+locator.waitFor: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('article').last().getByText(/ · completed$/) to be visible[22m
+
+    at send (/Users/moeghashim/tenboards-v07/scripts/assistant-context-browser-check.ts:47:8)
+    at async file:///Users/moeghashim/tenboards-v07/scripts/assistant-context-browser-check.ts:49:32 {
+  log: [
+    "  - waiting for locator('article').last().getByText(/ · completed$/) to be visible"
+  ],
+  name: 'TimeoutError'
+}
+
+Node.js v24.21.0

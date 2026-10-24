@@ -1,0 +1,22 @@
+
+> tenboards@0.6.2 assistant:context
+> node --experimental-strip-types scripts/assistant-context-browser-check.ts
+
+PASS visible whole-pair context pruning, local UTF8 cap, oversized latest stays visible and blocks replay
+PASS reader scroll preserved, transient history absent from storage/cookies/URL, navigation clears, no page errors
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+locator.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Home', exact: true })[22m
+
+    at /Users/moeghashim/tenboards-v07/scripts/assistant-context-browser-check.ts:107:67 {
+  log: [
+    "  - waiting for getByRole('link', { name: 'Home', exact: true })"
+  ],
+  name: 'TimeoutError'
+}
+
+Node.js v24.21.0

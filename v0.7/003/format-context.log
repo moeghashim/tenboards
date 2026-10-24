@@ -1,0 +1,64 @@
+scripts/assistant-lifecycle-browser-check.ts:24:24 lint/style/noNonNullAssertion  FIXABLE  ━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+  
+    22 │     await cacheCaptureFonts(context);
+    23 │     const page = await context.newPage();
+  > 24 │     const html = await (await page.goto(`${worker.baseURL}/dashboard/assistant`))!.text();
+       │                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    25 │     assert.ok(!html.includes("synthetic-v07-"));
+    26 │     assert.ok(!html.includes("SYNTHETIC_USER_PROMPT"));
+  
+  i A non-null assertion tells TypeScript to ignore a possible null or undefined value. If the value is missing at runtime, the code fails with an error that the compiler could not catch.
+  
+  i Check that the value is defined before using it, for example with an if statement or optional chaining, instead of asserting it.
+  
+  i Unsafe fix: Replace with optional chain operator ?. This operator includes runtime checks, so it is safer than the compile-only non-null assertion operator
+  
+     22  22 │       await cacheCaptureFonts(context);
+     23  23 │       const page = await context.newPage();
+     24     │ - ····const·html·=·await·(await·page.goto(`${worker.baseURL}/dashboard/assistant`))!.text();
+         24 │ + ····const·html·=·await·(await·page.goto(`${worker.baseURL}/dashboard/assistant`))?.text();
+     25  25 │       assert.ok(!html.includes("synthetic-v07-"));
+     26  26 │       assert.ok(!html.includes("SYNTHETIC_USER_PROMPT"));
+  
+
+scripts/assistant-context-browser-check.ts:20:23 lint/suspicious/noEmptyBlockStatements ━━━━━━━━━━━━
+
+  × Unexpected empty block.
+  
+    18 │   let reply = 'root = Text("Synthetic reply")';
+    19 │   let gate: Promise<void> | undefined;
+  > 20 │   let release = () => {};
+       │                       ^^
+    21 │   const bodies: { messages: { role: string; content: string }[] }[] = [];
+    22 │   await page.route("**/api/assistant", async (route) => {
+  
+  i Empty blocks are usually the result of an incomplete refactoring. Remove the empty block or add a comment inside it if it is intentional.
+  
+
+scripts/assistant-context-browser-check.ts:34:20 lint/suspicious/noEmptyBlockStatements ━━━━━━━━━━━━
+
+  × Unexpected empty block.
+  
+    32 │         ]),
+    33 │       })
+  > 34 │       .catch(() => {});
+       │                    ^^
+    35 │   });
+    36 │   await page.goto(`${base}/dashboard/assistant`);
+  
+  i Empty blocks are usually the result of an incomplete refactoring. Remove the empty block or add a comment inside it if it is intentional.
+  
+
+Skipped 1 suggested fixes.
+If you wish to apply the suggested (unsafe) fixes, use the command biome check --write --unsafe
+
+Checked 2 files in 964ms. Fixed 2 files.
+Found 2 errors.
+Found 1 warning.
+check ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Some errors were emitted while applying fixes.
+  
+

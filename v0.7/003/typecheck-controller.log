@@ -1,0 +1,6 @@
+
+> tenboards@0.6.2 typecheck
+> tsc --noEmit
+
+src/routes/(main)/dashboard/assistant/-components/conversation.ts(66,31): error TS2550: Property 'findLastIndex' does not exist on type 'Turn[]'. Do you need to change your target library? Try changing the 'lib' compiler option to 'es2023' or later.
+src/routes/(main)/dashboard/assistant/-components/conversation.ts(66,46): error TS7006: Parameter 'turn' implicitly has an 'any' type.

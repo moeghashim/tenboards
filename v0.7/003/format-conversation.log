@@ -1,0 +1,18 @@
+src/routes/(main)/dashboard/assistant/-components/use-conversation.ts:71:9 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━
+
+  ! This condition is always truthy.
+  
+    69 │   }, [retryAt]);
+    70 │   useEffect(() => {
+  > 71 │     if (follow.current && state.turns.length) end.current?.scrollIntoView({ block: "end", behavior: "instant" });
+       │         ^^^^^^^^^^^^^^
+    72 │   }, [state.turns]);
+    73 │   async function refresh(id: number) {
+  
+  i The value's type can never be falsy, so this check is redundant.
+  
+  i Remove the condition, or check the value you meant to test.
+  
+
+Checked 3 files in 368ms. Fixed 2 files.
+Found 1 warning.

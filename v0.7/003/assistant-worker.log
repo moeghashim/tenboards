@@ -1,0 +1,23 @@
+
+> tenboards@0.6.2 assistant:worker
+> node --experimental-strip-types scripts/assistant-worker-check.ts
+
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+200 !== 429
+
+    at file:///Users/moeghashim/tenboards-v07/scripts/assistant-worker-check.ts:49:10
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5) {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 200,
+  expected: 429,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.21.0

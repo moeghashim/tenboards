@@ -1,0 +1,7 @@
+PASS public /auth/v2/login
+PASS public /auth/v2/register
+PASS public /unauthorized
+PASS demo mode, public 404, protected behavior and signed-out session
+PASS read-only deployment check; no account writes requested.
+PASS recorded SSR/POST https://d47f95db-tenboards-preview.mohanadgh.workers.dev
+PASS recorded SSR/POST https://pr-72-tenboards-preview.mohanadgh.workers.dev

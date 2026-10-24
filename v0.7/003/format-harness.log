@@ -1,0 +1,112 @@
+scripts/worker-assistant-harness.ts:35:9 lint/style/noNestedTernary ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Do not nest ternary expressions.
+  
+    33 │     url.hostname === "api.anthropic.com"
+    34 │       ? "anthropic"
+  > 35 │       : url.hostname === "api.openai.com"
+       │         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  > 36 │         ? "openai"
+        ...
+  > 42 │               ? "google"
+  > 43 │               : undefined;
+       │               ^^^^^^^^^^^
+    44 │   if (!id) {
+    45 │     violations++;
+  
+  i Nesting ternary expressions can make code more difficult to understand.
+  
+  i Convert nested ternary expression into if-else statements or separate the conditions to make the logic easier to understand.
+  
+
+scripts/worker-assistant-harness.ts:37:11 lint/style/noNestedTernary ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Do not nest ternary expressions.
+  
+    35 │       : url.hostname === "api.openai.com"
+    36 │         ? "openai"
+  > 37 │         : url.hostname === "api.x.ai"
+       │           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  > 38 │           ? "xai"
+        ...
+  > 42 │               ? "google"
+  > 43 │               : undefined;
+       │               ^^^^^^^^^^^
+    44 │   if (!id) {
+    45 │     violations++;
+  
+  i Nesting ternary expressions can make code more difficult to understand.
+  
+  i Convert nested ternary expression into if-else statements or separate the conditions to make the logic easier to understand.
+  
+
+scripts/worker-assistant-harness.ts:39:13 lint/style/noNestedTernary ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Do not nest ternary expressions.
+  
+    37 │         : url.hostname === "api.x.ai"
+    38 │           ? "xai"
+  > 39 │           : url.hostname === "api.meta.ai"
+       │             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  > 40 │             ? "meta"
+  > 41 │             : url.hostname === "generativelanguage.googleapis.com"
+  > 42 │               ? "google"
+  > 43 │               : undefined;
+       │               ^^^^^^^^^^^
+    44 │   if (!id) {
+    45 │     violations++;
+  
+  i Nesting ternary expressions can make code more difficult to understand.
+  
+  i Convert nested ternary expression into if-else statements or separate the conditions to make the logic easier to understand.
+  
+
+scripts/worker-assistant-harness.ts:41:15 lint/style/noNestedTernary ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Do not nest ternary expressions.
+  
+    39 │           : url.hostname === "api.meta.ai"
+    40 │             ? "meta"
+  > 41 │             : url.hostname === "generativelanguage.googleapis.com"
+       │               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  > 42 │               ? "google"
+  > 43 │               : undefined;
+       │               ^^^^^^^^^^^
+    44 │   if (!id) {
+    45 │     violations++;
+  
+  i Nesting ternary expressions can make code more difficult to understand.
+  
+  i Convert nested ternary expression into if-else statements or separate the conditions to make the logic easier to understand.
+  
+
+scripts/worker-assistant-harness.ts:55:26 lint/style/noNonNullAssertion  FIXABLE  ━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+  
+    53 │   outputRequests.push({
+    54 │     provider: id,
+  > 55 │     model: body.model ?? providers.find((p) => p.id === id)!.model,
+       │                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    56 │     explicitKey: key.includes(`synthetic-v07-${id}-`),
+    57 │     storageDisabled: !["openai", "xai"].includes(id) || body.store === false,
+  
+  i A non-null assertion tells TypeScript to ignore a possible null or undefined value. If the value is missing at runtime, the code fails with an error that the compiler could not catch.
+  
+  i Check that the value is defined before using it, for example with an if statement or optional chaining, instead of asserting it.
+  
+  i Unsafe fix: Replace with optional chain operator ?. This operator includes runtime checks, so it is safer than the compile-only non-null assertion operator
+  
+    53 53 │     outputRequests.push({
+    54 54 │       provider: id,
+    55    │ - ····model:·body.model·??·providers.find((p)·=>·p.id·===·id)!.model,
+       55 │ + ····model:·body.model·??·providers.find((p)·=>·p.id·===·id)?.model,
+    56 56 │       explicitKey: key.includes(`synthetic-v07-${id}-`),
+    57 57 │       storageDisabled: !["openai", "xai"].includes(id) || body.store === false,
+  
+
+Skipped 1 suggested fixes.
+If you wish to apply the suggested (unsafe) fixes, use the command biome check --write --unsafe
+
+Checked 5 files in 794ms. Fixed 4 files.
+Found 5 warnings.

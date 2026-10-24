@@ -1,0 +1,9 @@
+
+> tenboards@0.6.2 assistant:server
+> node --experimental-strip-types scripts/assistant-server-check.ts
+
+PASS provider defaults, order, models, safe DTO, canonical origin configuration
+PASS strict roles/fields, UTF8/body/history bounds, stalled input cancellation, memory TTL/cap and spoofed IP
+PASS 45 actual adapter wire cases, explicit keys/endpoints/tokens, storage off, split UTF8, safe failures, no retries, cancellation
+PASS visible-output cap, token truncation, tool rejection, one terminal event and idle cancellation
+PASS exact deadline constants and total cancellation despite continuous text

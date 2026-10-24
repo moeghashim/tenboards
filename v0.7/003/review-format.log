@@ -1,0 +1,113 @@
+src/routes/(main)/dashboard/assistant/-components/assistant.tsx:87:25 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    85 │             <a
+    86 │               ref={conversation.signIn}
+  > 87 │               className="underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-ring"
+       │                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    88 │               href="/auth/v2/login?redirect=%2Fdashboard%2Fassistant"
+    89 │             >
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+     85  85 │               <a
+     86  86 │                 ref={conversation.signIn}
+     87     │ - ··············className="underline·underline-offset-4·focus-visible:outline-2·focus-visible:outline-ring"
+         87 │ + ··············className="focus-visible:outline-ring·underline·underline-offset-4·focus-visible:outline-2"
+     88  88 │                 href="/auth/v2/login?redirect=%2Fdashboard%2Fassistant"
+     89  89 │               >
+  
+
+src/routes/(main)/dashboard/assistant/-components/assistant.tsx:127:32 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    125 │                 <div className="bg-muted ml-auto max-w-prose rounded-xl px-4 py-3">
+    126 │                   <p className="mb-1 font-medium">You</p>
+  > 127 │                   <p className="whitespace-pre-wrap break-words">{turn.prompt}</p>
+        │                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    128 │                 </div>
+    129 │                 <div className="min-w-0 space-y-3">
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+    125 125 │                   <div className="bg-muted ml-auto max-w-prose rounded-xl px-4 py-3">
+    126 126 │                     <p className="mb-1 font-medium">You</p>
+    127     │ - ··················<p·className="whitespace-pre-wrap·break-words">{turn.prompt}</p>
+        127 │ + ··················<p·className="break-words·whitespace-pre-wrap">{turn.prompt}</p>
+    128 128 │                   </div>
+    129 129 │                   <div className="min-w-0 space-y-3">
+  
+
+src/routes/(main)/dashboard/assistant/-components/assistant.tsx:220:17 lint/style/noNestedTernary ━━━━━━━━━━
+
+  ! Do not nest ternary expressions.
+  
+    218 │           <p className="sr-only" role="status" aria-live="polite">
+    219 │             {busy
+  > 220 │               ? selected
+        │                 ^^^^^^^^
+  > 221 │                 ? "Preparing a reply."
+  > 222 │                 : "Preparing a recorded reply."
+        │                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    223 │               : turns.length
+    224 │                 ? `Response ${turns.at(-1)?.status}.`
+  
+  i Nesting ternary expressions can make code more difficult to understand.
+  
+  i Convert nested ternary expression into if-else statements or separate the conditions to make the logic easier to understand.
+  
+
+src/routes/(main)/dashboard/assistant/-components/conversation.ts:37:67 lint/suspicious/noEmptyBlockStatements ━━━━━━━━━━
+
+  × Unexpected empty block.
+  
+    35 │   const reader = response.body?.getReader();
+    36 │   if (!reader) return fallback;
+  > 37 │   const timer = setTimeout(() => void reader.cancel().catch(() => {}), 2000);
+       │                                                                   ^^
+    38 │   try {
+    39 │     const decoder = new TextDecoder();
+  
+  i Empty blocks are usually the result of an incomplete refactoring. Remove the empty block or add a comment inside it if it is intentional.
+  
+
+src/routes/(main)/dashboard/assistant/-components/conversation.ts:55:39 lint/suspicious/noEmptyBlockStatements ━━━━━━━━━━
+
+  × Unexpected empty block.
+  
+    53 │   } finally {
+    54 │     clearTimeout(timer);
+  > 55 │     await reader.cancel().catch(() => {});
+       │                                       ^^
+    56 │     reader.releaseLock();
+    57 │   }
+  
+  i Empty blocks are usually the result of an incomplete refactoring. Remove the empty block or add a comment inside it if it is intentional.
+  
+
+Skipped 2 suggested fixes.
+If you wish to apply the suggested (unsafe) fixes, use the command biome check --write --unsafe
+
+Checked 6 files in 1345ms. Fixed 5 files.
+Found 2 errors.
+Found 1 warning.
+Found 2 infos.
+check ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Some errors were emitted while applying fixes.
+  
+

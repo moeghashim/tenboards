@@ -1,0 +1,406 @@
+
+> tenboards@0.6.2 check
+> biome check
+
+scripts/assistant-browser-check.ts:101:54 lint/performance/useDomNodeTextContent  FIXABLE  ━━━━━━━━━━
+
+  ! innerText is not recommended for reading DOM node text.
+  
+     99 │           .waitFor()
+    100 │           .catch(async (error) => {
+  > 101 │             console.error(await page.locator("main").innerText(), errors);
+        │                                                      ^^^^^^^^^
+    102 │             await page.screenshot({ path: `${output}/failure.png` });
+    103 │             throw error;
+  
+  i innerText depends on rendered layout and CSS, so it can be slower and produce different results from the DOM tree's text content.
+  
+  i Use textContent when you want the node's text without rendered-text behavior.
+  
+  i Unsafe fix: Use textContent instead.
+  
+     99  99 │             .waitFor()
+    100 100 │             .catch(async (error) => {
+    101     │ - ············console.error(await·page.locator("main").innerText(),·errors);
+        101 │ + ············console.error(await·page.locator("main").textContent(),·errors);
+    102 102 │               await page.screenshot({ path: `${output}/failure.png` });
+    103 103 │               throw error;
+  
+
+scripts/assistant-modes-check.ts:86:35 lint/style/noNonNullAssertion ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+  
+    84 │             assert.equal(r.status, 200);
+    85 │             assert.equal(
+  > 86 │               await consumeStream(r.body!, new AbortController().signal, () => {
+       │                                   ^^^^^^^
+    87 │                 /* Test observes the final state. */
+    88 │               }),
+  
+  i A non-null assertion tells TypeScript to ignore a possible null or undefined value. If the value is missing at runtime, the code fails with an error that the compiler could not catch.
+  
+  i Check that the value is defined before using it, for example with an if statement or optional chaining, instead of asserting it.
+  
+
+scripts/assistant-wire-fixtures.ts:19:62 lint/style/noNestedTernary ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Do not nest ternary expressions.
+  
+    17 │ const frame = (value: unknown) => `data: ${JSON.stringify(value)}\n\n`;
+    18 │ export function providerWire(id: ProviderId, mode: WireCase = "success") {
+  > 19 │   const text = mode === "empty" || mode === "refusal" ? "" : mode === "oversize" ? "x".repeat(65537) : mockOutput;
+       │                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    20 │   if (mode === "malformed") return "data: {INVALID\n\n";
+    21 │   let chunks: string[];
+  
+  i Nesting ternary expressions can make code more difficult to understand.
+  
+  i Convert nested ternary expression into if-else statements or separate the conditions to make the logic easier to understand.
+  
+
+scripts/assistant-worker-check.ts:24:24 lint/style/noNonNullAssertion ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+  
+    22 │   assert.match(response.headers.get("cache-control") ?? "", /private, no-store/);
+    23 │   assert.equal(response.headers.get("x-content-type-options"), "nosniff");
+  > 24 │   return consumeStream(response.body!, new AbortController().signal, () => {
+       │                        ^^^^^^^^^^^^^^
+    25 │     /* Inspect final response below. */
+    26 │   });
+  
+  i A non-null assertion tells TypeScript to ignore a possible null or undefined value. If the value is missing at runtime, the code fails with an error that the compiler could not catch.
+  
+  i Check that the value is defined before using it, for example with an if statement or optional chaining, instead of asserting it.
+  
+
+scripts/assistant-worker-check.ts:146:12 lint/style/noNonNullAssertion  FIXABLE  ━━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+  
+    144 │   const responses = await Promise.all(
+    145 │     Array.from({ length: 16 }, (_, n) =>
+  > 146 │       post((n % 2 ? first : second)!.baseURL, payload, { "cf-connecting-ip": "198.19.8.1" }),
+        │            ^^^^^^^^^^^^^^^^^^^^^^^^^
+    147 │     ),
+    148 │   );
+  
+  i A non-null assertion tells TypeScript to ignore a possible null or undefined value. If the value is missing at runtime, the code fails with an error that the compiler could not catch.
+  
+  i Check that the value is defined before using it, for example with an if statement or optional chaining, instead of asserting it.
+  
+  i Unsafe fix: Replace with optional chain operator ?. This operator includes runtime checks, so it is safer than the compile-only non-null assertion operator
+  
+    144 144 │     const responses = await Promise.all(
+    145 145 │       Array.from({ length: 16 }, (_, n) =>
+    146     │ - ······post((n·%·2·?·first·:·second)!.baseURL,·payload,·{·"cf-connecting-ip":·"198.19.8.1"·}),
+        146 │ + ······post((n·%·2·?·first·:·second)?.baseURL,·payload,·{·"cf-connecting-ip":·"198.19.8.1"·}),
+    147 147 │       ),
+    148 148 │     );
+  
+
+scripts/deploy-prepare-core.ts:96:55 lint/style/noNonNullAssertion  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+  
+    94 │   for (const entry of providers)
+    95 │     for (const key of [entry.key, entry.override])
+  > 96 │       if (assistantEnv[key]?.trim()) assistant[key] = assistantEnv[key]!.trim();
+       │                                                       ^^^^^^^^^^^^^^^^^^
+    97 │   if (assistantEnv.ASSISTANT_ORIGIN?.trim()) assistant.ASSISTANT_ORIGIN = assistantEnv.ASSISTANT_ORIGIN.trim();
+    98 │   // Exclusive creation rejects existing files and symlinks; never rotate an existing secret implicitly.
+  
+  i A non-null assertion tells TypeScript to ignore a possible null or undefined value. If the value is missing at runtime, the code fails with an error that the compiler could not catch.
+  
+  i Check that the value is defined before using it, for example with an if statement or optional chaining, instead of asserting it.
+  
+  i Unsafe fix: Replace with optional chain operator ?. This operator includes runtime checks, so it is safer than the compile-only non-null assertion operator
+  
+     94  94 │     for (const entry of providers)
+     95  95 │       for (const key of [entry.key, entry.override])
+     96     │ - ······if·(assistantEnv[key]?.trim())·assistant[key]·=·assistantEnv[key]!.trim();
+         96 │ + ······if·(assistantEnv[key]?.trim())·assistant[key]·=·assistantEnv[key]?.trim();
+     97  97 │     if (assistantEnv.ASSISTANT_ORIGIN?.trim()) assistant.ASSISTANT_ORIGIN = assistantEnv.ASSISTANT_ORIGIN.trim();
+     98  98 │     // Exclusive creation rejects existing files and symlinks; never rotate an existing secret implicitly.
+  
+
+scripts/worker-assistant-harness.ts:35:9 lint/style/noNestedTernary ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Do not nest ternary expressions.
+  
+    33 │     url.hostname === "api.anthropic.com"
+    34 │       ? "anthropic"
+  > 35 │       : url.hostname === "api.openai.com"
+       │         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  > 36 │         ? "openai"
+        ...
+  > 42 │               ? "google"
+  > 43 │               : undefined;
+       │               ^^^^^^^^^^^
+    44 │   if (!id) {
+    45 │     violations++;
+  
+  i Nesting ternary expressions can make code more difficult to understand.
+  
+  i Convert nested ternary expression into if-else statements or separate the conditions to make the logic easier to understand.
+  
+
+scripts/worker-assistant-harness.ts:37:11 lint/style/noNestedTernary ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Do not nest ternary expressions.
+  
+    35 │       : url.hostname === "api.openai.com"
+    36 │         ? "openai"
+  > 37 │         : url.hostname === "api.x.ai"
+       │           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  > 38 │           ? "xai"
+        ...
+  > 42 │               ? "google"
+  > 43 │               : undefined;
+       │               ^^^^^^^^^^^
+    44 │   if (!id) {
+    45 │     violations++;
+  
+  i Nesting ternary expressions can make code more difficult to understand.
+  
+  i Convert nested ternary expression into if-else statements or separate the conditions to make the logic easier to understand.
+  
+
+scripts/worker-assistant-harness.ts:39:13 lint/style/noNestedTernary ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Do not nest ternary expressions.
+  
+    37 │         : url.hostname === "api.x.ai"
+    38 │           ? "xai"
+  > 39 │           : url.hostname === "api.meta.ai"
+       │             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  > 40 │             ? "meta"
+  > 41 │             : url.hostname === "generativelanguage.googleapis.com"
+  > 42 │               ? "google"
+  > 43 │               : undefined;
+       │               ^^^^^^^^^^^
+    44 │   if (!id) {
+    45 │     violations++;
+  
+  i Nesting ternary expressions can make code more difficult to understand.
+  
+  i Convert nested ternary expression into if-else statements or separate the conditions to make the logic easier to understand.
+  
+
+scripts/worker-assistant-harness.ts:41:15 lint/style/noNestedTernary ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Do not nest ternary expressions.
+  
+    39 │           : url.hostname === "api.meta.ai"
+    40 │             ? "meta"
+  > 41 │             : url.hostname === "generativelanguage.googleapis.com"
+       │               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  > 42 │               ? "google"
+  > 43 │               : undefined;
+       │               ^^^^^^^^^^^
+    44 │   if (!id) {
+    45 │     violations++;
+  
+  i Nesting ternary expressions can make code more difficult to understand.
+  
+  i Convert nested ternary expression into if-else statements or separate the conditions to make the logic easier to understand.
+  
+
+scripts/worker-assistant-harness.ts:55:26 lint/style/noNonNullAssertion  FIXABLE  ━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+  
+    53 │   outputRequests.push({
+    54 │     provider: id,
+  > 55 │     model: body.model ?? providers.find((p) => p.id === id)!.model,
+       │                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    56 │     explicitKey: key.includes(`synthetic-v07-${id}-`),
+    57 │     storageDisabled: !["openai", "xai"].includes(id) || body.store === false,
+  
+  i A non-null assertion tells TypeScript to ignore a possible null or undefined value. If the value is missing at runtime, the code fails with an error that the compiler could not catch.
+  
+  i Check that the value is defined before using it, for example with an if statement or optional chaining, instead of asserting it.
+  
+  i Unsafe fix: Replace with optional chain operator ?. This operator includes runtime checks, so it is safer than the compile-only non-null assertion operator
+  
+    53 53 │     outputRequests.push({
+    54 54 │       provider: id,
+    55    │ - ····model:·body.model·??·providers.find((p)·=>·p.id·===·id)!.model,
+       55 │ + ····model:·body.model·??·providers.find((p)·=>·p.id·===·id)?.model,
+    56 56 │       explicitKey: key.includes(`synthetic-v07-${id}-`),
+    57 57 │       storageDisabled: !["openai", "xai"].includes(id) || body.store === false,
+  
+
+scripts/worker-assistant-harness.ts:51:16 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━
+
+  ! Unnecessary nullish coalescing.
+  
+    49 │   const headers = new Headers(init?.headers);
+    50 │   const key = [...headers.values()].find((value) => value.includes("synthetic-v07-")) ?? "";
+  > 51 │   const mode = (key.split("synthetic-v07-")[1]?.split("-")[1] as WireCase) ?? "success";
+       │                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    52 │   const body = JSON.parse(String(init?.body));
+    53 │   outputRequests.push({
+  
+  i Drop ?? and the fallback expression.
+  
+    49 │   const headers = new Headers(init?.headers);
+    50 │   const key = [...headers.values()].find((value) => value.includes("synthetic-v07-")) ?? "";
+  > 51 │   const mode = (key.split("synthetic-v07-")[1]?.split("-")[1] as WireCase) ?? "success";
+       │                                                                            ^^
+    52 │   const body = JSON.parse(String(init?.body));
+    53 │   outputRequests.push({
+  
+  i The left-hand side is guaranteed to be non-nullish, so the fallback is unreachable.
+  
+
+src/lib/assistant/language.ts:60:14 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! This condition is always truthy.
+  
+    58 │         return result;
+    59 │       }
+  > 60 │       while (true) {
+       │              ^^^^
+    61 │         result.push(value(depth + 1));
+    62 │         skip();
+  
+  i The value's type can never be falsy, so this check is redundant.
+  
+  i Remove the condition, or check the value you meant to test.
+  
+
+src/lib/assistant/language.ts:78:14 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! This condition is always truthy.
+  
+    76 │         return result;
+    77 │       }
+  > 78 │       while (true) {
+       │              ^^^^
+    79 │         const key = source[offset] === '"' ? value(depth + 1) : identifier();
+    80 │         if (
+  
+  i The value's type can never be falsy, so this check is redundant.
+  
+  i Remove the condition, or check the value you meant to test.
+  
+
+src/lib/assistant/language.ts:119:12 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! This condition is always truthy.
+  
+    117 │       return { call: name, args };
+    118 │     }
+  > 119 │     while (true) {
+        │            ^^^^
+    120 │       args.push(value(depth + 1));
+    121 │       skip();
+  
+  i The value's type can never be falsy, so this check is redundant.
+  
+  i Remove the condition, or check the value you meant to test.
+  
+
+src/lib/assistant/language.ts:131:12 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! This condition is always truthy.
+  
+    129 │   let pending = false;
+    130 │   try {
+  > 131 │     while (true) {
+        │            ^^^^
+    132 │       skip();
+    133 │       if (offset === source.length) break;
+  
+  i The value's type can never be falsy, so this check is redundant.
+  
+  i Remove the condition, or check the value you meant to test.
+  
+
+src/lib/assistant/language.ts:204:9 lint/complexity/useOptionalChain  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━
+
+  ! Change to an optional chain.
+  
+    202 │       }
+    203 │     if (!root && unresolved && !complete) return { status: "pending", response: null };
+  > 204 │     if (!root || root.name !== "Stack" || (complete && unresolved)) throw new Invalid();
+        │         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    205 │     return { status: pending || unresolved ? "pending" : "ready", response: `root = ${serialize(root)}` };
+    206 │   } catch {
+  
+  i An optional chain is shorter, and it avoids repeating the same expression in each check.
+  
+  i Unsafe fix: Change to an optional chain.
+  
+    202 202 │         }
+    203 203 │       if (!root && unresolved && !complete) return { status: "pending", response: null };
+    204     │ - ····if·(!root·||·root.name·!==·"Stack"·||·(complete·&&·unresolved))·throw·new·Invalid();
+        204 │ + ····if·(root?.name·!==·"Stack"·||·(complete·&&·unresolved))·throw·new·Invalid();
+    205 205 │       return { status: pending || unresolved ? "pending" : "ready", response: `root = ${serialize(root)}` };
+    206 206 │     } catch {
+  
+
+src/lib/assistant/recorded.ts:17:54 lint/style/noNestedTernary ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Do not nest ternary expressions.
+  
+    15 │ };
+    16 │ export function recordedReply(prompt: string) {
+  > 17 │   const key = /chart|week/i.test(prompt) ? "chart" : /table|plan|compare/i.test(prompt) ? "table" : "overview";
+       │                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    18 │   const matched = examples.some((example) => example.prompt.toLowerCase() === prompt.trim().toLowerCase());
+    19 │   return matched
+  
+  i Nesting ternary expressions can make code more difficult to understand.
+  
+  i Convert nested ternary expression into if-else statements or separate the conditions to make the logic easier to understand.
+  
+
+src/lib/assistant/transport.ts:42:12 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! This condition is always truthy.
+  
+    40 │   signal.addEventListener("abort", cancel, { once: true });
+    41 │   try {
+  > 42 │     while (true) {
+       │            ^^^^
+    43 │       signal.throwIfAborted();
+    44 │       const part = await reader.read();
+  
+  i The value's type can never be falsy, so this check is redundant.
+  
+  i Remove the condition, or check the value you meant to test.
+  
+
+src/lib/highlighter.tsx:96:20 lint/suspicious/noArrayIndexKey ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Avoid using the index of an array as key property in an element.
+  
+    94 │           line.map((token, index) => (
+    95 │             <span
+  > 96 │               key={index}
+       │                    ^^^^^
+    97 │               style={token.htmlStyle as React.CSSProperties}
+    98 │               className="text-(--shiki-light) dark:text-(--shiki-dark)"
+  
+  i This is the source of the key value.
+  
+    92 │       return {
+    93 │         lines: tokens.map((line) =>
+  > 94 │           line.map((token, index) => (
+       │                            ^^^^^
+    95 │             <span
+    96 │               key={index}
+  
+  i The order of the items may change, and this also affects performances and component state.
+  
+  i Check the React documentation. 
+  
+
+The number of diagnostics exceeds the limit allowed. Use --max-diagnostics to increase it.
+Diagnostics not shown: 22.
+Checked 504 files in 485ms. No fixes applied.
+Found 31 warnings.
+Found 11 infos.

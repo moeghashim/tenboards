@@ -1,0 +1,156 @@
+scripts/assistant-wire-fixtures.ts:143:5 lint/style/useTemplate  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  i Template literals are preferred over string concatenation.
+  
+    141 │   );
+    142 │   const repeating = new TextEncoder().encode(
+  > 143 │     providerWire(id, "truncated").split("\n\n").filter(Boolean).at(-1)! + "\n\n",
+        │     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    144 │   );
+    145 │   let offset = 0;
+  
+  i Template literals are easier to read than a chain of + operators and quotes, and they avoid mistakes with spaces and escaped quotes.
+  
+  i Unsafe fix: Use a template literal.
+  
+    141 141 │     );
+    142 142 │     const repeating = new TextEncoder().encode(
+    143     │ - ····providerWire(id,·"truncated").split("\n\n").filter(Boolean).at(-1)!·+·"\n\n",
+        143 │ + ····`${providerWire(id,·"truncated").split("\n\n").filter(Boolean).at(-1)!}\n\n`,
+    144 144 │     );
+    145 145 │     let offset = 0;
+  
+
+scripts/assistant-lifecycle-browser-check.ts:24:24 lint/style/noNonNullAssertion  FIXABLE  ━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+  
+    22 │     await cacheCaptureFonts(context);
+    23 │     const page = await context.newPage();
+  > 24 │     const html = await (await page.goto(`${worker.baseURL}/dashboard/assistant`))!.text();
+       │                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    25 │     assert.ok(!html.includes("synthetic-v07-"));
+    26 │     assert.ok(!html.includes("SYNTHETIC_USER_PROMPT"));
+  
+  i A non-null assertion tells TypeScript to ignore a possible null or undefined value. If the value is missing at runtime, the code fails with an error that the compiler could not catch.
+  
+  i Check that the value is defined before using it, for example with an if statement or optional chaining, instead of asserting it.
+  
+  i Unsafe fix: Replace with optional chain operator ?. This operator includes runtime checks, so it is safer than the compile-only non-null assertion operator
+  
+     22  22 │       await cacheCaptureFonts(context);
+     23  23 │       const page = await context.newPage();
+     24     │ - ····const·html·=·await·(await·page.goto(`${worker.baseURL}/dashboard/assistant`))!.text();
+         24 │ + ····const·html·=·await·(await·page.goto(`${worker.baseURL}/dashboard/assistant`))?.text();
+     25  25 │       assert.ok(!html.includes("synthetic-v07-"));
+     26  26 │       assert.ok(!html.includes("SYNTHETIC_USER_PROMPT"));
+  
+
+scripts/assistant-modes-check.ts:64:31 lint/style/noNonNullAssertion ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+  
+    62 │         assert.equal(response.status, 200);
+    63 │         assert.equal(
+  > 64 │           await consumeStream(response.body!, new AbortController().signal, () => {
+       │                               ^^^^^^^^^^^^^^
+    65 │             /* Test observes the final state. */
+    66 │           }),
+  
+  i A non-null assertion tells TypeScript to ignore a possible null or undefined value. If the value is missing at runtime, the code fails with an error that the compiler could not catch.
+  
+  i Check that the value is defined before using it, for example with an if statement or optional chaining, instead of asserting it.
+  
+
+scripts/assistant-modes-check.ts:85:35 lint/style/noNonNullAssertion ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+  
+    83 │             assert.equal(r.status, 200);
+    84 │             assert.equal(
+  > 85 │               await consumeStream(r.body!, new AbortController().signal, () => {
+       │                                   ^^^^^^^
+    86 │                 /* Test observes the final state. */
+    87 │               }),
+  
+  i A non-null assertion tells TypeScript to ignore a possible null or undefined value. If the value is missing at runtime, the code fails with an error that the compiler could not catch.
+  
+  i Check that the value is defined before using it, for example with an if statement or optional chaining, instead of asserting it.
+  
+
+scripts/assistant-wire-fixtures.ts:19:62 lint/style/noNestedTernary ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Do not nest ternary expressions.
+  
+    17 │ const frame = (value: unknown) => `data: ${JSON.stringify(value)}\n\n`;
+    18 │ export function providerWire(id: ProviderId, mode: WireCase = "success") {
+  > 19 │   const text = mode === "empty" || mode === "refusal" ? "" : mode === "oversize" ? "x".repeat(65537) : mockOutput;
+       │                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    20 │   if (mode === "malformed") return "data: {INVALID\n\n";
+    21 │   let chunks: string[];
+  
+  i Nesting ternary expressions can make code more difficult to understand.
+  
+  i Convert nested ternary expression into if-else statements or separate the conditions to make the logic easier to understand.
+  
+
+scripts/assistant-wire-fixtures.ts:143:5 lint/style/noNonNullAssertion ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+  
+    141 │   );
+    142 │   const repeating = new TextEncoder().encode(
+  > 143 │     providerWire(id, "truncated").split("\n\n").filter(Boolean).at(-1)! + "\n\n",
+        │     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    144 │   );
+    145 │   let offset = 0;
+  
+  i A non-null assertion tells TypeScript to ignore a possible null or undefined value. If the value is missing at runtime, the code fails with an error that the compiler could not catch.
+  
+  i Check that the value is defined before using it, for example with an if statement or optional chaining, instead of asserting it.
+  
+
+scripts/assistant-worker-check.ts:24:24 lint/style/noNonNullAssertion ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+  
+    22 │   assert.match(response.headers.get("cache-control") ?? "", /private, no-store/);
+    23 │   assert.equal(response.headers.get("x-content-type-options"), "nosniff");
+  > 24 │   return consumeStream(response.body!, new AbortController().signal, () => {
+       │                        ^^^^^^^^^^^^^^
+    25 │     /* Inspect final response below. */
+    26 │   });
+  
+  i A non-null assertion tells TypeScript to ignore a possible null or undefined value. If the value is missing at runtime, the code fails with an error that the compiler could not catch.
+  
+  i Check that the value is defined before using it, for example with an if statement or optional chaining, instead of asserting it.
+  
+
+scripts/assistant-worker-check.ts:146:12 lint/style/noNonNullAssertion  FIXABLE  ━━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+  
+    144 │   const responses = await Promise.all(
+    145 │     Array.from({ length: 16 }, (_, n) =>
+  > 146 │       post((n % 2 ? first : second)!.baseURL, payload, { "cf-connecting-ip": "198.19.8.1" }),
+        │            ^^^^^^^^^^^^^^^^^^^^^^^^^
+    147 │     ),
+    148 │   );
+  
+  i A non-null assertion tells TypeScript to ignore a possible null or undefined value. If the value is missing at runtime, the code fails with an error that the compiler could not catch.
+  
+  i Check that the value is defined before using it, for example with an if statement or optional chaining, instead of asserting it.
+  
+  i Unsafe fix: Replace with optional chain operator ?. This operator includes runtime checks, so it is safer than the compile-only non-null assertion operator
+  
+    144 144 │     const responses = await Promise.all(
+    145 145 │       Array.from({ length: 16 }, (_, n) =>
+    146     │ - ······post((n·%·2·?·first·:·second)!.baseURL,·payload,·{·"cf-connecting-ip":·"198.19.8.1"·}),
+        146 │ + ······post((n·%·2·?·first·:·second)?.baseURL,·payload,·{·"cf-connecting-ip":·"198.19.8.1"·}),
+    147 147 │       ),
+    148 148 │     );
+  
+
+Checked 8 files in 777ms. No fixes applied.
+Found 7 warnings.
+Found 1 info.

@@ -1,0 +1,5 @@
+
+> tenboards@0.6.2 typecheck
+> tsc --noEmit
+
+scripts/assistant-modes-check.ts(82,55): error TS18046: 'server.hasDiagnosticLeak' is of type 'unknown'.

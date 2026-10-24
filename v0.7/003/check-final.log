@@ -1,0 +1,404 @@
+
+> tenboards@0.6.2 check
+> biome check
+
+scripts/assistant-wire-fixtures.ts:143:5 lint/style/useTemplate  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  i Template literals are preferred over string concatenation.
+  
+    141 │   );
+    142 │   const repeating = new TextEncoder().encode(
+  > 143 │     providerWire(id, "truncated").split("\n\n").filter(Boolean).at(-1)! + "\n\n",
+        │     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    144 │   );
+    145 │   let offset = 0;
+  
+  i Template literals are easier to read than a chain of + operators and quotes, and they avoid mistakes with spaces and escaped quotes.
+  
+  i Unsafe fix: Use a template literal.
+  
+    141 141 │     );
+    142 142 │     const repeating = new TextEncoder().encode(
+    143     │ - ····providerWire(id,·"truncated").split("\n\n").filter(Boolean).at(-1)!·+·"\n\n",
+        143 │ + ····`${providerWire(id,·"truncated").split("\n\n").filter(Boolean).at(-1)!}\n\n`,
+    144 144 │     );
+    145 145 │     let offset = 0;
+  
+
+scripts/assistant-browser-check.ts:101:54 lint/performance/useDomNodeTextContent  FIXABLE  ━━━━━━━━━━
+
+  ! innerText is not recommended for reading DOM node text.
+  
+     99 │           .waitFor()
+    100 │           .catch(async (error) => {
+  > 101 │             console.error(await page.locator("main").innerText(), errors);
+        │                                                      ^^^^^^^^^
+    102 │             await page.screenshot({ path: `${output}/failure.png` });
+    103 │             throw error;
+  
+  i innerText depends on rendered layout and CSS, so it can be slower and produce different results from the DOM tree's text content.
+  
+  i Use textContent when you want the node's text without rendered-text behavior.
+  
+  i Unsafe fix: Use textContent instead.
+  
+     99  99 │             .waitFor()
+    100 100 │             .catch(async (error) => {
+    101     │ - ············console.error(await·page.locator("main").innerText(),·errors);
+        101 │ + ············console.error(await·page.locator("main").textContent(),·errors);
+    102 102 │               await page.screenshot({ path: `${output}/failure.png` });
+    103 103 │               throw error;
+  
+
+scripts/assistant-lifecycle-browser-check.ts:24:24 lint/style/noNonNullAssertion  FIXABLE  ━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+  
+    22 │     await cacheCaptureFonts(context);
+    23 │     const page = await context.newPage();
+  > 24 │     const html = await (await page.goto(`${worker.baseURL}/dashboard/assistant`))!.text();
+       │                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    25 │     assert.ok(!html.includes("synthetic-v07-"));
+    26 │     assert.ok(!html.includes("SYNTHETIC_USER_PROMPT"));
+  
+  i A non-null assertion tells TypeScript to ignore a possible null or undefined value. If the value is missing at runtime, the code fails with an error that the compiler could not catch.
+  
+  i Check that the value is defined before using it, for example with an if statement or optional chaining, instead of asserting it.
+  
+  i Unsafe fix: Replace with optional chain operator ?. This operator includes runtime checks, so it is safer than the compile-only non-null assertion operator
+  
+     22  22 │       await cacheCaptureFonts(context);
+     23  23 │       const page = await context.newPage();
+     24     │ - ····const·html·=·await·(await·page.goto(`${worker.baseURL}/dashboard/assistant`))!.text();
+         24 │ + ····const·html·=·await·(await·page.goto(`${worker.baseURL}/dashboard/assistant`))?.text();
+     25  25 │       assert.ok(!html.includes("synthetic-v07-"));
+     26  26 │       assert.ok(!html.includes("SYNTHETIC_USER_PROMPT"));
+  
+
+scripts/assistant-modes-check.ts:63:42 lint/style/noNonNullAssertion ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+  
+    61 │         const response = await post("openai", cookie);
+    62 │         assert.equal(response.status, 200);
+  > 63 │         assert.equal(await consumeStream(response.body!, new AbortController().signal, () => {}), mockOutput);
+       │                                          ^^^^^^^^^^^^^^
+    64 │         await server.api.post("/api/auth/sign-out", { data: {} });
+    65 │         assert.equal((await post("openai", cookie)).status, 401);
+  
+  i A non-null assertion tells TypeScript to ignore a possible null or undefined value. If the value is missing at runtime, the code fails with an error that the compiler could not catch.
+  
+  i Check that the value is defined before using it, for example with an if statement or optional chaining, instead of asserting it.
+  
+
+scripts/assistant-modes-check.ts:79:46 lint/style/noNonNullAssertion ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+  
+    77 │             const r = await post(provider.id);
+    78 │             assert.equal(r.status, 200);
+  > 79 │             assert.equal(await consumeStream(r.body!, new AbortController().signal, () => {}), mockOutput);
+       │                                              ^^^^^^^
+    80 │           }
+    81 │       }
+  
+  i A non-null assertion tells TypeScript to ignore a possible null or undefined value. If the value is missing at runtime, the code fails with an error that the compiler could not catch.
+  
+  i Check that the value is defined before using it, for example with an if statement or optional chaining, instead of asserting it.
+  
+
+scripts/assistant-wire-fixtures.ts:19:62 lint/style/noNestedTernary ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Do not nest ternary expressions.
+  
+    17 │ const frame = (value: unknown) => `data: ${JSON.stringify(value)}\n\n`;
+    18 │ export function providerWire(id: ProviderId, mode: WireCase = "success") {
+  > 19 │   const text = mode === "empty" || mode === "refusal" ? "" : mode === "oversize" ? "x".repeat(65537) : mockOutput;
+       │                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    20 │   if (mode === "malformed") return "data: {INVALID\n\n";
+    21 │   let chunks: string[];
+  
+  i Nesting ternary expressions can make code more difficult to understand.
+  
+  i Convert nested ternary expression into if-else statements or separate the conditions to make the logic easier to understand.
+  
+
+scripts/assistant-wire-fixtures.ts:143:5 lint/style/noNonNullAssertion ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+  
+    141 │   );
+    142 │   const repeating = new TextEncoder().encode(
+  > 143 │     providerWire(id, "truncated").split("\n\n").filter(Boolean).at(-1)! + "\n\n",
+        │     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    144 │   );
+    145 │   let offset = 0;
+  
+  i A non-null assertion tells TypeScript to ignore a possible null or undefined value. If the value is missing at runtime, the code fails with an error that the compiler could not catch.
+  
+  i Check that the value is defined before using it, for example with an if statement or optional chaining, instead of asserting it.
+  
+
+scripts/assistant-worker-check.ts:24:24 lint/style/noNonNullAssertion ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+  
+    22 │   assert.match(response.headers.get("cache-control") ?? "", /private, no-store/);
+    23 │   assert.equal(response.headers.get("x-content-type-options"), "nosniff");
+  > 24 │   return consumeStream(response.body!, new AbortController().signal, () => {
+       │                        ^^^^^^^^^^^^^^
+    25 │     /* Inspect final response below. */
+    26 │   });
+  
+  i A non-null assertion tells TypeScript to ignore a possible null or undefined value. If the value is missing at runtime, the code fails with an error that the compiler could not catch.
+  
+  i Check that the value is defined before using it, for example with an if statement or optional chaining, instead of asserting it.
+  
+
+scripts/assistant-worker-check.ts:146:12 lint/style/noNonNullAssertion  FIXABLE  ━━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+  
+    144 │   const responses = await Promise.all(
+    145 │     Array.from({ length: 16 }, (_, n) =>
+  > 146 │       post((n % 2 ? first : second)!.baseURL, payload, { "cf-connecting-ip": "198.19.8.1" }),
+        │            ^^^^^^^^^^^^^^^^^^^^^^^^^
+    147 │     ),
+    148 │   );
+  
+  i A non-null assertion tells TypeScript to ignore a possible null or undefined value. If the value is missing at runtime, the code fails with an error that the compiler could not catch.
+  
+  i Check that the value is defined before using it, for example with an if statement or optional chaining, instead of asserting it.
+  
+  i Unsafe fix: Replace with optional chain operator ?. This operator includes runtime checks, so it is safer than the compile-only non-null assertion operator
+  
+    144 144 │     const responses = await Promise.all(
+    145 145 │       Array.from({ length: 16 }, (_, n) =>
+    146     │ - ······post((n·%·2·?·first·:·second)!.baseURL,·payload,·{·"cf-connecting-ip":·"198.19.8.1"·}),
+        146 │ + ······post((n·%·2·?·first·:·second)?.baseURL,·payload,·{·"cf-connecting-ip":·"198.19.8.1"·}),
+    147 147 │       ),
+    148 148 │     );
+  
+
+scripts/deploy-prepare-core.ts:96:55 lint/style/noNonNullAssertion  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+  
+    94 │   for (const entry of providers)
+    95 │     for (const key of [entry.key, entry.override])
+  > 96 │       if (assistantEnv[key]?.trim()) assistant[key] = assistantEnv[key]!.trim();
+       │                                                       ^^^^^^^^^^^^^^^^^^
+    97 │   if (assistantEnv.ASSISTANT_ORIGIN?.trim()) assistant.ASSISTANT_ORIGIN = assistantEnv.ASSISTANT_ORIGIN.trim();
+    98 │   // Exclusive creation rejects existing files and symlinks; never rotate an existing secret implicitly.
+  
+  i A non-null assertion tells TypeScript to ignore a possible null or undefined value. If the value is missing at runtime, the code fails with an error that the compiler could not catch.
+  
+  i Check that the value is defined before using it, for example with an if statement or optional chaining, instead of asserting it.
+  
+  i Unsafe fix: Replace with optional chain operator ?. This operator includes runtime checks, so it is safer than the compile-only non-null assertion operator
+  
+     94  94 │     for (const entry of providers)
+     95  95 │       for (const key of [entry.key, entry.override])
+     96     │ - ······if·(assistantEnv[key]?.trim())·assistant[key]·=·assistantEnv[key]!.trim();
+         96 │ + ······if·(assistantEnv[key]?.trim())·assistant[key]·=·assistantEnv[key]?.trim();
+     97  97 │     if (assistantEnv.ASSISTANT_ORIGIN?.trim()) assistant.ASSISTANT_ORIGIN = assistantEnv.ASSISTANT_ORIGIN.trim();
+     98  98 │     // Exclusive creation rejects existing files and symlinks; never rotate an existing secret implicitly.
+  
+
+scripts/worker-assistant-harness.ts:35:9 lint/style/noNestedTernary ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Do not nest ternary expressions.
+  
+    33 │     url.hostname === "api.anthropic.com"
+    34 │       ? "anthropic"
+  > 35 │       : url.hostname === "api.openai.com"
+       │         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  > 36 │         ? "openai"
+        ...
+  > 42 │               ? "google"
+  > 43 │               : undefined;
+       │               ^^^^^^^^^^^
+    44 │   if (!id) {
+    45 │     violations++;
+  
+  i Nesting ternary expressions can make code more difficult to understand.
+  
+  i Convert nested ternary expression into if-else statements or separate the conditions to make the logic easier to understand.
+  
+
+scripts/worker-assistant-harness.ts:37:11 lint/style/noNestedTernary ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Do not nest ternary expressions.
+  
+    35 │       : url.hostname === "api.openai.com"
+    36 │         ? "openai"
+  > 37 │         : url.hostname === "api.x.ai"
+       │           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  > 38 │           ? "xai"
+        ...
+  > 42 │               ? "google"
+  > 43 │               : undefined;
+       │               ^^^^^^^^^^^
+    44 │   if (!id) {
+    45 │     violations++;
+  
+  i Nesting ternary expressions can make code more difficult to understand.
+  
+  i Convert nested ternary expression into if-else statements or separate the conditions to make the logic easier to understand.
+  
+
+scripts/worker-assistant-harness.ts:39:13 lint/style/noNestedTernary ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Do not nest ternary expressions.
+  
+    37 │         : url.hostname === "api.x.ai"
+    38 │           ? "xai"
+  > 39 │           : url.hostname === "api.meta.ai"
+       │             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  > 40 │             ? "meta"
+  > 41 │             : url.hostname === "generativelanguage.googleapis.com"
+  > 42 │               ? "google"
+  > 43 │               : undefined;
+       │               ^^^^^^^^^^^
+    44 │   if (!id) {
+    45 │     violations++;
+  
+  i Nesting ternary expressions can make code more difficult to understand.
+  
+  i Convert nested ternary expression into if-else statements or separate the conditions to make the logic easier to understand.
+  
+
+scripts/worker-assistant-harness.ts:41:15 lint/style/noNestedTernary ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Do not nest ternary expressions.
+  
+    39 │           : url.hostname === "api.meta.ai"
+    40 │             ? "meta"
+  > 41 │             : url.hostname === "generativelanguage.googleapis.com"
+       │               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  > 42 │               ? "google"
+  > 43 │               : undefined;
+       │               ^^^^^^^^^^^
+    44 │   if (!id) {
+    45 │     violations++;
+  
+  i Nesting ternary expressions can make code more difficult to understand.
+  
+  i Convert nested ternary expression into if-else statements or separate the conditions to make the logic easier to understand.
+  
+
+scripts/worker-assistant-harness.ts:55:26 lint/style/noNonNullAssertion  FIXABLE  ━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+  
+    53 │   outputRequests.push({
+    54 │     provider: id,
+  > 55 │     model: body.model ?? providers.find((p) => p.id === id)!.model,
+       │                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    56 │     explicitKey: key.includes(`synthetic-v07-${id}-`),
+    57 │     storageDisabled: !["openai", "xai"].includes(id) || body.store === false,
+  
+  i A non-null assertion tells TypeScript to ignore a possible null or undefined value. If the value is missing at runtime, the code fails with an error that the compiler could not catch.
+  
+  i Check that the value is defined before using it, for example with an if statement or optional chaining, instead of asserting it.
+  
+  i Unsafe fix: Replace with optional chain operator ?. This operator includes runtime checks, so it is safer than the compile-only non-null assertion operator
+  
+    53 53 │     outputRequests.push({
+    54 54 │       provider: id,
+    55    │ - ····model:·body.model·??·providers.find((p)·=>·p.id·===·id)!.model,
+       55 │ + ····model:·body.model·??·providers.find((p)·=>·p.id·===·id)?.model,
+    56 56 │       explicitKey: key.includes(`synthetic-v07-${id}-`),
+    57 57 │       storageDisabled: !["openai", "xai"].includes(id) || body.store === false,
+  
+
+scripts/worker-assistant-harness.ts:51:16 lint/suspicious/noUnnecessaryConditions ━━━━━━━━━━━━━━━━━━
+
+  ! Unnecessary nullish coalescing.
+  
+    49 │   const headers = new Headers(init?.headers);
+    50 │   const key = [...headers.values()].find((value) => value.includes("synthetic-v07-")) ?? "";
+  > 51 │   const mode = (key.split("synthetic-v07-")[1]?.split("-")[1] as WireCase) ?? "success";
+       │                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    52 │   const body = JSON.parse(String(init?.body));
+    53 │   outputRequests.push({
+  
+  i Drop ?? and the fallback expression.
+  
+    49 │   const headers = new Headers(init?.headers);
+    50 │   const key = [...headers.values()].find((value) => value.includes("synthetic-v07-")) ?? "";
+  > 51 │   const mode = (key.split("synthetic-v07-")[1]?.split("-")[1] as WireCase) ?? "success";
+       │                                                                            ^^
+    52 │   const body = JSON.parse(String(init?.body));
+    53 │   outputRequests.push({
+  
+  i The left-hand side is guaranteed to be non-nullish, so the fallback is unreachable.
+  
+
+scripts/assistant-context-browser-check.ts:20:23 lint/suspicious/noEmptyBlockStatements ━━━━━━━━━━━━
+
+  × Unexpected empty block.
+  
+    18 │   let reply = 'root = Stack([Text("Synthetic reply")])';
+    19 │   let gate: Promise<void> | undefined;
+  > 20 │   let release = () => {};
+       │                       ^^
+    21 │   const bodies: { messages: { role: string; content: string }[] }[] = [];
+    22 │   await page.route("**/api/assistant", async (route) => {
+  
+  i Empty blocks are usually the result of an incomplete refactoring. Remove the empty block or add a comment inside it if it is intentional.
+  
+
+scripts/assistant-context-browser-check.ts:34:20 lint/suspicious/noEmptyBlockStatements ━━━━━━━━━━━━
+
+  × Unexpected empty block.
+  
+    32 │         ]),
+    33 │       })
+  > 34 │       .catch(() => {});
+       │                    ^^
+    35 │   });
+    36 │   await page.goto(`${base}/dashboard/assistant`);
+  
+  i Empty blocks are usually the result of an incomplete refactoring. Remove the empty block or add a comment inside it if it is intentional.
+  
+
+scripts/assistant-modes-check.ts:63:94 lint/suspicious/noEmptyBlockStatements ━━━━━━━━━━━━━━━━━━━━━━
+
+  × Unexpected empty block.
+  
+    61 │         const response = await post("openai", cookie);
+    62 │         assert.equal(response.status, 200);
+  > 63 │         assert.equal(await consumeStream(response.body!, new AbortController().signal, () => {}), mockOutput);
+       │                                                                                              ^^
+    64 │         await server.api.post("/api/auth/sign-out", { data: {} });
+    65 │         assert.equal((await post("openai", cookie)).status, 401);
+  
+  i Empty blocks are usually the result of an incomplete refactoring. Remove the empty block or add a comment inside it if it is intentional.
+  
+
+scripts/assistant-modes-check.ts:79:91 lint/suspicious/noEmptyBlockStatements ━━━━━━━━━━━━━━━━━━━━━━
+
+  × Unexpected empty block.
+  
+    77 │             const r = await post(provider.id);
+    78 │             assert.equal(r.status, 200);
+  > 79 │             assert.equal(await consumeStream(r.body!, new AbortController().signal, () => {}), mockOutput);
+       │                                                                                           ^^
+    80 │           }
+    81 │       }
+  
+  i Empty blocks are usually the result of an incomplete refactoring. Remove the empty block or add a comment inside it if it is intentional.
+  
+
+The number of diagnostics exceeds the limit allowed. Use --max-diagnostics to increase it.
+Diagnostics not shown: 30.
+Checked 503 files in 1119ms. No fixes applied.
+Found 4 errors.
+Found 34 warnings.
+Found 12 infos.
+check ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Some errors were emitted while running checks.
+  
+
