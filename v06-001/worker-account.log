@@ -1,0 +1,16 @@
+PASS Current-user account/session projections contain only safe fields; two users isolated
+PASS Trimmed name save persists/reloads, refreshes header, validates/focuses and leaves other identity unchanged
+PASS Direct name bounds and supplied identity/email fields rejected server-side
+PASS Cross-user/forged session IDs and forged/missing origins cannot revoke any session
+PASS Account/error/confirmation light/desktop with keyboard focus recovery
+PASS Account/error/confirmation light/mobile with keyboard focus recovery
+PASS Account/error/confirmation dark/desktop with keyboard focus recovery
+PASS Account/error/confirmation dark/mobile with keyboard focus recovery
+PASS Owned other-session revoke invalidates route and direct RPC; stale ID handled safely
+PASS Password confirmation/current-password errors are inline and recoverable
+PASS Password change rotates current session, clears inputs, revokes other sessions, rejects old and accepts new password
+PASS Fresh-session requirement has working signout/re-login return flow without auth loop
+PASS Provider-only supported adapter fixture hides password controls; no real OAuth round-trip claimed
+PASS Account service/network failure displays retry and recovers with real data
+PASS Current-session revoke propagates cleared cookie and invalidates direct RPC
+Auth accounts: 15/15 passing.

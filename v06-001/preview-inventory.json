@@ -1,0 +1,15 @@
+{
+  "worker": "tenboards-preview",
+  "version": "40f2c0dc-e5be-4ebd-aa82-592dc3190cde",
+  "bindings": [
+    {
+      "name": "ASSETS",
+      "type": "assets"
+    }
+  ],
+  "compatibility_date": "2026-10-23",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "secrets": []
+}
