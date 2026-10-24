@@ -304,6 +304,6 @@ src/lib/highlighter.tsx:96:20 lint/suspicious/noArrayIndexKey ━━━━━━
   i Check the React documentation. 
   
 
-Checked 440 files in 518ms. No fixes applied.
+Checked 440 files in 528ms. No fixes applied.
 Found 1 warning.
 Found 10 infos.
