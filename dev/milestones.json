@@ -136,7 +136,7 @@
       ],
       "taskStatuses": {
         "001-auth-foundation": "review",
-        "002-auth-flows": "todo",
+        "002-auth-flows": "review",
         "003-protection-shell": "todo",
         "004-account-sessions": "todo",
         "005-auth-acceptance": "todo"

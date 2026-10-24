@@ -1,11 +1,13 @@
 import { betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
+import { APIError, createAuthMiddleware } from "better-auth/api";
 import { tanstackStartCookies } from "better-auth/tanstack-start";
 import { sql } from "drizzle-orm";
 
 import { authAccount, authSession, authUser, authVerification } from "../../server/db/auth-schema.ts";
 import { getDatabase } from "../../server/db/client.server.ts";
 import { authConfiguration } from "./config.ts";
+import { authDestination, authErrorCallback } from "./redirect.ts";
 
 function createAuth(config: Extract<ReturnType<typeof authConfiguration>, { enabled: true }>) {
   return betterAuth({
@@ -28,6 +30,24 @@ function createAuth(config: Extract<ReturnType<typeof authConfiguration>, { enab
       ...(config.providers.github
         ? { github: { ...config.providers.github, scope: ["read:user", "user:email"] } }
         : {}),
+    },
+    hooks: {
+      before: createAuthMiddleware(async (ctx) => {
+        if (!["/sign-in/social", "/sign-in/email", "/sign-up/email"].includes(ctx.path)) return;
+        const body = { ...ctx.body };
+        if (ctx.path === "/sign-up/email") {
+          if (typeof body.name !== "string" || !body.name.trim() || body.name.trim().length > 100)
+            throw new APIError("BAD_REQUEST", { code: "INVALID_NAME", message: "Enter a name of 1–100 characters." });
+          body.name = body.name.trim();
+        }
+        if (ctx.path === "/sign-in/social" || body.callbackURL !== undefined)
+          body.callbackURL = authDestination(body.callbackURL);
+        if (ctx.path === "/sign-in/social") {
+          body.newUserCallbackURL = authDestination(body.newUserCallbackURL ?? body.callbackURL);
+          body.errorCallbackURL = authErrorCallback(body.errorCallbackURL, body.callbackURL);
+        }
+        return { context: { ...ctx, body } };
+      }),
     },
     account: { accountLinking: { enabled: false } },
     session: { cookieCache: { enabled: false } },

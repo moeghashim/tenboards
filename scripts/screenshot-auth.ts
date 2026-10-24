@@ -36,7 +36,7 @@ export async function captureAuth(
     await page.getByRole("checkbox", { name: "Remember me for 30 days" }).press("Space");
   }
   await submit.press("Enter");
-  await page.getByText("You submitted the following values", { exact: true }).waitFor();
+  await page.getByText("Demo only", { exact: true }).waitFor();
   await capture("demo-submit");
   const url = page.url();
   await page.getByRole("button", { name: "Continue with Google" }).press("Enter");
@@ -66,7 +66,7 @@ export async function captureAuth(
   const crosslink = page.getByRole("link", { name: register ? "Login" : "Register", exact: true });
   await crosslink.focus();
   await crosslink.press("Enter");
-  await page.waitForURL(`**/${register ? "login" : "register"}`);
+  await page.waitForURL((url) => url.pathname.endsWith(register ? "/login" : "/register"));
   await page.locator("form").waitFor();
   await page.goto(initial.href, { waitUntil: "networkidle" });
   return [
