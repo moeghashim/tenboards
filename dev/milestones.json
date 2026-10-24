@@ -169,10 +169,10 @@
     },
     {
       "id": "v0.6.2-compact-density",
-      "status": "in_progress",
+      "status": "in_review",
       "tasks": ["001-compact-density"],
       "taskStatuses": {
-        "001-compact-density": "in_progress"
+        "001-compact-density": "in_review"
       }
     },
     {
