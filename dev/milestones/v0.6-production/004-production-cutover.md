@@ -34,8 +34,8 @@ all application/auth behavior; add no runtime dependency.
 - [x] Add `npm run deploy:prepare`: clean build, expected Worker name and nodejs_compat validation, exactly one real-format nonzero 32-hex HYPERDRIVE ID, no localConnectionString or DB/auth vars; optional exclusive 0600 secrets outside the repository with random BETTER_AUTH_SECRET and required canonical --url. Print next commands without executing Cloudflare/database operations or exposing secret contents.
 - [x] Test invalid configuration, environment isolation, private secret-file safety and command ordering in the existing scripts style; include preparation tests in the operations check. Replace adopter-facing hardcoded production-origin fixtures with example hosts.
 - [x] Update README deployment guidance/live-demo/release-ready status, draft CHANGELOG v0.6, milestone references/runbook/DoD and task 004 review status. Keep PLAN and release metadata unchanged.
-- [ ] On a fresh local Docker database at port 54329, pass build/check/typecheck, auth:test, data:parity, worker:test, worker:auth, worker:security, operations-check and deploy-check-test. Drop the test database afterward. Record inherited warnings separately.
-- [ ] Pass dev `/dashboard/default` smoke without console errors and `npm run screenshots`; publish redacted light/dark × desktop/mobile evidence or explain the nonvisual exemption. Include an immutable `tenboards-preview` URL plus `pr-NNN` alias in the PR.
+- [x] On a fresh local Docker database at port 54329, pass build/check/typecheck, auth:test, data:parity, worker:test, worker:auth, worker:security, operations-check and deploy-check-test. Drop the test database afterward. Record inherited warnings separately.
+- [x] Pass dev `/dashboard/default` smoke without console errors and `npm run screenshots`; publish redacted light/dark × desktop/mobile evidence or explain the nonvisual exemption. Include an immutable `tenboards-preview` URL plus `pr-NNN` alias in the PR.
 
 ## Verification and handoff
 
@@ -47,3 +47,18 @@ installation. No live database/account is created to close this milestone.
 Depends on merged tasks 001–003 (PRs #57, #60, #59). No Neon-access gate remains.
 The reviewer may release v0.6 after readiness review; package/tag/release changes
 are separate reviewer work.
+
+## Verified evidence — 2026-10-24
+
+[PR #61](https://github.com/moeghashim/tenboards/pull/61) targets main. Implementation
+`3fe465c`; [logs, capture matrix and database cleanup](https://github.com/moeghashim/tenboards/tree/pr-assets/v06-004).
+
+- Build/check/typecheck pass. Biome retains one existing highlighter array-index-key warning and ten infos.
+- Node auth: 486 scenarios; data parity: 22 reads/130 scenarios. Worker auth: 310 scenarios; Worker runtime/parity, distributed security, operations-check, deploy-check-test and atomic-upload dry-run pass.
+- Preparation validation rejects 27 invalid configs and verifies environment/file/command safety. A temporary copied fork passes real clean Nitro build/config/0600 secret creation with inherited secret markers absent from output; it contacts no cloud/database and is removed.
+- Fresh Docker targets use port 54329. Both test-owned databases were dropped; a follow-up catalog query confirms zero remaining. The shared Docker service is preserved.
+- Dev before/after and immutable-preview `/dashboard/default` captures pass light/dark × desktop/mobile with zero app console/hydration errors. Dev before/after PNGs are identical. No UI/token changes; broader visual regression is exempt for this nonvisual task.
+- Initial IPv4 capture failure and a Worker startup failure during a concurrent preview rebuild are retained in evidence. Correct localhost captures and a stable-build/fresh-database Worker rerun pass without runtime changes.
+- [Immutable preview](https://ed61566f-tenboards-preview.mohanadgh.workers.dev) and [pr-61 alias](https://pr-61-tenboards-preview.mohanadgh.workers.dev) pass demo deploy:check; inventory is ASSETS-only with no secrets. Production resources were not touched.
+
+Release remains reviewer-owned; hosted Neon/Hyperdrive acceptance is not claimed.

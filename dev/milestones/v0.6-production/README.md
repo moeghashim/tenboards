@@ -1,4 +1,4 @@
-# v0.6 — Production Cloudflare
+# v0.6 — Cloudflare template readiness
 
 Status: **ready for release after task 004 review — tasks 001–003 merged (#57, #60, #59); task 004 in review**. Original planning baseline: `272ee7b`, 2026-10-24, following v0.5.0. [PLAN.md](../../../PLAN.md) is the canonical contract. Its **v0.6 template readiness** decision (bb3c62a, 2026-10-24) supersedes the provisioning and production-mode rows: no project-owned Neon, and the live Worker stays a zero-config demo. The runtime, OAuth and isolated-preview decisions still apply.
 
@@ -84,7 +84,7 @@ Tasks 001–003 verify locally; 004 validates adopter preparation and documents 
 - [x] Auth rate limiting uses migrated cross-isolate database storage, exact runtime origins and verified IP handling; the security checklist has evidence.
 - [x] `docs/deploy.md` and `npm run deploy:check -- <url>` are implemented and verified; remote migrate/seed requires explicit opt-in. README, auth/data guides and CHANGELOG v0.6 draft match delivered behavior.
 - [x] Build/check/typecheck, dev default smoke, demo and authenticated workerd acceptance, hydration regression and required four-state evidence pass. Artifacts live only on `pr-assets`/PR attachments.
-- [ ] Task 004 documents your deployment quick path, supplies a tested clean-build/config/private-secret preparation helper, and updates README/CHANGELOG/status with verified evidence. No project-owned Neon or hosted cutover gate.
+- [x] Task 004 documents your deployment quick path, supplies a tested clean-build/config/private-secret preparation helper, and updates README/CHANGELOG/status with verified evidence. No project-owned Neon or hosted cutover gate. [Task 004 evidence](https://github.com/moeghashim/tenboards/tree/pr-assets/v06-004) verifies preparation, the full local test floor, database cleanup and isolated preview.
 - [ ] After review, Claude merges and publishes v0.6.0. No implementer merge, production deployment, version bump/tag or release.
 
 ## Template deployment runbook outline
