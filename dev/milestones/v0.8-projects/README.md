@@ -1,6 +1,6 @@
 # v0.8 — Projects workspace
 
-Status: **in progress; tasks 001–003 in review, tasks 004–006 pending**. Inspection baseline: `origin/main` at `cc3c5e7`, 2026-10-24. [PLAN.md](../../../PLAN.md) and its Decisions log are authoritative, particularly **v0.8 projects workspace**, **v0.8 page consolidation**, **v0.7/v0.8 sequencing**, and **v0.6.2 compact density**. Planning precedent: [v0.7 / PR #62](https://github.com/moeghashim/tenboards/pull/62) and [v0.6 / PR #56](https://github.com/moeghashim/tenboards/pull/56). This PR proposes implementation contracts; unchecked boxes do not claim delivered behavior.
+Status: **in progress; tasks 001–004 in review, tasks 005–006 pending**. Inspection baseline: `origin/main` at `cc3c5e7`, 2026-10-24. [PLAN.md](../../../PLAN.md) and its Decisions log are authoritative, particularly **v0.8 projects workspace**, **v0.8 page consolidation**, **v0.7/v0.8 sequencing**, and **v0.6.2 compact density**. Planning precedent: [v0.7 / PR #62](https://github.com/moeghashim/tenboards/pull/62) and [v0.6 / PR #56](https://github.com/moeghashim/tenboards/pull/56). This PR proposes implementation contracts; unchecked boxes do not claim delivered behavior.
 
 ## Brief and boundaries
 
