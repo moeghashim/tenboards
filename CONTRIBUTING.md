@@ -136,3 +136,20 @@ Report bugs, suggestions, or issues through [GitHub Issues](https://github.com/m
 Your contributions keep this project growing. 🚀
 
 **Happy Vibe Coding!**
+
+## Isolated previews and production ownership
+
+Use `npm run preview:deploy -- --preview-alias pr-NNN`. The command checks input
+files/environment, builds with a stripped environment, generates an independent
+ASSETS-only config and verifies remote version bindings/secrets before upload.
+It accepts only `tenboards-preview`; never override the name or upload PR versions
+to `tenboards`. Move local `.env*` (except `.env.example`) and `.dev.vars*` files
+outside the checkout and unset DB/auth/provider/build-override variables first.
+
+On first use, add `--initialize` to create only the separate demo Worker. Existing
+remote secrets or service/database bindings are a hard failure, not an invitation
+to remove production resources. Every PR supplies the immutable URL and alias.
+The root production config has an inactive Hyperdrive slot: before the reviewer
+adds the real ID, a binding-less/no-secret deployment remains demo. A secret without
+a binding/URL fails closed. The reviewer alone provisions production, handles
+secret/deployment ordering, merges, deploys main and releases.

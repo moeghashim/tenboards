@@ -1,7 +1,7 @@
 import { chromium, type Page } from "playwright";
 import postgres from "postgres";
 
-import { localDatabase, startTestServer, testSecret } from "./auth-test-support.ts";
+import { localDatabase, startTestServer, testHeaders, testSecret } from "./auth-test-support.ts";
 import { cacheCaptureFonts } from "./screenshot-assets.ts";
 import assert from "node:assert/strict";
 import { mkdir } from "node:fs/promises";
@@ -35,7 +35,7 @@ const destination = "/dashboard/tasks?search=auth-test#table";
 try {
   await mkdir(evidenceDir, { recursive: true });
   for (const variant of ["v1", "v2"]) {
-    const context = await browser.newContext();
+    const context = await browser.newContext({ extraHTTPHeaders: testHeaders });
     await cacheCaptureFonts(context);
     context.setDefaultTimeout(15000);
     context.setDefaultNavigationTimeout(20000);
@@ -98,7 +98,7 @@ try {
     await context.close();
     await delay(10200); // Keep the real 3/10s email limiter enabled.
   }
-  const capture = await browser.newContext({ reducedMotion: "reduce" });
+  const capture = await browser.newContext({ extraHTTPHeaders: testHeaders, reducedMotion: "reduce" });
   await cacheCaptureFonts(capture);
   const page = await capture.newPage();
   for (const theme of ["light", "dark"] as const)

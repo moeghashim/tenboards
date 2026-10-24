@@ -1,6 +1,6 @@
 # v0.6 — Production Cloudflare
 
-Status: **in progress — task 001 in review; tasks 002–004 are todo**. Baseline: `origin/main` **272ee7b** (`272ee7be8d3a409cb1d6803a5c64a6bd1add7da5`), 2026-10-24, following released v0.5.0. [PLAN.md](../../../PLAN.md) is the canonical contract; its six **v0.6 production host / database provisioning / production mode / OAuth / runtime / previews** Decisions log rows win. Precedent: [v0.5](../v0.5-auth/README.md), planning [PR #50](https://github.com/moeghashim/tenboards/pull/50), and [v0.4 planning PR #41](https://github.com/moeghashim/tenboards/pull/41).
+Status: **in progress — tasks 001–002 in review; tasks 003–004 are todo**. Baseline: `origin/main` **272ee7b** (`272ee7be8d3a409cb1d6803a5c64a6bd1add7da5`), 2026-10-24, following released v0.5.0. [PLAN.md](../../../PLAN.md) is the canonical contract; its six **v0.6 production host / database provisioning / production mode / OAuth / runtime / previews** Decisions log rows win. Precedent: [v0.5](../v0.5-auth/README.md), planning [PR #50](https://github.com/moeghashim/tenboards/pull/50), and [v0.4 planning PR #41](https://github.com/moeghashim/tenboards/pull/41).
 
 ## Brief and boundaries
 

@@ -177,10 +177,10 @@ The suite creates an explicitly test-owned empty database for the missing-schema
 case; the local test role needs CREATE DATABASE, as the compose role has. It never
 resets a shared database. Tests delete only their exact test-owned auth users.
 
-The migration check compares v0.4.0 migration files byte-for-byte, creates fresh and
+The migration check compares v0.5.0 migration files byte-for-byte, creates fresh and
 upgrade test databases, applies/repeats migrations and seed, and runs all 22 reads /
 130 scenarios in each. Those fresh test-owned databases are dropped after the checks. Fetch
-the `v0.4.0` tag in a shallow checkout before running this check. The bundle check
+the `v0.5.0` tag in a shallow checkout before running this check. The bundle check
 builds with private random sentinels, scans browser/server artifacts without
 printing their values, then always restores a zero-env build. It does not deploy.
 
@@ -285,3 +285,55 @@ No unconditional `cloudflare:workers` import enters Node scripts or development.
 Worker Secure-cookie probes use a reserved HTTPS canonical host over loopback HTTP
 to avoid Wrangler proxy rewriting of localhost URL-related headers. This checks
 actual response cookie flags, not TLS transport. The v0.5 Node probe is unchanged.
+
+## Database rate limits and Worker origins (v0.6 task 002)
+
+Migration `0013_wandering_midnight.sql` adds `auth_rate_limit` without changing
+existing tables or seeds. Better Auth's `rateLimit` model maps to this isolated
+Drizzle table: text primary ID, unique text key, integer count and bigint millisecond
+`last_request`. Required readiness includes the limiter table. Explicit enabled
+database storage never falls back to memory on connection/schema failure.
+
+Installed Better Auth 1.7.12 reads the bucket, inserts under a unique-key constraint
+or retries a competing insert, and uses conditional atomic `incrementOne` for
+counts/window resets. The Drizzle adapter emits a conditional SQL UPDATE with
+RETURNING. Limits are shared across isolates/restarts: general 100/10 seconds;
+credential signup/signin and password/email changes 3/10 seconds. This is an
+inactivity/sliding window: an admitted request updates lastRequest; rejected requests
+do not extend it. The library returns X-Retry-After; our handler also emits standard
+Retry-After, with private/no-store. Expired rows are opportunistically pruned on
+window reset; inactive one-off buckets can remain until later cleanup. This is an
+IP/path HTTP limiter, not account lockout, bot protection or per-user authorization.
+
+Workers configure only `cf-connecting-ip`, which Cloudflare overwrites at ingress.
+Forwarded, x-forwarded-for and x-real-ip cannot change the bucket. Missing/invalid
+trusted IPs share a conservative per-path bucket instead of bypassing limits.
+IPv6 uses the library's /64 grouping. Local workerd tests inject controlled reserved
+addresses; actual Cloudflare header rewriting is a task 004 check. Node keeps its
+existing Better Auth development IP behavior; do not expose Node dev as production.
+Auth tests use distinct reserved IP fixtures across independent suites and retain
+real limits. The two-Worker concurrency test uses one shared IP and admits exactly
+three of twelve simultaneous first requests; it never disables limits.
+
+Hosted Worker auth requires an explicit non-loopback HTTPS BETTER_AUTH_URL. Trusted
+origins contain only that validated origin; no forwarded host/origin inference.
+Local Node/workerd loopback retains its documented development origin. Cookie,
+CSRF, callback, account ownership and direct server-function guards remain enabled.
+Direct `auth.api.getSession`, listUserAccounts/listSessions, signOut/revokeSession
+inside server functions do not traverse Better Auth HTTP rate limiting. They still
+require the existing session and, for mutations, the exact configured origin.
+
+Run `node --experimental-strip-types scripts/worker-rate-limit-check.ts` with an
+explicit fresh local DATABASE_URL after migration/build. It checks two instances,
+restart, concurrent insertion/increment, 429/window recovery, forwarding spoof,
+missing trusted header, missing-table failure and recovery. Run
+`node --experimental-strip-types scripts/preview-policy-check.ts` without DB/auth
+environment to test preview allowlists and a real isolated build while the production
+source temporarily contains a nonsecret Hyperdrive/URL fixture. Nothing is deployed
+by that fixture test.
+
+Wrangler supplies a loopback cf-connecting-ip when the incoming header is empty.
+The missing-header case therefore uses a separate local test adapter that strips
+it immediately before the real built Worker entry. This adapter is excluded from
+production/preview builds; it changes no auth guard. Initial proxy-fixture failure
+and the corrected passing test are retained in task 002 evidence.

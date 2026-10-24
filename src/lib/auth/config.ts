@@ -7,6 +7,8 @@ export type AuthEnvironment = DataEnvironment & {
   GOOGLE_CLIENT_SECRET?: string;
   GITHUB_CLIENT_ID?: string;
   GITHUB_CLIENT_SECRET?: string;
+  /** Set by our request boundary, never inferred from forwarding headers. */
+  REQUIRE_AUTH_ORIGIN?: boolean;
 };
 export function authConfiguration(env: AuthEnvironment) {
   const source = selectSource(env);
@@ -19,8 +21,11 @@ export function authConfiguration(env: AuthEnvironment) {
     throw new Error("Authentication secret is invalid. Generate a random secret of at least 32 characters.");
   let baseURL: string;
   try {
+    if (env.REQUIRE_AUTH_ORIGIN && !env.BETTER_AUTH_URL) throw new Error();
     const url = new URL(env.BETTER_AUTH_URL ?? "http://localhost:3000");
     if (
+      (env.REQUIRE_AUTH_ORIGIN &&
+        (url.protocol !== "https:" || ["localhost", "127.0.0.1", "[::1]"].includes(url.hostname))) ||
       (url.protocol !== "https:" &&
         !(url.protocol === "http:" && ["localhost", "127.0.0.1", "[::1]"].includes(url.hostname))) ||
       url.username ||

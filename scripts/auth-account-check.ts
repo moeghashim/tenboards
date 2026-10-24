@@ -1,7 +1,7 @@
 import { chromium, type Page } from "playwright";
 import postgres from "postgres";
 
-import { callRpc, localDatabase, startTestServer, testSecret } from "./auth-test-support.ts";
+import { callRpc, localDatabase, startTestServer, testHeaders, testSecret } from "./auth-test-support.ts";
 import { cacheCaptureFonts } from "./screenshot-assets.ts";
 import assert from "node:assert/strict";
 import { mkdir } from "node:fs/promises";
@@ -34,9 +34,21 @@ async function visit(page: Page) {
 }
 try {
   await mkdir(evidenceDir, { recursive: true });
-  const a = await browser.newContext({ reducedMotion: "reduce", userAgent: "Account test browser A" });
-  const a2 = await browser.newContext({ reducedMotion: "reduce", userAgent: "Account test browser B" });
-  const b = await browser.newContext({ reducedMotion: "reduce", userAgent: "Different user's browser" });
+  const a = await browser.newContext({
+    extraHTTPHeaders: testHeaders,
+    reducedMotion: "reduce",
+    userAgent: "Account test browser A",
+  });
+  const a2 = await browser.newContext({
+    extraHTTPHeaders: testHeaders,
+    reducedMotion: "reduce",
+    userAgent: "Account test browser B",
+  });
+  const b = await browser.newContext({
+    extraHTTPHeaders: testHeaders,
+    reducedMotion: "reduce",
+    userAgent: "Different user's browser",
+  });
   for (const ctx of [a, a2, b]) await cacheCaptureFonts(ctx);
   const emailA = `account-a-${Date.now()}@example.test`,
     emailB = `account-b-${Date.now()}@example.test`;
@@ -203,7 +215,7 @@ try {
   pass("Fresh-session requirement has working signout/re-login return flow without auth loop");
   await login(a, emailA, newPassword);
   await visit(page);
-  const restore = await browser.newContext({ storageState: currentState });
+  const restore = await browser.newContext({ extraHTTPHeaders: testHeaders, storageState: currentState });
   assert.equal(await (await restore.request.get(`${server.baseURL}/api/auth/get-session`)).json(), null);
   await restore.close();
   // Supported isolated adapter fixture: convert only this test-owned account to

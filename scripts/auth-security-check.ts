@@ -1,7 +1,14 @@
 import { chromium } from "playwright";
 import postgres from "postgres";
 
-import { assertSafeError, callRpc, localDatabase, startTestServer, testSecret } from "./auth-test-support.ts";
+import {
+  assertSafeError,
+  callRpc,
+  localDatabase,
+  startTestServer,
+  testHeaders,
+  testSecret,
+} from "./auth-test-support.ts";
 import { cacheCaptureFonts } from "./screenshot-assets.ts";
 import assert from "node:assert/strict";
 
@@ -53,7 +60,7 @@ try {
   await server.stop();
   const config = { DATABASE_URL: localDatabase, BETTER_AUTH_SECRET: secret, BETTER_AUTH_URL: "http://localhost:3011" };
   server = await startTestServer(config);
-  const context = await browser.newContext();
+  const context = await browser.newContext({ extraHTTPHeaders: testHeaders });
   await cacheCaptureFonts(context);
   const email = `security-${Date.now()}@example.test`;
   emails.push(email);
@@ -130,7 +137,7 @@ try {
   assert.equal((await context.request.get(`${server.baseURL}/dashboard/default`)).status(), 200);
   assert.equal((await (await context.request.get(`${server.baseURL}/api/auth/get-session`)).json()).user.id, user.id);
   pass("Same valid cookie recovers after DB configuration restoration");
-  const second = await browser.newContext();
+  const second = await browser.newContext({ extraHTTPHeaders: testHeaders });
   const secondLogin = await second.request.post(`${server.baseURL}/api/auth/sign-in/email`, {
     headers: { origin: server.baseURL },
     data: { email, password },

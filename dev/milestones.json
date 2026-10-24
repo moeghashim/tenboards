@@ -153,7 +153,7 @@
       ],
       "taskStatuses": {
         "001-workers-database-runtime": "review",
-        "002-preview-isolation-hardening": "todo",
+        "002-preview-isolation-hardening": "review",
         "003-ops-docs-acceptance": "todo",
         "004-production-cutover": "todo"
       }

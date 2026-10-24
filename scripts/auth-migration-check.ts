@@ -9,21 +9,21 @@ import { mkdtemp, readdir, readFile, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";
 
-const archive = await mkdtemp(path.join(tmpdir(), "tenboards-v04-migrations-"));
+const archive = await mkdtemp(path.join(tmpdir(), "tenboards-v05-migrations-"));
 const baseline = path.join(archive, "src/server/db/migrations");
 const current = "src/server/db/migrations";
 const admin = postgres(localDatabase, { connect_timeout: 3 });
 const journal = JSON.parse(await readFile(`${current}/meta/_journal.json`, "utf8"));
 try {
-  const archiveFile = path.join(archive, "v04.tar");
-  execFileSync("git", ["archive", "--output", archiveFile, "v0.4.0", "src/server/db/migrations"]);
+  const archiveFile = path.join(archive, "v05.tar");
+  execFileSync("git", ["archive", "--output", archiveFile, "v0.5.0", "src/server/db/migrations"]);
   execFileSync("tar", ["-xf", archiveFile, "-C", archive]);
   for (const file of await readdir(baseline))
     if (file.endsWith(".sql"))
       assert.equal(
         await readFile(path.join(baseline, file), "utf8"),
         await readFile(path.join(current, file), "utf8"),
-        "A v0.4 migration changed",
+        "A v0.5 migration changed",
       );
   for (const mode of ["fresh", "upgrade"]) {
     const name = `tenboards_auth_${mode}_${Date.now()}`;
@@ -70,7 +70,7 @@ try {
         (
           await sql`select count(*)::int as count from pg_tables where schemaname='public' and tablename like 'auth_%'`
         )[0].count,
-        4,
+        5,
       );
       const parity = run("data:parity").toString();
       assert.ok(parity.includes('"reads":22,"scenarios":130,"passing":true'));

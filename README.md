@@ -32,7 +32,7 @@ Open [the default dashboard](http://localhost:3000/dashboard/default).
 - `npm run generate-routes` — regenerate file-based routes.
 - `npm run generate:presets` — regenerate the preset registry.
 - `npm run deploy` — reviewer-only build and production deployment after approved merges.
-- `npm run preview:deploy` — superseded pending task 002; do not run the old production-target command. Use the isolated task-001 procedure below.
+- `npm run preview:deploy -- --preview-alias pr-NNN` — guarded build/upload exclusively to demo-only `tenboards-preview`; no database bindings or secrets.
 - `npm run worker:dev -- --binding` — compiled local Worker with Docker Hyperdrive emulation; omit `--binding` for demo/URL fallback.
 - `npm run worker:test` — local workerd runtime/concurrency/recovery and 22-read/130-scenario parity checks on a fresh review database.
 
@@ -93,11 +93,12 @@ npm run deploy
 For each PR, from its branch:
 
 ```sh
-npm run build
-npx wrangler versions upload --config wrangler.preview.jsonc --preview-alias pr-NNN
+npm run preview:deploy -- --preview-alias pr-NNN
 ```
 
-For the first use only, initialize the separate demo Worker with `npx wrangler deploy --config wrangler.preview.jsonc`; then upload its version. Review the source config as ASSETS-only and confirm `npx wrangler secret list --config wrangler.preview.jsonc` is empty. Task 002 replaces this interim reviewed procedure with guarded tooling. Never upload PR versions to `tenboards`.
+The preview command uses a deliberately separate source/config generator, not a production name override. It rejects local dotenv/dev-vars files and DB/auth/provider/build-override environment, strips build subprocess inputs, disables Nitro production config generation, and checks the final generated config and remote version/secret inventory before upload. Move local `.env*`/`.dev.vars*` files outside the checkout first (keep `.env.example`). No production binding can enter via Nitro array merging. On first use only, add `--initialize` to create the separate demo Worker; normal runs refuse a missing Worker. Never upload PR versions to `tenboards`.
+
+The root config keeps its real Hyperdrive slot commented until reviewer cutover. Without binding and secret it deploys as demo; a secret without database configuration returns 503. Never set a production secret on a binding-less live version; task 003's runbook stages a complete version atomically.
 
 Copy the returned version-specific URL into the PR body. The optional alias gives a reusable URL for that PR; uploading a version does not replace the live deployment. Preview URLs are public demo URLs. No GitHub Actions secrets or automated deployments are configured.
 
@@ -470,4 +471,8 @@ tasks remain in review; no production auth or milestone release is implied.
 
 ### Workers runtime readiness (v0.6 task 001)
 
-The compiled Worker now uses request-scoped database and Better Auth instances, a shared effective runtime environment, and successful-only auth-storage readiness memoization. Builds need no secrets. Node retains its pooled client; zero-env and forced demo remain connection-free. See [local setup, tests and evidence boundaries](docs/auth.md#local-workers-runtime-v06-task-001). Local workerd verification does not claim hosted Neon/Hyperdrive acceptance. Tasks 002–004 and v0.6 release remain pending.
+The compiled Worker now uses request-scoped database and Better Auth instances, a shared effective runtime environment, and successful-only auth-storage readiness memoization. Builds need no secrets. Node retains its pooled client; zero-env and forced demo remain connection-free. See [local setup, tests and evidence boundaries](docs/auth.md#local-workers-runtime-v06-task-001). Local workerd verification does not claim hosted Neon/Hyperdrive acceptance. Task 002 adds isolated preview tooling and database rate limits; operations acceptance and reviewer cutover/release remain pending.
+
+### Preview isolation and auth hardening (v0.6 task 002)
+
+Migration `0013_wandering_midnight.sql` adds only `auth_rate_limit`. Better Auth uses database storage with unique keys and conditional atomic increments; both Node and Worker HTTP handlers share it. Workers trust only `cf-connecting-ip`; missing/invalid values share a conservative per-path bucket. Hosted auth requires an explicit canonical HTTPS origin. General limits remain 100/10 seconds and sensitive credential routes 3/10 seconds. Custom `auth.api` calls are outside the HTTP limiter; session/origin guards still apply. See [storage/IP semantics and limits](docs/auth.md#database-rate-limits-and-worker-origins-v06-task-002).

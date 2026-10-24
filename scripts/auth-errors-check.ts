@@ -1,7 +1,7 @@
 import { chromium } from "playwright";
 import postgres from "postgres";
 
-import { localDatabase, startTestServer, testSecret } from "./auth-test-support.ts";
+import { localDatabase, startTestServer, testHeaders, testSecret } from "./auth-test-support.ts";
 import { cacheCaptureFonts } from "./screenshot-assets.ts";
 import assert from "node:assert/strict";
 import { setTimeout as delay } from "node:timers/promises";
@@ -25,7 +25,7 @@ try {
     (await server.api.post("/api/auth/sign-up/email", { data: { name: "Error test", email, password } })).status(),
     200,
   );
-  const context = await browser.newContext();
+  const context = await browser.newContext({ extraHTTPHeaders: testHeaders });
   await cacheCaptureFonts(context);
   const page = await context.newPage();
   async function visit(path: string) {

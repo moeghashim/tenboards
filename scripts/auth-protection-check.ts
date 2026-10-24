@@ -1,7 +1,7 @@
 import { chromium } from "playwright";
 import postgres from "postgres";
 
-import { callRpc, localDatabase, startTestServer, testSecret } from "./auth-test-support.ts";
+import { callRpc, localDatabase, startTestServer, testHeaders, testSecret } from "./auth-test-support.ts";
 import { cacheCaptureFonts } from "./screenshot-assets.ts";
 import { captureRoutes } from "./screenshot-routes.ts";
 import assert from "node:assert/strict";
@@ -66,7 +66,7 @@ const browser = await chromium.launch();
 const email = `protection-${Date.now()}@example.test`;
 const password = testSecret();
 try {
-  const anonymous = await browser.newContext();
+  const anonymous = await browser.newContext({ extraHTTPHeaders: testHeaders });
   await cacheCaptureFonts(anonymous);
   const page = await anonymous.newPage();
   page.setDefaultTimeout(15000);
@@ -99,7 +99,7 @@ try {
     assert.match(result.cacheControl, /private.*no-store/);
     pass(`No-cookie direct RPC ${item.file}:${item.name}`);
   }
-  const signed = await browser.newContext({ reducedMotion: "reduce" });
+  const signed = await browser.newContext({ extraHTTPHeaders: testHeaders, reducedMotion: "reduce" });
   await cacheCaptureFonts(signed);
   const response = await signed.request.post(`${server.baseURL}/api/auth/sign-up/email`, {
     headers: { origin: server.baseURL },
@@ -140,7 +140,7 @@ try {
   }
   assert.deepEqual(errors, []);
   for (const state of ["tampered", "expired", "revoked"]) {
-    const invalid = await browser.newContext({ storageState: storage });
+    const invalid = await browser.newContext({ extraHTTPHeaders: testHeaders, storageState: storage });
     if (state === "tampered") {
       const cookie = (await invalid.cookies()).find((c) => c.name === "better-auth.session_token");
       assert.ok(cookie);

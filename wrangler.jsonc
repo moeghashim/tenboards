@@ -5,4 +5,7 @@
   "compatibility_flags": ["nodejs_compat"],
   "workers_dev": true,
   "preview_urls": true
+  // Reviewer cutover only: add the real nonsecret ID, with query caching disabled.
+  // No active binding (and no auth secret) means the pre-cutover demo.
+  // , "hyperdrive": [{ "binding": "HYPERDRIVE", "id": "REVIEWER_REAL_ID" }]
 }

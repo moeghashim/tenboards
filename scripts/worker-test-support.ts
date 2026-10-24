@@ -9,7 +9,13 @@ import { setTimeout as delay } from "node:timers/promises";
 
 export async function startWorker(
   env: AuthEnvironment = {},
-  options: { port?: number; binding?: boolean; harness?: boolean } = {},
+  options: {
+    port?: number;
+    binding?: boolean;
+    harness?: boolean;
+    stripClientIp?: boolean;
+    headers?: Record<string, string>;
+  } = {},
 ) {
   const port = options.port ?? 3021;
   const baseURL = `http://localhost:${port}`;
@@ -21,13 +27,16 @@ export async function startWorker(
     : [];
   if (options.binding) delete vars.DATABASE_URL;
   // This is a separate local test source config, never a mutation of Nitro output.
+  let entry = ".output/server/index.mjs";
+  if (options.harness) entry = "scripts/worker-parity-harness.ts";
+  if (options.stripClientIp) entry = "scripts/worker-ip-harness.ts";
   const config = {
     name: "tenboards-local-test",
     compatibility_date: "2026-10-23",
     compatibility_flags: ["nodejs_compat"],
-    main: path.resolve(options.harness ? "scripts/worker-parity-harness.ts" : ".output/server/index.mjs"),
-    no_bundle: !options.harness,
-    rules: options.harness ? [] : [{ type: "ESModule", globs: ["**/*.mjs", "**/*.js"] }],
+    main: path.resolve(entry),
+    no_bundle: !options.harness && !options.stripClientIp,
+    rules: options.harness || options.stripClientIp ? [] : [{ type: "ESModule", globs: ["**/*.mjs", "**/*.js"] }],
     assets: { binding: "ASSETS", directory: path.resolve(".output/public") },
     env: { local: { hyperdrive } },
   };
@@ -89,7 +98,7 @@ export async function startWorker(
   }
   const api = await request.newContext({
     baseURL,
-    extraHTTPHeaders: { origin: baseURL, "cf-connecting-ip": "192.0.2.1" },
+    extraHTTPHeaders: { origin: baseURL, "cf-connecting-ip": "192.0.2.1", ...options.headers },
   });
   return {
     baseURL,

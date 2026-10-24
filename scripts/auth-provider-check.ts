@@ -1,7 +1,7 @@
 import { chromium } from "playwright";
 import postgres from "postgres";
 
-import { localDatabase, startTestServer, testSecret } from "./auth-test-support.ts";
+import { localDatabase, startTestServer, testHeaders, testSecret } from "./auth-test-support.ts";
 import { cacheCaptureFonts } from "./screenshot-assets.ts";
 import assert from "node:assert/strict";
 
@@ -35,7 +35,7 @@ for (const [label, google, github, extra] of [
   });
   const browser = await chromium.launch();
   try {
-    const context = await browser.newContext();
+    const context = await browser.newContext({ extraHTTPHeaders: testHeaders });
     await cacheCaptureFonts(context);
     const page = await context.newPage();
     for (const variant of ["v1", "v2"])
