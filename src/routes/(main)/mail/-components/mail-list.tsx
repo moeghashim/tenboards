@@ -72,7 +72,7 @@ export function MailList({ groups, onSelectMail }: MailListProps) {
                           </div>
                           <div
                             className={cn(
-                              "text-foreground truncate text-xs font-medium",
+                              "text-foreground truncate text-sm font-medium",
                               item.isRead && "text-muted-foreground font-normal",
                             )}
                           >
@@ -90,7 +90,7 @@ export function MailList({ groups, onSelectMail }: MailListProps) {
                         </div>
                       </div>
 
-                      <p className="text-muted-foreground mt-2 line-clamp-2 text-xs leading-5">{item.body}</p>
+                      <p className="text-muted-foreground mt-2 line-clamp-2 text-sm leading-5">{item.body}</p>
                     </div>
                   </div>
                 </button>

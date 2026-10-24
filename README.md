@@ -6,6 +6,8 @@ Ten current dashboards and the retained app pages share a compact design system,
 
 **v0.6.1 (legacy removal) is merged, deployed and released as [v0.6.1](https://github.com/moeghashim/tenboards/releases/tag/v0.6.1)**: the four V1 dashboards and Auth V1 forms are retired. Six old URLs permanently redirect to their current equivalents; Auth V2 is the only sign-in UI, and the collapsed desktop sidebar no longer shows a duplicate header toggle. The [collapsed-header-toggle task](dev/milestones/v0.6.1-legacy-removal/002-collapsed-header-toggle.md), [milestone overview](dev/milestones/v0.6.1-legacy-removal/README.md) and [milestone status](dev/milestones.json) track acceptance. The v0.5 authentication/session/security boundaries remain in place.
 
+**v0.6.2 compact density (in review)** tightens the shared desktop typography, controls, cards, tables and shell. Content uses 13px text, default desktop controls are 28px, and the header is 48px. Toolbar selects and tabs retain content-based minimum widths so wider font choices keep their labels readable. Mobile keeps larger control/spacing defaults; all fonts, presets and sidebar styles remain available. There is one compact default, with no additional preference. See the [density contract](dev/milestones/v0.6.2-compact-density/README.md) and [design system](DESIGN.md).
+
 **v0.7 (AI Assistant) is planned, not implemented** — [the milestone contract and three tasks](dev/milestones/v0.7-assistant/README.md) cover a separate Assistant page, safe OpenUI rendering, optional server-configured providers and recorded zero-config replies. Existing Chat stays unchanged. The live demo and PR previews will remain recorded-only; adopters supply their own provider keys.
 
 **v0.8 (Projects workspace) is planned, not implemented** — [the milestone contract and six tasks](dev/milestones/v0.8-projects/README.md) cover workspace Home, a Projects index, nested project navigation and read-only Overview/Board/List/Timeline/Files views. Kanban, Tasks, Calendar and File Manager will consolidate into project views with permanent legacy redirects. Both v0.7 and v0.8 proceed independently after rebasing onto v0.6.2 compact density; the reviewer reconciles shared shell files. Current routes and behavior are unchanged by this planning PR.
@@ -34,7 +36,7 @@ Open [the default dashboard](http://localhost:3000/dashboard/default).
 - `npm run db:migrate` — apply committed migrations to an explicit local Postgres URL; remote operations require `-- --allow-remote` and direct TLS URL.
 - `npm run db:seed` — transactionally upsert canonical demo records, local-only by default; the same explicit remote opt-in applies.
 - `npm run data:parity` — compare every demo/DB read against seeded local Postgres.
-- `npm run screenshots` — capture route/preset/theme/viewport evidence (optional `--reference` for identical request dates).
+- `npm run screenshots` — capture route/preset/theme/viewport evidence (optional `--reference` for identical request dates, `--density` for computed geometry, and `--font` for a registry choice).
 - `npm run generate-routes` — regenerate file-based routes.
 - `npm run generate:presets` — regenerate the preset registry.
 - `npm run deploy` — reviewer-only build and production deployment after approved merges.

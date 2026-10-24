@@ -63,7 +63,7 @@ try {
                   const label = el.querySelector("span:not(.sr-only)");
                   return (label?.getBoundingClientRect().left ?? 0) - el.getBoundingClientRect().left;
                 });
-                assert.equal(alignment, 24, `${label}: breadcrumb has no empty toggle gap`);
+                assert.equal(alignment, 21, `${label}: compact breadcrumb has no empty toggle gap`);
                 assert.equal(await rail.isVisible(), true, label);
               }
               if (values.ssr) {

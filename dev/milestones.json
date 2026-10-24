@@ -168,6 +168,14 @@
       }
     },
     {
+      "id": "v0.6.2-compact-density",
+      "status": "in_review",
+      "tasks": ["001-compact-density"],
+      "taskStatuses": {
+        "001-compact-density": "in_review"
+      }
+    },
+    {
       "id": "v0.7-assistant",
       "status": "planned",
       "tasks": ["001-assistant-foundation", "002-provider-streaming-endpoint", "003-picker-conversation-acceptance"],
