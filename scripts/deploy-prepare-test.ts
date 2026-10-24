@@ -125,7 +125,15 @@ try {
   await symlink(filename, link);
   await assert.rejects(() => createDeploymentSecrets(link, origin, repo));
   const second = path.join(directory, "second.json");
-  await createDeploymentSecrets(second, origin, repo);
+  const previousKey = process.env.OPENAI_API_KEY;
+  process.env.OPENAI_API_KEY = "SYNTHETIC_NOT_OPTED_IN";
+  try {
+    await createDeploymentSecrets(second, origin, repo);
+    assert.ok(!("OPENAI_API_KEY" in JSON.parse(await readFile(second, "utf8"))));
+  } finally {
+    if (previousKey === undefined) delete process.env.OPENAI_API_KEY;
+    else process.env.OPENAI_API_KEY = previousKey;
+  }
   assert.notEqual(JSON.parse(await readFile(second, "utf8")).BETTER_AUTH_SECRET, secrets.BETTER_AUTH_SECRET);
   const assistantFile = path.join(directory, "assistant.json");
   await createDeploymentSecrets(assistantFile, origin, repo, {

@@ -4,6 +4,7 @@ import {
   canonicalOrigin,
   providers,
   publicConfiguration,
+  selectProvider,
 } from "../src/server/assistant/config.server.ts";
 import { readInput, requestSchema } from "../src/server/assistant/input.ts";
 import { createMemoryLimiter, limiterKey, trustedIP } from "../src/server/assistant/limiter.server.ts";
@@ -13,6 +14,10 @@ import { mockOutput, type WireCase, wireResponse } from "./assistant-wire-fixtur
 import assert from "node:assert/strict";
 
 assert.deepEqual(assistantConfiguration({ OPENAI_MODEL: "override" }), []);
+assert.throws(() => selectProvider(assistantConfiguration({ OPENAI_API_KEY: "synthetic" }), "meta"), {
+  code: "invalid",
+  status: 400,
+});
 assert.deepEqual(assistantConfiguration({ OPENAI_API_KEY: "  " }), []);
 for (const entry of providers) {
   const config = assistantConfiguration({ [entry.key]: "SYNTHETIC_PRIVATE_KEY", [entry.override]: "override-1" });
@@ -28,6 +33,10 @@ assert.deepEqual(
   providers.map((p) => p.id),
 );
 assert.equal(canonicalOrigin({}, "http://localhost:3170/api/assistant", true), "http://localhost:3170");
+assert.equal(
+  canonicalOrigin({ ASSISTANT_ORIGIN: "  " }, "https://recorded.example/api", false),
+  "https://recorded.example",
+);
 assert.equal(canonicalOrigin({}, "https://recorded.example/api/assistant", false), "https://recorded.example");
 assert.throws(() => canonicalOrigin({}, "https://live.example/api/assistant", true));
 for (const origin of [
@@ -195,7 +204,7 @@ for (const [events, expected] of [
       { type: "text-delta", text: mockOutput },
       { type: "finish", finishReason: "length" },
     ],
-    "invalid",
+    "limit",
   ],
   [[{ type: "tool-call" }], "provider"],
 ] as [SourceEvent[], string][]) {

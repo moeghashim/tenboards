@@ -16,6 +16,7 @@ export function boundedStream(
   let reader: ReadableStreamDefaultReader<SourceEvent> | undefined;
   let finished = false;
   let content = "";
+  let contentBytes = 0;
   let timer: ReturnType<typeof setTimeout>;
   let total: ReturnType<typeof setTimeout>;
   let finish: (event?: StreamEvent) => void = () => {
@@ -32,9 +33,12 @@ export function boundedStream(
           clearTimeout(total);
           requestSignal.removeEventListener("abort", disconnect);
           abort.abort();
-          void reader?.cancel().catch(() => {
-            /* Cancellation may race a closed reader. */
-          });
+          void reader
+            ?.cancel()
+            .catch(() => {
+              /* Cancellation may race a closed reader. */
+            })
+            .finally(() => reader?.releaseLock());
           if (event) {
             controller.enqueue(encodeEvent(event));
             controller.close();
@@ -65,7 +69,8 @@ export function boundedStream(
             }
             const event = part.value;
             if (event.type === "text-delta" && "text" in event && typeof event.text === "string" && event.text) {
-              if (bytes(content) + bytes(event.text) > 65536) {
+              contentBytes += bytes(event.text);
+              if (contentBytes > 65536) {
                 finish({ v: 1, type: "error", code: "limit" });
                 return;
               }
@@ -76,6 +81,11 @@ export function boundedStream(
               return;
             }
             if (event.type === "finish") {
+              const usage = "totalUsage" in event ? (event.totalUsage as { outputTokens?: number }) : undefined;
+              if ((usage?.outputTokens ?? 0) > 4096 || ("finishReason" in event && event.finishReason === "length")) {
+                finish({ v: 1, type: "error", code: "limit" });
+                return;
+              }
               const valid =
                 "finishReason" in event &&
                 event.finishReason === "stop" &&

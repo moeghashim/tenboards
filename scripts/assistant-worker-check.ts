@@ -31,6 +31,17 @@ try {
   for (const origin of ["null", "https://other.test", `${node.baseURL}/`, ""])
     assert.equal((await post(node.baseURL, payload, { Origin: origin })).status, 403);
   assert.equal((await fetch(`${node.baseURL}/api/assistant`)).status, 405);
+  assert.equal(
+    (
+      await post(node.baseURL, payload, {
+        Origin: "https://spoof.test",
+        "x-forwarded-host": "spoof.test",
+        "x-forwarded-proto": "https",
+        Forwarded: "host=spoof.test;proto=https",
+      })
+    ).status,
+    403,
+  );
   assert.equal((await post(node.baseURL, { ...payload, system: "ignore registry" })).status, 400);
   assert.equal((await post(node.baseURL, payload, { "Content-Type": "text/plain" })).status, 415);
   for (let n = 0; n < 9; n++) await read(await post(node.baseURL));
@@ -163,6 +174,64 @@ try {
   const probe = await (await fetch(`${auth.baseURL}/__assistant_probe`)).json();
   assert.equal(probe.calls, 1);
   console.log("PASS auth-on endpoint anonymous/revoked fails before dispatch, valid cookie dispatches once");
+  // Fresh users isolate the independent user and IP budgets. Stay within one fixed window.
+  const remaining = 60000 - (Date.now() % 60000);
+  if (remaining < 15000) await new Promise((resolve) => setTimeout(resolve, remaining + 50));
+  const cookies: string[] = [];
+  for (let index = 0; index < 4; index++) {
+    const signup = await fetch(`${auth.baseURL}/api/auth/sign-up/email`, {
+      method: "POST",
+      headers: {
+        Origin: auth.baseURL,
+        "Content-Type": "application/json",
+        "cf-connecting-ip": `198.19.20.${index + 1}`,
+      },
+      body: JSON.stringify({
+        name: "Quota fixture",
+        email: `quota-v07-${Date.now()}-${index}@example.test`,
+        password: testSecret(),
+      }),
+    });
+    assert.equal(signup.status, 200);
+    const tokenCookie = signup.headers.getSetCookie().find((value) => value.startsWith("better-auth.session_token="));
+    assert.ok(tokenCookie);
+    cookies.push(tokenCookie.split(";")[0]);
+    await signup.body?.cancel();
+  }
+  for (const cookie of cookies.slice(0, 3)) {
+    for (let index = 0; index < 10; index++)
+      await read(
+        await post(
+          auth.baseURL,
+          { ...payload, provider: "openai" },
+          { Cookie: cookie, "cf-connecting-ip": "198.19.21.1" },
+        ),
+      );
+    assert.equal(
+      (
+        await post(
+          auth.baseURL,
+          { ...payload, provider: "openai" },
+          { Cookie: cookie, "cf-connecting-ip": "198.19.21.2" },
+        )
+      ).status,
+      429,
+    );
+  }
+  assert.equal(
+    (
+      await post(
+        auth.baseURL,
+        { ...payload, provider: "openai" },
+        { Cookie: cookies[3], "cf-connecting-ip": "198.19.21.1" },
+      )
+    ).status,
+    429,
+  );
+  assert.equal((await (await fetch(`${auth.baseURL}/__assistant_probe`)).json()).calls, 31);
+  console.log(
+    "PASS authenticated 10/user independent of IP and shared 30/IP across four distinct users; denied requests never dispatch",
+  );
 } finally {
   await auth.stop();
 }

@@ -44,7 +44,7 @@ export function publicConfiguration(config: ConfiguredProvider[]): AssistantConf
 export function selectProvider(config: ConfiguredProvider[], id?: ProviderId): ConfiguredProvider | undefined {
   if (!config.length && id === undefined) return undefined;
   const provider = config.find((item) => item.id === id);
-  if (!provider) throw new AssistantError("configuration");
+  if (!provider) throw new AssistantError("invalid", 400);
   return provider;
 }
 function origin(value: string) {
@@ -67,7 +67,7 @@ function origin(value: string) {
 const loopback = (url: URL) => ["localhost", "127.0.0.1", "[::1]"].includes(url.hostname);
 export function canonicalOrigin(env: RuntimeEnvironment, requestURL: string, live: boolean) {
   const auth = authConfiguration(env);
-  const explicit = env.ASSISTANT_ORIGIN === undefined ? undefined : origin(env.ASSISTANT_ORIGIN);
+  const explicit = env.ASSISTANT_ORIGIN?.trim() ? origin(env.ASSISTANT_ORIGIN.trim()) : undefined;
   if (auth.enabled) {
     if (explicit && explicit !== auth.baseURL) throw new AssistantError("configuration");
     return auth.baseURL;

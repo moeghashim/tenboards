@@ -13,8 +13,14 @@ import { parseArgs } from "node:util";
 
 try {
   const { values } = parseArgs({
-    options: { name: { type: "string" }, url: { type: "string" }, "secrets-file": { type: "string" } },
+    options: {
+      name: { type: "string" },
+      url: { type: "string" },
+      "secrets-file": { type: "string" },
+      "include-assistant": { type: "boolean" },
+    },
   });
+  if (values["include-assistant"] && !values["secrets-file"]) throw new Error();
   const name = deploymentName(values.name);
   const url = deploymentURL(values.url);
   const filename = values["secrets-file"] ? await externalSecretsPath(values["secrets-file"]) : undefined;
@@ -31,7 +37,8 @@ try {
   if (build.status !== 0)
     throw new Error("Clean build failed; build output withheld to avoid exposing configuration values.");
   assertDeploymentConfig(JSON.parse(await readFile(".output/server/wrangler.json", "utf8")), name);
-  if (filename) await createDeploymentSecrets(filename, url);
+  if (filename)
+    await createDeploymentSecrets(filename, url, process.cwd(), values["include-assistant"] ? process.env : {});
   console.log("PASS clean build and deployment config. No Cloudflare or database operation performed.");
   console.log(
     filename

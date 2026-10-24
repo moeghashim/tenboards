@@ -80,7 +80,7 @@ export async function createDeploymentSecrets(
   filename: string,
   url: string,
   root = process.cwd(),
-  assistantEnv: AssistantEnvironment = process.env,
+  assistantEnv: AssistantEnvironment = {},
 ) {
   const destination = await externalSecretsPath(filename, root);
   const secrets = { BETTER_AUTH_SECRET: randomBytes(48).toString("base64url"), BETTER_AUTH_URL: deploymentURL(url) };
@@ -93,8 +93,8 @@ export async function createDeploymentSecrets(
   const assistant: Record<string, string> = {};
   for (const entry of providers)
     for (const key of [entry.key, entry.override])
-      if (assistantEnv[key] !== undefined) assistant[key] = assistantEnv[key]!;
-  if (assistantEnv.ASSISTANT_ORIGIN !== undefined) assistant.ASSISTANT_ORIGIN = assistantEnv.ASSISTANT_ORIGIN;
+      if (assistantEnv[key]?.trim()) assistant[key] = assistantEnv[key]!.trim();
+  if (assistantEnv.ASSISTANT_ORIGIN?.trim()) assistant.ASSISTANT_ORIGIN = assistantEnv.ASSISTANT_ORIGIN.trim();
   // Exclusive creation rejects existing files and symlinks; never rotate an existing secret implicitly.
   await writeFile(destination, JSON.stringify({ ...secrets, ...assistant }, null, 2), { mode: 0o600, flag: "wx" });
   return destination;
