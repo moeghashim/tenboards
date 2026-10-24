@@ -55,3 +55,5 @@ Every task passes `npm run build`, `npm run check`, `npm run typecheck` and dev 
 Depends on merged 001 and v0.6.2. Blocks 003. Hand off reusable project shell/task presentation and guarded loaders. The old app routes are temporary compatibility consumers, not duplicate new data domains.
 
 One approved task per branch/PR; declare any stack and layer compare URL. Conventional commit with DCO sign-off and final `Co-Authored-By: GPT-6-Astra <noreply@openai.com>` trailer. Claude reviews and alone merges.
+
+Round 2 verification: [evidence](https://github.com/moeghashim/tenboards/tree/pr-assets/v08-002-round2). Build/check/typecheck, 448 Node auth scenarios, 29 reads / 208 Node/Worker parity scenarios, Worker auth/security, Node/Worker project access, project/migration checks and 96 redirects pass. Four-state dev and immutable-preview captures plus filters, debounced search, dialog focus and paging checks pass. Preview: https://2198d241-tenboards-preview.mohanadgh.workers.dev (alias pr-69). Remains in review.
