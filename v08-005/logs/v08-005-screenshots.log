@@ -1,0 +1,40 @@
+
+> tenboards@0.6.2 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://localhost:3277 --routes /dashboard/home/,/dashboard/projects/,/dashboard/projects/$projectId/overview,/dashboard/projects/$projectId/board,/dashboard/projects/$projectId/list,/dashboard/projects/$projectId/timeline,/dashboard/projects/$projectId/files,/dashboard/default,/dashboard/chat --output screenshots/v08-005/after --sidebar-states
+
+PASS /dashboard/home/ light/desktop direct
+PASS /dashboard/home/ light/mobile direct
+PASS /dashboard/home/ dark/desktop direct
+PASS /dashboard/home/ dark/mobile direct
+PASS /dashboard/projects/ light/desktop direct
+PASS /dashboard/projects/ light/mobile direct
+PASS /dashboard/projects/ dark/desktop direct
+PASS /dashboard/projects/ dark/mobile direct
+PASS /dashboard/projects/$projectId/overview light/desktop direct
+PASS /dashboard/projects/$projectId/overview light/mobile direct
+PASS /dashboard/projects/$projectId/overview dark/desktop direct
+PASS /dashboard/projects/$projectId/overview dark/mobile direct
+PASS /dashboard/projects/$projectId/timeline light/desktop direct
+PASS /dashboard/projects/$projectId/timeline light/mobile direct
+PASS /dashboard/projects/$projectId/timeline dark/desktop direct
+PASS /dashboard/projects/$projectId/timeline dark/mobile direct
+PASS /dashboard/projects/$projectId/files light/desktop direct
+PASS /dashboard/projects/$projectId/files light/mobile direct
+PASS /dashboard/projects/$projectId/files dark/desktop direct
+PASS /dashboard/projects/$projectId/files dark/mobile direct
+PASS /dashboard/projects/$projectId/board light/desktop direct
+PASS /dashboard/projects/$projectId/board light/mobile direct
+PASS /dashboard/projects/$projectId/board dark/desktop direct
+PASS /dashboard/projects/$projectId/board dark/mobile direct
+PASS /dashboard/projects/$projectId/list light/desktop direct
+PASS /dashboard/projects/$projectId/list light/mobile direct
+PASS /dashboard/projects/$projectId/list dark/desktop direct
+PASS /dashboard/projects/$projectId/list dark/mobile direct
+PASS /dashboard/chat light/desktop direct
+PASS /dashboard/chat light/mobile direct
+PASS /dashboard/chat dark/desktop direct
+PASS /dashboard/chat dark/mobile direct
+PASS /dashboard/default light/desktop direct
+PASS /dashboard/default light/mobile direct
+PASS /dashboard/default dark/desktop direct
+PASS /dashboard/default dark/mobile direct

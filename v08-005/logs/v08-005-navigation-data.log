@@ -1,0 +1,1 @@
+PASS isolated authenticated navigation data: real schema failure yields honest error, retry recovers guarded summaries, empty DB yields empty section without demo fallback.

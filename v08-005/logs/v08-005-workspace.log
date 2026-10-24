@@ -1,0 +1,7 @@
+PASS light/desktop: Home KPI parity, named sample person, owning-project links, index live search/status/keyboard/empty recovery, empty project, overflow and console
+PASS light/mobile: Home KPI parity, named sample person, owning-project links, index live search/status/keyboard/empty recovery, empty project, overflow and console
+PASS dark/desktop: Home KPI parity, named sample person, owning-project links, index live search/status/keyboard/empty recovery, empty project, overflow and console
+PASS dark/mobile: Home KPI parity, named sample person, owning-project links, index live search/status/keyboard/empty recovery, empty project, overflow and console
+PASS delayed Home direct/refresh hydration UTC
+PASS delayed Home direct/refresh hydration America/Chicago
+PASS delayed Home direct/refresh hydration Pacific/Kiritimati

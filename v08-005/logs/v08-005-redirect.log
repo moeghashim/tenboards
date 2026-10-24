@@ -1,0 +1,3 @@
+PASS project aliases demo: HTTP 308, view allowlist, query discard, trailing slash, hash, back, root, guards/revocation
+PASS project aliases auth: HTTP 308, view allowlist, query discard, trailing slash, hash, back, root, guards/revocation
+Project redirects: 80/80 passing.

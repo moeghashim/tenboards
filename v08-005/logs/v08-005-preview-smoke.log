@@ -1,0 +1,20 @@
+
+> tenboards@0.6.2 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url https://8835c63b-tenboards-preview.mohanadgh.workers.dev --routes /dashboard/home/,/dashboard/projects/,/dashboard/projects/$projectId/overview,/dashboard/default --output screenshots/v08-005/preview
+
+PASS /dashboard/home/ light/desktop direct
+PASS /dashboard/home/ light/mobile direct
+PASS /dashboard/home/ dark/desktop direct
+PASS /dashboard/home/ dark/mobile direct
+PASS /dashboard/projects/ light/desktop direct
+PASS /dashboard/projects/ light/mobile direct
+PASS /dashboard/projects/ dark/desktop direct
+PASS /dashboard/projects/ dark/mobile direct
+PASS /dashboard/projects/$projectId/overview light/desktop direct
+PASS /dashboard/projects/$projectId/overview light/mobile direct
+PASS /dashboard/projects/$projectId/overview dark/desktop direct
+PASS /dashboard/projects/$projectId/overview dark/mobile direct
+PASS /dashboard/default light/desktop direct
+PASS /dashboard/default light/mobile direct
+PASS /dashboard/default dark/desktop direct
+PASS /dashboard/default dark/mobile direct

@@ -1,0 +1,189 @@
+{
+  "baseURL": "https://8835c63b-tenboards-preview.mohanadgh.workers.dev/",
+  "fontAssets": "exact public responses cached between contexts",
+  "maskedLiveClocks": false,
+  "hydrationDelayMs": 0,
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": false,
+  "interactions": false,
+  "sidebarStates": false,
+  "results": [
+    {
+      "route": "/dashboard/home/",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_home_-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/home/",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_home_-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/home/",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_home_-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/home/",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_home_-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/projects/",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_projects_-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/projects/",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_projects_-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/projects/",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_projects_-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/projects/",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_projects_-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/projects/$projectId/overview",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_projects__projectId_overview-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/projects/$projectId/overview",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_projects__projectId_overview-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/projects/$projectId/overview",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_projects__projectId_overview-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/projects/$projectId/overview",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_projects__projectId_overview-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_default-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_default-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_default-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_default-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    }
+  ]
+}
