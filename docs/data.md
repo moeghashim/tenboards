@@ -1,6 +1,6 @@
 # Project data foundation
 
-Projects use the existing `readSource` selection and request-scoped database client. No configuration, auth policy or runtime dependency changes. Project Board/List GET functions independently call `requireSession` before validated reads. Route guards protect documents; direct RPC access is separately checked. The foundation itself exports data readers, not RPC endpoints.
+Projects use the existing `readSource` selection and request-scoped database client. No configuration, auth policy or runtime dependency changes. All five project-view GET functions independently call `requireSession` before validated reads. Route guards protect documents; direct RPC access is separately checked. The foundation itself exports data readers, not RPC endpoints.
 
 ## Migration and provenance
 
@@ -12,7 +12,7 @@ Seeds run inside the existing transaction in dependency order. Upserts touch kno
 
 ## Read contracts
 
-Seven reads are registered: `readProjects`, `readProject`, `readProjectTasks`, `readProjectTimeline`, `readProjectFiles`, `readProjectActivity`, `readWorkspaceHome`. The registry retains the old 22 reads / 104 scenarios and now totals **29 reads / 209 scenarios**. Both source implementations validate IDs/filters and return deterministic order. Database child queries include the requested project predicate; missing project returns null while an empty project returns an empty collection.
+Seven reads are registered: `readProjects`, `readProject`, `readProjectTasks`, `readProjectTimeline`, `readProjectFiles`, `readProjectActivity`, `readWorkspaceHome`. The registry retains the old 22 reads / 104 scenarios and now totals **29 reads / 211 scenarios**. Both source implementations validate IDs/filters and return deterministic order. Database child queries include the requested project predicate; missing project returns null while an empty project returns an empty collection.
 
 Project summaries contain members and server-computed metrics, never task/file bodies. Project and membership summaries cap at 100. Task pages accept 10/20/50 rows or a 100-row board/timeline batch, with offset, total and `hasMore`. Filters cover task ID, status, assignee (including null), label and bounded text search. Files and calendar templates cap at 100; files carry a total. Activity caps at 50. Home sections cap at ten, with independently computed overall task totals. Home queries its member and upcoming sections across all stored tasks before applying the ten-row limit.
 
@@ -27,3 +27,5 @@ Project membership, labels, subtasks, optional task/event/file/activity associat
 Use a dedicated local Postgres container/database. The v0.8 run uses port 3279 and `_v08_` database names; it never accesses a shared Docker database. Run build/check/typecheck, auth:test, data:parity, worker:test, worker:auth, worker:security and `scripts/project-check.ts`. The Worker parity harness imports the same full read registry and is excluded from production. Existing redirect checks remain in `scripts/legacy-redirect-check.ts`; project redirect coverage belongs to consolidation task 005.
 
 Test listener settings support concurrent worktrees: `AUTH_TEST_PORT=3280 WORKER_TEST_PORT=3281 SECURITY_TEST_PORT=3282 AUTH_SENTINEL_PORT=3288 TEST_DATABASE_INFIX=v08`. `SECURITY_TEST_PORT` also reserves its next two ports. Node/compiled local workerd evidence does not establish hosted database behavior.
+
+Task003 adds a validated `dueFrom` filter to task reads so Overview selects upcoming work before bounded limits. Its scoped aggregate uses the same project metrics as Board/List; it combines at most10 upcoming rows from each open status and returns the earliest10. The registry includes dated-bound and empty-bound parity cases. Calendar events use `event:<template-id>` and dated task projections use `task:<canonical-task-id>`; invalid task spans fail before projection. `schedule.ts` performs UTC civil arithmetic and clipping independently of timezone/DST. Project Calendar preserves request-clock serialization and post-hydration local projection; task dates stay authored civil dates.

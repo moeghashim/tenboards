@@ -108,6 +108,11 @@ export const readRegistry = [
           input: { projectId, renderedAt },
         })),
       ),
+      {
+        name: "upcoming-bound",
+        input: { projectId: "sample-operations", dueFrom: "2026-06-20", sort: "dueDate", limit: 10 },
+      },
+      { name: "upcoming-empty", input: { projectId: "sample-docs", dueFrom: "2027-01-01" } },
       { name: "due-sort", input: { projectId: "sample-operations", sort: "dueDate" } },
       { name: "title-sort", input: { projectId: "sample-docs", sort: "title" } },
       { name: "paged", input: { projectId: "sample-operations", offset: 10, limit: 10 } },

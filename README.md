@@ -15,7 +15,7 @@ The configured provider/model selector sits in the composer's bottom toolbar and
 
 The Assistant follows new replies until you scroll up; Jump to latest resumes following. Enter sends, Shift+Enter inserts a newline, and the composer grows from one to eight rows. Copy and Regenerate are available below the latest reply.
 
-**v0.8 (Projects workspace) is in progress** — the data foundation and direct read-only project Board/List views are implemented. [The milestone contract](dev/milestones/v0.8-projects/README.md) tracks the remaining Overview/Timeline/Files, workspace Home/index and navigation consolidation. Existing standalone routes and the default landing remain available.
+**v0.8 (Projects workspace) is in progress** — the data foundation and all five direct read-only project views are implemented. [The milestone contract](dev/milestones/v0.8-projects/README.md) tracks the remaining workspace Home/index, navigation consolidation and final acceptance. Existing standalone routes and the default landing remain available.
 
 ## Run locally
 
@@ -408,7 +408,7 @@ checks later request dates against an unchanged seed.
 
 Default, CRM, Finance and Analytics load through four typed GET reads. Customer/opportunity, financial account/card/transaction and analytics page/source/campaign records use normalized tables. KPI and chart measures use ordered typed metric points with display metadata; chart colors, geometry and placeholder controls remain local. No action writes to the DB. CRM month labels share the request reference; Finance statement dates retain UTC semantics.
 
-v0.6.1 removes the V1 payloads, queries, fixtures, seeds, range projectors and 26 V1-only parity scenarios. Migration `0014_remove_legacy.sql` drops 13 exclusive tables and deletes only V1 metric rows; shipped migrations remain intact. Apply `db:migrate` and `db:seed` when upgrading. After the Projects foundation, current parity is 29 reads / 209 scenarios. `node --experimental-strip-types scripts/auth-migration-check.ts` verifies fresh and populated upgrades, retained rows and repeat migrate/seed; `scripts/legacy-redirect-check.ts` checks all six aliases in demo and auth modes.
+v0.6.1 removes the V1 payloads, queries, fixtures, seeds, range projectors and 26 V1-only parity scenarios. Migration `0014_remove_legacy.sql` drops 13 exclusive tables and deletes only V1 metric rows; shipped migrations remain intact. Apply `db:migrate` and `db:seed` when upgrading. After the Projects foundation, current parity is 29 reads / 211 scenarios. `node --experimental-strip-types scripts/auth-migration-check.ts` verifies fresh and populated upgrades, retained rows and repeat migrate/seed; `scripts/legacy-redirect-check.ts` checks all six aliases in demo and auth modes.
 
 ### Operational dashboard reads (v0.4/007)
 
@@ -442,7 +442,7 @@ normal reduced-motion snapshots preserve deterministic signal geometry.
 The final source audit checks every canonical fixture owner and traverses runtime
 imports to reject client fixture dependencies. Chat's remaining tab counts and
 thread date now belong to the Chat read; migration `0011_blushing_siren.sql` follows
-the operational migration. The v0.6.1 registry retained 22 reads / 104 scenarios; the Projects foundation extends it to 29 reads / 209 scenarios.
+the operational migration. The v0.6.1 registry retained 22 reads / 104 scenarios; the Projects foundation extends it to 29 reads / 211 scenarios.
 Fresh Postgres 17 and an upgrade beginning with the actual layer 001 schema/seed
 both pass, including repeated seeds and deliberate parity failures.
 
@@ -512,7 +512,7 @@ Follow [docs/deploy.md](docs/deploy.md) for local rehearsal, your own Neon/Hyper
 
 ## Projects data foundation (v0.8 / 001)
 
-The additive Projects model is available to server consumers; Board/List now consume it through guarded server functions; navigation consolidation is pending. `0015_project_foundation.sql` preserves the legacy workspace and auth tables and backfills canonical, namespaced tasks plus project file/calendar links. Run `npm run db:migrate` and `npm run db:seed` for local upgrades. Demo and database reads share validated contracts, with 29 registered reads / 209 parity scenarios.
+The additive Projects model is available to server consumers; Board/List now consume it through guarded server functions; navigation consolidation is pending. `0015_project_foundation.sql` preserves the legacy workspace and auth tables and backfills canonical, namespaced tasks plus project file/calendar links. Run `npm run db:migrate` and `npm run db:seed` for local upgrades. Demo and database reads share validated contracts, with 29 registered reads / 211 parity scenarios.
 
 The original samples are Operations rollout (`sample-operations`), Documentation refresh (`sample-docs`) and the empty Research queue (`sample-empty`). Synthetic membership is display metadata, not an account or permission boundary. Both Kanban and ledger records remain traceable, including canceled tasks. Sample dates are projected from one stored anchor onto the request’s UTC day, identically in demo and DB modes. Both populated projects include overdue, today and upcoming work; most tasks have authored schedule spans. Adopter rows retain their actual dates. See [project data and migration details](docs/data.md).
 
@@ -522,7 +522,16 @@ The original samples are Operations rollout (`sample-operations`), Documentation
 
 Open `/dashboard/projects/sample-operations/board` or `/dashboard/projects/sample-operations/list` directly. The project selector also offers Documentation refresh and the empty Research queue. Board and List share canonical task IDs, statuses (including canceled), assignees, labels, due dates, subtasks and counts. Search, status/assignee/priority/label filters, sort and bounded pages use validated URL state; Board loads every matching task across bounded server reads; only List paginates (10/20/50 rows). Default search values are omitted from Board/List URLs. Progress states the eligible task denominator and the excluded canceled count; tasks without subtasks display an em dash. Search updates after a short typing pause. Filters use the shared Select controls. Compact Board cards omit empty counts and use circular assignee avatars, semantic priority badges, status dots and short task keys; List shares these cues. Task details open the existing keyboard-accessible dialog. There is no task creation, drag/drop, completion or edit endpoint.
 
-The existing Kanban and Tasks URLs still work. Only Board/List links are exposed in the project shell; Overview, Timeline, Files, workspace Home/index and sidebar/palette consolidation ship in later layers. Unknown projects return an authorized 404. `/`, `/dashboard` and auth-success fallback retain `/dashboard/default`.
+The existing Kanban and Tasks URLs still work. The project shell now links Overview, Board, List, Timeline and Files; workspace Home/index and sidebar/palette consolidation ship in later layers. Unknown projects return an authorized 404. `/`, `/dashboard` and auth-success fallback retain `/dashboard/default`.
 
 Run `node --experimental-strip-types scripts/project-ui-check.ts http://localhost:3270` for project switching, filters, pagination, details/focus and responsive checks. `scripts/project-access-check.ts` checks route/RPC denial, validation, project scope and revocation against an isolated local auth database; `AUTH_TEST_RUNTIME=workerd` exercises the Worker build.
 
+## Project Overview, Timeline and Files (v0.8 / 003)
+
+`/dashboard/projects/sample-operations` validates the project then redirects to `/overview`. Overview shows scoped totals, sample members, upcoming work and activity. Its deadline reference is explicitly June 20, 2026; upcoming queries filter dates before their limits. Empty and unknown projects remain distinct.
+
+`/timeline` offers `mode=gantt|table|calendar`, with Gantt as the desktop default and Table after mobile hydration unless a mode was explicitly chosen. Weeks/Months, 1–12 periods, date input and previous/next/Today controls change presentation without reloading task data. Ranges clip labeled bars while retaining exact dates and continuation text. Scheduled rows precede unscheduled rows within each bounded batch in both Gantt and Table; unscheduled work stays visible. Calendar reuses the existing Month/Week/Day display with project templates and dated tasks, without Add event. Template dates follow the serialized request month and local timezone after UTC hydration; authored task dates remain fixed. The live current-day reference is separate from the sample deadline date. Event IDs and task IDs are distinct; all-day task ends convert from inclusive to exclusive.
+
+`/files?view=grid|list` reuses the current file/folder displays with real local search/type filters. Stars and shared flags are read-only sample attributes. Folder summaries do not assert membership or real binary storage; all loaded files remain at project root. There is no upload, download, share, rename or delete service. Old Calendar/File Manager URLs remain available until task005.
+
+`node --experimental-strip-types scripts/project-schedule-check.ts` tests civil-day spans, clipping, invalid inputs and timezone edges. `scripts/project-views-check.ts http://localhost:3270` covers all five links, index redirect, schedule identity, responsive/keyboard controls, Calendar modes, file filtering, empty projects and delayed direct/refresh hydration. Data parity is 29 reads / 211 scenarios.

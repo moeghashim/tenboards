@@ -4,6 +4,8 @@
 
 - Replace inherited generated ledger titles with neutral operations-rollout tasks; repeat seeds preserve IDs and update both legacy and canonical copies.
 
+- Complete project Overview, Timeline (Gantt/table/Calendar) and Files with validated index redirects, bounded civil-date ranges, separate unscheduled work and read-only existing-component adapters. Extend parity to 204 scenarios.
+
 - Add guarded project Board/List routes, project switching, canonical read-only details, URL filters and bounded pagination; retain existing standalone views.
 
 - Add the read-only Projects data foundation with additive migration/backfill, explicit legacy mappings, synthetic memberships, canonical tasks, labels, subtasks, file/calendar links and sample activity.

@@ -103,8 +103,12 @@ try {
   assert.equal(inclusiveDuration("2026-03-07", "2026-03-09"), 3);
   assert.throws(() => inclusiveDuration("2026-06-20", "2026-06-19"));
   assert.throws(() => addCivilDays("2026-02-30", 1));
+  for (const reader of [demoProjectTasks, dbProjectTasks]) {
+    const result = await reader({ projectId: "sample-operations", dueFrom: "2026-06-20", sort: "dueDate", limit: 10 });
+    assert.ok(result?.items.every((t) => t.dueDate !== null && t.dueDate >= "2026-06-20"));
+  }
   const timeline = await demoProjectTimeline({ projectId: "sample-docs", renderedAt: "2026-06-20T12:00:00Z" });
-  assert.equal(timeline?.taskEvents.find((t) => t.id === "sample:review-checklist")?.end, "2026-06-21");
+  assert.equal(timeline?.taskEvents.find((t) => t.id === "task:sample:review-checklist")?.end, "2026-06-21");
   for (const renderedAt of ["2026-10-24T12:00:00Z", "2028-02-29T23:59:59Z", "2027-01-01T00:00:00Z"]) {
     const today = renderedAt.slice(0, 10);
     for (const projectId of ["sample-operations", "sample-docs"]) {

@@ -2,7 +2,7 @@
 id: "003"
 title: Project Overview, Timeline and Files
 milestone: v0.8-projects
-status: todo
+status: in-review
 category: ui
 files: ["src/routes/(main)/dashboard/projects/", "src/routes/(main)/dashboard/calendar/", "src/routes/(main)/dashboard/file-manager/", "src/server/data/calendar.types.ts", "src/navigation/route-catalog.ts", "scripts/", "README.md", "dev/milestones.json"]
 ---
@@ -11,7 +11,7 @@ files: ["src/routes/(main)/dashboard/projects/", "src/routes/(main)/dashboard/ca
 
 Complete all five project views, including an original read-only Gantt view and its accessible table. Re-scope Calendar and File Manager using their existing components; do not rewrite protected wrappers or add a charting dependency.
 
-Follow the [milestone contract](README.md), PLAN Decisions and AGENTS. All acceptance below is pending implementation.
+Follow the [milestone contract](README.md), PLAN Decisions and AGENTS. Acceptance below is verified for this layer; reviewer approval and merge remain pending.
 
 ## Files and ownership
 
@@ -34,15 +34,15 @@ Run Impeccable context once from the task worktree, inspect incumbent renders an
 
 ## Acceptance criteria
 
-- [ ] Add guarded /overview, /timeline and /files routes plus project-index redirect to validated Overview; complete five route links and concrete route catalog entries. Unknown/empty IDs follow the common contract.
-- [ ] Overview uses real scoped aggregate reads for status, member metadata, progress, upcoming work and sample activity; it agrees with Board/List and exposes no mutation controls.
-- [ ] Timeline provides validated gantt/table/calendar modes, bounded Weeks/Months ranges and named range controls. CSS/date utilities draw labeled read-only bars with exact dates, unscheduled items and clipping/continuation; no dependency editing, drag/resize or new runtime dependency.
-- [ ] Accessible table uses exactly the same filtered schedule rows/order with names, status, assignee, start/end/due and duration. Mobile defaults to the table after safe hydration, with explicit chart opt-in and labeled local horizontal scroll; no hover-only information or duplicate announcements.
-- [ ] Reuse Calendar composition and projectEvents for the project event subset; remove Add event at usage sites, handle empty definitions, retain month/week/day access and UTC-to-local request-clock hydration. Convert inclusive task ends to exclusive all-day calendar ends explicitly.
-- [ ] Test civil-day spans across DST/leap/month/year edges, missing/endless/same-day/reversed dates, calendar event versus task identity, timezone changes and long names; invalid spans fail validation rather than rendering misleading bars.
-- [ ] Reuse file grid/list/folder display and validated view switch with project data. Original shared/starred flags are read-only sample attributes; no fake download/upload/share/delete service, and folder summary limitations remain honest.
-- [ ] Screens, detail/empty/loading/error states and keyboard controls meet the merged compact scale and token/focus/motion contract. No protected component edit or unrelated page change.
-- [ ] README describes working project views and read-only calendar/file boundaries; old standalone URLs remain working until 005, and final navigation is still pending.
+- [x] Add guarded /overview, /timeline and /files routes plus project-index redirect to validated Overview; complete five route links and concrete route catalog entries. Unknown/empty IDs follow the common contract.
+- [x] Overview uses real scoped aggregate reads for status, member metadata, progress, upcoming work and sample activity; it agrees with Board/List and exposes no mutation controls.
+- [x] Timeline provides validated gantt/table/calendar modes, bounded Weeks/Months ranges and named range controls. CSS/date utilities draw labeled read-only bars with exact dates, unscheduled items and clipping/continuation; no dependency editing, drag/resize or new runtime dependency.
+- [x] Accessible table uses exactly the same filtered schedule rows/order with names, status, assignee, start/end/due and duration. Mobile defaults to the table after safe hydration, with explicit chart opt-in and labeled local horizontal scroll; no hover-only information or duplicate announcements.
+- [x] Reuse Calendar composition and projectEvents for the project event subset; remove Add event at usage sites, handle empty definitions, retain month/week/day access and UTC-to-local request-clock hydration. Convert inclusive task ends to exclusive all-day calendar ends explicitly.
+- [x] Test civil-day spans across DST/leap/month/year edges, missing/endless/same-day/reversed dates, calendar event versus task identity, timezone changes and long names; invalid spans fail validation rather than rendering misleading bars.
+- [x] Reuse file grid/list/folder display and validated view switch with project data. Original shared/starred flags are read-only sample attributes; no fake download/upload/share/delete service, and folder summary limitations remain honest.
+- [x] Screens, detail/empty/loading/error states and keyboard controls meet the merged compact scale and token/focus/motion contract. No protected component edit or unrelated page change.
+- [x] README describes working project views and read-only calendar/file boundaries; old standalone URLs remain working until 005, and final navigation is still pending.
 
 ## Tests
 
@@ -55,3 +55,7 @@ Every task passes `npm run build`, `npm run check`, `npm run typecheck` and dev 
 Depends on 002, blocks 004. Hand off five complete view URLs, Calendar mode search contract and tested default/empty project behavior. Old URLs cannot redirect yet; 005 owns the switch.
 
 One approved task per branch/PR; declare any stack and layer compare URL. Conventional commit with DCO sign-off and final `Co-Authored-By: GPT-6-Astra <noreply@openai.com>` trailer. Claude reviews and alone merges.
+
+## Verification — 2026-10-24
+
+Build/check/typecheck and Default smoke pass. Node auth suites pass after separating validated index redirects from the visual-route inventory; direct redirect/access checks remain explicit. Worker auth, security, runtime and project access pass. Demo/DB parity is29reads/204scenarios, project mapping/upgrade/constraint checks pass, and existing legacy redirects96/96pass. Civil-date tests pass UTC/Chicago/Kiritimati, including DST/leap/year, invalid spans, clipping and task/event identity. Four-state view interactions, 32screen captures, delayed direct/refresh hydration and narrow/zoom overflow checks pass. Fresh Impeccable review: three fixes applied in one batch, then ship verdict. No dependency/token/protected-wrapper change. Evidence: pr-assets/v08-003.

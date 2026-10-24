@@ -8,6 +8,7 @@ import { ProjectSelect } from "../-components/project-controls";
 import { loadProject } from "../-components/project-functions";
 import { ProjectProgress } from "../-components/project-progress";
 import { searchSchema } from "../-components/project-search";
+import { timelineSearch } from "../-components/timeline-search";
 export const Route = createFileRoute("/(main)/dashboard/projects/$projectId")({
   beforeLoad: requireAppRoute,
   loader: async ({ params }) => {
@@ -60,10 +61,20 @@ function ProjectShell() {
       </div>
       <nav aria-label="Project views" className="flex flex-wrap gap-1 border-b pb-2">
         <Link
+          to="/dashboard/projects/$projectId/overview"
+          params={{ projectId: project.id }}
+          className="hover:bg-muted rounded-lg px-3 py-2"
+          activeOptions={{ exact: true, includeSearch: false }}
+          activeProps={{ className: "bg-muted font-medium", "aria-current": "page" }}
+        >
+          Overview
+        </Link>
+        <Link
           to="/dashboard/projects/$projectId/board"
           params={{ projectId: project.id }}
           search={searchSchema.parse({})}
           className="hover:bg-muted rounded-lg px-3 py-2"
+          activeOptions={{ exact: true, includeSearch: false }}
           activeProps={{ className: "bg-muted font-medium", "aria-current": "page" }}
         >
           Board
@@ -73,9 +84,31 @@ function ProjectShell() {
           params={{ projectId: project.id }}
           search={searchSchema.parse({ limit: 10 })}
           className="hover:bg-muted rounded-lg px-3 py-2"
+          activeOptions={{ exact: true, includeSearch: false }}
           activeProps={{ className: "bg-muted font-medium", "aria-current": "page" }}
         >
           List
+        </Link>
+
+        <Link
+          to="/dashboard/projects/$projectId/timeline"
+          params={{ projectId: project.id }}
+          search={timelineSearch.parse({})}
+          className="hover:bg-muted rounded-lg px-3 py-2"
+          activeOptions={{ exact: true, includeSearch: false }}
+          activeProps={{ className: "bg-muted font-medium", "aria-current": "page" }}
+        >
+          Timeline
+        </Link>
+        <Link
+          to="/dashboard/projects/$projectId/files"
+          params={{ projectId: project.id }}
+          search={{ view: "grid" }}
+          className="hover:bg-muted rounded-lg px-3 py-2"
+          activeOptions={{ exact: true, includeSearch: false }}
+          activeProps={{ className: "bg-muted font-medium", "aria-current": "page" }}
+        >
+          Files
         </Link>
       </nav>
       <Outlet />

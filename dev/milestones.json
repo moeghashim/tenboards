@@ -199,7 +199,7 @@
       "taskStatuses": {
         "001-project-data-foundation": "in-review",
         "002-project-board-list": "in-review",
-        "003-project-overview-timeline-files": "todo",
+        "003-project-overview-timeline-files": "in-review",
         "004-workspace-home-projects-index": "todo",
         "005-project-navigation-consolidation": "todo",
         "006-projects-acceptance": "todo"

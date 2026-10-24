@@ -20,12 +20,25 @@ const page = await context.newPage(),
 const file = "/src/routes/(main)/dashboard/projects/-components/project-functions.ts";
 try {
   await page.goto(`${server.baseURL}/auth/v2/login`);
-  for (const name of ["loadProject", "loadProjectTasks", "loadProjectBoard"]) {
-    const result = await callRpc(page, file, name, "GET", { projectId: "sample-docs" });
+  for (const [rpcFile, name] of [
+    [file, "loadProject"],
+    [file, "loadProjectTasks"],
+    [file, "loadProjectBoard"],
+    ...["loadProjectOverview", "loadProjectTimeline", "loadProjectFiles"].map((name) => [
+      file.replace("project-functions", "project-view-functions"),
+      name,
+    ]),
+  ]) {
+    const result = await callRpc(page, rpcFile, name, "GET", { projectId: "sample-docs" });
     assert.equal(result.ok, false);
     assert.equal(result.message, "Sign in to continue.");
   }
-  for (const path of ["/dashboard/projects/sample-docs/board", "/dashboard/projects/missing/list"]) {
+  for (const path of [
+    "/dashboard/projects/sample-docs/board",
+    "/dashboard/projects/missing/list",
+    "/dashboard/projects/sample-docs",
+    "/dashboard/projects/missing",
+  ]) {
     let response = await context.request.get(server.baseURL + path, { maxRedirects: 0 });
     const location = response.headers().location;
     if (location?.startsWith(`${path}?`))
@@ -39,8 +52,34 @@ try {
   });
   assert.equal(signup.status(), 200);
   const user = (await signup.json()).user;
+  for (const suffix of ["", "/"]) {
+    let response = await context.request.get(`${server.baseURL}/dashboard/projects/sample-docs${suffix}`, {
+      maxRedirects: 0,
+    });
+    if (response.headers().location === "/dashboard/projects/sample-docs")
+      response = await context.request.get(server.baseURL + response.headers().location, { maxRedirects: 0 });
+    assert.equal(response.status(), 307);
+    assert.equal(response.headers().location, "/dashboard/projects/sample-docs/overview");
+  }
+  assert.equal((await context.request.get(`${server.baseURL}/dashboard/projects/missing`)).status(), 404);
+
   await page.goto(`${server.baseURL}/dashboard/projects/sample-docs/list`);
   await page.getByRole("heading", { name: "Documentation refresh", exact: true }).waitFor();
+  for (const name of ["loadProjectOverview", "loadProjectTimeline", "loadProjectFiles"]) {
+    const result = await callRpc(page, file.replace("project-functions", "project-view-functions"), name, "GET", {
+      projectId: "sample-docs",
+    });
+    assert.equal(result.ok, true);
+    assert.match(result.cacheControl, /private.*no-store/);
+    assert.equal(
+      (
+        await callRpc(page, file.replace("project-functions", "project-view-functions"), name, "GET", {
+          projectId: "missing",
+        })
+      ).result,
+      null,
+    );
+  }
   const tasks = await callRpc(page, file, "loadProjectTasks", "GET", { projectId: "sample-docs" });
   assert.equal(tasks.ok, true);
   assert.equal(tasks.result.total, 5);

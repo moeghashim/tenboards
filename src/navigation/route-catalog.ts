@@ -5,10 +5,21 @@ import { sidebarItems } from "./sidebar/sidebar-items.ts";
 export const captureRoutes = [
   { route: "/dashboard/assistant", path: "/dashboard/assistant", ready: "What would you like to explore?" },
   {
-    route: "/dashboard/projects/$projectId",
-    path: "/dashboard/projects/sample-operations",
+    route: "/dashboard/projects/$projectId/overview",
+    path: "/dashboard/projects/sample-operations/overview",
     ready: "Operations rollout",
   },
+  {
+    route: "/dashboard/projects/$projectId/timeline",
+    path: "/dashboard/projects/sample-operations/timeline",
+    ready: "Operations rollout",
+  },
+  {
+    route: "/dashboard/projects/$projectId/files",
+    path: "/dashboard/projects/sample-operations/files",
+    ready: "Operations rollout",
+  },
+
   {
     route: "/dashboard/projects/$projectId/board",
     path: "/dashboard/projects/sample-operations/board",
@@ -184,7 +195,7 @@ export const routeCatalog = captureRoutes
 
 // Interim labels for direct project routes; guarded project-qualified shell navigation ships in 005.
 export function projectRouteTitle(path: string) {
-  const match = path.match(/^\/dashboard\/projects\/[^/]+(?:\/(board|list))?\/?$/);
+  const match = path.match(/^\/dashboard\/projects\/[^/]+(?:\/(overview|board|list|timeline|files))?\/?$/);
   if (!match) return undefined;
-  return match[1] ? `Project · ${match[1] === "board" ? "Board" : "List"}` : "Project";
+  return match[1] ? `Project · ${match[1][0].toUpperCase()}${match[1].slice(1)}` : "Project";
 }
