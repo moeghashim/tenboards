@@ -49,7 +49,7 @@ OpenUI install telemetry must remain disabled (`OPENUI_TELEMETRY_DISABLED=1` or 
 - `npm run worker:dev -- --binding` — compiled local Worker with Docker Hyperdrive emulation; omit `--binding` for demo/URL fallback.
 - `npm run worker:test` — local workerd runtime/concurrency/recovery and 22-read/104-scenario parity checks on a fresh review database.
 - `npm run worker:auth` / `npm run worker:security` — compiled route/account/security regressions and two-Worker distributed limiter checks.
-- `npm run deploy:prepare -- --name <worker-name> --url <https-origin> [--secrets-file <external-path>]` — clean build/config validation and optional private secrets; prints staging commands without network operations.
+- `npm run deploy:prepare -- --name <worker-name> --url <https-origin> [--secrets-file <external-path>] [--include-assistant]` — clean build/config validation and optional private secrets (AI settings require `--include-assistant`); prints staging commands without network operations.
 - `npm run deploy:check -- <origin>` — read-only auth-on production smoke; `--demo` explicitly selects preview expectations, `--auth-roundtrip` explicitly creates one throwaway account.
 
 ## Deploy with your own database
