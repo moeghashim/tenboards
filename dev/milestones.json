@@ -161,9 +161,10 @@
     {
       "id": "v0.6.1-legacy-removal",
       "status": "review",
-      "tasks": ["001-remove-legacy"],
+      "tasks": ["001-remove-legacy", "002-collapsed-header-toggle"],
       "taskStatuses": {
-        "001-remove-legacy": "review"
+        "001-remove-legacy": "merged",
+        "002-collapsed-header-toggle": "review"
       }
     }
   ]

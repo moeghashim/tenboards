@@ -3,6 +3,7 @@ import { chromium } from "playwright";
 import { cacheCaptureFonts } from "./screenshot-assets.ts";
 import { captureInteractions } from "./screenshot-interactions.ts";
 import { captureRoutes, httpRoutes } from "./screenshot-routes.ts";
+import { captureSidebarStates } from "./screenshot-shell.ts";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { parseArgs } from "node:util";
@@ -20,6 +21,7 @@ const { values } = parseArgs({
     reload: { type: "boolean", default: false },
     boundaries: { type: "boolean", default: false },
     interactions: { type: "boolean", default: false },
+    "sidebar-states": { type: "boolean", default: false },
     "mask-live-clocks": { type: "boolean", default: false },
     "hydration-delay-ms": { type: "string", default: "0" },
   },
@@ -180,6 +182,15 @@ try {
               );
               window.scrollTo(0, 0);
             });
+            if (values["sidebar-states"])
+              interactionNotes.push(
+                ...(await captureSidebarStates(page, async (state) => {
+                  await page.screenshot({
+                    path: path.join(output, file.replace(".png", `-sidebar-${state}.png`)),
+                    animations: "disabled",
+                  });
+                })),
+              );
             if (values.interactions || entry.route.startsWith("qa:"))
               interactionNotes = await captureInteractions(page, entry.route, async (variant) => {
                 if (variant === "print")
@@ -254,7 +265,7 @@ try {
   await browser.close();
   await writeFile(
     path.join(output, "report.json"),
-    `${JSON.stringify({ baseURL, fontAssets: "exact public responses cached between contexts", maskedLiveClocks: values["mask-live-clocks"], reference, search: values.search, hydrationDelayMs, preset: values.preset, timezone: values.timezone, reload: values.reload, interactions: values.interactions, results }, null, 2)}\n`,
+    `${JSON.stringify({ baseURL, fontAssets: "exact public responses cached between contexts", maskedLiveClocks: values["mask-live-clocks"], reference, search: values.search, hydrationDelayMs, preset: values.preset, timezone: values.timezone, reload: values.reload, interactions: values.interactions, sidebarStates: values["sidebar-states"], results }, null, 2)}\n`,
   );
 }
 if (results.some((result) => result.errors.length)) process.exitCode = 1;

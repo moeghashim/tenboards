@@ -1,7 +1,18 @@
 # v0.6.1 — Legacy removal
 
+## Tasks
+
+| Task | Status | Contract |
+| --- | --- | --- |
+| 001 — Remove legacy dashboards and Auth V1 | Merged (#63) | Acceptance below |
+| 002 — Collapsed header toggle | Review (#64) | [Task contract](002-collapsed-header-toggle.md) |
+
+Task 002 removes the duplicate header opener for desktop icon rails while preserving mobile and fully hidden off-canvas openers, focus, shortcuts and SSR. Build/check/typecheck, 96 hydrated combinations, 96 server-rendered cookie combinations and before/after screenshots pass. [PR #64](https://github.com/moeghashim/tenboards/pull/64) links the isolated version preview and [pr-assets evidence](https://github.com/moeghashim/tenboards/tree/pr-assets/v061-002).
+
+## Task 001
+
 Task: 001 — Remove legacy dashboards and Auth V1
-Status: review
+Status: merged (#63)
 Contract: PLAN.md Decisions log, “v0.6.1 legacy removal” (2026-10-24), approved base `f45e813`.
 
 Remove the Legacy navigation group, four V1 dashboards and Auth V1 forms; Auth V2 is the only sign-in UI. Permanently redirect the six retired URLs to current equivalents with validated return queries. Remove only unused components/data, add a new migration for exclusive tables, preserve shared data and all v0.5 security properties. No merge or production deployment by the implementer.
