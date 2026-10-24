@@ -1,0 +1,11 @@
+v0.5 task 004 verification
+Preview: https://7e5cc0b2-tenboards.mohanadgh.workers.dev
+Alias: https://pr-54-tenboards.mohanadgh.workers.dev
+Build/check/typecheck pass. Only inherited highlighter warning, 10 Biome infos and third-party bundler/Node warnings.
+Account suite 15/15 real Docker Postgres 17; protection suite 221/221 (27 read functions, owned-session mutation separately classified/tested); Profile demo 8/8.
+Parity 22 reads/130 scenarios passes after account changes. No business-domain schema/read/seed writes changed.
+Before Profile four-state; after-demo/Workers 8 cases each, including default smoke and six-tab/menu/document interactions. Auth account/error/confirmation four-state captures (12 PNGs) reviewed. Active tab scrolls into view and session actions stack on mobile.
+T3 evaluate confirms demo account query yields Overview, six tabs, no account heading. Snapshot API failed twice on this page; focused evaluate succeeded.
+Original failed logs retained: local inputValidator API spelling, JSX edit syntax (fixed before successful run), and protection page-load wait timeout. Final exact tests use DOM readiness and explicit controls rather than waiting for unrelated asset load.
+OAuth-only capability uses supported library adapter fixture for test-owned user; no provider consent round-trip. No token/hash/provider credential in projected data or saved storage state. Password changes force other-session revocation server-side; current session rotates.
+No migration/dependency/token changes. Task stays review; no production deployment.

@@ -1,0 +1,7 @@
+
+> tenboards@0.4.0 typecheck
+> tsc --noEmit
+
+src/routes/(main)/dashboard/profile/-components/account-panel.tsx(101,10): error TS1005: ':' expected.
+src/routes/(main)/dashboard/profile/-components/account-panel.tsx(118,9): error TS1005: ';' expected.
+src/routes/(main)/dashboard/profile/-components/account-panel.tsx(131,1): error TS1128: Declaration or statement expected.

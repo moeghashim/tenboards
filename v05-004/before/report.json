@@ -1,0 +1,56 @@
+{
+  "baseURL": "https://300990a6-tenboards.mohanadgh.workers.dev/",
+  "fontAssets": "exact public responses cached between contexts",
+  "maskedLiveClocks": false,
+  "hydrationDelayMs": 0,
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": false,
+  "interactions": false,
+  "results": [
+    {
+      "route": "/dashboard/profile",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_profile-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/profile",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_profile-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/profile",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_profile-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/profile",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_profile-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    }
+  ]
+}

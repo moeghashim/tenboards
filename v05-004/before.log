@@ -1,0 +1,8 @@
+
+> tenboards@0.4.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url https://300990a6-tenboards.mohanadgh.workers.dev --routes /dashboard/profile --output screenshots/v05-004/before
+
+PASS /dashboard/profile light/desktop direct
+PASS /dashboard/profile light/mobile direct
+PASS /dashboard/profile dark/desktop direct
+PASS /dashboard/profile dark/mobile direct
