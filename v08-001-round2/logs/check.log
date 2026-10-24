@@ -1,0 +1,247 @@
+
+> tenboards@0.6.2 check
+> biome check
+
+src/routes/(main)/dashboard/analytics/-components/realtime-visitors.tsx:77:31 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    75 │           <div className="text-muted-foreground flex items-center gap-2 text-sm">
+    76 │             <span className="relative flex size-2">
+  > 77 │               <span className="relative inline-flex size-2 rounded-full bg-success" />
+       │                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    78 │             </span>
+    79 │             <span>Live</span>
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+     75  75 │             <div className="text-muted-foreground flex items-center gap-2 text-sm">
+     76  76 │               <span className="relative flex size-2">
+     77     │ - ··············<span·className="relative·inline-flex·size-2·rounded-full·bg-success"·/>
+         77 │ + ··············<span·className="bg-success·relative·inline-flex·size-2·rounded-full"·/>
+     78  78 │               </span>
+     79  79 │               <span>Live</span>
+  
+
+src/routes/(main)/dashboard/analytics/-components/realtime-visitors.tsx:91:26 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    89 │         </DashboardChart>
+    90 │         <div className="grid grid-cols-1 sm:grid-cols-2">
+  > 91 │           <div className="border-border/50 flex items-center gap-3 sm:border-r border-b pt-1 pr-5 pb-4">
+       │                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    92 │             <span
+    93 │               aria-hidden="true"
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+     89  89 │           </DashboardChart>
+     90  90 │           <div className="grid grid-cols-1 sm:grid-cols-2">
+     91     │ - ··········<div·className="border-border/50·flex·items-center·gap-3·sm:border-r·border-b·pt-1·pr-5·pb-4">
+         91 │ + ··········<div·className="border-border/50·flex·items-center·gap-3·border-b·pt-1·pr-5·pb-4·sm:border-r">
+     92  92 │               <span
+     93  93 │                 aria-hidden="true"
+  
+
+src/routes/(main)/dashboard/analytics/-components/realtime-visitors.tsx:111:26 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    109 │             <span className="text-sm tabular-nums">{summary.value3}</span>
+    110 │           </div>
+  > 111 │           <div className="border-border/50 flex items-center gap-3 sm:border-r pt-4 pr-5 pb-1">
+        │                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    112 │             <span
+    113 │               aria-hidden="true"
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+    109 109 │               <span className="text-sm tabular-nums">{summary.value3}</span>
+    110 110 │             </div>
+    111     │ - ··········<div·className="border-border/50·flex·items-center·gap-3·sm:border-r·pt-4·pr-5·pb-1">
+        111 │ + ··········<div·className="border-border/50·flex·items-center·gap-3·pt-4·pr-5·pb-1·sm:border-r">
+    112 112 │               <span
+    113 113 │                 aria-hidden="true"
+  
+
+src/routes/(main)/dashboard/analytics/route.tsx:44:31 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    42 │       <Tabs defaultValue="overview" className="flex min-w-0 flex-col gap-4">
+    43 │         <div className="flex flex-wrap items-center justify-between gap-3">
+  > 44 │           <TabsList className="group-data-horizontal/tabs:h-auto max-w-full flex-wrap justify-start gap-1 [&_[role=tab]]:h-7">
+       │                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    45 │             <TabsTrigger value="overview">Overview</TabsTrigger>
+    46 │             <TabsTrigger value="audience">Audience</TabsTrigger>
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+     42  42 │         <Tabs defaultValue="overview" className="flex min-w-0 flex-col gap-4">
+     43  43 │           <div className="flex flex-wrap items-center justify-between gap-3">
+     44     │ - ··········<TabsList·className="group-data-horizontal/tabs:h-auto·max-w-full·flex-wrap·justify-start·gap-1·[&_[role=tab]]:h-7">
+         44 │ + ··········<TabsList·className="max-w-full·flex-wrap·justify-start·gap-1·group-data-horizontal/tabs:h-auto·[&_[role=tab]]:h-7">
+     45  45 │               <TabsTrigger value="overview">Overview</TabsTrigger>
+     46  46 │               <TabsTrigger value="audience">Audience</TabsTrigger>
+  
+
+src/routes/(main)/dashboard/file-manager/-components/file-grid-view.tsx:43:36 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    41 │             </CardContent>
+    42 │             <CardHeader>
+  > 43 │               <CardTitle className="min-w-0 break-words [overflow-wrap:anywhere]">{file.name}</CardTitle>
+       │                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    44 │               <CardDescription className="flex min-w-0 flex-col gap-1 text-xs">
+    45 │                 <span className="break-words">{file.owner}</span>
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+    41 41 │               </CardContent>
+    42 42 │               <CardHeader>
+    43    │ - ··············<CardTitle·className="min-w-0·break-words·[overflow-wrap:anywhere]">{file.name}</CardTitle>
+       43 │ + ··············<CardTitle·className="min-w-0·[overflow-wrap:anywhere]·break-words">{file.name}</CardTitle>
+    44 44 │                 <CardDescription className="flex min-w-0 flex-col gap-1 text-xs">
+    45 45 │                   <span className="break-words">{file.owner}</span>
+  
+
+src/routes/(main)/dashboard/file-manager/-components/file-list-view.tsx:20:20 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    19 │   return (
+  > 20 │     <div className="min-w-0 rounded-xl border bg-card p-3">
+       │                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    21 │       <Table className="min-w-180">
+    22 │         <TableHeader>
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+    18 18 │   
+    19 19 │     return (
+    20    │ - ····<div·className="min-w-0·rounded-xl·border·bg-card·p-3">
+       20 │ + ····<div·className="bg-card·min-w-0·rounded-xl·border·p-3">
+    21 21 │         <Table className="min-w-180">
+    22 22 │           <TableHeader>
+  
+
+src/routes/(main)/dashboard/file-manager/-components/file-list-view.tsx:46:39 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    44 │                       className="h-auto w-64 justify-start px-0 text-left whitespace-normal"
+    45 │                     >
+  > 46 │                       <span className="break-words [overflow-wrap:anywhere]">{file.name}</span>
+       │                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    47 │                     </Button>
+    48 │                     {file.shared && <Badge variant="outline">Shared</Badge>}
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+    44 44 │                         className="h-auto w-64 justify-start px-0 text-left whitespace-normal"
+    45 45 │                       >
+    46    │ - ······················<span·className="break-words·[overflow-wrap:anywhere]">{file.name}</span>
+       46 │ + ······················<span·className="[overflow-wrap:anywhere]·break-words">{file.name}</span>
+    47 47 │                       </Button>
+    48 48 │                       {file.shared && <Badge variant="outline">Shared</Badge>}
+  
+
+src/routes/(main)/dashboard/file-manager/-components/folders-section.tsx:35:42 lint/nursery/useTailwindSortedClasses  FIXABLE  ━━━━━━━━━━
+
+  i These CSS classes should be sorted.
+  
+    33 │                   </div>
+    34 │                   <div className="flex min-w-0 flex-col gap-1">
+  > 35 │                     <CardTitle className="break-words leading-snug">{folder.name}</CardTitle>
+       │                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    36 │                     <CardDescription className="text-xs">{folder.fileCount} files</CardDescription>
+    37 │                   </div>
+  
+  i A consistent class order makes class lists easier to read and keeps changes to them small.
+  
+  i This rule is still being actively worked on, so it may be missing features or have rough edges. Visit https://github.com/biomejs/biome/issues/1274 for more information or to report possible bugs.
+  
+  i This rule belongs to the nursery group, which means it is not yet stable and may change in the future. Visit https://biomejs.dev/linter/#nursery for more information.
+  
+  i Unsafe fix: Sort the classes.
+  
+    33 33 │                     </div>
+    34 34 │                     <div className="flex min-w-0 flex-col gap-1">
+    35    │ - ····················<CardTitle·className="break-words·leading-snug">{folder.name}</CardTitle>
+       35 │ + ····················<CardTitle·className="leading-snug·break-words">{folder.name}</CardTitle>
+    36 36 │                       <CardDescription className="text-xs">{folder.fileCount} files</CardDescription>
+    37 37 │                     </div>
+  
+
+src/lib/highlighter.tsx:96:20 lint/suspicious/noArrayIndexKey ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Avoid using the index of an array as key property in an element.
+  
+    94 │           line.map((token, index) => (
+    95 │             <span
+  > 96 │               key={index}
+       │                    ^^^^^
+    97 │               style={token.htmlStyle as React.CSSProperties}
+    98 │               className="text-(--shiki-light) dark:text-(--shiki-dark)"
+  
+  i This is the source of the key value.
+  
+    92 │       return {
+    93 │         lines: tokens.map((line) =>
+  > 94 │           line.map((token, index) => (
+       │                            ^^^^^
+    95 │             <span
+    96 │               key={index}
+  
+  i The order of the items may change, and this also affects performances and component state.
+  
+  i Check the React documentation. 
+  
+
+Checked 476 files in 695ms. No fixes applied.
+Found 1 warning.
+Found 8 infos.

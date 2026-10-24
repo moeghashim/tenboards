@@ -1,0 +1,50 @@
+
+> tenboards@0.6.2 worker:auth
+> node --experimental-strip-types scripts/worker-auth-test.ts
+
+PASS Inventory: 32 visual routes, HTTP auth handler, 23 protected read functions, one owned session mutation and five public preference/bootstrap functions
+PASS Anonymous SSR/refresh/client navigation /chat
+PASS Anonymous SSR/refresh/client navigation /dashboard
+PASS Anonymous SSR/refresh/client navigation /mail
+PASS Anonymous SSR/refresh/client navigation /
+PASS Anonymous SSR/refresh/client navigation /dashboard/academy
+PASS Anonymous SSR/refresh/client navigation /dashboard/analytics
+PASS Anonymous SSR/refresh/client navigation /dashboard/calendar
+PASS Anonymous SSR/refresh/client navigation /dashboard/chat
+PASS Anonymous SSR/refresh/client navigation /dashboard/coming-soon
+PASS Anonymous SSR/refresh/client navigation /dashboard/crm
+PASS Anonymous SSR/refresh/client navigation /dashboard/default
+PASS Anonymous SSR/refresh/client navigation /dashboard/ecommerce
+PASS Anonymous SSR/refresh/client navigation /dashboard/file-manager
+PASS Anonymous SSR/refresh/client navigation /dashboard/finance
+PASS Anonymous SSR/refresh/client navigation /dashboard/infrastructure
+PASS Anonymous SSR/refresh/client navigation /dashboard/invoice
+PASS Anonymous SSR/refresh/client navigation /dashboard/kanban
+PASS Anonymous SSR/refresh/client navigation /dashboard/logistics
+PASS Anonymous SSR/refresh/client navigation /dashboard/mail
+PASS Anonymous SSR/refresh/client navigation /dashboard/patient-monitoring
+PASS Anonymous SSR/refresh/client navigation /dashboard/productivity
+PASS Anonymous SSR/refresh/client navigation /dashboard/products
+PASS Anonymous SSR/refresh/client navigation /dashboard/profile
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
++ actual - expected
+
++ '/dashboard/roles'
+- '/auth/v2/login'
+
+    at file:///Users/moeghashim/tenboards-v08/scripts/auth-protection-check.ts:75:12
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at process.processImmediate (node:internal/timers:541:9) {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: '/dashboard/roles',
+  expected: '/auth/v2/login',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.21.0
