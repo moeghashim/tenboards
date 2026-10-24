@@ -76,6 +76,7 @@
   --space-4: 1rem;
   --space-6: 1.5rem;
   --space-8: 2rem;
+  --shell-header-height: 3.5rem;
   --duration-fast: 150ms;
   --duration-normal: 200ms;
   --ease-standard: cubic-bezier(0.2, 0, 0, 1);
@@ -88,18 +89,22 @@
   --font-mono: var(--app-font-mono);
   --text-xs: 0.75rem;
   --text-xs--line-height: 1rem;
-  --text-label: 0.8125rem;
-  --text-label--line-height: 1.125rem;
-  --text-sm: 0.875rem;
-  --text-sm--line-height: 1.25rem;
-  --text-base: 1rem;
-  --text-base--line-height: 1.5rem;
-  --text-xl: 1.25rem;
-  --text-xl--line-height: 1.75rem;
-  --text-2xl: 1.5rem;
-  --text-2xl--line-height: 2rem;
-  --text-3xl: 1.875rem;
-  --text-3xl--line-height: 2.25rem;
+  --text-label: 0.75rem;
+  --text-label--line-height: 1rem;
+  --text-sm: 0.8125rem;
+  --text-sm--line-height: 1.125rem;
+  --text-base: 0.875rem;
+  --text-base--line-height: 1.25rem;
+  --text-lg: 1rem;
+  --text-lg--line-height: 1.5rem;
+  --text-xl: 1.125rem;
+  --text-xl--line-height: 1.5rem;
+  --text-2xl: 1.3125rem;
+  --text-2xl--line-height: 1.75rem;
+  --text-3xl: 1.625rem;
+  --text-3xl--line-height: 2rem;
+  --text-4xl: 2rem;
+  --text-4xl--line-height: 2.25rem;
   --default-transition-duration: var(--duration-fast);
   --default-transition-timing-function: var(--ease-standard);
   --shadow-2xs: var(--elevation-low);
@@ -193,13 +198,62 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground text-sm;
     font-variation-settings: var(--app-font-variation-settings);
     font-variant-numeric: tabular-nums;
   }
 
   html {
     @apply font-sans;
+  }
+}
+
+/* Compact is the single default. Keep the rem root and breakpoints intact:
+   only Tailwind's spacing rhythm contracts, on desktop. Mobile retains its
+   existing spacing and targets. No preference or registry changes are needed. */
+@media (min-width: 48rem) {
+  :root {
+    --spacing: 0.21875rem;
+    --space-1: 0.21875rem;
+    --space-2: 0.4375rem;
+    --space-3: 0.75rem;
+    --space-4: 0.875rem;
+    --space-6: 1.3125rem;
+    --space-8: 1.75rem;
+    --shell-header-height: 3rem;
+  }
+}
+
+/* The protected Card primitive exposes this seam for all cards, including
+   DashboardCard/StatCard. Small cards keep enough room around focus outlines. */
+[data-slot="card"][data-size="sm"] {
+  --card-spacing: 0.75rem;
+}
+
+/* Preserve third-party chart/calendar geometry and their 12px tick labels.
+   Their surrounding cards, toolbars and page gutters still become compact. */
+:is([data-slot="chart"], .fc, [data-slot="calendar"]) {
+  --spacing: 0.25rem;
+}
+
+/* Small/icon variants must not fall below the target floor as spacing shrinks.
+   Checkbox/radio/switch wrappers already supply larger pseudo-element hit areas.
+   Do not match generic role=button: draggable cards need their intrinsic flex
+   minimum, otherwise bounded Kanban columns shrink cards over their content. */
+:is(button, [data-slot="button"], [data-slot="select-trigger"], [data-slot="input"]) {
+  min-height: 1.5rem;
+  min-width: 1.5rem;
+}
+
+/* Initials are labels, including inherited 10px avatar usages. */
+[data-slot="avatar-fallback"] {
+  font-size: max(0.75rem, 1em);
+}
+
+@media (max-width: 47.999rem) {
+  /* Preserve readable entry text and avoid focus zoom on mobile Safari. */
+  :is([data-slot="input"], [data-slot="textarea"], select) {
+    font-size: 1rem;
   }
 }
 

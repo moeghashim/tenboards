@@ -64,7 +64,7 @@ function DashboardLayout() {
           "[html[data-content-layout=centered]_&>*]:w-full",
           "[html[data-content-layout=centered]_&>*]:max-w-screen-2xl",
           "peer-data-[variant=inset]:border",
-          "[--dashboard-header-height:--spacing(14)]",
+          "[--dashboard-header-height:var(--shell-header-height)]",
           "min-w-0 overflow-x-clip",
         )}
       >

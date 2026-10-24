@@ -1,6 +1,7 @@
 import { chromium } from "playwright";
 
 import { cacheCaptureFonts } from "./screenshot-assets.ts";
+import { measureDensity } from "./screenshot-density.ts";
 import { captureInteractions } from "./screenshot-interactions.ts";
 import { captureRoutes, httpRoutes } from "./screenshot-routes.ts";
 import { captureSidebarStates } from "./screenshot-shell.ts";
@@ -15,6 +16,8 @@ const { values } = parseArgs({
     search: { type: "string" },
     output: { type: "string", default: "screenshots" },
     preset: { type: "string", default: "default" },
+    font: { type: "string", default: "geist" },
+    density: { type: "boolean", default: false },
     list: { type: "boolean", default: false },
     reference: { type: "string" },
     timezone: { type: "string", default: "America/Chicago" },
@@ -108,7 +111,7 @@ try {
           await context.addCookies([
             { name: "theme_mode", value: theme, url: baseURL.origin },
             { name: "theme_preset", value: values.preset, url: baseURL.origin },
-            { name: "font", value: "geist", url: baseURL.origin },
+            { name: "font", value: values.font, url: baseURL.origin },
           ]);
           const page = await context.newPage();
           // Only the explicitly documented live monitor clock is masked. Waveforms
@@ -182,6 +185,15 @@ try {
               );
               window.scrollTo(0, 0);
             });
+            if (values.density) {
+              const density = await measureDensity(page);
+              await writeFile(
+                path.join(output, file.replace(".png", "-density.json")),
+                `${JSON.stringify(density, null, 2)}\n`,
+              );
+              if (density.some((frame) => frame.overflowingCards.length))
+                throw new Error("Kanban card content overflows its sortable wrapper");
+            }
             if (values["sidebar-states"])
               interactionNotes.push(
                 ...(await captureSidebarStates(page, async (state) => {

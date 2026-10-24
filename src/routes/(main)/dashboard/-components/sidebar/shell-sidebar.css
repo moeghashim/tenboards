@@ -55,6 +55,20 @@
   height: 40px;
   border-color: var(--border);
 }
+@media (min-width: 48rem) {
+  .tenboards-shell [data-slot="sidebar-menu-button"] {
+    height: 36px;
+    gap: 10px;
+    padding-inline: 10px;
+  }
+  .tenboards-shell [data-slot="sidebar-menu-button"] svg {
+    width: 16px;
+    height: 16px;
+  }
+  .shell-search {
+    height: 36px;
+  }
+}
 [data-collapsible="icon"] .shell-sidebar-header {
   padding-inline: 8px;
 }
