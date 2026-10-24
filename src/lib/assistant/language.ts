@@ -94,6 +94,7 @@ export function inspectLanguage(
         skip();
       }
     }
+    if (!complete && /^-?(?:\d+(?:\.\d*)?(?:[eE][+-]?\d*)?)?$/.test(source.slice(offset))) throw new Pending();
     const number = /^-?(?:0|[1-9]\d*)(?:\.\d+)?(?:[eE][+-]?\d+)?/.exec(source.slice(offset));
     if (number) {
       offset += number[0].length;
@@ -146,14 +147,17 @@ export function inspectLanguage(
   }
   const constructed = new WeakSet<object>();
   let nodes = 0;
+  let work = 0;
+  const visitedReferences = new Set(["root"]);
   let unresolved = false;
   function resolve(input: Value, depth: number, refs: Set<string>): unknown {
-    if (depth > limits.depth) throw new Invalid();
+    if (++work > 12000 || depth > limits.depth) throw new Invalid();
     if (Array.isArray(input)) return input.map((item) => resolve(item, depth, refs));
     if (input === null || typeof input !== "object") return input;
     if ("ref" in input) {
       const name = input.ref as string;
       if (refs.has(name)) throw new Invalid();
+      visitedReferences.add(name);
       const found = statements.get(name);
       if (found === undefined) {
         unresolved = true;
@@ -193,8 +197,7 @@ export function inspectLanguage(
     const root = resolve(rootValue, 1, new Set(["root"])) as SafeNode | null;
     // Validate unreachable statements too; they cannot hide unsupported calls.
     for (const [key, val] of statements)
-      if (key !== "root") {
-        nodes = 0;
+      if (!visitedReferences.has(key)) {
         resolve(val, 1, new Set([key]));
       }
     if (!root && unresolved && !complete) return { status: "pending", response: null };

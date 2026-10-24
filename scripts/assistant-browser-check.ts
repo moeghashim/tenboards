@@ -1,6 +1,7 @@
 import { chromium } from "playwright";
 
 import { cacheCaptureFonts } from "./screenshot-assets.ts";
+import { captureSidebarStates } from "./screenshot-shell.ts";
 import assert from "node:assert/strict";
 import { mkdir } from "node:fs/promises";
 
@@ -79,7 +80,14 @@ try {
         ["Compare sample plans", "Sample plans"],
         ["Chart a sample week", "Sample review trend"],
       ]) {
-        await page.getByRole("button", { name: label, exact: true }).click();
+        await page.getByRole("button", { name: label, exact: true }).press("Enter");
+        assert.ok(
+          await page
+            .getByRole("textbox", { name: "Message", exact: true })
+            .evaluate((el) => el === document.activeElement),
+        );
+        if (label.startsWith("Summarize"))
+          await page.screenshot({ path: `${output}/${theme}-${size}-streaming-focus.png`, fullPage: true });
         await page
           .getByText("Recorded demo · completed", { exact: true })
           .waitFor()
@@ -106,8 +114,11 @@ try {
       );
       assert.equal(await page.locator("article").count(), 0);
       await input.press("Enter");
-      await page.getByRole("button", { name: "Stop", exact: true }).click();
+      await page.getByRole("button", { name: "Stop", exact: true }).press("Enter");
       await page.getByText("Response stopped. This reply is incomplete.", { exact: true }).waitFor();
+      assert.ok(await input.evaluate((el) => el === document.activeElement));
+      assert.equal(await page.getByText("Preparing response…", { exact: true }).count(), 0);
+      await page.screenshot({ path: `${output}/${theme}-${size}-stopped-focus.png`, fullPage: true });
       await page.getByRole("button", { name: "New conversation", exact: true }).click();
       await page.getByRole("button", { name: "Chart a sample week", exact: true }).click();
       await page.getByRole("button", { name: "New conversation", exact: true }).click();
@@ -115,6 +126,21 @@ try {
       assert.equal(await page.locator("article").count(), 0);
       await page.reload();
       assert.equal(await page.locator("article").count(), 0);
+      await page.waitForLoadState("networkidle");
+      await captureSidebarStates(page, async (state) => {
+        await page.screenshot({ path: `${output}/${theme}-${size}-nav-${state}.png`, fullPage: true });
+      });
+      await page.keyboard.press("Control+k");
+      await page.getByRole("combobox", { name: "Search pages" }).fill("assistant");
+      await page.getByRole("option").filter({ hasText: "AI Assistant" }).waitFor();
+      await page.screenshot({ path: `${output}/${theme}-${size}-palette.png`, fullPage: true });
+      await page.keyboard.press("Escape");
+      const recovery = await page.evaluate(async () => {
+        const path = "/scripts/assistant-renderer-probe.tsx";
+        return (await import(path)).run();
+      });
+      assert.deepEqual(recovery, { rejected: true, recovered: true, boundary: true });
+      await page.screenshot({ path: `${output}/${theme}-${size}-error.png`, fullPage: true });
       assert.deepEqual(external, []);
       assert.deepEqual(errors, []);
       await context.close();

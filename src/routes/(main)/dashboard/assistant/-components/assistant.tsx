@@ -40,6 +40,7 @@ export function Assistant() {
     active.current = controller;
     setError("");
     setInput("");
+    composer.current?.focus();
     setTurns((previous) => [...previous, { id, prompt, text: "", status: "streaming" }]);
     const update = (patch: Partial<Turn>) => {
       if (generation.current === id)
@@ -53,7 +54,10 @@ export function Assistant() {
     } catch {
       update({ status: controller.signal.aborted ? "stopped" : "error" });
     } finally {
-      if (generation.current === id) active.current = null;
+      if (generation.current === id) {
+        active.current = null;
+        if (document.activeElement?.textContent === "Stop") composer.current?.focus();
+      }
     }
   }
   function clear() {
@@ -77,7 +81,7 @@ export function Assistant() {
           </Button>
         }
       />
-      <div className="mx-auto flex w-full max-w-4xl flex-1 flex-col gap-5">
+      <div className="flex w-full max-w-4xl flex-1 flex-col gap-5">
         <div className="flex flex-wrap items-center gap-2">
           <Badge variant="secondary">Recorded demo</Badge>
           <p className="text-muted-foreground text-xs">Sample replies · No model is connected</p>
@@ -106,7 +110,13 @@ export function Assistant() {
                 </div>
                 <div className="min-w-0 space-y-3">
                   <p className="text-muted-foreground text-xs">Recorded demo · {turn.status}</p>
-                  <SafeResponse text={turn.text} complete={turn.status === "completed" || turn.status === "error"} />
+                  {turn.status !== "error" && (turn.text || turn.status === "streaming") && (
+                    <SafeResponse
+                      text={turn.text}
+                      complete={turn.status === "completed"}
+                      pending={turn.status === "streaming"}
+                    />
+                  )}
                   {turn.status === "stopped" && (
                     <p className="text-muted-foreground">Response stopped. This reply is incomplete.</p>
                   )}
@@ -150,7 +160,14 @@ export function Assistant() {
           <div className="flex items-center justify-between gap-3">
             <p className="text-muted-foreground text-xs">Conversation clears when you leave or reload.</p>
             {busy ? (
-              <Button type="button" variant="outline" onClick={() => active.current?.abort()}>
+              <Button
+                type="button"
+                variant="outline"
+                onClick={() => {
+                  active.current?.abort();
+                  composer.current?.focus();
+                }}
+              >
                 <Square />
                 Stop
               </Button>

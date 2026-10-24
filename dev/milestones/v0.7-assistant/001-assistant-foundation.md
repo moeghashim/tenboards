@@ -2,7 +2,7 @@
 id: "001"
 title: Build the Assistant shell, safe OpenUI registry and recorded streams
 milestone: v0.7-assistant
-status: todo
+status: review
 category: ui
 files: ["src/routes/(main)/dashboard/assistant/", "src/routes/(main)/dashboard/-components/sidebar/nav-main.tsx", "src/navigation/", "src/lib/assistant/", "scripts/", "package.json", "package-lock.json", "README.md", "dev/milestones.json"]
 ---
@@ -24,16 +24,16 @@ Run the global Impeccable context command once from repo root; inspect Chat and 
 
 ## Acceptance criteria
 
-- [ ] `/dashboard/assistant` renders in the current shell, inherits `requireAppRoute` protection/session refresh, and sits immediately after Chat in desktop, collapsed-icon and mobile nav. Palette/header/capture registry agree; existing standalone and embedded Chat are unchanged.
-- [ ] Exact OpenUI pins and lockfile are committed; existing React/Zod peers resolve, no react-ui/headless/CLI/server/Gateway/native SDK dependency is added. Record dependency tree and before/after client/Worker build sizes; unused devtools/observability are not activated. No telemetry or external network request in recorded mode.
-- [ ] Registry contains bounded root/stack, escaped text, cards, stats, badges, lists, tables and simple bar/line charts composed from existing wrappers/theme. Strict Zod schemas enforce finite data, text/array limits and application-owned enums; chart alternatives and reduced-motion behavior match DESIGN.
-- [ ] Registered names/prop schemas produce one serializable spec and library prompt, with drift detection; server-use imports exclude React/render components. Match the pinned package's real API rather than copying a newer docs example blindly.
-- [ ] Every node's evaluated props are independently validated before rendering; enforce milestone depth/node/row/point limits, reject unknown names and unsupported expressions/actions/Query/Mutation. No DOM spreading, raw HTML, iframe, script, dynamic evaluation, arbitrary CSS, URL/link prop or generated form. The safety boundary holds for intermediate as well as final output.
-- [ ] Recorded samples cover every allowed component using synthetic illustrative data and the versioned text-delta/finish/error envelope. Select an example or submit a prompt to receive an explicitly labeled recorded reply; unmatched input gets an honest recorded fallback, never pretends to call a model. Same incremental decoder/renderer source seam will accept 002 streams.
-- [ ] Provide a minimal working composer and transient transcript with visible empty/loading/completed/incomplete/error states; recorded generation is cancellable and cleans up on unmount. No storage, cookie or URL transcript. SSR/client initial state agrees; browser APIs stay in effects/guarded code, no `use client` directive.
-- [ ] Incremental split tokens/UTF-8, malformed/unknown/deep/oversized output and error-boundary recovery tests pass without exposing unsafe partial content or crashing the page. Error messages contain no raw payloads. Parser/schema tests are behavior-focused, not snapshots of implementation internals.
-- [ ] Keyboard names/focus, Enter versus Shift+Enter/IME, mobile composer and local table scrolling, token pairs and reduced motion pass. Capture/inspect before/after Assistant shell context plus unchanged Chat/default in light/dark × desktop/mobile; no hydration/console errors.
-- [ ] README explains this layer's recorded-only availability, and status reflects verified work only. Version preview is ASSETS-only `tenboards-preview`; no real credentials or provider calls.
+- [x] `/dashboard/assistant` renders in the current shell, inherits `requireAppRoute` protection/session refresh, and sits immediately after Chat in desktop, collapsed-icon and mobile nav. Palette/header/capture registry agree; existing standalone and embedded Chat are unchanged.
+- [x] Exact OpenUI pins and lockfile are committed; existing React/Zod peers resolve, no react-ui/headless/CLI/server/Gateway/native SDK dependency is added. Record dependency tree and before/after client/Worker build sizes; unused devtools/observability are not activated. No telemetry or external network request in recorded mode.
+- [x] Registry contains bounded root/stack, escaped text, cards, stats, badges, lists, tables and simple bar/line charts composed from existing wrappers/theme. Strict Zod schemas enforce finite data, text/array limits and application-owned enums; chart alternatives and reduced-motion behavior match DESIGN.
+- [x] Registered names/prop schemas produce one serializable spec and library prompt, with drift detection; server-use imports exclude React/render components. Match the pinned package's real API rather than copying a newer docs example blindly.
+- [x] Every node's evaluated props are independently validated before rendering; enforce milestone depth/node/row/point limits, reject unknown names and unsupported expressions/actions/Query/Mutation. No DOM spreading, raw HTML, iframe, script, dynamic evaluation, arbitrary CSS, URL/link prop or generated form. The safety boundary holds for intermediate as well as final output.
+- [x] Recorded samples cover every allowed component using synthetic illustrative data and the versioned text-delta/finish/error envelope. Select an example or submit a prompt to receive an explicitly labeled recorded reply; unmatched input gets an honest recorded fallback, never pretends to call a model. Same incremental decoder/renderer source seam will accept 002 streams.
+- [x] Provide a minimal working composer and transient transcript with visible empty/loading/completed/incomplete/error states; recorded generation is cancellable and cleans up on unmount. No storage, cookie or URL transcript. SSR/client initial state agrees; browser APIs stay in effects/guarded code, no `use client` directive.
+- [x] Incremental split tokens/UTF-8, malformed/unknown/deep/oversized output and error-boundary recovery tests pass without exposing unsafe partial content or crashing the page. Error messages contain no raw payloads. Parser/schema tests are behavior-focused, not snapshots of implementation internals.
+- [x] Keyboard names/focus, Enter versus Shift+Enter/IME, mobile composer and local table scrolling, token pairs and reduced motion pass. Capture/inspect before/after Assistant shell context plus unchanged Chat/default in light/dark × desktop/mobile; no hydration/console errors.
+- [x] README explains this layer's recorded-only availability, and status reflects verified work only. Version preview is ASSETS-only `tenboards-preview`; no real credentials or provider calls.
 
 ## Tests
 

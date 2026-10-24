@@ -1,14 +1,24 @@
 import type { ReactNode } from "react";
 
 import { createLibrary, defineComponent } from "@openuidev/lang-core";
-import { Bar, BarChart, CartesianGrid, Line, LineChart, XAxis, YAxis } from "recharts";
+import { Bar, BarChart, CartesianGrid, Legend, Line, LineChart, Tooltip, XAxis, YAxis } from "recharts";
 import { z } from "zod";
 
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { type ComponentName, descriptions, limits, schemas } from "@/lib/assistant/registry";
-import { chartAxis, chartGrid, chartSeries, DashboardChart, seriesConfig, useChartMotion } from "@/lib/charts/theme";
+import {
+  chartAxis,
+  chartCursor,
+  chartGrid,
+  chartSeries,
+  DashboardChart,
+  DashboardLegend,
+  DashboardTooltip,
+  seriesConfig,
+  useChartMotion,
+} from "@/lib/charts/theme";
 
 const element = z
   .object({
@@ -34,10 +44,14 @@ export function validateEvaluatedProps(name: ComponentName, props: unknown) {
   }
   return check(name, props, 1);
 }
-function DataTable({ columns, rows }: z.infer<typeof schemas.Table>) {
+function DataTable({
+  columns,
+  rows,
+  label = "Response data table",
+}: z.infer<typeof schemas.Table> & { label?: string }) {
   return (
     // biome-ignore lint/a11y/noNoninteractiveTabindex: Keyboard users scroll this bounded table region.
-    <section className="max-w-full overflow-x-auto rounded-lg border" tabIndex={0} aria-label="Response data table">
+    <section className="max-w-full overflow-x-auto rounded-lg border" tabIndex={0} aria-label={label}>
       <Table>
         <TableHeader>
           <TableRow>
@@ -75,8 +89,10 @@ function ResponseChart({ title, kind, labels, series }: z.infer<typeof schemas.C
             <CartesianGrid {...chartGrid} />
             <XAxis dataKey="label" {...chartAxis} />
             <YAxis {...chartAxis} />
-            {series.map((item, i) => (
-              <Bar key={item.label} dataKey={`s${i}`} fill={chartSeries[i].color} {...motion} />
+            <Tooltip content={<DashboardTooltip />} cursor={chartCursor} {...motion} />
+            <Legend content={<DashboardLegend config={config} />} />
+            {series.map((_, i) => (
+              <Bar key={`s${i}`} dataKey={`s${i}`} fill={chartSeries[i].color} {...motion} />
             ))}
           </BarChart>
         ) : (
@@ -84,9 +100,11 @@ function ResponseChart({ title, kind, labels, series }: z.infer<typeof schemas.C
             <CartesianGrid {...chartGrid} />
             <XAxis dataKey="label" {...chartAxis} />
             <YAxis {...chartAxis} />
-            {series.map((item, i) => (
+            <Tooltip content={<DashboardTooltip />} cursor={chartCursor} {...motion} />
+            <Legend content={<DashboardLegend config={config} />} />
+            {series.map((_, i) => (
               <Line
-                key={item.label}
+                key={`s${i}`}
                 dataKey={`s${i}`}
                 stroke={chartSeries[i].color}
                 strokeDasharray={chartSeries[i].strokeDasharray}
@@ -99,6 +117,7 @@ function ResponseChart({ title, kind, labels, series }: z.infer<typeof schemas.C
         )}
       </DashboardChart>
       <DataTable
+        label={`${title} data`}
         columns={["Period", ...series.map((item) => item.label)]}
         rows={labels.map((label, i) => [label, ...series.map((item) => item.values[i])])}
       />
@@ -162,7 +181,7 @@ function RegisteredNode({
       return (
         <dl className="space-y-1">
           <dt className="text-muted-foreground">{p.label}</dt>
-          <dd className="text-2xl font-medium tabular-nums">{p.value}</dd>
+          <dd className="text-xl font-medium tabular-nums">{p.value}</dd>
           <dd className="text-muted-foreground text-xs">{p.detail}</dd>
         </dl>
       );

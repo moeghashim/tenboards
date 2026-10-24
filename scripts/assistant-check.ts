@@ -12,7 +12,10 @@ const check = (condition: unknown) => {
   passed++;
 };
 const parser = createParser(specLibrary.toJSONSchema(), "Stack");
-for (const [id, source] of Object.entries(recordedReplies)) {
+for (const [id, source] of Object.entries({
+  ...recordedReplies,
+  numbers: 'root = Stack([Table(["Value"], [[-12.5], [1e-3], [2E+2], [-0.25]])])',
+})) {
   const result = inspectLanguage(source, true);
   check(result.status === "ready");
   const parsed = parser.parse(result.response ?? "");
@@ -129,3 +132,19 @@ controller.abort();
 await assert.rejects(cancelled);
 passed++;
 console.log(`PASS Assistant language, registry, stream and cancellation: ${passed} assertions`);
+
+for (const levels of [6, 7, 8])
+  for (const reachable of [false, true]) {
+    const statements = ['a0 = ["x"]'];
+    for (let i = 1; i <= levels; i++)
+      statements.push(
+        `a${i} = [${Array(10)
+          .fill(`a${i - 1}`)
+          .join(",")}]`,
+      );
+    const attack = `root = Stack([Text(${reachable ? `a${levels}` : '"safe"'})])\n${statements.join("\n")}`;
+    const started = performance.now();
+    assert.equal(inspectLanguage(attack, true).status, "invalid");
+    assert.ok(performance.now() - started < 250, "Reference fan-out must reject within a bounded amount of work");
+  }
+console.log("PASS six reachable/unreachable reference fan-out attacks (10^6–10^8), each under 250ms");

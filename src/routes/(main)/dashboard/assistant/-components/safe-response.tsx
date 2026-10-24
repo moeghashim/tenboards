@@ -5,7 +5,7 @@ import { inspectLanguage } from "@/lib/assistant/language";
 import { Renderer } from "./openui";
 import { assistantLibrary } from "./registry";
 
-class ResponseBoundary extends Component<{ children: ReactNode }, { failed: boolean }> {
+export class ResponseBoundary extends Component<{ children: ReactNode }, { failed: boolean }> {
   state = { failed: false };
   static getDerivedStateFromError() {
     return { failed: true };
@@ -34,7 +34,15 @@ function ValidatedResponse({ response }: { response: string }) {
     />
   );
 }
-export function SafeResponse({ text, complete }: { text: string; complete: boolean }) {
+export function SafeResponse({
+  text,
+  complete,
+  pending = true,
+}: {
+  text: string;
+  complete: boolean;
+  pending?: boolean;
+}) {
   const result = useMemo(() => inspectLanguage(text, complete), [text, complete]);
   if (result.status === "invalid")
     return (
@@ -42,7 +50,7 @@ export function SafeResponse({ text, complete }: { text: string; complete: boole
         The response contained unsupported content. Try another example.
       </p>
     );
-  if (!result.response) return <p className="text-muted-foreground">Preparing response…</p>;
+  if (!result.response) return pending ? <p className="text-muted-foreground">Preparing response…</p> : null;
   return (
     <ResponseBoundary key={result.response}>
       <ValidatedResponse response={result.response} />
