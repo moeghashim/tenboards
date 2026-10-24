@@ -123,6 +123,24 @@
         "007-operational-dashboard-data": "merged",
         "008-data-layer-acceptance": "merged"
       }
+    },
+    {
+      "id": "v0.5-auth",
+      "status": "planned",
+      "tasks": [
+        "001-auth-foundation",
+        "002-auth-flows",
+        "003-protection-shell",
+        "004-account-sessions",
+        "005-auth-acceptance"
+      ],
+      "taskStatuses": {
+        "001-auth-foundation": "todo",
+        "002-auth-flows": "todo",
+        "003-protection-shell": "todo",
+        "004-account-sessions": "todo",
+        "005-auth-acceptance": "todo"
+      }
     }
   ]
 }
