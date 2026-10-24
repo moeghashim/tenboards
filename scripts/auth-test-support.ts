@@ -69,6 +69,7 @@ export async function callRpc(
   name: string,
   method: "GET" | "POST",
   data?: unknown,
+  origin?: string,
 ) {
   const source = await (await page.request.get(new URL(file, page.url()).href)).text();
   const ids = [...source.matchAll(/createClientRpc\("([^"]+)"\)/g)].map((m) => m[1]);
@@ -88,11 +89,20 @@ export async function callRpc(
     headers: {
       "x-tsr-serverFn": "true",
       accept: "application/json",
-      origin: rpcURL.origin,
+      origin: origin ?? rpcURL.origin,
       "content-type": "application/json",
     },
     ...(method === "POST" ? { data: payload } : {}),
   });
+  if (!response.ok()) {
+    assertSafeError(await response.text());
+    return {
+      ok: false,
+      message: "Request rejected.",
+      result: undefined,
+      cacheControl: response.headers()["cache-control"],
+    };
+  }
   const { createDefaultSerovalPlugins } = await import("@tanstack/react-router/ssr/client");
   const result = fromCrossJSON(await response.json(), { refs: new Map(), plugins: createDefaultSerovalPlugins() });
   const cacheControl = response.headers()["cache-control"];

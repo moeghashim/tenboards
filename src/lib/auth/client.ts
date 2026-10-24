@@ -8,6 +8,7 @@ export function authError(error?: { code?: string; status?: number } | null) {
   if (error?.code === "INVALID_EMAIL_OR_PASSWORD") return "Email or password is incorrect. Please try again.";
   if (error?.code === "USER_ALREADY_EXISTS" || error?.code === "USER_ALREADY_EXISTS_USE_ANOTHER_EMAIL")
     return "Unable to register with this email. Try signing in.";
+  if (error?.code === "INVALID_NAME") return "Enter a name of 1–100 characters.";
   if (error?.code === "INVALID_PASSWORD") return "The current password is incorrect.";
   if (error?.code === "SESSION_NOT_FRESH") return "Please sign in again before making this change.";
   return "Unable to complete this request. Check your details and connection, then try again.";

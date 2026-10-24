@@ -40,9 +40,9 @@ export function SignedInAccount({ user }: { user: NonNullable<AuthState["user"]>
         </div>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
-          <DropdownMenuItem render={<Link to="/dashboard/profile" />}>
+          <DropdownMenuItem render={<Link to="/dashboard/profile" search={{ tab: "account" }} />}>
             <UserRound />
-            Profile
+            Account &amp; security
           </DropdownMenuItem>
           <DropdownMenuItem
             disabled={pending}
