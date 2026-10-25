@@ -1,5 +1,7 @@
 # v0.7 — AI Assistant
 
+Status: **done — merged as #68, #70 and #72 and released as [v0.7.0](https://github.com/moeghashim/tenboards/releases/tag/v0.7.0)**.
+
 Status: **in progress; 001–003 implemented and verified, in review at [PR #68](https://github.com/moeghashim/tenboards/pull/68), [PR #70](https://github.com/moeghashim/tenboards/pull/70) and [PR #72](https://github.com/moeghashim/tenboards/pull/72)**. Implementation baseline: `3703f76` (v0.6.2). Planning baseline: `origin/main` at `cad4896c0738f446a5ac355beca70c75e7ca2b1a` (v0.6.0), inspected 2026-10-24. [PLAN.md](../../../PLAN.md), especially the three **v0.7** Decisions rows and **v0.6 template readiness / previews**, is the contract. This planning assignment authorizes these new task documents; it does not authorize editing PLAN or starting implementation. Precedents: planning PRs [#56](https://github.com/moeghashim/tenboards/pull/56) and [#50](https://github.com/moeghashim/tenboards/pull/50).
 
 Main advanced during planning to `f45e813`, adding the **v0.6.1 legacy removal** decision: that implementation runs before v0.7, removes legacy dashboards/Auth V1 and makes Auth V2 canonical. Preserve the requested cad4896 inspection baseline, but start implementation only after v0.6.1 merges. Reinspect routes/guards/catalog and use the then-current Auth V2 redirect policy and regression counts; do not restore removed V1 screens or fixtures. This PR neither edits PLAN nor performs that separate removal.

@@ -177,12 +177,12 @@
     },
     {
       "id": "v0.7-assistant",
-      "status": "in-progress",
+      "status": "done",
       "tasks": ["001-assistant-foundation", "002-provider-streaming-endpoint", "003-picker-conversation-acceptance"],
       "taskStatuses": {
-        "001-assistant-foundation": "review",
-        "002-provider-streaming-endpoint": "review",
-        "003-picker-conversation-acceptance": "review"
+        "001-assistant-foundation": "merged",
+        "002-provider-streaming-endpoint": "merged",
+        "003-picker-conversation-acceptance": "merged"
       }
     },
     {

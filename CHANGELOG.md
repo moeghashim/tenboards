@@ -1,11 +1,11 @@
 # Changelog
 
-## Unreleased — v0.7 AI Assistant
+## v0.7.0 — AI Assistant (2026-10-25)
+
+Released as [v0.7.0](https://github.com/moeghashim/tenboards/releases/tag/v0.7.0).
 
 - Complete transient conversation history, whole-pair context pruning, Regenerate, cancellation generations, safe recovery/countdowns, explicit provider-change handling and session-loss clearing. Verify synthetic Node/workerd modes and all four presets; no transcript persistence or live provider acceptance.
 - Add guarded Assistant streaming for five direct provider adapters, server-only configuration, exact Origin/session checks, bounded input/output/deadlines and atomic DB or bounded local admission. Preview guard rejects AI configuration; adopter secrets preparation keeps keys outside builds.
-
-
 - Add a native AI Assistant next to unchanged Chat with recorded summaries, comparisons and accessible charts.
 - Bound and validate a read-only OpenUI vocabulary before rendering; exclude actions, tools, URLs and raw markup.
 - Keep conversation state transient, with Send, Stop and New conversation. No provider access in this layer.
