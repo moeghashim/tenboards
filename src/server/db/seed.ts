@@ -10,12 +10,14 @@ import { seedCore } from "./seed-core.ts";
 import { seedEcommerce } from "./seed-ecommerce.ts";
 import { seedOperational } from "./seed-operational.ts";
 import { seedPeople } from "./seed-people.ts";
+import { seedProjects } from "./seed-projects.ts";
 import { seedWorkspace } from "./seed-workspace.ts";
 
 export async function seed() {
   await getDatabase().transaction(async (tx) => {
     await seedPeople(tx);
     await seedWorkspace(tx);
+    await seedProjects(tx);
     await seedCommunications(tx);
     await seedCore(tx);
     await seedOperational(tx);

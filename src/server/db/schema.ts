@@ -94,4 +94,5 @@ export * from "./core-entity-schema.ts";
 export * from "./ecommerce-schema.ts";
 export * from "./operational-schema.ts";
 export * from "./people-schema.ts";
+export * from "./project-schema.ts";
 export * from "./workspace-schema.ts";

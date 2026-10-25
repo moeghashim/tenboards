@@ -187,7 +187,7 @@
     },
     {
       "id": "v0.8-projects",
-      "status": "planned",
+      "status": "in-progress",
       "tasks": [
         "001-project-data-foundation",
         "002-project-board-list",
@@ -197,7 +197,7 @@
         "006-projects-acceptance"
       ],
       "taskStatuses": {
-        "001-project-data-foundation": "todo",
+        "001-project-data-foundation": "in-review",
         "002-project-board-list": "todo",
         "003-project-overview-timeline-files": "todo",
         "004-workspace-home-projects-index": "todo",

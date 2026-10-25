@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased — v0.8 Projects workspace
+
+- Replace inherited generated ledger titles with neutral operations-rollout tasks; repeat seeds preserve IDs and update both legacy and canonical copies.
+
+- Add the read-only Projects data foundation with additive migration/backfill, explicit legacy mappings, synthetic memberships, canonical tasks, labels, subtasks, file/calendar links and sample activity.
+- Add seven bounded project/workspace reads and extend demo/DB parity to 29 reads / 202 scenarios. Project UI and consolidation remain pending.
+- Make local test ports configurable for concurrent isolated worktrees.
+
 ## v0.7.0 — AI Assistant (2026-10-25)
 
 Released as [v0.7.0](https://github.com/moeghashim/tenboards/releases/tag/v0.7.0).
@@ -11,6 +19,7 @@ Released as [v0.7.0](https://github.com/moeghashim/tenboards/releases/tag/v0.7.0
 - Keep conversation state transient, with Send, Stop and New conversation. No provider access in this layer.
 - Pin OpenUI 1.0.1, disable install/runtime telemetry and add adversarial stream/renderer checks.
 - Allow isolated auth/Worker test ports without changing default ports.
+
 
 ## v0.6.2 — Compact density (2026-10-24)
 
