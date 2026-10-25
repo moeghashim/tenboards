@@ -2,15 +2,14 @@ import { Link } from "@tanstack/react-router";
 
 import { ArrowUpRight, CalendarDays } from "lucide-react";
 
-import { AvatarGroup, AvatarGroupCount } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { CardContent } from "@/components/ui/card";
-import { Progress } from "@/components/ui/progress";
 
 import { DashboardCard } from "../../-components/dashboard/cards";
 import type { loadProject } from "./project-functions";
+import { ProjectProgress } from "./project-progress";
 import { displayDate } from "./project-search";
-import { PersonAvatar } from "./task-presentation";
+import { MemberAvatars } from "./task-presentation";
 export type ProjectSummary = NonNullable<Awaited<ReturnType<typeof loadProject>>["project"]>;
 export function ProjectStatus({ status }: { status: ProjectSummary["status"] }) {
   return (
@@ -53,29 +52,14 @@ export function ProjectSummaryCard({ project }: { project: ProjectSummary }) {
             {project.metrics.open} open · {project.metrics.total} tasks
           </span>
         </div>
-        <div className="space-y-2">
-          <div className="text-muted-foreground flex justify-between gap-2 text-xs">
-            <span>{project.metrics.completed} completed</span>
-            <span>{project.metrics.progress}%</span>
-          </div>
-          <Progress value={project.metrics.progress} aria-label={`${project.name} completion`} />
-        </div>
+        <ProjectProgress metrics={project.metrics} name={project.name} />
         <div className="flex flex-wrap items-center justify-between gap-3 border-t pt-3">
           <span className="text-muted-foreground inline-flex items-center gap-2 text-xs">
             <CalendarDays className="size-3.5" aria-hidden="true" />
             {project.dueDate ? displayDate(project.dueDate) : "No target date"}
           </span>
           {project.members.length ? (
-            <AvatarGroup className="-space-x-1" role="group" aria-label={`${project.name} members`}>
-              {project.members.slice(0, 4).map((m) => (
-                <PersonAvatar key={m.id} person={m} />
-              ))}
-              {project.members.length > 4 && (
-                <AvatarGroupCount aria-label={`${project.members.length - 4} more members`}>
-                  +{project.members.length - 4}
-                </AvatarGroupCount>
-              )}
-            </AvatarGroup>
+            <MemberAvatars members={project.members} label={`${project.name} members`} limit={4} />
           ) : (
             <span className="text-muted-foreground text-xs">No members yet</span>
           )}

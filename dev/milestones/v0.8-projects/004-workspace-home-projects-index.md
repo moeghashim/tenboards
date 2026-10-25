@@ -62,3 +62,8 @@ Build/check/typecheck pass with inherited Biome one warning/four infos. Node aut
 The round-two user instruction supersedes the original historical-reporting-date clause: samples now share the serialized request UTC date, with no internal deadline-reference UI. My tasks explicitly names Jordan Lee as the sample member; greeting adopts local time after safe hydration. Exact aggregate counts accompany capped lists.
 
 PR [#73](https://github.com/moeghashim/tenboards/pull/73), stacked on#71. Immutable demo https://584941b9-tenboards-preview.mohanadgh.workers.dev ; alias https://pr-73-tenboards-preview.mohanadgh.workers.dev . Upload used the approved preview command. A transient Cloudflare version-not-found response interrupted post-upload verification; a subsequent read-only verification using the same policy assertion confirms ASSETS only/no secrets. [Evidence](https://github.com/moeghashim/tenboards/tree/pr-assets/v08-004). No new runtime dependency, token or protected-wrapper change; no merge/production deploy.
+
+
+### Round 4 integration — 2026-10-25
+
+Replayed on the v0.7-integrated stack. Home places Recent activity beneath My tasks at desktop widths, with the existing mobile reading order. Home/index cards use the shared progress denominator/canceled explanation and spaced member initials. The project shell now has real Projects and project Overview breadcrumb links plus the current view. Index default queries are omitted. Build/check/typecheck, default smoke, four-state Home/index interactions and three-zone delayed hydration pass. Final evidence includes 1440/1280 desktop inspection. Status remains in review.

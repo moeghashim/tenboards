@@ -27,15 +27,17 @@ function WorkList({
   tasks,
   total,
   home,
+  className,
 }: {
   title: string;
   description?: string;
   tasks: Task[];
   total: number;
   home: Home;
+  className?: string;
 }) {
   return (
-    <DashboardCard>
+    <DashboardCard className={className}>
       <SectionHeader
         title={title}
         description={description}
@@ -122,63 +124,70 @@ function Page() {
       </div>
       <div className="grid items-start gap-5 xl:grid-cols-2">
         <WorkList
+          className="xl:col-start-1 xl:row-start-1"
           title="My tasks"
           description={`${member?.name ?? "Sample member"} · sample member`}
           tasks={home.myTasks}
           total={home.myTaskTotal}
           home={home}
         />
-        <WorkList title="Upcoming deadlines" tasks={home.upcoming} total={home.upcomingTotal} home={home} />
-      </div>
-      <section className="space-y-3" aria-labelledby="home-project-progress">
-        <div className="flex items-center justify-between gap-3">
-          <h2 id="home-project-progress" className="text-base font-medium">
-            Project progress
-          </h2>
-          <span className="text-muted-foreground text-sm">{home.projects.length} projects</span>
-        </div>
-        {home.projects.length ? (
-          <div className="grid items-start gap-4 lg:grid-cols-2 xl:grid-cols-3">
-            {home.projects.map((project) => (
-              <ProjectSummaryCard key={project.id} project={project} />
-            ))}
+        <WorkList
+          className="xl:col-start-2 xl:row-span-2 xl:row-start-1"
+          title="Upcoming deadlines"
+          tasks={home.upcoming}
+          total={home.upcomingTotal}
+          home={home}
+        />
+        <section className="space-y-3 xl:col-span-2 xl:row-start-3" aria-labelledby="home-project-progress">
+          <div className="flex items-center justify-between gap-3">
+            <h2 id="home-project-progress" className="text-base font-medium">
+              Project progress
+            </h2>
+            <span className="text-muted-foreground text-sm">{home.projects.length} projects</span>
           </div>
-        ) : (
-          <p className="text-muted-foreground">No projects yet.</p>
-        )}
-      </section>
-      <DashboardCard>
-        <SectionHeader title="Recent activity" />
-        <CardContent>
-          {home.activity.length ? (
-            <ol className="divide-y">
-              {home.activity.map((a) => {
-                const project = home.projects.find((p) => p.id === a.projectId);
-                return (
-                  <li key={a.id} className="flex items-start gap-3 py-3 first:pt-0 last:pb-0">
-                    <PersonAvatar person={project?.members.find((m) => m.id === a.actorId) ?? null} />
-                    <div className="min-w-0 flex-1">
-                      <p>{a.detail}</p>
-                      <Link
-                        className="text-muted-foreground mt-1 inline-block text-xs underline underline-offset-4"
-                        to="/dashboard/projects/$projectId/overview"
-                        params={{ projectId: a.projectId }}
-                      >
-                        {project?.name ?? "View project"}
-                      </Link>
-                    </div>
-                    <time className="text-muted-foreground text-xs" dateTime={a.occurredAt}>
-                      {relativeDueDate(a.occurredAt.slice(0, 10), home.sampleDate)}
-                    </time>
-                  </li>
-                );
-              })}
-            </ol>
+          {home.projects.length ? (
+            <div className="grid items-start gap-4 lg:grid-cols-2 xl:grid-cols-3">
+              {home.projects.map((project) => (
+                <ProjectSummaryCard key={project.id} project={project} />
+              ))}
+            </div>
           ) : (
-            <p className="text-muted-foreground">No recent activity.</p>
+            <p className="text-muted-foreground">No projects yet.</p>
           )}
-        </CardContent>
-      </DashboardCard>
+        </section>
+        <DashboardCard className="xl:col-start-1 xl:row-start-2">
+          <SectionHeader title="Recent activity" />
+          <CardContent>
+            {home.activity.length ? (
+              <ol className="divide-y">
+                {home.activity.map((a) => {
+                  const project = home.projects.find((p) => p.id === a.projectId);
+                  return (
+                    <li key={a.id} className="flex items-start gap-3 py-3 first:pt-0 last:pb-0">
+                      <PersonAvatar person={project?.members.find((m) => m.id === a.actorId) ?? null} />
+                      <div className="min-w-0 flex-1">
+                        <p>{a.detail}</p>
+                        <Link
+                          className="text-muted-foreground mt-1 inline-block text-xs underline underline-offset-4"
+                          to="/dashboard/projects/$projectId/overview"
+                          params={{ projectId: a.projectId }}
+                        >
+                          {project?.name ?? "View project"}
+                        </Link>
+                      </div>
+                      <time className="text-muted-foreground text-xs" dateTime={a.occurredAt}>
+                        {relativeDueDate(a.occurredAt.slice(0, 10), home.sampleDate)}
+                      </time>
+                    </li>
+                  );
+                })}
+              </ol>
+            ) : (
+              <p className="text-muted-foreground">No recent activity.</p>
+            )}
+          </CardContent>
+        </DashboardCard>
+      </div>
     </section>
   );
 }

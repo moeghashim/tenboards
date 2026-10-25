@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, stripSearchParams } from "@tanstack/react-router";
 
 import { FolderSearch } from "lucide-react";
 
@@ -15,7 +15,9 @@ import { WorkspaceError, WorkspacePending } from "./-components/workspace-bounda
 import { loadProjectsIndex } from "./-components/workspace-functions";
 export const Route = createFileRoute("/(main)/dashboard/projects/")({
   beforeLoad: requireAppRoute,
-  validateSearch: (s) => projectIndexSearch.parse(s),
+  validateSearch: (s: Record<string, unknown>): ReturnType<typeof projectIndexSearch.parse> =>
+    projectIndexSearch.parse(s),
+  search: { middlewares: [stripSearchParams<ReturnType<typeof projectIndexSearch.parse>>({ query: "" })] },
   loaderDeps: ({ search }) => search,
   loader: ({ deps }) => loadProjectsIndex({ data: deps }),
   component: Page,
