@@ -6,9 +6,10 @@
     "branch": "feat/v0.8/001-project-data-foundation",
     "original": "c86adbe03f19c4c2212c274e94b008a9304bbe25",
     "replayed": "b04e93a7ce4c7a3a0240918ee3253ffbdb634ff3",
-    "final": "5bd149c27d42e69eac80eab1dc25b19eb3805784",
+    "final": "fcb025d33f3c096048a764c9b12912c37b9c67b2",
     "preview": "https://8f4e7b21-tenboards-preview.mohanadgh.workers.dev",
-    "alias": "https://pr-067-tenboards-preview.mohanadgh.workers.dev"
+    "alias": "https://pr-067-tenboards-preview.mohanadgh.workers.dev",
+    "testedTipBeforeSignoff": "5bd149c27d42e69eac80eab1dc25b19eb3805784"
   },
   {
     "n": 2,
@@ -17,9 +18,10 @@
     "branch": "feat/v0.8/002-project-board-list",
     "original": "cfa09e7b45bc67dc49b0d6e9c550ed5e115bbda3",
     "replayed": "ce161bec922fc73f99d31616c125e5f07f3515eb",
-    "final": "adabfd5cea78bb306fab8258e7e229ca3eb3c8f2",
+    "final": "d419fa8c671947a6bb2482d0f7db7727cea19fc8",
     "preview": "https://074425da-tenboards-preview.mohanadgh.workers.dev",
-    "alias": "https://pr-069-tenboards-preview.mohanadgh.workers.dev"
+    "alias": "https://pr-069-tenboards-preview.mohanadgh.workers.dev",
+    "testedTipBeforeSignoff": "adabfd5cea78bb306fab8258e7e229ca3eb3c8f2"
   },
   {
     "n": 3,
@@ -28,9 +30,10 @@
     "branch": "feat/v0.8/003-project-overview-timeline-files",
     "original": "2d08f369e38f68ca1bcd42f3e7e8c7aacea0c412",
     "replayed": "1270e13a25f186bc2374439828941bb306760d89",
-    "final": "86c20988c5f0fb8134100951463a2e846509ef0c",
+    "final": "09c482b73f82d9f227ef127330b1ce70207e831e",
     "preview": "https://f7684274-tenboards-preview.mohanadgh.workers.dev",
-    "alias": "https://pr-071-tenboards-preview.mohanadgh.workers.dev"
+    "alias": "https://pr-071-tenboards-preview.mohanadgh.workers.dev",
+    "testedTipBeforeSignoff": "86c20988c5f0fb8134100951463a2e846509ef0c"
   },
   {
     "n": 4,
@@ -39,9 +42,10 @@
     "branch": "feat/v0.8/004-workspace-home-projects-index",
     "original": "9b6c3e9e8b4feabf8d92fa39a794481fead31ab9",
     "replayed": "e7c80550547baecb70c341d7dd93733820642e16",
-    "final": "095f59b9bef3ae0a136f216c87a51bd9a0162ae6",
+    "final": "397673f2b0e4e6dad52a62fce5525122bb17ddd0",
     "preview": "https://842a07f2-tenboards-preview.mohanadgh.workers.dev",
-    "alias": "https://pr-073-tenboards-preview.mohanadgh.workers.dev"
+    "alias": "https://pr-073-tenboards-preview.mohanadgh.workers.dev",
+    "testedTipBeforeSignoff": "095f59b9bef3ae0a136f216c87a51bd9a0162ae6"
   },
   {
     "n": 5,
@@ -50,9 +54,10 @@
     "branch": "feat/v0.8/005-project-navigation-consolidation",
     "original": "a90cb906c2a65ff3b375c81045e36c2a258a2f38",
     "replayed": "bd6ba2a0fad58fe4d5a79067bcc2691c5605586c",
-    "final": "996cd3113acfafacfc081769bc088ae600df611e",
+    "final": "7d963d297f9f3663314ee727685961fef2b4924d",
     "preview": "https://045835ef-tenboards-preview.mohanadgh.workers.dev",
-    "alias": "https://pr-074-tenboards-preview.mohanadgh.workers.dev"
+    "alias": "https://pr-074-tenboards-preview.mohanadgh.workers.dev",
+    "testedTipBeforeSignoff": "996cd3113acfafacfc081769bc088ae600df611e"
   },
   {
     "n": 6,
@@ -61,8 +66,9 @@
     "branch": "feat/v0.8/006-projects-acceptance",
     "original": "7ae2594714269425565cd5dba91f48a9db40f6ec",
     "replayed": "683ee11775aaf9d0be5a1ca0a665b0e8c9bf4425",
-    "final": "56cf91c3eab465baf9abd70d7e352acb3085d325",
+    "final": "efcbeb59289a0bdd6455220768ec05be0eab6cf8",
     "preview": "https://52d24b98-tenboards-preview.mohanadgh.workers.dev",
-    "alias": "https://pr-075-tenboards-preview.mohanadgh.workers.dev"
+    "alias": "https://pr-075-tenboards-preview.mohanadgh.workers.dev",
+    "testedTipBeforeSignoff": "56cf91c3eab465baf9abd70d7e352acb3085d325"
   }
 ]
