@@ -4,6 +4,7 @@ import { consumeStream } from "../src/lib/assistant/transport.ts";
 import { providers } from "../src/server/assistant/config.server.ts";
 import { mockOutput } from "./assistant-wire-fixtures.ts";
 import { localDatabase, startTestServer, testSecret } from "./auth-test-support.ts";
+import { testOrigin } from "./test-port.ts";
 import { startWorker } from "./worker-test-support.ts";
 import assert from "node:assert/strict";
 
@@ -182,7 +183,12 @@ try {
   await db.end();
 }
 const auth = await startWorker(
-  { DATABASE_URL: localDatabase, BETTER_AUTH_SECRET: testSecret(), BETTER_AUTH_URL: "http://localhost:3176", ...env },
+  {
+    DATABASE_URL: localDatabase,
+    BETTER_AUTH_SECRET: testSecret(),
+    BETTER_AUTH_URL: testOrigin("http://localhost:3016"),
+    ...env,
+  },
   { port: 3016, binding: true, assistantMock: true },
 );
 try {

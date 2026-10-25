@@ -54,7 +54,7 @@ OpenUI install telemetry must remain disabled (`OPENUI_TELEMETRY_DISABLED=1` or 
 - `npm run deploy` — reviewer-only build and production deployment after approved merges.
 - `npm run preview:deploy -- --preview-alias pr-NNN` — guarded build/upload exclusively to demo-only `tenboards-preview`; no database bindings or secrets.
 - `npm run worker:dev -- --binding` — compiled local Worker with Docker Hyperdrive emulation; omit `--binding` for demo/URL fallback.
-- `npm run worker:test` — local workerd runtime/concurrency/recovery and 22-read/104-scenario parity checks on a fresh review database.
+- `npm run worker:test` — local workerd runtime/concurrency/recovery and 29-read/211-scenario parity checks on a fresh review database.
 - `npm run worker:auth` / `npm run worker:security` — compiled route/account/security regressions and two-Worker distributed limiter checks.
 - `npm run deploy:prepare -- --name <worker-name> --url <https-origin> [--secrets-file <external-path>] [--include-assistant]` — clean build/config validation and optional private secrets (AI settings require `--include-assistant`); prints staging commands without network operations.
 - `npm run deploy:check -- <origin>` — read-only auth-on production smoke; `--demo` explicitly selects preview expectations, `--auth-roundtrip` explicitly creates one throwaway account.
@@ -85,7 +85,7 @@ The 10 dashboards share the dashboard/chart presentation contract.
 | Infrastructure | `/dashboard/infrastructure` |
 | Patient Monitoring | `/dashboard/patient-monitoring` |
 
-The app sitemap also includes Home, Projects, AI Assistant, Products, Users, Roles, Profile, Mail, Chat, Invoice, Coming Soon and error/permission states. Kanban, Tasks, Calendar and File Manager now redirect into project views. Standalone `/mail` and `/chat` retain `/dashboard/mail` and `/dashboard/chat` iframe aliases. Authentication uses `/auth/v2/login` and `/auth/v2/register`; bare `/auth/v2` remains layout-only. With no secret the forms are visual demos; optional auth enables real accounts/sessions. The [route catalog](src/navigation/route-catalog.ts) enumerates 36 visual routes, including indexes and system states.
+The app sitemap also includes Home, Projects, AI Assistant, project Overview/Board/List/Timeline/Files, Products, Users, Roles, Profile, Mail, Chat, Invoice, Coming Soon and error/permission states. Legacy Kanban, Tasks, Calendar and File Manager URLs are guarded permanent aliases to project views. Standalone `/mail` and `/chat` retain `/dashboard/mail` and `/dashboard/chat` iframe aliases. Authentication uses `/auth/v2/login` and `/auth/v2/register`; bare `/auth/v2` remains layout-only. With no secret the forms are visual demos; optional auth enables real accounts/sessions. The [route catalog](src/navigation/route-catalog.ts) enumerates 36 visual route patterns, including indexes and system states.
 
 `/dashboard/default-v1`, `/dashboard/crm-v1`, `/dashboard/finance-v1` and `/dashboard/analytics-v1` return HTTP 308 to the matching current dashboard. `/auth/v1/login` and `/auth/v1/register` return HTTP 308 to Auth V2. Redirects preserve a validated `redirect` query (unsafe values fall back to `/dashboard/home`); destination pages enforce their existing guards. Redirect-only URLs are absent from sidebar/search and are tested separately from the screenshot catalog.
 
@@ -144,13 +144,13 @@ Install the approved browser tooling once with `npx playwright install chromium`
 
 ```sh
 npm run screenshots
-npm run screenshots -- --routes /dashboard/home,/auth/v2/login --output screenshots/before
+npm run screenshots -- --routes /dashboard/home/,/auth/v2/login --output screenshots/before
 npm run screenshots -- --base-url https://pr-012-tenboards-preview.<account-subdomain>.workers.dev --output screenshots/after
-npm run screenshots -- --routes /dashboard/home --sidebar-states --output screenshots/sidebar
+npm run screenshots -- --routes /dashboard/home/ --sidebar-states --output screenshots/sidebar
 npm run screenshots -- --list
 ```
 
-The default captures every retained route in light/dark at desktop 1440×900 and mobile 390×844. `src/navigation/route-catalog.ts` is the shared 36-route visual inventory, re-exported by `scripts/screenshot-routes.ts` and checked against generated route metadata; missing/stale routes and unknown subsets fail before launch. The dashboard splat uses `/dashboard/capture-not-found` to exercise its not-found state; project-ID route patterns use the concrete sample-operations project for captures. Root/index redirects are captured at their destination; six retired V1 aliases are covered by the dedicated redirect checks. `--preset` selects a valid preset for the same four-state matrix. `--sidebar-states` adds expanded/collapsed desktop captures and open/closed mobile-sheet captures on shell routes. Run `node --experimental-strip-types scripts/sidebar-toggle-check.ts` to verify every allowed sidebar style/collapse mode and preset in both themes and viewports; add `--ssr --base-url <built-preview-url>` to check initial markup with JavaScript disabled.
+The default captures every retained route in light/dark at desktop 1440×900 and mobile 390×844. `src/navigation/route-catalog.ts` is the shared 36-route visual inventory, re-exported by `scripts/screenshot-routes.ts` and checked against generated route metadata; missing/stale routes and unknown subsets fail before launch. The dashboard splat uses `/dashboard/capture-not-found` to exercise its not-found state; project-ID routes use `sample-operations` by default, with `--project-id sample-docs|sample-empty` for the secondary and empty fixtures. Root/index redirects are captured at their destination; six retired V1 aliases and four consolidated workspace aliases are covered by dedicated redirect checks; explicitly passing those workspace aliases to `--routes` also captures their destinations. `--preset` selects a valid preset for the same four-state matrix. `--sidebar-states` adds expanded/collapsed desktop captures and open/closed mobile-sheet captures on shell routes. Run `node --experimental-strip-types scripts/sidebar-toggle-check.ts` to verify every allowed sidebar style/collapse mode and preset in both themes and viewports; add `--ssr --base-url <built-preview-url>` to check initial markup with JavaScript disabled.
 
 Captures wait for React hydration, fonts, network idle, images, JS chart settling, and stable content. Reduced motion is emulated and screenshot animations are disabled. Console errors, page errors, failed requests, unexpected HTTP status, and capture failures are recorded in `report.json` and cause a nonzero exit. The hydration check uses React's DOM binding marker; revisit it if React's renderer changes. Application clocks are never frozen. For v0.4 comparisons, pass the same `--reference` ISO timestamp to serialize identical date inputs; the real monitoring clock can be narrowly masked with `--mask-live-clocks`.
 
@@ -254,7 +254,7 @@ Calendar, Invoice and both Auth V2 forms have passed their separate hydration ga
 
 ### App-page foundation (v0.3 / 001)
 
-`dashboard/-components/app-pages/page-header.tsx` provides a presentation-only `PageHeader` with a required string `title`, optional string `description`, wrapping React `actions`, and optional layout `className`. It renders one semantic h1 at 24px, with wrapping titles and action groups. File Manager and Products use it while retaining query-driven file views and the product drawer; their grids and tables remain assigned to tasks 008/009. The upstream-author File Manager owner fixture is now Jordan Lee. Tasks and Invoice are intended later consumers. Existing dashboard cards, card-level headings and chart theme remain the shared APIs for their respective roles.
+`dashboard/-components/app-pages/page-header.tsx` provides a presentation-only `PageHeader` with a required string `title`, optional string `description`, wrapping React `actions`, and optional layout `className`. It renders one semantic h1 at the compact 21px scale, with wrapping titles and action groups. File Manager and Products use it while retaining query-driven file views and the product drawer; their grids and tables remain assigned to tasks 008/009. The upstream-author File Manager owner fixture is now Jordan Lee. Tasks and Invoice are intended later consumers. Existing dashboard cards, card-level headings and chart theme remain the shared APIs for their respective roles.
 
 
 ### Mail pages (v0.3 / 002)
@@ -318,7 +318,7 @@ Auth V2 retains login/register routes, validation, masked password fields, autof
 
 ### System states (v0.3 / 013)
 
-Coming Soon describes planned content; the dashboard splat explains an unknown dashboard page. Root not-found, demo Unauthorized and RootError share a compact hierarchy with wrapping copy and keyboard recovery links. Production errors retain generic text; development can show the error message. `/`, `/dashboard` and `/dashboard/` still return 307 redirects to `/dashboard/home`; unknown root URLs return 404 and the explicit dashboard splat remains HTTP 200. `npm run screenshots -- --routes /dashboard/home --boundaries` adds four-state root not-found and real root-error/reset evidence. The CLI temporarily replaces a loaded browser route component, restores it and presses Try again; no error trigger or route is shipped. Expected injected exceptions and the exact unknown-document 404 diagnostic are recorded separately in report.json.
+Coming Soon describes planned content; the dashboard splat explains an unknown dashboard page. Root not-found, demo Unauthorized and RootError share a compact hierarchy with wrapping copy and keyboard recovery links. Production errors retain generic text; development can show the error message. `/`, `/dashboard` and `/dashboard/` still return 307 redirects to `/dashboard/home`; unknown root URLs return 404 and the explicit dashboard splat remains HTTP 200. `npm run screenshots -- --routes /dashboard/home/ --boundaries` adds four-state root not-found and real root-error/reset evidence. The CLI temporarily replaces a loaded browser route component, restores it and presses Try again; no error trigger or route is shipped. Expected injected exceptions and the exact unknown-document 404 diagnostic are recorded separately in report.json.
 
 
 ### Complete app-page acceptance (v0.3 / 014)
@@ -378,8 +378,8 @@ Cumulative parity covers seven reads and 26 scenarios, including product filters
 ### Workspace reads (v0.4/004)
 
 Kanban, Tasks, Calendar and File Manager now load through the optional data source.
-Their local drag, filter, selection and star controls remain session-only. Kanban
-and the Tasks ledger retain separate records. Calendar stores typed relative event
+Those legacy readers and records remain for provenance/parity; v0.8 project views use the canonical read-only task domain and remove the old drag/status/star compositions. The original Kanban
+and Tasks ledger records remain separately traceable. Calendar stores typed relative event
 definitions, resolves one request timestamp for SSR, then adopts browser-local civil
 time after hydration; Today and the now marker continue using the live clock.
 Migration `0005_abandoned_red_ghost.sql` extends the cumulative journal. Parity covers
@@ -438,8 +438,8 @@ the operational migration. The v0.6.1 registry retained 22 reads / 104 scenarios
 Fresh Postgres 17 and an upgrade beginning with the actual layer 001 schema/seed
 both pass, including repeated seeds and deliberate parity failures.
 
-The current screenshot catalog contains 32 visual routes × four presets × two themes × two
-viewports: 608 cases per source. Run each source/preset with the same `--reference`
+The current screenshot catalog contains 35 visual routes × four presets × two themes × two
+viewports: 560 visual cases per source, plus 13 HTTP-only route checks. Run each source/preset with the same `--reference`
 ISO timestamp and `--mask-live-clocks`; neither option freezes the runtime clock.
 The reference becomes a validated, read-only request header for date-relative
 loaders. Without it, requests use real time. Invalid headers are ignored. Masks
@@ -560,3 +560,15 @@ Run `scripts/project-navigation-check.ts` for disclosure/rail/mobile/palette/sto
 Workspace Home is the landing page, per the locked 2026-10-25 PLAN decision. `/`, `/dashboard` and `/dashboard/` retain their existing 307/replace redirect mechanism and lead to `/dashboard/home`. Missing or unsafe post-sign-in/OAuth return values fall back to Home; validated destinations still win. `/dashboard/default` remains the revenue dashboard under Dashboards. The consolidated Kanban Board is read-only: the former local drag-and-drop interaction has been removed, and tasks cannot be moved or reordered.
 
 With the three sample projects, the demo card counts **35 enabled concrete dashboard destinations**, including AI Assistant and all 15 project views; aliases are excluded.
+
+## Projects integrated acceptance (v0.8 / 006)
+
+The six v0.8 layers are stacked for review; they do not constitute a merged release. Claude owns review, merge/rebase, production deployment and release. Package version and release tags remain unchanged. The application uses the v0.6.2 compact system; no additional runtime dependency or hosted service was introduced.
+
+The capture inventory contains 36 visual route patterns and 14 HTTP/redirect-only routes. Dynamic project patterns resolve to the concrete `sample-operations` fixture by default. Use `--project-id sample-docs` or `--project-id sample-empty` with the five project route patterns to capture the secondary/empty projects. Only those three known fixture IDs are accepted. Reports record the selected project and each case's diagnostics; the actual app clock remains live. For example:
+
+```sh
+npm run screenshots -- --base-url http://localhost:3277 --preset pine --project-id sample-docs --routes '/dashboard/projects/$projectId/overview,/dashboard/projects/$projectId/board,/dashboard/projects/$projectId/list,/dashboard/projects/$projectId/timeline,/dashboard/projects/$projectId/files' --output screenshots/v08-project-docs
+```
+
+Integrated acceptance combines the full retained-route Default/Graphite/Pine/Iris matrix (light/dark × desktop/mobile), the secondary/empty project matrix, focused task/navigation/workspace interactions and delayed real-clock Calendar/Home checks. Node/compiled workerd verify guards and failure recovery, 29-read/211-scenario parity and migration preservation. Navigation tests also exercise all sidebar layout/collapse combinations and real isolated DB error/empty recovery. Evidence and a consolidated report belong on `pr-assets/v08-006`; screenshots never enter the implementation branch.

@@ -63,7 +63,7 @@ The generic cookie RPC is now limited to validated preference names/values, with
 
 `node --experimental-strip-types scripts/auth-config-check.ts` checks configuration/provider decisions, real DB signup/session/signout/cookie semantics, reseed preservation and a forced-demo TCP sentinel. `node --experimental-strip-types scripts/auth-cookie-check.ts` calls the actual HTTP RPCs with hostile cookie names/options and valid UI preferences. Both use the installed Playwright tooling, generated throwaway credentials, and no committed storage state. `DATABASE_URL` may select another explicit local test DB; otherwise the compose URL is used.
 
-Run `npm run data:parity` with the local URL: all 22 domain reads and 104 retained scenarios pass (26 V1-only scenarios were removed in v0.6.1). Run `npm run db:generate` to check drift; apply/repeat migrations explicitly. If configuration fails, check the source, private secret and exact origin. If auth storage fails, check Docker availability and migrations. Never fix a DB error by silently selecting demo while a secret is set.
+Run `npm run data:parity` with the local URL: all 29 domain reads and 211 scenarios pass (including the v0.8 Projects registry; 26 V1-only scenarios were removed in v0.6.1). Run `npm run db:generate` to check drift; apply/repeat migrations explicitly. If configuration fails, check the source, private secret and exact origin. If auth storage fails, check Docker availability and migrations. Never fix a DB error by silently selecting demo while a secret is set.
 
 Official references checked against installed APIs: [TanStack integration](https://www.better-auth.com/docs/integrations/tanstack), [Drizzle adapter](https://www.better-auth.com/docs/adapters/drizzle), [cookies](https://www.better-auth.com/docs/concepts/cookies), [sessions](https://www.better-auth.com/docs/concepts/session-management), [rate limits](https://www.better-auth.com/docs/concepts/rate-limit), [Start server routes](https://tanstack.com/start/latest/docs/framework/react/guide/server-routes) and [middleware](https://tanstack.com/start/latest/docs/framework/react/guide/middleware). The adapter docs show a separate package; the installed bundled export supports this approved dependency boundary.
 
@@ -175,7 +175,7 @@ resets a shared database. Tests delete only their exact test-owned auth users.
 
 The migration check compares all shipped migration files at `f45e813` byte-for-byte, creates fresh and
 upgrade test databases, applies/repeats migrations and seed, and runs all 22 reads /
-104 scenarios in each. Those fresh test-owned databases are dropped after the checks. Fetch
+211 scenarios in each. Those fresh test-owned databases are dropped after the checks. Fetch
 the `f45e813` base in a shallow checkout before running this check. The bundle check
 builds with private random sentinels, scans browser/server artifacts without
 printing their values, then always restores a zero-env build. It does not deploy.
@@ -266,7 +266,7 @@ DATABASE_URL=<separate-local-review-url> npm run data:parity
 
 The Worker suite tests demo/DB/auth configuration, runtime-only secrets, recovery
 and readiness memoization, sequential/overlapping users, signup/signin/signout,
-origin/redirect rejection, revocation and all 22 reads / 104 parity scenarios over
+origin/redirect rejection, revocation and all 29 reads / 211 parity scenarios over
 HTTP in a separate test-only Worker entry. That harness is not in production output.
 Existing protection/account/security suites discover the compiled RPC manifest;
 they do not rely on Vite RPC IDs. Node regressions remain separately labeled.
@@ -349,6 +349,16 @@ memory. Normal GET traffic still updates the database limiter's counters.
 
 All route guards, session refreshes, sign-out destinations, account return links and OAuth error callbacks target `/auth/v2/login` or `/auth/v2/register`. The old V1 forms are redirect-only routes with HTTP 308 and the existing `authDestination` validator. Invalid destinations fall back to `/dashboard/home`; valid pathname/search/hash destinations survive. Dashboard V1 aliases redirect outside the authenticated layout; the current destination then applies its normal guard and callable reads still require a session. No auth storage, cookie policy, rate limit, provider or session ownership rule changes.
 
-Run `node --experimental-strip-types scripts/legacy-redirect-check.ts` against a seeded local test database to check all six aliases, safe/hostile return parameters and browser/guard behavior. Current protected read coverage is 22 app-data functions plus Account details (23); owned-session mutations remain independently checked.
+Run `node --experimental-strip-types scripts/legacy-redirect-check.ts` against a seeded local test database to check all six aliases, safe/hostile return parameters and browser/guard behavior. At the v0.6.1 release, protected read coverage was 22 app-data functions plus Account details (23); owned-session mutations remain independently checked.
 
 The v0.6.1 Node rerun passes 426 scenarios across 12 suites; compiled Worker auth passes 245 protection, 15 account and 12 security cases. Removed-screen coverage is retired while credential/cookie, return-path, provider, error, ownership and failure-mode categories remain. Reports and original reruns are in [pr-assets/v061-001](https://github.com/moeghashim/tenboards/tree/pr-assets/v061-001).
+
+## v0.8 project boundaries
+
+Home, Projects index, the project layout and all five views remain under the dashboard route guard. Every new project/workspace/navigation server function independently checks `requireSession` before reading data. The shell requests summaries only inside the guarded dashboard layout; the root command palette consumes loader data and makes no protected project request on an auth/public surface. Navigation query recovery does not catch authentication failures.
+
+Projects and sample membership are shared display data for signed-in users, not a tenancy or ACL implementation. My tasks identifies Jordan Lee as the sample member rather than claiming the session user's assignments. There are no task/file/member/favorite mutation endpoints. Existing account ownership, origin, cookie, provider, rate-limit and session-revocation rules remain unchanged.
+
+The legacy Kanban/Tasks/Calendar/File Manager aliases recheck the app guard and issue 308 only after authorization. Login-return follows the original local URL and fragment through the canonical redirect; unknown legacy search keys are discarded. `/`, dashboard index and invalid auth-return fallback resolve to `/dashboard/home`; validated return destinations still win.
+
+Run `scripts/project-access-check.ts` in Node and with `AUTH_TEST_RUNTIME=workerd` against a built local Worker for malformed/cross-project/missing IDs, independent RPC denial, cache headers and revocation. `project-redirect-check.ts` covers 80 demo/auth redirect cases; `legacy-redirect-check.ts` retains the 96 V1 cases. The integrated inventory is 27 guarded read functions (including account details), plus the existing owned-session mutation and five public bootstrap/preference functions. Full local suites do not claim hosted DB/Hyperdrive or provider round-trip acceptance.

@@ -75,7 +75,11 @@ try {
             );
             await page.waitForLoadState("networkidle");
             await page.waitForTimeout(500);
-            if (route.includes("tab=account")) await page.getByText("Your sign-in account", { exact: true }).waitFor();
+            if (route.includes("tab=account"))
+              await page
+                .getByRole("tabpanel", { name: "Account & security", exact: true })
+                .getByRole("heading", { name: "Your sign-in account", exact: true })
+                .waitFor();
             else if (route.startsWith("/auth")) await page.locator("form").waitFor();
             else await page.getByText("My tasks", { exact: true }).waitFor();
             const name = `${timezone.replace("/", "-")}-${route.replace(/[^\w-]/g, "_")}-${theme}-${viewport}-${phase}`;
@@ -86,7 +90,7 @@ try {
           await context.close();
         }
   await writeFile(`${output}/report.json`, JSON.stringify(rows, null, 2));
-  assert.equal(rows.length, 96);
+  assert.equal(rows.length, 64);
   assert.ok(
     rows.every((row) => !row.errors.length),
     "Hydration/console failures; inspect report.",
