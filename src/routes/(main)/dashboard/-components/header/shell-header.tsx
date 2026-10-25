@@ -1,6 +1,6 @@
-import { useLayoutEffect, useRef } from "react";
+import { type ComponentPropsWithRef, useLayoutEffect, useRef } from "react";
 
-import { Link, useRouterState } from "@tanstack/react-router";
+import { createLink, useRouterState } from "@tanstack/react-router";
 
 import { cn } from "cn";
 
@@ -15,6 +15,9 @@ import { GitHubRepositoriesMenu } from "./github-repositories-menu";
 import { LayoutControls } from "./layout-controls";
 import { SignedInAccount } from "./signed-in-account";
 import { ThemeSwitcher } from "./theme-switcher";
+
+// Ancestor crumbs remain navigable; only the final view is the current page.
+const BreadcrumbLink = createLink((props: ComponentPropsWithRef<"a">) => <a {...props} aria-current={false} />);
 
 type ShellIdentity = { mode: "demo"; accounts: DemoAccount[] } | { mode: "auth"; user: NonNullable<AuthState["user"]> };
 
@@ -64,26 +67,26 @@ export function ShellHeader({ identity }: { identity: ShellIdentity }) {
         <nav aria-label="Breadcrumb" className="min-w-0 flex-1 text-sm">
           <ol className="flex min-w-0 items-center gap-2">
             <li className="shrink-0">
-              <Link
+              <BreadcrumbLink
                 to="/dashboard/projects"
                 search={{ query: "" }}
                 className="text-muted-foreground hover:text-foreground hover:underline"
               >
                 Projects
-              </Link>
+              </BreadcrumbLink>
             </li>
             <li aria-hidden="true" className="text-muted-foreground">
               /
             </li>
             <li className="min-w-0">
-              <Link
+              <BreadcrumbLink
                 to="/dashboard/projects/$projectId/overview"
                 params={{ projectId: project.id }}
                 className="text-muted-foreground hover:text-foreground block truncate hover:underline"
                 title={project.name}
               >
                 {project.name}
-              </Link>
+              </BreadcrumbLink>
             </li>
             <li aria-hidden="true" className="text-muted-foreground">
               /
