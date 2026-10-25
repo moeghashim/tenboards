@@ -1,5 +1,6 @@
 import { authConfiguration } from "../src/lib/auth/config.ts";
 import { assertSafeError, localDatabase, startTestServer, testSecret } from "./auth-test-support.ts";
+import { testOrigin } from "./test-port.ts";
 import assert from "node:assert/strict";
 import { createServer } from "node:net";
 
@@ -64,15 +65,16 @@ for (const [google, github] of [
   assert.equal(!!config.providers.github, github);
   pass("provider pair matrix");
 }
+const sentinelPort = Number(process.env.TEST_SENTINEL_PORT ?? 54328);
 let connections = 0;
 const sentinel = createServer((socket) => {
   connections++;
   socket.destroy();
 });
-await new Promise<void>((resolve) => sentinel.listen(54328, "127.0.0.1", resolve));
+await new Promise<void>((resolve) => sentinel.listen(sentinelPort, "127.0.0.1", resolve));
 try {
   const demo = await startTestServer({
-    DATABASE_URL: "postgresql://sentinel:private@127.0.0.1:54328/absent",
+    DATABASE_URL: `postgresql://sentinel:private@127.0.0.1:${sentinelPort}/absent`,
     DATA_SOURCE: "demo",
   });
   try {
@@ -90,7 +92,7 @@ try {
 const server = await startTestServer({
   DATABASE_URL: localDatabase,
   BETTER_AUTH_SECRET: secret,
-  BETTER_AUTH_URL: "http://localhost:3011",
+  BETTER_AUTH_URL: testOrigin("http://localhost:3011"),
 });
 try {
   const email = `foundation-${Date.now()}@example.test`;

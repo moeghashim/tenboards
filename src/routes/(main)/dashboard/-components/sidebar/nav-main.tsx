@@ -81,7 +81,7 @@ function hasSubItems(item: NavMainItem): item is NavMainParentItem {
   return Boolean(item.subItems?.length);
 }
 
-const primaryIds = new Set(["default", "email", "tasks", "calendar", "chat", "file-manager"]);
+const primaryIds = new Set(["default", "email", "tasks", "calendar", "chat", "assistant", "file-manager"]);
 
 export function NavMain({ items }: NavMainProps) {
   const path = useRouterState({ select: (state) => state.location.pathname });

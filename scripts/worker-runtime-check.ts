@@ -5,12 +5,17 @@ import { authConfiguration } from "../src/lib/auth/config.ts";
 import { readRegistry } from "../src/server/data/registry.ts";
 import { resolveEnvironment } from "../src/server/runtime.server.ts";
 import { assertSafeError, localDatabase, testSecret } from "./auth-test-support.ts";
+import { testOrigin } from "./test-port.ts";
 import { startWorker } from "./worker-test-support.ts";
 import assert from "node:assert/strict";
 import { setTimeout as delay } from "node:timers/promises";
 
 const secret = testSecret();
-const env = { DATABASE_URL: localDatabase, BETTER_AUTH_SECRET: secret, BETTER_AUTH_URL: "http://localhost:3021" };
+const env = {
+  DATABASE_URL: localDatabase,
+  BETTER_AUTH_SECRET: secret,
+  BETTER_AUTH_URL: testOrigin("http://localhost:3021"),
+};
 const db = postgres(localDatabase, { max: 1 });
 const renamed = new Set<string>();
 const rename = async (from: string, to: string) => {

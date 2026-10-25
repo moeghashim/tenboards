@@ -1,6 +1,7 @@
 import { request } from "playwright";
 
 import { databaseUrl } from "../src/server/data/source.ts";
+import { testPort } from "./test-port.ts";
 import { startWorker } from "./worker-test-support.ts";
 import assert from "node:assert/strict";
 import { spawn } from "node:child_process";
@@ -23,10 +24,11 @@ export async function startTestServer(overrides: NodeJS.ProcessEnv = {}, port = 
       headers: testHeaders,
       binding: !!overrides.DATABASE_URL && !overrides.DATABASE_URL.includes(":1/"),
     });
-  const baseURL = `http://localhost:${port}`;
+  const nodePort = testPort(port);
+  const baseURL = `http://localhost:${nodePort}`;
   const child = spawn(
     process.execPath,
-    ["node_modules/vite/bin/vite.js", "dev", "--port", String(port), "--strictPort"],
+    ["node_modules/vite/bin/vite.js", "dev", "--port", String(nodePort), "--strictPort"],
     {
       env: {
         ...process.env,

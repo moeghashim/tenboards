@@ -2,6 +2,7 @@ import { request } from "playwright";
 
 import type { AuthEnvironment } from "../src/lib/auth/config.ts";
 import { databaseUrl } from "../src/server/data/source.ts";
+import { testPort } from "./test-port.ts";
 import { spawn } from "node:child_process";
 import { mkdir, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
@@ -17,7 +18,7 @@ export async function startWorker(
     headers?: Record<string, string>;
   } = {},
 ) {
-  const port = options.port ?? 3021;
+  const port = testPort(options.port ?? 3021);
   const baseURL = `http://localhost:${port}`;
   const directory = path.resolve(`.wrangler/review-${port}`);
   await mkdir(directory, { recursive: true });

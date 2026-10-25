@@ -19,6 +19,7 @@ import { Route as mainDashboardIndexRouteImport } from './routes/(main)/dashboar
 import { Route as mainDashboardSplatRouteImport } from './routes/(main)/dashboard/$'
 import { Route as mainDashboardAcademyRouteRouteImport } from './routes/(main)/dashboard/academy/route'
 import { Route as mainDashboardAnalyticsRouteRouteImport } from './routes/(main)/dashboard/analytics/route'
+import { Route as mainDashboardAssistantRouteRouteImport } from './routes/(main)/dashboard/assistant/route'
 import { Route as mainDashboardCalendarRouteRouteImport } from './routes/(main)/dashboard/calendar/route'
 import { Route as mainDashboardChatRouteRouteImport } from './routes/(main)/dashboard/chat/route'
 import { Route as mainDashboardComingSoonRouteRouteImport } from './routes/(main)/dashboard/coming-soon/route'
@@ -99,6 +100,12 @@ const mainDashboardAnalyticsRouteRoute =
   mainDashboardAnalyticsRouteRouteImport.update({
     id: '/analytics',
     path: '/analytics',
+    getParentRoute: () => mainDashboardRouteRoute,
+  } as any)
+const mainDashboardAssistantRouteRoute =
+  mainDashboardAssistantRouteRouteImport.update({
+    id: '/assistant',
+    path: '/assistant',
     getParentRoute: () => mainDashboardRouteRoute,
   } as any)
 const mainDashboardCalendarRouteRoute =
@@ -271,6 +278,7 @@ export interface FileRoutesByFullPath {
   '/auth/v2': typeof mainAuthV2RouteRouteWithChildren
   '/dashboard/academy': typeof mainDashboardAcademyRouteRoute
   '/dashboard/analytics': typeof mainDashboardAnalyticsRouteRoute
+  '/dashboard/assistant': typeof mainDashboardAssistantRouteRoute
   '/dashboard/calendar': typeof mainDashboardCalendarRouteRoute
   '/dashboard/chat': typeof mainDashboardChatRouteRoute
   '/dashboard/coming-soon': typeof mainDashboardComingSoonRouteRoute
@@ -311,6 +319,7 @@ export interface FileRoutesByTo {
   '/auth/v2': typeof mainAuthV2RouteRouteWithChildren
   '/dashboard/academy': typeof mainDashboardAcademyRouteRoute
   '/dashboard/analytics': typeof mainDashboardAnalyticsRouteRoute
+  '/dashboard/assistant': typeof mainDashboardAssistantRouteRoute
   '/dashboard/calendar': typeof mainDashboardCalendarRouteRoute
   '/dashboard/chat': typeof mainDashboardChatRouteRoute
   '/dashboard/coming-soon': typeof mainDashboardComingSoonRouteRoute
@@ -353,6 +362,7 @@ export interface FileRoutesById {
   '/(main)/auth/v2': typeof mainAuthV2RouteRouteWithChildren
   '/(main)/dashboard/academy': typeof mainDashboardAcademyRouteRoute
   '/(main)/dashboard/analytics': typeof mainDashboardAnalyticsRouteRoute
+  '/(main)/dashboard/assistant': typeof mainDashboardAssistantRouteRoute
   '/(main)/dashboard/calendar': typeof mainDashboardCalendarRouteRoute
   '/(main)/dashboard/chat': typeof mainDashboardChatRouteRoute
   '/(main)/dashboard/coming-soon': typeof mainDashboardComingSoonRouteRoute
@@ -396,6 +406,7 @@ export interface FileRouteTypes {
     | '/auth/v2'
     | '/dashboard/academy'
     | '/dashboard/analytics'
+    | '/dashboard/assistant'
     | '/dashboard/calendar'
     | '/dashboard/chat'
     | '/dashboard/coming-soon'
@@ -436,6 +447,7 @@ export interface FileRouteTypes {
     | '/auth/v2'
     | '/dashboard/academy'
     | '/dashboard/analytics'
+    | '/dashboard/assistant'
     | '/dashboard/calendar'
     | '/dashboard/chat'
     | '/dashboard/coming-soon'
@@ -477,6 +489,7 @@ export interface FileRouteTypes {
     | '/(main)/auth/v2'
     | '/(main)/dashboard/academy'
     | '/(main)/dashboard/analytics'
+    | '/(main)/dashboard/assistant'
     | '/(main)/dashboard/calendar'
     | '/(main)/dashboard/chat'
     | '/(main)/dashboard/coming-soon'
@@ -596,6 +609,13 @@ declare module '@tanstack/react-router' {
       path: '/analytics'
       fullPath: '/dashboard/analytics'
       preLoaderRoute: typeof mainDashboardAnalyticsRouteRouteImport
+      parentRoute: typeof mainDashboardRouteRoute
+    }
+    '/(main)/dashboard/assistant': {
+      id: '/(main)/dashboard/assistant'
+      path: '/assistant'
+      fullPath: '/dashboard/assistant'
+      preLoaderRoute: typeof mainDashboardAssistantRouteRouteImport
       parentRoute: typeof mainDashboardRouteRoute
     }
     '/(main)/dashboard/calendar': {
@@ -807,6 +827,7 @@ declare module '@tanstack/react-router' {
 interface mainDashboardRouteRouteChildren {
   mainDashboardAcademyRouteRoute: typeof mainDashboardAcademyRouteRoute
   mainDashboardAnalyticsRouteRoute: typeof mainDashboardAnalyticsRouteRoute
+  mainDashboardAssistantRouteRoute: typeof mainDashboardAssistantRouteRoute
   mainDashboardCalendarRouteRoute: typeof mainDashboardCalendarRouteRoute
   mainDashboardChatRouteRoute: typeof mainDashboardChatRouteRoute
   mainDashboardComingSoonRouteRoute: typeof mainDashboardComingSoonRouteRoute
@@ -834,6 +855,7 @@ interface mainDashboardRouteRouteChildren {
 const mainDashboardRouteRouteChildren: mainDashboardRouteRouteChildren = {
   mainDashboardAcademyRouteRoute: mainDashboardAcademyRouteRoute,
   mainDashboardAnalyticsRouteRoute: mainDashboardAnalyticsRouteRoute,
+  mainDashboardAssistantRouteRoute: mainDashboardAssistantRouteRoute,
   mainDashboardCalendarRouteRoute: mainDashboardCalendarRouteRoute,
   mainDashboardChatRouteRoute: mainDashboardChatRouteRoute,
   mainDashboardComingSoonRouteRoute: mainDashboardComingSoonRouteRoute,

@@ -3,6 +3,7 @@ import { sidebarItems } from "./sidebar/sidebar-items.ts";
 // Explicit coverage contract. Compare against generated metadata on every capture run.
 // The only dynamic route is the dashboard splat: exercise its retained not-found UI.
 export const captureRoutes = [
+  { route: "/dashboard/assistant", path: "/dashboard/assistant", ready: "What would you like to explore?" },
   {
     route: "/chat",
     path: "/chat",

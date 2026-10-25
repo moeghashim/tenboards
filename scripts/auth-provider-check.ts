@@ -3,6 +3,7 @@ import postgres from "postgres";
 
 import { localDatabase, startTestServer, testHeaders, testSecret } from "./auth-test-support.ts";
 import { cacheCaptureFonts } from "./screenshot-assets.ts";
+import { testOrigin } from "./test-port.ts";
 import assert from "node:assert/strict";
 
 let cases = 0;
@@ -28,7 +29,7 @@ for (const [label, google, github, extra] of [
   const server = await startTestServer({
     DATABASE_URL: localDatabase,
     BETTER_AUTH_SECRET: testSecret(),
-    BETTER_AUTH_URL: "http://localhost:3011",
+    BETTER_AUTH_URL: testOrigin("http://localhost:3011"),
     ...(google ? { GOOGLE_CLIENT_ID: "dummy-google-id", GOOGLE_CLIENT_SECRET: "dummy-google-secret" } : {}),
     ...(github ? { GITHUB_CLIENT_ID: "dummy-github-id", GITHUB_CLIENT_SECRET: "dummy-github-secret" } : {}),
     ...extra,
