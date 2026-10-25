@@ -1,0 +1,6 @@
+
+> tenboards@0.7.0 assistant:test
+> node --experimental-strip-types scripts/assistant-check.ts
+
+PASS Assistant language, registry, stream and cancellation: 1047 assertions
+PASS six reachable/unreachable reference fan-out attacks (10^6–10^8), each under 250ms

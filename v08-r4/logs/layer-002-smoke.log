@@ -1,0 +1,8 @@
+
+> tenboards@0.7.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://127.0.0.1:3140 --routes /dashboard/default --output screenshots/v08-r4/layer-002-smoke
+
+PASS /dashboard/default light/desktop direct
+PASS /dashboard/default light/mobile direct
+PASS /dashboard/default dark/desktop direct
+PASS /dashboard/default dark/mobile direct

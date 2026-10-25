@@ -1,0 +1,28 @@
+src/routes/(main)/dashboard/projects/-components/project-functions.ts:38:11 lint/complexity/useOptionalChain  FIXABLE  ━━━━━━━━━━
+
+  ! Change to an optional chain.
+  
+    36 │     while (page.hasMore) {
+    37 │       const next = await readProjectTasks({ ...input, offset: page.offset + page.items.length });
+  > 38 │       if (!next || !next.items.length) throw new Error("Project tasks changed while loading. Please retry.");
+       │           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    39 │       items.push(...next.items);
+    40 │       page = next;
+  
+  i An optional chain is shorter, and it avoids repeating the same expression in each check.
+  
+  i Unsafe fix: Change to an optional chain.
+  
+    36 36 │       while (page.hasMore) {
+    37 37 │         const next = await readProjectTasks({ ...input, offset: page.offset + page.items.length });
+    38    │ - ······if·(!next·||·!next.items.length)·throw·new·Error("Project·tasks·changed·while·loading.·Please·retry.");
+       38 │ + ······if·(!next?.items.length)·throw·new·Error("Project·tasks·changed·while·loading.·Please·retry.");
+    39 39 │         items.push(...next.items);
+    40 40 │         page = next;
+  
+
+Skipped 1 suggested fixes.
+If you wish to apply the suggested (unsafe) fixes, use the command biome check --write --unsafe
+
+Checked 14 files in 419ms. Fixed 4 files.
+Found 1 warning.

@@ -1,0 +1,92 @@
+
+> tenboards@0.7.0 worker:auth
+> node --experimental-strip-types scripts/worker-auth-test.ts
+
+PASS Inventory: 36 visual routes, HTTP auth handler, 29 protected read functions, one owned session mutation and five public preference/bootstrap functions
+PASS Anonymous SSR/refresh/client navigation /dashboard/assistant
+PASS Anonymous SSR/refresh/client navigation /dashboard/home
+PASS Anonymous SSR/refresh/client navigation /dashboard/projects
+PASS Anonymous SSR/refresh/client navigation /dashboard/projects/sample-operations/overview
+PASS Anonymous SSR/refresh/client navigation /dashboard/projects/sample-operations/timeline
+PASS Anonymous SSR/refresh/client navigation /dashboard/projects/sample-operations/files
+PASS Anonymous SSR/refresh/client navigation /dashboard/projects/sample-operations/board
+PASS Anonymous SSR/refresh/client navigation /dashboard/projects/sample-operations/list
+PASS Anonymous SSR/refresh/client navigation /chat
+PASS Anonymous SSR/refresh/client navigation /dashboard
+PASS Anonymous SSR/refresh/client navigation /mail
+PASS Anonymous SSR/refresh/client navigation /
+PASS Anonymous SSR/refresh/client navigation /dashboard/academy
+PASS Anonymous SSR/refresh/client navigation /dashboard/analytics
+PASS Anonymous SSR/refresh/client navigation /dashboard/chat
+PASS Anonymous SSR/refresh/client navigation /dashboard/coming-soon
+PASS Anonymous SSR/refresh/client navigation /dashboard/crm
+PASS Anonymous SSR/refresh/client navigation /dashboard/default
+PASS Anonymous SSR/refresh/client navigation /dashboard/ecommerce
+PASS Anonymous SSR/refresh/client navigation /dashboard/finance
+PASS Anonymous SSR/refresh/client navigation /dashboard/infrastructure
+PASS Anonymous SSR/refresh/client navigation /dashboard/invoice
+PASS Anonymous SSR/refresh/client navigation /dashboard/logistics
+PASS Anonymous SSR/refresh/client navigation /dashboard/mail
+PASS Anonymous SSR/refresh/client navigation /dashboard/patient-monitoring
+PASS Anonymous SSR/refresh/client navigation /dashboard/productivity
+PASS Anonymous SSR/refresh/client navigation /dashboard/products
+PASS Anonymous SSR/refresh/client navigation /dashboard/profile
+PASS Anonymous SSR/refresh/client navigation /dashboard/roles
+PASS Anonymous SSR/refresh/client navigation /dashboard/users
+PASS Anonymous SSR/refresh/client navigation /dashboard/
+PASS Public system/auth /unauthorized: no account shell
+PASS Public system/auth /auth/v2: no account shell
+PASS Public system/auth /dashboard/capture-not-found: no account shell
+PASS Public system/auth /auth/v2/login: no account shell
+PASS Public system/auth /auth/v2/register: no account shell
+PASS Public system/auth /missing-root-page: no account shell
+PASS No-cookie direct RPC /src/routes/(main)/mail/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/route.tsx:getAccounts
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/users/route.tsx:loadUsers
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/roles/route.tsx:loadRoles
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/projects/-components/project-functions.ts:loadProject
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/projects/-components/project-functions.ts:loadProjectTasks
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/projects/-components/project-functions.ts:loadProjectBoard
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/projects/-components/project-view-functions.ts:loadProjectOverview
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/projects/-components/project-view-functions.ts:loadProjectTimeline
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/projects/-components/project-view-functions.ts:loadProjectFiles
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/projects/-components/workspace-functions.ts:loadWorkspaceHome
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/projects/-components/workspace-functions.ts:loadProjectsIndex
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/projects/-components/workspace-functions.ts:loadProjectNavigation
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/profile/route.tsx:loadProfile
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/products/route.tsx:loadCatalog
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/productivity/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/patient-monitoring/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/logistics/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/invoice/route.tsx:loadInvoice
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/infrastructure/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/finance/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/ecommerce/route.tsx:loadEcommerce
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/default/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/crm/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/analytics/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/dashboard/academy/route.tsx:loadData
+PASS No-cookie direct RPC /src/routes/(main)/chat/route.tsx:loadData
+PASS No-cookie direct RPC /src/lib/auth/account-functions.ts:getAccountDetails
+PASS No-cookie direct RPC /src/lib/assistant/server-functions.ts:getAssistantConfig
+PASS Valid SSR/refresh/client navigation /dashboard/assistant
+PASS Valid SSR/refresh/client navigation /dashboard/home
+PASS Valid SSR/refresh/client navigation /dashboard/projects
+PASS Valid SSR/refresh/client navigation /dashboard/projects/sample-operations/overview
+PASS Valid SSR/refresh/client navigation /dashboard/projects/sample-operations/timeline
+PASS Valid SSR/refresh/client navigation /dashboard/projects/sample-operations/files
+PASS Valid SSR/refresh/client navigation /dashboard/projects/sample-operations/board
+PASS Valid SSR/refresh/client navigation /dashboard/projects/sample-operations/list
+PASS Valid SSR/refresh/client navigation /chat
+PASS Valid SSR/refresh/client navigation /dashboard
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+page.waitForFunction: Timeout 30000ms exceeded.
+    at /Users/moeghashim/tenboards-v08/scripts/auth-protection-check.ts:128:25 {
+  log: [],
+  name: 'TimeoutError'
+}
+
+Node.js v24.21.0

@@ -1,0 +1,4 @@
+PASS configured picker, selected POST, disabled while busy, frozen attribution, overflow/console light/desktop
+PASS configured picker, selected POST, disabled while busy, frozen attribution, overflow/console light/mobile
+PASS configured picker, selected POST, disabled while busy, frozen attribution, overflow/console dark/desktop
+PASS configured picker, selected POST, disabled while busy, frozen attribution, overflow/console dark/mobile

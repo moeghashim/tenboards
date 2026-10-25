@@ -1,0 +1,33 @@
+{
+  "uniqueCases": 736,
+  "passing": true,
+  "originalFailures": [
+    {
+      "report": "screenshots/v08-r4/matrix/graphite/report.json",
+      "case": [
+        "graphite",
+        "sample-operations",
+        "/dashboard/default",
+        "dark",
+        "desktop"
+      ],
+      "errors": [
+        "page.evaluate: Execution context was destroyed, most likely because of a navigation"
+      ]
+    },
+    {
+      "report": "screenshots/v08-r4/matrix/graphite/report.json",
+      "case": [
+        "graphite",
+        "sample-operations",
+        "/dashboard/productivity",
+        "light",
+        "desktop"
+      ],
+      "errors": [
+        "page.evaluate: Execution context was destroyed, most likely because of a navigation"
+      ]
+    }
+  ],
+  "replacements": "matrix/graphite-retry/report.json"
+}

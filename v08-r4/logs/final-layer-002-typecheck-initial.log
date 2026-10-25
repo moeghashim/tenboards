@@ -1,0 +1,5 @@
+
+> tenboards@0.7.0 typecheck
+> tsc --noEmit
+
+screenshots/v08-r4/main-baseline/src/router.tsx(17,5): error TS2717: Subsequent property declarations must have the same type.  Property 'router' must be of type 'RouterCore<Route<Register, any, "/", "/", string, "__root__", undefined, {}, {}, AnyContext, AnyContext, {}, undefined, RootRouteChildren, FileRouteTypes, unknown, unknown, undefined>, "never", false, RouterHistory, Record<...>>', but here has type 'RouterCore<Route<Register, any, "/", "/", string, "__root__", undefined, {}, {}, AnyContext, AnyContext, {}, undefined, RootRouteChildren, FileRouteTypes, unknown, unknown, undefined>, "never", false, RouterHistory, Record<...>>'.

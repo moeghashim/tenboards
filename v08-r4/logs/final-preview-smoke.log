@@ -1,0 +1,12 @@
+
+> tenboards@0.7.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url https://52d24b98-tenboards-preview.mohanadgh.workers.dev --routes /,/dashboard/assistant --output screenshots/v08-r4/final-preview-smoke
+
+PASS /dashboard/assistant light/desktop direct
+PASS /dashboard/assistant light/mobile direct
+PASS /dashboard/assistant dark/desktop direct
+PASS /dashboard/assistant dark/mobile direct
+PASS / light/desktop direct
+PASS / light/mobile direct
+PASS / dark/desktop direct
+PASS / dark/mobile direct

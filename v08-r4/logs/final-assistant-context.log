@@ -1,0 +1,18 @@
+
+> tenboards@0.7.0 assistant:context
+> node --experimental-strip-types scripts/assistant-context-browser-check.ts
+
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+page.waitForURL: Timeout 30000ms exceeded.
+=========================== logs ===========================
+waiting for navigation to "**/dashboard/default" until "load"
+============================================================
+    at /Users/moeghashim/tenboards-v08/scripts/assistant-context-browser-check.ts:122:18 {
+  log: [],
+  name: 'TimeoutError'
+}
+
+Node.js v24.21.0

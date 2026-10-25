@@ -1,0 +1,5 @@
+PASS light/desktop: identity, board/list equality, filters, empty/project switching, details keyboard/focus, all 117 unique tasks without board pagination, canceled and overflow
+PASS light/mobile: identity, board/list equality, filters, empty/project switching, details keyboard/focus, all 117 unique tasks without board pagination, canceled and overflow
+PASS dark/desktop: identity, board/list equality, filters, empty/project switching, details keyboard/focus, all 117 unique tasks without board pagination, canceled and overflow
+PASS dark/mobile: identity, board/list equality, filters, empty/project switching, details keyboard/focus, all 117 unique tasks without board pagination, canceled and overflow
+PASS authorized missing project is 404, never default substitution

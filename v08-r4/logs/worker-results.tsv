@@ -1,0 +1,10 @@
+worker-migrate	0
+worker-seed	0
+worker-runtime	0
+worker-auth	1
+worker-security	0
+assistant-worker	0
+assistant-conversation	0
+assistant-lifecycle	0
+assistant-modes	0
+worker-project-access	0

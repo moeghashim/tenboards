@@ -1,0 +1,102 @@
+[
+  {
+    "width": 1280,
+    "theme": "light",
+    "rects": {
+      "My tasks": {
+        "x": 309,
+        "y": 244.25,
+        "width": 466.25,
+        "height": 359
+      },
+      "Upcoming deadlines": {
+        "x": 792.75,
+        "y": 244.25,
+        "width": 466.25,
+        "height": 635
+      },
+      "Recent activity": {
+        "x": 309,
+        "y": 639.25,
+        "width": 466.25,
+        "height": 221.5
+      }
+    },
+    "errors": []
+  },
+  {
+    "width": 1280,
+    "theme": "dark",
+    "rects": {
+      "My tasks": {
+        "x": 309,
+        "y": 244.25,
+        "width": 466.25,
+        "height": 359
+      },
+      "Upcoming deadlines": {
+        "x": 792.75,
+        "y": 244.25,
+        "width": 466.25,
+        "height": 635
+      },
+      "Recent activity": {
+        "x": 309,
+        "y": 639.25,
+        "width": 466.25,
+        "height": 221.5
+      }
+    },
+    "errors": []
+  },
+  {
+    "width": 1440,
+    "theme": "light",
+    "rects": {
+      "My tasks": {
+        "x": 309,
+        "y": 244.25,
+        "width": 546.25,
+        "height": 359
+      },
+      "Upcoming deadlines": {
+        "x": 872.75,
+        "y": 244.25,
+        "width": 546.25,
+        "height": 635
+      },
+      "Recent activity": {
+        "x": 309,
+        "y": 639.25,
+        "width": 546.25,
+        "height": 221.5
+      }
+    },
+    "errors": []
+  },
+  {
+    "width": 1440,
+    "theme": "dark",
+    "rects": {
+      "My tasks": {
+        "x": 309,
+        "y": 244.25,
+        "width": 546.25,
+        "height": 359
+      },
+      "Upcoming deadlines": {
+        "x": 872.75,
+        "y": 244.25,
+        "width": 546.25,
+        "height": 635
+      },
+      "Recent activity": {
+        "x": 309,
+        "y": 639.25,
+        "width": 546.25,
+        "height": 221.5
+      }
+    },
+    "errors": []
+  }
+]

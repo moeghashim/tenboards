@@ -1,0 +1,8 @@
+
+> tenboards@0.7.0 assistant:browser
+> node --experimental-strip-types scripts/assistant-browser-check.ts
+
+PASS Assistant recorded examples, no egress, IME, Stop/clear races, reload, overflow, console light/desktop
+PASS Assistant recorded examples, no egress, IME, Stop/clear races, reload, overflow, console light/mobile
+PASS Assistant recorded examples, no egress, IME, Stop/clear races, reload, overflow, console dark/desktop
+PASS Assistant recorded examples, no egress, IME, Stop/clear races, reload, overflow, console dark/mobile

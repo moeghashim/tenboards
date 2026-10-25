@@ -1,0 +1,64 @@
+PASS auth delayed hydration America-Chicago-_auth_v2_login-light-desktop-direct
+PASS auth delayed hydration America-Chicago-_auth_v2_login-light-desktop-refresh
+PASS auth delayed hydration America-Chicago-_auth_v2_register-light-desktop-direct
+PASS auth delayed hydration America-Chicago-_auth_v2_register-light-desktop-refresh
+PASS auth delayed hydration America-Chicago-_dashboard_home-light-desktop-direct
+PASS auth delayed hydration America-Chicago-_dashboard_home-light-desktop-refresh
+PASS auth delayed hydration America-Chicago-_dashboard_profile_tab_account-light-desktop-direct
+PASS auth delayed hydration America-Chicago-_dashboard_profile_tab_account-light-desktop-refresh
+PASS auth delayed hydration America-Chicago-_auth_v2_login-light-mobile-direct
+PASS auth delayed hydration America-Chicago-_auth_v2_login-light-mobile-refresh
+PASS auth delayed hydration America-Chicago-_auth_v2_register-light-mobile-direct
+PASS auth delayed hydration America-Chicago-_auth_v2_register-light-mobile-refresh
+PASS auth delayed hydration America-Chicago-_dashboard_home-light-mobile-direct
+PASS auth delayed hydration America-Chicago-_dashboard_home-light-mobile-refresh
+PASS auth delayed hydration America-Chicago-_dashboard_profile_tab_account-light-mobile-direct
+PASS auth delayed hydration America-Chicago-_dashboard_profile_tab_account-light-mobile-refresh
+PASS auth delayed hydration America-Chicago-_auth_v2_login-dark-desktop-direct
+PASS auth delayed hydration America-Chicago-_auth_v2_login-dark-desktop-refresh
+PASS auth delayed hydration America-Chicago-_auth_v2_register-dark-desktop-direct
+PASS auth delayed hydration America-Chicago-_auth_v2_register-dark-desktop-refresh
+PASS auth delayed hydration America-Chicago-_dashboard_home-dark-desktop-direct
+PASS auth delayed hydration America-Chicago-_dashboard_home-dark-desktop-refresh
+PASS auth delayed hydration America-Chicago-_dashboard_profile_tab_account-dark-desktop-direct
+PASS auth delayed hydration America-Chicago-_dashboard_profile_tab_account-dark-desktop-refresh
+PASS auth delayed hydration America-Chicago-_auth_v2_login-dark-mobile-direct
+PASS auth delayed hydration America-Chicago-_auth_v2_login-dark-mobile-refresh
+PASS auth delayed hydration America-Chicago-_auth_v2_register-dark-mobile-direct
+PASS auth delayed hydration America-Chicago-_auth_v2_register-dark-mobile-refresh
+PASS auth delayed hydration America-Chicago-_dashboard_home-dark-mobile-direct
+PASS auth delayed hydration America-Chicago-_dashboard_home-dark-mobile-refresh
+PASS auth delayed hydration America-Chicago-_dashboard_profile_tab_account-dark-mobile-direct
+PASS auth delayed hydration America-Chicago-_dashboard_profile_tab_account-dark-mobile-refresh
+PASS auth delayed hydration Pacific-Kiritimati-_auth_v2_login-light-desktop-direct
+PASS auth delayed hydration Pacific-Kiritimati-_auth_v2_login-light-desktop-refresh
+PASS auth delayed hydration Pacific-Kiritimati-_auth_v2_register-light-desktop-direct
+PASS auth delayed hydration Pacific-Kiritimati-_auth_v2_register-light-desktop-refresh
+PASS auth delayed hydration Pacific-Kiritimati-_dashboard_home-light-desktop-direct
+PASS auth delayed hydration Pacific-Kiritimati-_dashboard_home-light-desktop-refresh
+PASS auth delayed hydration Pacific-Kiritimati-_dashboard_profile_tab_account-light-desktop-direct
+PASS auth delayed hydration Pacific-Kiritimati-_dashboard_profile_tab_account-light-desktop-refresh
+PASS auth delayed hydration Pacific-Kiritimati-_auth_v2_login-light-mobile-direct
+PASS auth delayed hydration Pacific-Kiritimati-_auth_v2_login-light-mobile-refresh
+PASS auth delayed hydration Pacific-Kiritimati-_auth_v2_register-light-mobile-direct
+PASS auth delayed hydration Pacific-Kiritimati-_auth_v2_register-light-mobile-refresh
+PASS auth delayed hydration Pacific-Kiritimati-_dashboard_home-light-mobile-direct
+PASS auth delayed hydration Pacific-Kiritimati-_dashboard_home-light-mobile-refresh
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+locator.waitFor: Error: strict mode violation: getByText('Your sign-in account', { exact: true }) resolved to 2 elements:
+    1) <h2 class="text-xl font-semibold" data-tsd-source="/src/routes/(main)/dashboard/profile/-components/account-panel.tsx:120:9">Your sign-in account</h2> aka locator('#base-ui-_R_d39aq_').getByRole('heading', { name: 'Your sign-in account' })
+    2) <h2 class="text-xl font-semibold" data-tsd-source="/src/routes/(main)/dashboard/profile/-components/account-panel.tsx:120:9">Your sign-in account</h2> aka getByRole('tabpanel', { name: 'Account & security' }).getByRole('heading', { name: 'Your sign-in account' })
+
+Call log:
+[2m  - waiting for getByText('Your sign-in account', { exact: true }) to be visible[22m
+
+    at /Users/moeghashim/tenboards-v08/scripts/auth-hydration-check.ts:78:110 {
+  log: [
+    "  - waiting for getByText('Your sign-in account', { exact: true }) to be visible"
+  ]
+}
+
+Node.js v24.21.0

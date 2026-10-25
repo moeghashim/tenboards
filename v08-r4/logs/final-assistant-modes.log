@@ -1,0 +1,16 @@
+
+> tenboards@0.7.0 assistant:modes
+> node --experimental-strip-types scripts/assistant-modes-check.ts
+
+PASS Node no-env: actual Assistant route/config/protocol boundary, synthetic-only, safe bootstrap
+PASS Node live: actual Assistant route/config/protocol boundary, synthetic-only, safe bootstrap
+PASS Node forced-demo: actual Assistant route/config/protocol boundary, synthetic-only, safe bootstrap
+PASS Node db-open: actual Assistant route/config/protocol boundary, synthetic-only, safe bootstrap
+PASS Node auth: actual Assistant route/config/protocol boundary, synthetic-only, safe bootstrap
+PASS Node invalid-auth: configuration rejected at startup, no open fallback
+PASS workerd no-env: actual Assistant route/config/protocol boundary, synthetic-only, safe bootstrap
+PASS workerd live: actual Assistant route/config/protocol boundary, synthetic-only, safe bootstrap
+PASS workerd forced-demo: actual Assistant route/config/protocol boundary, synthetic-only, safe bootstrap
+PASS workerd db-open: actual Assistant route/config/protocol boundary, synthetic-only, safe bootstrap
+PASS workerd auth: actual Assistant route/config/protocol boundary, synthetic-only, safe bootstrap
+PASS workerd invalid-auth: actual Assistant route/config/protocol boundary, synthetic-only, safe bootstrap

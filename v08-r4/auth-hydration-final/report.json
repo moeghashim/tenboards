@@ -1,0 +1,514 @@
+[
+  {
+    "route": "/auth/v2/login",
+    "timezone": "America/Chicago",
+    "theme": "light",
+    "viewport": "desktop",
+    "phase": "direct",
+    "errors": []
+  },
+  {
+    "route": "/auth/v2/login",
+    "timezone": "America/Chicago",
+    "theme": "light",
+    "viewport": "desktop",
+    "phase": "refresh",
+    "errors": []
+  },
+  {
+    "route": "/auth/v2/register",
+    "timezone": "America/Chicago",
+    "theme": "light",
+    "viewport": "desktop",
+    "phase": "direct",
+    "errors": []
+  },
+  {
+    "route": "/auth/v2/register",
+    "timezone": "America/Chicago",
+    "theme": "light",
+    "viewport": "desktop",
+    "phase": "refresh",
+    "errors": []
+  },
+  {
+    "route": "/dashboard/home",
+    "timezone": "America/Chicago",
+    "theme": "light",
+    "viewport": "desktop",
+    "phase": "direct",
+    "errors": []
+  },
+  {
+    "route": "/dashboard/home",
+    "timezone": "America/Chicago",
+    "theme": "light",
+    "viewport": "desktop",
+    "phase": "refresh",
+    "errors": []
+  },
+  {
+    "route": "/dashboard/profile?tab=account",
+    "timezone": "America/Chicago",
+    "theme": "light",
+    "viewport": "desktop",
+    "phase": "direct",
+    "errors": []
+  },
+  {
+    "route": "/dashboard/profile?tab=account",
+    "timezone": "America/Chicago",
+    "theme": "light",
+    "viewport": "desktop",
+    "phase": "refresh",
+    "errors": []
+  },
+  {
+    "route": "/auth/v2/login",
+    "timezone": "America/Chicago",
+    "theme": "light",
+    "viewport": "mobile",
+    "phase": "direct",
+    "errors": []
+  },
+  {
+    "route": "/auth/v2/login",
+    "timezone": "America/Chicago",
+    "theme": "light",
+    "viewport": "mobile",
+    "phase": "refresh",
+    "errors": []
+  },
+  {
+    "route": "/auth/v2/register",
+    "timezone": "America/Chicago",
+    "theme": "light",
+    "viewport": "mobile",
+    "phase": "direct",
+    "errors": []
+  },
+  {
+    "route": "/auth/v2/register",
+    "timezone": "America/Chicago",
+    "theme": "light",
+    "viewport": "mobile",
+    "phase": "refresh",
+    "errors": []
+  },
+  {
+    "route": "/dashboard/home",
+    "timezone": "America/Chicago",
+    "theme": "light",
+    "viewport": "mobile",
+    "phase": "direct",
+    "errors": []
+  },
+  {
+    "route": "/dashboard/home",
+    "timezone": "America/Chicago",
+    "theme": "light",
+    "viewport": "mobile",
+    "phase": "refresh",
+    "errors": []
+  },
+  {
+    "route": "/dashboard/profile?tab=account",
+    "timezone": "America/Chicago",
+    "theme": "light",
+    "viewport": "mobile",
+    "phase": "direct",
+    "errors": []
+  },
+  {
+    "route": "/dashboard/profile?tab=account",
+    "timezone": "America/Chicago",
+    "theme": "light",
+    "viewport": "mobile",
+    "phase": "refresh",
+    "errors": []
+  },
+  {
+    "route": "/auth/v2/login",
+    "timezone": "America/Chicago",
+    "theme": "dark",
+    "viewport": "desktop",
+    "phase": "direct",
+    "errors": []
+  },
+  {
+    "route": "/auth/v2/login",
+    "timezone": "America/Chicago",
+    "theme": "dark",
+    "viewport": "desktop",
+    "phase": "refresh",
+    "errors": []
+  },
+  {
+    "route": "/auth/v2/register",
+    "timezone": "America/Chicago",
+    "theme": "dark",
+    "viewport": "desktop",
+    "phase": "direct",
+    "errors": []
+  },
+  {
+    "route": "/auth/v2/register",
+    "timezone": "America/Chicago",
+    "theme": "dark",
+    "viewport": "desktop",
+    "phase": "refresh",
+    "errors": []
+  },
+  {
+    "route": "/dashboard/home",
+    "timezone": "America/Chicago",
+    "theme": "dark",
+    "viewport": "desktop",
+    "phase": "direct",
+    "errors": []
+  },
+  {
+    "route": "/dashboard/home",
+    "timezone": "America/Chicago",
+    "theme": "dark",
+    "viewport": "desktop",
+    "phase": "refresh",
+    "errors": []
+  },
+  {
+    "route": "/dashboard/profile?tab=account",
+    "timezone": "America/Chicago",
+    "theme": "dark",
+    "viewport": "desktop",
+    "phase": "direct",
+    "errors": []
+  },
+  {
+    "route": "/dashboard/profile?tab=account",
+    "timezone": "America/Chicago",
+    "theme": "dark",
+    "viewport": "desktop",
+    "phase": "refresh",
+    "errors": []
+  },
+  {
+    "route": "/auth/v2/login",
+    "timezone": "America/Chicago",
+    "theme": "dark",
+    "viewport": "mobile",
+    "phase": "direct",
+    "errors": []
+  },
+  {
+    "route": "/auth/v2/login",
+    "timezone": "America/Chicago",
+    "theme": "dark",
+    "viewport": "mobile",
+    "phase": "refresh",
+    "errors": []
+  },
+  {
+    "route": "/auth/v2/register",
+    "timezone": "America/Chicago",
+    "theme": "dark",
+    "viewport": "mobile",
+    "phase": "direct",
+    "errors": []
+  },
+  {
+    "route": "/auth/v2/register",
+    "timezone": "America/Chicago",
+    "theme": "dark",
+    "viewport": "mobile",
+    "phase": "refresh",
+    "errors": []
+  },
+  {
+    "route": "/dashboard/home",
+    "timezone": "America/Chicago",
+    "theme": "dark",
+    "viewport": "mobile",
+    "phase": "direct",
+    "errors": []
+  },
+  {
+    "route": "/dashboard/home",
+    "timezone": "America/Chicago",
+    "theme": "dark",
+    "viewport": "mobile",
+    "phase": "refresh",
+    "errors": []
+  },
+  {
+    "route": "/dashboard/profile?tab=account",
+    "timezone": "America/Chicago",
+    "theme": "dark",
+    "viewport": "mobile",
+    "phase": "direct",
+    "errors": []
+  },
+  {
+    "route": "/dashboard/profile?tab=account",
+    "timezone": "America/Chicago",
+    "theme": "dark",
+    "viewport": "mobile",
+    "phase": "refresh",
+    "errors": []
+  },
+  {
+    "route": "/auth/v2/login",
+    "timezone": "Pacific/Kiritimati",
+    "theme": "light",
+    "viewport": "desktop",
+    "phase": "direct",
+    "errors": []
+  },
+  {
+    "route": "/auth/v2/login",
+    "timezone": "Pacific/Kiritimati",
+    "theme": "light",
+    "viewport": "desktop",
+    "phase": "refresh",
+    "errors": []
+  },
+  {
+    "route": "/auth/v2/register",
+    "timezone": "Pacific/Kiritimati",
+    "theme": "light",
+    "viewport": "desktop",
+    "phase": "direct",
+    "errors": []
+  },
+  {
+    "route": "/auth/v2/register",
+    "timezone": "Pacific/Kiritimati",
+    "theme": "light",
+    "viewport": "desktop",
+    "phase": "refresh",
+    "errors": []
+  },
+  {
+    "route": "/dashboard/home",
+    "timezone": "Pacific/Kiritimati",
+    "theme": "light",
+    "viewport": "desktop",
+    "phase": "direct",
+    "errors": []
+  },
+  {
+    "route": "/dashboard/home",
+    "timezone": "Pacific/Kiritimati",
+    "theme": "light",
+    "viewport": "desktop",
+    "phase": "refresh",
+    "errors": []
+  },
+  {
+    "route": "/dashboard/profile?tab=account",
+    "timezone": "Pacific/Kiritimati",
+    "theme": "light",
+    "viewport": "desktop",
+    "phase": "direct",
+    "errors": []
+  },
+  {
+    "route": "/dashboard/profile?tab=account",
+    "timezone": "Pacific/Kiritimati",
+    "theme": "light",
+    "viewport": "desktop",
+    "phase": "refresh",
+    "errors": []
+  },
+  {
+    "route": "/auth/v2/login",
+    "timezone": "Pacific/Kiritimati",
+    "theme": "light",
+    "viewport": "mobile",
+    "phase": "direct",
+    "errors": []
+  },
+  {
+    "route": "/auth/v2/login",
+    "timezone": "Pacific/Kiritimati",
+    "theme": "light",
+    "viewport": "mobile",
+    "phase": "refresh",
+    "errors": []
+  },
+  {
+    "route": "/auth/v2/register",
+    "timezone": "Pacific/Kiritimati",
+    "theme": "light",
+    "viewport": "mobile",
+    "phase": "direct",
+    "errors": []
+  },
+  {
+    "route": "/auth/v2/register",
+    "timezone": "Pacific/Kiritimati",
+    "theme": "light",
+    "viewport": "mobile",
+    "phase": "refresh",
+    "errors": []
+  },
+  {
+    "route": "/dashboard/home",
+    "timezone": "Pacific/Kiritimati",
+    "theme": "light",
+    "viewport": "mobile",
+    "phase": "direct",
+    "errors": []
+  },
+  {
+    "route": "/dashboard/home",
+    "timezone": "Pacific/Kiritimati",
+    "theme": "light",
+    "viewport": "mobile",
+    "phase": "refresh",
+    "errors": []
+  },
+  {
+    "route": "/dashboard/profile?tab=account",
+    "timezone": "Pacific/Kiritimati",
+    "theme": "light",
+    "viewport": "mobile",
+    "phase": "direct",
+    "errors": []
+  },
+  {
+    "route": "/dashboard/profile?tab=account",
+    "timezone": "Pacific/Kiritimati",
+    "theme": "light",
+    "viewport": "mobile",
+    "phase": "refresh",
+    "errors": []
+  },
+  {
+    "route": "/auth/v2/login",
+    "timezone": "Pacific/Kiritimati",
+    "theme": "dark",
+    "viewport": "desktop",
+    "phase": "direct",
+    "errors": []
+  },
+  {
+    "route": "/auth/v2/login",
+    "timezone": "Pacific/Kiritimati",
+    "theme": "dark",
+    "viewport": "desktop",
+    "phase": "refresh",
+    "errors": []
+  },
+  {
+    "route": "/auth/v2/register",
+    "timezone": "Pacific/Kiritimati",
+    "theme": "dark",
+    "viewport": "desktop",
+    "phase": "direct",
+    "errors": []
+  },
+  {
+    "route": "/auth/v2/register",
+    "timezone": "Pacific/Kiritimati",
+    "theme": "dark",
+    "viewport": "desktop",
+    "phase": "refresh",
+    "errors": []
+  },
+  {
+    "route": "/dashboard/home",
+    "timezone": "Pacific/Kiritimati",
+    "theme": "dark",
+    "viewport": "desktop",
+    "phase": "direct",
+    "errors": []
+  },
+  {
+    "route": "/dashboard/home",
+    "timezone": "Pacific/Kiritimati",
+    "theme": "dark",
+    "viewport": "desktop",
+    "phase": "refresh",
+    "errors": []
+  },
+  {
+    "route": "/dashboard/profile?tab=account",
+    "timezone": "Pacific/Kiritimati",
+    "theme": "dark",
+    "viewport": "desktop",
+    "phase": "direct",
+    "errors": []
+  },
+  {
+    "route": "/dashboard/profile?tab=account",
+    "timezone": "Pacific/Kiritimati",
+    "theme": "dark",
+    "viewport": "desktop",
+    "phase": "refresh",
+    "errors": []
+  },
+  {
+    "route": "/auth/v2/login",
+    "timezone": "Pacific/Kiritimati",
+    "theme": "dark",
+    "viewport": "mobile",
+    "phase": "direct",
+    "errors": []
+  },
+  {
+    "route": "/auth/v2/login",
+    "timezone": "Pacific/Kiritimati",
+    "theme": "dark",
+    "viewport": "mobile",
+    "phase": "refresh",
+    "errors": []
+  },
+  {
+    "route": "/auth/v2/register",
+    "timezone": "Pacific/Kiritimati",
+    "theme": "dark",
+    "viewport": "mobile",
+    "phase": "direct",
+    "errors": []
+  },
+  {
+    "route": "/auth/v2/register",
+    "timezone": "Pacific/Kiritimati",
+    "theme": "dark",
+    "viewport": "mobile",
+    "phase": "refresh",
+    "errors": []
+  },
+  {
+    "route": "/dashboard/home",
+    "timezone": "Pacific/Kiritimati",
+    "theme": "dark",
+    "viewport": "mobile",
+    "phase": "direct",
+    "errors": []
+  },
+  {
+    "route": "/dashboard/home",
+    "timezone": "Pacific/Kiritimati",
+    "theme": "dark",
+    "viewport": "mobile",
+    "phase": "refresh",
+    "errors": []
+  },
+  {
+    "route": "/dashboard/profile?tab=account",
+    "timezone": "Pacific/Kiritimati",
+    "theme": "dark",
+    "viewport": "mobile",
+    "phase": "direct",
+    "errors": []
+  },
+  {
+    "route": "/dashboard/profile?tab=account",
+    "timezone": "Pacific/Kiritimati",
+    "theme": "dark",
+    "viewport": "mobile",
+    "phase": "refresh",
+    "errors": []
+  }
+]

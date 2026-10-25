@@ -1,0 +1,114 @@
+[
+  {
+    "path": "/dashboard/kanban",
+    "theme": "light",
+    "size": "desktop",
+    "url": "http://127.0.0.1:3140/dashboard/projects/sample-operations/board?query=&sort=position&offset=0&limit=100",
+    "errors": []
+  },
+  {
+    "path": "/dashboard/kanban",
+    "theme": "light",
+    "size": "mobile",
+    "url": "http://127.0.0.1:3140/dashboard/projects/sample-operations/board?query=&sort=position&offset=0&limit=100",
+    "errors": []
+  },
+  {
+    "path": "/dashboard/kanban",
+    "theme": "dark",
+    "size": "desktop",
+    "url": "http://127.0.0.1:3140/dashboard/projects/sample-operations/board?query=&sort=position&offset=0&limit=100",
+    "errors": []
+  },
+  {
+    "path": "/dashboard/kanban",
+    "theme": "dark",
+    "size": "mobile",
+    "url": "http://127.0.0.1:3140/dashboard/projects/sample-operations/board?query=&sort=position&offset=0&limit=100",
+    "errors": []
+  },
+  {
+    "path": "/dashboard/tasks",
+    "theme": "light",
+    "size": "desktop",
+    "url": "http://127.0.0.1:3140/dashboard/projects/sample-operations/list?query=&sort=position&offset=0&limit=10",
+    "errors": []
+  },
+  {
+    "path": "/dashboard/tasks",
+    "theme": "light",
+    "size": "mobile",
+    "url": "http://127.0.0.1:3140/dashboard/projects/sample-operations/list?query=&sort=position&offset=0&limit=10",
+    "errors": []
+  },
+  {
+    "path": "/dashboard/tasks",
+    "theme": "dark",
+    "size": "desktop",
+    "url": "http://127.0.0.1:3140/dashboard/projects/sample-operations/list?query=&sort=position&offset=0&limit=10",
+    "errors": []
+  },
+  {
+    "path": "/dashboard/tasks",
+    "theme": "dark",
+    "size": "mobile",
+    "url": "http://127.0.0.1:3140/dashboard/projects/sample-operations/list?query=&sort=position&offset=0&limit=10",
+    "errors": []
+  },
+  {
+    "path": "/dashboard/calendar",
+    "theme": "light",
+    "size": "desktop",
+    "url": "http://127.0.0.1:3140/dashboard/projects/sample-operations/timeline?query=&sort=position&offset=0&limit=100&mode=calendar&scale=weeks",
+    "errors": []
+  },
+  {
+    "path": "/dashboard/calendar",
+    "theme": "light",
+    "size": "mobile",
+    "url": "http://127.0.0.1:3140/dashboard/projects/sample-operations/timeline?query=&sort=position&offset=0&limit=100&mode=calendar&scale=weeks",
+    "errors": []
+  },
+  {
+    "path": "/dashboard/calendar",
+    "theme": "dark",
+    "size": "desktop",
+    "url": "http://127.0.0.1:3140/dashboard/projects/sample-operations/timeline?query=&sort=position&offset=0&limit=100&mode=calendar&scale=weeks",
+    "errors": []
+  },
+  {
+    "path": "/dashboard/calendar",
+    "theme": "dark",
+    "size": "mobile",
+    "url": "http://127.0.0.1:3140/dashboard/projects/sample-operations/timeline?query=&sort=position&offset=0&limit=100&mode=calendar&scale=weeks",
+    "errors": []
+  },
+  {
+    "path": "/dashboard/file-manager",
+    "theme": "light",
+    "size": "desktop",
+    "url": "http://127.0.0.1:3140/dashboard/projects/sample-operations/files?view=grid",
+    "errors": []
+  },
+  {
+    "path": "/dashboard/file-manager",
+    "theme": "light",
+    "size": "mobile",
+    "url": "http://127.0.0.1:3140/dashboard/projects/sample-operations/files?view=grid",
+    "errors": []
+  },
+  {
+    "path": "/dashboard/file-manager",
+    "theme": "dark",
+    "size": "desktop",
+    "url": "http://127.0.0.1:3140/dashboard/projects/sample-operations/files?view=grid",
+    "errors": []
+  },
+  {
+    "path": "/dashboard/file-manager",
+    "theme": "dark",
+    "size": "mobile",
+    "url": "http://127.0.0.1:3140/dashboard/projects/sample-operations/files?view=grid",
+    "errors": []
+  }
+]

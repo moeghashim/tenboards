@@ -1,0 +1,24 @@
+
+> tenboards@0.7.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://127.0.0.1:3140 --routes /dashboard/projects/$projectId/overview,/dashboard/projects/$projectId/board,/dashboard/projects/$projectId/list,/dashboard/projects/$projectId/timeline,/dashboard/projects/$projectId/files --project-id sample-empty --preset iris --output screenshots/v08-r4/matrix/iris-sample-empty
+
+PASS /dashboard/projects/$projectId/overview light/desktop direct
+PASS /dashboard/projects/$projectId/overview light/mobile direct
+PASS /dashboard/projects/$projectId/overview dark/desktop direct
+PASS /dashboard/projects/$projectId/overview dark/mobile direct
+PASS /dashboard/projects/$projectId/timeline light/desktop direct
+PASS /dashboard/projects/$projectId/timeline light/mobile direct
+PASS /dashboard/projects/$projectId/timeline dark/desktop direct
+PASS /dashboard/projects/$projectId/timeline dark/mobile direct
+PASS /dashboard/projects/$projectId/files light/desktop direct
+PASS /dashboard/projects/$projectId/files light/mobile direct
+PASS /dashboard/projects/$projectId/files dark/desktop direct
+PASS /dashboard/projects/$projectId/files dark/mobile direct
+PASS /dashboard/projects/$projectId/board light/desktop direct
+PASS /dashboard/projects/$projectId/board light/mobile direct
+PASS /dashboard/projects/$projectId/board dark/desktop direct
+PASS /dashboard/projects/$projectId/board dark/mobile direct
+PASS /dashboard/projects/$projectId/list light/desktop direct
+PASS /dashboard/projects/$projectId/list light/mobile direct
+PASS /dashboard/projects/$projectId/list dark/desktop direct
+PASS /dashboard/projects/$projectId/list dark/mobile direct

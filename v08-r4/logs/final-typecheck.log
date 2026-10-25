@@ -1,0 +1,15 @@
+
+> tenboards@0.7.0 typecheck
+> tsc --noEmit
+
+screenshots/v08-r4/main-baseline/src/router.tsx(17,5): error TS2717: Subsequent property declarations must have the same type.  Property 'router' must be of type 'RouterCore<Route<Register, any, "/", "/", string, "__root__", undefined, {}, {}, AnyContext, AnyContext, {}, undefined, RootRouteChildren, FileRouteTypes, unknown, unknown, undefined>, "never", false, RouterHistory, Record<...>>', but here has type 'RouterCore<Route<Register, any, "/", "/", string, "__root__", undefined, {}, {}, AnyContext, AnyContext, {}, undefined, RootRouteChildren, FileRouteTypes, unknown, unknown, undefined>, "never", false, RouterHistory, Record<...>>'.
+screenshots/v08-r4/main-baseline/src/routes/(main)/dashboard/calendar/route.tsx(21,11): error TS2322: Type 'undefined' is not assignable to type 'IntrinsicAttributes & CalendarData'.
+  Type 'undefined' is not assignable to type 'IntrinsicAttributes'.
+screenshots/v08-r4/main-baseline/src/routes/(main)/dashboard/calendar/route.tsx(21,24): error TS2698: Spread types may only be created from object types.
+screenshots/v08-r4/main-baseline/src/routes/(main)/dashboard/file-manager/route.tsx(32,11): error TS2339: Property 'files' does not exist on type 'undefined'.
+screenshots/v08-r4/main-baseline/src/routes/(main)/dashboard/file-manager/route.tsx(32,18): error TS2339: Property 'folders' does not exist on type 'undefined'.
+screenshots/v08-r4/main-baseline/src/routes/(main)/dashboard/file-manager/route.tsx(33,11): error TS2339: Property 'view' does not exist on type '{}'.
+screenshots/v08-r4/main-baseline/src/routes/(main)/dashboard/kanban/-components/kanban.tsx(81,11): error TS2339: Property 'view' does not exist on type '{}'.
+screenshots/v08-r4/main-baseline/src/routes/(main)/dashboard/kanban/route.tsx(22,11): error TS2339: Property 'board' does not exist on type 'undefined'.
+screenshots/v08-r4/main-baseline/src/routes/(main)/dashboard/kanban/route.tsx(22,32): error TS2339: Property 'columns' does not exist on type 'undefined'.
+screenshots/v08-r4/main-baseline/src/routes/(main)/dashboard/tasks/route.tsx(24,14): error TS2322: Type 'undefined' is not assignable to type '{ id: string; title: string; status: string; label: string; priority: string; }[]'.

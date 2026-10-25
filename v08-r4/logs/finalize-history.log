@@ -1,0 +1,250 @@
+Saved working directory and index state On (no branch): v08-r4 verified integration before layer placement
+FINALIZING LAYER 001
+Previous HEAD position was 683ee11 test(projects): finalize verified acceptance and review handoff
+HEAD is now at b04e93a fix(projects): author operations tasks and reconcile v0.7 foundation
+
+> tenboards@0.7.0 generate:presets
+> ts-node -P tsconfig.scripts.json src/scripts/generate-theme-presets.ts
+
+ℹ️  No changes in theme.ts
+(node:45754) [DEP0180] DeprecationWarning: fs.Stats constructor is deprecated.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+[STARTED] Backing up original state...
+[COMPLETED] Backed up original state in git stash (323bbe3)
+[STARTED] Running tasks for staged files...
+[STARTED] package.json — 1 file
+[STARTED] *.{js,ts,jsx,tsx} — 1 file
+[STARTED] biome check --write --no-errors-on-unmatched
+[COMPLETED] biome check --write --no-errors-on-unmatched
+[COMPLETED] *.{js,ts,jsx,tsx} — 1 file
+[COMPLETED] package.json — 1 file
+[COMPLETED] Running tasks for staged files...
+[STARTED] Applying modifications from tasks...
+[COMPLETED] Applying modifications from tasks...
+[STARTED] Cleaning up temporary files...
+[COMPLETED] Cleaning up temporary files...
+[detached HEAD 5bd149c] fix(data): preserve isolated auth database naming
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+VERIFIED 001 5bd149c27d42e69eac80eab1dc25b19eb3805784
+FINALIZING LAYER 002
+[detached HEAD baa56f9] feat(projects): add read-only project board and list views
+ Date: Sat Oct 24 14:38:01 2026 -0500
+ 20 files changed, 1083 insertions(+), 63 deletions(-)
+ create mode 100644 scripts/project-access-check.ts
+ create mode 100644 scripts/project-ui-check.ts
+ create mode 100644 src/routes/(main)/dashboard/projects/$projectId/board.tsx
+ create mode 100644 src/routes/(main)/dashboard/projects/$projectId/list.tsx
+ create mode 100644 src/routes/(main)/dashboard/projects/$projectId/route.tsx
+ create mode 100644 src/routes/(main)/dashboard/projects/-components/project-boundaries.tsx
+ create mode 100644 src/routes/(main)/dashboard/projects/-components/project-functions.ts
+ create mode 100644 src/routes/(main)/dashboard/projects/-components/project-search.ts
+ create mode 100644 src/routes/(main)/dashboard/projects/-components/project-task-detail.tsx
+ create mode 100644 src/routes/(main)/dashboard/projects/-components/project-tasks.tsx
+ create mode 100644 src/routes/(main)/dashboard/projects/-components/task-rows.tsx
+[detached HEAD a8665e9] test(projects): settle filtered board captures and check keyboard paging
+ Date: Sat Oct 24 14:41:19 2026 -0500
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+[detached HEAD 03c6797] docs(projects): record board and list acceptance evidence
+ Date: Sat Oct 24 14:43:28 2026 -0500
+ 4 files changed, 13 insertions(+), 13 deletions(-)
+[detached HEAD b6aceef] fix(projects): refine board and list controls and task cues
+ Date: Sat Oct 24 15:26:48 2026 -0500
+ 9 files changed, 250 insertions(+), 173 deletions(-)
+ create mode 100644 src/routes/(main)/dashboard/projects/-components/project-controls.tsx
+ create mode 100644 src/routes/(main)/dashboard/projects/-components/task-presentation.tsx
+[detached HEAD 8081292] test(projects): cover the expanded documentation schedule
+ Date: Sat Oct 24 15:28:44 2026 -0500
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[detached HEAD a213766] docs(projects): record round two board and list verification
+ Date: Sat Oct 24 15:32:57 2026 -0500
+ 1 file changed, 2 insertions(+)
+[detached HEAD adabfd5] fix(projects): show complete boards and honest task progress
+ Date: Sun Oct 25 14:14:43 2026 -0500
+ 10 files changed, 120 insertions(+), 52 deletions(-)
+ create mode 100644 src/routes/(main)/dashboard/projects/-components/project-progress.tsx
+Traceback (most recent call last):
+  File "/Users/moeghashim/tenboards-v08/screenshots/v08-r4/finalize-history.py", line 26, in <module>
+    with (evidence/f'final-layer-{tag}-{command}.log').open('w') as log:run('npm','run',command,stdout=log,stderr=subprocess.STDOUT)
+  File "/Users/moeghashim/tenboards-v08/screenshots/v08-r4/finalize-history.py", line 4, in run
+    def run(*args,**kwargs):return subprocess.run(args,check=True,**kwargs)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 528, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '('npm', 'run', 'typecheck')' returned non-zero exit status 2.
+VERIFIED 002 adabfd5cea78bb306fab8258e7e229ca3eb3c8f2
+FINALIZING LAYER 003
+[detached HEAD b7f2889] feat(projects): add overview timeline and read-only files
+ Date: Sat Oct 24 15:03:15 2026 -0500
+ 30 files changed, 1406 insertions(+), 117 deletions(-)
+ create mode 100644 scripts/project-schedule-check.ts
+ create mode 100644 scripts/project-views-check.ts
+ create mode 100644 src/routes/(main)/dashboard/projects/$projectId/files.tsx
+ create mode 100644 src/routes/(main)/dashboard/projects/$projectId/index.tsx
+ create mode 100644 src/routes/(main)/dashboard/projects/$projectId/overview.tsx
+ create mode 100644 src/routes/(main)/dashboard/projects/$projectId/timeline.tsx
+ create mode 100644 src/routes/(main)/dashboard/projects/-components/project-timeline.tsx
+ create mode 100644 src/routes/(main)/dashboard/projects/-components/project-view-functions.ts
+ create mode 100644 src/routes/(main)/dashboard/projects/-components/schedule.ts
+ create mode 100644 src/routes/(main)/dashboard/projects/-components/timeline-search.ts
+[detached HEAD b9847fb] docs(projects): link verified overview timeline and files preview
+ Date: Sat Oct 24 15:06:53 2026 -0500
+ 2 files changed, 4 insertions(+), 2 deletions(-)
+[detached HEAD 13ff2a0] fix(projects): refine project shell overview timeline and files
+ Date: Sat Oct 24 15:41:38 2026 -0500
+ 18 files changed, 640 insertions(+), 495 deletions(-)
+[detached HEAD 5db8936] fix(projects): keep filtered files and member identities clear
+ Date: Sat Oct 24 15:48:45 2026 -0500
+ 3 files changed, 5 insertions(+), 4 deletions(-)
+[detached HEAD 275df47] docs(projects): record round two five-view verification
+ Date: Sat Oct 24 15:51:31 2026 -0500
+ 1 file changed, 8 insertions(+)
+[detached HEAD 86c2098] fix(projects): reconcile overview totals and refine view details
+ Date: Sun Oct 25 14:17:25 2026 -0500
+ 8 files changed, 48 insertions(+), 22 deletions(-)
+VERIFIED 003 86c20988c5f0fb8134100951463a2e846509ef0c
+FINALIZING LAYER 004
+[detached HEAD 45c77b7] feat(workspace): add home summary and projects index
+ Date: Sat Oct 24 15:54:22 2026 -0500
+ 14 files changed, 624 insertions(+), 1 deletion(-)
+ create mode 100644 scripts/workspace-ui-check.ts
+ create mode 100644 src/routes/(main)/dashboard/home/index.tsx
+ create mode 100644 src/routes/(main)/dashboard/projects/-components/project-index-search.ts
+ create mode 100644 src/routes/(main)/dashboard/projects/-components/project-summary-card.tsx
+ create mode 100644 src/routes/(main)/dashboard/projects/-components/workspace-boundaries.tsx
+ create mode 100644 src/routes/(main)/dashboard/projects/-components/workspace-functions.ts
+ create mode 100644 src/routes/(main)/dashboard/projects/index.tsx
+[detached HEAD 61490a5] docs(workspace): record verified Home and Projects acceptance
+ Date: Sat Oct 24 16:00:11 2026 -0500
+ 3 files changed, 21 insertions(+), 13 deletions(-)
+[detached HEAD d74bda9] fix(workspace): balance home and link project breadcrumbs
+ Date: Sun Oct 25 14:19:17 2026 -0500
+ 6 files changed, 120 insertions(+), 81 deletions(-)
+
+> tenboards@0.7.0 generate:presets
+> ts-node -P tsconfig.scripts.json src/scripts/generate-theme-presets.ts
+
+ℹ️  No changes in theme.ts
+(node:52676) [DEP0180] DeprecationWarning: fs.Stats constructor is deprecated.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+[STARTED] Backing up original state...
+[COMPLETED] Backed up original state in git stash (00402b8)
+[STARTED] Running tasks for staged files...
+[STARTED] package.json — 1 file
+[STARTED] *.{js,ts,jsx,tsx} — 1 file
+[STARTED] biome check --write --no-errors-on-unmatched
+[COMPLETED] biome check --write --no-errors-on-unmatched
+[COMPLETED] *.{js,ts,jsx,tsx} — 1 file
+[COMPLETED] package.json — 1 file
+[COMPLETED] Running tasks for staged files...
+[STARTED] Applying modifications from tasks...
+[COMPLETED] Applying modifications from tasks...
+[STARTED] Cleaning up temporary files...
+[COMPLETED] Cleaning up temporary files...
+[detached HEAD 095f59b] fix(navigation): mark only the current breadcrumb view
+ 1 file changed, 9 insertions(+), 6 deletions(-)
+VERIFIED 004 095f59b9bef3ae0a136f216c87a51bd9a0162ae6
+FINALIZING LAYER 005
+Auto-merging src/routes/(main)/dashboard/-components/header/shell-header.tsx
+[detached HEAD fe1a61e] feat(navigation): integrate project views and consolidate legacy pages
+ Date: Sat Oct 24 16:11:41 2026 -0500
+ 60 files changed, 897 insertions(+), 2331 deletions(-)
+ create mode 100644 scripts/project-navigation-check.ts
+ create mode 100644 scripts/project-redirect-check.ts
+ create mode 100644 src/navigation/project-destinations.ts
+ create mode 100644 src/routes/(main)/dashboard/-components/sidebar/project-expansion.ts
+ create mode 100644 src/routes/(main)/dashboard/-components/sidebar/project-navigation.tsx
+ delete mode 100644 src/routes/(main)/dashboard/file-manager/-components/file-actions.tsx
+ delete mode 100644 src/routes/(main)/dashboard/file-manager/-components/file-list-view.tsx
+ delete mode 100644 src/routes/(main)/dashboard/file-manager/-components/file-manager-toolbar.tsx
+ delete mode 100644 src/routes/(main)/dashboard/kanban/-components/kanban-column.tsx
+ delete mode 100644 src/routes/(main)/dashboard/kanban/-components/kanban-list-dnd.tsx
+ delete mode 100644 src/routes/(main)/dashboard/kanban/-components/kanban-list.tsx
+ delete mode 100644 src/routes/(main)/dashboard/kanban/-components/kanban-table-columns.tsx
+ delete mode 100644 src/routes/(main)/dashboard/kanban/-components/kanban-table-dnd.tsx
+ delete mode 100644 src/routes/(main)/dashboard/kanban/-components/kanban-table.tsx
+ delete mode 100644 src/routes/(main)/dashboard/kanban/-components/kanban.tsx
+ delete mode 100644 src/routes/(main)/dashboard/kanban/-components/sortable-task-card.tsx
+ delete mode 100644 src/routes/(main)/dashboard/kanban/-components/task-status.ts
+ delete mode 100644 src/routes/(main)/dashboard/kanban/-components/utils.ts
+ rename src/routes/(main)/dashboard/{calendar/-components => projects/-components/calendar}/calendar.tsx (84%)
+ rename src/routes/(main)/dashboard/{file-manager/-components => projects/-components/file-manager}/data.ts (100%)
+ rename src/routes/(main)/dashboard/{file-manager/-components => projects/-components/file-manager}/file-grid-view.tsx (51%)
+ create mode 100644 src/routes/(main)/dashboard/projects/-components/file-manager/file-list-view.tsx
+ rename src/routes/(main)/dashboard/{file-manager/-components => projects/-components/file-manager}/folders-section.tsx (57%)
+ rename src/routes/(main)/dashboard/{kanban/-components => projects/-components/kanban}/data.ts (100%)
+ rename src/routes/(main)/dashboard/{kanban/-components => projects/-components/kanban}/task-card.tsx (100%)
+ rename src/routes/(main)/dashboard/{kanban/-components => projects/-components/kanban}/task-priority.ts (100%)
+ rename src/routes/(main)/dashboard/{kanban/-components => projects/-components/kanban}/types.ts (100%)
+ rename src/routes/(main)/dashboard/{tasks/-components => projects/-components/tasks}/data.ts (100%)
+ delete mode 100644 src/routes/(main)/dashboard/tasks/-components/columns.tsx
+ delete mode 100644 src/routes/(main)/dashboard/tasks/-components/task-priority-filter.tsx
+ delete mode 100644 src/routes/(main)/dashboard/tasks/-components/task-status-filter.tsx
+ delete mode 100644 src/routes/(main)/dashboard/tasks/-components/tasks-toolbar.tsx
+ delete mode 100644 src/routes/(main)/dashboard/tasks/-components/tasks.tsx
+[detached HEAD 5975314] test(navigation): verify project consolidation and review evidence
+ Date: Sat Oct 24 16:15:56 2026 -0500
+ 7 files changed, 116 insertions(+), 19 deletions(-)
+ create mode 100644 scripts/project-navigation-data-check.ts
+[detached HEAD ab3ba2a] feat(navigation): land on Home and preserve AI Assistant integration
+ Date: Sun Oct 25 14:25:03 2026 -0500
+ 27 files changed, 106 insertions(+), 70 deletions(-)
+
+> tenboards@0.7.0 generate:presets
+> ts-node -P tsconfig.scripts.json src/scripts/generate-theme-presets.ts
+
+ℹ️  No changes in theme.ts
+(node:53532) [DEP0180] DeprecationWarning: fs.Stats constructor is deprecated.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+[STARTED] Backing up original state...
+[COMPLETED] Backed up original state in git stash (cbad264)
+[STARTED] Running tasks for staged files...
+[STARTED] package.json — 3 files
+[STARTED] *.{js,ts,jsx,tsx} — 2 files
+[STARTED] biome check --write --no-errors-on-unmatched
+[COMPLETED] biome check --write --no-errors-on-unmatched
+[COMPLETED] *.{js,ts,jsx,tsx} — 2 files
+[COMPLETED] package.json — 3 files
+[COMPLETED] Running tasks for staged files...
+[STARTED] Applying modifications from tasks...
+[COMPLETED] Applying modifications from tasks...
+[STARTED] Cleaning up temporary files...
+[COMPLETED] Cleaning up temporary files...
+[detached HEAD 996cd31] test(navigation): align return checks with Home and clean URLs
+ 3 files changed, 6 insertions(+), 6 deletions(-)
+VERIFIED 005 996cd3113acfafacfc081769bc088ae600df611e
+FINALIZING LAYER 006
+[detached HEAD 5face1b] test(projects): consolidate acceptance tooling and workspace documentation
+ Date: Sat Oct 24 16:21:25 2026 -0500
+ 7 files changed, 139 insertions(+), 16 deletions(-)
+ create mode 100644 scripts/report-project-captures.ts
+[detached HEAD 79ee899] test(projects): finalize verified acceptance and review handoff
+ Date: Sat Oct 24 16:31:20 2026 -0500
+ 7 files changed, 36 insertions(+), 20 deletions(-)
+
+> tenboards@0.7.0 generate:presets
+> ts-node -P tsconfig.scripts.json src/scripts/generate-theme-presets.ts
+
+ℹ️  No changes in theme.ts
+(node:54223) [DEP0180] DeprecationWarning: fs.Stats constructor is deprecated.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+[STARTED] Backing up original state...
+[COMPLETED] Backed up original state in git stash (c427dfc)
+[STARTED] Running tasks for staged files...
+[STARTED] package.json — 11 files
+[STARTED] *.{js,ts,jsx,tsx} — 6 files
+[STARTED] biome check --write --no-errors-on-unmatched
+[COMPLETED] biome check --write --no-errors-on-unmatched
+[COMPLETED] *.{js,ts,jsx,tsx} — 6 files
+[COMPLETED] package.json — 11 files
+[COMPLETED] Running tasks for staged files...
+[STARTED] Applying modifications from tasks...
+[COMPLETED] Applying modifications from tasks...
+[STARTED] Cleaning up temporary files...
+[COMPLETED] Cleaning up temporary files...
+[detached HEAD 56cf91c] test(projects): verify integrated v0.7 acceptance and tooling
+ 11 files changed, 69 insertions(+), 30 deletions(-)
+VERIFIED 006 56cf91c3eab465baf9abd70d7e352acb3085d325
+Switched to branch 'feat/v0.8/006-projects-acceptance'
+Your branch and 'origin/feat/v0.8/006-projects-acceptance' have diverged,
+and have 35 and 21 different commits each, respectively.
+  (use "git pull" if you want to integrate the remote branch with yours)
+FINAL TREE IDENTICAL TO VERIFIED SNAPSHOT
