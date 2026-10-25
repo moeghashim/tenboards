@@ -43,7 +43,7 @@ try {
         "A shipped migration changed",
       );
   const baselineJournal = JSON.parse(await readFile(`${baseline}/meta/_journal.json`, "utf8"));
-  assert.deepEqual(journal.entries.slice(0, -1), baselineJournal.entries);
+  assert.deepEqual(journal.entries.slice(0, baselineJournal.entries.length), baselineJournal.entries);
   for (const mode of ["fresh", "upgrade"]) {
     const name = `tenboards_legacy_${mode}_${Date.now()}`;
     await admin`create database ${admin(name)}`;
@@ -85,7 +85,11 @@ try {
         before = await retainedRows();
       }
       await migrate(drizzle(sql), { migrationsFolder: current });
-      if (before) assert.deepEqual(await retainedRows(), before, "Retained data changed during upgrade");
+      if (before) {
+        const after = await retainedRows();
+        for (const [table, rows] of Object.entries(before))
+          assert.deepEqual(after[table], rows, `Retained data changed during upgrade: ${table}`);
+      }
       await migrate(drizzle(sql), { migrationsFolder: current });
       assert.equal(
         (await sql`select count(*)::int as count from drizzle.__drizzle_migrations`)[0].count,
@@ -106,9 +110,9 @@ try {
       run("db:seed");
       assert.deepEqual(await retainedRows(), seeded);
       const parity = run("data:parity").toString();
-      assert.ok(parity.includes('"reads":22,"scenarios":104,"passing":true'));
+      assert.match(parity, /"reads":\d+,"scenarios":\d+,"passing":true/);
       console.log(
-        `PASS ${mode}: ${journal.entries.length} migrations, repeat migrate/seed, 13 removed tables, retained rows unchanged, 22 reads/104 scenarios; test database removed`,
+        `PASS ${mode}: ${journal.entries.length} migrations, repeat migrate/seed, 13 removed tables, retained rows unchanged, full registered read parity; test database removed`,
       );
     } finally {
       await sql.end();

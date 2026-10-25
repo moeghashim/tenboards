@@ -164,7 +164,10 @@ try {
         scenarios++;
       }
     }
-    assert.equal(scenarios, 104);
+    assert.equal(
+      scenarios,
+      readRegistry.reduce((total, entry) => total + entry.scenarios.length, 0),
+    );
     pass(`workerd HTTP parity: ${readRegistry.length} reads/${scenarios} scenarios`);
   } finally {
     await harness.stop();

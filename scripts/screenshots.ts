@@ -61,6 +61,11 @@ const requested = values.routes?.split(",");
 const selected: Array<{ route: string; path: string; ready?: string; status?: number }> = captureRoutes
   .filter((entry) => !requested || requested.includes(entry.route))
   .map((entry) => ({ ...entry }));
+// Explicit alias requests capture their canonical destination without adding aliases
+// to the retained navigation inventory.
+for (const route of requested ?? [])
+  if (["/dashboard/kanban", "/dashboard/tasks", "/dashboard/calendar", "/dashboard/file-manager"].includes(route))
+    selected.push({ route, path: route, ready: "Operations rollout" });
 for (const entry of selected)
   if (entry.route.includes("$projectId")) {
     entry.path = entry.path.replace("sample-operations", projectId);

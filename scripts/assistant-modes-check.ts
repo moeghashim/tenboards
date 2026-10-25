@@ -2,6 +2,7 @@ import { consumeStream } from "../src/lib/assistant/transport.ts";
 import { providers } from "../src/server/assistant/config.server.ts";
 import { mockOutput } from "./assistant-wire-fixtures.ts";
 import { localDatabase, startTestServer, testSecret } from "./auth-test-support.ts";
+import { testOrigin } from "./test-port.ts";
 import { startWorker } from "./worker-test-support.ts";
 import assert from "node:assert/strict";
 
@@ -10,7 +11,7 @@ let ip = 1;
 const payload = { messages: [{ role: "user", content: "SYNTHETIC_USER_PROMPT" }] };
 for (const runtime of ["Node", "workerd"] as const) {
   for (const mode of ["no-env", "live", "forced-demo", "db-open", "auth", "invalid-auth"] as const) {
-    const origin = "http://localhost:3174";
+    const origin = testOrigin("http://localhost:3014");
     const env = {
       ...(mode === "no-env" ? {} : keys),
       ...(["db-open", "auth"].includes(mode) ? { DATABASE_URL: localDatabase } : {}),

@@ -54,7 +54,7 @@ OpenUI install telemetry must remain disabled (`OPENUI_TELEMETRY_DISABLED=1` or 
 - `npm run deploy` — reviewer-only build and production deployment after approved merges.
 - `npm run preview:deploy -- --preview-alias pr-NNN` — guarded build/upload exclusively to demo-only `tenboards-preview`; no database bindings or secrets.
 - `npm run worker:dev -- --binding` — compiled local Worker with Docker Hyperdrive emulation; omit `--binding` for demo/URL fallback.
-- `npm run worker:test` — local workerd runtime/concurrency/recovery and 22-read/104-scenario parity checks on a fresh review database.
+- `npm run worker:test` — local workerd runtime/concurrency/recovery and 29-read/211-scenario parity checks on a fresh review database.
 - `npm run worker:auth` / `npm run worker:security` — compiled route/account/security regressions and two-Worker distributed limiter checks.
 - `npm run deploy:prepare -- --name <worker-name> --url <https-origin> [--secrets-file <external-path>] [--include-assistant]` — clean build/config validation and optional private secrets (AI settings require `--include-assistant`); prints staging commands without network operations.
 - `npm run deploy:check -- <origin>` — read-only auth-on production smoke; `--demo` explicitly selects preview expectations, `--auth-roundtrip` explicitly creates one throwaway account.
@@ -144,13 +144,13 @@ Install the approved browser tooling once with `npx playwright install chromium`
 
 ```sh
 npm run screenshots
-npm run screenshots -- --routes /dashboard/home,/auth/v2/login --output screenshots/before
+npm run screenshots -- --routes /dashboard/home/,/auth/v2/login --output screenshots/before
 npm run screenshots -- --base-url https://pr-012-tenboards-preview.<account-subdomain>.workers.dev --output screenshots/after
-npm run screenshots -- --routes /dashboard/home --sidebar-states --output screenshots/sidebar
+npm run screenshots -- --routes /dashboard/home/ --sidebar-states --output screenshots/sidebar
 npm run screenshots -- --list
 ```
 
-The default captures every retained route in light/dark at desktop 1440×900 and mobile 390×844. `src/navigation/route-catalog.ts` is the shared 36-route visual inventory, re-exported by `scripts/screenshot-routes.ts` and checked against generated route metadata; missing/stale routes and unknown subsets fail before launch. The dashboard splat uses `/dashboard/capture-not-found` to exercise its not-found state; project-ID routes use `sample-operations` by default, with `--project-id sample-docs|sample-empty` for the secondary and empty fixtures. Root/index redirects are captured at their destination; six retired V1 aliases and four consolidated workspace aliases are covered by dedicated redirect checks. `--preset` selects a valid preset for the same four-state matrix. `--sidebar-states` adds expanded/collapsed desktop captures and open/closed mobile-sheet captures on shell routes. Run `node --experimental-strip-types scripts/sidebar-toggle-check.ts` to verify every allowed sidebar style/collapse mode and preset in both themes and viewports; add `--ssr --base-url <built-preview-url>` to check initial markup with JavaScript disabled.
+The default captures every retained route in light/dark at desktop 1440×900 and mobile 390×844. `src/navigation/route-catalog.ts` is the shared 36-route visual inventory, re-exported by `scripts/screenshot-routes.ts` and checked against generated route metadata; missing/stale routes and unknown subsets fail before launch. The dashboard splat uses `/dashboard/capture-not-found` to exercise its not-found state; project-ID routes use `sample-operations` by default, with `--project-id sample-docs|sample-empty` for the secondary and empty fixtures. Root/index redirects are captured at their destination; six retired V1 aliases and four consolidated workspace aliases are covered by dedicated redirect checks; explicitly passing those workspace aliases to `--routes` also captures their destinations. `--preset` selects a valid preset for the same four-state matrix. `--sidebar-states` adds expanded/collapsed desktop captures and open/closed mobile-sheet captures on shell routes. Run `node --experimental-strip-types scripts/sidebar-toggle-check.ts` to verify every allowed sidebar style/collapse mode and preset in both themes and viewports; add `--ssr --base-url <built-preview-url>` to check initial markup with JavaScript disabled.
 
 Captures wait for React hydration, fonts, network idle, images, JS chart settling, and stable content. Reduced motion is emulated and screenshot animations are disabled. Console errors, page errors, failed requests, unexpected HTTP status, and capture failures are recorded in `report.json` and cause a nonzero exit. The hydration check uses React's DOM binding marker; revisit it if React's renderer changes. Application clocks are never frozen. For v0.4 comparisons, pass the same `--reference` ISO timestamp to serialize identical date inputs; the real monitoring clock can be narrowly masked with `--mask-live-clocks`.
 
@@ -318,7 +318,7 @@ Auth V2 retains login/register routes, validation, masked password fields, autof
 
 ### System states (v0.3 / 013)
 
-Coming Soon describes planned content; the dashboard splat explains an unknown dashboard page. Root not-found, demo Unauthorized and RootError share a compact hierarchy with wrapping copy and keyboard recovery links. Production errors retain generic text; development can show the error message. `/`, `/dashboard` and `/dashboard/` still return 307 redirects to `/dashboard/home`; unknown root URLs return 404 and the explicit dashboard splat remains HTTP 200. `npm run screenshots -- --routes /dashboard/home --boundaries` adds four-state root not-found and real root-error/reset evidence. The CLI temporarily replaces a loaded browser route component, restores it and presses Try again; no error trigger or route is shipped. Expected injected exceptions and the exact unknown-document 404 diagnostic are recorded separately in report.json.
+Coming Soon describes planned content; the dashboard splat explains an unknown dashboard page. Root not-found, demo Unauthorized and RootError share a compact hierarchy with wrapping copy and keyboard recovery links. Production errors retain generic text; development can show the error message. `/`, `/dashboard` and `/dashboard/` still return 307 redirects to `/dashboard/home`; unknown root URLs return 404 and the explicit dashboard splat remains HTTP 200. `npm run screenshots -- --routes /dashboard/home/ --boundaries` adds four-state root not-found and real root-error/reset evidence. The CLI temporarily replaces a loaded browser route component, restores it and presses Try again; no error trigger or route is shipped. Expected injected exceptions and the exact unknown-document 404 diagnostic are recorded separately in report.json.
 
 
 ### Complete app-page acceptance (v0.3 / 014)

@@ -63,7 +63,7 @@ The generic cookie RPC is now limited to validated preference names/values, with
 
 `node --experimental-strip-types scripts/auth-config-check.ts` checks configuration/provider decisions, real DB signup/session/signout/cookie semantics, reseed preservation and a forced-demo TCP sentinel. `node --experimental-strip-types scripts/auth-cookie-check.ts` calls the actual HTTP RPCs with hostile cookie names/options and valid UI preferences. Both use the installed Playwright tooling, generated throwaway credentials, and no committed storage state. `DATABASE_URL` may select another explicit local test DB; otherwise the compose URL is used.
 
-Run `npm run data:parity` with the local URL: all 22 domain reads and 104 retained scenarios pass (26 V1-only scenarios were removed in v0.6.1). Run `npm run db:generate` to check drift; apply/repeat migrations explicitly. If configuration fails, check the source, private secret and exact origin. If auth storage fails, check Docker availability and migrations. Never fix a DB error by silently selecting demo while a secret is set.
+Run `npm run data:parity` with the local URL: all 29 domain reads and 211 scenarios pass (including the v0.8 Projects registry; 26 V1-only scenarios were removed in v0.6.1). Run `npm run db:generate` to check drift; apply/repeat migrations explicitly. If configuration fails, check the source, private secret and exact origin. If auth storage fails, check Docker availability and migrations. Never fix a DB error by silently selecting demo while a secret is set.
 
 Official references checked against installed APIs: [TanStack integration](https://www.better-auth.com/docs/integrations/tanstack), [Drizzle adapter](https://www.better-auth.com/docs/adapters/drizzle), [cookies](https://www.better-auth.com/docs/concepts/cookies), [sessions](https://www.better-auth.com/docs/concepts/session-management), [rate limits](https://www.better-auth.com/docs/concepts/rate-limit), [Start server routes](https://tanstack.com/start/latest/docs/framework/react/guide/server-routes) and [middleware](https://tanstack.com/start/latest/docs/framework/react/guide/middleware). The adapter docs show a separate package; the installed bundled export supports this approved dependency boundary.
 
@@ -175,7 +175,7 @@ resets a shared database. Tests delete only their exact test-owned auth users.
 
 The migration check compares all shipped migration files at `f45e813` byte-for-byte, creates fresh and
 upgrade test databases, applies/repeats migrations and seed, and runs all 22 reads /
-104 scenarios in each. Those fresh test-owned databases are dropped after the checks. Fetch
+211 scenarios in each. Those fresh test-owned databases are dropped after the checks. Fetch
 the `f45e813` base in a shallow checkout before running this check. The bundle check
 builds with private random sentinels, scans browser/server artifacts without
 printing their values, then always restores a zero-env build. It does not deploy.
@@ -266,7 +266,7 @@ DATABASE_URL=<separate-local-review-url> npm run data:parity
 
 The Worker suite tests demo/DB/auth configuration, runtime-only secrets, recovery
 and readiness memoization, sequential/overlapping users, signup/signin/signout,
-origin/redirect rejection, revocation and all 22 reads / 104 parity scenarios over
+origin/redirect rejection, revocation and all 29 reads / 211 parity scenarios over
 HTTP in a separate test-only Worker entry. That harness is not in production output.
 Existing protection/account/security suites discover the compiled RPC manifest;
 they do not rely on Vite RPC IDs. Node regressions remain separately labeled.
