@@ -2,6 +2,10 @@ import type { ProviderId } from "../src/lib/assistant/config.ts";
 export const mockOutput = 'root = Stack([Text("Synthetic Café 🙂 response")])';
 export type WireCase =
   | "success"
+  | "slow"
+  | "idle"
+  | "heartbeat"
+  | "wireoverflow"
   | "empty"
   | "malformed"
   | "refusal"
@@ -130,7 +134,14 @@ export function wireResponse(
 ) {
   if (mode === "429" || mode === "500")
     return new Response("SYNTHETIC_PRIVATE_UPSTREAM_ERROR", { status: Number(mode) });
-  const bytes = new TextEncoder().encode(providerWire(id, mode));
+  if (mode === "wireoverflow")
+    return new Response(new Uint8Array(2 * 1024 * 1024 + 1), { headers: { "Content-Type": "text/event-stream" } });
+  const bytes = new TextEncoder().encode(
+    providerWire(id, mode === "idle" || mode === "heartbeat" ? "truncated" : mode),
+  );
+  const repeating = new TextEncoder().encode(
+    `${providerWire(id, "truncated").split("\n\n").filter(Boolean).at(-1) ?? ""}\n\n`,
+  );
   let offset = 0;
   let closed = false;
   let end: (() => void) | undefined;
@@ -156,6 +167,15 @@ export function wireResponse(
           controller.close();
           return;
         }
+        if (offset === bytes.length && (mode === "idle" || mode === "heartbeat")) {
+          await new Promise<void>((resolve) => {
+            end = resolve;
+            if (mode === "heartbeat") setTimeout(resolve, 1000);
+          });
+          if (closed) controller.close();
+          else controller.enqueue(repeating);
+          return;
+        }
         if (offset === bytes.length) {
           closed = true;
           signal?.removeEventListener("abort", cancel);
@@ -164,6 +184,11 @@ export function wireResponse(
         }
         // Deliberately split JSON and Unicode independently of provider token boundaries.
         const width = mode === "oversize" ? 16384 : 37;
+        if (mode === "slow") await new Promise((resolve) => setTimeout(resolve, 100));
+        if (closed) {
+          controller.close();
+          return;
+        }
         controller.enqueue(bytes.slice(offset, offset + width));
         offset = Math.min(bytes.length, offset + width);
       },

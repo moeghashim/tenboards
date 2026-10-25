@@ -29,6 +29,7 @@ export async function consumeStream(
   const decoder = new TextDecoder("utf-8", { fatal: true });
   let buffer = "";
   let text = "";
+  let textBytes = 0;
   let terminal = false;
   let wireBytes = 0;
   const cancel = () => {
@@ -55,8 +56,9 @@ export async function consumeStream(
         if (terminal || !frame.startsWith("data: ")) throw new StreamFailure("invalid");
         const event = streamEvent.parse(JSON.parse(frame.slice(6)));
         if (event.type === "text-delta") {
+          textBytes += bytes(event.text);
+          if (textBytes > limits.outputBytes) throw new StreamFailure("limit");
           text += event.text;
-          if (bytes(text) > limits.outputBytes) throw new StreamFailure("limit");
           onText(text);
         } else {
           terminal = true;

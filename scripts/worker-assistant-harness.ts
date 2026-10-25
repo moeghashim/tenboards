@@ -7,6 +7,17 @@ import { type WireCase, wireResponse } from "./assistant-wire-fixtures.ts";
 let calls = 0;
 let cancelled = 0;
 let violations = 0;
+let leaks = 0;
+for (const method of ["log", "warn", "error", "info", "debug"] as const) {
+  const original = console[method].bind(console);
+  console[method] = (...args) => {
+    if (/synthetic-v07-|SYNTHETIC_USER_PROMPT|Synthetic Café|Bearer /i.test(args.map(String).join(" "))) {
+      leaks++;
+      return;
+    }
+    original(...args);
+  };
+}
 const outputRequests: {
   provider: string;
   model: string;
@@ -55,8 +66,12 @@ globalThis.fetch = async (input, init) => {
 export default {
   fetch(request: Request, env: unknown, context: unknown) {
     const url = new URL(request.url);
-    if (url.pathname === "/__assistant_probe") return Response.json({ calls, cancelled, violations, outputRequests });
+    if (url.pathname === "/__assistant_probe")
+      return Response.json({ calls, cancelled, violations, leaks, outputRequests });
     const scoped = { ...(env as Record<string, unknown>) };
+    const enabled = request.headers.get("x-v07-providers");
+    if (enabled !== null)
+      for (const entry of providers) if (!enabled.split(",").includes(entry.id)) delete scoped[entry.key];
     const mode = request.headers.get("x-v07-case") ?? "success";
     for (const entry of providers) if (scoped[entry.key]) scoped[entry.key] = `synthetic-v07-${entry.id}-${mode}`;
     return app.fetch(request, scoped, context);

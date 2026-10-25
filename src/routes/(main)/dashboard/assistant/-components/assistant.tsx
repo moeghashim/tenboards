@@ -1,153 +1,180 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
+import { ArrowDown, Check, Copy, RotateCcw } from "lucide-react";
+
+import { Button } from "@/components/ui/button";
 import { NativeSelect, NativeSelectOption } from "@/components/ui/native-select";
 import type { AssistantConfig, ProviderId } from "@/lib/assistant/config";
-import { inspectLanguage } from "@/lib/assistant/language";
-import { bytes } from "@/lib/assistant/registry";
-import { consumeStream } from "@/lib/assistant/transport";
 
-import { AssistantSurface, Composer, ConversationTurn, RecordedPicker, Welcome } from "./presentation";
+import { failureCopy } from "./conversation";
+import { AssistantSurface, Composer, ConversationTurn, RecordedPicker, ReplyAction, Welcome } from "./presentation";
 import { SafeResponse } from "./safe-response";
+import { useConversation } from "./use-conversation";
 
-type Turn = {
-  attribution: string;
-  id: number;
-  prompt: string;
-  text: string;
-  status: "streaming" | "completed" | "stopped" | "error";
-};
 export function Assistant({ config }: { config: AssistantConfig }) {
-  const [provider, setProvider] = useState<ProviderId | undefined>(config.providers[0]?.id);
-  const selected = config.providers.find((item) => item.id === provider);
-  const [input, setInput] = useState("");
-  const [turns, setTurns] = useState<Turn[]>([]);
-  const [error, setError] = useState("");
-  const active = useRef<AbortController | null>(null);
-  const generation = useRef(0);
-  const composer = useRef<HTMLTextAreaElement>(null);
-  const stopButton = useRef<HTMLButtonElement>(null);
-  const busy = turns.at(-1)?.status === "streaming";
-  useEffect(
-    () => () => {
-      generation.current++;
-      active.current?.abort();
-    },
-    [],
-  );
-  async function send(prompt = input) {
-    if (active.current || !prompt.trim()) return;
-    if (bytes(prompt) > 8192) {
-      setError("Keep your message under 8 KiB. Shorten it and try again.");
-      return;
-    }
-    const id = ++generation.current;
-    const controller = new AbortController();
-    active.current = controller;
-    setError("");
-    setInput("");
-    composer.current?.focus();
-    setTurns((previous) => [
-      ...previous,
-      {
-        id,
-        prompt,
-        text: "",
-        status: "streaming",
-        attribution: selected ? `${selected.name} · ${selected.model}` : "Recorded demo",
-      },
-    ]);
-    const update = (patch: Partial<Turn>) => {
-      if (generation.current === id)
-        setTurns((previous) => previous.map((turn) => (turn.id === id ? { ...turn, ...patch } : turn)));
-    };
+  const conversation = useConversation(config);
+  const { turns, input, setInput, error, busy, composer, selected, provider, send, clear } = conversation;
+  const latestReply = useRef<HTMLDivElement>(null);
+  const [copyStatus, setCopyStatus] = useState("");
+  const latest = turns.at(-1);
+  async function copy() {
     try {
-      const response = await fetch("/api/assistant", {
-        method: "POST",
-        credentials: "same-origin",
-        signal: controller.signal,
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ provider, messages: [{ role: "user", content: prompt }] }),
-      });
-      if (!response.ok || !response.body) throw new Error("Assistant unavailable.");
-      const text = await consumeStream(response.body, controller.signal, (text) => update({ text }));
-      update({ text, status: inspectLanguage(text, true).status === "ready" ? "completed" : "error" });
+      await navigator.clipboard.writeText(latestReply.current?.innerText ?? "");
+      setCopyStatus("Reply copied.");
     } catch {
-      update({ status: controller.signal.aborted ? "stopped" : "error" });
-    } finally {
-      if (generation.current === id) {
-        active.current = null;
-        if (document.activeElement === stopButton.current) composer.current?.focus();
-      }
+      setCopyStatus("Copy unavailable. Select the reply text to copy it.");
     }
-  }
-  function clear() {
-    generation.current++;
-    active.current?.abort();
-    active.current = null;
-    setTurns([]);
-    setInput("");
-    setError("");
-    composer.current?.focus();
   }
   return (
-    <AssistantSurface clear={clear}>
-      <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-4 md:px-6">
-        <div
-          className="mx-auto flex min-h-full w-full max-w-[752px] flex-col gap-7 py-5"
-          role="log"
-          aria-label="Conversation"
-          aria-live="polite"
-          aria-busy={busy}
-        >
-          {turns.length === 0 ? (
-            <Welcome send={(prompt) => void send(prompt)} disabled={busy} />
-          ) : (
-            turns.map((turn) => (
+    <AssistantSurface
+      clear={() => {
+        clear();
+        setCopyStatus("");
+      }}
+    >
+      <div
+        ref={conversation.transcript}
+        onScroll={conversation.trackScroll}
+        className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-4 md:px-6"
+        data-assistant-scroll
+      >
+        <div className="mx-auto flex min-h-full w-full max-w-[752px] flex-col gap-7 py-5">
+          {conversation.selectionRequired && (
+            <p role="status" className="text-muted-foreground">
+              Available providers changed.{" "}
+              {conversation.config.providers.length
+                ? "Choose an available provider before sending."
+                : "No model is connected."}
+              {!conversation.config.providers.length && (
+                <Button variant="outline" onClick={conversation.chooseRecorded}>
+                  Use recorded demo
+                </Button>
+              )}
+            </p>
+          )}
+          {conversation.refreshing && (
+            <p role="status" className="text-muted-foreground">
+              Checking available providers…
+            </p>
+          )}
+          {conversation.expired && (
+            <p role="alert">
+              Your session ended. The conversation has been cleared.{" "}
+              <a
+                ref={conversation.signIn}
+                className="underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-ring"
+                href="/auth/v2/login?redirect=%2Fdashboard%2Fassistant"
+              >
+                Sign in to continue
+              </a>
+              .
+            </p>
+          )}
+          {conversation.contextNotice && (
+            <p role="status" className="text-muted-foreground">
+              Older complete exchanges were left out to fit the context limit. They remain visible here.
+            </p>
+          )}
+          {turns.length === 0 ? <Welcome send={(prompt) => void send(prompt)} disabled={conversation.blocked} /> : null}
+          <div
+            role="log"
+            aria-label="Conversation"
+            aria-live="polite"
+            aria-relevant="additions text"
+            aria-busy={busy}
+            className="min-w-0 space-y-7 empty:hidden"
+          >
+            {turns.map((turn) => (
               <ConversationTurn key={turn.id} prompt={turn.prompt} attribution={`${turn.attribution} · ${turn.status}`}>
-                {turn.status !== "error" && (
-                  <SafeResponse
-                    text={turn.text}
-                    complete={turn.status === "completed"}
-                    pending={turn.status === "streaming"}
-                  />
-                )}
-                {turn.status === "stopped" && (
-                  <p className="text-muted-foreground">Response stopped. This reply is incomplete.</p>
-                )}
-                {turn.status === "error" && (
-                  <p className="text-danger">The reply could not be completed. Try an example again.</p>
+                <div ref={turn.id === latest?.id ? latestReply : undefined} className="min-w-0 space-y-3">
+                  {turn.status !== "error" && (turn.text || turn.status === "streaming") && (
+                    <SafeResponse
+                      text={turn.text}
+                      complete={turn.status === "completed"}
+                      pending={turn.status === "streaming"}
+                    />
+                  )}
+                  {turn.status === "stopped" && (
+                    <p className="text-muted-foreground">Response stopped. This reply is incomplete.</p>
+                  )}
+                  {turn.status === "error" && (
+                    <p role="alert" className="text-danger">
+                      {failureCopy[turn.error ?? "unavailable"]}
+                    </p>
+                  )}
+                </div>
+                {turn.id === latest?.id && !busy && (
+                  <div className="text-muted-foreground flex items-center gap-1">
+                    <ReplyAction
+                      label="Regenerate"
+                      disabled={conversation.blocked}
+                      onClick={() => {
+                        setCopyStatus("");
+                        conversation.regenerate();
+                      }}
+                    >
+                      <RotateCcw aria-hidden="true" />
+                    </ReplyAction>
+                    {turn.status === "completed" && (
+                      <ReplyAction label="Copy reply" onClick={() => void copy()}>
+                        {copyStatus === "Reply copied." ? <Check aria-hidden="true" /> : <Copy aria-hidden="true" />}
+                      </ReplyAction>
+                    )}
+                    <span role="status" className="text-xs">
+                      {copyStatus}
+                    </span>
+                  </div>
                 )}
               </ConversationTurn>
-            ))
-          )}
+            ))}
+          </div>
         </div>
       </div>
+      {conversation.away && (
+        <div className="relative z-10 h-0 shrink-0">
+          <Button
+            variant="outline"
+            className="bg-card absolute bottom-2 left-1/2 -translate-x-1/2 rounded-full shadow-sm"
+            onClick={conversation.jumpToLatest}
+          >
+            <ArrowDown aria-hidden="true" />
+            Jump to latest
+          </Button>
+        </div>
+      )}
       <Composer
         input={input}
         setInput={setInput}
-        send={() => void send()}
-        stop={() => {
-          active.current?.abort();
-          composer.current?.focus();
+        send={() => {
+          setCopyStatus("");
+          void send();
         }}
+        stop={conversation.stop}
         busy={busy}
+        blocked={conversation.blocked}
+        disabled={conversation.expired}
         composer={composer}
-        stopButton={stopButton}
+        stopButton={conversation.stopButton}
         toolbar={
-          config.providers.length ? (
+          conversation.config.providers.length ? (
             <>
               <label htmlFor="assistant-provider" className="sr-only">
                 Provider
               </label>
               <NativeSelect
                 id="assistant-provider"
-                value={provider}
-                disabled={busy}
-                onChange={(event) => setProvider(event.target.value as ProviderId)}
+                value={provider ?? ""}
+                disabled={busy || conversation.expired || conversation.refreshing}
+                onChange={(event) => conversation.select(event.target.value as ProviderId)}
                 className="max-w-full"
                 size="sm"
               >
-                {config.providers.map((item) => (
+                {conversation.selectionRequired && (
+                  <NativeSelectOption value="" disabled>
+                    Choose a provider
+                  </NativeSelectOption>
+                )}
+                {conversation.config.providers.map((item) => (
                   <NativeSelectOption key={item.id} value={item.id}>
                     {item.name} · {item.model}
                   </NativeSelectOption>
@@ -160,16 +187,28 @@ export function Assistant({ config }: { config: AssistantConfig }) {
         }
       >
         {error && (
-          <p role="alert" className="text-danger">
-            {error}
+          <div className="flex flex-wrap items-center gap-2">
+            <p role="alert" className="text-danger">
+              {error}
+            </p>
+            <Button type="button" variant="outline" onClick={() => clear()}>
+              New conversation
+            </Button>
+          </div>
+        )}
+        {conversation.remaining > 0 && (
+          <p className="text-muted-foreground text-xs">
+            Try again in {conversation.remaining}s. No request will be sent automatically.
           </p>
         )}
       </Composer>
-      <p className="sr-only" role="status">
+      <p className="sr-only" role="status" aria-live="polite">
         {busy
-          ? "Preparing a recorded reply."
+          ? selected
+            ? "Preparing a reply."
+            : "Preparing a recorded reply."
           : turns.length
-            ? `Response ${turns.at(-1)?.status}.`
+            ? `Response ${latest?.status}.`
             : "Ready for a message."}
       </p>
     </AssistantSurface>
