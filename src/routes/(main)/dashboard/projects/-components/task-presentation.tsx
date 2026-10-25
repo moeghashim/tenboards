@@ -1,6 +1,6 @@
 import { ChevronUp, Flame, Minus, UserRound } from "lucide-react";
 
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarGroupCount } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import type { Person, Priority, Task, TaskStatus } from "@/server/data/projects.types";
 
@@ -38,7 +38,7 @@ export function TaskPriority({ priority }: { priority: Priority }) {
 }
 export function PersonAvatar({ person }: { person: Person | null }) {
   return (
-    <Avatar size="sm" aria-label={person?.name ?? "Unassigned"}>
+    <Avatar size="sm" role="img" aria-label={person?.name ?? "Unassigned"}>
       <AvatarFallback>{person?.initials ?? <UserRound className="size-3.5" aria-hidden="true" />}</AvatarFallback>
     </Avatar>
   );
@@ -55,4 +55,23 @@ export function taskKey(task: Pick<Task, "projectId" | "position" | "sourceId">)
   const prefixes: Record<string, string> = { "sample-operations": "OPS", "sample-docs": "DOC" };
   const prefix = prefixes[task.projectId] ?? "TASK";
   return `${prefix}-${task.position + 100}`;
+}
+
+export function MemberAvatars({ members, label, limit = 5 }: { members: Person[]; label: string; limit?: number }) {
+  return (
+    <ul className="group/avatar-group flex flex-wrap gap-1" aria-label={label}>
+      {members.slice(0, limit).map((person) => (
+        <li key={person.id}>
+          <PersonAvatar person={person} />
+        </li>
+      ))}
+      {members.length > limit && (
+        <li>
+          <AvatarGroupCount aria-label={`${members.length - limit} more members`}>
+            +{members.length - limit}
+          </AvatarGroupCount>
+        </li>
+      )}
+    </ul>
+  );
 }

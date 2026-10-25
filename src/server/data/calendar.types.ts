@@ -31,6 +31,7 @@ export function projectEvents(templates: CalendarTemplate[], renderedAt: string,
     const date = (day: number, hour: number | null, minute: number | null) =>
       `${year}-${pad(t.fixedMonth ?? month)}-${pad(day)}${hour === null ? "" : `T${pad(hour)}:${pad(minute ?? 0)}:00`}`;
     return {
+      id: `event:${t.id}`,
       title: t.title,
       start: date(t.startDay, t.startHour, t.startMinute),
       ...(t.endDay === null ? {} : { end: date(t.endDay, t.endHour, t.endMinute) }),

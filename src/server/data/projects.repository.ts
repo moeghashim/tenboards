@@ -64,6 +64,7 @@ export const demoRepository = {
           t.projectId === q.projectId &&
           (q.id === undefined || t.id === q.id) &&
           (q.status === undefined || t.status === q.status) &&
+          (q.dueFrom === undefined || (t.dueDate !== null && t.dueDate >= q.dueFrom)) &&
           (q.priority === undefined || t.priority === q.priority) &&
           (q.assigneeId === undefined || t.assigneeId === q.assigneeId) &&
           (q.label === undefined ||
@@ -190,6 +191,7 @@ export const dbRepository = {
       eq(t.projectId, q.projectId),
       q.id === undefined ? undefined : eq(t.id, q.id),
       q.status === undefined ? undefined : eq(t.status, q.status),
+      q.dueFrom === undefined ? undefined : sql`${dueDate(today)} >= ${q.dueFrom}`,
       q.priority === undefined ? undefined : eq(t.priority, q.priority),
       q.assigneeId === undefined ? undefined : assigneeFilter,
       !q.query ? undefined : or(ilike(t.title, `%${escaped}%`), ilike(t.description, `%${escaped}%`)),

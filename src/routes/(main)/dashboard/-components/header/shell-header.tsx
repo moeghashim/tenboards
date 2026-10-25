@@ -20,7 +20,17 @@ type ShellIdentity = { mode: "demo"; accounts: DemoAccount[] } | { mode: "auth";
 
 export function ShellHeader({ identity }: { identity: ShellIdentity }) {
   const path = useRouterState({ select: (state) => state.location.pathname });
-  const title = routeCatalog.find((item) => item.path === path)?.label ?? projectRouteTitle(path) ?? "Page not found";
+  const project = useRouterState({
+    select: (state) =>
+      state.matches.find((match) => match.routeId === "/(main)/dashboard/projects/$projectId")?.loaderData?.project,
+  });
+  const view = path.split("/").filter(Boolean).at(-1) ?? "overview";
+  const projectTitle = project ? `Projects / ${project.name} / ${view[0].toUpperCase() + view.slice(1)}` : undefined;
+  const title =
+    projectTitle ??
+    routeCatalog.find((item) => item.path === path)?.label ??
+    projectRouteTitle(path) ??
+    "Page not found";
   const { open, isMobile } = useSidebar();
   const toggleRef = useRef<HTMLButtonElement>(null);
   const toggleHadFocus = useRef(false);

@@ -27,3 +27,15 @@ export function displayDate(date: string | null) {
       )
     : "Unscheduled";
 }
+
+export function relativeDueDate(date: string | null, today: string) {
+  if (!date) return "No due date";
+  const days = Math.round((Date.parse(`${date}T00:00:00Z`) - Date.parse(`${today}T00:00:00Z`)) / 86400000);
+  if (days === 0) return "Today";
+  if (days === 1) return "Tomorrow";
+  if (days === -1) return "Yesterday";
+  return new Intl.DateTimeFormat(
+    "en-US",
+    days > 1 && days < 7 ? { weekday: "short", timeZone: "UTC" } : { month: "short", day: "numeric", timeZone: "UTC" },
+  ).format(new Date(`${date}T00:00:00Z`));
+}

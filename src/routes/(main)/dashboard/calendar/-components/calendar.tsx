@@ -21,9 +21,20 @@ const views = [
   { value: "timeGridDay", label: "Day" },
 ];
 
+const noTaskEvents: { id: string; title: string; start: string; end: string; allDay: boolean }[] = [];
+
 const plugins = [dayGridPlugin, timeGridPlugin, listPlugin, interactionPlugin, multiMonthPlugin];
 
-export function Calendar({ renderedAt, templates, calendars }: CalendarData) {
+export function Calendar({
+  renderedAt,
+  templates,
+  calendars,
+  readOnly = false,
+  taskEvents = noTaskEvents,
+}: CalendarData & {
+  readOnly?: boolean;
+  taskEvents?: { id: string; title: string; start: string; end: string; allDay: boolean }[];
+}) {
   const [local, setLocal] = React.useState(false);
   const hydrated = React.useRef<boolean>(false);
   const now = React.useCallback(() => (hydrated.current ? new Date() : new Date(renderedAt)), [renderedAt]);
@@ -32,12 +43,15 @@ export function Calendar({ renderedAt, templates, calendars }: CalendarData) {
     setLocal(true);
   }, []);
   const demoEvents = React.useMemo(
-    () => projectEvents(templates, renderedAt, local ? Intl.DateTimeFormat().resolvedOptions().timeZone : "UTC"),
-    [renderedAt, local, templates],
+    () => [
+      ...projectEvents(templates, renderedAt, local ? Intl.DateTimeFormat().resolvedOptions().timeZone : "UTC"),
+      ...taskEvents,
+    ],
+    [renderedAt, local, templates, taskEvents],
   );
   const controller = useCalendarController();
   const [eventCount, setEventCount] = React.useState(0);
-  const [selectedCalendar, setSelectedCalendar] = React.useState(calendars[0].value);
+  const [selectedCalendar, setSelectedCalendar] = React.useState(calendars[0]?.value ?? "");
   const [dateInfo, setDateInfo] = React.useState(() => {
     const initial = new Date(renderedAt);
 
@@ -46,6 +60,7 @@ export function Calendar({ renderedAt, templates, calendars }: CalendarData) {
       days: new Date(Date.UTC(initial.getUTCFullYear(), initial.getUTCMonth() + 1, 0)).getUTCDate(),
     };
   });
+  const Title = readOnly ? "h3" : "h1";
   const title = dateInfo.title;
   const days = dateInfo.days;
 
@@ -53,34 +68,36 @@ export function Calendar({ renderedAt, templates, calendars }: CalendarData) {
     <div className="bg-card text-card-foreground flex min-w-0 flex-col overflow-hidden rounded-xl border">
       <div className="flex flex-col gap-4 border-b p-4 lg:flex-row lg:items-center lg:justify-between">
         <div className="flex min-w-0 shrink-0 flex-col gap-1">
-          <h1 className="text-2xl font-medium tracking-tight">{title}</h1>
+          <Title className="text-2xl font-medium tracking-tight">{title}</Title>
           <p className="text-muted-foreground text-sm">
             {days} days · {eventCount} events · {local ? "Local time" : "UTC"}
           </p>
         </div>
 
         <div className="flex flex-wrap items-center gap-2">
-          <Select
-            value={selectedCalendar}
-            onValueChange={(value) => {
-              if (value !== null) setSelectedCalendar(value);
-            }}
-            items={calendars}
-          >
-            <SelectTrigger aria-label="Calendar" className="w-full sm:w-auto">
-              <CalendarIcon />
-              <SelectValue />
-            </SelectTrigger>
-            <SelectContent align="start" alignItemWithTrigger={false}>
-              <SelectGroup>
-                {calendars.map((calendar) => (
-                  <SelectItem key={calendar.value} value={calendar.value}>
-                    {calendar.label}
-                  </SelectItem>
-                ))}
-              </SelectGroup>
-            </SelectContent>
-          </Select>
+          {!readOnly && calendars.length > 0 && (
+            <Select
+              value={selectedCalendar}
+              onValueChange={(value) => {
+                if (value !== null) setSelectedCalendar(value);
+              }}
+              items={calendars}
+            >
+              <SelectTrigger aria-label="Calendar" className="w-full sm:w-auto">
+                <CalendarIcon />
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent align="start" alignItemWithTrigger={false}>
+                <SelectGroup>
+                  {calendars.map((calendar) => (
+                    <SelectItem key={calendar.value} value={calendar.value}>
+                      {calendar.label}
+                    </SelectItem>
+                  ))}
+                </SelectGroup>
+              </SelectContent>
+            </Select>
+          )}
           <ButtonGroup>
             <Button size="icon" aria-label="Previous period" variant="outline" onClick={() => controller.prev()}>
               <ChevronLeft />
@@ -112,10 +129,12 @@ export function Calendar({ renderedAt, templates, calendars }: CalendarData) {
               </SelectGroup>
             </SelectContent>
           </Select>
-          <Button>
-            <Plus />
-            Add event
-          </Button>
+          {!readOnly && (
+            <Button>
+              <Plus />
+              Add event
+            </Button>
+          )}
         </div>
       </div>
 

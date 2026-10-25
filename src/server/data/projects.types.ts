@@ -17,6 +17,7 @@ export const projectInput = z.object({ projectId: boundedId, renderedAt: z.iso.d
 export const taskInput = projectInput.extend({
   id: boundedId.optional(),
   status: z.enum(taskStatuses).optional(),
+  dueFrom: civilDate.optional(),
   priority: z.enum(priorities).optional(),
   sort: z.enum(["position", "dueDate", "title"]).default("position"),
   assigneeId: boundedId.nullable().optional(),
@@ -108,9 +109,13 @@ export function inclusiveDuration(start: string, end: string) {
 }
 export function taskCalendarEvents(tasks: Task[]) {
   return tasks
-    .filter((t) => t.startDate !== null)
+    .filter((t) => {
+      if (t.endDate && !t.startDate) throw new Error("End requires start");
+      if (t.startDate) inclusiveDuration(t.startDate, t.endDate ?? t.startDate);
+      return t.startDate !== null;
+    })
     .map((t) => ({
-      id: t.id,
+      id: `task:${t.id}`,
       title: t.title,
       start: t.startDate as string,
       end: addCivilDays(t.endDate ?? (t.startDate as string), 1),

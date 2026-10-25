@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import { cn } from "cn";
-import { Star } from "lucide-react";
+import { Star, UsersRound } from "lucide-react";
 
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
@@ -11,13 +11,13 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { type FileManagerFile, fileIcons } from "./data";
 import { FileActions } from "./file-actions";
 
-export function FileListView({ files }: { files: FileManagerFile[] }) {
+export function FileListView({ files, readOnly = false }: { files: FileManagerFile[]; readOnly?: boolean }) {
   const [listFiles, setListFiles] = useState(files);
   const toggleStar = (fileId: string) =>
     setListFiles((current) => current.map((file) => (file.id === fileId ? { ...file, starred: !file.starred } : file)));
 
   return (
-    <div className="min-w-0 rounded-xl border bg-card p-3">
+    <div className="bg-card min-w-0 rounded-xl border p-3">
       <Table className="min-w-180">
         <TableHeader>
           <TableRow>
@@ -31,21 +31,30 @@ export function FileListView({ files }: { files: FileManagerFile[] }) {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {listFiles.map((file) => {
+          {(readOnly ? files : listFiles).map((file) => {
             const FileIcon = fileIcons[file.kind];
             return (
               <TableRow key={file.id}>
                 <TableCell className="pl-0">
                   <div className="flex min-w-0 items-center gap-3">
                     <FileIcon className="text-muted-foreground size-5 shrink-0" />
-                    <Button
-                      variant="link"
-                      size="sm"
-                      className="h-auto w-64 justify-start px-0 text-left whitespace-normal"
-                    >
-                      <span className="break-words [overflow-wrap:anywhere]">{file.name}</span>
-                    </Button>
-                    {file.shared && <Badge variant="outline">Shared</Badge>}
+                    {readOnly ? (
+                      <span className="w-64 [overflow-wrap:anywhere] break-words whitespace-normal">{file.name}</span>
+                    ) : (
+                      <Button
+                        variant="link"
+                        size="sm"
+                        className="h-auto w-64 justify-start px-0 text-left whitespace-normal"
+                      >
+                        <span className="[overflow-wrap:anywhere] break-words">{file.name}</span>
+                      </Button>
+                    )}
+                    {file.shared &&
+                      (readOnly ? (
+                        <UsersRound className="text-muted-foreground size-4" role="img" aria-label="Shared" />
+                      ) : (
+                        <Badge variant="outline">Shared</Badge>
+                      ))}
                   </div>
                 </TableCell>
                 <TableCell>
@@ -60,16 +69,22 @@ export function FileListView({ files }: { files: FileManagerFile[] }) {
                 <TableCell className="text-muted-foreground">{file.size}</TableCell>
                 <TableCell>
                   <div className="flex items-center justify-end">
-                    <Button
-                      variant="ghost"
-                      size="icon-sm"
-                      aria-pressed={file.starred}
-                      aria-label={file.starred ? `Unstar ${file.name}` : `Star ${file.name}`}
-                      onClick={() => toggleStar(file.id)}
-                    >
-                      <Star className={cn(file.starred && "fill-current")} />
-                    </Button>
-                    <FileActions file={file} onToggleStar={() => toggleStar(file.id)} />
+                    {readOnly ? (
+                      <span className="text-warning">
+                        {file.starred && <Star className="size-4 fill-current" role="img" aria-label="Starred" />}
+                      </span>
+                    ) : (
+                      <Button
+                        variant="ghost"
+                        size="icon-sm"
+                        aria-pressed={file.starred}
+                        aria-label={file.starred ? `Unstar ${file.name}` : `Star ${file.name}`}
+                        onClick={() => toggleStar(file.id)}
+                      >
+                        <Star className={cn(file.starred && "fill-current")} />
+                      </Button>
+                    )}
+                    {!readOnly && <FileActions file={file} onToggleStar={() => toggleStar(file.id)} />}
                   </div>
                 </TableCell>
               </TableRow>
