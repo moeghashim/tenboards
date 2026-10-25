@@ -1,7 +1,7 @@
 import type {
   FileManagerFile,
   FileManagerFolder,
-} from "../../../routes/(main)/dashboard/file-manager/-components/data.ts";
+} from "../../../routes/(main)/dashboard/projects/-components/file-manager/data.ts";
 export const folders: FileManagerFolder[] = [
   { id: "brand-assets", name: "Brand assets", fileCount: 24, size: "1.8 GB", updatedAt: "12 min ago" },
   { id: "product-design", name: "Product design", fileCount: 38, size: "4.6 GB", updatedAt: "Yesterday" },

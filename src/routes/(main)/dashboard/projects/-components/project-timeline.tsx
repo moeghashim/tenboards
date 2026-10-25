@@ -11,7 +11,7 @@ import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { projectEvents } from "@/server/data/calendar.types";
 import { addCivilDays, inclusiveDuration, taskStatuses } from "@/server/data/projects.types";
 
-import { Calendar } from "../../calendar/-components/calendar";
+import { Calendar } from "./calendar/calendar";
 import { ProjectSelect, useSearchDraft } from "./project-controls";
 import { displayDate, statusLabels } from "./project-search";
 import type { loadProjectTimeline } from "./project-view-functions";
@@ -337,7 +337,6 @@ export function ProjectTimeline({
             templates={templates}
             calendars={data.calendars}
             taskEvents={data.taskEvents}
-            readOnly
           />
         </section>
       )}

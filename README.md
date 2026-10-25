@@ -28,7 +28,7 @@ OPENUI_TELEMETRY_DISABLED=1 DO_NOT_TRACK=1 npm install
 npm run dev
 ```
 
-Open [the default dashboard](http://localhost:3000/dashboard/default).
+Open [workspace Home](http://localhost:3000/dashboard/home).
 
 OpenUI install telemetry must remain disabled (`OPENUI_TELEMETRY_DISABLED=1` or `DO_NOT_TRACK=1`). The Assistant disables its runtime inspector and observability; recorded replies make no provider requests.
 
@@ -85,9 +85,9 @@ The 10 dashboards share the dashboard/chart presentation contract.
 | Infrastructure | `/dashboard/infrastructure` |
 | Patient Monitoring | `/dashboard/patient-monitoring` |
 
-The app sitemap also includes File Manager, Products, Users, Roles, Profile, Mail, Chat, Calendar, Kanban, Tasks, Invoice, Coming Soon and error/permission states. Standalone `/mail` and `/chat` retain `/dashboard/mail` and `/dashboard/chat` iframe aliases. Authentication uses `/auth/v2/login` and `/auth/v2/register`; bare `/auth/v2` remains layout-only. With no secret the forms are visual demos; optional auth enables real accounts/sessions. The [route catalog](src/navigation/route-catalog.ts) enumerates 32 visual routes, including indexes and system states.
+The app sitemap also includes Home, Projects, AI Assistant, Products, Users, Roles, Profile, Mail, Chat, Invoice, Coming Soon and error/permission states. Kanban, Tasks, Calendar and File Manager now redirect into project views. Standalone `/mail` and `/chat` retain `/dashboard/mail` and `/dashboard/chat` iframe aliases. Authentication uses `/auth/v2/login` and `/auth/v2/register`; bare `/auth/v2` remains layout-only. With no secret the forms are visual demos; optional auth enables real accounts/sessions. The [route catalog](src/navigation/route-catalog.ts) enumerates 36 visual routes, including indexes and system states.
 
-`/dashboard/default-v1`, `/dashboard/crm-v1`, `/dashboard/finance-v1` and `/dashboard/analytics-v1` return HTTP 308 to the matching current dashboard. `/auth/v1/login` and `/auth/v1/register` return HTTP 308 to Auth V2. Redirects preserve a validated `redirect` query (unsafe values fall back to `/dashboard/default`); destination pages enforce their existing guards. Redirect-only URLs are absent from sidebar/search and are tested separately from the screenshot catalog.
+`/dashboard/default-v1`, `/dashboard/crm-v1`, `/dashboard/finance-v1` and `/dashboard/analytics-v1` return HTTP 308 to the matching current dashboard. `/auth/v1/login` and `/auth/v1/register` return HTTP 308 to Auth V2. Redirects preserve a validated `redirect` query (unsafe values fall back to `/dashboard/home`); destination pages enforce their existing guards. Redirect-only URLs are absent from sidebar/search and are tested separately from the screenshot catalog.
 
 ## Provenance and license
 
@@ -104,7 +104,7 @@ The unmodified import passed Biome with one existing `noArrayIndexKey` warning i
 ## Cloudflare demo and PR previews
 
 
-**Live demo:** [tenboards.mohanadgh.workers.dev](https://tenboards.mohanadgh.workers.dev/dashboard/default) — redeployed from `main` after each merge.
+**Live demo:** [tenboards.mohanadgh.workers.dev](https://tenboards.mohanadgh.workers.dev/dashboard/home) — redeployed from `main` after each merge.
 
 The Worker serves the existing mock-data demo. It has no database, authentication service, or secret bindings. Its only generated binding is `ASSETS` for static files. Production is redeployed from `main` by the reviewer after approved merges. Preview uploads target only the separate demo-only `tenboards-preview` Worker. They do not change production traffic.
 
@@ -144,13 +144,13 @@ Install the approved browser tooling once with `npx playwright install chromium`
 
 ```sh
 npm run screenshots
-npm run screenshots -- --routes /dashboard/default,/auth/v2/login --output screenshots/before
+npm run screenshots -- --routes /dashboard/home,/auth/v2/login --output screenshots/before
 npm run screenshots -- --base-url https://pr-012-tenboards-preview.<account-subdomain>.workers.dev --output screenshots/after
-npm run screenshots -- --routes /dashboard/default --sidebar-states --output screenshots/sidebar
+npm run screenshots -- --routes /dashboard/home --sidebar-states --output screenshots/sidebar
 npm run screenshots -- --list
 ```
 
-The default captures every retained route in light/dark at desktop 1440×900 and mobile 390×844. `src/navigation/route-catalog.ts` is the shared 32-route visual inventory, re-exported by `scripts/screenshot-routes.ts` and checked against generated route metadata; missing/stale routes and unknown subsets fail before launch. The dashboard splat uses `/dashboard/capture-not-found` to exercise its not-found state; there are no entity-ID routes needing demo records. Root/index redirects are captured at their destination; six retired V1 aliases are covered by the dedicated redirect checks. `--preset` selects a valid preset for the same four-state matrix. `--sidebar-states` adds expanded/collapsed desktop captures and open/closed mobile-sheet captures on shell routes. Run `node --experimental-strip-types scripts/sidebar-toggle-check.ts` to verify every allowed sidebar style/collapse mode and preset in both themes and viewports; add `--ssr --base-url <built-preview-url>` to check initial markup with JavaScript disabled.
+The default captures every retained route in light/dark at desktop 1440×900 and mobile 390×844. `src/navigation/route-catalog.ts` is the shared 36-route visual inventory, re-exported by `scripts/screenshot-routes.ts` and checked against generated route metadata; missing/stale routes and unknown subsets fail before launch. The dashboard splat uses `/dashboard/capture-not-found` to exercise its not-found state; project-ID route patterns use the concrete sample-operations project for captures. Root/index redirects are captured at their destination; six retired V1 aliases are covered by the dedicated redirect checks. `--preset` selects a valid preset for the same four-state matrix. `--sidebar-states` adds expanded/collapsed desktop captures and open/closed mobile-sheet captures on shell routes. Run `node --experimental-strip-types scripts/sidebar-toggle-check.ts` to verify every allowed sidebar style/collapse mode and preset in both themes and viewports; add `--ssr --base-url <built-preview-url>` to check initial markup with JavaScript disabled.
 
 Captures wait for React hydration, fonts, network idle, images, JS chart settling, and stable content. Reduced motion is emulated and screenshot animations are disabled. Console errors, page errors, failed requests, unexpected HTTP status, and capture failures are recorded in `report.json` and cause a nonzero exit. The hydration check uses React's DOM binding marker; revisit it if React's renderer changes. Application clocks are never frozen. For v0.4 comparisons, pass the same `--reference` ISO timestamp to serialize identical date inputs; the real monitoring clock can be narrowly masked with `--mask-live-clocks`.
 
@@ -171,7 +171,7 @@ The floating sidebar keeps a viewport-height panel while long pages scroll. Prim
 
 Desktop icon rails own the expand/collapse control; the header hides its redundant toggle and aligns the breadcrumb at its normal padding. Expanded desktop navigation also keeps its existing sidebar control. The header opener remains on mobile and when desktop “Hide” mode moves the whole sidebar off-canvas. **⌘B / Ctrl+B** still toggles navigation. When a focused header opener becomes hidden after reopening desktop navigation or resizing to desktop, focus moves to the sidebar toggle.
 
-Open search from the sidebar, the mobile header, or **⌘K / Ctrl+K** on any retained route. Arrow keys choose results; Enter opens a page; Escape closes and restores focus. The shared catalog exposes 34 searchable screens; the remaining four catalog entries cover redirects and the auth layout route. Pressing the shortcut again closes search. Other visible dialogs, alert dialogs, menus, and listboxes retain the shortcut (the mobile navigation sheet excepted); text-field focus alone does not suppress it. The bare `/auth/v2` path is an inherited layout-only screen; its login/register children are the searchable destinations.
+Open search from the sidebar, the mobile header, or **⌘K / Ctrl+K** on any retained route. Arrow keys choose results; Enter opens a page; Escape closes and restores focus. The palette exposes 27 static screens plus 15 views across the three sample projects; four non-searchable catalog entries cover redirects and the auth layout route. Pressing the shortcut again closes search. Other visible dialogs, alert dialogs, menus, and listboxes retain the shortcut (the mobile navigation sheet excepted); text-field focus alone does not suppress it. The bare `/auth/v2` path is an inherited layout-only screen; its login/register children are the searchable destinations.
 
 Settings in the sidebar or header controls theme (including System), Default/Graphite/Pine/Iris presets, the existing font registry, content width, header behavior, sidebar style, and collapse behavior. Changes persist in the existing seven-day browser cookies, one per preference key, plus the separate sidebar-state cookie. Reset restores Light, Default, Geist, Centered, Sticky, Panel, Show icons, and expanded navigation. Inset also frames the content; every desktop style preserves the reference sidebar. Mobile navigation always uses a sheet.
 
@@ -247,7 +247,7 @@ All screens remain mock-data demos, including existing disabled and placeholder 
 
 ### App pages (v0.3)
 
-The [app-page breakdown](dev/milestones/v0.3-app-pages/README.md) assigns the original 38 route-catalog entries plus root not-found/error states to page owners or final regression coverage. Mail and Chat each retain standalone and dashboard iframe routes; Auth originally included four forms and the bare V2 layout. The external `/` remains a redirect to `/dashboard/default`, with no landing UI to restyle. Implementation progress is documented per task below.
+The [app-page breakdown](dev/milestones/v0.3-app-pages/README.md) assigns the original 38 route-catalog entries plus root not-found/error states to page owners or final regression coverage. Mail and Chat each retain standalone and dashboard iframe routes; Auth originally included four forms and the bare V2 layout. The external `/` remains a redirect to `/dashboard/home`, with no landing UI to restyle. Implementation progress is documented per task below.
 
 Calendar, Invoice and both Auth V2 forms have passed their separate hydration gates. Page owners replaced the remaining upstream-author demo identities; the final whole-source scan has no matches, while legal attribution remains intact. Final acceptance checks every route across all four presets and reconciles hydration history. All v0.3 tasks are merged, deployed and released; their evidence remains separate from the v0.4 implementation review.
 
@@ -269,25 +269,17 @@ Standalone tenboards Chat and its dashboard iframe use neutral conversation/thre
 
 ### Calendar page (v0.3 / 004)
 
-Calendar retains Month/Week/Day, Today/previous/next, demo calendar selection and more-events popovers. The card surface, named controls, full-contrast today marker and wrapping event titles use existing tokens. Month/week grids scroll horizontally within the calendar on small screens; Day fills the available width. Two additional demo meetings provide a crowded-day example, and the birthday fixture is Jordan Lee.
-
-A route-loader request timestamp is shared by SSR and hydration with an explicit initial UTC timezone; after hydration, the calendar adopts browser-local time and its real live clock. Civil-date demo events derive from that shared month instead of a module-startup clock. This fixes the demonstrated server/browser disagreement about today's cell without disabling SSR, suppressing warnings or freezing time. Calendar adapters remain intact. Add event and calendar filtering retain their existing placeholder behavior.
-
-`npm run screenshots -- --routes /dashboard/calendar --reload --interactions --timezone Pacific/Kiritimati --hydration-delay-ms 1800` verifies local Today, real now-marker positioning, views/navigation and crowded-day popovers. Interaction runs also save Week/Day/Month variant captures. Use `--base-url` to repeat on Workers.
+The former Calendar page now redirects to `/dashboard/projects/sample-operations/timeline?mode=calendar`. Read-only Month/Week/Day, Today/previous/next and more-events popovers retain their existing calendar adapters. SSR uses the serialized request UTC clock and adopts local time after hydration. Project schedule tests cover delayed real-clock hydration across timezones; there is no Add event or calendar-filter placeholder.
 
 
 ### Kanban page (v0.3 / 005)
 
-Kanban keeps query-addressable Board, List and Table views, local task/column/table ordering, cancellation rollback and table status edits. The compact toolbar, wrapping task content, textual priority badges and neutral team/owner treatments use semantic tokens; Jordan Lee replaces the author owner in every view and drag overlay. Board/table scrolling remains local on mobile, and empty columns show “No tasks.” Search/filter/sort/create controls retain their existing placeholder behavior.
-
-`npm run screenshots -- --routes /dashboard/kanban --search view=list --reload` captures a query-selected view (use `view=board` or `view=table` as needed). `--interactions` exercises keyboard moves/cancellation, desktop pointer movement, column/list/table ordering, status edits and empty-column states; it saves each view and the drag overlay. Active-drag captures preserve animation and viewport size so taking evidence does not end the gesture. Failed captures now also attempt a diagnostic PNG.
+The former Kanban page now redirects to the default project Board. Legacy `view=list` and `view=table` select the project List. Canonical Board/List use real filters and shared read-only tasks; legacy drag/drop, column reordering and status-edit composition has been removed. See the v0.8 sections below for controls and verification.
 
 
 ### Tasks page (v0.3 / 006)
 
-Tasks uses the shared page heading and a compact table with wrapping titles, textual semantic status/priority badges, named selection/search controls and a visible mobile column menu. Search and combined filters retain local state; empty results explain how to recover, Reset is neutral, and selected-count feedback remains live. The inherited Base UI sorting/clear-filter callbacks and column-menu label grouping are corrected at their usage sites. Row actions remain demo placeholders; no task records or dependencies change.
-
-`npm run screenshots -- --routes /dashboard/tasks --interactions` checks the known search/status/priority result, row and page selection, empty/reset states, Asc/Desc ordering, column visibility, page sizes, pagination and both filter clear actions. It also captures selected and empty variants.
+The former Tasks page now redirects to the default project List, discarding unvalidated legacy search. The project List exposes bounded URL filtering, task details and consistent status, priority and assignee presentation; it has no task mutation controls.
 
 
 ### Invoice page (v0.3 / 007)
@@ -301,7 +293,7 @@ The route loader creates fresh UTC civil-date defaults for each request and shar
 
 ### File Manager (v0.3 / 008)
 
-File Manager retains query-selected Grid/List views and compact folders. Filenames wrap; cards expose owner, date and sharing metadata, and mobile tables scroll locally with every column intact. Star buttons are always visible and expose pressed state; the menu uses the Base UI click callback. Neutral demo owners and matching initials appear in both views. Stars retain their view-local state and reset when remounting, as before. Search/filter, folder navigation, upload, download/share/trash remain demo placeholders. `npm run screenshots -- --base-url http://localhost:3000 --routes /dashboard/file-manager --reload --interactions` verifies query refresh, button/menu stars and mobile metadata.
+The former File Manager now redirects to default-project Files, retaining only validated `view=grid|list`. Project-owned file/folder presentation uses icons, avatar owners and read-only star/share metadata. Search/type filters work on scoped records. Legacy star toggles and upload/download/share/trash placeholders have been removed.
 
 
 ### Products (v0.3 / 009)
@@ -326,14 +318,14 @@ Auth V2 retains login/register routes, validation, masked password fields, autof
 
 ### System states (v0.3 / 013)
 
-Coming Soon describes planned content; the dashboard splat explains an unknown dashboard page. Root not-found, demo Unauthorized and RootError share a compact hierarchy with wrapping copy and keyboard recovery links. Production errors retain generic text; development can show the error message. `/`, `/dashboard` and `/dashboard/` still return 307 redirects to `/dashboard/default`; unknown root URLs return 404 and the explicit dashboard splat remains HTTP 200. `npm run screenshots -- --routes /dashboard/default --boundaries` adds four-state root not-found and real root-error/reset evidence. The CLI temporarily replaces a loaded browser route component, restores it and presses Try again; no error trigger or route is shipped. Expected injected exceptions and the exact unknown-document 404 diagnostic are recorded separately in report.json.
+Coming Soon describes planned content; the dashboard splat explains an unknown dashboard page. Root not-found, demo Unauthorized and RootError share a compact hierarchy with wrapping copy and keyboard recovery links. Production errors retain generic text; development can show the error message. `/`, `/dashboard` and `/dashboard/` still return 307 redirects to `/dashboard/home`; unknown root URLs return 404 and the explicit dashboard splat remains HTTP 200. `npm run screenshots -- --routes /dashboard/home --boundaries` adds four-state root not-found and real root-error/reset evidence. The CLI temporarily replaces a loaded browser route component, restores it and presses Try again; no error trigger or route is shipped. Expected injected exceptions and the exact unknown-document 404 diagnostic are recorded separately in report.json.
 
 
 ### Complete app-page acceptance (v0.3 / 014)
 
 The integrated v0.3 stack passes all 38 catalog entries on dev and Workers with Default, Graphite, Pine and Iris × light/dark × desktop/mobile: 608 cases per environment, 1,216 total. The coverage manifest checks generated routes, duplicates, missing/unexpected cases and every error; original failures and explicit reruns remain in pr-assets/v03-014. Supplemental scenarios cover Mail/Chat iframe contents, File Manager grid/list, Kanban board/list/table and overlays, Roles and all six Profile tabs, product/directory/task filters and forms, four auth forms, Invoice print, live Calendar/Patient Monitoring behavior, root 404/error/reset, and shell focus/preferences/reduced motion. All eight historical hydration findings are resolved; the whole-src author scan returns no matches. Supported-token audits pass 280 comparisons per environment; scoped actual-surface evidence is linked, not represented as a complete accessibility certification. The app source is unchanged by this acceptance layer. All 14 v0.3 tasks are merged and deployed, and v0.3.0 is released. This paragraph records the historical v0.3 acceptance run; current v0.4 evidence is described below.
 
-Run `npm run screenshots -- --base-url <url> --preset <default|graphite|pine|iris> --output <root>/<dev|workers>/<preset>` for each environment/preset. `node --experimental-strip-types scripts/report-route-coverage.ts --root <root> --retries <manifest.json>` verifies complete coverage and retains original errors alongside explicitly mapped reruns. `--interactions` on `/dashboard/default` verifies shell focus, preference persistence and reduced motion; dialog evidence uses the existing viewport so screenshot resizing cannot disturb focus.
+Run `npm run screenshots -- --base-url <url> --preset <default|graphite|pine|iris> --output <root>/<dev|workers>/<preset>` for each environment/preset. `node --experimental-strip-types scripts/report-route-coverage.ts --root <root> --retries <manifest.json>` verifies complete coverage and retains original errors alongside explicitly mapped reruns. `--interactions` on `/dashboard/home` verifies shell focus, preference persistence and reduced motion; dialog evidence uses the existing viewport so screenshot resizing cannot disturb focus.
 
 
 ## Optional data layer (v0.4)
@@ -512,7 +504,7 @@ Follow [docs/deploy.md](docs/deploy.md) for local rehearsal, your own Neon/Hyper
 
 ## Projects data foundation (v0.8 / 001)
 
-The additive Projects model is available to server consumers; Board/List now consume it through guarded server functions; navigation consolidation is pending. `0015_project_foundation.sql` preserves the legacy workspace and auth tables and backfills canonical, namespaced tasks plus project file/calendar links. Run `npm run db:migrate` and `npm run db:seed` for local upgrades. Demo and database reads share validated contracts, with 29 registered reads / 211 parity scenarios.
+The additive Projects model is available to server consumers; Board/List now consume it through guarded server functions; navigation is integrated. `0015_project_foundation.sql` preserves the legacy workspace and auth tables and backfills canonical, namespaced tasks plus project file/calendar links. Run `npm run db:migrate` and `npm run db:seed` for local upgrades. Demo and database reads share validated contracts, with 29 registered reads / 211 parity scenarios.
 
 The original samples are Operations rollout (`sample-operations`), Documentation refresh (`sample-docs`) and the empty Research queue (`sample-empty`). Synthetic membership is display metadata, not an account or permission boundary. Both Kanban and ledger records remain traceable, including canceled tasks. Sample dates are projected from one stored anchor onto the request’s UTC day, identically in demo and DB modes. Both populated projects include overdue, today and upcoming work; most tasks have authored schedule spans. Adopter rows retain their actual dates. See [project data and migration details](docs/data.md).
 
@@ -522,7 +514,7 @@ The original samples are Operations rollout (`sample-operations`), Documentation
 
 Open `/dashboard/projects/sample-operations/board` or `/dashboard/projects/sample-operations/list` directly. The project selector also offers Documentation refresh and the empty Research queue. Board and List share canonical task IDs, statuses (including canceled), assignees, labels, due dates, subtasks and counts. Search, status/assignee/priority/label filters, sort and bounded pages use validated URL state; Board loads every matching task across bounded server reads; only List paginates (10/20/50 rows). Default search values are omitted from Board/List URLs. Progress states the eligible task denominator and the excluded canceled count; tasks without subtasks display an em dash. Search updates after a short typing pause. Filters use the shared Select controls. Compact Board cards omit empty counts and use circular assignee avatars, semantic priority badges, status dots and short task keys; List shares these cues. Task details open the existing keyboard-accessible dialog. There is no task creation, drag/drop, completion or edit endpoint.
 
-The existing Kanban and Tasks URLs still work. The project shell has one project-qualified header breadcrumb, status, member avatars and progress, and links Overview, Board, List, Timeline and Files; workspace Home/index and sidebar/palette consolidation ship in later layers. Unknown projects return an authorized 404. `/`, `/dashboard` and auth-success fallback retain `/dashboard/default`.
+The existing Kanban and Tasks URLs redirect permanently to the default project. The project shell has one project-qualified header breadcrumb, status, member avatars and progress, and links Overview, Board, List, Timeline and Files; workspace Home/index, nested sidebar navigation and project-qualified palette search are available. Unknown projects return an authorized 404. `/`, `/dashboard` and auth-success fallback use `/dashboard/home`.
 
 Run `node --experimental-strip-types scripts/project-ui-check.ts http://localhost:3270` for project switching, filters, pagination, details/focus and responsive checks. `scripts/project-access-check.ts` checks route/RPC denial, validation, project scope and revocation against an isolated local auth database; `AUTH_TEST_RUNTIME=workerd` exercises the Worker build.
 
@@ -532,7 +524,7 @@ Run `node --experimental-strip-types scripts/project-ui-check.ts http://localhos
 
 `/timeline` offers segmented Gantt/Table/Calendar modes, with Table after mobile hydration unless a mode was explicitly chosen. Weeks/Months, 1–12 periods, date input and previous/next/Today controls change presentation without reloading task data. The initial range includes today and the project’s active span within the bounded range. Status-colored bars and a vertical Today marker align with the date axis. Rows outside the range are hidden in both chart and table; unscheduled work is available in a collapsible group below them. Search updates after a typing pause. Calendar reuses Month/Week/Day with project events and dated tasks, without Add event. Task dates and deadline metrics share the serialized request’s UTC day; event templates retain the existing UTC-to-local hydration behavior. Task/event identities are distinct and inclusive task ends become exclusive all-day calendar ends.
 
-`/files?view=grid|list` reuses the current file/folder displays with real local search/type filters. File-type icons, a read-only star marker and shared icons replace explanatory metadata labels. Grid/List uses a segmented switch; file types use the shared Select. Folder summaries remain display metadata; all loaded files remain at project root. There is no upload, download, share, rename or delete service. Old Calendar/File Manager URLs remain available until task005.
+`/files?view=grid|list` reuses the current file/folder displays with real local search/type filters. File-type icons, a read-only star marker and shared icons replace explanatory metadata labels. Grid/List uses a segmented switch; file types use the shared Select. Folder summaries remain display metadata; all loaded files remain at project root. There is no upload, download, share, rename or delete service. Old Calendar/File Manager URLs redirect to Timeline Calendar mode and project Files.
 
 `node --experimental-strip-types scripts/project-schedule-check.ts` tests civil-day spans, clipping, invalid inputs and timezone edges. `scripts/project-views-check.ts http://localhost:3270` covers all five links, index redirect, schedule identity, responsive/keyboard controls, Calendar modes, file filtering, empty projects and delayed direct/refresh hydration. Data parity is 29 reads / 211 scenarios.
 
@@ -544,6 +536,27 @@ Project progress uses completed / (total − canceled), with both the denominato
 
 `/dashboard/projects` provides debounced name/description search, a shared status Select, stable project ordering, progress, target dates and member summaries. No matching results can be reset, and the empty Research queue remains a real project with zero work. Both destinations and their server reads are independently guarded and read-only. The project summary card is shared with Home; no new runtime dependency or density override is introduced.
 
-Home and Projects are direct destinations until navigation consolidation in task 005. `/`, `/dashboard`, `/dashboard/` and the safe auth fallback still open `/dashboard/default`; the existing Default dashboard remains available.
-
 On desktop, Recent activity sits beneath My tasks beside Upcoming deadlines, keeping both work columns balanced; mobile keeps tasks, deadlines, progress and activity in reading order. Home and index cards share the project header’s eligible-task progress and readable member initials. Project breadcrumbs link Projects → project Overview → current view, with `aria-current` on the view. Default index search values are omitted from links.
+
+Primary navigation and the brand link open Home and Projects. `/`, `/dashboard`, `/dashboard/` and the safe auth fallback open `/dashboard/home`; the existing Default dashboard remains available.
+
+## Project navigation and consolidation (v0.8 / 005)
+
+Primary navigation is Home → Projects → Email → Chat, followed immediately by AI Assistant. Default remains under Dashboards. The brand opens `/dashboard/home`; `/`, `/dashboard`, `/dashboard/` and auth fallback redirect to `/dashboard/home`. Guarded summaries populate the Projects section and project-qualified command palette without fetching project data on public root/auth surfaces. Exploration counts include concrete project views, excluding aliases.
+
+Project buttons disclose Overview, Board, List, Timeline and Files. The active child matches an exact project/view; rail triggers open named keyboard-accessible popovers. Mobile disclosure keeps the sheet open, while navigation closes it. `tenboards:project-nav:v1` stores only expanded known IDs (maximum 50) in localStorage. Initial render opens the active ancestor, restores/prunes storage after hydration, tolerates corrupt/disabled storage, and opens an ancestor on project entry. Manual collapse persists across views of the same project until leaving and re-entering. Existing layout cookies remain unchanged.
+
+| Legacy URL | Permanent destination | Retained search |
+| --- | --- | --- |
+| `/dashboard/kanban` | `/dashboard/projects/sample-operations/board` | `view=list` or `table` selects `/list`; other values select Board |
+| `/dashboard/tasks` | `/dashboard/projects/sample-operations/list` | None |
+| `/dashboard/calendar` | `/dashboard/projects/sample-operations/timeline` | Explicit `mode=calendar` |
+| `/dashboard/file-manager` | `/dashboard/projects/sample-operations/files` | Valid `view=list|grid`, default grid |
+
+Redirects use 308 with replacement navigation and retained fragments. Auth may first send an unauthenticated request to login; authorized requests then follow the permanent redirect. Unknown keys are discarded. Unknown project IDs return authorized not-found rather than default-project data. Legacy workspace rows remain intact; only obsolete page compositions were removed.
+
+Run `scripts/project-navigation-check.ts` for disclosure/rail/mobile/palette/storage/layout checks and `scripts/project-redirect-check.ts` for demo/auth HTTP/client/query/hash/trailing-slash/revocation checks using Node's `--experimental-strip-types`. Capture patterns use concrete `sample-operations` paths in `src/navigation/route-catalog.ts`; redirect-only aliases are in `scripts/screenshot-routes.ts`. Secondary and empty projects are covered separately. Capture output belongs on `pr-assets`, not main.
+
+Workspace Home is the landing page, per the locked 2026-10-25 PLAN decision. `/`, `/dashboard` and `/dashboard/` retain their existing 307/replace redirect mechanism and lead to `/dashboard/home`. Missing or unsafe post-sign-in/OAuth return values fall back to Home; validated destinations still win. `/dashboard/default` remains the revenue dashboard under Dashboards. The consolidated Kanban Board is read-only: the former local drag-and-drop interaction has been removed, and tasks cannot be moved or reordered.
+
+With the three sample projects, the demo card counts **35 enabled concrete dashboard destinations**, including AI Assistant and all 15 project views; aliases are excluded.

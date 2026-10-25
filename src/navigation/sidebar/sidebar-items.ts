@@ -1,16 +1,13 @@
 import {
   Banknote,
   Bot,
-  Calendar,
   ChartBar,
-  CheckSquare,
   Fingerprint,
   FolderOpen,
   Forklift,
   Gauge,
   GraduationCap,
   HeartPulse,
-  Kanban,
   LayoutDashboard,
   ListTodo,
   Lock,
@@ -127,12 +124,6 @@ export const sidebarItems: NavGroup[] = [
         icon: Server,
       },
       {
-        id: "file-manager",
-        title: "File Manager",
-        url: "/dashboard/file-manager",
-        icon: FolderOpen,
-      },
-      {
         id: "patient-monitoring",
         title: "Patient Monitoring",
         url: "/dashboard/patient-monitoring",
@@ -144,6 +135,8 @@ export const sidebarItems: NavGroup[] = [
     id: 2,
     label: "Pages",
     items: [
+      { id: "home", title: "Home", url: "/dashboard/home", icon: LayoutDashboard },
+      { id: "projects", title: "Projects", url: "/dashboard/projects", icon: FolderOpen },
       {
         id: "products",
         title: "Products",
@@ -168,25 +161,6 @@ export const sidebarItems: NavGroup[] = [
         title: "AI Assistant",
         url: "/dashboard/assistant",
         icon: Bot,
-      },
-      {
-        id: "calendar",
-        title: "Calendar",
-        url: "/dashboard/calendar",
-        icon: Calendar,
-      },
-      {
-        id: "kanban",
-        title: "Kanban",
-        url: "/dashboard/kanban",
-        icon: Kanban,
-        badge: "updated",
-      },
-      {
-        id: "tasks",
-        title: "Tasks",
-        url: "/dashboard/tasks",
-        icon: CheckSquare,
       },
       {
         id: "invoice",

@@ -25,6 +25,7 @@ import {
   SidebarMenuSubItem,
   useSidebar,
 } from "@/components/ui/sidebar";
+import type { ProjectNavigationData } from "@/navigation/project-destinations";
 import type {
   AppPath,
   NavBadge,
@@ -34,7 +35,12 @@ import type {
   NavMainParentItem,
 } from "@/navigation/sidebar/sidebar-items";
 
+import type { useProjectExpansion } from "./project-expansion";
+import { ProjectNavigation } from "./project-navigation";
+
 interface NavMainProps {
+  readonly navigation: ProjectNavigationData;
+  readonly expansion: ReturnType<typeof useProjectExpansion>;
   readonly items: readonly NavGroup[];
 }
 
@@ -81,9 +87,10 @@ function hasSubItems(item: NavMainItem): item is NavMainParentItem {
   return Boolean(item.subItems?.length);
 }
 
-const primaryIds = new Set(["default", "email", "tasks", "calendar", "chat", "assistant", "file-manager"]);
+const primaryOrder = ["home", "projects", "email", "chat", "assistant"];
+const primaryIds = new Set(primaryOrder);
 
-export function NavMain({ items }: NavMainProps) {
+export function NavMain({ items, navigation, expansion }: NavMainProps) {
   const path = useRouterState({ select: (state) => state.location.pathname });
 
   const isItemActive = (item: NavMainItem) => {
@@ -109,6 +116,7 @@ export function NavMain({ items }: NavMainProps) {
           {items
             .flatMap((group) => group.items)
             .filter((item) => primaryIds.has(item.id))
+            .sort((a, b) => primaryOrder.indexOf(a.id) - primaryOrder.indexOf(b.id))
             .map((item) => (
               <NavItem
                 key={item.id}
@@ -120,6 +128,7 @@ export function NavMain({ items }: NavMainProps) {
             ))}
         </SidebarMenu>
       </SidebarGroup>
+      <ProjectNavigation data={navigation} expansion={expansion} />
       {items.map((group) => (
         <SidebarGroup key={group.id} className="p-0 py-0.5">
           <NavSection
@@ -204,6 +213,7 @@ function NavLinkItem({ item, isActive, showIconFallback }: NavLinkItemProps) {
         render={
           <Link
             to={item.url}
+            activeOptions={{ exact: true, includeSearch: false }}
             onClick={() => {
               if (isMobile) setOpenMobile(false);
             }}
@@ -217,7 +227,7 @@ function NavLinkItem({ item, isActive, showIconFallback }: NavLinkItemProps) {
         isActive={isActive}
       >
         <NavLinkIcon item={item} showFallback={showIconFallback} />
-        <span>{item.id === "default" ? "Home" : item.title}</span>
+        <span>{item.title}</span>
       </SidebarMenuButton>
       <NavItemBadge badge={item.badge} />
     </SidebarMenuItem>
@@ -248,7 +258,7 @@ function NavDropdownItem({ item, isActive, isSubItemActive }: NavDropdownItemPro
           render={<SidebarMenuButton tooltip={item.title} isActive={isActive} disabled={item.disabled} />}
         >
           {Icon ? <Icon /> : <CollapsedIconFallback title={item.title} />}
-          <span>{item.id === "default" ? "Home" : item.title}</span>
+          <span>{item.title}</span>
         </DropdownMenuTrigger>
 
         <DropdownMenuContent side="right" align="start" sideOffset={12} className="w-48">
@@ -295,7 +305,7 @@ function NavCollapsibleItem({ item, isActive, defaultOpen, isSubItemActive }: Na
         render={<SidebarMenuButton tooltip={item.title} isActive={isActive} disabled={item.disabled} />}
       >
         {Icon && <Icon />}
-        <span>{item.id === "default" ? "Home" : item.title}</span>
+        <span>{item.title}</span>
         <ChevronRight className="ml-auto transition-transform duration-200 group-data-panel-open/menu-button:rotate-90" />
       </CollapsibleTrigger>
       <NavItemBadge badge={item.badge} />

@@ -4,6 +4,10 @@ export { captureRoutes } from "../src/navigation/route-catalog.ts";
 // Redirect-only aliases have HTTP/browser coverage in legacy-redirect-check.ts.
 // Validated project-index redirects have route/RPC coverage in project-access-check.ts.
 export const httpRoutes: string[] = [
+  "/dashboard/kanban",
+  "/dashboard/tasks",
+  "/dashboard/calendar",
+  "/dashboard/file-manager",
   "/dashboard/projects/$projectId",
   "/dashboard/projects/$projectId/",
   "/api/auth/$",

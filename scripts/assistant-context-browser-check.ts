@@ -119,8 +119,8 @@ try {
       assert.ok(!JSON.stringify(storage).includes("Delayed follow-up"));
       if (size === "mobile") await page.getByRole("button", { name: "Toggle Sidebar", exact: true }).click();
       await page.getByRole("link", { name: "Home", exact: true }).click();
-      await page.waitForURL("**/dashboard/default");
-      await page.getByText("Total Revenue", { exact: true }).first().waitFor();
+      await page.waitForURL("**/dashboard/home");
+      await page.getByText("My tasks", { exact: true }).first().waitFor();
       if (size === "mobile") await page.getByRole("button", { name: "Toggle Sidebar", exact: true }).click();
       await page.getByRole("link", { name: "AI Assistant", exact: true }).click();
       await page.waitForURL("**/dashboard/assistant");

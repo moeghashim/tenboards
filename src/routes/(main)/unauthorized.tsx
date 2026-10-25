@@ -20,8 +20,8 @@ function Page() {
           This is a demo permission state. No access control is connected.
         </p>
       </div>
-      <Button nativeButton={false} variant="outline" render={<Link to="/dashboard/default" />}>
-        Go to dashboard
+      <Button nativeButton={false} variant="outline" render={<Link to="/dashboard/home" />}>
+        Go to Home
       </Button>
     </main>
   );

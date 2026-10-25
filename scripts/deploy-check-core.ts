@@ -125,7 +125,7 @@ export async function checkDeployment(
   const notFound = await send("/deployment-check-missing-route");
   status(notFound, 404, "unknown public route");
   await notFound.body?.cancel();
-  const dashboard = await send("/dashboard/default");
+  const dashboard = await send("/dashboard/home");
   if (options.demo) status(dashboard, 200, "demo dashboard");
   else {
     if (![302, 303, 307, 308].includes(dashboard.status))
@@ -136,7 +136,7 @@ export async function checkDeployment(
     if (
       destination.origin !== origin ||
       destination.pathname !== "/auth/v2/login" ||
-      destination.searchParams.get("redirect") !== "/dashboard/default" ||
+      destination.searchParams.get("redirect") !== "/dashboard/home" ||
       destination.hash
     )
       throw new Error("Unsafe or invalid protected-route redirect.");
@@ -178,7 +178,7 @@ export async function checkDeployment(
     const created = identity(await json(signup));
     if (created.email !== email || !cookies.size) throw new Error("Signup did not establish the expected session.");
     if (identity(await readSession()).id !== created.id) throw new Error("Signup session identity mismatch.");
-    let protectedResponse = await send("/dashboard/default");
+    let protectedResponse = await send("/dashboard/home");
     status(protectedResponse, 200, "authenticated dashboard");
     await protectedResponse.body?.cancel();
     let signout = await send("/api/auth/sign-out", {});
@@ -189,7 +189,7 @@ export async function checkDeployment(
     status(signin, 200, "signin");
     if (identity(await json(signin)).id !== created.id) throw new Error("Signin identity mismatch.");
     if (identity(await readSession()).id !== created.id) throw new Error("Signin session identity mismatch.");
-    protectedResponse = await send("/dashboard/default");
+    protectedResponse = await send("/dashboard/home");
     status(protectedResponse, 200, "signed-in dashboard");
     await protectedResponse.body?.cancel();
     signout = await send("/api/auth/sign-out", {});

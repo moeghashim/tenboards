@@ -51,15 +51,31 @@ try {
     await page.getByLabel("Password", { exact: true }).fill(password);
     await page.getByLabel("Confirm Password", { exact: true }).fill(password);
     await page.getByRole("button", { name: "Register", exact: true }).click();
-    await page.waitForURL((url) => url.pathname + url.search + url.hash === destination, {
-      waitUntil: "domcontentloaded",
-    });
+    await page.waitForURL(
+      (url) =>
+        url.pathname === "/dashboard/projects/sample-operations/list" &&
+        url.hash === "#task-table" &&
+        !url.searchParams.has("search"),
+      {
+        waitUntil: "domcontentloaded",
+      },
+    );
     assert.equal(
       (await (await context.request.get(`${server.baseURL}/api/auth/get-session`)).json()).user.email,
       email,
     );
     cases++;
     console.log(`PASS ${variant} real signup returns to protected pathname/search/hash`);
+    for (const [search, expected] of [
+      ["", "/dashboard/home"],
+      ["?redirect=https%3A%2F%2Fevil.example", "/dashboard/home"],
+      ["?redirect=%2Fdashboard%2Fdefault", "/dashboard/default"],
+    ]) {
+      await page.goto(`${server.baseURL}/auth/v2/login${search}`, { waitUntil: "networkidle" });
+      assert.equal(new URL(page.url()).pathname, expected);
+      cases++;
+    }
+    console.log("PASS missing/unsafe returns use Home; validated revenue dashboard destination wins");
     await context.close();
   }
   console.log(`Auth return paths: ${cases}/${cases} passing.`);

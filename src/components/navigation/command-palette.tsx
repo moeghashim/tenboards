@@ -1,11 +1,12 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 
-import { useNavigate } from "@tanstack/react-router";
+import { useNavigate, useRouterState } from "@tanstack/react-router";
 
 import { File } from "lucide-react";
 
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { type ProjectNavigationData, projectDestination, projectViews } from "@/navigation/project-destinations";
 import { routeCatalog } from "@/navigation/route-catalog";
 import type { AppPath } from "@/navigation/sidebar/sidebar-items";
 
@@ -19,6 +20,14 @@ export function CommandPalette() {
   const returnFocus = useRef<HTMLElement | null>(null);
   const input = useRef<HTMLInputElement | null>(null);
   const navigate = useNavigate();
+  const projects = useRouterState({
+    select: (s) =>
+      (
+        s.matches.find((m) => m.routeId === "/(main)/dashboard")?.loaderData as
+          | { navigation?: ProjectNavigationData }
+          | undefined
+      )?.navigation?.projects ?? [],
+  });
 
   useEffect(() => {
     const show = (event?: Event) => {
@@ -130,6 +139,29 @@ export function CommandPalette() {
           />
           <CommandList className="max-h-[50dvh]">
             <CommandEmpty>No pages found. Try a dashboard or app name.</CommandEmpty>
+            {projects.length > 0 && (
+              <CommandGroup heading="Projects">
+                {projects.flatMap((project) =>
+                  projectViews.map((view) => (
+                    <CommandItem
+                      key={`${project.id}-${view.id}`}
+                      value={`${project.name} ${view.label} Projects`}
+                      onSelect={() => {
+                        setOpen(false);
+                        setQuery("");
+                        void navigate(projectDestination(project.id, view.id));
+                      }}
+                      className="min-h-10 gap-3"
+                    >
+                      <view.icon aria-hidden="true" />
+                      <span className="min-w-0 flex-1 truncate">
+                        {project.name} · {view.label}
+                      </span>
+                    </CommandItem>
+                  )),
+                )}
+              </CommandGroup>
+            )}
             {groups.map((group) => (
               <CommandGroup key={group} heading={group}>
                 {searchRoutes

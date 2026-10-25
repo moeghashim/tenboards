@@ -10,7 +10,7 @@ import { type DataTableFeatures, dataTableFeatures } from "@/lib/data-table-feat
 import type { readProjectTasks } from "@/server/data/projects";
 import { priorities, type Task, taskStatuses } from "@/server/data/projects.types";
 
-import { TaskCard } from "../../kanban/-components/task-card";
+import { TaskCard } from "./kanban/task-card";
 import { ProjectSelect, useSearchDraft } from "./project-controls";
 import { displayDate, type ProjectSearch, statusLabels } from "./project-search";
 import { ProjectTaskDetail } from "./project-task-detail";

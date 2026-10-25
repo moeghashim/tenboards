@@ -1,12 +1,12 @@
 import { boolean, integer, pgTable, primaryKey, text } from "drizzle-orm/pg-core";
 
-import type { FileKind } from "../../routes/(main)/dashboard/file-manager/-components/data.ts";
+import type { FileKind } from "../../routes/(main)/dashboard/projects/-components/file-manager/data.ts";
 import type {
   ColumnId,
   TaskInsightLabel,
   TaskPriority,
   TaskTeam,
-} from "../../routes/(main)/dashboard/kanban/-components/types.ts";
+} from "../../routes/(main)/dashboard/projects/-components/kanban/types.ts";
 export const boardColumns = pgTable("board_columns", {
   id: text().$type<ColumnId>().primaryKey(),
   title: text().notNull(),

@@ -98,7 +98,13 @@ try {
       await mode.getByRole("button", { name: "Calendar", exact: true }).click();
       await p.waitForURL(/mode=calendar/);
       await p.getByRole("region", { name: "Project calendar", exact: true }).waitFor();
-      assert.equal(await p.getByRole("link", { name: "Timeline", exact: true }).getAttribute("aria-current"), "page");
+      assert.equal(
+        await p
+          .getByRole("navigation", { name: "Project views" })
+          .getByRole("link", { name: "Timeline", exact: true })
+          .getAttribute("aria-current"),
+        "page",
+      );
       assert.equal(await p.getByRole("button", { name: "Add event", exact: true }).count(), 0);
       for (const label of ["Week", "Day", "Month"]) {
         await p.getByRole("combobox", { name: "Calendar view", exact: true }).click();
@@ -110,7 +116,10 @@ try {
       await p.getByRole("button", { name: "Today", exact: true }).focus();
       await p.keyboard.press("Enter");
       await p.screenshot({ path: `${out}/calendar-${theme}-${size}.png`, fullPage: true });
-      await p.getByRole("link", { name: "Files", exact: true }).click();
+      await p
+        .getByRole("navigation", { name: "Project views" })
+        .getByRole("link", { name: "Files", exact: true })
+        .click();
       await p.getByLabel("File display").waitFor();
       assert.equal(await p.getByRole("button", { name: /Upload|Download|Share|Delete|Unstar|Star / }).count(), 0);
       await p
@@ -118,7 +127,13 @@ try {
         .getByRole("button", { name: "List", exact: true })
         .click();
       await p.waitForURL(/view=list/);
-      assert.equal(await p.getByRole("link", { name: "Files", exact: true }).getAttribute("aria-current"), "page");
+      assert.equal(
+        await p
+          .getByRole("navigation", { name: "Project views" })
+          .getByRole("link", { name: "Files", exact: true })
+          .getAttribute("aria-current"),
+        "page",
+      );
       await p.getByLabel("Search files").fill("no-such-file");
       await p.getByText(/No matching files in Documentation refresh/).waitFor();
       assert.equal(await p.getByRole("heading", { name: "Folders", exact: true }).count(), 0);

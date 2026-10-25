@@ -26,6 +26,7 @@ try {
     [file, "loadProjectBoard"],
     [file.replace("project-functions", "workspace-functions"), "loadWorkspaceHome"],
     [file.replace("project-functions", "workspace-functions"), "loadProjectsIndex"],
+    [file.replace("project-functions", "workspace-functions"), "loadProjectNavigation"],
     ...["loadProjectOverview", "loadProjectTimeline", "loadProjectFiles"].map((name) => [
       file.replace("project-functions", "project-view-functions"),
       name,
@@ -85,6 +86,11 @@ try {
     );
   }
   const workspaceFile = file.replace("project-functions", "workspace-functions");
+  const navigation = await callRpc(page, workspaceFile, "loadProjectNavigation", "GET");
+  assert.equal(navigation.ok, true);
+  assert.equal(navigation.result.projects.length, 3);
+  assert.equal(navigation.result.error, false);
+  assert.match(navigation.cacheControl, /private.*no-store/);
   const home = await callRpc(page, workspaceFile, "loadWorkspaceHome", "GET");
   assert.equal(home.ok, true);
   assert.equal(home.result.sampleMember, "board:jordan");

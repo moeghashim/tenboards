@@ -2,6 +2,10 @@
 
 ## Unreleased — v0.8 Projects workspace
 
+- Make workspace Home the landing page for root/dashboard redirects and missing or invalid auth returns; preserve validated destinations and the revenue dashboard at `/dashboard/default`.
+- Retain AI Assistant immediately after Chat in primary navigation, palette and the route inventory.
+- Remove the former local Kanban drag-and-drop interaction as part of read-only project consolidation; Board shows all matching tasks and List retains pagination.
+
 - Replace inherited generated ledger titles with neutral operations-rollout tasks; repeat seeds preserve IDs and update both legacy and canonical copies.
 
 - Complete project Overview, Timeline (Gantt/table/Calendar) and Files with validated index redirects, bounded civil-date ranges, separate unscheduled work and read-only existing-component adapters. Extend parity to 204 scenarios.
