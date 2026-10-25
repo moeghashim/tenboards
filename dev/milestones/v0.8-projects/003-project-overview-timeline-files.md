@@ -69,3 +69,8 @@ Rebased on revised 001/002. Shared Select/ToggleGroup controls, project-qualifie
 Independent Impeccable A/B: 29/40 before final polish, no P0/P1; file-result visibility, singular count and avatar overlap fixed. Two nonblocking refinements remain: mobile table identity during horizontal inspection and exact-label discovery. Raw reports and four-state before/after/preview captures are in [round-two evidence](https://github.com/moeghashim/tenboards/tree/pr-assets/v08-003-round2).
 
 Final immutable demo: https://4d38b0c3-tenboards-preview.mohanadgh.workers.dev ; alias https://pr-71-tenboards-preview.mohanadgh.workers.dev . A disk-full/Docker interruption was recovered using a clean temporary evidence-cache removal and isolated PostgreSQL 17 on3278; complete reruns pass. PR #71 remains in review; implementer did not merge or deploy production.
+
+
+### Round 4 integration — 2026-10-25
+
+Replayed on v0.7 and the revised Board layer. Overview exposes canceled totals and marks overdue as a subset of open; the header shares the done/eligible progress explanation. Member avatars no longer overlap initials. Files has a File name hint; Timeline/Files defaults are absent from URLs while explicit choices remain. Build/check/typecheck, default smoke, all four view-interaction states and delayed Calendar hydration across UTC/Chicago/Kiritimati pass. Civil schedule checks pass in all three zones. Breadcrumb links follow in layer004 when Projects index exists. Status remains in review.

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { createFileRoute, getRouteApi, notFound } from "@tanstack/react-router";
+import { createFileRoute, getRouteApi, notFound, stripSearchParams } from "@tanstack/react-router";
 
 import { z } from "zod";
 
@@ -19,7 +19,9 @@ import { loadProjectFiles } from "../-components/project-view-functions";
 const shell = getRouteApi("/(main)/dashboard/projects/$projectId");
 export const Route = createFileRoute("/(main)/dashboard/projects/$projectId/files")({
   beforeLoad: requireAppRoute,
-  validateSearch: (s) => z.object({ view: z.enum(["grid", "list"]).catch("grid") }).parse(s),
+  validateSearch: (s: Record<string, unknown>): { view: "grid" | "list" } =>
+    z.object({ view: z.enum(["grid", "list"]).catch("grid") }).parse(s),
+  search: { middlewares: [stripSearchParams<{ view: "grid" | "list" }>({ view: "grid" })] },
   loader: async ({ params }) => {
     const d = await loadProjectFiles({ data: params });
     if (!d) throw notFound();
@@ -51,6 +53,7 @@ function Files() {
           Search files
           <Input
             id="project-file-query"
+            placeholder="File name"
             aria-label="Search files"
             value={query}
             maxLength={200}

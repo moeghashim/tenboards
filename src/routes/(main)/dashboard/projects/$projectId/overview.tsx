@@ -23,11 +23,12 @@ function Page() {
   const { project, upcoming, activity } = Route.useLoaderData();
   return (
     <section className="space-y-5" aria-label="Project overview">
-      <div className="grid grid-cols-2 gap-3 xl:grid-cols-4">
-        <StatCard label="Total tasks" value={project.metrics.total} />
+      <div className="grid grid-cols-2 gap-3 xl:grid-cols-5">
+        <StatCard label="Total tasks" value={project.metrics.total} help="Open + completed + canceled" />
         <StatCard label="Open tasks" value={project.metrics.open} />
         <StatCard label="Completed" value={project.metrics.completed} />
-        <StatCard label="Overdue" value={project.metrics.overdue} />
+        <StatCard label="Canceled" value={project.metrics.canceled} />
+        <StatCard label="Overdue" value={project.metrics.overdue} help="Included in open tasks" />
       </div>
       <div className="grid items-start gap-5 lg:grid-cols-[minmax(0,2fr)_minmax(16rem,1fr)]">
         <div className="min-w-0 space-y-5">

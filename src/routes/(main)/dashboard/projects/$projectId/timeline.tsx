@@ -1,14 +1,19 @@
-import { createFileRoute, notFound } from "@tanstack/react-router";
+import { createFileRoute, notFound, stripSearchParams } from "@tanstack/react-router";
 
 import { requireAppRoute } from "@/lib/auth/app-route";
 
 import { ProjectError, ProjectPending } from "../-components/project-boundaries";
 import { ProjectTimeline } from "../-components/project-timeline";
 import { loadProjectTimeline } from "../-components/project-view-functions";
-import { timelineSearch } from "../-components/timeline-search";
+import { type TimelineSearch, timelineSearch } from "../-components/timeline-search";
 export const Route = createFileRoute("/(main)/dashboard/projects/$projectId/timeline")({
   beforeLoad: requireAppRoute,
-  validateSearch: (s) => timelineSearch.parse(s),
+  validateSearch: (s: Record<string, unknown>): TimelineSearch => timelineSearch.parse(s),
+  search: {
+    middlewares: [
+      stripSearchParams<TimelineSearch>({ query: "", sort: "position", offset: 0, limit: 100, scale: "weeks" }),
+    ],
+  },
   loaderDeps: ({ search }) => {
     const { mode: _, scale: __, periods: ___, start: ____, ...filters } = search;
     return filters;

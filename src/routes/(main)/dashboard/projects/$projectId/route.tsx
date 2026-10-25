@@ -1,6 +1,5 @@
 import { createFileRoute, Link, notFound, Outlet, useNavigate } from "@tanstack/react-router";
 
-import { AvatarGroup, AvatarGroupCount } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { requireAppRoute } from "@/lib/auth/app-route";
 
@@ -10,7 +9,7 @@ import { ProjectSelect } from "../-components/project-controls";
 import { loadProject } from "../-components/project-functions";
 import { ProjectProgress } from "../-components/project-progress";
 import { searchSchema } from "../-components/project-search";
-import { PersonAvatar } from "../-components/task-presentation";
+import { MemberAvatars } from "../-components/task-presentation";
 import { timelineSearch } from "../-components/timeline-search";
 export const Route = createFileRoute("/(main)/dashboard/projects/$projectId")({
   beforeLoad: requireAppRoute,
@@ -61,16 +60,7 @@ function ProjectShell() {
             {project.status.replaceAll("-", " ")}
           </Badge>
           <span className="text-muted-foreground text-sm">{project.metrics.total} tasks</span>
-          <AvatarGroup className="-space-x-1" role="group" aria-label="Project members">
-            {project.members.slice(0, 5).map((person) => (
-              <PersonAvatar key={person.id} person={person} />
-            ))}
-            {project.members.length > 5 && (
-              <AvatarGroupCount aria-label={`${project.members.length - 5} more members`}>
-                +{project.members.length - 5}
-              </AvatarGroupCount>
-            )}
-          </AvatarGroup>
+          <MemberAvatars members={project.members} label="Project members" />
         </div>
         <div className="w-full sm:w-64">
           <ProjectProgress metrics={project.metrics} name={project.name} />
