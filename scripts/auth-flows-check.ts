@@ -32,7 +32,7 @@ const pass = (name: string) => {
   cases++;
   console.log(`PASS ${name}`);
 };
-const destination = "/dashboard/projects/sample-operations/list?query=auth-test&sort=position&offset=0&limit=10#table";
+const destination = "/dashboard/projects/sample-operations/list?query=auth-test#table";
 try {
   await mkdir(evidenceDir, { recursive: true });
   for (const remember of [false, true]) {

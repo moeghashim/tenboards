@@ -39,7 +39,7 @@ Run Impeccable context once from the task worktree, inspect incumbent renders an
 
 ## Acceptance criteria
 
-- [x] Primary Home points to /dashboard/home, Projects to /dashboard/projects, and brand-home follows Home. Retain Default under Dashboards and leave root/dashboard-index/auth fallback destinations unchanged. Keep Email/Chat and preserve Assistant directly after Chat.
+- [x] Primary Home points to /dashboard/home, Projects to /dashboard/projects, and brand-home follows Home. Retain Default under Dashboards; root/dashboard-index/auth fallbacks lead to Home per the locked 2026-10-25 PLAN decision, while validated return destinations win. Keep Email/Chat and preserve Assistant directly after Chat.
 - [x] Projects section loads guarded summaries and expands each named project to Overview/Board/List/Timeline/Files with exact active child and parent indication. No unresolved parameter navigation, prefix collisions or copied reference assets/data.
 - [x] Disclosure buttons/nested lists expose correct expanded/controls state; Enter/Space/Tab and visible focus work, collapsed content leaves tab order and focus is recovered on collapse. Use the same indented pattern for suitable existing parent groups without unrelated redesign.
 - [x] Named collapsed-rail triggers open usable Popover links, active state and project name; tooltip is supplemental. Escape/outside/route-change dismissal and focus return work. Preserve off-canvas/mobile/header-toggle behavior across layout preferences.
@@ -52,9 +52,9 @@ Run Impeccable context once from the task worktree, inspect incumbent renders an
 
 ## Tests
 
-Run common test floor, dedicated HTTP/client redirect checks in demo/auth modes, direct RPC denial/session expiry and nested-nav storage/keyboard/focus tests. npm run screenshots covers Home/index/all views plus default/Chat/Assistant when present, before/after light/dark desktop/mobile; add --sidebar-states and all supported sidebar styles/collapse modes. Inspect palette project search, empty/error summaries, deep links, cross-project switching, no raw $projectId paths and unchanged root destinations on dev and immutable demo preview.
+Run common test floor, dedicated HTTP/client redirect checks in demo/auth modes, direct RPC denial/session expiry and nested-nav storage/keyboard/focus tests. npm run screenshots covers Home/index/all views plus default/Chat/Assistant when present, before/after light/dark desktop/mobile; add --sidebar-states and all supported sidebar styles/collapse modes. Inspect palette project search, empty/error summaries, deep links, cross-project switching, no raw $projectId paths and PLAN-approved Home root destinations on dev and immutable demo preview.
 
-Every task passes `npm run build`, `npm run check`, `npm run typecheck` and dev `/dashboard/default` smoke without console errors. Attach a demo-only immutable preview and alias; use only `npm run preview:deploy -- --preview-alias pr-NNN`. Evidence stays on pr-assets/PR attachments. Report inherited warnings separately.
+Every task passes `npm run build`, `npm run check`, `npm run typecheck` and dev `/` → `/dashboard/home` smoke without console errors. Attach a demo-only immutable preview and alias; use only `npm run preview:deploy -- --preview-alias pr-NNN`. Evidence stays on pr-assets/PR attachments. Report inherited warnings separately.
 
 ## Dependencies and handoff
 
