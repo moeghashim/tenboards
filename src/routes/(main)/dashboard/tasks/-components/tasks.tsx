@@ -21,9 +21,9 @@ import {
   PaginationPrevious,
 } from "@/components/ui/pagination";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { dataTableFeatures } from "@/lib/data-table-features";
 
+import { TaskRows } from "../../projects/-components/task-rows";
 import { columns } from "./columns";
 import type { Task } from "./data";
 import { TasksToolbar } from "./tasks-toolbar";
@@ -88,46 +88,15 @@ export function Tasks({ data }: TasksProps) {
       <div className="border-b px-4 py-4">
         <TasksToolbar table={table} />
       </div>
-      <Table aria-label="Tasks" className="min-w-200 **:data-[slot=table-cell]:px-4 **:data-[slot=table-head]:px-4">
-        <TableHeader>
-          {table.getHeaderGroups().map((headerGroup) => (
-            <TableRow key={headerGroup.id} className="hover:bg-transparent">
-              {headerGroup.headers.map((header) => (
-                <TableHead key={header.id} className="text-muted-foreground h-11 font-medium" colSpan={header.colSpan}>
-                  {header.isPlaceholder ? null : <table.FlexRender header={header} />}
-                </TableHead>
-              ))}
-            </TableRow>
-          ))}
-        </TableHeader>
-        <TableBody>
-          {table.getRowModel().rows?.length ? (
-            table.getRowModel().rows.map((row) => (
-              <TableRow
-                key={row.id}
-                data-task-id={row.id}
-                className="border-border hover:bg-muted"
-                data-state={table.state.rowSelection[row.id] && "selected"}
-              >
-                {row.getVisibleCells().map((cell) => (
-                  <TableCell key={cell.id} className="py-2 align-middle">
-                    <table.FlexRender cell={cell} />
-                  </TableCell>
-                ))}
-              </TableRow>
-            ))
-          ) : (
-            <TableRow>
-              <TableCell colSpan={table.getVisibleLeafColumns().length} className="h-24 p-0">
-                <div className="sticky left-0 w-[calc(100vw-4rem)] px-4 py-6 text-center sm:w-auto">
-                  <p className="font-medium">No matching tasks</p>
-                  <p className="text-muted-foreground mt-1 text-sm">Change your search or reset the filters above.</p>
-                </div>
-              </TableCell>
-            </TableRow>
-          )}
-        </TableBody>
-      </Table>
+      <TaskRows
+        table={table}
+        empty={
+          <div className="sticky left-0 w-[calc(100vw-4rem)] px-4 py-6 text-center sm:w-auto">
+            <p className="font-medium">No matching tasks</p>
+            <p className="text-muted-foreground mt-1 text-sm">Change your search or reset the filters above.</p>
+          </div>
+        }
+      />
       <div className="flex flex-col gap-3 border-t px-4 py-4 md:flex-row md:items-center md:justify-between">
         <div className="text-muted-foreground text-sm" role="status">
           {table.getFilteredSelectedRowModel().rows.length} of {table.getFilteredRowModel().rows.length} row(s)

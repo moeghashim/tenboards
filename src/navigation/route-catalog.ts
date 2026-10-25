@@ -1,9 +1,24 @@
 import { sidebarItems } from "./sidebar/sidebar-items.ts";
 
 // Explicit coverage contract. Compare against generated metadata on every capture run.
-// The only dynamic route is the dashboard splat: exercise its retained not-found UI.
+// Dynamic project routes use concrete capture paths; palette integration belongs to consolidation.
 export const captureRoutes = [
   { route: "/dashboard/assistant", path: "/dashboard/assistant", ready: "What would you like to explore?" },
+  {
+    route: "/dashboard/projects/$projectId",
+    path: "/dashboard/projects/sample-operations",
+    ready: "Operations rollout",
+  },
+  {
+    route: "/dashboard/projects/$projectId/board",
+    path: "/dashboard/projects/sample-operations/board",
+    ready: "Operations rollout",
+  },
+  {
+    route: "/dashboard/projects/$projectId/list",
+    path: "/dashboard/projects/sample-operations/list",
+    ready: "Operations rollout",
+  },
   {
     route: "/chat",
     path: "/chat",
@@ -155,12 +170,21 @@ const extraLabels: Record<string, string> = {
   "/dashboard/coming-soon": "Coming soon",
 };
 
-export const routeCatalog = captureRoutes.map((entry) => {
-  const nav = navRoutes.find((item) => item.url === entry.route);
-  return {
-    ...entry,
-    label: extraLabels[entry.route] ?? nav?.title ?? entry.route,
-    group: nav?.group ?? "Other screens",
-    icon: nav?.icon,
-  };
-});
+export const routeCatalog = captureRoutes
+  .filter((entry) => !entry.route.includes("$projectId"))
+  .map((entry) => {
+    const nav = navRoutes.find((item) => item.url === entry.route);
+    return {
+      ...entry,
+      label: extraLabels[entry.route] ?? nav?.title ?? entry.route,
+      group: nav?.group ?? "Other screens",
+      icon: nav?.icon,
+    };
+  });
+
+// Interim labels for direct project routes; guarded project-qualified shell navigation ships in 005.
+export function projectRouteTitle(path: string) {
+  const match = path.match(/^\/dashboard\/projects\/[^/]+(?:\/(board|list))?\/?$/);
+  if (!match) return undefined;
+  return match[1] ? `Project · ${match[1] === "board" ? "Board" : "List"}` : "Project";
+}

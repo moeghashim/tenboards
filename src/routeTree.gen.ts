@@ -50,6 +50,9 @@ import { Route as mainAuthV1LoginRouteRouteImport } from './routes/(main)/auth/v
 import { Route as mainAuthV1RegisterRouteRouteImport } from './routes/(main)/auth/v1/register/route'
 import { Route as mainAuthV2LoginRouteRouteImport } from './routes/(main)/auth/v2/login/route'
 import { Route as mainAuthV2RegisterRouteRouteImport } from './routes/(main)/auth/v2/register/route'
+import { Route as mainDashboardProjectsProjectIdRouteRouteImport } from './routes/(main)/dashboard/projects/$projectId/route'
+import { Route as mainDashboardProjectsProjectIdBoardRouteImport } from './routes/(main)/dashboard/projects/$projectId/board'
+import { Route as mainDashboardProjectsProjectIdListRouteImport } from './routes/(main)/dashboard/projects/$projectId/list'
 
 const externalIndexRoute = externalIndexRouteImport.update({
   id: '/(external)/',
@@ -274,6 +277,24 @@ const mainAuthV2RegisterRouteRoute = mainAuthV2RegisterRouteRouteImport.update({
   path: '/register',
   getParentRoute: () => mainAuthV2RouteRoute,
 } as any)
+const mainDashboardProjectsProjectIdRouteRoute =
+  mainDashboardProjectsProjectIdRouteRouteImport.update({
+    id: '/projects/$projectId',
+    path: '/projects/$projectId',
+    getParentRoute: () => mainDashboardRouteRoute,
+  } as any)
+const mainDashboardProjectsProjectIdBoardRoute =
+  mainDashboardProjectsProjectIdBoardRouteImport.update({
+    id: '/board',
+    path: '/board',
+    getParentRoute: () => mainDashboardProjectsProjectIdRouteRoute,
+  } as any)
+const mainDashboardProjectsProjectIdListRoute =
+  mainDashboardProjectsProjectIdListRouteImport.update({
+    id: '/list',
+    path: '/list',
+    getParentRoute: () => mainDashboardProjectsProjectIdRouteRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/chat': typeof mainChatRouteRoute
@@ -317,6 +338,9 @@ export interface FileRoutesByFullPath {
   '/auth/v1/register': typeof mainAuthV1RegisterRouteRoute
   '/auth/v2/login': typeof mainAuthV2LoginRouteRoute
   '/auth/v2/register': typeof mainAuthV2RegisterRouteRoute
+  '/dashboard/projects/$projectId': typeof mainDashboardProjectsProjectIdRouteRouteWithChildren
+  '/dashboard/projects/$projectId/board': typeof mainDashboardProjectsProjectIdBoardRoute
+  '/dashboard/projects/$projectId/list': typeof mainDashboardProjectsProjectIdListRoute
 }
 export interface FileRoutesByTo {
   '/chat': typeof mainChatRouteRoute
@@ -359,6 +383,9 @@ export interface FileRoutesByTo {
   '/auth/v1/register': typeof mainAuthV1RegisterRouteRoute
   '/auth/v2/login': typeof mainAuthV2LoginRouteRoute
   '/auth/v2/register': typeof mainAuthV2RegisterRouteRoute
+  '/dashboard/projects/$projectId': typeof mainDashboardProjectsProjectIdRouteRouteWithChildren
+  '/dashboard/projects/$projectId/board': typeof mainDashboardProjectsProjectIdBoardRoute
+  '/dashboard/projects/$projectId/list': typeof mainDashboardProjectsProjectIdListRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -403,6 +430,9 @@ export interface FileRoutesById {
   '/(main)/auth/v1/register': typeof mainAuthV1RegisterRouteRoute
   '/(main)/auth/v2/login': typeof mainAuthV2LoginRouteRoute
   '/(main)/auth/v2/register': typeof mainAuthV2RegisterRouteRoute
+  '/(main)/dashboard/projects/$projectId': typeof mainDashboardProjectsProjectIdRouteRouteWithChildren
+  '/(main)/dashboard/projects/$projectId/board': typeof mainDashboardProjectsProjectIdBoardRoute
+  '/(main)/dashboard/projects/$projectId/list': typeof mainDashboardProjectsProjectIdListRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -448,6 +478,9 @@ export interface FileRouteTypes {
     | '/auth/v1/register'
     | '/auth/v2/login'
     | '/auth/v2/register'
+    | '/dashboard/projects/$projectId'
+    | '/dashboard/projects/$projectId/board'
+    | '/dashboard/projects/$projectId/list'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/chat'
@@ -490,6 +523,9 @@ export interface FileRouteTypes {
     | '/auth/v1/register'
     | '/auth/v2/login'
     | '/auth/v2/register'
+    | '/dashboard/projects/$projectId'
+    | '/dashboard/projects/$projectId/board'
+    | '/dashboard/projects/$projectId/list'
   id:
     | '__root__'
     | '/(main)/chat'
@@ -533,6 +569,9 @@ export interface FileRouteTypes {
     | '/(main)/auth/v1/register'
     | '/(main)/auth/v2/login'
     | '/(main)/auth/v2/register'
+    | '/(main)/dashboard/projects/$projectId'
+    | '/(main)/dashboard/projects/$projectId/board'
+    | '/(main)/dashboard/projects/$projectId/list'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -841,8 +880,47 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof mainAuthV2RegisterRouteRouteImport
       parentRoute: typeof mainAuthV2RouteRoute
     }
+    '/(main)/dashboard/projects/$projectId': {
+      id: '/(main)/dashboard/projects/$projectId'
+      path: '/projects/$projectId'
+      fullPath: '/dashboard/projects/$projectId'
+      preLoaderRoute: typeof mainDashboardProjectsProjectIdRouteRouteImport
+      parentRoute: typeof mainDashboardRouteRoute
+    }
+    '/(main)/dashboard/projects/$projectId/board': {
+      id: '/(main)/dashboard/projects/$projectId/board'
+      path: '/board'
+      fullPath: '/dashboard/projects/$projectId/board'
+      preLoaderRoute: typeof mainDashboardProjectsProjectIdBoardRouteImport
+      parentRoute: typeof mainDashboardProjectsProjectIdRouteRoute
+    }
+    '/(main)/dashboard/projects/$projectId/list': {
+      id: '/(main)/dashboard/projects/$projectId/list'
+      path: '/list'
+      fullPath: '/dashboard/projects/$projectId/list'
+      preLoaderRoute: typeof mainDashboardProjectsProjectIdListRouteImport
+      parentRoute: typeof mainDashboardProjectsProjectIdRouteRoute
+    }
   }
 }
+
+interface mainDashboardProjectsProjectIdRouteRouteChildren {
+  mainDashboardProjectsProjectIdBoardRoute: typeof mainDashboardProjectsProjectIdBoardRoute
+  mainDashboardProjectsProjectIdListRoute: typeof mainDashboardProjectsProjectIdListRoute
+}
+
+const mainDashboardProjectsProjectIdRouteRouteChildren: mainDashboardProjectsProjectIdRouteRouteChildren =
+  {
+    mainDashboardProjectsProjectIdBoardRoute:
+      mainDashboardProjectsProjectIdBoardRoute,
+    mainDashboardProjectsProjectIdListRoute:
+      mainDashboardProjectsProjectIdListRoute,
+  }
+
+const mainDashboardProjectsProjectIdRouteRouteWithChildren =
+  mainDashboardProjectsProjectIdRouteRoute._addFileChildren(
+    mainDashboardProjectsProjectIdRouteRouteChildren,
+  )
 
 interface mainDashboardRouteRouteChildren {
   mainDashboardAcademyRouteRoute: typeof mainDashboardAcademyRouteRoute
@@ -870,6 +948,7 @@ interface mainDashboardRouteRouteChildren {
   mainDashboardUsersRouteRoute: typeof mainDashboardUsersRouteRoute
   mainDashboardSplatRoute: typeof mainDashboardSplatRoute
   mainDashboardIndexRoute: typeof mainDashboardIndexRoute
+  mainDashboardProjectsProjectIdRouteRoute: typeof mainDashboardProjectsProjectIdRouteRouteWithChildren
 }
 
 const mainDashboardRouteRouteChildren: mainDashboardRouteRouteChildren = {
@@ -899,6 +978,8 @@ const mainDashboardRouteRouteChildren: mainDashboardRouteRouteChildren = {
   mainDashboardUsersRouteRoute: mainDashboardUsersRouteRoute,
   mainDashboardSplatRoute: mainDashboardSplatRoute,
   mainDashboardIndexRoute: mainDashboardIndexRoute,
+  mainDashboardProjectsProjectIdRouteRoute:
+    mainDashboardProjectsProjectIdRouteRouteWithChildren,
 }
 
 const mainDashboardRouteRouteWithChildren =

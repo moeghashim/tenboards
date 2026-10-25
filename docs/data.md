@@ -1,6 +1,6 @@
 # Project data foundation
 
-Projects use the existing `readSource` selection and request-scoped database client. No configuration, auth policy or runtime dependency changes. New page/server consumers must independently call `requireSession` before reading; the foundation exports data readers, not RPC endpoints.
+Projects use the existing `readSource` selection and request-scoped database client. No configuration, auth policy or runtime dependency changes. Project Board/List GET functions independently call `requireSession` before validated reads. Route guards protect documents; direct RPC access is separately checked. The foundation itself exports data readers, not RPC endpoints.
 
 ## Migration and provenance
 
