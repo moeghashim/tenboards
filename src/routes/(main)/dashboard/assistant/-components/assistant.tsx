@@ -1,15 +1,24 @@
 import { useEffect, useRef, useState } from "react";
 
+import { NativeSelect, NativeSelectOption } from "@/components/ui/native-select";
+import type { AssistantConfig, ProviderId } from "@/lib/assistant/config";
 import { inspectLanguage } from "@/lib/assistant/language";
-import { recordedStream } from "@/lib/assistant/recorded";
 import { bytes } from "@/lib/assistant/registry";
 import { consumeStream } from "@/lib/assistant/transport";
 
-import { AssistantSurface, Composer, ConversationTurn, Welcome } from "./presentation";
+import { AssistantSurface, Composer, ConversationTurn, RecordedPicker, Welcome } from "./presentation";
 import { SafeResponse } from "./safe-response";
 
-type Turn = { id: number; prompt: string; text: string; status: "streaming" | "completed" | "stopped" | "error" };
-export function Assistant() {
+type Turn = {
+  attribution: string;
+  id: number;
+  prompt: string;
+  text: string;
+  status: "streaming" | "completed" | "stopped" | "error";
+};
+export function Assistant({ config }: { config: AssistantConfig }) {
+  const [provider, setProvider] = useState<ProviderId | undefined>(config.providers[0]?.id);
+  const selected = config.providers.find((item) => item.id === provider);
   const [input, setInput] = useState("");
   const [turns, setTurns] = useState<Turn[]>([]);
   const [error, setError] = useState("");
@@ -37,15 +46,30 @@ export function Assistant() {
     setError("");
     setInput("");
     composer.current?.focus();
-    setTurns((previous) => [...previous, { id, prompt, text: "", status: "streaming" }]);
+    setTurns((previous) => [
+      ...previous,
+      {
+        id,
+        prompt,
+        text: "",
+        status: "streaming",
+        attribution: selected ? `${selected.name} · ${selected.model}` : "Recorded demo",
+      },
+    ]);
     const update = (patch: Partial<Turn>) => {
       if (generation.current === id)
         setTurns((previous) => previous.map((turn) => (turn.id === id ? { ...turn, ...patch } : turn)));
     };
     try {
-      const text = await consumeStream(recordedStream(prompt, controller.signal), controller.signal, (text) =>
-        update({ text }),
-      );
+      const response = await fetch("/api/assistant", {
+        method: "POST",
+        credentials: "same-origin",
+        signal: controller.signal,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ provider, messages: [{ role: "user", content: prompt }] }),
+      });
+      if (!response.ok || !response.body) throw new Error("Assistant unavailable.");
+      const text = await consumeStream(response.body, controller.signal, (text) => update({ text }));
       update({ text, status: inspectLanguage(text, true).status === "ready" ? "completed" : "error" });
     } catch {
       update({ status: controller.signal.aborted ? "stopped" : "error" });
@@ -79,7 +103,7 @@ export function Assistant() {
             <Welcome send={(prompt) => void send(prompt)} disabled={busy} />
           ) : (
             turns.map((turn) => (
-              <ConversationTurn key={turn.id} prompt={turn.prompt} attribution={`Recorded demo · ${turn.status}`}>
+              <ConversationTurn key={turn.id} prompt={turn.prompt} attribution={`${turn.attribution} · ${turn.status}`}>
                 {turn.status !== "error" && (
                   <SafeResponse
                     text={turn.text}
@@ -109,6 +133,31 @@ export function Assistant() {
         busy={busy}
         composer={composer}
         stopButton={stopButton}
+        toolbar={
+          config.providers.length ? (
+            <>
+              <label htmlFor="assistant-provider" className="sr-only">
+                Provider
+              </label>
+              <NativeSelect
+                id="assistant-provider"
+                value={provider}
+                disabled={busy}
+                onChange={(event) => setProvider(event.target.value as ProviderId)}
+                className="max-w-full"
+                size="sm"
+              >
+                {config.providers.map((item) => (
+                  <NativeSelectOption key={item.id} value={item.id}>
+                    {item.name} · {item.model}
+                  </NativeSelectOption>
+                ))}
+              </NativeSelect>
+            </>
+          ) : (
+            <RecordedPicker />
+          )
+        }
       >
         {error && (
           <p role="alert" className="text-danger">

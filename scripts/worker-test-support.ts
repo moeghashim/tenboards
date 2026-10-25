@@ -1,6 +1,6 @@
 import { request } from "playwright";
 
-import type { AuthEnvironment } from "../src/lib/auth/config.ts";
+import type { RuntimeEnvironment } from "../src/server/assistant/config.server.ts";
 import { databaseUrl } from "../src/server/data/source.ts";
 import { testPort } from "./test-port.ts";
 import { spawn } from "node:child_process";
@@ -9,11 +9,12 @@ import path from "node:path";
 import { setTimeout as delay } from "node:timers/promises";
 
 export async function startWorker(
-  env: AuthEnvironment = {},
+  env: RuntimeEnvironment = {},
   options: {
     port?: number;
     binding?: boolean;
     harness?: boolean;
+    assistantMock?: boolean;
     stripClientIp?: boolean;
     headers?: Record<string, string>;
   } = {},
@@ -30,14 +31,18 @@ export async function startWorker(
   // This is a separate local test source config, never a mutation of Nitro output.
   let entry = ".output/server/index.mjs";
   if (options.harness) entry = "scripts/worker-parity-harness.ts";
+  if (options.assistantMock) entry = "scripts/worker-assistant-harness.ts";
   if (options.stripClientIp) entry = "scripts/worker-ip-harness.ts";
   const config = {
     name: "tenboards-local-test",
     compatibility_date: "2026-10-23",
     compatibility_flags: ["nodejs_compat"],
     main: path.resolve(entry),
-    no_bundle: !options.harness && !options.stripClientIp,
-    rules: options.harness || options.stripClientIp ? [] : [{ type: "ESModule", globs: ["**/*.mjs", "**/*.js"] }],
+    no_bundle: !options.harness && !options.stripClientIp && !options.assistantMock,
+    rules:
+      options.harness || options.stripClientIp || options.assistantMock
+        ? []
+        : [{ type: "ESModule", globs: ["**/*.mjs", "**/*.js"] }],
     assets: { binding: "ASSETS", directory: path.resolve(".output/public") },
     env: { local: { hyperdrive } },
   };

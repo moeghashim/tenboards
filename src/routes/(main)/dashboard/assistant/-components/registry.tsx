@@ -217,17 +217,19 @@ function RegisteredNode({
     }
   }
 }
-export const assistantLibrary = createLibrary({
-  id: "tenboards-assistant-v1",
-  root: "Stack",
-  components: Object.entries(schemas).map(([name, props]) =>
-    defineComponent({
-      name,
-      props,
-      description: descriptions[name as ComponentName],
-      component: ({ props: values, renderNode }: { props: unknown; renderNode: (node: unknown) => ReactNode }) => (
-        <RegisteredNode name={name as ComponentName} props={values} renderNode={renderNode} />
-      ),
-    }),
-  ),
-});
+export function getAssistantLibrary() {
+  return createLibrary({
+    id: "tenboards-assistant-v1",
+    root: "Stack",
+    components: Object.entries(schemas).map(([name, props]) =>
+      defineComponent({
+        name,
+        props,
+        description: descriptions[name as ComponentName],
+        component: ({ props: values, renderNode }: { props: unknown; renderNode: (node: unknown) => ReactNode }) => (
+          <RegisteredNode name={name as ComponentName} props={values} renderNode={renderNode} />
+        ),
+      }),
+    ),
+  });
+}

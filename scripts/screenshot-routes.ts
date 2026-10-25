@@ -4,6 +4,7 @@ export { captureRoutes } from "../src/navigation/route-catalog.ts";
 // Redirect-only aliases have HTTP/browser coverage in legacy-redirect-check.ts.
 export const httpRoutes: string[] = [
   "/api/auth/$",
+  "/api/assistant",
   "/dashboard/default-v1",
   "/dashboard/crm-v1",
   "/dashboard/finance-v1",

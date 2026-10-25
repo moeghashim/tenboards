@@ -31,7 +31,7 @@ export function assertPreviewConfig(config: unknown, generated = false) {
 }
 export function assertPreviewEnvironment(env: NodeJS.ProcessEnv) {
   const forbidden =
-    /^(?:DATABASE_URL|HYPERDRIVE|DATA_SOURCE|BETTER_AUTH_|GOOGLE_CLIENT_|GITHUB_CLIENT_|VITE_|NITRO_|WRANGLER_ENV|CLOUDFLARE_ENV|NODE_OPTIONS|TENBOARDS_PREVIEW_BUILD)/;
+    /^(?:ANTHROPIC_|OPENAI_|XAI_|META_|GOOGLE_GENERATIVE_AI_|ASSISTANT_ORIGIN|DATABASE_URL|HYPERDRIVE|DATA_SOURCE|BETTER_AUTH_|GOOGLE_CLIENT_|GITHUB_CLIENT_|VITE_|NITRO_|WRANGLER_ENV|CLOUDFLARE_ENV|NODE_OPTIONS|TENBOARDS_PREVIEW_BUILD)/;
   if (Object.keys(env).some((key) => forbidden.test(key) && env[key] !== undefined))
     throw new Error(
       "Preview build rejected: database/auth/provider/build override environment is present. Unset it first.",

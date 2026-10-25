@@ -8,7 +8,7 @@ Ten current dashboards and the retained app pages share a compact design system,
 
 **v0.6.2 (compact density) is merged, deployed and released as [v0.6.2](https://github.com/moeghashim/tenboards/releases/tag/v0.6.2)** tightens the shared desktop typography, controls, cards, tables and shell. Content uses 13px text, default desktop controls are 28px, and the header is 48px. Toolbar selects and tabs retain content-based minimum widths so wider font choices keep their labels readable. Mobile keeps larger control/spacing defaults; all fonts, presets and sidebar styles remain available. There is one compact default, with no additional preference. See the [density contract](dev/milestones/v0.6.2-compact-density/README.md) and [design system](DESIGN.md).
 
-**v0.7 task 001 (recorded Assistant foundation) is implemented for review** — `/dashboard/assistant` sits immediately after Chat and streams labeled illustrative replies through a bounded, read-only OpenUI registry. Try summaries, plan comparisons and charts with data-table alternatives; Send, Stop and New conversation keep state only in the mounted view. No model or provider endpoint is connected in this layer. Existing Chat stays unchanged. The live demo and PR previews remain recorded-only. See [the milestone contract](dev/milestones/v0.7-assistant/README.md).
+**v0.7 tasks 001–002 are implemented for review** — `/dashboard/assistant` sits immediately after Chat and streams bounded read-only summaries, tables and charts. Zero keys gives recorded examples; adopters can configure Anthropic, OpenAI, xAI, Meta or Google with server-only keys and model overrides. Both modes use a guarded, limited POST endpoint with cancellation. Send, Stop and New conversation keep state only in the mounted view; task 003 completes history/Regenerate. Existing Chat stays unchanged. Live demo and PR previews remain recorded-only. See [Assistant setup, limits and privacy](docs/assistant.md) and [the milestone contract](dev/milestones/v0.7-assistant/README.md).
 
 **v0.8 (Projects workspace) is planned, not implemented** — [the milestone contract and six tasks](dev/milestones/v0.8-projects/README.md) cover workspace Home, a Projects index, nested project navigation and read-only Overview/Board/List/Timeline/Files views. Kanban, Tasks, Calendar and File Manager will consolidate into project views with permanent legacy redirects. Both v0.7 and v0.8 proceed independently after rebasing onto v0.6.2 compact density; the reviewer reconciles shared shell files. Current routes and behavior are unchanged by this planning PR.
 
@@ -33,6 +33,7 @@ OpenUI install telemetry must remain disabled (`OPENUI_TELEMETRY_DISABLED=1` or 
 - `npm run build` — production client and server build.
 - `npm run preview` — preview the compiled Worker locally with Wrangler.
 - `npm run check` / `npm run check:fix` — Biome lint, imports, and formatting.
+- `npm run assistant:server` / `npm run assistant:worker` — synthetic provider-wire, endpoint and isolated admission/auth checks on Node and compiled workerd.
 - `npm run assistant:test` — bounded language/registry/stream checks; `npm run assistant:browser` runs recorded interaction checks against `ASSISTANT_TEST_URL` (default port 3170).
 - Set `TEST_PORT_OFFSET` when running auth/Worker regression suites in parallel worktrees; for example `160` maps 3011/3021/3031–3033 to 3171/3181/3191–3193. Supply an isolated local `DATABASE_URL`.
 - `npm run typecheck` — TypeScript (`tsc --noEmit`).
@@ -48,7 +49,7 @@ OpenUI install telemetry must remain disabled (`OPENUI_TELEMETRY_DISABLED=1` or 
 - `npm run worker:dev -- --binding` — compiled local Worker with Docker Hyperdrive emulation; omit `--binding` for demo/URL fallback.
 - `npm run worker:test` — local workerd runtime/concurrency/recovery and 22-read/104-scenario parity checks on a fresh review database.
 - `npm run worker:auth` / `npm run worker:security` — compiled route/account/security regressions and two-Worker distributed limiter checks.
-- `npm run deploy:prepare -- --name <worker-name> --url <https-origin> [--secrets-file <external-path>]` — clean build/config validation and optional private secrets; prints staging commands without network operations.
+- `npm run deploy:prepare -- --name <worker-name> --url <https-origin> [--secrets-file <external-path>] [--include-assistant]` — clean build/config validation and optional private secrets (AI settings require `--include-assistant`); prints staging commands without network operations.
 - `npm run deploy:check -- <origin>` — read-only auth-on production smoke; `--demo` explicitly selects preview expectations, `--auth-roundtrip` explicitly creates one throwaway account.
 
 ## Deploy with your own database
@@ -503,3 +504,4 @@ Follow [docs/deploy.md](docs/deploy.md) for local rehearsal, your own Neon/Hyper
 [Task 003 local acceptance and capture reports](https://github.com/moeghashim/tenboards/tree/pr-assets/v06-003) record the exact isolated preview and evidence boundaries; hosted checks belong to each adopter; task 004 adds template preparation and onboarding.
 
 The Assistant presents a centered conversation, suggestion cards and a single auto-growing composer anchored below the transcript, including safe-area spacing on mobile. Generated metrics, tables and charts share the compact dashboard card styling.
+The configured provider/model selector sits in the composer's bottom toolbar and remains disabled during a reply.

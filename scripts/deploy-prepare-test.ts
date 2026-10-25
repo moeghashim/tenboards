@@ -39,6 +39,12 @@ const badConfigs: unknown[] = [
     hyperdrive: [{ ...valid.hyperdrive[0], localConnectionString }],
   })),
   ...[
+    "ANTHROPIC_API_KEY",
+    "OPENAI_API_KEY",
+    "XAI_API_KEY",
+    "META_API_KEY",
+    "GOOGLE_GENERATIVE_AI_API_KEY",
+    "ASSISTANT_ORIGIN",
     "DATABASE_URL",
     "DATA_SOURCE",
     "HYPERDRIVE",
@@ -119,8 +125,31 @@ try {
   await symlink(filename, link);
   await assert.rejects(() => createDeploymentSecrets(link, origin, repo));
   const second = path.join(directory, "second.json");
-  await createDeploymentSecrets(second, origin, repo);
+  const previousKey = process.env.OPENAI_API_KEY;
+  process.env.OPENAI_API_KEY = "SYNTHETIC_NOT_OPTED_IN";
+  try {
+    await createDeploymentSecrets(second, origin, repo);
+    assert.ok(!("OPENAI_API_KEY" in JSON.parse(await readFile(second, "utf8"))));
+  } finally {
+    if (previousKey === undefined) delete process.env.OPENAI_API_KEY;
+    else process.env.OPENAI_API_KEY = previousKey;
+  }
   assert.notEqual(JSON.parse(await readFile(second, "utf8")).BETTER_AUTH_SECRET, secrets.BETTER_AUTH_SECRET);
+  const assistantFile = path.join(directory, "assistant.json");
+  await createDeploymentSecrets(assistantFile, origin, repo, {
+    META_API_KEY: "SYNTHETIC_META_KEY",
+    META_MODEL: "muse-spark-1.3",
+    ASSISTANT_ORIGIN: origin,
+  });
+  const assistantSecrets = JSON.parse(await readFile(assistantFile, "utf8"));
+  assert.equal(assistantSecrets.META_API_KEY, "SYNTHETIC_META_KEY");
+  assert.equal((await stat(assistantFile)).mode & 0o777, 0o600);
+  await assert.rejects(() =>
+    createDeploymentSecrets(path.join(directory, "bad.json"), origin, repo, {
+      OPENAI_API_KEY: "synthetic",
+      ASSISTANT_ORIGIN: "https://other.test",
+    }),
+  );
   const commands = deploymentNextCommands(origin, filename);
   assert.ok(!commands.includes(secrets.BETTER_AUTH_SECRET));
   assert.ok(commands.indexOf("versions upload") < commands.indexOf("versions view"));
