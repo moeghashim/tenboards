@@ -20,7 +20,7 @@ const page = await context.newPage(),
 const file = "/src/routes/(main)/dashboard/projects/-components/project-functions.ts";
 try {
   await page.goto(`${server.baseURL}/auth/v2/login`);
-  for (const name of ["loadProject", "loadProjectTasks"]) {
+  for (const name of ["loadProject", "loadProjectTasks", "loadProjectBoard"]) {
     const result = await callRpc(page, file, name, "GET", { projectId: "sample-docs" });
     assert.equal(result.ok, false);
     assert.equal(result.message, "Sign in to continue.");

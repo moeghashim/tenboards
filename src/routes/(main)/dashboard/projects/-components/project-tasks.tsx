@@ -48,7 +48,10 @@ const columns: ColumnDef<DataTableFeatures, Task>[] = [
   {
     id: "subtasks",
     header: "Subtasks",
-    cell: ({ row }) => `${row.original.subtasks.filter((s) => s.done).length}/${row.original.subtasks.length}`,
+    cell: ({ row }) =>
+      row.original.subtasks.length
+        ? `${row.original.subtasks.filter((s) => s.done).length}/${row.original.subtasks.length}`
+        : "—",
   },
   { accessorKey: "commentCount", header: "Comments" },
   { id: "details", header: "Details", cell: ({ row }) => <ProjectTaskDetail task={row.original} /> },
@@ -260,35 +263,37 @@ export function ProjectTasks({
           No matching tasks in {project?.name}. Reset filters or choose another project.
         </p>
       )}
-      <div className="flex flex-wrap items-center justify-between gap-3 border-t pt-4">
-        <p className="text-muted-foreground text-sm">
-          Showing {data.total ? data.offset + 1 : 0}–{data.offset + data.items.length} of {data.total}
-        </p>
-        <div className="flex flex-wrap items-center gap-2">
-          {view === "list" && (
-            <ProjectSelect
-              label="Rows per page"
-              value={String(search.limit)}
-              options={[10, 20, 50].map((n) => ({ value: String(n), label: String(n) }))}
-              onChange={(value) => update({ limit: Number(value) as ProjectSearch["limit"] })}
-            />
-          )}
-          <Button
-            variant="outline"
-            disabled={!data.offset}
-            onClick={() => update({ offset: Math.max(0, data.offset - data.limit) })}
-          >
-            Previous
-          </Button>
-          <Button
-            variant="outline"
-            disabled={!data.hasMore}
-            onClick={() => update({ offset: data.offset + data.limit })}
-          >
-            Next
-          </Button>
+      {view === "list" && (
+        <div className="flex flex-wrap items-center justify-between gap-3 border-t pt-4">
+          <p className="text-muted-foreground text-sm">
+            Showing {data.total ? data.offset + 1 : 0}–{data.offset + data.items.length} of {data.total}
+          </p>
+          <div className="flex flex-wrap items-center gap-2">
+            {view === "list" && (
+              <ProjectSelect
+                label="Rows per page"
+                value={String(search.limit)}
+                options={[10, 20, 50].map((n) => ({ value: String(n), label: String(n) }))}
+                onChange={(value) => update({ limit: Number(value) as ProjectSearch["limit"] })}
+              />
+            )}
+            <Button
+              variant="outline"
+              disabled={!data.offset}
+              onClick={() => update({ offset: Math.max(0, data.offset - data.limit) })}
+            >
+              Previous
+            </Button>
+            <Button
+              variant="outline"
+              disabled={!data.hasMore}
+              onClick={() => update({ offset: data.offset + data.limit })}
+            >
+              Next
+            </Button>
+          </div>
         </div>
-      </div>
+      )}
     </section>
   );
 }

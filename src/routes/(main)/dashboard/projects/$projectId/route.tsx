@@ -6,6 +6,7 @@ import { PageHeader } from "../../-components/app-pages/page-header";
 import { ProjectError, ProjectMissing, ProjectPending } from "../-components/project-boundaries";
 import { ProjectSelect } from "../-components/project-controls";
 import { loadProject } from "../-components/project-functions";
+import { ProjectProgress } from "../-components/project-progress";
 import { searchSchema } from "../-components/project-search";
 export const Route = createFileRoute("/(main)/dashboard/projects/$projectId")({
   beforeLoad: requireAppRoute,
@@ -52,8 +53,11 @@ function ProjectShell() {
       />
       <p className="text-muted-foreground text-sm">
         <span className="text-foreground capitalize">{project.status.replaceAll("-", " ")}</span> ·{" "}
-        {project.metrics.total} tasks · {project.metrics.completed} completed · {project.metrics.progress}% complete
+        {project.metrics.total} tasks
       </p>
+      <div className="w-full sm:w-64">
+        <ProjectProgress metrics={project.metrics} name={project.name} />
+      </div>
       <nav aria-label="Project views" className="flex flex-wrap gap-1 border-b pb-2">
         <Link
           to="/dashboard/projects/$projectId/board"

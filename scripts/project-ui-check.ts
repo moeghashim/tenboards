@@ -78,7 +78,7 @@ try {
       await page.getByRole("combobox", { name: "Project", exact: true }).click();
       await page.getByRole("option", { name: "Operations rollout", exact: true }).click();
       await page.getByRole("heading", { name: "Operations rollout", exact: true }).waitFor();
-      await page.waitForFunction(() => document.querySelectorAll("[data-task-id]").length === 100);
+      await page.waitForFunction(() => document.querySelectorAll("[data-task-id]").length === 117);
       assert.equal(
         await page.evaluate(
           () =>
@@ -92,17 +92,12 @@ try {
         true,
         "Board scrollers contain absolute accessible labels",
       );
-      const first = await page
+      const all = await page
         .locator("[data-task-id]")
         .evaluateAll((nodes) => nodes.map((n) => n.getAttribute("data-task-id")));
-      await page.getByRole("button", { name: "Next", exact: true }).focus();
-      await page.keyboard.press("Enter");
-      await page.waitForURL(/offset=100/);
-      await page.waitForFunction(() => document.querySelectorAll("[data-task-id]").length === 17);
-      const second = await page
-        .locator("[data-task-id]")
-        .evaluateAll((nodes) => nodes.map((n) => n.getAttribute("data-task-id")));
-      assert.equal(new Set([...first, ...second]).size, 117);
+      assert.equal(new Set(all).size, 117);
+      assert.equal(await page.getByRole("button", { name: "Next", exact: true }).count(), 0);
+      assert.equal(new URL(page.url()).search, "");
       assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1), true);
       await page.getByRole("combobox", { name: "Status", exact: true }).click();
       await page.getByRole("option", { name: "Canceled", exact: true }).click();
@@ -113,12 +108,23 @@ try {
         .evaluate((node) => {
           node.scrollLeft = node.scrollWidth;
         });
-      assert.equal(new URL(page.url()).searchParams.get("offset"), "0");
+      assert.equal(new URL(page.url()).searchParams.get("offset"), null);
       await page.screenshot({ path: `${output}/canceled-${theme}-${size}.png`, fullPage: true });
+      await page
+        .getByRole("navigation", { name: "Project views" })
+        .getByRole("link", { name: "List", exact: true })
+        .click();
+      await page.waitForFunction(() => document.querySelectorAll("[data-task-id]").length === 10);
+      assert.equal(new URL(page.url()).search, "");
+      assert.ok(!((await page.getByRole("table", { name: "Project tasks" }).textContent()) ?? "").includes("0/0"));
+      await page.getByRole("button", { name: "Next", exact: true }).focus();
+      await page.keyboard.press("Enter");
+      await page.waitForURL(/offset=10/);
+
       assert.deepEqual(errors, []);
       await context.close();
       console.log(
-        `PASS ${theme}/${size}: identity, board/list equality, filters, empty/project switching, details keyboard/focus, 117 unique tasks over bounded pages, canceled and overflow`,
+        `PASS ${theme}/${size}: identity, board/list equality, filters, empty/project switching, details keyboard/focus, all 117 unique tasks without board pagination, canceled and overflow`,
       );
     }
   const context = await browser.newContext();

@@ -57,3 +57,8 @@ Depends on merged 001 and v0.6.2. Blocks 003. Hand off reusable project shell/ta
 One approved task per branch/PR; declare any stack and layer compare URL. Conventional commit with DCO sign-off and final `Co-Authored-By: GPT-6-Astra <noreply@openai.com>` trailer. Claude reviews and alone merges.
 
 Round 2 verification: [evidence](https://github.com/moeghashim/tenboards/tree/pr-assets/v08-002-round2). Build/check/typecheck, 448 Node auth scenarios, 29 reads / 208 Node/Worker parity scenarios, Worker auth/security, Node/Worker project access, project/migration checks and 96 redirects pass. Four-state dev and immutable-preview captures plus filters, debounced search, dialog focus and paging checks pass. Preview: https://2198d241-tenboards-preview.mohanadgh.workers.dev (alias pr-69). Remains in review.
+
+
+### Round 4 integration — 2026-10-25
+
+Replayed on the v0.7-integrated foundation. Board now reads all matching tasks (117 Operations tasks) through bounded, independently guarded server reads; List retains pagination. Default search values are omitted from canonical links, and absent subtasks display an em dash. Shared progress presentation states done/eligible counts and canceled exclusions. Four-state keyboard/filter/pagination/detail checks, Node RPC scope/denial/revocation and default-route smoke pass; build/check/typecheck pass with inherited diagnostics only. The final stack report supplies current before/after evidence. Status remains in review.
