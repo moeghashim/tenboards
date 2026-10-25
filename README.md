@@ -2,7 +2,7 @@
 
 An MIT-licensed dashboard template built with TanStack Start, React 19, TypeScript, Tailwind CSS v4, and shadcn/ui on Base UI.
 
-Ten current dashboards and the retained app pages share a compact design system, neutral demo identities and optional Postgres/Better Auth integration. Milestones v0.1–v0.7 are merged and released; [v0.6.0](https://github.com/moeghashim/tenboards/releases/tag/v0.6.0) delivers Workers database support, isolated demo previews and adopter deployment tooling. The [live site](https://tenboards.mohanadgh.workers.dev) intentionally stays a zero-config demo; adopters connect and verify their own database.
+Ten current dashboards and the retained app pages share a compact design system, neutral demo identities and optional Postgres/Better Auth integration. Milestones v0.1–v0.8 are merged and released; [v0.6.0](https://github.com/moeghashim/tenboards/releases/tag/v0.6.0) delivers Workers database support, isolated demo previews and adopter deployment tooling. The [live site](https://tenboards.mohanadgh.workers.dev) intentionally stays a zero-config demo; adopters connect and verify their own database.
 
 **v0.6.1 (legacy removal) is merged, deployed and released as [v0.6.1](https://github.com/moeghashim/tenboards/releases/tag/v0.6.1)**: the four V1 dashboards and Auth V1 forms are retired. Six old URLs permanently redirect to their current equivalents; Auth V2 is the only sign-in UI, and the collapsed desktop sidebar no longer shows a duplicate header toggle. The [collapsed-header-toggle task](dev/milestones/v0.6.1-legacy-removal/002-collapsed-header-toggle.md), [milestone overview](dev/milestones/v0.6.1-legacy-removal/README.md) and [milestone status](dev/milestones.json) track acceptance. The v0.5 authentication/session/security boundaries remain in place.
 
@@ -15,7 +15,7 @@ The configured provider/model selector sits in the composer's bottom toolbar and
 
 The Assistant follows new replies until you scroll up; Jump to latest resumes following. Enter sends, Shift+Enter inserts a newline, and the composer grows from one to eight rows. Copy and Regenerate are available below the latest reply.
 
-**v0.8 (Projects workspace) is in progress** — the data foundation, workspace Home/Projects index, and all five direct read-only project views are implemented. [The milestone contract](dev/milestones/v0.8-projects/README.md) tracks the remaining navigation consolidation and final acceptance. Existing standalone routes and the default landing remain available.
+**v0.8 (Projects workspace) is merged, deployed and released as [v0.8.0](https://github.com/moeghashim/tenboards/releases/tag/v0.8.0)** — the data foundation, workspace Home/Projects index, and all five direct read-only project views are implemented. [The milestone contract](dev/milestones/v0.8-projects/README.md) tracks the remaining navigation consolidation and final acceptance. Existing standalone routes and the default landing remain available.
 
 ## Run locally
 

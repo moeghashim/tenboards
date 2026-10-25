@@ -187,7 +187,7 @@
     },
     {
       "id": "v0.8-projects",
-      "status": "in-progress",
+      "status": "done",
       "tasks": [
         "001-project-data-foundation",
         "002-project-board-list",
@@ -197,12 +197,12 @@
         "006-projects-acceptance"
       ],
       "taskStatuses": {
-        "001-project-data-foundation": "in-review",
-        "002-project-board-list": "in-review",
-        "003-project-overview-timeline-files": "in-review",
-        "004-workspace-home-projects-index": "in-review",
-        "005-project-navigation-consolidation": "in-review",
-        "006-projects-acceptance": "in-review"
+        "001-project-data-foundation": "merged",
+        "002-project-board-list": "merged",
+        "003-project-overview-timeline-files": "merged",
+        "004-workspace-home-projects-index": "merged",
+        "005-project-navigation-consolidation": "merged",
+        "006-projects-acceptance": "merged"
       }
     }
   ]

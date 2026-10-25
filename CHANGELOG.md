@@ -1,6 +1,8 @@
 # Changelog
 
-## Unreleased — v0.8 Projects workspace
+## v0.8.0 — Projects workspace (2026-10-25)
+
+Released as [v0.8.0](https://github.com/moeghashim/tenboards/releases/tag/v0.8.0).
 
 - Make workspace Home the landing page for root/dashboard redirects and missing or invalid auth returns; preserve validated destinations and the revenue dashboard at `/dashboard/default`.
 - Retain AI Assistant immediately after Chat in primary navigation, palette and the route inventory.
