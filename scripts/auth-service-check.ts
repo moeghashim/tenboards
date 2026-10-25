@@ -6,7 +6,7 @@ import assert from "node:assert/strict";
 
 // A fresh test-owned empty database; removed after the suite.
 const missingURL = new URL(localDatabase);
-const missingName = `tenboards_auth_unmigrated_${Date.now()}`;
+const missingName = `tenboards_${process.env.TEST_DATABASE_INFIX ?? "auth"}_unmigrated_${Date.now()}`;
 missingURL.pathname = `/${missingName}`;
 const admin = postgres(localDatabase, { connect_timeout: 3 });
 try {
