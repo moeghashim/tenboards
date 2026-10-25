@@ -24,6 +24,8 @@ try {
     [file, "loadProject"],
     [file, "loadProjectTasks"],
     [file, "loadProjectBoard"],
+    [file.replace("project-functions", "workspace-functions"), "loadWorkspaceHome"],
+    [file.replace("project-functions", "workspace-functions"), "loadProjectsIndex"],
     ...["loadProjectOverview", "loadProjectTimeline", "loadProjectFiles"].map((name) => [
       file.replace("project-functions", "project-view-functions"),
       name,
@@ -34,6 +36,8 @@ try {
     assert.equal(result.message, "Sign in to continue.");
   }
   for (const path of [
+    "/dashboard/home",
+    "/dashboard/projects",
     "/dashboard/projects/sample-docs/board",
     "/dashboard/projects/missing/list",
     "/dashboard/projects/sample-docs",
@@ -80,6 +84,15 @@ try {
       null,
     );
   }
+  const workspaceFile = file.replace("project-functions", "workspace-functions");
+  const home = await callRpc(page, workspaceFile, "loadWorkspaceHome", "GET");
+  assert.equal(home.ok, true);
+  assert.equal(home.result.sampleMember, "board:jordan");
+  assert.ok(home.result.myTasks.length <= home.result.myTaskTotal);
+  assert.match(home.cacheControl, /private.*no-store/);
+  const index = await callRpc(page, workspaceFile, "loadProjectsIndex", "GET", { query: "Documentation" });
+  assert.equal(index.result.projects.length, 1);
+  assert.equal(index.result.total, 3);
   const tasks = await callRpc(page, file, "loadProjectTasks", "GET", { projectId: "sample-docs" });
   assert.equal(tasks.ok, true);
   assert.equal(tasks.result.total, 5);
@@ -100,6 +113,9 @@ try {
   const missing = await context.request.get(`${server.baseURL}/dashboard/projects/missing/board`);
   assert.equal(missing.status(), 404);
   await db`delete from auth_session where user_id=${user.id}`;
+  for (const name of ["loadWorkspaceHome", "loadProjectsIndex"]) {
+    assert.equal((await callRpc(page, workspaceFile, name, "GET", {})).message, "Sign in to continue.");
+  }
   assert.equal(
     (await callRpc(page, file, "loadProjectTasks", "GET", { projectId: "sample-docs" })).message,
     "Sign in to continue.",

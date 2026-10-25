@@ -4,6 +4,8 @@ import { sidebarItems } from "./sidebar/sidebar-items.ts";
 // Dynamic project routes use concrete capture paths; palette integration belongs to consolidation.
 export const captureRoutes = [
   { route: "/dashboard/assistant", path: "/dashboard/assistant", ready: "What would you like to explore?" },
+  { route: "/dashboard/home/", path: "/dashboard/home", ready: "My tasks" },
+  { route: "/dashboard/projects/", path: "/dashboard/projects", ready: "Projects" },
   {
     route: "/dashboard/projects/$projectId/overview",
     path: "/dashboard/projects/sample-operations/overview",
@@ -179,6 +181,8 @@ const extraLabels: Record<string, string> = {
   "/unauthorized": "Unauthorized",
   "/dashboard/$": "Page not found",
   "/dashboard/coming-soon": "Coming soon",
+  "/dashboard/home/": "Home",
+  "/dashboard/projects/": "Projects",
 };
 
 export const routeCatalog = captureRoutes

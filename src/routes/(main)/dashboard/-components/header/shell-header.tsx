@@ -1,6 +1,6 @@
-import { useLayoutEffect, useRef } from "react";
+import { type ComponentPropsWithRef, useLayoutEffect, useRef } from "react";
 
-import { useRouterState } from "@tanstack/react-router";
+import { createLink, useRouterState } from "@tanstack/react-router";
 
 import { cn } from "cn";
 
@@ -15,6 +15,9 @@ import { GitHubRepositoriesMenu } from "./github-repositories-menu";
 import { LayoutControls } from "./layout-controls";
 import { SignedInAccount } from "./signed-in-account";
 import { ThemeSwitcher } from "./theme-switcher";
+
+// Ancestor crumbs remain navigable; only the final view is the current page.
+const BreadcrumbLink = createLink((props: ComponentPropsWithRef<"a">) => <a {...props} aria-current={false} />);
 
 type ShellIdentity = { mode: "demo"; accounts: DemoAccount[] } | { mode: "auth"; user: NonNullable<AuthState["user"]> };
 
@@ -60,15 +63,52 @@ export function ShellHeader({ identity }: { identity: ShellIdentity }) {
           if (toggleRef.current?.getClientRects().length) toggleHadFocus.current = false;
         }}
       />
-      <div className="flex min-w-0 flex-1 items-center gap-2 text-sm">
-        <span className="text-muted-foreground hidden shrink-0 sm:inline">Workspace</span>
-        <span className="text-muted-foreground hidden sm:inline" aria-hidden="true">
-          /
-        </span>
-        <span className="truncate font-medium" title={title}>
-          {title}
-        </span>
-      </div>
+      {project ? (
+        <nav aria-label="Breadcrumb" className="min-w-0 flex-1 text-sm">
+          <ol className="flex min-w-0 items-center gap-2">
+            <li className="shrink-0">
+              <BreadcrumbLink
+                to="/dashboard/projects"
+                search={{ query: "" }}
+                className="text-muted-foreground hover:text-foreground hover:underline"
+              >
+                Projects
+              </BreadcrumbLink>
+            </li>
+            <li aria-hidden="true" className="text-muted-foreground">
+              /
+            </li>
+            <li className="min-w-0">
+              <BreadcrumbLink
+                to="/dashboard/projects/$projectId/overview"
+                params={{ projectId: project.id }}
+                className="text-muted-foreground hover:text-foreground block truncate hover:underline"
+                title={project.name}
+              >
+                {project.name}
+              </BreadcrumbLink>
+            </li>
+            <li aria-hidden="true" className="text-muted-foreground">
+              /
+            </li>
+            <li className="shrink-0">
+              <span aria-current="page" className="font-medium">
+                {view[0].toUpperCase() + view.slice(1)}
+              </span>
+            </li>
+          </ol>
+        </nav>
+      ) : (
+        <div className="flex min-w-0 flex-1 items-center gap-2 text-sm">
+          <span className="text-muted-foreground hidden shrink-0 sm:inline">Workspace</span>
+          <span className="text-muted-foreground hidden sm:inline" aria-hidden="true">
+            /
+          </span>
+          <span className="truncate font-medium" title={title}>
+            {title}
+          </span>
+        </div>
+      )}
       <div className="flex shrink-0 items-center gap-1">
         <div className="md:hidden">
           <SearchTrigger compact />

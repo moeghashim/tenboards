@@ -89,6 +89,8 @@ try {
     home.metrics.total,
     home.projects.reduce((n, p) => n + p.metrics.total, 0),
   );
+  assert.ok(home.myTaskTotal >= home.myTasks.length);
+  assert.ok(home.upcomingTotal >= home.upcoming.length);
   assert.ok(home.myTasks.every((t) => t.assigneeId === "board:jordan"));
   assert.equal(taskMetrics([{ status: "canceled", dueDate: null }]).progress, 0);
   assert.equal(

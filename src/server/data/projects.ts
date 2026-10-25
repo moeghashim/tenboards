@@ -107,7 +107,9 @@ async function home(repository: ProjectRepository, input: z.input<typeof homeInp
     metrics: await repository.metrics(undefined, today),
     activeProjects: summaries.filter((p) => p.status === "active" || p.status === "at-risk").length,
     myTasks: await section("mine"),
+    myTaskTotal: await repository.homeTaskCount(q.memberId, "mine", today),
     upcoming: await section("upcoming"),
+    upcomingTotal: await repository.homeTaskCount(q.memberId, "upcoming", today),
     activity: (await Promise.all(summaries.map((p) => repository.activity(p.id, 10))))
       .flat()
       .map((row) => sampleActivity(row, today))

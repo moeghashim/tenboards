@@ -50,6 +50,8 @@ import { Route as mainAuthV1LoginRouteRouteImport } from './routes/(main)/auth/v
 import { Route as mainAuthV1RegisterRouteRouteImport } from './routes/(main)/auth/v1/register/route'
 import { Route as mainAuthV2LoginRouteRouteImport } from './routes/(main)/auth/v2/login/route'
 import { Route as mainAuthV2RegisterRouteRouteImport } from './routes/(main)/auth/v2/register/route'
+import { Route as mainDashboardHomeIndexRouteImport } from './routes/(main)/dashboard/home/index'
+import { Route as mainDashboardProjectsIndexRouteImport } from './routes/(main)/dashboard/projects/index'
 import { Route as mainDashboardProjectsProjectIdRouteRouteImport } from './routes/(main)/dashboard/projects/$projectId/route'
 import { Route as mainDashboardProjectsProjectIdIndexRouteImport } from './routes/(main)/dashboard/projects/$projectId/index'
 import { Route as mainDashboardProjectsProjectIdBoardRouteImport } from './routes/(main)/dashboard/projects/$projectId/board'
@@ -281,6 +283,17 @@ const mainAuthV2RegisterRouteRoute = mainAuthV2RegisterRouteRouteImport.update({
   path: '/register',
   getParentRoute: () => mainAuthV2RouteRoute,
 } as any)
+const mainDashboardHomeIndexRoute = mainDashboardHomeIndexRouteImport.update({
+  id: '/home/',
+  path: '/home/',
+  getParentRoute: () => mainDashboardRouteRoute,
+} as any)
+const mainDashboardProjectsIndexRoute =
+  mainDashboardProjectsIndexRouteImport.update({
+    id: '/projects/',
+    path: '/projects/',
+    getParentRoute: () => mainDashboardRouteRoute,
+  } as any)
 const mainDashboardProjectsProjectIdRouteRoute =
   mainDashboardProjectsProjectIdRouteRouteImport.update({
     id: '/projects/$projectId',
@@ -367,6 +380,8 @@ export interface FileRoutesByFullPath {
   '/auth/v2/login': typeof mainAuthV2LoginRouteRoute
   '/auth/v2/register': typeof mainAuthV2RegisterRouteRoute
   '/dashboard/projects/$projectId': typeof mainDashboardProjectsProjectIdRouteRouteWithChildren
+  '/dashboard/home/': typeof mainDashboardHomeIndexRoute
+  '/dashboard/projects/': typeof mainDashboardProjectsIndexRoute
   '/dashboard/projects/$projectId/board': typeof mainDashboardProjectsProjectIdBoardRoute
   '/dashboard/projects/$projectId/files': typeof mainDashboardProjectsProjectIdFilesRoute
   '/dashboard/projects/$projectId/list': typeof mainDashboardProjectsProjectIdListRoute
@@ -415,6 +430,8 @@ export interface FileRoutesByTo {
   '/auth/v1/register': typeof mainAuthV1RegisterRouteRoute
   '/auth/v2/login': typeof mainAuthV2LoginRouteRoute
   '/auth/v2/register': typeof mainAuthV2RegisterRouteRoute
+  '/dashboard/home': typeof mainDashboardHomeIndexRoute
+  '/dashboard/projects': typeof mainDashboardProjectsIndexRoute
   '/dashboard/projects/$projectId/board': typeof mainDashboardProjectsProjectIdBoardRoute
   '/dashboard/projects/$projectId/files': typeof mainDashboardProjectsProjectIdFilesRoute
   '/dashboard/projects/$projectId/list': typeof mainDashboardProjectsProjectIdListRoute
@@ -466,6 +483,8 @@ export interface FileRoutesById {
   '/(main)/auth/v2/login': typeof mainAuthV2LoginRouteRoute
   '/(main)/auth/v2/register': typeof mainAuthV2RegisterRouteRoute
   '/(main)/dashboard/projects/$projectId': typeof mainDashboardProjectsProjectIdRouteRouteWithChildren
+  '/(main)/dashboard/home/': typeof mainDashboardHomeIndexRoute
+  '/(main)/dashboard/projects/': typeof mainDashboardProjectsIndexRoute
   '/(main)/dashboard/projects/$projectId/board': typeof mainDashboardProjectsProjectIdBoardRoute
   '/(main)/dashboard/projects/$projectId/files': typeof mainDashboardProjectsProjectIdFilesRoute
   '/(main)/dashboard/projects/$projectId/list': typeof mainDashboardProjectsProjectIdListRoute
@@ -518,6 +537,8 @@ export interface FileRouteTypes {
     | '/auth/v2/login'
     | '/auth/v2/register'
     | '/dashboard/projects/$projectId'
+    | '/dashboard/home/'
+    | '/dashboard/projects/'
     | '/dashboard/projects/$projectId/board'
     | '/dashboard/projects/$projectId/files'
     | '/dashboard/projects/$projectId/list'
@@ -566,6 +587,8 @@ export interface FileRouteTypes {
     | '/auth/v1/register'
     | '/auth/v2/login'
     | '/auth/v2/register'
+    | '/dashboard/home'
+    | '/dashboard/projects'
     | '/dashboard/projects/$projectId/board'
     | '/dashboard/projects/$projectId/files'
     | '/dashboard/projects/$projectId/list'
@@ -616,6 +639,8 @@ export interface FileRouteTypes {
     | '/(main)/auth/v2/login'
     | '/(main)/auth/v2/register'
     | '/(main)/dashboard/projects/$projectId'
+    | '/(main)/dashboard/home/'
+    | '/(main)/dashboard/projects/'
     | '/(main)/dashboard/projects/$projectId/board'
     | '/(main)/dashboard/projects/$projectId/files'
     | '/(main)/dashboard/projects/$projectId/list'
@@ -930,6 +955,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof mainAuthV2RegisterRouteRouteImport
       parentRoute: typeof mainAuthV2RouteRoute
     }
+    '/(main)/dashboard/home/': {
+      id: '/(main)/dashboard/home/'
+      path: '/home'
+      fullPath: '/dashboard/home/'
+      preLoaderRoute: typeof mainDashboardHomeIndexRouteImport
+      parentRoute: typeof mainDashboardRouteRoute
+    }
+    '/(main)/dashboard/projects/': {
+      id: '/(main)/dashboard/projects/'
+      path: '/projects'
+      fullPath: '/dashboard/projects/'
+      preLoaderRoute: typeof mainDashboardProjectsIndexRouteImport
+      parentRoute: typeof mainDashboardRouteRoute
+    }
     '/(main)/dashboard/projects/$projectId': {
       id: '/(main)/dashboard/projects/$projectId'
       path: '/projects/$projectId'
@@ -1039,6 +1078,8 @@ interface mainDashboardRouteRouteChildren {
   mainDashboardSplatRoute: typeof mainDashboardSplatRoute
   mainDashboardIndexRoute: typeof mainDashboardIndexRoute
   mainDashboardProjectsProjectIdRouteRoute: typeof mainDashboardProjectsProjectIdRouteRouteWithChildren
+  mainDashboardHomeIndexRoute: typeof mainDashboardHomeIndexRoute
+  mainDashboardProjectsIndexRoute: typeof mainDashboardProjectsIndexRoute
 }
 
 const mainDashboardRouteRouteChildren: mainDashboardRouteRouteChildren = {
@@ -1070,6 +1111,8 @@ const mainDashboardRouteRouteChildren: mainDashboardRouteRouteChildren = {
   mainDashboardIndexRoute: mainDashboardIndexRoute,
   mainDashboardProjectsProjectIdRouteRoute:
     mainDashboardProjectsProjectIdRouteRouteWithChildren,
+  mainDashboardHomeIndexRoute: mainDashboardHomeIndexRoute,
+  mainDashboardProjectsIndexRoute: mainDashboardProjectsIndexRoute,
 }
 
 const mainDashboardRouteRouteWithChildren =

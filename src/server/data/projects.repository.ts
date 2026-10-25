@@ -114,6 +114,12 @@ export const demoRepository = {
       calendars: links.length ? calendars : [],
     });
   },
+  async homeTaskCount(memberId: string, kind: "mine" | "upcoming", today = requestDate()) {
+    const rows = f.projectTasks.map((t) => sampleTask(t, today));
+    return kind === "mine"
+      ? rows.filter((t) => t.assigneeId === memberId && isOpen(t)).length
+      : upcoming(rows, today).length;
+  },
   async homeTasks(memberId: string, kind: "mine" | "upcoming", today = requestDate()) {
     const rows =
       kind === "mine"
@@ -307,6 +313,19 @@ export const dbRepository = {
           .orderBy(asc(w.calendarDefinitions.position), asc(w.calendarDefinitions.value))
       : [];
     return { templates: rows.map(({ template: { position: _, ...t } }) => t), calendars };
+  },
+  async homeTaskCount(memberId: string, kind: "mine" | "upcoming", today = requestDate()) {
+    const t = s.projectTasks;
+    const [row] = await (await database())
+      .select({ total: count() })
+      .from(t)
+      .where(
+        and(
+          notInArray(t.status, ["done", "canceled"]),
+          kind === "mine" ? eq(t.assigneeId, memberId) : gte(dueDate(today), today),
+        ),
+      );
+    return row.total;
   },
   async homeTasks(memberId: string, kind: "mine" | "upcoming", today = requestDate()) {
     const t = s.projectTasks;
