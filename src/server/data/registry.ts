@@ -89,6 +89,10 @@ export const readRegistry = [
     demo: demoProjectTasks,
     db: dbProjectTasks,
     scenarios: [
+      {
+        name: "authored-operations-title",
+        input: { projectId: "sample-operations", query: "rollout support process" },
+      },
       ...["sample-operations", "sample-docs", "sample-empty", "missing"].map((projectId) => ({
         name: projectId,
         input: { projectId },

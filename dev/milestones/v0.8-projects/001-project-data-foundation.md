@@ -58,3 +58,8 @@ One approved task per branch/PR; declare any stack and layer compare URL. Conven
 Verification: [PR #67 evidence](https://github.com/moeghashim/tenboards/tree/pr-assets/v08-001). Node and workerd parity: 29 reads / 202 scenarios; Node auth: 426; Worker auth: 272; legacy redirects: 96. Build/check/typecheck and four-state dev/preview default smoke pass. Remains in review pending Claude.
 
 Round 2 verification: [evidence](https://github.com/moeghashim/tenboards/tree/pr-assets/v08-001-round2). Request-relative demo/DB dates and mostly scheduled sample work verified at UTC day, leap-day and year boundaries. Build/check/typecheck, default dev/preview four-state smoke, Node auth 426, Node/Worker parity 29 reads / 208 scenarios, Worker auth/security, project migration checks and 96 legacy redirects pass. Preview: https://82f202d4-tenboards-preview.mohanadgh.workers.dev (alias pr-67). Status remains in review.
+
+
+### Round 4 integration — 2026-10-25
+
+Replayed onto main f228231 (v0.7.0). Preserved released Assistant and consolidated test isolation in `scripts/test-port.ts`; explicit suite/sentinel ports and shared offsets remain supported. Authored all 100 operations ledger titles without changing IDs or structure; legacy and project seeds use the same fixtures. Fresh migration/seed, 29 reads / 209 parity scenarios and populated/repeated upgrade/preservation checks pass on isolated local PostgreSQL 17. Build/check/typecheck pass (35 inherited Biome warnings, 14 infos). Screenshot/default/Assistant smoke evidence is recorded under the round-4 pr-assets report. Status remains in review; no reviewer approval or merge is claimed.

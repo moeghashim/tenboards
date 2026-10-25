@@ -56,6 +56,11 @@ try {
     assert.equal(first.total, Object.values(initialBoard).flat().length + tasks.length);
     assert.equal(first.items.length + last.items.length, first.total);
     assert.equal(new Set([...first.items, ...last.items].map((t) => t.id)).size, first.total);
+    const ledgerTitles = [...first.items, ...last.items].filter((t) => t.sourceKind === "ledger");
+    assert.equal(ledgerTitles.length, tasks.length);
+    for (const task of ledgerTitles)
+      assert.equal(task.title, tasks.find((fixture) => fixture.id === task.sourceId)?.title);
+    assert.ok(ledgerTitles.every((t) => !/pixel|SCSI|1080p|capacitor|bandwidth/i.test(t.title)));
     assert.equal((await load({ projectId: "sample-docs", id: first.items[0].id }))?.total, 0);
     assert.equal((await load({ projectId: "sample-empty" }))?.total, 0);
     assert.equal(await load({ projectId: "missing" }), null);

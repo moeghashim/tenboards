@@ -13,6 +13,8 @@ export async function seedProjects(tx: Transaction) {
       .insert(s.projectMembers)
       .values(row)
       .onConflictDoUpdate({ target: [s.projectMembers.projectId, s.projectMembers.personId], set: row });
+  // Canonical titles come from the same authored fixtures as legacy workspace seeds.
+  // Upsert them on repeat seeds so existing sample installations receive copy fixes.
   for (const row of f.projectTasks)
     await tx.insert(s.projectTasks).values(row).onConflictDoUpdate({ target: s.projectTasks.id, set: row });
   for (const row of f.labels) await tx.insert(s.projectLabels).values(row).onConflictDoNothing();

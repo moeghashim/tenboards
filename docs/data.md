@@ -12,7 +12,7 @@ Seeds run inside the existing transaction in dependency order. Upserts touch kno
 
 ## Read contracts
 
-Seven reads are registered: `readProjects`, `readProject`, `readProjectTasks`, `readProjectTimeline`, `readProjectFiles`, `readProjectActivity`, `readWorkspaceHome`. The registry retains the old 22 reads / 104 scenarios and now totals **29 reads / 208 scenarios**. Both source implementations validate IDs/filters and return deterministic order. Database child queries include the requested project predicate; missing project returns null while an empty project returns an empty collection.
+Seven reads are registered: `readProjects`, `readProject`, `readProjectTasks`, `readProjectTimeline`, `readProjectFiles`, `readProjectActivity`, `readWorkspaceHome`. The registry retains the old 22 reads / 104 scenarios and now totals **29 reads / 209 scenarios**. Both source implementations validate IDs/filters and return deterministic order. Database child queries include the requested project predicate; missing project returns null while an empty project returns an empty collection.
 
 Project summaries contain members and server-computed metrics, never task/file bodies. Project and membership summaries cap at 100. Task pages accept 10/20/50 rows or a 100-row board/timeline batch, with offset, total and `hasMore`. Filters cover task ID, status, assignee (including null), label and bounded text search. Files and calendar templates cap at 100; files carry a total. Activity caps at 50. Home sections cap at ten, with independently computed overall task totals. Home queries its member and upcoming sections across all stored tasks before applying the ten-row limit.
 

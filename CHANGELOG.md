@@ -2,6 +2,8 @@
 
 ## Unreleased — v0.8 Projects workspace
 
+- Replace inherited generated ledger titles with neutral operations-rollout tasks; repeat seeds preserve IDs and update both legacy and canonical copies.
+
 - Add the read-only Projects data foundation with additive migration/backfill, explicit legacy mappings, synthetic memberships, canonical tasks, labels, subtasks, file/calendar links and sample activity.
 - Add seven bounded project/workspace reads and extend demo/DB parity to 29 reads / 202 scenarios. Project UI and consolidation remain pending.
 - Make local test ports configurable for concurrent isolated worktrees.
