@@ -8,7 +8,7 @@ export function RootError({ error, reset }: ErrorComponentProps) {
       <div className="flex max-w-sm flex-col gap-2">
         <h1 className="text-2xl font-medium">Something went wrong.</h1>
         <p className="text-muted-foreground text-sm">
-          An unexpected error occurred while loading this page. Try again or return to the dashboard.
+          An unexpected error occurred while loading this page. Try again or return to Home.
         </p>
         {import.meta.env.DEV ? (
           <p className="text-destructive text-sm wrap-anywhere">
@@ -18,8 +18,8 @@ export function RootError({ error, reset }: ErrorComponentProps) {
       </div>
       <div className="flex flex-wrap justify-center gap-2">
         <Button onClick={reset}>Try again</Button>
-        <Button nativeButton={false} variant="outline" render={<Link to="/dashboard/default" replace />}>
-          Go to dashboard
+        <Button nativeButton={false} variant="outline" render={<Link to="/dashboard/home" replace />}>
+          Go to Home
         </Button>
       </div>
     </main>

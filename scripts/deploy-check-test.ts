@@ -45,13 +45,13 @@ for (const mode of [
         res.writeHead(404);
         res.end(JSON.stringify({ message: "Authentication is disabled in this demo." }));
       } else res.end(mode === "invalid-session" ? '{"unexpected":"PRIVATE_ERROR_MARKER"}' : "null");
-    } else if (req.url === "/dashboard/default") {
+    } else if (req.url === "/dashboard/home") {
       if (!["demo", "wrong-mode"].includes(mode))
         res.writeHead(307, {
           location:
             mode === "unsafe-redirect"
-              ? "https://evil.example/auth/v2/login?redirect=/dashboard/default"
-              : "/auth/v2/login?redirect=%2Fdashboard%2Fdefault",
+              ? "https://evil.example/auth/v2/login?redirect=/dashboard/home"
+              : "/auth/v2/login?redirect=%2Fdashboard%2Fhome",
         });
       res.end("<html>dashboard</html>");
     } else if (req.url === "/deployment-check-missing-route") {

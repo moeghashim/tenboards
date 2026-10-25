@@ -14,8 +14,8 @@ const scenarios = [
   ["tasks", "?search=discard&bad=drop", "list", ""],
   ["calendar", "?mode=gantt&bad=drop", "timeline", "calendar"],
   ["file-manager", "?view=list&bad=drop", "files", "list"],
-  ["file-manager", "?view=grid", "files", "grid"],
-  ["file-manager", "?view=invalid", "files", "grid"],
+  ["file-manager", "?view=grid", "files", ""],
+  ["file-manager", "?view=invalid", "files", ""],
 ];
 const browser = await chromium.launch(),
   db = postgres(localDatabase, { max: 1 });
@@ -63,7 +63,7 @@ try {
           assert.equal(location.origin, server.baseURL);
           assert.equal(location.searchParams.has("bad"), false);
           assert.equal(location.searchParams.has("search"), false);
-          if (mode) assert.equal(location.searchParams.get(view === "timeline" ? "mode" : "view"), mode);
+          assert.equal(location.search, mode ? `?${view === "timeline" ? "mode" : "view"}=${mode}` : "");
           cases++;
         }
         const errors: string[] = [];
@@ -76,7 +76,7 @@ try {
         p.off("pageerror", listener);
         cases++;
       }
-      // Exercise the actual client router, replacement history, and unchanged public fallback.
+      // Exercise the actual client router, replacement history, and Home landing fallback.
       await p.goto(`${server.baseURL}/dashboard/default`, { waitUntil: "networkidle" });
       await p.evaluate(async () => {
         await window.__TSR_ROUTER__?.navigate({ href: "/dashboard/kanban?view=table&bad=drop#client" });
@@ -91,9 +91,9 @@ try {
       await p.goBack({ waitUntil: "networkidle" });
       assert.equal(new URL(p.url()).pathname, "/dashboard/default");
       cases++;
-      for (const root of ["/", "/dashboard"]) {
+      for (const root of ["/", "/dashboard", "/dashboard/"]) {
         await p.goto(server.baseURL + root, { waitUntil: "networkidle" });
-        assert.equal(new URL(p.url()).pathname, "/dashboard/default");
+        assert.equal(new URL(p.url()).pathname, "/dashboard/home");
         cases++;
       }
       if (auth) {

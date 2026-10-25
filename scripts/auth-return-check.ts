@@ -66,6 +66,16 @@ try {
     );
     cases++;
     console.log(`PASS ${variant} real signup returns to protected pathname/search/hash`);
+    for (const [search, expected] of [
+      ["", "/dashboard/home"],
+      ["?redirect=https%3A%2F%2Fevil.example", "/dashboard/home"],
+      ["?redirect=%2Fdashboard%2Fdefault", "/dashboard/default"],
+    ]) {
+      await page.goto(`${server.baseURL}/auth/v2/login${search}`, { waitUntil: "networkidle" });
+      assert.equal(new URL(page.url()).pathname, expected);
+      cases++;
+    }
+    console.log("PASS missing/unsafe returns use Home; validated revenue dashboard destination wins");
     await context.close();
   }
   console.log(`Auth return paths: ${cases}/${cases} passing.`);

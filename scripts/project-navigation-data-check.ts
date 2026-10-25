@@ -7,7 +7,7 @@ import { closeDatabase } from "../src/server/db/client.server.ts";
 import { seed } from "../src/server/db/seed.ts";
 import { localDatabase, startTestServer, testHeaders, testSecret } from "./auth-test-support.ts";
 import { cacheCaptureFonts } from "./screenshot-assets.ts";
-import { authTestURL } from "./test-ports.ts";
+import { testOrigin } from "./test-port.ts";
 import assert from "node:assert/strict";
 import { mkdir } from "node:fs/promises";
 
@@ -30,7 +30,7 @@ try {
   server = await startTestServer({
     DATABASE_URL: url.href,
     BETTER_AUTH_SECRET: testSecret(),
-    BETTER_AUTH_URL: authTestURL,
+    BETTER_AUTH_URL: testOrigin("http://localhost:3011"),
   });
   const c = await browser.newContext({ extraHTTPHeaders: testHeaders, viewport: { width: 1440, height: 900 } });
   await cacheCaptureFonts(c);

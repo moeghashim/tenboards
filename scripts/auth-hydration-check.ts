@@ -34,7 +34,7 @@ try {
         for (const route of [
           "/auth/v2/login",
           "/auth/v2/register",
-          "/dashboard/default",
+          "/dashboard/home",
           "/dashboard/profile?tab=account",
         ]) {
           const context = await browser.newContext({
@@ -77,7 +77,7 @@ try {
             await page.waitForTimeout(500);
             if (route.includes("tab=account")) await page.getByText("Your sign-in account", { exact: true }).waitFor();
             else if (route.startsWith("/auth")) await page.locator("form").waitFor();
-            else await page.getByText("Total Revenue", { exact: true }).waitFor();
+            else await page.getByText("My tasks", { exact: true }).waitFor();
             const name = `${timezone.replace("/", "-")}-${route.replace(/[^\w-]/g, "_")}-${theme}-${viewport}-${phase}`;
             await page.screenshot({ path: `${output}/${name}.png`, fullPage: true });
             rows.push({ route, timezone, theme, viewport, phase, errors: [...errors] });

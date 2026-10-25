@@ -45,12 +45,16 @@ try {
       };
       await openMobile();
       const nav = p.getByRole("navigation", { name: "Main navigation", exact: true });
+      const primary = await nav
+        .locator("a")
+        .evaluateAll((nodes) => nodes.slice(0, 5).map((node) => node.textContent?.trim()));
+      assert.deepEqual(primary, ["Home", "Projects", "Email", "Chat", "AI Assistant"]);
       const trigger = nav.getByRole("button", { name: /Operations rollout views/ });
       assert.equal(await trigger.getAttribute("aria-expanded"), "true");
       assert.ok(await trigger.getAttribute("aria-controls"));
       assert.equal(
         await nav.locator('a[aria-current="page"]').getAttribute("href"),
-        "/dashboard/projects/sample-operations/board?query=&sort=position&offset=0&limit=100",
+        "/dashboard/projects/sample-operations/board",
       );
       const stored = await p.evaluate((key) => JSON.parse(localStorage.getItem(key) ?? "{}"), key);
       assert.deepEqual(Object.keys(stored).sort(), ["sample-docs", "sample-operations"]);

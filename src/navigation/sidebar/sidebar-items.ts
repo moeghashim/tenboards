@@ -157,7 +157,12 @@ export const sidebarItems: NavGroup[] = [
         icon: MessageSquare,
       },
       {
-        Bot,
+        id: "assistant",
+        title: "AI Assistant",
+        url: "/dashboard/assistant",
+        icon: Bot,
+      },
+      {
         id: "invoice",
         title: "Invoice",
         url: "/dashboard/invoice",

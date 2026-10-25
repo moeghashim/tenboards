@@ -20,7 +20,7 @@ Every PR updates README.md in the same PR whenever it changes user-visible behav
 
 ## Test floor
 
-Every task PR must pass npm run build, npm run check, npm run typecheck, and a dev-server /dashboard/default smoke without console errors. From task 004 onward, run npm run screenshots and attach before/after light/dark × desktop/mobile evidence for affected screens. Capture output is gitignored; upload only to pr-assets or PR attachments, never main. Report inherited warnings separately from failures. Include a version-preview URL in every PR.
+Every task PR must pass npm run build, npm run check, npm run typecheck, and a dev-server / → /dashboard/home smoke without console errors. From task 004 onward, run npm run screenshots and attach before/after light/dark × desktop/mobile evidence for affected screens. Capture output is gitignored; upload only to pr-assets or PR attachments, never main. Report inherited warnings separately from failures. Include a version-preview URL in every PR.
 
 ## UI work
 

@@ -1,4 +1,4 @@
-export const DEFAULT_AUTH_DESTINATION = "/dashboard/default";
+export const DEFAULT_AUTH_DESTINATION = "/dashboard/home";
 
 /** A navigation destination, never a URL nested inside a query value. */
 export function authDestination(value: unknown): string {

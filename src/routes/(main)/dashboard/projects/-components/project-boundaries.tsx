@@ -6,8 +6,8 @@ export function ProjectMissing() {
     <section className="space-y-4 py-10">
       <h1 className="text-2xl font-medium">Project not found</h1>
       <p className="text-muted-foreground">Check the project address. No project was substituted.</p>
-      <Link to="/dashboard/default" className="text-primary underline underline-offset-4">
-        Return to dashboard
+      <Link to="/dashboard/home" className="text-primary underline underline-offset-4">
+        Return to Home
       </Link>
     </section>
   );

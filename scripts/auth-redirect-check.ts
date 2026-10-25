@@ -1,6 +1,11 @@
-import { authDestination, DEFAULT_AUTH_DESTINATION } from "../src/lib/auth/redirect.ts";
+import { authDestination, authErrorCallback, DEFAULT_AUTH_DESTINATION } from "../src/lib/auth/redirect.ts";
 import assert from "node:assert/strict";
 
+assert.equal(DEFAULT_AUTH_DESTINATION, "/dashboard/home");
+assert.equal(
+  authErrorCallback(undefined, "https://evil.example"),
+  "/auth/v2/login?redirect=%2Fdashboard%2Fhome&error=oauth",
+);
 const hostile = [
   undefined,
   "",
@@ -26,6 +31,8 @@ const hostile = [
 ];
 for (const value of hostile) assert.equal(authDestination(value), DEFAULT_AUTH_DESTINATION);
 const valid = [
+  "/dashboard/default",
+  "/dashboard/home",
   "/dashboard/profile?tab=account#sessions",
   "/dashboard/tasks?q=space%20test",
   "/mail",

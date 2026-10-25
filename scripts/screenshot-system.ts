@@ -8,7 +8,7 @@ export async function captureSystem(
 ): Promise<string[]> {
   if (["/", "/dashboard", "/dashboard/"].includes(route)) {
     let target = new URL(route, page.url());
-    const hops = route === "/dashboard/" ? ["/dashboard", "/dashboard/default"] : ["/dashboard/default"];
+    const hops = route === "/dashboard/" ? ["/dashboard", "/dashboard/home"] : ["/dashboard/home"];
     for (const expected of hops) {
       const response = await page.request.get(target.href, { maxRedirects: 0 });
       const location = response.headers().location;
@@ -16,12 +16,9 @@ export async function captureSystem(
         throw new Error(`Unexpected redirect for ${target.pathname}: ${response.status()} ${location}`);
       target = new URL(location, target);
     }
-    await page.waitForURL("**/dashboard/default");
-    await page.getByText("Total Revenue", { exact: true }).first().waitFor();
-    return [
-      "HTTP 307 preserves the default-dashboard destination",
-      "Redirect target hydrates and displays loaded dashboard data",
-    ];
+    await page.waitForURL("**/dashboard/home");
+    await page.getByText("My tasks", { exact: true }).first().waitFor();
+    return ["HTTP 307 preserves the Home destination", "Redirect target hydrates and displays loaded dashboard data"];
   }
   if (route === "qa:root-error") {
     await page.evaluate(() => {
@@ -72,11 +69,11 @@ export async function captureSystem(
   if (await page.evaluate(() => document.documentElement.scrollWidth > innerWidth))
     throw new Error("System page overflow");
   await capture("state");
-  const recovery = page.getByRole("link", { name: /Go back home|Go to Homepage|Go to dashboard/ }).first();
+  const recovery = page.getByRole("link", { name: /Go back home|Go to Homepage|Go to Home/ }).first();
   if (await recovery.count()) {
     await recovery.press("Enter");
-    await page.waitForURL("**/dashboard/default");
-    await page.getByText("Total Revenue", { exact: true }).first().waitFor();
+    await page.waitForURL("**/dashboard/home");
+    await page.getByText("My tasks", { exact: true }).first().waitFor();
   }
   return ["Distinct system heading and no page overflow", "Existing recovery link navigates by keyboard when provided"];
 }
