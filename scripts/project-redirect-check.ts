@@ -76,7 +76,7 @@ try {
         p.off("pageerror", listener);
         cases++;
       }
-      // Exercise the actual client router, replacement history, and Home landing fallback.
+      // Exercise the actual client router, replacement history, and Default landing fallback.
       await p.goto(`${server.baseURL}/dashboard/default`, { waitUntil: "networkidle" });
       await p.evaluate(async () => {
         await window.__TSR_ROUTER__?.navigate({ href: "/dashboard/kanban?view=table&bad=drop#client" });
@@ -92,10 +92,37 @@ try {
       assert.equal(new URL(p.url()).pathname, "/dashboard/default");
       cases++;
       for (const root of ["/", "/dashboard", "/dashboard/"]) {
+        let target = server.baseURL + root;
+        for (const expected of root === "/dashboard/" ? ["/dashboard", "/dashboard/default"] : ["/dashboard/default"]) {
+          const response = await c.request.get(target, { maxRedirects: 0 });
+          assert.equal(response.status(), 307);
+          const location = new URL(response.headers().location, server.baseURL);
+          assert.equal(location.origin, server.baseURL);
+          assert.equal(location.pathname, expected);
+          target = location.href;
+        }
         await p.goto(server.baseURL + root, { waitUntil: "networkidle" });
+        assert.equal(new URL(p.url()).pathname, "/dashboard/default");
+        cases++;
+      }
+      await p.goto(`${server.baseURL}/dashboard/home`, { waitUntil: "networkidle" });
+      const brand = p.getByRole("link", { name: "tenboards dashboard", exact: true });
+      assert.equal(await brand.getAttribute("href"), "/dashboard/default");
+      await brand.focus();
+      await p.keyboard.press("Enter");
+      await p.waitForURL("**/dashboard/default");
+      await p.goBack({ waitUntil: "networkidle" });
+      assert.equal(new URL(p.url()).pathname, "/dashboard/home");
+      for (const root of ["/", "/dashboard", "/dashboard/"]) {
+        await p.evaluate(async (href) => {
+          await window.__TSR_ROUTER__?.navigate({ href });
+        }, root);
+        await p.waitForURL("**/dashboard/default");
+        await p.goBack({ waitUntil: "networkidle" });
         assert.equal(new URL(p.url()).pathname, "/dashboard/home");
         cases++;
       }
+      cases++;
       if (auth) {
         await db`delete from auth_session where user_id in (select id from auth_user where email=${email})`;
         for (const [old] of scenarios) {

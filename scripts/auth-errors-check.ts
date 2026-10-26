@@ -64,7 +64,7 @@ try {
   });
   await page.getByRole("button", { name: "Signing in…" }).waitFor();
   assert.ok(await page.getByRole("button", { name: "Signing in…" }).isDisabled());
-  await page.waitForURL("**/dashboard/home");
+  await page.waitForURL("**/dashboard/default");
   assert.equal(submissions, 1);
   pass("duplicate submit blocked; retry succeeds at safe fallback");
   await context.close();
