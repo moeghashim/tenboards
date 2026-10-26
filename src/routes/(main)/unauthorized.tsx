@@ -22,7 +22,7 @@ function Page() {
         </p>
       </div>
       <Button nativeButton={false} variant="outline" render={<Link to={APP_LANDING_ROUTE} />}>
-        Go to Home
+        Go to dashboard
       </Button>
     </main>
   );

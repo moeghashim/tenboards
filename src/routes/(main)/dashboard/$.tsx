@@ -12,7 +12,7 @@ function DashboardNotFound() {
       <h1 className="text-2xl font-medium">Page not found.</h1>
       <p className="text-muted-foreground max-w-sm text-sm">This dashboard page does not exist.</p>
       <Link to={APP_LANDING_ROUTE} className="underline underline-offset-4">
-        Return to Home
+        Return to dashboard
       </Link>
     </div>
   );

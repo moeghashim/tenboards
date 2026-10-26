@@ -56,7 +56,7 @@ export function AppSidebar({
         <div className="flex items-center gap-2">
           <Link
             to={APP_LANDING_ROUTE}
-            aria-label="tenboards home"
+            aria-label="tenboards dashboard"
             className="flex min-w-0 flex-1 items-center gap-3 rounded-lg group-data-[collapsible=icon]:hidden"
           >
             <span className="bg-muted flex size-9 shrink-0 items-center justify-center rounded-xl">

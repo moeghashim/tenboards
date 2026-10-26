@@ -39,8 +39,8 @@ export async function captureSystem(
     });
     await page.getByRole("heading", { name: "Something went wrong.", exact: true }).waitFor();
     // Base UI renders this anchor with role=button; keep its existing semantics.
-    const home = page.getByRole("button", { name: "Go to Home", exact: true });
-    if ((await home.getAttribute("href")) !== "/dashboard/default")
+    const recoveryLink = page.getByRole("button", { name: "Go to dashboard", exact: true });
+    if ((await recoveryLink.getAttribute("href")) !== "/dashboard/default")
       throw new Error("Root error recovery must open Default");
     if (
       !["localhost", "127.0.0.1", "[::1]"].includes(new URL(page.url()).hostname) &&
@@ -48,8 +48,8 @@ export async function captureSystem(
     )
       throw new Error("Production leaked error detail");
     await capture("boundary");
-    await home.focus();
-    if (!(await home.evaluate((link) => link === document.activeElement)))
+    await recoveryLink.focus();
+    if (!(await recoveryLink.evaluate((link) => link === document.activeElement)))
       throw new Error("Root error recovery link did not receive keyboard focus");
     await page.evaluate(() => {
       const win = window as unknown as {
@@ -81,8 +81,10 @@ export async function captureSystem(
   await capture("state");
   const recovery = page
     .locator("a")
-    .filter({ hasText: /^(Go back home|Go to Homepage|Go to Home|Return to Home)$/ })
+    .filter({ hasText: /^(Go to dashboard|Return to dashboard)$/ })
     .first();
+  if (["qa:root-not-found", "/unauthorized", "/dashboard/$"].includes(route) && (await recovery.count()) !== 1)
+    throw new Error("Expected a dashboard recovery link");
   if (await recovery.count()) {
     await recovery.press("Enter");
     await page.waitForURL("**/dashboard/default");

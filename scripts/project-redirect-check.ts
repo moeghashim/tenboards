@@ -106,7 +106,7 @@ try {
         cases++;
       }
       await p.goto(`${server.baseURL}/dashboard/home`, { waitUntil: "networkidle" });
-      const brand = p.getByRole("link", { name: "tenboards home", exact: true });
+      const brand = p.getByRole("link", { name: "tenboards dashboard", exact: true });
       assert.equal(await brand.getAttribute("href"), "/dashboard/default");
       await brand.focus();
       await p.keyboard.press("Enter");
