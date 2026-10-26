@@ -229,7 +229,7 @@
         "002-page-generators": "merged",
         "003-design-guardrails": "merged",
         "004-adopter-guide-skills": "merged",
-        "005-registry-llms": "planned",
+        "005-registry-llms": "merged",
         "006-accessibility-debt": "merged"
       }
     }

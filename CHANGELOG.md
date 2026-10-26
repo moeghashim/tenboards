@@ -2,6 +2,13 @@
 
 ## v0.9 — Agent-ready template (draft)
 
+### shadcn registry and LLM documentation (005)
+
+- Publish nine self-contained registry items with source-derived default tokens, compact CSS, bundled UI/chart helpers and declared package dependencies; add registry build/freshness commands.
+- Generate static llms.txt, llms-full.txt and linked adopter docs from the block inventory, scripts, skills and source; fail the standard check on drift.
+- Add per-block JSON links and copyable, current-origin install commands to the kit. External installs use isolated tenboards component paths and apply the global default theme.
+
+
 - Promote typed, TSDoc-documented presentation blocks to `@/components/blocks`; migrate existing imports without changing page markup or behavior.
 - Add a caller-owned TanStack Table block with sorting, pagination, empty recovery and labelled mobile reflow.
 - Add `/dashboard/kit` under Developer and in the command palette, with executable examples, variants and copyable source. Protected UI/calendar primitives remain unchanged.
