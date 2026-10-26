@@ -40,6 +40,7 @@ URLs beginning with / are relative to the origin serving this file. Resolve them
 - [docs/data-layer.md](/agent-docs/docs/data-layer.md)
 - [docs/deploy.md](/agent-docs/docs/deploy.md)
 - [.agents/skills/tenboards-build-ui/references/blocks.md](/agent-docs/agents/skills/tenboards-build-ui/references/blocks.md)
+- [.agents/skills/tenboards-connect-data/references/data-workflow.md](/agent-docs/agents/skills/tenboards-connect-data/references/data-workflow.md)
 - [Expanded source and guidance](/llms-full.txt)
 
 ## Verification
@@ -914,45 +915,6 @@ For your own existing DB/auth Worker, `deploy:prepare --secrets-file /absolute/p
 Auth-off/no-DB adopters may supply server-only provider bindings to their own deployment without enabling auth or adding a DB. A hosted live configuration needs an explicit HTTPS `ASSISTANT_ORIGIN` and an adopter-owned shared ingress/provider budget if deployed across isolates. The DB/auth-specific preparation helper does not provision this separate mode or establish a global quota. Node uses private process environment. Never run paid acceptance against this repository's live or preview Workers.
 
 
-## Source: .agents/skills/tenboards-build-ui/references/blocks.md
-
-# Public block contracts
-
-Import from `@/components/blocks`; inspect the TSDoc/source for the exact installed API.
-Chart primitives also export from `@/components/blocks/charts`, never import `recharts`
-directly in routes. The executable kit is `src/routes/(main)/dashboard/kit/-components/`.
-
-| Block | Contract |
-| --- | --- |
-| PageHeader | `title: string`, optional `description: string`, `actions`, `className`; one h1 per page |
-| DashboardCard | Native Card props plus `density: "compact" | "standard"`; default standard already follows compact responsive tokens |
-| SectionHeader | `title`, optional `description`, `actions`, `level: 2 | 3`, `id`; compose inside DashboardCard |
-| StatCard | `label: string`, `value: ReactNode`; optional `help`, `trend`, `actions`, `icon`, `density`, `level`, `className` |
-| CardContent | Public re-export of the existing card content slot |
-| DataTable | Caller-owned `table`, required accessible `label`; optional `empty`, `pagination`, `mobile: "reflow" | "scroll"`, `columnLabels`, `className` |
-| DashboardChart | ChartContainer props, including `config` and `children`; default responsive height |
-| DashboardTooltip | ChartTooltipContent props; custom formatter replaces the entire row |
-| DashboardLegend | Required named-series `config`, optional payload and className |
-
-For tables copy the generator's `./scripts/templates/records-table.tsx.template`:
-`ColumnDef<DataTableFeatures, Row>[]`, `useTable({ features: dataTableFeatures, data,
-columns, getRowId, initialState })`. Headers are plain labels: DataTable supplies
-sorting buttons. `mobile="reflow"` is the default. Use an informative empty state.
-
-Charts use `seriesConfig({ revenue: "Revenue" })`, `chartAxis`, `chartGrid`,
-`chartCursor` and `useChartMotion()`. Spread motion onto each mark and Tooltip;
-use `config.revenue.color` for marks and preserve labels in custom tooltips.
-Copy the generated activity chart's accessible table alternative when changing series.
-Use `formatCurrency(value, currency?)`, `formatNumber(value)` and `formatPercent(value)`
-for explicit en-US formatting. For chart ticks use `(value) => formatCurrency(value)`;
-a chart callback may pass an index as its second argument. Numeric Table columns
-use `(a, b, id) => a.getValue<number>(id) - b.getValue<number>(id)`, not a v8 sort name.
-
-Use named layout classes such as `min-w-0 space-y-5`, `grid gap-4 sm:grid-cols-3`.
-Do not copy raw primitive Card/Table markup to imitate blocks or add raw colors,
-arbitrary sizing, new density overrides or exceptions to pass a new page.
-
-
 ## Source: .agents/skills/tenboards-build-ui/SKILL.md
 
 ---
@@ -1035,6 +997,45 @@ against the host from which you fetched it before passing a URL to shadcn.
   TypeScript exclusion.
 
 
+## Source: .agents/skills/tenboards-build-ui/references/blocks.md
+
+# Public block contracts
+
+Import from `@/components/blocks`; inspect the TSDoc/source for the exact installed API.
+Chart primitives also export from `@/components/blocks/charts`, never import `recharts`
+directly in routes. The executable kit is `src/routes/(main)/dashboard/kit/-components/`.
+
+| Block | Contract |
+| --- | --- |
+| PageHeader | `title: string`, optional `description: string`, `actions`, `className`; one h1 per page |
+| DashboardCard | Native Card props plus `density: "compact" | "standard"`; default standard already follows compact responsive tokens |
+| SectionHeader | `title`, optional `description`, `actions`, `level: 2 | 3`, `id`; compose inside DashboardCard |
+| StatCard | `label: string`, `value: ReactNode`; optional `help`, `trend`, `actions`, `icon`, `density`, `level`, `className` |
+| CardContent | Public re-export of the existing card content slot |
+| DataTable | Caller-owned `table`, required accessible `label`; optional `empty`, `pagination`, `mobile: "reflow" | "scroll"`, `columnLabels`, `className` |
+| DashboardChart | ChartContainer props, including `config` and `children`; default responsive height |
+| DashboardTooltip | ChartTooltipContent props; custom formatter replaces the entire row |
+| DashboardLegend | Required named-series `config`, optional payload and className |
+
+For tables copy the generator's `./scripts/templates/records-table.tsx.template`:
+`ColumnDef<DataTableFeatures, Row>[]`, `useTable({ features: dataTableFeatures, data,
+columns, getRowId, initialState })`. Headers are plain labels: DataTable supplies
+sorting buttons. `mobile="reflow"` is the default. Use an informative empty state.
+
+Charts use `seriesConfig({ revenue: "Revenue" })`, `chartAxis`, `chartGrid`,
+`chartCursor` and `useChartMotion()`. Spread motion onto each mark and Tooltip;
+use `config.revenue.color` for marks and preserve labels in custom tooltips.
+Copy the generated activity chart's accessible table alternative when changing series.
+Use `formatCurrency(value, currency?)`, `formatNumber(value)` and `formatPercent(value)`
+for explicit en-US formatting. For chart ticks use `(value) => formatCurrency(value)`;
+a chart callback may pass an index as its second argument. Numeric Table columns
+use `(a, b, id) => a.getValue<number>(id) - b.getValue<number>(id)`, not a v8 sort name.
+
+Use named layout classes such as `min-w-0 space-y-5`, `grid gap-4 sm:grid-cols-3`.
+Do not copy raw primitive Card/Table markup to imitate blocks or add raw colors,
+arbitrary sizing, new density overrides or exceptions to pass a new page.
+
+
 ## Source: .agents/skills/tenboards-connect-data/SKILL.md
 
 ---
@@ -1076,6 +1077,45 @@ server functions. Keep presentation in blocks and route-local components.
 - Existing source/auth contracts: configured DB errors remain visible, never fall
   back to fixtures; demo identities are not authenticated users or ownership checks.
   No CRUD, RBAC or authentication changes are implied by adding a typed read.
+
+
+## Source: .agents/skills/tenboards-connect-data/references/data-workflow.md
+
+# Typed reads, schema and parity
+
+Read `docs/data-layer.md` and the nearest domain before editing. Small example:
+`src/server/data/users.ts`; complex filtering/date examples: `projects.ts`.
+
+1. Put serializable types in `src/server/data/<domain>.types.ts`; validate inputs with
+   the installed Zod. Preserve numbers, nulls, ordering and date semantics across sources.
+2. Canonical fixtures belong in `src/server/db/fixtures/`. Demo functions return fresh
+   data (`structuredClone` for static fixtures), so caller mutation cannot leak across requests.
+3. DB functions dynamically import `getDatabase` from `client.server.ts` and schema;
+   use normalized entity tables and ordered queries. Workers clients are request-scoped.
+   Apply validated filters before limits, then project exactly the same output shape.
+4. Export `read<Domain>` using `readSource(() => demo(input), () => db(input))`.
+   No DATABASE_URL means demo; DATA_SOURCE=demo explicitly forces demo. Configured
+   unreachable/unmigrated databases produce a sanitized visible error, not demo fallback.
+5. Follow `./scripts/templates/load.ts.template`: `createServerFn({ method: "GET" })`,
+   dynamic server imports, `await requireSession()` before the read. Route loaders
+   call this function; components receive loader data and type-only imports.
+6. Extend `src/server/db/schema.ts` and generate an additive migration with
+   `npm run db:generate`. Inspect SQL before applying it. Keep shipped migrations intact.
+   Seed from canonical fixtures with stable keys; preserve unrelated and adopter rows.
+7. Register distinct demo/DB implementations in `src/server/data/registry.ts` with
+   all/existing/missing/filter/empty scenarios as applicable. Date-relative records use
+   one serialized request reference; test later requests without reseeding.
+
+For a disposable local Postgres database, explicitly set its DATABASE_URL outside
+committed files, then run `npm run db:migrate`, `npm run db:seed`, and
+`npm run data:parity`. The parity runner checks every exported read is registered,
+compares actual outputs and verifies caller mutation isolation. Repeated seed and
+populated upgrades must retain unrelated records. Do not run remote migrations/seeds
+without explicit authorization; never print credentials in evidence.
+
+The generator intentionally emits an illustrative DB stub. It is useful for a demo
+page, but is not evidence of a schema, query or seed. For demo-only work keep its TODO
+and describe that limitation rather than inventing persistence.
 
 
 ## Source: src/components/blocks/cards.tsx

@@ -1,17 +1,11 @@
 import { registrySchema } from "shadcn/schema";
 
-import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 const check = process.argv.includes("--check");
 const registry = registrySchema.parse(JSON.parse(await readFile("registry.json", "utf8")));
-const docs = [
-  "AGENTS.md",
-  "DESIGN.md",
-  "docs/data-layer.md",
-  "docs/deploy.md",
-  ".agents/skills/tenboards-build-ui/references/blocks.md",
-];
+const docs = ["AGENTS.md", "DESIGN.md", "docs/data-layer.md", "docs/deploy.md"];
 const skills = [];
 for (const name of (await readdir(".agents/skills")).sort()) {
   const file = `.agents/skills/${name}/SKILL.md`;
@@ -20,6 +14,14 @@ for (const name of (await readdir(".agents/skills")).sort()) {
   if (!description) throw new Error(`Missing skill description: ${file}`);
   skills.push({ name, file, description });
   docs.push(file);
+  for (const reference of (
+    await readdir(`.agents/skills/${name}/references`).catch((error: NodeJS.ErrnoException) => {
+      if (error.code === "ENOENT") return [];
+      throw error;
+    })
+  ).sort()) {
+    if (reference.endsWith(".md")) docs.push(`.agents/skills/${name}/references/${reference}`);
+  }
 }
 const commands = JSON.parse(await readFile("package.json", "utf8")).scripts as Record<string, string>;
 const generators = Object.keys(commands)
@@ -50,6 +52,14 @@ for (const [target, content] of outputs) {
   } else {
     await mkdir(path.dirname(target), { recursive: true });
     await writeFile(target, content);
+  }
+}
+for (const entry of await readdir("public/agent-docs", { recursive: true, withFileTypes: true })) {
+  if (!entry.isFile()) continue;
+  const target = path.join(entry.parentPath, entry.name);
+  if (!outputs.has(target)) {
+    if (check) throw new Error(`Stale ${target}; run npm run llms:build`);
+    await rm(target);
   }
 }
 console.log(`PASS llms ${check ? "freshness" : "build"}: ${outputs.size} source-derived assets`);

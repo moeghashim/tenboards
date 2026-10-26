@@ -5,7 +5,7 @@
   "items": [
     {
       "name": "dashboard-card",
-      "type": "registry:block",
+      "type": "registry:style",
       "title": "DashboardCard",
       "description": "Compact or standard card surface with composable slots.",
       "dependencies": ["cn"],
@@ -28,7 +28,7 @@
     },
     {
       "name": "section-header",
-      "type": "registry:block",
+      "type": "registry:style",
       "title": "SectionHeader",
       "description": "Semantic card heading with description and wrapping actions.",
       "dependencies": ["cn"],
@@ -51,7 +51,7 @@
     },
     {
       "name": "stat-card",
-      "type": "registry:block",
+      "type": "registry:style",
       "title": "StatCard",
       "description": "Labelled metric with tabular value, trend and supporting text.",
       "dependencies": ["cn"],
@@ -74,7 +74,7 @@
     },
     {
       "name": "card-content",
-      "type": "registry:block",
+      "type": "registry:style",
       "title": "CardContent",
       "description": "Content slot with the shared card spacing.",
       "dependencies": ["cn"],
@@ -97,7 +97,7 @@
     },
     {
       "name": "page-header",
-      "type": "registry:block",
+      "type": "registry:style",
       "title": "PageHeader",
       "description": "Responsive page h1 with description and action slots.",
       "dependencies": ["cn"],
@@ -115,7 +115,7 @@
     },
     {
       "name": "dashboard-chart",
-      "type": "registry:block",
+      "type": "registry:style",
       "title": "DashboardChart",
       "description": "Responsive Recharts container with series, axis and reduced-motion helpers.",
       "dependencies": ["cn", "recharts"],
@@ -138,7 +138,7 @@
     },
     {
       "name": "dashboard-tooltip",
-      "type": "registry:block",
+      "type": "registry:style",
       "title": "DashboardTooltip",
       "description": "Token-colored tooltip preserving named series and value formatting.",
       "dependencies": ["cn", "recharts"],
@@ -161,7 +161,7 @@
     },
     {
       "name": "dashboard-legend",
-      "type": "registry:block",
+      "type": "registry:style",
       "title": "DashboardLegend",
       "description": "Wrapping legend with labelled, distinct line patterns.",
       "dependencies": ["cn", "recharts"],
@@ -184,7 +184,7 @@
     },
     {
       "name": "data-table",
-      "type": "registry:block",
+      "type": "registry:style",
       "title": "DataTable",
       "description": "Caller-owned TanStack Table v9 with sorting, pagination, mobile reflow and empty state.",
       "dependencies": ["cn", "@tanstack/react-table", "lucide-react", "@base-ui/react", "class-variance-authority"],

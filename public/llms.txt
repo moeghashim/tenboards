@@ -40,6 +40,7 @@ URLs beginning with / are relative to the origin serving this file. Resolve them
 - [docs/data-layer.md](/agent-docs/docs/data-layer.md)
 - [docs/deploy.md](/agent-docs/docs/deploy.md)
 - [.agents/skills/tenboards-build-ui/references/blocks.md](/agent-docs/agents/skills/tenboards-build-ui/references/blocks.md)
+- [.agents/skills/tenboards-connect-data/references/data-workflow.md](/agent-docs/agents/skills/tenboards-connect-data/references/data-workflow.md)
 - [Expanded source and guidance](/llms-full.txt)
 
 ## Verification

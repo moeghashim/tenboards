@@ -23,7 +23,7 @@ export function registryTheme(source: string) {
       }
       if (char === "(") parentheses++;
       if (char === ")") parentheses--;
-      if (parentheses) continue;
+      if (parentheses > 0) continue;
       if (char === "{") {
         const selector = css.slice(start, position).trim();
         position++;
@@ -62,12 +62,16 @@ export function registryTheme(source: string) {
       }),
     );
   }
-  const cssVars = { light: variables(":root"), dark: variables(".dark"), theme: variables("@theme inline") };
+  const light = variables(":root");
+  // Initialized shadcn projects often define aliases (card, muted, chart-N) in .dark.
+  // Reset those too, otherwise they shadow our inherited root aliases.
+  const cssVars = { light, dark: { ...light, ...variables(".dark") }, theme: variables("@theme inline") };
   // Consumers already initialize Tailwind/shadcn. Presets belong to the template, not this default theme.
   for (const key of Object.keys(rules)) if (key.startsWith("@import")) delete rules[key];
   const imports = {
     '@import "@fontsource-variable/geist"': {},
     '@import "@fontsource-variable/geist-mono"': {},
   };
-  return { cssVars, css: { ...imports, ...rules } };
+  const result: CssRules = { ...imports, ...rules };
+  return { cssVars, css: result };
 }
