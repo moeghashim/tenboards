@@ -9,3 +9,15 @@
 - `failure-light-desktop.png/json` is a resolved harness assertion: page 2 is rendered correctly with no browser errors, but exact text matching included hidden mobile labels. The final test uses accessible cell names.
 - Inherited warnings: Biome reports 35 warnings and 10 infos, without errors. Build reports dependency module-level `use client` directives. Installation reports 8 audit vulnerabilities (6 moderate, 2 high), unchanged dependencies. No unrelated dependency upgrade is included.
 - No generated route, fixture or route-tree source is committed. The hosted PR preview contains the implementation and existing kit; generated samples are documented by disposable-app evidence only.
+
+## Hosted preview and final head
+
+PR: https://github.com/moeghashim/tenboards/pull/79
+
+Implementation/build head: `cf71fcb9bfbbb3f9c302d7a4c536901d2c3ddbce`. Final head: `97f9f73f3e60d30c569e42de33006c62e241381a`; the final commit only ticks the verified preview acceptance checkbox.
+
+- Version: https://0805c2db-tenboards-preview.mohanadgh.workers.dev
+- Alias: https://pr-79-tenboards-preview.mohanadgh.workers.dev
+- Worker version: `0805c2db-6845-42ad-9477-6fd753c142ac`
+- `preview-deploy.log`: guarded uploader confirms only ASSETS, no secrets. Production untouched.
+- `preview-smoke.log`: full existing kit suite passes all four combinations on the version URL, including root → Default → Home; no console/hydration errors. Alias `/dashboard/kit` also returns HTTP 200.
