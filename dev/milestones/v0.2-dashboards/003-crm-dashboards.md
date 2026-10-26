@@ -16,7 +16,7 @@ Routes: `/dashboard/crm`, `/dashboard/crm-v1`.
 
 ## Before implementation
 
-Read root AGENTS.md and PLAN.md (Decisions log wins), PRODUCT.md and DESIGN.md. Use Impeccable in Operate mode, run its context once from the repo root per session, inspect incumbent renders/local components, and read `reference/craft-floor.md` immediately before UI edits.
+Read dev/MAINTAINERS.md and PLAN.md (Decisions log wins), PRODUCT.md and DESIGN.md. Use Impeccable in Operate mode, run its context once from the repo root per session, inspect incumbent renders/local components, and read `reference/craft-floor.md` immediately before UI edits.
 
 Prefactor inspection: Inspect repeated KPI and status-cell markup; move only presentation into 001 primitives, leaving pipeline dates, lead records and table state in their owning routes.
 

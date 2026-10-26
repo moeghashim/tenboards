@@ -17,7 +17,7 @@ Routes: `/dashboard/file-manager` and `/dashboard/products` (header-only integra
 
 ## Before implementation
 
-Read root AGENTS.md, PLAN.md end to end (Decisions log wins; §7 governs), PRODUCT.md and DESIGN.md. Use Impeccable in Operate mode, run its context once per session from the repo root, inspect incumbent renders and local/Base UI wrappers, and read `reference/craft-floor.md` immediately before UI edits. Preserve existing demo behavior and all screens. Read current official TanStack documentation before any routing/framework change.
+Read dev/MAINTAINERS.md, PLAN.md end to end (Decisions log wins; §7 governs), PRODUCT.md and DESIGN.md. Use Impeccable in Operate mode, run its context once per session from the repo root, inspect incumbent renders and local/Base UI wrappers, and read `reference/craft-floor.md` immediately before UI edits. Preserve existing demo behavior and all screens. Read current official TanStack documentation before any routing/framework change.
 
 Prefactor inspection: Inspect File Manager/Products/Invoice title-description-action markup and existing dashboard card exports. Extract only the demonstrated repeated presentation seam; no route, state or data abstraction.
 

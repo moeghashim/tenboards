@@ -18,7 +18,7 @@ Routes: `/auth/v1/login`, `/auth/v1/register`, `/auth/v2/login`, `/auth/v2/regis
 
 ## Before implementation
 
-Read root AGENTS.md, PLAN.md end to end (Decisions log wins; §7 governs), PRODUCT.md and DESIGN.md. Use Impeccable in Operate mode, run its context once per session from the repo root, inspect incumbent renders and local/Base UI wrappers, and read `reference/craft-floor.md` immediately before UI edits. Preserve existing demo behavior and all screens. Read current official TanStack documentation before any routing/framework change.
+Read dev/MAINTAINERS.md, PLAN.md end to end (Decisions log wins; §7 governs), PRODUCT.md and DESIGN.md. Use Impeccable in Operate mode, run its context once per session from the repo root, inspect incumbent renders and local/Base UI wrappers, and read `reference/craft-floor.md` immediately before UI edits. Preserve existing demo behavior and all screens. Read current official TanStack documentation before any routing/framework change.
 
 Prefactor inspection: Inspect shared LoginForm/RegisterForm/GoogleButton and the repeated V2 footer/link structures. A small local form frame/footer helper is acceptable only when it preserves labels, routes, validation and SSR output; no auth service changes.
 

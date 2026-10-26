@@ -17,7 +17,7 @@ Routes: `/dashboard/invoice`, including editor, preview and print presentation.
 
 ## Before implementation
 
-Read root AGENTS.md, PLAN.md end to end (Decisions log wins; §7 governs), PRODUCT.md and DESIGN.md. Use Impeccable in Operate mode, run its context once per session from the repo root, inspect incumbent renders and local/Base UI wrappers, and read `reference/craft-floor.md` immediately before UI edits. Preserve existing demo behavior and all screens. Read current official TanStack documentation before any routing/framework change.
+Read dev/MAINTAINERS.md, PLAN.md end to end (Decisions log wins; §7 governs), PRODUCT.md and DESIGN.md. Use Impeccable in Operate mode, run its context once per session from the repo root, inspect incumbent renders and local/Base UI wrappers, and read `reference/craft-floor.md` immediately before UI edits. Preserve existing demo behavior and all screens. Read current official TanStack documentation before any routing/framework change.
 
 Prefactor inspection: Inspect date defaults/formatters, form initialization, paper/preview/print sharing and current positioning hook. Isolate a narrow shared formatter/default contract only where it removes the proven mismatch.
 

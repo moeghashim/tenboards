@@ -20,6 +20,12 @@
 - Route existing Recharts primitives through the public chart block without changing page markup or tokens.
 - Add `verify:page` for a single route or the route catalog: four-state screenshots, WCAG 2.2 AA axe scans, console/hydration diagnostics and gitignored JSON reports. Inherited accessibility findings remain reported failures, tracked separately from this tooling change.
 
+### Adopter guide and Agent Skills (004)
+
+- Move upstream workflow rules verbatim to dev/MAINTAINERS.md; root AGENTS.md now guides adopters, with a CLAUDE.md import.
+- Add build-ui and connect-data skills, on-demand references and relative Claude mirrors, with review-backed gotchas.
+- Add dependency-free check:skills metadata/reference/mirror validation to npm run check.
+
 ## v0.8.1 — Default dashboard landing (2026-10-26)
 
 Released as [v0.8.1](https://github.com/moeghashim/tenboards/releases/tag/v0.8.1).

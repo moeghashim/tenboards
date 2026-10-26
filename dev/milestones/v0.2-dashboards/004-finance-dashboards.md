@@ -17,7 +17,7 @@ Routes: `/dashboard/finance`, `/dashboard/finance-v1`.
 
 ## Before implementation
 
-Read root AGENTS.md and PLAN.md (Decisions log wins), PRODUCT.md and DESIGN.md. Use Impeccable in Operate mode, run its context once from the repo root per session, inspect incumbent renders/local components, and read `reference/craft-floor.md` immediately before UI edits.
+Read dev/MAINTAINERS.md and PLAN.md (Decisions log wins), PRODUCT.md and DESIGN.md. Use Impeccable in Operate mode, run its context once from the repo root per session, inspect incumbent renders/local components, and read `reference/craft-floor.md` immediately before UI edits.
 
 Prefactor inspection: Inspect date/number formatting and repeated KPI formatting before edits; isolate route-local deterministic formatting or fixture seams only when they reduce the hydration fix risk.
 

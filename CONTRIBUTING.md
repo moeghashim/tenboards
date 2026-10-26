@@ -1,7 +1,7 @@
 # Contributing to tenboards
 
 Thanks for showing interest in improving **tenboards** (repo: `tenboards`).
-Follow [AGENTS.md](AGENTS.md) for task branches, required checks, screenshot evidence, PR structure, and reviewer merge authority. PLAN.md and its Decisions log are authoritative.
+Follow [dev/MAINTAINERS.md](dev/MAINTAINERS.md) for task branches, required checks, screenshot evidence, PR structure, and reviewer merge authority. PLAN.md and its Decisions log are authoritative.
 
 ---
 

@@ -18,7 +18,7 @@ Routes: `/dashboard/coming-soon`, `/dashboard/$` (capture `/dashboard/capture-no
 
 ## Before implementation
 
-Read root AGENTS.md, PLAN.md end to end (Decisions log wins; §7 governs), PRODUCT.md and DESIGN.md. Use Impeccable in Operate mode, run its context once per session from the repo root, inspect incumbent renders and local/Base UI wrappers, and read `reference/craft-floor.md` immediately before UI edits. Preserve existing demo behavior and all screens. Read current official TanStack documentation before any routing/framework change.
+Read dev/MAINTAINERS.md, PLAN.md end to end (Decisions log wins; §7 governs), PRODUCT.md and DESIGN.md. Use Impeccable in Operate mode, run its context once per session from the repo root, inspect incumbent renders and local/Base UI wrappers, and read `reference/craft-floor.md` immediately before UI edits. Preserve existing demo behavior and all screens. Read current official TanStack documentation before any routing/framework change.
 
 Prefactor inspection: Inspect the five small system components and existing capture inventory. A presentation helper is warranted only if it reduces duplication without conflating statuses/actions. Keep error injection exclusively in QA and preserve route metadata generation.
 

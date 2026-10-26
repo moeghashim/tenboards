@@ -1,6 +1,6 @@
 # 004 — Adopter guide and Agent Skills
 
-Status: planned. Branch: `feat/v0.9/004-adopter-guide-skills`. Depends on 002 and 003.
+Status: in-review (#80). Branch: `feat/v0.9/004-adopter-guide-skills`. Depends on 002 and 003.
 
 ## Scope
 
@@ -16,7 +16,15 @@ Status: planned. Branch: `feat/v0.9/004-adopter-guide-skills`. Depends on 002 an
 
 ## Acceptance criteria
 
-- [ ] Maintainer rules preserved in `dev/MAINTAINERS.md`; all references updated; root AGENTS.md is adopter-facing; CLAUDE.md imports it.
-- [ ] Both skills pass `check:skills`; `.claude/skills` symlinks resolve; skills appear in Claude Code and Codex skill discovery (evidence).
-- [ ] Two eval runs produce on-system pages that pass `check:design` and `verify:page` without manual fixes; transcripts summarized in PR.
-- [ ] README (“Building with agents” section), CHANGELOG draft, milestone status; preview in PR.
+- [x] Maintainer rules preserved in `dev/MAINTAINERS.md`; all references updated; root AGENTS.md is adopter-facing; CLAUDE.md imports it.
+- [x] Both skills pass `check:skills`; `.claude/skills` symlinks resolve; skills appear in Claude Code and Codex skill discovery (evidence).
+- [x] Two eval runs produce on-system pages that pass `check:design` and `verify:page` without manual fixes; transcripts summarized in PR.
+- [x] README (“Building with agents” section), CHANGELOG draft, milestone status; preview in PR.
+
+## Verification — PR #80
+
+- Original maintainer rules match the base AGENTS.md byte-for-byte; root guide is 57 lines; CLAUDE.md imports it. Current workflow references point to dev/MAINTAINERS.md; historical records retain relocation notes.
+- build/check/typecheck, check:skills and 16 validator rejection cases pass; no new dependency.
+- Fresh Codex Sales and Claude Code Vendors sessions discover both skills and produce pages passing check:design and verify:page in all four states without manual implementation fixes. Agent corrections and the scratch dependency-symlink startup failure are recorded as gotchas.
+- Root → Default and Home dev smoke passes 8/8 with no console/hydration errors. Nonvisual task: no application source changes; eval diffs/captures live only on pr-assets.
+- Evidence: https://github.com/moeghashim/tenboards/tree/pr-assets/v09-004. Preview: https://78ecdd04-tenboards-preview.mohanadgh.workers.dev (alias https://pr-80-tenboards-preview.mohanadgh.workers.dev).

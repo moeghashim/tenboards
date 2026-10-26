@@ -20,3 +20,5 @@ Read the actual sidebar reference and current rendered app. PLAN takes precedenc
 
 ## Execution order
 Design authority and contributor rules must precede visual changes.
+
+Maintainer-reference update (v0.9 / 004): historical root `AGENTS.md` workflow rules and its PR template now live in `dev/MAINTAINERS.md`; read that file for current upstream contributions.

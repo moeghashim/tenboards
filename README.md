@@ -17,7 +17,7 @@ The Assistant follows new replies until you scroll up; Jump to latest resumes fo
 
 **v0.8 (Projects workspace) is merged, deployed and released as [v0.8.0](https://github.com/moeghashim/tenboards/releases/tag/v0.8.0)** — the data foundation, workspace Home/Projects index, and all five direct read-only project views are implemented. [The milestone contract](dev/milestones/v0.8-projects/README.md) tracks the remaining navigation consolidation and final acceptance. Existing standalone routes and the default landing remain available.
 
-**v0.8.1 (Default dashboard landing) is merged, deployed and released as [v0.8.1](https://github.com/moeghashim/tenboards/releases/tag/v0.8.1)** — restores the Default revenue dashboard as the entry point and auth fallback. Home, Projects, navigation order and legacy redirects remain available. See the [task contract](dev/milestones/v0.8.1-default-landing/README.md). **v0.9 (Agent-ready template) is in progress** — tasks 001 (public blocks and the `/dashboard/kit` page) 002 (`new:dashboard` / `new:page` generators) and 003 (`check:design` and `verify:page`) are merged; design guardrails, adopter skills and the shadcn registry follow. See the [milestone contract](dev/milestones/v0.9-agent-ready/README.md).
+**v0.8.1 (Default dashboard landing) is merged, deployed and released as [v0.8.1](https://github.com/moeghashim/tenboards/releases/tag/v0.8.1)** — restores the Default revenue dashboard as the entry point and auth fallback. Home, Projects, navigation order and legacy redirects remain available. See the [task contract](dev/milestones/v0.8.1-default-landing/README.md). **v0.9 (Agent-ready template) is in progress** — tasks 001 (public blocks and the `/dashboard/kit` page) 002 (`new:dashboard` / `new:page` generators) and 003 (`check:design` and `verify:page`) are merged; task 004 (adopter guide and Agent Skills) is in review; the shadcn registry follows. See the [milestone contract](dev/milestones/v0.9-agent-ready/README.md).
 
 ## Run locally
 
@@ -39,7 +39,7 @@ OpenUI install telemetry must remain disabled (`OPENUI_TELEMETRY_DISABLED=1` or 
 - `npm run dev` — development server on port 3000.
 - `npm run build` — production client and server build.
 - `npm run preview` — preview the compiled Worker locally with Wrangler.
-- `npm run check` — Biome lint, imports, formatting, and design guardrails. `npm run check:fix` applies Biome fixes; rerun `check` afterward.
+- `npm run check` — Biome lint, imports, formatting, design guardrails and Agent Skills validation. `npm run check:fix` applies Biome fixes; rerun `check` afterward.
 - `npm run assistant:ui` — four-state composer, copy, stop/regenerate and scroll-follow checks, with empty/streaming/completed captures.
 - `npm run assistant:conversation` / `assistant:lifecycle` / `assistant:context` / `assistant:modes` — bounded history, configured UI recovery, scrolling and Node/Worker configuration acceptance using synthetic fixtures.
 - `npm run assistant:server` / `npm run assistant:worker` — synthetic provider-wire, endpoint and isolated admission/auth checks on Node and compiled workerd.
@@ -96,7 +96,7 @@ The app sitemap also includes Home, Projects, AI Assistant, project Overview/Boa
 
 Imported from [arhamkhnz/tanstack-shadcn-admin-dashboard](https://github.com/arhamkhnz/tanstack-shadcn-admin-dashboard) (Studio Admin), revision [`81e5ef1391b68c176154faba0c9ac7b0023ecbaf`](https://github.com/arhamkhnz/tanstack-shadcn-admin-dashboard/commit/81e5ef1391b68c176154faba0c9ac7b0023ecbaf). Copyright © 2026 Mohammed Arham Khan. The original MIT notice is preserved in [LICENSE](LICENSE), alongside the tenboards copyright. No upstream history or remote is retained.
 
-The upstream contributor guidance is archived at [docs/upstream-AGENTS.md](docs/upstream-AGENTS.md). PLAN.md and its Decisions log govern tenboards. Root [AGENTS.md](AGENTS.md) defines the current contributor workflow and required checks.
+The upstream contributor guidance is archived at [docs/upstream-AGENTS.md](docs/upstream-AGENTS.md). PLAN.md and its Decisions log govern tenboards. Root [AGENTS.md](AGENTS.md) guides adopters’ agents; [dev/MAINTAINERS.md](dev/MAINTAINERS.md) defines the upstream contributor workflow and PR template.
 
 ## Import validation notes
 
@@ -643,3 +643,33 @@ npm run verify:page:test
 `verify:page` reuses the requested server or starts a local Vite server when it is unavailable. It captures light/dark × desktop/mobile, checks WCAG 2.2 A/AA rules with exact-pinned `@axe-core/playwright`, and reports console, hydration and page errors. Each route gets screenshots and `report.json` in gitignored `verify/<encoded-route>/`; `verify/report.json` indexes the run. Exit 1 means a violation, runtime error or setup failure. Reports preserve axe selectors, node HTML, help links and incomplete/manual-review candidates; an automated pass is not a complete accessibility audit.
 
 `--all` uses the same 37-entry capture catalog, including concrete sample project paths, aliases and system states. Inherited accessibility findings are tracked in [open questions](dev/open-questions.md); they remain visible failures, not suppressed rules. Evidence belongs on `pr-assets`, never the implementation branch. Shell search/account names and the Default activity filters have accessible names that include their visible labels. Default and Kit pass all four verification states; inherited route-specific issues remain logged. Existing visuals, styles and tokens are unchanged.
+
+
+## Building with agents
+
+Start a fresh Codex or Claude Code session in your clone and ask, for example,
+“add a Sales dashboard with revenue KPIs and a top-products table” or
+“add a Vendors page listing vendors”. [AGENTS.md](AGENTS.md) provides the build loop;
+Claude Code imports it through root CLAUDE.md.
+
+The repository ships two [Agent Skills](https://agentskills.io/specification):
+
+- [tenboards-build-ui](.agents/skills/tenboards-build-ui/SKILL.md): generators, public blocks, domain adaptation and page verification.
+- [tenboards-connect-data](.agents/skills/tenboards-connect-data/SKILL.md): typed reads, guarded loaders, additive migrations, seeds and demo/database parity.
+
+Codex discovers `.agents/skills/`; Claude Code discovers the committed relative
+symlinks in `.claude/skills/`. Keep symlinks enabled when cloning. Restart an existing
+session after adding skills. You can explicitly request `$tenboards-build-ui` in
+Codex or `/tenboards-build-ui` in Claude Code. Supporting references load on demand.
+
+The default path is generator → public blocks → typed data → checks → four-state
+verification. Run `npm run check:skills` to validate metadata, relative references
+and mirrors; it also runs in `npm run check`, with no added dependency. Frontmatter
+uses plain/quoted YAML scalar fields and an indented string metadata map; unsupported
+YAML constructs fail explicitly. Run `npm run check:skills:test` when editing the validator.
+
+Generators initially return illustrative fixtures in both sources. A working demo
+is not proof of a real database query: use the data skill and `data:parity` before
+claiming database integration. `verify:page` checks axe and runtime errors; inspect
+its screenshots and keyboard behavior too. Upstream contributions must first read
+[the maintainer rules and PR template](dev/MAINTAINERS.md).
