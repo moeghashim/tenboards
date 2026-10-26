@@ -1,0 +1,160 @@
+{
+  "routes": 37,
+  "cases": 148,
+  "passedCases": 26,
+  "runtimeErrors": 0,
+  "rules": {
+    "label-content-name-mismatch": {
+      "cases": 120,
+      "nodes": 294,
+      "routes": [
+        "/",
+        "/dashboard",
+        "/dashboard/",
+        "/dashboard/academy",
+        "/dashboard/analytics",
+        "/dashboard/assistant",
+        "/dashboard/chat",
+        "/dashboard/coming-soon",
+        "/dashboard/crm",
+        "/dashboard/default",
+        "/dashboard/ecommerce",
+        "/dashboard/finance",
+        "/dashboard/home/",
+        "/dashboard/infrastructure",
+        "/dashboard/invoice",
+        "/dashboard/kit/",
+        "/dashboard/logistics",
+        "/dashboard/mail",
+        "/dashboard/patient-monitoring",
+        "/dashboard/productivity",
+        "/dashboard/products",
+        "/dashboard/profile",
+        "/dashboard/projects/",
+        "/dashboard/projects/$projectId/board",
+        "/dashboard/projects/$projectId/files",
+        "/dashboard/projects/$projectId/list",
+        "/dashboard/projects/$projectId/overview",
+        "/dashboard/projects/$projectId/timeline",
+        "/dashboard/roles",
+        "/dashboard/users"
+      ],
+      "sample": [
+        [
+          ".shell-search"
+        ],
+        [
+          "#base-ui-_R_repaq_"
+        ],
+        [
+          ".shell-search"
+        ]
+      ]
+    },
+    "scrollable-region-focusable": {
+      "cases": 4,
+      "nodes": 4,
+      "routes": [
+        "/dashboard/analytics",
+        "/dashboard/projects/$projectId/timeline"
+      ],
+      "sample": [
+        [
+          ".overflow-x-auto"
+        ],
+        [
+          ".overflow-x-auto"
+        ],
+        [
+          ".overflow-x-auto"
+        ]
+      ]
+    },
+    "color-contrast": {
+      "cases": 21,
+      "nodes": 65,
+      "routes": [
+        "/chat",
+        "/dashboard/analytics",
+        "/dashboard/chat",
+        "/dashboard/crm",
+        "/dashboard/ecommerce",
+        "/dashboard/finance",
+        "/dashboard/invoice",
+        "/dashboard/logistics",
+        "/dashboard/patient-monitoring",
+        "/dashboard/products",
+        "/dashboard/profile",
+        "/dashboard/roles"
+      ],
+      "sample": [
+        [
+          "#base-ui-_R_jb9aq_"
+        ],
+        [
+          "#base-ui-_R_jb9aq_"
+        ],
+        [
+          "#base-ui-_R_29j9aq_"
+        ]
+      ]
+    },
+    "button-name": {
+      "cases": 16,
+      "nodes": 32,
+      "routes": [
+        "/",
+        "/dashboard",
+        "/dashboard/",
+        "/dashboard/default"
+      ],
+      "sample": [
+        [
+          "#base-ui-_R_pj9aq_"
+        ],
+        [
+          "#base-ui-_R_pj9aq_"
+        ],
+        [
+          "#base-ui-_R_pj9aq_"
+        ]
+      ]
+    },
+    "aria-progressbar-name": {
+      "cases": 4,
+      "nodes": 4,
+      "routes": [
+        "/dashboard/crm"
+      ],
+      "sample": [
+        [
+          ".\\*\\:data-\\[slot\\=\\'progress-indicator\\'\\]\\:bg-chart-2"
+        ],
+        [
+          ".\\*\\:data-\\[slot\\=\\'progress-indicator\\'\\]\\:bg-chart-2"
+        ],
+        [
+          ".\\*\\:data-\\[slot\\=\\'progress-indicator\\'\\]\\:bg-chart-2"
+        ]
+      ]
+    },
+    "aria-required-children": {
+      "cases": 4,
+      "nodes": 4,
+      "routes": [
+        "/dashboard/finance"
+      ],
+      "sample": [
+        [
+          ".group\\/item-group"
+        ],
+        [
+          ".group\\/item-group"
+        ],
+        [
+          ".group\\/item-group"
+        ]
+      ]
+    }
+  }
+}

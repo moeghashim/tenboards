@@ -1,0 +1,16 @@
+
+> tenboards@0.8.1 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://127.0.0.1:3393 --routes /dashboard/default,/dashboard/kit/,/dashboard/finance --output screenshots/v09-003-after
+
+PASS /dashboard/kit/ light/desktop direct
+PASS /dashboard/kit/ light/mobile direct
+PASS /dashboard/kit/ dark/desktop direct
+PASS /dashboard/kit/ dark/mobile direct
+PASS /dashboard/default light/desktop direct
+PASS /dashboard/default light/mobile direct
+PASS /dashboard/default dark/desktop direct
+PASS /dashboard/default dark/mobile direct
+PASS /dashboard/finance light/desktop direct
+PASS /dashboard/finance light/mobile direct
+PASS /dashboard/finance dark/desktop direct
+PASS /dashboard/finance dark/mobile direct

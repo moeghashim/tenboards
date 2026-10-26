@@ -1,0 +1,25 @@
+
+> tenboards@0.8.1 verify:page:test
+> node --experimental-strip-types scripts/verify-page-test.ts
+
+FAIL /fixture light/desktop: 3 axe violations, 1 runtime errors
+  axe button-name: Buttons must have discernible text (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/button-name?application=playwright
+  axe label: Form elements must have labels (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/label?application=playwright
+  axe target-size: All touch targets must be 24px large, or leave sufficient space (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/target-size?application=playwright
+  console: Seeded hydration failure: fixture must fail verification
+FAIL /fixture light/mobile: 3 axe violations, 1 runtime errors
+  axe button-name: Buttons must have discernible text (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/button-name?application=playwright
+  axe label: Form elements must have labels (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/label?application=playwright
+  axe target-size: All touch targets must be 24px large, or leave sufficient space (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/target-size?application=playwright
+  console: Seeded hydration failure: fixture must fail verification
+FAIL /fixture dark/desktop: 3 axe violations, 1 runtime errors
+  axe button-name: Buttons must have discernible text (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/button-name?application=playwright
+  axe label: Form elements must have labels (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/label?application=playwright
+  axe target-size: All touch targets must be 24px large, or leave sufficient space (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/target-size?application=playwright
+  console: Seeded hydration failure: fixture must fail verification
+FAIL /fixture dark/mobile: 3 axe violations, 1 runtime errors
+  axe button-name: Buttons must have discernible text (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/button-name?application=playwright
+  axe label: Form elements must have labels (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/label?application=playwright
+  axe target-size: All touch targets must be 24px large, or leave sufficient space (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/target-size?application=playwright
+  console: Seeded hydration failure: fixture must fail verification
+PASS seeded inaccessible fixture: four screenshots, axe failures, hydration diagnostic, JSON report, exit 1; reused server preserved

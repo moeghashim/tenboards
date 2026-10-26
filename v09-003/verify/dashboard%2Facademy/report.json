@@ -1,0 +1,3041 @@
+{
+  "route": "/dashboard/academy",
+  "path": "/dashboard/academy",
+  "baseURL": "http://127.0.0.1:3393/",
+  "tags": [
+    "wcag2a",
+    "wcag2aa",
+    "wcag21a",
+    "wcag21aa",
+    "wcag22aa"
+  ],
+  "passed": false,
+  "results": [
+    {
+      "theme": "light",
+      "viewport": "desktop",
+      "screenshot": "light-desktop.png",
+      "finalURL": "http://127.0.0.1:3393/dashboard/academy",
+      "passed": false,
+      "errors": [],
+      "warnings": [
+        "Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used."
+      ],
+      "violations": [
+        {
+          "id": "label-content-name-mismatch",
+          "impact": "serious",
+          "tags": [
+            "cat.semantics",
+            "wcag21a",
+            "wcag253",
+            "EN-301-549",
+            "EN-9.2.5.3",
+            "RGAAv4",
+            "RGAA-6.1.5"
+          ],
+          "description": "Ensure that elements labelled through their content must have their visible text as part of their accessible name",
+          "help": "Elements must have their visible text as part of their accessible name",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" tabindex=\"0\" data-slot=\"button\" aria-label=\"Search pages (Comman...\" data-tsd-source=\"/src/components/navi...\" class=\"group/button inline-...\">",
+              "target": [
+                ".shell-search"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" tabindex=\"0\" data-slot=\"dropdown-menu-trigge...\" aria-label=\"Demo account: Demo U...\" aria-haspopup=\"menu\" aria-expanded=\"false\" id=\"base-ui-_R_repaq_\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"group/button inline-...\">",
+              "target": [
+                "#base-ui-_R_repaq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" id=\"base-ui-_R_7n6j39aq_\" data-base-ui-tooltip...=\"\" data-slot=\"tooltip-trigger\" aria-label=\"Olivia Davis\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"flex items-center ga...\">",
+              "target": [
+                "#base-ui-_R_7n6j39aq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" id=\"base-ui-_R_7r6j39aq_\" data-base-ui-tooltip...=\"\" data-slot=\"tooltip-trigger\" aria-label=\"Ethan Miller\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"flex items-center ga...\">",
+              "target": [
+                "#base-ui-_R_7r6j39aq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" id=\"base-ui-_R_7v6j39aq_\" data-base-ui-tooltip...=\"\" data-slot=\"tooltip-trigger\" aria-label=\"Sophia Wilson\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"flex items-center ga...\">",
+              "target": [
+                "#base-ui-_R_7v6j39aq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" id=\"base-ui-_R_3vaj39aq_\" data-base-ui-tooltip...=\"\" data-slot=\"tooltip-trigger\" aria-label=\"Isabella Anderson\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"flex items-center ga...\">",
+              "target": [
+                "#base-ui-_R_3vaj39aq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" id=\"base-ui-_R_7nej39aq_\" data-base-ui-tooltip...=\"\" data-slot=\"tooltip-trigger\" aria-label=\"Alexander Brown\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"flex items-center ga...\">",
+              "target": [
+                "#base-ui-_R_7nej39aq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" id=\"base-ui-_R_7rej39aq_\" data-base-ui-tooltip-trigger=\"\" data-slot=\"tooltip-trigger\" aria-label=\"Mia Garcia\" data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/performance-highlights.tsx:44:19\" ...>",
+              "target": [
+                "#base-ui-_R_7rej39aq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" id=\"base-ui-_R_7vej39aq_\" data-base-ui-tooltip...=\"\" data-slot=\"tooltip-trigger\" aria-label=\"Noah Martinez\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"flex items-center ga...\">",
+              "target": [
+                "#base-ui-_R_7vej39aq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" id=\"base-ui-_R_7nij39aq_\" data-base-ui-tooltip...=\"\" data-slot=\"tooltip-trigger\" aria-label=\"Emma Taylor\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"flex items-center ga...\">",
+              "target": [
+                "#base-ui-_R_7nij39aq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" id=\"base-ui-_R_7rij39aq_\" data-base-ui-tooltip...=\"\" data-slot=\"tooltip-trigger\" aria-label=\"William Johnson\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"flex items-center ga...\">",
+              "target": [
+                "#base-ui-_R_7rij39aq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "impact": "serious",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "description": "Ensure ARIA attributes are not prohibited for an element's role",
+          "help": "Elements must only use permitted ARIA attributes",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-prohibited-attr?application=playwright",
+          "nodes": [
+            {
+              "any": [],
+              "all": [],
+              "none": [
+                {
+                  "id": "aria-prohibited-attr",
+                  "data": {
+                    "role": null,
+                    "nodeName": "div",
+                    "messageKey": "noRoleSingular",
+                    "prohibited": [
+                      "aria-label"
+                    ]
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "aria-label attribute is not well supported on \"div\" elements with no valid role attribute."
+                }
+              ],
+              "impact": "serious",
+              "html": "<div data-slot=\"sidebar-group\" data-sidebar=\"group\" class=\"relative flex w-full min-w-0 flex-col p-0 pb-3\" aria-label=\"Projects navigation\" data-tsd-source=\"/src/routes/(main)/dashboard/-components/sidebar/project-navigation.tsx:127:5\">",
+              "target": [
+                "div[aria-label=\"Projects navigation\"]"
+              ],
+              "failureSummary": "Fix all of the following:\n  aria-label attribute is not well supported on \"div\" elements with no valid role attribute."
+            }
+          ]
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/assignment-status.tsx:34:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"288\" viewBox=\"0 0 614 288\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"90.6\" dy=\"0.71em\">G11A</tspan>",
+              "target": [
+                "tspan[x=\"90.6\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/assignment-status.tsx:34:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"288\" viewBox=\"0 0 614 288\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"205.79999999999998\" dy=\"0.71em\">G11B</tspan>",
+              "target": [
+                "tspan[x=\"205.79999999999998\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/assignment-status.tsx:34:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"288\" viewBox=\"0 0 614 288\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"321\" dy=\"0.71em\">G11C</tspan>",
+              "target": [
+                "tspan[x=\"321\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/assignment-status.tsx:34:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"288\" viewBox=\"0 0 614 288\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"436.20000000000005\" dy=\"0.71em\">G11D</tspan>",
+              "target": [
+                "tspan[x=\"436.20000000000005\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/assignment-status.tsx:34:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"288\" viewBox=\"0 0 614 288\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"551.4\" dy=\"0.71em\">G11E</tspan>",
+              "target": [
+                "tspan[x=\"551.4\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "shortTextContent",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/assignment-status.tsx:34:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"288\" viewBox=\"0 0 614 288\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element content is too short to determine if it is actual text content"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"19\" dy=\"0.355em\">0</tspan>",
+              "target": [
+                "text[y=\"253\"] > tspan[dy=\"0.355em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "shortTextContent",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/assignment-status.tsx:34:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"288\" viewBox=\"0 0 614 288\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element content is too short to determine if it is actual text content"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"19\" dy=\"0.355em\">6</tspan>",
+              "target": [
+                "text[y=\"191\"][orientation=\"left\"][text-anchor=\"end\"] > tspan[dy=\"0.355em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/assignment-status.tsx:34:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"288\" viewBox=\"0 0 614 288\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"19\" dy=\"0.355em\">12</tspan>",
+              "target": [
+                "text[y=\"129\"] > tspan[dy=\"0.355em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/assignment-status.tsx:34:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"288\" viewBox=\"0 0 614 288\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"19\" dy=\"0.355em\">18</tspan>",
+              "target": [
+                "text[y=\"67\"][orientation=\"left\"][text-anchor=\"end\"] > tspan[dy=\"0.355em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/assignment-status.tsx:34:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"288\" viewBox=\"0 0 614 288\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"19\" dy=\"0.355em\">24</tspan>",
+              "target": [
+                "text[y=\"9\"] > tspan[dy=\"0.355em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-muted grid h-1/3 place-items-center border-b text-xs leading-snug font-medium uppercase\" data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/upcoming-events.tsx:32:19\">Oct</div>",
+                      "target": [
+                        ".justify-between.flex-wrap.gap-2:nth-child(1) > .basis-48.flex-1.gap-3 > .size-11.rounded-sm.border > .h-1\\/3.uppercase.border-b"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<div class=\"bg-muted grid h-1/3 place-items-center border-b text-xs leading-snug font-medium uppercase\" data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/upcoming-events.tsx:32:19\">Oct</div>",
+              "target": [
+                ".justify-between.flex-wrap.gap-2:nth-child(1) > .basis-48.flex-1.gap-3 > .size-11.rounded-sm.border > .h-1\\/3.uppercase.border-b"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-muted grid h-1/3 place-items-center border-b text-xs leading-snug font-medium uppercase\" data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/upcoming-events.tsx:32:19\">Nov</div>",
+                      "target": [
+                        ".justify-between.flex-wrap.gap-2:nth-child(2) > .basis-48.flex-1.gap-3 > .size-11.rounded-sm.border > .h-1\\/3.uppercase.border-b"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<div class=\"bg-muted grid h-1/3 place-items-center border-b text-xs leading-snug font-medium uppercase\" data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/upcoming-events.tsx:32:19\">Nov</div>",
+              "target": [
+                ".justify-between.flex-wrap.gap-2:nth-child(2) > .basis-48.flex-1.gap-3 > .size-11.rounded-sm.border > .h-1\\/3.uppercase.border-b"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-muted grid h-1/3 place-items-center border-b text-xs leading-snug font-medium uppercase\" data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/upcoming-events.tsx:32:19\">Nov</div>",
+                      "target": [
+                        ".justify-between.flex-wrap.gap-2:nth-child(3) > .basis-48.flex-1.gap-3 > .size-11.rounded-sm.border > .h-1\\/3.uppercase.border-b"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<div class=\"bg-muted grid h-1/3 place-items-center border-b text-xs leading-snug font-medium uppercase\" data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/upcoming-events.tsx:32:19\">Nov</div>",
+              "target": [
+                ".justify-between.flex-wrap.gap-2:nth-child(3) > .basis-48.flex-1.gap-3 > .size-11.rounded-sm.border > .h-1\\/3.uppercase.border-b"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-muted grid h-1/3 place-items-center border-b text-xs leading-snug font-medium uppercase\" data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/upcoming-events.tsx:32:19\">Nov</div>",
+                      "target": [
+                        ".justify-between.flex-wrap.gap-2:nth-child(4) > .basis-48.flex-1.gap-3 > .size-11.rounded-sm.border > .h-1\\/3.uppercase.border-b"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<div class=\"bg-muted grid h-1/3 place-items-center border-b text-xs leading-snug font-medium uppercase\" data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/upcoming-events.tsx:32:19\">Nov</div>",
+              "target": [
+                ".justify-between.flex-wrap.gap-2:nth-child(4) > .basis-48.flex-1.gap-3 > .size-11.rounded-sm.border > .h-1\\/3.uppercase.border-b"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-muted grid h-1/3 place-items-center border-b text-xs leading-snug font-medium uppercase\" data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/upcoming-events.tsx:32:19\">Nov</div>",
+                      "target": [
+                        ".justify-between.flex-wrap.gap-2:nth-child(5) > .basis-48.flex-1.gap-3 > .size-11.rounded-sm.border > .h-1\\/3.uppercase.border-b"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<div class=\"bg-muted grid h-1/3 place-items-center border-b text-xs leading-snug font-medium uppercase\" data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/upcoming-events.tsx:32:19\">Nov</div>",
+              "target": [
+                ".justify-between.flex-wrap.gap-2:nth-child(5) > .basis-48.flex-1.gap-3 > .size-11.rounded-sm.border > .h-1\\/3.uppercase.border-b"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            }
+          ]
+        }
+      ],
+      "axeVersion": "4.14.0"
+    },
+    {
+      "theme": "light",
+      "viewport": "mobile",
+      "screenshot": "light-mobile.png",
+      "finalURL": "http://127.0.0.1:3393/dashboard/academy",
+      "passed": false,
+      "errors": [],
+      "warnings": [
+        "Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used."
+      ],
+      "violations": [
+        {
+          "id": "label-content-name-mismatch",
+          "impact": "serious",
+          "tags": [
+            "cat.semantics",
+            "wcag21a",
+            "wcag253",
+            "EN-301-549",
+            "EN-9.2.5.3",
+            "RGAAv4",
+            "RGAA-6.1.5"
+          ],
+          "description": "Ensure that elements labelled through their content must have their visible text as part of their accessible name",
+          "help": "Elements must have their visible text as part of their accessible name",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" tabindex=\"0\" data-slot=\"dropdown-menu-trigge...\" aria-label=\"Demo account: Demo U...\" aria-haspopup=\"menu\" aria-expanded=\"false\" id=\"base-ui-_R_repaq_\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"group/button inline-...\">",
+              "target": [
+                "#base-ui-_R_repaq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" id=\"base-ui-_R_7n6j39aq_\" data-base-ui-tooltip...=\"\" data-slot=\"tooltip-trigger\" aria-label=\"Olivia Davis\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"flex items-center ga...\">",
+              "target": [
+                "#base-ui-_R_7n6j39aq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" id=\"base-ui-_R_7r6j39aq_\" data-base-ui-tooltip...=\"\" data-slot=\"tooltip-trigger\" aria-label=\"Ethan Miller\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"flex items-center ga...\">",
+              "target": [
+                "#base-ui-_R_7r6j39aq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" id=\"base-ui-_R_7v6j39aq_\" data-base-ui-tooltip...=\"\" data-slot=\"tooltip-trigger\" aria-label=\"Sophia Wilson\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"flex items-center ga...\">",
+              "target": [
+                "#base-ui-_R_7v6j39aq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" id=\"base-ui-_R_3vaj39aq_\" data-base-ui-tooltip...=\"\" data-slot=\"tooltip-trigger\" aria-label=\"Isabella Anderson\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"flex items-center ga...\">",
+              "target": [
+                "#base-ui-_R_3vaj39aq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" id=\"base-ui-_R_7nej39aq_\" data-base-ui-tooltip...=\"\" data-slot=\"tooltip-trigger\" aria-label=\"Alexander Brown\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"flex items-center ga...\">",
+              "target": [
+                "#base-ui-_R_7nej39aq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" id=\"base-ui-_R_7rej39aq_\" data-base-ui-tooltip-trigger=\"\" data-slot=\"tooltip-trigger\" aria-label=\"Mia Garcia\" data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/performance-highlights.tsx:44:19\" ...>",
+              "target": [
+                "#base-ui-_R_7rej39aq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" id=\"base-ui-_R_7vej39aq_\" data-base-ui-tooltip...=\"\" data-slot=\"tooltip-trigger\" aria-label=\"Noah Martinez\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"flex items-center ga...\">",
+              "target": [
+                "#base-ui-_R_7vej39aq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" id=\"base-ui-_R_7nij39aq_\" data-base-ui-tooltip...=\"\" data-slot=\"tooltip-trigger\" aria-label=\"Emma Taylor\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"flex items-center ga...\">",
+              "target": [
+                "#base-ui-_R_7nij39aq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" id=\"base-ui-_R_7rij39aq_\" data-base-ui-tooltip...=\"\" data-slot=\"tooltip-trigger\" aria-label=\"William Johnson\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"flex items-center ga...\">",
+              "target": [
+                "#base-ui-_R_7rij39aq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/assignment-status.tsx:34:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"61.8\" dy=\"0.71em\">G11A</tspan>",
+              "target": [
+                "tspan[x=\"61.8\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/assignment-status.tsx:34:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"119.39999999999999\" dy=\"0.71em\">G11B</tspan>",
+              "target": [
+                "tspan[x=\"119.39999999999999\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/assignment-status.tsx:34:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"177\" dy=\"0.71em\">G11C</tspan>",
+              "target": [
+                "tspan[x=\"177\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/assignment-status.tsx:34:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"234.60000000000002\" dy=\"0.71em\">G11D</tspan>",
+              "target": [
+                "tspan[x=\"234.60000000000002\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/assignment-status.tsx:34:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"292.2\" dy=\"0.71em\">G11E</tspan>",
+              "target": [
+                "tspan[x=\"292.2\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "shortTextContent",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/assignment-status.tsx:34:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element content is too short to determine if it is actual text content"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"19\" dy=\"0.355em\">0</tspan>",
+              "target": [
+                "text[y=\"221\"] > tspan[dy=\"0.355em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "shortTextContent",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/assignment-status.tsx:34:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element content is too short to determine if it is actual text content"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"19\" dy=\"0.355em\">6</tspan>",
+              "target": [
+                "text[y=\"167\"][width=\"28\"][orientation=\"left\"] > tspan[dy=\"0.355em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/assignment-status.tsx:34:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"19\" dy=\"0.355em\">12</tspan>",
+              "target": [
+                "text[y=\"113\"] > tspan[dy=\"0.355em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/assignment-status.tsx:34:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"19\" dy=\"0.355em\">18</tspan>",
+              "target": [
+                "text[y=\"59\"][width=\"28\"][orientation=\"left\"] > tspan[dy=\"0.355em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/assignment-status.tsx:34:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"19\" dy=\"0.355em\">24</tspan>",
+              "target": [
+                "text[y=\"9\"] > tspan[dy=\"0.355em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-muted grid h-1/3 place-items-center border-b text-xs leading-snug font-medium uppercase\" data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/upcoming-events.tsx:32:19\">Oct</div>",
+                      "target": [
+                        ".justify-between.flex-wrap.gap-2:nth-child(1) > .basis-48.flex-1.gap-3 > .size-11.rounded-sm.overflow-hidden > .h-1\\/3.uppercase.border-b"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<div class=\"bg-muted grid h-1/3 place-items-center border-b text-xs leading-snug font-medium uppercase\" data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/upcoming-events.tsx:32:19\">Oct</div>",
+              "target": [
+                ".justify-between.flex-wrap.gap-2:nth-child(1) > .basis-48.flex-1.gap-3 > .size-11.rounded-sm.overflow-hidden > .h-1\\/3.uppercase.border-b"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-muted grid h-1/3 place-items-center border-b text-xs leading-snug font-medium uppercase\" data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/upcoming-events.tsx:32:19\">Nov</div>",
+                      "target": [
+                        ".justify-between.flex-wrap.gap-2:nth-child(2) > .basis-48.flex-1.gap-3 > .size-11.rounded-sm.overflow-hidden > .h-1\\/3.uppercase.border-b"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<div class=\"bg-muted grid h-1/3 place-items-center border-b text-xs leading-snug font-medium uppercase\" data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/upcoming-events.tsx:32:19\">Nov</div>",
+              "target": [
+                ".justify-between.flex-wrap.gap-2:nth-child(2) > .basis-48.flex-1.gap-3 > .size-11.rounded-sm.overflow-hidden > .h-1\\/3.uppercase.border-b"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-muted grid h-1/3 place-items-center border-b text-xs leading-snug font-medium uppercase\" data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/upcoming-events.tsx:32:19\">Nov</div>",
+                      "target": [
+                        ".justify-between.flex-wrap.gap-2:nth-child(3) > .basis-48.flex-1.gap-3 > .size-11.rounded-sm.overflow-hidden > .h-1\\/3.uppercase.border-b"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<div class=\"bg-muted grid h-1/3 place-items-center border-b text-xs leading-snug font-medium uppercase\" data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/upcoming-events.tsx:32:19\">Nov</div>",
+              "target": [
+                ".justify-between.flex-wrap.gap-2:nth-child(3) > .basis-48.flex-1.gap-3 > .size-11.rounded-sm.overflow-hidden > .h-1\\/3.uppercase.border-b"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-muted grid h-1/3 place-items-center border-b text-xs leading-snug font-medium uppercase\" data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/upcoming-events.tsx:32:19\">Nov</div>",
+                      "target": [
+                        ".justify-between.flex-wrap.gap-2:nth-child(4) > .basis-48.flex-1.gap-3 > .size-11.rounded-sm.overflow-hidden > .h-1\\/3.uppercase.border-b"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<div class=\"bg-muted grid h-1/3 place-items-center border-b text-xs leading-snug font-medium uppercase\" data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/upcoming-events.tsx:32:19\">Nov</div>",
+              "target": [
+                ".justify-between.flex-wrap.gap-2:nth-child(4) > .basis-48.flex-1.gap-3 > .size-11.rounded-sm.overflow-hidden > .h-1\\/3.uppercase.border-b"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-muted grid h-1/3 place-items-center border-b text-xs leading-snug font-medium uppercase\" data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/upcoming-events.tsx:32:19\">Nov</div>",
+                      "target": [
+                        ".justify-between.flex-wrap.gap-2:nth-child(5) > .basis-48.flex-1.gap-3 > .size-11.rounded-sm.overflow-hidden > .h-1\\/3.uppercase.border-b"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<div class=\"bg-muted grid h-1/3 place-items-center border-b text-xs leading-snug font-medium uppercase\" data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/upcoming-events.tsx:32:19\">Nov</div>",
+              "target": [
+                ".justify-between.flex-wrap.gap-2:nth-child(5) > .basis-48.flex-1.gap-3 > .size-11.rounded-sm.overflow-hidden > .h-1\\/3.uppercase.border-b"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            }
+          ]
+        }
+      ],
+      "axeVersion": "4.14.0"
+    },
+    {
+      "theme": "dark",
+      "viewport": "desktop",
+      "screenshot": "dark-desktop.png",
+      "finalURL": "http://127.0.0.1:3393/dashboard/academy",
+      "passed": false,
+      "errors": [],
+      "warnings": [
+        "Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used."
+      ],
+      "violations": [
+        {
+          "id": "label-content-name-mismatch",
+          "impact": "serious",
+          "tags": [
+            "cat.semantics",
+            "wcag21a",
+            "wcag253",
+            "EN-301-549",
+            "EN-9.2.5.3",
+            "RGAAv4",
+            "RGAA-6.1.5"
+          ],
+          "description": "Ensure that elements labelled through their content must have their visible text as part of their accessible name",
+          "help": "Elements must have their visible text as part of their accessible name",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" tabindex=\"0\" data-slot=\"button\" aria-label=\"Search pages (Comman...\" data-tsd-source=\"/src/components/navi...\" class=\"group/button inline-...\">",
+              "target": [
+                ".shell-search"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" tabindex=\"0\" data-slot=\"dropdown-menu-trigge...\" aria-label=\"Demo account: Demo U...\" aria-haspopup=\"menu\" aria-expanded=\"false\" id=\"base-ui-_R_repaq_\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"group/button inline-...\">",
+              "target": [
+                "#base-ui-_R_repaq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" id=\"base-ui-_R_7n6j39aq_\" data-base-ui-tooltip...=\"\" data-slot=\"tooltip-trigger\" aria-label=\"Olivia Davis\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"flex items-center ga...\">",
+              "target": [
+                "#base-ui-_R_7n6j39aq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" id=\"base-ui-_R_7r6j39aq_\" data-base-ui-tooltip...=\"\" data-slot=\"tooltip-trigger\" aria-label=\"Ethan Miller\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"flex items-center ga...\">",
+              "target": [
+                "#base-ui-_R_7r6j39aq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" id=\"base-ui-_R_7v6j39aq_\" data-base-ui-tooltip...=\"\" data-slot=\"tooltip-trigger\" aria-label=\"Sophia Wilson\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"flex items-center ga...\">",
+              "target": [
+                "#base-ui-_R_7v6j39aq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" id=\"base-ui-_R_3vaj39aq_\" data-base-ui-tooltip...=\"\" data-slot=\"tooltip-trigger\" aria-label=\"Isabella Anderson\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"flex items-center ga...\">",
+              "target": [
+                "#base-ui-_R_3vaj39aq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" id=\"base-ui-_R_7nej39aq_\" data-base-ui-tooltip...=\"\" data-slot=\"tooltip-trigger\" aria-label=\"Alexander Brown\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"flex items-center ga...\">",
+              "target": [
+                "#base-ui-_R_7nej39aq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" id=\"base-ui-_R_7rej39aq_\" data-base-ui-tooltip-trigger=\"\" data-slot=\"tooltip-trigger\" aria-label=\"Mia Garcia\" data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/performance-highlights.tsx:44:19\" ...>",
+              "target": [
+                "#base-ui-_R_7rej39aq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" id=\"base-ui-_R_7vej39aq_\" data-base-ui-tooltip...=\"\" data-slot=\"tooltip-trigger\" aria-label=\"Noah Martinez\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"flex items-center ga...\">",
+              "target": [
+                "#base-ui-_R_7vej39aq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" id=\"base-ui-_R_7nij39aq_\" data-base-ui-tooltip...=\"\" data-slot=\"tooltip-trigger\" aria-label=\"Emma Taylor\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"flex items-center ga...\">",
+              "target": [
+                "#base-ui-_R_7nij39aq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" id=\"base-ui-_R_7rij39aq_\" data-base-ui-tooltip...=\"\" data-slot=\"tooltip-trigger\" aria-label=\"William Johnson\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"flex items-center ga...\">",
+              "target": [
+                "#base-ui-_R_7rij39aq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "impact": "serious",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "description": "Ensure ARIA attributes are not prohibited for an element's role",
+          "help": "Elements must only use permitted ARIA attributes",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-prohibited-attr?application=playwright",
+          "nodes": [
+            {
+              "any": [],
+              "all": [],
+              "none": [
+                {
+                  "id": "aria-prohibited-attr",
+                  "data": {
+                    "role": null,
+                    "nodeName": "div",
+                    "messageKey": "noRoleSingular",
+                    "prohibited": [
+                      "aria-label"
+                    ]
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "aria-label attribute is not well supported on \"div\" elements with no valid role attribute."
+                }
+              ],
+              "impact": "serious",
+              "html": "<div data-slot=\"sidebar-group\" data-sidebar=\"group\" class=\"relative flex w-full min-w-0 flex-col p-0 pb-3\" aria-label=\"Projects navigation\" data-tsd-source=\"/src/routes/(main)/dashboard/-components/sidebar/project-navigation.tsx:127:5\">",
+              "target": [
+                "div[aria-label=\"Projects navigation\"]"
+              ],
+              "failureSummary": "Fix all of the following:\n  aria-label attribute is not well supported on \"div\" elements with no valid role attribute."
+            }
+          ]
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/assignment-status.tsx:34:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"288\" viewBox=\"0 0 614 288\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"90.6\" dy=\"0.71em\">G11A</tspan>",
+              "target": [
+                "tspan[x=\"90.6\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/assignment-status.tsx:34:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"288\" viewBox=\"0 0 614 288\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"205.79999999999998\" dy=\"0.71em\">G11B</tspan>",
+              "target": [
+                "tspan[x=\"205.79999999999998\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/assignment-status.tsx:34:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"288\" viewBox=\"0 0 614 288\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"321\" dy=\"0.71em\">G11C</tspan>",
+              "target": [
+                "tspan[x=\"321\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/assignment-status.tsx:34:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"288\" viewBox=\"0 0 614 288\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"436.20000000000005\" dy=\"0.71em\">G11D</tspan>",
+              "target": [
+                "tspan[x=\"436.20000000000005\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/assignment-status.tsx:34:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"288\" viewBox=\"0 0 614 288\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"551.4\" dy=\"0.71em\">G11E</tspan>",
+              "target": [
+                "tspan[x=\"551.4\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "shortTextContent",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/assignment-status.tsx:34:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"288\" viewBox=\"0 0 614 288\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element content is too short to determine if it is actual text content"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"19\" dy=\"0.355em\">0</tspan>",
+              "target": [
+                "text[y=\"253\"] > tspan[dy=\"0.355em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "shortTextContent",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/assignment-status.tsx:34:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"288\" viewBox=\"0 0 614 288\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element content is too short to determine if it is actual text content"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"19\" dy=\"0.355em\">6</tspan>",
+              "target": [
+                "text[y=\"191\"][orientation=\"left\"][text-anchor=\"end\"] > tspan[dy=\"0.355em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/assignment-status.tsx:34:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"288\" viewBox=\"0 0 614 288\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"19\" dy=\"0.355em\">12</tspan>",
+              "target": [
+                "text[y=\"129\"] > tspan[dy=\"0.355em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/assignment-status.tsx:34:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"288\" viewBox=\"0 0 614 288\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"19\" dy=\"0.355em\">18</tspan>",
+              "target": [
+                "text[y=\"67\"][orientation=\"left\"][text-anchor=\"end\"] > tspan[dy=\"0.355em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/assignment-status.tsx:34:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"288\" viewBox=\"0 0 614 288\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"19\" dy=\"0.355em\">24</tspan>",
+              "target": [
+                "text[y=\"9\"] > tspan[dy=\"0.355em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-muted grid h-1/3 place-items-center border-b text-xs leading-snug font-medium uppercase\" data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/upcoming-events.tsx:32:19\">Oct</div>",
+                      "target": [
+                        ".justify-between.flex-wrap.gap-2:nth-child(1) > .basis-48.flex-1.gap-3 > .size-11.rounded-sm.border > .h-1\\/3.uppercase.border-b"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<div class=\"bg-muted grid h-1/3 place-items-center border-b text-xs leading-snug font-medium uppercase\" data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/upcoming-events.tsx:32:19\">Oct</div>",
+              "target": [
+                ".justify-between.flex-wrap.gap-2:nth-child(1) > .basis-48.flex-1.gap-3 > .size-11.rounded-sm.border > .h-1\\/3.uppercase.border-b"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-muted grid h-1/3 place-items-center border-b text-xs leading-snug font-medium uppercase\" data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/upcoming-events.tsx:32:19\">Nov</div>",
+                      "target": [
+                        ".justify-between.flex-wrap.gap-2:nth-child(2) > .basis-48.flex-1.gap-3 > .size-11.rounded-sm.border > .h-1\\/3.uppercase.border-b"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<div class=\"bg-muted grid h-1/3 place-items-center border-b text-xs leading-snug font-medium uppercase\" data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/upcoming-events.tsx:32:19\">Nov</div>",
+              "target": [
+                ".justify-between.flex-wrap.gap-2:nth-child(2) > .basis-48.flex-1.gap-3 > .size-11.rounded-sm.border > .h-1\\/3.uppercase.border-b"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-muted grid h-1/3 place-items-center border-b text-xs leading-snug font-medium uppercase\" data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/upcoming-events.tsx:32:19\">Nov</div>",
+                      "target": [
+                        ".justify-between.flex-wrap.gap-2:nth-child(3) > .basis-48.flex-1.gap-3 > .size-11.rounded-sm.border > .h-1\\/3.uppercase.border-b"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<div class=\"bg-muted grid h-1/3 place-items-center border-b text-xs leading-snug font-medium uppercase\" data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/upcoming-events.tsx:32:19\">Nov</div>",
+              "target": [
+                ".justify-between.flex-wrap.gap-2:nth-child(3) > .basis-48.flex-1.gap-3 > .size-11.rounded-sm.border > .h-1\\/3.uppercase.border-b"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-muted grid h-1/3 place-items-center border-b text-xs leading-snug font-medium uppercase\" data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/upcoming-events.tsx:32:19\">Nov</div>",
+                      "target": [
+                        ".justify-between.flex-wrap.gap-2:nth-child(4) > .basis-48.flex-1.gap-3 > .size-11.rounded-sm.border > .h-1\\/3.uppercase.border-b"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<div class=\"bg-muted grid h-1/3 place-items-center border-b text-xs leading-snug font-medium uppercase\" data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/upcoming-events.tsx:32:19\">Nov</div>",
+              "target": [
+                ".justify-between.flex-wrap.gap-2:nth-child(4) > .basis-48.flex-1.gap-3 > .size-11.rounded-sm.border > .h-1\\/3.uppercase.border-b"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-muted grid h-1/3 place-items-center border-b text-xs leading-snug font-medium uppercase\" data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/upcoming-events.tsx:32:19\">Nov</div>",
+                      "target": [
+                        ".justify-between.flex-wrap.gap-2:nth-child(5) > .basis-48.flex-1.gap-3 > .size-11.rounded-sm.border > .h-1\\/3.uppercase.border-b"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<div class=\"bg-muted grid h-1/3 place-items-center border-b text-xs leading-snug font-medium uppercase\" data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/upcoming-events.tsx:32:19\">Nov</div>",
+              "target": [
+                ".justify-between.flex-wrap.gap-2:nth-child(5) > .basis-48.flex-1.gap-3 > .size-11.rounded-sm.border > .h-1\\/3.uppercase.border-b"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            }
+          ]
+        }
+      ],
+      "axeVersion": "4.14.0"
+    },
+    {
+      "theme": "dark",
+      "viewport": "mobile",
+      "screenshot": "dark-mobile.png",
+      "finalURL": "http://127.0.0.1:3393/dashboard/academy",
+      "passed": false,
+      "errors": [],
+      "warnings": [
+        "Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used."
+      ],
+      "violations": [
+        {
+          "id": "label-content-name-mismatch",
+          "impact": "serious",
+          "tags": [
+            "cat.semantics",
+            "wcag21a",
+            "wcag253",
+            "EN-301-549",
+            "EN-9.2.5.3",
+            "RGAAv4",
+            "RGAA-6.1.5"
+          ],
+          "description": "Ensure that elements labelled through their content must have their visible text as part of their accessible name",
+          "help": "Elements must have their visible text as part of their accessible name",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" tabindex=\"0\" data-slot=\"dropdown-menu-trigge...\" aria-label=\"Demo account: Demo U...\" aria-haspopup=\"menu\" aria-expanded=\"false\" id=\"base-ui-_R_repaq_\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"group/button inline-...\">",
+              "target": [
+                "#base-ui-_R_repaq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" id=\"base-ui-_R_7n6j39aq_\" data-base-ui-tooltip...=\"\" data-slot=\"tooltip-trigger\" aria-label=\"Olivia Davis\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"flex items-center ga...\">",
+              "target": [
+                "#base-ui-_R_7n6j39aq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" id=\"base-ui-_R_7r6j39aq_\" data-base-ui-tooltip...=\"\" data-slot=\"tooltip-trigger\" aria-label=\"Ethan Miller\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"flex items-center ga...\">",
+              "target": [
+                "#base-ui-_R_7r6j39aq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" id=\"base-ui-_R_7v6j39aq_\" data-base-ui-tooltip...=\"\" data-slot=\"tooltip-trigger\" aria-label=\"Sophia Wilson\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"flex items-center ga...\">",
+              "target": [
+                "#base-ui-_R_7v6j39aq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" id=\"base-ui-_R_3vaj39aq_\" data-base-ui-tooltip...=\"\" data-slot=\"tooltip-trigger\" aria-label=\"Isabella Anderson\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"flex items-center ga...\">",
+              "target": [
+                "#base-ui-_R_3vaj39aq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" id=\"base-ui-_R_7nej39aq_\" data-base-ui-tooltip...=\"\" data-slot=\"tooltip-trigger\" aria-label=\"Alexander Brown\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"flex items-center ga...\">",
+              "target": [
+                "#base-ui-_R_7nej39aq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" id=\"base-ui-_R_7rej39aq_\" data-base-ui-tooltip-trigger=\"\" data-slot=\"tooltip-trigger\" aria-label=\"Mia Garcia\" data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/performance-highlights.tsx:44:19\" ...>",
+              "target": [
+                "#base-ui-_R_7rej39aq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" id=\"base-ui-_R_7vej39aq_\" data-base-ui-tooltip...=\"\" data-slot=\"tooltip-trigger\" aria-label=\"Noah Martinez\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"flex items-center ga...\">",
+              "target": [
+                "#base-ui-_R_7vej39aq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" id=\"base-ui-_R_7nij39aq_\" data-base-ui-tooltip...=\"\" data-slot=\"tooltip-trigger\" aria-label=\"Emma Taylor\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"flex items-center ga...\">",
+              "target": [
+                "#base-ui-_R_7nij39aq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" id=\"base-ui-_R_7rij39aq_\" data-base-ui-tooltip...=\"\" data-slot=\"tooltip-trigger\" aria-label=\"William Johnson\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"flex items-center ga...\">",
+              "target": [
+                "#base-ui-_R_7rij39aq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/assignment-status.tsx:34:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"61.8\" dy=\"0.71em\">G11A</tspan>",
+              "target": [
+                "tspan[x=\"61.8\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/assignment-status.tsx:34:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"119.39999999999999\" dy=\"0.71em\">G11B</tspan>",
+              "target": [
+                "tspan[x=\"119.39999999999999\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/assignment-status.tsx:34:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"177\" dy=\"0.71em\">G11C</tspan>",
+              "target": [
+                "tspan[x=\"177\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/assignment-status.tsx:34:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"234.60000000000002\" dy=\"0.71em\">G11D</tspan>",
+              "target": [
+                "tspan[x=\"234.60000000000002\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/assignment-status.tsx:34:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"292.2\" dy=\"0.71em\">G11E</tspan>",
+              "target": [
+                "tspan[x=\"292.2\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "shortTextContent",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/assignment-status.tsx:34:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element content is too short to determine if it is actual text content"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"19\" dy=\"0.355em\">0</tspan>",
+              "target": [
+                "text[y=\"221\"] > tspan[dy=\"0.355em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "shortTextContent",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/assignment-status.tsx:34:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element content is too short to determine if it is actual text content"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"19\" dy=\"0.355em\">6</tspan>",
+              "target": [
+                "text[y=\"167\"][width=\"28\"][orientation=\"left\"] > tspan[dy=\"0.355em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/assignment-status.tsx:34:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"19\" dy=\"0.355em\">12</tspan>",
+              "target": [
+                "text[y=\"113\"] > tspan[dy=\"0.355em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/assignment-status.tsx:34:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"19\" dy=\"0.355em\">18</tspan>",
+              "target": [
+                "text[y=\"59\"][width=\"28\"][orientation=\"left\"] > tspan[dy=\"0.355em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/assignment-status.tsx:34:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"19\" dy=\"0.355em\">24</tspan>",
+              "target": [
+                "text[y=\"9\"] > tspan[dy=\"0.355em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-muted grid h-1/3 place-items-center border-b text-xs leading-snug font-medium uppercase\" data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/upcoming-events.tsx:32:19\">Oct</div>",
+                      "target": [
+                        ".justify-between.flex-wrap.gap-2:nth-child(1) > .basis-48.flex-1.gap-3 > .size-11.rounded-sm.overflow-hidden > .h-1\\/3.uppercase.border-b"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<div class=\"bg-muted grid h-1/3 place-items-center border-b text-xs leading-snug font-medium uppercase\" data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/upcoming-events.tsx:32:19\">Oct</div>",
+              "target": [
+                ".justify-between.flex-wrap.gap-2:nth-child(1) > .basis-48.flex-1.gap-3 > .size-11.rounded-sm.overflow-hidden > .h-1\\/3.uppercase.border-b"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-muted grid h-1/3 place-items-center border-b text-xs leading-snug font-medium uppercase\" data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/upcoming-events.tsx:32:19\">Nov</div>",
+                      "target": [
+                        ".justify-between.flex-wrap.gap-2:nth-child(2) > .basis-48.flex-1.gap-3 > .size-11.rounded-sm.overflow-hidden > .h-1\\/3.uppercase.border-b"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<div class=\"bg-muted grid h-1/3 place-items-center border-b text-xs leading-snug font-medium uppercase\" data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/upcoming-events.tsx:32:19\">Nov</div>",
+              "target": [
+                ".justify-between.flex-wrap.gap-2:nth-child(2) > .basis-48.flex-1.gap-3 > .size-11.rounded-sm.overflow-hidden > .h-1\\/3.uppercase.border-b"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-muted grid h-1/3 place-items-center border-b text-xs leading-snug font-medium uppercase\" data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/upcoming-events.tsx:32:19\">Nov</div>",
+                      "target": [
+                        ".justify-between.flex-wrap.gap-2:nth-child(3) > .basis-48.flex-1.gap-3 > .size-11.rounded-sm.overflow-hidden > .h-1\\/3.uppercase.border-b"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<div class=\"bg-muted grid h-1/3 place-items-center border-b text-xs leading-snug font-medium uppercase\" data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/upcoming-events.tsx:32:19\">Nov</div>",
+              "target": [
+                ".justify-between.flex-wrap.gap-2:nth-child(3) > .basis-48.flex-1.gap-3 > .size-11.rounded-sm.overflow-hidden > .h-1\\/3.uppercase.border-b"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-muted grid h-1/3 place-items-center border-b text-xs leading-snug font-medium uppercase\" data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/upcoming-events.tsx:32:19\">Nov</div>",
+                      "target": [
+                        ".justify-between.flex-wrap.gap-2:nth-child(4) > .basis-48.flex-1.gap-3 > .size-11.rounded-sm.overflow-hidden > .h-1\\/3.uppercase.border-b"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<div class=\"bg-muted grid h-1/3 place-items-center border-b text-xs leading-snug font-medium uppercase\" data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/upcoming-events.tsx:32:19\">Nov</div>",
+              "target": [
+                ".justify-between.flex-wrap.gap-2:nth-child(4) > .basis-48.flex-1.gap-3 > .size-11.rounded-sm.overflow-hidden > .h-1\\/3.uppercase.border-b"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-muted grid h-1/3 place-items-center border-b text-xs leading-snug font-medium uppercase\" data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/upcoming-events.tsx:32:19\">Nov</div>",
+                      "target": [
+                        ".justify-between.flex-wrap.gap-2:nth-child(5) > .basis-48.flex-1.gap-3 > .size-11.rounded-sm.overflow-hidden > .h-1\\/3.uppercase.border-b"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<div class=\"bg-muted grid h-1/3 place-items-center border-b text-xs leading-snug font-medium uppercase\" data-tsd-source=\"/src/routes/(main)/dashboard/academy/-components/upcoming-events.tsx:32:19\">Nov</div>",
+              "target": [
+                ".justify-between.flex-wrap.gap-2:nth-child(5) > .basis-48.flex-1.gap-3 > .size-11.rounded-sm.overflow-hidden > .h-1\\/3.uppercase.border-b"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            }
+          ]
+        }
+      ],
+      "axeVersion": "4.14.0"
+    }
+  ]
+}

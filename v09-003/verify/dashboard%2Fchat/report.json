@@ -1,0 +1,1027 @@
+{
+  "route": "/dashboard/chat",
+  "path": "/dashboard/chat",
+  "baseURL": "http://127.0.0.1:3393/",
+  "tags": [
+    "wcag2a",
+    "wcag2aa",
+    "wcag21a",
+    "wcag21aa",
+    "wcag22aa"
+  ],
+  "passed": false,
+  "results": [
+    {
+      "theme": "light",
+      "viewport": "desktop",
+      "screenshot": "light-desktop.png",
+      "finalURL": "http://127.0.0.1:3393/dashboard/chat",
+      "passed": false,
+      "errors": [],
+      "warnings": [
+        "Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.",
+        "Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used."
+      ],
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "fgColor": "#74777c",
+                    "bgColor": "#ffffff",
+                    "contrastRatio": 4.49,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": null,
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div aria-hidden=\"false\" class=\"bg-card flex h-full flex-col gap-3 pt-3 transition-transform duration-200 ease-out will-change-transform max-md:col-start-1 max-md:row-start-1\" data-tsd-source=\"/src/routes/(main)/chat/-components/chat-conversation-list.tsx:47:5\">",
+                      "target": [
+                        "iframe",
+                        ".pt-3"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element has insufficient color contrast of 4.49 (foreground color: #74777c, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_jb9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/c...\" class=\"relative inline-flex...\">",
+              "target": [
+                "iframe",
+                "#base-ui-_R_jb9aq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.49 (foreground color: #74777c, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "fgColor": "#74777c",
+                    "bgColor": "#ffffff",
+                    "contrastRatio": 4.49,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": null,
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div aria-hidden=\"false\" class=\"bg-card flex h-full flex-col gap-3 pt-3 transition-transform duration-200 ease-out will-change-transform max-md:col-start-1 max-md:row-start-1\" data-tsd-source=\"/src/routes/(main)/chat/-components/chat-conversation-list.tsx:47:5\">",
+                      "target": [
+                        "iframe",
+                        ".pt-3"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element has insufficient color contrast of 4.49 (foreground color: #74777c, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_rb9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/c...\" class=\"relative inline-flex...\">",
+              "target": [
+                "iframe",
+                "#base-ui-_R_rb9aq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.49 (foreground color: #74777c, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "fgColor": "#74777c",
+                    "bgColor": "#ffffff",
+                    "contrastRatio": 4.49,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": null,
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div aria-hidden=\"false\" class=\"bg-card flex h-full flex-col gap-3 pt-3 transition-transform duration-200 ease-out will-change-transform max-md:col-start-1 max-md:row-start-1\" data-tsd-source=\"/src/routes/(main)/chat/-components/chat-conversation-list.tsx:47:5\">",
+                      "target": [
+                        "iframe",
+                        ".pt-3"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element has insufficient color contrast of 4.49 (foreground color: #74777c, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_13b9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/c...\" class=\"relative inline-flex...\">",
+              "target": [
+                "iframe",
+                "#base-ui-_R_13b9aq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.49 (foreground color: #74777c, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "fgColor": "#74777c",
+                    "bgColor": "#ffffff",
+                    "contrastRatio": 4.49,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": null,
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div aria-hidden=\"false\" class=\"bg-card flex h-full flex-col py-3 transition-transform duration-200 ease-out will-change-transform max-md:col-start-1 max-md:row-start-1 max-md:pointer-events-none max-md:translate-x-full\" data-tsd-source=\"/src/routes/(main)/chat/-components/chat-thread.tsx:70:5\">",
+                      "target": [
+                        "iframe",
+                        ".py-3"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element has insufficient color contrast of 4.49 (foreground color: #74777c, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_17j9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/c...\" class=\"relative inline-flex...\">",
+              "target": [
+                "iframe",
+                "#base-ui-_R_17j9aq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.49 (foreground color: #74777c, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        },
+        {
+          "id": "label-content-name-mismatch",
+          "impact": "serious",
+          "tags": [
+            "cat.semantics",
+            "wcag21a",
+            "wcag253",
+            "EN-301-549",
+            "EN-9.2.5.3",
+            "RGAAv4",
+            "RGAA-6.1.5"
+          ],
+          "description": "Ensure that elements labelled through their content must have their visible text as part of their accessible name",
+          "help": "Elements must have their visible text as part of their accessible name",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" tabindex=\"0\" data-slot=\"button\" aria-label=\"Search pages (Comman...\" data-tsd-source=\"/src/components/navi...\" class=\"group/button inline-...\">",
+              "target": [
+                ".px-2\\.5"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" tabindex=\"0\" data-slot=\"dropdown-menu-trigge...\" aria-label=\"Demo account: Demo U...\" aria-haspopup=\"menu\" aria-expanded=\"false\" id=\"base-ui-_R_repaq_\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"group/button inline-...\">",
+              "target": [
+                "#base-ui-_R_repaq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "impact": "serious",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "description": "Ensure ARIA attributes are not prohibited for an element's role",
+          "help": "Elements must only use permitted ARIA attributes",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-prohibited-attr?application=playwright",
+          "nodes": [
+            {
+              "any": [],
+              "all": [],
+              "none": [
+                {
+                  "id": "aria-prohibited-attr",
+                  "data": {
+                    "role": null,
+                    "nodeName": "div",
+                    "messageKey": "noRoleSingular",
+                    "prohibited": [
+                      "aria-label"
+                    ]
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "aria-label attribute is not well supported on \"div\" elements with no valid role attribute."
+                }
+              ],
+              "impact": "serious",
+              "html": "<div data-slot=\"sidebar-group\" data-sidebar=\"group\" class=\"relative flex w-full min-w-0 flex-col p-0 pb-3\" aria-label=\"Projects navigation\" data-tsd-source=\"/src/routes/(main)/dashboard/-components/sidebar/project-navigation.tsx:127:5\">",
+              "target": [
+                "div[aria-label=\"Projects navigation\"]"
+              ],
+              "failureSummary": "Fix all of the following:\n  aria-label attribute is not well supported on \"div\" elements with no valid role attribute."
+            },
+            {
+              "any": [],
+              "all": [],
+              "none": [
+                {
+                  "id": "aria-prohibited-attr",
+                  "data": {
+                    "role": null,
+                    "nodeName": "div",
+                    "messageKey": "noRoleSingular",
+                    "prohibited": [
+                      "aria-label"
+                    ]
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "aria-label attribute is not well supported on \"div\" elements with no valid role attribute."
+                }
+              ],
+              "impact": "serious",
+              "html": "<div data-slot=\"bubble-reactions\" data-align=\"start\" data-side=\"bottom\" class=\"absolute z-10 flex w...\" aria-label=\"Reaction: 👍\" data-tsd-source=\"/src/routes/(main)/c...\">",
+              "target": [
+                "iframe",
+                ".left-3"
+              ],
+              "failureSummary": "Fix all of the following:\n  aria-label attribute is not well supported on \"div\" elements with no valid role attribute."
+            },
+            {
+              "any": [],
+              "all": [],
+              "none": [
+                {
+                  "id": "aria-prohibited-attr",
+                  "data": {
+                    "role": null,
+                    "nodeName": "div",
+                    "messageKey": "noRoleSingular",
+                    "prohibited": [
+                      "aria-label"
+                    ]
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "aria-label attribute is not well supported on \"div\" elements with no valid role attribute."
+                }
+              ],
+              "impact": "serious",
+              "html": "<div data-slot=\"bubble-reactions\" data-align=\"end\" data-side=\"bottom\" class=\"absolute z-10 flex w...\" aria-label=\"Reaction: 👀\" data-tsd-source=\"/src/routes/(main)/c...\">",
+              "target": [
+                "iframe",
+                ".right-3"
+              ],
+              "failureSummary": "Fix all of the following:\n  aria-label attribute is not well supported on \"div\" elements with no valid role attribute."
+            }
+          ]
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "pseudoContent",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<button type=\"button\" data-active=\"\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"0\" role=\"tab\" aria-selected=\"true\" id=\"base-ui-_R_bb9aq_\" data-composite-item-...=\"\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/c...\" ...>",
+                      "target": [
+                        "iframe",
+                        "#base-ui-_R_bb9aq_"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined due to a pseudo element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"text-muted-foreground text-xs\" data-tsd-source=\"/src/routes/(main)/chat/-components/chat-conversation-list.tsx:75:13\">(24)</span>",
+              "target": [
+                "iframe",
+                "#base-ui-_R_bb9aq_ > .text-muted-foreground.text-xs"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgOverlap",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it is overlapped by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span data-slot=\"marker-content\" class=\"min-w-0 wrap-break-w...\" data-tsd-source=\"/src/routes/(main)/c...\">",
+              "target": [
+                "iframe",
+                ".group-data-\\[variant\\=separator\\]\\/marker\\:flex-none"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            }
+          ]
+        }
+      ],
+      "axeVersion": "4.14.0"
+    },
+    {
+      "theme": "light",
+      "viewport": "mobile",
+      "screenshot": "light-mobile.png",
+      "finalURL": "http://127.0.0.1:3393/dashboard/chat",
+      "passed": false,
+      "errors": [],
+      "warnings": [
+        "Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.",
+        "Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used."
+      ],
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "fgColor": "#74777c",
+                    "bgColor": "#ffffff",
+                    "contrastRatio": 4.49,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": null,
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div aria-hidden=\"false\" class=\"bg-card flex h-full flex-col gap-3 pt-3 transition-transform duration-200 ease-out will-change-transform max-md:col-start-1 max-md:row-start-1\" data-tsd-source=\"/src/routes/(main)/chat/-components/chat-conversation-list.tsx:47:5\">",
+                      "target": [
+                        "iframe",
+                        ".pt-3"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element has insufficient color contrast of 4.49 (foreground color: #74777c, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_jb9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/c...\" class=\"relative inline-flex...\">",
+              "target": [
+                "iframe",
+                "#base-ui-_R_jb9aq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.49 (foreground color: #74777c, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "fgColor": "#74777c",
+                    "bgColor": "#ffffff",
+                    "contrastRatio": 4.49,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": null,
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div aria-hidden=\"false\" class=\"bg-card flex h-full flex-col gap-3 pt-3 transition-transform duration-200 ease-out will-change-transform max-md:col-start-1 max-md:row-start-1\" data-tsd-source=\"/src/routes/(main)/chat/-components/chat-conversation-list.tsx:47:5\">",
+                      "target": [
+                        "iframe",
+                        ".pt-3"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element has insufficient color contrast of 4.49 (foreground color: #74777c, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_rb9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/c...\" class=\"relative inline-flex...\">",
+              "target": [
+                "iframe",
+                "#base-ui-_R_rb9aq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.49 (foreground color: #74777c, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "fgColor": "#74777c",
+                    "bgColor": "#ffffff",
+                    "contrastRatio": 4.49,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": null,
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div aria-hidden=\"false\" class=\"bg-card flex h-full flex-col gap-3 pt-3 transition-transform duration-200 ease-out will-change-transform max-md:col-start-1 max-md:row-start-1\" data-tsd-source=\"/src/routes/(main)/chat/-components/chat-conversation-list.tsx:47:5\">",
+                      "target": [
+                        "iframe",
+                        ".pt-3"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element has insufficient color contrast of 4.49 (foreground color: #74777c, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_13b9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/c...\" class=\"relative inline-flex...\">",
+              "target": [
+                "iframe",
+                "#base-ui-_R_13b9aq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.49 (foreground color: #74777c, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        },
+        {
+          "id": "label-content-name-mismatch",
+          "impact": "serious",
+          "tags": [
+            "cat.semantics",
+            "wcag21a",
+            "wcag253",
+            "EN-301-549",
+            "EN-9.2.5.3",
+            "RGAAv4",
+            "RGAA-6.1.5"
+          ],
+          "description": "Ensure that elements labelled through their content must have their visible text as part of their accessible name",
+          "help": "Elements must have their visible text as part of their accessible name",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" tabindex=\"0\" data-slot=\"dropdown-menu-trigge...\" aria-label=\"Demo account: Demo U...\" aria-haspopup=\"menu\" aria-expanded=\"false\" id=\"base-ui-_R_repaq_\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"group/button inline-...\">",
+              "target": [
+                "#base-ui-_R_repaq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "pseudoContent",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<button type=\"button\" data-active=\"\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"0\" role=\"tab\" aria-selected=\"true\" id=\"base-ui-_R_bb9aq_\" data-composite-item-...=\"\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/c...\" ...>",
+                      "target": [
+                        "iframe",
+                        "#base-ui-_R_bb9aq_"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined due to a pseudo element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"text-muted-foreground text-xs\" data-tsd-source=\"/src/routes/(main)/chat/-components/chat-conversation-list.tsx:75:13\">(24)</span>",
+              "target": [
+                "iframe",
+                "#base-ui-_R_bb9aq_ > .text-muted-foreground.text-xs"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            }
+          ]
+        }
+      ],
+      "axeVersion": "4.14.0"
+    },
+    {
+      "theme": "dark",
+      "viewport": "desktop",
+      "screenshot": "dark-desktop.png",
+      "finalURL": "http://127.0.0.1:3393/dashboard/chat",
+      "passed": false,
+      "errors": [],
+      "warnings": [
+        "Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.",
+        "Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used."
+      ],
+      "violations": [
+        {
+          "id": "label-content-name-mismatch",
+          "impact": "serious",
+          "tags": [
+            "cat.semantics",
+            "wcag21a",
+            "wcag253",
+            "EN-301-549",
+            "EN-9.2.5.3",
+            "RGAAv4",
+            "RGAA-6.1.5"
+          ],
+          "description": "Ensure that elements labelled through their content must have their visible text as part of their accessible name",
+          "help": "Elements must have their visible text as part of their accessible name",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" tabindex=\"0\" data-slot=\"button\" aria-label=\"Search pages (Comman...\" data-tsd-source=\"/src/components/navi...\" class=\"group/button inline-...\">",
+              "target": [
+                ".px-2\\.5"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" tabindex=\"0\" data-slot=\"dropdown-menu-trigge...\" aria-label=\"Demo account: Demo U...\" aria-haspopup=\"menu\" aria-expanded=\"false\" id=\"base-ui-_R_repaq_\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"group/button inline-...\">",
+              "target": [
+                "#base-ui-_R_repaq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "impact": "serious",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "description": "Ensure ARIA attributes are not prohibited for an element's role",
+          "help": "Elements must only use permitted ARIA attributes",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-prohibited-attr?application=playwright",
+          "nodes": [
+            {
+              "any": [],
+              "all": [],
+              "none": [
+                {
+                  "id": "aria-prohibited-attr",
+                  "data": {
+                    "role": null,
+                    "nodeName": "div",
+                    "messageKey": "noRoleSingular",
+                    "prohibited": [
+                      "aria-label"
+                    ]
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "aria-label attribute is not well supported on \"div\" elements with no valid role attribute."
+                }
+              ],
+              "impact": "serious",
+              "html": "<div data-slot=\"sidebar-group\" data-sidebar=\"group\" class=\"relative flex w-full min-w-0 flex-col p-0 pb-3\" aria-label=\"Projects navigation\" data-tsd-source=\"/src/routes/(main)/dashboard/-components/sidebar/project-navigation.tsx:127:5\">",
+              "target": [
+                "div[aria-label=\"Projects navigation\"]"
+              ],
+              "failureSummary": "Fix all of the following:\n  aria-label attribute is not well supported on \"div\" elements with no valid role attribute."
+            },
+            {
+              "any": [],
+              "all": [],
+              "none": [
+                {
+                  "id": "aria-prohibited-attr",
+                  "data": {
+                    "role": null,
+                    "nodeName": "div",
+                    "messageKey": "noRoleSingular",
+                    "prohibited": [
+                      "aria-label"
+                    ]
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "aria-label attribute is not well supported on \"div\" elements with no valid role attribute."
+                }
+              ],
+              "impact": "serious",
+              "html": "<div data-slot=\"bubble-reactions\" data-align=\"start\" data-side=\"bottom\" class=\"absolute z-10 flex w...\" aria-label=\"Reaction: 👍\" data-tsd-source=\"/src/routes/(main)/c...\">",
+              "target": [
+                "iframe",
+                ".left-3"
+              ],
+              "failureSummary": "Fix all of the following:\n  aria-label attribute is not well supported on \"div\" elements with no valid role attribute."
+            },
+            {
+              "any": [],
+              "all": [],
+              "none": [
+                {
+                  "id": "aria-prohibited-attr",
+                  "data": {
+                    "role": null,
+                    "nodeName": "div",
+                    "messageKey": "noRoleSingular",
+                    "prohibited": [
+                      "aria-label"
+                    ]
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "aria-label attribute is not well supported on \"div\" elements with no valid role attribute."
+                }
+              ],
+              "impact": "serious",
+              "html": "<div data-slot=\"bubble-reactions\" data-align=\"end\" data-side=\"bottom\" class=\"absolute z-10 flex w...\" aria-label=\"Reaction: 👀\" data-tsd-source=\"/src/routes/(main)/c...\">",
+              "target": [
+                "iframe",
+                ".right-3"
+              ],
+              "failureSummary": "Fix all of the following:\n  aria-label attribute is not well supported on \"div\" elements with no valid role attribute."
+            }
+          ]
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "pseudoContent",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<button type=\"button\" data-active=\"\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"0\" role=\"tab\" aria-selected=\"true\" id=\"base-ui-_R_bb9aq_\" data-composite-item-...=\"\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/c...\" ...>",
+                      "target": [
+                        "iframe",
+                        "#base-ui-_R_bb9aq_"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined due to a pseudo element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"text-muted-foreground text-xs\" data-tsd-source=\"/src/routes/(main)/chat/-components/chat-conversation-list.tsx:75:13\">(24)</span>",
+              "target": [
+                "iframe",
+                "#base-ui-_R_bb9aq_ > .text-muted-foreground.text-xs"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgOverlap",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it is overlapped by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span data-slot=\"marker-content\" class=\"min-w-0 wrap-break-w...\" data-tsd-source=\"/src/routes/(main)/c...\">",
+              "target": [
+                "iframe",
+                ".group-data-\\[variant\\=separator\\]\\/marker\\:flex-none"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            }
+          ]
+        }
+      ],
+      "axeVersion": "4.14.0"
+    },
+    {
+      "theme": "dark",
+      "viewport": "mobile",
+      "screenshot": "dark-mobile.png",
+      "finalURL": "http://127.0.0.1:3393/dashboard/chat",
+      "passed": false,
+      "errors": [],
+      "warnings": [
+        "Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used.",
+        "Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used."
+      ],
+      "violations": [
+        {
+          "id": "label-content-name-mismatch",
+          "impact": "serious",
+          "tags": [
+            "cat.semantics",
+            "wcag21a",
+            "wcag253",
+            "EN-301-549",
+            "EN-9.2.5.3",
+            "RGAAv4",
+            "RGAA-6.1.5"
+          ],
+          "description": "Ensure that elements labelled through their content must have their visible text as part of their accessible name",
+          "help": "Elements must have their visible text as part of their accessible name",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" tabindex=\"0\" data-slot=\"dropdown-menu-trigge...\" aria-label=\"Demo account: Demo U...\" aria-haspopup=\"menu\" aria-expanded=\"false\" id=\"base-ui-_R_repaq_\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"group/button inline-...\">",
+              "target": [
+                "#base-ui-_R_repaq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "pseudoContent",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<button type=\"button\" data-active=\"\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"0\" role=\"tab\" aria-selected=\"true\" id=\"base-ui-_R_bb9aq_\" data-composite-item-...=\"\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/c...\" ...>",
+                      "target": [
+                        "iframe",
+                        "#base-ui-_R_bb9aq_"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined due to a pseudo element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"text-muted-foreground text-xs\" data-tsd-source=\"/src/routes/(main)/chat/-components/chat-conversation-list.tsx:75:13\">(24)</span>",
+              "target": [
+                "iframe",
+                "#base-ui-_R_bb9aq_ > .text-muted-foreground.text-xs"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+            }
+          ]
+        }
+      ],
+      "axeVersion": "4.14.0"
+    }
+  ]
+}

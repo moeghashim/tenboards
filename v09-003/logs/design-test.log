@@ -1,0 +1,31 @@
+
+> tenboards@0.8.1 check:design:test
+> node --experimental-strip-types scripts/design-check-test.ts
+
+PASS seeded violation: hex
+PASS seeded violation: short hex
+PASS seeded violation: alpha hex
+PASS seeded violation: rgb
+PASS seeded violation: rgba
+PASS seeded violation: hsl
+PASS seeded violation: oklch
+PASS seeded violation: color class
+PASS seeded violation: size
+PASS seeded violation: spacing
+PASS seeded violation: typography
+PASS seeded violation: arbitrary selector and value
+PASS seeded violation: property syntax
+PASS seeded violation: template
+PASS seeded violation: hand rolled card
+PASS seeded violation: conditional card
+PASS seeded violation: page header
+PASS seeded violation: recharts
+PASS seeded violation: recharts dynamic
+PASS seeded violation: recharts export
+PASS seeded violation: recharts deep
+PASS seeded violation: primitive card
+PASS seeded violation: relative primitive card
+PASS seeded violation: namespace primitive card
+PASS seeded violation: dynamic primitive card
+PASS permitted tokens/variants/blocks/chart boundary, CSS comments, exact counted exceptions, and stale exception detection
+PASS check:design CLI exits 1 with actionable diagnostics for all seeded rules

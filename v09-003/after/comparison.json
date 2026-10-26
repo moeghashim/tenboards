@@ -1,0 +1,146 @@
+[
+  {
+    "file": "_dashboard_default-dark-mobile.png",
+    "before": [
+      390,
+      1971
+    ],
+    "after": [
+      390,
+      1971
+    ],
+    "diffBounds": null
+  },
+  {
+    "file": "_dashboard_default-dark-desktop.png",
+    "before": [
+      1440,
+      1393
+    ],
+    "after": [
+      1440,
+      1393
+    ],
+    "diffBounds": null
+  },
+  {
+    "file": "_dashboard_kit_-light-mobile.png",
+    "before": [
+      390,
+      2553
+    ],
+    "after": [
+      390,
+      2553
+    ],
+    "diffBounds": null
+  },
+  {
+    "file": "_dashboard_finance-dark-mobile.png",
+    "before": [
+      390,
+      3016
+    ],
+    "after": [
+      390,
+      3016
+    ],
+    "diffBounds": null
+  },
+  {
+    "file": "_dashboard_kit_-dark-desktop.png",
+    "before": [
+      1440,
+      1739
+    ],
+    "after": [
+      1440,
+      1739
+    ],
+    "diffBounds": null
+  },
+  {
+    "file": "_dashboard_default-light-mobile.png",
+    "before": [
+      390,
+      1971
+    ],
+    "after": [
+      390,
+      1971
+    ],
+    "diffBounds": null
+  },
+  {
+    "file": "_dashboard_default-light-desktop.png",
+    "before": [
+      1440,
+      1393
+    ],
+    "after": [
+      1440,
+      1393
+    ],
+    "diffBounds": null
+  },
+  {
+    "file": "_dashboard_kit_-dark-mobile.png",
+    "before": [
+      390,
+      2553
+    ],
+    "after": [
+      390,
+      2553
+    ],
+    "diffBounds": null
+  },
+  {
+    "file": "_dashboard_kit_-light-desktop.png",
+    "before": [
+      1440,
+      1739
+    ],
+    "after": [
+      1440,
+      1739
+    ],
+    "diffBounds": null
+  },
+  {
+    "file": "_dashboard_finance-dark-desktop.png",
+    "before": [
+      1440,
+      1300
+    ],
+    "after": [
+      1440,
+      1300
+    ],
+    "diffBounds": null
+  },
+  {
+    "file": "_dashboard_finance-light-desktop.png",
+    "before": [
+      1440,
+      1300
+    ],
+    "after": [
+      1440,
+      1300
+    ],
+    "diffBounds": null
+  },
+  {
+    "file": "_dashboard_finance-light-mobile.png",
+    "before": [
+      390,
+      3016
+    ],
+    "after": [
+      390,
+      3016
+    ],
+    "diffBounds": null
+  }
+]

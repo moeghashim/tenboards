@@ -1,0 +1,322 @@
+
+> tenboards@0.8.1 verify:page
+> node --experimental-strip-types scripts/verify-page.ts --all --base-url http://127.0.0.1:3393
+
+Reusing http://127.0.0.1:3393
+FAIL /dashboard/kit/ light/desktop: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/kit/ light/mobile: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/kit/ dark/desktop: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/kit/ dark/mobile: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/assistant light/desktop: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (5 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/assistant light/mobile: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (4 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/assistant dark/desktop: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (5 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/assistant dark/mobile: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (4 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/home/ light/desktop: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/home/ light/mobile: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/home/ dark/desktop: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/home/ dark/mobile: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/projects/ light/desktop: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/projects/ light/mobile: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/projects/ dark/desktop: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/projects/ dark/mobile: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/projects/$projectId/overview light/desktop: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/projects/$projectId/overview light/mobile: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/projects/$projectId/overview dark/desktop: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/projects/$projectId/overview dark/mobile: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/projects/$projectId/timeline light/desktop: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/projects/$projectId/timeline light/mobile: 2 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+  axe scrollable-region-focusable: Scrollable region must have keyboard access (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/scrollable-region-focusable?application=playwright
+FAIL /dashboard/projects/$projectId/timeline dark/desktop: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/projects/$projectId/timeline dark/mobile: 2 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+  axe scrollable-region-focusable: Scrollable region must have keyboard access (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/scrollable-region-focusable?application=playwright
+FAIL /dashboard/projects/$projectId/files light/desktop: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/projects/$projectId/files light/mobile: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/projects/$projectId/files dark/desktop: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/projects/$projectId/files dark/mobile: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/projects/$projectId/board light/desktop: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/projects/$projectId/board light/mobile: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/projects/$projectId/board dark/desktop: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/projects/$projectId/board dark/mobile: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/projects/$projectId/list light/desktop: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/projects/$projectId/list light/mobile: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/projects/$projectId/list dark/desktop: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/projects/$projectId/list dark/mobile: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /chat light/desktop: 1 axe violations, 0 runtime errors
+  axe color-contrast: Elements must meet minimum color contrast ratio thresholds (4 nodes) — https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright
+FAIL /chat light/mobile: 1 axe violations, 0 runtime errors
+  axe color-contrast: Elements must meet minimum color contrast ratio thresholds (3 nodes) — https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright
+PASS /chat dark/desktop: 0 axe violations, 0 runtime errors
+PASS /chat dark/mobile: 0 axe violations, 0 runtime errors
+FAIL /dashboard light/desktop: 2 axe violations, 0 runtime errors
+  axe button-name: Buttons must have discernible text (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/button-name?application=playwright
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard light/mobile: 2 axe violations, 0 runtime errors
+  axe button-name: Buttons must have discernible text (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/button-name?application=playwright
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard dark/desktop: 2 axe violations, 0 runtime errors
+  axe button-name: Buttons must have discernible text (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/button-name?application=playwright
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard dark/mobile: 2 axe violations, 0 runtime errors
+  axe button-name: Buttons must have discernible text (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/button-name?application=playwright
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+PASS /mail light/desktop: 0 axe violations, 0 runtime errors
+PASS /mail light/mobile: 0 axe violations, 0 runtime errors
+PASS /mail dark/desktop: 0 axe violations, 0 runtime errors
+PASS /mail dark/mobile: 0 axe violations, 0 runtime errors
+PASS /unauthorized light/desktop: 0 axe violations, 0 runtime errors
+PASS /unauthorized light/mobile: 0 axe violations, 0 runtime errors
+PASS /unauthorized dark/desktop: 0 axe violations, 0 runtime errors
+PASS /unauthorized dark/mobile: 0 axe violations, 0 runtime errors
+FAIL / light/desktop: 2 axe violations, 0 runtime errors
+  axe button-name: Buttons must have discernible text (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/button-name?application=playwright
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL / light/mobile: 2 axe violations, 0 runtime errors
+  axe button-name: Buttons must have discernible text (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/button-name?application=playwright
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL / dark/desktop: 2 axe violations, 0 runtime errors
+  axe button-name: Buttons must have discernible text (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/button-name?application=playwright
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL / dark/mobile: 2 axe violations, 0 runtime errors
+  axe button-name: Buttons must have discernible text (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/button-name?application=playwright
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+PASS /auth/v2 light/desktop: 0 axe violations, 0 runtime errors
+PASS /auth/v2 light/mobile: 0 axe violations, 0 runtime errors
+PASS /auth/v2 dark/desktop: 0 axe violations, 0 runtime errors
+PASS /auth/v2 dark/mobile: 0 axe violations, 0 runtime errors
+FAIL /dashboard/academy light/desktop: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (11 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/academy light/mobile: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (10 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/academy dark/desktop: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (11 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/academy dark/mobile: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (10 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/analytics light/desktop: 2 axe violations, 0 runtime errors
+  axe color-contrast: Elements must meet minimum color contrast ratio thresholds (6 nodes) — https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/analytics light/mobile: 3 axe violations, 0 runtime errors
+  axe color-contrast: Elements must meet minimum color contrast ratio thresholds (6 nodes) — https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+  axe scrollable-region-focusable: Scrollable region must have keyboard access (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/scrollable-region-focusable?application=playwright
+FAIL /dashboard/analytics dark/desktop: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/analytics dark/mobile: 2 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+  axe scrollable-region-focusable: Scrollable region must have keyboard access (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/scrollable-region-focusable?application=playwright
+FAIL /dashboard/chat light/desktop: 2 axe violations, 0 runtime errors
+  axe color-contrast: Elements must meet minimum color contrast ratio thresholds (4 nodes) — https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/chat light/mobile: 2 axe violations, 0 runtime errors
+  axe color-contrast: Elements must meet minimum color contrast ratio thresholds (3 nodes) — https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/chat dark/desktop: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/chat dark/mobile: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/coming-soon light/desktop: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/coming-soon light/mobile: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/coming-soon dark/desktop: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/coming-soon dark/mobile: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/crm light/desktop: 3 axe violations, 0 runtime errors
+  axe aria-progressbar-name: ARIA progressbar nodes must have an accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/aria-progressbar-name?application=playwright
+  axe color-contrast: Elements must meet minimum color contrast ratio thresholds (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/crm light/mobile: 2 axe violations, 0 runtime errors
+  axe aria-progressbar-name: ARIA progressbar nodes must have an accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/aria-progressbar-name?application=playwright
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/crm dark/desktop: 2 axe violations, 0 runtime errors
+  axe aria-progressbar-name: ARIA progressbar nodes must have an accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/aria-progressbar-name?application=playwright
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/crm dark/mobile: 2 axe violations, 0 runtime errors
+  axe aria-progressbar-name: ARIA progressbar nodes must have an accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/aria-progressbar-name?application=playwright
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/default light/desktop: 2 axe violations, 0 runtime errors
+  axe button-name: Buttons must have discernible text (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/button-name?application=playwright
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/default light/mobile: 2 axe violations, 0 runtime errors
+  axe button-name: Buttons must have discernible text (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/button-name?application=playwright
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/default dark/desktop: 2 axe violations, 0 runtime errors
+  axe button-name: Buttons must have discernible text (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/button-name?application=playwright
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/default dark/mobile: 2 axe violations, 0 runtime errors
+  axe button-name: Buttons must have discernible text (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/button-name?application=playwright
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/ecommerce light/desktop: 2 axe violations, 0 runtime errors
+  axe color-contrast: Elements must meet minimum color contrast ratio thresholds (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/ecommerce light/mobile: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/ecommerce dark/desktop: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/ecommerce dark/mobile: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/finance light/desktop: 3 axe violations, 0 runtime errors
+  axe aria-required-children: Certain ARIA roles must contain particular children (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/aria-required-children?application=playwright
+  axe color-contrast: Elements must meet minimum color contrast ratio thresholds (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/finance light/mobile: 3 axe violations, 0 runtime errors
+  axe aria-required-children: Certain ARIA roles must contain particular children (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/aria-required-children?application=playwright
+  axe color-contrast: Elements must meet minimum color contrast ratio thresholds (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/finance dark/desktop: 2 axe violations, 0 runtime errors
+  axe aria-required-children: Certain ARIA roles must contain particular children (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/aria-required-children?application=playwright
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/finance dark/mobile: 2 axe violations, 0 runtime errors
+  axe aria-required-children: Certain ARIA roles must contain particular children (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/aria-required-children?application=playwright
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/infrastructure light/desktop: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/infrastructure light/mobile: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/infrastructure dark/desktop: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/infrastructure dark/mobile: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/invoice light/desktop: 2 axe violations, 0 runtime errors
+  axe color-contrast: Elements must meet minimum color contrast ratio thresholds (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (4 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/invoice light/mobile: 2 axe violations, 0 runtime errors
+  axe color-contrast: Elements must meet minimum color contrast ratio thresholds (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (3 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/invoice dark/desktop: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (4 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/invoice dark/mobile: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (3 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/logistics light/desktop: 2 axe violations, 0 runtime errors
+  axe color-contrast: Elements must meet minimum color contrast ratio thresholds (7 nodes) — https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (7 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/logistics light/mobile: 2 axe violations, 0 runtime errors
+  axe color-contrast: Elements must meet minimum color contrast ratio thresholds (3 nodes) — https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (5 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/logistics dark/desktop: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (7 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/logistics dark/mobile: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (5 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/mail light/desktop: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/mail light/mobile: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/mail dark/desktop: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/mail dark/mobile: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/patient-monitoring light/desktop: 2 axe violations, 0 runtime errors
+  axe color-contrast: Elements must meet minimum color contrast ratio thresholds (3 nodes) — https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (12 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/patient-monitoring light/mobile: 2 axe violations, 0 runtime errors
+  axe color-contrast: Elements must meet minimum color contrast ratio thresholds (3 nodes) — https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (11 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/patient-monitoring dark/desktop: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (12 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/patient-monitoring dark/mobile: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (11 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/productivity light/desktop: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/productivity light/mobile: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/productivity dark/desktop: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/productivity dark/mobile: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/products light/desktop: 2 axe violations, 0 runtime errors
+  axe color-contrast: Elements must meet minimum color contrast ratio thresholds (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/products light/mobile: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/products dark/desktop: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/products dark/mobile: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/profile light/desktop: 2 axe violations, 0 runtime errors
+  axe color-contrast: Elements must meet minimum color contrast ratio thresholds (5 nodes) — https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/profile light/mobile: 2 axe violations, 0 runtime errors
+  axe color-contrast: Elements must meet minimum color contrast ratio thresholds (3 nodes) — https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/profile dark/desktop: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/profile dark/mobile: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/roles light/desktop: 2 axe violations, 0 runtime errors
+  axe color-contrast: Elements must meet minimum color contrast ratio thresholds (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/roles light/mobile: 2 axe violations, 0 runtime errors
+  axe color-contrast: Elements must meet minimum color contrast ratio thresholds (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/roles dark/desktop: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/roles dark/mobile: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/users light/desktop: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/users light/mobile: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/users dark/desktop: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/users dark/mobile: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+PASS /dashboard/$ light/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/$ light/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/$ dark/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/$ dark/mobile: 0 axe violations, 0 runtime errors
+FAIL /dashboard/ light/desktop: 2 axe violations, 0 runtime errors
+  axe button-name: Buttons must have discernible text (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/button-name?application=playwright
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/ light/mobile: 2 axe violations, 0 runtime errors
+  axe button-name: Buttons must have discernible text (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/button-name?application=playwright
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/ dark/desktop: 2 axe violations, 0 runtime errors
+  axe button-name: Buttons must have discernible text (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/button-name?application=playwright
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/ dark/mobile: 2 axe violations, 0 runtime errors
+  axe button-name: Buttons must have discernible text (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/button-name?application=playwright
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+PASS /auth/v2/login light/desktop: 0 axe violations, 0 runtime errors
+PASS /auth/v2/login light/mobile: 0 axe violations, 0 runtime errors
+PASS /auth/v2/login dark/desktop: 0 axe violations, 0 runtime errors
+PASS /auth/v2/login dark/mobile: 0 axe violations, 0 runtime errors
+PASS /auth/v2/register light/desktop: 0 axe violations, 0 runtime errors
+PASS /auth/v2/register light/mobile: 0 axe violations, 0 runtime errors
+PASS /auth/v2/register dark/desktop: 0 axe violations, 0 runtime errors
+PASS /auth/v2/register dark/mobile: 0 axe violations, 0 runtime errors

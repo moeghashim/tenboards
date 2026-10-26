@@ -1,0 +1,9 @@
+
+> tenboards@0.8.1 verify:page
+> node --experimental-strip-types scripts/verify-page.ts /unauthorized --base-url http://127.0.0.1:3394
+
+Started http://127.0.0.1:3394
+PASS /unauthorized light/desktop: 0 axe violations, 0 runtime errors
+PASS /unauthorized light/mobile: 0 axe violations, 0 runtime errors
+PASS /unauthorized dark/desktop: 0 axe violations, 0 runtime errors
+PASS /unauthorized dark/mobile: 0 axe violations, 0 runtime errors

@@ -1,0 +1,82 @@
+[
+  {
+    "file": "src/routes/(main)/dashboard/academy/-components/assignment-status.tsx",
+    "identical": true
+  },
+  {
+    "file": "src/routes/(main)/dashboard/analytics/-components/realtime-visitors.tsx",
+    "identical": true
+  },
+  {
+    "file": "src/routes/(main)/dashboard/analytics/-components/top-traffic-sources.tsx",
+    "identical": true
+  },
+  {
+    "file": "src/routes/(main)/dashboard/analytics/-components/traffic-quality.tsx",
+    "identical": true
+  },
+  {
+    "file": "src/routes/(main)/dashboard/assistant/-components/registry.tsx",
+    "identical": true
+  },
+  {
+    "file": "src/routes/(main)/dashboard/crm/-components/pipeline-activity.tsx",
+    "identical": true
+  },
+  {
+    "file": "src/routes/(main)/dashboard/default/-components/performance-overview.tsx",
+    "identical": true
+  },
+  {
+    "file": "src/routes/(main)/dashboard/default/-components/subscriber-overview.tsx",
+    "identical": true
+  },
+  {
+    "file": "src/routes/(main)/dashboard/ecommerce/-components/inventory.tsx",
+    "identical": true
+  },
+  {
+    "file": "src/routes/(main)/dashboard/ecommerce/-components/kpi-strip.tsx",
+    "identical": true
+  },
+  {
+    "file": "src/routes/(main)/dashboard/ecommerce/-components/store-traffic.tsx",
+    "identical": true
+  },
+  {
+    "file": "src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx",
+    "identical": true
+  },
+  {
+    "file": "src/routes/(main)/dashboard/finance/-components/transactions-overview-card.tsx",
+    "identical": true
+  },
+  {
+    "file": "src/routes/(main)/dashboard/kit/-components/chart-example.tsx",
+    "identical": true
+  },
+  {
+    "file": "src/routes/(main)/dashboard/logistics/-components/shipment-list.tsx",
+    "identical": true
+  },
+  {
+    "file": "src/routes/(main)/dashboard/patient-monitoring/-components/patient-trends.tsx",
+    "identical": true
+  },
+  {
+    "file": "src/routes/(main)/dashboard/patient-monitoring/-components/vital-waveform.tsx",
+    "identical": true
+  },
+  {
+    "file": "src/routes/(main)/dashboard/projects/-components/file-manager/file-grid-view.tsx",
+    "identical": true
+  },
+  {
+    "file": "src/routes/(main)/dashboard/projects/-components/file-manager/folders-section.tsx",
+    "identical": true
+  },
+  {
+    "file": "src/routes/(main)/dashboard/users/-components/users.tsx",
+    "identical": true
+  }
+]

@@ -1,0 +1,63 @@
+{
+  "route": "/auth/v2",
+  "path": "/auth/v2",
+  "baseURL": "http://127.0.0.1:3393/",
+  "tags": [
+    "wcag2a",
+    "wcag2aa",
+    "wcag21a",
+    "wcag21aa",
+    "wcag22aa"
+  ],
+  "passed": true,
+  "results": [
+    {
+      "theme": "light",
+      "viewport": "desktop",
+      "screenshot": "light-desktop.png",
+      "finalURL": "http://127.0.0.1:3393/auth/v2",
+      "passed": true,
+      "errors": [],
+      "warnings": [],
+      "violations": [],
+      "incomplete": [],
+      "axeVersion": "4.14.0"
+    },
+    {
+      "theme": "light",
+      "viewport": "mobile",
+      "screenshot": "light-mobile.png",
+      "finalURL": "http://127.0.0.1:3393/auth/v2",
+      "passed": true,
+      "errors": [],
+      "warnings": [],
+      "violations": [],
+      "incomplete": [],
+      "axeVersion": "4.14.0"
+    },
+    {
+      "theme": "dark",
+      "viewport": "desktop",
+      "screenshot": "dark-desktop.png",
+      "finalURL": "http://127.0.0.1:3393/auth/v2",
+      "passed": true,
+      "errors": [],
+      "warnings": [],
+      "violations": [],
+      "incomplete": [],
+      "axeVersion": "4.14.0"
+    },
+    {
+      "theme": "dark",
+      "viewport": "mobile",
+      "screenshot": "dark-mobile.png",
+      "finalURL": "http://127.0.0.1:3393/auth/v2",
+      "passed": true,
+      "errors": [],
+      "warnings": [],
+      "violations": [],
+      "incomplete": [],
+      "axeVersion": "4.14.0"
+    }
+  ]
+}
