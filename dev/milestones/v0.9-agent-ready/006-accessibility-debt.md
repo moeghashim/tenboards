@@ -1,6 +1,6 @@
 # 006 — Inherited accessibility findings
 
-Status: in-review. Branch: `feat/v0.9/006-accessibility-debt`. Depends on 003.
+Status: merged (#81). Branch: `feat/v0.9/006-accessibility-debt`. Depends on 003.
 
 Task 003's `verify:page` audit of the full route catalog (light/dark × desktop/mobile) found inherited axe failures. 003 fixes the shell-level ones so new pages pass. This task clears the route-specific remainder so `npm run verify:page -- --all` passes catalog-wide, making it usable as a regression gate.
 

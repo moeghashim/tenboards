@@ -215,7 +215,7 @@
     },
     {
       "id": "v0.9-agent-ready",
-      "status": "in-progress",
+      "status": "done",
       "tasks": [
         "001-blocks-kit",
         "002-page-generators",

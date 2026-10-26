@@ -1,6 +1,6 @@
 # 003 — Design guardrails and verify:page
 
-Status: in-review. Branch: `feat/v0.9/003-design-guardrails`. Depends on 001.
+Status: merged (#78). Branch: `feat/v0.9/003-design-guardrails`. Depends on 001.
 
 ## Scope
 

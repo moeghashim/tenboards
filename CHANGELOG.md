@@ -1,6 +1,33 @@
 # Changelog
 
-## v0.9 — Agent-ready template (draft)
+## v0.9.0 — Agent-ready template (2026-10-26)
+
+Released as [v0.9.0](https://github.com/moeghashim/tenboards/releases/tag/v0.9.0).
+
+### Public blocks and kit (001)
+
+- Promote typed, TSDoc-documented presentation blocks to `@/components/blocks`; migrate existing imports without changing page markup or behavior.
+- Add a caller-owned TanStack Table block with sorting, pagination, empty recovery and labelled mobile reflow.
+- Add `/dashboard/kit` under Developer and in the command palette, with executable examples, variants and copyable source. Protected UI/calendar primitives remain unchanged.
+
+### Page generators (002)
+
+- Add `new:dashboard` and `new:page` with editable block-based templates, typed illustrative reads, guarded loaders, sidebar/catalog/parity registration, slug validation and overwrite protection.
+- Export the kit's chart composition primitives and CardContent through the blocks barrel so generated routes use only the public presentation API; no runtime dependency added.
+- Add `generators:test`: disposable generation, safe-failure checks, build/check/typecheck/data parity and four-state browser/screenshot verification; generated samples stay out of the repository.
+
+### Design guardrails and verification (003)
+
+- v0.9 guardrail review: accept token references and grid composition, keep inherited exceptions in JSON, and name shell/Default controls without changing their appearance.
+- Add `check:design` to the standard check: route/block token checks, Recharts boundary, primitive-card import restrictions and documented card/page-header heuristics, with counted exceptions and seeded regression fixtures.
+- Route existing Recharts primitives through the public chart block without changing page markup or tokens.
+- Add `verify:page` for a single route or the route catalog: four-state screenshots, WCAG 2.2 AA axe scans, console/hydration diagnostics and gitignored JSON reports. Inherited accessibility findings remain reported failures, tracked separately from this tooling change.
+
+### Adopter guide and Agent Skills (004)
+
+- Move upstream workflow rules verbatim to dev/MAINTAINERS.md; root AGENTS.md now guides adopters, with a CLAUDE.md import.
+- Add build-ui and connect-data skills, on-demand references and relative Claude mirrors, with review-backed gotchas.
+- Add dependency-free check:skills metadata/reference/mirror validation to npm run check.
 
 ### shadcn registry and LLM documentation (005)
 
@@ -12,26 +39,6 @@
 - Promote typed, TSDoc-documented presentation blocks to `@/components/blocks`; migrate existing imports without changing page markup or behavior.
 - Add a caller-owned TanStack Table block with sorting, pagination, empty recovery and labelled mobile reflow.
 - Add `/dashboard/kit` under Developer and in the command palette, with executable examples, variants and copyable source. Protected UI/calendar primitives remain unchanged.
-
-### Page generators (v0.9 / 002)
-
-- Add `new:dashboard` and `new:page` with editable block-based templates, typed illustrative reads, guarded loaders, sidebar/catalog/parity registration, slug validation and overwrite protection.
-- Export the kit's chart composition primitives and CardContent through the blocks barrel so generated routes use only the public presentation API; no runtime dependency added.
-- Add `generators:test`: disposable generation, safe-failure checks, build/check/typecheck/data parity and four-state browser/screenshot verification; generated samples stay out of the repository.
-
-### Design guardrails and verification (003)
-
-- v0.9 guardrail review: accept token references and grid composition, keep inherited exceptions in JSON, and name shell/Default controls without changing their appearance.
-
-- Add `check:design` to the standard check: route/block token checks, Recharts boundary, primitive-card import restrictions and documented card/page-header heuristics, with counted exceptions and seeded regression fixtures.
-- Route existing Recharts primitives through the public chart block without changing page markup or tokens.
-- Add `verify:page` for a single route or the route catalog: four-state screenshots, WCAG 2.2 AA axe scans, console/hydration diagnostics and gitignored JSON reports. Inherited accessibility findings remain reported failures, tracked separately from this tooling change.
-
-### Adopter guide and Agent Skills (004)
-
-- Move upstream workflow rules verbatim to dev/MAINTAINERS.md; root AGENTS.md now guides adopters, with a CLAUDE.md import.
-- Add build-ui and connect-data skills, on-demand references and relative Claude mirrors, with review-backed gotchas.
-- Add dependency-free check:skills metadata/reference/mirror validation to npm run check.
 
 ### Inherited accessibility (006)
 

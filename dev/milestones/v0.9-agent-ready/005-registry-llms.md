@@ -1,6 +1,6 @@
 # 005 — shadcn registry and llms.txt
 
-Status: in-review (#82). Branch: `feat/v0.9/005-registry-llms`. Depends on 001; final docs after 004.
+Status: merged (#82). Branch: `feat/v0.9/005-registry-llms`. Depends on 001; final docs after 004.
 
 ## Scope
 

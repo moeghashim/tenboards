@@ -1,6 +1,6 @@
 # 002 — Page generators
 
-Status: in-review. Branch: `feat/v0.9/002-page-generators`. Depends on 001.
+Status: merged (#79). Branch: `feat/v0.9/002-page-generators`. Depends on 001.
 
 ## Scope
 

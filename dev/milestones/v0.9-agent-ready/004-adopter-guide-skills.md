@@ -1,6 +1,6 @@
 # 004 — Adopter guide and Agent Skills
 
-Status: in-review (#80). Branch: `feat/v0.9/004-adopter-guide-skills`. Depends on 002 and 003.
+Status: merged (#80). Branch: `feat/v0.9/004-adopter-guide-skills`. Depends on 002 and 003.
 
 ## Scope
 
