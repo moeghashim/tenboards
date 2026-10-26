@@ -17,7 +17,7 @@ __unconfig*
 todos.json
 
 # Visual QA evidence belongs on pr-assets, never main.
-screenshots/
+/screenshots/
 
 # Page verification reports and screenshots belong on pr-assets.
 verify/
