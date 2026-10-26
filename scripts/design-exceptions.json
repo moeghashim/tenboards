@@ -416,8 +416,15 @@
     "file": "src/routes/(main)/dashboard/projects/-components/project-timeline.tsx",
     "rule": "card-markup",
     "value": "\"bg-card relative max-h-[65dvh] max-w-full overflow-auto rounded-xl border\"",
-    "count": 2,
+    "count": 1,
     "reason": "Existing specialized surface preserves padding, clipping, or grid behavior; a block replacement requires separate visual review."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/projects/-components/project-timeline.tsx",
+    "rule": "card-markup",
+    "value": "\"bg-card relative max-h-[65dvh] max-w-full overflow-auto rounded-xl border focus-visible:-outline-offset-2 [&>[data-slot=table-container]]:overflow-visible\"",
+    "count": 1,
+    "reason": "Existing schedule surface; usage-site overflow delegates horizontal scrolling to the named focusable region without changing its visual frame."
   },
   {
     "file": "src/routes/(main)/dashboard/projects/-components/workspace-boundaries.tsx",

@@ -11,9 +11,15 @@ export function InvoiceForm() {
     <div className="bg-card flex min-w-0 flex-col gap-4 rounded-xl border p-4">
       <Tabs defaultValue="invoice">
         <TabsList className="w-full">
-          <TabsTrigger value="invoice">Invoice</TabsTrigger>
-          <TabsTrigger value="payment">Payment</TabsTrigger>
-          <TabsTrigger value="business">Business</TabsTrigger>
+          <TabsTrigger className="text-muted-foreground" value="invoice">
+            Invoice
+          </TabsTrigger>
+          <TabsTrigger className="text-muted-foreground" value="payment">
+            Payment
+          </TabsTrigger>
+          <TabsTrigger className="text-muted-foreground" value="business">
+            Business
+          </TabsTrigger>
         </TabsList>
       </Tabs>
 

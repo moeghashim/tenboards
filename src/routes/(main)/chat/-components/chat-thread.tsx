@@ -210,10 +210,10 @@ export function ChatThread({
             variant="line"
             className="w-full justify-start gap-2 border-b px-3 group-data-horizontal/tabs:h-10 **:data-[slot=tabs-trigger]:border-x-0 **:data-[slot=tabs-trigger]:px-6"
           >
-            <TabsTrigger value="reply" className="flex-none px-1">
+            <TabsTrigger value="reply" className="text-muted-foreground flex-none px-1">
               Reply
             </TabsTrigger>
-            <TabsTrigger value="note" className="flex-none px-1">
+            <TabsTrigger value="note" className="text-muted-foreground flex-none px-1">
               Internal note
             </TabsTrigger>
           </TabsList>

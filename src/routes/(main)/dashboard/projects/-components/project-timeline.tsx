@@ -207,7 +207,7 @@ export function ProjectTimeline({
             <section
               tabIndex={0}
               aria-label="Schedule table, scroll horizontally"
-              className="bg-card relative max-h-[65dvh] max-w-full overflow-auto rounded-xl border"
+              className="bg-card relative max-h-[65dvh] max-w-full overflow-auto rounded-xl border focus-visible:-outline-offset-2 [&>[data-slot=table-container]]:overflow-visible"
             >
               <Table className="min-w-220">
                 <TableCaption className="sr-only">Task schedule</TableCaption>
@@ -386,7 +386,7 @@ export function ProjectTimeline({
               <section
                 aria-label="Calendar event table, scroll horizontally"
                 tabIndex={0}
-                className="max-h-80 overflow-auto"
+                className="max-h-80 overflow-auto focus-visible:-outline-offset-2 [&>[data-slot=table-container]]:overflow-visible"
               >
                 <Table className="min-w-180">
                   <TableCaption className="sr-only">Project event schedule</TableCaption>

@@ -32,23 +32,23 @@ export async function captureInteractions(
     const originalIssued = (await paper.textContent())?.match(/Issued: (\d{4}-\d{2}-\d{2})/)?.[1];
     if (!originalIssued) throw new Error("Invoice initial civil date missing");
     await page.getByRole("textbox", { name: "Reference Number", exact: true }).fill("NORTHWIND-DEMO-2026-0123");
-    await page.getByRole("button", { name: "Issued Date", exact: true }).press("Enter");
+    await page.getByRole("button", { name: /^Issued Date:/ }).press("Enter");
     const next = new Date(`${originalIssued}T12:00:00`);
     next.setDate(next.getDate() + 1);
     const nextDay = `${next.getMonth() + 1}/${next.getDate()}/${next.getFullYear()}`;
     const nextCivil = `${next.getFullYear()}-${String(next.getMonth() + 1).padStart(2, "0")}-${String(next.getDate()).padStart(2, "0")}`;
     await page.locator(`[data-day="${nextDay}"]`).press("Enter");
     await paper.getByText(`Issued: ${nextCivil}`, { exact: true }).waitFor();
-    await page.waitForFunction(() => document.activeElement?.getAttribute("aria-label") === "Issued Date");
+    await page.waitForFunction(() => document.activeElement?.getAttribute("aria-label")?.startsWith("Issued Date:"));
     const originalDue = (await paper.textContent())?.match(/Payment due: (\d{4}-\d{2}-\d{2})/)?.[1];
     if (!originalDue) throw new Error("Invoice due date missing");
     const due = new Date(`${originalDue}T12:00:00`);
     due.setDate(due.getDate() + 1);
-    await page.getByRole("button", { name: "Due Date", exact: true }).press("Enter");
+    await page.getByRole("button", { name: /^Due Date:/ }).press("Enter");
     await page.locator(`[data-day="${due.getMonth() + 1}/${due.getDate()}/${due.getFullYear()}"]`).press("Enter");
     const dueCivil = `${due.getFullYear()}-${String(due.getMonth() + 1).padStart(2, "0")}-${String(due.getDate()).padStart(2, "0")}`;
     await paper.getByText(`Payment due: ${dueCivil}`, { exact: true }).waitFor();
-    await page.waitForFunction(() => document.activeElement?.getAttribute("aria-label") === "Due Date");
+    await page.waitForFunction(() => document.activeElement?.getAttribute("aria-label")?.startsWith("Due Date:"));
     await page.getByRole("combobox", { name: "Client", exact: true }).click();
     await page.getByRole("option", { name: "Bright Enterprises", exact: true }).click();
     await page
@@ -697,7 +697,7 @@ export async function captureInteractions(
     await page.getByRole("button", { name: "Acknowledge", exact: true }).press("Enter");
     if (!(await page.getByRole("button", { name: "Acknowledged", exact: true }).isDisabled()))
       throw new Error("Acknowledgement did not persist");
-    await page.getByRole("button", { name: "Open C01, Ethan Brooks", exact: true }).press("Enter");
+    await page.getByRole("button", { name: /^Open C01 Ethan Brooks/ }).press("Enter");
     await page.getByRole("tab", { name: "Event review", exact: true }).click();
     await page
       .getByRole("tabpanel", { name: "Event review", exact: true })
@@ -746,7 +746,7 @@ export async function captureInteractions(
     ];
   }
   if (route === "/dashboard/logistics") {
-    const shipment = page.getByRole("button", { name: "Select shipment SDA-02-2402", exact: true });
+    const shipment = page.getByRole("button", { name: /^Select shipment #SDA-02-2402/ });
     await shipment.focus();
     await shipment.press("Enter");
     const mobile = (page.viewportSize()?.width ?? 1440) < 1024;
@@ -760,9 +760,7 @@ export async function captureInteractions(
     if (mobile) {
       await page.keyboard.press("Escape");
       await page.getByRole("dialog").waitFor({ state: "hidden" });
-      await page.waitForFunction(
-        () => document.activeElement?.getAttribute("aria-label") === "Select shipment SDA-02-2402",
-      );
+      await page.waitForFunction(() => document.activeElement?.textContent?.startsWith("Select shipment #SDA-02-2402"));
       await shipment.press("Enter");
       await region.waitFor();
     }

@@ -40,7 +40,7 @@ export function UpcomingTransactions() {
 
         <ItemGroup>
           {transactions.map((transaction) => (
-            <Item key={transaction.id} variant="outline" size="xs">
+            <Item role="listitem" key={transaction.id} variant="outline" size="xs">
               <ItemMedia>
                 <div className="bg-background grid size-9 place-items-center rounded-md border">
                   <SimpleIcon icon={transaction.icon} />

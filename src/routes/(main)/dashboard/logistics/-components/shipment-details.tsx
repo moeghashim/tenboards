@@ -205,19 +205,19 @@ export function ShipmentDetails({ shipment }: ShipmentDetailsProps) {
               className="h-auto w-full flex-wrap justify-start gap-2 border-b px-4 **:data-[slot=tabs-trigger]:text-xs sm:gap-4 sm:**:data-[slot=tabs-trigger]:text-sm"
               variant="line"
             >
-              <TabsTrigger className="flex-none" value="overview">
+              <TabsTrigger className="text-muted-foreground flex-none" value="overview">
                 Overview
               </TabsTrigger>
-              <TabsTrigger className="flex-none" value="route">
+              <TabsTrigger className="text-muted-foreground flex-none" value="route">
                 Route
               </TabsTrigger>
-              <TabsTrigger className="flex-none" value="cargo">
+              <TabsTrigger className="text-muted-foreground flex-none" value="cargo">
                 Cargo
               </TabsTrigger>
-              <TabsTrigger className="flex-none" value="documents">
+              <TabsTrigger className="text-muted-foreground flex-none" value="documents">
                 Documents
               </TabsTrigger>
-              <TabsTrigger className="flex-none" value="activity">
+              <TabsTrigger className="text-muted-foreground flex-none" value="activity">
                 Activity
               </TabsTrigger>
             </TabsList>

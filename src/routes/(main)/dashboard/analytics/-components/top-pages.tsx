@@ -11,7 +11,12 @@ export function TopPages() {
     <Card className="h-full gap-2">
       <SectionHeader title="Page Performance" />
 
-      <CardContent className="px-0">
+      <CardContent
+        role="region"
+        aria-label="Page Performance, scroll horizontally"
+        tabIndex={0}
+        className="overflow-x-auto px-0 focus-visible:-outline-offset-2 [&>[data-slot=table-container]]:overflow-visible"
+      >
         <Table className="min-w-[540px] [&_td:first-child]:pl-4 [&_td:last-child]:pr-4 [&_th:first-child]:pl-4 [&_th:last-child]:pr-4">
           <TableHeader className="[&_tr]:border-border/50">
             <TableRow className="hover:bg-transparent">

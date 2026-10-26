@@ -70,19 +70,21 @@ export function ChatConversationList({
 
       <Tabs defaultValue="all">
         <TabsList variant="line" className="w-full border-b px-0 **:data-[slot=tabs-trigger]:border-x-0">
-          <TabsTrigger value="all">
+          <TabsTrigger className="text-muted-foreground" value="all">
             All
             <span className="text-muted-foreground text-xs">{`(${display.counts.all})`}</span>
           </TabsTrigger>
-          <TabsTrigger value="open">
+          <TabsTrigger className="text-muted-foreground" value="open">
             Open
             <span className="text-muted-foreground text-xs">{`(${display.counts.open})`}</span>
           </TabsTrigger>
-          <TabsTrigger value="snoozed">
+          <TabsTrigger className="text-muted-foreground" value="snoozed">
             Snoozed
             <span className="text-muted-foreground text-xs">{`(${display.counts.snoozed})`}</span>
           </TabsTrigger>
-          <TabsTrigger value="closed">Closed</TabsTrigger>
+          <TabsTrigger className="text-muted-foreground" value="closed">
+            Closed
+          </TabsTrigger>
         </TabsList>
       </Tabs>
 

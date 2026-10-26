@@ -97,10 +97,18 @@ export function PatientMonitoring({ patients, initialPatientId }: PatientMonitor
             className="*:border-border h-auto w-full flex-wrap justify-start gap-0 border-b p-0 *:h-full *:max-w-32 *:rounded-none *:border-0 *:border-r *:after:-bottom-px!"
             variant="line"
           >
-            <TabsTrigger value="real-time">Real time</TabsTrigger>
-            <TabsTrigger value="events">Event review</TabsTrigger>
-            <TabsTrigger value="trends">Trends</TabsTrigger>
-            <TabsTrigger value="disclosure">Full disclosure</TabsTrigger>
+            <TabsTrigger className="text-muted-foreground" value="real-time">
+              Real time
+            </TabsTrigger>
+            <TabsTrigger className="text-muted-foreground" value="events">
+              Event review
+            </TabsTrigger>
+            <TabsTrigger className="text-muted-foreground" value="trends">
+              Trends
+            </TabsTrigger>
+            <TabsTrigger className="text-muted-foreground" value="disclosure">
+              Full disclosure
+            </TabsTrigger>
           </TabsList>
 
           <TabsContent

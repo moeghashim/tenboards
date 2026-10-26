@@ -201,11 +201,13 @@ export function OpportunitiesSection() {
               <PaginationContent className="gap-1.5">
                 <PaginationItem>
                   <PaginationPrevious
+                    aria-disabled={!table.getCanPreviousPage()}
+                    tabIndex={table.getCanPreviousPage() ? 0 : -1}
                     href="#"
                     className={!table.getCanPreviousPage() ? "pointer-events-none opacity-50" : undefined}
                     onClick={(event) => {
                       preventPaginationNavigation(event);
-                      table.previousPage();
+                      if (table.getCanPreviousPage()) table.previousPage();
                     }}
                   />
                 </PaginationItem>
@@ -235,11 +237,13 @@ export function OpportunitiesSection() {
                 ) : null}
                 <PaginationItem>
                   <PaginationNext
+                    aria-disabled={!table.getCanNextPage()}
+                    tabIndex={table.getCanNextPage() ? 0 : -1}
                     href="#"
                     className={!table.getCanNextPage() ? "pointer-events-none opacity-50" : undefined}
                     onClick={(event) => {
                       preventPaginationNavigation(event);
-                      table.nextPage();
+                      if (table.getCanNextPage()) table.nextPage();
                     }}
                   />
                 </PaginationItem>

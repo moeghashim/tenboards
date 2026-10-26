@@ -120,6 +120,7 @@ export function PipelineActivity() {
 
                 <div className="flex flex-col gap-2 pt-0.5">
                   <Progress
+                    aria-label="Qualified leads with a discovery call booked"
                     value={discoveryProgress}
                     className="bg-muted *:data-[slot='progress-indicator']:bg-chart-2 h-2.5"
                   />

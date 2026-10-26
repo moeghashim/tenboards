@@ -351,7 +351,7 @@ function NavItemBadge({ badge }: { badge?: NavBadge }) {
       className={cn(
         "rounded-sm border px-1.5 capitalize",
         badge === "new" &&
-          "border-emerald-600/20 bg-emerald-500/10 text-emerald-700 peer-hover/menu-button:text-emerald-700 peer-data-active/menu-button:text-emerald-700 dark:border-emerald-400/25 dark:bg-emerald-400/10 dark:text-emerald-300 dark:peer-hover/menu-button:text-emerald-300 dark:peer-data-active/menu-button:text-emerald-300",
+          "border-success/30 bg-success-surface text-success peer-hover/menu-button:text-success peer-data-active/menu-button:text-success",
         badge === "soon" &&
           "border-zinc-500/20 bg-zinc-500/10 text-zinc-600 peer-hover/menu-button:text-zinc-600 peer-data-active/menu-button:text-zinc-600 dark:border-zinc-400/25 dark:bg-zinc-400/10 dark:text-zinc-300 dark:peer-hover/menu-button:text-zinc-300 dark:peer-data-active/menu-button:text-zinc-300",
         badge === "updated" &&
