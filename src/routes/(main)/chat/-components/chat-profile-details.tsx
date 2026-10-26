@@ -67,9 +67,15 @@ export function ChatProfileDetails({ contact, onClose }: ChatProfileDetailsProps
 
       <Tabs defaultValue="details">
         <TabsList variant="line" className="w-full justify-between border-b px-0 **:data-[slot=tabs-trigger]:flex-1">
-          <TabsTrigger value="details">Details</TabsTrigger>
-          <TabsTrigger value="files">Files</TabsTrigger>
-          <TabsTrigger value="activity">Activity</TabsTrigger>
+          <TabsTrigger className="text-muted-foreground" value="details">
+            Details
+          </TabsTrigger>
+          <TabsTrigger className="text-muted-foreground" value="files">
+            Files
+          </TabsTrigger>
+          <TabsTrigger className="text-muted-foreground" value="activity">
+            Activity
+          </TabsTrigger>
         </TabsList>
       </Tabs>
 

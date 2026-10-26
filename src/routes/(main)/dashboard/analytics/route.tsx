@@ -42,11 +42,21 @@ function PageContent() {
       <Tabs defaultValue="overview" className="flex min-w-0 flex-col gap-4">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <TabsList className="group-data-horizontal/tabs:h-auto max-w-full flex-wrap justify-start gap-1 [&_[role=tab]]:h-7">
-            <TabsTrigger value="overview">Overview</TabsTrigger>
-            <TabsTrigger value="audience">Audience</TabsTrigger>
-            <TabsTrigger value="acquisition">Acquisition</TabsTrigger>
-            <TabsTrigger value="engagement">Engagement</TabsTrigger>
-            <TabsTrigger value="conversions">Conversions</TabsTrigger>
+            <TabsTrigger className="text-muted-foreground" value="overview">
+              Overview
+            </TabsTrigger>
+            <TabsTrigger className="text-muted-foreground" value="audience">
+              Audience
+            </TabsTrigger>
+            <TabsTrigger className="text-muted-foreground" value="acquisition">
+              Acquisition
+            </TabsTrigger>
+            <TabsTrigger className="text-muted-foreground" value="engagement">
+              Engagement
+            </TabsTrigger>
+            <TabsTrigger className="text-muted-foreground" value="conversions">
+              Conversions
+            </TabsTrigger>
           </TabsList>
 
           <AnalyticsToolbar />

@@ -17,7 +17,7 @@ export async function runOperationalStateProbe() {
   const assert = (condition: boolean, message: string) => {
     if (!condition) throw new Error(message);
   };
-  const selected = () => container.querySelector('[aria-pressed="true"]')?.getAttribute("aria-label");
+  const selected = () => container.querySelector('[aria-pressed="true"]')?.textContent;
   try {
     const renderLogistics = (shipments: typeof logistics.shipments) =>
       flushSync(() =>
@@ -28,12 +28,12 @@ export async function runOperationalStateProbe() {
         ),
       );
     renderLogistics(logistics.shipments);
-    assert(selected() === `Select shipment ${logistics.shipments[0].id}`, "Initial shipment");
+    assert(selected()?.startsWith(`Select shipment #${logistics.shipments[0].id}`) === true, "Initial shipment");
     flushSync(() => container.querySelectorAll<HTMLButtonElement>("[aria-pressed]")[1].click());
-    assert(selected() === `Select shipment ${logistics.shipments[1].id}`, "Changed shipment");
+    assert(selected()?.startsWith(`Select shipment #${logistics.shipments[1].id}`) === true, "Changed shipment");
     renderLogistics([logistics.shipments[0]]);
     assert(
-      selected() === `Select shipment ${logistics.shipments[0].id}`,
+      selected()?.startsWith(`Select shipment #${logistics.shipments[0].id}`) === true,
       "Removed selection must highlight fallback shipment",
     );
     assert(

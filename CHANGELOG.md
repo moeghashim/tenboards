@@ -26,6 +26,12 @@
 - Add build-ui and connect-data skills, on-demand references and relative Claude mirrors, with review-backed gotchas.
 - Add dependency-free check:skills metadata/reference/mirror validation to npm run check.
 
+### Inherited accessibility (006)
+
+- Match accessible names to visible control text, name CRM discovery-call progress, and give Finance transactions list-item semantics.
+- Make Analytics and Timeline table scrolling keyboard accessible with named regions and visible focus.
+- Use existing supported text/success token pairs for inactive tabs and the New navigation badge; give CRM/Ecommerce pagination accurate disabled semantics. No token values or protected primitives change.
+
 ## v0.8.1 — Default dashboard landing (2026-10-26)
 
 Released as [v0.8.1](https://github.com/moeghashim/tenboards/releases/tag/v0.8.1).

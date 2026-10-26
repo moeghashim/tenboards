@@ -92,9 +92,15 @@ export function Roles({ roles }: { roles: Role[] }) {
           variant="line"
           className="max-w-full justify-start gap-2 overflow-x-auto border-b ps-0 *:data-[slot=tabs-trigger]:flex-none"
         >
-          <TabsTrigger value="roles">Roles</TabsTrigger>
-          <TabsTrigger value="permission-sets">Permission sets</TabsTrigger>
-          <TabsTrigger value="access-reviews">Access reviews</TabsTrigger>
+          <TabsTrigger className="text-muted-foreground" value="roles">
+            Roles
+          </TabsTrigger>
+          <TabsTrigger className="text-muted-foreground" value="permission-sets">
+            Permission sets
+          </TabsTrigger>
+          <TabsTrigger className="text-muted-foreground" value="access-reviews">
+            Access reviews
+          </TabsTrigger>
         </TabsList>
 
         <TabsContent value="roles">

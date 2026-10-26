@@ -45,9 +45,15 @@ function PageContent() {
       <Tabs defaultValue="30-days" className="flex min-w-0 flex-col gap-4">
         <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
           <TabsList variant="line">
-            <TabsTrigger value="30-days">Dashboard</TabsTrigger>
-            <TabsTrigger value="12-months">Accounts</TabsTrigger>
-            <TabsTrigger value="custom">Transactions</TabsTrigger>
+            <TabsTrigger className="text-muted-foreground" value="30-days">
+              Dashboard
+            </TabsTrigger>
+            <TabsTrigger className="text-muted-foreground" value="12-months">
+              Accounts
+            </TabsTrigger>
+            <TabsTrigger className="text-muted-foreground" value="custom">
+              Transactions
+            </TabsTrigger>
           </TabsList>
 
           <div className="flex flex-wrap items-center gap-3">

@@ -19,7 +19,6 @@ export function PatientCard({ active, acknowledged, onSelect, patient }: Patient
 
   return (
     <button
-      aria-label={`Open ${patient.bed}, ${patient.name}`}
       aria-pressed={active}
       className={cn(
         "bg-card text-card-foreground flex min-h-36 min-w-0 flex-col p-2 text-left",
@@ -29,6 +28,7 @@ export function PatientCard({ active, acknowledged, onSelect, patient }: Patient
       onClick={() => onSelect(patient.id)}
       type="button"
     >
+      <span className="sr-only">Open </span>
       <div className="flex w-full flex-wrap items-start justify-between gap-2">
         <div className="text-sm font-medium wrap-break-word">
           <span className={cn(hasActiveAlarm && "text-warning")}>{patient.bed}</span> {patient.name}

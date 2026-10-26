@@ -63,7 +63,6 @@ export function Welcome({ send, disabled }: { send: (prompt: string) => void; di
               key={example.id}
               variant="outline"
               disabled={disabled}
-              aria-label={example.label}
               className="bg-card h-auto min-w-0 flex-col items-start justify-start gap-2 rounded-xl p-4 text-left whitespace-normal last:col-span-2"
               onClick={() => send(example.prompt)}
             >

@@ -81,13 +81,13 @@ export function TopTrafficSources() {
       <CardContent className="px-0">
         <Tabs defaultValue="sources" className="flex flex-col gap-3">
           <TabsList className="w-full justify-start border-b px-2.5" variant="line">
-            <TabsTrigger className="flex-none font-normal" value="sources">
+            <TabsTrigger className="text-muted-foreground flex-none font-normal" value="sources">
               Sources
             </TabsTrigger>
-            <TabsTrigger className="flex-none font-normal" value="campaigns">
+            <TabsTrigger className="text-muted-foreground flex-none font-normal" value="campaigns">
               Campaigns
             </TabsTrigger>
-            <TabsTrigger className="flex-none font-normal" value="referrers">
+            <TabsTrigger className="text-muted-foreground flex-none font-normal" value="referrers">
               Referrers
             </TabsTrigger>
           </TabsList>

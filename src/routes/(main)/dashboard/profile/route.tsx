@@ -106,13 +106,29 @@ function Page() {
             className="w-max min-w-full justify-start gap-4 px-4 *:data-[slot=tabs-trigger]:flex-none"
             variant="line"
           >
-            <TabsTrigger value="overview">Overview</TabsTrigger>
-            <TabsTrigger value="personal">Personal</TabsTrigger>
-            <TabsTrigger value="employment">Employment</TabsTrigger>
-            <TabsTrigger value="compensation">Compensation</TabsTrigger>
-            <TabsTrigger value="time-off">Time off</TabsTrigger>
-            <TabsTrigger value="documents">Documents</TabsTrigger>
-            {authenticated && <TabsTrigger value="account">Account &amp; security</TabsTrigger>}
+            <TabsTrigger className="text-muted-foreground" value="overview">
+              Overview
+            </TabsTrigger>
+            <TabsTrigger className="text-muted-foreground" value="personal">
+              Personal
+            </TabsTrigger>
+            <TabsTrigger className="text-muted-foreground" value="employment">
+              Employment
+            </TabsTrigger>
+            <TabsTrigger className="text-muted-foreground" value="compensation">
+              Compensation
+            </TabsTrigger>
+            <TabsTrigger className="text-muted-foreground" value="time-off">
+              Time off
+            </TabsTrigger>
+            <TabsTrigger className="text-muted-foreground" value="documents">
+              Documents
+            </TabsTrigger>
+            {authenticated && (
+              <TabsTrigger className="text-muted-foreground" value="account">
+                Account &amp; security
+              </TabsTrigger>
+            )}
           </TabsList>
         </div>
 

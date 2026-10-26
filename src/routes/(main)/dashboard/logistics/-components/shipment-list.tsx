@@ -37,7 +37,6 @@ function ShipmentCard({ shipment, active, onSelectShipment }: ShipmentCardProps)
     <button
       type="button"
       aria-pressed={active}
-      aria-label={`Select shipment ${shipment.id}`}
       onClick={(event) => {
         onSelectShipment(shipment.id, event.currentTarget);
       }}
@@ -47,6 +46,7 @@ function ShipmentCard({ shipment, active, onSelectShipment }: ShipmentCardProps)
         active && "border-primary bg-muted",
       )}
     >
+      <span className="sr-only">Select shipment </span>
       <div className="flex flex-wrap items-center justify-between gap-2">
         <div>#{shipment.id}</div>
 
@@ -123,16 +123,16 @@ export function ShipmentList({ shipments, selectedShipmentId, onSelectShipment }
       <CardContent className="flex flex-1 flex-col gap-4 overflow-hidden px-0">
         <Tabs defaultValue="all">
           <TabsList className="h-auto w-full flex-wrap border-b px-3" variant="line">
-            <TabsTrigger className="text-xs" value="all">
+            <TabsTrigger className="text-muted-foreground text-xs" value="all">
               {`All (${counts.all})`}
             </TabsTrigger>
-            <TabsTrigger className="text-xs" value="in-transit">
+            <TabsTrigger className="text-muted-foreground text-xs" value="in-transit">
               {`In Transit (${counts.inTransit})`}
             </TabsTrigger>
-            <TabsTrigger className="text-xs" value="delivered">
+            <TabsTrigger className="text-muted-foreground text-xs" value="delivered">
               {`Delivered (${counts.delivered})`}
             </TabsTrigger>
-            <TabsTrigger className="text-xs" value="delayed">
+            <TabsTrigger className="text-muted-foreground text-xs" value="delayed">
               {`Delayed (${counts.delayed})`}
             </TabsTrigger>
           </TabsList>

@@ -41,11 +41,7 @@ export function PerformanceHighlights() {
             <div className="flex flex-wrap gap-2">
               {row.students.map((student) => (
                 <Tooltip key={student.initials}>
-                  <TooltipTrigger
-                    type="button"
-                    aria-label={student.name}
-                    className="flex items-center gap-1 rounded-md border px-2 py-1 text-xs"
-                  >
+                  <TooltipTrigger type="button" className="flex items-center gap-1 rounded-md border px-2 py-1 text-xs">
                     <Avatar size="sm">
                       <AvatarFallback>{student.initials}</AvatarFallback>
                     </Avatar>

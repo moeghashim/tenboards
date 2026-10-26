@@ -72,6 +72,7 @@ export function InvoiceDetails() {
 function DatePicker({ id, value, onChange }: { id: string; value: string; onChange: (value: string) => void }) {
   const [open, setOpen] = React.useState(false);
   const date = parseDateValue(value);
+  const dateLabel = date ? format(date, "PPP") : "Pick a date";
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -79,14 +80,14 @@ function DatePicker({ id, value, onChange }: { id: string; value: string; onChan
         render={
           <Button
             id={id}
-            aria-label={id === "issued-date" ? "Issued Date" : "Due Date"}
+            aria-label={`${id === "issued-date" ? "Issued Date" : "Due Date"}: ${dateLabel}`}
             variant="outline"
             data-empty={!date}
             className="data-[empty=true]:text-muted-foreground w-full justify-between text-left font-normal"
           />
         }
       >
-        {date ? format(date, "PPP") : <span>Pick a date</span>}
+        {dateLabel}
         <CalendarIcon className="text-muted-foreground" />
       </PopoverTrigger>
       <PopoverContent className="w-auto p-0" align="start">

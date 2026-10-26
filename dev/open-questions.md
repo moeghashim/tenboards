@@ -192,3 +192,22 @@ Evidence: [full reports](https://github.com/moeghashim/tenboards/tree/pr-assets/
 | V09-003-F: `aria-required-children` | 4 / 4 | `/dashboard/finance` |
 
 V09-003-D: resolved (0 cases / 0 nodes). The Default controls were activity-period/segment Select triggers; their accessible names now include purpose and the current visible value. Screen-specific A includes Assistant suggestion buttons and Academy controls in addition to Invoice, Logistics and Patient Monitoring controls. The verifier has no inherited-failure suppression. Playwright caret injection caused one interrupted-run hydration diagnostic; preserving caret styles eliminated the tool-induced mutation, and the full fresh run has zero runtime errors. Inherited Base UI animation warnings remain recorded separately.
+
+
+### Task 006 — route-specific findings resolved (2026-10-26)
+
+Fresh `npm run verify:page -- --all --base-url http://127.0.0.1:3396`: **148/148 cases pass, 37/37 catalog routes pass all four states, zero axe violations and zero runtime errors, exit 0**. This supersedes the historical Review round 2 baseline above. No axe rules were suppressed or filtered.
+
+Evidence: [verbatim catalog log](https://github.com/moeghashim/tenboards/blob/pr-assets/v09-006/logs/catalog.log), [full catalog/per-route reports](https://github.com/moeghashim/tenboards/tree/pr-assets/v09-006/verify), [summary](https://github.com/moeghashim/tenboards/blob/pr-assets/v09-006/catalog-summary.json), [four-preset before/after matrix](https://github.com/moeghashim/tenboards/blob/pr-assets/v09-006/README.md).
+
+| Finding | Status | Verified repair |
+| --- | --- | --- |
+| V09-003-A | Resolved; 0 cases / 0 nodes | Visible content supplies Assistant, Academy, shipment and patient names; Invoice date names include the displayed date. Existing interaction locators follow the corrected names. |
+| V09-003-B | Resolved; 0 cases / 0 nodes | Analytics and Timeline delegate table overflow to the named, focusable outer region. ArrowRight scrolls, focus is visible, and Tab exits in light/dark × desktop/mobile. |
+| V09-003-C | Resolved; 0 cases / 0 nodes | Exact failing foreground/background pairs reviewed; inactive tabs use opaque text-muted, New badge uses success/success-surface. Unavailable CRM/Ecommerce pagination has disabled semantics, no tab stop and guarded activation. All 280 supported-pair checks pass across Default/Graphite/Pine/Iris; no token values change. |
+| V09-003-E | Resolved; 0 cases / 0 nodes | CRM discovery-call progress has a metric name. |
+| V09-003-F | Resolved; 0 cases / 0 nodes | Finance transaction Items have listitem roles under ItemGroup. |
+
+Build, check (including check:design), typecheck, `/` → `/dashboard/default` → `/dashboard/home` navigation and keyboard smoke pass. All 240 before and 240 after captures pass; 124 pairs are pixel-identical, with no dimension changes. Intended tab/badge contrast, table scrollbar ownership and transient native scrollbar differences are documented in the evidence. Protected UI/calendar primitives and PLAN.md are untouched.
+
+Inherited warnings remain separate: Biome reports 35 warnings/10 infos; bundling reports dependency module-level directives; the catalog records 133 Base UI animation warnings and one development-mode TanStack CSRF advisory (auth behavior is outside this task). One concurrent Patient Monitoring interaction capture reported `Reduced-motion waveform moved`; its isolated rerun passes 4/4. One Iris Academy capture missed a chart during the concurrent run; the isolated recapture is pixel-identical to baseline. Original anomalous captures/logs are retained. No unresolved task 006 questions or reviewer waivers are required.
