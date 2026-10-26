@@ -2,6 +2,7 @@ import { Download } from "lucide-react";
 
 import { SectionHeader } from "@/components/blocks";
 import { Button } from "@/components/ui/button";
+// biome-ignore lint/style/noRestrictedImports: Existing specialized card layout preserves its density/size semantics; DashboardCard migration needs separate visual review.
 import { Card, CardContent } from "@/components/ui/card";
 
 import { useDashboardData } from "./data-context";

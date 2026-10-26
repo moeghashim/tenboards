@@ -153,3 +153,14 @@ The root production config has an inactive Hyperdrive slot: before the reviewer
 adds the real ID, a binding-less/no-secret deployment remains demo. A secret without
 a binding/URL fails closed. The reviewer alone provisions production, handles
 secret/deployment ordering, merges, deploys main and releases.
+
+
+## Design guardrails and page verification (v0.9 / 003)
+
+Run `npm run check:design:test` and `npm run verify:page:test` when changing the design/verifier tooling, alongside the standard build/check/typecheck floor. For a page change, run `npm run verify:page -- /your/route --base-url http://127.0.0.1:3000`; `--all` verifies the capture catalog. First install the existing Playwright Chromium browser with `npx playwright install chromium` if it is missing.
+
+Use `@/components/blocks` for cards and page headings, `@/components/blocks/charts` for chart primitives, and named DESIGN.md token classes. [Design guardrails](docs/design-guardrails.md) documents the deliberately bounded heuristics, exceptions and report format. Add an exception only with an exact file/value/count and a reason explaining why an existing block/token cannot represent the requirement; never add a blanket directory exclusion. Remove stale exceptions as their usages migrate.
+
+Page verification records all axe/runtime failures and exits nonzero. Log inherited axe findings separately in `dev/open-questions.md` with route/theme/viewport, rule, affected selectors and report links; do not silently suppress them or restyle existing pages in a tooling task. The reviewer assesses those inherited findings separately from regressions. Keep `verify/` and `screenshots/` artifacts on `pr-assets` or PR attachments.
+
+Design exceptions in `scripts/design-exceptions.json` are for inherited code only. New pages and generator output must use tokens or blocks; do not add exceptions. CSS variable references and grid track templates are already permitted.

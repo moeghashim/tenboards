@@ -1,5 +1,3 @@
-import { CartesianGrid, ComposedChart, Legend, Line, XAxis, YAxis } from "recharts";
-
 import {
   DashboardCard as Card,
   chartAxis,
@@ -11,6 +9,7 @@ import {
   seriesConfig,
   useChartMotion,
 } from "@/components/blocks";
+import { CartesianGrid, ComposedChart, Legend, Line, XAxis, YAxis } from "@/components/blocks/charts";
 import { CardContent } from "@/components/ui/card";
 import { ChartTooltip } from "@/components/ui/chart";
 

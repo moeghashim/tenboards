@@ -1,0 +1,485 @@
+[
+  {
+    "file": "src/components/blocks/data-table.tsx",
+    "rule": "card-markup",
+    "value": "\"bg-card overflow-hidden rounded-xl border\"",
+    "count": 1,
+    "reason": "DataTable is the public table block; its flush table frame intentionally does not add DashboardCard padding."
+  },
+  {
+    "file": "src/routes/(main)/auth/v2/-components/auth-frame.tsx",
+    "rule": "page-header",
+    "value": "<h1>",
+    "count": 1,
+    "reason": "Authentication frame heading uses its existing centered form hierarchy, not the app-page header."
+  },
+  {
+    "file": "src/routes/(main)/chat/-components/chat-header.tsx",
+    "rule": "page-header",
+    "value": "<h1>",
+    "count": 1,
+    "reason": "Existing heading preserves its screen-specific title size and surrounding controls; replacing it with PageHeader would alter the approved render."
+  },
+  {
+    "file": "src/routes/(main)/chat/route.tsx",
+    "rule": "arbitrary-value",
+    "value": "[--header-height:calc(--spacing(14))]",
+    "count": 1,
+    "reason": "Viewport-relative pane height subtracts existing shell geometry or bounds local scrolling."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/$.tsx",
+    "rule": "page-header",
+    "value": "<h1>",
+    "count": 1,
+    "reason": "Standalone recovery/status heading uses a centered or minimal boundary layout, not an app-page header."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/-components/header/signed-in-account.tsx",
+    "rule": "arbitrary-value",
+    "value": "max-w-[calc(100vw-2rem)]",
+    "count": 1,
+    "reason": "Viewport-relative pane height subtracts existing shell geometry or bounds local scrolling."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/-components/sidebar/nav-main.tsx",
+    "rule": "arbitrary-value",
+    "value": "text-[13px]",
+    "count": 1,
+    "reason": "Inherited explicit label size matches the approved compact scale; preserved to avoid changing contextual typography."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/academy/route.tsx",
+    "rule": "page-header",
+    "value": "<h1>",
+    "count": 1,
+    "reason": "Existing heading preserves its screen-specific title size and surrounding controls; replacing it with PageHeader would alter the approved render."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/analytics/-components/top-pages.tsx",
+    "rule": "arbitrary-value",
+    "value": "min-w-[540px]",
+    "count": 1,
+    "reason": "Existing measured layout preserves the approved screen geometry; no equivalent named token currently exists."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/analytics/route.tsx",
+    "rule": "page-header",
+    "value": "<h1>",
+    "count": 1,
+    "reason": "Existing heading preserves its screen-specific title size and surrounding controls; replacing it with PageHeader would alter the approved render."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/assistant/-components/assistant.tsx",
+    "rule": "arbitrary-value",
+    "value": "max-w-[752px]",
+    "count": 1,
+    "reason": "Existing measured layout preserves the approved screen geometry; no equivalent named token currently exists."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/assistant/-components/presentation.tsx",
+    "rule": "arbitrary-value",
+    "value": "max-h-[calc(8lh+1rem)]",
+    "count": 1,
+    "reason": "Viewport-relative pane height subtracts existing shell geometry or bounds local scrolling."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/assistant/-components/presentation.tsx",
+    "rule": "arbitrary-value",
+    "value": "max-w-[600px]",
+    "count": 1,
+    "reason": "Existing measured layout preserves the approved screen geometry; no equivalent named token currently exists."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/assistant/-components/presentation.tsx",
+    "rule": "arbitrary-value",
+    "value": "max-w-[752px]",
+    "count": 1,
+    "reason": "Existing measured layout preserves the approved screen geometry; no equivalent named token currently exists."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/assistant/-components/presentation.tsx",
+    "rule": "arbitrary-value",
+    "value": "pb-[max(16px,env(safe-area-inset-bottom))]",
+    "count": 1,
+    "reason": "Mobile composer respects the platform safe-area inset with its existing minimum padding."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/assistant/-components/presentation.tsx",
+    "rule": "arbitrary-value",
+    "value": "sm:max-w-[85%]",
+    "count": 1,
+    "reason": "Existing measured layout preserves the approved screen geometry; no equivalent named token currently exists."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/assistant/-components/presentation.tsx",
+    "rule": "card-markup",
+    "value": "\"border-input bg-card rounded-xl border p-2 focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-ring\"",
+    "count": 1,
+    "reason": "Composer input boundary owns focus-within outline and textarea controls; not a content card."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/chat/route.tsx",
+    "rule": "page-header",
+    "value": "<h1>",
+    "count": 1,
+    "reason": "Screen-reader-only iframe page heading; PageHeader would introduce visible layout."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/coming-soon/route.tsx",
+    "rule": "page-header",
+    "value": "<h1>",
+    "count": 1,
+    "reason": "Standalone recovery/status heading uses a centered or minimal boundary layout, not an app-page header."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/crm/-components/opportunities-section.tsx",
+    "rule": "arbitrary-value",
+    "value": "min-w-[760px]",
+    "count": 1,
+    "reason": "Existing measured layout preserves the approved screen geometry; no equivalent named token currently exists."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/crm/-components/task-reminders.tsx",
+    "rule": "arbitrary-value",
+    "value": "left-[8%]",
+    "count": 1,
+    "reason": "Existing measured layout preserves the approved screen geometry; no equivalent named token currently exists."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/crm/-components/task-reminders.tsx",
+    "rule": "arbitrary-value",
+    "value": "left-[90%]",
+    "count": 1,
+    "reason": "Existing measured layout preserves the approved screen geometry; no equivalent named token currently exists."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/crm/-components/task-reminders.tsx",
+    "rule": "arbitrary-value",
+    "value": "sm:left-[22%]",
+    "count": 1,
+    "reason": "Existing measured layout preserves the approved screen geometry; no equivalent named token currently exists."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/crm/-components/task-reminders.tsx",
+    "rule": "arbitrary-value",
+    "value": "sm:left-[64%]",
+    "count": 1,
+    "reason": "Existing measured layout preserves the approved screen geometry; no equivalent named token currently exists."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/crm/-components/task-reminders.tsx",
+    "rule": "arbitrary-value",
+    "value": "sm:w-[44%]",
+    "count": 1,
+    "reason": "Existing measured layout preserves the approved screen geometry; no equivalent named token currently exists."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/crm/-components/task-reminders.tsx",
+    "rule": "arbitrary-value",
+    "value": "w-[84%]",
+    "count": 1,
+    "reason": "Existing measured layout preserves the approved screen geometry; no equivalent named token currently exists."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/default/-components/recent-customers-table/table.tsx",
+    "rule": "arbitrary-value",
+    "value": "min-w-[760px]",
+    "count": 1,
+    "reason": "Existing measured layout preserves the approved screen geometry; no equivalent named token currently exists."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/default/-components/recent-customers-table/table.tsx",
+    "rule": "arbitrary-value",
+    "value": "rounded-[min(var(--radius-md),12px)]",
+    "count": 1,
+    "reason": "Existing named CSS variable connects shared shell/control geometry without a new literal design value."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/default/-components/recent-customers-table/table.tsx",
+    "rule": "card-markup",
+    "value": "\"bg-card min-w-0 overflow-hidden rounded-lg border\"",
+    "count": 1,
+    "reason": "Existing specialized surface preserves padding, clipping, or grid behavior; a block replacement requires separate visual review."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/ecommerce/-components/customer-reviews.tsx",
+    "rule": "arbitrary-value",
+    "value": "min-h-[3em]",
+    "count": 1,
+    "reason": "Existing measured layout preserves the approved screen geometry; no equivalent named token currently exists."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/ecommerce/-components/customer-reviews.tsx",
+    "rule": "arbitrary-value",
+    "value": "min-h-[4.5em]",
+    "count": 1,
+    "reason": "Existing measured layout preserves the approved screen geometry; no equivalent named token currently exists."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/ecommerce/route.tsx",
+    "rule": "page-header",
+    "value": "<h1>",
+    "count": 1,
+    "reason": "Existing heading preserves its screen-specific title size and surrounding controls; replacing it with PageHeader would alter the approved render."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/finance/-components/quick-actions.tsx",
+    "rule": "arbitrary-value",
+    "value": "text-[10px]",
+    "count": 1,
+    "reason": "Existing measured layout preserves the approved screen geometry; no equivalent named token currently exists."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/finance/-components/upcoming-transactions.tsx",
+    "rule": "card-markup",
+    "value": "\"bg-background grid size-9 place-items-center rounded-md border\"",
+    "count": 1,
+    "reason": "Small icon/payment-method control surface inside DashboardCard; not a nested content card."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/finance/-components/upcoming-transactions.tsx",
+    "rule": "card-markup",
+    "value": "\"border-border bg-muted flex max-w-full items-center gap-2 rounded-md border px-2 py-1.5 text-sm\"",
+    "count": 1,
+    "reason": "Small icon/payment-method control surface inside DashboardCard; not a nested content card."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/finance/-components/wallet.tsx",
+    "rule": "card-markup",
+    "value": "\"bg-background flex size-9 shrink-0 items-center justify-center rounded-md border\"",
+    "count": 2,
+    "reason": "Small icon/payment-method control surface inside DashboardCard; not a nested content card."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/finance/route.tsx",
+    "rule": "page-header",
+    "value": "<h1>",
+    "count": 1,
+    "reason": "Existing heading preserves its screen-specific title size and surrounding controls; replacing it with PageHeader would alter the approved render."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/infrastructure/-components/infrastructure-header.tsx",
+    "rule": "page-header",
+    "value": "<h1>",
+    "count": 1,
+    "reason": "Existing heading preserves its screen-specific title size and surrounding controls; replacing it with PageHeader would alter the approved render."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/infrastructure/-components/project-environments.tsx",
+    "rule": "arbitrary-value",
+    "value": "md:min-w-[1180px]",
+    "count": 1,
+    "reason": "Existing measured layout preserves the approved screen geometry; no equivalent named token currently exists."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/invoice/-components/invoice-form.tsx",
+    "rule": "card-markup",
+    "value": "\"bg-card flex min-w-0 flex-col gap-4 rounded-xl border p-4\"",
+    "count": 1,
+    "reason": "Existing specialized surface preserves padding, clipping, or grid behavior; a block replacement requires separate visual review."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/invoice/-components/invoice-preview.tsx",
+    "rule": "arbitrary-value",
+    "value": "min-h-[calc(100svh-15rem)]",
+    "count": 1,
+    "reason": "Viewport-relative pane height subtracts existing shell geometry or bounds local scrolling."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/invoice/-components/invoice-preview.tsx",
+    "rule": "card-markup",
+    "value": "\"bg-card flex min-w-0 flex-col rounded-xl border\"",
+    "count": 1,
+    "reason": "Existing specialized surface preserves padding, clipping, or grid behavior; a block replacement requires separate visual review."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/logistics/-components/shipment-details.tsx",
+    "rule": "page-header",
+    "value": "<h1>",
+    "count": 1,
+    "reason": "Existing heading preserves its screen-specific title size and surrounding controls; replacing it with PageHeader would alter the approved render."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/mail/route.tsx",
+    "rule": "page-header",
+    "value": "<h1>",
+    "count": 1,
+    "reason": "Screen-reader-only iframe page heading; PageHeader would introduce visible layout."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/patient-monitoring/route.tsx",
+    "rule": "page-header",
+    "value": "<h1>",
+    "count": 1,
+    "reason": "Existing heading preserves its screen-specific title size and surrounding controls; replacing it with PageHeader would alter the approved render."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/productivity/-components/calendar-panel.tsx",
+    "rule": "arbitrary-value",
+    "value": "[--cell-size:--spacing(9)]",
+    "count": 1,
+    "reason": "Existing named CSS variable connects shared shell/control geometry without a new literal design value."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/productivity/-components/quote-card.tsx",
+    "rule": "card-markup",
+    "value": "\"bg-card rounded-xl border p-4\"",
+    "count": 1,
+    "reason": "Existing specialized surface preserves padding, clipping, or grid behavior; a block replacement requires separate visual review."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/productivity/-components/tasks-section.tsx",
+    "rule": "card-markup",
+    "value": "\"bg-card overflow-hidden rounded-xl border\"",
+    "count": 1,
+    "reason": "Existing specialized surface preserves padding, clipping, or grid behavior; a block replacement requires separate visual review."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/productivity/route.tsx",
+    "rule": "page-header",
+    "value": "<h1>",
+    "count": 1,
+    "reason": "Existing heading preserves its screen-specific title size and surrounding controls; replacing it with PageHeader would alter the approved render."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/products/-components/add-product-drawer.tsx",
+    "rule": "arbitrary-value",
+    "value": "data-[swipe-axis=x]:[--drawer-content-width:100%]",
+    "count": 1,
+    "reason": "Existing measured layout preserves the approved screen geometry; no equivalent named token currently exists."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/products/-components/add-product-drawer.tsx",
+    "rule": "arbitrary-value",
+    "value": "data-[swipe-axis=x]:sm:[--drawer-content-width:32rem]",
+    "count": 1,
+    "reason": "Existing measured layout preserves the approved screen geometry; no equivalent named token currently exists."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/profile/-components/profile-header.tsx",
+    "rule": "page-header",
+    "value": "<h1>",
+    "count": 1,
+    "reason": "Existing heading preserves its screen-specific title size and surrounding controls; replacing it with PageHeader would alter the approved render."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/projects/-components/calendar/calendar.tsx",
+    "rule": "card-markup",
+    "value": "\"bg-card text-card-foreground flex min-w-0 flex-col overflow-hidden rounded-xl border\"",
+    "count": 1,
+    "reason": "Existing specialized surface preserves padding, clipping, or grid behavior; a block replacement requires separate visual review."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/projects/-components/file-manager/file-list-view.tsx",
+    "rule": "card-markup",
+    "value": "\"bg-card min-w-0 rounded-xl border p-3\"",
+    "count": 1,
+    "reason": "Existing specialized surface preserves padding, clipping, or grid behavior; a block replacement requires separate visual review."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/projects/-components/kanban/task-card.tsx",
+    "rule": "card-markup",
+    "value": "{cn(\n        \"bg-card text-card-foreground flex flex-col gap-3 rounded-xl border p-3\",\n        isOverlay && \"w-80 shadow-lg\",\n      )}",
+    "count": 1,
+    "reason": "Existing specialized surface preserves padding, clipping, or grid behavior; a block replacement requires separate visual review."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/projects/-components/project-boundaries.tsx",
+    "rule": "page-header",
+    "value": "<h1>",
+    "count": 1,
+    "reason": "Standalone recovery/status heading uses a centered or minimal boundary layout, not an app-page header."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/projects/-components/project-tasks.tsx",
+    "rule": "arbitrary-value",
+    "value": "w-[calc(100vw-4rem)]",
+    "count": 1,
+    "reason": "Viewport-relative pane height subtracts existing shell geometry or bounds local scrolling."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/projects/-components/project-tasks.tsx",
+    "rule": "card-markup",
+    "value": "\"bg-card overflow-hidden rounded-xl border\"",
+    "count": 1,
+    "reason": "Board column or flush task-table frame owns scrolling/row layout; DashboardCard would add unwanted card spacing."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/projects/-components/project-tasks.tsx",
+    "rule": "card-markup",
+    "value": "\"bg-muted w-80 rounded-xl border\"",
+    "count": 1,
+    "reason": "Board column or flush task-table frame owns scrolling/row layout; DashboardCard would add unwanted card spacing."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/projects/-components/project-timeline.tsx",
+    "rule": "card-markup",
+    "value": "\"bg-card relative max-h-[65dvh] max-w-full overflow-auto rounded-xl border\"",
+    "count": 2,
+    "reason": "Existing specialized surface preserves padding, clipping, or grid behavior; a block replacement requires separate visual review."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/projects/-components/workspace-boundaries.tsx",
+    "rule": "page-header",
+    "value": "<h1>",
+    "count": 1,
+    "reason": "Standalone recovery/status heading uses a centered or minimal boundary layout, not an app-page header."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/roles/-components/roles.tsx",
+    "rule": "card-markup",
+    "value": "\"border-border bg-card overflow-hidden rounded-xl border\"",
+    "count": 1,
+    "reason": "Existing specialized surface preserves padding, clipping, or grid behavior; a block replacement requires separate visual review."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/roles/-components/roles.tsx",
+    "rule": "page-header",
+    "value": "<h1>",
+    "count": 1,
+    "reason": "Existing heading preserves its screen-specific title size and surrounding controls; replacing it with PageHeader would alter the approved render."
+  },
+  {
+    "file": "src/routes/(main)/dashboard/users/-components/users.tsx",
+    "rule": "page-header",
+    "value": "<h1>",
+    "count": 1,
+    "reason": "Existing heading preserves its screen-specific title size and surrounding controls; replacing it with PageHeader would alter the approved render."
+  },
+  {
+    "file": "src/routes/(main)/mail/-components/mail-inbox.tsx",
+    "rule": "page-header",
+    "value": "<h1>",
+    "count": 1,
+    "reason": "Existing heading preserves its screen-specific title size and surrounding controls; replacing it with PageHeader would alter the approved render."
+  },
+  {
+    "file": "src/routes/(main)/mail/-components/mail-sidebar.tsx",
+    "rule": "arbitrary-value",
+    "value": "ring-[1.25px]",
+    "count": 1,
+    "reason": "Existing measured layout preserves the approved screen geometry; no equivalent named token currently exists."
+  },
+  {
+    "file": "src/routes/(main)/unauthorized.tsx",
+    "rule": "page-header",
+    "value": "<h1>",
+    "count": 1,
+    "reason": "Standalone recovery/status heading uses a centered or minimal boundary layout, not an app-page header."
+  },
+  {
+    "file": "src/routes/-components/not-found.tsx",
+    "rule": "page-header",
+    "value": "<h1>",
+    "count": 1,
+    "reason": "Standalone recovery/status heading uses a centered or minimal boundary layout, not an app-page header."
+  },
+  {
+    "file": "src/routes/-components/root-error.tsx",
+    "rule": "page-header",
+    "value": "<h1>",
+    "count": 1,
+    "reason": "Standalone recovery/status heading uses a centered or minimal boundary layout, not an app-page header."
+  }
+]

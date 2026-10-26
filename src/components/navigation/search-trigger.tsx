@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 export function SearchTrigger({ sidebar = false, compact = false }: { sidebar?: boolean; compact?: boolean }) {
   return (
     <Button
-      aria-label="Search pages (Command or Control K)"
+      aria-label="Search ⌘K — pages (Command or Control K)"
       onClick={(event) => document.dispatchEvent(new CustomEvent("tenboards:search", { detail: event.currentTarget }))}
       variant="ghost"
       size={compact ? "icon" : "default"}

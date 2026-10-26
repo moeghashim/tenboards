@@ -1,5 +1,3 @@
-import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts";
-
 import {
   DashboardCard as Card,
   chartAxis,
@@ -10,6 +8,7 @@ import {
   SectionHeader,
   useChartMotion,
 } from "@/components/blocks";
+import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "@/components/blocks/charts";
 import { CardContent } from "@/components/ui/card";
 import { type ChartConfig, ChartTooltip } from "@/components/ui/chart";
 import { Progress } from "@/components/ui/progress";

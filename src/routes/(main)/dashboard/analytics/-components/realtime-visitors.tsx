@@ -1,5 +1,3 @@
-import { Bar, BarChart, type BarShapeProps, XAxis, YAxis } from "recharts";
-
 import {
   DashboardCard as Card,
   chartAxis,
@@ -8,6 +6,7 @@ import {
   SectionHeader,
   useChartMotion,
 } from "@/components/blocks";
+import { Bar, BarChart, type BarShapeProps, XAxis, YAxis } from "@/components/blocks/charts";
 import { CardContent } from "@/components/ui/card";
 import { type ChartConfig, ChartTooltip } from "@/components/ui/chart";
 

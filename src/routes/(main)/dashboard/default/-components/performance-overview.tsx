@@ -1,5 +1,4 @@
 import { format, parseISO } from "date-fns";
-import { Area, CartesianGrid, ComposedChart, Line, XAxis } from "recharts";
 
 import {
   chartAxis,
@@ -12,7 +11,9 @@ import {
   seriesConfig,
   useChartMotion,
 } from "@/components/blocks";
+import { Area, CartesianGrid, ComposedChart, Line, XAxis } from "@/components/blocks/charts";
 import { Button } from "@/components/ui/button";
+// biome-ignore lint/style/noRestrictedImports: Existing specialized card layout preserves its density/size semantics; DashboardCard migration needs separate visual review.
 import { Card, CardContent } from "@/components/ui/card";
 import { ChartLegend, ChartTooltip } from "@/components/ui/chart";
 import {
@@ -59,8 +60,15 @@ export function PerformanceOverview() {
         actions={
           <>
             <Select defaultValue="quarter" items={performancePeriodItems}>
-              <SelectTrigger size="sm" className="w-28">
-                <SelectValue placeholder="3 months" />
+              <SelectTrigger
+                size="sm"
+                className="w-28"
+                aria-labelledby="performance-period-label performance-period-value"
+              >
+                <span id="performance-period-label" className="sr-only">
+                  Period
+                </span>
+                <SelectValue id="performance-period-value" placeholder="3 months" />
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
@@ -75,8 +83,15 @@ export function PerformanceOverview() {
             </Select>
 
             <Select defaultValue="all" items={performanceSegmentItems}>
-              <SelectTrigger size="sm" className="w-32">
-                <SelectValue placeholder="All segments" />
+              <SelectTrigger
+                size="sm"
+                className="w-32"
+                aria-labelledby="performance-segment-label performance-segment-value"
+              >
+                <span id="performance-segment-label" className="sr-only">
+                  Segment
+                </span>
+                <SelectValue id="performance-segment-value" placeholder="All segments" />
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>

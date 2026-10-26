@@ -227,7 +227,7 @@
       "taskStatuses": {
         "001-blocks-kit": "merged",
         "002-page-generators": "merged",
-        "003-design-guardrails": "planned",
+        "003-design-guardrails": "merged",
         "004-adopter-guide-skills": "planned",
         "005-registry-llms": "planned",
         "006-accessibility-debt": "planned"

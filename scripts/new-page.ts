@@ -190,7 +190,7 @@ async function generate() {
     `Created:\n${created.map((file) => `  ${file}`).join("\n")}\nUpdated:\n${changed.map((file) => `  ${file}`).join("\n")}`,
   );
   console.log(
-    `\nNext steps:\n  npm run dev  # visit ${url}; the router generates its metadata\n  npm run build && npm run check && npm run typecheck\n  npm run data:parity  # requires a migrated/seeded local DATABASE_URL\n  npm run verify:page -- ${url}  # provided by v0.9 task 003\nReplace illustrative fixtures and implement the DB TODO before using live data.`,
+    `\nNext steps:\n  npm run dev  # visit ${url}; the router generates its metadata\n  npm run build && npm run check && npm run typecheck\n  npm run data:parity  # requires a migrated/seeded local DATABASE_URL\n  npm run verify:page -- ${url}\nReplace illustrative fixtures and implement the DB TODO before using live data.`,
   );
 }
 
