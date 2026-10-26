@@ -1,0 +1,102 @@
+{
+  "baseURL": "https://63e15ab3-tenboards-preview.mohanadgh.workers.dev/",
+  "projectId": "sample-operations",
+  "fontAssets": "exact public responses cached between contexts",
+  "maskedLiveClocks": false,
+  "hydrationDelayMs": 0,
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": false,
+  "interactions": false,
+  "sidebarStates": false,
+  "results": [
+    {
+      "route": "/dashboard/kit/",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_kit_-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/kit/",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_kit_-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/kit/",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_kit_-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/kit/",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_kit_-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/home/",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_home_-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/home/",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_home_-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/home/",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_home_-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/home/",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_home_-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    }
+  ]
+}
