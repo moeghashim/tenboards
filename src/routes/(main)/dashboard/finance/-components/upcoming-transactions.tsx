@@ -1,11 +1,11 @@
 import { ChevronRight, Zap } from "lucide-react";
 import { siClaude, siLinear, siResend } from "simple-icons";
 
+import { DashboardCard as Card, SectionHeader } from "@/components/blocks";
 import { SimpleIcon } from "@/components/simple-icon";
 import { CardContent } from "@/components/ui/card";
 import { Item, ItemActions, ItemContent, ItemDescription, ItemGroup, ItemMedia, ItemTitle } from "@/components/ui/item";
 
-import { DashboardCard as Card, SectionHeader } from "../../-components/dashboard/cards";
 import { useDashboardData } from "./data-context";
 
 export function UpcomingTransactions() {

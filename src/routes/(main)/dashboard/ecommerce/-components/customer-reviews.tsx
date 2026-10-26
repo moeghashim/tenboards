@@ -1,10 +1,10 @@
 import { ArrowLeft, ArrowRight, Star } from "lucide-react";
 
+import { DashboardCard as Card } from "@/components/blocks";
 import { Avatar, AvatarFallback, AvatarGroup, AvatarGroupCount } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
-import { DashboardCard as Card } from "../../-components/dashboard/cards";
 import { useEcommerce } from "./ecommerce-context";
 
 export function CustomerReviews() {

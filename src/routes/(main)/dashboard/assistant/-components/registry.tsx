@@ -4,23 +4,24 @@ import { createLibrary, defineComponent } from "@openuidev/lang-core";
 import { Bar, BarChart, CartesianGrid, Legend, Line, LineChart, Tooltip, XAxis, YAxis } from "recharts";
 import { z } from "zod";
 
-import { Badge } from "@/components/ui/badge";
-import { CardContent } from "@/components/ui/card";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { type ComponentName, descriptions, limits, schemas } from "@/lib/assistant/registry";
 import {
   chartAxis,
   chartCursor,
   chartGrid,
   chartSeries,
+  DashboardCard,
   DashboardChart,
   DashboardLegend,
   DashboardTooltip,
+  SectionHeader,
+  StatCard,
   seriesConfig,
   useChartMotion,
-} from "@/lib/charts/theme";
-
-import { DashboardCard, SectionHeader, StatCard } from "../../-components/dashboard/cards";
+} from "@/components/blocks";
+import { Badge } from "@/components/ui/badge";
+import { CardContent } from "@/components/ui/card";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { type ComponentName, descriptions, limits, schemas } from "@/lib/assistant/registry";
 
 const element = z
   .object({

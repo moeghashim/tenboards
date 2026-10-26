@@ -1,17 +1,17 @@
 import { Area, AreaChart, CartesianGrid, Line, XAxis, YAxis } from "recharts";
 
-import { CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ChartLegend, ChartTooltip } from "@/components/ui/chart";
 import {
+  DashboardCard as Card,
   chartAxis,
   chartGrid,
   DashboardChart,
   DashboardLegend,
   DashboardTooltip,
   useChartMotion,
-} from "@/lib/charts/theme";
+} from "@/components/blocks";
+import { CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { ChartLegend, ChartTooltip } from "@/components/ui/chart";
 
-import { DashboardCard as Card } from "../../-components/dashboard/cards";
 import { useEcommerce } from "./ecommerce-context";
 
 const trafficConfig = {

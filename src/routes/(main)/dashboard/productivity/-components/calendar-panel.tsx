@@ -2,10 +2,10 @@ import * as React from "react";
 
 import { enGB } from "date-fns/locale";
 
+import { DashboardCard as Card, SectionHeader } from "@/components/blocks";
 import { Calendar, CalendarDayButton } from "@/components/ui/calendar";
 import { CardContent } from "@/components/ui/card";
 
-import { DashboardCard as Card, SectionHeader } from "../../-components/dashboard/cards";
 import { useDashboardData } from "./data-context";
 import { createDemoDay, createDemoMonth } from "./demo-date";
 

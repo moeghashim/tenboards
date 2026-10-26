@@ -1,9 +1,9 @@
 import { createFileRoute, Link, notFound, Outlet, useNavigate } from "@tanstack/react-router";
 
+import { PageHeader } from "@/components/blocks";
 import { Badge } from "@/components/ui/badge";
 import { requireAppRoute } from "@/lib/auth/app-route";
 
-import { PageHeader } from "../../-components/app-pages/page-header";
 import { ProjectError, ProjectMissing, ProjectPending } from "../-components/project-boundaries";
 import { ProjectSelect } from "../-components/project-controls";
 import { loadProject } from "../-components/project-functions";

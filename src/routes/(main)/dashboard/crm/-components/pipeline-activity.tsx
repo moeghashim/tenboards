@@ -1,19 +1,20 @@
 import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts";
 
-import { CardContent } from "@/components/ui/card";
-import { type ChartConfig, ChartTooltip } from "@/components/ui/chart";
-import { Progress } from "@/components/ui/progress";
-import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import {
+  DashboardCard as Card,
   chartAxis,
   chartCursor,
   chartGrid,
   DashboardChart,
   DashboardTooltip,
+  SectionHeader,
   useChartMotion,
-} from "@/lib/charts/theme";
+} from "@/components/blocks";
+import { CardContent } from "@/components/ui/card";
+import { type ChartConfig, ChartTooltip } from "@/components/ui/chart";
+import { Progress } from "@/components/ui/progress";
+import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
-import { DashboardCard as Card, SectionHeader } from "../../-components/dashboard/cards";
 import { useDashboardData } from "./data-context";
 
 const pipelineChartConfig = {

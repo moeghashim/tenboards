@@ -17,7 +17,7 @@ The Assistant follows new replies until you scroll up; Jump to latest resumes fo
 
 **v0.8 (Projects workspace) is merged, deployed and released as [v0.8.0](https://github.com/moeghashim/tenboards/releases/tag/v0.8.0)** — the data foundation, workspace Home/Projects index, and all five direct read-only project views are implemented. [The milestone contract](dev/milestones/v0.8-projects/README.md) tracks the remaining navigation consolidation and final acceptance. Existing standalone routes and the default landing remain available.
 
-**v0.8.1 (Default dashboard landing) is merged, deployed and released as [v0.8.1](https://github.com/moeghashim/tenboards/releases/tag/v0.8.1)** — restores the Default revenue dashboard as the entry point and auth fallback. Home, Projects, navigation order and legacy redirects remain available. See the [task contract](dev/milestones/v0.8.1-default-landing/README.md). **v0.9 (Agent-ready template) is planned** — see the [milestone contract](dev/milestones/v0.9-agent-ready/README.md).
+**v0.8.1 (Default dashboard landing) is merged, deployed and released as [v0.8.1](https://github.com/moeghashim/tenboards/releases/tag/v0.8.1)** — restores the Default revenue dashboard as the entry point and auth fallback. Home, Projects, navigation order and legacy redirects remain available. See the [task contract](dev/milestones/v0.8.1-default-landing/README.md). **v0.9 (Agent-ready template) is in progress** — task 001 (public blocks and the `/dashboard/kit` page) is merged; generators, design guardrails, adopter skills and the shadcn registry follow. See the [milestone contract](dev/milestones/v0.9-agent-ready/README.md).
 
 ## Run locally
 
@@ -86,8 +86,9 @@ The 10 dashboards share the dashboard/chart presentation contract.
 | Logistics | `/dashboard/logistics` |
 | Infrastructure | `/dashboard/infrastructure` |
 | Patient Monitoring | `/dashboard/patient-monitoring` |
+| Blocks kit (Developer) | `/dashboard/kit` |
 
-The app sitemap also includes Home, Projects, AI Assistant, project Overview/Board/List/Timeline/Files, Products, Users, Roles, Profile, Mail, Chat, Invoice, Coming Soon and error/permission states. Legacy Kanban, Tasks, Calendar and File Manager URLs are guarded permanent aliases to project views. Standalone `/mail` and `/chat` retain `/dashboard/mail` and `/dashboard/chat` iframe aliases. Authentication uses `/auth/v2/login` and `/auth/v2/register`; bare `/auth/v2` remains layout-only. With no secret the forms are visual demos; optional auth enables real accounts/sessions. The [route catalog](src/navigation/route-catalog.ts) enumerates 36 visual route patterns, including indexes and system states.
+The app sitemap also includes Home, Projects, AI Assistant, project Overview/Board/List/Timeline/Files, Products, Users, Roles, Profile, Mail, Chat, Invoice, Coming Soon and error/permission states. Legacy Kanban, Tasks, Calendar and File Manager URLs are guarded permanent aliases to project views. Standalone `/mail` and `/chat` retain `/dashboard/mail` and `/dashboard/chat` iframe aliases. Authentication uses `/auth/v2/login` and `/auth/v2/register`; bare `/auth/v2` remains layout-only. With no secret the forms are visual demos; optional auth enables real accounts/sessions. The [route catalog](src/navigation/route-catalog.ts) enumerates 37 visual route patterns, including indexes and system states.
 
 `/dashboard/default-v1`, `/dashboard/crm-v1`, `/dashboard/finance-v1` and `/dashboard/analytics-v1` return HTTP 308 to the matching current dashboard. `/auth/v1/login` and `/auth/v1/register` return HTTP 308 to Auth V2. Redirects preserve a validated `redirect` query (unsafe values fall back to `/dashboard/default`); destination pages enforce their existing guards. Redirect-only URLs are absent from sidebar/search and are tested separately from the screenshot catalog.
 
@@ -152,7 +153,7 @@ npm run screenshots -- --routes /dashboard/default --sidebar-states --output scr
 npm run screenshots -- --list
 ```
 
-The default captures every retained route in light/dark at desktop 1440×900 and mobile 390×844. `src/navigation/route-catalog.ts` is the shared 36-route visual inventory, re-exported by `scripts/screenshot-routes.ts` and checked against generated route metadata; missing/stale routes and unknown subsets fail before launch. The dashboard splat uses `/dashboard/capture-not-found` to exercise its not-found state; project-ID routes use `sample-operations` by default, with `--project-id sample-docs|sample-empty` for the secondary and empty fixtures. Root/index redirects are captured at their destination; six retired V1 aliases and four consolidated workspace aliases are covered by dedicated redirect checks; explicitly passing those workspace aliases to `--routes` also captures their destinations. `--preset` selects a valid preset for the same four-state matrix. `--sidebar-states` adds expanded/collapsed desktop captures and open/closed mobile-sheet captures on shell routes. Run `node --experimental-strip-types scripts/sidebar-toggle-check.ts` to verify every allowed sidebar style/collapse mode and preset in both themes and viewports; add `--ssr --base-url <built-preview-url>` to check initial markup with JavaScript disabled.
+The default captures every retained route in light/dark at desktop 1440×900 and mobile 390×844. `src/navigation/route-catalog.ts` is the shared 37-route visual inventory, re-exported by `scripts/screenshot-routes.ts` and checked against generated route metadata; missing/stale routes and unknown subsets fail before launch. The dashboard splat uses `/dashboard/capture-not-found` to exercise its not-found state; project-ID routes use `sample-operations` by default, with `--project-id sample-docs|sample-empty` for the secondary and empty fixtures. Root/index redirects are captured at their destination; six retired V1 aliases and four consolidated workspace aliases are covered by dedicated redirect checks; explicitly passing those workspace aliases to `--routes` also captures their destinations. `--preset` selects a valid preset for the same four-state matrix. `--sidebar-states` adds expanded/collapsed desktop captures and open/closed mobile-sheet captures on shell routes. Run `node --experimental-strip-types scripts/sidebar-toggle-check.ts` to verify every allowed sidebar style/collapse mode and preset in both themes and viewports; add `--ssr --base-url <built-preview-url>` to check initial markup with JavaScript disabled.
 
 Captures wait for React hydration, fonts, network idle, images, JS chart settling, and stable content. Reduced motion is emulated and screenshot animations are disabled. Console errors, page errors, failed requests, unexpected HTTP status, and capture failures are recorded in `report.json` and cause a nonzero exit. The hydration check uses React's DOM binding marker; revisit it if React's renderer changes. Application clocks are never frozen. For v0.4 comparisons, pass the same `--reference` ISO timestamp to serialize identical date inputs; the real monitoring clock can be narrowly masked with `--mask-live-clocks`.
 
@@ -190,9 +191,9 @@ Current hydration status: all eight inherited findings are resolved and verified
 
 ## Dashboard foundation (v0.2 / 001)
 
-`src/lib/charts/theme.tsx` composes the existing chart wrappers with responsive sizing, token-based axes/grid/cursor/tooltips/legends, explicit en-US numeric formatters, and `useChartMotion`. The hook starts without animation on both SSR and initial hydration, then observes reduced-motion changes; pass its props to every animated Recharts series. `seriesConfig` selects chart-1, chart-2, chart-4 and chart-5, avoiding Default's duplicate chart-3 color. Pair series with labels and dash patterns from their keyed `seriesConfig` entries; color alone is insufficient.
+`src/components/blocks/charts.tsx` composes the existing chart wrappers with responsive sizing, token-based axes/grid/cursor/tooltips/legends, explicit en-US numeric formatters, and `useChartMotion`. The hook starts without animation on both SSR and initial hydration, then observes reduced-motion changes; pass its props to every animated Recharts series. `seriesConfig` selects chart-1, chart-2, chart-4 and chart-5, avoiding Default's duplicate chart-3 color. Pair series with labels and dash patterns from their keyed `seriesConfig` entries; color alone is insufficient.
 
-`dashboard/-components/dashboard/cards.tsx` provides `DashboardCard` (12px compact / 16px standard), `SectionHeader`, and `StatCard`. These presentation APIs accept domain values, help, trends and actions without owning data or state. The primitives are reused throughout the 10 dashboard routes. Domain data and interactions remain route-local; protected UI wrappers remain intact.
+`@/components/blocks` provides `DashboardCard` (12px compact / 16px standard), `SectionHeader`, and `StatCard`. These presentation APIs accept domain values, help, trends and actions without owning data or state. The primitives are reused throughout the 10 dashboard routes. Domain data and interactions remain route-local; protected UI wrappers remain intact.
 
 ## Default dashboards (v0.2 / 002)
 
@@ -256,7 +257,7 @@ Calendar, Invoice and both Auth V2 forms have passed their separate hydration ga
 
 ### App-page foundation (v0.3 / 001)
 
-`dashboard/-components/app-pages/page-header.tsx` provides a presentation-only `PageHeader` with a required string `title`, optional string `description`, wrapping React `actions`, and optional layout `className`. It renders one semantic h1 at the compact 21px scale, with wrapping titles and action groups. File Manager and Products use it while retaining query-driven file views and the product drawer; their grids and tables remain assigned to tasks 008/009. The upstream-author File Manager owner fixture is now Jordan Lee. Tasks and Invoice are intended later consumers. Existing dashboard cards, card-level headings and chart theme remain the shared APIs for their respective roles.
+`@/components/blocks` provides a presentation-only `PageHeader` with a required string `title`, optional string `description`, wrapping React `actions`, and optional layout `className`. It renders one semantic h1 at the compact 21px scale, with wrapping titles and action groups. File Manager and Products use it while retaining query-driven file views and the product drawer; their grids and tables remain assigned to tasks 008/009. The upstream-author File Manager owner fixture is now Jordan Lee. Tasks and Invoice are intended later consumers. Existing dashboard cards, card-level headings and chart theme remain the shared APIs for their respective roles.
 
 
 ### Mail pages (v0.3 / 002)
@@ -574,3 +575,22 @@ npm run screenshots -- --base-url http://localhost:3277 --preset pine --project-
 ```
 
 Integrated acceptance combines the full retained-route Default/Graphite/Pine/Iris matrix (light/dark × desktop/mobile), the secondary/empty project matrix, focused task/navigation/workspace interactions and delayed real-clock Calendar/Home checks. Node/compiled workerd verify guards and failure recovery, 29-read/211-scenario parity and migration preservation. Navigation tests also exercise all sidebar layout/collapse combinations and real isolated DB error/empty recovery. Evidence and a consolidated report belong on `pr-assets/v08-006`; screenshots never enter the implementation branch.
+
+
+## Public blocks and kit (v0.9 / 001)
+
+The agent-ready milestone is in progress; public blocks and the kit page are in review. Import presentation APIs from `@/components/blocks`: `PageHeader`, `DashboardCard`, `SectionHeader`, `StatCard`, `DataTable`, `DashboardChart`, `DashboardTooltip`, `DashboardLegend`, and the chart axis/grid/cursor, series, formatting and reduced-motion helpers. Exported prop types and TSDoc describe each contract. Existing route imports have migrated; the old route-local card/header files and chart theme file have no compatibility shims.
+
+Open `/dashboard/kit` from the **Developer** sidebar group or the command palette. Every block has a live example, variants and copyable TypeScript source. Snippets are static raw imports of the actual example modules, so the displayed code is the code that runs. The kit includes sorting, pagination, empty recovery, mobile table reflow/scrolling, single/comparison chart series, exact chart data and clipboard-failure recovery.
+
+### Project layout for blocks
+
+- `src/components/blocks/index.ts` — public barrel and typed API.
+- `src/components/blocks/{cards,page-header,charts,data-table}.tsx` — presentation only; no route imports, fetching or domain fixtures.
+- `src/routes/(main)/dashboard/kit/-components/` — illustrative fixtures, executable examples and source disclosure.
+- `src/lib/data-table-features.ts` — existing TanStack Table v9 registry, also exported by the blocks barrel.
+- `src/components/ui/` and `src/components/calendar/` — protected primitive layers, unchanged.
+
+Create a caller-owned `useTable` instance with `dataTableFeatures` and pass it to `DataTable`. Columns, filters, row IDs and client/server state stay with the caller. Use non-interactive column headers because the block supplies sort buttons; supply `columnLabels` for function headers. `mobile="reflow"` retains labelled values below the medium breakpoint; `mobile="scroll"` keeps a locally scrolling table. Set `pagination={false}` when the caller renders its own controls. Specialized existing tables keep their route-specific presentation.
+
+Run `BLOCKS_TEST_URL=http://127.0.0.1:3000 node --experimental-strip-types scripts/blocks-kit-check.ts` for the four-state interaction and root → Home smoke checks. Use `npm run screenshots` for the full route matrix. The intentional Developer entry and demo page count change the shell; screenshot comparisons of existing page content exclude that sidebar region and narrowly mask the live monitoring clock.

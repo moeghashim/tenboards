@@ -3,6 +3,7 @@ import { sidebarItems } from "./sidebar/sidebar-items.ts";
 // Explicit coverage contract. Compare against generated metadata on every capture run.
 // Dynamic project routes use concrete capture paths and guarded palette destinations.
 export const captureRoutes = [
+  { route: "/dashboard/kit/", path: "/dashboard/kit", ready: "Blocks kit" },
   { route: "/dashboard/assistant", path: "/dashboard/assistant", ready: "What would you like to explore?" },
   { route: "/dashboard/home/", path: "/dashboard/home", ready: "My tasks" },
   { route: "/dashboard/projects/", path: "/dashboard/projects", ready: "Projects" },

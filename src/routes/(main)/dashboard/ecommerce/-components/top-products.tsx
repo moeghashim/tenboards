@@ -1,7 +1,7 @@
+import { DashboardCard as Card } from "@/components/blocks";
 import { CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 
-import { DashboardCard as Card } from "../../-components/dashboard/cards";
 import { useEcommerce } from "./ecommerce-context";
 
 export function TopProducts() {

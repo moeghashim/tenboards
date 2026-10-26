@@ -1,12 +1,12 @@
 # v0.9 — Agent-ready template
 
-Status: **planned**. Contract: PLAN.md Decisions log, “v0.9 …” rows (2026-10-26).
+Status: **in-progress**. Contract: PLAN.md Decisions log, “v0.9 …” rows (2026-10-26).
 
 Goal: coding agents adopting tenboards use its real building blocks instead of generating look-alike UI. The on-system path is the shortest path; the off-system path fails a check.
 
 | Task | Depends on | Contract |
 | --- | --- | --- |
-| 001 — Public blocks and kit page | main | [001](001-blocks-kit.md) |
+| 001 — Public blocks and kit page (merged #77) | main | [001](001-blocks-kit.md) |
 | 002 — Page generators | 001 | [002](002-page-generators.md) |
 | 003 — Design guardrails and verify:page | 001 | [003](003-design-guardrails.md) |
 | 004 — Adopter guide and Agent Skills | 002, 003 | [004](004-adopter-guide-skills.md) |

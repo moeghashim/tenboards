@@ -1,10 +1,17 @@
 import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts";
 
+import {
+  chartAxis,
+  chartGrid,
+  DashboardCard,
+  DashboardChart,
+  DashboardTooltip,
+  SectionHeader,
+  useChartMotion,
+} from "@/components/blocks";
 import { CardContent } from "@/components/ui/card";
 import { ChartTooltip } from "@/components/ui/chart";
-import { chartAxis, chartGrid, DashboardChart, DashboardTooltip, useChartMotion } from "@/lib/charts/theme";
 
-import { DashboardCard, SectionHeader } from "../../-components/dashboard/cards";
 import { useDashboardData } from "./data-context";
 
 const config = {

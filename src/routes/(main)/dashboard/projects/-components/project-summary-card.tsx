@@ -2,10 +2,10 @@ import { Link } from "@tanstack/react-router";
 
 import { ArrowUpRight, CalendarDays } from "lucide-react";
 
+import { DashboardCard } from "@/components/blocks";
 import { Badge } from "@/components/ui/badge";
 import { CardContent } from "@/components/ui/card";
 
-import { DashboardCard } from "../../-components/dashboard/cards";
 import type { loadProject } from "./project-functions";
 import { ProjectProgress } from "./project-progress";
 import { displayDate } from "./project-search";

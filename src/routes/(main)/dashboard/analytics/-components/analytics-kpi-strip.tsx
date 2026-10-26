@@ -1,6 +1,6 @@
+import { StatCard } from "@/components/blocks";
 import { Badge } from "@/components/ui/badge";
 
-import { StatCard } from "../../-components/dashboard/cards";
 import { useDashboardData } from "./data-context";
 
 export function AnalyticsKpiStrip() {

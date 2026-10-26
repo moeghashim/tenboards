@@ -1,8 +1,8 @@
+import { DashboardCard, SectionHeader } from "@/components/blocks";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { CardContent } from "@/components/ui/card";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 
-import { DashboardCard, SectionHeader } from "../../-components/dashboard/cards";
 import { useDashboardData } from "./data-context";
 
 export function PerformanceHighlights() {

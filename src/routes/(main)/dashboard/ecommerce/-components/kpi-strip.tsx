@@ -1,20 +1,22 @@
 import { Bar, CartesianGrid, ComposedChart, Line, XAxis, YAxis } from "recharts";
 
-import { CardContent } from "@/components/ui/card";
-import { ChartLegend, ChartTooltip } from "@/components/ui/chart";
 import {
   chartAxis,
   chartCursor,
   chartGrid,
+  DashboardCard,
   DashboardChart,
   DashboardLegend,
   DashboardTooltip,
   formatCurrency,
+  SectionHeader,
+  StatCard,
   seriesConfig,
   useChartMotion,
-} from "@/lib/charts/theme";
+} from "@/components/blocks";
+import { CardContent } from "@/components/ui/card";
+import { ChartLegend, ChartTooltip } from "@/components/ui/chart";
 
-import { DashboardCard, SectionHeader, StatCard } from "../../-components/dashboard/cards";
 import { useEcommerce } from "./ecommerce-context";
 
 // A dated demo interval, independent of Worker startup time and browser timezone.

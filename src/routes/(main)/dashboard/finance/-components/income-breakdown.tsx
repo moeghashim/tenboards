@@ -1,6 +1,6 @@
+import { DashboardCard, SectionHeader } from "@/components/blocks";
 import { CardContent } from "@/components/ui/card";
 
-import { DashboardCard, SectionHeader } from "../../-components/dashboard/cards";
 import { useDashboardData } from "./data-context";
 
 export function IncomeBreakdown() {

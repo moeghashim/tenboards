@@ -1,10 +1,10 @@
 import { siBarclays, siBitcoin, siEthereum, siHsbc, siRevolut } from "simple-icons";
 
+import { DashboardCard as Card, SectionHeader } from "@/components/blocks";
 import { SimpleIcon } from "@/components/simple-icon";
 import { CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 
-import { DashboardCard as Card, SectionHeader } from "../../-components/dashboard/cards";
 import { useDashboardData } from "./data-context";
 
 export function Wallet() {

@@ -9,6 +9,7 @@ import {
 
 import { ChevronDownIcon, ListFilter } from "lucide-react";
 
+import { DashboardCard as Card, SectionHeader } from "@/components/blocks";
 import { Button } from "@/components/ui/button";
 import { CardContent } from "@/components/ui/card";
 import {
@@ -31,7 +32,6 @@ import {
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { dataTableFeatures } from "@/lib/data-table-features";
 
-import { DashboardCard as Card, SectionHeader } from "../../-components/dashboard/cards";
 import { useDashboardData } from "./data-context";
 import { opportunitiesColumns } from "./opportunities-table/columns";
 import { opportunitiesSchema } from "./opportunities-table/schema";

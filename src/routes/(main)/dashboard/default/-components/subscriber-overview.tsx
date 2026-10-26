@@ -1,9 +1,9 @@
 import { Download } from "lucide-react";
 
+import { SectionHeader } from "@/components/blocks";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
-import { SectionHeader } from "../../-components/dashboard/cards";
 import { useDashboardData } from "./data-context";
 import { RecentCustomersTable } from "./recent-customers-table/table";
 

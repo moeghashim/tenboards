@@ -1,8 +1,8 @@
 import { TrendingDown, TrendingUp } from "lucide-react";
 
+import { SectionHeader, StatCard } from "@/components/blocks";
 import { Badge } from "@/components/ui/badge";
 
-import { SectionHeader, StatCard } from "../../-components/dashboard/cards";
 import { useDashboardData } from "./data-context";
 
 export function KpiCards() {

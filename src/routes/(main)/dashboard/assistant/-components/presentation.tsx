@@ -2,13 +2,12 @@ import type { ComponentProps, ReactNode, Ref } from "react";
 
 import { ArrowUp, Bot, ChartNoAxesCombined, ClipboardList, Plus, Square, Table2 } from "lucide-react";
 
+import { PageHeader } from "@/components/blocks";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { examples } from "@/lib/assistant/recorded";
-
-import { PageHeader } from "../../-components/app-pages/page-header";
 
 export function AssistantSurface({ clear, children }: { clear: () => void; children: ReactNode }) {
   return (

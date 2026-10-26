@@ -1,8 +1,8 @@
 import { cn } from "cn";
 import { CartesianGrid, Line, LineChart, YAxis } from "recharts";
 
+import { DashboardChart } from "@/components/blocks";
 import type { ChartConfig } from "@/components/ui/chart";
-import { DashboardChart } from "@/lib/charts/theme";
 
 import { getVerticalGridCoordinates } from "./chart-grid";
 

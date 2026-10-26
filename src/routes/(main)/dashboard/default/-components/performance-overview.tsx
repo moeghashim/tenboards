@@ -1,6 +1,17 @@
 import { format, parseISO } from "date-fns";
 import { Area, CartesianGrid, ComposedChart, Line, XAxis } from "recharts";
 
+import {
+  chartAxis,
+  chartCursor,
+  chartGrid,
+  DashboardChart,
+  DashboardLegend,
+  DashboardTooltip,
+  SectionHeader,
+  seriesConfig,
+  useChartMotion,
+} from "@/components/blocks";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ChartLegend, ChartTooltip } from "@/components/ui/chart";
@@ -13,18 +24,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import {
-  chartAxis,
-  chartCursor,
-  chartGrid,
-  DashboardChart,
-  DashboardLegend,
-  DashboardTooltip,
-  seriesConfig,
-  useChartMotion,
-} from "@/lib/charts/theme";
 
-import { SectionHeader } from "../../-components/dashboard/cards";
 import { useDashboardData } from "./data-context";
 
 const chartConfig = seriesConfig({

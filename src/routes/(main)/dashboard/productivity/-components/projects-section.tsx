@@ -1,12 +1,12 @@
 import { ClipboardCheck, Globe, Orbit, Plus } from "lucide-react";
 
+import { DashboardCard as Card, SectionHeader } from "@/components/blocks";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { CardContent, CardFooter } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
-import { DashboardCard as Card, SectionHeader } from "../../-components/dashboard/cards";
 import { useDashboardData } from "./data-context";
 
 const projectFilterItems = [
