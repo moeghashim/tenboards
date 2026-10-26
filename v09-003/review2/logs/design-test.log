@@ -1,0 +1,63 @@
+
+> tenboards@0.8.1 check:design:test
+> node --experimental-strip-types scripts/design-check-test.ts
+
+PASS seeded violation: hex
+PASS seeded violation: short hex
+PASS seeded violation: alpha hex
+PASS seeded violation: rgb
+PASS seeded violation: rgba
+PASS seeded violation: hsl
+PASS seeded violation: oklch
+PASS seeded violation: color class
+PASS seeded violation: size
+PASS seeded violation: spacing
+PASS seeded violation: typography
+PASS seeded violation: arbitrary selector and value
+PASS seeded violation: property syntax
+PASS seeded violation: template
+PASS seeded violation: hand rolled card
+PASS seeded violation: conditional card
+PASS seeded violation: page header
+PASS seeded violation: recharts
+PASS seeded violation: recharts dynamic
+PASS seeded violation: recharts export
+PASS seeded violation: recharts deep
+PASS seeded violation: primitive card
+PASS seeded violation: relative primitive card
+PASS seeded violation: namespace primitive card
+PASS seeded violation: dynamic primitive card
+PASS seeded violation: literal remains banned: min-w-[760px]
+PASS seeded violation: literal remains banned: max-w-[752px]
+PASS seeded violation: literal remains banned: h-[12rem]
+PASS seeded violation: literal remains banned: h-[calc(100dvh-2rem)]
+PASS seeded violation: literal remains banned: h-[calc(var(--header-height)+13px)]
+PASS seeded violation: literal remains banned: w-[var(--width,760px)]
+PASS seeded violation: literal remains banned: text-[red]
+PASS seeded violation: literal remains banned: text-[1.2rem]
+PASS seeded violation: literal remains banned: leading-[1.3]
+PASS seeded violation: literal remains banned: tracking-[.3em]
+PASS seeded violation: literal remains banned: m-[13px]
+PASS seeded violation: literal remains banned: gap-[5px]
+PASS seeded violation: literal remains banned: space-x-[7px]
+PASS seeded violation: literal remains banned: rounded-[12px]
+PASS seeded violation: literal remains banned: shadow-[0_2px_8px_black]
+PASS seeded violation: literal remains banned: p-[calc(var(--spacing)*2+1rem)]
+PASS allowed token/layout: h-(--header-height)
+PASS allowed token/layout: hover:!w-(--anchor-width)
+PASS allowed token/layout: [&>p]:text-(--label-color)
+PASS allowed token/layout: bg-[var(--primary)]
+PASS allowed token/layout: h-[calc(100dvh-var(--dashboard-header-height))]
+PASS allowed token/layout: h-[calc(100svh-var(--header-height))]!
+PASS allowed token/layout: w-[calc(var(--width)*2)]
+PASS allowed token/layout: w-[calc(100vw/2)]
+PASS allowed token/layout: h-[calc(100dvh-calc(var(--header-height)*2))]
+PASS allowed token/layout: [width:var(--panel-width)]
+PASS allowed token/layout: p-[var(--spacing)]
+PASS allowed token/layout: grid-cols-[22.5rem_minmax(0,1fr)]
+PASS allowed token/layout: xl:grid-cols-[22.5rem_minmax(0,1fr)_var(--profile-width)]
+PASS allowed token/layout: grid-rows-[auto_1fr_40px]
+PASS allowed token/layout: auto-cols-[12rem]
+PASS allowed token/layout: auto-rows-[minmax(0,1fr)]
+PASS permitted tokens/variants/blocks/chart boundary, CSS comments, exact counted exceptions, and stale exception detection
+PASS check:design CLI exits 1 with actionable diagnostics for all seeded rules

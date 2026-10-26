@@ -1,0 +1,191 @@
+{
+  "baseURL": "http://127.0.0.1:3078/",
+  "passed": false,
+  "reports": [
+    {
+      "route": "/dashboard/kit/",
+      "passed": true,
+      "report": "dashboard%2Fkit%2F/report.json"
+    },
+    {
+      "route": "/dashboard/assistant",
+      "passed": false,
+      "report": "dashboard%2Fassistant/report.json"
+    },
+    {
+      "route": "/dashboard/home/",
+      "passed": true,
+      "report": "dashboard%2Fhome%2F/report.json"
+    },
+    {
+      "route": "/dashboard/projects/",
+      "passed": true,
+      "report": "dashboard%2Fprojects%2F/report.json"
+    },
+    {
+      "route": "/dashboard/projects/$projectId/overview",
+      "passed": true,
+      "report": "dashboard%2Fprojects%2F%24projectId%2Foverview/report.json"
+    },
+    {
+      "route": "/dashboard/projects/$projectId/timeline",
+      "passed": false,
+      "report": "dashboard%2Fprojects%2F%24projectId%2Ftimeline/report.json"
+    },
+    {
+      "route": "/dashboard/projects/$projectId/files",
+      "passed": true,
+      "report": "dashboard%2Fprojects%2F%24projectId%2Ffiles/report.json"
+    },
+    {
+      "route": "/dashboard/projects/$projectId/board",
+      "passed": true,
+      "report": "dashboard%2Fprojects%2F%24projectId%2Fboard/report.json"
+    },
+    {
+      "route": "/dashboard/projects/$projectId/list",
+      "passed": true,
+      "report": "dashboard%2Fprojects%2F%24projectId%2Flist/report.json"
+    },
+    {
+      "route": "/chat",
+      "passed": false,
+      "report": "chat/report.json"
+    },
+    {
+      "route": "/dashboard",
+      "passed": true,
+      "report": "dashboard/report.json"
+    },
+    {
+      "route": "/mail",
+      "passed": true,
+      "report": "mail/report.json"
+    },
+    {
+      "route": "/unauthorized",
+      "passed": true,
+      "report": "unauthorized/report.json"
+    },
+    {
+      "route": "/",
+      "passed": true,
+      "report": "root/report.json"
+    },
+    {
+      "route": "/auth/v2",
+      "passed": true,
+      "report": "auth%2Fv2/report.json"
+    },
+    {
+      "route": "/dashboard/academy",
+      "passed": false,
+      "report": "dashboard%2Facademy/report.json"
+    },
+    {
+      "route": "/dashboard/analytics",
+      "passed": false,
+      "report": "dashboard%2Fanalytics/report.json"
+    },
+    {
+      "route": "/dashboard/chat",
+      "passed": false,
+      "report": "dashboard%2Fchat/report.json"
+    },
+    {
+      "route": "/dashboard/coming-soon",
+      "passed": true,
+      "report": "dashboard%2Fcoming-soon/report.json"
+    },
+    {
+      "route": "/dashboard/crm",
+      "passed": false,
+      "report": "dashboard%2Fcrm/report.json"
+    },
+    {
+      "route": "/dashboard/default",
+      "passed": true,
+      "report": "dashboard%2Fdefault/report.json"
+    },
+    {
+      "route": "/dashboard/ecommerce",
+      "passed": false,
+      "report": "dashboard%2Fecommerce/report.json"
+    },
+    {
+      "route": "/dashboard/finance",
+      "passed": false,
+      "report": "dashboard%2Ffinance/report.json"
+    },
+    {
+      "route": "/dashboard/infrastructure",
+      "passed": true,
+      "report": "dashboard%2Finfrastructure/report.json"
+    },
+    {
+      "route": "/dashboard/invoice",
+      "passed": false,
+      "report": "dashboard%2Finvoice/report.json"
+    },
+    {
+      "route": "/dashboard/logistics",
+      "passed": false,
+      "report": "dashboard%2Flogistics/report.json"
+    },
+    {
+      "route": "/dashboard/mail",
+      "passed": true,
+      "report": "dashboard%2Fmail/report.json"
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "passed": false,
+      "report": "dashboard%2Fpatient-monitoring/report.json"
+    },
+    {
+      "route": "/dashboard/productivity",
+      "passed": true,
+      "report": "dashboard%2Fproductivity/report.json"
+    },
+    {
+      "route": "/dashboard/products",
+      "passed": false,
+      "report": "dashboard%2Fproducts/report.json"
+    },
+    {
+      "route": "/dashboard/profile",
+      "passed": false,
+      "report": "dashboard%2Fprofile/report.json"
+    },
+    {
+      "route": "/dashboard/roles",
+      "passed": false,
+      "report": "dashboard%2Froles/report.json"
+    },
+    {
+      "route": "/dashboard/users",
+      "passed": true,
+      "report": "dashboard%2Fusers/report.json"
+    },
+    {
+      "route": "/dashboard/$",
+      "passed": true,
+      "report": "dashboard%2F%24/report.json"
+    },
+    {
+      "route": "/dashboard/",
+      "passed": true,
+      "report": "dashboard%2F/report.json"
+    },
+    {
+      "route": "/auth/v2/login",
+      "passed": true,
+      "report": "auth%2Fv2%2Flogin/report.json"
+    },
+    {
+      "route": "/auth/v2/register",
+      "passed": true,
+      "report": "auth%2Fv2%2Fregister/report.json"
+    }
+  ]
+}

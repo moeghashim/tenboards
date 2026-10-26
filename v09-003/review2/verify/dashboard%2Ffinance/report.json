@@ -1,0 +1,3041 @@
+{
+  "route": "/dashboard/finance",
+  "path": "/dashboard/finance",
+  "baseURL": "http://127.0.0.1:3078/",
+  "tags": [
+    "wcag2a",
+    "wcag2aa",
+    "wcag21a",
+    "wcag21aa",
+    "wcag22aa"
+  ],
+  "passed": false,
+  "results": [
+    {
+      "theme": "light",
+      "viewport": "desktop",
+      "screenshot": "light-desktop.png",
+      "finalURL": "http://127.0.0.1:3078/dashboard/finance",
+      "passed": false,
+      "errors": [],
+      "warnings": [
+        "Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used."
+      ],
+      "violations": [
+        {
+          "id": "aria-required-children",
+          "impact": "critical",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag131",
+            "EN-301-549",
+            "EN-9.1.3.1",
+            "RGAAv4",
+            "RGAA-9.3.1"
+          ],
+          "description": "Ensure elements with an ARIA role that require child roles contain them",
+          "help": "Certain ARIA roles must contain particular children",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-required-children?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "aria-required-children",
+                  "data": {
+                    "messageKey": "unallowed",
+                    "values": "svg[aria-hidden]"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg viewBox=\"0 0 24 24\" aria-label=\"Claude\" aria-hidden=\"false\" focusable=\"false\" class=\"fill-foreground size-5\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/upcoming-transactions.tsx:46:19\">",
+                      "target": [
+                        "svg[aria-label=\"Claude\"]"
+                      ]
+                    },
+                    {
+                      "html": "<svg viewBox=\"0 0 24 24\" aria-label=\"Resend\" aria-hidden=\"false\" focusable=\"false\" class=\"fill-foreground size-5\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/upcoming-transactions.tsx:46:19\">",
+                      "target": [
+                        "svg[aria-label=\"Resend\"]"
+                      ]
+                    },
+                    {
+                      "html": "<svg viewBox=\"0 0 24 24\" aria-label=\"Linear\" aria-hidden=\"false\" focusable=\"false\" class=\"fill-foreground size-5\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/upcoming-transactions.tsx:46:19\">",
+                      "target": [
+                        "svg[aria-label=\"Linear\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "critical",
+                  "message": "Element has children which are not allowed: svg[aria-hidden]"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "critical",
+              "html": "<div role=\"list\" data-slot=\"item-group\" class=\"group/item-group flex w-full flex-col gap-4 has-data-[size=sm]:gap-2.5 has-data-[size=xs]:gap-2\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/upcoming-transactions.tsx:41:9\">",
+              "target": [
+                ".group\\/item-group"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element has children which are not allowed: svg[aria-hidden]"
+            }
+          ]
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "fgColor": "#72747b",
+                    "bgColor": "#f8f9fb",
+                    "contrastRatio": 4.43,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": null,
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<main data-slot=\"sidebar-inset\" class=\"relative flex w-full...\" data-tsd-source=\"/src/routes/(main)/d...\">",
+                      "target": [
+                        "main"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element has insufficient color contrast of 4.43 (foreground color: #72747b, background color: #f8f9fb, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_29j9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+              "target": [
+                "#base-ui-_R_29j9aq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.43 (foreground color: #72747b, background color: #f8f9fb, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "fgColor": "#72747b",
+                    "bgColor": "#f8f9fb",
+                    "contrastRatio": 4.43,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": null,
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<main data-slot=\"sidebar-inset\" class=\"relative flex w-full...\" data-tsd-source=\"/src/routes/(main)/d...\">",
+                      "target": [
+                        "main"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element has insufficient color contrast of 4.43 (foreground color: #72747b, background color: #f8f9fb, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_39j9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+              "target": [
+                "#base-ui-_R_39j9aq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.43 (foreground color: #72747b, background color: #f8f9fb, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "impact": "serious",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "description": "Ensure ARIA attributes are not prohibited for an element's role",
+          "help": "Elements must only use permitted ARIA attributes",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-prohibited-attr?application=playwright",
+          "nodes": [
+            {
+              "any": [],
+              "all": [],
+              "none": [
+                {
+                  "id": "aria-prohibited-attr",
+                  "data": {
+                    "role": null,
+                    "nodeName": "div",
+                    "messageKey": "noRoleSingular",
+                    "prohibited": [
+                      "aria-label"
+                    ]
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "aria-label attribute is not well supported on \"div\" elements with no valid role attribute."
+                }
+              ],
+              "impact": "serious",
+              "html": "<div data-slot=\"sidebar-group\" data-sidebar=\"group\" class=\"relative flex w-full min-w-0 flex-col p-0 pb-3\" aria-label=\"Projects navigation\" data-tsd-source=\"/src/routes/(main)/dashboard/-components/sidebar/project-navigation.tsx:127:5\">",
+              "target": [
+                "div[aria-label=\"Projects navigation\"]"
+              ],
+              "failureSummary": "Fix all of the following:\n  aria-label attribute is not well supported on \"div\" elements with no valid role attribute."
+            }
+          ]
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/transactions-overview-card.tsx:72:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"438\" viewBox=\"0 0 614 438\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 614 438\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"flex items-center gap-1.5\" data-tsd-source=\"/src/components/blocks/charts.tsx:116:13\">",
+              "target": [
+                ".gap-x-4 > .gap-1\\.5.items-center:nth-child(1)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/transactions-overview-card.tsx:72:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"438\" viewBox=\"0 0 614 438\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 614 438\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"flex items-center gap-1.5\" data-tsd-source=\"/src/components/blocks/charts.tsx:116:13\">",
+              "target": [
+                ".gap-x-4 > .gap-1\\.5.items-center:nth-child(2)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/transactions-overview-card.tsx:72:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"438\" viewBox=\"0 0 614 438\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 614 438\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"43.857142857142854\" dy=\"0.71em\">Mon</tspan>",
+              "target": [
+                "tspan[x=\"43.857142857142854\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/transactions-overview-card.tsx:72:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"438\" viewBox=\"0 0 614 438\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 614 438\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"131.57142857142856\" dy=\"0.71em\">Tue</tspan>",
+              "target": [
+                "tspan[x=\"131.57142857142856\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/transactions-overview-card.tsx:72:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"438\" viewBox=\"0 0 614 438\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 614 438\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"219.28571428571428\" dy=\"0.71em\">Wed</tspan>",
+              "target": [
+                "tspan[x=\"219.28571428571428\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/transactions-overview-card.tsx:72:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"438\" viewBox=\"0 0 614 438\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 614 438\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"307\" dy=\"0.71em\">Thu</tspan>",
+              "target": [
+                "tspan[x=\"307\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/transactions-overview-card.tsx:72:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"438\" viewBox=\"0 0 614 438\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 614 438\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"394.7142857142857\" dy=\"0.71em\">Fri</tspan>",
+              "target": [
+                "tspan[x=\"394.7142857142857\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/transactions-overview-card.tsx:72:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"438\" viewBox=\"0 0 614 438\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 614 438\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"482.42857142857144\" dy=\"0.71em\">Sat</tspan>",
+              "target": [
+                "tspan[x=\"482.42857142857144\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/transactions-overview-card.tsx:72:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"438\" viewBox=\"0 0 614 438\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 614 438\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"570.1428571428571\" dy=\"0.71em\">Sun</tspan>",
+              "target": [
+                "tspan[x=\"570.1428571428571\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgOverlap",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it is overlapped by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan class=\"fill-muted-foreground text-xs\" x=\"213\" y=\"120\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:162:23\">Total</tspan>",
+              "target": [
+                ".fill-muted-foreground"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "12.0pt (16px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgOverlap",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it is overlapped by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan class=\"fill-foreground font-heading text-lg font-medium tabular-nums\" x=\"213\" y=\"142\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:165:23\">$234,896</tspan>",
+              "target": [
+                ".font-heading"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:102:11\" cx=\"50%\" cy=\"50%\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"426\" height=\"256\" viewBox=\"0 0 426 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[cx=\"50%\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<text x=\"210.08570097306625\" y=\"36.04616994827451\" fill=\"var(--foreground)\" font-size=\"12\" text-anchor=\"end\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:136:19\">",
+              "target": [
+                "text[y=\"36.04616994827451\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:102:11\" cx=\"50%\" cy=\"50%\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"426\" height=\"256\" viewBox=\"0 0 426 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[cx=\"50%\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"210.08570097306625\" dy=\"14\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:144:21\">52.2%</tspan>",
+              "target": [
+                "tspan[x=\"210.08570097306625\"][dy=\"14\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:102:11\" cx=\"50%\" cy=\"50%\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"426\" height=\"256\" viewBox=\"0 0 426 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[cx=\"50%\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<text x=\"144.45385221043324\" y=\"189.36306399790408\" fill=\"var(--foreground)\" font-size=\"12\" text-anchor=\"end\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:136:19\">",
+              "target": [
+                "text[y=\"189.36306399790408\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:102:11\" cx=\"50%\" cy=\"50%\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"426\" height=\"256\" viewBox=\"0 0 426 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[cx=\"50%\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"144.45385221043324\" dy=\"14\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:144:21\">20.6%</tspan>",
+              "target": [
+                "tspan[x=\"144.45385221043324\"][dy=\"14\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:102:11\" cx=\"50%\" cy=\"50%\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"426\" height=\"256\" viewBox=\"0 0 426 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[cx=\"50%\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<text x=\"240.81473552871887\" y=\"215.69458642052783\" fill=\"var(--foreground)\" font-size=\"12\" text-anchor=\"start\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:136:19\">",
+              "target": [
+                "text[y=\"215.69458642052783\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:102:11\" cx=\"50%\" cy=\"50%\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"426\" height=\"256\" viewBox=\"0 0 426 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[cx=\"50%\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"240.81473552871887\" dy=\"14\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:144:21\">15.7%</tspan>",
+              "target": [
+                "tspan[x=\"240.81473552871887\"][dy=\"14\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:102:11\" cx=\"50%\" cy=\"50%\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"426\" height=\"256\" viewBox=\"0 0 426 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[cx=\"50%\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<text x=\"298.04474155301875\" y=\"163.09119453908988\" fill=\"var(--foreground)\" font-size=\"12\" text-anchor=\"start\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:136:19\">",
+              "target": [
+                "text[y=\"163.09119453908988\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:102:11\" cx=\"50%\" cy=\"50%\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"426\" height=\"256\" viewBox=\"0 0 426 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[cx=\"50%\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"298.04474155301875\" dy=\"14\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:144:21\">11.5%</tspan>",
+              "target": [
+                "tspan[x=\"298.04474155301875\"][dy=\"14\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            }
+          ]
+        }
+      ],
+      "axeVersion": "4.14.0"
+    },
+    {
+      "theme": "light",
+      "viewport": "mobile",
+      "screenshot": "light-mobile.png",
+      "finalURL": "http://127.0.0.1:3078/dashboard/finance",
+      "passed": false,
+      "errors": [],
+      "warnings": [
+        "Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used."
+      ],
+      "violations": [
+        {
+          "id": "aria-required-children",
+          "impact": "critical",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag131",
+            "EN-301-549",
+            "EN-9.1.3.1",
+            "RGAAv4",
+            "RGAA-9.3.1"
+          ],
+          "description": "Ensure elements with an ARIA role that require child roles contain them",
+          "help": "Certain ARIA roles must contain particular children",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-required-children?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "aria-required-children",
+                  "data": {
+                    "messageKey": "unallowed",
+                    "values": "svg[aria-hidden]"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg viewBox=\"0 0 24 24\" aria-label=\"Claude\" aria-hidden=\"false\" focusable=\"false\" class=\"fill-foreground size-5\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/upcoming-transactions.tsx:46:19\">",
+                      "target": [
+                        "svg[aria-label=\"Claude\"]"
+                      ]
+                    },
+                    {
+                      "html": "<svg viewBox=\"0 0 24 24\" aria-label=\"Resend\" aria-hidden=\"false\" focusable=\"false\" class=\"fill-foreground size-5\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/upcoming-transactions.tsx:46:19\">",
+                      "target": [
+                        "svg[aria-label=\"Resend\"]"
+                      ]
+                    },
+                    {
+                      "html": "<svg viewBox=\"0 0 24 24\" aria-label=\"Linear\" aria-hidden=\"false\" focusable=\"false\" class=\"fill-foreground size-5\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/upcoming-transactions.tsx:46:19\">",
+                      "target": [
+                        "svg[aria-label=\"Linear\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "critical",
+                  "message": "Element has children which are not allowed: svg[aria-hidden]"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "critical",
+              "html": "<div role=\"list\" data-slot=\"item-group\" class=\"group/item-group flex w-full flex-col gap-4 has-data-[size=sm]:gap-2.5 has-data-[size=xs]:gap-2\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/upcoming-transactions.tsx:41:9\">",
+              "target": [
+                ".group\\/item-group"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element has children which are not allowed: svg[aria-hidden]"
+            }
+          ]
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "fgColor": "#72747b",
+                    "bgColor": "#f8f9fb",
+                    "contrastRatio": 4.43,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": null,
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<main data-slot=\"sidebar-inset\" class=\"relative flex w-full...\" data-tsd-source=\"/src/routes/(main)/d...\">",
+                      "target": [
+                        "main"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element has insufficient color contrast of 4.43 (foreground color: #72747b, background color: #f8f9fb, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_29j9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+              "target": [
+                "#base-ui-_R_29j9aq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.43 (foreground color: #72747b, background color: #f8f9fb, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "fgColor": "#72747b",
+                    "bgColor": "#f8f9fb",
+                    "contrastRatio": 4.43,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": null,
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<main data-slot=\"sidebar-inset\" class=\"relative flex w-full...\" data-tsd-source=\"/src/routes/(main)/d...\">",
+                      "target": [
+                        "main"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element has insufficient color contrast of 4.43 (foreground color: #72747b, background color: #f8f9fb, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_39j9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+              "target": [
+                "#base-ui-_R_39j9aq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.43 (foreground color: #72747b, background color: #f8f9fb, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/transactions-overview-card.tsx:72:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".min-h-64 > .recharts-responsive-container > div > .recharts-wrapper[height=\"256\"][width=\"326\"] > .recharts-surface[role=\"application\"][viewBox=\"0 0 326 256\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"flex items-center gap-1.5\" data-tsd-source=\"/src/components/blocks/charts.tsx:116:13\">",
+              "target": [
+                ".gap-x-4 > .gap-1\\.5.items-center.flex:nth-child(1)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/transactions-overview-card.tsx:72:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".min-h-64 > .recharts-responsive-container > div > .recharts-wrapper[height=\"256\"][width=\"326\"] > .recharts-surface[role=\"application\"][viewBox=\"0 0 326 256\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"flex items-center gap-1.5\" data-tsd-source=\"/src/components/blocks/charts.tsx:116:13\">",
+              "target": [
+                ".gap-x-4 > .gap-1\\.5.items-center.flex:nth-child(2)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/transactions-overview-card.tsx:72:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".min-h-64 > .recharts-responsive-container > div > .recharts-wrapper[height=\"256\"][width=\"326\"] > .recharts-surface[role=\"application\"][viewBox=\"0 0 326 256\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"23.285714285714285\" dy=\"0.71em\">Mon</tspan>",
+              "target": [
+                "tspan[x=\"23.285714285714285\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/transactions-overview-card.tsx:72:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".min-h-64 > .recharts-responsive-container > div > .recharts-wrapper[height=\"256\"][width=\"326\"] > .recharts-surface[role=\"application\"][viewBox=\"0 0 326 256\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"69.85714285714285\" dy=\"0.71em\">Tue</tspan>",
+              "target": [
+                "tspan[x=\"69.85714285714285\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/transactions-overview-card.tsx:72:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".min-h-64 > .recharts-responsive-container > div > .recharts-wrapper[height=\"256\"][width=\"326\"] > .recharts-surface[role=\"application\"][viewBox=\"0 0 326 256\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"116.42857142857143\" dy=\"0.71em\">Wed</tspan>",
+              "target": [
+                "tspan[x=\"116.42857142857143\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/transactions-overview-card.tsx:72:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".min-h-64 > .recharts-responsive-container > div > .recharts-wrapper[height=\"256\"][width=\"326\"] > .recharts-surface[role=\"application\"][viewBox=\"0 0 326 256\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"163\" dy=\"0.71em\">Thu</tspan>",
+              "target": [
+                "tspan[x=\"163\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/transactions-overview-card.tsx:72:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".min-h-64 > .recharts-responsive-container > div > .recharts-wrapper[height=\"256\"][width=\"326\"] > .recharts-surface[role=\"application\"][viewBox=\"0 0 326 256\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"209.57142857142858\" dy=\"0.71em\">Fri</tspan>",
+              "target": [
+                "tspan[x=\"209.57142857142858\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/transactions-overview-card.tsx:72:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".min-h-64 > .recharts-responsive-container > div > .recharts-wrapper[height=\"256\"][width=\"326\"] > .recharts-surface[role=\"application\"][viewBox=\"0 0 326 256\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"256.1428571428571\" dy=\"0.71em\">Sat</tspan>",
+              "target": [
+                "tspan[x=\"256.1428571428571\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/transactions-overview-card.tsx:72:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".min-h-64 > .recharts-responsive-container > div > .recharts-wrapper[height=\"256\"][width=\"326\"] > .recharts-surface[role=\"application\"][viewBox=\"0 0 326 256\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"302.7142857142857\" dy=\"0.71em\">Sun</tspan>",
+              "target": [
+                "tspan[x=\"302.7142857142857\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgOverlap",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it is overlapped by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan class=\"fill-muted-foreground text-xs\" x=\"163\" y=\"120\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:162:23\">Total</tspan>",
+              "target": [
+                ".fill-muted-foreground"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "12.0pt (16px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgOverlap",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it is overlapped by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan class=\"fill-foreground font-heading text-lg font-medium tabular-nums\" x=\"163\" y=\"142\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:165:23\">$234,896</tspan>",
+              "target": [
+                ".font-heading"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:102:11\" cx=\"50%\" cy=\"50%\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[cx=\"50%\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<text x=\"160.08570097306625\" y=\"36.04616994827451\" fill=\"var(--foreground)\" font-size=\"12\" text-anchor=\"end\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:136:19\">",
+              "target": [
+                "text[y=\"36.04616994827451\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:102:11\" cx=\"50%\" cy=\"50%\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[cx=\"50%\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"160.08570097306625\" dy=\"14\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:144:21\">52.2%</tspan>",
+              "target": [
+                "tspan[x=\"160.08570097306625\"][dy=\"14\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:102:11\" cx=\"50%\" cy=\"50%\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[cx=\"50%\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<text x=\"94.45385221043324\" y=\"189.36306399790408\" fill=\"var(--foreground)\" font-size=\"12\" text-anchor=\"end\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:136:19\">",
+              "target": [
+                "text[y=\"189.36306399790408\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:102:11\" cx=\"50%\" cy=\"50%\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[cx=\"50%\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"94.45385221043324\" dy=\"14\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:144:21\">20.6%</tspan>",
+              "target": [
+                "tspan[x=\"94.45385221043324\"][dy=\"14\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:102:11\" cx=\"50%\" cy=\"50%\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[cx=\"50%\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<text x=\"190.81473552871887\" y=\"215.69458642052783\" fill=\"var(--foreground)\" font-size=\"12\" text-anchor=\"start\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:136:19\">",
+              "target": [
+                "text[y=\"215.69458642052783\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:102:11\" cx=\"50%\" cy=\"50%\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[cx=\"50%\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"190.81473552871887\" dy=\"14\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:144:21\">15.7%</tspan>",
+              "target": [
+                "tspan[x=\"190.81473552871887\"][dy=\"14\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:102:11\" cx=\"50%\" cy=\"50%\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[cx=\"50%\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<text x=\"248.04474155301872\" y=\"163.09119453908988\" fill=\"var(--foreground)\" font-size=\"12\" text-anchor=\"start\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:136:19\">",
+              "target": [
+                "text[y=\"163.09119453908988\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:102:11\" cx=\"50%\" cy=\"50%\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[cx=\"50%\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"248.04474155301872\" dy=\"14\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:144:21\">11.5%</tspan>",
+              "target": [
+                "tspan[x=\"248.04474155301872\"][dy=\"14\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            }
+          ]
+        }
+      ],
+      "axeVersion": "4.14.0"
+    },
+    {
+      "theme": "dark",
+      "viewport": "desktop",
+      "screenshot": "dark-desktop.png",
+      "finalURL": "http://127.0.0.1:3078/dashboard/finance",
+      "passed": false,
+      "errors": [],
+      "warnings": [
+        "Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used."
+      ],
+      "violations": [
+        {
+          "id": "aria-required-children",
+          "impact": "critical",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag131",
+            "EN-301-549",
+            "EN-9.1.3.1",
+            "RGAAv4",
+            "RGAA-9.3.1"
+          ],
+          "description": "Ensure elements with an ARIA role that require child roles contain them",
+          "help": "Certain ARIA roles must contain particular children",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-required-children?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "aria-required-children",
+                  "data": {
+                    "messageKey": "unallowed",
+                    "values": "svg[aria-hidden]"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg viewBox=\"0 0 24 24\" aria-label=\"Claude\" aria-hidden=\"false\" focusable=\"false\" class=\"fill-foreground size-5\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/upcoming-transactions.tsx:46:19\">",
+                      "target": [
+                        "svg[aria-label=\"Claude\"]"
+                      ]
+                    },
+                    {
+                      "html": "<svg viewBox=\"0 0 24 24\" aria-label=\"Resend\" aria-hidden=\"false\" focusable=\"false\" class=\"fill-foreground size-5\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/upcoming-transactions.tsx:46:19\">",
+                      "target": [
+                        "svg[aria-label=\"Resend\"]"
+                      ]
+                    },
+                    {
+                      "html": "<svg viewBox=\"0 0 24 24\" aria-label=\"Linear\" aria-hidden=\"false\" focusable=\"false\" class=\"fill-foreground size-5\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/upcoming-transactions.tsx:46:19\">",
+                      "target": [
+                        "svg[aria-label=\"Linear\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "critical",
+                  "message": "Element has children which are not allowed: svg[aria-hidden]"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "critical",
+              "html": "<div role=\"list\" data-slot=\"item-group\" class=\"group/item-group flex w-full flex-col gap-4 has-data-[size=sm]:gap-2.5 has-data-[size=xs]:gap-2\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/upcoming-transactions.tsx:41:9\">",
+              "target": [
+                ".group\\/item-group"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element has children which are not allowed: svg[aria-hidden]"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "impact": "serious",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "description": "Ensure ARIA attributes are not prohibited for an element's role",
+          "help": "Elements must only use permitted ARIA attributes",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-prohibited-attr?application=playwright",
+          "nodes": [
+            {
+              "any": [],
+              "all": [],
+              "none": [
+                {
+                  "id": "aria-prohibited-attr",
+                  "data": {
+                    "role": null,
+                    "nodeName": "div",
+                    "messageKey": "noRoleSingular",
+                    "prohibited": [
+                      "aria-label"
+                    ]
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "aria-label attribute is not well supported on \"div\" elements with no valid role attribute."
+                }
+              ],
+              "impact": "serious",
+              "html": "<div data-slot=\"sidebar-group\" data-sidebar=\"group\" class=\"relative flex w-full min-w-0 flex-col p-0 pb-3\" aria-label=\"Projects navigation\" data-tsd-source=\"/src/routes/(main)/dashboard/-components/sidebar/project-navigation.tsx:127:5\">",
+              "target": [
+                "div[aria-label=\"Projects navigation\"]"
+              ],
+              "failureSummary": "Fix all of the following:\n  aria-label attribute is not well supported on \"div\" elements with no valid role attribute."
+            }
+          ]
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/transactions-overview-card.tsx:72:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"438\" viewBox=\"0 0 614 438\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 614 438\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"flex items-center gap-1.5\" data-tsd-source=\"/src/components/blocks/charts.tsx:116:13\">",
+              "target": [
+                ".gap-x-4 > .gap-1\\.5.items-center:nth-child(1)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/transactions-overview-card.tsx:72:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"438\" viewBox=\"0 0 614 438\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 614 438\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"flex items-center gap-1.5\" data-tsd-source=\"/src/components/blocks/charts.tsx:116:13\">",
+              "target": [
+                ".gap-x-4 > .gap-1\\.5.items-center:nth-child(2)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/transactions-overview-card.tsx:72:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"438\" viewBox=\"0 0 614 438\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 614 438\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"43.857142857142854\" dy=\"0.71em\">Mon</tspan>",
+              "target": [
+                "tspan[x=\"43.857142857142854\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/transactions-overview-card.tsx:72:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"438\" viewBox=\"0 0 614 438\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 614 438\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"131.57142857142856\" dy=\"0.71em\">Tue</tspan>",
+              "target": [
+                "tspan[x=\"131.57142857142856\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/transactions-overview-card.tsx:72:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"438\" viewBox=\"0 0 614 438\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 614 438\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"219.28571428571428\" dy=\"0.71em\">Wed</tspan>",
+              "target": [
+                "tspan[x=\"219.28571428571428\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/transactions-overview-card.tsx:72:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"438\" viewBox=\"0 0 614 438\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 614 438\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"307\" dy=\"0.71em\">Thu</tspan>",
+              "target": [
+                "tspan[x=\"307\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/transactions-overview-card.tsx:72:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"438\" viewBox=\"0 0 614 438\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 614 438\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"394.7142857142857\" dy=\"0.71em\">Fri</tspan>",
+              "target": [
+                "tspan[x=\"394.7142857142857\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/transactions-overview-card.tsx:72:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"438\" viewBox=\"0 0 614 438\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 614 438\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"482.42857142857144\" dy=\"0.71em\">Sat</tspan>",
+              "target": [
+                "tspan[x=\"482.42857142857144\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/transactions-overview-card.tsx:72:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"438\" viewBox=\"0 0 614 438\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 614 438\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"570.1428571428571\" dy=\"0.71em\">Sun</tspan>",
+              "target": [
+                "tspan[x=\"570.1428571428571\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgOverlap",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it is overlapped by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan class=\"fill-muted-foreground text-xs\" x=\"213\" y=\"120\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:162:23\">Total</tspan>",
+              "target": [
+                ".fill-muted-foreground"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "12.0pt (16px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgOverlap",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it is overlapped by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan class=\"fill-foreground font-heading text-lg font-medium tabular-nums\" x=\"213\" y=\"142\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:165:23\">$234,896</tspan>",
+              "target": [
+                ".font-heading"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:102:11\" cx=\"50%\" cy=\"50%\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"426\" height=\"256\" viewBox=\"0 0 426 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[cx=\"50%\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<text x=\"210.08570097306625\" y=\"36.04616994827451\" fill=\"var(--foreground)\" font-size=\"12\" text-anchor=\"end\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:136:19\">",
+              "target": [
+                "text[y=\"36.04616994827451\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:102:11\" cx=\"50%\" cy=\"50%\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"426\" height=\"256\" viewBox=\"0 0 426 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[cx=\"50%\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"210.08570097306625\" dy=\"14\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:144:21\">52.2%</tspan>",
+              "target": [
+                "tspan[x=\"210.08570097306625\"][dy=\"14\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:102:11\" cx=\"50%\" cy=\"50%\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"426\" height=\"256\" viewBox=\"0 0 426 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[cx=\"50%\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<text x=\"144.45385221043324\" y=\"189.36306399790408\" fill=\"var(--foreground)\" font-size=\"12\" text-anchor=\"end\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:136:19\">",
+              "target": [
+                "text[y=\"189.36306399790408\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:102:11\" cx=\"50%\" cy=\"50%\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"426\" height=\"256\" viewBox=\"0 0 426 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[cx=\"50%\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"144.45385221043324\" dy=\"14\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:144:21\">20.6%</tspan>",
+              "target": [
+                "tspan[x=\"144.45385221043324\"][dy=\"14\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:102:11\" cx=\"50%\" cy=\"50%\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"426\" height=\"256\" viewBox=\"0 0 426 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[cx=\"50%\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<text x=\"240.81473552871887\" y=\"215.69458642052783\" fill=\"var(--foreground)\" font-size=\"12\" text-anchor=\"start\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:136:19\">",
+              "target": [
+                "text[y=\"215.69458642052783\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:102:11\" cx=\"50%\" cy=\"50%\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"426\" height=\"256\" viewBox=\"0 0 426 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[cx=\"50%\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"240.81473552871887\" dy=\"14\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:144:21\">15.7%</tspan>",
+              "target": [
+                "tspan[x=\"240.81473552871887\"][dy=\"14\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:102:11\" cx=\"50%\" cy=\"50%\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"426\" height=\"256\" viewBox=\"0 0 426 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[cx=\"50%\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<text x=\"298.04474155301875\" y=\"163.09119453908988\" fill=\"var(--foreground)\" font-size=\"12\" text-anchor=\"start\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:136:19\">",
+              "target": [
+                "text[y=\"163.09119453908988\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:102:11\" cx=\"50%\" cy=\"50%\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"426\" height=\"256\" viewBox=\"0 0 426 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[cx=\"50%\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"298.04474155301875\" dy=\"14\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:144:21\">11.5%</tspan>",
+              "target": [
+                "tspan[x=\"298.04474155301875\"][dy=\"14\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            }
+          ]
+        }
+      ],
+      "axeVersion": "4.14.0"
+    },
+    {
+      "theme": "dark",
+      "viewport": "mobile",
+      "screenshot": "dark-mobile.png",
+      "finalURL": "http://127.0.0.1:3078/dashboard/finance",
+      "passed": false,
+      "errors": [],
+      "warnings": [
+        "Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used."
+      ],
+      "violations": [
+        {
+          "id": "aria-required-children",
+          "impact": "critical",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag131",
+            "EN-301-549",
+            "EN-9.1.3.1",
+            "RGAAv4",
+            "RGAA-9.3.1"
+          ],
+          "description": "Ensure elements with an ARIA role that require child roles contain them",
+          "help": "Certain ARIA roles must contain particular children",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-required-children?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "aria-required-children",
+                  "data": {
+                    "messageKey": "unallowed",
+                    "values": "svg[aria-hidden]"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg viewBox=\"0 0 24 24\" aria-label=\"Claude\" aria-hidden=\"false\" focusable=\"false\" class=\"fill-foreground size-5\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/upcoming-transactions.tsx:46:19\">",
+                      "target": [
+                        "svg[aria-label=\"Claude\"]"
+                      ]
+                    },
+                    {
+                      "html": "<svg viewBox=\"0 0 24 24\" aria-label=\"Resend\" aria-hidden=\"false\" focusable=\"false\" class=\"fill-foreground size-5\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/upcoming-transactions.tsx:46:19\">",
+                      "target": [
+                        "svg[aria-label=\"Resend\"]"
+                      ]
+                    },
+                    {
+                      "html": "<svg viewBox=\"0 0 24 24\" aria-label=\"Linear\" aria-hidden=\"false\" focusable=\"false\" class=\"fill-foreground size-5\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/upcoming-transactions.tsx:46:19\">",
+                      "target": [
+                        "svg[aria-label=\"Linear\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "critical",
+                  "message": "Element has children which are not allowed: svg[aria-hidden]"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "critical",
+              "html": "<div role=\"list\" data-slot=\"item-group\" class=\"group/item-group flex w-full flex-col gap-4 has-data-[size=sm]:gap-2.5 has-data-[size=xs]:gap-2\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/upcoming-transactions.tsx:41:9\">",
+              "target": [
+                ".group\\/item-group"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element has children which are not allowed: svg[aria-hidden]"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/transactions-overview-card.tsx:72:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".min-h-64 > .recharts-responsive-container > div > .recharts-wrapper[height=\"256\"][width=\"326\"] > .recharts-surface[role=\"application\"][viewBox=\"0 0 326 256\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"flex items-center gap-1.5\" data-tsd-source=\"/src/components/blocks/charts.tsx:116:13\">",
+              "target": [
+                ".gap-x-4 > .gap-1\\.5.items-center.flex:nth-child(1)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/transactions-overview-card.tsx:72:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".min-h-64 > .recharts-responsive-container > div > .recharts-wrapper[height=\"256\"][width=\"326\"] > .recharts-surface[role=\"application\"][viewBox=\"0 0 326 256\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"flex items-center gap-1.5\" data-tsd-source=\"/src/components/blocks/charts.tsx:116:13\">",
+              "target": [
+                ".gap-x-4 > .gap-1\\.5.items-center.flex:nth-child(2)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/transactions-overview-card.tsx:72:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".min-h-64 > .recharts-responsive-container > div > .recharts-wrapper[height=\"256\"][width=\"326\"] > .recharts-surface[role=\"application\"][viewBox=\"0 0 326 256\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"23.285714285714285\" dy=\"0.71em\">Mon</tspan>",
+              "target": [
+                "tspan[x=\"23.285714285714285\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/transactions-overview-card.tsx:72:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".min-h-64 > .recharts-responsive-container > div > .recharts-wrapper[height=\"256\"][width=\"326\"] > .recharts-surface[role=\"application\"][viewBox=\"0 0 326 256\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"69.85714285714285\" dy=\"0.71em\">Tue</tspan>",
+              "target": [
+                "tspan[x=\"69.85714285714285\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/transactions-overview-card.tsx:72:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".min-h-64 > .recharts-responsive-container > div > .recharts-wrapper[height=\"256\"][width=\"326\"] > .recharts-surface[role=\"application\"][viewBox=\"0 0 326 256\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"116.42857142857143\" dy=\"0.71em\">Wed</tspan>",
+              "target": [
+                "tspan[x=\"116.42857142857143\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/transactions-overview-card.tsx:72:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".min-h-64 > .recharts-responsive-container > div > .recharts-wrapper[height=\"256\"][width=\"326\"] > .recharts-surface[role=\"application\"][viewBox=\"0 0 326 256\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"163\" dy=\"0.71em\">Thu</tspan>",
+              "target": [
+                "tspan[x=\"163\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/transactions-overview-card.tsx:72:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".min-h-64 > .recharts-responsive-container > div > .recharts-wrapper[height=\"256\"][width=\"326\"] > .recharts-surface[role=\"application\"][viewBox=\"0 0 326 256\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"209.57142857142858\" dy=\"0.71em\">Fri</tspan>",
+              "target": [
+                "tspan[x=\"209.57142857142858\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/transactions-overview-card.tsx:72:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".min-h-64 > .recharts-responsive-container > div > .recharts-wrapper[height=\"256\"][width=\"326\"] > .recharts-surface[role=\"application\"][viewBox=\"0 0 326 256\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"256.1428571428571\" dy=\"0.71em\">Sat</tspan>",
+              "target": [
+                "tspan[x=\"256.1428571428571\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/transactions-overview-card.tsx:72:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".min-h-64 > .recharts-responsive-container > div > .recharts-wrapper[height=\"256\"][width=\"326\"] > .recharts-surface[role=\"application\"][viewBox=\"0 0 326 256\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"302.7142857142857\" dy=\"0.71em\">Sun</tspan>",
+              "target": [
+                "tspan[x=\"302.7142857142857\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgOverlap",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it is overlapped by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan class=\"fill-muted-foreground text-xs\" x=\"163\" y=\"120\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:162:23\">Total</tspan>",
+              "target": [
+                ".fill-muted-foreground"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "12.0pt (16px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgOverlap",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it is overlapped by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan class=\"fill-foreground font-heading text-lg font-medium tabular-nums\" x=\"163\" y=\"142\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:165:23\">$234,896</tspan>",
+              "target": [
+                ".font-heading"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:102:11\" cx=\"50%\" cy=\"50%\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[cx=\"50%\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<text x=\"160.08570097306625\" y=\"36.04616994827451\" fill=\"var(--foreground)\" font-size=\"12\" text-anchor=\"end\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:136:19\">",
+              "target": [
+                "text[y=\"36.04616994827451\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:102:11\" cx=\"50%\" cy=\"50%\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[cx=\"50%\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"160.08570097306625\" dy=\"14\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:144:21\">52.2%</tspan>",
+              "target": [
+                "tspan[x=\"160.08570097306625\"][dy=\"14\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:102:11\" cx=\"50%\" cy=\"50%\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[cx=\"50%\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<text x=\"94.45385221043324\" y=\"189.36306399790408\" fill=\"var(--foreground)\" font-size=\"12\" text-anchor=\"end\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:136:19\">",
+              "target": [
+                "text[y=\"189.36306399790408\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:102:11\" cx=\"50%\" cy=\"50%\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[cx=\"50%\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"94.45385221043324\" dy=\"14\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:144:21\">20.6%</tspan>",
+              "target": [
+                "tspan[x=\"94.45385221043324\"][dy=\"14\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:102:11\" cx=\"50%\" cy=\"50%\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[cx=\"50%\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<text x=\"190.81473552871887\" y=\"215.69458642052783\" fill=\"var(--foreground)\" font-size=\"12\" text-anchor=\"start\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:136:19\">",
+              "target": [
+                "text[y=\"215.69458642052783\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:102:11\" cx=\"50%\" cy=\"50%\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[cx=\"50%\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"190.81473552871887\" dy=\"14\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:144:21\">15.7%</tspan>",
+              "target": [
+                "tspan[x=\"190.81473552871887\"][dy=\"14\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:102:11\" cx=\"50%\" cy=\"50%\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[cx=\"50%\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<text x=\"248.04474155301872\" y=\"163.09119453908988\" fill=\"var(--foreground)\" font-size=\"12\" text-anchor=\"start\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:136:19\">",
+              "target": [
+                "text[y=\"163.09119453908988\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:102:11\" cx=\"50%\" cy=\"50%\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[cx=\"50%\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"248.04474155301872\" dy=\"14\" data-tsd-source=\"/src/routes/(main)/dashboard/finance/-components/balance-distribution-card.tsx:144:21\">11.5%</tspan>",
+              "target": [
+                "tspan[x=\"248.04474155301872\"][dy=\"14\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            }
+          ]
+        }
+      ],
+      "axeVersion": "4.14.0"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+
+> tenboards@0.8.1 dev
+> node --env-file-if-exists=.env node_modules/vite/bin/vite.js dev --port 3000 --port 3079 --strictPort
+
+.env not found. Continuing without it.
+Error: Failed to load url /Users/moeghashim/.t3/worktrees/tenboards/t3-9fc1c793/node_modules/@tanstack/react-start/dist/plugin/default-entry/server.ts (resolved id: /Users/moeghashim/.t3/worktrees/tenboards/t3-9fc1c793/node_modules/@tanstack/react-start/dist/plugin/default-entry/server.ts). Does the file exist?
+    at loadAndTransform (file:///Users/moeghashim/.t3/worktrees/tenboards/t3-9fc1c793/node_modules/vite/dist/node/chunks/node.js:20144:31) {
+  code: 'ERR_LOAD_URL',
+  runnerError: Error: RunnerError
+      at reviveInvokeError (file:///Users/moeghashim/.t3/worktrees/tenboards/t3-9fc1c793/node_modules/vite/dist/node/module-runner.js:557:64)
+      at Object.invoke (file:///Users/moeghashim/.t3/worktrees/tenboards/t3-9fc1c793/node_modules/vite/dist/node/module-runner.js:630:11)
+      at async ModuleRunner.getModuleInformation (file:///Users/moeghashim/.t3/worktrees/tenboards/t3-9fc1c793/node_modules/vite/dist/node/module-runner.js:1221:7)
+      at async ModuleRunner.import (file:///Users/moeghashim/.t3/worktrees/tenboards/t3-9fc1c793/node_modules/vite/dist/node/module-runner.js:1142:23)
+      at async file:///Users/moeghashim/.t3/worktrees/tenboards/t3-9fc1c793/node_modules/nitro/dist/runtime/internal/vite/dev-worker.mjs:114:22
+}
+Error: Failed to load url /Users/moeghashim/.t3/worktrees/tenboards/t3-9fc1c793/node_modules/nitro/dist/runtime/internal/vite/dev-entry.mjs (resolved id: /Users/moeghashim/.t3/worktrees/tenboards/t3-9fc1c793/node_modules/nitro/dist/runtime/internal/vite/dev-entry.mjs). Does the file exist?
+    at loadAndTransform (file:///Users/moeghashim/.t3/worktrees/tenboards/t3-9fc1c793/node_modules/vite/dist/node/chunks/node.js:20144:31) {
+  code: 'ERR_LOAD_URL',
+  runnerError: Error: RunnerError
+      at reviveInvokeError (file:///Users/moeghashim/.t3/worktrees/tenboards/t3-9fc1c793/node_modules/vite/dist/node/module-runner.js:557:64)
+      at Object.invoke (file:///Users/moeghashim/.t3/worktrees/tenboards/t3-9fc1c793/node_modules/vite/dist/node/module-runner.js:630:11)
+      at async ModuleRunner.getModuleInformation (file:///Users/moeghashim/.t3/worktrees/tenboards/t3-9fc1c793/node_modules/vite/dist/node/module-runner.js:1221:7)
+      at async ModuleRunner.import (file:///Users/moeghashim/.t3/worktrees/tenboards/t3-9fc1c793/node_modules/vite/dist/node/module-runner.js:1142:23)
+      at async file:///Users/moeghashim/.t3/worktrees/tenboards/t3-9fc1c793/node_modules/nitro/dist/runtime/internal/vite/dev-worker.mjs:114:22
+}
+
+  VITE v8.3.5  ready in 328 ms
+
+  ➜  Local:   http://localhost:3079/
+  ➜  Network: use --host to expose

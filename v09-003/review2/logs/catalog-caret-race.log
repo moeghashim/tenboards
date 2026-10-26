@@ -1,0 +1,113 @@
+
+> tenboards@0.8.1 verify:page
+> node --experimental-strip-types scripts/verify-page.ts --all --base-url http://127.0.0.1:3078
+
+Started http://127.0.0.1:3078
+PASS /dashboard/kit/ light/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/kit/ light/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/kit/ dark/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/kit/ dark/mobile: 0 axe violations, 0 runtime errors
+FAIL /dashboard/assistant light/desktop: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (3 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/assistant light/mobile: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (3 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/assistant dark/desktop: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (3 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/assistant dark/mobile: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (3 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+PASS /dashboard/home/ light/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/home/ light/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/home/ dark/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/home/ dark/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/ light/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/ light/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/ dark/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/ dark/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/$projectId/overview light/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/$projectId/overview light/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/$projectId/overview dark/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/$projectId/overview dark/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/$projectId/timeline light/desktop: 0 axe violations, 0 runtime errors
+FAIL /dashboard/projects/$projectId/timeline light/mobile: 1 axe violations, 0 runtime errors
+  axe scrollable-region-focusable: Scrollable region must have keyboard access (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/scrollable-region-focusable?application=playwright
+PASS /dashboard/projects/$projectId/timeline dark/desktop: 0 axe violations, 0 runtime errors
+FAIL /dashboard/projects/$projectId/timeline dark/mobile: 1 axe violations, 0 runtime errors
+  axe scrollable-region-focusable: Scrollable region must have keyboard access (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/scrollable-region-focusable?application=playwright
+PASS /dashboard/projects/$projectId/files light/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/$projectId/files light/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/$projectId/files dark/desktop: 0 axe violations, 0 runtime errors
+FAIL /dashboard/projects/$projectId/files dark/mobile: 0 axe violations, 1 runtime errors
+  console: A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <MatchImpl routeId="/(main)/da...">
+      <Suspense fallback={<Context>}>
+        <CatchBoundary getResetKey={function getResetKey} errorComponent={function Lazy} onCatch={function onCatch}>
+          <MatchInnerImpl match={{id:"/(main...", ...}}>
+            <Lazy>
+              <Page>
+                <Files data-tsd-source="/src/route...">
+                  <section className="space-y-5" aria-label="Project files" data-tsd-source="/src/route...">
+                    <h2>
+                    <div className="flex flex-..." data-tsd-source="/src/route...">
+                      <label htmlFor="project-fi..." className="flex min-w..." data-tsd-source="/src/route...">
+                        <Input id="project-fi..." placeholder="File name" aria-label="Search files" value="" ...>
+                          <Input type={undefined} data-slot="input" className="h-8 w-full..." id="project-fi..." ...>
+                            <FieldControl ref={null} type={undefined} data-slot="input" className="h-8 w-full..." ...>
+                              <input
+                                id="project-file-query"
+                                disabled={false}
+                                name={undefined}
+                                ref={function}
+                                aria-labelledby={undefined}
+                                autoFocus={false}
+                                value=""
+                                onChange={function}
+                                onFocus={function}
+                                onBlur={function}
+                                onKeyDown={function}
+                                type={undefined}
+                                data-slot="input"
+                                placeholder="File name"
+                                aria-label="Search files"
+                                maxLength={200}
+                                data-tsd-source="/src/routes/(main)/dashboard/projects/$projectId/files.tsx:54:11"
+                                className="h-8 w-full min-w-0 rounded-lg border border-input bg-transparent px-2.5 py-..."
+-                               style={{caret-color:"transparent"}}
+                              >
+                      ...
+                    ...
+
+PASS /dashboard/projects/$projectId/board light/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/$projectId/board light/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/$projectId/board dark/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/$projectId/board dark/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/$projectId/list light/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/$projectId/list light/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/$projectId/list dark/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/$projectId/list dark/mobile: 0 axe violations, 0 runtime errors
+FAIL /chat light/desktop: 1 axe violations, 0 runtime errors
+  axe color-contrast: Elements must meet minimum color contrast ratio thresholds (4 nodes) — https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright
+FAIL /chat light/mobile: 1 axe violations, 0 runtime errors
+  axe color-contrast: Elements must meet minimum color contrast ratio thresholds (3 nodes) — https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright
+PASS /chat dark/desktop: 0 axe violations, 0 runtime errors
+PASS /chat dark/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard light/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard light/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard dark/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard dark/mobile: 0 axe violations, 0 runtime errors
+PASS /mail light/desktop: 0 axe violations, 0 runtime errors
+PASS /mail light/mobile: 0 axe violations, 0 runtime errors
+PASS /mail dark/desktop: 0 axe violations, 0 runtime errors
+PASS /mail dark/mobile: 0 axe violations, 0 runtime errors
+PASS /unauthorized light/desktop: 0 axe violations, 0 runtime errors

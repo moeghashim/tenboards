@@ -1,0 +1,2827 @@
+{
+  "route": "/dashboard/products",
+  "path": "/dashboard/products",
+  "baseURL": "http://127.0.0.1:3078/",
+  "tags": [
+    "wcag2a",
+    "wcag2aa",
+    "wcag21a",
+    "wcag21aa",
+    "wcag22aa"
+  ],
+  "passed": false,
+  "results": [
+    {
+      "theme": "light",
+      "viewport": "desktop",
+      "screenshot": "light-desktop.png",
+      "finalURL": "http://127.0.0.1:3078/dashboard/products",
+      "passed": false,
+      "errors": [],
+      "warnings": [
+        "Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used."
+      ],
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "fgColor": "#007a55",
+                    "bgColor": "#d8ede9",
+                    "contrastRatio": 4.39,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": null,
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div data-slot=\"sidebar-menu-badge\" data-sidebar=\"menu-badge\" class=\"pointer-events-none ...\" data-tsd-source=\"/src/routes/(main)/d...\">",
+                      "target": [
+                        ".absolute"
+                      ]
+                    },
+                    {
+                      "html": "<a id=\"base-ui-_R_ujat5aq_\" data-base-ui-tooltip...=\"\" data-slot=\"sidebar-menu-button\" data-tsd-source=\"/src/components/ui/s...\" data-sidebar=\"menu-button\" data-size=\"default\" data-active=\"\" aria-current=\"page\" class=\"peer/menu-button gro...\" href=\"/dashboard/products\" data-status=\"active\">",
+                      "target": [
+                        "#base-ui-_R_ujat5aq_"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element has insufficient color contrast of 4.39 (foreground color: #007a55, background color: #d8ede9, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<div data-slot=\"sidebar-menu-badge\" data-sidebar=\"menu-badge\" class=\"pointer-events-none ...\" data-tsd-source=\"/src/routes/(main)/d...\">",
+              "target": [
+                ".absolute"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.39 (foreground color: #007a55, background color: #d8ede9, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "impact": "serious",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "description": "Ensure ARIA attributes are not prohibited for an element's role",
+          "help": "Elements must only use permitted ARIA attributes",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-prohibited-attr?application=playwright",
+          "nodes": [
+            {
+              "any": [],
+              "all": [],
+              "none": [
+                {
+                  "id": "aria-prohibited-attr",
+                  "data": {
+                    "role": null,
+                    "nodeName": "div",
+                    "messageKey": "noRoleSingular",
+                    "prohibited": [
+                      "aria-label"
+                    ]
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "aria-label attribute is not well supported on \"div\" elements with no valid role attribute."
+                }
+              ],
+              "impact": "serious",
+              "html": "<div data-slot=\"sidebar-group\" data-sidebar=\"group\" class=\"relative flex w-full min-w-0 flex-col p-0 pb-3\" aria-label=\"Projects navigation\" data-tsd-source=\"/src/routes/(main)/dashboard/-components/sidebar/project-navigation.tsx:127:5\">",
+              "target": [
+                "div[aria-label=\"Projects navigation\"]"
+              ],
+              "failureSummary": "Fix all of the following:\n  aria-label attribute is not well supported on \"div\" elements with no valid role attribute."
+            }
+          ]
+        }
+      ],
+      "axeVersion": "4.14.0"
+    },
+    {
+      "theme": "light",
+      "viewport": "mobile",
+      "screenshot": "light-mobile.png",
+      "finalURL": "http://127.0.0.1:3078/dashboard/products",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used."
+      ],
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"text-muted-foreground block max-w-72 font-mono text-xs break-all whitespace-normal\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:96:9\">CL-TEE-101</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(1) > .px-4:nth-child(3) > .max-w-72.font-mono.break-all"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<td data-slot=\"table-cell\" class=\"p-2 align-middle whi...\" style=\"width:150px;min-widt...\" data-tsd-source=\"/src/routes/(main)/d...\">",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(1) > .px-4:nth-child(4)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"tabular-nums\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:137:26\">$29.00</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(1) > .text-right.px-4:nth-child(7) > .tabular-nums"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"tabular-nums\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:142:26\">1,248</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(1) > .text-right.px-4:nth-child(8) > .tabular-nums"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"text-muted-foreground block max-w-72 font-mono text-xs break-all whitespace-normal\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:96:9\">CL-SHT-102</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(2) > .px-4:nth-child(3) > .max-w-72.font-mono.break-all"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<td data-slot=\"table-cell\" class=\"p-2 align-middle whi...\" style=\"width:150px;min-widt...\" data-tsd-source=\"/src/routes/(main)/d...\">",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(2) > .px-4:nth-child(4)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"tabular-nums\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:137:26\">$68.00</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(2) > .text-right.px-4:nth-child(7) > .tabular-nums"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"tabular-nums\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:142:26\">436</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(2) > .text-right.px-4:nth-child(8) > .tabular-nums"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"text-muted-foreground block max-w-72 font-mono text-xs break-all whitespace-normal\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:96:9\">CL-JNS-103</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(3) > .px-4:nth-child(3) > .max-w-72.font-mono.break-all"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<td data-slot=\"table-cell\" class=\"p-2 align-middle whi...\" style=\"width:150px;min-widt...\" data-tsd-source=\"/src/routes/(main)/d...\">",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(3) > .px-4:nth-child(4)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"tabular-nums\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:137:26\">$89.00</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(3) > .text-right.px-4:nth-child(7) > .tabular-nums"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"tabular-nums\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:142:26\">682</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(3) > .text-right.px-4:nth-child(8) > .tabular-nums"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"text-muted-foreground block max-w-72 font-mono text-xs break-all whitespace-normal\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:96:9\">CL-KNT-104</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(4) > .px-4:nth-child(3) > .max-w-72.font-mono.break-all"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<td data-slot=\"table-cell\" class=\"p-2 align-middle whi...\" style=\"width:150px;min-widt...\" data-tsd-source=\"/src/routes/(main)/d...\">",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(4) > .px-4:nth-child(4)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"tabular-nums\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:137:26\">$129.00</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(4) > .text-right.px-4:nth-child(7) > .tabular-nums"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "shortTextContent",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element content is too short to determine if it is actual text content"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"tabular-nums\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:142:26\">0</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(4) > .text-right.px-4:nth-child(8) > .tabular-nums"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"text-muted-foreground block max-w-72 font-mono text-xs break-all whitespace-normal\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:96:9\">FW-SNK-201</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(5) > .px-4:nth-child(3) > .max-w-72.font-mono.break-all"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<td data-slot=\"table-cell\" class=\"p-2 align-middle whi...\" style=\"width:150px;min-widt...\" data-tsd-source=\"/src/routes/(main)/d...\">",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(5) > .px-4:nth-child(4)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"tabular-nums\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:137:26\">$119.00</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(5) > .text-right.px-4:nth-child(7) > .tabular-nums"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"tabular-nums\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:142:26\">824</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(5) > .text-right.px-4:nth-child(8) > .tabular-nums"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"text-muted-foreground block max-w-72 font-mono text-xs break-all whitespace-normal\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:96:9\">FW-RUN-202</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(6) > .px-4:nth-child(3) > .max-w-72.font-mono.break-all"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<td data-slot=\"table-cell\" class=\"p-2 align-middle whi...\" style=\"width:150px;min-widt...\" data-tsd-source=\"/src/routes/(main)/d...\">",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(6) > .px-4:nth-child(4)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"tabular-nums\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:137:26\">$145.00</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(6) > .text-right.px-4:nth-child(7) > .tabular-nums"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"tabular-nums\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:142:26\">392</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(6) > .text-right.px-4:nth-child(8) > .tabular-nums"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"text-muted-foreground block max-w-72 font-mono text-xs break-all whitespace-normal\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:96:9\">FW-LOF-203</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(7) > .px-4:nth-child(3) > .max-w-72.font-mono.break-all"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<td data-slot=\"table-cell\" class=\"p-2 align-middle whi...\" style=\"width:150px;min-widt...\" data-tsd-source=\"/src/routes/(main)/d...\">",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(7) > .px-4:nth-child(4)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"tabular-nums\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:137:26\">$98.00</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(7) > .text-right.px-4:nth-child(7) > .tabular-nums"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"tabular-nums\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:142:26\">256</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(7) > .text-right.px-4:nth-child(8) > .tabular-nums"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"text-muted-foreground block max-w-72 font-mono text-xs break-all whitespace-normal\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:96:9\">FW-CNV-204</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(8) > .px-4:nth-child(3) > .max-w-72.font-mono.break-all"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<td data-slot=\"table-cell\" class=\"p-2 align-middle whi...\" style=\"width:150px;min-widt...\" data-tsd-source=\"/src/routes/(main)/d...\">",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(8) > .px-4:nth-child(4)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"tabular-nums\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:137:26\">$65.00</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(8) > .text-right.px-4:nth-child(7) > .tabular-nums"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"tabular-nums\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:142:26\">918</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(8) > .text-right.px-4:nth-child(8) > .tabular-nums"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"text-muted-foreground block max-w-72 font-mono text-xs break-all whitespace-normal\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:96:9\">AC-BAG-301</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(9) > .px-4:nth-child(3) > .max-w-72.font-mono.break-all"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<td data-slot=\"table-cell\" class=\"p-2 align-middle whi...\" style=\"width:150px;min-widt...\" data-tsd-source=\"/src/routes/(main)/d...\">",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(9) > .px-4:nth-child(4)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"tabular-nums\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:137:26\">$79.00</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(9) > .text-right.px-4:nth-child(7) > .tabular-nums"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"tabular-nums\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:142:26\">547</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(9) > .text-right.px-4:nth-child(8) > .tabular-nums"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"text-muted-foreground block max-w-72 font-mono text-xs break-all whitespace-normal\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:96:9\">AC-TOT-302</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(10) > .px-4:nth-child(3) > .max-w-72.font-mono.break-all"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<td data-slot=\"table-cell\" class=\"p-2 align-middle whi...\" style=\"width:150px;min-widt...\" data-tsd-source=\"/src/routes/(main)/d...\">",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(10) > .px-4:nth-child(4)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"tabular-nums\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:137:26\">$24.00</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(10) > .text-right.px-4:nth-child(7) > .tabular-nums"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"tabular-nums\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:142:26\">1,632</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(10) > .text-right.px-4:nth-child(8) > .tabular-nums"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            }
+          ]
+        }
+      ],
+      "axeVersion": "4.14.0"
+    },
+    {
+      "theme": "dark",
+      "viewport": "desktop",
+      "screenshot": "dark-desktop.png",
+      "finalURL": "http://127.0.0.1:3078/dashboard/products",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used."
+      ],
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "impact": "serious",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "description": "Ensure ARIA attributes are not prohibited for an element's role",
+          "help": "Elements must only use permitted ARIA attributes",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-prohibited-attr?application=playwright",
+          "nodes": [
+            {
+              "any": [],
+              "all": [],
+              "none": [
+                {
+                  "id": "aria-prohibited-attr",
+                  "data": {
+                    "role": null,
+                    "nodeName": "div",
+                    "messageKey": "noRoleSingular",
+                    "prohibited": [
+                      "aria-label"
+                    ]
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "aria-label attribute is not well supported on \"div\" elements with no valid role attribute."
+                }
+              ],
+              "impact": "serious",
+              "html": "<div data-slot=\"sidebar-group\" data-sidebar=\"group\" class=\"relative flex w-full min-w-0 flex-col p-0 pb-3\" aria-label=\"Projects navigation\" data-tsd-source=\"/src/routes/(main)/dashboard/-components/sidebar/project-navigation.tsx:127:5\">",
+              "target": [
+                "div[aria-label=\"Projects navigation\"]"
+              ],
+              "failureSummary": "Fix all of the following:\n  aria-label attribute is not well supported on \"div\" elements with no valid role attribute."
+            }
+          ]
+        }
+      ],
+      "axeVersion": "4.14.0"
+    },
+    {
+      "theme": "dark",
+      "viewport": "mobile",
+      "screenshot": "dark-mobile.png",
+      "finalURL": "http://127.0.0.1:3078/dashboard/products",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used."
+      ],
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"text-muted-foreground block max-w-72 font-mono text-xs break-all whitespace-normal\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:96:9\">CL-TEE-101</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(1) > .px-4:nth-child(3) > .max-w-72.font-mono.break-all"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<td data-slot=\"table-cell\" class=\"p-2 align-middle whi...\" style=\"width:150px;min-widt...\" data-tsd-source=\"/src/routes/(main)/d...\">",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(1) > .px-4:nth-child(4)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"tabular-nums\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:137:26\">$29.00</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(1) > .text-right.px-4:nth-child(7) > .tabular-nums"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"tabular-nums\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:142:26\">1,248</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(1) > .text-right.px-4:nth-child(8) > .tabular-nums"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"text-muted-foreground block max-w-72 font-mono text-xs break-all whitespace-normal\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:96:9\">CL-SHT-102</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(2) > .px-4:nth-child(3) > .max-w-72.font-mono.break-all"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<td data-slot=\"table-cell\" class=\"p-2 align-middle whi...\" style=\"width:150px;min-widt...\" data-tsd-source=\"/src/routes/(main)/d...\">",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(2) > .px-4:nth-child(4)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"tabular-nums\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:137:26\">$68.00</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(2) > .text-right.px-4:nth-child(7) > .tabular-nums"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"tabular-nums\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:142:26\">436</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(2) > .text-right.px-4:nth-child(8) > .tabular-nums"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"text-muted-foreground block max-w-72 font-mono text-xs break-all whitespace-normal\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:96:9\">CL-JNS-103</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(3) > .px-4:nth-child(3) > .max-w-72.font-mono.break-all"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<td data-slot=\"table-cell\" class=\"p-2 align-middle whi...\" style=\"width:150px;min-widt...\" data-tsd-source=\"/src/routes/(main)/d...\">",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(3) > .px-4:nth-child(4)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"tabular-nums\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:137:26\">$89.00</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(3) > .text-right.px-4:nth-child(7) > .tabular-nums"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"tabular-nums\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:142:26\">682</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(3) > .text-right.px-4:nth-child(8) > .tabular-nums"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"text-muted-foreground block max-w-72 font-mono text-xs break-all whitespace-normal\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:96:9\">CL-KNT-104</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(4) > .px-4:nth-child(3) > .max-w-72.font-mono.break-all"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<td data-slot=\"table-cell\" class=\"p-2 align-middle whi...\" style=\"width:150px;min-widt...\" data-tsd-source=\"/src/routes/(main)/d...\">",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(4) > .px-4:nth-child(4)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"tabular-nums\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:137:26\">$129.00</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(4) > .text-right.px-4:nth-child(7) > .tabular-nums"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "shortTextContent",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element content is too short to determine if it is actual text content"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"tabular-nums\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:142:26\">0</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(4) > .text-right.px-4:nth-child(8) > .tabular-nums"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"text-muted-foreground block max-w-72 font-mono text-xs break-all whitespace-normal\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:96:9\">FW-SNK-201</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(5) > .px-4:nth-child(3) > .max-w-72.font-mono.break-all"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<td data-slot=\"table-cell\" class=\"p-2 align-middle whi...\" style=\"width:150px;min-widt...\" data-tsd-source=\"/src/routes/(main)/d...\">",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(5) > .px-4:nth-child(4)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"tabular-nums\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:137:26\">$119.00</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(5) > .text-right.px-4:nth-child(7) > .tabular-nums"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"tabular-nums\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:142:26\">824</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(5) > .text-right.px-4:nth-child(8) > .tabular-nums"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"text-muted-foreground block max-w-72 font-mono text-xs break-all whitespace-normal\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:96:9\">FW-RUN-202</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(6) > .px-4:nth-child(3) > .max-w-72.font-mono.break-all"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<td data-slot=\"table-cell\" class=\"p-2 align-middle whi...\" style=\"width:150px;min-widt...\" data-tsd-source=\"/src/routes/(main)/d...\">",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(6) > .px-4:nth-child(4)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"tabular-nums\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:137:26\">$145.00</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(6) > .text-right.px-4:nth-child(7) > .tabular-nums"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"tabular-nums\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:142:26\">392</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(6) > .text-right.px-4:nth-child(8) > .tabular-nums"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"text-muted-foreground block max-w-72 font-mono text-xs break-all whitespace-normal\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:96:9\">FW-LOF-203</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(7) > .px-4:nth-child(3) > .max-w-72.font-mono.break-all"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<td data-slot=\"table-cell\" class=\"p-2 align-middle whi...\" style=\"width:150px;min-widt...\" data-tsd-source=\"/src/routes/(main)/d...\">",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(7) > .px-4:nth-child(4)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"tabular-nums\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:137:26\">$98.00</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(7) > .text-right.px-4:nth-child(7) > .tabular-nums"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"tabular-nums\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:142:26\">256</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(7) > .text-right.px-4:nth-child(8) > .tabular-nums"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"text-muted-foreground block max-w-72 font-mono text-xs break-all whitespace-normal\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:96:9\">FW-CNV-204</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(8) > .px-4:nth-child(3) > .max-w-72.font-mono.break-all"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<td data-slot=\"table-cell\" class=\"p-2 align-middle whi...\" style=\"width:150px;min-widt...\" data-tsd-source=\"/src/routes/(main)/d...\">",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(8) > .px-4:nth-child(4)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"tabular-nums\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:137:26\">$65.00</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(8) > .text-right.px-4:nth-child(7) > .tabular-nums"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"tabular-nums\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:142:26\">918</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(8) > .text-right.px-4:nth-child(8) > .tabular-nums"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"text-muted-foreground block max-w-72 font-mono text-xs break-all whitespace-normal\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:96:9\">AC-BAG-301</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(9) > .px-4:nth-child(3) > .max-w-72.font-mono.break-all"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<td data-slot=\"table-cell\" class=\"p-2 align-middle whi...\" style=\"width:150px;min-widt...\" data-tsd-source=\"/src/routes/(main)/d...\">",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(9) > .px-4:nth-child(4)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"tabular-nums\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:137:26\">$79.00</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(9) > .text-right.px-4:nth-child(7) > .tabular-nums"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"tabular-nums\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:142:26\">547</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(9) > .text-right.px-4:nth-child(8) > .tabular-nums"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"text-muted-foreground block max-w-72 font-mono text-xs break-all whitespace-normal\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:96:9\">AC-TOT-302</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(10) > .px-4:nth-child(3) > .max-w-72.font-mono.break-all"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<td data-slot=\"table-cell\" class=\"p-2 align-middle whi...\" style=\"width:150px;min-widt...\" data-tsd-source=\"/src/routes/(main)/d...\">",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(10) > .px-4:nth-child(4)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"tabular-nums\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:137:26\">$24.00</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(10) > .text-right.px-4:nth-child(7) > .tabular-nums"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscured",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div class=\"bg-card flex min-h-0 min-w-0 flex-1 flex-col *:data-[slot=table-container]:min-h-0 *:data-[slot=table-container]:flex-1 *:data-[slot=table-container]:overflow-auto\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-table.tsx:49:5\">",
+                      "target": [
+                        ".\\*\\:data-\\[slot\\=table-container\\]\\:min-h-0"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it's partially obscured by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"tabular-nums\" data-tsd-source=\"/src/routes/(main)/dashboard/products/-components/products-columns.tsx:142:26\">1,632</span>",
+              "target": [
+                ".hover\\:bg-muted\\/30.last\\:\\*\\:border-b-0:nth-child(10) > .text-right.px-4:nth-child(8) > .tabular-nums"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+            }
+          ]
+        }
+      ],
+      "axeVersion": "4.14.0"
+    }
+  ]
+}

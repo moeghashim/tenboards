@@ -1,0 +1,11 @@
+{
+  "baseURL": "http://127.0.0.1:3079/",
+  "passed": true,
+  "reports": [
+    {
+      "route": "/dashboard/guardrail-probe",
+      "passed": true,
+      "report": "dashboard%2Fguardrail-probe/report.json"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+
+> tenboards@0.8.1 typecheck
+> tsc --noEmit
+
+screenshots/review2-throwaway/guardrail-probe.tsx(4,38): error TS2345: Argument of type '"/(main)/dashboard/guardrail-probe"' is not assignable to parameter of type 'keyof FileRoutesByPath | undefined'.

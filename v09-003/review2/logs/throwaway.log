@@ -1,0 +1,9 @@
+
+> tenboards@0.8.1 verify:page
+> node --experimental-strip-types scripts/verify-page.ts /dashboard/guardrail-probe --base-url http://127.0.0.1:3079
+
+Started http://127.0.0.1:3079
+PASS /dashboard/guardrail-probe light/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/guardrail-probe light/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/guardrail-probe dark/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/guardrail-probe dark/mobile: 0 axe violations, 0 runtime errors

@@ -1,0 +1,106 @@
+[
+  {
+    "file": "_dashboard_default-dark-desktop.png",
+    "before": [
+      1440,
+      1393
+    ],
+    "after": [
+      1440,
+      1393
+    ],
+    "identical": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_default-dark-mobile.png",
+    "before": [
+      390,
+      1971
+    ],
+    "after": [
+      390,
+      1971
+    ],
+    "identical": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_default-light-desktop.png",
+    "before": [
+      1440,
+      1393
+    ],
+    "after": [
+      1440,
+      1393
+    ],
+    "identical": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_default-light-mobile.png",
+    "before": [
+      390,
+      1971
+    ],
+    "after": [
+      390,
+      1971
+    ],
+    "identical": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_kit_-dark-desktop.png",
+    "before": [
+      1440,
+      1739
+    ],
+    "after": [
+      1440,
+      1739
+    ],
+    "identical": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_kit_-dark-mobile.png",
+    "before": [
+      390,
+      2553
+    ],
+    "after": [
+      390,
+      2553
+    ],
+    "identical": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_kit_-light-desktop.png",
+    "before": [
+      1440,
+      1739
+    ],
+    "after": [
+      1440,
+      1739
+    ],
+    "identical": true,
+    "difference": null
+  },
+  {
+    "file": "_dashboard_kit_-light-mobile.png",
+    "before": [
+      390,
+      2553
+    ],
+    "after": [
+      390,
+      2553
+    ],
+    "identical": true,
+    "difference": null
+  }
+]

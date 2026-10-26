@@ -1,0 +1,4 @@
+PASS light/desktop: named selects, keyboard Escape/focus return, changed selected value, switched account initials, search dialog; no console/page errors
+PASS light/mobile: named selects, keyboard Escape/focus return, changed selected value, switched account initials, search dialog; no console/page errors
+PASS dark/desktop: named selects, keyboard Escape/focus return, changed selected value, switched account initials, search dialog; no console/page errors
+PASS dark/mobile: named selects, keyboard Escape/focus return, changed selected value, switched account initials, search dialog; no console/page errors

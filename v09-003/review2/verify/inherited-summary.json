@@ -1,0 +1,1558 @@
+{
+  "routes": 37,
+  "passingRoutes": 22,
+  "cases": 148,
+  "passingCases": 105,
+  "failingCases": 43,
+  "runtimeErrors": 0,
+  "rules": {
+    "label-content-name-mismatch": {
+      "cases": 20,
+      "nodes": 114,
+      "routes": [
+        "/dashboard/assistant",
+        "/dashboard/academy",
+        "/dashboard/invoice",
+        "/dashboard/logistics",
+        "/dashboard/patient-monitoring"
+      ],
+      "targets": [
+        [
+          "button[aria-label=\"Summarize a sample launch\"]"
+        ],
+        [
+          "button[aria-label=\"Compare sample plans\"]"
+        ],
+        [
+          "button[aria-label=\"Chart a sample week\"]"
+        ],
+        [
+          "#base-ui-_R_7n6j39aq_"
+        ],
+        [
+          "#base-ui-_R_7r6j39aq_"
+        ],
+        [
+          "#base-ui-_R_7v6j39aq_"
+        ],
+        [
+          "#base-ui-_R_3vaj39aq_"
+        ],
+        [
+          "#base-ui-_R_7nej39aq_"
+        ],
+        [
+          "#base-ui-_R_7rej39aq_"
+        ],
+        [
+          "#base-ui-_R_7vej39aq_"
+        ],
+        [
+          "#base-ui-_R_7nij39aq_"
+        ],
+        [
+          "#base-ui-_R_7rij39aq_"
+        ],
+        [
+          "#issued-date"
+        ],
+        [
+          "#payment-due-date"
+        ],
+        [
+          ".border-primary"
+        ],
+        [
+          "button[aria-label=\"Select shipment SDA-02-2402\"]"
+        ],
+        [
+          "button[aria-label=\"Select shipment SDA-03-2403\"]"
+        ],
+        [
+          "button[aria-label=\"Select shipment SDA-04-2404\"]"
+        ],
+        [
+          "button[aria-label=\"Select shipment SDA-05-2405\"]"
+        ],
+        [
+          "button[aria-label=\"Open C01, Ethan Brooks\"]"
+        ],
+        [
+          "button[aria-label=\"Open C02, Olivia Rhye\"]"
+        ],
+        [
+          "button[aria-label=\"Open C03, Nico Arendt\"]"
+        ],
+        [
+          ".ring-primary"
+        ],
+        [
+          "button[aria-label=\"Open C05, Candice Wu\"]"
+        ],
+        [
+          "button[aria-label=\"Open C06, Noah Pierre\"]"
+        ],
+        [
+          "button[aria-label=\"Open C07, Lana Steiner\"]"
+        ],
+        [
+          "button[aria-label=\"Open C08, Steven Tey\"]"
+        ],
+        [
+          "button[aria-label=\"Open C09, Mia Romberg\"]"
+        ],
+        [
+          "button[aria-label=\"Open C10, Alec Whitten\"]"
+        ]
+      ]
+    },
+    "scrollable-region-focusable": {
+      "cases": 4,
+      "nodes": 4,
+      "routes": [
+        "/dashboard/projects/$projectId/timeline",
+        "/dashboard/analytics"
+      ],
+      "targets": [
+        [
+          ".overflow-x-auto"
+        ]
+      ]
+    },
+    "color-contrast": {
+      "cases": 21,
+      "nodes": 65,
+      "routes": [
+        "/chat",
+        "/dashboard/analytics",
+        "/dashboard/chat",
+        "/dashboard/crm",
+        "/dashboard/ecommerce",
+        "/dashboard/finance",
+        "/dashboard/invoice",
+        "/dashboard/logistics",
+        "/dashboard/patient-monitoring",
+        "/dashboard/products",
+        "/dashboard/profile",
+        "/dashboard/roles"
+      ],
+      "targets": [
+        [
+          "#base-ui-_R_jb9aq_"
+        ],
+        [
+          "#base-ui-_R_rb9aq_"
+        ],
+        [
+          "#base-ui-_R_13b9aq_"
+        ],
+        [
+          "#base-ui-_R_17j9aq_"
+        ],
+        [
+          "#base-ui-_R_29j9aq_"
+        ],
+        [
+          "#base-ui-_R_39j9aq_"
+        ],
+        [
+          "#base-ui-_R_49j9aq_"
+        ],
+        [
+          "#base-ui-_R_59j9aq_"
+        ],
+        [
+          "#base-ui-_R_hlqj9aq_"
+        ],
+        [
+          "#base-ui-_R_plqj9aq_"
+        ],
+        [
+          "iframe",
+          "#base-ui-_R_jb9aq_"
+        ],
+        [
+          "iframe",
+          "#base-ui-_R_rb9aq_"
+        ],
+        [
+          "iframe",
+          "#base-ui-_R_13b9aq_"
+        ],
+        [
+          "iframe",
+          "#base-ui-_R_17j9aq_"
+        ],
+        [
+          ".pl-1\\.5\\! > .sm\\:block.hidden"
+        ],
+        [
+          "#base-ui-_R_45j9aq_"
+        ],
+        [
+          "#base-ui-_R_65j9aq_"
+        ],
+        [
+          "#base-ui-_R_4pb9aq_"
+        ],
+        [
+          "#base-ui-_R_6pb9aq_"
+        ],
+        [
+          "#base-ui-_R_8pb9aq_"
+        ],
+        [
+          "#base-ui-_R_8qb9aq_"
+        ],
+        [
+          "#base-ui-_R_cqb9aq_"
+        ],
+        [
+          "#base-ui-_R_gqb9aq_"
+        ],
+        [
+          "#base-ui-_R_kqb9aq_"
+        ],
+        [
+          "#base-ui-_R_jcr9aq_"
+        ],
+        [
+          "#base-ui-_R_13cr9aq_"
+        ],
+        [
+          "#base-ui-_R_23cr9aq_"
+        ],
+        [
+          ".absolute"
+        ],
+        [
+          "#base-ui-_R_j39aq_"
+        ],
+        [
+          "#base-ui-_R_r39aq_"
+        ],
+        [
+          "#base-ui-_R_1339aq_"
+        ],
+        [
+          "#base-ui-_R_1b39aq_"
+        ],
+        [
+          "#base-ui-_R_1j39aq_"
+        ],
+        [
+          "#base-ui-_R_hj9aq_"
+        ],
+        [
+          "#base-ui-_R_pj9aq_"
+        ]
+      ]
+    },
+    "aria-progressbar-name": {
+      "cases": 4,
+      "nodes": 4,
+      "routes": [
+        "/dashboard/crm"
+      ],
+      "targets": [
+        [
+          ".\\*\\:data-\\[slot\\=\\'progress-indicator\\'\\]\\:bg-chart-2"
+        ]
+      ]
+    },
+    "aria-required-children": {
+      "cases": 4,
+      "nodes": 4,
+      "routes": [
+        "/dashboard/finance"
+      ],
+      "targets": [
+        [
+          ".group\\/item-group"
+        ]
+      ]
+    }
+  },
+  "caseResults": [
+    {
+      "route": "/dashboard/kit/",
+      "theme": "light",
+      "viewport": "desktop",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/kit/",
+      "theme": "light",
+      "viewport": "mobile",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/kit/",
+      "theme": "dark",
+      "viewport": "desktop",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/kit/",
+      "theme": "dark",
+      "viewport": "mobile",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/assistant",
+      "theme": "light",
+      "viewport": "desktop",
+      "passed": false,
+      "errors": [],
+      "rules": [
+        "label-content-name-mismatch"
+      ]
+    },
+    {
+      "route": "/dashboard/assistant",
+      "theme": "light",
+      "viewport": "mobile",
+      "passed": false,
+      "errors": [],
+      "rules": [
+        "label-content-name-mismatch"
+      ]
+    },
+    {
+      "route": "/dashboard/assistant",
+      "theme": "dark",
+      "viewport": "desktop",
+      "passed": false,
+      "errors": [],
+      "rules": [
+        "label-content-name-mismatch"
+      ]
+    },
+    {
+      "route": "/dashboard/assistant",
+      "theme": "dark",
+      "viewport": "mobile",
+      "passed": false,
+      "errors": [],
+      "rules": [
+        "label-content-name-mismatch"
+      ]
+    },
+    {
+      "route": "/dashboard/home/",
+      "theme": "light",
+      "viewport": "desktop",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/home/",
+      "theme": "light",
+      "viewport": "mobile",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/home/",
+      "theme": "dark",
+      "viewport": "desktop",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/home/",
+      "theme": "dark",
+      "viewport": "mobile",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/projects/",
+      "theme": "light",
+      "viewport": "desktop",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/projects/",
+      "theme": "light",
+      "viewport": "mobile",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/projects/",
+      "theme": "dark",
+      "viewport": "desktop",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/projects/",
+      "theme": "dark",
+      "viewport": "mobile",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/projects/$projectId/overview",
+      "theme": "light",
+      "viewport": "desktop",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/projects/$projectId/overview",
+      "theme": "light",
+      "viewport": "mobile",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/projects/$projectId/overview",
+      "theme": "dark",
+      "viewport": "desktop",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/projects/$projectId/overview",
+      "theme": "dark",
+      "viewport": "mobile",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/projects/$projectId/timeline",
+      "theme": "light",
+      "viewport": "desktop",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/projects/$projectId/timeline",
+      "theme": "light",
+      "viewport": "mobile",
+      "passed": false,
+      "errors": [],
+      "rules": [
+        "scrollable-region-focusable"
+      ]
+    },
+    {
+      "route": "/dashboard/projects/$projectId/timeline",
+      "theme": "dark",
+      "viewport": "desktop",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/projects/$projectId/timeline",
+      "theme": "dark",
+      "viewport": "mobile",
+      "passed": false,
+      "errors": [],
+      "rules": [
+        "scrollable-region-focusable"
+      ]
+    },
+    {
+      "route": "/dashboard/projects/$projectId/files",
+      "theme": "light",
+      "viewport": "desktop",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/projects/$projectId/files",
+      "theme": "light",
+      "viewport": "mobile",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/projects/$projectId/files",
+      "theme": "dark",
+      "viewport": "desktop",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/projects/$projectId/files",
+      "theme": "dark",
+      "viewport": "mobile",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/projects/$projectId/board",
+      "theme": "light",
+      "viewport": "desktop",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/projects/$projectId/board",
+      "theme": "light",
+      "viewport": "mobile",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/projects/$projectId/board",
+      "theme": "dark",
+      "viewport": "desktop",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/projects/$projectId/board",
+      "theme": "dark",
+      "viewport": "mobile",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/projects/$projectId/list",
+      "theme": "light",
+      "viewport": "desktop",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/projects/$projectId/list",
+      "theme": "light",
+      "viewport": "mobile",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/projects/$projectId/list",
+      "theme": "dark",
+      "viewport": "desktop",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/projects/$projectId/list",
+      "theme": "dark",
+      "viewport": "mobile",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/chat",
+      "theme": "light",
+      "viewport": "desktop",
+      "passed": false,
+      "errors": [],
+      "rules": [
+        "color-contrast"
+      ]
+    },
+    {
+      "route": "/chat",
+      "theme": "light",
+      "viewport": "mobile",
+      "passed": false,
+      "errors": [],
+      "rules": [
+        "color-contrast"
+      ]
+    },
+    {
+      "route": "/chat",
+      "theme": "dark",
+      "viewport": "desktop",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/chat",
+      "theme": "dark",
+      "viewport": "mobile",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard",
+      "theme": "light",
+      "viewport": "desktop",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard",
+      "theme": "light",
+      "viewport": "mobile",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard",
+      "theme": "dark",
+      "viewport": "desktop",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard",
+      "theme": "dark",
+      "viewport": "mobile",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/mail",
+      "theme": "light",
+      "viewport": "desktop",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/mail",
+      "theme": "light",
+      "viewport": "mobile",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/mail",
+      "theme": "dark",
+      "viewport": "desktop",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/mail",
+      "theme": "dark",
+      "viewport": "mobile",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/unauthorized",
+      "theme": "light",
+      "viewport": "desktop",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/unauthorized",
+      "theme": "light",
+      "viewport": "mobile",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/unauthorized",
+      "theme": "dark",
+      "viewport": "desktop",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/unauthorized",
+      "theme": "dark",
+      "viewport": "mobile",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/",
+      "theme": "light",
+      "viewport": "desktop",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/",
+      "theme": "light",
+      "viewport": "mobile",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/",
+      "theme": "dark",
+      "viewport": "desktop",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/",
+      "theme": "dark",
+      "viewport": "mobile",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/auth/v2",
+      "theme": "light",
+      "viewport": "desktop",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/auth/v2",
+      "theme": "light",
+      "viewport": "mobile",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/auth/v2",
+      "theme": "dark",
+      "viewport": "desktop",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/auth/v2",
+      "theme": "dark",
+      "viewport": "mobile",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/academy",
+      "theme": "light",
+      "viewport": "desktop",
+      "passed": false,
+      "errors": [],
+      "rules": [
+        "label-content-name-mismatch"
+      ]
+    },
+    {
+      "route": "/dashboard/academy",
+      "theme": "light",
+      "viewport": "mobile",
+      "passed": false,
+      "errors": [],
+      "rules": [
+        "label-content-name-mismatch"
+      ]
+    },
+    {
+      "route": "/dashboard/academy",
+      "theme": "dark",
+      "viewport": "desktop",
+      "passed": false,
+      "errors": [],
+      "rules": [
+        "label-content-name-mismatch"
+      ]
+    },
+    {
+      "route": "/dashboard/academy",
+      "theme": "dark",
+      "viewport": "mobile",
+      "passed": false,
+      "errors": [],
+      "rules": [
+        "label-content-name-mismatch"
+      ]
+    },
+    {
+      "route": "/dashboard/analytics",
+      "theme": "light",
+      "viewport": "desktop",
+      "passed": false,
+      "errors": [],
+      "rules": [
+        "color-contrast"
+      ]
+    },
+    {
+      "route": "/dashboard/analytics",
+      "theme": "light",
+      "viewport": "mobile",
+      "passed": false,
+      "errors": [],
+      "rules": [
+        "color-contrast",
+        "scrollable-region-focusable"
+      ]
+    },
+    {
+      "route": "/dashboard/analytics",
+      "theme": "dark",
+      "viewport": "desktop",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/analytics",
+      "theme": "dark",
+      "viewport": "mobile",
+      "passed": false,
+      "errors": [],
+      "rules": [
+        "scrollable-region-focusable"
+      ]
+    },
+    {
+      "route": "/dashboard/chat",
+      "theme": "light",
+      "viewport": "desktop",
+      "passed": false,
+      "errors": [],
+      "rules": [
+        "color-contrast"
+      ]
+    },
+    {
+      "route": "/dashboard/chat",
+      "theme": "light",
+      "viewport": "mobile",
+      "passed": false,
+      "errors": [],
+      "rules": [
+        "color-contrast"
+      ]
+    },
+    {
+      "route": "/dashboard/chat",
+      "theme": "dark",
+      "viewport": "desktop",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/chat",
+      "theme": "dark",
+      "viewport": "mobile",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/coming-soon",
+      "theme": "light",
+      "viewport": "desktop",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/coming-soon",
+      "theme": "light",
+      "viewport": "mobile",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/coming-soon",
+      "theme": "dark",
+      "viewport": "desktop",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/coming-soon",
+      "theme": "dark",
+      "viewport": "mobile",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/crm",
+      "theme": "light",
+      "viewport": "desktop",
+      "passed": false,
+      "errors": [],
+      "rules": [
+        "aria-progressbar-name",
+        "color-contrast"
+      ]
+    },
+    {
+      "route": "/dashboard/crm",
+      "theme": "light",
+      "viewport": "mobile",
+      "passed": false,
+      "errors": [],
+      "rules": [
+        "aria-progressbar-name"
+      ]
+    },
+    {
+      "route": "/dashboard/crm",
+      "theme": "dark",
+      "viewport": "desktop",
+      "passed": false,
+      "errors": [],
+      "rules": [
+        "aria-progressbar-name"
+      ]
+    },
+    {
+      "route": "/dashboard/crm",
+      "theme": "dark",
+      "viewport": "mobile",
+      "passed": false,
+      "errors": [],
+      "rules": [
+        "aria-progressbar-name"
+      ]
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "light",
+      "viewport": "desktop",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "light",
+      "viewport": "mobile",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "dark",
+      "viewport": "desktop",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/default",
+      "theme": "dark",
+      "viewport": "mobile",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/ecommerce",
+      "theme": "light",
+      "viewport": "desktop",
+      "passed": false,
+      "errors": [],
+      "rules": [
+        "color-contrast"
+      ]
+    },
+    {
+      "route": "/dashboard/ecommerce",
+      "theme": "light",
+      "viewport": "mobile",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/ecommerce",
+      "theme": "dark",
+      "viewport": "desktop",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/ecommerce",
+      "theme": "dark",
+      "viewport": "mobile",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/finance",
+      "theme": "light",
+      "viewport": "desktop",
+      "passed": false,
+      "errors": [],
+      "rules": [
+        "aria-required-children",
+        "color-contrast"
+      ]
+    },
+    {
+      "route": "/dashboard/finance",
+      "theme": "light",
+      "viewport": "mobile",
+      "passed": false,
+      "errors": [],
+      "rules": [
+        "aria-required-children",
+        "color-contrast"
+      ]
+    },
+    {
+      "route": "/dashboard/finance",
+      "theme": "dark",
+      "viewport": "desktop",
+      "passed": false,
+      "errors": [],
+      "rules": [
+        "aria-required-children"
+      ]
+    },
+    {
+      "route": "/dashboard/finance",
+      "theme": "dark",
+      "viewport": "mobile",
+      "passed": false,
+      "errors": [],
+      "rules": [
+        "aria-required-children"
+      ]
+    },
+    {
+      "route": "/dashboard/infrastructure",
+      "theme": "light",
+      "viewport": "desktop",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/infrastructure",
+      "theme": "light",
+      "viewport": "mobile",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/infrastructure",
+      "theme": "dark",
+      "viewport": "desktop",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/infrastructure",
+      "theme": "dark",
+      "viewport": "mobile",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/invoice",
+      "theme": "light",
+      "viewport": "desktop",
+      "passed": false,
+      "errors": [],
+      "rules": [
+        "color-contrast",
+        "label-content-name-mismatch"
+      ]
+    },
+    {
+      "route": "/dashboard/invoice",
+      "theme": "light",
+      "viewport": "mobile",
+      "passed": false,
+      "errors": [],
+      "rules": [
+        "color-contrast",
+        "label-content-name-mismatch"
+      ]
+    },
+    {
+      "route": "/dashboard/invoice",
+      "theme": "dark",
+      "viewport": "desktop",
+      "passed": false,
+      "errors": [],
+      "rules": [
+        "label-content-name-mismatch"
+      ]
+    },
+    {
+      "route": "/dashboard/invoice",
+      "theme": "dark",
+      "viewport": "mobile",
+      "passed": false,
+      "errors": [],
+      "rules": [
+        "label-content-name-mismatch"
+      ]
+    },
+    {
+      "route": "/dashboard/logistics",
+      "theme": "light",
+      "viewport": "desktop",
+      "passed": false,
+      "errors": [],
+      "rules": [
+        "color-contrast",
+        "label-content-name-mismatch"
+      ]
+    },
+    {
+      "route": "/dashboard/logistics",
+      "theme": "light",
+      "viewport": "mobile",
+      "passed": false,
+      "errors": [],
+      "rules": [
+        "color-contrast",
+        "label-content-name-mismatch"
+      ]
+    },
+    {
+      "route": "/dashboard/logistics",
+      "theme": "dark",
+      "viewport": "desktop",
+      "passed": false,
+      "errors": [],
+      "rules": [
+        "label-content-name-mismatch"
+      ]
+    },
+    {
+      "route": "/dashboard/logistics",
+      "theme": "dark",
+      "viewport": "mobile",
+      "passed": false,
+      "errors": [],
+      "rules": [
+        "label-content-name-mismatch"
+      ]
+    },
+    {
+      "route": "/dashboard/mail",
+      "theme": "light",
+      "viewport": "desktop",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/mail",
+      "theme": "light",
+      "viewport": "mobile",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/mail",
+      "theme": "dark",
+      "viewport": "desktop",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/mail",
+      "theme": "dark",
+      "viewport": "mobile",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "light",
+      "viewport": "desktop",
+      "passed": false,
+      "errors": [],
+      "rules": [
+        "color-contrast",
+        "label-content-name-mismatch"
+      ]
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "light",
+      "viewport": "mobile",
+      "passed": false,
+      "errors": [],
+      "rules": [
+        "color-contrast",
+        "label-content-name-mismatch"
+      ]
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "dark",
+      "viewport": "desktop",
+      "passed": false,
+      "errors": [],
+      "rules": [
+        "label-content-name-mismatch"
+      ]
+    },
+    {
+      "route": "/dashboard/patient-monitoring",
+      "theme": "dark",
+      "viewport": "mobile",
+      "passed": false,
+      "errors": [],
+      "rules": [
+        "label-content-name-mismatch"
+      ]
+    },
+    {
+      "route": "/dashboard/productivity",
+      "theme": "light",
+      "viewport": "desktop",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/productivity",
+      "theme": "light",
+      "viewport": "mobile",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/productivity",
+      "theme": "dark",
+      "viewport": "desktop",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/productivity",
+      "theme": "dark",
+      "viewport": "mobile",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/products",
+      "theme": "light",
+      "viewport": "desktop",
+      "passed": false,
+      "errors": [],
+      "rules": [
+        "color-contrast"
+      ]
+    },
+    {
+      "route": "/dashboard/products",
+      "theme": "light",
+      "viewport": "mobile",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/products",
+      "theme": "dark",
+      "viewport": "desktop",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/products",
+      "theme": "dark",
+      "viewport": "mobile",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/profile",
+      "theme": "light",
+      "viewport": "desktop",
+      "passed": false,
+      "errors": [],
+      "rules": [
+        "color-contrast"
+      ]
+    },
+    {
+      "route": "/dashboard/profile",
+      "theme": "light",
+      "viewport": "mobile",
+      "passed": false,
+      "errors": [],
+      "rules": [
+        "color-contrast"
+      ]
+    },
+    {
+      "route": "/dashboard/profile",
+      "theme": "dark",
+      "viewport": "desktop",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/profile",
+      "theme": "dark",
+      "viewport": "mobile",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/roles",
+      "theme": "light",
+      "viewport": "desktop",
+      "passed": false,
+      "errors": [],
+      "rules": [
+        "color-contrast"
+      ]
+    },
+    {
+      "route": "/dashboard/roles",
+      "theme": "light",
+      "viewport": "mobile",
+      "passed": false,
+      "errors": [],
+      "rules": [
+        "color-contrast"
+      ]
+    },
+    {
+      "route": "/dashboard/roles",
+      "theme": "dark",
+      "viewport": "desktop",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/roles",
+      "theme": "dark",
+      "viewport": "mobile",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/users",
+      "theme": "light",
+      "viewport": "desktop",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/users",
+      "theme": "light",
+      "viewport": "mobile",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/users",
+      "theme": "dark",
+      "viewport": "desktop",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/users",
+      "theme": "dark",
+      "viewport": "mobile",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/$",
+      "theme": "light",
+      "viewport": "desktop",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/$",
+      "theme": "light",
+      "viewport": "mobile",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/$",
+      "theme": "dark",
+      "viewport": "desktop",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/$",
+      "theme": "dark",
+      "viewport": "mobile",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/",
+      "theme": "light",
+      "viewport": "desktop",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/",
+      "theme": "light",
+      "viewport": "mobile",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/",
+      "theme": "dark",
+      "viewport": "desktop",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/dashboard/",
+      "theme": "dark",
+      "viewport": "mobile",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/auth/v2/login",
+      "theme": "light",
+      "viewport": "desktop",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/auth/v2/login",
+      "theme": "light",
+      "viewport": "mobile",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/auth/v2/login",
+      "theme": "dark",
+      "viewport": "desktop",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/auth/v2/login",
+      "theme": "dark",
+      "viewport": "mobile",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/auth/v2/register",
+      "theme": "light",
+      "viewport": "desktop",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/auth/v2/register",
+      "theme": "light",
+      "viewport": "mobile",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/auth/v2/register",
+      "theme": "dark",
+      "viewport": "desktop",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    },
+    {
+      "route": "/auth/v2/register",
+      "theme": "dark",
+      "viewport": "mobile",
+      "passed": true,
+      "errors": [],
+      "rules": []
+    }
+  ]
+}

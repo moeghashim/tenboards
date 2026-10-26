@@ -1,0 +1,1477 @@
+{
+  "route": "/dashboard/invoice",
+  "path": "/dashboard/invoice",
+  "baseURL": "http://127.0.0.1:3078/",
+  "tags": [
+    "wcag2a",
+    "wcag2aa",
+    "wcag21a",
+    "wcag21aa",
+    "wcag22aa"
+  ],
+  "passed": false,
+  "results": [
+    {
+      "theme": "light",
+      "viewport": "desktop",
+      "screenshot": "light-desktop.png",
+      "finalURL": "http://127.0.0.1:3078/dashboard/invoice",
+      "passed": false,
+      "errors": [],
+      "warnings": [
+        "Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used."
+      ],
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "fgColor": "#6e7278",
+                    "bgColor": "#f0f2f5",
+                    "contrastRatio": 4.31,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": null,
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div data-orientation=\"horizontal\" data-activation-dire...=\"none\" role=\"tablist\" data-slot=\"tabs-list\" data-variant=\"default\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"group/tabs-list inli...\">",
+                      "target": [
+                        ".group\\/tabs-list"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element has insufficient color contrast of 4.31 (foreground color: #6e7278, background color: #f0f2f5, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_45j9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+              "target": [
+                "#base-ui-_R_45j9aq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.31 (foreground color: #6e7278, background color: #f0f2f5, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "fgColor": "#6e7278",
+                    "bgColor": "#f0f2f5",
+                    "contrastRatio": 4.31,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": null,
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div data-orientation=\"horizontal\" data-activation-dire...=\"none\" role=\"tablist\" data-slot=\"tabs-list\" data-variant=\"default\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"group/tabs-list inli...\">",
+                      "target": [
+                        ".group\\/tabs-list"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element has insufficient color contrast of 4.31 (foreground color: #6e7278, background color: #f0f2f5, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_65j9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+              "target": [
+                "#base-ui-_R_65j9aq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.31 (foreground color: #6e7278, background color: #f0f2f5, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        },
+        {
+          "id": "label-content-name-mismatch",
+          "impact": "serious",
+          "tags": [
+            "cat.semantics",
+            "wcag21a",
+            "wcag253",
+            "EN-301-549",
+            "EN-9.2.5.3",
+            "RGAAv4",
+            "RGAA-6.1.5"
+          ],
+          "description": "Ensure that elements labelled through their content must have their visible text as part of their accessible name",
+          "help": "Elements must have their visible text as part of their accessible name",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" tabindex=\"0\" data-slot=\"popover-trigger\" id=\"issued-date\" aria-label=\"Issued Date\" data-empty=\"false\" data-base-ui-click-t...=\"\" aria-haspopup=\"dialog\" aria-expanded=\"false\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"group/button inline-...\">",
+              "target": [
+                "#issued-date"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" tabindex=\"0\" data-slot=\"popover-trigger\" id=\"payment-due-date\" aria-label=\"Due Date\" data-empty=\"false\" data-base-ui-click-t...=\"\" aria-haspopup=\"dialog\" aria-expanded=\"false\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"group/button inline-...\">",
+              "target": [
+                "#payment-due-date"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-allowed-attr",
+          "impact": "critical",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "description": "Ensure an element's role supports its ARIA attributes",
+          "help": "Elements must only use supported ARIA attributes",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-allowed-attr?application=playwright",
+          "nodes": [
+            {
+              "any": [],
+              "all": [
+                {
+                  "id": "aria-no-deprecated-attr",
+                  "data": [
+                    "aria-grabbed"
+                  ],
+                  "relatedNodes": [],
+                  "impact": "critical",
+                  "message": "The attribute is deprecated and should not be used: aria-grabbed"
+                }
+              ],
+              "none": [],
+              "impact": "critical",
+              "html": "<button type=\"button\" tabindex=\"0\" data-slot=\"button\" aria-label=\"Reorder item 1\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"group/button inline-...\" aria-roledescription=\"draggable\" aria-describedby=\"dnd-kit-description-...\" aria-pressed=\"false\" aria-grabbed=\"false\" aria-disabled=\"false\">",
+              "target": [
+                "button[aria-label=\"Reorder item 1\"]"
+              ],
+              "failureSummary": "Fix all of the following:\n  The attribute is deprecated and should not be used: aria-grabbed"
+            },
+            {
+              "any": [],
+              "all": [
+                {
+                  "id": "aria-no-deprecated-attr",
+                  "data": [
+                    "aria-grabbed"
+                  ],
+                  "relatedNodes": [],
+                  "impact": "critical",
+                  "message": "The attribute is deprecated and should not be used: aria-grabbed"
+                }
+              ],
+              "none": [],
+              "impact": "critical",
+              "html": "<button type=\"button\" tabindex=\"0\" data-slot=\"button\" aria-label=\"Reorder item 2\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"group/button inline-...\" aria-roledescription=\"draggable\" aria-describedby=\"dnd-kit-description-...\" aria-pressed=\"false\" aria-grabbed=\"false\" aria-disabled=\"false\">",
+              "target": [
+                "button[aria-label=\"Reorder item 2\"]"
+              ],
+              "failureSummary": "Fix all of the following:\n  The attribute is deprecated and should not be used: aria-grabbed"
+            },
+            {
+              "any": [],
+              "all": [
+                {
+                  "id": "aria-no-deprecated-attr",
+                  "data": [
+                    "aria-grabbed"
+                  ],
+                  "relatedNodes": [],
+                  "impact": "critical",
+                  "message": "The attribute is deprecated and should not be used: aria-grabbed"
+                }
+              ],
+              "none": [],
+              "impact": "critical",
+              "html": "<button type=\"button\" tabindex=\"0\" data-slot=\"button\" aria-label=\"Reorder item 3\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"group/button inline-...\" aria-roledescription=\"draggable\" aria-describedby=\"dnd-kit-description-...\" aria-pressed=\"false\" aria-grabbed=\"false\" aria-disabled=\"false\">",
+              "target": [
+                "button[aria-label=\"Reorder item 3\"]"
+              ],
+              "failureSummary": "Fix all of the following:\n  The attribute is deprecated and should not be used: aria-grabbed"
+            }
+          ]
+        },
+        {
+          "id": "aria-prohibited-attr",
+          "impact": "serious",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "description": "Ensure ARIA attributes are not prohibited for an element's role",
+          "help": "Elements must only use permitted ARIA attributes",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-prohibited-attr?application=playwright",
+          "nodes": [
+            {
+              "any": [],
+              "all": [],
+              "none": [
+                {
+                  "id": "aria-prohibited-attr",
+                  "data": {
+                    "role": null,
+                    "nodeName": "div",
+                    "messageKey": "noRoleSingular",
+                    "prohibited": [
+                      "aria-label"
+                    ]
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "aria-label attribute is not well supported on \"div\" elements with no valid role attribute."
+                }
+              ],
+              "impact": "serious",
+              "html": "<div data-slot=\"sidebar-group\" data-sidebar=\"group\" class=\"relative flex w-full min-w-0 flex-col p-0 pb-3\" aria-label=\"Projects navigation\" data-tsd-source=\"/src/routes/(main)/dashboard/-components/sidebar/project-navigation.tsx:127:5\">",
+              "target": [
+                "div[aria-label=\"Projects navigation\"]"
+              ],
+              "failureSummary": "Fix all of the following:\n  aria-label attribute is not well supported on \"div\" elements with no valid role attribute."
+            }
+          ]
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscuring",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it partially overlaps other elements"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<p data-tsd-source=\"/src/routes/(main)/dashboard/invoice/-components/invoice-paper.tsx:49:13\">Routing no. <!-- -->084009519</p>",
+              "target": [
+                ".origin-top-left > article > .gap-6 > .leading-relaxed.grid-cols-2:nth-child(2) > div:nth-child(2) > p:nth-child(3)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscuring",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it partially overlaps other elements"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<p data-tsd-source=\"/src/routes/(main)/dashboard/invoice/-components/invoice-paper.tsx:68:13\">Tax ID: <!-- -->GSTIN-27AAICA9102K1Z7</p>",
+              "target": [
+                ".origin-top-left > article > .gap-6 > .leading-relaxed.grid-cols-2:nth-child(3) > div:nth-child(2) > p:nth-child(5)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscuring",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it partially overlaps other elements"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<p data-tsd-source=\"/src/routes/(main)/dashboard/invoice/-components/invoice-paper.tsx:132:11\">Issued by <!-- -->Jordan Lee</p>",
+              "target": [
+                ".origin-top-left > article > footer > div:nth-child(2) > p:nth-child(2)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
+            }
+          ]
+        }
+      ],
+      "axeVersion": "4.14.0"
+    },
+    {
+      "theme": "light",
+      "viewport": "mobile",
+      "screenshot": "light-mobile.png",
+      "finalURL": "http://127.0.0.1:3078/dashboard/invoice",
+      "passed": false,
+      "errors": [],
+      "warnings": [
+        "Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used."
+      ],
+      "violations": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "fgColor": "#6e7278",
+                    "bgColor": "#f0f2f5",
+                    "contrastRatio": 4.31,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": null,
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div data-orientation=\"horizontal\" data-activation-dire...=\"none\" role=\"tablist\" data-slot=\"tabs-list\" data-variant=\"default\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"group/tabs-list inli...\">",
+                      "target": [
+                        ".group\\/tabs-list"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element has insufficient color contrast of 4.31 (foreground color: #6e7278, background color: #f0f2f5, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_45j9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+              "target": [
+                "#base-ui-_R_45j9aq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.31 (foreground color: #6e7278, background color: #f0f2f5, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "fgColor": "#6e7278",
+                    "bgColor": "#f0f2f5",
+                    "contrastRatio": 4.31,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": null,
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<div data-orientation=\"horizontal\" data-activation-dire...=\"none\" role=\"tablist\" data-slot=\"tabs-list\" data-variant=\"default\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"group/tabs-list inli...\">",
+                      "target": [
+                        ".group\\/tabs-list"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element has insufficient color contrast of 4.31 (foreground color: #6e7278, background color: #f0f2f5, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_65j9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+              "target": [
+                "#base-ui-_R_65j9aq_"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.31 (foreground color: #6e7278, background color: #f0f2f5, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+            }
+          ]
+        },
+        {
+          "id": "label-content-name-mismatch",
+          "impact": "serious",
+          "tags": [
+            "cat.semantics",
+            "wcag21a",
+            "wcag253",
+            "EN-301-549",
+            "EN-9.2.5.3",
+            "RGAAv4",
+            "RGAA-6.1.5"
+          ],
+          "description": "Ensure that elements labelled through their content must have their visible text as part of their accessible name",
+          "help": "Elements must have their visible text as part of their accessible name",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" tabindex=\"0\" data-slot=\"popover-trigger\" id=\"issued-date\" aria-label=\"Issued Date\" data-empty=\"false\" data-base-ui-click-t...=\"\" aria-haspopup=\"dialog\" aria-expanded=\"false\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"group/button inline-...\">",
+              "target": [
+                "#issued-date"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" tabindex=\"0\" data-slot=\"popover-trigger\" id=\"payment-due-date\" aria-label=\"Due Date\" data-empty=\"false\" data-base-ui-click-t...=\"\" aria-haspopup=\"dialog\" aria-expanded=\"false\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"group/button inline-...\">",
+              "target": [
+                "#payment-due-date"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-allowed-attr",
+          "impact": "critical",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "description": "Ensure an element's role supports its ARIA attributes",
+          "help": "Elements must only use supported ARIA attributes",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-allowed-attr?application=playwright",
+          "nodes": [
+            {
+              "any": [],
+              "all": [
+                {
+                  "id": "aria-no-deprecated-attr",
+                  "data": [
+                    "aria-grabbed"
+                  ],
+                  "relatedNodes": [],
+                  "impact": "critical",
+                  "message": "The attribute is deprecated and should not be used: aria-grabbed"
+                }
+              ],
+              "none": [],
+              "impact": "critical",
+              "html": "<button type=\"button\" tabindex=\"0\" data-slot=\"button\" aria-label=\"Reorder item 1\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"group/button inline-...\" aria-roledescription=\"draggable\" aria-describedby=\"dnd-kit-description-...\" aria-pressed=\"false\" aria-grabbed=\"false\" aria-disabled=\"false\">",
+              "target": [
+                "button[aria-label=\"Reorder item 1\"]"
+              ],
+              "failureSummary": "Fix all of the following:\n  The attribute is deprecated and should not be used: aria-grabbed"
+            },
+            {
+              "any": [],
+              "all": [
+                {
+                  "id": "aria-no-deprecated-attr",
+                  "data": [
+                    "aria-grabbed"
+                  ],
+                  "relatedNodes": [],
+                  "impact": "critical",
+                  "message": "The attribute is deprecated and should not be used: aria-grabbed"
+                }
+              ],
+              "none": [],
+              "impact": "critical",
+              "html": "<button type=\"button\" tabindex=\"0\" data-slot=\"button\" aria-label=\"Reorder item 2\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"group/button inline-...\" aria-roledescription=\"draggable\" aria-describedby=\"dnd-kit-description-...\" aria-pressed=\"false\" aria-grabbed=\"false\" aria-disabled=\"false\">",
+              "target": [
+                "button[aria-label=\"Reorder item 2\"]"
+              ],
+              "failureSummary": "Fix all of the following:\n  The attribute is deprecated and should not be used: aria-grabbed"
+            },
+            {
+              "any": [],
+              "all": [
+                {
+                  "id": "aria-no-deprecated-attr",
+                  "data": [
+                    "aria-grabbed"
+                  ],
+                  "relatedNodes": [],
+                  "impact": "critical",
+                  "message": "The attribute is deprecated and should not be used: aria-grabbed"
+                }
+              ],
+              "none": [],
+              "impact": "critical",
+              "html": "<button type=\"button\" tabindex=\"0\" data-slot=\"button\" aria-label=\"Reorder item 3\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"group/button inline-...\" aria-roledescription=\"draggable\" aria-describedby=\"dnd-kit-description-...\" aria-pressed=\"false\" aria-grabbed=\"false\" aria-disabled=\"false\">",
+              "target": [
+                "button[aria-label=\"Reorder item 3\"]"
+              ],
+              "failureSummary": "Fix all of the following:\n  The attribute is deprecated and should not be used: aria-grabbed"
+            }
+          ]
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscuring",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it partially overlaps other elements"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<p data-tsd-source=\"/src/routes/(main)/dashboard/invoice/-components/invoice-paper.tsx:43:13\">Issued: <!-- -->2026-10-26</p>",
+              "target": [
+                ".origin-top-left > article > .gap-6 > .leading-relaxed.grid-cols-2:nth-child(2) > div:nth-child(1) > p:nth-child(2)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscuring",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it partially overlaps other elements"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<p data-tsd-source=\"/src/routes/(main)/dashboard/invoice/-components/invoice-paper.tsx:60:13\">Tax ID: <!-- -->NW-1029384756</p>",
+              "target": [
+                ".origin-top-left > article > .gap-6 > .leading-relaxed.grid-cols-2:nth-child(3) > div:nth-child(1) > p:nth-child(5)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgOverlap",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it is overlapped by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"min-w-0 pr-3 break-words whitespace-pre-line\" data-tsd-source=\"/src/routes/(main)/dashboard/invoice/-components/invoice-paper.tsx:86:15\">Cloud hosting services</span>",
+              "target": [
+                ".origin-top-left > article > .gap-5.flex-col.flex > section > .grid-cols-\\[minmax\\(0\\,1fr\\)_74px_116px_116px\\].border-neutral-300.border-b:nth-child(2) > .pr-3.whitespace-pre-line.break-words"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "shortTextContent",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element content is too short to determine if it is actual text content"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"text-right\" data-tsd-source=\"/src/routes/(main)/dashboard/invoice/-components/invoice-paper.tsx:87:15\">1</span>",
+              "target": [
+                ".origin-top-left > article > .gap-5.flex-col.flex > section > .grid-cols-\\[minmax\\(0\\,1fr\\)_74px_116px_116px\\].border-neutral-300.border-b:nth-child(2) > .text-right:nth-child(2)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgOverlap",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it is overlapped by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"text-right\" data-tsd-source=\"/src/routes/(main)/dashboard/invoice/-components/invoice-paper.tsx:88:15\">$3,500.00</span>",
+              "target": [
+                ".origin-top-left > article > .gap-5.flex-col.flex > section > .grid-cols-\\[minmax\\(0\\,1fr\\)_74px_116px_116px\\].border-neutral-300.border-b:nth-child(2) > .text-right:nth-child(3)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgOverlap",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it is overlapped by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"text-right\" data-tsd-source=\"/src/routes/(main)/dashboard/invoice/-components/invoice-paper.tsx:89:15\">$3,500.00</span>",
+              "target": [
+                ".origin-top-left > article > .gap-5.flex-col.flex > section > .grid-cols-\\[minmax\\(0\\,1fr\\)_74px_116px_116px\\].border-neutral-300.border-b:nth-child(2) > .text-right:nth-child(4)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgOverlap",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it is overlapped by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span data-tsd-source=\"/src/routes/(main)/dashboard/invoice/-components/invoice-paper.tsx:106:17\">VAT<!-- --> <!-- -->12<!-- -->%</span>",
+              "target": [
+                ".origin-top-left > article > .gap-5.flex-col.flex > .leading-relaxed.grid-cols-2.gap-8 > .col-start-2.space-y-2.break-inside-avoid > div:nth-child(1) > .justify-between.gap-8.flex:nth-child(3) > span:nth-child(1)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            }
+          ]
+        }
+      ],
+      "axeVersion": "4.14.0"
+    },
+    {
+      "theme": "dark",
+      "viewport": "desktop",
+      "screenshot": "dark-desktop.png",
+      "finalURL": "http://127.0.0.1:3078/dashboard/invoice",
+      "passed": false,
+      "errors": [],
+      "warnings": [
+        "Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used."
+      ],
+      "violations": [
+        {
+          "id": "label-content-name-mismatch",
+          "impact": "serious",
+          "tags": [
+            "cat.semantics",
+            "wcag21a",
+            "wcag253",
+            "EN-301-549",
+            "EN-9.2.5.3",
+            "RGAAv4",
+            "RGAA-6.1.5"
+          ],
+          "description": "Ensure that elements labelled through their content must have their visible text as part of their accessible name",
+          "help": "Elements must have their visible text as part of their accessible name",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" tabindex=\"0\" data-slot=\"popover-trigger\" id=\"issued-date\" aria-label=\"Issued Date\" data-empty=\"false\" data-base-ui-click-t...=\"\" aria-haspopup=\"dialog\" aria-expanded=\"false\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"group/button inline-...\">",
+              "target": [
+                "#issued-date"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" tabindex=\"0\" data-slot=\"popover-trigger\" id=\"payment-due-date\" aria-label=\"Due Date\" data-empty=\"false\" data-base-ui-click-t...=\"\" aria-haspopup=\"dialog\" aria-expanded=\"false\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"group/button inline-...\">",
+              "target": [
+                "#payment-due-date"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-allowed-attr",
+          "impact": "critical",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "description": "Ensure an element's role supports its ARIA attributes",
+          "help": "Elements must only use supported ARIA attributes",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-allowed-attr?application=playwright",
+          "nodes": [
+            {
+              "any": [],
+              "all": [
+                {
+                  "id": "aria-no-deprecated-attr",
+                  "data": [
+                    "aria-grabbed"
+                  ],
+                  "relatedNodes": [],
+                  "impact": "critical",
+                  "message": "The attribute is deprecated and should not be used: aria-grabbed"
+                }
+              ],
+              "none": [],
+              "impact": "critical",
+              "html": "<button type=\"button\" tabindex=\"0\" data-slot=\"button\" aria-label=\"Reorder item 1\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"group/button inline-...\" aria-roledescription=\"draggable\" aria-describedby=\"dnd-kit-description-...\" aria-pressed=\"false\" aria-grabbed=\"false\" aria-disabled=\"false\">",
+              "target": [
+                "button[aria-label=\"Reorder item 1\"]"
+              ],
+              "failureSummary": "Fix all of the following:\n  The attribute is deprecated and should not be used: aria-grabbed"
+            },
+            {
+              "any": [],
+              "all": [
+                {
+                  "id": "aria-no-deprecated-attr",
+                  "data": [
+                    "aria-grabbed"
+                  ],
+                  "relatedNodes": [],
+                  "impact": "critical",
+                  "message": "The attribute is deprecated and should not be used: aria-grabbed"
+                }
+              ],
+              "none": [],
+              "impact": "critical",
+              "html": "<button type=\"button\" tabindex=\"0\" data-slot=\"button\" aria-label=\"Reorder item 2\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"group/button inline-...\" aria-roledescription=\"draggable\" aria-describedby=\"dnd-kit-description-...\" aria-pressed=\"false\" aria-grabbed=\"false\" aria-disabled=\"false\">",
+              "target": [
+                "button[aria-label=\"Reorder item 2\"]"
+              ],
+              "failureSummary": "Fix all of the following:\n  The attribute is deprecated and should not be used: aria-grabbed"
+            },
+            {
+              "any": [],
+              "all": [
+                {
+                  "id": "aria-no-deprecated-attr",
+                  "data": [
+                    "aria-grabbed"
+                  ],
+                  "relatedNodes": [],
+                  "impact": "critical",
+                  "message": "The attribute is deprecated and should not be used: aria-grabbed"
+                }
+              ],
+              "none": [],
+              "impact": "critical",
+              "html": "<button type=\"button\" tabindex=\"0\" data-slot=\"button\" aria-label=\"Reorder item 3\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"group/button inline-...\" aria-roledescription=\"draggable\" aria-describedby=\"dnd-kit-description-...\" aria-pressed=\"false\" aria-grabbed=\"false\" aria-disabled=\"false\">",
+              "target": [
+                "button[aria-label=\"Reorder item 3\"]"
+              ],
+              "failureSummary": "Fix all of the following:\n  The attribute is deprecated and should not be used: aria-grabbed"
+            }
+          ]
+        },
+        {
+          "id": "aria-prohibited-attr",
+          "impact": "serious",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "description": "Ensure ARIA attributes are not prohibited for an element's role",
+          "help": "Elements must only use permitted ARIA attributes",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-prohibited-attr?application=playwright",
+          "nodes": [
+            {
+              "any": [],
+              "all": [],
+              "none": [
+                {
+                  "id": "aria-prohibited-attr",
+                  "data": {
+                    "role": null,
+                    "nodeName": "div",
+                    "messageKey": "noRoleSingular",
+                    "prohibited": [
+                      "aria-label"
+                    ]
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "aria-label attribute is not well supported on \"div\" elements with no valid role attribute."
+                }
+              ],
+              "impact": "serious",
+              "html": "<div data-slot=\"sidebar-group\" data-sidebar=\"group\" class=\"relative flex w-full min-w-0 flex-col p-0 pb-3\" aria-label=\"Projects navigation\" data-tsd-source=\"/src/routes/(main)/dashboard/-components/sidebar/project-navigation.tsx:127:5\">",
+              "target": [
+                "div[aria-label=\"Projects navigation\"]"
+              ],
+              "failureSummary": "Fix all of the following:\n  aria-label attribute is not well supported on \"div\" elements with no valid role attribute."
+            }
+          ]
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscuring",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it partially overlaps other elements"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<p data-tsd-source=\"/src/routes/(main)/dashboard/invoice/-components/invoice-paper.tsx:49:13\">Routing no. <!-- -->084009519</p>",
+              "target": [
+                ".origin-top-left > article > .gap-6 > .leading-relaxed.grid-cols-2:nth-child(2) > div:nth-child(2) > p:nth-child(3)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscuring",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it partially overlaps other elements"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<p data-tsd-source=\"/src/routes/(main)/dashboard/invoice/-components/invoice-paper.tsx:68:13\">Tax ID: <!-- -->GSTIN-27AAICA9102K1Z7</p>",
+              "target": [
+                ".origin-top-left > article > .gap-6 > .leading-relaxed.grid-cols-2:nth-child(3) > div:nth-child(2) > p:nth-child(5)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscuring",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it partially overlaps other elements"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<p data-tsd-source=\"/src/routes/(main)/dashboard/invoice/-components/invoice-paper.tsx:132:11\">Issued by <!-- -->Jordan Lee</p>",
+              "target": [
+                ".origin-top-left > article > footer > div:nth-child(2) > p:nth-child(2)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
+            }
+          ]
+        }
+      ],
+      "axeVersion": "4.14.0"
+    },
+    {
+      "theme": "dark",
+      "viewport": "mobile",
+      "screenshot": "dark-mobile.png",
+      "finalURL": "http://127.0.0.1:3078/dashboard/invoice",
+      "passed": false,
+      "errors": [],
+      "warnings": [
+        "Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used."
+      ],
+      "violations": [
+        {
+          "id": "label-content-name-mismatch",
+          "impact": "serious",
+          "tags": [
+            "cat.semantics",
+            "wcag21a",
+            "wcag253",
+            "EN-301-549",
+            "EN-9.2.5.3",
+            "RGAAv4",
+            "RGAA-6.1.5"
+          ],
+          "description": "Ensure that elements labelled through their content must have their visible text as part of their accessible name",
+          "help": "Elements must have their visible text as part of their accessible name",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" tabindex=\"0\" data-slot=\"popover-trigger\" id=\"issued-date\" aria-label=\"Issued Date\" data-empty=\"false\" data-base-ui-click-t...=\"\" aria-haspopup=\"dialog\" aria-expanded=\"false\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"group/button inline-...\">",
+              "target": [
+                "#issued-date"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            },
+            {
+              "any": [
+                {
+                  "id": "label-content-name-mismatch",
+                  "data": null,
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Text inside the element is not included in the accessible name"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<button type=\"button\" tabindex=\"0\" data-slot=\"popover-trigger\" id=\"payment-due-date\" aria-label=\"Due Date\" data-empty=\"false\" data-base-ui-click-t...=\"\" aria-haspopup=\"dialog\" aria-expanded=\"false\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"group/button inline-...\">",
+              "target": [
+                "#payment-due-date"
+              ],
+              "failureSummary": "Fix any of the following:\n  Text inside the element is not included in the accessible name"
+            }
+          ]
+        }
+      ],
+      "incomplete": [
+        {
+          "id": "aria-allowed-attr",
+          "impact": "critical",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "description": "Ensure an element's role supports its ARIA attributes",
+          "help": "Elements must only use supported ARIA attributes",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-allowed-attr?application=playwright",
+          "nodes": [
+            {
+              "any": [],
+              "all": [
+                {
+                  "id": "aria-no-deprecated-attr",
+                  "data": [
+                    "aria-grabbed"
+                  ],
+                  "relatedNodes": [],
+                  "impact": "critical",
+                  "message": "The attribute is deprecated and should not be used: aria-grabbed"
+                }
+              ],
+              "none": [],
+              "impact": "critical",
+              "html": "<button type=\"button\" tabindex=\"0\" data-slot=\"button\" aria-label=\"Reorder item 1\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"group/button inline-...\" aria-roledescription=\"draggable\" aria-describedby=\"dnd-kit-description-...\" aria-pressed=\"false\" aria-grabbed=\"false\" aria-disabled=\"false\">",
+              "target": [
+                "button[aria-label=\"Reorder item 1\"]"
+              ],
+              "failureSummary": "Fix all of the following:\n  The attribute is deprecated and should not be used: aria-grabbed"
+            },
+            {
+              "any": [],
+              "all": [
+                {
+                  "id": "aria-no-deprecated-attr",
+                  "data": [
+                    "aria-grabbed"
+                  ],
+                  "relatedNodes": [],
+                  "impact": "critical",
+                  "message": "The attribute is deprecated and should not be used: aria-grabbed"
+                }
+              ],
+              "none": [],
+              "impact": "critical",
+              "html": "<button type=\"button\" tabindex=\"0\" data-slot=\"button\" aria-label=\"Reorder item 2\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"group/button inline-...\" aria-roledescription=\"draggable\" aria-describedby=\"dnd-kit-description-...\" aria-pressed=\"false\" aria-grabbed=\"false\" aria-disabled=\"false\">",
+              "target": [
+                "button[aria-label=\"Reorder item 2\"]"
+              ],
+              "failureSummary": "Fix all of the following:\n  The attribute is deprecated and should not be used: aria-grabbed"
+            },
+            {
+              "any": [],
+              "all": [
+                {
+                  "id": "aria-no-deprecated-attr",
+                  "data": [
+                    "aria-grabbed"
+                  ],
+                  "relatedNodes": [],
+                  "impact": "critical",
+                  "message": "The attribute is deprecated and should not be used: aria-grabbed"
+                }
+              ],
+              "none": [],
+              "impact": "critical",
+              "html": "<button type=\"button\" tabindex=\"0\" data-slot=\"button\" aria-label=\"Reorder item 3\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"group/button inline-...\" aria-roledescription=\"draggable\" aria-describedby=\"dnd-kit-description-...\" aria-pressed=\"false\" aria-grabbed=\"false\" aria-disabled=\"false\">",
+              "target": [
+                "button[aria-label=\"Reorder item 3\"]"
+              ],
+              "failureSummary": "Fix all of the following:\n  The attribute is deprecated and should not be used: aria-grabbed"
+            }
+          ]
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscuring",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it partially overlaps other elements"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<p data-tsd-source=\"/src/routes/(main)/dashboard/invoice/-components/invoice-paper.tsx:43:13\">Issued: <!-- -->2026-10-26</p>",
+              "target": [
+                ".origin-top-left > article > .gap-6 > .leading-relaxed.grid-cols-2:nth-child(2) > div:nth-child(1) > p:nth-child(2)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "elmPartiallyObscuring",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it partially overlaps other elements"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<p data-tsd-source=\"/src/routes/(main)/dashboard/invoice/-components/invoice-paper.tsx:60:13\">Tax ID: <!-- -->NW-1029384756</p>",
+              "target": [
+                ".origin-top-left > article > .gap-6 > .leading-relaxed.grid-cols-2:nth-child(3) > div:nth-child(1) > p:nth-child(5)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgOverlap",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it is overlapped by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"min-w-0 pr-3 break-words whitespace-pre-line\" data-tsd-source=\"/src/routes/(main)/dashboard/invoice/-components/invoice-paper.tsx:86:15\">Cloud hosting services</span>",
+              "target": [
+                ".origin-top-left > article > .gap-5.flex-col.flex > section > .grid-cols-\\[minmax\\(0\\,1fr\\)_74px_116px_116px\\].border-neutral-300.border-b:nth-child(2) > .pr-3.whitespace-pre-line.break-words"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "shortTextContent",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element content is too short to determine if it is actual text content"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"text-right\" data-tsd-source=\"/src/routes/(main)/dashboard/invoice/-components/invoice-paper.tsx:87:15\">1</span>",
+              "target": [
+                ".origin-top-left > article > .gap-5.flex-col.flex > section > .grid-cols-\\[minmax\\(0\\,1fr\\)_74px_116px_116px\\].border-neutral-300.border-b:nth-child(2) > .text-right:nth-child(2)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgOverlap",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it is overlapped by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"text-right\" data-tsd-source=\"/src/routes/(main)/dashboard/invoice/-components/invoice-paper.tsx:88:15\">$3,500.00</span>",
+              "target": [
+                ".origin-top-left > article > .gap-5.flex-col.flex > section > .grid-cols-\\[minmax\\(0\\,1fr\\)_74px_116px_116px\\].border-neutral-300.border-b:nth-child(2) > .text-right:nth-child(3)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgOverlap",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it is overlapped by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"text-right\" data-tsd-source=\"/src/routes/(main)/dashboard/invoice/-components/invoice-paper.tsx:89:15\">$3,500.00</span>",
+              "target": [
+                ".origin-top-left > article > .gap-5.flex-col.flex > section > .grid-cols-\\[minmax\\(0\\,1fr\\)_74px_116px_116px\\].border-neutral-300.border-b:nth-child(2) > .text-right:nth-child(4)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgOverlap",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because it is overlapped by another element"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span data-tsd-source=\"/src/routes/(main)/dashboard/invoice/-components/invoice-paper.tsx:106:17\">VAT<!-- --> <!-- -->12<!-- -->%</span>",
+              "target": [
+                ".origin-top-left > article > .gap-5.flex-col.flex > .leading-relaxed.grid-cols-2.gap-8 > .col-start-2.space-y-2.break-inside-avoid > div:nth-child(1) > .justify-between.gap-8.flex:nth-child(3) > span:nth-child(1)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+            }
+          ]
+        }
+      ],
+      "axeVersion": "4.14.0"
+    }
+  ]
+}

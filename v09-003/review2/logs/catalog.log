@@ -1,0 +1,206 @@
+
+> tenboards@0.8.1 verify:page
+> node --experimental-strip-types scripts/verify-page.ts --all --base-url http://127.0.0.1:3078
+
+Started http://127.0.0.1:3078
+PASS /dashboard/kit/ light/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/kit/ light/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/kit/ dark/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/kit/ dark/mobile: 0 axe violations, 0 runtime errors
+FAIL /dashboard/assistant light/desktop: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (3 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/assistant light/mobile: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (3 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/assistant dark/desktop: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (3 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/assistant dark/mobile: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (3 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+PASS /dashboard/home/ light/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/home/ light/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/home/ dark/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/home/ dark/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/ light/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/ light/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/ dark/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/ dark/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/$projectId/overview light/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/$projectId/overview light/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/$projectId/overview dark/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/$projectId/overview dark/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/$projectId/timeline light/desktop: 0 axe violations, 0 runtime errors
+FAIL /dashboard/projects/$projectId/timeline light/mobile: 1 axe violations, 0 runtime errors
+  axe scrollable-region-focusable: Scrollable region must have keyboard access (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/scrollable-region-focusable?application=playwright
+PASS /dashboard/projects/$projectId/timeline dark/desktop: 0 axe violations, 0 runtime errors
+FAIL /dashboard/projects/$projectId/timeline dark/mobile: 1 axe violations, 0 runtime errors
+  axe scrollable-region-focusable: Scrollable region must have keyboard access (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/scrollable-region-focusable?application=playwright
+PASS /dashboard/projects/$projectId/files light/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/$projectId/files light/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/$projectId/files dark/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/$projectId/files dark/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/$projectId/board light/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/$projectId/board light/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/$projectId/board dark/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/$projectId/board dark/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/$projectId/list light/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/$projectId/list light/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/$projectId/list dark/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/$projectId/list dark/mobile: 0 axe violations, 0 runtime errors
+FAIL /chat light/desktop: 1 axe violations, 0 runtime errors
+  axe color-contrast: Elements must meet minimum color contrast ratio thresholds (4 nodes) — https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright
+FAIL /chat light/mobile: 1 axe violations, 0 runtime errors
+  axe color-contrast: Elements must meet minimum color contrast ratio thresholds (3 nodes) — https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright
+PASS /chat dark/desktop: 0 axe violations, 0 runtime errors
+PASS /chat dark/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard light/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard light/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard dark/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard dark/mobile: 0 axe violations, 0 runtime errors
+PASS /mail light/desktop: 0 axe violations, 0 runtime errors
+PASS /mail light/mobile: 0 axe violations, 0 runtime errors
+PASS /mail dark/desktop: 0 axe violations, 0 runtime errors
+PASS /mail dark/mobile: 0 axe violations, 0 runtime errors
+PASS /unauthorized light/desktop: 0 axe violations, 0 runtime errors
+PASS /unauthorized light/mobile: 0 axe violations, 0 runtime errors
+PASS /unauthorized dark/desktop: 0 axe violations, 0 runtime errors
+PASS /unauthorized dark/mobile: 0 axe violations, 0 runtime errors
+PASS / light/desktop: 0 axe violations, 0 runtime errors
+PASS / light/mobile: 0 axe violations, 0 runtime errors
+PASS / dark/desktop: 0 axe violations, 0 runtime errors
+PASS / dark/mobile: 0 axe violations, 0 runtime errors
+PASS /auth/v2 light/desktop: 0 axe violations, 0 runtime errors
+PASS /auth/v2 light/mobile: 0 axe violations, 0 runtime errors
+PASS /auth/v2 dark/desktop: 0 axe violations, 0 runtime errors
+PASS /auth/v2 dark/mobile: 0 axe violations, 0 runtime errors
+FAIL /dashboard/academy light/desktop: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (9 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/academy light/mobile: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (9 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/academy dark/desktop: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (9 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/academy dark/mobile: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (9 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/analytics light/desktop: 1 axe violations, 0 runtime errors
+  axe color-contrast: Elements must meet minimum color contrast ratio thresholds (6 nodes) — https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright
+FAIL /dashboard/analytics light/mobile: 2 axe violations, 0 runtime errors
+  axe color-contrast: Elements must meet minimum color contrast ratio thresholds (6 nodes) — https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright
+  axe scrollable-region-focusable: Scrollable region must have keyboard access (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/scrollable-region-focusable?application=playwright
+PASS /dashboard/analytics dark/desktop: 0 axe violations, 0 runtime errors
+FAIL /dashboard/analytics dark/mobile: 1 axe violations, 0 runtime errors
+  axe scrollable-region-focusable: Scrollable region must have keyboard access (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/scrollable-region-focusable?application=playwright
+FAIL /dashboard/chat light/desktop: 1 axe violations, 0 runtime errors
+  axe color-contrast: Elements must meet minimum color contrast ratio thresholds (4 nodes) — https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright
+FAIL /dashboard/chat light/mobile: 1 axe violations, 0 runtime errors
+  axe color-contrast: Elements must meet minimum color contrast ratio thresholds (3 nodes) — https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright
+PASS /dashboard/chat dark/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/chat dark/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/coming-soon light/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/coming-soon light/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/coming-soon dark/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/coming-soon dark/mobile: 0 axe violations, 0 runtime errors
+FAIL /dashboard/crm light/desktop: 2 axe violations, 0 runtime errors
+  axe aria-progressbar-name: ARIA progressbar nodes must have an accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/aria-progressbar-name?application=playwright
+  axe color-contrast: Elements must meet minimum color contrast ratio thresholds (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright
+FAIL /dashboard/crm light/mobile: 1 axe violations, 0 runtime errors
+  axe aria-progressbar-name: ARIA progressbar nodes must have an accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/aria-progressbar-name?application=playwright
+FAIL /dashboard/crm dark/desktop: 1 axe violations, 0 runtime errors
+  axe aria-progressbar-name: ARIA progressbar nodes must have an accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/aria-progressbar-name?application=playwright
+FAIL /dashboard/crm dark/mobile: 1 axe violations, 0 runtime errors
+  axe aria-progressbar-name: ARIA progressbar nodes must have an accessible name (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/aria-progressbar-name?application=playwright
+PASS /dashboard/default light/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/default light/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/default dark/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/default dark/mobile: 0 axe violations, 0 runtime errors
+FAIL /dashboard/ecommerce light/desktop: 1 axe violations, 0 runtime errors
+  axe color-contrast: Elements must meet minimum color contrast ratio thresholds (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright
+PASS /dashboard/ecommerce light/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/ecommerce dark/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/ecommerce dark/mobile: 0 axe violations, 0 runtime errors
+FAIL /dashboard/finance light/desktop: 2 axe violations, 0 runtime errors
+  axe aria-required-children: Certain ARIA roles must contain particular children (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/aria-required-children?application=playwright
+  axe color-contrast: Elements must meet minimum color contrast ratio thresholds (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright
+FAIL /dashboard/finance light/mobile: 2 axe violations, 0 runtime errors
+  axe aria-required-children: Certain ARIA roles must contain particular children (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/aria-required-children?application=playwright
+  axe color-contrast: Elements must meet minimum color contrast ratio thresholds (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright
+FAIL /dashboard/finance dark/desktop: 1 axe violations, 0 runtime errors
+  axe aria-required-children: Certain ARIA roles must contain particular children (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/aria-required-children?application=playwright
+FAIL /dashboard/finance dark/mobile: 1 axe violations, 0 runtime errors
+  axe aria-required-children: Certain ARIA roles must contain particular children (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/aria-required-children?application=playwright
+PASS /dashboard/infrastructure light/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/infrastructure light/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/infrastructure dark/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/infrastructure dark/mobile: 0 axe violations, 0 runtime errors
+FAIL /dashboard/invoice light/desktop: 2 axe violations, 0 runtime errors
+  axe color-contrast: Elements must meet minimum color contrast ratio thresholds (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/invoice light/mobile: 2 axe violations, 0 runtime errors
+  axe color-contrast: Elements must meet minimum color contrast ratio thresholds (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/invoice dark/desktop: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/invoice dark/mobile: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/logistics light/desktop: 2 axe violations, 0 runtime errors
+  axe color-contrast: Elements must meet minimum color contrast ratio thresholds (7 nodes) — https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (5 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/logistics light/mobile: 2 axe violations, 0 runtime errors
+  axe color-contrast: Elements must meet minimum color contrast ratio thresholds (3 nodes) — https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (4 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/logistics dark/desktop: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (5 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/logistics dark/mobile: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (4 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+PASS /dashboard/mail light/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/mail light/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/mail dark/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/mail dark/mobile: 0 axe violations, 0 runtime errors
+FAIL /dashboard/patient-monitoring light/desktop: 2 axe violations, 0 runtime errors
+  axe color-contrast: Elements must meet minimum color contrast ratio thresholds (3 nodes) — https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (10 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/patient-monitoring light/mobile: 2 axe violations, 0 runtime errors
+  axe color-contrast: Elements must meet minimum color contrast ratio thresholds (3 nodes) — https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (10 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/patient-monitoring dark/desktop: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (10 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+FAIL /dashboard/patient-monitoring dark/mobile: 1 axe violations, 0 runtime errors
+  axe label-content-name-mismatch: Elements must have their visible text as part of their accessible name (10 nodes) — https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright
+PASS /dashboard/productivity light/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/productivity light/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/productivity dark/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/productivity dark/mobile: 0 axe violations, 0 runtime errors
+FAIL /dashboard/products light/desktop: 1 axe violations, 0 runtime errors
+  axe color-contrast: Elements must meet minimum color contrast ratio thresholds (1 nodes) — https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright
+PASS /dashboard/products light/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/products dark/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/products dark/mobile: 0 axe violations, 0 runtime errors
+FAIL /dashboard/profile light/desktop: 1 axe violations, 0 runtime errors
+  axe color-contrast: Elements must meet minimum color contrast ratio thresholds (5 nodes) — https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright
+FAIL /dashboard/profile light/mobile: 1 axe violations, 0 runtime errors
+  axe color-contrast: Elements must meet minimum color contrast ratio thresholds (3 nodes) — https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright
+PASS /dashboard/profile dark/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/profile dark/mobile: 0 axe violations, 0 runtime errors
+FAIL /dashboard/roles light/desktop: 1 axe violations, 0 runtime errors
+  axe color-contrast: Elements must meet minimum color contrast ratio thresholds (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright
+FAIL /dashboard/roles light/mobile: 1 axe violations, 0 runtime errors
+  axe color-contrast: Elements must meet minimum color contrast ratio thresholds (2 nodes) — https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright
+PASS /dashboard/roles dark/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/roles dark/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/users light/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/users light/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/users dark/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/users dark/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/$ light/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/$ light/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/$ dark/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/$ dark/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/ light/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/ light/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/ dark/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/ dark/mobile: 0 axe violations, 0 runtime errors
+PASS /auth/v2/login light/desktop: 0 axe violations, 0 runtime errors
+PASS /auth/v2/login light/mobile: 0 axe violations, 0 runtime errors
+PASS /auth/v2/login dark/desktop: 0 axe violations, 0 runtime errors
+PASS /auth/v2/login dark/mobile: 0 axe violations, 0 runtime errors
+PASS /auth/v2/register light/desktop: 0 axe violations, 0 runtime errors
+PASS /auth/v2/register light/mobile: 0 axe violations, 0 runtime errors
+PASS /auth/v2/register dark/desktop: 0 axe violations, 0 runtime errors
+PASS /auth/v2/register dark/mobile: 0 axe violations, 0 runtime errors

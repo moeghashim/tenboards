@@ -1,0 +1,9 @@
+
+> tenboards@0.8.1 verify:page
+> node --experimental-strip-types scripts/verify-page.ts /dashboard/kit --base-url http://127.0.0.1:3078
+
+Reusing http://127.0.0.1:3078
+PASS /dashboard/kit/ light/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/kit/ light/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/kit/ dark/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/kit/ dark/mobile: 0 axe violations, 0 runtime errors
