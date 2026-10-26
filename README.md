@@ -1,6 +1,8 @@
 # tenboards
 
-An MIT-licensed dashboard template built with TanStack Start, React 19, TypeScript, Tailwind CSS v4, and shadcn/ui on Base UI.
+An agent-first, MIT-licensed dashboard template built with TanStack Start, React 19, TypeScript, Tailwind CSS v4, and shadcn/ui on Base UI.
+
+Point Codex or Claude Code at a clone and ask for a dashboard or page. Agents get an adopter guide ([AGENTS.md](AGENTS.md)), two Agent Skills, page generators and public blocks, so the on-system path is the shortest one. `npm run check` and `npm run verify:page` fail on off-system UI: raw colors, arbitrary sizes, look-alike cards, accessibility violations and hydration errors. External agents can read [`/llms.txt`](https://tenboards.mohanadgh.workers.dev/llms.txt) and install blocks from the shadcn registry. See [Building with agents](#building-with-agents).
 
 Ten current dashboards and the retained app pages share a compact design system, neutral demo identities and optional Postgres/Better Auth integration. Milestones v0.1–v0.9 are merged and released; [v0.6.0](https://github.com/moeghashim/tenboards/releases/tag/v0.6.0) delivers Workers database support, isolated demo previews and adopter deployment tooling. The [live site](https://tenboards.mohanadgh.workers.dev) intentionally stays a zero-config demo; adopters connect and verify their own database.
 
@@ -489,7 +491,7 @@ local demo, local DB/auth-off and Workers demo. Supplemental coverage includes a
 with original failures and explicit retries retained. Four-state auth/account renders
 and all twelve invoice print PDFs were inspected. See the [evidence index](https://github.com/moeghashim/tenboards/tree/pr-assets/v05-005)
 and [security evidence](docs/auth.md#verified-security-evidence-v05-review). All five
-tasks remain in review; no production auth or milestone release is implied.
+tasks are merged and released with v0.5; the live demo still runs with auth off.
 
 ### Workers runtime readiness (v0.6 task 001)
 
@@ -579,7 +581,7 @@ Integrated acceptance combines the full retained-route Default/Graphite/Pine/Iri
 
 ## Public blocks and kit (v0.9 / 001)
 
-The agent-ready milestone is in progress; public blocks and the kit page are in review. Import presentation APIs from `@/components/blocks`: `PageHeader`, `DashboardCard`, `SectionHeader`, `StatCard`, `DataTable`, `DashboardChart`, `DashboardTooltip`, `DashboardLegend`, and the chart axis/grid/cursor, series, formatting and reduced-motion helpers. Exported prop types and TSDoc describe each contract. Existing route imports have migrated; the old route-local card/header files and chart theme file have no compatibility shims.
+Released in v0.9.0. Import presentation APIs from `@/components/blocks`: `PageHeader`, `DashboardCard`, `SectionHeader`, `StatCard`, `DataTable`, `DashboardChart`, `DashboardTooltip`, `DashboardLegend`, and the chart axis/grid/cursor, series, formatting and reduced-motion helpers. Exported prop types and TSDoc describe each contract. Existing route imports have migrated; the old route-local card/header files and chart theme file have no compatibility shims.
 
 Open `/dashboard/kit` from the **Developer** sidebar group or the command palette. Every block has a live example, variants and copyable TypeScript source. Snippets are static raw imports of the actual example modules, so the displayed code is the code that runs. The kit includes sorting, pagination, empty recovery, mobile table reflow/scrolling, single/comparison chart series, exact chart data and clipboard-failure recovery.
 
@@ -597,7 +599,7 @@ Run `BLOCKS_TEST_URL=http://127.0.0.1:3000 node --experimental-strip-types scrip
 
 ## Build your own pages (v0.9 / 002)
 
-Page generators are in review. Start with the canonical examples at `/dashboard/kit`, then scaffold a dashboard or a table page:
+Page generators shipped in v0.9.0. Start with the canonical examples at `/dashboard/kit`, then scaffold a dashboard or a table page:
 
 ```sh
 npm run new:dashboard team-activity
@@ -642,7 +644,7 @@ npm run verify:page:test
 
 `verify:page` reuses the requested server or starts a local Vite server when it is unavailable. It captures light/dark × desktop/mobile, checks WCAG 2.2 A/AA rules with exact-pinned `@axe-core/playwright`, and reports console, hydration and page errors. Each route gets screenshots and `report.json` in gitignored `verify/<encoded-route>/`; `verify/report.json` indexes the run. Exit 1 means a violation, runtime error or setup failure. Reports preserve axe selectors, node HTML, help links and incomplete/manual-review candidates; an automated pass is not a complete accessibility audit.
 
-`--all` uses the same 37-entry capture catalog, including concrete sample project paths, aliases and system states. Inherited accessibility findings are tracked in [open questions](dev/open-questions.md); they remain visible failures, not suppressed rules. Evidence belongs on `pr-assets`, never the implementation branch. Shell search/account names and the Default activity filters have accessible names that include their visible labels. Task 006 resolves the inherited route-specific names, table scrolling, contrast, progress and list semantics at usage sites: all 37 catalog routes pass light/dark × desktop/mobile (148/148 cases), with zero axe violations or runtime errors. Inactive tabs and the New navigation badge use supported token pairs; token values and protected primitives stay unchanged. Named Analytics/Timeline scroll regions support keyboard scrolling with visible focus; disabled pagination exposes its unavailable state.
+`--all` uses the same 37-entry capture catalog, including concrete sample project paths, aliases and system states. The verifier never suppresses axe rules; the inherited findings it originally reported are recorded as resolved in [open questions](dev/open-questions.md). Evidence belongs on `pr-assets`, never the implementation branch. Shell search/account names and the Default activity filters have accessible names that include their visible labels. Task 006 resolves the inherited route-specific names, table scrolling, contrast, progress and list semantics at usage sites: all 37 catalog routes pass light/dark × desktop/mobile (148/148 cases), with zero axe violations or runtime errors. Inactive tabs and the New navigation badge use supported token pairs; token values and protected primitives stay unchanged. Named Analytics/Timeline scroll regions support keyboard scrolling with visible focus; disabled pagination exposes its unavailable state.
 
 
 ## Building with agents
