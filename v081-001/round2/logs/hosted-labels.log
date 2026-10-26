@@ -1,0 +1,8 @@
+PASS https://a9e19f19-tenboards-preview.mohanadgh.workers.dev/unauthorized: 200; Go to dashboard
+PASS https://a9e19f19-tenboards-preview.mohanadgh.workers.dev/capture-not-found: 404; Go to dashboard
+PASS https://a9e19f19-tenboards-preview.mohanadgh.workers.dev/dashboard/round2-missing: 200; Return to dashboard
+PASS https://a9e19f19-tenboards-preview.mohanadgh.workers.dev/dashboard/default: 200; tenboards dashboard
+PASS https://pr-76-tenboards-preview.mohanadgh.workers.dev/unauthorized: 200; Go to dashboard
+PASS https://pr-76-tenboards-preview.mohanadgh.workers.dev/capture-not-found: 404; Go to dashboard
+PASS https://pr-76-tenboards-preview.mohanadgh.workers.dev/dashboard/round2-missing: 200; Return to dashboard
+PASS https://pr-76-tenboards-preview.mohanadgh.workers.dev/dashboard/default: 200; tenboards dashboard

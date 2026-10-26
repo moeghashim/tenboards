@@ -109,3 +109,7 @@ Node.js v24.21.0
 5. The pre-commit preset generator emits the inherited `[DEP0180] DeprecationWarning: fs.Stats constructor is deprecated.` It generated no changes.
 
 No outstanding product, access or PLAN questions. No dev/open-questions.md change is required. PLAN, protected components, generated routes, dependency versions and release tags remain unchanged.
+
+## Review round 2
+
+[Label correction, refreshed preview, complete verification and before/after screenshots](round2/README.md). Head `d6a771f`; preview `a9e19f19`. All rerun suites pass after correcting the local fixture URL; original configuration failure retained. This supersedes the initial preview and recovery-label evidence above.
