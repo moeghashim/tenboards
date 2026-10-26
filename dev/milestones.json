@@ -223,6 +223,24 @@
       "taskStatuses": {
         "001-default-landing": "planned"
       }
+    },
+    {
+      "id": "v0.9-agent-ready",
+      "status": "planned",
+      "tasks": [
+        "001-blocks-kit",
+        "002-page-generators",
+        "003-design-guardrails",
+        "004-adopter-guide-skills",
+        "005-registry-llms"
+      ],
+      "taskStatuses": {
+        "001-blocks-kit": "planned",
+        "002-page-generators": "planned",
+        "003-design-guardrails": "planned",
+        "004-adopter-guide-skills": "planned",
+        "005-registry-llms": "planned"
+      }
     }
   ]
 }
