@@ -1,0 +1,8 @@
+
+> tenboards@0.8.1 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://127.0.0.1:3292 --routes /dashboard/kit/ --output screenshots/v0.9-002/kit-after
+
+PASS /dashboard/kit/ light/desktop direct
+PASS /dashboard/kit/ light/mobile direct
+PASS /dashboard/kit/ dark/desktop direct
+PASS /dashboard/kit/ dark/mobile direct

@@ -1,0 +1,6 @@
+[
+  "PASS light/desktop: root → Home, palette discovery, both generated pages, pagination, chart data, refresh, no console errors or overflow",
+  "PASS light/mobile: root → Home, palette discovery, both generated pages, pagination, chart data, refresh, no console errors or overflow",
+  "PASS dark/desktop: root → Home, palette discovery, both generated pages, pagination, chart data, refresh, no console errors or overflow",
+  "PASS dark/mobile: root → Home, palette discovery, both generated pages, pagination, chart data, refresh, no console errors or overflow"
+]

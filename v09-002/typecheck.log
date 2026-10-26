@@ -1,0 +1,4 @@
+
+> tenboards@0.8.1 typecheck
+> tsc --noEmit
+

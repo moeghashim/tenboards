@@ -1,0 +1,11 @@
+# v0.9 / 002 — Page generators evidence
+
+- `generators-test.log`: final successful disposable-copy run. Both generated routes pass build/check/typecheck without edits, 31 reads / 213 parity scenarios, 23 safe-rejection checks, four browser combinations and 12 screenshots. Temp copy/server are removed.
+- `after/`: generated dashboard/page plus kit, light/dark × desktop/mobile. `interactions.json`: root → Default → Home, command palette, pagination, chart data, refresh, no console/hydration errors or page overflow.
+- `before/` and `kit-after/`: actual branch kit before/after; all four images are pixel-identical (`kit-comparison.json`). The extra sidebar entries in `after/` exist only in the temp generated app.
+- `kit-test.log`: all four incumbent kit interaction combinations pass. `design-integration.log`: templates pass task 003's current inspectDesign rules, plus the direct-Recharts import boundary (read-only probe of the sibling worktree).
+- No tokens/presets change; supported contrast pairs and chart motion/series helpers are reused.
+- `attempt-1.log` through `attempt-9.log`, `typecheck-first-attempt.log`, `kit-first-attempt.log`, and failure diagnostics retain original development failures. Resolved harness issues: CLI invalid-option wording; Biome title quoting; dependency symlink outside the Vite root; unused import; readiness wait; table locator/hidden mobile labels; devtools overlay intercepting pointer pagination. Pagination is now keyboard-tested with native button activation and accessible cell names. The cached React hook error on the incumbent server cleared after forced dependency reoptimization; no application fix was needed.
+- `failure-light-desktop.png/json` is a resolved harness assertion: page 2 is rendered correctly with no browser errors, but exact text matching included hidden mobile labels. The final test uses accessible cell names.
+- Inherited warnings: Biome reports 35 warnings and 10 infos, without errors. Build reports dependency module-level `use client` directives. Installation reports 8 audit vulnerabilities (6 moderate, 2 high), unchanged dependencies. No unrelated dependency upgrade is included.
+- No generated route, fixture or route-tree source is committed. The hosted PR preview contains the implementation and existing kit; generated samples are documented by disposable-app evidence only.

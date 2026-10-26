@@ -1,0 +1,146 @@
+{
+  "baseURL": "http://127.0.0.1:50880/",
+  "projectId": "sample-operations",
+  "fontAssets": "exact public responses cached between contexts",
+  "maskedLiveClocks": false,
+  "hydrationDelayMs": 0,
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": false,
+  "interactions": false,
+  "sidebarStates": false,
+  "results": [
+    {
+      "route": "/dashboard/kit/",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_kit_-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/kit/",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_kit_-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/kit/",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_kit_-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/kit/",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_kit_-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/generator-dashboard/",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_generator-dashboard_-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/generator-dashboard/",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_generator-dashboard_-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/generator-dashboard/",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_generator-dashboard_-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/generator-dashboard/",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_generator-dashboard_-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/generator-page/",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_generator-page_-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/generator-page/",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_generator-page_-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/generator-page/",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_generator-page_-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/dashboard/generator-page/",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_generator-page_-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": []
+    }
+  ]
+}

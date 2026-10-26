@@ -1,0 +1,94 @@
+
+> tenboards@0.8.1 generators:test
+> node --env-file-if-exists=.env --experimental-strip-types scripts/generators-test.ts
+
+.env not found. Continuing without it.
+PASS safe rejection: ["page","Bad-Slug"]
+PASS safe rejection: ["page","../escape"]
+PASS safe rejection: ["page","two_words"]
+PASS safe rejection: ["page","two--words"]
+PASS safe rejection: ["page","-start"]
+PASS safe rejection: ["page","end-"]
+PASS safe rejection: ["page","9lives"]
+PASS safe rejection: ["page","aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"]
+PASS safe rejection: ["dashboard","index"]
+PASS safe rejection: ["dashboard","route"]
+PASS safe rejection: ["dashboard","api"]
+PASS safe rejection: ["dashboard","dashboard"]
+PASS safe rejection: ["dashboard","home"]
+PASS safe rejection: ["dashboard","kit"]
+PASS safe rejection: ["dashboard","tasks"]
+PASS safe rejection: ["dashboard","projects"]
+PASS safe rejection: ["dashboard","unknown-group","--group","Missing"]
+PASS safe rejection: ["page","bad-option","--group","Pages"]
+PASS safe rejection: ["page","empty-title","--title"," "]
+PASS safe rejection: ["page"]
+PASS safe rejection: ["page","collision"]
+
+> tenboards@0.8.1 new:dashboard
+> node --experimental-strip-types scripts/new-page.ts dashboard generator-dashboard --title Operations "weekly" & <review> --group Developer
+
+Created:
+  src/routes/(main)/dashboard/generator-dashboard/index.tsx
+  src/routes/(main)/dashboard/generator-dashboard/-components/page.tsx
+  src/routes/(main)/dashboard/generator-dashboard/-components/records-table.tsx
+  src/routes/(main)/dashboard/generator-dashboard/-components/load.ts
+  src/server/data/generator-dashboard.types.ts
+  src/server/db/fixtures/generator-dashboard.ts
+  src/server/data/generator-dashboard.ts
+  src/routes/(main)/dashboard/generator-dashboard/-components/activity-chart.tsx
+Updated:
+  src/navigation/sidebar/sidebar-items.ts
+  src/navigation/route-catalog.ts
+  src/server/data/registry.ts
+
+Next steps:
+  npm run dev  # visit /dashboard/generator-dashboard; the router generates its metadata
+  npm run build && npm run check && npm run typecheck
+  npm run data:parity  # requires a migrated/seeded local DATABASE_URL
+  npm run verify:page -- /dashboard/generator-dashboard  # provided by v0.9 task 003
+Replace illustrative fixtures and implement the DB TODO before using live data.
+
+> tenboards@0.8.1 new:page
+> node --experimental-strip-types scripts/new-page.ts page generator-page
+
+Created:
+  src/routes/(main)/dashboard/generator-page/index.tsx
+  src/routes/(main)/dashboard/generator-page/-components/page.tsx
+  src/routes/(main)/dashboard/generator-page/-components/records-table.tsx
+  src/routes/(main)/dashboard/generator-page/-components/load.ts
+  src/server/data/generator-page.types.ts
+  src/server/db/fixtures/generator-page.ts
+  src/server/data/generator-page.ts
+Updated:
+  src/navigation/sidebar/sidebar-items.ts
+  src/navigation/route-catalog.ts
+  src/server/data/registry.ts
+
+Next steps:
+  npm run dev  # visit /dashboard/generator-page; the router generates its metadata
+  npm run build && npm run check && npm run typecheck
+  npm run data:parity  # requires a migrated/seeded local DATABASE_URL
+  npm run verify:page -- /dashboard/generator-page  # provided by v0.9 task 003
+Replace illustrative fixtures and implement the DB TODO before using live data.
+PASS safe rejection: ["page","generator-page"]
+PASS safe rejection: ["dashboard","generator-dashboard"]
+Cleaned temporary copy: /var/folders/28/jpf5lgdn0635bdx2yw0kljnc0000gn/T/tenboards-generators-zJNA01
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+  assert.ok((await readFile(path.join(temporary, route), "utf8")).includes(JSON.stringify(dashboardTitle)))
+
+    at file:///Users/moeghashim/.t3/worktrees/tenboards/t3-47d20a13/scripts/generators-test.ts:94:10 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v24.21.0

@@ -1,0 +1,5 @@
+PASS task 003 design rules and chart import boundary: activity-chart.tsx.template
+PASS task 003 design rules and chart import boundary: dashboard.tsx.template
+PASS task 003 design rules and chart import boundary: page.tsx.template
+PASS task 003 design rules and chart import boundary: records-table.tsx.template
+PASS task 003 design rules and chart import boundary: route.tsx.template

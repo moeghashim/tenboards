@@ -1,0 +1,5 @@
+
+> tenboards@0.8.1 typecheck
+> tsc --noEmit
+
+scripts/generators-test.ts(99,52): error TS2353: Object literal may only specify known properties, and 'DATABASE_URL' does not exist in type '{ DATA_SOURCE: string; }'.

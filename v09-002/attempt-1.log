@@ -1,0 +1,29 @@
+
+> tenboards@0.8.1 generators:test
+> node --env-file-if-exists=.env --experimental-strip-types scripts/generators-test.ts
+
+.env not found. Continuing without it.
+PASS safe rejection: ["page","Bad-Slug"]
+PASS safe rejection: ["page","../escape"]
+PASS safe rejection: ["page","two_words"]
+PASS safe rejection: ["page","two--words"]
+Cleaned temporary copy: /var/folders/28/jpf5lgdn0635bdx2yw0kljnc0000gn/T/tenboards-generators-Nyrmxq
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: The input did not match the regular expression /Invalid slug/. Input:
+
+`Unknown option '-s'. To specify a positional argument starting with a '-', place it at the end of the command after '--', as in '-- "-s"\n`
+
+    at rejects (file:///Users/moeghashim/.t3/worktrees/tenboards/t3-47d20a13/scripts/generators-test.ts:51:10)
+    at async file:///Users/moeghashim/.t3/worktrees/tenboards/t3-47d20a13/scripts/generators-test.ts:77:5 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: `Unknown option '-s'. To specify a positional argument starting with a '-', place it at the end of the command after '--', as in '-- "-s"\n`,
+  expected: /Invalid slug/,
+  operator: 'match',
+  diff: 'simple'
+}
+
+Node.js v24.21.0

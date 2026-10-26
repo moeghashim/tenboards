@@ -1,0 +1,22 @@
+[
+  {
+    "image": "_dashboard_kit_-dark-desktop.png",
+    "same_size": true,
+    "pixel_identical": true
+  },
+  {
+    "image": "_dashboard_kit_-dark-mobile.png",
+    "same_size": true,
+    "pixel_identical": true
+  },
+  {
+    "image": "_dashboard_kit_-light-desktop.png",
+    "same_size": true,
+    "pixel_identical": true
+  },
+  {
+    "image": "_dashboard_kit_-light-mobile.png",
+    "same_size": true,
+    "pixel_identical": true
+  }
+]
