@@ -30,7 +30,9 @@ try {
       });
       page.on("pageerror", (error) => errors.push(error.message));
       await page.goto(baseURL);
-      await page.waitForURL("**/dashboard/home");
+      await page.waitForURL("**/dashboard/default");
+      await page.getByText("Total Revenue").first().waitFor();
+      await page.goto(new URL("/dashboard/home", baseURL).href);
       await page.getByRole("heading", { name: "My tasks", exact: true }).waitFor();
       await page.waitForLoadState("networkidle");
       await page.keyboard.press("Control+k");
@@ -132,7 +134,7 @@ try {
       await page.screenshot({ path: `${output}/${theme}-${size}.png`, fullPage: true, animations: "disabled" });
       assert.deepEqual(errors, []);
       results.push(
-        `PASS ${theme}/${size}: root→home, palette→kit, sidebar, keyboard/source/copy/recovery, sorting, pagination, empty, mobile reflow/scroll, chart variants/data/focus, no overflow or console/hydration errors`,
+        `PASS ${theme}/${size}: root→default, home, palette→kit, sidebar, keyboard/source/copy/recovery, sorting, pagination, empty, mobile reflow/scroll, chart variants/data/focus, no overflow or console/hydration errors`,
       );
       console.log(results.at(-1));
       await context.close();

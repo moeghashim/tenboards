@@ -17,7 +17,7 @@ The Assistant follows new replies until you scroll up; Jump to latest resumes fo
 
 **v0.8 (Projects workspace) is merged, deployed and released as [v0.8.0](https://github.com/moeghashim/tenboards/releases/tag/v0.8.0)** — the data foundation, workspace Home/Projects index, and all five direct read-only project views are implemented. [The milestone contract](dev/milestones/v0.8-projects/README.md) tracks the remaining navigation consolidation and final acceptance. Existing standalone routes and the default landing remain available.
 
-**v0.8.1 (Default dashboard landing) is merged, deployed and released as [v0.8.1](https://github.com/moeghashim/tenboards/releases/tag/v0.8.1)** — restores the Default revenue dashboard as the entry point and auth fallback. Home, Projects, navigation order and legacy redirects remain available. See the [task contract](dev/milestones/v0.8.1-default-landing/README.md). **v0.9 (Agent-ready template) is planned** — see the [milestone contract](dev/milestones/v0.9-agent-ready/README.md).
+**v0.8.1 (Default dashboard landing) is merged, deployed and released as [v0.8.1](https://github.com/moeghashim/tenboards/releases/tag/v0.8.1)** — restores the Default revenue dashboard as the entry point and auth fallback. Home, Projects, navigation order and legacy redirects remain available. See the [task contract](dev/milestones/v0.8.1-default-landing/README.md). **v0.9 (Agent-ready template) is in progress** — task 001 (public blocks and the `/dashboard/kit` page) is merged; generators, design guardrails, adopter skills and the shadcn registry follow. See the [milestone contract](dev/milestones/v0.9-agent-ready/README.md).
 
 ## Run locally
 

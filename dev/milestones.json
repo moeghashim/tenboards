@@ -224,7 +224,7 @@
         "005-registry-llms"
       ],
       "taskStatuses": {
-        "001-blocks-kit": "in-review",
+        "001-blocks-kit": "merged",
         "002-page-generators": "planned",
         "003-design-guardrails": "planned",
         "004-adopter-guide-skills": "planned",
