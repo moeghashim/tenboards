@@ -1,0 +1,387 @@
+diff --git a/src/navigation/route-catalog.ts b/src/navigation/route-catalog.ts
+index 1b5c2c8..562edc7 100644
+--- a/src/navigation/route-catalog.ts
++++ b/src/navigation/route-catalog.ts
+@@ -149,6 +149,8 @@ export const captureRoutes = [
+     route: "/auth/v2/register",
+     path: "/auth/v2/register",
+   },
++
++  { route: "/dashboard/vendors/", path: "/dashboard/vendors", ready: "Vendors" },
+ ] as const satisfies readonly { route: string; path: string; ready?: string; status?: number }[];
+ 
+ const navRoutes = sidebarItems.flatMap((group) =>
+diff --git a/src/navigation/sidebar/sidebar-items.ts b/src/navigation/sidebar/sidebar-items.ts
+index 091da29..3b10288 100644
+--- a/src/navigation/sidebar/sidebar-items.ts
++++ b/src/navigation/sidebar/sidebar-items.ts
+@@ -20,6 +20,7 @@ import {
+   Server,
+   ShoppingBag,
+   SquareArrowUpRight,
++  Store,
+   UserRound,
+   Users,
+ } from "lucide-react";
+@@ -196,6 +197,8 @@ export const sidebarItems: NavGroup[] = [
+           { id: "auth-register-v2", title: "Register v2", url: "/auth/v2/register", newTab: true },
+         ],
+       },
++
++      { id: "vendors", title: "Vendors", url: "/dashboard/vendors", icon: Store },
+     ],
+   },
+   {
+diff --git a/src/routeTree.gen.ts b/src/routeTree.gen.ts
+index 4648290..18bd7d8 100644
+--- a/src/routeTree.gen.ts
++++ b/src/routeTree.gen.ts
+@@ -54,6 +54,7 @@ import { Route as mainDashboardHomeIndexRouteImport } from './routes/(main)/dash
+ import { Route as mainDashboardKitIndexRouteImport } from './routes/(main)/dashboard/kit/index'
+ import { Route as mainDashboardProjectsIndexRouteImport } from './routes/(main)/dashboard/projects/index'
+ import { Route as mainDashboardProjectsProjectIdRouteRouteImport } from './routes/(main)/dashboard/projects/$projectId/route'
++import { Route as mainDashboardVendorsIndexRouteImport } from './routes/(main)/dashboard/vendors/index'
+ import { Route as mainDashboardProjectsProjectIdIndexRouteImport } from './routes/(main)/dashboard/projects/$projectId/index'
+ import { Route as mainDashboardProjectsProjectIdBoardRouteImport } from './routes/(main)/dashboard/projects/$projectId/board'
+ import { Route as mainDashboardProjectsProjectIdFilesRouteImport } from './routes/(main)/dashboard/projects/$projectId/files'
+@@ -306,6 +307,12 @@ const mainDashboardProjectsProjectIdRouteRoute =
+     path: '/projects/$projectId',
+     getParentRoute: () => mainDashboardRouteRoute,
+   } as any)
++const mainDashboardVendorsIndexRoute =
++  mainDashboardVendorsIndexRouteImport.update({
++    id: '/vendors/',
++    path: '/vendors/',
++    getParentRoute: () => mainDashboardRouteRoute,
++  } as any)
+ const mainDashboardProjectsProjectIdIndexRoute =
+   mainDashboardProjectsProjectIdIndexRouteImport.update({
+     id: '/',
+@@ -389,6 +396,7 @@ export interface FileRoutesByFullPath {
+   '/dashboard/home/': typeof mainDashboardHomeIndexRoute
+   '/dashboard/kit/': typeof mainDashboardKitIndexRoute
+   '/dashboard/projects/': typeof mainDashboardProjectsIndexRoute
++  '/dashboard/vendors/': typeof mainDashboardVendorsIndexRoute
+   '/dashboard/projects/$projectId/board': typeof mainDashboardProjectsProjectIdBoardRoute
+   '/dashboard/projects/$projectId/files': typeof mainDashboardProjectsProjectIdFilesRoute
+   '/dashboard/projects/$projectId/list': typeof mainDashboardProjectsProjectIdListRoute
+@@ -440,6 +448,7 @@ export interface FileRoutesByTo {
+   '/dashboard/home': typeof mainDashboardHomeIndexRoute
+   '/dashboard/kit': typeof mainDashboardKitIndexRoute
+   '/dashboard/projects': typeof mainDashboardProjectsIndexRoute
++  '/dashboard/vendors': typeof mainDashboardVendorsIndexRoute
+   '/dashboard/projects/$projectId/board': typeof mainDashboardProjectsProjectIdBoardRoute
+   '/dashboard/projects/$projectId/files': typeof mainDashboardProjectsProjectIdFilesRoute
+   '/dashboard/projects/$projectId/list': typeof mainDashboardProjectsProjectIdListRoute
+@@ -494,6 +503,7 @@ export interface FileRoutesById {
+   '/(main)/dashboard/home/': typeof mainDashboardHomeIndexRoute
+   '/(main)/dashboard/kit/': typeof mainDashboardKitIndexRoute
+   '/(main)/dashboard/projects/': typeof mainDashboardProjectsIndexRoute
++  '/(main)/dashboard/vendors/': typeof mainDashboardVendorsIndexRoute
+   '/(main)/dashboard/projects/$projectId/board': typeof mainDashboardProjectsProjectIdBoardRoute
+   '/(main)/dashboard/projects/$projectId/files': typeof mainDashboardProjectsProjectIdFilesRoute
+   '/(main)/dashboard/projects/$projectId/list': typeof mainDashboardProjectsProjectIdListRoute
+@@ -549,6 +559,7 @@ export interface FileRouteTypes {
+     | '/dashboard/home/'
+     | '/dashboard/kit/'
+     | '/dashboard/projects/'
++    | '/dashboard/vendors/'
+     | '/dashboard/projects/$projectId/board'
+     | '/dashboard/projects/$projectId/files'
+     | '/dashboard/projects/$projectId/list'
+@@ -600,6 +611,7 @@ export interface FileRouteTypes {
+     | '/dashboard/home'
+     | '/dashboard/kit'
+     | '/dashboard/projects'
++    | '/dashboard/vendors'
+     | '/dashboard/projects/$projectId/board'
+     | '/dashboard/projects/$projectId/files'
+     | '/dashboard/projects/$projectId/list'
+@@ -653,6 +665,7 @@ export interface FileRouteTypes {
+     | '/(main)/dashboard/home/'
+     | '/(main)/dashboard/kit/'
+     | '/(main)/dashboard/projects/'
++    | '/(main)/dashboard/vendors/'
+     | '/(main)/dashboard/projects/$projectId/board'
+     | '/(main)/dashboard/projects/$projectId/files'
+     | '/(main)/dashboard/projects/$projectId/list'
+@@ -995,6 +1008,13 @@ declare module '@tanstack/react-router' {
+       preLoaderRoute: typeof mainDashboardProjectsProjectIdRouteRouteImport
+       parentRoute: typeof mainDashboardRouteRoute
+     }
++    '/(main)/dashboard/vendors/': {
++      id: '/(main)/dashboard/vendors/'
++      path: '/vendors'
++      fullPath: '/dashboard/vendors/'
++      preLoaderRoute: typeof mainDashboardVendorsIndexRouteImport
++      parentRoute: typeof mainDashboardRouteRoute
++    }
+     '/(main)/dashboard/projects/$projectId/': {
+       id: '/(main)/dashboard/projects/$projectId/'
+       path: '/'
+@@ -1100,6 +1120,7 @@ interface mainDashboardRouteRouteChildren {
+   mainDashboardHomeIndexRoute: typeof mainDashboardHomeIndexRoute
+   mainDashboardKitIndexRoute: typeof mainDashboardKitIndexRoute
+   mainDashboardProjectsIndexRoute: typeof mainDashboardProjectsIndexRoute
++  mainDashboardVendorsIndexRoute: typeof mainDashboardVendorsIndexRoute
+ }
+ 
+ const mainDashboardRouteRouteChildren: mainDashboardRouteRouteChildren = {
+@@ -1134,6 +1155,7 @@ const mainDashboardRouteRouteChildren: mainDashboardRouteRouteChildren = {
+   mainDashboardHomeIndexRoute: mainDashboardHomeIndexRoute,
+   mainDashboardKitIndexRoute: mainDashboardKitIndexRoute,
+   mainDashboardProjectsIndexRoute: mainDashboardProjectsIndexRoute,
++  mainDashboardVendorsIndexRoute: mainDashboardVendorsIndexRoute,
+ }
+ 
+ const mainDashboardRouteRouteWithChildren =
+diff --git a/src/routes/(main)/dashboard/vendors/-components/load.ts b/src/routes/(main)/dashboard/vendors/-components/load.ts
+new file mode 100644
+index 0000000..64637aa
+--- /dev/null
++++ b/src/routes/(main)/dashboard/vendors/-components/load.ts
+@@ -0,0 +1,8 @@
++import { createServerFn } from "@tanstack/react-start";
++
++export const loadVendors = createServerFn({ method: "GET" }).handler(async () => {
++  const { requireSession } = await import("@/lib/auth/session.server");
++  await requireSession();
++  const { readVendors } = await import("@/server/data/vendors");
++  return readVendors();
++});
+diff --git a/src/routes/(main)/dashboard/vendors/-components/page.tsx b/src/routes/(main)/dashboard/vendors/-components/page.tsx
+new file mode 100644
+index 0000000..7f50bef
+--- /dev/null
++++ b/src/routes/(main)/dashboard/vendors/-components/page.tsx
+@@ -0,0 +1,21 @@
++import { CardContent, DashboardCard, PageHeader, SectionHeader } from "@/components/blocks";
++import type { VendorsData } from "@/server/data/vendors.types";
++
++import { RecordsTable } from "./records-table";
++
++export function VendorsPage({ data }: { data: VendorsData }) {
++  return (
++    <section className="min-w-0 space-y-5" aria-label={"Vendors"}>
++      <PageHeader title={"Vendors"} description="Suppliers and service providers your team buys from." />
++      <DashboardCard>
++        <SectionHeader
++          title="Vendor directory"
++          description="Sample vendor records. Sort columns or browse the next page."
++        />
++        <CardContent>
++          <RecordsTable records={data.records} />
++        </CardContent>
++      </DashboardCard>
++    </section>
++  );
++}
+diff --git a/src/routes/(main)/dashboard/vendors/-components/records-table.tsx b/src/routes/(main)/dashboard/vendors/-components/records-table.tsx
+new file mode 100644
+index 0000000..8833f13
+--- /dev/null
++++ b/src/routes/(main)/dashboard/vendors/-components/records-table.tsx
+@@ -0,0 +1,51 @@
++import { type ColumnDef, useTable } from "@tanstack/react-table";
++
++import { cn } from "cn";
++
++import { DataTable, type DataTableFeatures, dataTableFeatures, formatCurrency } from "@/components/blocks";
++import { Badge } from "@/components/ui/badge";
++import type { VendorStatus, VendorsRecord } from "@/server/data/vendors.types";
++
++const statusClasses: Record<VendorStatus, string> = {
++  Active: "bg-success-surface text-success",
++  Onboarding: "bg-info-surface text-info",
++  "Under review": "bg-warning-surface text-warning",
++  Inactive: "bg-muted text-muted-foreground",
++};
++
++const columns: ColumnDef<DataTableFeatures, VendorsRecord>[] = [
++  { accessorKey: "id", header: "Vendor ID", sortFn: "alphanumeric" },
++  {
++    accessorKey: "name",
++    header: "Vendor",
++    sortFn: "text",
++    cell: ({ row }) => <span className="font-medium">{row.original.name}</span>,
++  },
++  { accessorKey: "category", header: "Category", sortFn: "text" },
++  { accessorKey: "contact", header: "Primary contact", sortFn: "text" },
++  {
++    accessorKey: "status",
++    header: "Status",
++    sortFn: "text",
++    cell: ({ row }) => (
++      <Badge variant="secondary" className={cn("rounded-md", statusClasses[row.original.status])}>
++        {row.original.status}
++      </Badge>
++    ),
++  },
++  {
++    accessorKey: "annualSpend",
++    header: "Annual spend",
++    cell: ({ row }) => <span className="tabular-nums">{formatCurrency(row.original.annualSpend)}</span>,
++  },
++];
++export function RecordsTable({ records }: { records: VendorsRecord[] }) {
++  const table = useTable({
++    features: dataTableFeatures,
++    data: records,
++    columns,
++    getRowId: (row) => row.id,
++    initialState: { pagination: { pageIndex: 0, pageSize: 5 } },
++  });
++  return <DataTable table={table} label="Vendors" mobile="reflow" empty="No vendors to display yet." />;
++}
+diff --git a/src/routes/(main)/dashboard/vendors/index.tsx b/src/routes/(main)/dashboard/vendors/index.tsx
+new file mode 100644
+index 0000000..95886a6
+--- /dev/null
++++ b/src/routes/(main)/dashboard/vendors/index.tsx
+@@ -0,0 +1,15 @@
++import { createFileRoute } from "@tanstack/react-router";
++
++import { requireAppRoute } from "@/lib/auth/app-route";
++
++import { loadVendors } from "./-components/load";
++import { VendorsPage } from "./-components/page";
++
++export const Route = createFileRoute("/(main)/dashboard/vendors/")({
++  beforeLoad: requireAppRoute,
++  loader: () => loadVendors(),
++  component: Page,
++});
++function Page() {
++  return <VendorsPage data={Route.useLoaderData()} />;
++}
+diff --git a/src/server/data/registry.ts b/src/server/data/registry.ts
+index e792200..4f0e376 100644
+--- a/src/server/data/registry.ts
++++ b/src/server/data/registry.ts
+@@ -36,6 +36,7 @@ import {
+ import { dbRoles, demoRoles } from "./roles.ts";
+ import { dbTasks, demoTasks } from "./tasks.ts";
+ import { dbUsers, demoUsers } from "./users.ts";
++import { dbVendors, demoVendors } from "./vendors.ts";
+ 
+ // Each exported domain read owns all of its supported input/variant scenarios here.
+ function defineRead<Input, Output>(entry: {
+@@ -474,4 +475,12 @@ export const readRegistry = [
+       { name: "missing-order", input: { orderId: "missing" } },
+     ],
+   }),
++
++  defineRead({
++    module: "vendors",
++    read: "readVendors",
++    demo: demoVendors,
++    db: dbVendors,
++    scenarios: [{ name: "all", input: {} }],
++  }),
+ ];
+diff --git a/src/server/data/vendors.ts b/src/server/data/vendors.ts
+new file mode 100644
+index 0000000..a5445a1
+--- /dev/null
++++ b/src/server/data/vendors.ts
+@@ -0,0 +1,16 @@
++import { fixture } from "../db/fixtures/vendors.ts";
++import { readSource } from "./source.ts";
++import type { VendorsData } from "./vendors.types.ts";
++
++export async function demoVendors(): Promise<VendorsData> {
++  return structuredClone(fixture);
++}
++export async function dbVendors(): Promise<VendorsData> {
++  // TODO: replace this explicit scaffold stub with an ordered database query,
++  // add a schema/migration/seed, and extend registry scenarios. Until then both
++  // sources intentionally return illustrative data; no real records are loaded.
++  return structuredClone(fixture);
++}
++export async function readVendors(): Promise<VendorsData> {
++  return readSource(demoVendors, dbVendors);
++}
+diff --git a/src/server/data/vendors.types.ts b/src/server/data/vendors.types.ts
+new file mode 100644
+index 0000000..2e6352c
+--- /dev/null
++++ b/src/server/data/vendors.types.ts
+@@ -0,0 +1,10 @@
++export type VendorStatus = "Active" | "Onboarding" | "Under review" | "Inactive";
++export type VendorsRecord = {
++  id: string;
++  name: string;
++  category: string;
++  contact: string;
++  status: VendorStatus;
++  annualSpend: number;
++};
++export type VendorsData = { records: VendorsRecord[] };
+diff --git a/src/server/db/fixtures/vendors.ts b/src/server/db/fixtures/vendors.ts
+new file mode 100644
+index 0000000..5696cf4
+--- /dev/null
++++ b/src/server/db/fixtures/vendors.ts
+@@ -0,0 +1,62 @@
++import type { VendorsData } from "../../data/vendors.types.ts";
++
++export const fixture: VendorsData = {
++  records: [
++    {
++      id: "VEN-1001",
++      name: "Northwind Office Supply",
++      category: "Office supplies",
++      contact: "Jordan Lee",
++      status: "Active",
++      annualSpend: 48200,
++    },
++    {
++      id: "VEN-1002",
++      name: "Brightline Logistics",
++      category: "Freight",
++      contact: "Morgan Chen",
++      status: "Active",
++      annualSpend: 186500,
++    },
++    {
++      id: "VEN-1003",
++      name: "Cobalt Cloud Hosting",
++      category: "Software",
++      contact: "Alex Rivera",
++      status: "Under review",
++      annualSpend: 92750,
++    },
++    {
++      id: "VEN-1004",
++      name: "Harbor Facilities Group",
++      category: "Facilities",
++      contact: "Casey Patel",
++      status: "Onboarding",
++      annualSpend: 0,
++    },
++    {
++      id: "VEN-1005",
++      name: "Summit Print Works",
++      category: "Marketing",
++      contact: "Riley Brooks",
++      status: "Inactive",
++      annualSpend: 6300,
++    },
++    {
++      id: "VEN-1006",
++      name: "Meridian Security Services",
++      category: "Security",
++      contact: "Taylor Morgan",
++      status: "Active",
++      annualSpend: 71400,
++    },
++    {
++      id: "VEN-1007",
++      name: "Fieldstone Catering",
++      category: "Hospitality",
++      contact: "Avery Kim",
++      status: "Active",
++      annualSpend: 23900,
++    },
++  ],
++};

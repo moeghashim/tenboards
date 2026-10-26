@@ -1,0 +1,5 @@
+
+> tenboards@0.8.1 check:skills:test
+> node --experimental-strip-types scripts/check-skills-test.ts
+
+Skills validator passed: valid inventory and 16 rejection cases.

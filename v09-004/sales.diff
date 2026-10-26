@@ -1,0 +1,440 @@
+diff --git a/src/navigation/route-catalog.ts b/src/navigation/route-catalog.ts
+index 1b5c2c8..3eea9b5 100644
+--- a/src/navigation/route-catalog.ts
++++ b/src/navigation/route-catalog.ts
+@@ -149,6 +149,8 @@ export const captureRoutes = [
+     route: "/auth/v2/register",
+     path: "/auth/v2/register",
+   },
++
++  { route: "/dashboard/sales/", path: "/dashboard/sales", ready: "Sales" },
+ ] as const satisfies readonly { route: string; path: string; ready?: string; status?: number }[];
+ 
+ const navRoutes = sidebarItems.flatMap((group) =>
+diff --git a/src/navigation/sidebar/sidebar-items.ts b/src/navigation/sidebar/sidebar-items.ts
+index 091da29..60d33d5 100644
+--- a/src/navigation/sidebar/sidebar-items.ts
++++ b/src/navigation/sidebar/sidebar-items.ts
+@@ -130,6 +130,8 @@ export const sidebarItems: NavGroup[] = [
+         url: "/dashboard/patient-monitoring",
+         icon: HeartPulse,
+       },
++
++      { id: "sales", title: "Sales", url: "/dashboard/sales", icon: LayoutDashboard },
+     ],
+   },
+   {
+diff --git a/src/routeTree.gen.ts b/src/routeTree.gen.ts
+index 4648290..cf30b4c 100644
+--- a/src/routeTree.gen.ts
++++ b/src/routeTree.gen.ts
+@@ -54,6 +54,7 @@ import { Route as mainDashboardHomeIndexRouteImport } from './routes/(main)/dash
+ import { Route as mainDashboardKitIndexRouteImport } from './routes/(main)/dashboard/kit/index'
+ import { Route as mainDashboardProjectsIndexRouteImport } from './routes/(main)/dashboard/projects/index'
+ import { Route as mainDashboardProjectsProjectIdRouteRouteImport } from './routes/(main)/dashboard/projects/$projectId/route'
++import { Route as mainDashboardSalesIndexRouteImport } from './routes/(main)/dashboard/sales/index'
+ import { Route as mainDashboardProjectsProjectIdIndexRouteImport } from './routes/(main)/dashboard/projects/$projectId/index'
+ import { Route as mainDashboardProjectsProjectIdBoardRouteImport } from './routes/(main)/dashboard/projects/$projectId/board'
+ import { Route as mainDashboardProjectsProjectIdFilesRouteImport } from './routes/(main)/dashboard/projects/$projectId/files'
+@@ -306,6 +307,11 @@ const mainDashboardProjectsProjectIdRouteRoute =
+     path: '/projects/$projectId',
+     getParentRoute: () => mainDashboardRouteRoute,
+   } as any)
++const mainDashboardSalesIndexRoute = mainDashboardSalesIndexRouteImport.update({
++  id: '/sales/',
++  path: '/sales/',
++  getParentRoute: () => mainDashboardRouteRoute,
++} as any)
+ const mainDashboardProjectsProjectIdIndexRoute =
+   mainDashboardProjectsProjectIdIndexRouteImport.update({
+     id: '/',
+@@ -389,6 +395,7 @@ export interface FileRoutesByFullPath {
+   '/dashboard/home/': typeof mainDashboardHomeIndexRoute
+   '/dashboard/kit/': typeof mainDashboardKitIndexRoute
+   '/dashboard/projects/': typeof mainDashboardProjectsIndexRoute
++  '/dashboard/sales/': typeof mainDashboardSalesIndexRoute
+   '/dashboard/projects/$projectId/board': typeof mainDashboardProjectsProjectIdBoardRoute
+   '/dashboard/projects/$projectId/files': typeof mainDashboardProjectsProjectIdFilesRoute
+   '/dashboard/projects/$projectId/list': typeof mainDashboardProjectsProjectIdListRoute
+@@ -440,6 +447,7 @@ export interface FileRoutesByTo {
+   '/dashboard/home': typeof mainDashboardHomeIndexRoute
+   '/dashboard/kit': typeof mainDashboardKitIndexRoute
+   '/dashboard/projects': typeof mainDashboardProjectsIndexRoute
++  '/dashboard/sales': typeof mainDashboardSalesIndexRoute
+   '/dashboard/projects/$projectId/board': typeof mainDashboardProjectsProjectIdBoardRoute
+   '/dashboard/projects/$projectId/files': typeof mainDashboardProjectsProjectIdFilesRoute
+   '/dashboard/projects/$projectId/list': typeof mainDashboardProjectsProjectIdListRoute
+@@ -494,6 +502,7 @@ export interface FileRoutesById {
+   '/(main)/dashboard/home/': typeof mainDashboardHomeIndexRoute
+   '/(main)/dashboard/kit/': typeof mainDashboardKitIndexRoute
+   '/(main)/dashboard/projects/': typeof mainDashboardProjectsIndexRoute
++  '/(main)/dashboard/sales/': typeof mainDashboardSalesIndexRoute
+   '/(main)/dashboard/projects/$projectId/board': typeof mainDashboardProjectsProjectIdBoardRoute
+   '/(main)/dashboard/projects/$projectId/files': typeof mainDashboardProjectsProjectIdFilesRoute
+   '/(main)/dashboard/projects/$projectId/list': typeof mainDashboardProjectsProjectIdListRoute
+@@ -549,6 +558,7 @@ export interface FileRouteTypes {
+     | '/dashboard/home/'
+     | '/dashboard/kit/'
+     | '/dashboard/projects/'
++    | '/dashboard/sales/'
+     | '/dashboard/projects/$projectId/board'
+     | '/dashboard/projects/$projectId/files'
+     | '/dashboard/projects/$projectId/list'
+@@ -600,6 +610,7 @@ export interface FileRouteTypes {
+     | '/dashboard/home'
+     | '/dashboard/kit'
+     | '/dashboard/projects'
++    | '/dashboard/sales'
+     | '/dashboard/projects/$projectId/board'
+     | '/dashboard/projects/$projectId/files'
+     | '/dashboard/projects/$projectId/list'
+@@ -653,6 +664,7 @@ export interface FileRouteTypes {
+     | '/(main)/dashboard/home/'
+     | '/(main)/dashboard/kit/'
+     | '/(main)/dashboard/projects/'
++    | '/(main)/dashboard/sales/'
+     | '/(main)/dashboard/projects/$projectId/board'
+     | '/(main)/dashboard/projects/$projectId/files'
+     | '/(main)/dashboard/projects/$projectId/list'
+@@ -995,6 +1007,13 @@ declare module '@tanstack/react-router' {
+       preLoaderRoute: typeof mainDashboardProjectsProjectIdRouteRouteImport
+       parentRoute: typeof mainDashboardRouteRoute
+     }
++    '/(main)/dashboard/sales/': {
++      id: '/(main)/dashboard/sales/'
++      path: '/sales'
++      fullPath: '/dashboard/sales/'
++      preLoaderRoute: typeof mainDashboardSalesIndexRouteImport
++      parentRoute: typeof mainDashboardRouteRoute
++    }
+     '/(main)/dashboard/projects/$projectId/': {
+       id: '/(main)/dashboard/projects/$projectId/'
+       path: '/'
+@@ -1100,6 +1119,7 @@ interface mainDashboardRouteRouteChildren {
+   mainDashboardHomeIndexRoute: typeof mainDashboardHomeIndexRoute
+   mainDashboardKitIndexRoute: typeof mainDashboardKitIndexRoute
+   mainDashboardProjectsIndexRoute: typeof mainDashboardProjectsIndexRoute
++  mainDashboardSalesIndexRoute: typeof mainDashboardSalesIndexRoute
+ }
+ 
+ const mainDashboardRouteRouteChildren: mainDashboardRouteRouteChildren = {
+@@ -1134,6 +1154,7 @@ const mainDashboardRouteRouteChildren: mainDashboardRouteRouteChildren = {
+   mainDashboardHomeIndexRoute: mainDashboardHomeIndexRoute,
+   mainDashboardKitIndexRoute: mainDashboardKitIndexRoute,
+   mainDashboardProjectsIndexRoute: mainDashboardProjectsIndexRoute,
++  mainDashboardSalesIndexRoute: mainDashboardSalesIndexRoute,
+ }
+ 
+ const mainDashboardRouteRouteWithChildren =
+diff --git a/src/routes/(main)/dashboard/sales/-components/activity-chart.tsx b/src/routes/(main)/dashboard/sales/-components/activity-chart.tsx
+new file mode 100644
+index 0000000..ef05071
+--- /dev/null
++++ b/src/routes/(main)/dashboard/sales/-components/activity-chart.tsx
+@@ -0,0 +1,73 @@
++import { type ColumnDef, useTable } from "@tanstack/react-table";
++
++import {
++  CartesianGrid,
++  chartAxis,
++  chartCursor,
++  chartGrid,
++  DashboardChart,
++  DashboardLegend,
++  DashboardTooltip,
++  DataTable,
++  type DataTableFeatures,
++  dataTableFeatures,
++  formatCurrency,
++  Legend,
++  Line,
++  LineChart,
++  seriesConfig,
++  Tooltip,
++  useChartMotion,
++  XAxis,
++  YAxis,
++} from "@/components/blocks";
++import type { SalesPoint } from "@/server/data/sales.types";
++
++const config = seriesConfig({ revenue: "Net revenue" });
++const columns: ColumnDef<DataTableFeatures, SalesPoint>[] = [
++  { accessorKey: "day", header: "Date", enableSorting: false },
++  {
++    accessorKey: "revenue",
++    header: "Net revenue (USD)",
++    enableSorting: false,
++    cell: ({ getValue }) => formatCurrency(getValue<number>()),
++  },
++];
++export function RevenueChart({ data }: { data: SalesPoint[] }) {
++  const motion = useChartMotion();
++  const table = useTable({ features: dataTableFeatures, data, columns, getRowId: (row) => row.day });
++  if (!data.length) return <p className="text-muted-foreground text-sm">No revenue data in this reporting period.</p>;
++  return (
++    <div className="min-w-0 space-y-4">
++      <DashboardChart config={config} aria-label="Daily net revenue in USD; exact values in View chart data below">
++        <LineChart data={data} accessibilityLayer>
++          <CartesianGrid {...chartGrid} />
++          <XAxis dataKey="day" {...chartAxis} />
++          <YAxis {...chartAxis} tickFormatter={(value: number) => formatCurrency(value)} width={80} />
++          <Tooltip
++            {...motion}
++            cursor={chartCursor}
++            content={
++              <DashboardTooltip formatter={(value) => <span>Net revenue: {formatCurrency(Number(value))}</span>} />
++            }
++          />
++          <Legend content={<DashboardLegend config={config} />} />
++          <Line
++            dataKey="revenue"
++            stroke={config.revenue.color}
++            strokeDasharray={config.revenue.strokeDasharray}
++            strokeWidth={2}
++            dot
++            {...motion}
++          />
++        </LineChart>
++      </DashboardChart>
++      <details>
++        <summary className="w-fit cursor-pointer rounded-sm text-sm underline underline-offset-4">
++          View chart data
++        </summary>
++        <DataTable table={table} label="Daily net revenue in USD" mobile="reflow" pagination={false} />
++      </details>
++    </div>
++  );
++}
+diff --git a/src/routes/(main)/dashboard/sales/-components/load.ts b/src/routes/(main)/dashboard/sales/-components/load.ts
+new file mode 100644
+index 0000000..a796068
+--- /dev/null
++++ b/src/routes/(main)/dashboard/sales/-components/load.ts
+@@ -0,0 +1,8 @@
++import { createServerFn } from "@tanstack/react-start";
++
++export const loadSales = createServerFn({ method: "GET" }).handler(async () => {
++  const { requireSession } = await import("@/lib/auth/session.server");
++  await requireSession();
++  const { readSales } = await import("@/server/data/sales");
++  return readSales();
++});
+diff --git a/src/routes/(main)/dashboard/sales/-components/page.tsx b/src/routes/(main)/dashboard/sales/-components/page.tsx
+new file mode 100644
+index 0000000..47ca10c
+--- /dev/null
++++ b/src/routes/(main)/dashboard/sales/-components/page.tsx
+@@ -0,0 +1,50 @@
++import {
++  CardContent,
++  DashboardCard,
++  formatCurrency,
++  formatNumber,
++  PageHeader,
++  SectionHeader,
++  StatCard,
++} from "@/components/blocks";
++import type { SalesData } from "@/server/data/sales.types";
++
++import { RevenueChart } from "./activity-chart";
++import { TopProductsTable } from "./records-table";
++
++export function SalesPage({ data }: { data: SalesData }) {
++  const { netRevenue, orders } = data.metrics;
++  return (
++    <section className="min-w-0 space-y-5" aria-label="Sales">
++      <PageHeader title="Sales" description="Demo sales · October 19–23, 2026 · All amounts in USD." />
++      <div className="grid gap-4 sm:grid-cols-3">
++        <StatCard
++          label="Net revenue"
++          value={formatCurrency(netRevenue)}
++          help="After discounts and returns; excludes tax and shipping."
++        />
++        <StatCard label="Paid orders" value={formatNumber(orders)} help="Orders included in this reporting period." />
++        <StatCard
++          label="Average order value"
++          value={orders ? formatCurrency(netRevenue / orders) : "—"}
++          help="Net revenue divided by paid orders."
++        />
++      </div>
++      <DashboardCard>
++        <SectionHeader title="Daily revenue" description="Net revenue across the five-day reporting period." />
++        <CardContent>
++          <RevenueChart data={data.revenue} />
++        </CardContent>
++      </DashboardCard>
++      <DashboardCard>
++        <SectionHeader
++          title="Top products"
++          description="Products sold this period, ranked by net revenue. Orders may include multiple products."
++        />
++        <CardContent>
++          <TopProductsTable products={data.products} />
++        </CardContent>
++      </DashboardCard>
++    </section>
++  );
++}
+diff --git a/src/routes/(main)/dashboard/sales/-components/records-table.tsx b/src/routes/(main)/dashboard/sales/-components/records-table.tsx
+new file mode 100644
+index 0000000..265ef63
+--- /dev/null
++++ b/src/routes/(main)/dashboard/sales/-components/records-table.tsx
+@@ -0,0 +1,45 @@
++import { type ColumnDef, useTable } from "@tanstack/react-table";
++
++import {
++  DataTable,
++  type DataTableFeatures,
++  dataTableFeatures,
++  formatCurrency,
++  formatNumber,
++} from "@/components/blocks";
++import type { SalesProduct } from "@/server/data/sales.types";
++
++const columns: ColumnDef<DataTableFeatures, SalesProduct>[] = [
++  { accessorKey: "name", header: "Product", sortFn: "text" },
++  { accessorKey: "id", header: "SKU", sortFn: "alphanumeric" },
++  { accessorKey: "category", header: "Category", sortFn: "text" },
++  {
++    accessorKey: "units",
++    header: "Units sold",
++    sortFn: (a, b, columnId) => a.getValue<number>(columnId) - b.getValue<number>(columnId),
++    cell: ({ getValue }) => formatNumber(getValue<number>()),
++  },
++  {
++    accessorKey: "revenue",
++    header: "Net revenue",
++    sortFn: (a, b, columnId) => a.getValue<number>(columnId) - b.getValue<number>(columnId),
++    cell: ({ getValue }) => formatCurrency(getValue<number>()),
++  },
++];
++export function TopProductsTable({ products }: { products: SalesProduct[] }) {
++  const table = useTable({
++    features: dataTableFeatures,
++    data: products,
++    columns,
++    getRowId: (row) => row.id,
++    initialState: { sorting: [{ id: "revenue", desc: true }], pagination: { pageIndex: 0, pageSize: 5 } },
++  });
++  return (
++    <DataTable
++      table={table}
++      label="Top products by net revenue"
++      mobile="reflow"
++      empty="No product sales in this reporting period."
++    />
++  );
++}
+diff --git a/src/routes/(main)/dashboard/sales/index.tsx b/src/routes/(main)/dashboard/sales/index.tsx
+new file mode 100644
+index 0000000..9899d13
+--- /dev/null
++++ b/src/routes/(main)/dashboard/sales/index.tsx
+@@ -0,0 +1,15 @@
++import { createFileRoute } from "@tanstack/react-router";
++
++import { requireAppRoute } from "@/lib/auth/app-route";
++
++import { loadSales } from "./-components/load";
++import { SalesPage } from "./-components/page";
++
++export const Route = createFileRoute("/(main)/dashboard/sales/")({
++  beforeLoad: requireAppRoute,
++  loader: () => loadSales(),
++  component: Page,
++});
++function Page() {
++  return <SalesPage data={Route.useLoaderData()} />;
++}
+diff --git a/src/server/data/registry.ts b/src/server/data/registry.ts
+index e792200..f990f42 100644
+--- a/src/server/data/registry.ts
++++ b/src/server/data/registry.ts
+@@ -34,6 +34,7 @@ import {
+   demoWorkspaceHome,
+ } from "./projects.ts";
+ import { dbRoles, demoRoles } from "./roles.ts";
++import { dbSales, demoSales } from "./sales.ts";
+ import { dbTasks, demoTasks } from "./tasks.ts";
+ import { dbUsers, demoUsers } from "./users.ts";
+ 
+@@ -474,4 +475,12 @@ export const readRegistry = [
+       { name: "missing-order", input: { orderId: "missing" } },
+     ],
+   }),
++
++  defineRead({
++    module: "sales",
++    read: "readSales",
++    demo: demoSales,
++    db: dbSales,
++    scenarios: [{ name: "all", input: {} }],
++  }),
+ ];
+diff --git a/src/server/data/sales.ts b/src/server/data/sales.ts
+new file mode 100644
+index 0000000..bc120d5
+--- /dev/null
++++ b/src/server/data/sales.ts
+@@ -0,0 +1,16 @@
++import { fixture } from "../db/fixtures/sales.ts";
++import type { SalesData } from "./sales.types.ts";
++import { readSource } from "./source.ts";
++
++export async function demoSales(): Promise<SalesData> {
++  return structuredClone(fixture);
++}
++export async function dbSales(): Promise<SalesData> {
++  // TODO: replace this explicit scaffold stub with an ordered database query,
++  // add a schema/migration/seed, and extend registry scenarios. Until then both
++  // sources intentionally return illustrative data; no real records are loaded.
++  return structuredClone(fixture);
++}
++export async function readSales(): Promise<SalesData> {
++  return readSource(demoSales, dbSales);
++}
+diff --git a/src/server/data/sales.types.ts b/src/server/data/sales.types.ts
+new file mode 100644
+index 0000000..31eabf0
+--- /dev/null
++++ b/src/server/data/sales.types.ts
+@@ -0,0 +1,13 @@
++export type SalesProduct = {
++  id: string;
++  name: string;
++  category: string;
++  units: number;
++  revenue: number;
++};
++export type SalesPoint = { day: string; revenue: number };
++export type SalesData = {
++  products: SalesProduct[];
++  revenue: SalesPoint[];
++  metrics: { netRevenue: number; orders: number };
++};
+diff --git a/src/server/db/fixtures/sales.ts b/src/server/db/fixtures/sales.ts
+new file mode 100644
+index 0000000..a637879
+--- /dev/null
++++ b/src/server/db/fixtures/sales.ts
+@@ -0,0 +1,19 @@
++import type { SalesData } from "../../data/sales.types.ts";
++
++export const fixture: SalesData = {
++  metrics: { netRevenue: 42850, orders: 400 },
++  revenue: [
++    { day: "Oct 19", revenue: 7200 },
++    { day: "Oct 20", revenue: 8150 },
++    { day: "Oct 21", revenue: 7800 },
++    { day: "Oct 22", revenue: 9100 },
++    { day: "Oct 23", revenue: 10600 },
++  ],
++  products: [
++    { id: "PRD-101", name: "Ergonomic desk chair", category: "Furniture", units: 120, revenue: 18000 },
++    { id: "PRD-102", name: "Adjustable monitor stand", category: "Desk accessories", units: 160, revenue: 9600 },
++    { id: "PRD-103", name: "Wireless keyboard", category: "Electronics", units: 90, revenue: 7200 },
++    { id: "PRD-104", name: "LED desk lamp", category: "Lighting", units: 80, revenue: 4800 },
++    { id: "PRD-105", name: "Felt desk mat", category: "Desk accessories", units: 130, revenue: 3250 },
++  ],
++};

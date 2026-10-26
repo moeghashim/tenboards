@@ -1,0 +1,75 @@
+{
+  "route": "/dashboard/sales/",
+  "path": "/dashboard/sales",
+  "baseURL": "http://127.0.0.1:3404/",
+  "tags": [
+    "wcag2a",
+    "wcag2aa",
+    "wcag21a",
+    "wcag21aa",
+    "wcag22aa"
+  ],
+  "passed": false,
+  "results": [
+    {
+      "theme": "light",
+      "viewport": "desktop",
+      "screenshot": "light-desktop.png",
+      "finalURL": "http://127.0.0.1:3404/dashboard/sales",
+      "passed": false,
+      "errors": [
+        "console: Failed to load resource: the server responded with a status of 503 ()",
+        "Unexpected HTTP status 503"
+      ],
+      "warnings": [],
+      "violations": [],
+      "incomplete": [],
+      "axeVersion": null
+    },
+    {
+      "theme": "light",
+      "viewport": "mobile",
+      "screenshot": "light-mobile.png",
+      "finalURL": "http://127.0.0.1:3404/dashboard/sales",
+      "passed": false,
+      "errors": [
+        "console: Failed to load resource: the server responded with a status of 503 ()",
+        "Unexpected HTTP status 503"
+      ],
+      "warnings": [],
+      "violations": [],
+      "incomplete": [],
+      "axeVersion": null
+    },
+    {
+      "theme": "dark",
+      "viewport": "desktop",
+      "screenshot": "dark-desktop.png",
+      "finalURL": "http://127.0.0.1:3404/dashboard/sales",
+      "passed": false,
+      "errors": [
+        "console: Failed to load resource: the server responded with a status of 503 ()",
+        "Unexpected HTTP status 503"
+      ],
+      "warnings": [],
+      "violations": [],
+      "incomplete": [],
+      "axeVersion": null
+    },
+    {
+      "theme": "dark",
+      "viewport": "mobile",
+      "screenshot": "dark-mobile.png",
+      "finalURL": "http://127.0.0.1:3404/dashboard/sales",
+      "passed": false,
+      "errors": [
+        "console: Failed to load resource: the server responded with a status of 503 ()",
+        "Unexpected HTTP status 503"
+      ],
+      "warnings": [],
+      "violations": [],
+      "incomplete": [],
+      "axeVersion": null
+    }
+  ]
+}

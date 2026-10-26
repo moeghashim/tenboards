@@ -1,0 +1,32 @@
+[
+  {
+    "pr": "https://github.com/moeghashim/tenboards/pull/78",
+    "url": "https://github.com/moeghashim/tenboards/pull/78#discussion_r4375549966",
+    "body": "**<sub><sub>![P2 Badge](https://img.shields.io/badge/P2-yellow?style=flat)</sub></sub>  Reject unexpected redirects before auditing the page**\n\nAgainst an auth-enabled server, fresh contexts have no session, so `requireAppRoute` in `src/lib/auth/app-route.ts` redirects protected routes to `/auth/v2/login`. For catalog entries without `ready`, such as `/dashboard/analytics`, the final login response can satisfy the HTTP, hydration and theme checks, and its axe results are then reported under the requested dashboard route. Recording `finalURL` without validating it allows an untested page to receive a passing report. Validate the destination before capture, with explicit expected destinations for intentional catalog aliases, and fail clearly when authentication prevents access.\n\nUseful? React with \ud83d\udc4d\u00a0/ \ud83d\udc4e.\n\n<!-- codex-code-review-finding:v1 -->"
+  },
+  {
+    "pr": "https://github.com/moeghashim/tenboards/pull/78",
+    "url": "https://github.com/moeghashim/tenboards/pull/78#discussion_r4375549973",
+    "body": "**<sub><sub>![P2 Badge](https://img.shields.io/badge/P2-yellow?style=flat)</sub></sub>  Preserve colons inside parenthesized utility values**\n\nFor a literal utility such as `text-(length:--my-font-size)`, the variant splitter treats the type-hint colon as a variant separator because it tracks only square brackets. The resulting candidate is `--my-font-size)`, so the arbitrary-value check silently accepts it even though the utility regex matches the original token. This bypasses the documented parenthesized typography-value restriction and its exception policy. Track parentheses as well when locating variant separators, and add a typed-parenthesis regression fixture.\n\nUseful? React with \ud83d\udc4d\u00a0/ \ud83d\udc4e.\n\n<!-- codex-code-review-finding:v1 -->"
+  },
+  {
+    "pr": "https://github.com/moeghashim/tenboards/pull/65",
+    "url": "https://github.com/moeghashim/tenboards/pull/65#discussion_r4368113744",
+    "body": "**<sub><sub>![P2 Badge](https://img.shields.io/badge/P2-yellow?style=flat)</sub></sub>  Include input-group controls in the mobile font-size override**\n\nOn mobile Safari, grouped inputs and textareas now fall from 16px to 14px and trigger focus zoom because this selector misses them. `InputGroupInput` and `InputGroupTextarea` in `src/components/ui/input-group.tsx` replace the underlying primitive\u2019s slot with `data-slot=\"input-group-control\"`, so they retain the newly reduced `text-base` size instead of receiving this override. This affects, for example, Mail search, the Finance transfer amount, and the Chat composer. Include the grouped-control slot in the mobile override to preserve their previous entry-text behavior.\n\nUseful? React with \ud83d\udc4d\u00a0/ \ud83d\udc4e.\n\n<!-- codex-code-review-finding:v1 -->"
+  },
+  {
+    "pr": "https://github.com/moeghashim/tenboards/pull/24",
+    "url": "https://github.com/moeghashim/tenboards/pull/24#discussion_r4359849593",
+    "body": "**<sub><sub>![P2 Badge](https://img.shields.io/badge/P2-yellow?style=flat)</sub></sub>  Preserve series labels in the sales tooltip formatter**\n\nWhen hovering or keyboard-navigating the Sales Overview chart, the tooltip now shows two bare currency amounts without identifying Revenue versus Profit. `ChartTooltipContent` in `src/components/ui/chart.tsx` treats `formatter` as a replacement for the entire item row, including its series label and color indicator\u2014not just its value. Return a labelled row from this callback so users can reliably associate each amount with its series.\n\nUseful? React with \ud83d\udc4d\u00a0/ \ud83d\udc4e.\n\n<!-- codex-code-review-finding:v1 -->"
+  },
+  {
+    "pr": "https://github.com/moeghashim/tenboards/pull/24",
+    "url": "https://github.com/moeghashim/tenboards/pull/24#discussion_r4359849605",
+    "body": "**<sub><sub>![P2 Badge](https://img.shields.io/badge/P2-yellow?style=flat)</sub></sub>  Start the hydration delay when scripts become available**\n\nIf context setup and the initial document response take at least `hydrationDelayMs` (for example, during a cold dev-server start), this deadline expires before the browser requests any scripts. The interception then delivers every script without delay, allowing the advertised delayed-hydration check to pass without exercising hydration across a second boundary. Start the delay from the document response or first script interception, and reset it equivalently for refresh captures, so the required screenshot evidence actually tests the intended condition.\n\nAGENTS.md reference: [AGENTS.md:L23-L23](https://github.com/moeghashim/tenboards/blob/0c7d5a05d332f0512279c1aa627024f9ad51b0b7/AGENTS.md#L23-L23)\n\nUseful? React with \ud83d\udc4d\u00a0/ \ud83d\udc4e.\n\n<!-- codex-code-review-finding:v1 -->"
+  },
+  {
+    "pr": "https://github.com/moeghashim/tenboards/pull/67",
+    "url": "https://github.com/moeghashim/tenboards/pull/67#discussion_r4368227630",
+    "body": "**<sub><sub>![P2 Badge](https://img.shields.io/badge/P2-yellow?style=flat)</sub></sub>  Apply project filters before limiting database results**\n\nWhen a database contains more than 100 projects, `repository.projects()` returns only the first 100 before these status and search filters run. A matching project outside that initial batch therefore cannot be found by `readProjects`, even though `readProject` can retrieve it directly; filtering can return an empty result despite matching stored records. Pass the validated filters into the repository and apply them in SQL before the result limit.\n\nUseful? React with \ud83d\udc4d\u00a0/ \ud83d\udc4e.\n\n<!-- codex-code-review-finding:v1 -->"
+  }
+]

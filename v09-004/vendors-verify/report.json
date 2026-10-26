@@ -1,0 +1,11 @@
+{
+  "baseURL": "http://127.0.0.1:3405/",
+  "passed": true,
+  "reports": [
+    {
+      "route": "/dashboard/vendors/",
+      "passed": true,
+      "report": "dashboard%2Fvendors%2F/report.json"
+    }
+  ]
+}

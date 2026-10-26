@@ -1,0 +1,12 @@
+
+> tenboards@0.8.1 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --routes /,/dashboard/home/ --base-url http://127.0.0.1:3406 --output /tmp/tenboards-004-evidence/smoke
+
+PASS /dashboard/home/ light/desktop direct
+PASS /dashboard/home/ light/mobile direct
+PASS /dashboard/home/ dark/desktop direct
+PASS /dashboard/home/ dark/mobile direct
+PASS / light/desktop direct
+PASS / light/mobile direct
+PASS / dark/desktop direct
+PASS / dark/mobile direct

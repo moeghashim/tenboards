@@ -1,0 +1,6 @@
+
+> tenboards@0.8.1 check:design
+> node --experimental-strip-types scripts/check-design.ts
+
+Checked 260 files in 41ms. No fixes applied.
+Design guardrails passed (260 files; 71 documented existing exceptions).
