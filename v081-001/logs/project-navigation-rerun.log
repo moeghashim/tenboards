@@ -1,0 +1,12 @@
+PASS light/desktop: exact active, storage pruning, keyboard disclosure, route policy, mobile dismissal, palette typed links, rail escape/outside/route focus, overflow, console
+PASS light/mobile: exact active, storage pruning, keyboard disclosure, route policy, mobile dismissal, palette typed links, rail escape/outside/route focus, overflow, console
+PASS dark/desktop: exact active, storage pruning, keyboard disclosure, route policy, mobile dismissal, palette typed links, rail escape/outside/route focus, overflow, console
+PASS dark/mobile: exact active, storage pruning, keyboard disclosure, route policy, mobile dismissal, palette typed links, rail escape/outside/route focus, overflow, console
+PASS layout sidebar/icon, toggle and restored disclosure
+PASS layout sidebar/offcanvas, toggle and restored disclosure
+PASS layout inset/icon, toggle and restored disclosure
+PASS layout inset/offcanvas, toggle and restored disclosure
+PASS layout floating/icon, toggle and restored disclosure
+PASS layout floating/offcanvas, toggle and restored disclosure
+PASS corrupt expansion storage
+PASS disabled expansion storage

@@ -1,0 +1,48 @@
+
+> tenboards@0.8.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://localhost:3000 --routes /,/dashboard,/dashboard/,/unauthorized,/dashboard/$ --boundaries --output screenshots/v081/after
+
+PASS /dashboard light/desktop direct
+PASS /dashboard light/mobile direct
+PASS /dashboard dark/desktop direct
+PASS /dashboard dark/mobile direct
+PASS /unauthorized light/desktop direct
+PASS /unauthorized light/mobile direct
+PASS /unauthorized dark/desktop direct
+PASS /unauthorized dark/mobile direct
+PASS / light/desktop direct
+PASS / light/mobile direct
+PASS / dark/desktop direct
+PASS / dark/mobile direct
+PASS /dashboard/$ light/desktop direct
+PASS /dashboard/$ light/mobile direct
+PASS /dashboard/$ dark/desktop direct
+PASS /dashboard/$ dark/mobile direct
+PASS /dashboard/ light/desktop direct
+PASS /dashboard/ light/mobile direct
+PASS /dashboard/ dark/desktop direct
+PASS /dashboard/ dark/mobile direct
+PASS qa:root-not-found light/desktop direct
+PASS qa:root-not-found light/mobile direct
+PASS qa:root-not-found dark/desktop direct
+PASS qa:root-not-found dark/mobile direct
+FAIL qa:root-error light/desktop direct
+locator.getAttribute: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Go to Home', exact: true })[22m
+
+FAIL qa:root-error light/mobile direct
+locator.getAttribute: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Go to Home', exact: true })[22m
+
+FAIL qa:root-error dark/desktop direct
+locator.getAttribute: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Go to Home', exact: true })[22m
+
+FAIL qa:root-error dark/mobile direct
+locator.getAttribute: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('link', { name: 'Go to Home', exact: true })[22m
+

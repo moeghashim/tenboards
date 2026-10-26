@@ -1,0 +1,17 @@
+PASS duplicate registration safe inline error
+PASS network failure preserves non-secret input and permits retry
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+page.waitForURL: Timeout 30000ms exceeded.
+=========================== logs ===========================
+waiting for navigation to "**/dashboard/default" until "load"
+  navigated to "http://localhost:8111/auth/v2/login?redirect=%2Fdashboard%2Fdefault"
+============================================================
+    at /Users/moeghashim/.t3/worktrees/tenboards/t3-b200052c/scripts/auth-errors-check.ts:67:14 {
+  log: [],
+  name: 'TimeoutError'
+}
+
+Node.js v24.21.0

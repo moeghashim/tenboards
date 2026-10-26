@@ -1,0 +1,76 @@
+
+> tenboards@0.8.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --routes /,/dashboard,/dashboard/ --output screenshots/v081/before
+
+FAIL /dashboard light/desktop direct
+request: http://127.0.0.1:3000/dashboard net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard light/mobile direct
+request: http://127.0.0.1:3000/dashboard net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard dark/desktop direct
+request: http://127.0.0.1:3000/dashboard net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard dark/mobile direct
+request: http://127.0.0.1:3000/dashboard net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard", waiting until "domcontentloaded"[22m
+
+FAIL / light/desktop direct
+request: http://127.0.0.1:3000/ net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/", waiting until "domcontentloaded"[22m
+
+FAIL / light/mobile direct
+request: http://127.0.0.1:3000/ net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/", waiting until "domcontentloaded"[22m
+
+FAIL / dark/desktop direct
+request: http://127.0.0.1:3000/ net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/", waiting until "domcontentloaded"[22m
+
+FAIL / dark/mobile direct
+request: http://127.0.0.1:3000/ net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/ light/desktop direct
+request: http://127.0.0.1:3000/dashboard/ net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/ light/mobile direct
+request: http://127.0.0.1:3000/dashboard/ net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/ dark/desktop direct
+request: http://127.0.0.1:3000/dashboard/ net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/ dark/mobile direct
+request: http://127.0.0.1:3000/dashboard/ net::ERR_CONNECTION_REFUSED
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/", waiting until "domcontentloaded"[22m
+

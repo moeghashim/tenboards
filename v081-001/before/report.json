@@ -1,0 +1,182 @@
+{
+  "baseURL": "http://127.0.0.1:3000/",
+  "projectId": "sample-operations",
+  "fontAssets": "exact public responses cached between contexts",
+  "maskedLiveClocks": false,
+  "hydrationDelayMs": 0,
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": false,
+  "interactions": false,
+  "sidebarStates": false,
+  "results": [
+    {
+      "route": "/dashboard",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": [
+        "request: http://127.0.0.1:3000/ net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": [
+        "request: http://127.0.0.1:3000/ net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": [
+        "request: http://127.0.0.1:3000/ net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": [
+        "request: http://127.0.0.1:3000/ net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_dashboard_-light-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/ net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_dashboard_-light-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/ net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_dashboard_-dark-desktop.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/ net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    },
+    {
+      "route": "/dashboard/",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_dashboard_-dark-mobile.png",
+      "controlsFile": null,
+      "phase": "direct",
+      "interactionNotes": [],
+      "expectedDiagnostics": [],
+      "errors": [
+        "request: http://127.0.0.1:3000/dashboard/ net::ERR_CONNECTION_REFUSED",
+        "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:3000/dashboard/\", waiting until \"domcontentloaded\"\u001b[22m\n"
+      ]
+    }
+  ]
+}
