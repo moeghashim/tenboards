@@ -62,3 +62,8 @@ smoke/report.json records root → Default and Home in four states each, 8/8 wit
 console/hydration errors. No app UI changed, so before/after screenshots are exempt.
 Eval diffs and all page-verification reports/screenshots are evidence only on pr-assets.
 preview.log records an ASSETS-only, zero-secret upload to tenboards-preview.
+
+A later Sales refresh hit one `page.waitForLoadState: Timeout 30000ms exceeded`
+on light/desktop. The agent retained `sales-network-idle-retry.json` and reran
+unchanged code; the final report passes 4/4. Existing Base UI transition/animation
+warnings and axe incomplete/manual-review candidates remain visible in reports.
