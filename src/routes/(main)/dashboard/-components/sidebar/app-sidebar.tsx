@@ -16,6 +16,7 @@ import {
   SidebarTrigger,
   useSidebar,
 } from "@/components/ui/sidebar";
+import { APP_LANDING_ROUTE } from "@/navigation/landing";
 import type { ProjectNavigationData } from "@/navigation/project-destinations";
 import { sidebarItems } from "@/navigation/sidebar/sidebar-items";
 import { usePreferencesStore } from "@/stores/preferences/preferences-provider";
@@ -54,7 +55,7 @@ export function AppSidebar({
       <SidebarHeader className="shell-sidebar-header gap-4 p-4">
         <div className="flex items-center gap-2">
           <Link
-            to="/dashboard/home"
+            to={APP_LANDING_ROUTE}
             aria-label="tenboards home"
             className="flex min-w-0 flex-1 items-center gap-3 rounded-lg group-data-[collapsible=icon]:hidden"
           >

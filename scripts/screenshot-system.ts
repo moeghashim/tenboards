@@ -8,7 +8,7 @@ export async function captureSystem(
 ): Promise<string[]> {
   if (["/", "/dashboard", "/dashboard/"].includes(route)) {
     let target = new URL(route, page.url());
-    const hops = route === "/dashboard/" ? ["/dashboard", "/dashboard/home"] : ["/dashboard/home"];
+    const hops = route === "/dashboard/" ? ["/dashboard", "/dashboard/default"] : ["/dashboard/default"];
     for (const expected of hops) {
       const response = await page.request.get(target.href, { maxRedirects: 0 });
       const location = response.headers().location;
@@ -16,9 +16,12 @@ export async function captureSystem(
         throw new Error(`Unexpected redirect for ${target.pathname}: ${response.status()} ${location}`);
       target = new URL(location, target);
     }
-    await page.waitForURL("**/dashboard/home");
-    await page.getByText("My tasks", { exact: true }).first().waitFor();
-    return ["HTTP 307 preserves the Home destination", "Redirect target hydrates and displays loaded dashboard data"];
+    await page.waitForURL("**/dashboard/default");
+    await page.getByText("Total Revenue", { exact: true }).first().waitFor();
+    return [
+      "HTTP 307 preserves the Default destination",
+      "Redirect target hydrates and displays loaded dashboard data",
+    ];
   }
   if (route === "qa:root-error") {
     await page.evaluate(() => {
@@ -35,6 +38,13 @@ export async function captureSystem(
       router.invalidate();
     });
     await page.getByRole("heading", { name: "Something went wrong.", exact: true }).waitFor();
+    // Base UI renders this anchor with role=button; keep its existing semantics.
+    const home = page.getByRole("button", { name: "Go to Home", exact: true });
+    if ((await home.getAttribute("href")) !== "/dashboard/default")
+      throw new Error("Root error recovery must open Default");
+    await home.focus();
+    if (!(await home.evaluate((link) => link === document.activeElement)))
+      throw new Error("Root error recovery link did not receive keyboard focus");
     if (
       !["localhost", "127.0.0.1", "[::1]"].includes(new URL(page.url()).hostname) &&
       (await page.locator("main").textContent())?.includes("QA_ONLY_ROOT_ERROR")
@@ -69,11 +79,14 @@ export async function captureSystem(
   if (await page.evaluate(() => document.documentElement.scrollWidth > innerWidth))
     throw new Error("System page overflow");
   await capture("state");
-  const recovery = page.getByRole("link", { name: /Go back home|Go to Homepage|Go to Home/ }).first();
+  const recovery = page
+    .locator("a")
+    .filter({ hasText: /^(Go back home|Go to Homepage|Go to Home|Return to Home)$/ })
+    .first();
   if (await recovery.count()) {
     await recovery.press("Enter");
-    await page.waitForURL("**/dashboard/home");
-    await page.getByText("My tasks", { exact: true }).first().waitFor();
+    await page.waitForURL("**/dashboard/default");
+    await page.getByText("Total Revenue", { exact: true }).first().waitFor();
   }
   return ["Distinct system heading and no page overflow", "Existing recovery link navigates by keyboard when provided"];
 }

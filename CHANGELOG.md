@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.8.1 — Default dashboard landing (draft)
+
+- Restore `/dashboard/default` as the root/dashboard entry point, missing or unsafe auth return fallback, sidebar brand destination and global recovery destination. Preserve the existing 307/replace mechanism and validated returns.
+- Keep workspace Home, its navigation position, Projects contextual Home links and all legacy redirects unchanged.
+- Align redirect/auth/deploy checks and screenshot tooling with the landing destination. Review draft only; the reviewer owns versioning and release.
+
 ## v0.8.0 — Projects workspace (2026-10-25)
 
 Released as [v0.8.0](https://github.com/moeghashim/tenboards/releases/tag/v0.8.0).

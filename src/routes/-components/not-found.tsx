@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 
 import { Button } from "@/components/ui/button";
+import { APP_LANDING_ROUTE } from "@/navigation/landing";
 
 export function NotFound() {
   return (
@@ -9,7 +10,7 @@ export function NotFound() {
       <p className="text-muted-foreground max-w-sm text-sm">
         This address does not match a page. Check the URL or return to Home.
       </p>
-      <Button nativeButton={false} variant="outline" render={<Link to="/dashboard/home" replace />}>
+      <Button nativeButton={false} variant="outline" render={<Link to={APP_LANDING_ROUTE} replace />}>
         Go to Home
       </Button>
     </main>

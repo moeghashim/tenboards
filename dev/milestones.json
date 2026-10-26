@@ -161,10 +161,7 @@
     {
       "id": "v0.6.1-legacy-removal",
       "status": "done",
-      "tasks": [
-        "001-remove-legacy",
-        "002-collapsed-header-toggle"
-      ],
+      "tasks": ["001-remove-legacy", "002-collapsed-header-toggle"],
       "taskStatuses": {
         "001-remove-legacy": "merged",
         "002-collapsed-header-toggle": "merged"
@@ -173,9 +170,7 @@
     {
       "id": "v0.6.2-compact-density",
       "status": "done",
-      "tasks": [
-        "001-compact-density"
-      ],
+      "tasks": ["001-compact-density"],
       "taskStatuses": {
         "001-compact-density": "merged"
       }
@@ -183,11 +178,7 @@
     {
       "id": "v0.7-assistant",
       "status": "done",
-      "tasks": [
-        "001-assistant-foundation",
-        "002-provider-streaming-endpoint",
-        "003-picker-conversation-acceptance"
-      ],
+      "tasks": ["001-assistant-foundation", "002-provider-streaming-endpoint", "003-picker-conversation-acceptance"],
       "taskStatuses": {
         "001-assistant-foundation": "merged",
         "002-provider-streaming-endpoint": "merged",
@@ -216,12 +207,10 @@
     },
     {
       "id": "v0.8.1-default-landing",
-      "status": "planned",
-      "tasks": [
-        "001-default-landing"
-      ],
+      "status": "in-review",
+      "tasks": ["001-default-landing"],
       "taskStatuses": {
-        "001-default-landing": "planned"
+        "001-default-landing": "in-review"
       }
     }
   ]

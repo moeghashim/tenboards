@@ -17,6 +17,8 @@ The Assistant follows new replies until you scroll up; Jump to latest resumes fo
 
 **v0.8 (Projects workspace) is merged, deployed and released as [v0.8.0](https://github.com/moeghashim/tenboards/releases/tag/v0.8.0)** — the data foundation, workspace Home/Projects index, and all five direct read-only project views are implemented. [The milestone contract](dev/milestones/v0.8-projects/README.md) tracks the remaining navigation consolidation and final acceptance. Existing standalone routes and the default landing remain available.
 
+**v0.8.1 (Default dashboard landing) is in review** — restores the Default revenue dashboard as the entry point and auth fallback. Home, Projects, navigation order and legacy redirects remain available. See the [task contract](dev/milestones/v0.8.1-default-landing/README.md). No version bump or release is included.
+
 ## Run locally
 
 Use Node 22+ and npm. No environment variables or database are required.
@@ -28,7 +30,7 @@ OPENUI_TELEMETRY_DISABLED=1 DO_NOT_TRACK=1 npm install
 npm run dev
 ```
 
-Open [workspace Home](http://localhost:3000/dashboard/home).
+Open the [Default revenue dashboard](http://localhost:3000/dashboard/default).
 
 OpenUI install telemetry must remain disabled (`OPENUI_TELEMETRY_DISABLED=1` or `DO_NOT_TRACK=1`). The Assistant disables its runtime inspector and observability; recorded replies make no provider requests.
 
@@ -87,7 +89,7 @@ The 10 dashboards share the dashboard/chart presentation contract.
 
 The app sitemap also includes Home, Projects, AI Assistant, project Overview/Board/List/Timeline/Files, Products, Users, Roles, Profile, Mail, Chat, Invoice, Coming Soon and error/permission states. Legacy Kanban, Tasks, Calendar and File Manager URLs are guarded permanent aliases to project views. Standalone `/mail` and `/chat` retain `/dashboard/mail` and `/dashboard/chat` iframe aliases. Authentication uses `/auth/v2/login` and `/auth/v2/register`; bare `/auth/v2` remains layout-only. With no secret the forms are visual demos; optional auth enables real accounts/sessions. The [route catalog](src/navigation/route-catalog.ts) enumerates 36 visual route patterns, including indexes and system states.
 
-`/dashboard/default-v1`, `/dashboard/crm-v1`, `/dashboard/finance-v1` and `/dashboard/analytics-v1` return HTTP 308 to the matching current dashboard. `/auth/v1/login` and `/auth/v1/register` return HTTP 308 to Auth V2. Redirects preserve a validated `redirect` query (unsafe values fall back to `/dashboard/home`); destination pages enforce their existing guards. Redirect-only URLs are absent from sidebar/search and are tested separately from the screenshot catalog.
+`/dashboard/default-v1`, `/dashboard/crm-v1`, `/dashboard/finance-v1` and `/dashboard/analytics-v1` return HTTP 308 to the matching current dashboard. `/auth/v1/login` and `/auth/v1/register` return HTTP 308 to Auth V2. Redirects preserve a validated `redirect` query (unsafe values fall back to `/dashboard/default`); destination pages enforce their existing guards. Redirect-only URLs are absent from sidebar/search and are tested separately from the screenshot catalog.
 
 ## Provenance and license
 
@@ -104,7 +106,7 @@ The unmodified import passed Biome with one existing `noArrayIndexKey` warning i
 ## Cloudflare demo and PR previews
 
 
-**Live demo:** [tenboards.mohanadgh.workers.dev](https://tenboards.mohanadgh.workers.dev/dashboard/home) — redeployed from `main` after each merge.
+**Live demo:** [tenboards.mohanadgh.workers.dev](https://tenboards.mohanadgh.workers.dev/dashboard/default) — redeployed from `main` after each merge.
 
 The Worker serves the existing mock-data demo. It has no database, authentication service, or secret bindings. Its only generated binding is `ASSETS` for static files. Production is redeployed from `main` by the reviewer after approved merges. Preview uploads target only the separate demo-only `tenboards-preview` Worker. They do not change production traffic.
 
@@ -144,9 +146,9 @@ Install the approved browser tooling once with `npx playwright install chromium`
 
 ```sh
 npm run screenshots
-npm run screenshots -- --routes /dashboard/home/,/auth/v2/login --output screenshots/before
+npm run screenshots -- --routes /dashboard/default,/auth/v2/login --output screenshots/before
 npm run screenshots -- --base-url https://pr-012-tenboards-preview.<account-subdomain>.workers.dev --output screenshots/after
-npm run screenshots -- --routes /dashboard/home/ --sidebar-states --output screenshots/sidebar
+npm run screenshots -- --routes /dashboard/default --sidebar-states --output screenshots/sidebar
 npm run screenshots -- --list
 ```
 
@@ -247,7 +249,7 @@ All screens remain mock-data demos, including existing disabled and placeholder 
 
 ### App pages (v0.3)
 
-The [app-page breakdown](dev/milestones/v0.3-app-pages/README.md) assigns the original 38 route-catalog entries plus root not-found/error states to page owners or final regression coverage. Mail and Chat each retain standalone and dashboard iframe routes; Auth originally included four forms and the bare V2 layout. The external `/` remains a redirect to `/dashboard/home`, with no landing UI to restyle. Implementation progress is documented per task below.
+The [app-page breakdown](dev/milestones/v0.3-app-pages/README.md) assigns the original 38 route-catalog entries plus root not-found/error states to page owners or final regression coverage. Mail and Chat each retain standalone and dashboard iframe routes; Auth originally included four forms and the bare V2 layout. The external `/` remains a redirect to `/dashboard/default`, with no landing UI to restyle. Implementation progress is documented per task below.
 
 Calendar, Invoice and both Auth V2 forms have passed their separate hydration gates. Page owners replaced the remaining upstream-author demo identities; the final whole-source scan has no matches, while legal attribution remains intact. Final acceptance checks every route across all four presets and reconciles hydration history. All v0.3 tasks are merged, deployed and released; their evidence remains separate from the v0.4 implementation review.
 
@@ -318,14 +320,14 @@ Auth V2 retains login/register routes, validation, masked password fields, autof
 
 ### System states (v0.3 / 013)
 
-Coming Soon describes planned content; the dashboard splat explains an unknown dashboard page. Root not-found, demo Unauthorized and RootError share a compact hierarchy with wrapping copy and keyboard recovery links. Production errors retain generic text; development can show the error message. `/`, `/dashboard` and `/dashboard/` still return 307 redirects to `/dashboard/home`; unknown root URLs return 404 and the explicit dashboard splat remains HTTP 200. `npm run screenshots -- --routes /dashboard/home/ --boundaries` adds four-state root not-found and real root-error/reset evidence. The CLI temporarily replaces a loaded browser route component, restores it and presses Try again; no error trigger or route is shipped. Expected injected exceptions and the exact unknown-document 404 diagnostic are recorded separately in report.json.
+Coming Soon describes planned content; the dashboard splat explains an unknown dashboard page. Root not-found, demo Unauthorized and RootError share a compact hierarchy with wrapping copy and keyboard recovery links. Production errors retain generic text; development can show the error message. `/`, `/dashboard` and `/dashboard/` return 307 redirects to `/dashboard/default`; unknown root URLs return 404 and the explicit dashboard splat remains HTTP 200. `npm run screenshots -- --routes /dashboard/default --boundaries` adds four-state root not-found and real root-error/reset evidence. The CLI temporarily replaces a loaded browser route component, restores it and presses Try again; no error trigger or route is shipped. Expected injected exceptions and the exact unknown-document 404 diagnostic are recorded separately in report.json.
 
 
 ### Complete app-page acceptance (v0.3 / 014)
 
 The integrated v0.3 stack passes all 38 catalog entries on dev and Workers with Default, Graphite, Pine and Iris × light/dark × desktop/mobile: 608 cases per environment, 1,216 total. The coverage manifest checks generated routes, duplicates, missing/unexpected cases and every error; original failures and explicit reruns remain in pr-assets/v03-014. Supplemental scenarios cover Mail/Chat iframe contents, File Manager grid/list, Kanban board/list/table and overlays, Roles and all six Profile tabs, product/directory/task filters and forms, four auth forms, Invoice print, live Calendar/Patient Monitoring behavior, root 404/error/reset, and shell focus/preferences/reduced motion. All eight historical hydration findings are resolved; the whole-src author scan returns no matches. Supported-token audits pass 280 comparisons per environment; scoped actual-surface evidence is linked, not represented as a complete accessibility certification. The app source is unchanged by this acceptance layer. All 14 v0.3 tasks are merged and deployed, and v0.3.0 is released. This paragraph records the historical v0.3 acceptance run; current v0.4 evidence is described below.
 
-Run `npm run screenshots -- --base-url <url> --preset <default|graphite|pine|iris> --output <root>/<dev|workers>/<preset>` for each environment/preset. `node --experimental-strip-types scripts/report-route-coverage.ts --root <root> --retries <manifest.json>` verifies complete coverage and retains original errors alongside explicitly mapped reruns. `--interactions` on `/dashboard/home` verifies shell focus, preference persistence and reduced motion; dialog evidence uses the existing viewport so screenshot resizing cannot disturb focus.
+Run `npm run screenshots -- --base-url <url> --preset <default|graphite|pine|iris> --output <root>/<dev|workers>/<preset>` for each environment/preset. `node --experimental-strip-types scripts/report-route-coverage.ts --root <root> --retries <manifest.json>` verifies complete coverage and retains original errors alongside explicitly mapped reruns. `--interactions` on `/dashboard/default` verifies shell focus, preference persistence and reduced motion; dialog evidence uses the existing viewport so screenshot resizing cannot disturb focus.
 
 
 ## Optional data layer (v0.4)
@@ -514,7 +516,7 @@ The original samples are Operations rollout (`sample-operations`), Documentation
 
 Open `/dashboard/projects/sample-operations/board` or `/dashboard/projects/sample-operations/list` directly. The project selector also offers Documentation refresh and the empty Research queue. Board and List share canonical task IDs, statuses (including canceled), assignees, labels, due dates, subtasks and counts. Search, status/assignee/priority/label filters, sort and bounded pages use validated URL state; Board loads every matching task across bounded server reads; only List paginates (10/20/50 rows). Default search values are omitted from Board/List URLs. Progress states the eligible task denominator and the excluded canceled count; tasks without subtasks display an em dash. Search updates after a short typing pause. Filters use the shared Select controls. Compact Board cards omit empty counts and use circular assignee avatars, semantic priority badges, status dots and short task keys; List shares these cues. Task details open the existing keyboard-accessible dialog. There is no task creation, drag/drop, completion or edit endpoint.
 
-The existing Kanban and Tasks URLs redirect permanently to the default project. The project shell has one project-qualified header breadcrumb, status, member avatars and progress, and links Overview, Board, List, Timeline and Files; workspace Home/index, nested sidebar navigation and project-qualified palette search are available. Unknown projects return an authorized 404. `/`, `/dashboard` and auth-success fallback use `/dashboard/home`.
+The existing Kanban and Tasks URLs redirect permanently to the default project. The project shell has one project-qualified header breadcrumb, status, member avatars and progress, and links Overview, Board, List, Timeline and Files; workspace Home/index, nested sidebar navigation and project-qualified palette search are available. Unknown projects return an authorized 404. `/`, `/dashboard` and auth-success fallback use `/dashboard/default` as of v0.8.1.
 
 Run `node --experimental-strip-types scripts/project-ui-check.ts http://localhost:3270` for project switching, filters, pagination, details/focus and responsive checks. `scripts/project-access-check.ts` checks route/RPC denial, validation, project scope and revocation against an isolated local auth database; `AUTH_TEST_RUNTIME=workerd` exercises the Worker build.
 
@@ -538,11 +540,11 @@ Project progress uses completed / (total − canceled), with both the denominato
 
 On desktop, Recent activity sits beneath My tasks beside Upcoming deadlines, keeping both work columns balanced; mobile keeps tasks, deadlines, progress and activity in reading order. Home and index cards share the project header’s eligible-task progress and readable member initials. Project breadcrumbs link Projects → project Overview → current view, with `aria-current` on the view. Default index search values are omitted from links.
 
-Primary navigation and the brand link open Home and Projects. `/`, `/dashboard`, `/dashboard/` and the safe auth fallback open `/dashboard/home`; the existing Default dashboard remains available.
+Primary navigation retains Home and Projects. The brand link, `/`, `/dashboard`, `/dashboard/` and missing/unsafe auth fallbacks open `/dashboard/default`; validated return destinations still win.
 
 ## Project navigation and consolidation (v0.8 / 005)
 
-Primary navigation is Home → Projects → Email → Chat, followed immediately by AI Assistant. Default remains under Dashboards. The brand opens `/dashboard/home`; `/`, `/dashboard`, `/dashboard/` and auth fallback redirect to `/dashboard/home`. Guarded summaries populate the Projects section and project-qualified command palette without fetching project data on public root/auth surfaces. Exploration counts include concrete project views, excluding aliases.
+Primary navigation is Home → Projects → Email → Chat, followed immediately by AI Assistant. Default remains under Dashboards. The brand opens `/dashboard/default`; `/`, `/dashboard`, `/dashboard/` and missing/unsafe auth fallbacks redirect to `/dashboard/default`. Guarded summaries populate the Projects section and project-qualified command palette without fetching project data on public root/auth surfaces. Exploration counts include concrete project views, excluding aliases.
 
 Project buttons disclose Overview, Board, List, Timeline and Files. The active child matches an exact project/view; rail triggers open named keyboard-accessible popovers. Mobile disclosure keeps the sheet open, while navigation closes it. `tenboards:project-nav:v1` stores only expanded known IDs (maximum 50) in localStorage. Initial render opens the active ancestor, restores/prunes storage after hydration, tolerates corrupt/disabled storage, and opens an ancestor on project entry. Manual collapse persists across views of the same project until leaving and re-entering. Existing layout cookies remain unchanged.
 
@@ -557,7 +559,7 @@ Redirects use 308 with replacement navigation and retained fragments. Auth may f
 
 Run `scripts/project-navigation-check.ts` for disclosure/rail/mobile/palette/storage/layout checks and `scripts/project-redirect-check.ts` for demo/auth HTTP/client/query/hash/trailing-slash/revocation checks using Node's `--experimental-strip-types`. Capture patterns use concrete `sample-operations` paths in `src/navigation/route-catalog.ts`; redirect-only aliases are in `scripts/screenshot-routes.ts`. Secondary and empty projects are covered separately. Capture output belongs on `pr-assets`, not main.
 
-Workspace Home is the landing page, per the locked 2026-10-25 PLAN decision. `/`, `/dashboard` and `/dashboard/` retain their existing 307/replace redirect mechanism and lead to `/dashboard/home`. Missing or unsafe post-sign-in/OAuth return values fall back to Home; validated destinations still win. `/dashboard/default` remains the revenue dashboard under Dashboards. The consolidated Kanban Board is read-only: the former local drag-and-drop interaction has been removed, and tasks cannot be moved or reordered.
+The Default revenue dashboard is the landing page again, per the locked 2026-10-26 v0.8.1 PLAN decision. `/`, `/dashboard` and `/dashboard/` retain their existing 307/replace redirect mechanism and lead to `/dashboard/default`. Missing or unsafe post-sign-in/OAuth return values fall back there; validated destinations still win. Workspace Home stays at `/dashboard/home` in its existing navigation position, Projects retain their contextual Home links, and Default stays under Dashboards. The brand and global recovery links open Default. The consolidated Kanban Board is read-only: the former local drag-and-drop interaction has been removed, and tasks cannot be moved or reordered.
 
 With the three sample projects, the demo card counts **35 enabled concrete dashboard destinations**, including AI Assistant and all 15 project views; aliases are excluded.
 

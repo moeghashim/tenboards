@@ -1,6 +1,6 @@
 # v0.8.1 — Default dashboard landing
 
-Status: **planned**.
+Status: **in-review**.
 
 Task: 001 — Default dashboard landing. Approved contract: PLAN.md Decisions log, “v0.8.1 landing page” (2026-10-26). Branch: `feat/v0.8.1/001-default-landing`; base main; one layer.
 

@@ -39,7 +39,7 @@ export const captureRoutes = [
   {
     route: "/dashboard",
     path: "/dashboard",
-    ready: "My tasks",
+    ready: "Total Revenue",
   },
   {
     route: "/mail",
@@ -52,7 +52,7 @@ export const captureRoutes = [
   {
     route: "/",
     path: "/",
-    ready: "My tasks",
+    ready: "Total Revenue",
   },
   {
     route: "/auth/v2",
@@ -138,7 +138,7 @@ export const captureRoutes = [
   {
     route: "/dashboard/",
     path: "/dashboard/",
-    ready: "My tasks",
+    ready: "Total Revenue",
   },
   {
     route: "/auth/v2/login",

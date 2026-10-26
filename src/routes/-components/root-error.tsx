@@ -1,6 +1,7 @@
 import { type ErrorComponentProps, Link } from "@tanstack/react-router";
 
 import { Button } from "@/components/ui/button";
+import { APP_LANDING_ROUTE } from "@/navigation/landing";
 
 export function RootError({ error, reset }: ErrorComponentProps) {
   return (
@@ -18,7 +19,7 @@ export function RootError({ error, reset }: ErrorComponentProps) {
       </div>
       <div className="flex flex-wrap justify-center gap-2">
         <Button onClick={reset}>Try again</Button>
-        <Button nativeButton={false} variant="outline" render={<Link to="/dashboard/home" replace />}>
+        <Button nativeButton={false} variant="outline" render={<Link to={APP_LANDING_ROUTE} replace />}>
           Go to Home
         </Button>
       </div>

@@ -3,6 +3,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Lock } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import { APP_LANDING_ROUTE } from "@/navigation/landing";
 
 export const Route = createFileRoute("/(main)/unauthorized")({ component: Page });
 
@@ -20,7 +21,7 @@ function Page() {
           This is a demo permission state. No access control is connected.
         </p>
       </div>
-      <Button nativeButton={false} variant="outline" render={<Link to="/dashboard/home" />}>
+      <Button nativeButton={false} variant="outline" render={<Link to={APP_LANDING_ROUTE} />}>
         Go to Home
       </Button>
     </main>

@@ -1,4 +1,6 @@
-export const DEFAULT_AUTH_DESTINATION = "/dashboard/home";
+import { APP_LANDING_ROUTE } from "../../navigation/landing.ts";
+
+export const DEFAULT_AUTH_DESTINATION = APP_LANDING_ROUTE;
 
 /** A navigation destination, never a URL nested inside a query value. */
 export function authDestination(value: unknown): string {

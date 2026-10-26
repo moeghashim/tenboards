@@ -1,10 +1,10 @@
 import { authDestination, authErrorCallback, DEFAULT_AUTH_DESTINATION } from "../src/lib/auth/redirect.ts";
 import assert from "node:assert/strict";
 
-assert.equal(DEFAULT_AUTH_DESTINATION, "/dashboard/home");
+assert.equal(DEFAULT_AUTH_DESTINATION, "/dashboard/default");
 assert.equal(
   authErrorCallback(undefined, "https://evil.example"),
-  "/auth/v2/login?redirect=%2Fdashboard%2Fhome&error=oauth",
+  "/auth/v2/login?redirect=%2Fdashboard%2Fdefault&error=oauth",
 );
 const hostile = [
   undefined,
