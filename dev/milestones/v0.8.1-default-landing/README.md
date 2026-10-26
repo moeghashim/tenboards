@@ -16,13 +16,13 @@ Make `/dashboard/default` the app's landing page again. Reverses only the entry-
 
 ## Acceptance criteria
 
-- [ ] `/`, `/dashboard`, `/dashboard/` return 307 to `/dashboard/default` in dev and local workerd, demo and auth modes.
-- [ ] Sign-in with no/unsafe `redirect` lands on `/dashboard/default`; safe `redirect` values still win; auth return/redirect/error checks pass.
-- [ ] Brand link and global recovery links open `/dashboard/default`; keyboard access and accessible names preserved.
-- [ ] Home, Projects, palette and legacy redirects behave as before (project redirect, workspace UI and access checks pass).
-- [ ] Build, check, typecheck, dev `/` → `/dashboard/default` smoke without console errors; inherited warnings reported separately.
-- [ ] Before/after evidence of the landing flow (light/dark × desktop/mobile) uploaded only to pr-assets.
-- [ ] README (quick start link, live demo link, routing/landing sections), CHANGELOG draft and milestone status updated; PR links an isolated tenboards-preview version and alias.
+- [x] `/`, `/dashboard`, `/dashboard/` return 307 to `/dashboard/default` in dev and local workerd, demo and auth modes.
+- [x] Sign-in with no/unsafe `redirect` lands on `/dashboard/default`; safe `redirect` values still win; auth return/redirect/error checks pass.
+- [x] Brand link and global recovery links open `/dashboard/default`; keyboard access and accessible names preserved.
+- [x] Home, Projects, palette and legacy redirects behave as before (project redirect, workspace UI and access checks pass).
+- [x] Build, check, typecheck, dev `/` → `/dashboard/default` smoke without console errors; inherited warnings reported separately.
+- [x] Before/after evidence of the landing flow (light/dark × desktop/mobile) uploaded only to pr-assets.
+- [x] README (quick start link, live demo link, routing/landing sections), CHANGELOG draft and milestone status updated; PR links an isolated tenboards-preview version and alias.
 
 ## Decisions
 

@@ -42,15 +42,15 @@ export async function captureSystem(
     const home = page.getByRole("button", { name: "Go to Home", exact: true });
     if ((await home.getAttribute("href")) !== "/dashboard/default")
       throw new Error("Root error recovery must open Default");
-    await home.focus();
-    if (!(await home.evaluate((link) => link === document.activeElement)))
-      throw new Error("Root error recovery link did not receive keyboard focus");
     if (
       !["localhost", "127.0.0.1", "[::1]"].includes(new URL(page.url()).hostname) &&
       (await page.locator("main").textContent())?.includes("QA_ONLY_ROOT_ERROR")
     )
       throw new Error("Production leaked error detail");
     await capture("boundary");
+    await home.focus();
+    if (!(await home.evaluate((link) => link === document.activeElement)))
+      throw new Error("Root error recovery link did not receive keyboard focus");
     await page.evaluate(() => {
       const win = window as unknown as {
         __QA_ROOT__?: { route: { options: { component: unknown } }; component: unknown };
