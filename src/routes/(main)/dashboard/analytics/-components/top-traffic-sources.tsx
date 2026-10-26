@@ -1,11 +1,17 @@
 import { Bar, BarChart, CartesianGrid, LabelList, type LabelProps, XAxis, YAxis } from "recharts";
 
+import {
+  DashboardCard as Card,
+  chartAxis,
+  DashboardChart,
+  DashboardTooltip,
+  SectionHeader,
+  useChartMotion,
+} from "@/components/blocks";
 import { CardContent } from "@/components/ui/card";
 import { type ChartConfig, ChartTooltip } from "@/components/ui/chart";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { chartAxis, DashboardChart, DashboardTooltip, useChartMotion } from "@/lib/charts/theme";
 
-import { DashboardCard as Card, SectionHeader } from "../../-components/dashboard/cards";
 import { useDashboardData } from "./data-context";
 
 const chartConfig = {

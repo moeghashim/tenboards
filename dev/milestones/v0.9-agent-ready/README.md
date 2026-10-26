@@ -1,6 +1,6 @@
 # v0.9 — Agent-ready template
 
-Status: **planned**. Contract: PLAN.md Decisions log, “v0.9 …” rows (2026-10-26).
+Status: **in-progress**. Contract: PLAN.md Decisions log, “v0.9 …” rows (2026-10-26).
 
 Goal: coding agents adopting tenboards use its real building blocks instead of generating look-alike UI. The on-system path is the shortest path; the off-system path fails a check.
 

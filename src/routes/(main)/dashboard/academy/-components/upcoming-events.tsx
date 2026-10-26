@@ -1,11 +1,11 @@
 import { addDays, format } from "date-fns";
 import { ArrowRight } from "lucide-react";
 
+import { DashboardCard as Card } from "@/components/blocks";
 import { Badge } from "@/components/ui/badge";
 import { CardAction, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { civilDate } from "@/server/data/core-dates";
 
-import { DashboardCard as Card } from "../../-components/dashboard/cards";
 import { useDashboardData } from "./data-context";
 
 export function UpcomingEvents() {

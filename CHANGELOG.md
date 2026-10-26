@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.9 — Agent-ready template (draft)
+
+- Promote typed, TSDoc-documented presentation blocks to `@/components/blocks`; migrate existing imports without changing page markup or behavior.
+- Add a caller-owned TanStack Table block with sorting, pagination, empty recovery and labelled mobile reflow.
+- Add `/dashboard/kit` under Developer and in the command palette, with executable examples, variants and copyable source. Protected UI/calendar primitives remain unchanged.
+
 ## v0.8.1 — Default dashboard landing (2026-10-26)
 
 Released as [v0.8.1](https://github.com/moeghashim/tenboards/releases/tag/v0.8.1).

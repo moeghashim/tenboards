@@ -215,7 +215,7 @@
     },
     {
       "id": "v0.9-agent-ready",
-      "status": "planned",
+      "status": "in-progress",
       "tasks": [
         "001-blocks-kit",
         "002-page-generators",
@@ -224,7 +224,7 @@
         "005-registry-llms"
       ],
       "taskStatuses": {
-        "001-blocks-kit": "planned",
+        "001-blocks-kit": "in-review",
         "002-page-generators": "planned",
         "003-design-guardrails": "planned",
         "004-adopter-guide-skills": "planned",

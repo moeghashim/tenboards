@@ -1,8 +1,8 @@
+import { DashboardCard as Card, SectionHeader } from "@/components/blocks";
 import { Button } from "@/components/ui/button";
 import { CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 
-import { DashboardCard as Card, SectionHeader } from "../../-components/dashboard/cards";
 import { useDashboardData } from "./data-context";
 
 export function WeeklySummaryCard() {

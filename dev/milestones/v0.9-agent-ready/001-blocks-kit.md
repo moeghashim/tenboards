@@ -1,6 +1,6 @@
 # 001 — Public blocks and kit page
 
-Status: planned. Branch: `feat/v0.9/001-blocks-kit`.
+Status: in-review. Branch: `feat/v0.9/001-blocks-kit`.
 
 ## Scope
 

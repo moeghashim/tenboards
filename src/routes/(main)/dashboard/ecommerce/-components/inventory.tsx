@@ -1,12 +1,11 @@
 import { PackageCheck, PackageX, TriangleAlert } from "lucide-react";
 import { Label, Pie, PieChart } from "recharts";
 
+import { DashboardCard as Card, DashboardChart, useChartMotion } from "@/components/blocks";
 import { CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import type { ChartConfig } from "@/components/ui/chart";
 import { Separator } from "@/components/ui/separator";
-import { DashboardChart, useChartMotion } from "@/lib/charts/theme";
 
-import { DashboardCard as Card } from "../../-components/dashboard/cards";
 import { useEcommerce } from "./ecommerce-context";
 
 const chartConfig = {

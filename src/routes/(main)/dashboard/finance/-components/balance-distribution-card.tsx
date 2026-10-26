@@ -2,13 +2,18 @@ import * as React from "react";
 
 import { Label, Pie, PieChart } from "recharts";
 
+import {
+  DashboardCard as Card,
+  DashboardChart,
+  DashboardTooltip,
+  SectionHeader,
+  useChartMotion,
+} from "@/components/blocks";
 import { CardContent } from "@/components/ui/card";
 import { type ChartConfig, ChartTooltip } from "@/components/ui/chart";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { DashboardChart, DashboardTooltip, useChartMotion } from "@/lib/charts/theme";
 import { formatCurrency } from "@/lib/utils";
 
-import { DashboardCard as Card, SectionHeader } from "../../-components/dashboard/cards";
 import { useDashboardData } from "./data-context";
 
 type BalanceKey = "investment" | "main" | "reserve" | "savings";

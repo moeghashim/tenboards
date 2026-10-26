@@ -2,12 +2,12 @@ import { createFileRoute, stripSearchParams } from "@tanstack/react-router";
 
 import { FolderSearch } from "lucide-react";
 
+import { PageHeader } from "@/components/blocks";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { requireAppRoute } from "@/lib/auth/app-route";
 import { projectStatuses } from "@/server/data/projects.types";
 
-import { PageHeader } from "../-components/app-pages/page-header";
 import { ProjectSelect, useSearchDraft } from "./-components/project-controls";
 import { projectIndexSearch } from "./-components/project-index-search";
 import { ProjectSummaryCard } from "./-components/project-summary-card";

@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { createServerFn } from "@tanstack/react-start";
 
-import { PageHeader } from "../-components/app-pages/page-header";
+import { PageHeader } from "@/components/blocks";
+
 import { AddProductDrawer } from "./-components/add-product-drawer";
 import { CatalogContext } from "./-components/catalog-context";
 import { Products } from "./-components/products";

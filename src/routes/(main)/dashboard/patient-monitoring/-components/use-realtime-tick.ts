@@ -1,6 +1,6 @@
 import { useEffect, useState, useSyncExternalStore } from "react";
 
-import { useChartMotion } from "@/lib/charts/theme";
+import { useChartMotion } from "@/components/blocks";
 
 import { createRealtimeTicker, MONITORING_SPEED } from "./realtime-utils";
 

@@ -2,12 +2,11 @@ import { useEffect, useState } from "react";
 
 import { createFileRoute, Link } from "@tanstack/react-router";
 
+import { DashboardCard, PageHeader, SectionHeader, StatCard } from "@/components/blocks";
 import { CardContent } from "@/components/ui/card";
 import { requireAppRoute } from "@/lib/auth/app-route";
 import type { Task } from "@/server/data/projects.types";
 
-import { PageHeader } from "../-components/app-pages/page-header";
-import { DashboardCard, SectionHeader, StatCard } from "../-components/dashboard/cards";
 import { displayDate, relativeDueDate, searchSchema } from "../projects/-components/project-search";
 import { ProjectSummaryCard } from "../projects/-components/project-summary-card";
 import { PersonAvatar, TaskStatusLabel, taskKey } from "../projects/-components/task-presentation";

@@ -12,7 +12,7 @@ import type { AppPath } from "@/navigation/sidebar/sidebar-items";
 
 const aliasRoutes = new Set(["/", "/dashboard", "/dashboard/", "/auth/v2"]);
 const searchRoutes = routeCatalog.filter((item) => !aliasRoutes.has(item.route));
-const groups = ["Dashboards", "Pages", "Other screens", "Misc"];
+const groups = ["Dashboards", "Pages", "Developer", "Other screens", "Misc"];
 
 export function CommandPalette() {
   const [open, setOpen] = useState(false);

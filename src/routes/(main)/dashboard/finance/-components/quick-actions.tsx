@@ -10,13 +10,13 @@ import {
   Smartphone,
 } from "lucide-react";
 
+import { DashboardCard as Card, SectionHeader } from "@/components/blocks";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { CardContent } from "@/components/ui/card";
 import { Field } from "@/components/ui/field";
 import { InputGroup, InputGroupAddon, InputGroupInput, InputGroupText } from "@/components/ui/input-group";
 
-import { DashboardCard as Card, SectionHeader } from "../../-components/dashboard/cards";
 import { useDashboardData } from "./data-context";
 
 const shortcuts = [

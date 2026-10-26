@@ -4,7 +4,7 @@ import { cn } from "cn";
 
 import { ChartContainer, type ChartLegendContent, ChartTooltipContent } from "@/components/ui/chart";
 
-// Deliberately skip chart-3: Default maps it to the same color as chart-1.
+/** Opaque chart colors and distinct line patterns. Skips duplicate Default chart-3. */
 export const chartSeries = [
   { color: "var(--chart-1)", strokeDasharray: undefined },
   { color: "var(--chart-2)", strokeDasharray: "6 3" },
@@ -12,8 +12,17 @@ export const chartSeries = [
   { color: "var(--chart-5)", strokeDasharray: "8 3 2 3" },
 ] as const;
 
-export type SeriesStyle = { label: string; color: string; strokeDasharray?: string };
+/** Accessible series identity shared by marks, tooltip and legend. */
+export interface SeriesStyle {
+  /** Human-readable series name. */
+  label: string;
+  /** CSS token color for marks and legend samples. */
+  color: string;
+  /** Supplementary line pattern so color is not the only distinction. */
+  strokeDasharray?: string;
+}
 
+/** Assign shared colors/patterns to named series in insertion order; styles repeat after four series. */
 export function seriesConfig<T extends string>(labels: Record<T, string>): Record<T, SeriesStyle> {
   return Object.fromEntries(
     Object.entries<string>(labels).map(([key, label], index) => [
@@ -23,18 +32,24 @@ export function seriesConfig<T extends string>(labels: Record<T, string>): Recor
   ) as Record<T, SeriesStyle>;
 }
 
+/** Recharts axis props: muted 12px ticks without decorative axis lines. */
 export const chartAxis = {
   axisLine: false,
   tickLine: false,
   tickMargin: 8,
   tick: { fill: "var(--text-muted)", fontSize: 12 },
 } as const;
+/** Recharts CartesianGrid props for decorative dashed horizontal separators. */
 export const chartGrid = { vertical: false, stroke: "var(--border)", strokeDasharray: "3 3" } as const;
+/** Recharts tooltip cursor props using a dashed muted stroke. */
 export const chartCursor = { stroke: "var(--text-muted)", strokeDasharray: "3 3" } as const;
 
+/** Format a number using the explicit en-US locale. */
 export const formatNumber = (value: number) => new Intl.NumberFormat("en-US").format(value);
+/** Format an amount using en-US and the supplied ISO currency (USD by default). */
 export const formatCurrency = (value: number, currency = "USD") =>
   new Intl.NumberFormat("en-US", { style: "currency", currency, maximumFractionDigits: 2 }).format(value);
+/** Format a ratio as an en-US percentage with at most one decimal place. */
 export const formatPercent = (value: number) =>
   new Intl.NumberFormat("en-US", { style: "percent", maximumFractionDigits: 1 }).format(value);
 
@@ -44,6 +59,7 @@ function subscribeMotion(onChange: () => void) {
   return () => media.removeEventListener("change", onChange);
 }
 // Static SSR and first client paint; enable short animations only after hydration.
+/** SSR-safe reduced-motion subscription. Spread onto every animated series and tooltip. */
 export function useChartMotion() {
   const reduced = useSyncExternalStore(
     subscribeMotion,
@@ -53,7 +69,18 @@ export function useChartMotion() {
   return { isAnimationActive: !reduced, animationDuration: 200 } as const;
 }
 
-export function DashboardChart({ className, ...props }: ComponentProps<typeof ChartContainer>) {
+/** ChartContainer props, including required config/children and optional height/layout className. */
+export type DashboardChartProps = ComponentProps<typeof ChartContainer>;
+/** ChartTooltipContent props; Recharts supplies payload/active and callers own value/label formatters. */
+export type DashboardTooltipProps = ComponentProps<typeof ChartTooltipContent>;
+/** Legend content props with the same named series config used by the marks. */
+export type DashboardLegendProps = ComponentProps<typeof ChartLegendContent> & {
+  /** Series labels, token colors and line patterns, keyed by dataKey. */
+  config: Record<string, SeriesStyle>;
+};
+
+/** Bounded responsive chart container with keyboard focus treatment; provide an accessible data alternative. */
+export function DashboardChart({ className, ...props }: DashboardChartProps) {
   return (
     <ChartContainer
       className={cn(
@@ -65,7 +92,8 @@ export function DashboardChart({ className, ...props }: ComponentProps<typeof Ch
   );
 }
 
-export function DashboardTooltip(props: ComponentProps<typeof ChartTooltipContent>) {
+/** Token-colored tooltip content for a Recharts Tooltip. */
+export function DashboardTooltip(props: DashboardTooltipProps) {
   return (
     <ChartTooltipContent
       {...props}
@@ -74,11 +102,8 @@ export function DashboardTooltip(props: ComponentProps<typeof ChartTooltipConten
   );
 }
 
-export function DashboardLegend({
-  config,
-  payload,
-  className,
-}: ComponentProps<typeof ChartLegendContent> & { config: Record<string, SeriesStyle> }) {
+/** Wrapping legend with distinct line samples matched to the series config. */
+export function DashboardLegend({ config, payload, className }: DashboardLegendProps) {
   return (
     <div className={cn("text-muted-foreground flex flex-wrap items-center gap-x-4 gap-y-2 py-3 text-xs", className)}>
       {payload

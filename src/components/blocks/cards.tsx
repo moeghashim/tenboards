@@ -4,27 +4,33 @@ import { cn } from "cn";
 
 import { Card, CardAction, CardContent, CardHeader } from "@/components/ui/card";
 
-export function DashboardCard({
-  density = "standard",
-  className,
-  ...props
-}: ComponentProps<typeof Card> & { density?: "compact" | "standard" }) {
+/** Card surface using the shared compact or standard spacing; compose with UI card slots. */
+export type DashboardCardProps = ComponentProps<typeof Card> & {
+  /** Compact uses 12px spacing; standard follows responsive card tokens. Defaults to standard. */
+  density?: "compact" | "standard";
+};
+
+/** Shared dashboard card. All native Card props, children and accessible names pass through. */
+export function DashboardCard({ density = "standard", className, ...props }: DashboardCardProps) {
   return <Card {...props} size={density === "compact" ? "sm" : "default"} className={cn("min-w-0", className)} />;
 }
 
-export function SectionHeader({
-  title,
-  description,
-  actions,
-  level = 2,
-  id,
-}: {
+/** Props for a card-level semantic heading. */
+export interface SectionHeaderProps {
+  /** Visible section heading. */
   title: ReactNode;
+  /** Supporting content below the heading. */
   description?: ReactNode;
+  /** Route-owned controls, wrapping beside the heading. */
   actions?: ReactNode;
+  /** Heading hierarchy; defaults to h2. */
   level?: 2 | 3;
+  /** Heading ID for aria-labelledby and fragment links. */
   id?: string;
-}) {
+}
+
+/** Wrapping h2/h3 header for DashboardCard, with optional description and actions. */
+export function SectionHeader({ title, description, actions, level = 2, id }: SectionHeaderProps) {
   const Heading = level === 2 ? "h2" : "h3";
   return (
     <CardHeader className="flex flex-wrap items-start justify-between gap-3">
@@ -39,6 +45,29 @@ export function SectionHeader({
   );
 }
 
+/** Props for an accessibly labelled metric card. */
+export interface StatCardProps {
+  /** Heading hierarchy; defaults to h2. */
+  level?: 2 | 3;
+  /** Accessible metric name and visible heading. */
+  label: string;
+  /** Route-formatted metric; units and locale belong to the caller. */
+  value: ReactNode;
+  /** Supporting explanation below the value. */
+  help?: ReactNode;
+  /** Text or indicator alongside the value; pair color with a label. */
+  trend?: ReactNode;
+  /** Route-owned controls in the card header. */
+  actions?: ReactNode;
+  /** Optional decorative or accessibly named icon. */
+  icon?: ReactNode;
+  /** Card spacing; defaults to standard. */
+  density?: "compact" | "standard";
+  /** Additional layout classes. */
+  className?: string;
+}
+
+/** Metric card with tabular values and optional help, trend, icon and action slots. */
 export function StatCard({
   label,
   value,
@@ -49,17 +78,7 @@ export function StatCard({
   density = "standard",
   level = 2,
   className,
-}: {
-  level?: 2 | 3;
-  label: string;
-  value: ReactNode;
-  help?: ReactNode;
-  trend?: ReactNode;
-  actions?: ReactNode;
-  icon?: ReactNode;
-  density?: "compact" | "standard";
-  className?: string;
-}) {
+}: StatCardProps) {
   const id = useId();
   const Heading = level === 2 ? "h2" : "h3";
   return (

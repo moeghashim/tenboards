@@ -1,9 +1,9 @@
 import { siEbay, siGoogle, siMeta, siShopify, siTiktok } from "simple-icons";
 
+import { DashboardCard, SectionHeader } from "@/components/blocks";
 import { SimpleIcon } from "@/components/simple-icon";
 import { CardContent } from "@/components/ui/card";
 
-import { DashboardCard, SectionHeader } from "../../-components/dashboard/cards";
 import { useEcommerce } from "./ecommerce-context";
 
 const icons = { siEbay, siGoogle, siMeta, siShopify, siTiktok };

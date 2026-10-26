@@ -1,9 +1,9 @@
 import { BellOff } from "lucide-react";
 
+import { DashboardCard as Card, SectionHeader } from "@/components/blocks";
 import { Button } from "@/components/ui/button";
 import { CardContent } from "@/components/ui/card";
 
-import { DashboardCard as Card, SectionHeader } from "../../-components/dashboard/cards";
 import { useDashboardData } from "./data-context";
 
 export function FocusCard() {

@@ -3,9 +3,9 @@ import { createServerFn } from "@tanstack/react-start";
 
 import { Save, Send } from "lucide-react";
 
+import { PageHeader } from "@/components/blocks";
 import { Button } from "@/components/ui/button";
 
-import { PageHeader } from "../-components/app-pages/page-header";
 import { Invoice } from "./-components/invoice";
 import { InvoiceContext } from "./-components/invoice-context";
 

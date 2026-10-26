@@ -51,6 +51,7 @@ import { Route as mainAuthV1RegisterRouteRouteImport } from './routes/(main)/aut
 import { Route as mainAuthV2LoginRouteRouteImport } from './routes/(main)/auth/v2/login/route'
 import { Route as mainAuthV2RegisterRouteRouteImport } from './routes/(main)/auth/v2/register/route'
 import { Route as mainDashboardHomeIndexRouteImport } from './routes/(main)/dashboard/home/index'
+import { Route as mainDashboardKitIndexRouteImport } from './routes/(main)/dashboard/kit/index'
 import { Route as mainDashboardProjectsIndexRouteImport } from './routes/(main)/dashboard/projects/index'
 import { Route as mainDashboardProjectsProjectIdRouteRouteImport } from './routes/(main)/dashboard/projects/$projectId/route'
 import { Route as mainDashboardProjectsProjectIdIndexRouteImport } from './routes/(main)/dashboard/projects/$projectId/index'
@@ -288,6 +289,11 @@ const mainDashboardHomeIndexRoute = mainDashboardHomeIndexRouteImport.update({
   path: '/home/',
   getParentRoute: () => mainDashboardRouteRoute,
 } as any)
+const mainDashboardKitIndexRoute = mainDashboardKitIndexRouteImport.update({
+  id: '/kit/',
+  path: '/kit/',
+  getParentRoute: () => mainDashboardRouteRoute,
+} as any)
 const mainDashboardProjectsIndexRoute =
   mainDashboardProjectsIndexRouteImport.update({
     id: '/projects/',
@@ -381,6 +387,7 @@ export interface FileRoutesByFullPath {
   '/auth/v2/register': typeof mainAuthV2RegisterRouteRoute
   '/dashboard/projects/$projectId': typeof mainDashboardProjectsProjectIdRouteRouteWithChildren
   '/dashboard/home/': typeof mainDashboardHomeIndexRoute
+  '/dashboard/kit/': typeof mainDashboardKitIndexRoute
   '/dashboard/projects/': typeof mainDashboardProjectsIndexRoute
   '/dashboard/projects/$projectId/board': typeof mainDashboardProjectsProjectIdBoardRoute
   '/dashboard/projects/$projectId/files': typeof mainDashboardProjectsProjectIdFilesRoute
@@ -431,6 +438,7 @@ export interface FileRoutesByTo {
   '/auth/v2/login': typeof mainAuthV2LoginRouteRoute
   '/auth/v2/register': typeof mainAuthV2RegisterRouteRoute
   '/dashboard/home': typeof mainDashboardHomeIndexRoute
+  '/dashboard/kit': typeof mainDashboardKitIndexRoute
   '/dashboard/projects': typeof mainDashboardProjectsIndexRoute
   '/dashboard/projects/$projectId/board': typeof mainDashboardProjectsProjectIdBoardRoute
   '/dashboard/projects/$projectId/files': typeof mainDashboardProjectsProjectIdFilesRoute
@@ -484,6 +492,7 @@ export interface FileRoutesById {
   '/(main)/auth/v2/register': typeof mainAuthV2RegisterRouteRoute
   '/(main)/dashboard/projects/$projectId': typeof mainDashboardProjectsProjectIdRouteRouteWithChildren
   '/(main)/dashboard/home/': typeof mainDashboardHomeIndexRoute
+  '/(main)/dashboard/kit/': typeof mainDashboardKitIndexRoute
   '/(main)/dashboard/projects/': typeof mainDashboardProjectsIndexRoute
   '/(main)/dashboard/projects/$projectId/board': typeof mainDashboardProjectsProjectIdBoardRoute
   '/(main)/dashboard/projects/$projectId/files': typeof mainDashboardProjectsProjectIdFilesRoute
@@ -538,6 +547,7 @@ export interface FileRouteTypes {
     | '/auth/v2/register'
     | '/dashboard/projects/$projectId'
     | '/dashboard/home/'
+    | '/dashboard/kit/'
     | '/dashboard/projects/'
     | '/dashboard/projects/$projectId/board'
     | '/dashboard/projects/$projectId/files'
@@ -588,6 +598,7 @@ export interface FileRouteTypes {
     | '/auth/v2/login'
     | '/auth/v2/register'
     | '/dashboard/home'
+    | '/dashboard/kit'
     | '/dashboard/projects'
     | '/dashboard/projects/$projectId/board'
     | '/dashboard/projects/$projectId/files'
@@ -640,6 +651,7 @@ export interface FileRouteTypes {
     | '/(main)/auth/v2/register'
     | '/(main)/dashboard/projects/$projectId'
     | '/(main)/dashboard/home/'
+    | '/(main)/dashboard/kit/'
     | '/(main)/dashboard/projects/'
     | '/(main)/dashboard/projects/$projectId/board'
     | '/(main)/dashboard/projects/$projectId/files'
@@ -962,6 +974,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof mainDashboardHomeIndexRouteImport
       parentRoute: typeof mainDashboardRouteRoute
     }
+    '/(main)/dashboard/kit/': {
+      id: '/(main)/dashboard/kit/'
+      path: '/kit'
+      fullPath: '/dashboard/kit/'
+      preLoaderRoute: typeof mainDashboardKitIndexRouteImport
+      parentRoute: typeof mainDashboardRouteRoute
+    }
     '/(main)/dashboard/projects/': {
       id: '/(main)/dashboard/projects/'
       path: '/projects'
@@ -1079,6 +1098,7 @@ interface mainDashboardRouteRouteChildren {
   mainDashboardIndexRoute: typeof mainDashboardIndexRoute
   mainDashboardProjectsProjectIdRouteRoute: typeof mainDashboardProjectsProjectIdRouteRouteWithChildren
   mainDashboardHomeIndexRoute: typeof mainDashboardHomeIndexRoute
+  mainDashboardKitIndexRoute: typeof mainDashboardKitIndexRoute
   mainDashboardProjectsIndexRoute: typeof mainDashboardProjectsIndexRoute
 }
 
@@ -1112,6 +1132,7 @@ const mainDashboardRouteRouteChildren: mainDashboardRouteRouteChildren = {
   mainDashboardProjectsProjectIdRouteRoute:
     mainDashboardProjectsProjectIdRouteRouteWithChildren,
   mainDashboardHomeIndexRoute: mainDashboardHomeIndexRoute,
+  mainDashboardKitIndexRoute: mainDashboardKitIndexRoute,
   mainDashboardProjectsIndexRoute: mainDashboardProjectsIndexRoute,
 }
 

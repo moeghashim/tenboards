@@ -1,18 +1,19 @@
 import { CartesianGrid, ComposedChart, Legend, Line, XAxis, YAxis } from "recharts";
 
-import { CardContent } from "@/components/ui/card";
-import { ChartTooltip } from "@/components/ui/chart";
 import {
+  DashboardCard as Card,
   chartAxis,
   chartGrid,
   DashboardChart,
   DashboardLegend,
   DashboardTooltip,
+  SectionHeader,
   seriesConfig,
   useChartMotion,
-} from "@/lib/charts/theme";
+} from "@/components/blocks";
+import { CardContent } from "@/components/ui/card";
+import { ChartTooltip } from "@/components/ui/chart";
 
-import { DashboardCard as Card, SectionHeader } from "../../-components/dashboard/cards";
 import { useDashboardData } from "./data-context";
 
 const chartConfig = seriesConfig({ actualQuality: "Actual quality", baselineQuality: "Baseline quality" });

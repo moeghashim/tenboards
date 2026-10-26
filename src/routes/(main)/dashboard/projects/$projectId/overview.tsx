@@ -1,9 +1,9 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 
+import { DashboardCard, SectionHeader, StatCard } from "@/components/blocks";
 import { CardContent } from "@/components/ui/card";
 import { requireAppRoute } from "@/lib/auth/app-route";
 
-import { DashboardCard, SectionHeader, StatCard } from "../../-components/dashboard/cards";
 import { ProjectError, ProjectPending } from "../-components/project-boundaries";
 import { displayDate, relativeDueDate, searchSchema } from "../-components/project-search";
 import { loadProjectOverview } from "../-components/project-view-functions";

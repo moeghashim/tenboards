@@ -1,5 +1,6 @@
 import {
   Banknote,
+  Blocks,
   Bot,
   ChartBar,
   Fingerprint,
@@ -211,4 +212,5 @@ export const sidebarItems: NavGroup[] = [
       },
     ],
   },
+  { id: 5, label: "Developer", items: [{ id: "kit", title: "Blocks kit", url: "/dashboard/kit", icon: Blocks }] },
 ];

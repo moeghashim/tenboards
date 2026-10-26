@@ -4,6 +4,7 @@ import { type ColumnFiltersState, type PaginationState, type SortingState, useTa
 
 import { ArrowUpDown, ArrowUpRight, Download, MoreHorizontal } from "lucide-react";
 
+import { DashboardCard as Card } from "@/components/blocks";
 import { Button } from "@/components/ui/button";
 import { CardAction, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import {
@@ -19,7 +20,6 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { dataTableFeatures } from "@/lib/data-table-features";
 
-import { DashboardCard as Card } from "../../-components/dashboard/cards";
 import { useEcommerce } from "./ecommerce-context";
 import { recentOrdersColumns } from "./recent-orders-table/columns";
 import {

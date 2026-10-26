@@ -1,7 +1,7 @@
+import { DashboardCard as Card, SectionHeader } from "@/components/blocks";
 import { CardContent } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
-import { DashboardCard as Card, SectionHeader } from "../../-components/dashboard/cards";
 import { useDashboardData } from "./data-context";
 
 export function TopPages() {

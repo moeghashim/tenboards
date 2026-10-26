@@ -1,4 +1,5 @@
-import { StatCard } from "../../-components/dashboard/cards";
+import { StatCard } from "@/components/blocks";
+
 import { useDashboardData } from "./data-context";
 
 export function KpiCards() {
