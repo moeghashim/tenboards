@@ -39,7 +39,10 @@
     "assistant:conversation": "node --experimental-strip-types scripts/assistant-conversation-check.ts",
     "assistant:lifecycle": "node --experimental-strip-types scripts/assistant-lifecycle-browser-check.ts",
     "assistant:context": "node --experimental-strip-types scripts/assistant-context-browser-check.ts",
-    "assistant:modes": "node --experimental-strip-types scripts/assistant-modes-check.ts"
+    "assistant:modes": "node --experimental-strip-types scripts/assistant-modes-check.ts",
+    "new:dashboard": "node --experimental-strip-types scripts/new-page.ts dashboard",
+    "new:page": "node --experimental-strip-types scripts/new-page.ts page",
+    "generators:test": "node --env-file-if-exists=.env --experimental-strip-types scripts/generators-test.ts"
   },
   "lint-staged": {
     "*.{js,ts,jsx,tsx}": ["biome check --write --no-errors-on-unmatched"]

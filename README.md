@@ -17,7 +17,7 @@ The Assistant follows new replies until you scroll up; Jump to latest resumes fo
 
 **v0.8 (Projects workspace) is merged, deployed and released as [v0.8.0](https://github.com/moeghashim/tenboards/releases/tag/v0.8.0)** — the data foundation, workspace Home/Projects index, and all five direct read-only project views are implemented. [The milestone contract](dev/milestones/v0.8-projects/README.md) tracks the remaining navigation consolidation and final acceptance. Existing standalone routes and the default landing remain available.
 
-**v0.8.1 (Default dashboard landing) is merged, deployed and released as [v0.8.1](https://github.com/moeghashim/tenboards/releases/tag/v0.8.1)** — restores the Default revenue dashboard as the entry point and auth fallback. Home, Projects, navigation order and legacy redirects remain available. See the [task contract](dev/milestones/v0.8.1-default-landing/README.md). **v0.9 (Agent-ready template) is in progress** — task 001 (public blocks and the `/dashboard/kit` page) is merged; generators, design guardrails, adopter skills and the shadcn registry follow. See the [milestone contract](dev/milestones/v0.9-agent-ready/README.md).
+**v0.8.1 (Default dashboard landing) is merged, deployed and released as [v0.8.1](https://github.com/moeghashim/tenboards/releases/tag/v0.8.1)** — restores the Default revenue dashboard as the entry point and auth fallback. Home, Projects, navigation order and legacy redirects remain available. See the [task contract](dev/milestones/v0.8.1-default-landing/README.md). **v0.9 (Agent-ready template) is in progress** — tasks 001 (public blocks and the `/dashboard/kit` page) and 002 (`new:dashboard` / `new:page` generators) are merged; design guardrails, adopter skills and the shadcn registry follow. See the [milestone contract](dev/milestones/v0.9-agent-ready/README.md).
 
 ## Run locally
 
@@ -594,3 +594,34 @@ Open `/dashboard/kit` from the **Developer** sidebar group or the command palett
 Create a caller-owned `useTable` instance with `dataTableFeatures` and pass it to `DataTable`. Columns, filters, row IDs and client/server state stay with the caller. Use non-interactive column headers because the block supplies sort buttons; supply `columnLabels` for function headers. `mobile="reflow"` retains labelled values below the medium breakpoint; `mobile="scroll"` keeps a locally scrolling table. Set `pagination={false}` when the caller renders its own controls. Specialized existing tables keep their route-specific presentation.
 
 Run `BLOCKS_TEST_URL=http://127.0.0.1:3000 node --experimental-strip-types scripts/blocks-kit-check.ts` for the four-state interaction and root → Home smoke checks. Use `npm run screenshots` for the full route matrix. The intentional Developer entry and demo page count change the shell; screenshot comparisons of existing page content exclude that sidebar region and narrowly mask the live monitoring clock.
+
+## Build your own pages (v0.9 / 002)
+
+Page generators are in review. Start with the canonical examples at `/dashboard/kit`, then scaffold a dashboard or a table page:
+
+```sh
+npm run new:dashboard team-activity
+npm run new:dashboard team-activity -- --title "Team activity" --group Dashboards
+npm run new:page requests -- --title "Requests"
+```
+
+Choose one dashboard command: repeating an existing slug fails without changing files. Slugs must be lowercase kebab-case, start with a letter, and contain at most 64 characters. Existing routes (including redirect aliases), reserved framework names, data files and read names are protected. `--title` accepts nonempty single-line text; dashboards accept an existing sidebar group label with `--group` (default **Dashboards**). Pages use **Pages**. Unknown flags/groups fail before writes. The generator prints every created/updated file and follow-up commands.
+
+Each generator adds an `index.tsx` and route-local `-components/` under `src/routes/(main)/dashboard/<slug>/`, a sidebar item, a capture/command-palette route entry, typed DTOs, a canonical fixture, a guarded GET loader, and a registered `readX`/`demoX`/`dbX` domain. Dashboard output composes a PageHeader, three StatCards, one DashboardChart card and one DataTable card. Page output composes a PageHeader and DataTable card with an empty state. Tables preserve the kit's caller-owned `dataTableFeatures`, sorting, pagination and mobile reflow. Charts use the public block exports, token series and reduced-motion helper, with an exact-data table.
+
+Editable templates live in `scripts/templates/*.template`; they use `__SLUG__`, `__NAME__` and JSON-escaped `__TITLE__` substitutions. Node's strip-types runner uses the existing TypeScript parser to locate registration arrays and the existing Biome installation to format before writing. No dependency is added. A temporary `.page-generator.lock` serializes generator invocations; after an interrupted process, confirm no generator is running before removing a stale lock.
+
+The DB function is explicitly a **fixture-backed scaffold stub**, not persistence: demo and DB paths return fresh clones of the same illustrative DTO. Implement the generated TODO with schema, migration, seed and ordered DB queries, and extend its parity scenarios before connecting real records. Follow [the data-layer guide](docs/data-layer.md) and [project data contracts](docs/data.md). Both the document route and GET function retain the existing session guards. No auth policy changes or mutations are generated.
+
+```sh
+npm run dev                         # visit /dashboard/<slug>
+npm run build                       # router regenerates routeTree.gen.ts
+npm run check
+npm run typecheck
+npm run data:parity                  # migrated/seeded local DATABASE_URL required
+npm run verify:page -- /dashboard/<slug>  # supplied by v0.9 task 003
+```
+
+Never hand-edit `src/routeTree.gen.ts`. `verify:page` is the companion task's command and is unavailable until that task is merged.
+
+Run `npm run generators:test` with a migrated/seeded **local** `DATABASE_URL`. It copies the current tracked and unignored files into a temporary repository, copies installed dependencies with independent caches, verifies safe failures and repeat invocation, generates both examples, and runs build/check/typecheck/full data parity without manual fixes. If `check:design` is installed, it also runs that check. A dedicated random-port demo server verifies root → Default → Home, palette navigation, pagination, refresh and both generated screens in light/dark × desktop/mobile, followed by `npm run screenshots`. The test removes its temporary source/build and stops its server even on failure; no sample page is committed. Evidence defaults to gitignored `screenshots/generators-test` (`GENERATORS_TEST_OUTPUT` overrides it) and belongs only on `pr-assets` or PR attachments. Install the repository's Playwright Chromium browser if it is not already available.
