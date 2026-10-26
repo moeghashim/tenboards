@@ -221,14 +221,16 @@
         "002-page-generators",
         "003-design-guardrails",
         "004-adopter-guide-skills",
-        "005-registry-llms"
+        "005-registry-llms",
+        "006-accessibility-debt"
       ],
       "taskStatuses": {
         "001-blocks-kit": "merged",
         "002-page-generators": "planned",
         "003-design-guardrails": "planned",
         "004-adopter-guide-skills": "planned",
-        "005-registry-llms": "planned"
+        "005-registry-llms": "planned",
+        "006-accessibility-debt": "planned"
       }
     }
   ]

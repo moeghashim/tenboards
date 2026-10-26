@@ -11,6 +11,7 @@ Goal: coding agents adopting tenboards use its real building blocks instead of g
 | 003 — Design guardrails and verify:page | 001 | [003](003-design-guardrails.md) |
 | 004 — Adopter guide and Agent Skills | 002, 003 | [004](004-adopter-guide-skills.md) |
 | 005 — shadcn registry and llms.txt | 001 (docs after 004) | [005](005-registry-llms.md) |
+| 006 — Inherited accessibility findings | 003 | [006](006-accessibility-debt.md) |
 
 Branches: `feat/v0.9/NNN-slug`, one PR per task to main. 002 and 003 may run in parallel after 001 merges. v0.8.1 (default landing) merges first; v0.9 rebases onto it.
 
