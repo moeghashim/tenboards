@@ -1,5 +1,8 @@
 /** Public presentation blocks. Data, routing and domain behavior stay with the caller. */
 
+export { CardContent } from "@/components/ui/card";
+// Chart composition primitives used by the kit and generated pages.
+export { CartesianGrid, Legend, Line, LineChart, Tooltip, XAxis, YAxis } from "@/lib/charts";
 export type { DataTableFeatures } from "@/lib/data-table-features";
 export { dataTableFeatures } from "@/lib/data-table-features";
 

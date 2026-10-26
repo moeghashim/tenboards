@@ -226,7 +226,7 @@
       ],
       "taskStatuses": {
         "001-blocks-kit": "merged",
-        "002-page-generators": "planned",
+        "002-page-generators": "in-review",
         "003-design-guardrails": "planned",
         "004-adopter-guide-skills": "planned",
         "005-registry-llms": "planned",

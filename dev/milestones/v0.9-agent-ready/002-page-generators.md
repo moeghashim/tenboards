@@ -1,6 +1,6 @@
 # 002 — Page generators
 
-Status: planned. Branch: `feat/v0.9/002-page-generators`. Depends on 001.
+Status: in-review. Branch: `feat/v0.9/002-page-generators`. Depends on 001.
 
 ## Scope
 
@@ -11,7 +11,7 @@ Status: planned. Branch: `feat/v0.9/002-page-generators`. Depends on 001.
 
 ## Acceptance criteria
 
-- [ ] Fresh output of both generators passes build, check, typecheck and data parity with zero edits; renders without console/hydration errors in light/dark × desktop/mobile.
-- [ ] Re-running on an existing slug fails safely with a clear message; invalid slugs rejected.
-- [ ] A scripted test generates into a temp copy, runs the checks, and cleans up (`npm run generators:test`).
+- [x] Fresh output of both generators passes build, check, typecheck and data parity with zero edits; renders without console/hydration errors in light/dark × desktop/mobile.
+- [x] Re-running on an existing slug fails safely with a clear message; invalid slugs rejected.
+- [x] A scripted test generates into a temp copy, runs the checks, and cleans up (`npm run generators:test`).
 - [ ] README “Build your own pages” section and CHANGELOG draft updated; milestone status; preview in PR (generated sample pages are not committed).

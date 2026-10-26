@@ -1,8 +1,7 @@
 import { useState } from "react";
 
-import { CartesianGrid, Legend, Line, LineChart, Tooltip, XAxis, YAxis } from "recharts";
-
 import {
+  CartesianGrid,
   chartAxis,
   chartCursor,
   chartGrid,
@@ -10,8 +9,14 @@ import {
   DashboardLegend,
   DashboardTooltip,
   formatNumber,
+  Legend,
+  Line,
+  LineChart,
   seriesConfig,
+  Tooltip,
   useChartMotion,
+  XAxis,
+  YAxis,
 } from "@/components/blocks";
 import { Button } from "@/components/ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";

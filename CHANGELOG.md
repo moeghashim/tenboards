@@ -6,6 +6,12 @@
 - Add a caller-owned TanStack Table block with sorting, pagination, empty recovery and labelled mobile reflow.
 - Add `/dashboard/kit` under Developer and in the command palette, with executable examples, variants and copyable source. Protected UI/calendar primitives remain unchanged.
 
+### Page generators (v0.9 / 002)
+
+- Add `new:dashboard` and `new:page` with editable block-based templates, typed illustrative reads, guarded loaders, sidebar/catalog/parity registration, slug validation and overwrite protection.
+- Export the kit's chart composition primitives and CardContent through the blocks barrel so generated routes use only the public presentation API; no runtime dependency added.
+- Add `generators:test`: disposable generation, safe-failure checks, build/check/typecheck/data parity and four-state browser/screenshot verification; generated samples stay out of the repository.
+
 ## v0.8.1 — Default dashboard landing (2026-10-26)
 
 Released as [v0.8.1](https://github.com/moeghashim/tenboards/releases/tag/v0.8.1).
