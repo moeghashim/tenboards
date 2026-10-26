@@ -1,0 +1,4 @@
+PASS external render light desktop {"primary":"#1e40af","card":"rgb(255, 255, 255)","bodyFont":"13px","spacing":"0.21875rem","chart":"rgb(30, 64, 175)","overflow":false}
+PASS external render light mobile {"primary":"#1e40af","card":"rgb(255, 255, 255)","bodyFont":"13px","spacing":"0.25rem","chart":"rgb(30, 64, 175)","overflow":false}
+PASS external render dark desktop {"primary":"#a9c2ff","card":"rgb(25, 29, 37)","bodyFont":"13px","spacing":"0.21875rem","chart":"rgb(169, 194, 255)","overflow":false}
+PASS external render dark mobile {"primary":"#a9c2ff","card":"rgb(25, 29, 37)","bodyFont":"13px","spacing":"0.25rem","chart":"rgb(169, 194, 255)","overflow":false}

@@ -1,0 +1,8 @@
+PASS dev smoke / → /dashboard/default
+PASS dev smoke /dashboard/home → /dashboard/home
+PASS dev smoke /dashboard/kit → /dashboard/kit
+PASS expanded kit light desktop 9 links; keyboard disclosure; clipboard; focus; no overflow; axe clean
+PASS expanded kit light mobile 9 links; keyboard disclosure; clipboard; focus; no overflow; axe clean
+PASS expanded kit dark desktop 9 links; keyboard disclosure; clipboard; focus; no overflow; axe clean
+PASS expanded kit dark mobile 9 links; keyboard disclosure; clipboard; focus; no overflow; axe clean
+PASS no console/page errors

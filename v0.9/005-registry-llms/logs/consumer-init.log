@@ -1,0 +1,25 @@
+- Preflight checks.
+✔ Preflight checks.
+- Verifying framework.
+✔ Verifying framework. Found Vite.
+- Validating Tailwind CSS. Found v4.
+✔ Validating Tailwind CSS. Found v4.
+- Validating import alias.
+✔ Validating import alias.
+- Writing components.json.
+✔ Writing components.json.
+- Checking registry.
+✔ Checking registry.
+- Installing dependencies.
+- Installing dependencies.
+✔ Installing dependencies.
+- Updating files.
+ℹ Skipped 2 files: (files might be identical, use --overwrite to overwrite)
+  - src/components/ui/button.tsx
+  - src/lib/utils.ts
+- Updating src/index.css
+✔ Updating src/index.css
+
+Project initialization completed.
+You may now add components.
+

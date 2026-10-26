@@ -1,0 +1,11 @@
+{
+  "baseURL": "http://127.0.0.1:3405/",
+  "passed": true,
+  "reports": [
+    {
+      "route": "/dashboard/kit/",
+      "passed": true,
+      "report": "dashboard%2Fkit%2F/report.json"
+    }
+  ]
+}

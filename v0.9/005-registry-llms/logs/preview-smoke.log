@@ -1,0 +1,4 @@
+PASS preview / → https://8dfbffb6-tenboards-preview.mohanadgh.workers.dev/dashboard/default
+PASS preview /dashboard/home → https://8dfbffb6-tenboards-preview.mohanadgh.workers.dev/dashboard/home
+PASS preview /dashboard/kit → https://8dfbffb6-tenboards-preview.mohanadgh.workers.dev/dashboard/kit
+PASS preview hydration, registry links, zero console errors

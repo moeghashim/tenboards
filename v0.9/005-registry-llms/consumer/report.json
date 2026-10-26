@@ -1,0 +1,58 @@
+[
+  {
+    "theme": "light",
+    "size": "desktop",
+    "styles": {
+      "primary": "#1e40af",
+      "card": "rgb(255, 255, 255)",
+      "bodyFont": "13px",
+      "spacing": "0.21875rem",
+      "chart": "rgb(30, 64, 175)",
+      "overflow": false
+    },
+    "errors": [],
+    "axeViolations": 0
+  },
+  {
+    "theme": "light",
+    "size": "mobile",
+    "styles": {
+      "primary": "#1e40af",
+      "card": "rgb(255, 255, 255)",
+      "bodyFont": "13px",
+      "spacing": "0.25rem",
+      "chart": "rgb(30, 64, 175)",
+      "overflow": false
+    },
+    "errors": [],
+    "axeViolations": 0
+  },
+  {
+    "theme": "dark",
+    "size": "desktop",
+    "styles": {
+      "primary": "#a9c2ff",
+      "card": "rgb(25, 29, 37)",
+      "bodyFont": "13px",
+      "spacing": "0.21875rem",
+      "chart": "rgb(169, 194, 255)",
+      "overflow": false
+    },
+    "errors": [],
+    "axeViolations": 0
+  },
+  {
+    "theme": "dark",
+    "size": "mobile",
+    "styles": {
+      "primary": "#a9c2ff",
+      "card": "rgb(25, 29, 37)",
+      "bodyFont": "13px",
+      "spacing": "0.25rem",
+      "chart": "rgb(169, 194, 255)",
+      "overflow": false
+    },
+    "errors": [],
+    "axeViolations": 0
+  }
+]
