@@ -132,3 +132,25 @@ export function DashboardLegend({ config, payload, className }: DashboardLegendP
     </div>
   );
 }
+
+/** Recharts primitives share this public boundary; callers retain data and composition. */
+export {
+  Area,
+  AreaChart,
+  Bar,
+  BarChart,
+  type BarShapeProps,
+  CartesianGrid,
+  ComposedChart,
+  Label,
+  LabelList,
+  type LabelProps,
+  Legend,
+  Line,
+  LineChart,
+  Pie,
+  PieChart,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from "recharts";

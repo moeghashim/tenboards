@@ -1,5 +1,3 @@
-import { CartesianGrid, Legend, Line, LineChart, XAxis, YAxis } from "recharts";
-
 import {
   DashboardCard as Card,
   chartAxis,
@@ -12,6 +10,7 @@ import {
   seriesConfig,
   useChartMotion,
 } from "@/components/blocks";
+import { CartesianGrid, Legend, Line, LineChart, XAxis, YAxis } from "@/components/blocks/charts";
 import { CardContent } from "@/components/ui/card";
 import { ChartTooltip } from "@/components/ui/chart";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";

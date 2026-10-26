@@ -1,7 +1,5 @@
 import * as React from "react";
 
-import { Label, Pie, PieChart } from "recharts";
-
 import {
   DashboardCard as Card,
   DashboardChart,
@@ -9,6 +7,7 @@ import {
   SectionHeader,
   useChartMotion,
 } from "@/components/blocks";
+import { Label, Pie, PieChart } from "@/components/blocks/charts";
 import { CardContent } from "@/components/ui/card";
 import { type ChartConfig, ChartTooltip } from "@/components/ui/chart";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";

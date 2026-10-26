@@ -12,6 +12,14 @@
 - Export the kit's chart composition primitives and CardContent through the blocks barrel so generated routes use only the public presentation API; no runtime dependency added.
 - Add `generators:test`: disposable generation, safe-failure checks, build/check/typecheck/data parity and four-state browser/screenshot verification; generated samples stay out of the repository.
 
+### Design guardrails and verification (003)
+
+- v0.9 guardrail review: accept token references and grid composition, keep inherited exceptions in JSON, and name shell/Default controls without changing their appearance.
+
+- Add `check:design` to the standard check: route/block token checks, Recharts boundary, primitive-card import restrictions and documented card/page-header heuristics, with counted exceptions and seeded regression fixtures.
+- Route existing Recharts primitives through the public chart block without changing page markup or tokens.
+- Add `verify:page` for a single route or the route catalog: four-state screenshots, WCAG 2.2 AA axe scans, console/hydration diagnostics and gitignored JSON reports. Inherited accessibility findings remain reported failures, tracked separately from this tooling change.
+
 ## v0.8.1 — Default dashboard landing (2026-10-26)
 
 Released as [v0.8.1](https://github.com/moeghashim/tenboards/releases/tag/v0.8.1).

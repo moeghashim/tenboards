@@ -1,6 +1,7 @@
 import { Star, UsersRound } from "lucide-react";
 
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+// biome-ignore lint/style/noRestrictedImports: Existing specialized card layout preserves its density/size semantics; DashboardCard migration needs separate visual review.
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 import { type FileManagerFile, fileIcons, fileKindLabels } from "./data";

@@ -157,3 +157,38 @@ The milestone contract assigns merge-first/rebase sequencing to the reviewer. Af
 ## 2026-10-26 — v0.9 / 002 generator verification
 
 Status: resolved; no product/scope question is open. The collaborative preview twice returned `Preview automation snapshot timed out after 15000ms.`; verification uses the repository's Playwright capture workflow. Tests use a dedicated local PostgreSQL 17 cluster on `127.0.0.1:3293` / `tenboards_v09_002`, with no shared DB or production access. The first disposable-app harness used a dependency symlink, which Vite could not resolve outside its root. It now copies dependencies with independent caches; the incumbent dev server was restarted with forced dependency optimization after the earlier shared-cache run. Initial harness assertion/type/locator failures and successful reruns are retained in PR evidence. Generated DB reads are explicitly fixture-backed TODO stubs, as task 002 requires; they do not claim persistence. Task 003 owns `check:design`/`verify:page`; task 002 uses token-only templates and routes chart exports through `src/lib/charts` for that integration. Impeccable's existing stale sidecar is unchanged and can be refreshed separately with `impeccable document`.
+
+## 2026-10-26 — v0.9 / 003 inherited accessibility audit
+
+**Round 1 audit (historical): shell findings in A and all of D are resolved in review round 2 below; route-specific findings remain open.** `npm run verify:page -- --all --base-url http://127.0.0.1:3393` audited all 37 capture-catalog routes in light/dark × desktop/mobile (148 cases), using `@axe-core/playwright@4.14.0` and WCAG 2/2.1/2.2 A/AA tags. Result: 26 passing cases, 122 failing cases, **zero console/hydration/page/request errors**, exit 1. The command deliberately does not suppress inherited violations.
+
+Evidence: [run index and per-route reports](https://github.com/moeghashim/tenboards/tree/pr-assets/v09-003/verify), [rule/route summary](https://github.com/moeghashim/tenboards/blob/pr-assets/v09-003/verify/inherited-summary.json), [verbatim audit output](https://github.com/moeghashim/tenboards/blob/pr-assets/v09-003/logs/verify-all.log). Reports include the exact theme/viewport, node targets, node HTML, failure summaries and remediation links. Counts below are rule occurrences across cases, not unique defects (cases can contain several rules).
+
+| Logged issue | Cases / nodes | Affected surfaces and representative targets | Follow-up |
+| --- | --- | --- | --- |
+| V09-003-A: `label-content-name-mismatch` | 120 / 294 | 30 shell-backed routes; `.shell-search`, demo account trigger `#base-ui-_R_repaq_`, and screen-specific named controls (invoice/logistics/monitoring) | Include visible control text in accessible names without losing useful context |
+| V09-003-B: `scrollable-region-focusable` | 4 / 4 | Analytics and project Timeline; `.overflow-x-auto` | Provide keyboard access to the overflowing data region |
+| V09-003-C: `color-contrast` | 21 / 65 | Chat (standalone and iframe), Analytics, CRM, Ecommerce, Finance, Invoice, Logistics, Patient Monitoring, Products, Profile and Roles | Review the exact rendered foreground/background pair in each report before token/usage fixes; no claim that supported DESIGN.md pairs changed |
+| V09-003-D: `button-name` | 16 / 32 | Default dashboard plus `/`, `/dashboard`, `/dashboard/` aliases; `#base-ui-_R_pj9aq_` and companion control | Give the two icon controls accessible names |
+| V09-003-E: `aria-progressbar-name` | 4 / 4 | CRM; progress indicator with chart-2 styling | Supply an accessible metric label |
+| V09-003-F: `aria-required-children` | 4 / 4 | Finance; `.group\/item-group` | Reconcile the item-group role and child semantics |
+
+These findings predate this task: all 20 touched route modules have identical non-import AST statements to `c605e25`, tokens/markup are unchanged, and all 12 Default/Finance/Kit before/after captures are pixel-identical. Round 1 added only a chart export boundary and import rewiring in app code. The reviewer subsequently authorized shell-level A and landing-page D fixes in this PR so new pages can pass verification; other route-specific fixes remain separately scoped.
+
+The seeded inaccessible fixture independently proves `button-name`, `label`, a hydration console diagnostic, four captures, JSON reporting and exit 1. Auto-start/reuse and owned-server cleanup were also verified. Ordinary inherited Base UI animation warnings are recorded separately from errors. Impeccable reported its existing stale design sidecar; no design-context repair was included.
+
+### Review round 2 — shell baseline resolved; route-specific follow-up remains open
+
+Final fresh catalog run: **105/148 cases pass (22/37 routes pass all four states), 43 cases retain route-specific axe findings, zero runtime errors, exit 1**. The original run had 26 passing and 122 failing cases. V09-003-A's shell search/account findings and all V09-003-D findings are resolved at usage sites. Default, Kit, and an uncommitted minimal PageHeader route inside the shell each pass four states. Eight Default/Kit before/after captures are pixel-identical. No route-specific A/B/C/E/F fixes were included.
+
+Evidence: [full reports](https://github.com/moeghashim/tenboards/tree/pr-assets/v09-003/review2/verify), [verbatim output](https://github.com/moeghashim/tenboards/tree/pr-assets/v09-003/review2/logs/catalog.log), [summary](https://github.com/moeghashim/tenboards/tree/pr-assets/v09-003/review2/verify/inherited-summary.json). Current cases/nodes below exclude the resolved shell/landing controls.
+
+| Logged issue | Remaining cases / nodes | Affected routes |
+| --- | --- | --- |
+| V09-003-A: `label-content-name-mismatch` | 20 / 114 | `/dashboard/assistant`, `/dashboard/academy`, `/dashboard/invoice`, `/dashboard/logistics`, `/dashboard/patient-monitoring` |
+| V09-003-B: `scrollable-region-focusable` | 4 / 4 | `/dashboard/projects/$projectId/timeline`, `/dashboard/analytics` |
+| V09-003-C: `color-contrast` | 21 / 65 | `/chat`, `/dashboard/analytics`, `/dashboard/chat`, `/dashboard/crm`, `/dashboard/ecommerce`, `/dashboard/finance`, `/dashboard/invoice`, `/dashboard/logistics`, `/dashboard/patient-monitoring`, `/dashboard/products`, `/dashboard/profile`, `/dashboard/roles` |
+| V09-003-E: `aria-progressbar-name` | 4 / 4 | `/dashboard/crm` |
+| V09-003-F: `aria-required-children` | 4 / 4 | `/dashboard/finance` |
+
+V09-003-D: resolved (0 cases / 0 nodes). The Default controls were activity-period/segment Select triggers; their accessible names now include purpose and the current visible value. Screen-specific A includes Assistant suggestion buttons and Academy controls in addition to Invoice, Logistics and Patient Monitoring controls. The verifier has no inherited-failure suppression. Playwright caret injection caused one interrupted-run hydration diagnostic; preserving caret styles eliminated the tool-induced mutation, and the full fresh run has zero runtime errors. Inherited Base UI animation warnings remain recorded separately.

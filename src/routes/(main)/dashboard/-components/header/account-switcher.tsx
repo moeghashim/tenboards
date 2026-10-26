@@ -35,13 +35,15 @@ export function AccountSwitcher({
     return null;
   }
 
+  const initials = getInitials(activeUser.name);
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger
-        render={<Button variant="ghost" size="icon" aria-label={`Demo account: ${activeUser.name}`} />}
+        render={<Button variant="ghost" size="icon" aria-label={`${initials} — Demo account: ${activeUser.name}`} />}
       >
         <Avatar className="size-8">
-          <AvatarFallback>{getInitials(activeUser.name)}</AvatarFallback>
+          <AvatarFallback>{initials}</AvatarFallback>
         </Avatar>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="min-w-56 space-y-1 rounded-lg" side="bottom" align="end" sideOffset={4}>

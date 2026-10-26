@@ -2,6 +2,7 @@ import { cn } from "cn";
 import { Plane, Search, Ship, SlidersHorizontal, Truck } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+// biome-ignore lint/style/noRestrictedImports: Existing specialized card layout preserves its density/size semantics; DashboardCard migration needs separate visual review.
 import { Card, CardAction, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { InputGroup, InputGroupAddon, InputGroupInput } from "@/components/ui/input-group";
 import { ScrollArea } from "@/components/ui/scroll-area";

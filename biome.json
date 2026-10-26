@@ -57,6 +57,65 @@
           }
         }
       }
+    },
+    {
+      "includes": [
+        "src/components/blocks/**",
+        "!src/components/blocks/charts.tsx",
+        "!src/components/blocks/charts-*.tsx",
+        "!src/components/blocks/charts/**",
+        "!**/*.gen.*",
+        "!**/*.generated.*"
+      ],
+      "linter": {
+        "rules": {
+          "style": {
+            "noRestrictedImports": {
+              "level": "error",
+              "options": {
+                "paths": {
+                  "recharts": "Import chart primitives from @/components/blocks/charts; keep Recharts access in the chart block module."
+                },
+                "patterns": [
+                  {
+                    "group": ["recharts/**"],
+                    "message": "Import chart primitives from @/components/blocks/charts."
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "includes": ["src/routes/**", "!**/*.gen.*", "!**/*.generated.*"],
+      "linter": {
+        "rules": {
+          "style": {
+            "noRestrictedImports": {
+              "level": "error",
+              "options": {
+                "paths": {
+                  "recharts": "Import chart primitives from @/components/blocks/charts; keep Recharts access in the chart block module."
+                },
+                "patterns": [
+                  {
+                    "group": ["recharts/**"],
+                    "message": "Import chart primitives from @/components/blocks/charts."
+                  },
+                  {
+                    "group": ["**/ui/card", "**/ui/card.tsx"],
+                    "message": "Use DashboardCard or StatCard from @/components/blocks; UI card slots remain composable.",
+                    "importNamePattern": "CardAction|CardContent|CardDescription|CardFooter|CardHeader|CardTitle",
+                    "invertImportNamePattern": true
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
     }
   ],
   "formatter": {

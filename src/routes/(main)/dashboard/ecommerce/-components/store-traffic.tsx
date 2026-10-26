@@ -1,5 +1,3 @@
-import { Area, AreaChart, CartesianGrid, Line, XAxis, YAxis } from "recharts";
-
 import {
   DashboardCard as Card,
   chartAxis,
@@ -9,6 +7,7 @@ import {
   DashboardTooltip,
   useChartMotion,
 } from "@/components/blocks";
+import { Area, AreaChart, CartesianGrid, Line, XAxis, YAxis } from "@/components/blocks/charts";
 import { CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ChartLegend, ChartTooltip } from "@/components/ui/chart";
 

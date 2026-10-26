@@ -39,7 +39,7 @@ OpenUI install telemetry must remain disabled (`OPENUI_TELEMETRY_DISABLED=1` or 
 - `npm run dev` — development server on port 3000.
 - `npm run build` — production client and server build.
 - `npm run preview` — preview the compiled Worker locally with Wrangler.
-- `npm run check` / `npm run check:fix` — Biome lint, imports, and formatting.
+- `npm run check` — Biome lint, imports, formatting, and design guardrails. `npm run check:fix` applies Biome fixes; rerun `check` afterward.
 - `npm run assistant:ui` — four-state composer, copy, stop/regenerate and scroll-follow checks, with empty/streaming/completed captures.
 - `npm run assistant:conversation` / `assistant:lifecycle` / `assistant:context` / `assistant:modes` — bounded history, configured UI recovery, scrolling and Node/Worker configuration acceptance using synthetic fixtures.
 - `npm run assistant:server` / `npm run assistant:worker` — synthetic provider-wire, endpoint and isolated admission/auth checks on Node and compiled workerd.
@@ -625,3 +625,21 @@ npm run verify:page -- /dashboard/<slug>  # supplied by v0.9 task 003
 Never hand-edit `src/routeTree.gen.ts`. `verify:page` is the companion task's command and is unavailable until that task is merged.
 
 Run `npm run generators:test` with a migrated/seeded **local** `DATABASE_URL`. It copies the current tracked and unignored files into a temporary repository, copies installed dependencies with independent caches, verifies safe failures and repeat invocation, generates both examples, and runs build/check/typecheck/full data parity without manual fixes. If `check:design` is installed, it also runs that check. A dedicated random-port demo server verifies root → Default → Home, palette navigation, pagination, refresh and both generated screens in light/dark × desktop/mobile, followed by `npm run screenshots`. The test removes its temporary source/build and stops its server even on failure; no sample page is committed. Evidence defaults to gitignored `screenshots/generators-test` (`GENERATORS_TEST_OUTPUT` overrides it) and belongs only on `pr-assets` or PR attachments. Install the repository's Playwright Chromium browser if it is not already available.
+
+
+## Design checks and page verification (v0.9 / 003)
+
+`npm run check:design` enforces token/block usage in routes and public blocks; it also runs inside `npm run check`. Diagnostics name the token class or block to use. Recharts primitives now come from `@/components/blocks/charts`; chart helpers remain exported by `@/components/blocks`. CSS variable references, viewport calculations using tokens and grid track composition are allowed. Inherited exceptional geometry is documented in the exact, occurrence-counted `scripts/design-exceptions.json`; new pages and generator output must use tokens or blocks instead of adding exceptions. See [the rules and heuristics](docs/design-guardrails.md).
+
+```bash
+npm run check:design
+npm run check:design:test
+npm run verify:page -- /dashboard/home
+npm run verify:page -- /dashboard/kit --base-url http://127.0.0.1:3000
+npm run verify:page -- --all --base-url http://127.0.0.1:3000
+npm run verify:page:test
+```
+
+`verify:page` reuses the requested server or starts a local Vite server when it is unavailable. It captures light/dark × desktop/mobile, checks WCAG 2.2 A/AA rules with exact-pinned `@axe-core/playwright`, and reports console, hydration and page errors. Each route gets screenshots and `report.json` in gitignored `verify/<encoded-route>/`; `verify/report.json` indexes the run. Exit 1 means a violation, runtime error or setup failure. Reports preserve axe selectors, node HTML, help links and incomplete/manual-review candidates; an automated pass is not a complete accessibility audit.
+
+`--all` uses the same 37-entry capture catalog, including concrete sample project paths, aliases and system states. Inherited accessibility findings are tracked in [open questions](dev/open-questions.md); they remain visible failures, not suppressed rules. Evidence belongs on `pr-assets`, never the implementation branch. Shell search/account names and the Default activity filters have accessible names that include their visible labels. Default and Kit pass all four verification states; inherited route-specific issues remain logged. Existing visuals, styles and tokens are unchanged.

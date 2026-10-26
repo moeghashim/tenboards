@@ -12,7 +12,7 @@
     "preview": "vite preview",
     "format": "biome format",
     "lint": "biome lint",
-    "check": "biome check",
+    "check": "biome check && npm run check:design",
     "check:fix": "biome check --write",
     "prepare": "husky",
     "generate:presets": "ts-node -P tsconfig.scripts.json src/scripts/generate-theme-presets.ts",
@@ -42,7 +42,11 @@
     "assistant:modes": "node --experimental-strip-types scripts/assistant-modes-check.ts",
     "new:dashboard": "node --experimental-strip-types scripts/new-page.ts dashboard",
     "new:page": "node --experimental-strip-types scripts/new-page.ts page",
-    "generators:test": "node --env-file-if-exists=.env --experimental-strip-types scripts/generators-test.ts"
+    "generators:test": "node --env-file-if-exists=.env --experimental-strip-types scripts/generators-test.ts",
+    "check:design": "node --experimental-strip-types scripts/check-design.ts",
+    "check:design:test": "node --experimental-strip-types scripts/design-check-test.ts",
+    "verify:page": "node --experimental-strip-types scripts/verify-page.ts",
+    "verify:page:test": "node --experimental-strip-types scripts/verify-page-test.ts"
   },
   "lint-staged": {
     "*.{js,ts,jsx,tsx}": ["biome check --write --no-errors-on-unmatched"]
@@ -102,6 +106,7 @@
     "zustand": "^5.0.15"
   },
   "devDependencies": {
+    "@axe-core/playwright": "4.14.0",
     "@biomejs/biome": "^2.6.2",
     "@tanstack/devtools-vite": "^0.8.5",
     "@tanstack/router-cli": "^1.167.45",

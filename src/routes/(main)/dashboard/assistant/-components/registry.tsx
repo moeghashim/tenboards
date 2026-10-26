@@ -1,7 +1,6 @@
 import type { ReactNode } from "react";
 
 import { createLibrary, defineComponent } from "@openuidev/lang-core";
-import { Bar, BarChart, CartesianGrid, Legend, Line, LineChart, Tooltip, XAxis, YAxis } from "recharts";
 import { z } from "zod";
 
 import {
@@ -18,6 +17,17 @@ import {
   seriesConfig,
   useChartMotion,
 } from "@/components/blocks";
+import {
+  Bar,
+  BarChart,
+  CartesianGrid,
+  Legend,
+  Line,
+  LineChart,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from "@/components/blocks/charts";
 import { Badge } from "@/components/ui/badge";
 import { CardContent } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";

@@ -11,6 +11,7 @@ import {
 import { Cog, Download, Grid, Plus, Rows3, Search, SlidersHorizontal } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+// biome-ignore lint/style/noRestrictedImports: Existing specialized card layout preserves its density/size semantics; DashboardCard migration needs separate visual review.
 import { Card, CardAction, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { InputGroup, InputGroupAddon, InputGroupInput } from "@/components/ui/input-group";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
