@@ -1,0 +1,1879 @@
+{
+  "base": "e659940",
+  "tolerance": "0.1% pixels above channel delta 16",
+  "exclusions": "Desktop sidebar only (x < 288); live monitor clock masked in source captures",
+  "results": [
+    {
+      "file": "_-dark-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        1191
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_-dark-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        2790
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_-light-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        1191
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_-light-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        2790
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_auth_v2-dark-desktop.png",
+      "region": [
+        0,
+        0,
+        1440,
+        900
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_auth_v2-dark-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        844
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_auth_v2-light-desktop.png",
+      "region": [
+        0,
+        0,
+        1440,
+        900
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_auth_v2-light-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        844
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_auth_v2_login-dark-desktop.png",
+      "region": [
+        0,
+        0,
+        1440,
+        900
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_auth_v2_login-dark-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        844
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_auth_v2_login-light-desktop.png",
+      "region": [
+        0,
+        0,
+        1440,
+        900
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_auth_v2_login-light-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        844
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_auth_v2_register-dark-desktop.png",
+      "region": [
+        0,
+        0,
+        1440,
+        900
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_auth_v2_register-dark-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        844
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_auth_v2_register-light-desktop.png",
+      "region": [
+        0,
+        0,
+        1440,
+        900
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_auth_v2_register-light-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        844
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_chat-dark-desktop.png",
+      "region": [
+        0,
+        0,
+        1440,
+        900
+      ],
+      "exactChangedPixels": 62,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_chat-dark-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        844
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_chat-light-desktop.png",
+      "region": [
+        0,
+        0,
+        1440,
+        900
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_chat-light-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        844
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard-dark-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        1191
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard-dark-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        2790
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard-light-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        1191
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard-light-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        2790
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard_-dark-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        1191
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_-dark-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        2790
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard_-light-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        1191
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_-light-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        2790
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard__-dark-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        900
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard__-dark-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        844
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard__-light-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        900
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard__-light-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        844
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard_academy-dark-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        1339
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_academy-dark-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        3046
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard_academy-light-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        1339
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_academy-light-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        3046
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard_analytics-dark-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        1070
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_analytics-dark-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        2385
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard_analytics-light-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        1070
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_analytics-light-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        2385
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard_assistant-dark-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        900
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_assistant-dark-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        844
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard_assistant-light-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        900
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_assistant-light-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        844
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard_chat-dark-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        900
+      ],
+      "exactChangedPixels": 1,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_chat-dark-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        844
+      ],
+      "exactChangedPixels": 15,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_chat-light-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        900
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_chat-light-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        844
+      ],
+      "exactChangedPixels": 15,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_coming-soon-dark-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        900
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_coming-soon-dark-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        844
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard_coming-soon-light-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        900
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_coming-soon-light-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        844
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard_crm-dark-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        1522
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_crm-dark-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        2554
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard_crm-light-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        1522
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_crm-light-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        2554
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard_default-dark-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        1393
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_default-dark-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        1971
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard_default-light-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        1393
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_default-light-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        1971
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard_ecommerce-dark-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        2014
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_ecommerce-dark-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        3928
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard_ecommerce-light-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        2014
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_ecommerce-light-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        3928
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard_finance-dark-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        1300
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_finance-dark-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        3016
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard_finance-light-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        1300
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_finance-light-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        3016
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard_home_-dark-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        1191
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_home_-dark-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        2790
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard_home_-light-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        1191
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_home_-light-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        2790
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard_infrastructure-dark-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        900
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_infrastructure-dark-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        2790
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard_infrastructure-light-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        900
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_infrastructure-light-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        2790
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard_invoice-dark-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        1268
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_invoice-dark-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        2239
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard_invoice-light-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        1268
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_invoice-light-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        2239
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard_logistics-dark-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        900
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_logistics-dark-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        844
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard_logistics-light-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        900
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_logistics-light-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        844
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard_mail-dark-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        900
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_mail-dark-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        844
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard_mail-light-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        900
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_mail-light-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        844
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard_patient-monitoring-dark-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        900
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_patient-monitoring-dark-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        2182
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard_patient-monitoring-light-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        900
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_patient-monitoring-light-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        2182
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard_productivity-dark-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        1069
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_productivity-dark-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        2808
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard_productivity-light-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        1069
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_productivity-light-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        2808
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard_products-dark-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        900
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_products-dark-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        844
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard_products-light-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        900
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_products-light-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        844
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard_profile-dark-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        900
+      ],
+      "exactChangedPixels": 25,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_profile-dark-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        1563
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard_profile-light-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        900
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_profile-light-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        1563
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard_projects_-dark-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        900
+      ],
+      "exactChangedPixels": 64,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_projects_-dark-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        1103
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard_projects_-light-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        900
+      ],
+      "exactChangedPixels": 16,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_projects_-light-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        1103
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard_projects__projectId_board-dark-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        1020
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_projects__projectId_board-dark-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        1306
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard_projects__projectId_board-light-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        1020
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_projects__projectId_board-light-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        1306
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard_projects__projectId_files-dark-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        1233
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_projects__projectId_files-dark-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        3619
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard_projects__projectId_files-light-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        1233
+      ],
+      "exactChangedPixels": 38,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_projects__projectId_files-light-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        3619
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard_projects__projectId_list-dark-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        1017
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_projects__projectId_list-dark-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        1404
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard_projects__projectId_list-light-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        1017
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_projects__projectId_list-light-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        1404
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard_projects__projectId_overview-dark-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        1165
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_projects__projectId_overview-dark-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        2262
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard_projects__projectId_overview-light-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        1165
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_projects__projectId_overview-light-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        2262
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard_projects__projectId_timeline-dark-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        1193
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_projects__projectId_timeline-dark-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        1505
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard_projects__projectId_timeline-light-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        1193
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_projects__projectId_timeline-light-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        1505
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard_roles-dark-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        1020
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_roles-dark-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        1302
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard_roles-light-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        1020
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_roles-light-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        1302
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard_users-dark-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        949
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_users-dark-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        1294
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_dashboard_users-light-desktop.png",
+      "region": [
+        288,
+        0,
+        1440,
+        949
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_dashboard_users-light-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        1294
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_mail-dark-desktop.png",
+      "region": [
+        0,
+        0,
+        1440,
+        900
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_mail-dark-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        844
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_mail-light-desktop.png",
+      "region": [
+        0,
+        0,
+        1440,
+        900
+      ],
+      "exactChangedPixels": 28,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": false
+    },
+    {
+      "file": "_mail-light-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        844
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_unauthorized-dark-desktop.png",
+      "region": [
+        0,
+        0,
+        1440,
+        900
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_unauthorized-dark-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        844
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_unauthorized-light-desktop.png",
+      "region": [
+        0,
+        0,
+        1440,
+        900
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    },
+    {
+      "file": "_unauthorized-light-mobile.png",
+      "region": [
+        0,
+        0,
+        390,
+        844
+      ],
+      "exactChangedPixels": 0,
+      "changedPixelsOver16": 0,
+      "percent": 0.0,
+      "fullImageIdentical": true
+    }
+  ]
+}

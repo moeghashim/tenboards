@@ -1,0 +1,61 @@
+/tmp/tenboards-001-interactions.log
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+1 !== 0
+
+    at file:///Users/moeghashim/.t3/worktrees/tenboards/t3-407116d1/scripts/blocks-kit-check.ts:56:14 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 1,
+  expected: 0,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.21.0
+
+
+/tmp/tenboards-001-interactions-r3.log
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+1 !== 0
+
+    at file:///Users/moeghashim/.t3/worktrees/tenboards/t3-407116d1/scripts/blocks-kit-check.ts:56:14 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 1,
+  expected: 0,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.21.0
+
+
+/tmp/tenboards-001-interactions-r4.log
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+locator.waitFor: Error: strict mode violation: getByText('No requests to display.') resolved to 2 elements:
+    1) <p>No requests to display.</p> aka getByText('No requests to display.', { exact: true })
+    2) <code data-slot="code-block-code" class="grid min-h-lh min-w-max content-start in-data-numbered:grid-cols-[auto_1fr] in-data-wrap:min-w-0">import { useState } from "react";↵↵import { type …</code> aka getByText('import { useState } from "react"; import { type ColumnDef, useTable } from "@')
+
+Call log:
+[2m  - waiting for getByText('No requests to display.') to be visible[22m
+
+    at /Users/moeghashim/.t3/worktrees/tenboards/t3-407116d1/scripts/blocks-kit-check.ts:91:55 {
+  log: [
+    "  - waiting for getByText('No requests to display.') to be visible"
+  ]
+}
+
+Node.js v24.21.0

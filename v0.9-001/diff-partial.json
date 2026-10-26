@@ -1,0 +1,883 @@
+[
+  {
+    "file": "_-dark-desktop.png",
+    "region": [
+      288,
+      0,
+      1440,
+      1191
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": null,
+    "fullDiff": [
+      24,
+      123,
+      265,
+      813
+    ]
+  },
+  {
+    "file": "_-dark-mobile.png",
+    "region": [
+      0,
+      0,
+      390,
+      2790
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": null,
+    "fullDiff": null
+  },
+  {
+    "file": "_-light-desktop.png",
+    "region": [
+      288,
+      0,
+      1440,
+      1191
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": null,
+    "fullDiff": [
+      24,
+      123,
+      265,
+      813
+    ]
+  },
+  {
+    "file": "_-light-mobile.png",
+    "region": [
+      0,
+      0,
+      390,
+      2790
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": null,
+    "fullDiff": null
+  },
+  {
+    "file": "_auth_v2-dark-desktop.png",
+    "region": [
+      0,
+      0,
+      1440,
+      900
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": null,
+    "fullDiff": null
+  },
+  {
+    "file": "_auth_v2-dark-mobile.png",
+    "region": [
+      0,
+      0,
+      390,
+      844
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": null,
+    "fullDiff": null
+  },
+  {
+    "file": "_auth_v2-light-desktop.png",
+    "region": [
+      0,
+      0,
+      1440,
+      900
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": null,
+    "fullDiff": null
+  },
+  {
+    "file": "_auth_v2-light-mobile.png",
+    "region": [
+      0,
+      0,
+      390,
+      844
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": null,
+    "fullDiff": null
+  },
+  {
+    "file": "_chat-dark-desktop.png",
+    "region": [
+      0,
+      0,
+      1440,
+      900
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": [
+      282,
+      195,
+      302,
+      839
+    ],
+    "fullDiff": [
+      282,
+      195,
+      302,
+      839
+    ]
+  },
+  {
+    "file": "_chat-dark-mobile.png",
+    "region": [
+      0,
+      0,
+      390,
+      844
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": null,
+    "fullDiff": null
+  },
+  {
+    "file": "_chat-light-desktop.png",
+    "region": [
+      0,
+      0,
+      1440,
+      900
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": null,
+    "fullDiff": null
+  },
+  {
+    "file": "_chat-light-mobile.png",
+    "region": [
+      0,
+      0,
+      390,
+      844
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": null,
+    "fullDiff": null
+  },
+  {
+    "file": "_dashboard-dark-desktop.png",
+    "region": [
+      288,
+      0,
+      1440,
+      1191
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": null,
+    "fullDiff": [
+      24,
+      123,
+      265,
+      813
+    ]
+  },
+  {
+    "file": "_dashboard-dark-mobile.png",
+    "region": [
+      0,
+      0,
+      390,
+      2790
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": null,
+    "fullDiff": null
+  },
+  {
+    "file": "_dashboard-light-desktop.png",
+    "region": [
+      288,
+      0,
+      1440,
+      1191
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": null,
+    "fullDiff": [
+      24,
+      123,
+      265,
+      813
+    ]
+  },
+  {
+    "file": "_dashboard-light-mobile.png",
+    "region": [
+      0,
+      0,
+      390,
+      2790
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": null,
+    "fullDiff": null
+  },
+  {
+    "file": "_dashboard_academy-light-desktop.png",
+    "region": [
+      288,
+      0,
+      1440,
+      1339
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": null,
+    "fullDiff": [
+      144,
+      802,
+      151,
+      813
+    ]
+  },
+  {
+    "file": "_dashboard_assistant-dark-desktop.png",
+    "region": [
+      288,
+      0,
+      1440,
+      900
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": null,
+    "fullDiff": [
+      24,
+      134,
+      265,
+      813
+    ]
+  },
+  {
+    "file": "_dashboard_assistant-dark-mobile.png",
+    "region": [
+      0,
+      0,
+      390,
+      844
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": null,
+    "fullDiff": null
+  },
+  {
+    "file": "_dashboard_assistant-light-desktop.png",
+    "region": [
+      288,
+      0,
+      1440,
+      900
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": null,
+    "fullDiff": [
+      24,
+      209,
+      265,
+      813
+    ]
+  },
+  {
+    "file": "_dashboard_assistant-light-mobile.png",
+    "region": [
+      0,
+      0,
+      390,
+      844
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": null,
+    "fullDiff": null
+  },
+  {
+    "file": "_dashboard_home_-dark-desktop.png",
+    "region": [
+      288,
+      0,
+      1440,
+      1191
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": null,
+    "fullDiff": [
+      24,
+      123,
+      265,
+      813
+    ]
+  },
+  {
+    "file": "_dashboard_home_-dark-mobile.png",
+    "region": [
+      0,
+      0,
+      390,
+      2790
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": null,
+    "fullDiff": null
+  },
+  {
+    "file": "_dashboard_home_-light-desktop.png",
+    "region": [
+      288,
+      0,
+      1440,
+      1191
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": null,
+    "fullDiff": [
+      24,
+      123,
+      265,
+      813
+    ]
+  },
+  {
+    "file": "_dashboard_home_-light-mobile.png",
+    "region": [
+      0,
+      0,
+      390,
+      2790
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": null,
+    "fullDiff": null
+  },
+  {
+    "file": "_dashboard_projects_-dark-desktop.png",
+    "region": [
+      288,
+      0,
+      1440,
+      900
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": [
+      256,
+      428,
+      736,
+      464
+    ],
+    "fullDiff": [
+      24,
+      134,
+      1024,
+      813
+    ]
+  },
+  {
+    "file": "_dashboard_projects_-dark-mobile.png",
+    "region": [
+      0,
+      0,
+      390,
+      1103
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": null,
+    "fullDiff": null
+  },
+  {
+    "file": "_dashboard_projects_-light-desktop.png",
+    "region": [
+      288,
+      0,
+      1440,
+      900
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": [
+      279,
+      428,
+      718,
+      464
+    ],
+    "fullDiff": [
+      24,
+      159,
+      1006,
+      813
+    ]
+  },
+  {
+    "file": "_dashboard_projects_-light-mobile.png",
+    "region": [
+      0,
+      0,
+      390,
+      1103
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": null,
+    "fullDiff": null
+  },
+  {
+    "file": "_dashboard_projects__projectId_board-dark-desktop.png",
+    "region": [
+      288,
+      0,
+      1440,
+      1020
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": null,
+    "fullDiff": [
+      35,
+      692,
+      151,
+      813
+    ]
+  },
+  {
+    "file": "_dashboard_projects__projectId_board-dark-mobile.png",
+    "region": [
+      0,
+      0,
+      390,
+      1306
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": null,
+    "fullDiff": null
+  },
+  {
+    "file": "_dashboard_projects__projectId_board-light-desktop.png",
+    "region": [
+      288,
+      0,
+      1440,
+      1020
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": null,
+    "fullDiff": [
+      35,
+      692,
+      151,
+      813
+    ]
+  },
+  {
+    "file": "_dashboard_projects__projectId_board-light-mobile.png",
+    "region": [
+      0,
+      0,
+      390,
+      1306
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": null,
+    "fullDiff": null
+  },
+  {
+    "file": "_dashboard_projects__projectId_files-dark-desktop.png",
+    "region": [
+      288,
+      0,
+      1440,
+      1233
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": null,
+    "fullDiff": [
+      35,
+      692,
+      151,
+      813
+    ]
+  },
+  {
+    "file": "_dashboard_projects__projectId_files-dark-mobile.png",
+    "region": [
+      0,
+      0,
+      390,
+      3619
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": null,
+    "fullDiff": null
+  },
+  {
+    "file": "_dashboard_projects__projectId_files-light-desktop.png",
+    "region": [
+      288,
+      0,
+      1440,
+      1233
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": [
+      52,
+      153,
+      897,
+      778
+    ],
+    "fullDiff": [
+      35,
+      153,
+      1185,
+      813
+    ]
+  },
+  {
+    "file": "_dashboard_projects__projectId_files-light-mobile.png",
+    "region": [
+      0,
+      0,
+      390,
+      3619
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": null,
+    "fullDiff": null
+  },
+  {
+    "file": "_dashboard_projects__projectId_list-dark-desktop.png",
+    "region": [
+      288,
+      0,
+      1440,
+      1017
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": null,
+    "fullDiff": [
+      35,
+      692,
+      151,
+      813
+    ]
+  },
+  {
+    "file": "_dashboard_projects__projectId_list-dark-mobile.png",
+    "region": [
+      0,
+      0,
+      390,
+      1404
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": null,
+    "fullDiff": null
+  },
+  {
+    "file": "_dashboard_projects__projectId_list-light-desktop.png",
+    "region": [
+      288,
+      0,
+      1440,
+      1017
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": null,
+    "fullDiff": [
+      35,
+      692,
+      151,
+      813
+    ]
+  },
+  {
+    "file": "_dashboard_projects__projectId_list-light-mobile.png",
+    "region": [
+      0,
+      0,
+      390,
+      1404
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": null,
+    "fullDiff": null
+  },
+  {
+    "file": "_dashboard_projects__projectId_overview-dark-desktop.png",
+    "region": [
+      288,
+      0,
+      1440,
+      1165
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": null,
+    "fullDiff": [
+      35,
+      692,
+      151,
+      813
+    ]
+  },
+  {
+    "file": "_dashboard_projects__projectId_overview-dark-mobile.png",
+    "region": [
+      0,
+      0,
+      390,
+      2262
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": null,
+    "fullDiff": null
+  },
+  {
+    "file": "_dashboard_projects__projectId_overview-light-desktop.png",
+    "region": [
+      288,
+      0,
+      1440,
+      1165
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": null,
+    "fullDiff": [
+      35,
+      692,
+      151,
+      813
+    ]
+  },
+  {
+    "file": "_dashboard_projects__projectId_overview-light-mobile.png",
+    "region": [
+      0,
+      0,
+      390,
+      2262
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": null,
+    "fullDiff": null
+  },
+  {
+    "file": "_dashboard_projects__projectId_timeline-dark-desktop.png",
+    "region": [
+      288,
+      0,
+      1440,
+      1193
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": null,
+    "fullDiff": [
+      35,
+      692,
+      151,
+      813
+    ]
+  },
+  {
+    "file": "_dashboard_projects__projectId_timeline-dark-mobile.png",
+    "region": [
+      0,
+      0,
+      390,
+      1505
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": null,
+    "fullDiff": null
+  },
+  {
+    "file": "_dashboard_projects__projectId_timeline-light-desktop.png",
+    "region": [
+      288,
+      0,
+      1440,
+      1193
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": null,
+    "fullDiff": [
+      35,
+      692,
+      151,
+      813
+    ]
+  },
+  {
+    "file": "_dashboard_projects__projectId_timeline-light-mobile.png",
+    "region": [
+      0,
+      0,
+      390,
+      1505
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": null,
+    "fullDiff": null
+  },
+  {
+    "file": "_mail-dark-desktop.png",
+    "region": [
+      0,
+      0,
+      1440,
+      900
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": null,
+    "fullDiff": null
+  },
+  {
+    "file": "_mail-dark-mobile.png",
+    "region": [
+      0,
+      0,
+      390,
+      844
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": null,
+    "fullDiff": null
+  },
+  {
+    "file": "_mail-light-desktop.png",
+    "region": [
+      0,
+      0,
+      1440,
+      900
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": [
+      270,
+      119,
+      748,
+      895
+    ],
+    "fullDiff": [
+      270,
+      119,
+      748,
+      895
+    ]
+  },
+  {
+    "file": "_mail-light-mobile.png",
+    "region": [
+      0,
+      0,
+      390,
+      844
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": null,
+    "fullDiff": null
+  },
+  {
+    "file": "_unauthorized-dark-desktop.png",
+    "region": [
+      0,
+      0,
+      1440,
+      900
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": null,
+    "fullDiff": null
+  },
+  {
+    "file": "_unauthorized-dark-mobile.png",
+    "region": [
+      0,
+      0,
+      390,
+      844
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": null,
+    "fullDiff": null
+  },
+  {
+    "file": "_unauthorized-light-desktop.png",
+    "region": [
+      0,
+      0,
+      1440,
+      900
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": null,
+    "fullDiff": null
+  },
+  {
+    "file": "_unauthorized-light-mobile.png",
+    "region": [
+      0,
+      0,
+      390,
+      844
+    ],
+    "changedPixelsOver16": 0,
+    "percent": 0.0,
+    "bbox": null,
+    "fullDiff": null
+  }
+]

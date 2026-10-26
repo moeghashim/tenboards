@@ -1,0 +1,6 @@
+[
+  "PASS light/desktop: root→home, palette→kit, sidebar, keyboard/source/copy/recovery, sorting, pagination, empty, mobile reflow/scroll, chart variants/data/focus, no overflow or console/hydration errors",
+  "PASS light/mobile: root→home, palette→kit, sidebar, keyboard/source/copy/recovery, sorting, pagination, empty, mobile reflow/scroll, chart variants/data/focus, no overflow or console/hydration errors",
+  "PASS dark/desktop: root→home, palette→kit, sidebar, keyboard/source/copy/recovery, sorting, pagination, empty, mobile reflow/scroll, chart variants/data/focus, no overflow or console/hydration errors",
+  "PASS dark/mobile: root→home, palette→kit, sidebar, keyboard/source/copy/recovery, sorting, pagination, empty, mobile reflow/scroll, chart variants/data/focus, no overflow or console/hydration errors"
+]
