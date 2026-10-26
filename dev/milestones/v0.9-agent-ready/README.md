@@ -7,7 +7,7 @@ Goal: coding agents adopting tenboards use its real building blocks instead of g
 | Task | Depends on | Contract |
 | --- | --- | --- |
 | 001 — Public blocks and kit page (merged #77) | main | [001](001-blocks-kit.md) |
-| 002 — Page generators | 001 | [002](002-page-generators.md) |
+| 002 — Page generators (merged #79) | 001 | [002](002-page-generators.md) |
 | 003 — Design guardrails and verify:page | 001 | [003](003-design-guardrails.md) |
 | 004 — Adopter guide and Agent Skills | 002, 003 | [004](004-adopter-guide-skills.md) |
 | 005 — shadcn registry and llms.txt | 001 (docs after 004) | [005](005-registry-llms.md) |
