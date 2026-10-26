@@ -12,7 +12,7 @@
     "preview": "vite preview",
     "format": "biome format",
     "lint": "biome lint",
-    "check": "biome check && npm run check:design && npm run check:skills",
+    "check": "biome check && npm run check:design && npm run check:skills && npm run check:registry && npm run check:llms",
     "check:fix": "biome check --write",
     "prepare": "husky",
     "generate:presets": "ts-node -P tsconfig.scripts.json src/scripts/generate-theme-presets.ts",
@@ -48,7 +48,11 @@
     "check:design": "node --experimental-strip-types scripts/check-design.ts",
     "check:design:test": "node --experimental-strip-types scripts/design-check-test.ts",
     "verify:page": "node --experimental-strip-types scripts/verify-page.ts",
-    "verify:page:test": "node --experimental-strip-types scripts/verify-page-test.ts"
+    "verify:page:test": "node --experimental-strip-types scripts/verify-page-test.ts",
+    "registry:build": "node --experimental-strip-types scripts/registry-build.ts",
+    "llms:build": "node --experimental-strip-types scripts/llms.ts",
+    "check:registry": "node --experimental-strip-types scripts/registry-build.ts --check",
+    "check:llms": "node --experimental-strip-types scripts/llms.ts --check"
   },
   "lint-staged": {
     "*.{js,ts,jsx,tsx}": ["biome check --write --no-errors-on-unmatched"]

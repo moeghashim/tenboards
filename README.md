@@ -17,7 +17,7 @@ The Assistant follows new replies until you scroll up; Jump to latest resumes fo
 
 **v0.8 (Projects workspace) is merged, deployed and released as [v0.8.0](https://github.com/moeghashim/tenboards/releases/tag/v0.8.0)** — the data foundation, workspace Home/Projects index, and all five direct read-only project views are implemented. [The milestone contract](dev/milestones/v0.8-projects/README.md) tracks the remaining navigation consolidation and final acceptance. Existing standalone routes and the default landing remain available.
 
-**v0.8.1 (Default dashboard landing) is merged, deployed and released as [v0.8.1](https://github.com/moeghashim/tenboards/releases/tag/v0.8.1)** — restores the Default revenue dashboard as the entry point and auth fallback. Home, Projects, navigation order and legacy redirects remain available. See the [task contract](dev/milestones/v0.8.1-default-landing/README.md). **v0.9 (Agent-ready template) is in progress** — tasks 001 (public blocks and the `/dashboard/kit` page) 002 (`new:dashboard` / `new:page` generators) and 003 (`check:design` and `verify:page`) are merged; task 004 (adopter guide and Agent Skills) is in review; the shadcn registry follows. See the [milestone contract](dev/milestones/v0.9-agent-ready/README.md).
+**v0.8.1 (Default dashboard landing) is merged, deployed and released as [v0.8.1](https://github.com/moeghashim/tenboards/releases/tag/v0.8.1)** — restores the Default revenue dashboard as the entry point and auth fallback. Home, Projects, navigation order and legacy redirects remain available. See the [task contract](dev/milestones/v0.8.1-default-landing/README.md). **v0.9 (Agent-ready template) is in progress** — tasks 001 (public blocks and the `/dashboard/kit` page) 002 (`new:dashboard` / `new:page` generators) and 003 (`check:design` and `verify:page`) are merged; task 004 (adopter guide and Agent Skills) is merged; task 005 (shadcn registry and LLM documentation) is in review. See the [milestone contract](dev/milestones/v0.9-agent-ready/README.md).
 
 ## Run locally
 
@@ -39,7 +39,7 @@ OpenUI install telemetry must remain disabled (`OPENUI_TELEMETRY_DISABLED=1` or 
 - `npm run dev` — development server on port 3000.
 - `npm run build` — production client and server build.
 - `npm run preview` — preview the compiled Worker locally with Wrangler.
-- `npm run check` — Biome lint, imports, formatting, design guardrails and Agent Skills validation. `npm run check:fix` applies Biome fixes; rerun `check` afterward.
+- `npm run check` — Biome lint, imports, formatting, design guardrails and Agent Skills validation, registry freshness and generated LLM docs freshness. `npm run check:fix` applies Biome fixes; rerun `check` afterward.
 - `npm run assistant:ui` — four-state composer, copy, stop/regenerate and scroll-follow checks, with empty/streaming/completed captures.
 - `npm run assistant:conversation` / `assistant:lifecycle` / `assistant:context` / `assistant:modes` — bounded history, configured UI recovery, scrolling and Node/Worker configuration acceptance using synthetic fixtures.
 - `npm run assistant:server` / `npm run assistant:worker` — synthetic provider-wire, endpoint and isolated admission/auth checks on Node and compiled workerd.
@@ -673,3 +673,28 @@ is not proof of a real database query: use the data skill and `data:parity` befo
 claiming database integration. `verify:page` checks axe and runtime errors; inspect
 its screenshots and keyboard behavior too. Upstream contributions must first read
 [the maintainer rules and PR template](dev/MAINTAINERS.md).
+
+## shadcn registry
+
+Use `/dashboard/kit` on your running tenboards host for per-block JSON links and copyable install commands. In an **external React 19 + Tailwind v4 project with shadcn initialized**, substitute that host's origin:
+
+```sh
+npx shadcn add https://YOUR-TENBOARDS-HOST/r/stat-card.json
+npx shadcn add https://YOUR-TENBOARDS-HOST/r/dashboard-chart.json
+```
+
+Nine items cover PageHeader, DashboardCard, SectionHeader, StatCard, CardContent, DataTable, DashboardChart, DashboardTooltip and DashboardLegend. Import installed cards from `@/components/tenboards/cards`, chart components/helpers/primitives from `@/components/tenboards/charts`, and CardContent from `@/components/tenboards/ui/card` (adapt `@/` to your configured alias). PageHeader and DataTable use their kebab-case module names; table features install at `@/lib/tenboards/data-table-features`. Related items intentionally share a source module. Existing tenboards clones should continue importing `@/components/blocks`; do not reinstall the registry into this template.
+
+`registry.json` lists each block's purpose, source files, exact UI/helper files and package dependencies. `npm run registry:build` uses the installed shadcn CLI and emits self-contained `public/r/*.json`. Items use shadcn’s `registry:style` type because they install a block **and** its theme: unlike `registry:block`, this tells the CLI to replace initialized theme variables instead of silently keeping the old palette. The build adds the light/dark tokens, Tailwind mappings and CSS rules directly from `src/styles/styles.css`, pins dependency ranges to this template's package declarations, and relocates bundled primitives under `components/tenboards/ui` so an external project's own UI files stay intact. Chart items include `seriesConfig`, axes, formatters, `useChartMotion`, tooltip/legend helpers and Recharts. Preserve named series and an accessible data alternative.
+
+**Theme installation is global:** it applies the default tenboards colors, Geist fonts, compact type/spacing, focus and reduced-motion rules to the consumer's configured stylesheet. Review the CLI's CSS diff, especially in an existing themed project. It does not install the app shell, presets, routing, data, auth, bindings or secrets. No new package was added to this repository.
+
+Registry items have no host-bound custom registry dependencies: required source and CSS are bundled. Static documentation uses root-relative URLs, resolved against the origin serving `/llms.txt` (`new URL(path, llmsUrl).href`). Kit commands use `window.location.origin` after hydration; SSR and the first client render show the same placeholder. This makes preview and adopter hosts portable without a hard-coded production origin or build-time environment variable.
+
+## LLM documentation
+
+`/llms.txt` is a compact block, generator, skill and docs index; `/llms-full.txt` also contains the source guidance and block implementations. Linked Markdown is served under `/agent-docs/`. All are static ASSETS, alongside `/r/*.json`, with no runtime handlers or new bindings.
+
+Run `npm run llms:build` after changing the registry inventory, generators, listed docs, skills or block source. Run `npm run registry:build` after changing blocks, their dependencies or tokens. Commit the resulting assets. `npm run check` runs `check:registry` and `check:llms` in read-only mode and fails on drift; it never silently refreshes stale output. Deploy/build uses these checked-in assets unchanged.
+
+Registry tooling regression coverage: `node --experimental-strip-types scripts/registry-test.ts` checks theme conversion and verifies that source/output drift fails the freshness checks (restoring all probes afterward).

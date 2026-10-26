@@ -12,6 +12,16 @@ for live data. Use the generator, then adapt its domain; do not offer a new desi
 Read root AGENTS.md and DESIGN.md. Inspect `/dashboard/kit` and the local component
 before composing. If Impeccable is installed, use Operate mode and its craft floor.
 
+## External projects
+
+Inside a tenboards clone, keep using `@/components/blocks`. Only when installing
+blocks into another initialized React 19 + Tailwind v4 + shadcn project, use the
+kit's registry links and current-host `npx shadcn add` commands. Items install
+under `components/tenboards`, include chart helpers and apply the default global
+theme/compact CSS. Review that CSS change; retain accessible chart data alternatives.
+`/llms.txt` indexes the registry and guidance; resolve its root-relative URLs
+against the host from which you fetched it before passing a URL to shadcn.
+
 ## Progress checklist
 
 - [ ] Run `npm run new:dashboard <slug>` for metrics/charts or `npm run new:page <slug>`

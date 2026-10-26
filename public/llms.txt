@@ -1,0 +1,48 @@
+# tenboards
+
+> A React 19, TanStack Start and Tailwind v4 admin template with reusable shadcn/Base UI blocks, typed demo/database reads and zero-config demo mode.
+
+Generated from registry.json, source blocks, package scripts, adopter guidance and Agent Skills. Do not edit generated assets.
+
+## Install and build
+
+Use Node 22+ and npm. In this repository, import from @/components/blocks and use the generators. External React 19 + Tailwind v4 projects must initialize shadcn first, then run npx shadcn add <absolute-registry-url>. Items include their exact primitive/chart dependencies and the global default light/dark theme, typography, density, focus and motion rules. Review the CSS changes. Installed modules live in components/tenboards; table helpers live in lib/tenboards.
+
+URLs beginning with / are relative to the origin serving this file. Resolve them with new URL(path, llmsUrl).href before passing them to shadcn; for example, resolve /r/stat-card.json against the URL from which you fetched /llms.txt. The kit computes absolute commands from its current browser origin after hydration. No production hostname is baked into installs.
+
+## Blocks
+
+- [DashboardCard](/r/dashboard-card.json): Compact or standard card surface with composable slots.
+- [SectionHeader](/r/section-header.json): Semantic card heading with description and wrapping actions.
+- [StatCard](/r/stat-card.json): Labelled metric with tabular value, trend and supporting text.
+- [CardContent](/r/card-content.json): Content slot with the shared card spacing.
+- [PageHeader](/r/page-header.json): Responsive page h1 with description and action slots.
+- [DashboardChart](/r/dashboard-chart.json): Responsive Recharts container with series, axis and reduced-motion helpers.
+- [DashboardTooltip](/r/dashboard-tooltip.json): Token-colored tooltip preserving named series and value formatting.
+- [DashboardLegend](/r/dashboard-legend.json): Wrapping legend with labelled, distinct line patterns.
+- [DataTable](/r/data-table.json): Caller-owned TanStack Table v9 with sorting, pagination, mobile reflow and empty state.
+
+## Generators
+
+- npm run new:dashboard <slug>: Metrics and charts; creates /dashboard/<slug>, navigation, guarded loader and typed illustrative demo/database reads.
+- npm run new:page <slug>: Listing page; creates /dashboard/<slug>, navigation, guarded loader and typed illustrative demo/database reads.
+
+## Agent Skills
+
+- [tenboards-build-ui](/agent-docs/agents/skills/tenboards-build-ui/SKILL.md): Build tenboards dashboards and app pages with generators and public blocks. Use when adding or changing a dashboard, page, KPI, chart, revenue summary, or data table.
+- [tenboards-connect-data](/agent-docs/agents/skills/tenboards-connect-data/SKILL.md): Connect tenboards typed reads to demo fixtures and Postgres with Drizzle. Use when adding a data source, database query, schema migration, seed, parity scenario, or auth-guarded server loader.
+
+## Documentation
+
+- [Live block kit](/dashboard/kit): examples, source and installation commands.
+- [AGENTS.md](/agent-docs/AGENTS.md)
+- [DESIGN.md](/agent-docs/DESIGN.md)
+- [docs/data-layer.md](/agent-docs/docs/data-layer.md)
+- [docs/deploy.md](/agent-docs/docs/deploy.md)
+- [.agents/skills/tenboards-build-ui/references/blocks.md](/agent-docs/agents/skills/tenboards-build-ui/references/blocks.md)
+- [.agents/skills/tenboards-connect-data/references/data-workflow.md](/agent-docs/agents/skills/tenboards-connect-data/references/data-workflow.md)
+- [Expanded source and guidance](/llms-full.txt)
+
+## Verification
+
+Run npm run build, npm run check, npm run typecheck and npm run verify:page -- /dashboard/<slug>. Keep fixtures server-side and requireSession() inside each app-data server function. A configured failing database must show an error. Use seriesConfig and useChartMotion for charts and preserve accessible data alternatives.

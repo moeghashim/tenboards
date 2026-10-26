@@ -1,6 +1,6 @@
 # 005 — shadcn registry and llms.txt
 
-Status: planned. Branch: `feat/v0.9/005-registry-llms`. Depends on 001; final docs after 004.
+Status: in-review (#82). Branch: `feat/v0.9/005-registry-llms`. Depends on 001; final docs after 004.
 
 ## Scope
 
@@ -11,7 +11,7 @@ Status: planned. Branch: `feat/v0.9/005-registry-llms`. Depends on 001; final do
 
 ## Acceptance criteria
 
-- [ ] `npx shadcn add <preview-url>/r/stat-card.json` (and one chart block) installs into a scratch Vite+shadcn project and renders correctly (evidence).
-- [ ] `/llms.txt` and `/llms-full.txt` are served by the preview Worker and match a fresh generation; staleness check wired into `npm run check`.
-- [ ] Preview Worker remains ASSETS-only with no secrets.
-- [ ] README (registry + llms sections), CHANGELOG draft, milestone status; preview in PR.
+- [x] `npx shadcn add <preview-url>/r/stat-card.json` (and one chart block) installs into a scratch Vite+shadcn project and renders correctly (evidence).
+- [x] `/llms.txt` and `/llms-full.txt` are served by the preview Worker and match a fresh generation; staleness check wired into `npm run check`.
+- [x] Preview Worker remains ASSETS-only with no secrets.
+- [x] README (registry + llms sections), CHANGELOG draft, milestone status; preview in PR.

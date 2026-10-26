@@ -7,6 +7,7 @@ import chartSource from "./-components/chart-example?raw";
 import { ExampleSource } from "./-components/example-source";
 import { HeaderExample } from "./-components/header-example";
 import headerSource from "./-components/header-example?raw";
+import { RegistryInstall } from "./-components/registry-install";
 import { TableExample } from "./-components/table-example";
 import tableSource from "./-components/table-example?raw";
 
@@ -37,6 +38,7 @@ function KitPage() {
           page; keep controls in the actions slot.
         </p>
         <ExampleSource name="PageHeader" source={headerSource} />
+        <RegistryInstall section="page-header" />
       </section>
       <section id="cards" aria-labelledby="cards-title" className="scroll-mt-20 space-y-4 border-t pt-6">
         <h2 id="cards-title" className="text-lg font-medium">
@@ -48,6 +50,7 @@ function KitPage() {
         </p>
         <CardsExample />
         <ExampleSource name="Cards" source={cardsSource} />
+        <RegistryInstall section="cards" />
       </section>
       <section id="charts" aria-labelledby="charts-title" className="scroll-mt-20 space-y-4 border-t pt-6">
         <h2 id="charts-title" className="text-lg font-medium">
@@ -60,6 +63,7 @@ function KitPage() {
         </p>
         <ChartExample />
         <ExampleSource name="Charts" source={chartSource} />
+        <RegistryInstall section="charts" />
       </section>
       <section id="data-table" aria-labelledby="data-table-title" className="scroll-mt-20 space-y-4 border-t pt-6">
         <h2 id="data-table-title" className="text-lg font-medium">
@@ -71,6 +75,7 @@ function KitPage() {
         </p>
         <TableExample />
         <ExampleSource name="DataTable" source={tableSource} />
+        <RegistryInstall section="data-table" />
       </section>
     </div>
   );
