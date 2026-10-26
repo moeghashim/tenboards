@@ -16,7 +16,7 @@ Routes: `/dashboard/logistics`.
 
 ## Before implementation
 
-Read root AGENTS.md and PLAN.md (Decisions log wins), PRODUCT.md and DESIGN.md. Use Impeccable in Operate mode, run its context once from the repo root per session, inspect incumbent renders/local components, and read `reference/craft-floor.md` immediately before UI edits.
+Read dev/MAINTAINERS.md and PLAN.md (Decisions log wins), PRODUCT.md and DESIGN.md. Use Impeccable in Operate mode, run its context once from the repo root per session, inspect incumbent renders/local components, and read `reference/craft-floor.md` immediately before UI edits.
 
 Prefactor inspection: Inspect Logistics selection/breakpoint handling and repeated detail rows; extract only small local helpers that preserve the existing list/detail state flow.
 

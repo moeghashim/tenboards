@@ -17,7 +17,7 @@ Routes: `/dashboard/productivity`.
 
 ## Before implementation
 
-Read root AGENTS.md and PLAN.md (Decisions log wins), PRODUCT.md and DESIGN.md. Use Impeccable in Operate mode, run its context once from the repo root per session, inspect incumbent renders/local components, and read `reference/craft-floor.md` immediately before UI edits.
+Read dev/MAINTAINERS.md and PLAN.md (Decisions log wins), PRODUCT.md and DESIGN.md. Use Impeccable in Operate mode, run its context once from the repo root per session, inspect incumbent renders/local components, and read `reference/craft-floor.md` immediately before UI edits.
 
 Prefactor inspection: Inspect date initialization and local card/header repetition; isolate a stable demo-date seam if needed, without modifying protected calendar wrappers.
 

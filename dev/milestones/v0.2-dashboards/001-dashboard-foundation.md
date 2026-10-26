@@ -18,7 +18,7 @@ Routes: `/dashboard/default` (limited foundation integration only).
 
 ## Before implementation
 
-Read root AGENTS.md and PLAN.md (Decisions log wins), PRODUCT.md and DESIGN.md. Use Impeccable in Operate mode, run its context once from the repo root per session, inspect incumbent renders/local components, and read `reference/craft-floor.md` immediately before UI edits.
+Read dev/MAINTAINERS.md and PLAN.md (Decisions log wins), PRODUCT.md and DESIGN.md. Use Impeccable in Operate mode, run its context once from the repo root per session, inspect incumbent renders/local components, and read `reference/craft-floor.md` immediately before UI edits.
 
 Prefactor inspection: Inspect repeated metric markup and existing ChartConfig/ChartContainer/tooltip/legend extension points first. Extract only the shared styling and prop contracts needed by these known consumers; do not build a generic dashboard engine.
 

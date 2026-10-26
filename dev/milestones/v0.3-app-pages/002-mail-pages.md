@@ -18,7 +18,7 @@ Routes: `/mail` and `/dashboard/mail`.
 
 ## Before implementation
 
-Read root AGENTS.md, PLAN.md end to end (Decisions log wins; §7 governs), PRODUCT.md and DESIGN.md. Use Impeccable in Operate mode, run its context once per session from the repo root, inspect incumbent renders and local/Base UI wrappers, and read `reference/craft-floor.md` immediately before UI edits. Preserve existing demo behavior and all screens. Read current official TanStack documentation before any routing/framework change.
+Read dev/MAINTAINERS.md, PLAN.md end to end (Decisions log wins; §7 governs), PRODUCT.md and DESIGN.md. Use Impeccable in Operate mode, run its context once per session from the repo root, inspect incumbent renders and local/Base UI wrappers, and read `reference/craft-floor.md` immediately before UI edits. Preserve existing demo behavior and all screens. Read current official TanStack documentation before any routing/framework change.
 
 Prefactor inspection: Inspect `mail.tsx`, `mail-layout-config.ts`, `use-mail.ts`, list/detail/sidebar components and the iframe wrapper. Extract local status/identity presentation only if needed; preserve the existing mounted layout boundary and do not add SSR bypasses.
 

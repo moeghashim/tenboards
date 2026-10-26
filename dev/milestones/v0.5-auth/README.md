@@ -112,7 +112,7 @@ These are verification gates, not claims of completed security review. Owners: 0
 
 Serial default: start each approved task from latest main after its predecessor merges. Implementation branches `feat/v0.5/NNN-slug`, one task per PR targeting main, following the v0.4 convention. Any approved stack declares base PR/branch, merge order 001 → 005 and each layer compare URL. Foundation/flows are intermediate layers, not a claim of a protected application before 003; do not promote auth-on deployments during the stack. This planning branch is `docs/v0.5/task-breakdown`.
 
-Commits use Conventional Commits, `git commit -s` with `Signed-off-by: Moe Ghashim <mohanadgh@gmail.com>` and final `Co-Authored-By: GPT-6-Astra <noreply@openai.com>`. Use the AGENTS.md PR body template and record the README decision. Claude owns review, squash merge, stack rebases, production redeploy and release. Never run `npm run deploy` as implementer. Acceptance/status edits require evidence; tasks stay `review` until merged.
+Commits use Conventional Commits, `git commit -s` with `Signed-off-by: Moe Ghashim <mohanadgh@gmail.com>` and final `Co-Authored-By: GPT-6-Astra <noreply@openai.com>`. Use the dev/MAINTAINERS.md PR body template and record the README decision. Claude owns review, squash merge, stack rebases, production redeploy and release. Never run `npm run deploy` as implementer. Acceptance/status edits require evidence; tasks stay `review` until merged.
 
 ## Test floor and evidence
 

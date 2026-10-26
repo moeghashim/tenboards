@@ -44,3 +44,5 @@ Depends on 001. Blocks 003/004 and all future PR preview uploads. Claude reviews
 ## Verification evidence
 
 2026-10-24: [task 002 evidence](https://github.com/moeghashim/tenboards/tree/pr-assets/v06-002). Build/check/typecheck, Node 486 auth cases and 22/130 parity, v0.5 incremental/fresh/repeat migration/seed and no drift pass. Workerd runtime/22–130 parity and protection 283/account 15/security 12 pass. Two-Worker limiter tests prove restart persistence, exactly three concurrent admissions, Retry-After recovery, trusted-IP policy and missing-table recovery. Preview contamination and real production-fixture isolation build pass; immutable https://f70a72ed-tenboards-preview.mohanadgh.workers.dev has ASSETS only/no secrets. No production mutation.
+
+Maintainer-reference update (v0.9 / 004): historical root `AGENTS.md` workflow rules and its PR template now live in `dev/MAINTAINERS.md`; read that file for current upstream contributions.

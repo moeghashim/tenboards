@@ -83,7 +83,7 @@ Finance/Finance V1/Productivity/Patient Monitoring have recorded Workers hydrati
 
 The user explicitly authorized this planning addition to `dev/**` on `docs/v0.2-breakdown`. That historical planning approval was followed by explicit batch implementation authorization. Current acceptance boxes and task statuses now reflect verified evidence; the remaining reviewer approval/merge gate is unchecked.
 
-For future tasks, follow root AGENTS.md's one-task/one-PR workflow. Its literal `feat/v0.1/NNN-slug` branch example is historical to v0.1; use the milestone equivalent `feat/v0.2/NNN-slug` for these tasks. Copy the root PR template with this milestone's task link. Use Conventional Commits with a blank line followed by `Co-Authored-By: GPT-6-Astra <noreply@openai.com>`. Every PR states `README: updated (sections …)` for its required README changes.
+For future tasks, follow dev/MAINTAINERS.md's one-task/one-PR workflow. Its literal `feat/v0.1/NNN-slug` branch example is historical to v0.1; use the milestone equivalent `feat/v0.2/NNN-slug` for these tasks. Copy the dev/MAINTAINERS.md PR template with this milestone's task link. Use Conventional Commits with a blank line followed by `Co-Authored-By: GPT-6-Astra <noreply@openai.com>`. Every PR states `README: updated (sections …)` for its required README changes.
 
 Before coding, inspect for a small behavior-preserving prefactor, apply it only if it makes the task safer/simpler, and document the result. Use Impeccable context once per session from the repo root, inspect incumbent renders/components, read craft-floor immediately before UI edits, then inspect final renders in all four required states.
 

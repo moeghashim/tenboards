@@ -41,3 +41,5 @@ Branch feat/v0.1/NNN-slug from updated main after the predecessor merges; otherw
 Before implementation, inspect for small behavior-preserving prefactors that make the change simpler or safer. Do not refactor speculatively. Never regenerate PLAN.md or dev/** as code output.
 
 Escalate Decisions-log conflicts, unapproved runtime dependencies, new environment/config keys outside the plan, auth/credentials/telemetry/secrets, or milestone crossings to dev/open-questions.md and pause. The approved Wrangler/Nitro deploy configuration is within task 002. Root AGENTS.md must wait for breakdown approval and task 003.
+
+Maintainer-reference update (v0.9 / 004): historical root `AGENTS.md` workflow rules and its PR template now live in `dev/MAINTAINERS.md`; read that file for current upstream contributions.
