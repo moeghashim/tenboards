@@ -1,0 +1,3942 @@
+[
+  {
+    "preset": "default",
+    "file": "_chat-dark-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_chat-dark-mobile.png",
+    "before": [
+      390,
+      844
+    ],
+    "after": [
+      390,
+      844
+    ],
+    "differenceBounds": [
+      325,
+      170,
+      389,
+      838
+    ],
+    "changedPixels": 3350
+  },
+  {
+    "preset": "default",
+    "file": "_chat-light-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": [
+      280,
+      117,
+      816,
+      842
+    ],
+    "changedPixels": 1239
+  },
+  {
+    "preset": "default",
+    "file": "_chat-light-mobile.png",
+    "before": [
+      390,
+      844
+    ],
+    "after": [
+      390,
+      844
+    ],
+    "differenceBounds": [
+      116,
+      135,
+      363,
+      147
+    ],
+    "changedPixels": 768
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_academy-dark-desktop.png",
+    "before": [
+      1440,
+      1339
+    ],
+    "after": [
+      1440,
+      1339
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_academy-dark-mobile.png",
+    "before": [
+      390,
+      3046
+    ],
+    "after": [
+      390,
+      3046
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_academy-light-desktop.png",
+    "before": [
+      1440,
+      1339
+    ],
+    "after": [
+      1440,
+      1339
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_academy-light-mobile.png",
+    "before": [
+      390,
+      3046
+    ],
+    "after": [
+      390,
+      3046
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_analytics-dark-desktop.png",
+    "before": [
+      1440,
+      1070
+    ],
+    "after": [
+      1440,
+      1070
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_analytics-dark-mobile.png",
+    "before": [
+      390,
+      2385
+    ],
+    "after": [
+      390,
+      2385
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_analytics-light-desktop.png",
+    "before": [
+      1440,
+      1070
+    ],
+    "after": [
+      1440,
+      1070
+    ],
+    "differenceBounds": [
+      391,
+      146,
+      1182,
+      761
+    ],
+    "changedPixels": 2310
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_analytics-light-mobile.png",
+    "before": [
+      390,
+      2385
+    ],
+    "after": [
+      390,
+      2385
+    ],
+    "differenceBounds": [
+      100,
+      171,
+      364,
+      2075
+    ],
+    "changedPixels": 2305
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_assistant-dark-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": [
+      223,
+      509,
+      261,
+      527
+    ],
+    "changedPixels": 680
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_assistant-dark-mobile.png",
+    "before": [
+      390,
+      844
+    ],
+    "after": [
+      390,
+      844
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_assistant-light-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": [
+      223,
+      509,
+      261,
+      527
+    ],
+    "changedPixels": 680
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_assistant-light-mobile.png",
+    "before": [
+      390,
+      844
+    ],
+    "after": [
+      390,
+      844
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_chat-dark-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": [
+      223,
+      509,
+      261,
+      527
+    ],
+    "changedPixels": 680
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_chat-dark-mobile.png",
+    "before": [
+      390,
+      844
+    ],
+    "after": [
+      390,
+      844
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_chat-light-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": [
+      223,
+      238,
+      1126,
+      764
+    ],
+    "changedPixels": 1856
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_chat-light-mobile.png",
+    "before": [
+      390,
+      844
+    ],
+    "after": [
+      390,
+      844
+    ],
+    "differenceBounds": [
+      17,
+      145,
+      351,
+      292
+    ],
+    "changedPixels": 791
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_crm-dark-desktop.png",
+    "before": [
+      1440,
+      1522
+    ],
+    "after": [
+      1440,
+      1522
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_crm-dark-mobile.png",
+    "before": [
+      390,
+      2554
+    ],
+    "after": [
+      390,
+      2554
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_crm-light-desktop.png",
+    "before": [
+      1440,
+      1522
+    ],
+    "after": [
+      1440,
+      1522
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_crm-light-mobile.png",
+    "before": [
+      390,
+      2554
+    ],
+    "after": [
+      390,
+      2554
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_ecommerce-dark-desktop.png",
+    "before": [
+      1440,
+      2014
+    ],
+    "after": [
+      1440,
+      2014
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_ecommerce-dark-mobile.png",
+    "before": [
+      390,
+      3928
+    ],
+    "after": [
+      390,
+      3928
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_ecommerce-light-desktop.png",
+    "before": [
+      1440,
+      2014
+    ],
+    "after": [
+      1440,
+      2014
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_ecommerce-light-mobile.png",
+    "before": [
+      390,
+      3928
+    ],
+    "after": [
+      390,
+      3928
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_finance-dark-desktop.png",
+    "before": [
+      1440,
+      1300
+    ],
+    "after": [
+      1440,
+      1300
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_finance-dark-mobile.png",
+    "before": [
+      390,
+      3016
+    ],
+    "after": [
+      390,
+      3016
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_finance-light-desktop.png",
+    "before": [
+      1440,
+      1300
+    ],
+    "after": [
+      1440,
+      1300
+    ],
+    "differenceBounds": [
+      400,
+      145,
+      552,
+      156
+    ],
+    "changedPixels": 762
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_finance-light-mobile.png",
+    "before": [
+      390,
+      3016
+    ],
+    "after": [
+      390,
+      3016
+    ],
+    "differenceBounds": [
+      110,
+      152,
+      263,
+      163
+    ],
+    "changedPixels": 783
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_invoice-dark-desktop.png",
+    "before": [
+      1440,
+      1268
+    ],
+    "after": [
+      1440,
+      1268
+    ],
+    "differenceBounds": [
+      223,
+      509,
+      261,
+      527
+    ],
+    "changedPixels": 680
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_invoice-dark-mobile.png",
+    "before": [
+      390,
+      2239
+    ],
+    "after": [
+      390,
+      2239
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_invoice-light-desktop.png",
+    "before": [
+      1440,
+      1268
+    ],
+    "after": [
+      1440,
+      1268
+    ],
+    "differenceBounds": [
+      223,
+      154,
+      781,
+      527
+    ],
+    "changedPixels": 1316
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_invoice-light-mobile.png",
+    "before": [
+      390,
+      2239
+    ],
+    "after": [
+      390,
+      2239
+    ],
+    "differenceBounds": [
+      169,
+      211,
+      329,
+      223
+    ],
+    "changedPixels": 639
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_logistics-dark-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_logistics-dark-mobile.png",
+    "before": [
+      390,
+      844
+    ],
+    "after": [
+      390,
+      844
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_logistics-light-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": [
+      382,
+      113,
+      1020,
+      437
+    ],
+    "changedPixels": 2429
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_logistics-light-mobile.png",
+    "before": [
+      390,
+      844
+    ],
+    "after": [
+      390,
+      844
+    ],
+    "differenceBounds": [
+      110,
+      126,
+      366,
+      138
+    ],
+    "changedPixels": 1319
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_patient-monitoring-dark-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_patient-monitoring-dark-mobile.png",
+    "before": [
+      390,
+      2182
+    ],
+    "after": [
+      390,
+      2182
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_patient-monitoring-light-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": [
+      636,
+      587,
+      1044,
+      598
+    ],
+    "changedPixels": 1269
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_patient-monitoring-light-mobile.png",
+    "before": [
+      390,
+      2182
+    ],
+    "after": [
+      390,
+      2182
+    ],
+    "differenceBounds": [
+      20,
+      1672,
+      383,
+      1683
+    ],
+    "changedPixels": 1267
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_products-dark-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": [
+      223,
+      509,
+      261,
+      527
+    ],
+    "changedPixels": 680
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_products-dark-mobile.png",
+    "before": [
+      390,
+      844
+    ],
+    "after": [
+      390,
+      844
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_products-light-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": [
+      223,
+      509,
+      261,
+      527
+    ],
+    "changedPixels": 680
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_products-light-mobile.png",
+    "before": [
+      390,
+      844
+    ],
+    "after": [
+      390,
+      844
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_profile-dark-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": [
+      223,
+      509,
+      261,
+      527
+    ],
+    "changedPixels": 680
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_profile-dark-mobile.png",
+    "before": [
+      390,
+      1563
+    ],
+    "after": [
+      390,
+      1563
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_profile-light-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": [
+      223,
+      198,
+      833,
+      527
+    ],
+    "changedPixels": 2556
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_profile-light-mobile.png",
+    "before": [
+      390,
+      1563
+    ],
+    "after": [
+      390,
+      1563
+    ],
+    "differenceBounds": [
+      111,
+      327,
+      386,
+      339
+    ],
+    "changedPixels": 1273
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_projects__projectId_timeline-dark-desktop.png",
+    "before": [
+      1440,
+      1193
+    ],
+    "after": [
+      1440,
+      1193
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_projects__projectId_timeline-dark-mobile.png",
+    "before": [
+      390,
+      1505
+    ],
+    "after": [
+      390,
+      1505
+    ],
+    "differenceBounds": [
+      17,
+      726,
+      373,
+      1273
+    ],
+    "changedPixels": 10318
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_projects__projectId_timeline-light-desktop.png",
+    "before": [
+      1440,
+      1193
+    ],
+    "after": [
+      1440,
+      1193
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_projects__projectId_timeline-light-mobile.png",
+    "before": [
+      390,
+      1505
+    ],
+    "after": [
+      390,
+      1505
+    ],
+    "differenceBounds": [
+      17,
+      726,
+      373,
+      1273
+    ],
+    "changedPixels": 60
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_roles-dark-desktop.png",
+    "before": [
+      1440,
+      1020
+    ],
+    "after": [
+      1440,
+      1020
+    ],
+    "differenceBounds": [
+      223,
+      509,
+      261,
+      527
+    ],
+    "changedPixels": 680
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_roles-dark-mobile.png",
+    "before": [
+      390,
+      1302
+    ],
+    "after": [
+      390,
+      1302
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_roles-light-desktop.png",
+    "before": [
+      1440,
+      1020
+    ],
+    "after": [
+      1440,
+      1020
+    ],
+    "differenceBounds": [
+      223,
+      140,
+      578,
+      527
+    ],
+    "changedPixels": 1740
+  },
+  {
+    "preset": "default",
+    "file": "_dashboard_roles-light-mobile.png",
+    "before": [
+      390,
+      1302
+    ],
+    "after": [
+      390,
+      1302
+    ],
+    "differenceBounds": [
+      80,
+      210,
+      291,
+      221
+    ],
+    "changedPixels": 1087
+  },
+  {
+    "preset": "graphite",
+    "file": "_chat-dark-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": [
+      283,
+      162,
+      600,
+      900
+    ],
+    "changedPixels": 59
+  },
+  {
+    "preset": "graphite",
+    "file": "_chat-dark-mobile.png",
+    "before": [
+      390,
+      844
+    ],
+    "after": [
+      390,
+      844
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "graphite",
+    "file": "_chat-light-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": [
+      361,
+      117,
+      816,
+      786
+    ],
+    "changedPixels": 1176
+  },
+  {
+    "preset": "graphite",
+    "file": "_chat-light-mobile.png",
+    "before": [
+      390,
+      844
+    ],
+    "after": [
+      390,
+      844
+    ],
+    "differenceBounds": [
+      116,
+      135,
+      363,
+      147
+    ],
+    "changedPixels": 768
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_academy-dark-desktop.png",
+    "before": [
+      1440,
+      1339
+    ],
+    "after": [
+      1440,
+      1339
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_academy-dark-mobile.png",
+    "before": [
+      390,
+      3046
+    ],
+    "after": [
+      390,
+      3046
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_academy-light-desktop.png",
+    "before": [
+      1440,
+      1339
+    ],
+    "after": [
+      1440,
+      1339
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_academy-light-mobile.png",
+    "before": [
+      390,
+      3046
+    ],
+    "after": [
+      390,
+      3046
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_analytics-dark-desktop.png",
+    "before": [
+      1440,
+      1070
+    ],
+    "after": [
+      1440,
+      1070
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_analytics-dark-mobile.png",
+    "before": [
+      390,
+      2385
+    ],
+    "after": [
+      390,
+      2385
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_analytics-light-desktop.png",
+    "before": [
+      1440,
+      1070
+    ],
+    "after": [
+      1440,
+      1070
+    ],
+    "differenceBounds": [
+      391,
+      146,
+      1182,
+      761
+    ],
+    "changedPixels": 2310
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_analytics-light-mobile.png",
+    "before": [
+      390,
+      2385
+    ],
+    "after": [
+      390,
+      2385
+    ],
+    "differenceBounds": [
+      100,
+      171,
+      364,
+      2075
+    ],
+    "changedPixels": 2305
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_assistant-dark-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": [
+      223,
+      509,
+      261,
+      527
+    ],
+    "changedPixels": 680
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_assistant-dark-mobile.png",
+    "before": [
+      390,
+      844
+    ],
+    "after": [
+      390,
+      844
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_assistant-light-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": [
+      223,
+      509,
+      261,
+      527
+    ],
+    "changedPixels": 680
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_assistant-light-mobile.png",
+    "before": [
+      390,
+      844
+    ],
+    "after": [
+      390,
+      844
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_chat-dark-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": [
+      223,
+      509,
+      261,
+      527
+    ],
+    "changedPixels": 680
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_chat-dark-mobile.png",
+    "before": [
+      390,
+      844
+    ],
+    "after": [
+      390,
+      844
+    ],
+    "differenceBounds": [
+      17,
+      145,
+      25,
+      153
+    ],
+    "changedPixels": 15
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_chat-light-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": [
+      223,
+      238,
+      1126,
+      764
+    ],
+    "changedPixels": 1856
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_chat-light-mobile.png",
+    "before": [
+      390,
+      844
+    ],
+    "after": [
+      390,
+      844
+    ],
+    "differenceBounds": [
+      120,
+      280,
+      351,
+      292
+    ],
+    "changedPixels": 776
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_crm-dark-desktop.png",
+    "before": [
+      1440,
+      1522
+    ],
+    "after": [
+      1440,
+      1522
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_crm-dark-mobile.png",
+    "before": [
+      390,
+      2554
+    ],
+    "after": [
+      390,
+      2554
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_crm-light-desktop.png",
+    "before": [
+      1440,
+      1522
+    ],
+    "after": [
+      1440,
+      1522
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_crm-light-mobile.png",
+    "before": [
+      390,
+      2554
+    ],
+    "after": [
+      390,
+      2554
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_ecommerce-dark-desktop.png",
+    "before": [
+      1440,
+      2014
+    ],
+    "after": [
+      1440,
+      2014
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_ecommerce-dark-mobile.png",
+    "before": [
+      390,
+      3928
+    ],
+    "after": [
+      390,
+      3928
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_ecommerce-light-desktop.png",
+    "before": [
+      1440,
+      2014
+    ],
+    "after": [
+      1440,
+      2014
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_ecommerce-light-mobile.png",
+    "before": [
+      390,
+      3928
+    ],
+    "after": [
+      390,
+      3928
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_finance-dark-desktop.png",
+    "before": [
+      1440,
+      1300
+    ],
+    "after": [
+      1440,
+      1300
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_finance-dark-mobile.png",
+    "before": [
+      390,
+      3016
+    ],
+    "after": [
+      390,
+      3016
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_finance-light-desktop.png",
+    "before": [
+      1440,
+      1300
+    ],
+    "after": [
+      1440,
+      1300
+    ],
+    "differenceBounds": [
+      400,
+      145,
+      552,
+      156
+    ],
+    "changedPixels": 762
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_finance-light-mobile.png",
+    "before": [
+      390,
+      3016
+    ],
+    "after": [
+      390,
+      3016
+    ],
+    "differenceBounds": [
+      110,
+      152,
+      263,
+      163
+    ],
+    "changedPixels": 783
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_invoice-dark-desktop.png",
+    "before": [
+      1440,
+      1268
+    ],
+    "after": [
+      1440,
+      1268
+    ],
+    "differenceBounds": [
+      223,
+      509,
+      261,
+      527
+    ],
+    "changedPixels": 680
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_invoice-dark-mobile.png",
+    "before": [
+      390,
+      2239
+    ],
+    "after": [
+      390,
+      2239
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_invoice-light-desktop.png",
+    "before": [
+      1440,
+      1268
+    ],
+    "after": [
+      1440,
+      1268
+    ],
+    "differenceBounds": [
+      223,
+      154,
+      781,
+      527
+    ],
+    "changedPixels": 1316
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_invoice-light-mobile.png",
+    "before": [
+      390,
+      2239
+    ],
+    "after": [
+      390,
+      2239
+    ],
+    "differenceBounds": [
+      169,
+      211,
+      329,
+      223
+    ],
+    "changedPixels": 639
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_logistics-dark-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_logistics-dark-mobile.png",
+    "before": [
+      390,
+      844
+    ],
+    "after": [
+      390,
+      844
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_logistics-light-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": [
+      382,
+      113,
+      1020,
+      437
+    ],
+    "changedPixels": 2429
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_logistics-light-mobile.png",
+    "before": [
+      390,
+      844
+    ],
+    "after": [
+      390,
+      844
+    ],
+    "differenceBounds": [
+      110,
+      126,
+      366,
+      138
+    ],
+    "changedPixels": 1319
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_patient-monitoring-dark-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_patient-monitoring-dark-mobile.png",
+    "before": [
+      390,
+      2182
+    ],
+    "after": [
+      390,
+      2182
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_patient-monitoring-light-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": [
+      636,
+      587,
+      1044,
+      598
+    ],
+    "changedPixels": 1269
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_patient-monitoring-light-mobile.png",
+    "before": [
+      390,
+      2182
+    ],
+    "after": [
+      390,
+      2182
+    ],
+    "differenceBounds": [
+      20,
+      1672,
+      383,
+      1683
+    ],
+    "changedPixels": 1267
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_products-dark-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": [
+      223,
+      509,
+      261,
+      527
+    ],
+    "changedPixels": 680
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_products-dark-mobile.png",
+    "before": [
+      390,
+      844
+    ],
+    "after": [
+      390,
+      844
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_products-light-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": [
+      223,
+      509,
+      261,
+      527
+    ],
+    "changedPixels": 680
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_products-light-mobile.png",
+    "before": [
+      390,
+      844
+    ],
+    "after": [
+      390,
+      844
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_profile-dark-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": [
+      223,
+      509,
+      261,
+      527
+    ],
+    "changedPixels": 680
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_profile-dark-mobile.png",
+    "before": [
+      390,
+      1563
+    ],
+    "after": [
+      390,
+      1563
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_profile-light-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": [
+      223,
+      198,
+      833,
+      527
+    ],
+    "changedPixels": 2556
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_profile-light-mobile.png",
+    "before": [
+      390,
+      1563
+    ],
+    "after": [
+      390,
+      1563
+    ],
+    "differenceBounds": [
+      111,
+      327,
+      386,
+      339
+    ],
+    "changedPixels": 1273
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_projects__projectId_timeline-dark-desktop.png",
+    "before": [
+      1440,
+      1193
+    ],
+    "after": [
+      1440,
+      1193
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_projects__projectId_timeline-dark-mobile.png",
+    "before": [
+      390,
+      1505
+    ],
+    "after": [
+      390,
+      1505
+    ],
+    "differenceBounds": [
+      17,
+      726,
+      373,
+      1273
+    ],
+    "changedPixels": 10318
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_projects__projectId_timeline-light-desktop.png",
+    "before": [
+      1440,
+      1193
+    ],
+    "after": [
+      1440,
+      1193
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_projects__projectId_timeline-light-mobile.png",
+    "before": [
+      390,
+      1505
+    ],
+    "after": [
+      390,
+      1505
+    ],
+    "differenceBounds": [
+      17,
+      726,
+      373,
+      1273
+    ],
+    "changedPixels": 60
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_roles-dark-desktop.png",
+    "before": [
+      1440,
+      1020
+    ],
+    "after": [
+      1440,
+      1020
+    ],
+    "differenceBounds": [
+      223,
+      509,
+      261,
+      527
+    ],
+    "changedPixels": 680
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_roles-dark-mobile.png",
+    "before": [
+      390,
+      1302
+    ],
+    "after": [
+      390,
+      1302
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_roles-light-desktop.png",
+    "before": [
+      1440,
+      1020
+    ],
+    "after": [
+      1440,
+      1020
+    ],
+    "differenceBounds": [
+      223,
+      140,
+      578,
+      527
+    ],
+    "changedPixels": 1740
+  },
+  {
+    "preset": "graphite",
+    "file": "_dashboard_roles-light-mobile.png",
+    "before": [
+      390,
+      1302
+    ],
+    "after": [
+      390,
+      1302
+    ],
+    "differenceBounds": [
+      80,
+      210,
+      291,
+      221
+    ],
+    "changedPixels": 1087
+  },
+  {
+    "preset": "iris",
+    "file": "_chat-dark-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "iris",
+    "file": "_chat-dark-mobile.png",
+    "before": [
+      390,
+      844
+    ],
+    "after": [
+      390,
+      844
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "iris",
+    "file": "_chat-light-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": [
+      280,
+      117,
+      816,
+      900
+    ],
+    "changedPixels": 1292
+  },
+  {
+    "preset": "iris",
+    "file": "_chat-light-mobile.png",
+    "before": [
+      390,
+      844
+    ],
+    "after": [
+      390,
+      844
+    ],
+    "differenceBounds": [
+      116,
+      135,
+      363,
+      147
+    ],
+    "changedPixels": 768
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_academy-dark-desktop.png",
+    "before": [
+      1440,
+      1339
+    ],
+    "after": [
+      1440,
+      1339
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_academy-dark-mobile.png",
+    "before": [
+      390,
+      3046
+    ],
+    "after": [
+      390,
+      3046
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_academy-light-desktop.png",
+    "before": [
+      1440,
+      1339
+    ],
+    "after": [
+      1440,
+      1339
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_academy-light-mobile.png",
+    "before": [
+      390,
+      3046
+    ],
+    "after": [
+      390,
+      3046
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_analytics-dark-desktop.png",
+    "before": [
+      1440,
+      1070
+    ],
+    "after": [
+      1440,
+      1070
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_analytics-dark-mobile.png",
+    "before": [
+      390,
+      2385
+    ],
+    "after": [
+      390,
+      2385
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_analytics-light-desktop.png",
+    "before": [
+      1440,
+      1070
+    ],
+    "after": [
+      1440,
+      1070
+    ],
+    "differenceBounds": [
+      391,
+      146,
+      1182,
+      761
+    ],
+    "changedPixels": 2310
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_analytics-light-mobile.png",
+    "before": [
+      390,
+      2385
+    ],
+    "after": [
+      390,
+      2385
+    ],
+    "differenceBounds": [
+      100,
+      171,
+      364,
+      2075
+    ],
+    "changedPixels": 2305
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_assistant-dark-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": [
+      223,
+      509,
+      261,
+      527
+    ],
+    "changedPixels": 680
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_assistant-dark-mobile.png",
+    "before": [
+      390,
+      844
+    ],
+    "after": [
+      390,
+      844
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_assistant-light-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": [
+      223,
+      410,
+      1164,
+      604
+    ],
+    "changedPixels": 712
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_assistant-light-mobile.png",
+    "before": [
+      390,
+      844
+    ],
+    "after": [
+      390,
+      844
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_chat-dark-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": [
+      223,
+      509,
+      261,
+      527
+    ],
+    "changedPixels": 680
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_chat-dark-mobile.png",
+    "before": [
+      390,
+      844
+    ],
+    "after": [
+      390,
+      844
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_chat-light-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": [
+      223,
+      238,
+      1126,
+      764
+    ],
+    "changedPixels": 1856
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_chat-light-mobile.png",
+    "before": [
+      390,
+      844
+    ],
+    "after": [
+      390,
+      844
+    ],
+    "differenceBounds": [
+      120,
+      280,
+      351,
+      292
+    ],
+    "changedPixels": 776
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_crm-dark-desktop.png",
+    "before": [
+      1440,
+      1522
+    ],
+    "after": [
+      1440,
+      1522
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_crm-dark-mobile.png",
+    "before": [
+      390,
+      2554
+    ],
+    "after": [
+      390,
+      2554
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_crm-light-desktop.png",
+    "before": [
+      1440,
+      1522
+    ],
+    "after": [
+      1440,
+      1522
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_crm-light-mobile.png",
+    "before": [
+      390,
+      2554
+    ],
+    "after": [
+      390,
+      2554
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_ecommerce-dark-desktop.png",
+    "before": [
+      1440,
+      2014
+    ],
+    "after": [
+      1440,
+      2014
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_ecommerce-dark-mobile.png",
+    "before": [
+      390,
+      3928
+    ],
+    "after": [
+      390,
+      3928
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_ecommerce-light-desktop.png",
+    "before": [
+      1440,
+      2014
+    ],
+    "after": [
+      1440,
+      2014
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_ecommerce-light-mobile.png",
+    "before": [
+      390,
+      3928
+    ],
+    "after": [
+      390,
+      3928
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_finance-dark-desktop.png",
+    "before": [
+      1440,
+      1300
+    ],
+    "after": [
+      1440,
+      1300
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_finance-dark-mobile.png",
+    "before": [
+      390,
+      3016
+    ],
+    "after": [
+      390,
+      3016
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_finance-light-desktop.png",
+    "before": [
+      1440,
+      1300
+    ],
+    "after": [
+      1440,
+      1300
+    ],
+    "differenceBounds": [
+      400,
+      145,
+      552,
+      156
+    ],
+    "changedPixels": 762
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_finance-light-mobile.png",
+    "before": [
+      390,
+      3016
+    ],
+    "after": [
+      390,
+      3016
+    ],
+    "differenceBounds": [
+      110,
+      152,
+      263,
+      163
+    ],
+    "changedPixels": 783
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_invoice-dark-desktop.png",
+    "before": [
+      1440,
+      1268
+    ],
+    "after": [
+      1440,
+      1268
+    ],
+    "differenceBounds": [
+      223,
+      509,
+      261,
+      527
+    ],
+    "changedPixels": 680
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_invoice-dark-mobile.png",
+    "before": [
+      390,
+      2239
+    ],
+    "after": [
+      390,
+      2239
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_invoice-light-desktop.png",
+    "before": [
+      1440,
+      1268
+    ],
+    "after": [
+      1440,
+      1268
+    ],
+    "differenceBounds": [
+      223,
+      154,
+      781,
+      527
+    ],
+    "changedPixels": 1316
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_invoice-light-mobile.png",
+    "before": [
+      390,
+      2239
+    ],
+    "after": [
+      390,
+      2239
+    ],
+    "differenceBounds": [
+      169,
+      211,
+      329,
+      223
+    ],
+    "changedPixels": 639
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_logistics-dark-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_logistics-dark-mobile.png",
+    "before": [
+      390,
+      844
+    ],
+    "after": [
+      390,
+      844
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_logistics-light-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": [
+      382,
+      113,
+      1020,
+      437
+    ],
+    "changedPixels": 2429
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_logistics-light-mobile.png",
+    "before": [
+      390,
+      844
+    ],
+    "after": [
+      390,
+      844
+    ],
+    "differenceBounds": [
+      110,
+      126,
+      366,
+      138
+    ],
+    "changedPixels": 1319
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_patient-monitoring-dark-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_patient-monitoring-dark-mobile.png",
+    "before": [
+      390,
+      2182
+    ],
+    "after": [
+      390,
+      2182
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_patient-monitoring-light-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": [
+      636,
+      587,
+      1044,
+      598
+    ],
+    "changedPixels": 1269
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_patient-monitoring-light-mobile.png",
+    "before": [
+      390,
+      2182
+    ],
+    "after": [
+      390,
+      2182
+    ],
+    "differenceBounds": [
+      20,
+      1672,
+      383,
+      1683
+    ],
+    "changedPixels": 1267
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_products-dark-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": [
+      223,
+      509,
+      261,
+      527
+    ],
+    "changedPixels": 680
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_products-dark-mobile.png",
+    "before": [
+      390,
+      844
+    ],
+    "after": [
+      390,
+      844
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_products-light-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": [
+      223,
+      509,
+      261,
+      527
+    ],
+    "changedPixels": 680
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_products-light-mobile.png",
+    "before": [
+      390,
+      844
+    ],
+    "after": [
+      390,
+      844
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_profile-dark-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": [
+      223,
+      509,
+      261,
+      527
+    ],
+    "changedPixels": 680
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_profile-dark-mobile.png",
+    "before": [
+      390,
+      1563
+    ],
+    "after": [
+      390,
+      1563
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_profile-light-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": [
+      223,
+      198,
+      833,
+      527
+    ],
+    "changedPixels": 2556
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_profile-light-mobile.png",
+    "before": [
+      390,
+      1563
+    ],
+    "after": [
+      390,
+      1563
+    ],
+    "differenceBounds": [
+      111,
+      327,
+      386,
+      339
+    ],
+    "changedPixels": 1273
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_projects__projectId_timeline-dark-desktop.png",
+    "before": [
+      1440,
+      1193
+    ],
+    "after": [
+      1440,
+      1193
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_projects__projectId_timeline-dark-mobile.png",
+    "before": [
+      390,
+      1505
+    ],
+    "after": [
+      390,
+      1505
+    ],
+    "differenceBounds": [
+      17,
+      726,
+      373,
+      1273
+    ],
+    "changedPixels": 10318
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_projects__projectId_timeline-light-desktop.png",
+    "before": [
+      1440,
+      1193
+    ],
+    "after": [
+      1440,
+      1193
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_projects__projectId_timeline-light-mobile.png",
+    "before": [
+      390,
+      1505
+    ],
+    "after": [
+      390,
+      1505
+    ],
+    "differenceBounds": [
+      17,
+      726,
+      373,
+      1273
+    ],
+    "changedPixels": 60
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_roles-dark-desktop.png",
+    "before": [
+      1440,
+      1020
+    ],
+    "after": [
+      1440,
+      1020
+    ],
+    "differenceBounds": [
+      223,
+      509,
+      261,
+      527
+    ],
+    "changedPixels": 680
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_roles-dark-mobile.png",
+    "before": [
+      390,
+      1302
+    ],
+    "after": [
+      390,
+      1302
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_roles-light-desktop.png",
+    "before": [
+      1440,
+      1020
+    ],
+    "after": [
+      1440,
+      1020
+    ],
+    "differenceBounds": [
+      223,
+      140,
+      578,
+      527
+    ],
+    "changedPixels": 1740
+  },
+  {
+    "preset": "iris",
+    "file": "_dashboard_roles-light-mobile.png",
+    "before": [
+      390,
+      1302
+    ],
+    "after": [
+      390,
+      1302
+    ],
+    "differenceBounds": [
+      80,
+      210,
+      291,
+      221
+    ],
+    "changedPixels": 1087
+  },
+  {
+    "preset": "pine",
+    "file": "_chat-dark-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_chat-dark-mobile.png",
+    "before": [
+      390,
+      844
+    ],
+    "after": [
+      390,
+      844
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_chat-light-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": [
+      280,
+      117,
+      816,
+      900
+    ],
+    "changedPixels": 1238
+  },
+  {
+    "preset": "pine",
+    "file": "_chat-light-mobile.png",
+    "before": [
+      390,
+      844
+    ],
+    "after": [
+      390,
+      844
+    ],
+    "differenceBounds": [
+      116,
+      135,
+      363,
+      147
+    ],
+    "changedPixels": 768
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_academy-dark-desktop.png",
+    "before": [
+      1440,
+      1339
+    ],
+    "after": [
+      1440,
+      1339
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_academy-dark-mobile.png",
+    "before": [
+      390,
+      3046
+    ],
+    "after": [
+      390,
+      3046
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_academy-light-desktop.png",
+    "before": [
+      1440,
+      1339
+    ],
+    "after": [
+      1440,
+      1339
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_academy-light-mobile.png",
+    "before": [
+      390,
+      3046
+    ],
+    "after": [
+      390,
+      3046
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_analytics-dark-desktop.png",
+    "before": [
+      1440,
+      1070
+    ],
+    "after": [
+      1440,
+      1070
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_analytics-dark-mobile.png",
+    "before": [
+      390,
+      2385
+    ],
+    "after": [
+      390,
+      2385
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_analytics-light-desktop.png",
+    "before": [
+      1440,
+      1070
+    ],
+    "after": [
+      1440,
+      1070
+    ],
+    "differenceBounds": [
+      391,
+      146,
+      1182,
+      761
+    ],
+    "changedPixels": 2310
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_analytics-light-mobile.png",
+    "before": [
+      390,
+      2385
+    ],
+    "after": [
+      390,
+      2385
+    ],
+    "differenceBounds": [
+      100,
+      171,
+      364,
+      2075
+    ],
+    "changedPixels": 2305
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_assistant-dark-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": [
+      223,
+      509,
+      261,
+      527
+    ],
+    "changedPixels": 680
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_assistant-dark-mobile.png",
+    "before": [
+      390,
+      844
+    ],
+    "after": [
+      390,
+      844
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_assistant-light-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": [
+      223,
+      509,
+      261,
+      527
+    ],
+    "changedPixels": 680
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_assistant-light-mobile.png",
+    "before": [
+      390,
+      844
+    ],
+    "after": [
+      390,
+      844
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_chat-dark-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": [
+      223,
+      509,
+      261,
+      527
+    ],
+    "changedPixels": 680
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_chat-dark-mobile.png",
+    "before": [
+      390,
+      844
+    ],
+    "after": [
+      390,
+      844
+    ],
+    "differenceBounds": [
+      17,
+      145,
+      25,
+      153
+    ],
+    "changedPixels": 15
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_chat-light-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": [
+      223,
+      238,
+      1126,
+      764
+    ],
+    "changedPixels": 1856
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_chat-light-mobile.png",
+    "before": [
+      390,
+      844
+    ],
+    "after": [
+      390,
+      844
+    ],
+    "differenceBounds": [
+      17,
+      145,
+      351,
+      292
+    ],
+    "changedPixels": 791
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_crm-dark-desktop.png",
+    "before": [
+      1440,
+      1522
+    ],
+    "after": [
+      1440,
+      1522
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_crm-dark-mobile.png",
+    "before": [
+      390,
+      2554
+    ],
+    "after": [
+      390,
+      2554
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_crm-light-desktop.png",
+    "before": [
+      1440,
+      1522
+    ],
+    "after": [
+      1440,
+      1522
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_crm-light-mobile.png",
+    "before": [
+      390,
+      2554
+    ],
+    "after": [
+      390,
+      2554
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_ecommerce-dark-desktop.png",
+    "before": [
+      1440,
+      2014
+    ],
+    "after": [
+      1440,
+      2014
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_ecommerce-dark-mobile.png",
+    "before": [
+      390,
+      3928
+    ],
+    "after": [
+      390,
+      3928
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_ecommerce-light-desktop.png",
+    "before": [
+      1440,
+      2014
+    ],
+    "after": [
+      1440,
+      2014
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_ecommerce-light-mobile.png",
+    "before": [
+      390,
+      3928
+    ],
+    "after": [
+      390,
+      3928
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_finance-dark-desktop.png",
+    "before": [
+      1440,
+      1300
+    ],
+    "after": [
+      1440,
+      1300
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_finance-dark-mobile.png",
+    "before": [
+      390,
+      3016
+    ],
+    "after": [
+      390,
+      3016
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_finance-light-desktop.png",
+    "before": [
+      1440,
+      1300
+    ],
+    "after": [
+      1440,
+      1300
+    ],
+    "differenceBounds": [
+      400,
+      145,
+      552,
+      156
+    ],
+    "changedPixels": 762
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_finance-light-mobile.png",
+    "before": [
+      390,
+      3016
+    ],
+    "after": [
+      390,
+      3016
+    ],
+    "differenceBounds": [
+      110,
+      152,
+      263,
+      163
+    ],
+    "changedPixels": 783
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_invoice-dark-desktop.png",
+    "before": [
+      1440,
+      1268
+    ],
+    "after": [
+      1440,
+      1268
+    ],
+    "differenceBounds": [
+      223,
+      509,
+      261,
+      527
+    ],
+    "changedPixels": 680
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_invoice-dark-mobile.png",
+    "before": [
+      390,
+      2239
+    ],
+    "after": [
+      390,
+      2239
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_invoice-light-desktop.png",
+    "before": [
+      1440,
+      1268
+    ],
+    "after": [
+      1440,
+      1268
+    ],
+    "differenceBounds": [
+      223,
+      154,
+      781,
+      527
+    ],
+    "changedPixels": 1316
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_invoice-light-mobile.png",
+    "before": [
+      390,
+      2239
+    ],
+    "after": [
+      390,
+      2239
+    ],
+    "differenceBounds": [
+      169,
+      211,
+      329,
+      223
+    ],
+    "changedPixels": 639
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_logistics-dark-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_logistics-dark-mobile.png",
+    "before": [
+      390,
+      844
+    ],
+    "after": [
+      390,
+      844
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_logistics-light-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": [
+      302,
+      113,
+      1020,
+      816
+    ],
+    "changedPixels": 2482
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_logistics-light-mobile.png",
+    "before": [
+      390,
+      844
+    ],
+    "after": [
+      390,
+      844
+    ],
+    "differenceBounds": [
+      110,
+      126,
+      366,
+      138
+    ],
+    "changedPixels": 1319
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_patient-monitoring-dark-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_patient-monitoring-dark-mobile.png",
+    "before": [
+      390,
+      2182
+    ],
+    "after": [
+      390,
+      2182
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_patient-monitoring-light-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": [
+      636,
+      587,
+      1044,
+      598
+    ],
+    "changedPixels": 1269
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_patient-monitoring-light-mobile.png",
+    "before": [
+      390,
+      2182
+    ],
+    "after": [
+      390,
+      2182
+    ],
+    "differenceBounds": [
+      20,
+      1672,
+      383,
+      1683
+    ],
+    "changedPixels": 1267
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_products-dark-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": [
+      223,
+      509,
+      261,
+      527
+    ],
+    "changedPixels": 680
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_products-dark-mobile.png",
+    "before": [
+      390,
+      844
+    ],
+    "after": [
+      390,
+      844
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_products-light-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": [
+      223,
+      509,
+      261,
+      527
+    ],
+    "changedPixels": 680
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_products-light-mobile.png",
+    "before": [
+      390,
+      844
+    ],
+    "after": [
+      390,
+      844
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_profile-dark-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": [
+      223,
+      509,
+      261,
+      527
+    ],
+    "changedPixels": 680
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_profile-dark-mobile.png",
+    "before": [
+      390,
+      1563
+    ],
+    "after": [
+      390,
+      1563
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_profile-light-desktop.png",
+    "before": [
+      1440,
+      900
+    ],
+    "after": [
+      1440,
+      900
+    ],
+    "differenceBounds": [
+      223,
+      198,
+      833,
+      527
+    ],
+    "changedPixels": 2556
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_profile-light-mobile.png",
+    "before": [
+      390,
+      1563
+    ],
+    "after": [
+      390,
+      1563
+    ],
+    "differenceBounds": [
+      111,
+      327,
+      386,
+      339
+    ],
+    "changedPixels": 1273
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_projects__projectId_timeline-dark-desktop.png",
+    "before": [
+      1440,
+      1193
+    ],
+    "after": [
+      1440,
+      1193
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_projects__projectId_timeline-dark-mobile.png",
+    "before": [
+      390,
+      1505
+    ],
+    "after": [
+      390,
+      1505
+    ],
+    "differenceBounds": [
+      17,
+      726,
+      373,
+      1273
+    ],
+    "changedPixels": 10318
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_projects__projectId_timeline-light-desktop.png",
+    "before": [
+      1440,
+      1193
+    ],
+    "after": [
+      1440,
+      1193
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_projects__projectId_timeline-light-mobile.png",
+    "before": [
+      390,
+      1505
+    ],
+    "after": [
+      390,
+      1505
+    ],
+    "differenceBounds": [
+      17,
+      726,
+      373,
+      1273
+    ],
+    "changedPixels": 60
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_roles-dark-desktop.png",
+    "before": [
+      1440,
+      1020
+    ],
+    "after": [
+      1440,
+      1020
+    ],
+    "differenceBounds": [
+      223,
+      509,
+      261,
+      527
+    ],
+    "changedPixels": 680
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_roles-dark-mobile.png",
+    "before": [
+      390,
+      1302
+    ],
+    "after": [
+      390,
+      1302
+    ],
+    "differenceBounds": null,
+    "changedPixels": 0
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_roles-light-desktop.png",
+    "before": [
+      1440,
+      1020
+    ],
+    "after": [
+      1440,
+      1020
+    ],
+    "differenceBounds": [
+      223,
+      140,
+      578,
+      527
+    ],
+    "changedPixels": 1740
+  },
+  {
+    "preset": "pine",
+    "file": "_dashboard_roles-light-mobile.png",
+    "before": [
+      390,
+      1302
+    ],
+    "after": [
+      390,
+      1302
+    ],
+    "differenceBounds": [
+      80,
+      210,
+      291,
+      221
+    ],
+    "changedPixels": 1087
+  }
+]

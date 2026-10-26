@@ -1,0 +1,659 @@
+[
+  {
+    "route": "/dashboard/finance",
+    "theme": "light",
+    "viewport": "desktop",
+    "target": [
+      "#base-ui-_R_29j9aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_29j9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.43 (foreground color: #72747b, background color: #f8f9fb, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/finance",
+    "theme": "light",
+    "viewport": "desktop",
+    "target": [
+      "#base-ui-_R_39j9aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_39j9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.43 (foreground color: #72747b, background color: #f8f9fb, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/finance",
+    "theme": "light",
+    "viewport": "mobile",
+    "target": [
+      "#base-ui-_R_29j9aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_29j9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.43 (foreground color: #72747b, background color: #f8f9fb, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/finance",
+    "theme": "light",
+    "viewport": "mobile",
+    "target": [
+      "#base-ui-_R_39j9aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_39j9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.43 (foreground color: #72747b, background color: #f8f9fb, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/products",
+    "theme": "light",
+    "viewport": "desktop",
+    "target": [
+      ".absolute"
+    ],
+    "html": "<div data-slot=\"sidebar-menu-badge\" data-sidebar=\"menu-badge\" class=\"pointer-events-none ...\" data-tsd-source=\"/src/routes/(main)/d...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.39 (foreground color: #007a55, background color: #d8ede9, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/chat",
+    "theme": "light",
+    "viewport": "desktop",
+    "target": [
+      "#base-ui-_R_jb9aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_jb9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/c...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.49 (foreground color: #74777c, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/chat",
+    "theme": "light",
+    "viewport": "desktop",
+    "target": [
+      "#base-ui-_R_rb9aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_rb9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/c...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.49 (foreground color: #74777c, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/chat",
+    "theme": "light",
+    "viewport": "desktop",
+    "target": [
+      "#base-ui-_R_13b9aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_13b9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/c...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.49 (foreground color: #74777c, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/chat",
+    "theme": "light",
+    "viewport": "desktop",
+    "target": [
+      "#base-ui-_R_17j9aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_17j9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/c...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.49 (foreground color: #74777c, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/chat",
+    "theme": "light",
+    "viewport": "mobile",
+    "target": [
+      "#base-ui-_R_jb9aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_jb9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/c...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.49 (foreground color: #74777c, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/chat",
+    "theme": "light",
+    "viewport": "mobile",
+    "target": [
+      "#base-ui-_R_rb9aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_rb9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/c...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.49 (foreground color: #74777c, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/chat",
+    "theme": "light",
+    "viewport": "mobile",
+    "target": [
+      "#base-ui-_R_13b9aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_13b9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/c...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.49 (foreground color: #74777c, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/invoice",
+    "theme": "light",
+    "viewport": "desktop",
+    "target": [
+      "#base-ui-_R_45j9aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_45j9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.31 (foreground color: #6e7278, background color: #f0f2f5, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/invoice",
+    "theme": "light",
+    "viewport": "desktop",
+    "target": [
+      "#base-ui-_R_65j9aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_65j9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.31 (foreground color: #6e7278, background color: #f0f2f5, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/invoice",
+    "theme": "light",
+    "viewport": "mobile",
+    "target": [
+      "#base-ui-_R_45j9aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_45j9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.31 (foreground color: #6e7278, background color: #f0f2f5, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/invoice",
+    "theme": "light",
+    "viewport": "mobile",
+    "target": [
+      "#base-ui-_R_65j9aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_65j9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.31 (foreground color: #6e7278, background color: #f0f2f5, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/roles",
+    "theme": "light",
+    "viewport": "desktop",
+    "target": [
+      "#base-ui-_R_hj9aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_hj9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.43 (foreground color: #72747b, background color: #f8f9fb, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/roles",
+    "theme": "light",
+    "viewport": "desktop",
+    "target": [
+      "#base-ui-_R_pj9aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_pj9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.43 (foreground color: #72747b, background color: #f8f9fb, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/roles",
+    "theme": "light",
+    "viewport": "mobile",
+    "target": [
+      "#base-ui-_R_hj9aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_hj9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.43 (foreground color: #72747b, background color: #f8f9fb, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/roles",
+    "theme": "light",
+    "viewport": "mobile",
+    "target": [
+      "#base-ui-_R_pj9aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_pj9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.43 (foreground color: #72747b, background color: #f8f9fb, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/logistics",
+    "theme": "light",
+    "viewport": "desktop",
+    "target": [
+      "#base-ui-_R_4pb9aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_4pb9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.49 (foreground color: #74777c, background color: #ffffff, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/logistics",
+    "theme": "light",
+    "viewport": "desktop",
+    "target": [
+      "#base-ui-_R_6pb9aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_6pb9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.49 (foreground color: #74777c, background color: #ffffff, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/logistics",
+    "theme": "light",
+    "viewport": "desktop",
+    "target": [
+      "#base-ui-_R_8pb9aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_8pb9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.49 (foreground color: #74777c, background color: #ffffff, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/logistics",
+    "theme": "light",
+    "viewport": "desktop",
+    "target": [
+      "#base-ui-_R_8qb9aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_8qb9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.43 (foreground color: #72747b, background color: #f8f9fb, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/logistics",
+    "theme": "light",
+    "viewport": "desktop",
+    "target": [
+      "#base-ui-_R_cqb9aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_cqb9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.43 (foreground color: #72747b, background color: #f8f9fb, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/logistics",
+    "theme": "light",
+    "viewport": "desktop",
+    "target": [
+      "#base-ui-_R_gqb9aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_gqb9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.43 (foreground color: #72747b, background color: #f8f9fb, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/logistics",
+    "theme": "light",
+    "viewport": "desktop",
+    "target": [
+      "#base-ui-_R_kqb9aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_kqb9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.43 (foreground color: #72747b, background color: #f8f9fb, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/logistics",
+    "theme": "light",
+    "viewport": "mobile",
+    "target": [
+      "#base-ui-_R_4pb9aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_4pb9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.49 (foreground color: #74777c, background color: #ffffff, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/logistics",
+    "theme": "light",
+    "viewport": "mobile",
+    "target": [
+      "#base-ui-_R_6pb9aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_6pb9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.49 (foreground color: #74777c, background color: #ffffff, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/logistics",
+    "theme": "light",
+    "viewport": "mobile",
+    "target": [
+      "#base-ui-_R_8pb9aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_8pb9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.49 (foreground color: #74777c, background color: #ffffff, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/profile",
+    "theme": "light",
+    "viewport": "desktop",
+    "target": [
+      "#base-ui-_R_j39aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_j39aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.43 (foreground color: #72747b, background color: #f8f9fb, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/profile",
+    "theme": "light",
+    "viewport": "desktop",
+    "target": [
+      "#base-ui-_R_r39aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_r39aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.43 (foreground color: #72747b, background color: #f8f9fb, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/profile",
+    "theme": "light",
+    "viewport": "desktop",
+    "target": [
+      "#base-ui-_R_1339aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_1339aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.43 (foreground color: #72747b, background color: #f8f9fb, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/profile",
+    "theme": "light",
+    "viewport": "desktop",
+    "target": [
+      "#base-ui-_R_1b39aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_1b39aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.43 (foreground color: #72747b, background color: #f8f9fb, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/profile",
+    "theme": "light",
+    "viewport": "desktop",
+    "target": [
+      "#base-ui-_R_1j39aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_1j39aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.43 (foreground color: #72747b, background color: #f8f9fb, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/profile",
+    "theme": "light",
+    "viewport": "mobile",
+    "target": [
+      "#base-ui-_R_j39aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_j39aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.43 (foreground color: #72747b, background color: #f8f9fb, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/profile",
+    "theme": "light",
+    "viewport": "mobile",
+    "target": [
+      "#base-ui-_R_r39aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_r39aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.43 (foreground color: #72747b, background color: #f8f9fb, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/profile",
+    "theme": "light",
+    "viewport": "mobile",
+    "target": [
+      "#base-ui-_R_1339aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_1339aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.43 (foreground color: #72747b, background color: #f8f9fb, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/analytics",
+    "theme": "light",
+    "viewport": "desktop",
+    "target": [
+      "#base-ui-_R_29j9aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_29j9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.31 (foreground color: #6e7278, background color: #f0f2f5, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/analytics",
+    "theme": "light",
+    "viewport": "desktop",
+    "target": [
+      "#base-ui-_R_39j9aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_39j9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.31 (foreground color: #6e7278, background color: #f0f2f5, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/analytics",
+    "theme": "light",
+    "viewport": "desktop",
+    "target": [
+      "#base-ui-_R_49j9aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_49j9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.31 (foreground color: #6e7278, background color: #f0f2f5, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/analytics",
+    "theme": "light",
+    "viewport": "desktop",
+    "target": [
+      "#base-ui-_R_59j9aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_59j9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.31 (foreground color: #6e7278, background color: #f0f2f5, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/analytics",
+    "theme": "light",
+    "viewport": "desktop",
+    "target": [
+      "#base-ui-_R_hlqj9aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_hlqj9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.49 (foreground color: #74777c, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/analytics",
+    "theme": "light",
+    "viewport": "desktop",
+    "target": [
+      "#base-ui-_R_plqj9aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_plqj9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.49 (foreground color: #74777c, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/analytics",
+    "theme": "light",
+    "viewport": "mobile",
+    "target": [
+      "#base-ui-_R_29j9aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_29j9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.31 (foreground color: #6e7278, background color: #f0f2f5, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/analytics",
+    "theme": "light",
+    "viewport": "mobile",
+    "target": [
+      "#base-ui-_R_39j9aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_39j9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.31 (foreground color: #6e7278, background color: #f0f2f5, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/analytics",
+    "theme": "light",
+    "viewport": "mobile",
+    "target": [
+      "#base-ui-_R_49j9aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_49j9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.31 (foreground color: #6e7278, background color: #f0f2f5, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/analytics",
+    "theme": "light",
+    "viewport": "mobile",
+    "target": [
+      "#base-ui-_R_59j9aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_59j9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.31 (foreground color: #6e7278, background color: #f0f2f5, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/analytics",
+    "theme": "light",
+    "viewport": "mobile",
+    "target": [
+      "#base-ui-_R_hlqj9aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_hlqj9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.49 (foreground color: #74777c, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/analytics",
+    "theme": "light",
+    "viewport": "mobile",
+    "target": [
+      "#base-ui-_R_plqj9aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_plqj9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.49 (foreground color: #74777c, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/patient-monitoring",
+    "theme": "light",
+    "viewport": "desktop",
+    "target": [
+      "#base-ui-_R_jcr9aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_jcr9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.43 (foreground color: #72747b, background color: #f8f9fb, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/patient-monitoring",
+    "theme": "light",
+    "viewport": "desktop",
+    "target": [
+      "#base-ui-_R_13cr9aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_13cr9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.43 (foreground color: #72747b, background color: #f8f9fb, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/patient-monitoring",
+    "theme": "light",
+    "viewport": "desktop",
+    "target": [
+      "#base-ui-_R_23cr9aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_23cr9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.43 (foreground color: #72747b, background color: #f8f9fb, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/patient-monitoring",
+    "theme": "light",
+    "viewport": "mobile",
+    "target": [
+      "#base-ui-_R_jcr9aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_jcr9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.43 (foreground color: #72747b, background color: #f8f9fb, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/patient-monitoring",
+    "theme": "light",
+    "viewport": "mobile",
+    "target": [
+      "#base-ui-_R_13cr9aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_13cr9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.43 (foreground color: #72747b, background color: #f8f9fb, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/patient-monitoring",
+    "theme": "light",
+    "viewport": "mobile",
+    "target": [
+      "#base-ui-_R_23cr9aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_23cr9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/d...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.43 (foreground color: #72747b, background color: #f8f9fb, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/crm",
+    "theme": "light",
+    "viewport": "desktop",
+    "target": [
+      ".pl-1\\.5\\! > .sm\\:block.hidden"
+    ],
+    "html": "<span class=\"hidden sm:block\" data-tsd-source=\"/src/components/ui/pagination.tsx:78:7\">Previous</span>",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 3.28 (foreground color: #8c8e92, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/ecommerce",
+    "theme": "light",
+    "viewport": "desktop",
+    "target": [
+      ".pl-1\\.5\\! > .sm\\:block.hidden"
+    ],
+    "html": "<span class=\"hidden sm:block\" data-tsd-source=\"/src/components/ui/pagination.tsx:78:7\">Previous</span>",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 3.28 (foreground color: #8c8e92, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/chat",
+    "theme": "light",
+    "viewport": "desktop",
+    "target": [
+      "iframe",
+      "#base-ui-_R_jb9aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_jb9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/c...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.49 (foreground color: #74777c, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/chat",
+    "theme": "light",
+    "viewport": "desktop",
+    "target": [
+      "iframe",
+      "#base-ui-_R_rb9aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_rb9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/c...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.49 (foreground color: #74777c, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/chat",
+    "theme": "light",
+    "viewport": "desktop",
+    "target": [
+      "iframe",
+      "#base-ui-_R_13b9aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_13b9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/c...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.49 (foreground color: #74777c, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/chat",
+    "theme": "light",
+    "viewport": "desktop",
+    "target": [
+      "iframe",
+      "#base-ui-_R_17j9aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_17j9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/c...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.49 (foreground color: #74777c, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/chat",
+    "theme": "light",
+    "viewport": "mobile",
+    "target": [
+      "iframe",
+      "#base-ui-_R_jb9aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_jb9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/c...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.49 (foreground color: #74777c, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/chat",
+    "theme": "light",
+    "viewport": "mobile",
+    "target": [
+      "iframe",
+      "#base-ui-_R_rb9aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_rb9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/c...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.49 (foreground color: #74777c, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  },
+  {
+    "route": "/dashboard/chat",
+    "theme": "light",
+    "viewport": "mobile",
+    "target": [
+      "iframe",
+      "#base-ui-_R_13b9aq_"
+    ],
+    "html": "<button type=\"button\" data-orientation=\"horizontal\" data-activation-dire...=\"none\" aria-disabled=\"false\" tabindex=\"-1\" role=\"tab\" aria-selected=\"false\" id=\"base-ui-_R_13b9aq_\" data-slot=\"tabs-trigger\" data-tsd-source=\"/src/routes/(main)/c...\" class=\"relative inline-flex...\">",
+    "failure": "Fix any of the following:\n  Element has insufficient color contrast of 4.49 (foreground color: #74777c, background color: #ffffff, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+  }
+]

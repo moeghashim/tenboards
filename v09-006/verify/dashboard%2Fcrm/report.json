@@ -1,0 +1,1527 @@
+{
+  "route": "/dashboard/crm",
+  "path": "/dashboard/crm",
+  "baseURL": "http://127.0.0.1:3396/",
+  "tags": [
+    "wcag2a",
+    "wcag2aa",
+    "wcag21a",
+    "wcag21aa",
+    "wcag22aa"
+  ],
+  "passed": true,
+  "results": [
+    {
+      "theme": "light",
+      "viewport": "desktop",
+      "screenshot": "light-desktop.png",
+      "finalURL": "http://127.0.0.1:3396/dashboard/crm",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used."
+      ],
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "impact": "serious",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "description": "Ensure ARIA attributes are not prohibited for an element's role",
+          "help": "Elements must only use permitted ARIA attributes",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-prohibited-attr?application=playwright",
+          "nodes": [
+            {
+              "any": [],
+              "all": [],
+              "none": [
+                {
+                  "id": "aria-prohibited-attr",
+                  "data": {
+                    "role": null,
+                    "nodeName": "div",
+                    "messageKey": "noRoleSingular",
+                    "prohibited": [
+                      "aria-label"
+                    ]
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "aria-label attribute is not well supported on \"div\" elements with no valid role attribute."
+                }
+              ],
+              "impact": "serious",
+              "html": "<div data-slot=\"sidebar-group\" data-sidebar=\"group\" class=\"relative flex w-full min-w-0 flex-col p-0 pb-3\" aria-label=\"Projects navigation\" data-tsd-source=\"/src/routes/(main)/dashboard/-components/sidebar/project-navigation.tsx:127:5\">",
+              "target": [
+                "div[aria-label=\"Projects navigation\"]"
+              ],
+              "failureSummary": "Fix all of the following:\n  aria-label attribute is not well supported on \"div\" elements with no valid role attribute."
+            }
+          ]
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/crm/-components/pipeline-activity.tsx:70:15\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"717\" height=\"320\" viewBox=\"0 0 717 320\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"29.875\" dy=\"0.71em\">Nov</tspan>",
+              "target": [
+                "tspan[x=\"29.875\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/crm/-components/pipeline-activity.tsx:70:15\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"717\" height=\"320\" viewBox=\"0 0 717 320\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"89.625\" dy=\"0.71em\">Dec</tspan>",
+              "target": [
+                "tspan[x=\"89.625\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/crm/-components/pipeline-activity.tsx:70:15\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"717\" height=\"320\" viewBox=\"0 0 717 320\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"149.375\" dy=\"0.71em\">Jan</tspan>",
+              "target": [
+                "tspan[x=\"149.375\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/crm/-components/pipeline-activity.tsx:70:15\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"717\" height=\"320\" viewBox=\"0 0 717 320\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"209.125\" dy=\"0.71em\">Feb</tspan>",
+              "target": [
+                "tspan[x=\"209.125\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/crm/-components/pipeline-activity.tsx:70:15\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"717\" height=\"320\" viewBox=\"0 0 717 320\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"268.875\" dy=\"0.71em\">Mar</tspan>",
+              "target": [
+                "tspan[x=\"268.875\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/crm/-components/pipeline-activity.tsx:70:15\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"717\" height=\"320\" viewBox=\"0 0 717 320\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"328.625\" dy=\"0.71em\">Apr</tspan>",
+              "target": [
+                "tspan[x=\"328.625\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/crm/-components/pipeline-activity.tsx:70:15\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"717\" height=\"320\" viewBox=\"0 0 717 320\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"388.375\" dy=\"0.71em\">May</tspan>",
+              "target": [
+                "tspan[x=\"388.375\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/crm/-components/pipeline-activity.tsx:70:15\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"717\" height=\"320\" viewBox=\"0 0 717 320\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"448.125\" dy=\"0.71em\">Jun</tspan>",
+              "target": [
+                "tspan[x=\"448.125\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/crm/-components/pipeline-activity.tsx:70:15\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"717\" height=\"320\" viewBox=\"0 0 717 320\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"507.875\" dy=\"0.71em\">Jul</tspan>",
+              "target": [
+                "tspan[x=\"507.875\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/crm/-components/pipeline-activity.tsx:70:15\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"717\" height=\"320\" viewBox=\"0 0 717 320\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"567.625\" dy=\"0.71em\">Aug</tspan>",
+              "target": [
+                "tspan[x=\"567.625\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/crm/-components/pipeline-activity.tsx:70:15\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"717\" height=\"320\" viewBox=\"0 0 717 320\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"627.375\" dy=\"0.71em\">Sep</tspan>",
+              "target": [
+                "tspan[x=\"627.375\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/crm/-components/pipeline-activity.tsx:70:15\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"717\" height=\"320\" viewBox=\"0 0 717 320\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"687.125\" dy=\"0.71em\">Oct</tspan>",
+              "target": [
+                "tspan[x=\"687.125\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            }
+          ]
+        }
+      ],
+      "axeVersion": "4.14.0"
+    },
+    {
+      "theme": "light",
+      "viewport": "mobile",
+      "screenshot": "light-mobile.png",
+      "finalURL": "http://127.0.0.1:3396/dashboard/crm",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used."
+      ],
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/crm/-components/pipeline-activity.tsx:70:15\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"13.583333333333334\" dy=\"0.71em\">Nov</tspan>",
+              "target": [
+                "tspan[x=\"13.583333333333334\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/crm/-components/pipeline-activity.tsx:70:15\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"67.91666666666667\" dy=\"0.71em\">Jan</tspan>",
+              "target": [
+                "tspan[x=\"67.91666666666667\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/crm/-components/pipeline-activity.tsx:70:15\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"122.25\" dy=\"0.71em\">Mar</tspan>",
+              "target": [
+                "tspan[x=\"122.25\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/crm/-components/pipeline-activity.tsx:70:15\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"149.41666666666669\" dy=\"0.71em\">Apr</tspan>",
+              "target": [
+                "tspan[x=\"149.41666666666669\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/crm/-components/pipeline-activity.tsx:70:15\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"203.75000000000003\" dy=\"0.71em\">Jun</tspan>",
+              "target": [
+                "tspan[x=\"203.75000000000003\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/crm/-components/pipeline-activity.tsx:70:15\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"230.91666666666669\" dy=\"0.71em\">Jul</tspan>",
+              "target": [
+                "tspan[x=\"230.91666666666669\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/crm/-components/pipeline-activity.tsx:70:15\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"258.0833333333333\" dy=\"0.71em\">Aug</tspan>",
+              "target": [
+                "tspan[x=\"258.0833333333333\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/crm/-components/pipeline-activity.tsx:70:15\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"312.4166666666667\" dy=\"0.71em\">Oct</tspan>",
+              "target": [
+                "tspan[x=\"312.4166666666667\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            }
+          ]
+        }
+      ],
+      "axeVersion": "4.14.0"
+    },
+    {
+      "theme": "dark",
+      "viewport": "desktop",
+      "screenshot": "dark-desktop.png",
+      "finalURL": "http://127.0.0.1:3396/dashboard/crm",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used."
+      ],
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "impact": "serious",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "description": "Ensure ARIA attributes are not prohibited for an element's role",
+          "help": "Elements must only use permitted ARIA attributes",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-prohibited-attr?application=playwright",
+          "nodes": [
+            {
+              "any": [],
+              "all": [],
+              "none": [
+                {
+                  "id": "aria-prohibited-attr",
+                  "data": {
+                    "role": null,
+                    "nodeName": "div",
+                    "messageKey": "noRoleSingular",
+                    "prohibited": [
+                      "aria-label"
+                    ]
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "aria-label attribute is not well supported on \"div\" elements with no valid role attribute."
+                }
+              ],
+              "impact": "serious",
+              "html": "<div data-slot=\"sidebar-group\" data-sidebar=\"group\" class=\"relative flex w-full min-w-0 flex-col p-0 pb-3\" aria-label=\"Projects navigation\" data-tsd-source=\"/src/routes/(main)/dashboard/-components/sidebar/project-navigation.tsx:127:5\">",
+              "target": [
+                "div[aria-label=\"Projects navigation\"]"
+              ],
+              "failureSummary": "Fix all of the following:\n  aria-label attribute is not well supported on \"div\" elements with no valid role attribute."
+            }
+          ]
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/crm/-components/pipeline-activity.tsx:70:15\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"717\" height=\"320\" viewBox=\"0 0 717 320\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"29.875\" dy=\"0.71em\">Nov</tspan>",
+              "target": [
+                "tspan[x=\"29.875\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/crm/-components/pipeline-activity.tsx:70:15\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"717\" height=\"320\" viewBox=\"0 0 717 320\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"89.625\" dy=\"0.71em\">Dec</tspan>",
+              "target": [
+                "tspan[x=\"89.625\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/crm/-components/pipeline-activity.tsx:70:15\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"717\" height=\"320\" viewBox=\"0 0 717 320\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"149.375\" dy=\"0.71em\">Jan</tspan>",
+              "target": [
+                "tspan[x=\"149.375\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/crm/-components/pipeline-activity.tsx:70:15\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"717\" height=\"320\" viewBox=\"0 0 717 320\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"209.125\" dy=\"0.71em\">Feb</tspan>",
+              "target": [
+                "tspan[x=\"209.125\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/crm/-components/pipeline-activity.tsx:70:15\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"717\" height=\"320\" viewBox=\"0 0 717 320\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"268.875\" dy=\"0.71em\">Mar</tspan>",
+              "target": [
+                "tspan[x=\"268.875\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/crm/-components/pipeline-activity.tsx:70:15\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"717\" height=\"320\" viewBox=\"0 0 717 320\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"328.625\" dy=\"0.71em\">Apr</tspan>",
+              "target": [
+                "tspan[x=\"328.625\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/crm/-components/pipeline-activity.tsx:70:15\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"717\" height=\"320\" viewBox=\"0 0 717 320\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"388.375\" dy=\"0.71em\">May</tspan>",
+              "target": [
+                "tspan[x=\"388.375\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/crm/-components/pipeline-activity.tsx:70:15\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"717\" height=\"320\" viewBox=\"0 0 717 320\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"448.125\" dy=\"0.71em\">Jun</tspan>",
+              "target": [
+                "tspan[x=\"448.125\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/crm/-components/pipeline-activity.tsx:70:15\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"717\" height=\"320\" viewBox=\"0 0 717 320\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"507.875\" dy=\"0.71em\">Jul</tspan>",
+              "target": [
+                "tspan[x=\"507.875\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/crm/-components/pipeline-activity.tsx:70:15\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"717\" height=\"320\" viewBox=\"0 0 717 320\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"567.625\" dy=\"0.71em\">Aug</tspan>",
+              "target": [
+                "tspan[x=\"567.625\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/crm/-components/pipeline-activity.tsx:70:15\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"717\" height=\"320\" viewBox=\"0 0 717 320\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"627.375\" dy=\"0.71em\">Sep</tspan>",
+              "target": [
+                "tspan[x=\"627.375\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/crm/-components/pipeline-activity.tsx:70:15\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"717\" height=\"320\" viewBox=\"0 0 717 320\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"687.125\" dy=\"0.71em\">Oct</tspan>",
+              "target": [
+                "tspan[x=\"687.125\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            }
+          ]
+        }
+      ],
+      "axeVersion": "4.14.0"
+    },
+    {
+      "theme": "dark",
+      "viewport": "mobile",
+      "screenshot": "dark-mobile.png",
+      "finalURL": "http://127.0.0.1:3396/dashboard/crm",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used."
+      ],
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/crm/-components/pipeline-activity.tsx:70:15\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"13.583333333333334\" dy=\"0.71em\">Nov</tspan>",
+              "target": [
+                "tspan[x=\"13.583333333333334\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/crm/-components/pipeline-activity.tsx:70:15\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"67.91666666666667\" dy=\"0.71em\">Jan</tspan>",
+              "target": [
+                "tspan[x=\"67.91666666666667\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/crm/-components/pipeline-activity.tsx:70:15\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"122.25\" dy=\"0.71em\">Mar</tspan>",
+              "target": [
+                "tspan[x=\"122.25\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/crm/-components/pipeline-activity.tsx:70:15\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"149.41666666666669\" dy=\"0.71em\">Apr</tspan>",
+              "target": [
+                "tspan[x=\"149.41666666666669\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/crm/-components/pipeline-activity.tsx:70:15\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"203.75000000000003\" dy=\"0.71em\">Jun</tspan>",
+              "target": [
+                "tspan[x=\"203.75000000000003\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/crm/-components/pipeline-activity.tsx:70:15\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"230.91666666666669\" dy=\"0.71em\">Jul</tspan>",
+              "target": [
+                "tspan[x=\"230.91666666666669\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/crm/-components/pipeline-activity.tsx:70:15\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"258.0833333333333\" dy=\"0.71em\">Aug</tspan>",
+              "target": [
+                "tspan[x=\"258.0833333333333\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/crm/-components/pipeline-activity.tsx:70:15\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        ".recharts-surface"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"312.4166666666667\" dy=\"0.71em\">Oct</tspan>",
+              "target": [
+                "tspan[x=\"312.4166666666667\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            }
+          ]
+        }
+      ],
+      "axeVersion": "4.14.0"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+
+> tenboards@0.8.1 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://127.0.0.1:3396 --routes /dashboard/academy --preset iris --output screenshots/v09-006/academy-rerun
+
+PASS /dashboard/academy light/desktop direct
+PASS /dashboard/academy light/mobile direct
+PASS /dashboard/academy dark/desktop direct
+PASS /dashboard/academy dark/mobile direct

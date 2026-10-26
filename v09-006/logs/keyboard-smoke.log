@@ -1,0 +1,118 @@
+PASS smoke and keyboard light desktop
+PASS smoke and keyboard light mobile
+PASS smoke and keyboard dark desktop
+PASS smoke and keyboard dark mobile
+[
+  {
+    "theme": "light",
+    "viewportName": "desktop",
+    "route": "/dashboard/analytics",
+    "before": {
+      "left": 0,
+      "width": 642,
+      "scroll": 642,
+      "outline": "solid",
+      "outlineWidth": "3px"
+    },
+    "after": 0,
+    "tabExits": true
+  },
+  {
+    "theme": "light",
+    "viewportName": "desktop",
+    "route": "/dashboard/projects/sample-operations/timeline",
+    "before": {
+      "left": 0,
+      "width": 1108,
+      "scroll": 1108,
+      "outline": "solid",
+      "outlineWidth": "3px"
+    },
+    "after": 0,
+    "tabExits": true
+  },
+  {
+    "theme": "light",
+    "viewportName": "mobile",
+    "route": "/dashboard/analytics",
+    "before": {
+      "left": 0,
+      "width": 358,
+      "scroll": 540,
+      "outline": "solid",
+      "outlineWidth": "3px"
+    },
+    "after": 40,
+    "tabExits": true
+  },
+  {
+    "theme": "light",
+    "viewportName": "mobile",
+    "route": "/dashboard/projects/sample-operations/timeline",
+    "before": {
+      "left": 0,
+      "width": 356,
+      "scroll": 880,
+      "outline": "solid",
+      "outlineWidth": "2px"
+    },
+    "after": 40,
+    "tabExits": true
+  },
+  {
+    "theme": "dark",
+    "viewportName": "desktop",
+    "route": "/dashboard/analytics",
+    "before": {
+      "left": 0,
+      "width": 642,
+      "scroll": 642,
+      "outline": "solid",
+      "outlineWidth": "2px"
+    },
+    "after": 0,
+    "tabExits": true
+  },
+  {
+    "theme": "dark",
+    "viewportName": "desktop",
+    "route": "/dashboard/projects/sample-operations/timeline",
+    "before": {
+      "left": 0,
+      "width": 1108,
+      "scroll": 1108,
+      "outline": "solid",
+      "outlineWidth": "2px"
+    },
+    "after": 0,
+    "tabExits": true
+  },
+  {
+    "theme": "dark",
+    "viewportName": "mobile",
+    "route": "/dashboard/analytics",
+    "before": {
+      "left": 0,
+      "width": 358,
+      "scroll": 540,
+      "outline": "solid",
+      "outlineWidth": "2px"
+    },
+    "after": 40,
+    "tabExits": true
+  },
+  {
+    "theme": "dark",
+    "viewportName": "mobile",
+    "route": "/dashboard/projects/sample-operations/timeline",
+    "before": {
+      "left": 0,
+      "width": 356,
+      "scroll": 880,
+      "outline": "solid",
+      "outlineWidth": "2px"
+    },
+    "after": 40,
+    "tabExits": true
+  }
+]

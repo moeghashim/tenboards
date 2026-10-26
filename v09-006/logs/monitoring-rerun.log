@@ -1,0 +1,8 @@
+
+> tenboards@0.8.1 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://127.0.0.1:3396 --routes /dashboard/patient-monitoring --interactions --mask-live-clocks --output screenshots/v09-006/monitoring-rerun
+
+PASS /dashboard/patient-monitoring light/desktop direct
+PASS /dashboard/patient-monitoring light/mobile direct
+PASS /dashboard/patient-monitoring dark/desktop direct
+PASS /dashboard/patient-monitoring dark/mobile direct

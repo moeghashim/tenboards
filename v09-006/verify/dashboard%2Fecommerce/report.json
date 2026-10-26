@@ -1,0 +1,2807 @@
+{
+  "route": "/dashboard/ecommerce",
+  "path": "/dashboard/ecommerce",
+  "baseURL": "http://127.0.0.1:3396/",
+  "tags": [
+    "wcag2a",
+    "wcag2aa",
+    "wcag21a",
+    "wcag21aa",
+    "wcag22aa"
+  ],
+  "passed": true,
+  "results": [
+    {
+      "theme": "light",
+      "viewport": "desktop",
+      "screenshot": "light-desktop.png",
+      "finalURL": "http://127.0.0.1:3396/dashboard/ecommerce",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used."
+      ],
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "impact": "serious",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "description": "Ensure ARIA attributes are not prohibited for an element's role",
+          "help": "Elements must only use permitted ARIA attributes",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-prohibited-attr?application=playwright",
+          "nodes": [
+            {
+              "any": [],
+              "all": [],
+              "none": [
+                {
+                  "id": "aria-prohibited-attr",
+                  "data": {
+                    "role": null,
+                    "nodeName": "div",
+                    "messageKey": "noRoleSingular",
+                    "prohibited": [
+                      "aria-label"
+                    ]
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "aria-label attribute is not well supported on \"div\" elements with no valid role attribute."
+                }
+              ],
+              "impact": "serious",
+              "html": "<div data-slot=\"sidebar-group\" data-sidebar=\"group\" class=\"relative flex w-full min-w-0 flex-col p-0 pb-3\" aria-label=\"Projects navigation\" data-tsd-source=\"/src/routes/(main)/dashboard/-components/sidebar/project-navigation.tsx:127:5\">",
+              "target": [
+                "div[aria-label=\"Projects navigation\"]"
+              ],
+              "failureSummary": "Fix all of the following:\n  aria-label attribute is not well supported on \"div\" elements with no valid role attribute."
+            }
+          ]
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/kpi-strip.tsx:49:13\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"320\" viewBox=\"0 0 614 320\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 614 320\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"flex items-center gap-1.5\" data-tsd-source=\"/src/components/blocks/charts.tsx:116:13\">",
+              "target": [
+                ".recharts-wrapper[width=\"614\"][height=\"320\"] > .recharts-legend-wrapper > .gap-y-2.gap-x-4.py-3 > .gap-1\\.5.items-center.flex:nth-child(1)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/kpi-strip.tsx:49:13\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"320\" viewBox=\"0 0 614 320\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 614 320\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"flex items-center gap-1.5\" data-tsd-source=\"/src/components/blocks/charts.tsx:116:13\">",
+              "target": [
+                ".recharts-wrapper[width=\"614\"][height=\"320\"] > .recharts-legend-wrapper > .gap-y-2.gap-x-4.py-3 > .gap-1\\.5.items-center.flex:nth-child(2)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/kpi-strip.tsx:49:13\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"320\" viewBox=\"0 0 614 320\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 614 320\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"49.888888888888886\" dy=\"0.71em\">Nov 25</tspan>",
+              "target": [
+                "tspan[x=\"49.888888888888886\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/kpi-strip.tsx:49:13\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"320\" viewBox=\"0 0 614 320\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 614 320\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"189.88888888888889\" dy=\"0.71em\">Feb 26</tspan>",
+              "target": [
+                "tspan[x=\"189.88888888888889\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/kpi-strip.tsx:49:13\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"320\" viewBox=\"0 0 614 320\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 614 320\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"329.8888888888889\" dy=\"0.71em\">May 26</tspan>",
+              "target": [
+                "tspan[x=\"329.8888888888889\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/kpi-strip.tsx:49:13\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"320\" viewBox=\"0 0 614 320\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 614 320\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"469.8888888888889\" dy=\"0.71em\">Aug 26</tspan>",
+              "target": [
+                "tspan[x=\"469.8888888888889\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/kpi-strip.tsx:49:13\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"320\" viewBox=\"0 0 614 320\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 614 320\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"32\" dy=\"0.355em\">$0k</tspan>",
+              "target": [
+                "text[y=\"250\"] > tspan[dy=\"0.355em\"][x=\"32\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/kpi-strip.tsx:49:13\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"320\" viewBox=\"0 0 614 320\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 614 320\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"32\" dy=\"0.355em\">$2.5k</tspan>",
+              "target": [
+                "text[y=\"189.5\"] > tspan[dy=\"0.355em\"][x=\"32\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/kpi-strip.tsx:49:13\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"320\" viewBox=\"0 0 614 320\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 614 320\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"32\" dy=\"0.355em\">$5k</tspan>",
+              "target": [
+                "text[y=\"129\"] > tspan[dy=\"0.355em\"][x=\"32\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/kpi-strip.tsx:49:13\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"320\" viewBox=\"0 0 614 320\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 614 320\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"32\" dy=\"0.355em\">$7.5k</tspan>",
+              "target": [
+                "text[y=\"68.5\"] > tspan[dy=\"0.355em\"][x=\"32\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/kpi-strip.tsx:49:13\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"320\" viewBox=\"0 0 614 320\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 614 320\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"32\" dy=\"0.355em\">$10k</tspan>",
+              "target": [
+                "text[y=\"9\"] > tspan[dy=\"0.355em\"][x=\"32\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/store-traffic.tsx:63:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"426\" height=\"256\" viewBox=\"0 0 426 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 426 256\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"flex items-center gap-1.5\" data-tsd-source=\"/src/components/blocks/charts.tsx:116:13\">",
+              "target": [
+                ".recharts-wrapper[width=\"426\"][height=\"256\"] > .recharts-legend-wrapper > .gap-y-2.gap-x-4.py-3 > .gap-1\\.5.items-center.flex:nth-child(1)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/store-traffic.tsx:63:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"426\" height=\"256\" viewBox=\"0 0 426 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 426 256\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"flex items-center gap-1.5\" data-tsd-source=\"/src/components/blocks/charts.tsx:116:13\">",
+              "target": [
+                ".recharts-wrapper[width=\"426\"][height=\"256\"] > .recharts-legend-wrapper > .gap-y-2.gap-x-4.py-3 > .gap-1\\.5.items-center.flex:nth-child(2)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/store-traffic.tsx:63:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"426\" height=\"256\" viewBox=\"0 0 426 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 426 256\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"394.4609375\" dy=\"0.71em\">12:00 UTC</tspan>",
+              "target": [
+                "tspan[x=\"394.4609375\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "shortTextContent",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/store-traffic.tsx:63:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"426\" height=\"256\" viewBox=\"0 0 426 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 426 256\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element content is too short to determine if it is actual text content"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"24\" dy=\"0.355em\">0</tspan>",
+              "target": [
+                "text[y=\"226\"] > tspan[x=\"24\"][dy=\"0.355em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/store-traffic.tsx:63:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"426\" height=\"256\" viewBox=\"0 0 426 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 426 256\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"24\" dy=\"0.355em\">200</tspan>",
+              "target": [
+                "text[y=\"171.23076923076923\"] > tspan[x=\"24\"][dy=\"0.355em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/store-traffic.tsx:63:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"426\" height=\"256\" viewBox=\"0 0 426 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 426 256\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"24\" dy=\"0.355em\">400</tspan>",
+              "target": [
+                "text[y=\"116.46153846153845\"] > tspan[x=\"24\"][dy=\"0.355em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/store-traffic.tsx:63:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"426\" height=\"256\" viewBox=\"0 0 426 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 426 256\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"24\" dy=\"0.355em\">650</tspan>",
+              "target": [
+                "text[width=\"36\"][y=\"48\"][x=\"24\"] > tspan[x=\"24\"][dy=\"0.355em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "15.8pt (21px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/inventory.tsx:85:11\" cx=\"50%\" cy=\"50%\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"333\" height=\"160\" viewBox=\"0 0 333 160\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[cx=\"50%\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan class=\"fill-foreground text-2xl font-medium tabular-nums\" x=\"166.5\" y=\"102\" data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/inventory.tsx:106:25\">61%</tspan>",
+              "target": [
+                ".fill-foreground"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/inventory.tsx:85:11\" cx=\"50%\" cy=\"50%\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"333\" height=\"160\" viewBox=\"0 0 333 160\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[cx=\"50%\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan class=\"fill-muted-foreground text-xs\" x=\"166.5\" y=\"118\" data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/inventory.tsx:113:25\">Available</tspan>",
+              "target": [
+                ".fill-muted-foreground"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            }
+          ]
+        }
+      ],
+      "axeVersion": "4.14.0"
+    },
+    {
+      "theme": "light",
+      "viewport": "mobile",
+      "screenshot": "light-mobile.png",
+      "finalURL": "http://127.0.0.1:3396/dashboard/ecommerce",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used."
+      ],
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/kpi-strip.tsx:49:13\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"288\" viewBox=\"0 0 326 288\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 326 288\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"flex items-center gap-1.5\" data-tsd-source=\"/src/components/blocks/charts.tsx:116:13\">",
+              "target": [
+                ".recharts-wrapper[height=\"288\"][width=\"326\"] > .recharts-legend-wrapper > .gap-y-2.gap-x-4.py-3 > .gap-1\\.5.items-center.flex:nth-child(1)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/kpi-strip.tsx:49:13\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"288\" viewBox=\"0 0 326 288\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 326 288\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"flex items-center gap-1.5\" data-tsd-source=\"/src/components/blocks/charts.tsx:116:13\">",
+              "target": [
+                ".recharts-wrapper[height=\"288\"][width=\"326\"] > .recharts-legend-wrapper > .gap-y-2.gap-x-4.py-3 > .gap-1\\.5.items-center.flex:nth-child(2)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/kpi-strip.tsx:49:13\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"288\" viewBox=\"0 0 326 288\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 326 288\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"47.888888888888886\" dy=\"0.71em\">Nov 25</tspan>",
+              "target": [
+                "tspan[x=\"47.888888888888886\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/kpi-strip.tsx:49:13\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"288\" viewBox=\"0 0 326 288\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 326 288\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"115.88888888888889\" dy=\"0.71em\">Feb 26</tspan>",
+              "target": [
+                "tspan[x=\"115.88888888888889\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/kpi-strip.tsx:49:13\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"288\" viewBox=\"0 0 326 288\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 326 288\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"183.88888888888889\" dy=\"0.71em\">May 26</tspan>",
+              "target": [
+                "tspan[x=\"183.88888888888889\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/kpi-strip.tsx:49:13\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"288\" viewBox=\"0 0 326 288\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 326 288\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"251.88888888888889\" dy=\"0.71em\">Aug 26</tspan>",
+              "target": [
+                "tspan[x=\"251.88888888888889\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/kpi-strip.tsx:49:13\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"288\" viewBox=\"0 0 326 288\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 326 288\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"32\" dy=\"0.355em\">$0k</tspan>",
+              "target": [
+                "text[y=\"218\"] > tspan[dy=\"0.355em\"][x=\"32\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/kpi-strip.tsx:49:13\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"288\" viewBox=\"0 0 326 288\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 326 288\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"32\" dy=\"0.355em\">$2.5k</tspan>",
+              "target": [
+                "text[y=\"165.5\"] > tspan[dy=\"0.355em\"][x=\"32\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/kpi-strip.tsx:49:13\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"288\" viewBox=\"0 0 326 288\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 326 288\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"32\" dy=\"0.355em\">$5k</tspan>",
+              "target": [
+                "text[y=\"113\"] > tspan[dy=\"0.355em\"][x=\"32\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/kpi-strip.tsx:49:13\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"288\" viewBox=\"0 0 326 288\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 326 288\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"32\" dy=\"0.355em\">$7.5k</tspan>",
+              "target": [
+                "text[y=\"60.5\"] > tspan[dy=\"0.355em\"][x=\"32\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/kpi-strip.tsx:49:13\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"288\" viewBox=\"0 0 326 288\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 326 288\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"32\" dy=\"0.355em\">$10k</tspan>",
+              "target": [
+                "text[y=\"9\"] > tspan[dy=\"0.355em\"][x=\"32\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/store-traffic.tsx:63:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 326 256\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"flex items-center gap-1.5\" data-tsd-source=\"/src/components/blocks/charts.tsx:116:13\">",
+              "target": [
+                ".recharts-wrapper[height=\"256\"][width=\"326\"] > .recharts-legend-wrapper > .gap-y-2.gap-x-4.py-3 > .gap-1\\.5.items-center.flex:nth-child(1)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/store-traffic.tsx:63:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 326 256\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"flex items-center gap-1.5\" data-tsd-source=\"/src/components/blocks/charts.tsx:116:13\">",
+              "target": [
+                ".recharts-wrapper[height=\"256\"][width=\"326\"] > .recharts-legend-wrapper > .gap-y-2.gap-x-4.py-3 > .gap-1\\.5.items-center.flex:nth-child(2)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/store-traffic.tsx:63:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 326 256\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"294.4609375\" dy=\"0.71em\">12:00 UTC</tspan>",
+              "target": [
+                "tspan[x=\"294.4609375\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "shortTextContent",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/store-traffic.tsx:63:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 326 256\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element content is too short to determine if it is actual text content"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"24\" dy=\"0.355em\">0</tspan>",
+              "target": [
+                "text[y=\"226\"] > tspan[x=\"24\"][dy=\"0.355em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/store-traffic.tsx:63:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 326 256\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"24\" dy=\"0.355em\">200</tspan>",
+              "target": [
+                "text[y=\"171.23076923076923\"] > tspan[x=\"24\"][dy=\"0.355em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/store-traffic.tsx:63:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 326 256\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"24\" dy=\"0.355em\">400</tspan>",
+              "target": [
+                "text[y=\"116.46153846153845\"] > tspan[x=\"24\"][dy=\"0.355em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/store-traffic.tsx:63:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 326 256\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"24\" dy=\"0.355em\">650</tspan>",
+              "target": [
+                "text[width=\"36\"][y=\"48\"][x=\"24\"] > tspan[x=\"24\"][dy=\"0.355em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "15.8pt (21px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/inventory.tsx:85:11\" cx=\"50%\" cy=\"50%\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"160\" viewBox=\"0 0 326 160\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[cx=\"50%\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan class=\"fill-foreground text-2xl font-medium tabular-nums\" x=\"163\" y=\"102\" data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/inventory.tsx:106:25\">61%</tspan>",
+              "target": [
+                ".fill-foreground"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/inventory.tsx:85:11\" cx=\"50%\" cy=\"50%\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"160\" viewBox=\"0 0 326 160\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[cx=\"50%\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan class=\"fill-muted-foreground text-xs\" x=\"163\" y=\"118\" data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/inventory.tsx:113:25\">Available</tspan>",
+              "target": [
+                ".fill-muted-foreground"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            }
+          ]
+        }
+      ],
+      "axeVersion": "4.14.0"
+    },
+    {
+      "theme": "dark",
+      "viewport": "desktop",
+      "screenshot": "dark-desktop.png",
+      "finalURL": "http://127.0.0.1:3396/dashboard/ecommerce",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used."
+      ],
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "impact": "serious",
+          "tags": [
+            "cat.aria",
+            "wcag2a",
+            "wcag412",
+            "EN-301-549",
+            "EN-9.4.1.2",
+            "RGAAv4",
+            "RGAA-7.1.1"
+          ],
+          "description": "Ensure ARIA attributes are not prohibited for an element's role",
+          "help": "Elements must only use permitted ARIA attributes",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/aria-prohibited-attr?application=playwright",
+          "nodes": [
+            {
+              "any": [],
+              "all": [],
+              "none": [
+                {
+                  "id": "aria-prohibited-attr",
+                  "data": {
+                    "role": null,
+                    "nodeName": "div",
+                    "messageKey": "noRoleSingular",
+                    "prohibited": [
+                      "aria-label"
+                    ]
+                  },
+                  "relatedNodes": [],
+                  "impact": "serious",
+                  "message": "aria-label attribute is not well supported on \"div\" elements with no valid role attribute."
+                }
+              ],
+              "impact": "serious",
+              "html": "<div data-slot=\"sidebar-group\" data-sidebar=\"group\" class=\"relative flex w-full min-w-0 flex-col p-0 pb-3\" aria-label=\"Projects navigation\" data-tsd-source=\"/src/routes/(main)/dashboard/-components/sidebar/project-navigation.tsx:127:5\">",
+              "target": [
+                "div[aria-label=\"Projects navigation\"]"
+              ],
+              "failureSummary": "Fix all of the following:\n  aria-label attribute is not well supported on \"div\" elements with no valid role attribute."
+            }
+          ]
+        },
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/kpi-strip.tsx:49:13\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"320\" viewBox=\"0 0 614 320\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 614 320\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"flex items-center gap-1.5\" data-tsd-source=\"/src/components/blocks/charts.tsx:116:13\">",
+              "target": [
+                ".recharts-wrapper[width=\"614\"][height=\"320\"] > .recharts-legend-wrapper > .gap-y-2.gap-x-4.py-3 > .gap-1\\.5.items-center.flex:nth-child(1)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/kpi-strip.tsx:49:13\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"320\" viewBox=\"0 0 614 320\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 614 320\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"flex items-center gap-1.5\" data-tsd-source=\"/src/components/blocks/charts.tsx:116:13\">",
+              "target": [
+                ".recharts-wrapper[width=\"614\"][height=\"320\"] > .recharts-legend-wrapper > .gap-y-2.gap-x-4.py-3 > .gap-1\\.5.items-center.flex:nth-child(2)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/kpi-strip.tsx:49:13\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"320\" viewBox=\"0 0 614 320\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 614 320\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"49.888888888888886\" dy=\"0.71em\">Nov 25</tspan>",
+              "target": [
+                "tspan[x=\"49.888888888888886\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/kpi-strip.tsx:49:13\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"320\" viewBox=\"0 0 614 320\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 614 320\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"189.88888888888889\" dy=\"0.71em\">Feb 26</tspan>",
+              "target": [
+                "tspan[x=\"189.88888888888889\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/kpi-strip.tsx:49:13\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"320\" viewBox=\"0 0 614 320\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 614 320\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"329.8888888888889\" dy=\"0.71em\">May 26</tspan>",
+              "target": [
+                "tspan[x=\"329.8888888888889\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/kpi-strip.tsx:49:13\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"320\" viewBox=\"0 0 614 320\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 614 320\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"469.8888888888889\" dy=\"0.71em\">Aug 26</tspan>",
+              "target": [
+                "tspan[x=\"469.8888888888889\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/kpi-strip.tsx:49:13\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"320\" viewBox=\"0 0 614 320\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 614 320\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"32\" dy=\"0.355em\">$0k</tspan>",
+              "target": [
+                "text[y=\"250\"] > tspan[dy=\"0.355em\"][x=\"32\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/kpi-strip.tsx:49:13\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"320\" viewBox=\"0 0 614 320\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 614 320\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"32\" dy=\"0.355em\">$2.5k</tspan>",
+              "target": [
+                "text[y=\"189.5\"] > tspan[dy=\"0.355em\"][x=\"32\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/kpi-strip.tsx:49:13\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"320\" viewBox=\"0 0 614 320\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 614 320\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"32\" dy=\"0.355em\">$5k</tspan>",
+              "target": [
+                "text[y=\"129\"] > tspan[dy=\"0.355em\"][x=\"32\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/kpi-strip.tsx:49:13\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"320\" viewBox=\"0 0 614 320\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 614 320\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"32\" dy=\"0.355em\">$7.5k</tspan>",
+              "target": [
+                "text[y=\"68.5\"] > tspan[dy=\"0.355em\"][x=\"32\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/kpi-strip.tsx:49:13\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"614\" height=\"320\" viewBox=\"0 0 614 320\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 614 320\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"32\" dy=\"0.355em\">$10k</tspan>",
+              "target": [
+                "text[y=\"9\"] > tspan[dy=\"0.355em\"][x=\"32\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/store-traffic.tsx:63:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"426\" height=\"256\" viewBox=\"0 0 426 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 426 256\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"flex items-center gap-1.5\" data-tsd-source=\"/src/components/blocks/charts.tsx:116:13\">",
+              "target": [
+                ".recharts-wrapper[width=\"426\"][height=\"256\"] > .recharts-legend-wrapper > .gap-y-2.gap-x-4.py-3 > .gap-1\\.5.items-center.flex:nth-child(1)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/store-traffic.tsx:63:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"426\" height=\"256\" viewBox=\"0 0 426 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 426 256\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"flex items-center gap-1.5\" data-tsd-source=\"/src/components/blocks/charts.tsx:116:13\">",
+              "target": [
+                ".recharts-wrapper[width=\"426\"][height=\"256\"] > .recharts-legend-wrapper > .gap-y-2.gap-x-4.py-3 > .gap-1\\.5.items-center.flex:nth-child(2)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/store-traffic.tsx:63:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"426\" height=\"256\" viewBox=\"0 0 426 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 426 256\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"394.4609375\" dy=\"0.71em\">12:00 UTC</tspan>",
+              "target": [
+                "tspan[x=\"394.4609375\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "shortTextContent",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/store-traffic.tsx:63:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"426\" height=\"256\" viewBox=\"0 0 426 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 426 256\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element content is too short to determine if it is actual text content"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"24\" dy=\"0.355em\">0</tspan>",
+              "target": [
+                "text[y=\"226\"] > tspan[x=\"24\"][dy=\"0.355em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/store-traffic.tsx:63:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"426\" height=\"256\" viewBox=\"0 0 426 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 426 256\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"24\" dy=\"0.355em\">200</tspan>",
+              "target": [
+                "text[y=\"171.23076923076923\"] > tspan[x=\"24\"][dy=\"0.355em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/store-traffic.tsx:63:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"426\" height=\"256\" viewBox=\"0 0 426 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 426 256\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"24\" dy=\"0.355em\">400</tspan>",
+              "target": [
+                "text[y=\"116.46153846153845\"] > tspan[x=\"24\"][dy=\"0.355em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/store-traffic.tsx:63:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"426\" height=\"256\" viewBox=\"0 0 426 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 426 256\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"24\" dy=\"0.355em\">650</tspan>",
+              "target": [
+                "text[width=\"36\"][y=\"48\"][x=\"24\"] > tspan[x=\"24\"][dy=\"0.355em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "15.8pt (21px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/inventory.tsx:85:11\" cx=\"50%\" cy=\"50%\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"333\" height=\"160\" viewBox=\"0 0 333 160\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[cx=\"50%\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan class=\"fill-foreground text-2xl font-medium tabular-nums\" x=\"166.5\" y=\"102\" data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/inventory.tsx:106:25\">61%</tspan>",
+              "target": [
+                ".fill-foreground"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/inventory.tsx:85:11\" cx=\"50%\" cy=\"50%\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"333\" height=\"160\" viewBox=\"0 0 333 160\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[cx=\"50%\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan class=\"fill-muted-foreground text-xs\" x=\"166.5\" y=\"118\" data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/inventory.tsx:113:25\">Available</tspan>",
+              "target": [
+                ".fill-muted-foreground"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            }
+          ]
+        }
+      ],
+      "axeVersion": "4.14.0"
+    },
+    {
+      "theme": "dark",
+      "viewport": "mobile",
+      "screenshot": "dark-mobile.png",
+      "finalURL": "http://127.0.0.1:3396/dashboard/ecommerce",
+      "passed": true,
+      "errors": [],
+      "warnings": [
+        "Base UI: CSS transitions and CSS animations both detected on Collapsible or Accordion panel. Only one of either animation type should be used."
+      ],
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/kpi-strip.tsx:49:13\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"288\" viewBox=\"0 0 326 288\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 326 288\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"flex items-center gap-1.5\" data-tsd-source=\"/src/components/blocks/charts.tsx:116:13\">",
+              "target": [
+                ".recharts-wrapper[height=\"288\"][width=\"326\"] > .recharts-legend-wrapper > .gap-y-2.gap-x-4.py-3 > .gap-1\\.5.items-center.flex:nth-child(1)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/kpi-strip.tsx:49:13\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"288\" viewBox=\"0 0 326 288\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 326 288\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"flex items-center gap-1.5\" data-tsd-source=\"/src/components/blocks/charts.tsx:116:13\">",
+              "target": [
+                ".recharts-wrapper[height=\"288\"][width=\"326\"] > .recharts-legend-wrapper > .gap-y-2.gap-x-4.py-3 > .gap-1\\.5.items-center.flex:nth-child(2)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/kpi-strip.tsx:49:13\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"288\" viewBox=\"0 0 326 288\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 326 288\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"47.888888888888886\" dy=\"0.71em\">Nov 25</tspan>",
+              "target": [
+                "tspan[x=\"47.888888888888886\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/kpi-strip.tsx:49:13\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"288\" viewBox=\"0 0 326 288\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 326 288\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"115.88888888888889\" dy=\"0.71em\">Feb 26</tspan>",
+              "target": [
+                "tspan[x=\"115.88888888888889\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/kpi-strip.tsx:49:13\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"288\" viewBox=\"0 0 326 288\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 326 288\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"183.88888888888889\" dy=\"0.71em\">May 26</tspan>",
+              "target": [
+                "tspan[x=\"183.88888888888889\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/kpi-strip.tsx:49:13\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"288\" viewBox=\"0 0 326 288\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 326 288\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"251.88888888888889\" dy=\"0.71em\">Aug 26</tspan>",
+              "target": [
+                "tspan[x=\"251.88888888888889\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/kpi-strip.tsx:49:13\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"288\" viewBox=\"0 0 326 288\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 326 288\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"32\" dy=\"0.355em\">$0k</tspan>",
+              "target": [
+                "text[y=\"218\"] > tspan[dy=\"0.355em\"][x=\"32\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/kpi-strip.tsx:49:13\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"288\" viewBox=\"0 0 326 288\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 326 288\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"32\" dy=\"0.355em\">$2.5k</tspan>",
+              "target": [
+                "text[y=\"165.5\"] > tspan[dy=\"0.355em\"][x=\"32\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/kpi-strip.tsx:49:13\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"288\" viewBox=\"0 0 326 288\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 326 288\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"32\" dy=\"0.355em\">$5k</tspan>",
+              "target": [
+                "text[y=\"113\"] > tspan[dy=\"0.355em\"][x=\"32\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/kpi-strip.tsx:49:13\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"288\" viewBox=\"0 0 326 288\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 326 288\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"32\" dy=\"0.355em\">$7.5k</tspan>",
+              "target": [
+                "text[y=\"60.5\"] > tspan[dy=\"0.355em\"][x=\"32\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/kpi-strip.tsx:49:13\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"288\" viewBox=\"0 0 326 288\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 326 288\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"32\" dy=\"0.355em\">$10k</tspan>",
+              "target": [
+                "text[y=\"9\"] > tspan[dy=\"0.355em\"][x=\"32\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/store-traffic.tsx:63:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 326 256\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"flex items-center gap-1.5\" data-tsd-source=\"/src/components/blocks/charts.tsx:116:13\">",
+              "target": [
+                ".recharts-wrapper[height=\"256\"][width=\"326\"] > .recharts-legend-wrapper > .gap-y-2.gap-x-4.py-3 > .gap-1\\.5.items-center.flex:nth-child(1)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/store-traffic.tsx:63:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 326 256\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<span class=\"flex items-center gap-1.5\" data-tsd-source=\"/src/components/blocks/charts.tsx:116:13\">",
+              "target": [
+                ".recharts-wrapper[height=\"256\"][width=\"326\"] > .recharts-legend-wrapper > .gap-y-2.gap-x-4.py-3 > .gap-1\\.5.items-center.flex:nth-child(2)"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/store-traffic.tsx:63:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 326 256\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"294.4609375\" dy=\"0.71em\">12:00 UTC</tspan>",
+              "target": [
+                "tspan[x=\"294.4609375\"][dy=\"0.71em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "shortTextContent",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/store-traffic.tsx:63:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 326 256\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element content is too short to determine if it is actual text content"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"24\" dy=\"0.355em\">0</tspan>",
+              "target": [
+                "text[y=\"226\"] > tspan[x=\"24\"][dy=\"0.355em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/store-traffic.tsx:63:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 326 256\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"24\" dy=\"0.355em\">200</tspan>",
+              "target": [
+                "text[y=\"171.23076923076923\"] > tspan[x=\"24\"][dy=\"0.355em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/store-traffic.tsx:63:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 326 256\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"24\" dy=\"0.355em\">400</tspan>",
+              "target": [
+                "text[y=\"116.46153846153845\"] > tspan[x=\"24\"][dy=\"0.355em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/store-traffic.tsx:63:11\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"256\" viewBox=\"0 0 326 256\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[viewBox=\"0 0 326 256\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan x=\"24\" dy=\"0.355em\">650</tspan>",
+              "target": [
+                "text[width=\"36\"][y=\"48\"][x=\"24\"] > tspan[x=\"24\"][dy=\"0.355em\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "15.8pt (21px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/inventory.tsx:85:11\" cx=\"50%\" cy=\"50%\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"160\" viewBox=\"0 0 326 160\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[cx=\"50%\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan class=\"fill-foreground text-2xl font-medium tabular-nums\" x=\"163\" y=\"102\" data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/inventory.tsx:106:25\">61%</tspan>",
+              "target": [
+                ".fill-foreground"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.0pt (12px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/inventory.tsx:85:11\" cx=\"50%\" cy=\"50%\" role=\"application\" tabindex=\"0\" class=\"recharts-surface\" width=\"326\" height=\"160\" viewBox=\"0 0 326 160\" style=\"width: 100%; height: 100%; display: block;\">",
+                      "target": [
+                        "svg[cx=\"50%\"]"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<tspan class=\"fill-muted-foreground text-xs\" x=\"163\" y=\"118\" data-tsd-source=\"/src/routes/(main)/dashboard/ecommerce/-components/inventory.tsx:113:25\">Available</tspan>",
+              "target": [
+                ".fill-muted-foreground"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            }
+          ]
+        }
+      ],
+      "axeVersion": "4.14.0"
+    }
+  ]
+}
