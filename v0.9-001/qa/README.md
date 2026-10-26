@@ -165,3 +165,7 @@ Capture integrity: all 292 images opened in the numbered contact sheets; no malf
 - [light / mobile](https://raw.githubusercontent.com/moeghashim/tenboards/pr-assets/v0.9-001/after/_dashboard_kit_-light-mobile.png)
 - [dark / desktop](https://raw.githubusercontent.com/moeghashim/tenboards/pr-assets/v0.9-001/after/_dashboard_kit_-dark-desktop.png)
 - [dark / mobile](https://raw.githubusercontent.com/moeghashim/tenboards/pr-assets/v0.9-001/after/_dashboard_kit_-dark-mobile.png)
+
+## Deployed version
+
+Version `63e15ab3-9791-410e-bbbf-fe914ad7ef69` at https://63e15ab3-tenboards-preview.mohanadgh.workers.dev; alias https://pr-77-tenboards-preview.mohanadgh.workers.dev. Kit/Home pass all eight deployed captures; root returns HTTP 307 to Home. `preview-deploy.log` confirms ASSETS only and no secrets. Runtime source is commit 9c4858d; final head e2fbed0 adds only acceptance documentation.
