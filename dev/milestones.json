@@ -207,10 +207,10 @@
     },
     {
       "id": "v0.8.1-default-landing",
-      "status": "in-review",
+      "status": "done",
       "tasks": ["001-default-landing"],
       "taskStatuses": {
-        "001-default-landing": "in-review"
+        "001-default-landing": "merged"
       }
     },
     {

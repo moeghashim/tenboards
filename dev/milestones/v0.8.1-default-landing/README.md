@@ -1,6 +1,6 @@
 # v0.8.1 — Default dashboard landing
 
-Status: **in-review**.
+Status: **done — merged as #76 and released as [v0.8.1](https://github.com/moeghashim/tenboards/releases/tag/v0.8.1)**.
 
 Task: 001 — Default dashboard landing. Approved contract: PLAN.md Decisions log, “v0.8.1 landing page” (2026-10-26). Branch: `feat/v0.8.1/001-default-landing`; base main; one layer.
 
