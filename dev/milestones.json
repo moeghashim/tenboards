@@ -232,6 +232,14 @@
         "005-registry-llms": "merged",
         "006-accessibility-debt": "merged"
       }
+    },
+    {
+      "id": "v0.9.1-homepage",
+      "status": "planned",
+      "tasks": ["001-homepage"],
+      "taskStatuses": {
+        "001-homepage": "planned"
+      }
     }
   ]
 }
