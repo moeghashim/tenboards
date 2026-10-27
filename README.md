@@ -97,7 +97,7 @@ Generators, blocks and Agent Skills do not depend on the homepage.
 
 - [Reference](docs/reference.md): commands, previews, visual QA, data layer, auth and per-milestone notes
 - [Design guardrails](docs/design-guardrails.md) · [Data layer](docs/data-layer.md) · [Auth](docs/auth.md) · [Assistant](docs/assistant.md) · [Deploy](docs/deploy.md)
-- [Changelog](CHANGELOG.md) and [releases](https://github.com/moeghashim/tenboards/releases). v0.1–v0.9 are released; v0.9.0 is the agent-first release. v0.9.1 adds the project homepage (implementation pending review).
+- [Changelog](CHANGELOG.md) and [releases](https://github.com/moeghashim/tenboards/releases). v0.1–v0.9 are released; v0.9.0 is the agent-first release. v0.9.1 adds the project homepage (implemented and verified; [PR #83](https://github.com/moeghashim/tenboards/pull/83) is in review).
 
 ## Contributing
 
