@@ -1,0 +1,4 @@
+PASS light/desktop: homepage→demo, home, palette→kit, sidebar, keyboard/source/copy/recovery, sorting, pagination, empty, mobile reflow/scroll, chart variants/data/focus, no overflow or console/hydration errors
+PASS light/mobile: homepage→demo, home, palette→kit, sidebar, keyboard/source/copy/recovery, sorting, pagination, empty, mobile reflow/scroll, chart variants/data/focus, no overflow or console/hydration errors
+PASS dark/desktop: homepage→demo, home, palette→kit, sidebar, keyboard/source/copy/recovery, sorting, pagination, empty, mobile reflow/scroll, chart variants/data/focus, no overflow or console/hydration errors
+PASS dark/mobile: homepage→demo, home, palette→kit, sidebar, keyboard/source/copy/recovery, sorting, pagination, empty, mobile reflow/scroll, chart variants/data/focus, no overflow or console/hydration errors

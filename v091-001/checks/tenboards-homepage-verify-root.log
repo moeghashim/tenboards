@@ -1,0 +1,9 @@
+
+> tenboards@0.9.0 verify:page
+> node --experimental-strip-types scripts/verify-page.ts / --base-url http://127.0.0.1:3402
+
+Started http://127.0.0.1:3402
+PASS / light/desktop: 0 axe violations, 0 runtime errors
+PASS / light/mobile: 0 axe violations, 0 runtime errors
+PASS / dark/desktop: 0 axe violations, 0 runtime errors
+PASS / dark/mobile: 0 axe violations, 0 runtime errors

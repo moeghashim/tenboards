@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "results": [
+    "PASS demo/light: public SSR/metadata, 375px, skip/focus, targets, images, links, clipboard success/failure, persisted theme, no runtime errors",
+    "PASS demo/dark: public SSR/metadata, 375px, skip/focus, targets, images, links, clipboard success/failure, persisted theme, no runtime errors",
+    "PASS auth/light: public SSR/metadata, 375px, skip/focus, targets, images, links, clipboard success/failure, persisted theme, no runtime errors",
+    "PASS auth/dark: public SSR/metadata, 375px, skip/focus, targets, images, links, clipboard success/failure, persisted theme, no runtime errors",
+    "PASS image budget: 160202 bytes"
+  ]
+}

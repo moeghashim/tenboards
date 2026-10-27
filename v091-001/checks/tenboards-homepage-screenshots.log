@@ -1,0 +1,8 @@
+
+> tenboards@0.9.0 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --base-url http://127.0.0.1:3402 --routes / --interactions --output screenshots/v091/after
+
+PASS / light/desktop direct
+PASS / light/mobile direct
+PASS / dark/desktop direct
+PASS / dark/mobile direct

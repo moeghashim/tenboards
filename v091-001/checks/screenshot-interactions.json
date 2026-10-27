@@ -1,0 +1,70 @@
+{
+  "baseURL": "http://127.0.0.1:3402/",
+  "projectId": "sample-operations",
+  "fontAssets": "exact public responses cached between contexts",
+  "maskedLiveClocks": false,
+  "hydrationDelayMs": 0,
+  "preset": "default",
+  "timezone": "America/Chicago",
+  "reload": false,
+  "interactions": true,
+  "sidebarStates": false,
+  "results": [
+    {
+      "route": "/",
+      "theme": "light",
+      "viewport": "desktop",
+      "file": "_-light-desktop-interactive.png",
+      "controlsFile": "_-light-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Homepage returns HTTP 200 with SSR content",
+        "Keyboard demo link opens Default"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/",
+      "theme": "light",
+      "viewport": "mobile",
+      "file": "_-light-mobile-interactive.png",
+      "controlsFile": "_-light-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Homepage returns HTTP 200 with SSR content",
+        "Keyboard demo link opens Default"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/",
+      "theme": "dark",
+      "viewport": "desktop",
+      "file": "_-dark-desktop-interactive.png",
+      "controlsFile": "_-dark-desktop-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Homepage returns HTTP 200 with SSR content",
+        "Keyboard demo link opens Default"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    },
+    {
+      "route": "/",
+      "theme": "dark",
+      "viewport": "mobile",
+      "file": "_-dark-mobile-interactive.png",
+      "controlsFile": "_-dark-mobile-interactive-controls.png",
+      "phase": "direct",
+      "interactionNotes": [
+        "Homepage returns HTTP 200 with SSR content",
+        "Keyboard demo link opens Default"
+      ],
+      "expectedDiagnostics": [],
+      "errors": []
+    }
+  ]
+}

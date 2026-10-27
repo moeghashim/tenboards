@@ -1,0 +1,7 @@
+PASS v2 recovered fragment survives login/register cross-links
+PASS v2 real signup returns to protected pathname/search/hash
+PASS missing/unsafe returns use Default; validated workspace Home destination wins
+PASS v2 recovered fragment survives login/register cross-links
+PASS v2 real signup returns to protected pathname/search/hash
+PASS missing/unsafe returns use Default; validated workspace Home destination wins
+Auth return paths: 10/10 passing.
