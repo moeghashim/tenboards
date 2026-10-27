@@ -23,6 +23,38 @@ The Assistant follows new replies until you scroll up; Jump to latest resumes fo
 
 **v0.8.1 (Default dashboard landing) is merged, deployed and released as [v0.8.1](https://github.com/moeghashim/tenboards/releases/tag/v0.8.1)** — restores the Default revenue dashboard as the entry point and auth fallback. Home, Projects, navigation order and legacy redirects remain available. See the [task contract](../dev/milestones/v0.8.1-default-landing/README.md). **v0.9 (Agent-ready template) is merged, deployed and released as [v0.9.0](https://github.com/moeghashim/tenboards/releases/tag/v0.9.0)** — public blocks and the `/dashboard/kit` page, `new:dashboard` / `new:page` generators, `check:design` and `verify:page` guardrails (all 37 catalog routes pass), an adopter AGENTS.md with Agent Skills, and a shadcn registry with generated `llms.txt`. See [Building with agents](#building-with-agents) and the [milestone contract](../dev/milestones/v0.9-agent-ready/README.md).
 
+## Replace the project homepage
+
+`/` is a public, server-rendered project homepage in both demo and auth modes.
+The live demo starts at `/dashboard/default`; `/dashboard` and `/dashboard/`
+continue redirecting there. Auth fallbacks, the sidebar brand and recovery links
+also keep that destination.
+
+To start your clone directly in the app, replace
+`src/routes/(external)/index.tsx` with the redirect below, then delete
+`src/routes/(external)/-components/homepage.tsx`,
+`src/routes/(external)/-components/quick-start.tsx` and `public/homepage/`:
+
+```tsx
+import { createFileRoute, redirect } from "@tanstack/react-router";
+import { APP_LANDING_ROUTE } from "@/navigation/landing";
+
+export const Route = createFileRoute("/(external)/")({
+  beforeLoad: () => {
+    throw redirect({ href: APP_LANDING_ROUTE, replace: true });
+  },
+});
+```
+
+Set the `/` capture entry's `ready` text in `src/navigation/route-catalog.ts`
+back to `"Total Revenue"`. The homepage-specific assertions in
+`scripts/homepage-check.ts`, `scripts/screenshot-system.ts`,
+`scripts/project-redirect-check.ts`, `scripts/blocks-kit-check.ts` and
+`scripts/generators-browser.ts` should then expect the redirect again; classify
+`/` with the protected app entries in `scripts/auth-protection-check.ts`.
+Keep `src/components/theme-switcher.tsx`: the dashboard uses it too.
+Generators, blocks and Agent Skills do not depend on the homepage.
+
 ## Run locally
 
 Use Node 22+ and npm. No environment variables or database are required.
@@ -157,7 +189,7 @@ npm run screenshots -- --routes /dashboard/default --sidebar-states --output scr
 npm run screenshots -- --list
 ```
 
-The default captures every retained route in light/dark at desktop 1440×900 and mobile 390×844. `src/navigation/route-catalog.ts` is the shared 37-route visual inventory, re-exported by `scripts/screenshot-routes.ts` and checked against generated route metadata; missing/stale routes and unknown subsets fail before launch. The dashboard splat uses `/dashboard/capture-not-found` to exercise its not-found state; project-ID routes use `sample-operations` by default, with `--project-id sample-docs|sample-empty` for the secondary and empty fixtures. Root/index redirects are captured at their destination; six retired V1 aliases and four consolidated workspace aliases are covered by dedicated redirect checks; explicitly passing those workspace aliases to `--routes` also captures their destinations. `--preset` selects a valid preset for the same four-state matrix. `--sidebar-states` adds expanded/collapsed desktop captures and open/closed mobile-sheet captures on shell routes. Run `node --experimental-strip-types scripts/sidebar-toggle-check.ts` to verify every allowed sidebar style/collapse mode and preset in both themes and viewports; add `--ssr --base-url <built-preview-url>` to check initial markup with JavaScript disabled.
+The default captures every retained route in light/dark at desktop 1440×900 and mobile 390×844. `src/navigation/route-catalog.ts` is the shared 37-route visual inventory, re-exported by `scripts/screenshot-routes.ts` and checked against generated route metadata; missing/stale routes and unknown subsets fail before launch. The dashboard splat uses `/dashboard/capture-not-found` to exercise its not-found state; project-ID routes use `sample-operations` by default, with `--project-id sample-docs|sample-empty` for the secondary and empty fixtures. The root homepage is captured at `/`; dashboard index redirects are captured at their destination; six retired V1 aliases and four consolidated workspace aliases are covered by dedicated redirect checks; explicitly passing those workspace aliases to `--routes` also captures their destinations. `--preset` selects a valid preset for the same four-state matrix. `--sidebar-states` adds expanded/collapsed desktop captures and open/closed mobile-sheet captures on shell routes. Run `node --experimental-strip-types scripts/sidebar-toggle-check.ts` to verify every allowed sidebar style/collapse mode and preset in both themes and viewports; add `--ssr --base-url <built-preview-url>` to check initial markup with JavaScript disabled.
 
 Captures wait for React hydration, fonts, network idle, images, JS chart settling, and stable content. Reduced motion is emulated and screenshot animations are disabled. Console errors, page errors, failed requests, unexpected HTTP status, and capture failures are recorded in `report.json` and cause a nonzero exit. The hydration check uses React's DOM binding marker; revisit it if React's renderer changes. Application clocks are never frozen. For v0.4 comparisons, pass the same `--reference` ISO timestamp to serialize identical date inputs; the real monitoring clock can be narrowly masked with `--mask-live-clocks`.
 
@@ -564,7 +596,7 @@ Redirects use 308 with replacement navigation and retained fragments. Auth may f
 
 Run `scripts/project-navigation-check.ts` for disclosure/rail/mobile/palette/storage/layout checks and `scripts/project-redirect-check.ts` for demo/auth HTTP/client/query/hash/trailing-slash/revocation checks using Node's `--experimental-strip-types`. Capture patterns use concrete `sample-operations` paths in `src/navigation/route-catalog.ts`; redirect-only aliases are in `scripts/screenshot-routes.ts`. Secondary and empty projects are covered separately. Capture output belongs on `pr-assets`, not main.
 
-The Default revenue dashboard is the landing page again, per the locked 2026-10-26 v0.8.1 PLAN decision. `/`, `/dashboard` and `/dashboard/` retain their existing 307/replace redirect mechanism and lead to `/dashboard/default`. Missing or unsafe post-sign-in/OAuth return values fall back there; validated destinations still win. Workspace Home stays at `/dashboard/home` in its existing navigation position, Projects retain their contextual Home links, and Default stays under Dashboards. The brand link (accessible name “tenboards dashboard”) and global recovery links (“Go to dashboard” / “Return to dashboard”) open Default. The consolidated Kanban Board is read-only: the former local drag-and-drop interaction has been removed, and tasks cannot be moved or reordered.
+The Default revenue dashboard is the landing page again, per the locked 2026-10-26 v0.8.1 PLAN decision. `/dashboard` and `/dashboard/` retain their existing 307/replace redirect mechanism and lead to `/dashboard/default`. The v0.9.1 homepage supersedes only the `/` redirect; it returns public marketing content with HTTP 200. Missing or unsafe post-sign-in/OAuth return values fall back to `/dashboard/default`; validated destinations still win. Workspace Home stays at `/dashboard/home` in its existing navigation position, Projects retain their contextual Home links, and Default stays under Dashboards. The brand link (accessible name “tenboards dashboard”) and global recovery links (“Go to dashboard” / “Return to dashboard”) open Default. The consolidated Kanban Board is read-only: the former local drag-and-drop interaction has been removed, and tasks cannot be moved or reordered.
 
 With the three sample projects, the demo card counts **35 enabled concrete dashboard destinations**, including AI Assistant and all 15 project views; aliases are excluded.
 
@@ -597,7 +629,7 @@ Open `/dashboard/kit` from the **Developer** sidebar group or the command palett
 
 Create a caller-owned `useTable` instance with `dataTableFeatures` and pass it to `DataTable`. Columns, filters, row IDs and client/server state stay with the caller. Use non-interactive column headers because the block supplies sort buttons; supply `columnLabels` for function headers. `mobile="reflow"` retains labelled values below the medium breakpoint; `mobile="scroll"` keeps a locally scrolling table. Set `pagination={false}` when the caller renders its own controls. Specialized existing tables keep their route-specific presentation.
 
-Run `BLOCKS_TEST_URL=http://127.0.0.1:3000 node --experimental-strip-types scripts/blocks-kit-check.ts` for the four-state interaction and root → Home smoke checks. Use `npm run screenshots` for the full route matrix. The intentional Developer entry and demo page count change the shell; screenshot comparisons of existing page content exclude that sidebar region and narrowly mask the live monitoring clock.
+Run `BLOCKS_TEST_URL=http://127.0.0.1:3000 node --experimental-strip-types scripts/blocks-kit-check.ts` for the four-state interaction and homepage → demo → Home smoke checks. Use `npm run screenshots` for the full route matrix. The intentional Developer entry and demo page count change the shell; screenshot comparisons of existing page content exclude that sidebar region and narrowly mask the live monitoring clock.
 
 ## Build your own pages (v0.9 / 002)
 
@@ -628,7 +660,7 @@ npm run verify:page -- /dashboard/<slug>  # supplied by v0.9 task 003
 
 Never hand-edit `src/routeTree.gen.ts`. `verify:page` is the companion task's command and is unavailable until that task is merged.
 
-Run `npm run generators:test` with a migrated/seeded **local** `DATABASE_URL`. It copies the current tracked and unignored files into a temporary repository, copies installed dependencies with independent caches, verifies safe failures and repeat invocation, generates both examples, and runs build/check/typecheck/full data parity without manual fixes. If `check:design` is installed, it also runs that check. A dedicated random-port demo server verifies root → Default → Home, palette navigation, pagination, refresh and both generated screens in light/dark × desktop/mobile, followed by `npm run screenshots`. The test removes its temporary source/build and stops its server even on failure; no sample page is committed. Evidence defaults to gitignored `screenshots/generators-test` (`GENERATORS_TEST_OUTPUT` overrides it) and belongs only on `pr-assets` or PR attachments. Install the repository's Playwright Chromium browser if it is not already available.
+Run `npm run generators:test` with a migrated/seeded **local** `DATABASE_URL`. It copies the current tracked and unignored files into a temporary repository, copies installed dependencies with independent caches, verifies safe failures and repeat invocation, generates both examples, and runs build/check/typecheck/full data parity without manual fixes. If `check:design` is installed, it also runs that check. A dedicated random-port demo server verifies homepage → Default → Home, palette navigation, pagination, refresh and both generated screens in light/dark × desktop/mobile, followed by `npm run screenshots`. The test removes its temporary source/build and stops its server even on failure; no sample page is committed. Evidence defaults to gitignored `screenshots/generators-test` (`GENERATORS_TEST_OUTPUT` overrides it) and belongs only on `pr-assets` or PR attachments. Install the repository's Playwright Chromium browser if it is not already available.
 
 
 ## Design checks and page verification (v0.9 / 003)

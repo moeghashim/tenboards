@@ -1,6 +1,6 @@
 # 001 — Marketing homepage at `/`
 
-Status: planned. Branch: `feat/v0.9.1/001-homepage`. Base: main.
+Status: in progress. Branch: `feat/v0.9.1/001-homepage`. Base: main.
 
 ## Routing
 

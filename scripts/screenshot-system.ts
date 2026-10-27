@@ -6,7 +6,18 @@ export async function captureSystem(
   route: string,
   capture: (name: string) => Promise<void>,
 ): Promise<string[]> {
-  if (["/", "/dashboard", "/dashboard/"].includes(route)) {
+  if (route === "/") {
+    const response = await page.request.get(new URL("/", page.url()).href, { maxRedirects: 0 });
+    if (response.status() !== 200 || !(await response.text()).includes("An agent-ready foundation"))
+      throw new Error("Homepage must return HTTP 200 with server-rendered content");
+    await page.getByRole("heading", { name: "An agent-ready foundation for your next dashboard." }).waitFor();
+    if (new URL(page.url()).pathname !== "/") throw new Error("Homepage unexpectedly redirected");
+    await page.getByRole("link", { name: "Open live demo", exact: true }).first().press("Enter");
+    await page.waitForURL("**/dashboard/default");
+    await page.getByText("Total Revenue", { exact: true }).first().waitFor();
+    return ["Homepage returns HTTP 200 with SSR content", "Keyboard demo link opens Default"];
+  }
+  if (["/dashboard", "/dashboard/"].includes(route)) {
     let target = new URL(route, page.url());
     const hops = route === "/dashboard/" ? ["/dashboard", "/dashboard/default"] : ["/dashboard/default"];
     for (const expected of hops) {

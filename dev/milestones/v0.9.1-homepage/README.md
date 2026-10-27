@@ -1,6 +1,6 @@
 # v0.9.1 — Project homepage
 
-Status: **planned**. Contract: PLAN.md Decisions log, “v0.9.1 project homepage” (2026-10-27).
+Status: **in progress**. Contract: PLAN.md Decisions log, “v0.9.1 project homepage” (2026-10-27).
 
 Goal: a visitor landing on `/` understands in one scroll what tenboards is, why it is agent-ready, what it is built with and what it includes, and can open the GitHub repo or the live demo.
 

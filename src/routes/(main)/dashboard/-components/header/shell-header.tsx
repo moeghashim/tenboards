@@ -5,6 +5,7 @@ import { createLink, useRouterState } from "@tanstack/react-router";
 import { cn } from "cn";
 
 import { SearchTrigger } from "@/components/navigation/search-trigger";
+import { ThemeSwitcher } from "@/components/theme-switcher";
 import { SidebarTrigger, useSidebar } from "@/components/ui/sidebar";
 import type { DemoAccount } from "@/data/users";
 import type { AuthState } from "@/lib/auth/types";
@@ -15,7 +16,6 @@ import { AccountSwitcher } from "./account-switcher";
 import { GitHubRepositoriesMenu } from "./github-repositories-menu";
 import { LayoutControls } from "./layout-controls";
 import { SignedInAccount } from "./signed-in-account";
-import { ThemeSwitcher } from "./theme-switcher";
 
 // Ancestor crumbs remain navigable; only the final view is the current page.
 const BreadcrumbLink = createLink((props: ComponentPropsWithRef<"a">) => <a {...props} aria-current={false} />);

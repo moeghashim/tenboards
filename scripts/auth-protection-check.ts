@@ -16,7 +16,7 @@ const pass = (name: string) => {
   cases++;
   console.log(`PASS ${name}`);
 };
-const publicRoutes = new Set(["/unauthorized", "/auth/v2", "/auth/v2/login", "/auth/v2/register", "/dashboard/$"]);
+const publicRoutes = new Set(["/", "/unauthorized", "/auth/v2", "/auth/v2/login", "/auth/v2/register", "/dashboard/$"]);
 const protectedRoutes = captureRoutes.filter(({ route }) => !publicRoutes.has(route));
 const rpc: { file: string; name: string }[] = [];
 const allowedPublic = new Set([
