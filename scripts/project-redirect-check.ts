@@ -36,6 +36,10 @@ try {
     const p = await c.newPage(),
       email = `redirect-v08-${Date.now()}@example.test`;
     try {
+      const homepage = await c.request.get(server.baseURL, { maxRedirects: 0 });
+      assert.equal(homepage.status(), 200);
+      assert.match(await homepage.text(), /An agent-ready foundation for your next dashboard/);
+      cases++;
       if (auth) {
         for (const [old] of scenarios) {
           const response = await c.request.get(`${server.baseURL}/dashboard/${old}`, { maxRedirects: 0 });
@@ -91,7 +95,7 @@ try {
       await p.goBack({ waitUntil: "networkidle" });
       assert.equal(new URL(p.url()).pathname, "/dashboard/default");
       cases++;
-      for (const root of ["/", "/dashboard", "/dashboard/"]) {
+      for (const root of ["/dashboard", "/dashboard/"]) {
         let target = server.baseURL + root;
         for (const expected of root === "/dashboard/" ? ["/dashboard", "/dashboard/default"] : ["/dashboard/default"]) {
           const response = await c.request.get(target, { maxRedirects: 0 });
@@ -113,7 +117,7 @@ try {
       await p.waitForURL("**/dashboard/default");
       await p.goBack({ waitUntil: "networkidle" });
       assert.equal(new URL(p.url()).pathname, "/dashboard/home");
-      for (const root of ["/", "/dashboard", "/dashboard/"]) {
+      for (const root of ["/dashboard", "/dashboard/"]) {
         await p.evaluate(async (href) => {
           await window.__TSR_ROUTER__?.navigate({ href });
         }, root);
@@ -122,6 +126,13 @@ try {
         assert.equal(new URL(p.url()).pathname, "/dashboard/home");
         cases++;
       }
+      await p.evaluate(async () => {
+        await window.__TSR_ROUTER__?.navigate({ href: "/" });
+      });
+      await p.waitForURL(`${server.baseURL}/`);
+      await p.getByRole("heading", { name: "An agent-ready foundation for your next dashboard." }).waitFor();
+      await p.goBack({ waitUntil: "networkidle" });
+      assert.equal(new URL(p.url()).pathname, "/dashboard/home");
       cases++;
       if (auth) {
         await db`delete from auth_session where user_id in (select id from auth_user where email=${email})`;

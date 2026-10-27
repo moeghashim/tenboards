@@ -27,6 +27,8 @@ try {
       page.on("pageerror", (error) => errors.push(error.message));
       try {
         await page.goto(baseURL);
+        await page.getByRole("heading", { name: "An agent-ready foundation for your next dashboard." }).waitFor();
+        await page.getByRole("link", { name: "Open live demo", exact: true }).first().click();
         await page.waitForURL("**/dashboard/default");
         await page.getByText("Total Revenue").first().waitFor();
         await page.goto(`${baseURL}/dashboard/home`);
@@ -77,7 +79,7 @@ try {
         }
         assert.deepEqual(errors, [], `${theme}/${size}: console/hydration errors`);
         results.push(
-          `PASS ${theme}/${size}: root → Home, palette discovery, both generated pages, pagination, chart data, refresh, no console errors or overflow`,
+          `PASS ${theme}/${size}: homepage → demo → Home, palette discovery, both generated pages, pagination, chart data, refresh, no console errors or overflow`,
         );
       } catch (error) {
         await page.screenshot({ path: path.join(output, `failure-${theme}-${size}.png`), fullPage: true });

@@ -4,7 +4,7 @@ An agent-first, MIT-licensed dashboard template built with TanStack Start, React
 
 Point Codex or Claude Code at a clone and ask for a dashboard or page. Agents get an adopter guide, Agent Skills, page generators and public blocks, so the on-system path is the shortest one. `npm run check` and `npm run verify:page` fail on off-system UI.
 
-**[Live demo](https://tenboards.mohanadgh.workers.dev/dashboard/default)** · [Blocks kit](https://tenboards.mohanadgh.workers.dev/dashboard/kit) · [llms.txt](https://tenboards.mohanadgh.workers.dev/llms.txt) · [Changelog](CHANGELOG.md)
+**[Project homepage](https://tenboards.mohanadgh.workers.dev/)** · **[Live demo](https://tenboards.mohanadgh.workers.dev/dashboard/default)** · [Blocks kit](https://tenboards.mohanadgh.workers.dev/dashboard/kit) · [llms.txt](https://tenboards.mohanadgh.workers.dev/llms.txt) · [Changelog](CHANGELOG.md)
 
 ![Default revenue dashboard, light theme](docs/screenshots/default-light.png)
 
@@ -37,7 +37,7 @@ OPENUI_TELEMETRY_DISABLED=1 DO_NOT_TRACK=1 npm install
 npm run dev
 ```
 
-Open <http://localhost:3000/dashboard/default>. Keep OpenUI install telemetry disabled as shown.
+Open <http://localhost:3000/> for the homepage or <http://localhost:3000/dashboard/default> for the demo. Keep OpenUI install telemetry disabled as shown.
 
 | Command | Purpose |
 | --- | --- |
@@ -61,11 +61,43 @@ See the [full command list](docs/reference.md#commands).
 
 The live site is a zero-config demo with sample data and auth off. Adopters connect and verify their own database by following the [deployment quick path](docs/deploy.md#quick-path).
 
+## Replace the project homepage
+
+`/` is a public, server-rendered project homepage in both demo and auth modes.
+The live demo starts at `/dashboard/default`; `/dashboard` and `/dashboard/`
+continue redirecting there. Auth fallbacks, the sidebar brand and recovery links
+also keep that destination.
+
+To start your clone directly in the app, replace
+`src/routes/(external)/index.tsx` with the redirect below, then delete
+`src/routes/(external)/-components/homepage.tsx`,
+`src/routes/(external)/-components/quick-start.tsx` and `public/homepage/`:
+
+```tsx
+import { createFileRoute, redirect } from "@tanstack/react-router";
+import { APP_LANDING_ROUTE } from "@/navigation/landing";
+
+export const Route = createFileRoute("/(external)/")({
+  beforeLoad: () => {
+    throw redirect({ href: APP_LANDING_ROUTE, replace: true });
+  },
+});
+```
+
+Set the `/` capture entry's `ready` text in `src/navigation/route-catalog.ts`
+back to `"Total Revenue"`. The homepage-specific assertions in
+`scripts/homepage-check.ts`, `scripts/screenshot-system.ts`,
+`scripts/project-redirect-check.ts`, `scripts/blocks-kit-check.ts` and
+`scripts/generators-browser.ts` should then expect the redirect again; classify
+`/` with the protected app entries in `scripts/auth-protection-check.ts`.
+Keep `src/components/theme-switcher.tsx`: the dashboard uses it too.
+Generators, blocks and Agent Skills do not depend on the homepage.
+
 ## Documentation
 
 - [Reference](docs/reference.md): commands, previews, visual QA, data layer, auth and per-milestone notes
 - [Design guardrails](docs/design-guardrails.md) · [Data layer](docs/data-layer.md) · [Auth](docs/auth.md) · [Assistant](docs/assistant.md) · [Deploy](docs/deploy.md)
-- [Changelog](CHANGELOG.md) and [releases](https://github.com/moeghashim/tenboards/releases). v0.1–v0.9 are released; v0.9.0 is the agent-first release.
+- [Changelog](CHANGELOG.md) and [releases](https://github.com/moeghashim/tenboards/releases). v0.1–v0.9 are released; v0.9.0 is the agent-first release. v0.9.1 adds the project homepage (implemented and verified; [PR #83](https://github.com/moeghashim/tenboards/pull/83) is in review).
 
 ## Contributing
 

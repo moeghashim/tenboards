@@ -8,6 +8,7 @@ Use Node 22+, npm, strict TypeScript, React 19, TanStack Start (SSR), Tailwind v
 shadcn/Base UI, TanStack Table v9 and Recharts. Reuse installed dependencies.
 Read DESIGN.md for tokens and PRODUCT.md for product context.
 
+- `src/routes/(external)/index.tsx` + adjacent `-components/`: public homepage; `README.md` documents restoring the app redirect.
 - `src/routes/(main)/dashboard/<slug>/`: dashboard and app routes; feature code in `-components/`.
 - `src/components/blocks/`: public cards, headings, tables and chart API; `/dashboard/kit` has live examples.
 - `src/components/ui/` and `src/components/calendar/`: existing primitives; inspect wrappers, do not edit them to style a page.

@@ -155,7 +155,7 @@ try {
   const packageJson = JSON.parse(await readFile(path.join(temporary, "package.json"), "utf8"));
   if (packageJson.scripts["check:design"]) run("npm", ["run", "check:design"]);
   console.log(
-    "PASS generators: safe failures, fresh build/check/typecheck, registered data parity, root → Home smoke and light/dark × desktop/mobile renders.",
+    "PASS generators: safe failures, fresh build/check/typecheck, registered data parity, homepage → demo → Home smoke and light/dark × desktop/mobile renders.",
   );
 } finally {
   if (server && server.exitCode === null) {

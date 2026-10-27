@@ -53,7 +53,7 @@ export const captureRoutes = [
   {
     route: "/",
     path: "/",
-    ready: "Total Revenue",
+    ready: "An agent-ready foundation for your next dashboard.",
   },
   {
     route: "/auth/v2",

@@ -34,6 +34,8 @@ URLs beginning with / are relative to the origin serving this file. Resolve them
 
 ## Documentation
 
+- [Project homepage](/): public overview and agent workflow.
+- [Live demo](/dashboard/default): Default revenue dashboard with sample data.
 - [Live block kit](/dashboard/kit): examples, source and installation commands.
 - [AGENTS.md](/agent-docs/AGENTS.md)
 - [DESIGN.md](/agent-docs/DESIGN.md)
