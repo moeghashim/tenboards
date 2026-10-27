@@ -1,6 +1,6 @@
 # 001 — Marketing homepage at `/`
 
-Status: in review ([PR #83](https://github.com/moeghashim/tenboards/pull/83)). Branch: `feat/v0.9.1/001-homepage`. Base: main.
+Status: merged (#83). Branch: `feat/v0.9.1/001-homepage`. Base: main.
 
 ## Routing
 

@@ -1,6 +1,6 @@
 # v0.9.1 — Project homepage
 
-Status: **implemented and verified; in review at [PR #83](https://github.com/moeghashim/tenboards/pull/83)**. Contract: PLAN.md Decisions log, “v0.9.1 project homepage” (2026-10-27).
+Status: **done — merged as #83 and released as [v0.9.1](https://github.com/moeghashim/tenboards/releases/tag/v0.9.1)**. Contract: PLAN.md Decisions log, “v0.9.1 project homepage” (2026-10-27).
 
 Goal: a visitor landing on `/` understands in one scroll what tenboards is, why it is agent-ready, what it is built with and what it includes, and can open the GitHub repo or the live demo.
 

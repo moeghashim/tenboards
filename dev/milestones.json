@@ -235,10 +235,10 @@
     },
     {
       "id": "v0.9.1-homepage",
-      "status": "in-review",
+      "status": "done",
       "tasks": ["001-homepage"],
       "taskStatuses": {
-        "001-homepage": "in-review"
+        "001-homepage": "merged"
       }
     }
   ]

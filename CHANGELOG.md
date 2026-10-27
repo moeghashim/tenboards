@@ -1,11 +1,12 @@
 # Changelog
 
-## v0.9.1 — Project homepage (draft)
+## v0.9.1 — Project homepage (2026-10-27)
+
+Released as [v0.9.1](https://github.com/moeghashim/tenboards/releases/tag/v0.9.1).
 
 - Replace the root redirect with a public SSR homepage focused on the agent workflow, skills, generators, blocks and guardrails, with GitHub as the primary action and Default as the live demo.
 - Include current light/dark dashboard captures, the actual stack and screen inventory, copyable quick start, route-specific metadata and a shared theme switcher.
 - Preserve dashboard entry redirects, auth fallbacks, brand and recovery destinations; update root-route verification and document how adopters restore the redirect.
-
 
 ## v0.9.0 — Agent-ready template (2026-10-26)
 
