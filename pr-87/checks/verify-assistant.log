@@ -1,0 +1,9 @@
+
+> tenboards@0.9.1 verify:page
+> node --experimental-strip-types scripts/verify-page.ts /dashboard/assistant --base-url http://localhost:3170
+
+Reusing http://localhost:3170
+PASS /dashboard/assistant light/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/assistant light/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/assistant dark/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/assistant dark/mobile: 0 axe violations, 0 runtime errors

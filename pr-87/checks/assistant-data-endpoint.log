@@ -1,0 +1,6 @@
+PASS Node full endpoint five native adapter preflight/result/final flows
+PASS compiled app workerd five native adapters, unknown tools/invalid args/fifth calls fail closed, deduplicated model-free refresh
+PASS all five projections demo through guarded refresh
+PASS all five projections database parity through guarded refresh
+PASS configured DB failure visible with no model and no fallback
+PASS auth-on missing session rejected
