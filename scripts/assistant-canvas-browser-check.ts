@@ -1,6 +1,7 @@
 import AxeBuilder from "@axe-core/playwright";
 import { chromium } from "playwright";
 
+import { projectionCatalog } from "../src/lib/assistant/capabilities.ts";
 import { consumeStream } from "../src/lib/assistant/transport.ts";
 import { providers } from "../src/server/assistant/config.server.ts";
 import { toolText } from "./assistant-tool-wire.ts";
@@ -108,6 +109,18 @@ try {
             throw error;
           });
         await page.getByText("Recorded demo · completed", { exact: true }).waitFor();
+        const domain = prompt.includes("analytics")
+          ? "analytics"
+          : prompt.includes("finance")
+            ? "finance"
+            : "ecommerce";
+        await page
+          .getByRole("heading", { name: projectionCatalog.find((p) => p.domain === domain)!.label, exact: true })
+          .waitFor();
+        assert.doesNotMatch(
+          await page.getByRole("region", { name: "Dashboard canvas" }).innerText(),
+          /\d{4}-\d{2}-\d{2}T/,
+        );
         if (prompt !== "Show revenue dashboard")
           await page.getByRole("button", { name: "New conversation", exact: true }).click();
       }
@@ -135,6 +148,8 @@ try {
         el.scrollTop = 0;
       });
       await page.screenshot({ fullPage: false, path: `${output}/${theme}-${size}-edit.png` });
+      assert.equal(await page.locator('[data-panel-id="overview"] .recharts-legend-wrapper rect').count(), 2);
+      assert.equal(await page.locator('[data-panel-id="overview"] .recharts-legend-wrapper line').count(), 0);
       const editCount = edits;
       await page.getByRole("button", { name: "Refresh data", exact: true }).press("Enter");
       await page.getByText("Data refreshed. Layout unchanged.").waitFor();

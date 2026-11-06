@@ -1,5 +1,6 @@
 import { applyPatch, editSnapshots, panels, references, singlePanel } from "../src/lib/assistant/canvas.ts";
 import { type DataResultMap, dataRefKey } from "../src/lib/assistant/data-contract.ts";
+import { formatReportingDate, formatReportingMonth, formatSnapshotTime } from "../src/lib/assistant/date-format.ts";
 import { inspectLanguage } from "../src/lib/assistant/language.ts";
 import { requestSchema } from "../src/server/assistant/input.ts";
 import { toolRef, toolText } from "./assistant-tool-wire.ts";
@@ -74,3 +75,11 @@ assert.equal(requestSchema.safeParse(editRequest).success, true);
 assert.equal(requestSchema.safeParse({ ...editRequest, results: snapshots }).success, false);
 assert.equal(requestSchema.safeParse({ ...editRequest, edit: { ...editRequest.edit, op: "remove" } }).success, false);
 assert.equal(requestSchema.safeParse({ ...editRequest, edit: undefined }).success, false);
+
+for (const timezone of ["America/Los_Angeles", "Asia/Tokyo", "UTC"]) {
+  process.env.TZ = timezone;
+  assert.equal(formatSnapshotTime("2026-11-06T21:50:59.934Z"), "Nov 6, 2026, 21:50 UTC");
+  assert.equal(formatSnapshotTime("2026-04-01T00:00:00.000Z"), "Apr 1, 2026, 00:00 UTC");
+  assert.equal(formatReportingDate("2026-04-01"), "Apr 1, 2026");
+  assert.equal(formatReportingMonth("2026-04-01T00:00:00.000Z"), "Apr 2026");
+}

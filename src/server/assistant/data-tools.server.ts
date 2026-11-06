@@ -9,6 +9,7 @@ import {
   dataResultMapSchema,
   dataResultSchema,
 } from "../../lib/assistant/data-contract.ts";
+import { formatReportingDate, formatReportingMonth, formatSnapshotTime } from "../../lib/assistant/date-format.ts";
 import { readAnalytics } from "../data/analytics.ts";
 import { readCrm } from "../data/crm.ts";
 import { readDefault } from "../data/default.ts";
@@ -48,27 +49,37 @@ export async function dashboardRead(
     const projection = await (async () => {
       switch (args.domain) {
         case "default":
-          return series((await readDefault(clock)).projection.performance, args.limit, (r) => r.date, [
-            { label: "New customers", value: (r) => r.newCustomers },
-            { label: "Active accounts", value: (r) => r.activeAccounts },
-            { label: "Returning users", value: (r) => r.returningUsers },
-          ]);
+          return series(
+            (await readDefault(clock)).projection.performance,
+            args.limit,
+            (r) => formatReportingDate(r.date),
+            [
+              { label: "New customers", value: (r) => r.newCustomers },
+              { label: "Active accounts", value: (r) => r.activeAccounts },
+              { label: "Returning users", value: (r) => r.returningUsers },
+            ],
+          );
         case "analytics":
-          return series((await readAnalytics(clock)).current.trafficQualityQualitySeries, args.limit, (r) => r.date, [
-            { label: "Actual quality index", value: (r) => r.actualQuality },
-            { label: "Baseline quality index", value: (r) => r.baselineQuality },
-          ]);
+          return series(
+            (await readAnalytics(clock)).current.trafficQualityQualitySeries,
+            args.limit,
+            (r) => formatSnapshotTime(r.date),
+            [
+              { label: "Actual quality index", value: (r) => r.actualQuality },
+              { label: "Baseline quality index", value: (r) => r.baselineQuality },
+            ],
+          );
         case "finance":
           return series(
             (await readFinance(clock)).current.transactionsOverviewCardChartData.filter(
               (r) => typeof r.expense === "number",
             ),
             args.limit,
-            (r) => r.date,
+            (r) => formatSnapshotTime(r.date),
             [{ label: "Expense", value: (r) => r.expense }],
           );
         case "crm":
-          return series((await readCrm(clock)).projection.pipeline, args.limit, (r) => r.date.slice(0, 7), [
+          return series((await readCrm(clock)).projection.pipeline, args.limit, (r) => formatReportingMonth(r.date), [
             { label: "Qualified opportunities", value: (r) => r.qualified },
           ]);
         case "ecommerce":

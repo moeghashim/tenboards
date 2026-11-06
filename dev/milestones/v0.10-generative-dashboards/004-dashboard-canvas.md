@@ -37,3 +37,15 @@ Build, check (no new design exceptions), typecheck, all npm Assistant suites, da
 Preview version: https://a54407e7-tenboards-preview.mohanadgh.workers.dev
 Alias: https://pr-87-tenboards-preview.mohanadgh.workers.dev
 Deployment verified ASSETS only and no secrets. Hosted revenue, analytics and finance creates returned real refs; the mounted revenue panel changed to bar and refreshed successfully. Evidence: https://github.com/moeghashim/tenboards/tree/pr-assets/pr-87
+
+## Review round 2 verification — PR #87
+
+Corrected recorded chart titles to catalog labels, formatted snapshot captions with fixed en-US/UTC, formatted all five projections by domain (date-only performance, intraday analytics/finance, monthly CRM, existing ecommerce periods), and matched bar legend swatches to bar marks. Protected primitives and PLAN.md are unchanged.
+
+Build, check, typecheck, all 11 npm Assistant suites, data adapter/endpoint/block/artifact suites, and data:parity (29 reads / 211 scenarios) pass. Endpoint tests cover all five recorded titles and demo/DB projection parity. Local and hosted Assistant four-state verification report zero axe violations/runtime errors; four-state canvas create/edit/refresh screenshots replace the prior pr-assets captures. Homepage → dashboard/home smoke passes. Hands-on VoiceOver/NVDA remains outstanding.
+
+Initial environment failures (missing dependencies and occupied ports) were resolved. Recorded browser checks pass with rate-window isolation. The lifecycle test now clicks Send after provider configuration refresh so Playwright waits for enabled submission; an early Enter could be ignored. Existing build/Biome warnings remain non-failing.
+
+Preview version: https://bf4b34bd-tenboards-preview.mohanadgh.workers.dev
+Alias: https://pr-87-tenboards-preview.mohanadgh.workers.dev
+Hosted recorded create/bar-edit/refresh pass; deployment inventory is ASSETS only, no secrets.

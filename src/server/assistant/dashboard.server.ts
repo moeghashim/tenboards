@@ -242,7 +242,7 @@ export async function dashboardResponse(
           const result = Object.values(results)[0];
           const text = recordedPanel
             ? panelSource(recordedPanel)
-            : `root = Stack([DashboardGrid([Panel("overview", [DashboardChart(${JSON.stringify(result.periodLabel)}, "line", ${JSON.stringify(result.ref)})])])])`;
+            : `root = Stack([DashboardGrid([Panel("overview", [DashboardChart(${JSON.stringify(projectionCatalog.find((p) => p.domain === result.ref.args.domain)!.label)}, "line", ${JSON.stringify(result.ref)})])])])`;
           return new ReadableStream<SourceEvent>({
             start(c) {
               c.enqueue({ type: "text-delta", text });

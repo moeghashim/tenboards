@@ -1,3 +1,4 @@
+import { projectionCatalog } from "../src/lib/assistant/capabilities.ts";
 import type { DataResultMap } from "../src/lib/assistant/data-contract.ts";
 import { consumeStream } from "../src/lib/assistant/transport.ts";
 import { providers } from "../src/server/assistant/config.server.ts";
@@ -108,11 +109,32 @@ for (const database of [false, true]) {
   const service = await startWorker(database ? { DATABASE_URL: process.env.DATABASE_URL } : {}, { port: 3065 });
   try {
     for (const [domain, metric] of domains) {
+      const created = await post(service.baseURL, undefined, "tools", {
+        operation: "dashboard",
+        messages: [{ role: "user", content: `Show ${domain} dashboard` }],
+      });
+      assert.equal(created.status, 200);
+      const definition = await consumeStream(created.body!, new AbortController().signal, () => {
+        /* Assert the completed definition below. */
+      });
+      assert.ok(
+        definition.includes(
+          `DashboardChart(${JSON.stringify(projectionCatalog.find((p) => p.domain === domain)!.label)},`,
+        ),
+      );
       const ref = { ...toolRef, args: { ...toolArgs, domain, metric } };
       const response = await post(service.baseURL, undefined, "tools", { refs: [ref] }, "/api/assistant-refresh");
       assert.equal(response.status, 200);
-      const result = Object.values((await response.json()).results)[0] as { source: string; data: unknown };
+      const result = Object.values((await response.json()).results)[0] as {
+        source: string;
+        data: { labels: string[] };
+      };
       assert.equal(result.source, database ? "db" : "demo");
+      assert.doesNotMatch(result.data.labels.join(" "), /\d{4}-\d{2}-\d{2}T/);
+      if (domain !== "default") assert.equal(new Set(result.data.labels).size, result.data.labels.length);
+      if (["analytics", "finance"].includes(domain))
+        assert.ok(result.data.labels.every((label) => label.endsWith(" UTC")));
+      if (domain === "crm") assert.match(result.data.labels[0], /^[A-Z][a-z]{2} \d{4}$/);
       if (!database) snapshots.push(result.data);
       else assert.deepEqual(result.data, snapshots[domains.findIndex((d) => d[0] === domain)]);
     }

@@ -39,6 +39,7 @@ import { Badge } from "@/components/ui/badge";
 import { CardContent } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { type DataResultMap, dataRefKey, dataResultMapSchema } from "@/lib/assistant/data-contract";
+import { formatSnapshotTime } from "@/lib/assistant/date-format";
 import { type ComponentName, descriptions, limits, type SafeNode, schemas } from "@/lib/assistant/registry";
 
 import { ResponseBoundary } from "./response-boundary";
@@ -255,7 +256,7 @@ function RegisteredNode({
           {snapshot ? (
             <p className="text-muted-foreground text-xs">
               {snapshot.source === "demo" ? "Demo fixture data" : "Database data"} · {snapshot.periodLabel} · As of{" "}
-              {snapshot.asOf}
+              {formatSnapshotTime(snapshot.asOf)}
               {snapshot.truncated ? ` · First ${data.labels.length} observations` : ""}
             </p>
           ) : null}
