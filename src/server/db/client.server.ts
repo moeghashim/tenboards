@@ -48,6 +48,7 @@ export async function withToolTransaction<T>(
   read: () => Promise<T>,
 ): Promise<T> {
   assertReadActive(signal, deadline);
+  if (deadline - Date.now() < 500) throw new Error("Data read timed out before it could start.");
   const pending = new Set<PromiseLike<unknown> & { cancel(): void }>();
   const cancel = () => {
     for (const query of pending) query.cancel();
@@ -58,7 +59,9 @@ export async function withToolTransaction<T>(
     const pool = getClient();
     const result = await pool.begin(async (transaction) => {
       assertReadActive(signal, deadline);
-      const timeout = Math.min(5000, Math.max(1, Math.floor(deadline - Date.now())));
+      const remaining = Math.floor(deadline - Date.now());
+      if (remaining < 500) throw new Error("Data read timed out before it could start.");
+      const timeout = Math.min(4750, remaining - 250);
       // Integer derived exclusively from the server clock, never model/client SQL.
       await transaction.unsafe(`SET LOCAL statement_timeout = ${timeout}`);
       await transaction.unsafe(`SET LOCAL idle_in_transaction_session_timeout = ${timeout}`);

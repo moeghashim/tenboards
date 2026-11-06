@@ -249,3 +249,33 @@ Both runtimes pass the backend-inactive bound of 5,500 ms and early-abort settle
 The temporary route was removed and routes regenerated; no debug route ships. Local probe source/observer are retained under `.wrangler/003-gate/` (gitignored); build and runtime logs are under `/tmp/tenboards-003-gate/round2-*`. The compiled probe build passed. Provider preflight, registry/projections/shared DTO, v2 SSE, refresh endpoint, adapter mocks, injection tests, parity, Assistant page verification and preview deployment are intentionally not implemented/claimed after this failed gate. Acceptance remains unchecked; PLAN and dependency pins are unchanged.
 
 Post-probe verification after removing the temporary route: `npm run build`, `npm run check`, `npm run typecheck`, `npm run assistant:test` (1,047 assertions plus six reference fan-out attacks), and `git diff --check` passed. Check retains inherited diagnostics. README: no change needed because tools remain unwired and no user-visible behavior/commands are enabled; no completed-feature claims were added to README, assistant docs, CHANGELOG or milestone status. No PR or preview deployment was created at the failed gate. Candidate code and this evidence are retained locally for review; the test server and disposable database were stopped.
+
+### Round 3 — settlement margin gate (2026-11-06)
+
+Rebased round 2 onto `origin/main` (including task 002). Applied the reviewer's `min(4,750 ms, remaining deadline − 250 ms)` transaction timeout and skipped transaction reads with less than 500 ms remaining, checking again after acquiring the transaction. No budget was increased. The same temporary full-app route, real guarded `executeToolRead`, PostgreSQL 17 cluster, and independent 25 ms `pg_stat_activity` observer from round 2 were reused.
+
+| Runtime | Case | Read rejected at | Last observed active | First confirmed inactive |
+| --- | --- | ---: | ---: | ---: |
+| Node, full app (`npm run dev`, local dependencies) | abort at 100 ms | 104 ms | 114 ms | 139 ms |
+| Node, full app | timeout only | 4,760 ms | 4,750 ms | 4,780 ms |
+| Full compiled app (`npm run build` + `npm run preview`, workerd) | abort at 100 ms | 104 ms | 157 ms | 189 ms |
+| Full compiled app, workerd | timeout only | 4,752 ms | 4,742 ms | 4,769 ms |
+
+**Gate passes**: rejection ≤ 5,000 ms and backend inactive ≤ 5,500 ms on both runtimes. Timings retain round-2 definitions (handler time for rejection, observer request start for backend times). Local evidence: `/tmp/tenboards-003-gate/round3-{node,worker}-results.jsonl`, `round3-probe-build.log`, `round3-node.log`, and `round3-preview.log`. No real provider keys or remote database were used. Passing this gate does not establish the remaining task 003 acceptance criteria.
+
+#### Sequential statements expose a remaining cancellation failure — dependent work stopped
+
+The required single-`pg_sleep(6)` probe above passes. However, inspection before wiring the registry showed that the existing typed adapters execute multiple statements sequentially. A follow-up used the **same guarded path**, adding an awaited `getDatabase().execute` of `select pg_sleep(0.3)` immediately before the marked six-second statement. This is two sequential reads within one invocation, not two tool invocations. The invocation's five-second ceiling must still hold.
+
+| Runtime | Read rejected at | Last marked statement observed active | First confirmed inactive |
+| --- | ---: | ---: | ---: |
+| Node full app | **5,002 ms** | 4,989 ms | 5,017 ms |
+| Full compiled app, workerd | **5,004 ms** | 5,008 ms | 5,035 ms |
+
+The backend bounds pass, but the invocation rejection ceiling fails on both runtimes. `SET LOCAL statement_timeout` applies separately to each statement; setting it once at transaction entry does not reserve settlement time at the end of a multi-statement read. After the first 300 ms statement, the second statement still receives the original approximately 4,750 ms timeout. The driver cancellation timer fires at the five-second deadline and settlement lands after it. This is a different failure from the original single-statement round-2 overshoot. No artificial tolerance, Promise.race, or raised budget was introduced.
+
+**Step 2 remains paused per the instruction to stop with evidence on a failed ceiling check.** A follow-up should recompute the remaining settlement budget before each statement (including queued acquisition), and reserve settlement time for the secondary cancellation path, then repeat both single- and multi-statement probes. No endpoint or refresh path is enabled. The short-lived registry draft was removed; task 002's shared contract is untouched. No feature acceptance boxes, README/assistant docs/CHANGELOG completion claims, PR, or deployment were created.
+
+Reproduction: start the same temporary route from round 2 with two awaited `db.execute` calls inside `executeToolRead`, first `select pg_sleep(0.3)`, then `select pg_sleep(6) /* tenboards_003_round2 */`; run the independent observer against Node and a fresh `npm run build` + `npm run preview`. Probe source is retained in `.wrangler/003-gate/sequential-route-probe.txt`; local evidence is `/tmp/tenboards-003-gate/round3-sequential-{node,worker}-results.jsonl`, `round3-sequential-build.log` and `round3-sequential-preview.log`. The 100 ms abort follow-up rejects at 106 ms on both runtimes but precedes the marked second query, so it is not claimed as backend-observation evidence for that query. A transient Node hot-reload warm-up returned HTTP 500 (`getRequest is not a function`); the subsequent timed observations returned the explicit probe JSON shown above. All temporary routes were removed and routes regenerated before final checks.
+
+Post-probe clean verification: `npm run build`, `npm run check` (inherited diagnostics), `npm run assistant:test` (1,047 assertions, blocks-library checks and six fan-out attacks), and `git diff --check` pass. `npm run typecheck` fails with twelve TS2339 diagnostics at `src/lib/assistant/language.ts:264`, where the three-key result-kind map is indexed by the full node-name union. This exact code is present on rebased main `6018dd41035c832789b356289fde3281eefb0c05` and was not modified here. Full adapter mocks, data parity, Assistant page verification, feature/privacy documentation and preview deployment remain unverified/unimplemented after the sequential-read failure. README: no change needed for this unwired cancellation candidate and evidence-only continuation.
