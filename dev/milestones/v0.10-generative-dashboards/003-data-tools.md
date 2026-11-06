@@ -13,7 +13,7 @@ Status: implemented; in review. Branch: `feat/v0.10/003-data-tools`. Depends on 
 
 - [x] Unit tests per tool: schema rejection, auth-on without session → rejected, demo and DB parity (`data:parity`), DB failure → visible error.
 - [x] Mocked provider tests for each provider's tool-call flow; recorded mode shows fixture numbers with no keys.
-- [ ] Preview Worker remains recorded-only, ASSETS-only with no secrets.
+- [x] Preview Worker remains recorded-only, ASSETS-only with no secrets.
 - [x] Build, check, typecheck, verify:page pass; docs/assistant.md (tools, limits, privacy), README, CHANGELOG draft, milestone status updated.
 
 ## Spike clarifications (accepted by reviewer and user 2026-11-06)
