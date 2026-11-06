@@ -1,6 +1,18 @@
 # AI Assistant
 
-`/dashboard/assistant` is separate from person-to-person Chat. It renders bounded summaries, cards, statistics, badges, lists, tables and bar/line charts using the existing components. Charts include data tables. It cannot read workspace records, browse, use tools or change data. Output is untrusted: a restricted literal-language gate and independent Zod validation reject unsupported expressions, components and props before rendering. No generated HTML, script, iframe, links, styles, forms or actions are supported.
+`/dashboard/assistant` is separate from person-to-person Chat. It renders bounded summaries, cards, statistics, badges, lists, tables and bar/line/area charts using the existing components. Charts include data tables. It cannot read workspace records, browse, use tools or change data. Output is untrusted: a restricted literal-language gate and independent Zod validation reject unsupported expressions, components and props before rendering. No generated HTML, script, iframe, links, styles, forms or actions are supported.
+
+## Public blocks library (v0.10 task 002)
+
+Send **Show sample blocks** in recorded mode for an illustrative grid containing every new wrapper. Existing launch/plan/week replies and their literal syntax remain supported. Public wrappers are `DashboardCard`, `StatCard`, `DashboardChart`, read-only `DataTable` and `PageHeader` (a section h2, preserving the page's only h1). `DashboardGrid` contains `Panel(id, [block])` children under the existing `Stack` root. Panel IDs are unique ASCII document identifiers, never database IDs. The grid collapses on mobile; charts keep labeled series, a data table and reduced-motion support.
+
+The shared contract for task 003 is **`src/lib/assistant/data-contract.ts`**. It exports `dashboardReadArgsSchema`, `dataRefSchema`, `blockDataSchema`, stat/series/table data schemas, `dataResultSchema`, `dataResultMapSchema`, their types, and `dataRefKey`. Data props are strict `{kind:"literal",value:...}` or `{kind:"data-ref",version:1,tool:"dashboard_read",args:...}` objects. Domain/metric pairs are default/performance, analytics/traffic-quality, finance/transaction-overview, crm/pipeline and ecommerce/revenue; range is `available`, segment is `all`, and limit is 10, 25 or 50. Initial refs yield series only, so stat/table reference use fails closed until an audited capability is added.
+
+Results are `{ref,kind,data,source,asOf,periodLabel,truncated}` with `kind` stat/series/table, source demo/db, ISO datetime `asOf`, and fixed-order canonical keys from `dataRefKey`. Stat data contains label/value/detail; series data contains labels and labeled finite value arrays; table data contains columns and matching rows. Limits are eight panels, four distinct references, 8 KiB per result and 24 KiB per result map, in addition to all existing language limits and the 12,000-work guard.
+
+`inspectLanguage` exposes the validated `tree`; `validateTree` and `serializeTree` provide the application seam for task 004 without exposing the OpenUI evaluator. Supplying a result map requires every referenced result to exist and match its block kind. `AssistantDataProvider` accepts validated host snapshots; changing them updates chart data without parsing or network I/O. A missing snapshot renders an explicit unavailable state. This layer does not fetch: native Query/Mutation, bindings, functions and actions remain disabled. Server tools/v2 transport/refresh belong to task 003; canvas state and edits belong to task 004.
+
+Regression coverage: `npm run assistant:test` includes the block/ref/result/partial/unreachable/legacy gate checks. Run `node --experimental-strip-types scripts/assistant-blocks-browser-check.ts` against `ASSISTANT_TEST_URL` (default port 3170) for four-state recorded block and axe evidence under gitignored `verify/blocks`.
 
 ## Recorded and configured modes
 

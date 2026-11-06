@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.10 — Generative dashboards (draft)
+
+- Add strict public-block OpenUI wrappers, stable-ID panels, responsive grids, area charts and a read-only public table adapter. Preserve legacy recorded replies and the Stack root.
+- Add bounded version-1 inert reference/result contracts and validated-tree/serializer seams, with eight-panel/four-reference caps and regression tests. No dependency upgrade, renderer fetching or native Query/Mutation.
+- Add the illustrative “Show sample blocks” recorded example. Tools, v2 transport, refresh and the dashboard canvas remain separate tasks.
+
 ## v0.9.1 — Project homepage (2026-10-27)
 
 Released as [v0.9.1](https://github.com/moeghashim/tenboards/releases/tag/v0.9.1).

@@ -1,7 +1,11 @@
 import { createLibrary, defineComponent } from "@openuidev/lang-core";
 import { z } from "zod";
 
+import { blockDataSchema, seriesDataSchema, statDataSchema, tableDataSchema } from "./data-contract.ts";
+
 export const limits = {
+  panels: 8,
+  refs: 4,
   outputBytes: 65536,
   nodes: 200,
   depth: 12,
@@ -16,6 +20,17 @@ const label = z.string().min(1).max(120);
 const children = z.array(z.unknown()).max(limits.nodes);
 export const schemas = {
   Stack: z.strictObject({ children }),
+  DashboardGrid: z.strictObject({ children }),
+  Panel: z.strictObject({ id: z.string().regex(/^[A-Za-z][A-Za-z0-9_-]{0,63}$/), children }),
+  DashboardCard: z.strictObject({ title: label, children }),
+  PageHeader: z.strictObject({ title: label, description: text }),
+  StatCard: z.strictObject({ data: blockDataSchema(statDataSchema) }),
+  DashboardChart: z.strictObject({
+    title: label,
+    kind: z.enum(["line", "bar", "area"]),
+    data: blockDataSchema(seriesDataSchema),
+  }),
+  DataTable: z.strictObject({ title: label, data: blockDataSchema(tableDataSchema) }),
   Text: z.strictObject({ text }),
   Card: z.strictObject({ title: label, children }),
   Stat: z.strictObject({ label, value: z.string().max(80), detail: text }),
@@ -42,6 +57,13 @@ export const schemas = {
 export type ComponentName = keyof typeof schemas;
 export type SafeNode = { name: ComponentName; props: Record<string, unknown> };
 export const descriptions: Record<ComponentName, string> = {
+  DashboardGrid: "Responsive dashboard grid. Children must be Panels; at most eight panels per response.",
+  Panel: "Stable unique ASCII document ID and exactly one block child. Only inside DashboardGrid.",
+  DashboardCard: "Titled read-only group of registered components.",
+  PageHeader: "Section heading within the Assistant; never emits a second h1.",
+  StatCard: "Metric data: literal value or inert version-1 data reference.",
+  DashboardChart: "Line, bar or area with labeled series and accessible data table. Literal or inert reference data.",
+  DataTable: "Read-only public table. Literal or inert reference data; no actions or generated columns.",
   Stack: "Vertical read-only layout. Children are registered components.",
   Text: "Plain escaped text. No markup.",
   Card: "Titled group of registered read-only components.",

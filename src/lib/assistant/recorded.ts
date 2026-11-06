@@ -14,6 +14,7 @@ export const recordedReplies = {
     'root = Stack([intro,bars,lines])\nintro = Text("Recorded charts · Synthetic counts for one sample week.")\nbars = Chart("Sample tasks completed", "bar", ["Mon", "Tue", "Wed", "Thu", "Fri"], [{label: "Completed", values: [8,12,9,16,14]}, {label: "Planned", values: [10,12,12,15,16]}])\nlines = Chart("Sample review trend", "line", ["Mon", "Tue", "Wed", "Thu", "Fri"], [{label: "Reviewed", values: [3,5,8,7,11]}])',
 };
 export function recordedReply(prompt: string) {
+  if (prompt.trim().toLowerCase() === "show sample blocks") return blockRecordedReply;
   const key = /chart|week/i.test(prompt) ? "chart" : /table|plan|compare/i.test(prompt) ? "table" : "overview";
   const matched = examples.some((example) => example.prompt.toLowerCase() === prompt.trim().toLowerCase());
   return matched
@@ -61,3 +62,12 @@ export function recordedStream(prompt: string, signal: AbortSignal, delayMs = 24
     },
   });
 }
+
+/** Literal library showcase; workspace-backed recorded dashboards belong to task 003. */
+export const blockRecordedReply = `root = Stack([PageHeader("Sample blocks", "Illustrative values, not workspace records."), DashboardGrid([
+Panel("summary", [DashboardCard("Sample launch", [StatCard({kind:"literal",value:{label:"Ready tasks",value:18,detail:"Synthetic planning example."}})])]),
+Panel("plans", [DataTable("Sample plans", {kind:"literal",value:{columns:["Plan","Seats"],rows:[["Starter",3],["Team",12]]}})]),
+Panel("bar", [DashboardChart("Sample completed", "bar", {kind:"literal",value:{labels:["Mon","Tue"],series:[{label:"Completed",values:[8,12]}]}})]),
+Panel("line", [DashboardChart("Sample reviewed", "line", {kind:"literal",value:{labels:["Mon","Tue"],series:[{label:"Reviewed",values:[3,5]}]}})]),
+Panel("area", [DashboardChart("Sample activity", "area", {kind:"literal",value:{labels:["Mon","Tue"],series:[{label:"Activity",values:[4,9]}]}})])
+])])`;
