@@ -1,6 +1,6 @@
 # 001 — OpenUI dashboards spike (gate)
 
-Status: proposed. Branch: `feat/v0.10/001-spike`. Output: documentation only; no product code merged.
+Status: approved. Branch: `feat/v0.10/001-spike`. Output: documentation only; no product code merged.
 
 Answer these with evidence (links, versions, minimal throwaway experiments kept out of the PR) in `dev/milestones/v0.10-generative-dashboards/spike.md`:
 

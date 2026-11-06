@@ -1,6 +1,6 @@
 # 003 — Read-only data tools
 
-Status: proposed. Branch: `feat/v0.10/003-data-tools`. Depends on 001 approval.
+Status: approved. Branch: `feat/v0.10/003-data-tools`. Depends on 001 approval.
 
 ## Scope
 

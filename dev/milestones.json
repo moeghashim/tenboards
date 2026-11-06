@@ -243,13 +243,13 @@
     },
     {
       "id": "v0.10-generative-dashboards",
-      "status": "proposed",
+      "status": "approved",
       "tasks": ["001-spike", "002-blocks-library", "003-data-tools", "004-dashboard-canvas"],
       "taskStatuses": {
-        "001-spike": "proposed",
-        "002-blocks-library": "proposed",
-        "003-data-tools": "proposed",
-        "004-dashboard-canvas": "proposed"
+        "001-spike": "approved",
+        "002-blocks-library": "approved",
+        "003-data-tools": "approved",
+        "004-dashboard-canvas": "approved"
       }
     }
   ]
