@@ -43,3 +43,11 @@ Revised gate (must pass before the rest of 003 proceeds): with a `pg_sleep(6)` p
 ### Settlement margin (reviewer decision 2026-11-06, round-2 gate results)
 
 Round 2 showed database-enforced cancellation works on Node and the compiled app (backend inactive at 5,015 / 5,008 ms, inside the ceiling + 500 ms window), but rejection landed 3–5 ms after the 5,000 ms ceiling. Reserve settlement time inside the budget instead of permitting overshoot: set `statement_timeout` to `min(4,750 ms, remaining deadline − 250 ms)` and skip the read entirely if less than 500 ms remains. The 5 s per-call ceiling and all other budgets are unchanged. Gate: rejection ≤ 5,000 ms and backend inactive ≤ 5,500 ms on Node and the compiled app.
+
+### Whole-call deadline (reviewer decision 2026-11-06, round-3 gate results)
+
+Round 3 passed the single-statement gate (rejection 4,760 / 4,752 ms; backend inactive 4,780 / 4,769 ms) but a multi-statement read reached 5,002 / 5,004 ms because `statement_timeout` restarts for each statement. Bound the whole call, not each statement:
+
+- **Portable layer (required):** compute one per-call deadline at the start of the tool read. Before every statement in the transaction, re-arm `SET LOCAL statement_timeout` to the time remaining on that deadline (minus the 250 ms settlement margin); if under 500 ms remains, stop with a visible timeout error without issuing the statement.
+- **PostgreSQL 17+ (additional):** also `SET LOCAL transaction_timeout` to the same per-call budget. Detect support via `server_version_num`; never fail on older servers.
+- Gate: single- and multi-statement probes both reject ≤ 5,000 ms with backend inactive ≤ 5,500 ms, on Node and the full compiled app.
