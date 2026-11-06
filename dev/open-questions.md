@@ -211,3 +211,20 @@ Evidence: [verbatim catalog log](https://github.com/moeghashim/tenboards/blob/pr
 Build, check (including check:design), typecheck, `/` → `/dashboard/default` → `/dashboard/home` navigation and keyboard smoke pass. All 240 before and 240 after captures pass; 124 pairs are pixel-identical, with no dimension changes. Intended tab/badge contrast, table scrollbar ownership and transient native scrollbar differences are documented in the evidence. Protected UI/calendar primitives and PLAN.md are untouched.
 
 Inherited warnings remain separate: Biome reports 35 warnings/10 infos; bundling reports dependency module-level directives; the catalog records 133 Base UI animation warnings and one development-mode TanStack CSRF advisory (auth behavior is outside this task). One concurrent Patient Monitoring interaction capture reported `Reduced-motion waveform moved`; its isolated rerun passes 4/4. One Iris Academy capture missed a chart during the concurrent run; the isolated recapture is pixel-identical to baseline. Original anomalous captures/logs are retained. No unresolved task 006 questions or reviewer waivers are required.
+
+## 2026-11-06 — v0.10 / 003 database cancellation gate
+
+Status: **implementation paused at the spike cancellation gate** on baseline `0e9a82711b199610ae7e302f96959c3bf0e12668`. No dashboard tools, transport or refresh endpoint have been shipped; task acceptance remains unchecked. PLAN and the approved task files are unchanged.
+
+A local probe used an isolated PostgreSQL 17 cluster and the actual `withRuntimeRequest` / `getDatabase` code with `db.execute(sql\`select pg_sleep(6)\`)`. It aborted the Request signal after approximately 100 ms. The Node probe supplied Worker-shaped request bindings to exercise the request-scoped client rather than the global Node pool. The workerd probe bundled these same source modules with Wrangler 4.152.0 and `nodejs_compat`; it was a local compiled harness, **not the compiled full application**. No provider keys, remote DB or production deployment were involved.
+
+| Probe | Node | Compiled workerd harness |
+| --- | --- | --- |
+| Request abort only | query succeeded after 6,099 ms; abort at 186 ms | query succeeded after 6,035 ms; abort at 127 ms |
+| Abort plus existing scope cleanup (`end({timeout:1})`) | read rejected after 1,129 ms | read rejected after 1,136 ms |
+
+A repeated workerd forced-close probe rejected after 1,115 ms, but an independent `pg_stat_activity` query still found the backend **active / PgSleep at 5.35 seconds**. Thus closing the client and observing a rejected read does not establish database cancellation within the five-second tool ceiling. `Promise.race` would not repair this. Existing reads/session/admission calls do not consume the Request signal; cleanup currently runs when the request callback finishes.
+
+This is evidence that the existing abort/cleanup primitive is insufficient, not proof that an explicit cancellation design cannot work. A follow-up must implement and verify actual per-request query cancellation (including session and rate-limit reads, queued work and Node isolation), await settlement before resource cleanup, and repeat the latency gate in the full compiled application before enabling tools. The installed postgres driver exposes pending-query cancellation, but Drizzle's current read interface does not expose that handle; driver-level cancellation has **not** been implemented or verified here. Budgets were not raised and no dependency pins changed.
+
+Per the user's explicit instruction to stop and report a failing spike gate, dependent implementation stopped. Provider/tool mocks, first-content performance, full build/check/typecheck, parity, Assistant page verification and preview deployment remain unverified for task 003. No feature/privacy documentation claims or acceptance ticks were added. Local evidence is under `/tmp/tenboards-003-gate/`; the disposable harness is `.wrangler/003-gate/probe.ts` (gitignored).
