@@ -1,6 +1,6 @@
 # 002 — Blocks as the OpenUI library
 
-Status: implemented; verification complete except preview publication (in progress). Branch: `feat/v0.10/002-blocks-library`. Depends on 001 approval.
+Status: implemented; PR #85 in review. Branch: `feat/v0.10/002-blocks-library`. Depends on 001 approval.
 
 ## Scope
 
@@ -14,7 +14,7 @@ Status: implemented; verification complete except preview publication (in progre
 - [x] Recorded examples render each new block correctly in light/dark × desktop/mobile; `verify:page -- /dashboard/assistant` passes with zero axe/console/hydration errors.
 - [x] Invalid props, unknown components and over-limit specs are rejected with tests.
 - [x] `check:design` passes with no new exceptions; build, check, typecheck pass.
-- [ ] docs/assistant.md, README, CHANGELOG draft, milestone status updated; preview linked in PR.
+- [x] docs/assistant.md, README, CHANGELOG draft, milestone status updated; preview linked in PR.
 
 ## Spike clarifications (accepted by reviewer and user 2026-11-06)
 
@@ -31,3 +31,5 @@ Additional acceptance:
 Shared contract: `src/lib/assistant/data-contract.ts`. Language tree/serializer: `src/lib/assistant/language.ts`. Snapshot-only renderer provider: route-local `registry.tsx`. No tool registry, transport, resolver or canvas implementation is included.
 
 Verified: build, check/design (no exceptions), typecheck, assistant:test (including block contracts and fan-out), assistant:server (45 adapter cases), assistant:conversation, assistant:ui, four-state block rendering/axe, snapshot refresh with stable panel DOM, and verify:page. Dev `/` → `/dashboard/home` smoke passed. The older assistant:browser harness times out looking for its sample-launch suggestion; its run is not claimed as passing. The focused block suite and current assistant:ui interaction suite pass.
+
+PR: https://github.com/moeghashim/tenboards/pull/85. Demo-only alias: https://pr-85-tenboards-preview.mohanadgh.workers.dev. Version URL and pr-assets evidence are linked in the PR.

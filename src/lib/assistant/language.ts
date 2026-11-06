@@ -152,6 +152,7 @@ export function inspectLanguage(
   let work = 0;
   const visitedReferences = new Set(["root"]);
   let unresolved = false;
+  let usesBlocks = false;
   function resolve(input: Value, depth: number, refs: Set<string>): unknown {
     if (++work > 12000 || depth > limits.depth) throw new Invalid();
     if (Array.isArray(input)) return input.map((item) => resolve(item, depth, refs));
@@ -172,6 +173,12 @@ export function inspectLanguage(
       const call = input as Call;
       const name = call.call as ComponentName;
       const schema = schemas[name];
+      if (
+        ["DashboardGrid", "Panel", "DashboardCard", "PageHeader", "StatCard", "DashboardChart", "DataTable"].includes(
+          name,
+        )
+      )
+        usesBlocks = true;
       const keys = Object.keys(schema.shape);
       if (call.args.length !== keys.length) throw new Invalid();
       const raw = Object.fromEntries(keys.map((key, index) => [key, resolve(call.args[index], depth + 1, refs)]));
@@ -212,7 +219,7 @@ export function inspectLanguage(
       }
     if (!root && unresolved && !complete) return { status: "pending", response: null };
     if (!root || root.name !== "Stack" || (complete && unresolved)) throw new Invalid();
-    if (unresolved) return { status: "pending", response: null };
+    if (unresolved && usesBlocks) return { status: "pending", response: null };
     validateTree(
       { name: "Stack", props: { children: [...(root.props.children as SafeNode[]), ...unreachable] } },
       results,
