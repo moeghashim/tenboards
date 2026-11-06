@@ -1,0 +1,5 @@
+
+> tenboards@0.9.1 assistant:canvas
+> node --experimental-strip-types scripts/assistant-canvas-check.ts
+
+PASS targeted identity, preserved snapshot objects, local IDs, stale patch, whole-tree limits and strict single-panel gate

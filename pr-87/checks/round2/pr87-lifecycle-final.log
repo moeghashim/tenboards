@@ -1,0 +1,24 @@
+
+> tenboards@0.9.1 assistant:lifecycle
+> node --experimental-strip-types scripts/assistant-lifecycle-browser-check.ts
+
+PASS five single-key SSR/hydrated pickers expose exactly one effective model and no synthetic keys/prompts
+PASS history/regenerate/Stop/clear race, safe errors, Retry-After no retry, removed provider no fallback, session clear, focus/overflow light/desktop
+PASS history/regenerate/Stop/clear race, safe errors, Retry-After no retry, removed provider no fallback, session clear, focus/overflow light/mobile
+PASS history/regenerate/Stop/clear race, safe errors, Retry-After no retry, removed provider no fallback, session clear, focus/overflow dark/desktop
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+locator.waitFor: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByText(/reply or request was not supported/) to be visible[22m
+
+    at /Users/moeghashim/.t3/worktrees/tenboards/t3-c83c6d80/scripts/assistant-lifecycle-browser-check.ts:169:66 {
+  log: [
+    '  - waiting for getByText(/reply or request was not supported/) to be visible'
+  ],
+  name: 'TimeoutError'
+}
+
+Node.js v24.21.0

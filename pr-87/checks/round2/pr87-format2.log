@@ -1,0 +1,62 @@
+scripts/assistant-data-endpoint-check.ts:34:5 lint/style/noNonNullAssertion ━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+  
+    32 │   let results: DataResultMap = {};
+    33 │   const text = await consumeStream(
+  > 34 │     response.body!,
+       │     ^^^^^^^^^^^^^^
+    35 │     new AbortController().signal,
+    36 │     () => {
+  
+  i A non-null assertion tells TypeScript to ignore a possible null or undefined value. If the value is missing at runtime, the code fails with an error that the compiler could not catch.
+  
+  i Check that the value is defined before using it, for example with an if statement or optional chaining, instead of asserting it.
+  
+
+scripts/assistant-data-endpoint-check.ts:117:46 lint/style/noNonNullAssertion ━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+  
+    115 │       });
+    116 │       assert.equal(created.status, 200);
+  > 117 │       const definition = await consumeStream(created.body!, new AbortController().signal, () => {
+        │                                              ^^^^^^^^^^^^^
+    118 │         /* Assert the completed definition below. */
+    119 │       });
+  
+  i A non-null assertion tells TypeScript to ignore a possible null or undefined value. If the value is missing at runtime, the code fails with an error that the compiler could not catch.
+  
+  i Check that the value is defined before using it, for example with an if statement or optional chaining, instead of asserting it.
+  
+
+scripts/assistant-data-endpoint-check.ts:122:44 lint/style/noNonNullAssertion  FIXABLE  ━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+  
+    120 │       assert.ok(
+    121 │         definition.includes(
+  > 122 │           `DashboardChart(${JSON.stringify(projectionCatalog.find((p) => p.domain === domain)!.label)},`,
+        │                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    123 │         ),
+    124 │       );
+  
+  i A non-null assertion tells TypeScript to ignore a possible null or undefined value. If the value is missing at runtime, the code fails with an error that the compiler could not catch.
+  
+  i Check that the value is defined before using it, for example with an if statement or optional chaining, instead of asserting it.
+  
+  i Unsafe fix: Replace with optional chain operator ?. This operator includes runtime checks, so it is safer than the compile-only non-null assertion operator
+  
+    120 120 │         assert.ok(
+    121 121 │           definition.includes(
+    122     │ - ··········`DashboardChart(${JSON.stringify(projectionCatalog.find((p)·=>·p.domain·===·domain)!.label)},`,
+        122 │ + ··········`DashboardChart(${JSON.stringify(projectionCatalog.find((p)·=>·p.domain·===·domain)?.label)},`,
+    123 123 │           ),
+    124 124 │         );
+  
+
+Skipped 1 suggested fixes.
+If you wish to apply the suggested (unsafe) fixes, use the command biome check --write --unsafe
+
+Checked 1 file in 493ms. Fixed 1 file.
+Found 3 warnings.

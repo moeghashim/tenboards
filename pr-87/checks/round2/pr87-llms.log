@@ -1,0 +1,5 @@
+
+> tenboards@0.9.1 llms:build
+> node --experimental-strip-types scripts/llms.ts
+
+PASS llms build: 11 source-derived assets

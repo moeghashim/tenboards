@@ -1,0 +1,103 @@
+scripts/assistant-canvas-check.ts:12:59 lint/style/noNonNullAssertion ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+  
+    10 │ const second = { ...first, props: { ...first.props, id: "second" } };
+    11 │ // Build through the same validated patch seam, not string rewriting.
+  > 12 │ const initial = { version: 1 as const, revision: 0, tree: inspectLanguage(toolText, true).tree! };
+       │                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    13 │ const two = applyPatch(initial, { version: 1, baseRevision: 0, op: "add", targetId: "second", panel: second });
+    14 │ const replacement = {
+  
+  i A non-null assertion tells TypeScript to ignore a possible null or undefined value. If the value is missing at runtime, the code fails with an error that the compiler could not catch.
+  
+  i Check that the value is defined before using it, for example with an if statement or optional chaining, instead of asserting it.
+  
+
+scripts/assistant-data-endpoint-check.ts:34:5 lint/style/noNonNullAssertion ━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+  
+    32 │   let results: DataResultMap = {};
+    33 │   const text = await consumeStream(
+  > 34 │     response.body!,
+       │     ^^^^^^^^^^^^^^
+    35 │     new AbortController().signal,
+    36 │     () => {
+  
+  i A non-null assertion tells TypeScript to ignore a possible null or undefined value. If the value is missing at runtime, the code fails with an error that the compiler could not catch.
+  
+  i Check that the value is defined before using it, for example with an if statement or optional chaining, instead of asserting it.
+  
+
+scripts/assistant-data-endpoint-check.ts:117:46 lint/style/noNonNullAssertion ━━━━━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+  
+    115 │       });
+    116 │       assert.equal(created.status, 200);
+  > 117 │       const definition = await consumeStream(created.body!, new AbortController().signal, () => {
+        │                                              ^^^^^^^^^^^^^
+    118 │         /* Assert the completed definition below. */
+    119 │       });
+  
+  i A non-null assertion tells TypeScript to ignore a possible null or undefined value. If the value is missing at runtime, the code fails with an error that the compiler could not catch.
+  
+  i Check that the value is defined before using it, for example with an if statement or optional chaining, instead of asserting it.
+  
+
+scripts/assistant-data-endpoint-check.ts:122:44 lint/style/noNonNullAssertion  FIXABLE  ━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+  
+    120 │       assert.ok(
+    121 │         definition.includes(
+  > 122 │           `DashboardChart(${JSON.stringify(projectionCatalog.find((p) => p.domain === domain)!.label)},`,
+        │                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    123 │         ),
+    124 │       );
+  
+  i A non-null assertion tells TypeScript to ignore a possible null or undefined value. If the value is missing at runtime, the code fails with an error that the compiler could not catch.
+  
+  i Check that the value is defined before using it, for example with an if statement or optional chaining, instead of asserting it.
+  
+  i Unsafe fix: Replace with optional chain operator ?. This operator includes runtime checks, so it is safer than the compile-only non-null assertion operator
+  
+    120 120 │         assert.ok(
+    121 121 │           definition.includes(
+    122     │ - ··········`DashboardChart(${JSON.stringify(projectionCatalog.find((p)·=>·p.domain·===·domain)!.label)},`,
+        122 │ + ··········`DashboardChart(${JSON.stringify(projectionCatalog.find((p)·=>·p.domain·===·domain)?.label)},`,
+    123 123 │           ),
+    124 124 │         );
+  
+
+src/server/assistant/data-tools.server.ts:98:20 lint/style/noNonNullAssertion  FIXABLE  ━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+  
+     96 │       source: selectSource(runtimeEnvironment()),
+     97 │       asOf,
+   > 98 │       periodLabel: projectionCatalog.find((p) => p.domain === args.domain)!.periodLabel,
+        │                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     99 │     });
+    100 │   });
+  
+  i A non-null assertion tells TypeScript to ignore a possible null or undefined value. If the value is missing at runtime, the code fails with an error that the compiler could not catch.
+  
+  i Check that the value is defined before using it, for example with an if statement or optional chaining, instead of asserting it.
+  
+  i Unsafe fix: Replace with optional chain operator ?. This operator includes runtime checks, so it is safer than the compile-only non-null assertion operator
+  
+     96  96 │         source: selectSource(runtimeEnvironment()),
+     97  97 │         asOf,
+     98     │ - ······periodLabel:·projectionCatalog.find((p)·=>·p.domain·===·args.domain)!.periodLabel,
+         98 │ + ······periodLabel:·projectionCatalog.find((p)·=>·p.domain·===·args.domain)?.periodLabel,
+     99  99 │       });
+    100 100 │     });
+  
+
+Skipped 2 suggested fixes.
+If you wish to apply the suggested (unsafe) fixes, use the command biome check --write --unsafe
+
+Checked 4 files in 514ms. Fixed 1 file.
+Found 5 warnings.

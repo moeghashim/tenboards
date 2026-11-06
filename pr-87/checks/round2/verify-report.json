@@ -1,0 +1,11 @@
+{
+  "baseURL": "https://pr-87-tenboards-preview.mohanadgh.workers.dev/",
+  "passed": true,
+  "reports": [
+    {
+      "route": "/dashboard/assistant",
+      "passed": true,
+      "report": "dashboard%2Fassistant/report.json"
+    }
+  ]
+}

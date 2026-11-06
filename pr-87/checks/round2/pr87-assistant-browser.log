@@ -1,0 +1,20 @@
+
+> tenboards@0.9.1 assistant:browser
+> node --experimental-strip-types scripts/assistant-browser-check.ts
+
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3170/dashboard/assistant
+Call log:
+[2m  - navigating to "http://127.0.0.1:3170/dashboard/assistant", waiting until "load"[22m
+
+    at /Users/moeghashim/.t3/worktrees/tenboards/t3-c83c6d80/scripts/assistant-browser-check.ts:36:18 {
+  log: [
+    '  - navigating to "http://127.0.0.1:3170/dashboard/assistant", waiting until "load"'
+  ],
+  name: 'Error'
+}
+
+Node.js v24.21.0

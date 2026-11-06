@@ -1,0 +1,5 @@
+
+> tenboards@0.9.1 assistant:canvas-browser
+> node --experimental-strip-types scripts/assistant-canvas-browser-check.ts
+
+PASS five native edit adapters; four-state recorded creates/add/replace/refresh, keyed DOM identity, ambiguous target, stale-data/session recovery, keyboard, axe, reduced motion, zero provider egress

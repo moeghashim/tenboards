@@ -1,0 +1,8 @@
+
+> tenboards@0.9.1 screenshots
+> node --experimental-strip-types scripts/screenshots.ts --routes /dashboard/assistant --base-url http://localhost:3173 --output screenshots/round2
+
+PASS /dashboard/assistant light/desktop direct
+PASS /dashboard/assistant light/mobile direct
+PASS /dashboard/assistant dark/desktop direct
+PASS /dashboard/assistant dark/mobile direct

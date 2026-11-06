@@ -1,0 +1,5 @@
+
+> tenboards@0.9.1 registry:build
+> node --experimental-strip-types scripts/registry-build.ts
+
+PASS registry build: 9 self-contained items

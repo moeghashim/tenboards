@@ -1,0 +1,21 @@
+PASS Node full endpoint five native adapter preflight/result/final flows
+PASS compiled app workerd five native adapters, unknown tools/invalid args/fifth calls fail closed, deduplicated model-free refresh
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+5 !== 10
+
+    at file:///Users/moeghashim/.t3/worktrees/tenboards/t3-c83c6d80/scripts/assistant-data-endpoint-check.ts:134:14
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5) {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 5,
+  expected: 10,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.21.0
