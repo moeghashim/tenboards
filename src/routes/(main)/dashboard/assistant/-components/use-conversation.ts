@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useReducer, useRef, useState } from "react";
 
 import type { AssistantConfig, ProviderId } from "@/lib/assistant/config";
+import type { DataResultMap } from "@/lib/assistant/data-contract";
 import { inspectLanguage } from "@/lib/assistant/language";
 import { getAssistantConfig } from "@/lib/assistant/server-functions";
 import { consumeStream, StreamFailure } from "@/lib/assistant/transport";
@@ -185,10 +186,21 @@ export function useConversation(initialConfig: AssistantConfig) {
         throw new StreamFailure(safe);
       }
       if (!response.body) throw new StreamFailure("unavailable");
-      const text = await consumeStream(response.body, controller.signal, (text) => {
-        if (generation.current === id) dispatch({ type: "update", id, text });
-      });
-      if (inspectLanguage(text, true).status !== "ready") throw new StreamFailure("invalid");
+      let results: DataResultMap | undefined;
+      const text = await consumeStream(
+        response.body,
+        controller.signal,
+        (text) => {
+          if (generation.current === id) dispatch({ type: "update", id, text });
+        },
+        (data) => {
+          if (generation.current === id) {
+            results = data;
+            dispatch({ type: "update", id, results: data });
+          }
+        },
+      );
+      if (inspectLanguage(text, true, results).status !== "ready") throw new StreamFailure("invalid");
       dispatch({ type: "update", id, text, status: "completed" });
     } catch (failure) {
       if (generation.current !== id) return;

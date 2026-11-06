@@ -2,6 +2,7 @@
 // @ts-expect-error Generated module has no declaration.
 import app from "../.output/server/index.mjs";
 import { providers } from "../src/server/assistant/config.server.ts";
+import { finalToolWire, fragmentWire, toolArgs, toolWire } from "./assistant-tool-wire.ts";
 import { type WireCase, wireResponse } from "./assistant-wire-fixtures.ts";
 
 let calls = 0;
@@ -50,6 +51,21 @@ globalThis.fetch = async (input, init) => {
   const key = [...headers.values()].find((value) => value.includes("synthetic-v07-")) ?? "";
   const mode = (key.split("synthetic-v07-")[1]?.split("-")[1] as WireCase) ?? "success";
   const body = JSON.parse(String(init?.body));
+  if (key.includes("-tools")) {
+    const padding = key.includes("aggregate") ? `:${"x".repeat(1100000)}\n\n` : "";
+    if (body.tools?.length)
+      return fragmentWire(
+        padding +
+          toolWire(
+            id,
+            key.includes("unknown") ? "write_data" : "dashboard_read",
+            key.includes("invalid") ? { ...toolArgs, range: "90days" } : toolArgs,
+            key.includes("fifth") ? 5 : key.includes("multi") ? 2 : 1,
+          ),
+        padding ? 4096 : 17,
+      );
+    return fragmentWire(padding + (key.includes("finalcall") ? toolWire(id) : finalToolWire(id)), padding ? 4096 : 17);
+  }
   outputRequests.push({
     provider: id,
     model: body.model ?? providers.find((p) => p.id === id)!.model,

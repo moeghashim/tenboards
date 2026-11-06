@@ -244,7 +244,18 @@ function RegisteredNode({
       const snapshot = p.data.kind === "data-ref" ? results[dataRefKey(p.data)] : undefined;
       const data = p.data.kind === "literal" ? p.data.value : snapshot?.kind === "series" ? snapshot.data : undefined;
       if (!data) return <MissingData />;
-      return <ResponseChart title={p.title} kind={p.kind} {...data} />;
+      return (
+        <div className="space-y-2">
+          {snapshot ? (
+            <p className="text-muted-foreground text-xs">
+              {snapshot.source === "demo" ? "Demo fixture data" : "Database data"} · {snapshot.periodLabel} · As of{" "}
+              {snapshot.asOf}
+              {snapshot.truncated ? ` · First ${data.labels.length} observations` : ""}
+            </p>
+          ) : null}
+          <ResponseChart title={p.title} kind={p.kind} {...data} />
+        </div>
+      );
     }
     case "Stack": {
       const p = schemas.Stack.parse(props);

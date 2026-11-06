@@ -1,3 +1,4 @@
+import type { DataResultMap } from "../../lib/assistant/data-contract.ts";
 import { inspectLanguage } from "../../lib/assistant/language.ts";
 import { bytes } from "../../lib/assistant/registry.ts";
 import { encodeEvent, type StreamEvent } from "../../lib/assistant/transport.ts";
@@ -11,8 +12,18 @@ export function boundedStream(
   source: (signal: AbortSignal) => ReadableStream<SourceEvent>,
   requestSignal: AbortSignal,
   timing = deadlines,
+  results?: DataResultMap,
 ) {
   const abort = new AbortController();
+  const version = results ? 2 : 1;
+  let wireBytes = 0;
+  const encode = (event: StreamEvent) => {
+    const encoded = encodeEvent(event);
+    if (results && wireBytes + encoded.byteLength > 98304 - (event.type === "error" ? 0 : 128))
+      throw new Error("Stream limit");
+    wireBytes += encoded.byteLength;
+    return encoded;
+  };
   let reader: ReadableStreamDefaultReader<SourceEvent> | undefined;
   let finished = false;
   let content = "";
@@ -22,7 +33,7 @@ export function boundedStream(
   let finish: (event?: StreamEvent) => void = () => {
     /* Cancellation may race a closed reader. */
   };
-  const disconnect = () => finish({ v: 1, type: "error", code: "unavailable" });
+  const disconnect = () => finish({ v: version, type: "error", code: "unavailable" });
   return new ReadableStream<Uint8Array>(
     {
       start(controller) {
@@ -40,21 +51,22 @@ export function boundedStream(
             })
             .finally(() => reader?.releaseLock());
           if (event) {
-            controller.enqueue(encodeEvent(event));
+            controller.enqueue(encode(event));
             controller.close();
           }
         };
         requestSignal.addEventListener("abort", disconnect, { once: true });
-        timer = setTimeout(() => finish({ v: 1, type: "error", code: "timeout" }), timing.first);
-        total = setTimeout(() => finish({ v: 1, type: "error", code: "timeout" }), timing.total);
+        timer = setTimeout(() => finish({ v: version, type: "error", code: "timeout" }), timing.first);
+        total = setTimeout(() => finish({ v: version, type: "error", code: "timeout" }), timing.total);
         if (requestSignal.aborted) {
           disconnect();
           return;
         }
+        if (results) controller.enqueue(encode({ v: 2, type: "data", results }));
         try {
           reader = source(abort.signal).getReader();
         } catch {
-          finish({ v: 1, type: "error", code: "provider" });
+          finish({ v: version, type: "error", code: "provider" });
         }
       },
       async pull(controller) {
@@ -64,43 +76,50 @@ export function boundedStream(
             const part = await reader.read();
             if (finished) return;
             if (part.done) {
-              finish({ v: 1, type: "error", code: "provider" });
+              finish({ v: version, type: "error", code: "provider" });
               return;
             }
             const event = part.value;
             if (event.type === "text-delta" && "text" in event && typeof event.text === "string" && event.text) {
               contentBytes += bytes(event.text);
               if (contentBytes > 65536) {
-                finish({ v: 1, type: "error", code: "limit" });
+                finish({ v: version, type: "error", code: "limit" });
                 return;
               }
               content += event.text;
               clearTimeout(timer);
-              timer = setTimeout(() => finish({ v: 1, type: "error", code: "timeout" }), timing.idle);
-              controller.enqueue(encodeEvent({ v: 1, type: "text-delta", text: event.text }));
+              timer = setTimeout(() => finish({ v: version, type: "error", code: "timeout" }), timing.idle);
+              controller.enqueue(encode({ v: version, type: "text-delta", text: event.text }));
               return;
             }
             if (event.type === "finish") {
               const usage = "totalUsage" in event ? (event.totalUsage as { outputTokens?: number }) : undefined;
-              if ((usage?.outputTokens ?? 0) > 4096 || ("finishReason" in event && event.finishReason === "length")) {
-                finish({ v: 1, type: "error", code: "limit" });
+              if (
+                (usage?.outputTokens ?? 0) > (results ? 3072 : 4096) ||
+                ("finishReason" in event && event.finishReason === "length")
+              ) {
+                finish({ v: version, type: "error", code: "limit" });
                 return;
               }
               const valid =
                 "finishReason" in event &&
                 event.finishReason === "stop" &&
-                inspectLanguage(content, true).status === "ready";
-              finish(valid ? { v: 1, type: "finish" } : { v: 1, type: "error", code: content ? "invalid" : "refused" });
+                inspectLanguage(content, true, results).status === "ready";
+              finish(
+                valid
+                  ? { v: version, type: "finish" }
+                  : { v: version, type: "error", code: content ? "invalid" : "refused" },
+              );
               return;
             }
             if (event.type === "error" || event.type === "abort" || event.type.startsWith("tool-")) {
-              finish({ v: 1, type: "error", code: "provider" });
+              finish({ v: version, type: "error", code: "provider" });
               return;
             }
             // Reasoning, metadata, usage, sources and protocol bookkeeping never reach the renderer.
           }
         } catch {
-          finish({ v: 1, type: "error", code: "provider" });
+          finish({ v: version, type: "error", code: "provider" });
         }
       },
       cancel() {

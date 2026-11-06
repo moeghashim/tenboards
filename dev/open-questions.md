@@ -228,3 +228,79 @@ A repeated workerd forced-close probe rejected after 1,115 ms, but an independen
 This is evidence that the existing abort/cleanup primitive is insufficient, not proof that an explicit cancellation design cannot work. A follow-up must implement and verify actual per-request query cancellation (including session and rate-limit reads, queued work and Node isolation), await settlement before resource cleanup, and repeat the latency gate in the full compiled application before enabling tools. The installed postgres driver exposes pending-query cancellation, but Drizzle's current read interface does not expose that handle; driver-level cancellation has **not** been implemented or verified here. Budgets were not raised and no dependency pins changed.
 
 Per the user's explicit instruction to stop and report a failing spike gate, dependent implementation stopped. Provider/tool mocks, first-content performance, full build/check/typecheck, parity, Assistant page verification and preview deployment remain unverified for task 003. No feature/privacy documentation claims or acceptance ticks were added. Local evidence is under `/tmp/tenboards-003-gate/`; the disposable harness is `.wrangler/003-gate/probe.ts` (gitignored).
+
+### Round 2 — database-enforced cancellation (2026-11-06)
+
+Baseline `088d2ea`; fresh branch `feat/v0.10/003-data-tools`. The old local branch was renamed to `feat/v0.10/003-data-tools-round-1` with explicit user approval; it was not pushed or deleted.
+
+**Gate still fails the literal read-rejection ceiling; step 2 remains paused.** A candidate implementation now supplies transaction-local `statement_timeout` and `idle_in_transaction_session_timeout` equal to min(5,000 ms, remaining invocation/request deadline), tracks postgres pending queries below Drizzle, cancels them on abort/deadline, and awaits read/transaction settlement before request cleanup. `getDatabase()` uses an AsyncLocalStorage transaction override, leaving ordinary reads on their existing client. A shared, currently unwired `executeToolRead` independently guards and charges each invocation and checks abort/deadline before session, admission and data work. No feature endpoint has been enabled.
+
+A temporary `/api/003-probe` route called this execution boundary with the real session and admission functions, followed by `getDatabase().execute(sql\`select pg_sleep(6) /* tenboards_003_round2 */\`)`. It used the disposable PostgreSQL 17 cluster on loopback port 35473 (migrated locally), no provider credentials. The abort case aborted the probe Request signal after 100 ms. The timeout case did not abort early. A separate postgres connection polled `pg_stat_activity` every 25 ms, excluding its own backend, and observed the marked query active before cancellation. Backend times below are measured from the observer's HTTP request start; rejection times are measured inside the handler before calling the guarded execution boundary. Cold Node route compilation is not included in handler timing.
+
+| Runtime | Case | Read rejected at | Last observed active | First confirmed inactive |
+| --- | --- | ---: | ---: | ---: |
+| Node, full app (`npm run dev`, actual local node_modules) | abort at 100 ms | 105 ms | 167 ms | 192 ms |
+| Node, full app | timeout only | **5,005 ms** | 4,989 ms | 5,015 ms |
+| Full compiled app (`npm run build` + `npm run preview`, workerd) | abort at 100 ms | 109 ms | 175 ms | 202 ms |
+| Full compiled app, workerd | timeout only | **5,003 ms** | 4,981 ms | 5,008 ms |
+
+Both runtimes pass the backend-inactive bound of 5,500 ms and early-abort settlement, fixing the original still-active-backend failure. They do **not** pass the separate literal requirement to reject within 5,000 ms: statement cancellation, driver propagation and transaction rollback/settlement take several milliseconds beyond that deadline. No tolerance was silently introduced, budget raised, or early Promise.race rejection substituted for settlement. Reviewer decision is needed on reserving a small settlement margin inside the five-second budget versus explicitly accepting measured settlement overhead; the current decision specifies the timeout as min(5,000 ms, remaining deadline).
+
+The temporary route was removed and routes regenerated; no debug route ships. Local probe source/observer are retained under `.wrangler/003-gate/` (gitignored); build and runtime logs are under `/tmp/tenboards-003-gate/round2-*`. The compiled probe build passed. Provider preflight, registry/projections/shared DTO, v2 SSE, refresh endpoint, adapter mocks, injection tests, parity, Assistant page verification and preview deployment are intentionally not implemented/claimed after this failed gate. Acceptance remains unchecked; PLAN and dependency pins are unchanged.
+
+Post-probe verification after removing the temporary route: `npm run build`, `npm run check`, `npm run typecheck`, `npm run assistant:test` (1,047 assertions plus six reference fan-out attacks), and `git diff --check` passed. Check retains inherited diagnostics. README: no change needed because tools remain unwired and no user-visible behavior/commands are enabled; no completed-feature claims were added to README, assistant docs, CHANGELOG or milestone status. No PR or preview deployment was created at the failed gate. Candidate code and this evidence are retained locally for review; the test server and disposable database were stopped.
+
+### Round 3 — settlement margin gate (2026-11-06)
+
+Rebased round 2 onto `origin/main` (including task 002). Applied the reviewer's `min(4,750 ms, remaining deadline − 250 ms)` transaction timeout and skipped transaction reads with less than 500 ms remaining, checking again after acquiring the transaction. No budget was increased. The same temporary full-app route, real guarded `executeToolRead`, PostgreSQL 17 cluster, and independent 25 ms `pg_stat_activity` observer from round 2 were reused.
+
+| Runtime | Case | Read rejected at | Last observed active | First confirmed inactive |
+| --- | --- | ---: | ---: | ---: |
+| Node, full app (`npm run dev`, local dependencies) | abort at 100 ms | 104 ms | 114 ms | 139 ms |
+| Node, full app | timeout only | 4,760 ms | 4,750 ms | 4,780 ms |
+| Full compiled app (`npm run build` + `npm run preview`, workerd) | abort at 100 ms | 104 ms | 157 ms | 189 ms |
+| Full compiled app, workerd | timeout only | 4,752 ms | 4,742 ms | 4,769 ms |
+
+**Gate passes**: rejection ≤ 5,000 ms and backend inactive ≤ 5,500 ms on both runtimes. Timings retain round-2 definitions (handler time for rejection, observer request start for backend times). Local evidence: `/tmp/tenboards-003-gate/round3-{node,worker}-results.jsonl`, `round3-probe-build.log`, `round3-node.log`, and `round3-preview.log`. No real provider keys or remote database were used. Passing this gate does not establish the remaining task 003 acceptance criteria.
+
+#### Sequential statements expose a remaining cancellation failure — dependent work stopped
+
+The required single-`pg_sleep(6)` probe above passes. However, inspection before wiring the registry showed that the existing typed adapters execute multiple statements sequentially. A follow-up used the **same guarded path**, adding an awaited `getDatabase().execute` of `select pg_sleep(0.3)` immediately before the marked six-second statement. This is two sequential reads within one invocation, not two tool invocations. The invocation's five-second ceiling must still hold.
+
+| Runtime | Read rejected at | Last marked statement observed active | First confirmed inactive |
+| --- | ---: | ---: | ---: |
+| Node full app | **5,002 ms** | 4,989 ms | 5,017 ms |
+| Full compiled app, workerd | **5,004 ms** | 5,008 ms | 5,035 ms |
+
+The backend bounds pass, but the invocation rejection ceiling fails on both runtimes. `SET LOCAL statement_timeout` applies separately to each statement; setting it once at transaction entry does not reserve settlement time at the end of a multi-statement read. After the first 300 ms statement, the second statement still receives the original approximately 4,750 ms timeout. The driver cancellation timer fires at the five-second deadline and settlement lands after it. This is a different failure from the original single-statement round-2 overshoot. No artificial tolerance, Promise.race, or raised budget was introduced.
+
+**Step 2 remains paused per the instruction to stop with evidence on a failed ceiling check.** A follow-up should recompute the remaining settlement budget before each statement (including queued acquisition), and reserve settlement time for the secondary cancellation path, then repeat both single- and multi-statement probes. No endpoint or refresh path is enabled. The short-lived registry draft was removed; task 002's shared contract is untouched. No feature acceptance boxes, README/assistant docs/CHANGELOG completion claims, PR, or deployment were created.
+
+Reproduction: start the same temporary route from round 2 with two awaited `db.execute` calls inside `executeToolRead`, first `select pg_sleep(0.3)`, then `select pg_sleep(6) /* tenboards_003_round2 */`; run the independent observer against Node and a fresh `npm run build` + `npm run preview`. Probe source is retained in `.wrangler/003-gate/sequential-route-probe.txt`; local evidence is `/tmp/tenboards-003-gate/round3-sequential-{node,worker}-results.jsonl`, `round3-sequential-build.log` and `round3-sequential-preview.log`. The 100 ms abort follow-up rejects at 106 ms on both runtimes but precedes the marked second query, so it is not claimed as backend-observation evidence for that query. A transient Node hot-reload warm-up returned HTTP 500 (`getRequest is not a function`); the subsequent timed observations returned the explicit probe JSON shown above. All temporary routes were removed and routes regenerated before final checks.
+
+Post-probe clean verification: `npm run build`, `npm run check` (inherited diagnostics), `npm run assistant:test` (1,047 assertions, blocks-library checks and six fan-out attacks), and `git diff --check` pass. `npm run typecheck` fails with twelve TS2339 diagnostics at `src/lib/assistant/language.ts:264`, where the three-key result-kind map is indexed by the full node-name union. This exact code is present on rebased main `6018dd41035c832789b356289fde3281eefb0c05` and was not modified here. Full adapter mocks, data parity, Assistant page verification, feature/privacy documentation and preview deployment remain unverified/unimplemented after the sequential-read failure. README: no change needed for this unwired cancellation candidate and evidence-only continuation.
+
+### Round 4 — whole-call deadline and implementation (2026-11-06)
+
+Rebased with sign-off onto `82403bd` (includes `7d3f848`); the inherited language typecheck error is resolved. The driver seam now serializes timeout setup with each statement, recomputes remaining call time minus 250 ms, refuses statements below 500 ms remaining, and retains cancellation/settlement before cleanup. PostgreSQL `server_version_num` gates `transaction_timeout` at version 17. Its budget is the full remaining call time; the statement timeout reserves settlement within it. Timeout failures have a safe visible timeout code.
+
+The same real `executeToolRead` full-app probe ran against the isolated PostgreSQL 17.11 cluster, with single `pg_sleep(6)` and sequential `pg_sleep(0.3)` + marked `pg_sleep(6)` reads. Independent 25 ms activity observations ran serially per runtime. Two repeats of each case passed:
+
+| Runtime | Case | Rejection ms | First confirmed inactive ms |
+| --- | --- | --- | --- |
+| Node full app | single | 4753, 4763 | 4785, 4778 |
+| Node full app | sequential | 4753, 4753 | 4776, 4791 |
+| Full build + preview, workerd | single | 4756, 4754 | 4844, 4762 |
+| Full build + preview, workerd | sequential | 4753, 4754 | 4783, 4782 |
+
+**Gate passes**: rejection ≤5000 ms and inactive ≤5500 ms. Rejection uses handler start; activity uses observer HTTP request start, as in prior rounds. Evidence: `/tmp/tenboards-003-gate/round4-{node,worker}-isolated-results.jsonl`, `round4-probe-build.log`, and `round4-preview-final.log`. Temporary probe source is `.wrangler/003-gate/route-probe.txt`; it was removed from routes and never deployed.
+
+An initial candidate incorrectly gave transaction termination the same shortened budget as statement cancellation. Its warm-up could terminate the connection before statement settlement, producing a postgres driver write error and about 5.8 s HTTP completion. The final candidate keeps the transaction backstop at the full call budget and the statement/secondary-cancel settlement reserve at 250 ms. Isolated repeats above supersede that candidate. Earlier overlapping observers could see each other's identical markers; those observations were discarded, not counted as evidence. Initial Request-wrapper/HMR setup failures also did not reach the timed read.
+
+Step 2 now implements the five projections, existing shared contract, independently guarded calls, native planning/final phases, v2 snapshots with v1 compatibility, normal source selection in recorded mode, and model-free refresh. Finance exposes audited expense observations without filling sparse income with invented zeros; CRM labels monthly observations as YYYY-MM. No dependency or SDK pins changed. The preparatory changes are limited to provider construction, bounded JSON input, and the existing transaction seam.
+
+Verification: build/check/typecheck and Assistant tests pass, including new injection/schema/token/wire/transport checks. Five installed adapters pass fragmented native calls/results/final text on Node and the full compiled workerd endpoint; workerd also covers multiple calls, unknown/invalid/fifth-call rejection, forbidden final tool calls and aggregate wire overflow across planning/final. Five installed adapters separately reject aborted planning with late native calls on Node and compiled workerd. All five guarded projections match demo/DB, missing sessions reject, and configured DB errors remain visible. `data:parity`: 29 reads / 211 scenarios pass on the seeded disposable local DB. `/dashboard/assistant` passes light/dark × desktop/mobile with zero WCAG axe violations and zero runtime errors; recorded-chart interaction captures also pass WCAG/runtime checks. An unrestricted axe scan separately reports existing desktop sidebar `region` best-practice findings on the brand link and demo card, outside the affected content. Evidence is gitignored under `verify/` and `/tmp/tenboards-003-gate/round4-*`.
+
+No real provider account, hosted Hyperdrive, or PostgreSQL <17 runtime was tested. Older-server support is version-gated in code. Canvas refresh controls and targeted editing remain task 004. PLAN, protected primitives, dependencies and production are unchanged.
+
+Delivery: PR #86; isolated preview version `00e364fc-3be7-49e8-a1da-e50bba85dc18`, https://00e364fc-tenboards-preview.mohanadgh.workers.dev (alias https://pr-86-tenboards-preview.mohanadgh.workers.dev). `preview:deploy` verified remote ASSETS-only bindings and no secrets. A remote smoke confirmed Recorded demo, v2 demo-source revenue beginning at 4820, and successful finish. Production was not deployed.

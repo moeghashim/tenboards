@@ -1,4 +1,5 @@
 import type { ProviderId } from "../../../../../lib/assistant/config.ts";
+import type { DataResultMap } from "../../../../../lib/assistant/data-contract.ts";
 import { bytes } from "../../../../../lib/assistant/registry.ts";
 
 export type FailureCode =
@@ -61,13 +62,14 @@ export type Turn = {
   prompt: string;
   attribution: string;
   text: string;
+  results?: DataResultMap;
   status: "streaming" | "completed" | "stopped" | "error";
   error?: FailureCode;
 };
 export type Conversation = { turns: Turn[]; generation: number };
 export type Action =
   | { type: "start"; turn: Turn; regenerate: boolean }
-  | { type: "update"; id: number; text?: string; status?: Turn["status"]; error?: FailureCode }
+  | { type: "update"; id: number; text?: string; results?: DataResultMap; status?: Turn["status"]; error?: FailureCode }
   | { type: "clear"; generation: number };
 export const initialConversation: Conversation = { turns: [], generation: 0 };
 export function conversationReducer(state: Conversation, action: Action): Conversation {
@@ -87,6 +89,7 @@ export function conversationReducer(state: Conversation, action: Action): Conver
         ? {
             ...turn,
             text: action.text ?? turn.text,
+            results: action.results ?? turn.results,
             status: action.status ?? turn.status,
             error: action.error ?? turn.error,
           }

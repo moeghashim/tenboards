@@ -21,10 +21,19 @@ const message = z.discriminatedUnion("role", [
   }),
 ]);
 export const requestSchema = z
-  .strictObject({ provider: z.enum(providerIds).optional(), messages: z.array(message).min(1).max(20) })
+  .strictObject({
+    operation: z.literal("dashboard").optional(),
+    provider: z.enum(providerIds).optional(),
+    messages: z.array(message).min(1).max(20),
+  })
   .refine((body) => body.messages.at(-1)?.role === "user");
 export type AssistantRequest = z.infer<typeof requestSchema>;
 export async function readInput(request: Request, timeoutMs = 10000): Promise<AssistantRequest> {
+  const result = requestSchema.safeParse(await readJsonInput(request, timeoutMs));
+  if (!result.success) throw new AssistantError("invalid", 400);
+  return result.data;
+}
+export async function readJsonInput(request: Request, timeoutMs = 10000): Promise<unknown> {
   if (!/^application\/json(?:\s*;\s*charset=utf-8)?$/i.test(request.headers.get("content-type") ?? ""))
     throw new AssistantError("invalid", 415);
   const length = request.headers.get("content-length");
@@ -56,7 +65,7 @@ export async function readInput(request: Request, timeoutMs = 10000): Promise<As
       body += decoder.decode(part.value, { stream: true });
     }
     body += decoder.decode();
-    return requestSchema.parse(JSON.parse(body));
+    return JSON.parse(body);
   } catch (error) {
     throw error instanceof AssistantError ? error : new AssistantError("invalid", 400);
   } finally {

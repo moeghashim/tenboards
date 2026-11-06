@@ -149,3 +149,5 @@ for (const levels of [6, 7, 8])
     assert.ok(performance.now() - started < 250, "Reference fan-out must reject within a bounded amount of work");
   }
 console.log("PASS six reachable/unreachable reference fan-out attacks (10^6–10^8), each under 250ms");
+
+await import("./assistant-data-check.ts");
