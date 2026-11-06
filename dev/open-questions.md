@@ -304,3 +304,9 @@ Verification: build/check/typecheck and Assistant tests pass, including new inje
 No real provider account, hosted Hyperdrive, or PostgreSQL <17 runtime was tested. Older-server support is version-gated in code. Canvas refresh controls and targeted editing remain task 004. PLAN, protected primitives, dependencies and production are unchanged.
 
 Delivery: PR #86; isolated preview version `00e364fc-3be7-49e8-a1da-e50bba85dc18`, https://00e364fc-tenboards-preview.mohanadgh.workers.dev (alias https://pr-86-tenboards-preview.mohanadgh.workers.dev). `preview:deploy` verified remote ASSETS-only bindings and no secrets. A remote smoke confirmed Recorded demo, v2 demo-source revenue beginning at 4820, and successful finish. Production was not deployed.
+
+## v0.10 / 004 — Remaining assistive-technology review (2026-11-06)
+
+PR #87 implements the canvas and passes automated verification: 148 full-catalog four-state axe/runtime checks, hosted Assistant verification, keyboard controls, accessible names/regions/status announcements, reduced motion, recorded create/edit/refresh, five synthetic provider adapters, identity/stale-patch/Stop/session tests and all npm Assistant suites. The preview is recorded-only with ASSETS and no secrets.
+
+A hands-on VoiceOver/NVDA interaction pass was not performed. The screen-reader portion of task 004's accessibility acceptance remains unchecked for reviewer verification; browser accessibility-tree inspection and axe are the available evidence, not a claim of an actual screen-reader session. No implementation decision or scope expansion is pending. Evidence: https://github.com/moeghashim/tenboards/tree/pr-assets/pr-87.
