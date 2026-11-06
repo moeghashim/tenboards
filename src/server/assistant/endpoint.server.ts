@@ -37,6 +37,7 @@ export async function handleAssistant(request: Request) {
     const provider = selectProvider(config, input.provider);
     active();
     await admit(env, trustedIP(request, !!workerRequestScope()), state.user?.id);
+    if (input.operation === "edit") return await dashboardResponse(request, input, provider, started);
     if (
       input.operation === "dashboard" ||
       /^(?:show|build|create) (?:a )?(?:revenue |finance |analytics |crm |ecommerce )?dashboard/i.test(

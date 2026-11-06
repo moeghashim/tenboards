@@ -1,0 +1,56 @@
+import { applyPatch, editSnapshots, panels, references, singlePanel } from "../src/lib/assistant/canvas.ts";
+import { type DataResultMap, dataRefKey } from "../src/lib/assistant/data-contract.ts";
+import { inspectLanguage } from "../src/lib/assistant/language.ts";
+import { toolRef, toolText } from "./assistant-tool-wire.ts";
+import assert from "node:assert/strict";
+
+const first = singlePanel(toolText);
+const second = { ...first, props: { ...first.props, id: "second" } };
+// Build through the same validated patch seam, not string rewriting.
+const initial = { version: 1 as const, revision: 0, tree: inspectLanguage(toolText, true).tree! };
+const two = applyPatch(initial, { version: 1, baseRevision: 0, op: "add", targetId: "second", panel: second });
+const replacement = {
+  ...first,
+  props: {
+    ...first.props,
+    children: [{ name: "DashboardChart" as const, props: { title: "Changed", kind: "bar", data: toolRef } }],
+  },
+};
+const patch = {
+  version: 1 as const,
+  baseRevision: 1,
+  op: "replace" as const,
+  targetId: "overview",
+  panel: replacement,
+};
+const next = applyPatch(two, patch);
+assert.equal(panels(next.tree)[1], panels(two.tree)[1]);
+assert.notEqual(panels(next.tree)[0], panels(two.tree)[0]);
+assert.equal(panels(next.tree)[0].props.id, "overview");
+assert.throws(() => applyPatch(next, patch), /Stale/);
+assert.throws(() => applyPatch(two, { ...patch, targetId: "missing" }));
+assert.throws(() => applyPatch(two, { ...patch, panel: { name: "Text", props: { text: "bad" } } }));
+assert.throws(() => singlePanel('root = Stack([Text("Not a panel")])'));
+let full = two;
+for (let i = 2; i < 8; i++)
+  full = applyPatch(full, { ...patch, baseRevision: full.revision, op: "add", targetId: `panel${i}` });
+assert.throws(() => applyPatch(full, { ...patch, baseRevision: full.revision, op: "add", targetId: "ninth" }));
+const key = dataRefKey(toolRef);
+const snapshots: DataResultMap = {
+  [key]: {
+    ref: toolRef,
+    kind: "series",
+    source: "demo",
+    asOf: "2026-11-06T00:00:00.000Z",
+    periodLabel: "Available",
+    truncated: false,
+    data: { labels: ["A"], series: [{ label: "Count", values: [1] }] },
+  },
+};
+assert.equal(editSnapshots(next.tree, snapshots, {})[key], snapshots[key]);
+assert.throws(() => editSnapshots(next.tree, snapshots, snapshots));
+assert.throws(() => editSnapshots(next.tree, {}, {}));
+assert.equal(references(next.tree).length, 1);
+console.log(
+  "PASS targeted identity, preserved snapshot objects, local IDs, stale patch, whole-tree limits and strict single-panel gate",
+);

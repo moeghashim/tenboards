@@ -137,13 +137,14 @@ export function dashboardProviderStream(
   fetcher: typeof fetch,
   system: string,
   tools?: ToolSet,
+  optionalTools = false,
 ) {
   return streamText({
     model: providerModel(provider, fetcher),
     messages,
     system,
     tools,
-    toolChoice: tools ? "required" : "none",
+    toolChoice: tools ? (optionalTools ? "auto" : "required") : "none",
     abortSignal: signal,
     maxOutputTokens: tools ? 1024 : 3072,
     maxRetries: 0,

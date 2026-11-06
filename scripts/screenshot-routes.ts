@@ -12,6 +12,7 @@ export const httpRoutes: string[] = [
   "/dashboard/projects/$projectId/",
   "/api/auth/$",
   "/api/assistant",
+  "/api/assistant-refresh",
   "/dashboard/default-v1",
   "/dashboard/crm-v1",
   "/dashboard/finance-v1",

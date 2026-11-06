@@ -75,6 +75,13 @@ export function Welcome({ send, disabled }: { send: (prompt: string) => void; di
           );
         })}
       </div>
+      <div className="mt-4 flex flex-wrap justify-center gap-2">
+        {["Show revenue dashboard", "Show analytics dashboard", "Show finance dashboard"].map((prompt) => (
+          <Button key={prompt} variant="outline" disabled={disabled} onClick={() => send(prompt)}>
+            {prompt}
+          </Button>
+        ))}
+      </div>
     </section>
   );
 }

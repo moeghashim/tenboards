@@ -23,6 +23,7 @@ export function useConversation(initialConfig: AssistantConfig) {
   const [refreshing, setRefreshing] = useState(false);
   const selected = config.providers.find((item) => item.id === provider);
   const [state, dispatch] = useReducer(conversationReducer, initialConversation);
+  const [canvasBusy, setCanvasBusy] = useState(false);
   const [input, setInput] = useState("");
   const [error, setError] = useState("");
   const [contextNotice, setContextNotice] = useState(false);
@@ -51,7 +52,7 @@ export function useConversation(initialConfig: AssistantConfig) {
   }, []);
   const busy = state.turns.at(-1)?.status === "streaming";
   const remaining = Math.max(0, Math.ceil((retryAt - now) / 1000));
-  const blocked = busy || expired || refreshing || selectionRequired || remaining > 0;
+  const blocked = canvasBusy || busy || expired || refreshing || selectionRequired || remaining > 0;
   const clear = useCallback((sessionLost = false) => {
     const id = ++generation.current;
     active.current?.abort();
@@ -227,6 +228,12 @@ export function useConversation(initialConfig: AssistantConfig) {
   }
   return {
     config,
+    setCanvasBusy,
+    canvasBusy,
+    canvasRate: (deadline: number) => {
+      setNow(Date.now());
+      setRetryAt(deadline);
+    },
     provider,
     selected,
     select: (id: ProviderId) => {

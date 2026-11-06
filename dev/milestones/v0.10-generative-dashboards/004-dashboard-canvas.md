@@ -1,6 +1,6 @@
 # 004 — Dashboard canvas, refresh and targeted edits
 
-Status: approved. Branch: `feat/v0.10/004-dashboard-canvas`. Depends on 002 and 003.
+Status: implemented; verification and review in progress. Branch: `feat/v0.10/004-dashboard-canvas`. Depends on 002 and 003.
 
 ## Scope
 

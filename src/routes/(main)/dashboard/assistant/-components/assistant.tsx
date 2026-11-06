@@ -38,7 +38,9 @@ export function Assistant({ config }: { config: AssistantConfig }) {
         className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-4 md:px-6"
         data-assistant-scroll
       >
-        <div className="mx-auto flex min-h-full w-full max-w-[752px] flex-col gap-7 py-5">
+        <div
+          className={`mx-auto flex min-h-full w-full flex-col gap-7 py-5 ${turns.some((turn) => turn.results) ? "" : "max-w-[752px]"}`}
+        >
           {conversation.selectionRequired && (
             <p role="status" className="text-muted-foreground">
               Available providers changed.{" "}
@@ -89,6 +91,13 @@ export function Assistant({ config }: { config: AssistantConfig }) {
                 <div ref={turn.id === latest?.id ? latestReply : undefined} className="min-w-0 space-y-3">
                   {turn.status !== "error" && (turn.text || turn.status === "streaming") && (
                     <SafeResponse
+                      actions={{
+                        provider,
+                        blocked: conversation.blocked,
+                        busy: conversation.setCanvasBusy,
+                        rate: conversation.canvasRate,
+                        sessionLost: () => clear(true),
+                      }}
                       results={turn.results}
                       text={turn.text}
                       complete={turn.status === "completed"}
@@ -165,7 +174,7 @@ export function Assistant({ config }: { config: AssistantConfig }) {
               <NativeSelect
                 id="assistant-provider"
                 value={provider ?? ""}
-                disabled={busy || conversation.expired || conversation.refreshing}
+                disabled={busy || conversation.expired || conversation.refreshing || conversation.canvasBusy}
                 onChange={(event) => conversation.select(event.target.value as ProviderId)}
                 className="max-w-full"
                 size="sm"

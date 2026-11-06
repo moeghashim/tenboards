@@ -52,7 +52,9 @@
     "registry:build": "node --experimental-strip-types scripts/registry-build.ts",
     "llms:build": "node --experimental-strip-types scripts/llms.ts",
     "check:registry": "node --experimental-strip-types scripts/registry-build.ts --check",
-    "check:llms": "node --experimental-strip-types scripts/llms.ts --check"
+    "check:llms": "node --experimental-strip-types scripts/llms.ts --check",
+    "assistant:canvas": "node --experimental-strip-types scripts/assistant-canvas-check.ts",
+    "assistant:canvas-browser": "node --experimental-strip-types scripts/assistant-canvas-browser-check.ts"
   },
   "lint-staged": {
     "*.{js,ts,jsx,tsx}": ["biome check --write --no-errors-on-unmatched"]
