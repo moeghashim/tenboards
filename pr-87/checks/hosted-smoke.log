@@ -1,0 +1,3 @@
+PASS hosted smoke /
+PASS hosted smoke /dashboard/home
+PASS zero console/page errors
