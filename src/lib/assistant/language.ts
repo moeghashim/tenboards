@@ -261,7 +261,9 @@ export function validateTree(root: SafeNode, results?: DataResultMap): SafeNode 
       const key = dataRefKey(ref);
       refs.add(key);
       if (refs.size > limits.refs) throw new Error("Too many references");
-      const expected = { StatCard: "stat", DataTable: "table", DashboardChart: "series" }[node.name];
+      const expected = ({ StatCard: "stat", DataTable: "table", DashboardChart: "series" } as Record<string, string>)[
+        node.name
+      ];
       // The initial capability catalog exposes series only.
       if (expected !== "series") throw new Error("Incompatible reference kind");
       if (snapshots && (!snapshots[key] || snapshots[key].kind !== expected))
