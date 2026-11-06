@@ -243,13 +243,13 @@
     },
     {
       "id": "v0.10-generative-dashboards",
-      "status": "approved",
+      "status": "done",
       "tasks": ["001-spike", "002-blocks-library", "003-data-tools", "004-dashboard-canvas"],
       "taskStatuses": {
         "001-spike": "merged",
         "002-blocks-library": "merged",
         "003-data-tools": "merged",
-        "004-dashboard-canvas": "in-review"
+        "004-dashboard-canvas": "merged"
       }
     }
   ]

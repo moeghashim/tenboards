@@ -1,6 +1,6 @@
 # 002 — Blocks as the OpenUI library
 
-Status: implemented; PR #85 in review. Branch: `feat/v0.10/002-blocks-library`. Depends on 001 approval.
+Status: merged (#85). Branch: `feat/v0.10/002-blocks-library`. Depends on 001 approval.
 
 ## Scope
 

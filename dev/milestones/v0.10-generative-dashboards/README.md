@@ -1,6 +1,6 @@
 # v0.10 — Generative dashboards in the AI Assistant
 
-Status: **approved 2026-11-06; 001 spike merged (GO, approved by reviewer and user 2026-11-06); 002 and 003 merged; 004 implemented and in review**. Contract: PLAN.md Decisions log, “v0.10 generative dashboards” and “v0.10 data tools” (2026-11-06).
+Status: **done — merged as #84, #85, #86 and #87 and released as [v0.10.0](https://github.com/moeghashim/tenboards/releases/tag/v0.10.0)**. Contract: PLAN.md Decisions log, “v0.10 generative dashboards” and “v0.10 data tools” (2026-11-06).
 
 Goal: a user asks the AI Assistant for a dashboard and gets one built from tenboards' own blocks, filled with real data from the app's typed reads, that can be refreshed and edited one panel at a time. It complements the ten coded dashboards; it does not replace them.
 

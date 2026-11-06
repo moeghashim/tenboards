@@ -1,6 +1,6 @@
 # 004 — Dashboard canvas, refresh and targeted edits
 
-Status: implemented; automated verification passed; manual screen-reader review outstanding (#87). Branch: `feat/v0.10/004-dashboard-canvas`. Depends on 002 and 003.
+Status: merged (#87); hands-on VoiceOver/NVDA review not yet performed. Branch: `feat/v0.10/004-dashboard-canvas`. Depends on 002 and 003.
 
 ## Scope
 
