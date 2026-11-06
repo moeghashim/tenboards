@@ -1,0 +1,16 @@
+
+> tenboards@0.9.1 typecheck
+> tsc --noEmit
+
+src/lib/assistant/language.ts(264,24): error TS2339: Property 'Badge' does not exist on type '{ StatCard: string; DataTable: string; DashboardChart: string; }'.
+src/lib/assistant/language.ts(264,24): error TS2339: Property 'Card' does not exist on type '{ StatCard: string; DataTable: string; DashboardChart: string; }'.
+src/lib/assistant/language.ts(264,24): error TS2339: Property 'Chart' does not exist on type '{ StatCard: string; DataTable: string; DashboardChart: string; }'.
+src/lib/assistant/language.ts(264,24): error TS2339: Property 'DashboardCard' does not exist on type '{ StatCard: string; DataTable: string; DashboardChart: string; }'.
+src/lib/assistant/language.ts(264,24): error TS2339: Property 'DashboardGrid' does not exist on type '{ StatCard: string; DataTable: string; DashboardChart: string; }'.
+src/lib/assistant/language.ts(264,24): error TS2339: Property 'List' does not exist on type '{ StatCard: string; DataTable: string; DashboardChart: string; }'.
+src/lib/assistant/language.ts(264,24): error TS2339: Property 'PageHeader' does not exist on type '{ StatCard: string; DataTable: string; DashboardChart: string; }'.
+src/lib/assistant/language.ts(264,24): error TS2339: Property 'Panel' does not exist on type '{ StatCard: string; DataTable: string; DashboardChart: string; }'.
+src/lib/assistant/language.ts(264,24): error TS2339: Property 'Stack' does not exist on type '{ StatCard: string; DataTable: string; DashboardChart: string; }'.
+src/lib/assistant/language.ts(264,24): error TS2339: Property 'Stat' does not exist on type '{ StatCard: string; DataTable: string; DashboardChart: string; }'.
+src/lib/assistant/language.ts(264,24): error TS2339: Property 'Table' does not exist on type '{ StatCard: string; DataTable: string; DashboardChart: string; }'.
+src/lib/assistant/language.ts(264,24): error TS2339: Property 'Text' does not exist on type '{ StatCard: string; DataTable: string; DashboardChart: string; }'.

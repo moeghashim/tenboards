@@ -1,0 +1,4 @@
+PASS blocks light/desktop
+PASS blocks light/mobile
+PASS blocks dark/desktop
+PASS blocks dark/mobile

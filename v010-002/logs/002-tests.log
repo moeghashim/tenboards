@@ -1,0 +1,7 @@
+
+> tenboards@0.9.1 assistant:test
+> node --experimental-strip-types scripts/assistant-check.ts
+
+Blocks library: refs, results, caps, identity, splits, legacy and serializer checks passed.
+PASS Assistant language, registry, stream and cancellation: 1047 assertions
+PASS six reachable/unreachable reference fan-out attacks (10^6–10^8), each under 250ms

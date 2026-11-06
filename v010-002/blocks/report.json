@@ -1,0 +1,26 @@
+[
+  {
+    "theme": "light",
+    "size": "desktop",
+    "errors": [],
+    "violations": []
+  },
+  {
+    "theme": "light",
+    "size": "mobile",
+    "errors": [],
+    "violations": []
+  },
+  {
+    "theme": "dark",
+    "size": "desktop",
+    "errors": [],
+    "violations": []
+  },
+  {
+    "theme": "dark",
+    "size": "mobile",
+    "errors": [],
+    "violations": []
+  }
+]
