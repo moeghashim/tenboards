@@ -1,5 +1,5 @@
 {
-  "baseURL": "http://localhost:3170/",
+  "baseURL": "https://pr-87-tenboards-preview.mohanadgh.workers.dev/",
   "projectId": "sample-operations",
   "fontAssets": "exact public responses cached between contexts",
   "maskedLiveClocks": false,
@@ -41,9 +41,7 @@
       "phase": "direct",
       "interactionNotes": [],
       "expectedDiagnostics": [],
-      "errors": [
-        "Vite error overlay is present; this capture is not valid evidence."
-      ]
+      "errors": []
     },
     {
       "route": "/dashboard/assistant",

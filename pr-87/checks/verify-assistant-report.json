@@ -1,0 +1,11 @@
+{
+  "baseURL": "http://localhost:3171/",
+  "passed": true,
+  "reports": [
+    {
+      "route": "/dashboard/assistant",
+      "passed": true,
+      "report": "dashboard%2Fassistant/report.json"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+Version a54407e7-fa6a-49c2-bc19-e2273ff90ad1; ASSETS only, zero remote secrets (preview deploy policy verified).
+Manual browser on pr-87 alias:
+- Show revenue dashboard: Recorded demo · completed; server-authored fixture snapshot and panel overview.
+- Select overview; Make this a bar chart: revision 1; Panel updated. Other panels are unchanged.
+- Refresh data: Data refreshed. Layout unchanged.
+- Show analytics dashboard and Show finance dashboard: HTTP 200, data-ref and terminal finish each.
+No real provider keys were used. All five native adapter cases used intercepted synthetic wires locally.

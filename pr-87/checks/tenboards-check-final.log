@@ -264,16 +264,32 @@ scripts/assistant-canvas-browser-check.ts:83:15 lint/suspicious/noUnnecessaryCon
   i Remove the condition and the code it guards, or check the value you meant to test.
   
 
-scripts/assistant-canvas-check.ts:10:59 lint/style/noNonNullAssertion ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+scripts/assistant-canvas-check.ts:11:59 lint/style/noNonNullAssertion ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
   ! Forbidden non-null assertion.
   
-     8 │ const second = { ...first, props: { ...first.props, id: "second" } };
-     9 │ // Build through the same validated patch seam, not string rewriting.
-  > 10 │ const initial = { version: 1 as const, revision: 0, tree: inspectLanguage(toolText, true).tree! };
+     9 │ const second = { ...first, props: { ...first.props, id: "second" } };
+    10 │ // Build through the same validated patch seam, not string rewriting.
+  > 11 │ const initial = { version: 1 as const, revision: 0, tree: inspectLanguage(toolText, true).tree! };
        │                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    11 │ const two = applyPatch(initial, { version: 1, baseRevision: 0, op: "add", targetId: "second", panel: second });
-    12 │ const replacement = {
+    12 │ const two = applyPatch(initial, { version: 1, baseRevision: 0, op: "add", targetId: "second", panel: second });
+    13 │ const replacement = {
+  
+  i A non-null assertion tells TypeScript to ignore a possible null or undefined value. If the value is missing at runtime, the code fails with an error that the compiler could not catch.
+  
+  i Check that the value is defined before using it, for example with an if statement or optional chaining, instead of asserting it.
+  
+
+scripts/assistant-context-browser-check.ts:105:22 lint/style/noNonNullAssertion ━━━━━━━━━━━━━━━━━━━━
+
+  ! Forbidden non-null assertion.
+  
+    103 │       await page.getByRole("button", { name: "Jump to latest", exact: true }).click();
+    104 │       await page.waitForFunction(() => {
+  > 105 │         const node = document.querySelector("[data-assistant-scroll]")!;
+        │                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    106 │         return node.scrollHeight - node.clientHeight - node.scrollTop < 2;
+    107 │       });
   
   i A non-null assertion tells TypeScript to ignore a possible null or undefined value. If the value is missing at runtime, the code fails with an error that the compiler could not catch.
   
@@ -394,32 +410,16 @@ scripts/assistant-wire-fixtures.ts:19:62 lint/style/noNestedTernary ━━━━
   i Convert nested ternary expression into if-else statements or separate the conditions to make the logic easier to understand.
   
 
-scripts/assistant-worker-check.ts:25:24 lint/style/noNonNullAssertion ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  ! Forbidden non-null assertion.
-  
-    23 │   assert.match(response.headers.get("cache-control") ?? "", /private, no-store/);
-    24 │   assert.equal(response.headers.get("x-content-type-options"), "nosniff");
-  > 25 │   return consumeStream(response.body!, new AbortController().signal, () => {
-       │                        ^^^^^^^^^^^^^^
-    26 │     /* Inspect final response below. */
-    27 │   });
-  
-  i A non-null assertion tells TypeScript to ignore a possible null or undefined value. If the value is missing at runtime, the code fails with an error that the compiler could not catch.
-  
-  i Check that the value is defined before using it, for example with an if statement or optional chaining, instead of asserting it.
-  
-
 The number of diagnostics exceeds the limit allowed. Use --max-diagnostics to increase it.
 Diagnostics not shown: 55.
-Checked 601 files in 1898ms. No fixes applied.
+Checked 601 files in 1606ms. No fixes applied.
 Found 63 warnings.
 Found 12 infos.
 
 > tenboards@0.9.1 check:design
 > node --experimental-strip-types scripts/check-design.ts
 
-Checked 260 files in 18ms. No fixes applied.
+Checked 260 files in 23ms. No fixes applied.
 Design guardrails passed (260 files; 71 documented existing exceptions).
 
 > tenboards@0.9.1 check:skills
