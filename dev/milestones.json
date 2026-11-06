@@ -248,7 +248,7 @@
       "taskStatuses": {
         "001-spike": "merged",
         "002-blocks-library": "in-review",
-        "003-data-tools": "in-progress",
+        "003-data-tools": "in-review",
         "004-dashboard-canvas": "approved"
       }
     }

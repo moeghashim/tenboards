@@ -1,6 +1,6 @@
 # 003 — Read-only data tools
 
-Status: approved. Branch: `feat/v0.10/003-data-tools`. Depends on 001 approval.
+Status: implemented; in review. Branch: `feat/v0.10/003-data-tools`. Depends on 001 approval.
 
 ## Scope
 
@@ -11,10 +11,10 @@ Status: approved. Branch: `feat/v0.10/003-data-tools`. Depends on 001 approval.
 
 ## Acceptance criteria
 
-- [ ] Unit tests per tool: schema rejection, auth-on without session → rejected, demo and DB parity (`data:parity`), DB failure → visible error.
-- [ ] Mocked provider tests for each provider's tool-call flow; recorded mode shows fixture numbers with no keys.
+- [x] Unit tests per tool: schema rejection, auth-on without session → rejected, demo and DB parity (`data:parity`), DB failure → visible error.
+- [x] Mocked provider tests for each provider's tool-call flow; recorded mode shows fixture numbers with no keys.
 - [ ] Preview Worker remains recorded-only, ASSETS-only with no secrets.
-- [ ] Build, check, typecheck, verify:page pass; docs/assistant.md (tools, limits, privacy), README, CHANGELOG draft, milestone status updated.
+- [x] Build, check, typecheck, verify:page pass; docs/assistant.md (tools, limits, privacy), README, CHANGELOG draft, milestone status updated.
 
 ## Spike clarifications (accepted by reviewer and user 2026-11-06)
 
@@ -26,8 +26,8 @@ Status: approved. Branch: `feat/v0.10/003-data-tools`. Depends on 001 approval.
 
 Additional acceptance:
 
-- [ ] All five actual adapters pass fragmented native tool-call/result/final-text mocks on Node and compiled workerd; unknown tools, invalid args, fifth calls, late results, cancellation and aggregate budget failures fail closed.
-- [ ] DB/session cleanup occurs only after preflight work settles; refresh constructs no provider and configured DB errors remain visible in recorded mode. Injection fixtures cannot bypass authorization, gate or caps.
+- [x] All five actual adapters pass fragmented native tool-call/result/final-text mocks on Node and compiled workerd; unknown tools, invalid args, fifth calls, late results, cancellation and aggregate budget failures fail closed.
+- [x] DB/session cleanup occurs only after preflight work settles; refresh constructs no provider and configured DB errors remain visible in recorded mode. Injection fixtures cannot bypass authorization, gate or caps.
 
 ## Cancellation design (reviewer decision 2026-11-06, after the gate failure in dev/open-questions.md)
 

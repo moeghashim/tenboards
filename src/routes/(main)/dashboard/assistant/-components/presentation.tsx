@@ -52,7 +52,9 @@ export function Welcome({ send, disabled }: { send: (prompt: string) => void; di
           <Bot className="size-6" aria-hidden="true" />
         </div>
         <h2 className="text-xl font-medium tracking-tight">What would you like to explore?</h2>
-        <p className="text-muted-foreground mt-2 text-sm">Illustrative replies, with no access to your workspace.</p>
+        <p className="text-muted-foreground mt-2 text-sm">
+          Recorded examples and read-only dashboards from available data.
+        </p>
       </div>
       <div className="grid grid-cols-2 gap-3">
         {examples.map((example, index) => {

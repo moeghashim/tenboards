@@ -4,7 +4,9 @@
 
 - Add strict public-block OpenUI wrappers, stable-ID panels, responsive grids, area charts and a read-only public table adapter. Preserve legacy recorded replies and the Stack root.
 - Add bounded version-1 inert reference/result contracts and validated-tree/serializer seams, with eight-panel/four-reference caps and regression tests. No dependency upgrade, renderer fetching or native Query/Mutation.
-- Add the illustrative “Show sample blocks” recorded example. Tools, v2 transport, refresh and the dashboard canvas remain separate tasks.
+- Add the illustrative “Show sample blocks” recorded example. The dashboard canvas remains task 004.
+
+- Add five guarded dashboard series, two-phase native tools for all providers, recorded data references, v2 SSE snapshots and a model-free refresh resolver. Preserve the normal demo/DB selector, bounded budgets and whole-call database cancellation.
 
 ## v0.9.1 — Project homepage (2026-10-27)
 

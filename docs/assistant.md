@@ -1,6 +1,6 @@
 # AI Assistant
 
-`/dashboard/assistant` is separate from person-to-person Chat. It renders bounded summaries, cards, statistics, badges, lists, tables and bar/line/area charts using the existing components. Charts include data tables. It cannot read workspace records, browse, use tools or change data. Output is untrusted: a restricted literal-language gate and independent Zod validation reject unsupported expressions, components and props before rendering. No generated HTML, script, iframe, links, styles, forms or actions are supported.
+`/dashboard/assistant` is separate from person-to-person Chat. It renders bounded summaries, cards, statistics, badges, lists, tables and bar/line/area charts using the existing components. Charts include data tables. It can read five audited dashboard series through guarded tools; it cannot browse or change data. Output is untrusted: a restricted literal-language gate and independent Zod validation reject unsupported expressions, components and props before rendering. No generated HTML, script, iframe, links, styles, forms or actions are supported.
 
 ## Public blocks library (v0.10 task 002)
 
@@ -10,13 +10,13 @@ The shared contract for task 003 is **`src/lib/assistant/data-contract.ts`**. It
 
 Results are `{ref,kind,data,source,asOf,periodLabel,truncated}` with `kind` stat/series/table, source demo/db, ISO datetime `asOf`, and fixed-order canonical keys from `dataRefKey`. Stat data contains label/value/detail; series data contains labels and labeled finite value arrays; table data contains columns and matching rows. Limits are eight panels, four distinct references, 8 KiB per result and 24 KiB per result map, in addition to all existing language limits and the 12,000-work guard.
 
-`inspectLanguage` exposes the validated `tree`; `validateTree` and `serializeTree` provide the application seam for task 004 without exposing the OpenUI evaluator. Supplying a result map requires every referenced result to exist and match its block kind. `AssistantDataProvider` accepts validated host snapshots; changing them updates chart data without parsing or network I/O. A missing snapshot renders an explicit unavailable state. This layer does not fetch: native Query/Mutation, bindings, functions and actions remain disabled. Server tools/v2 transport/refresh belong to task 003; canvas state and edits belong to task 004.
+`inspectLanguage` exposes the validated `tree`; `validateTree` and `serializeTree` provide the application seam for task 004 without exposing the OpenUI evaluator. Supplying a result map requires every referenced result to exist and match its block kind. `AssistantDataProvider` accepts validated host snapshots; changing them updates chart data without parsing or network I/O. A missing snapshot renders an explicit unavailable state. This layer does not fetch: native Query/Mutation, bindings, functions and actions remain disabled. Task 003 supplies server tools, v2 transport and the refresh resolver; canvas controls and edits belong to task 004.
 
 Regression coverage: `npm run assistant:test` includes the block/ref/result/partial/unreachable/legacy gate checks. Run `node --experimental-strip-types scripts/assistant-blocks-browser-check.ts` against `ASSISTANT_TEST_URL` (default port 3170) for four-state recorded block and axe evidence under gitignored `verify/blocks`.
 
 ## Recorded and configured modes
 
-No keys means recorded replies. Examples use synthetic illustrative data, and unmatched prompts receive an explicitly labelled recorded fallback. Both sources use POST `/api/assistant` and the same bounded SSE text-delta/finish/error envelope. The repository live demo and every `tenboards-preview` version stay recorded-only.
+No keys means recorded replies. Legacy examples use illustrative data; recorded dashboards use guarded fixture or DB projections. Unmatched legacy prompts receive a labelled fallback. Both use POST `/api/assistant`, with v1 for legacy replies and v2 data/text/terminal events for dashboards. The repository live demo and every `tenboards-preview` version stay recorded-only.
 
 Adopters can set any subset of these **server-only** variables. Only a nonblank key enables a provider, in this order; model variables alone enable none. The selector shows enabled names and effective models. It sends only the provider ID; the server resolves the key and model on each request. Invalid configuration, removed/revoked keys and upstream errors fail explicitly, with no provider or recorded fallback.
 
@@ -54,7 +54,7 @@ Provider/config failures refresh enabled metadata. A removed provider leaves an 
 | Render | 200 nodes, 12 levels, 50 table rows × 8 columns, 4 series × 50 points |
 | Provider wire | 2 MiB cap, including metadata; bounded independently of visible output |
 
-Only user/assistant text is accepted. Client system/developer/tool roles, arbitrary destinations, headers, models and unknown fields are rejected. Requests contain entered text and library instructions, never profile/session/database/Chat data. SDK retries are disabled. Stop, disconnect, timeout and overflow cancel upstream. Truncated, empty, refused or invalid replies never receive a completed marker. Exactly one terminal event closes a response; safe HTTP errors before streaming are distinct from error events after headers. DB and session work finishes before the stream returns.
+Only user/assistant text is accepted. Client system/developer/tool roles, arbitrary destinations, headers, models and unknown fields are rejected. Requests contain entered text and library instructions; dashboard final requests additionally contain minimal selected projections, never profile/session/Chat records or whole domain objects. SDK retries are disabled. Stop, disconnect, timeout and overflow cancel upstream. Truncated, empty, refused or invalid replies never receive a completed marker. Exactly one terminal event closes a response; safe HTTP errors before streaming are distinct from error events after headers. DB and session work finishes before the stream returns.
 
 Admission uses fixed 60-second windows: 10 per authenticated user plus 30 per trusted IP, or 10 per IP with auth off. 429 includes Retry-After; aborts are not refunded. DB mode uses atomic conditional upserts in existing `auth_rate_limit`, hashed identifiers and `assistant:v1:` keys; cleanup touches only Assistant keys. Storage errors return 503 without memory fallback. Workers trust only `cf-connecting-ip` on their actual request path. Node ignores forwarding headers and uses one conservative unknown-IP bucket (30 across authenticated users). Fixed-window boundaries can admit twice the stated limit in a short burst; each IPv6 /128 has its own bucket.
 
@@ -88,3 +88,29 @@ Official model/protocol references rechecked 2026-10-24: [Anthropic catalog](htt
 ### Conversation controls
 
 The bottom composer grows from one to eight rows. Enter sends; Shift+Enter inserts a newline. Its toolbar contains the enabled provider/model selector (or Recorded demo badge) and Send, which becomes Stop during a reply. Copy reply and Regenerate sit below the latest assistant turn. Scrolling up pauses following; Jump to latest returns to new output. New conversation clears the view, and its tooltip explains that leaving or reloading also clears it.
+
+## Read-only dashboard data (v0.10 task 003)
+
+Send **Show revenue dashboard** (or **Show dashboard**) for a recorded dashboard with real fixture values and server-authored data references. The API also accepts `operation: "dashboard"`. Ordinary illustrative replies retain v1 SSE; dashboards use v2 with one validated `data` event followed by text-delta and a terminal finish/error. Snapshots live only in the mounted conversation. They never authorize subsequent reads, and renderer components never fetch.
+
+`dashboard_read` independently checks the session and charges admission on every invocation. Its sole schema is `src/lib/assistant/data-contract.ts`: five discriminated domain/metric pairs, `range: "available"`, `segment: "all"`, and limit 10, 25 or 50. Unsupported dates, channels, identifiers, SQL and URLs are rejected. Ordered projections expose only:
+
+| Domain / metric | Projection |
+| --- | --- |
+| default / performance | New customers, active accounts, returning users; available observation dates |
+| analytics / traffic-quality | Actual and baseline quality indices; fixed source dates |
+| finance / transaction-overview | Expense observations only; sparse income is not replaced with invented zeroes |
+| crm / pipeline | Qualified opportunities, labelled by reporting month |
+| ecommerce / revenue | Revenue and profit in USD, source reporting periods |
+
+The source selector is unchanged: no configured DB uses fixtures; configured DB uses DB and errors visibly. Recorded mode replaces only the model. Results carry source, server clock, period and explicit truncation metadata. No raw customers, email addresses, account records or entire domain objects leave the projection boundary.
+
+Live providers perform one native planning request with no execute callback. The whole batch is validated before sequential guarded execution inside the request scope; the second request streams final language with tools disabled. Tool labels/results are untrusted tool-message data, never system instructions. Prompt injection cannot grant authorization, add tools, change schemas or bypass the literal-language gate. The selected provider receives user text plus these minimal selected projections. Session credentials, raw database records and provider secrets are never included; prompts/results are not logged.
+
+POST `/api/assistant-refresh` accepts only `{refs:[...]}`. It applies method, Origin, content/body, session and rate checks, deduplicates validated refs, resolves them sequentially with one clock and returns `{v:2,results}`. It constructs no provider. Refresh controls and targeted canvas editing are task 004; this endpoint adds no background polling or persistence.
+
+Additional budgets: four invocations (duplicates still count in model batches), two model requests, 1,024 planning + 3,072 final requested tokens, 2 MiB aggregate provider wire, 2 KiB tool args, 8 KiB per result and 24 KiB aggregate, 96 KiB dashboard SSE and 32 KiB refresh JSON. One admission is charged for the request plus one per invocation. The existing 20s first-visible/15s idle/60s total deadlines include preflight; a data event does not extend first-visible time. Eight panels, four refs and existing language/render budgets remain enforced.
+
+Each tool has one deadline at most five seconds away. Database reads use a short transaction, re-arming `SET LOCAL statement_timeout` before each statement to remaining time minus 250 ms; no statement starts with under 500 ms left. PostgreSQL 17+ additionally receives `transaction_timeout` for the remaining call budget; older versions skip that setting. Pending queries are cancelled on abort/deadline and settled before request cleanup. A cancelled/failed read is a visible error, never a fixture fallback or late result.
+
+Verification commands: `npm run assistant:test`, `node --experimental-strip-types scripts/assistant-data-adapters-check.ts`, and `DATABASE_URL=<disposable-local-db> node --experimental-strip-types scripts/assistant-data-endpoint-check.ts` after `npm run build`. The endpoint suite uses synthetic provider wires on Node and compiled workerd; it also compares all five guarded projections, rejects missing sessions and checks visible DB failure. No real provider entitlement or hosted Hyperdrive test is implied.

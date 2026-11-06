@@ -89,6 +89,7 @@ export function Assistant({ config }: { config: AssistantConfig }) {
                 <div ref={turn.id === latest?.id ? latestReply : undefined} className="min-w-0 space-y-3">
                   {turn.status !== "error" && (turn.text || turn.status === "streaming") && (
                     <SafeResponse
+                      results={turn.results}
                       text={turn.text}
                       complete={turn.status === "completed"}
                       pending={turn.status === "streaming"}

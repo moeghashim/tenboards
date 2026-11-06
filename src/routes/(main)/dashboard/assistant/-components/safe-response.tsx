@@ -1,9 +1,10 @@
 import { Component, type ReactNode, useMemo, useState } from "react";
 
+import type { DataResultMap } from "@/lib/assistant/data-contract";
 import { inspectLanguage } from "@/lib/assistant/language";
 
 import { Renderer } from "./openui";
-import { getAssistantLibrary } from "./registry";
+import { AssistantDataProvider, getAssistantLibrary } from "./registry";
 
 export class ResponseBoundary extends Component<{ children: ReactNode }, { failed: boolean }> {
   state = { failed: false };
@@ -39,12 +40,14 @@ export function SafeResponse({
   text,
   complete,
   pending = true,
+  results,
 }: {
   text: string;
   complete: boolean;
   pending?: boolean;
+  results?: DataResultMap;
 }) {
-  const result = useMemo(() => inspectLanguage(text, complete), [text, complete]);
+  const result = useMemo(() => inspectLanguage(text, complete, results), [text, complete, results]);
   if (result.status === "invalid")
     return (
       <p role="status" className="text-danger">
@@ -64,7 +67,9 @@ export function SafeResponse({
     ) : null;
   return (
     <ResponseBoundary key={result.response}>
-      <ValidatedResponse response={result.response} />
+      <AssistantDataProvider results={results ?? {}}>
+        <ValidatedResponse response={result.response} />
+      </AssistantDataProvider>
     </ResponseBoundary>
   );
 }

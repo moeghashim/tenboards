@@ -3,7 +3,7 @@ import { createGoogleGenerativeAI } from "@ai-sdk/google";
 import { createOpenAI } from "@ai-sdk/openai";
 import { createOpenAICompatible } from "@ai-sdk/openai-compatible";
 import { createXai } from "@ai-sdk/xai";
-import { streamText } from "ai";
+import { type ModelMessage, streamText, type ToolSet } from "ai";
 
 import type { ConfiguredProvider } from "./config.server.ts";
 import { AssistantError } from "./errors.ts";
@@ -19,7 +19,7 @@ const hosts = new Set([
   "api.meta.ai",
   "generativelanguage.googleapis.com",
 ]);
-export function boundedFetch(signal: AbortSignal, upstream: typeof fetch = fetch): typeof fetch {
+export function boundedFetch(signal: AbortSignal, upstream: typeof fetch = fetch, budget = { bytes: 0 }): typeof fetch {
   return async (input, init) => {
     const url = new URL(input instanceof Request ? input.url : String(input));
     if (url.protocol !== "https:" || !hosts.has(url.hostname)) throw new AssistantError("provider");
@@ -32,7 +32,7 @@ export function boundedFetch(signal: AbortSignal, upstream: typeof fetch = fetch
       throw new AssistantError("provider");
     }
     const reader = response.body.getReader();
-    let size = 0;
+
     let done = false;
     const cancel = () => {
       void reader
@@ -60,9 +60,9 @@ export function boundedFetch(signal: AbortSignal, upstream: typeof fetch = fetch
               controller.close();
               return;
             }
-            size += part.value.byteLength;
+            budget.bytes += part.value.byteLength;
             // Bound parser frames and SDK metadata buffers independently of the visible-text cap.
-            if (size > 2 * 1024 * 1024) throw new AssistantError("limit");
+            if (budget.bytes > 2 * 1024 * 1024) throw new AssistantError("limit");
             controller.enqueue(part.value);
           } catch {
             cleanup();
@@ -86,7 +86,24 @@ export function providerStream(
   upstream?: typeof fetch,
 ) {
   const options = { apiKey: provider.key, fetch: boundedFetch(signal, upstream) };
-  const model = (() => {
+  const model = providerModel(provider, options.fetch);
+  return streamText({
+    model,
+    system: systemPrompt(),
+    messages,
+    maxOutputTokens: 4096,
+    maxRetries: 0,
+    telemetry: { isEnabled: false, recordInputs: false, recordOutputs: false, integrations: [] },
+    providerOptions: { openai: { store: false }, xai: { store: false } },
+    onError() {
+      /* Only our safe error envelope crosses the response boundary. */
+    },
+  }).fullStream;
+}
+
+export function providerModel(provider: ConfiguredProvider, fetcher: typeof fetch) {
+  const options = { apiKey: provider.key, fetch: fetcher };
+  return (() => {
     switch (provider.id) {
       case "anthropic":
         return createAnthropic(options)(provider.model);
@@ -111,16 +128,29 @@ export function providerStream(
         }).chatModel(provider.model);
     }
   })();
+}
+
+export function dashboardProviderStream(
+  provider: ConfiguredProvider,
+  messages: ModelMessage[],
+  signal: AbortSignal,
+  fetcher: typeof fetch,
+  system: string,
+  tools?: ToolSet,
+) {
   return streamText({
-    model,
-    system: systemPrompt(),
+    model: providerModel(provider, fetcher),
     messages,
-    maxOutputTokens: 4096,
+    system,
+    tools,
+    toolChoice: tools ? "required" : "none",
+    abortSignal: signal,
+    maxOutputTokens: tools ? 1024 : 3072,
     maxRetries: 0,
     telemetry: { isEnabled: false, recordInputs: false, recordOutputs: false, integrations: [] },
     providerOptions: { openai: { store: false }, xai: { store: false } },
     onError() {
-      /* Only our safe error envelope crosses the response boundary. */
+      /* Only safe application errors cross the boundary. */
     },
   }).fullStream;
 }
