@@ -39,3 +39,7 @@ The first attempt showed that aborting the request and closing the client does n
 - **Scope:** required for the new dashboard tool and refresh paths. Session and rate-limit reads keep their v0.7 behavior but must not start after abort/deadline.
 
 Revised gate (must pass before the rest of 003 proceeds): with a `pg_sleep(6)` probe through the real tool path, the read rejects within the ceiling and `pg_stat_activity` shows no active backend for it within **ceiling + 500 ms**, on Node and on the full compiled application (`npm run build` + `npm run preview`, workerd). Budgets stay unchanged.
+
+### Settlement margin (reviewer decision 2026-11-06, round-2 gate results)
+
+Round 2 showed database-enforced cancellation works on Node and the compiled app (backend inactive at 5,015 / 5,008 ms, inside the ceiling + 500 ms window), but rejection landed 3–5 ms after the 5,000 ms ceiling. Reserve settlement time inside the budget instead of permitting overshoot: set `statement_timeout` to `min(4,750 ms, remaining deadline − 250 ms)` and skip the read entirely if less than 500 ms remains. The 5 s per-call ceiling and all other budgets are unchanged. Gate: rejection ≤ 5,000 ms and backend inactive ≤ 5,500 ms on Node and the compiled app.
