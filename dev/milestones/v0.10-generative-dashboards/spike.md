@@ -1,7 +1,7 @@
 # 001 — OpenUI dashboards decision spike
 
 Date checked: **2026-11-06**. tenboards baseline: `4c68804a2b84341f226187de541f48099e0cac25`.
-Recommendation: **GO for a bounded, tenboards-owned implementation; approval pending.**
+Recommendation: **GO for a bounded, tenboards-owned implementation; approved by reviewer and user 2026-11-06.**
 No managed Dashboards, Gateway, Autofix, hosted observability, `react-ui`, interpreter, MCP, persistence or new runtime dependency. Keep both OpenUI packages at **1.0.1**. Reviewer and user must approve this spike and the proposed 002–004 clarifications before implementation starts.
 
 ## 1. Packages, versions and evidence
@@ -114,7 +114,7 @@ Tool text is untrusted even after schema validation. Project minimally, escape l
 
 ## 6. Handoff, approval and remaining risks
 
-002 owns strict serializable block/ref/Panel schemas and the validated-tree seam; 003 owns registry, projections, provider preflight, v2 DTO and refresh resolver; 004 owns mounted canvas, reference snapshots and atomic revisioned edits. Exact proposed contract additions are included in **002–004 themselves**, marked pending reviewer approval. This avoids implying that prose here silently changes an approved task.
+002 owns strict serializable block/ref/Panel schemas and the validated-tree seam; 003 owns registry, projections, provider preflight, v2 DTO and refresh resolver; 004 owns mounted canvas, reference snapshots and atomic revisioned edits. Exact proposed contract additions are included in **002–004 themselves**, accepted by reviewer and user on 2026-11-06. This avoids implying that prose here silently changes an approved task.
 
 No package.json or lockfile changes; retain all exact direct pins in section 1. No preview deployment needed for this docs-only PR. The user explicitly authorizes the spike/task-file edits, overriding the maintainer default restriction on dev/** scope; PLAN.md remains untouched. Approval is not supplied by writing this recommendation.
 

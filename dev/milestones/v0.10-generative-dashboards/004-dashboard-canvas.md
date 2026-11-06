@@ -19,13 +19,13 @@ Status: approved. Branch: `feat/v0.10/004-dashboard-canvas`. Depends on 002 and 
 - [ ] Build, check (no new design exceptions), typecheck pass; evidence to pr-assets only.
 - [ ] docs/assistant.md, homepage copy, README, CHANGELOG, llms sources and milestone status updated.
 
-## Proposed spike clarification — pending reviewer approval
+## Spike clarifications (accepted by reviewer and user 2026-11-06)
 
 - Keep validated panel definitions/IDs separate from snapshots in mounted state. Render keyed panel boundaries rather than keying the whole canvas by serialized response text.
 - Refresh calls 003's guarded resolver with refs only; replace snapshots atomically after revision/generation checks, retain visibly stale data on failure and clear it on session loss. Only capability-catalog filters are exposed; no polling or generated form/action language.
 - Edits produce a validated single-panel subtree; application constructs a version-1 replace/add patch with baseRevision and targetId. Preserve replacement ID; assign additions locally and append. Validate the resulting whole dashboard before atomic commit. No arbitrary paths, raw mergeStatements patches, removal or reordering. Ambiguous natural-language targets require panel selection.
 - Preserve unchanged panel objects and data; execute tools only for new references. No client-provided snapshot is trusted as a tool result. Stop/stale revision/error discards the pending edit.
 
-Additional acceptance proposed:
+Additional acceptance:
 
 - [ ] Tests assert stable unchanged panel identity/data, stale-patch rejection, whole-tree validation, model-free refresh and zero provider egress for three recorded creates plus recorded edit/refresh. Existing conversation lifecycle and history byte caps remain intact.
