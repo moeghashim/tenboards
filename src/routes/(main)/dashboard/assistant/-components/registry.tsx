@@ -39,7 +39,10 @@ import { Badge } from "@/components/ui/badge";
 import { CardContent } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { type DataResultMap, dataRefKey, dataResultMapSchema } from "@/lib/assistant/data-contract";
-import { type ComponentName, descriptions, limits, schemas } from "@/lib/assistant/registry";
+import { formatSnapshotTime } from "@/lib/assistant/date-format";
+import { type ComponentName, descriptions, limits, type SafeNode, schemas } from "@/lib/assistant/registry";
+
+import { ResponseBoundary } from "./response-boundary";
 
 const element = z
   .object({
@@ -71,8 +74,12 @@ function DataTable({
   label = "Response data table",
 }: z.infer<typeof schemas.Table> & { label?: string }) {
   return (
-    // biome-ignore lint/a11y/noNoninteractiveTabindex: Keyboard users scroll this bounded table region.
-    <section className="max-w-full overflow-x-auto" tabIndex={0} aria-label={label}>
+    <section
+      className="max-w-full overflow-x-auto [&>[data-slot=table-container]]:overflow-visible"
+      // biome-ignore lint/a11y/noNoninteractiveTabindex: Keyboard users scroll this bounded table region.
+      tabIndex={0}
+      aria-label={label}
+    >
       <Table>
         <TableHeader>
           <TableRow>
@@ -249,7 +256,7 @@ function RegisteredNode({
           {snapshot ? (
             <p className="text-muted-foreground text-xs">
               {snapshot.source === "demo" ? "Demo fixture data" : "Database data"} · {snapshot.periodLabel} · As of{" "}
-              {snapshot.asOf}
+              {formatSnapshotTime(snapshot.asOf)}
               {snapshot.truncated ? ` · First ${data.labels.length} observations` : ""}
             </p>
           ) : null}
@@ -342,7 +349,10 @@ export function getAssistantLibrary() {
 const ResultContext = createContext<DataResultMap>({});
 /** Host-supplied snapshots only. Updating this provider never parses or fetches data. */
 export function AssistantDataProvider({ results, children }: { results: DataResultMap; children: ReactNode }) {
-  const checked = useMemo(() => dataResultMapSchema.parse(results), [results]);
+  const checked = useMemo(() => {
+    dataResultMapSchema.parse(results);
+    return results;
+  }, [results]);
   return <ResultContext.Provider value={checked}>{children}</ResultContext.Provider>;
 }
 function MissingData() {
@@ -366,4 +376,29 @@ function BlockTable({ title, columns, rows }: { title: string; columns: string[]
     initialState: { pagination: { pageIndex: 0, pageSize: 50 } },
   });
   return <PublicDataTable table={table} label={title} pagination={false} empty="No records to display." />;
+}
+
+/** Application-owned nodes retain panel boundaries across snapshot and definition updates. */
+export function TreeResponse({ tree }: { tree: SafeNode }) {
+  function evaluated(node: SafeNode): unknown {
+    return {
+      type: "element",
+      typeName: node.name,
+      partial: false,
+      props: {
+        ...node.props,
+        ...(node.props.children ? { children: (node.props.children as SafeNode[]).map(evaluated) } : {}),
+      },
+    };
+  }
+  function render(value: unknown): ReactNode {
+    const node = element.parse(value);
+    const content = <RegisteredNode name={node.typeName} props={node.props} renderNode={render} />;
+    return node.typeName === "Panel" ? (
+      <ResponseBoundary key={schemas.Panel.parse(node.props).id}>{content}</ResponseBoundary>
+    ) : (
+      content
+    );
+  }
+  return render(evaluated(tree));
 }

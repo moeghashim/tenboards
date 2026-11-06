@@ -311,10 +311,10 @@ npm run verify:page -- /dashboard/sales`}</CodeBlockContent>
                 </p>
               </div>
               <div className="space-y-2">
-                <h3 className="text-lg font-medium">One design system</h3>
+                <h3 className="text-lg font-medium">Generative dashboards</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
-                  Light and dark themes, color presets, compact tokens, a ⌘K command palette and layout settings. New
-                  pages use the same blocks as the demo.
+                  Ask the Assistant for a dashboard from five audited data series. Refresh without a model call or edit
+                  one panel at a time. Available range only; recorded examples work with no keys.
                 </p>
               </div>
               <div className="space-y-2">

@@ -13,6 +13,7 @@ export function boundedStream(
   requestSignal: AbortSignal,
   timing = deadlines,
   results?: DataResultMap,
+  validate?: (source: string) => boolean,
 ) {
   const abort = new AbortController();
   const version = results ? 2 : 1;
@@ -104,7 +105,7 @@ export function boundedStream(
               const valid =
                 "finishReason" in event &&
                 event.finishReason === "stop" &&
-                inspectLanguage(content, true, results).status === "ready";
+                (validate ? validate(content) : inspectLanguage(content, true, results).status === "ready");
               finish(
                 valid
                   ? { v: version, type: "finish" }

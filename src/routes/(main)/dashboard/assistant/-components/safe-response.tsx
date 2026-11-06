@@ -1,24 +1,17 @@
-import { Component, type ReactNode, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 
+import { panels } from "@/lib/assistant/canvas";
 import type { DataResultMap } from "@/lib/assistant/data-contract";
 import { inspectLanguage } from "@/lib/assistant/language";
+
+import { type CanvasActions, DashboardCanvas } from "./dashboard-canvas";
+import { ResponseBoundary } from "./response-boundary";
+
+export { ResponseBoundary } from "./response-boundary";
 
 import { Renderer } from "./openui";
 import { AssistantDataProvider, getAssistantLibrary } from "./registry";
 
-export class ResponseBoundary extends Component<{ children: ReactNode }, { failed: boolean }> {
-  state = { failed: false };
-  static getDerivedStateFromError() {
-    return { failed: true };
-  }
-  render() {
-    return this.state.failed ? (
-      <p role="status">This response could not be displayed. Try another example.</p>
-    ) : (
-      this.props.children
-    );
-  }
-}
 function ValidatedResponse({ response }: { response: string }) {
   const [failed, setFailed] = useState(false);
   const library = useMemo(getAssistantLibrary, []);
@@ -41,11 +34,13 @@ export function SafeResponse({
   complete,
   pending = true,
   results,
+  actions,
 }: {
   text: string;
   complete: boolean;
   pending?: boolean;
   results?: DataResultMap;
+  actions?: CanvasActions;
 }) {
   const result = useMemo(() => inspectLanguage(text, complete, results), [text, complete, results]);
   if (result.status === "invalid")
@@ -65,6 +60,8 @@ export function SafeResponse({
         Preparing response…
       </p>
     ) : null;
+  if (complete && result.tree && panels(result.tree).length && actions)
+    return <DashboardCanvas tree={result.tree} results={results ?? {}} actions={actions} />;
   return (
     <ResponseBoundary key={result.response}>
       <AssistantDataProvider results={results ?? {}}>

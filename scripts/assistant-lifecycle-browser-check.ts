@@ -165,7 +165,8 @@ try {
       assert.ok(metadataRequests > metadataBeforeOutage, "Configuration errors must refresh metadata");
       await page.screenshot({ path: `${output}/${theme}-${size}-configuration.png`, fullPage: true });
       mode = "malicious";
-      await input.press("Enter");
+      // Configuration refresh may still disable submission after the network becomes idle.
+      await page.getByRole("button", { name: "Send", exact: true }).click();
       await page.getByText(/reply or request was not supported/).waitFor();
       await page.waitForLoadState("networkidle");
       assert.equal(await page.locator("article iframe, article script, article a").count(), 0);

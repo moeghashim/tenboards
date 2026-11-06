@@ -6,6 +6,7 @@ import assert from "node:assert/strict";
 import { mkdir } from "node:fs/promises";
 
 const baseURL = process.env.ASSISTANT_TEST_URL ?? "http://127.0.0.1:3170";
+const probeURL = process.env.ASSISTANT_PROBE_URL ?? baseURL;
 const output = process.env.ASSISTANT_EVIDENCE_ROOT ?? "screenshots/v07-001/interaction";
 await mkdir(output, { recursive: true });
 const browser = await chromium.launch();
@@ -39,7 +40,13 @@ try {
         ),
       );
       await page.waitForLoadState("networkidle");
-      const registryProof = await page.evaluate(async () => {
+      // Source-only safety probes run on dev; interaction checks may target a built preview.
+      const probePage = probeURL === baseURL ? page : await context.newPage();
+      if (probePage !== page) {
+        await probePage.goto(`${probeURL}/dashboard/assistant`);
+        await probePage.waitForLoadState("networkidle");
+      }
+      const registryProof = await probePage.evaluate(async () => {
         const rendererPath = "/src/routes/(main)/dashboard/assistant/-components/registry.tsx";
         const schemaPath = "/src/lib/assistant/registry.ts";
         const { getAssistantLibrary, validateEvaluatedProps } = await import(rendererPath);
@@ -86,7 +93,7 @@ try {
         ["Compare sample plans", "Sample plans"],
         ["Chart a sample week", "Sample review trend"],
       ]) {
-        await page.getByRole("button", { name: label, exact: true }).press("Enter");
+        await page.getByRole("button", { name: new RegExp(`^${label}(?: |$)`) }).press("Enter");
         assert.ok(
           await page
             .getByRole("textbox", { name: "Message", exact: true })
@@ -126,7 +133,7 @@ try {
       assert.equal(await page.getByText("Preparing response…", { exact: true }).count(), 0);
       await page.screenshot({ path: `${output}/${theme}-${size}-stopped-focus.png`, fullPage: true });
       await page.getByRole("button", { name: "New conversation", exact: true }).click();
-      await page.getByRole("button", { name: "Chart a sample week", exact: true }).click();
+      await page.getByRole("button", { name: /^Chart a sample week(?: |$)/ }).click();
       await page.getByRole("button", { name: "New conversation", exact: true }).click();
       await page.waitForTimeout(600);
       assert.equal(await page.locator("article").count(), 0);
@@ -141,12 +148,12 @@ try {
       await page.getByRole("option").filter({ hasText: "AI Assistant" }).waitFor();
       await page.screenshot({ path: `${output}/${theme}-${size}-palette.png`, fullPage: true });
       await page.keyboard.press("Escape");
-      const recovery = await page.evaluate(async () => {
+      const recovery = await probePage.evaluate(async () => {
         const path = "/scripts/assistant-renderer-probe.tsx";
         return (await import(path)).run();
       });
       assert.deepEqual(recovery, { rejected: true, recovered: true, boundary: true });
-      await page.screenshot({ path: `${output}/${theme}-${size}-error.png`, fullPage: true });
+      await probePage.screenshot({ path: `${output}/${theme}-${size}-error.png`, fullPage: true });
       assert.deepEqual(external, []);
       assert.deepEqual(errors, []);
       await context.close();

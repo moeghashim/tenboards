@@ -22,11 +22,20 @@ const message = z.discriminatedUnion("role", [
 ]);
 export const requestSchema = z
   .strictObject({
-    operation: z.literal("dashboard").optional(),
+    operation: z.enum(["dashboard", "edit"]).optional(),
+    edit: z
+      .strictObject({
+        definition: z.string().max(65536),
+        baseRevision: z.number().int().nonnegative(),
+        op: z.enum(["replace", "add"]),
+        targetId: z.string().regex(/^[A-Za-z][A-Za-z0-9_-]{0,63}$/),
+      })
+      .optional(),
     provider: z.enum(providerIds).optional(),
     messages: z.array(message).min(1).max(20),
   })
-  .refine((body) => body.messages.at(-1)?.role === "user");
+  .refine((body) => body.messages.at(-1)?.role === "user")
+  .refine((body) => (body.operation === "edit") === !!body.edit);
 export type AssistantRequest = z.infer<typeof requestSchema>;
 export async function readInput(request: Request, timeoutMs = 10000): Promise<AssistantRequest> {
   const result = requestSchema.safeParse(await readJsonInput(request, timeoutMs));

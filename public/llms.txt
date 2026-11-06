@@ -10,6 +10,10 @@ Use Node 22+ and npm. In this repository, import from @/components/blocks and us
 
 URLs beginning with / are relative to the origin serving this file. Resolve them with new URL(path, llmsUrl).href before passing them to shadcn; for example, resolve /r/stat-card.json against the URL from which you fetched /llms.txt. The kit computes absolute commands from its current browser origin after hydration. No production hostname is baked into installs.
 
+## Generative dashboards
+
+The AI Assistant composes public blocks from five audited series (performance, traffic quality, expenses, pipeline, revenue/profit). Available range and all segment only. Recorded creates, model-free refresh and targeted panel edits work without keys; mounted state only. See /agent-docs/docs/assistant.md.
+
 ## Blocks
 
 - [DashboardCard](/r/dashboard-card.json): Compact or standard card surface with composable slots.
@@ -41,6 +45,7 @@ URLs beginning with / are relative to the origin serving this file. Resolve them
 - [DESIGN.md](/agent-docs/DESIGN.md)
 - [docs/data-layer.md](/agent-docs/docs/data-layer.md)
 - [docs/deploy.md](/agent-docs/docs/deploy.md)
+- [docs/assistant.md](/agent-docs/docs/assistant.md)
 - [.agents/skills/tenboards-build-ui/references/blocks.md](/agent-docs/agents/skills/tenboards-build-ui/references/blocks.md)
 - [.agents/skills/tenboards-connect-data/references/data-workflow.md](/agent-docs/agents/skills/tenboards-connect-data/references/data-workflow.md)
 - [Expanded source and guidance](/llms-full.txt)

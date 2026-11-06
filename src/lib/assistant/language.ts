@@ -13,6 +13,7 @@ export function inspectLanguage(
   source: string,
   complete = false,
   results?: DataResultMap,
+  allowedRefs?: ReadonlySet<string>,
 ): { status: "ready" | "pending" | "invalid"; response: string | null; tree?: SafeNode } {
   if (bytes(source) > limits.outputBytes) return { status: "invalid", response: null };
   let offset = 0;
@@ -223,6 +224,7 @@ export function inspectLanguage(
     validateTree(
       { name: "Stack", props: { children: [...(root.props.children as SafeNode[]), ...unreachable] } },
       results,
+      allowedRefs,
     );
     return { status: pending || unresolved ? "pending" : "ready", response: `root = ${serialize(root)}`, tree: root };
   } catch {
@@ -241,7 +243,7 @@ function serialize(value: unknown): string {
 }
 
 /** Validate again when application code constructs or edits a tree; no evaluator or I/O. */
-export function validateTree(root: SafeNode, results?: DataResultMap): SafeNode {
+export function validateTree(root: SafeNode, results?: DataResultMap, allowedRefs?: ReadonlySet<string>): SafeNode {
   const snapshots = results === undefined ? undefined : dataResultMapSchema.parse(results);
   const ids = new Set<string>();
   const refs = new Set<string>();
@@ -259,6 +261,7 @@ export function validateTree(root: SafeNode, results?: DataResultMap): SafeNode 
     if ("data" in props && props.data.kind === "data-ref") {
       const ref = props.data as DataRef;
       const key = dataRefKey(ref);
+      if (allowedRefs && !allowedRefs.has(key)) throw new Error("Unknown reference");
       refs.add(key);
       if (refs.size > limits.refs) throw new Error("Too many references");
       const expected = ({ StatCard: "stat", DataTable: "table", DashboardChart: "series" } as Record<string, string>)[

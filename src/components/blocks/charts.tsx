@@ -102,7 +102,7 @@ export function DashboardTooltip(props: DashboardTooltipProps) {
   );
 }
 
-/** Wrapping legend with distinct line samples matched to the series config. */
+/** Wrapping legend with bar or distinct line samples matched to the marks. */
 export function DashboardLegend({ config, payload, className }: DashboardLegendProps) {
   return (
     <div className={cn("text-muted-foreground flex flex-wrap items-center gap-x-4 gap-y-2 py-3 text-xs", className)}>
@@ -115,15 +115,19 @@ export function DashboardLegend({ config, payload, className }: DashboardLegendP
           return (
             <span key={key} className="flex items-center gap-1.5">
               <svg width="24" height="12" viewBox="0 0 24 12" aria-hidden="true" className="shrink-0">
-                <line
-                  x1="0"
-                  y1="6"
-                  x2="24"
-                  y2="6"
-                  stroke={series.color}
-                  strokeWidth="2"
-                  strokeDasharray={series.strokeDasharray}
-                />
+                {entry.type === "rect" ? (
+                  <rect x="6" y="0" width="12" height="12" fill={series.color} />
+                ) : (
+                  <line
+                    x1="0"
+                    y1="6"
+                    x2="24"
+                    y2="6"
+                    stroke={series.color}
+                    strokeWidth="2"
+                    strokeDasharray={series.strokeDasharray}
+                  />
+                )}
               </svg>
               {series.label}
             </span>
