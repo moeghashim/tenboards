@@ -1,0 +1,66 @@
+[
+  {
+    "mode": "light",
+    "mobile": false,
+    "errors": [],
+    "violations": [
+      {
+        "id": "region",
+        "tags": [
+          "cat.keyboard",
+          "best-practice",
+          "RGAAv4",
+          "RGAA-9.2.1"
+        ],
+        "nodes": [
+          [
+            "a[aria-label=\"tenboards dashboard\"]"
+          ],
+          [
+            ".p-3.space-y-2.rounded-xl"
+          ]
+        ]
+      }
+    ],
+    "file": "verify/data-tools/light-desktop.png"
+  },
+  {
+    "mode": "light",
+    "mobile": true,
+    "errors": [],
+    "violations": [],
+    "file": "verify/data-tools/light-mobile.png"
+  },
+  {
+    "mode": "dark",
+    "mobile": false,
+    "errors": [],
+    "violations": [
+      {
+        "id": "region",
+        "tags": [
+          "cat.keyboard",
+          "best-practice",
+          "RGAAv4",
+          "RGAA-9.2.1"
+        ],
+        "nodes": [
+          [
+            "a[aria-label=\"tenboards dashboard\"]"
+          ],
+          [
+            ".p-3.space-y-2.rounded-xl"
+          ]
+        ]
+      }
+    ],
+    "file": "verify/data-tools/dark-desktop.png"
+  },
+  {
+    "mode": "dark",
+    "mobile": true,
+    "errors": [],
+    "violations": [],
+    "file": "verify/data-tools/dark-mobile.png"
+  }
+]
