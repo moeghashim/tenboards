@@ -1,3 +1,4 @@
+import "./assistant-blocks-check.ts";
 import { createParser, generateSystemPrompt } from "@openuidev/lang-core";
 
 import { inspectLanguage } from "../src/lib/assistant/language.ts";
@@ -72,7 +73,7 @@ check(
 );
 const system = generateSystemPrompt({ library: getLibrarySpec(), promptOptions });
 check(bytes(system) <= 32768);
-check(Object.keys(getLibrarySpec().components).length === 8);
+check(Object.keys(getLibrarySpec().components).length === Object.keys(schemas).length);
 const source = 'root = Stack([Text("Café 🙂 漢字")])';
 const chunks = [...encodeEvent({ v: 1, type: "text-delta", text: source }), ...encodeEvent({ v: 1, type: "finish" })];
 for (const width of [1, 2, 3, 7, 101]) {

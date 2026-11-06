@@ -57,6 +57,7 @@ See the [full command list](docs/reference.md#commands).
 - **Ten dashboards:** Default, CRM, Finance, Analytics, Productivity, E-commerce, Academy, Logistics, Infrastructure and Patient Monitoring.
 - **Workspace:** Home, Projects (Overview, Board, List, Timeline and Files), an AI Assistant, Mail, Chat, Invoice, Products, Users, Roles, Profile, auth pages and system states.
 - **Design system:** compact tokens in [DESIGN.md](DESIGN.md), light/dark themes, presets, a floating sidebar, a ⌘K palette and layout settings.
+- **Assistant block library (v0.10, in progress):** send **Show sample blocks** in recorded mode to see public cards, a read-only table and line/bar/area charts in a responsive grid. Strict inert data-reference contracts are ready for the separate data-tools and canvas tasks; see [Assistant documentation](docs/assistant.md).
 - **Optional integrations:** [Postgres data layer](docs/data-layer.md) with Drizzle, [Better Auth](docs/auth.md), [AI Assistant providers](docs/assistant.md) and [Cloudflare Workers deployment](docs/deploy.md).
 
 The live site is a zero-config demo with sample data and auth off. Adopters connect and verify their own database by following the [deployment quick path](docs/deploy.md#quick-path).

@@ -1,6 +1,6 @@
 # 002 — Blocks as the OpenUI library
 
-Status: approved. Branch: `feat/v0.10/002-blocks-library`. Depends on 001 approval.
+Status: implemented; verification complete except preview publication (in progress). Branch: `feat/v0.10/002-blocks-library`. Depends on 001 approval.
 
 ## Scope
 
@@ -11,9 +11,9 @@ Status: approved. Branch: `feat/v0.10/002-blocks-library`. Depends on 001 approv
 
 ## Acceptance criteria
 
-- [ ] Recorded examples render each new block correctly in light/dark × desktop/mobile; `verify:page -- /dashboard/assistant` passes with zero axe/console/hydration errors.
-- [ ] Invalid props, unknown components and over-limit specs are rejected with tests.
-- [ ] `check:design` passes with no new exceptions; build, check, typecheck pass.
+- [x] Recorded examples render each new block correctly in light/dark × desktop/mobile; `verify:page -- /dashboard/assistant` passes with zero axe/console/hydration errors.
+- [x] Invalid props, unknown components and over-limit specs are rejected with tests.
+- [x] `check:design` passes with no new exceptions; build, check, typecheck pass.
 - [ ] docs/assistant.md, README, CHANGELOG draft, milestone status updated; preview linked in PR.
 
 ## Spike clarifications (accepted by reviewer and user 2026-11-06)
@@ -24,4 +24,10 @@ Status: approved. Branch: `feat/v0.10/002-blocks-library`. Depends on 001 approv
 
 Additional acceptance:
 
-- [ ] Versioned ref/result schemas, panel identity and literal compatibility have focused tests; refresh changes data without parser-side network access.
+- [x] Versioned ref/result schemas, panel identity and literal compatibility have focused tests; refresh changes data without parser-side network access.
+
+## Implementation evidence
+
+Shared contract: `src/lib/assistant/data-contract.ts`. Language tree/serializer: `src/lib/assistant/language.ts`. Snapshot-only renderer provider: route-local `registry.tsx`. No tool registry, transport, resolver or canvas implementation is included.
+
+Verified: build, check/design (no exceptions), typecheck, assistant:test (including block contracts and fan-out), assistant:server (45 adapter cases), assistant:conversation, assistant:ui, four-state block rendering/axe, snapshot refresh with stable panel DOM, and verify:page. Dev `/` → `/dashboard/home` smoke passed. The older assistant:browser harness times out looking for its sample-launch suggestion; its run is not claimed as passing. The focused block suite and current assistant:ui interaction suite pass.

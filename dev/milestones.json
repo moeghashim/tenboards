@@ -247,7 +247,7 @@
       "tasks": ["001-spike", "002-blocks-library", "003-data-tools", "004-dashboard-canvas"],
       "taskStatuses": {
         "001-spike": "merged",
-        "002-blocks-library": "in-progress",
+        "002-blocks-library": "in-review",
         "003-data-tools": "in-progress",
         "004-dashboard-canvas": "approved"
       }

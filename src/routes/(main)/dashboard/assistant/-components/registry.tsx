@@ -1,4 +1,6 @@
-import type { ReactNode } from "react";
+import { createContext, type ReactNode, useContext, useMemo } from "react";
+
+import { type ColumnDef, useTable } from "@tanstack/react-table";
 
 import { createLibrary, defineComponent } from "@openuidev/lang-core";
 import { z } from "zod";
@@ -12,12 +14,17 @@ import {
   DashboardChart,
   DashboardLegend,
   DashboardTooltip,
+  type DataTableFeatures,
+  dataTableFeatures,
+  DataTable as PublicDataTable,
   SectionHeader,
   StatCard,
   seriesConfig,
   useChartMotion,
 } from "@/components/blocks";
 import {
+  Area,
+  AreaChart,
   Bar,
   BarChart,
   CartesianGrid,
@@ -31,6 +38,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { CardContent } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { type DataResultMap, dataRefKey, dataResultMapSchema } from "@/lib/assistant/data-contract";
 import { type ComponentName, descriptions, limits, schemas } from "@/lib/assistant/registry";
 
 const element = z
@@ -90,7 +98,12 @@ function DataTable({
     </section>
   );
 }
-function ResponseChart({ title, kind, labels, series }: z.infer<typeof schemas.Chart>) {
+function ResponseChart({
+  title,
+  kind,
+  labels,
+  series,
+}: Omit<z.infer<typeof schemas.Chart>, "kind"> & { kind: "bar" | "line" | "area" }) {
   const motion = useChartMotion();
   const config = seriesConfig(Object.fromEntries(series.map((item, index) => [`s${index}`, item.label])));
   const data = labels.map((label, index) => ({
@@ -113,6 +126,25 @@ function ResponseChart({ title, kind, labels, series }: z.infer<typeof schemas.C
                 <Bar key={`s${i}`} dataKey={`s${i}`} fill={chartSeries[i].color} {...motion} />
               ))}
             </BarChart>
+          ) : kind === "area" ? (
+            <AreaChart data={data} accessibilityLayer>
+              <CartesianGrid {...chartGrid} />
+              <XAxis dataKey="label" {...chartAxis} />
+              <YAxis {...chartAxis} />
+              <Tooltip content={<DashboardTooltip />} cursor={chartCursor} {...motion} />
+              <Legend content={<DashboardLegend config={config} />} />
+              {series.map((_, i) => (
+                <Area
+                  key={`s${i}`}
+                  dataKey={`s${i}`}
+                  stroke={chartSeries[i].color}
+                  fill={chartSeries[i].color}
+                  fillOpacity={0.12}
+                  strokeDasharray={chartSeries[i].strokeDasharray}
+                  {...motion}
+                />
+              ))}
+            </AreaChart>
           ) : (
             <LineChart data={data} accessibilityLayer>
               <CartesianGrid {...chartGrid} />
@@ -158,12 +190,62 @@ function RegisteredNode({
   props: unknown;
   renderNode: (node: unknown) => ReactNode;
 }) {
+  const results = useContext(ResultContext);
   try {
     validateEvaluatedProps(name, props);
   } catch {
     return <p className="text-danger">This response block could not be displayed safely.</p>;
   }
   switch (name) {
+    case "DashboardGrid": {
+      const p = schemas.DashboardGrid.parse(props);
+      return (
+        <div className="grid min-w-0 gap-4 md:grid-cols-2">
+          {p.children.map((child) => (
+            <div className="min-w-0" key={schemas.Panel.parse(element.parse(child).props).id}>
+              {renderNode(child)}
+            </div>
+          ))}
+        </div>
+      );
+    }
+    case "Panel": {
+      const p = schemas.Panel.parse(props);
+      return (
+        <div className="min-w-0" data-panel-id={p.id}>
+          {renderNode(p.children[0])}
+        </div>
+      );
+    }
+    case "PageHeader": {
+      const p = schemas.PageHeader.parse(props);
+      return <SectionHeader title={p.title} description={p.description} level={2} />;
+    }
+    case "StatCard": {
+      const p = schemas.StatCard.parse(props);
+      if (p.data.kind !== "literal") return <MissingData />;
+      return (
+        <StatCard
+          label={p.data.value.label}
+          value={p.data.value.value}
+          help={p.data.value.detail}
+          level={3}
+          density="compact"
+        />
+      );
+    }
+    case "DataTable": {
+      const p = schemas.DataTable.parse(props);
+      if (p.data.kind !== "literal") return <MissingData />;
+      return <BlockTable title={p.title} {...p.data.value} />;
+    }
+    case "DashboardChart": {
+      const p = schemas.DashboardChart.parse(props);
+      const snapshot = p.data.kind === "data-ref" ? results[dataRefKey(p.data)] : undefined;
+      const data = p.data.kind === "literal" ? p.data.value : snapshot?.kind === "series" ? snapshot.data : undefined;
+      if (!data) return <MissingData />;
+      return <ResponseChart title={p.title} kind={p.kind} {...data} />;
+    }
     case "Stack": {
       const p = schemas.Stack.parse(props);
       return (
@@ -178,6 +260,7 @@ function RegisteredNode({
     }
     case "Text":
       return <p className="max-w-prose whitespace-pre-wrap break-words">{schemas.Text.parse(props).text}</p>;
+    case "DashboardCard":
     case "Card": {
       const p = schemas.Card.parse(props);
       return (
@@ -243,4 +326,33 @@ export function getAssistantLibrary() {
       }),
     ),
   });
+}
+
+const ResultContext = createContext<DataResultMap>({});
+/** Host-supplied snapshots only. Updating this provider never parses or fetches data. */
+export function AssistantDataProvider({ results, children }: { results: DataResultMap; children: ReactNode }) {
+  const checked = useMemo(() => dataResultMapSchema.parse(results), [results]);
+  return <ResultContext.Provider value={checked}>{children}</ResultContext.Provider>;
+}
+function MissingData() {
+  return <p className="text-muted-foreground">Data is unavailable. This reference has not been resolved.</p>;
+}
+function BlockTable({ title, columns, rows }: { title: string; columns: string[]; rows: (string | number)[][] }) {
+  const definitions = useMemo<ColumnDef<DataTableFeatures, (string | number)[]>[]>(
+    () =>
+      columns.map((label, index) => ({
+        id: `c${index}`,
+        header: label,
+        accessorFn: (row) => row[index],
+        enableSorting: false,
+      })),
+    [columns],
+  );
+  const table = useTable({
+    features: dataTableFeatures,
+    data: rows,
+    columns: definitions,
+    initialState: { pagination: { pageIndex: 0, pageSize: 50 } },
+  });
+  return <PublicDataTable table={table} label={title} pagination={false} empty="No records to display." />;
 }
