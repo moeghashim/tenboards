@@ -28,3 +28,14 @@ Additional acceptance:
 
 - [ ] All five actual adapters pass fragmented native tool-call/result/final-text mocks on Node and compiled workerd; unknown tools, invalid args, fifth calls, late results, cancellation and aggregate budget failures fail closed.
 - [ ] DB/session cleanup occurs only after preflight work settles; refresh constructs no provider and configured DB errors remain visible in recorded mode. Injection fixtures cannot bypass authorization, gate or caps.
+
+## Cancellation design (reviewer decision 2026-11-06, after the gate failure in dev/open-questions.md)
+
+The first attempt showed that aborting the request and closing the client does not stop the PostgreSQL query (a backend stayed active at 5.35 s). Cancellation is therefore enforced by the database, with client cancellation as a second layer:
+
+- **Primary — server-enforced timeout:** every tool read and every refresh-resolver read runs inside its own short transaction that first executes `SET LOCAL statement_timeout` (and `SET LOCAL idle_in_transaction_session_timeout`) to the smaller of 5,000 ms and the remaining request deadline. PostgreSQL cancels the statement itself; this works through Hyperdrive because the setting is transaction-scoped. Timeouts surface as a safe, visible tool error, never a fallback.
+- **Secondary — client cancel:** on Request abort or deadline, cancel pending queries through the postgres driver (e.g. the pending query's `cancel()`), even if that needs a small seam below Drizzle in `src/server/db/`. No new dependency.
+- **Settle before cleanup:** await every started read to settle (resolved, rejected or cancelled) before request-scoped resources close; no late results are applied.
+- **Scope:** required for the new dashboard tool and refresh paths. Session and rate-limit reads keep their v0.7 behavior but must not start after abort/deadline.
+
+Revised gate (must pass before the rest of 003 proceeds): with a `pg_sleep(6)` probe through the real tool path, the read rejects within the ceiling and `pg_stat_activity` shows no active backend for it within **ceiling + 500 ms**, on Node and on the full compiled application (`npm run build` + `npm run preview`, workerd). Budgets stay unchanged.
