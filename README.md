@@ -97,7 +97,7 @@ Generators, blocks and Agent Skills do not depend on the homepage.
 
 - [Reference](docs/reference.md): commands, previews, visual QA, data layer, auth and per-milestone notes
 - [Design guardrails](docs/design-guardrails.md) · [Data layer](docs/data-layer.md) · [Auth](docs/auth.md) · [Assistant](docs/assistant.md) · [Deploy](docs/deploy.md)
-- [Changelog](CHANGELOG.md) and [releases](https://github.com/moeghashim/tenboards/releases). v0.1–v0.9.1 are released; v0.9.0 is the agent-first release and v0.9.1 adds the project homepage.
+- [Changelog](CHANGELOG.md) and [releases](https://github.com/moeghashim/tenboards/releases). v0.1–v0.9.1 are released; v0.9.0 is the agent-first release and v0.9.1 adds the project homepage. The [v0.10 OpenUI spike](dev/milestones/v0.10-generative-dashboards/spike.md) is approved (GO); generative dashboards are in progress.
 
 ## Contributing
 

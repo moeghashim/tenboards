@@ -15,3 +15,13 @@ Status: approved. Branch: `feat/v0.10/002-blocks-library`. Depends on 001 approv
 - [ ] Invalid props, unknown components and over-limit specs are rejected with tests.
 - [ ] `check:design` passes with no new exceptions; build, check, typecheck pass.
 - [ ] docs/assistant.md, README, CHANGELOG draft, milestone status updated; preview linked in PR.
+
+## Spike clarifications (accepted by reviewer and user 2026-11-06)
+
+- Keep OpenUI core/react-lang at 1.0.1. Register strict wrappers, not native block prop spreads; build TanStack table instances and chart marks inside adapters. Retain Stack root, adding DashboardGrid and stable-ID Panel children.
+- Use the spike's version-1 literal/data-ref discriminated union and server result map. References are inert; never enable native Query/Mutation, bindings or renderer fetching. Extract a validated tree/serializer seam without weakening the current literal gate or work limit.
+- Preserve existing limits; additionally cap eight panels and four distinct references. Test duplicate IDs, unknown reference combinations, incompatible result kinds, partial/unreachable statements and immutable old replies. Keep PageHeader heading hierarchy valid within the Assistant page.
+
+Additional acceptance:
+
+- [ ] Versioned ref/result schemas, panel identity and literal compatibility have focused tests; refresh changes data without parser-side network access.
