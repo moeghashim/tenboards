@@ -1,6 +1,7 @@
 import { applyPatch, editSnapshots, panels, references, singlePanel } from "../src/lib/assistant/canvas.ts";
 import { type DataResultMap, dataRefKey } from "../src/lib/assistant/data-contract.ts";
 import { inspectLanguage } from "../src/lib/assistant/language.ts";
+import { requestSchema } from "../src/server/assistant/input.ts";
 import { toolRef, toolText } from "./assistant-tool-wire.ts";
 import assert from "node:assert/strict";
 
@@ -54,3 +55,22 @@ assert.equal(references(next.tree).length, 1);
 console.log(
   "PASS targeted identity, preserved snapshot objects, local IDs, stale patch, whole-tree limits and strict single-panel gate",
 );
+
+assert.throws(() => singlePanel(toolText, new Set()));
+assert.throws(() =>
+  singlePanel(
+    toolText +
+      `; hidden = DashboardChart("Hidden", "line", ${JSON.stringify({ ...toolRef, args: { ...toolRef.args, limit: 25 } })})`,
+    new Set([dataRefKey(toolRef)]),
+  ),
+);
+
+const editRequest = {
+  operation: "edit",
+  messages: [{ role: "user", content: "Make this a bar chart" }],
+  edit: { definition: toolText, baseRevision: 0, op: "replace", targetId: "overview" },
+};
+assert.equal(requestSchema.safeParse(editRequest).success, true);
+assert.equal(requestSchema.safeParse({ ...editRequest, results: snapshots }).success, false);
+assert.equal(requestSchema.safeParse({ ...editRequest, edit: { ...editRequest.edit, op: "remove" } }).success, false);
+assert.equal(requestSchema.safeParse({ ...editRequest, edit: undefined }).success, false);

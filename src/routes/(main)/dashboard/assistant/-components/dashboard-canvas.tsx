@@ -173,7 +173,7 @@ export function DashboardCanvas({
           baseRevision: revision,
           op,
           targetId,
-          panel: singlePanel(source),
+          panel: singlePanel(source, new Set([...Object.keys(before.snapshots), ...Object.keys(fresh)])),
         });
         const snapshots = editSnapshots(definition.tree, before.snapshots, fresh);
         if (!valid()) return;

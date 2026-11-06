@@ -261,8 +261,8 @@ export async function dashboardResponse(
         edit && definition
           ? (source) => {
               try {
-                const panel = singlePanel(source);
                 const available = new Set([...oldKeys, ...Object.keys(results)]);
+                const panel = singlePanel(source, available);
                 const used = new Set(references(panel).map(dataRefKey));
                 if ([...used].some((key) => !available.has(key)) || Object.keys(results).some((key) => !used.has(key)))
                   return false;

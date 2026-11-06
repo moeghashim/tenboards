@@ -53,6 +53,7 @@ globalThis.fetch = async (input, init) => {
   const body = JSON.parse(String(init?.body));
   if (key.includes("-tools")) {
     const padding = key.includes("aggregate") ? `:${"x".repeat(1100000)}\n\n` : "";
+    if (body.tools?.length && key.includes("editnocall")) return fragmentWire(finalToolWire(id));
     if (body.tools?.length)
       return fragmentWire(
         padding +

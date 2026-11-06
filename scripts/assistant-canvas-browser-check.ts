@@ -18,36 +18,37 @@ const browser = await chromium.launch();
 let ip = 1;
 try {
   // Exercise edit output and reused references through every actual native adapter.
-  for (const provider of providers) {
-    const response = await fetch(`${service.baseURL}/api/assistant`, {
-      method: "POST",
-      headers: {
-        Origin: service.baseURL,
-        "Content-Type": "application/json",
-        "cf-connecting-ip": `198.19.${Math.floor(ip / 250)}.${(ip++ % 250) + 1}`,
-        "x-v07-case": "tools",
-      },
-      body: JSON.stringify({
-        operation: "edit",
-        provider: provider.id,
-        messages: [{ role: "user", content: "Make this a line chart" }],
-        edit: { definition: toolText, baseRevision: 0, op: "replace", targetId: "overview" },
-      }),
-    });
-    assert.equal(response.status, 200, await response.clone().text());
-    let map: unknown;
-    await consumeStream(
-      response.body!,
-      new AbortController().signal,
-      () => {
-        /* Assert final terminal below. */
-      },
-      (data) => {
-        map = data;
-      },
-    );
-    assert.deepEqual(map, {}, `${provider.id}: reused refs must not execute tools`);
-  }
+  for (const provider of providers)
+    for (const mode of ["tools", "tools-editnocall"]) {
+      const response = await fetch(`${service.baseURL}/api/assistant`, {
+        method: "POST",
+        headers: {
+          Origin: service.baseURL,
+          "Content-Type": "application/json",
+          "cf-connecting-ip": `198.19.${Math.floor(ip / 250)}.${(ip++ % 250) + 1}`,
+          "x-v07-case": mode,
+        },
+        body: JSON.stringify({
+          operation: "edit",
+          provider: provider.id,
+          messages: [{ role: "user", content: "Make this a line chart" }],
+          edit: { definition: toolText, baseRevision: 0, op: "replace", targetId: "overview" },
+        }),
+      });
+      assert.equal(response.status, 200, await response.clone().text());
+      let map: unknown;
+      await consumeStream(
+        response.body!,
+        new AbortController().signal,
+        () => {
+          /* Assert final terminal below. */
+        },
+        (data) => {
+          map = data;
+        },
+      );
+      assert.deepEqual(map, {}, `${provider.id}: reused refs must not execute tools`);
+    }
   const probe = async () => await (await fetch(`${service.baseURL}/__assistant_probe`)).json();
   const before = await probe();
   for (const theme of ["light", "dark"] as const)

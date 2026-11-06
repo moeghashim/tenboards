@@ -24,8 +24,8 @@ export function references(tree: SafeNode): DataRef[] {
   visit(tree);
   return [...found.values()];
 }
-export function singlePanel(source: string): SafeNode {
-  const checked = inspectLanguage(source, true);
+export function singlePanel(source: string, allowedRefs?: ReadonlySet<string>): SafeNode {
+  const checked = inspectLanguage(source, true, undefined, allowedRefs);
   const root = checked.tree;
   const children = root?.props.children as SafeNode[] | undefined;
   const grid = children?.[0];
