@@ -13,7 +13,7 @@ Point Codex or Claude Code at a clone and ask for a dashboard or page. Agents ge
 | ![Default dashboard, dark theme](docs/screenshots/default-dark.png) | ![Workspace Home with tasks and deadlines](docs/screenshots/home-light.png) |
 | ![Blocks kit with live examples and install commands](docs/screenshots/kit-light.png) | ![AI Assistant, dark theme](docs/screenshots/assistant-dark.png) |
 
-v0.10.1 refines controls with one accessible field/outline recipe, clearable filters, searchable role options, quieter toolbars and aligned filter rows. See the kit’s Controls example.
+v0.10.1 refines controls with one accessible field/outline recipe, clearable filters, searchable role options, quieter toolbars and aligned filter rows. Active filters keep their value and clear button inside one tinted control; menu search uses a borderless icon row. See the kit’s Controls example.
 
 ## Build with an agent
 

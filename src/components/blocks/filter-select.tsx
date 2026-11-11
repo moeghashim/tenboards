@@ -1,6 +1,6 @@
 import { useRef } from "react";
 
-import { X } from "lucide-react";
+import { Search, X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -15,6 +15,7 @@ import {
   ComboboxList,
   ComboboxTrigger,
 } from "@/components/ui/combobox";
+import { InputGroupAddon } from "@/components/ui/input-group";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger } from "@/components/ui/select";
 
 export interface FilterSelectProps {
@@ -46,7 +47,7 @@ export function FilterSelect({
     </>
   );
   return (
-    <div className="flex items-center gap-1">
+    <div className="filter-select control-recipe flex h-8 items-center rounded-lg" data-filter-active={active}>
       {searchable ? (
         <Combobox
           items={options}
@@ -54,20 +55,20 @@ export function FilterSelect({
           onValueChange={(option) => onValueChange(option?.value ?? allValue)}
           itemToStringLabel={(option) => option.label}
         >
-          <ComboboxTrigger
-            ref={trigger}
-            render={<Button variant="outline" />}
-            data-filter-active={active}
-            aria-label={title}
-          >
+          <ComboboxTrigger ref={trigger} render={<Button variant="outline" />} aria-label={title}>
             {title}
           </ComboboxTrigger>
-          <ComboboxContent className="min-w-64" aria-label={`${label} options`}>
+          <ComboboxContent className="filter-select-menu min-w-64" aria-label={`${label} options`}>
             <ComboboxInput
+              className="filter-select-search"
               aria-label={`Search ${label} options`}
               placeholder={`Search ${label.toLowerCase()}…`}
               showTrigger={false}
-            />
+            >
+              <InputGroupAddon align="inline-start">
+                <Search aria-hidden="true" />
+              </InputGroupAddon>
+            </ComboboxInput>
             <ComboboxEmpty>No matches.</ComboboxEmpty>
             <ComboboxList>
               <ComboboxGroup>
@@ -85,7 +86,7 @@ export function FilterSelect({
         </Combobox>
       ) : (
         <Select value={value} onValueChange={(next) => onValueChange(next ?? allValue)} items={[...options]}>
-          <SelectTrigger ref={trigger} aria-label={title} data-filter-active={active}>
+          <SelectTrigger ref={trigger} aria-label={title}>
             {title}
           </SelectTrigger>
           <SelectContent align="start" alignItemWithTrigger={false}>
@@ -102,6 +103,7 @@ export function FilterSelect({
       )}
       {active && (
         <Button
+          className="filter-select-clear"
           variant="ghost"
           size="icon"
           aria-label={`Clear ${label} filter`}

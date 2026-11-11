@@ -65,7 +65,11 @@ try {
             compare("ring", surface, 3);
             compare("border-strong", surface, 3);
             compare("control-edge", surface, 3);
+            compare("filter-edge", surface, 3);
           }
+          compare("filter-accent", "filter-fill");
+          compare("filter-edge", "filter-fill", 3);
+          compare("ring", "filter-fill", 3);
           compare("primary-foreground", "primary");
           for (const semantic of ["success", "warning", "danger", "info"]) compare(semantic, `${semantic}-surface`);
           compare("primary-foreground", "primary-top");
