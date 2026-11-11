@@ -262,10 +262,10 @@
     },
     {
       "id": "v0.11-brand-colour",
-      "status": "planned",
+      "status": "in-progress",
       "tasks": ["001-brand-colour"],
       "taskStatuses": {
-        "001-brand-colour": "planned"
+        "001-brand-colour": "in-review"
       }
     }
   ]

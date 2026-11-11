@@ -1,3 +1,4 @@
+import { hasBrand } from "@/lib/brand";
 import { applyFont } from "@/lib/fonts/font-runtime";
 
 import { PREFERENCE_REGISTRY, type PreferenceKey, type PreferenceValueMap } from "./preferences-config";
@@ -8,6 +9,10 @@ export function applyPreference<K extends PreferenceKey>(
   key: K,
   value: PreferenceValueMap[K],
 ): ResolvedThemeMode | undefined {
+  if (hasBrand && key === "theme_preset") {
+    document.documentElement.removeAttribute("data-theme-preset");
+    return undefined;
+  }
   if (key === "theme_mode") {
     return applyThemeMode(value as PreferenceValueMap["theme_mode"]);
   }

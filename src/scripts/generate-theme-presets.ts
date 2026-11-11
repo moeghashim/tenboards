@@ -98,14 +98,15 @@ const presets = files.map((file) => {
   return { label, value, primary };
 });
 
-const defaultLightPrimaryRegex = /:root\s*{[^}]*--primary:\s*([^;]+);/;
+const defaultLightPrimaryRegex = /:root(?::root)*(:not\(\.dark\))?\s*{[^}]*--primary:\s*([^;]+);/;
 const defaultDarkPrimaryRegex = /\.dark\s*{[^}]*--primary:\s*([^;]+);/;
 
-const defaultLightPrimaryMatch = globalContent.match(defaultLightPrimaryRegex);
-const defaultDarkPrimaryMatch = globalContent.match(defaultDarkPrimaryRegex);
+const brandContent = fs.readFileSync(path.resolve(__dirname, "../styles/brand.css"), "utf8");
+const defaultLightPrimaryMatch = brandContent.match(defaultLightPrimaryRegex);
+const defaultDarkPrimaryMatch = brandContent.match(defaultDarkPrimaryRegex);
 
 const defaultPrimary = {
-  light: defaultLightPrimaryMatch?.[1].trim() ?? "",
+  light: defaultLightPrimaryMatch?.[2].trim() ?? "",
   dark: defaultDarkPrimaryMatch?.[1].trim() ?? "",
 };
 

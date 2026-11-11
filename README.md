@@ -109,3 +109,29 @@ Upstream contributions follow [dev/MAINTAINERS.md](dev/MAINTAINERS.md) and [CONT
 ## Provenance and license
 
 MIT. Imported from [arhamkhnz/tanstack-shadcn-admin-dashboard](https://github.com/arhamkhnz/tanstack-shadcn-admin-dashboard) (Studio Admin), revision [`81e5ef1`](https://github.com/arhamkhnz/tanstack-shadcn-admin-dashboard/commit/81e5ef1391b68c176154faba0c9ac7b0023ecbaf). Copyright © 2026 Mohammed Arham Khan. The original MIT notice is preserved in [LICENSE](LICENSE), alongside the tenboards copyright. Upstream contributor guidance is archived at [docs/upstream-AGENTS.md](docs/upstream-AGENTS.md).
+
+## Brand colour
+
+Set `brand.color` in `tenboards.config.ts`, then run `npm run brand`, or use
+`npm run brand -- "#7c3aed"` to set it and regenerate `src/styles/brand.css`.
+Accepted formats: #rgb, #rrggbb, rgb() and oklch(), without transparency.
+The generator preserves hue, adjusts OKLCH lightness for contrast, and reduces
+chroma only to fit sRGB. In both modes, button labels use white or near-black,
+whichever requires less lightness adjustment; bright brands retain their fill in
+dark mode. The unset Default keeps its original blue/white pairing.
+The report names each role's contrast correction, dark-mode or hover derivation,
+or sRGB gamut clamp, alongside its changes and contrast ratio.
+`--exact` (or `brand.exact`) rejects adjustments; `--reset` restores the original
+blue and all four presets. `--check` detects stale generated CSS and runs in `npm run check`.
+
+Branding changes primary buttons, text accents, focus rings, selected filters and
+chart-1. It hides the preset picker and sanitizes old preset cookies before
+hydration. Semantic colours, neutral surfaces, fonts, radii, logos and favicons
+remain separate. Keep chart dash/marker encodings and labels, especially when
+a brand overlaps success or warning hues. Never hand-edit primary tokens.
+
+Example: `npm run brand -- "#7c3aed"` (the repository and live demo remain brand-unset).
+
+| Light | Dark |
+| --- | --- |
+| ![Violet brand, Users in light mode](https://raw.githubusercontent.com/moeghashim/tenboards/pr-assets/v011-001/purple/users-light-1440.png) | ![Violet brand, Users in dark mode](https://raw.githubusercontent.com/moeghashim/tenboards/pr-assets/v011-001/purple/users-dark-1440.png) |

@@ -1,5 +1,6 @@
 import { createStore } from "zustand/vanilla";
 
+import { hasBrand } from "@/lib/brand";
 import { applyPreference } from "@/lib/preferences/preference-runtime";
 import {
   PREFERENCE_DEFAULTS,
@@ -30,6 +31,7 @@ export const createPreferencesStore = (initialValues: Partial<PreferenceValueMap
     isSynced: false,
 
     setPreference: (key, value) => {
+      if (hasBrand && key === "theme_preset") return;
       const resolvedThemeMode = applyPreference(key, value);
 
       set((state) => ({
@@ -47,6 +49,7 @@ export const createPreferencesStore = (initialValues: Partial<PreferenceValueMap
       let resolvedThemeMode: ResolvedThemeMode = "light";
 
       for (const key of PREFERENCE_KEYS) {
+        if (hasBrand && key === "theme_preset") continue;
         const value = PREFERENCE_DEFAULTS[key];
         const resolved = applyPreference(key, value);
 

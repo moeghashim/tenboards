@@ -9,7 +9,12 @@ import path from "node:path";
 const check = process.argv.includes("--check");
 const registry = registrySchema.parse(JSON.parse(await readFile("registry.json", "utf8")));
 const packages = JSON.parse(await readFile("package.json", "utf8")).dependencies as Record<string, string>;
-const theme = registryTheme(await readFile("src/styles/styles.css", "utf8"));
+const theme = registryTheme(
+  (await readFile("src/styles/styles.css", "utf8")).replace(
+    '@import "./brand.css";',
+    await readFile("src/styles/brand.css", "utf8"),
+  ),
+);
 const output = await mkdtemp(path.join(tmpdir(), "tenboards-registry-"));
 try {
   const build = spawnSync(

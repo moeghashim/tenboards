@@ -1,3 +1,4 @@
+import { hasBrand } from "@/lib/brand";
 /**
  * Boot script that reads user preference values from cookies or localStorage
  * based on the configured persistence mode.
@@ -71,7 +72,8 @@ export function ThemeBootScript() {
           var value = readPreference(key, definition);
 
           preferences[key] = value;
-          root.setAttribute(definition.attribute, value);
+          if (${hasBrand} && key === "theme_preset") root.removeAttribute(definition.attribute);
+          else root.setAttribute(definition.attribute, value);
         });
 
         var mode = preferences.theme_mode;

@@ -10,6 +10,10 @@ Use Node 22+ and npm. In this repository, import from @/components/blocks and us
 
 URLs beginning with / are relative to the origin serving this file. Resolve them with new URL(path, llmsUrl).href before passing them to shadcn; for example, resolve /r/stat-card.json against the URL from which you fetched /llms.txt. The kit computes absolute commands from its current browser origin after hydration. No production hostname is baked into installs.
 
+## Brand colour
+
+Set brand.color in tenboards.config.ts and run npm run brand, or npm run brand -- <color>. Use --exact to reject adjustments and --reset to restore built-in presets. Never hand-edit generated brand.css.
+
 ## Generative dashboards
 
 The AI Assistant composes public blocks from five audited series (performance, traffic quality, expenses, pipeline, revenue/profit). Available range and all segment only. Recorded creates, model-free refresh and targeted panel edits work without keys; mounted state only. See /agent-docs/docs/assistant.md.

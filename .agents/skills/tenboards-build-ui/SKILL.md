@@ -80,3 +80,19 @@ against the host from which you fetched it before passing a URL to shadcn.
 ## Controls and filter rows
 
 Use one size step, align end (`items-end`), and use NativeSelect/Select, never raw `<select>`. Date fields use Input. Label/field stacks use flex-column gaps, not space-y around Select's hidden input. Default controls are 28px desktop / 32px mobile. Secondary toolbar actions use ghost; keep one primary action. Use FilterSelect for clearable filters and its searchable mode for long lists; counts are optional option metadata. See the kit regression row and measure control heights/bottom edges before shipping.
+
+## Brand colour
+
+Set `brand.color` in `tenboards.config.ts`, then run `npm run brand`, or use
+`npm run brand -- "#7c3aed"` to set it and regenerate `src/styles/brand.css`.
+Accepted formats: #rgb, #rrggbb, rgb() and oklch(), without transparency.
+The generator preserves hue, adjusts OKLCH lightness for contrast, and reduces
+chroma only to fit sRGB. It reports light/dark roles, changes and contrast ratios.
+`--exact` (or `brand.exact`) rejects adjustments; `--reset` restores the original
+blue and all four presets. `--check` detects stale generated CSS and runs in `npm run check`.
+
+Branding changes primary buttons, text accents, focus rings, selected filters and
+chart-1. It hides the preset picker and sanitizes old preset cookies before
+hydration. Semantic colours, neutral surfaces, fonts, radii, logos and favicons
+remain separate. Keep chart dash/marker encodings and labels, especially when
+a brand overlaps success or warning hues. Never hand-edit primary tokens.

@@ -15,6 +15,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { useSidebar } from "@/components/ui/sidebar";
+import { hasBrand } from "@/lib/brand";
 import { type FontKey, fontOptions } from "@/lib/fonts/registry";
 import type { ContentLayout, NavbarStyle, SidebarCollapsible, SidebarVariant } from "@/lib/preferences/layout";
 import { PREFERENCE_DEFAULTS } from "@/lib/preferences/preferences-config";
@@ -47,7 +48,9 @@ const choices = {
 } as const;
 const defaultsSummary = [
   choices.theme_mode.find((option) => option.value === PREFERENCE_DEFAULTS.theme_mode)?.label,
-  `${THEME_PRESET_OPTIONS.find((option) => option.value === PREFERENCE_DEFAULTS.theme_preset)?.label} preset`,
+  ...(hasBrand
+    ? []
+    : [`${THEME_PRESET_OPTIONS.find((option) => option.value === PREFERENCE_DEFAULTS.theme_preset)?.label} preset`]),
   fontOptions.find((option) => option.key === PREFERENCE_DEFAULTS.font)?.label,
   ...(["content_layout", "navbar_style", "sidebar_variant", "sidebar_collapsible"] as const).map(
     (key) => choices[key].find((option) => option.value === PREFERENCE_DEFAULTS[key])?.label,
@@ -164,12 +167,14 @@ export function LayoutControls({ sidebar = false }: { sidebar?: boolean }) {
               options={choices.theme_mode}
               onChange={(value) => setPreference("theme_mode", value as ThemeMode)}
             />
-            <SelectField
-              label="Color preset"
-              value={values.theme_preset}
-              options={THEME_PRESET_OPTIONS}
-              onChange={(value) => setPreference("theme_preset", value as ThemePreset)}
-            />
+            {!hasBrand && (
+              <SelectField
+                label="Color preset"
+                value={values.theme_preset}
+                options={THEME_PRESET_OPTIONS}
+                onChange={(value) => setPreference("theme_preset", value as ThemePreset)}
+              />
+            )}
             <SelectField
               label="Font"
               value={values.font}

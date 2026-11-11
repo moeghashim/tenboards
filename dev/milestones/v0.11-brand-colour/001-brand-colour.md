@@ -1,6 +1,6 @@
 # 001 — Brand colour config, generator and docs
 
-Status: planned. Branch: `feat/v0.11/001-brand-colour`. Base: main.
+Status: implemented; awaiting review in [PR #89](https://github.com/moeghashim/tenboards/pull/89). Validation and isolated preview deployment complete. Branch: `feat/v0.11/001-brand-colour`. Base: main.
 
 Read first: PLAN.md Decisions row "v0.11 brand colour", DESIGN.md (Colors, presets, contrast table, Control recipe), `src/styles/styles.css` (including the dark Default override block added in v0.10.1, near the bottom), `src/styles/presets/*`, `src/scripts/generate-theme-presets.ts`, `src/lib/preferences/*`, the layout settings sheet, `scripts/check-contrast.ts`, and the `tenboards-build-ui` skill.
 
@@ -51,14 +51,14 @@ Generate these roles for light and dark: `--primary`, `--primary-foreground`, `-
 
 ## Acceptance criteria
 
-- [ ] Brand unset: computed token diff against main is empty in light and dark for all four presets. The picker still works and existing checks pass.
-- [ ] Generator matrix (unit test, `npm run brand:test` or included in an existing test script): `#facc15`, `#22c55e`, `#000000`, `#ffffff`, `#7c3aed`, `#e11d48`, `#0ea5e9`, `#1e40af`, `oklch(0.7 0.15 200)`, `rgb(255 128 0)`.
+- [x] Brand unset: computed token diff against main is empty in light and dark for all four presets. The picker still works and existing checks pass.
+- [x] Generator matrix (unit test, `npm run brand:test` or included in an existing test script): `#facc15`, `#22c55e`, `#000000`, `#ffffff`, `#7c3aed`, `#e11d48`, `#0ea5e9`, `#1e40af`, `oklch(0.7 0.15 200)`, `rgb(255 128 0)`.
   - Each produces passing roles, with hue drift ≤2°.
   - `--exact` fails for at least `#facc15` and `#ffffff`.
   - Invalid inputs (`blue-ish`, `#12`, `oklch(2 0 0)`) error with no writes.
-- [ ] `npm run brand -- "#7c3aed"` then `node --experimental-strip-types scripts/check-contrast.ts` against the dev server passes in light and dark. Do the same for `#facc15` (auto-adjusted) and `#e11d48`.
-- [ ] Branded: the picker is hidden; a stale `graphite` cookie is rewritten with no hydration/console errors; `verify:page --all` passes with zero axe violations.
-- [ ] `npm run brand -- --check` is wired into `npm run check` and fails on a hand-edited `brand.css`. `--reset` restores the exact committed default.
-- [ ] `npm run build`, `npm run check` (no new design exceptions beyond the generated file), `npm run typecheck` pass. The committed repo state is brand-unset, so the live demo and previews look unchanged.
-- [ ] Screenshots of three brands (`#7c3aed`, `#e11d48`, `#facc15` adjusted) at light/dark × desktop on Users, Default dashboard and the open settings sheet, uploaded only to pr-assets. Isolated pr-NNN preview deployed with the repo default (unset).
-- [ ] README, AGENTS.md, skill plus mirror, DESIGN.md, docs/reference.md, CHANGELOG, llms sources and milestone status updated.
+- [x] `npm run brand -- "#7c3aed"` then `node --experimental-strip-types scripts/check-contrast.ts` against the dev server passes in light and dark. Do the same for `#facc15` (auto-adjusted) and `#e11d48`.
+- [x] Branded: the picker is hidden; a stale `graphite` cookie is rewritten with no hydration/console errors; `verify:page --all` passes with zero axe violations.
+- [x] `npm run brand -- --check` is wired into `npm run check` and fails on a hand-edited `brand.css`. `--reset` restores the exact committed default.
+- [x] `npm run build`, `npm run check` (no new design exceptions beyond the generated file), `npm run typecheck` pass. The committed repo state is brand-unset, so the live demo and previews look unchanged.
+- [x] Screenshots of three brands (`#7c3aed`, `#e11d48`, `#facc15` adjusted) at light/dark × desktop on Users, Default dashboard and the open settings sheet, uploaded only to pr-assets. Isolated pr-NNN preview deployed with the repo default (unset).
+- [x] README, AGENTS.md, skill plus mirror, DESIGN.md, docs/reference.md, CHANGELOG, llms sources and milestone status updated.

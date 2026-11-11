@@ -62,7 +62,7 @@ The frontmatter records the v0.6.2 compact desktop defaults (mobile controls and
 
 ## Colors
 
-src/styles/styles.css owns normative light and dark roles. Shadcn background/card/popover map to bg/surface, their foregrounds map to text, and muted/secondary/accent hover surfaces map to surface-raised. Because shadcn uses “accent” for hover fill, action-accent names the saturated primary action color. Border is a decorative separator; border-strong is the accessible input/control edge. Ring is the accessible action color. Recipe controls use a single opaque edge with a soft halo; other elements retain the global outline.
+`tenboards.config.ts` owns brand configuration; generated `src/styles/brand.css` owns Default primary values. `src/styles/styles.css` owns the shared neutral and semantic roles. See Brand colour below for derivation and preset behavior. Shadcn background/card/popover map to bg/surface, their foregrounds map to text, and muted/secondary/accent hover surfaces map to surface-raised. Because shadcn uses “accent” for hover fill, action-accent names the saturated primary action color. Border is a decorative separator; border-strong is the accessible input/control edge. Ring is the accessible action color. Recipe controls use a single opaque edge with a soft halo; other elements retain the global outline.
 
 Supported AA text pairs: text, text-muted (including placeholders), action-accent, success, warning, danger, and info on each of bg/surface/surface-raised; primary-foreground on primary (including the highlight and darker hover); each semantic foreground on its matching semantic surface. All require 4.5:1, even for large text. Ring and border-strong require 3:1 against all three neutral surfaces. No claim is made for arbitrary cross-role combinations or inherited hard-coded chart/page colors. Low-contrast decorative border is never the sole control boundary.
 
@@ -112,7 +112,7 @@ The header is 48px tall on desktop and 56px on mobile, with linked Projects/proj
 
 The root command palette uses the existing cmdk and dialog wrappers and the shared retained-route catalog. Search rows are at least 35px tall on desktop and 40px on mobile; the result list scrolls within a bounded viewport. The dialog has a title, description, explicit search label, empty state, and a touch close button. ⌘K/Ctrl+K toggles the palette, including inside text fields. Alt/Shift, key repeat, IME composition, already-handled events, and another visible dialog/menu/listbox suppress the shortcut (the mobile navigation sheet excepted). The search input group uses one opaque 2px focus outline with 2px offset and 8px corners; the inner input outline is suppressed. Keyboard selection, Escape, and focus return are part of the component contract.
 
-Layout settings is a right-hand sheet capped at 28rem on desktop and full width on mobile. Appearance and Layout sections group native labeled selects and fieldset radio choices. Controls are at least 35px tall on desktop and 40px on mobile; the body scrolls independently of its heading and reset footer. Selected choices use a neutral fill and 1px primary border; keyboard focus adds an opaque 2px outline with 2px offset. The Defaults footer derives all seven labels from the registry. Existing seven-day preference cookies and the separate sidebar-state cookie remain the layout persistence contract; Reset also re-expands the sidebar. The visible variant/mobile explanations describe the supported sidebar adaptations.
+Layout settings is a right-hand sheet capped at 28rem on desktop and full width on mobile. Appearance and Layout sections group native labeled selects and fieldset radio choices. Controls are at least 35px tall on desktop and 40px on mobile; the body scrolls independently of its heading and reset footer. Selected choices use a neutral fill and 1px primary border; keyboard focus adds an opaque 2px outline with 2px offset. The Defaults footer derives labels from the registry, omitting the preset label when branded. Existing seven-day preference cookies and the separate sidebar-state cookie remain the layout persistence contract; Reset also re-expands the sidebar. The visible variant/mobile explanations describe the supported sidebar adaptations.
 
 ## Do's and Don'ts
 
@@ -197,3 +197,19 @@ Measured control/focus minimums against bg, surface and surface-raised (2026-11-
 | Iris | 3.41:1 | 3.70:1 |
 
 Round 2 filter verification: the wrapper owns the fill, edge, radius and focus-within treatment around sibling trigger/clear buttons (28px desktop / 32px mobile; clear width 24px). Search rows use a full-width border divider and a 2px inset ring-token focus indicator. Fill remains primary at 7%; the accent edge uses 67% in light and 60% in dark to meet contrast, with Default dark using the lighter info accent. Active edge minimums across bg/surface/surface-raised/tint are Default 3.42/3.61, Graphite 3.83/4.26, Pine 3.08/4.14 and Iris 3.60/3.49 (light/dark). Active text minimum is 6.81:1. The contrast script now checks 43 pairs per mode/preset.
+
+## Brand colour
+
+Set `brand.color` in `tenboards.config.ts`, then run `npm run brand`, or use
+`npm run brand -- "#7c3aed"` to set it and regenerate `src/styles/brand.css`.
+Accepted formats: #rgb, #rrggbb, rgb() and oklch(), without transparency.
+The generator preserves hue, adjusts OKLCH lightness for contrast, and reduces
+chroma only to fit sRGB. It reports light/dark roles, changes and contrast ratios.
+`--exact` (or `brand.exact`) rejects adjustments; `--reset` restores the original
+blue and all four presets. `--check` detects stale generated CSS and runs in `npm run check`.
+
+Branding changes primary buttons, text accents, focus rings, selected filters and
+chart-1. It hides the preset picker and sanitizes old preset cookies before
+hydration. Semantic colours, neutral surfaces, fonts, radii, logos and favicons
+remain separate. Keep chart dash/marker encodings and labels, especially when
+a brand overlaps success or warning hues. Never hand-edit primary tokens.

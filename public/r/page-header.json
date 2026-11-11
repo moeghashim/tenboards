@@ -99,6 +99,8 @@
       "radius-4xl": "1.5rem"
     },
     "light": {
+      "primary": "#1e40af",
+      "primary-foreground": "#ffffff",
       "app-font-sans": "\"Geist Variable\", ui-sans-serif, system-ui, sans-serif",
       "app-font-mono": "\"Geist Mono Variable\", ui-monospace, monospace",
       "app-font-variation-settings": "normal",
@@ -109,8 +111,6 @@
       "text-muted": "#515b6b",
       "border": "#dbe0e8",
       "border-strong": "#788397",
-      "primary": "#1e40af",
-      "primary-foreground": "#ffffff",
       "success": "#166534",
       "success-surface": "#edf8f0",
       "warning": "#854d0e",
@@ -177,6 +177,8 @@
       "filter-edge": "color-mix(in srgb, var(--filter-accent) 67%, var(--surface))"
     },
     "dark": {
+      "primary": "#a9c2ff",
+      "primary-foreground": "#111318",
       "app-font-sans": "\"Geist Variable\", ui-sans-serif, system-ui, sans-serif",
       "app-font-mono": "\"Geist Mono Variable\", ui-monospace, monospace",
       "app-font-variation-settings": "normal",
@@ -187,8 +189,6 @@
       "text-muted": "#b0bacb",
       "border": "#343c49",
       "border-strong": "#768398",
-      "primary": "#a9c2ff",
-      "primary-foreground": "#111318",
       "success": "#86efac",
       "success-surface": "#142c21",
       "warning": "#fde68a",
@@ -258,6 +258,14 @@
   "css": {
     "@import \"@fontsource-variable/geist\"": {},
     "@import \"@fontsource-variable/geist-mono\"": {},
+    ".dark:root:not([data-theme-preset=\"graphite\"]):not([data-theme-preset=\"pine\"]):not([data-theme-preset=\"iris\"])": {
+      "--primary": "#3464db",
+      "--primary-foreground": "#ffffff",
+      "--action-accent": "var(--info)",
+      "--ring": "var(--info)",
+      "--chart-1": "var(--info)",
+      "--primary-hover": "color-mix(in srgb, var(--primary) 90%, var(--bg))"
+    },
     "@custom-variant dark (&:is(.dark *))": {},
     "@layer base": {
       "*": { "@apply border-border outline-ring/50": {} },
@@ -321,14 +329,6 @@
         "transition-duration": "0.01ms !important",
         "scroll-behavior": "auto !important"
       }
-    },
-    ".dark:root:not([data-theme-preset=\"graphite\"]):not([data-theme-preset=\"pine\"]):not([data-theme-preset=\"iris\"])": {
-      "--primary": "#3464db",
-      "--primary-foreground": "#ffffff",
-      "--action-accent": "var(--info)",
-      "--ring": "var(--info)",
-      "--chart-1": "var(--info)",
-      "--primary-hover": "color-mix(in srgb, var(--primary) 90%, var(--bg))"
     },
     ":root:not(.dark)": { "--primary-hover": "color-mix(in srgb, var(--primary) 90%, var(--text))" },
     ".text-primary": { "color": "var(--action-accent)" },

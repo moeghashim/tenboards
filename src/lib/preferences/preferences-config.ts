@@ -1,3 +1,4 @@
+import { hasBrand } from "@/lib/brand";
 /**
  * How each preference should be saved.
  *
@@ -63,7 +64,13 @@ export const PREFERENCE_REGISTRY = {
 
   theme_preset: definePreference({
     values: THEME_PRESET_VALUES,
-    legacyValues: ["brutalist", "neo-brutalism", "soft-pop", "tangerine"],
+    legacyValues: [
+      "brutalist",
+      "neo-brutalism",
+      "soft-pop",
+      "tangerine",
+      ...(hasBrand ? THEME_PRESET_VALUES.filter((v) => v !== "default") : []),
+    ],
     defaultValue: "default",
     persistence: "client-cookie",
     attribute: "data-theme-preset",
@@ -125,6 +132,7 @@ export function parsePreference<K extends PreferenceKey>(
   key: K,
   rawValue: string | null | undefined,
 ): PreferenceValueMap[K] {
+  if (hasBrand && key === "theme_preset") return "default" as PreferenceValueMap[K];
   const definition = PREFERENCE_REGISTRY[key];
   const allowedValues = definition.values as readonly string[];
 
