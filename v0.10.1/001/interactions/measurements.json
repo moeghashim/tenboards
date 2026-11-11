@@ -1,0 +1,126 @@
+[
+  {
+    "mode": "light",
+    "viewport": "desktop",
+    "boxes": [
+      {
+        "slot": "select-trigger",
+        "height": 28,
+        "bottom": 286.25
+      },
+      {
+        "slot": "native-select",
+        "height": 28,
+        "bottom": 286.25
+      },
+      {
+        "slot": "input",
+        "height": 28,
+        "bottom": 286.25
+      },
+      {
+        "slot": "input",
+        "height": 28,
+        "bottom": 286.25
+      },
+      {
+        "slot": "button",
+        "height": 28,
+        "bottom": 286.25
+      }
+    ]
+  },
+  {
+    "mode": "light",
+    "viewport": "mobile",
+    "boxes": [
+      {
+        "slot": "select-trigger",
+        "height": 32,
+        "bottom": 425.25
+      },
+      {
+        "slot": "native-select",
+        "height": 32,
+        "bottom": 425.25
+      },
+      {
+        "slot": "input",
+        "height": 32,
+        "bottom": 425.25
+      },
+      {
+        "slot": "input",
+        "height": 32,
+        "bottom": 425.25
+      },
+      {
+        "slot": "button",
+        "height": 32,
+        "bottom": 425.25
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "viewport": "desktop",
+    "boxes": [
+      {
+        "slot": "select-trigger",
+        "height": 28,
+        "bottom": 286.25
+      },
+      {
+        "slot": "native-select",
+        "height": 28,
+        "bottom": 286.25
+      },
+      {
+        "slot": "input",
+        "height": 28,
+        "bottom": 286.25
+      },
+      {
+        "slot": "input",
+        "height": 28,
+        "bottom": 286.25
+      },
+      {
+        "slot": "button",
+        "height": 28,
+        "bottom": 286.25
+      }
+    ]
+  },
+  {
+    "mode": "dark",
+    "viewport": "mobile",
+    "boxes": [
+      {
+        "slot": "select-trigger",
+        "height": 32,
+        "bottom": 425.25
+      },
+      {
+        "slot": "native-select",
+        "height": 32,
+        "bottom": 425.25
+      },
+      {
+        "slot": "input",
+        "height": 32,
+        "bottom": 425.25
+      },
+      {
+        "slot": "input",
+        "height": 32,
+        "bottom": 425.25
+      },
+      {
+        "slot": "button",
+        "height": 32,
+        "bottom": 425.25
+      }
+    ]
+  }
+]
