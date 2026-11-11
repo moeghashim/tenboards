@@ -61,11 +61,11 @@ function PageContent() {
               <RotateCw className="size-4" />
               <span>{summary.value1}</span>
             </div>
-            <Button size="sm" variant="outline">
+            <Button size="sm" variant="ghost">
               <Settings2 />
               Settings
             </Button>
-            <Button size="sm" variant="outline">
+            <Button size="sm" variant="ghost">
               <Download data-icon="inline-start" />
               Export
             </Button>

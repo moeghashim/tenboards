@@ -72,13 +72,13 @@ export function Calendar({
 
         <div className="flex flex-wrap items-center gap-2">
           <ButtonGroup>
-            <Button size="icon" aria-label="Previous period" variant="outline" onClick={() => controller.prev()}>
+            <Button size="icon" aria-label="Previous period" variant="ghost" onClick={() => controller.prev()}>
               <ChevronLeft />
             </Button>
-            <Button variant="outline" onClick={() => controller.today()}>
+            <Button variant="ghost" onClick={() => controller.today()}>
               Today
             </Button>
-            <Button size="icon" aria-label="Next period" variant="outline" onClick={() => controller.next()}>
+            <Button size="icon" aria-label="Next period" variant="ghost" onClick={() => controller.next()}>
               <ChevronRight />
             </Button>
           </ButtonGroup>

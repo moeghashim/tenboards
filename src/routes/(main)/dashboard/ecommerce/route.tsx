@@ -92,7 +92,7 @@ function Page() {
 
             <Separator orientation="vertical" />
 
-            <Button aria-label="Store settings" size="icon-sm" variant="outline">
+            <Button aria-label="Store settings" size="icon-sm" variant="ghost">
               <Settings2 />
             </Button>
           </div>

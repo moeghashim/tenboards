@@ -112,13 +112,6 @@
     "reason": "Existing measured layout preserves the approved screen geometry; no equivalent named token currently exists."
   },
   {
-    "file": "src/routes/(main)/dashboard/assistant/-components/presentation.tsx",
-    "rule": "card-markup",
-    "value": "\"border-input bg-card rounded-xl border p-2 focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-ring\"",
-    "count": 1,
-    "reason": "Composer input boundary owns focus-within outline and textarea controls; not a content card."
-  },
-  {
     "file": "src/routes/(main)/dashboard/chat/route.tsx",
     "rule": "page-header",
     "value": "<h1>",

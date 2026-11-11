@@ -33,7 +33,7 @@ function Page() {
           description="Add invoice details and review the preview."
           actions={
             <div className="flex flex-wrap items-center gap-3">
-              <Button type="button" variant="outline">
+              <Button type="button" variant="ghost">
                 <Save data-icon="inline-start" />
                 Save as Draft
               </Button>
