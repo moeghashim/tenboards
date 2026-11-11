@@ -1,0 +1,4 @@
+PASS light/desktop: equal heights/bottom edges, Role search, keyboard clear/focus return, open-popup axe
+PASS light/mobile: equal heights/bottom edges, Role search, keyboard clear/focus return, open-popup axe
+PASS dark/desktop: equal heights/bottom edges, Role search, keyboard clear/focus return, open-popup axe
+PASS dark/mobile: equal heights/bottom edges, Role search, keyboard clear/focus return, open-popup axe
