@@ -6,6 +6,7 @@ import { CommandPalette } from "@/components/navigation/command-palette";
 import { Toaster } from "@/components/ui/toast";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { APP_CONFIG } from "@/config/app-config";
+import { hasBrand } from "@/lib/brand";
 import { fontRegistry } from "@/lib/fonts/registry";
 import { PREFERENCE_DEFAULTS } from "@/lib/preferences/preferences-config";
 import { ThemeBootScript } from "@/scripts/theme-boot";
@@ -85,7 +86,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
     <html
       lang="en"
       data-theme-mode={theme_mode}
-      data-theme-preset={theme_preset}
+      data-theme-preset={hasBrand ? undefined : theme_preset}
       data-content-layout={content_layout}
       data-navbar-style={navbar_style}
       data-sidebar-variant={sidebar_variant}

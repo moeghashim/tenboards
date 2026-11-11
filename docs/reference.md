@@ -734,3 +734,19 @@ Registry items have no host-bound custom registry dependencies: required source 
 Run `npm run llms:build` after changing the registry inventory, generators, listed docs, skills or block source. Run `npm run registry:build` after changing blocks, their dependencies or tokens. Commit the resulting assets. `npm run check` runs `check:registry` and `check:llms` in read-only mode and fails on drift; it never silently refreshes stale output. Deploy/build uses these checked-in assets unchanged.
 
 Registry tooling regression coverage: `node --experimental-strip-types scripts/registry-test.ts` checks theme conversion and verifies that source/output drift fails the freshness checks (restoring all probes afterward).
+
+## Brand colour
+
+Set `brand.color` in `tenboards.config.ts`, then run `npm run brand`, or use
+`npm run brand -- "#7c3aed"` to set it and regenerate `src/styles/brand.css`.
+Accepted formats: #rgb, #rrggbb, rgb() and oklch(), without transparency.
+The generator preserves hue, adjusts OKLCH lightness for contrast, and reduces
+chroma only to fit sRGB. It reports light/dark roles, changes and contrast ratios.
+`--exact` (or `brand.exact`) rejects adjustments; `--reset` restores the original
+blue and all four presets. `--check` detects stale generated CSS and runs in `npm run check`.
+
+Branding changes primary buttons, text accents, focus rings, selected filters and
+chart-1. It hides the preset picker and sanitizes old preset cookies before
+hydration. Semantic colours, neutral surfaces, fonts, radii, logos and favicons
+remain separate. Keep chart dash/marker encodings and labels, especially when
+a brand overlaps success or warning hues. Never hand-edit primary tokens.

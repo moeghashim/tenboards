@@ -7,6 +7,7 @@
 @import "./presets/graphite.css";
 @import "./presets/iris.css";
 @import "./presets/pine.css";
+@import "./brand.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -22,8 +23,6 @@
   --text-muted: #515b6b;
   --border: #dbe0e8;
   --border-strong: #788397;
-  --primary: #1e40af;
-  --primary-foreground: #ffffff;
   --success: #166534;
   --success-surface: #edf8f0;
   --warning: #854d0e;
@@ -183,8 +182,6 @@
   --text-muted: #b0bacb;
   --border: #343c49;
   --border-strong: #768398;
-  --primary: #a9c2ff;
-  --primary-foreground: #111318;
   --success: #86efac;
   --success-surface: #142c21;
   --warning: #fde68a;
@@ -306,14 +303,7 @@
 }
 
 /* Direction A: one opaque boundary plus one soft halo, never stacked focus rings. */
-.dark:root:not([data-theme-preset="graphite"]):not([data-theme-preset="pine"]):not([data-theme-preset="iris"]) {
-  --primary: #3464db;
-  --primary-foreground: #ffffff;
-  --action-accent: var(--info);
-  --ring: var(--info);
-  --chart-1: var(--info);
-  --primary-hover: color-mix(in srgb, var(--primary) 90%, var(--bg));
-}
+
 :root:not(.dark) { --primary-hover: color-mix(in srgb, var(--primary) 90%, var(--text)); }
 .dark { --control-overlay: var(--elevation-overlay); --control-depth: inset 0 1px 0 color-mix(in srgb, var(--text) 5%, transparent); }
 .text-primary { color: var(--action-accent); }

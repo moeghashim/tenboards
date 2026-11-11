@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased — v0.11 (draft)
+
+- Add typed brand colour configuration and contrast-safe light/dark generation with exact, reset and freshness checks.
+- Hide preset selection and sanitize persisted presets when branded; retain original computed tokens when unset.
+
 ## v0.10.1 — Control refinement (2026-11-11)
 
 Release: [v0.10.1](https://github.com/moeghashim/tenboards/releases/tag/v0.10.1). Merged as #88.

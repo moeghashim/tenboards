@@ -18,6 +18,8 @@ Read DESIGN.md for tokens and PRODUCT.md for product context.
 - `scripts/templates/`: generator templates; `docs/data-layer.md` explains database integration.
 - `.agents/skills/`: canonical Agent Skills; `.claude/skills/` contains relative mirrors.
 
+Brand colour: set `brand.color` in tenboards.config.ts or run `npm run brand -- <color>`; never hand-edit primary tokens.
+
 ## Build loop
 
 1. Use `tenboards-build-ui` for dashboard/page/KPI/chart/table work; use

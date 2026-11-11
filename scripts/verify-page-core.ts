@@ -1,6 +1,7 @@
 import AxeBuilder from "@axe-core/playwright";
 import type { Browser } from "playwright";
 
+import config from "../tenboards.config.ts";
 import { cacheCaptureFonts } from "./screenshot-assets.ts";
 import { mkdir } from "node:fs/promises";
 import path from "node:path";
@@ -65,10 +66,10 @@ export async function verifyPage(
             ),
           );
           await page.waitForFunction(
-            (mode) =>
+            ({ mode, branded }) =>
               document.documentElement.classList.contains("dark") === (mode === "dark") &&
-              document.documentElement.dataset.themePreset === "default",
-            theme,
+              document.documentElement.dataset.themePreset === (branded ? undefined : "default"),
+            { mode: theme, branded: config.brand.color !== undefined },
           );
         }
         if (entry.ready) await page.getByText(entry.ready, { exact: true }).first().waitFor();
