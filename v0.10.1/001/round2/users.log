@@ -1,0 +1,9 @@
+
+> tenboards@0.10.0 verify:page
+> node --experimental-strip-types scripts/verify-page.ts /dashboard/users
+
+Started http://127.0.0.1:3000
+PASS /dashboard/users light/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/users light/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/users dark/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/users dark/mobile: 0 axe violations, 0 runtime errors

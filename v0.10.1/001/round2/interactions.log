@@ -1,0 +1,16 @@
+default light desktop {"height":28,"fill":"color(srgb 0.938235 0.947569 0.978039)","edge":"color(srgb 0.408824 0.498157 0.789804)","clearWidth":24,"clearHeight":26}
+default light mobile {"height":32,"fill":"color(srgb 0.938235 0.947569 0.978039)","edge":"color(srgb 0.408824 0.498157 0.789804)","clearWidth":24,"clearHeight":30}
+default dark desktop {"height":28,"fill":"color(srgb 0.105451 0.133216 0.195059)","edge":"color(srgb 0.436863 0.501961 0.658039)","clearWidth":24,"clearHeight":26}
+default dark mobile {"height":32,"fill":"color(srgb 0.105451 0.133216 0.195059)","edge":"color(srgb 0.436863 0.501961 0.658039)","clearWidth":24,"clearHeight":30}
+graphite light desktop {"height":28,"fill":"color(srgb 0.943177 0.945647 0.949765)","edge":"color(srgb 0.456118 0.479765 0.519176)","clearWidth":24,"clearHeight":26}
+graphite light mobile {"height":32,"fill":"color(srgb 0.943177 0.945647 0.949765)","edge":"color(srgb 0.456118 0.479765 0.519176)","clearWidth":24,"clearHeight":30}
+graphite dark desktop {"height":28,"fill":"color(srgb 0.148549 0.165059 0.197529)","edge":"color(srgb 0.53098 0.553725 0.59451)","clearWidth":24,"clearHeight":26}
+graphite dark mobile {"height":32,"fill":"color(srgb 0.148549 0.165059 0.197529)","edge":"color(srgb 0.53098 0.553725 0.59451)","clearWidth":24,"clearHeight":30}
+pine light desktop {"height":28,"fill":"color(srgb 0.934667 0.955804 0.954431)","edge":"color(srgb 0.374667 0.57698 0.563843)","clearWidth":24,"clearHeight":26}
+pine light mobile {"height":32,"fill":"color(srgb 0.934667 0.955804 0.954431)","edge":"color(srgb 0.374667 0.57698 0.563843)","clearWidth":24,"clearHeight":30}
+pine dark desktop {"height":28,"fill":"color(srgb 0.11698 0.17 0.193137)","edge":"color(srgb 0.260392 0.596078 0.556863)","clearWidth":24,"clearHeight":26}
+pine dark mobile {"height":32,"fill":"color(srgb 0.11698 0.17 0.193137)","edge":"color(srgb 0.260392 0.596078 0.556863)","clearWidth":24,"clearHeight":30}
+iris light desktop {"height":28,"fill":"color(srgb 0.95498 0.939059 0.979961)","edge":"color(srgb 0.569098 0.416706 0.808196)","clearWidth":24,"clearHeight":26}
+iris light mobile {"height":32,"fill":"color(srgb 0.95498 0.939059 0.979961)","edge":"color(srgb 0.569098 0.416706 0.808196)","clearWidth":24,"clearHeight":30}
+iris dark desktop {"height":28,"fill":"color(srgb 0.14498 0.155451 0.204392)","edge":"color(srgb 0.500392 0.471373 0.653333)","clearWidth":24,"clearHeight":26}
+iris dark mobile {"height":32,"fill":"color(srgb 0.14498 0.155451 0.204392)","edge":"color(srgb 0.500392 0.471373 0.653333)","clearWidth":24,"clearHeight":30}
