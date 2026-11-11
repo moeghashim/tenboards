@@ -1,6 +1,6 @@
 # v0.10.1 — Control refinement (direction A)
 
-Status: **in progress**. Contract: PLAN.md Decisions log, "v0.10.1 control refinement" (2026-11-11).
+Status: **in review**. Contract: PLAN.md Decisions log, "v0.10.1 control refinement" (2026-11-11).
 
 Goal: text fields, buttons, selects and menus read as one calm, precise set. Today they are stock shadcn: heavy field borders next to faint button borders, outlined toolbar buttons that compete with the primary action, filters that always look set, a doubled focus ring, a pale dark-mode primary, and filter rows whose controls have different heights and arrow placement.
 
