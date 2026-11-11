@@ -38,7 +38,7 @@ export function AnalyticsToolbar() {
       </Select>
 
       <DropdownMenu>
-        <DropdownMenuTrigger render={<Button size="icon" variant="outline" aria-label="More analytics actions" />}>
+        <DropdownMenuTrigger render={<Button size="icon" variant="ghost" aria-label="More analytics actions" />}>
           <Ellipsis />
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="w-48">

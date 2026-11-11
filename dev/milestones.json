@@ -254,10 +254,10 @@
     },
     {
       "id": "v0.10.1-controls",
-      "status": "planned",
+      "status": "in-review",
       "tasks": ["001-control-recipe"],
       "taskStatuses": {
-        "001-control-recipe": "planned"
+        "001-control-recipe": "in-review"
       }
     }
   ]

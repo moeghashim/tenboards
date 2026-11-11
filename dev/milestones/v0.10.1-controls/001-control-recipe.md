@@ -1,6 +1,6 @@
 # 001 — Shared control recipe and usage pass
 
-Status: planned. Branch: `feat/v0.10.1/001-control-recipe`. Base: main.
+Status: in review. Branch: `feat/v0.10.1/001-control-recipe`. Base: main.
 
 Read first: [direction-a.html](direction-a.html) (open it in a browser), [filter-row-defect.png](filter-row-defect.png), DESIGN.md, and the current `src/components/ui/{button,input,textarea,input-group,select,native-select,dropdown-menu,combobox,toggle-group}.tsx` and `src/styles/styles.css`.
 
@@ -56,13 +56,15 @@ Define the recipe once (CSS custom properties and/or a base-layer rule keyed on 
 
 ## Acceptance criteria
 
-- [ ] All recipe controls render the same height per size step on desktop and mobile. Measured with getBoundingClientRect on the kit regression row: every control's height and bottom edge are equal within 0.5px.
-- [ ] No browser-native select arrow anywhere in `verify:page --all` captures. Chevron inset is identical across Select and NativeSelect.
-- [ ] Hairline ≥3:1 and focus indicator ≥3:1 against bg/surface/surface-raised in all four presets, light and dark. Dark Default primary/primary-foreground ≥4.5:1. The contrast script passes.
-- [ ] Exactly one visible focus treatment on recipe controls (screenshot evidence of keyboard focus on input, select trigger, native select, date and button).
-- [ ] Toolbars on the listed pages show one filled primary action, with secondary actions as ghost.
-- [ ] Clearable filters work by mouse and keyboard and have correct names. axe is clean.
-- [ ] Menus: left checks, group labels, counts on the Users Role filter, search on long lists, 30px rows.
-- [ ] `npm run build`, `npm run check` (no new design exceptions), `npm run typecheck`, `npm run verify:page -- --all` pass, with zero axe violations and zero hydration/console errors. Assistant tests (`assistant:test`, `assistant:server`) still pass.
-- [ ] Before/after screenshots (light/dark × desktop/mobile) of Users, Products, Profile, Assistant composer, the kit regression row, an open Select and an open DropdownMenu, uploaded only to pr-assets. Isolated preview deployment `pr-NNN` linked in the PR.
-- [ ] README, CHANGELOG, DESIGN.md, the skill (plus mirror), `.impeccable/design.json` and the milestone status updated.
+- [x] All recipe controls render the same height per size step on desktop and mobile. Measured with getBoundingClientRect on the kit regression row: every control's height and bottom edge are equal within 0.5px.
+- [x] No browser-native select arrow anywhere in `verify:page --all` captures. Chevron inset is identical across Select and NativeSelect.
+- [x] Hairline ≥3:1 and focus indicator ≥3:1 against bg/surface/surface-raised in all four presets, light and dark. Dark Default primary/primary-foreground ≥4.5:1. The contrast script passes.
+- [x] Exactly one visible focus treatment on recipe controls (screenshot evidence of keyboard focus on input, select trigger, native select, date and button).
+- [x] Toolbars on the listed pages show one filled primary action, with secondary actions as ghost.
+- [x] Clearable filters work by mouse and keyboard and have correct names. axe is clean.
+- [x] Menus: left checks, group labels, counts on the Users Role filter, search on long lists, 30px rows.
+- [x] `npm run build`, `npm run check` (no new design exceptions), `npm run typecheck`, `npm run verify:page -- --all` pass, with zero axe violations and zero hydration/console errors. Assistant tests (`assistant:test`, `assistant:server`) still pass.
+- [x] Before/after screenshots (light/dark × desktop/mobile) of Users, Products, Profile, Assistant composer, the kit regression row, an open Select and an open DropdownMenu, uploaded only to pr-assets. Isolated preview deployment `pr-NNN` linked in the PR.
+- [x] README, CHANGELOG, DESIGN.md, the skill (plus mirror), `.impeccable/design.json` and the milestone status updated.
+
+Verified in PR #88: 148 full-catalog mode/viewport cases passed, plus the final Assistant rerun. Kit controls each measure 28px / bottom 286.25px at 1440×1000 and 32px / bottom 425.25px at 390×844, in both modes. Evidence is on pr-assets under v0.10.1/001.

@@ -5,7 +5,7 @@ import { ArrowUp, Bot, ChartNoAxesCombined, ClipboardList, Plus, Square, Table2 
 import { PageHeader } from "@/components/blocks";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
+import { InputGroup, InputGroupTextarea } from "@/components/ui/input-group";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { examples } from "@/lib/assistant/recorded";
 
@@ -158,11 +158,11 @@ export function Composer({
     >
       <div className="mx-auto w-full max-w-[752px] space-y-2">
         {children}
-        <div className="border-input bg-card rounded-xl border p-2 focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-ring">
+        <InputGroup className="h-auto flex-col items-stretch rounded-xl p-2">
           <label htmlFor="assistant-message" className="sr-only">
             Message
           </label>
-          <Textarea
+          <InputGroupTextarea
             ref={composer}
             id="assistant-message"
             rows={1}
@@ -190,7 +190,7 @@ export function Composer({
               </Button>
             )}
           </div>
-        </div>
+        </InputGroup>
       </div>
     </form>
   );

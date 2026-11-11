@@ -45,11 +45,11 @@ function PageContent() {
             <Megaphone />
             New Announcement
           </Button>
-          <Button size="sm" variant="outline">
+          <Button size="sm" variant="ghost">
             <BookOpenCheck />
             Gradebook
           </Button>
-          <Button size="sm" variant="outline">
+          <Button size="sm" variant="ghost">
             <Plus />
             Add Assignment
           </Button>

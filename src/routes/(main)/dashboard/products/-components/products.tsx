@@ -4,9 +4,9 @@ import { useTable } from "@tanstack/react-table";
 
 import { Search } from "lucide-react";
 
+import { FilterSelect } from "@/components/blocks";
 import { Button } from "@/components/ui/button";
 import { InputGroup, InputGroupAddon, InputGroupInput } from "@/components/ui/input-group";
-import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { toast } from "@/components/ui/toast";
 import { dataTableFeatures } from "@/lib/data-table-features";
 
@@ -93,46 +93,18 @@ export function Products() {
               Clear filters
             </Button>
           )}
-          <Select
+          <FilterSelect
+            label="Status"
             value={status}
-            onValueChange={(value) => {
-              if (value !== null) filterColumn("status", value);
-            }}
-          >
-            <SelectTrigger size="sm" aria-label="Filter product status" className="w-36">
-              <SelectValue>{status === "All" ? "All statuses" : status}</SelectValue>
-            </SelectTrigger>
-            <SelectContent align="end">
-              <SelectGroup>
-                <SelectItem value="All">All statuses</SelectItem>
-                {statuses.map((item) => (
-                  <SelectItem key={item} value={item}>
-                    {item}
-                  </SelectItem>
-                ))}
-              </SelectGroup>
-            </SelectContent>
-          </Select>
-          <Select
+            options={["All", ...statuses].map((value) => ({ value, label: value }))}
+            onValueChange={(value) => filterColumn("status", value)}
+          />
+          <FilterSelect
+            label="Category"
             value={category}
-            onValueChange={(value) => {
-              if (value !== null) filterColumn("category", value);
-            }}
-          >
-            <SelectTrigger size="sm" aria-label="Filter product category" className="w-44">
-              <SelectValue>{category === "All" ? "All categories" : category}</SelectValue>
-            </SelectTrigger>
-            <SelectContent align="end">
-              <SelectGroup>
-                <SelectItem value="All">All categories</SelectItem>
-                {categories.map((item) => (
-                  <SelectItem key={item} value={item}>
-                    {item}
-                  </SelectItem>
-                ))}
-              </SelectGroup>
-            </SelectContent>
-          </Select>
+            options={["All", ...categories].map((value) => ({ value, label: value }))}
+            onValueChange={(value) => filterColumn("category", value)}
+          />
         </div>
       </div>
       <ProductsTable table={table} onReset={resetFilters} />

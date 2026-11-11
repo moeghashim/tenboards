@@ -82,16 +82,16 @@ function PageContent() {
 
       <Separator />
       <footer className="flex flex-wrap gap-2 p-2 *:data-[slot=button]:h-11 *:data-[slot=button]:min-w-32 *:data-[slot=button]:flex-1 *:data-[slot=button]:rounded-lg">
-        <Button variant="outline">Main screen</Button>
-        <Button variant="outline">Patient setup</Button>
-        <Button variant="outline">Alarm review</Button>
-        <Button variant="outline">Wave review</Button>
-        <Button variant="outline">Trends</Button>
-        <Button variant="outline">
+        <Button variant="ghost">Main screen</Button>
+        <Button variant="ghost">Patient setup</Button>
+        <Button variant="ghost">Alarm review</Button>
+        <Button variant="ghost">Wave review</Button>
+        <Button variant="ghost">Trends</Button>
+        <Button variant="ghost">
           <Printer data-icon="inline-start" />
           Print
         </Button>
-        <Button variant="outline">
+        <Button variant="ghost">
           <Volume2 data-icon="inline-start" />
           Silence
         </Button>

@@ -79,7 +79,7 @@ export function Roles({ roles }: { roles: Role[] }) {
         </div>
 
         <div className="flex items-center gap-2">
-          <Button size="sm" variant="outline">
+          <Button size="sm" variant="ghost">
             <FileUp data-icon="inline-start" />
             Import JSON
           </Button>

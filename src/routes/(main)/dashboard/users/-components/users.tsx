@@ -10,11 +10,11 @@ import {
 
 import { Cog, Download, Grid, Plus, Rows3, Search, SlidersHorizontal } from "lucide-react";
 
+import { FilterSelect } from "@/components/blocks";
 import { Button } from "@/components/ui/button";
 // biome-ignore lint/style/noRestrictedImports: Existing specialized card layout preserves its density/size semantics; DashboardCard migration needs separate visual review.
 import { Card, CardAction, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { InputGroup, InputGroupAddon, InputGroupInput } from "@/components/ui/input-group";
-import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { dataTableFeatures } from "@/lib/data-table-features";
 
@@ -103,13 +103,13 @@ export function Users({ users }: { users: UserRow[] }) {
               }}
             />
           </InputGroup>
-          <Button variant="outline" size="sm">
+          <Button variant="ghost" size="sm">
             <SlidersHorizontal /> Hide
           </Button>
-          <Button variant="outline" size="sm">
+          <Button variant="ghost" size="sm">
             <Cog /> Customize
           </Button>
-          <Button variant="outline" size="sm">
+          <Button variant="ghost" size="sm">
             <Download /> Export
           </Button>
           <Button size="sm">
@@ -120,86 +120,39 @@ export function Users({ users }: { users: UserRow[] }) {
       <CardContent className="flex flex-col gap-4 px-0">
         <div className="flex flex-wrap items-center justify-between gap-3 px-4">
           <div className="flex flex-wrap items-center gap-3">
-            <Select
-              items={userFilterItems.role}
+            <FilterSelect
+              label="Role"
               value={roleFilter}
+              options={userFilterItems.role.map((option) => ({
+                ...option,
+                count:
+                  option.value === "All" ? users.length : users.filter((user) => user.role === option.value).length,
+              }))}
               onValueChange={(value) => setColumnSelectFilter("role", value)}
-            >
-              <SelectTrigger size="sm" aria-label="Filter users by role">
-                <span className="text-muted-foreground">Role:</span>
-                <SelectValue />
-              </SelectTrigger>
-              <SelectContent align="start" alignItemWithTrigger={false}>
-                <SelectGroup>
-                  {filters.role.map((option) => (
-                    <SelectItem key={option} value={option}>
-                      {option}
-                    </SelectItem>
-                  ))}
-                </SelectGroup>
-              </SelectContent>
-            </Select>
+              searchable
+            />
 
-            <Select
-              items={userFilterItems.team}
+            <FilterSelect
+              label="Team"
               value={teamFilter}
+              options={userFilterItems.team}
               onValueChange={(value) => setColumnSelectFilter("team", value)}
-            >
-              <SelectTrigger size="sm" aria-label="Filter users by team">
-                <span className="text-muted-foreground">Team:</span>
-                <SelectValue />
-              </SelectTrigger>
-              <SelectContent align="start" alignItemWithTrigger={false}>
-                <SelectGroup>
-                  {filters.team.map((option) => (
-                    <SelectItem key={option} value={option}>
-                      {option}
-                    </SelectItem>
-                  ))}
-                </SelectGroup>
-              </SelectContent>
-            </Select>
+            />
 
-            <Select
-              items={userFilterItems.status}
+            <FilterSelect
+              label="Status"
               value={statusFilter}
+              options={userFilterItems.status}
               onValueChange={(value) => setColumnSelectFilter("status", value)}
-            >
-              <SelectTrigger size="sm" aria-label="Filter users by status">
-                <span className="text-muted-foreground">Status:</span>
-                <SelectValue />
-              </SelectTrigger>
-              <SelectContent align="start" alignItemWithTrigger={false}>
-                <SelectGroup>
-                  {filters.status.map((option) => (
-                    <SelectItem key={option} value={option}>
-                      {option}
-                    </SelectItem>
-                  ))}
-                </SelectGroup>
-              </SelectContent>
-            </Select>
+            />
           </div>
 
-          <Select
-            items={userFilterItems.workspace}
+          <FilterSelect
+            label="Workspace"
             value={workspaceFilter}
+            options={userFilterItems.workspace}
             onValueChange={(value) => setColumnSelectFilter("workspace", value)}
-          >
-            <SelectTrigger size="sm" aria-label="Filter users by workspace">
-              <span className="text-muted-foreground">Workspace:</span>
-              <SelectValue />
-            </SelectTrigger>
-            <SelectContent align="end" alignItemWithTrigger={false}>
-              <SelectGroup>
-                {filters.workspace.map((option) => (
-                  <SelectItem key={option} value={option}>
-                    {option}
-                  </SelectItem>
-                ))}
-              </SelectGroup>
-            </SelectContent>
-          </Select>
+          />
         </div>
 
         <div className="flex items-center justify-between gap-3 px-4">

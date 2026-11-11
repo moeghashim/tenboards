@@ -186,16 +186,16 @@ export function ProjectTimeline({
               />
             </label>
             <div className="flex gap-1">
-              <Button variant="outline" size="icon" aria-label="Previous schedule range" onClick={() => shift(-1)}>
+              <Button variant="ghost" size="icon" aria-label="Previous schedule range" onClick={() => shift(-1)}>
                 <ChevronLeft />
               </Button>
               <Button
-                variant="outline"
+                variant="ghost"
                 onClick={() => update({ start: addCivilDays(today, -Math.min(7, Math.floor(range.days / 2))) })}
               >
                 Today
               </Button>
-              <Button variant="outline" size="icon" aria-label="Next schedule range" onClick={() => shift(1)}>
+              <Button variant="ghost" size="icon" aria-label="Next schedule range" onClick={() => shift(1)}>
                 <ChevronRight />
               </Button>
             </div>
@@ -421,17 +421,13 @@ export function ProjectTimeline({
         </p>
         <div className="flex gap-2">
           <Button
-            variant="outline"
+            variant="ghost"
             disabled={!data.offset}
             onClick={() => update({ offset: Math.max(0, data.offset - data.limit) })}
           >
             Previous page
           </Button>
-          <Button
-            variant="outline"
-            disabled={!data.hasMore}
-            onClick={() => update({ offset: data.offset + data.limit })}
-          >
+          <Button variant="ghost" disabled={!data.hasMore} onClick={() => update({ offset: data.offset + data.limit })}>
             Next page
           </Button>
         </div>

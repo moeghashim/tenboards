@@ -13,6 +13,8 @@ Point Codex or Claude Code at a clone and ask for a dashboard or page. Agents ge
 | ![Default dashboard, dark theme](docs/screenshots/default-dark.png) | ![Workspace Home with tasks and deadlines](docs/screenshots/home-light.png) |
 | ![Blocks kit with live examples and install commands](docs/screenshots/kit-light.png) | ![AI Assistant, dark theme](docs/screenshots/assistant-dark.png) |
 
+v0.10.1 refines controls with one accessible field/outline recipe, clearable filters, searchable role options, quieter toolbars and aligned filter rows. Active filters keep their value and clear button inside one tinted control; menu search uses a borderless icon row. See the kit’s Controls example.
+
 ## Build with an agent
 
 Start a fresh Codex or Claude Code session in your clone and ask, for example, “add a Sales dashboard with revenue KPIs and a top-products table” or “add a Vendors page listing vendors”.
@@ -98,7 +100,7 @@ Generators, blocks and Agent Skills do not depend on the homepage.
 
 - [Reference](docs/reference.md): commands, previews, visual QA, data layer, auth and per-milestone notes
 - [Design guardrails](docs/design-guardrails.md) · [Data layer](docs/data-layer.md) · [Auth](docs/auth.md) · [Assistant](docs/assistant.md) · [Deploy](docs/deploy.md)
-- [Changelog](CHANGELOG.md) and [releases](https://github.com/moeghashim/tenboards/releases). v0.1–v0.10 are released; v0.9.0 is the agent-first release, v0.9.1 adds the project homepage and v0.10.0 adds generative dashboards in the AI Assistant.
+- [Changelog](CHANGELOG.md) and [releases](https://github.com/moeghashim/tenboards/releases). v0.10.1 control refinement is in review; v0.1–v0.10 are released; v0.9.0 is the agent-first release, v0.9.1 adds the project homepage and v0.10.0 adds generative dashboards in the AI Assistant.
 
 ## Contributing
 

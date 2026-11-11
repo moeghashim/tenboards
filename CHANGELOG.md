@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.10.1 — Control refinement (draft)
+
+- Unify field and outline-button surfaces, focus, hover and invalid states; preserve compact sizes and public APIs.
+- Add clearable Users/Products filters with searchable role options and counts, left-check menus, ghost toolbar actions and saturated Default dark primary.
+- Add the kit alignment regression, raw-control guardrails and control guidance.
+
 ## v0.10.0 — Generative dashboards (2026-11-06)
 
 Released as [v0.10.0](https://github.com/moeghashim/tenboards/releases/tag/v0.10.0).
