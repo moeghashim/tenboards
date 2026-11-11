@@ -57,7 +57,9 @@
     "assistant:canvas-browser": "node --experimental-strip-types scripts/assistant-canvas-browser-check.ts"
   },
   "lint-staged": {
-    "*.{js,ts,jsx,tsx}": ["biome check --write --no-errors-on-unmatched"]
+    "*.{js,ts,jsx,tsx}": [
+      "biome check --write --no-errors-on-unmatched"
+    ]
   },
   "dependencies": {
     "@ai-sdk/anthropic": "4.0.87",
@@ -133,7 +135,7 @@
     "vite": "^8.3.5",
     "wrangler": "4.152.0"
   },
-  "version": "0.10.0",
+  "version": "0.10.1",
   "engines": {
     "node": ">=22"
   }

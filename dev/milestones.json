@@ -254,10 +254,10 @@
     },
     {
       "id": "v0.10.1-controls",
-      "status": "in-review",
+      "status": "done",
       "tasks": ["001-control-recipe"],
       "taskStatuses": {
-        "001-control-recipe": "in-review"
+        "001-control-recipe": "merged"
       }
     }
   ]

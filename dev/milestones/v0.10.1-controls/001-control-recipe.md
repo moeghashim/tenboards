@@ -1,6 +1,6 @@
 # 001 — Shared control recipe and usage pass
 
-Status: in review. Branch: `feat/v0.10.1/001-control-recipe`. Base: main.
+Status: merged (#88). Branch: `feat/v0.10.1/001-control-recipe`. Base: main.
 
 Read first: [direction-a.html](direction-a.html) (open it in a browser), [filter-row-defect.png](filter-row-defect.png), DESIGN.md, and the current `src/components/ui/{button,input,textarea,input-group,select,native-select,dropdown-menu,combobox,toggle-group}.tsx` and `src/styles/styles.css`.
 

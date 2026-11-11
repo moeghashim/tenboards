@@ -1,6 +1,8 @@
 # Changelog
 
-## v0.10.1 — Control refinement (draft)
+## v0.10.1 — Control refinement (2026-11-11)
+
+Release: [v0.10.1](https://github.com/moeghashim/tenboards/releases/tag/v0.10.1). Merged as #88.
 
 - Unify field and outline-button surfaces, focus, hover and invalid states; preserve compact sizes and public APIs.
 - Add clearable Users/Products filters with searchable role options and counts, left-check menus, ghost toolbar actions and saturated Default dark primary.
