@@ -1,6 +1,6 @@
 # 001 — Brand colour config, generator and docs
 
-Status: implemented; validation complete, preview pending. Branch: `feat/v0.11/001-brand-colour`. Base: main.
+Status: implemented; awaiting review in [PR #89](https://github.com/moeghashim/tenboards/pull/89). Validation and isolated preview deployment complete. Branch: `feat/v0.11/001-brand-colour`. Base: main.
 
 Read first: PLAN.md Decisions row "v0.11 brand colour", DESIGN.md (Colors, presets, contrast table, Control recipe), `src/styles/styles.css` (including the dark Default override block added in v0.10.1, near the bottom), `src/styles/presets/*`, `src/scripts/generate-theme-presets.ts`, `src/lib/preferences/*`, the layout settings sheet, `scripts/check-contrast.ts`, and the `tenboards-build-ui` skill.
 
@@ -60,5 +60,5 @@ Generate these roles for light and dark: `--primary`, `--primary-foreground`, `-
 - [x] Branded: the picker is hidden; a stale `graphite` cookie is rewritten with no hydration/console errors; `verify:page --all` passes with zero axe violations.
 - [x] `npm run brand -- --check` is wired into `npm run check` and fails on a hand-edited `brand.css`. `--reset` restores the exact committed default.
 - [x] `npm run build`, `npm run check` (no new design exceptions beyond the generated file), `npm run typecheck` pass. The committed repo state is brand-unset, so the live demo and previews look unchanged.
-- [ ] Screenshots of three brands (`#7c3aed`, `#e11d48`, `#facc15` adjusted) at light/dark × desktop on Users, Default dashboard and the open settings sheet, uploaded only to pr-assets. Isolated pr-NNN preview deployed with the repo default (unset).
+- [x] Screenshots of three brands (`#7c3aed`, `#e11d48`, `#facc15` adjusted) at light/dark × desktop on Users, Default dashboard and the open settings sheet, uploaded only to pr-assets. Isolated pr-NNN preview deployed with the repo default (unset).
 - [x] README, AGENTS.md, skill plus mirror, DESIGN.md, docs/reference.md, CHANGELOG, llms sources and milestone status updated.
