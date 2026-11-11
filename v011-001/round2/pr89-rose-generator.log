@@ -1,0 +1,20 @@
+
+> tenboards@0.10.1 brand
+> node --experimental-strip-types scripts/brand.ts #e11d48
+
+Input: #e11d48 (oklch(0.58583768 0.22204244 17.584628))
+light primary: oklch(0.58583768 0.22204244 17.584628); 4.70:1; unchanged
+light action-accent: oklch(0.56353768 0.22204244 17.584628); 4.60:1; adjusted ΔL=-0.02230 ΔC=0.00000 (contrast vs surface-raised 4.19→4.60)
+light ring: oklch(0.56353768 0.22204244 17.584628); 4.60:1; adjusted ΔL=-0.02230 ΔC=0.00000 (contrast vs surface-raised 4.19→4.60)
+light chart-1: oklch(0.56353768 0.22204244 17.584628); 4.60:1; adjusted ΔL=-0.02230 ΔC=0.00000 (contrast vs surface-raised 4.19→4.60)
+light primary-hover: oklch(0.56083768 0.22204244 17.584628); 5.22:1; adjusted ΔL=-0.02500 ΔC=0.00000 (hover derivation)
+light primary-top: oklch(0.59073768 0.22204244 17.584628); 4.60:1; adjusted ΔL=0.00490 ΔC=0.00000 (contrast vs foreground #ffffff 4.47→4.60)
+light primary-foreground: #ffffff
+dark primary: oklch(0.55000000 0.22025927 17.584628); 5.46:1; adjusted ΔL=-0.03584 ΔC=-0.00178 (dark-mode derivation)
+dark action-accent: oklch(0.75000000 0.15158215 17.584628); 5.98:1; adjusted ΔL=0.16416 ΔC=-0.07046 (dark-mode derivation)
+dark ring: oklch(0.75000000 0.15158215 17.584628); 5.98:1; adjusted ΔL=0.16416 ΔC=-0.07046 (dark-mode derivation)
+dark chart-1: oklch(0.75000000 0.15158215 17.584628); 5.98:1; adjusted ΔL=0.16416 ΔC=-0.07046 (dark-mode derivation)
+dark primary-hover: oklch(0.52500000 0.21024748 17.584628); 6.04:1; adjusted ΔL=-0.06084 ΔC=-0.01179 (hover derivation)
+dark primary-top: oklch(0.56200000 0.22025927 17.584628); 5.19:1; adjusted ΔL=-0.02384 ΔC=-0.00178 (hover derivation)
+dark primary-foreground: #ffffff
+Generated src/styles/brand.css

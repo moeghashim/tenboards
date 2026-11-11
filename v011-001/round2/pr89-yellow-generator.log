@@ -1,0 +1,21 @@
+
+> tenboards@0.10.1 brand
+> node --experimental-strip-types scripts/brand.ts #facc15
+
+Input: #facc15 (oklch(0.86055946 0.17311488 91.935651))
+light primary: oklch(0.86055946 0.17311488 91.935651); 12.13:1; unchanged
+light action-accent: oklch(0.53595946 0.10962920 91.935651); 4.60:1; adjusted ΔL=-0.32460 ΔC=-0.06349 (contrast vs surface-raised 1.37→4.60)
+light ring: oklch(0.53595946 0.10962920 91.935651); 4.60:1; adjusted ΔL=-0.32460 ΔC=-0.06349 (contrast vs surface-raised 1.37→4.60)
+light chart-1: oklch(0.53595946 0.10962920 91.935651); 4.60:1; adjusted ΔL=-0.32460 ΔC=-0.06349 (contrast vs surface-raised 1.37→4.60)
+light primary-hover: oklch(0.83555946 0.17091164 91.935651); 11.18:1; adjusted ΔL=-0.02500 ΔC=-0.00220 (hover derivation)
+light primary-top: oklch(0.87255946 0.17311488 91.935651); 12.61:1; adjusted ΔL=0.01200 ΔC=0.00000 (hover derivation)
+light primary-foreground: #111318
+dark primary: oklch(0.86055946 0.17311488 91.935651); 12.13:1; unchanged
+dark action-accent: oklch(0.86055946 0.17311488 91.935651); 9.28:1; unchanged
+dark ring: oklch(0.86055946 0.17311488 91.935651); 9.28:1; unchanged
+dark chart-1: oklch(0.86055946 0.17311488 91.935651); 9.28:1; unchanged
+dark primary-hover: oklch(0.83555946 0.17091164 91.935651); 11.18:1; adjusted ΔL=-0.02500 ΔC=-0.00220 (hover derivation)
+dark primary-top: oklch(0.87255946 0.17311488 91.935651); 12.61:1; adjusted ΔL=0.01200 ΔC=0.00000 (hover derivation)
+dark primary-foreground: #111318
+Chart hue overlaps the warning series: retain existing dash/marker encodings and labels; semantic colours are unchanged.
+Generated src/styles/brand.css

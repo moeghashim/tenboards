@@ -1,0 +1,16 @@
+
+> tenboards@0.10.1 brand:test
+> node --experimental-strip-types scripts/brand-test.ts
+
+PASS #facc15: light/dark contrast and hue
+PASS #22c55e: light/dark contrast and hue
+PASS #000000: light/dark contrast and hue
+PASS #ffffff: light/dark contrast and hue
+PASS #7c3aed: light/dark contrast and hue
+PASS #e11d48: light/dark contrast and hue
+PASS #0ea5e9: light/dark contrast and hue
+PASS #1e40af: light/dark contrast and hue
+PASS oklch(0.7 0.15 200): light/dark contrast and hue
+PASS rgb(255 128 0): light/dark contrast and hue
+PASS exact rejection and invalid input no-write checks
+PASS CLI set/check/stale/reset/exact roundtrip
