@@ -100,7 +100,7 @@ Generators, blocks and Agent Skills do not depend on the homepage.
 
 - [Reference](docs/reference.md): commands, previews, visual QA, data layer, auth and per-milestone notes
 - [Design guardrails](docs/design-guardrails.md) · [Data layer](docs/data-layer.md) · [Auth](docs/auth.md) · [Assistant](docs/assistant.md) · [Deploy](docs/deploy.md)
-- [Changelog](CHANGELOG.md) and [releases](https://github.com/moeghashim/tenboards/releases). v0.1–v0.10.1 are released; v0.9.0 is the agent-first release, v0.9.1 adds the project homepage v0.10.0 adds generative dashboards in the AI Assistant and v0.10.1 unifies form controls and filters.
+- [Changelog](CHANGELOG.md) and [releases](https://github.com/moeghashim/tenboards/releases). v0.1–v0.11 are released; v0.9.0 is the agent-first release, v0.9.1 adds the project homepage, v0.10.0 adds generative dashboards in the AI Assistant, v0.10.1 unifies form controls and filters, and v0.11.0 adds a one-command brand colour.
 
 ## Contributing
 

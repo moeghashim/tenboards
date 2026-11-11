@@ -1,6 +1,8 @@
 # Changelog
 
-## Unreleased — v0.11 (draft)
+## v0.11.0 — Brand colour (2026-11-11)
+
+Release: [v0.11.0](https://github.com/moeghashim/tenboards/releases/tag/v0.11.0). Merged as #89.
 
 - Add typed brand colour configuration and contrast-safe light/dark generation with exact, reset and freshness checks.
 - Hide preset selection and sanitize persisted presets when branded; retain original computed tokens when unset.

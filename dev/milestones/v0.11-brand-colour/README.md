@@ -1,6 +1,6 @@
 # v0.11 — Brand colour
 
-Status: **implemented; awaiting review**. Contract: PLAN.md Decisions log, "v0.11 brand colour" (2026-11-11).
+Status: **done — merged as #89 and released as [v0.11.0](https://github.com/moeghashim/tenboards/releases/tag/v0.11.0)**. Contract: PLAN.md Decisions log, "v0.11 brand colour" (2026-11-11).
 
 Goal: an adopter, or their coding agent, recolours tenboards to their brand with one setting or one command. They don't have to pick a built-in theme or hand-edit tokens, and the result always meets WCAG AA in light and dark.
 

@@ -1,6 +1,6 @@
 # 001 — Brand colour config, generator and docs
 
-Status: implemented; awaiting review in [PR #89](https://github.com/moeghashim/tenboards/pull/89). Validation and isolated preview deployment complete. Branch: `feat/v0.11/001-brand-colour`. Base: main.
+Status: merged (#89). Branch: `feat/v0.11/001-brand-colour`. Base: main.
 
 Read first: PLAN.md Decisions row "v0.11 brand colour", DESIGN.md (Colors, presets, contrast table, Control recipe), `src/styles/styles.css` (including the dark Default override block added in v0.10.1, near the bottom), `src/styles/presets/*`, `src/scripts/generate-theme-presets.ts`, `src/lib/preferences/*`, the layout settings sheet, `scripts/check-contrast.ts`, and the `tenboards-build-ui` skill.
 

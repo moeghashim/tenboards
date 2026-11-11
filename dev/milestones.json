@@ -262,10 +262,10 @@
     },
     {
       "id": "v0.11-brand-colour",
-      "status": "in-progress",
+      "status": "done",
       "tasks": ["001-brand-colour"],
       "taskStatuses": {
-        "001-brand-colour": "in-review"
+        "001-brand-colour": "merged"
       }
     }
   ]
