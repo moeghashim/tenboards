@@ -116,7 +116,11 @@ Set `brand.color` in `tenboards.config.ts`, then run `npm run brand`, or use
 `npm run brand -- "#7c3aed"` to set it and regenerate `src/styles/brand.css`.
 Accepted formats: #rgb, #rrggbb, rgb() and oklch(), without transparency.
 The generator preserves hue, adjusts OKLCH lightness for contrast, and reduces
-chroma only to fit sRGB. It reports light/dark roles, changes and contrast ratios.
+chroma only to fit sRGB. In both modes, button labels use white or near-black,
+whichever requires less lightness adjustment; bright brands retain their fill in
+dark mode. The unset Default keeps its original blue/white pairing.
+The report names each role's contrast correction, dark-mode or hover derivation,
+or sRGB gamut clamp, alongside its changes and contrast ratio.
 `--exact` (or `brand.exact`) rejects adjustments; `--reset` restores the original
 blue and all four presets. `--check` detects stale generated CSS and runs in `npm run check`.
 

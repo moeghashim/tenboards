@@ -1,4 +1,4 @@
-import { contrast, parseColor, toLch, toRgb } from "./brand/color.ts";
+import { contrast, gamut, parseColor, toLch, toRgb } from "./brand/color.ts";
 import { derive } from "./brand/derive.ts";
 import assert from "node:assert/strict";
 import { spawnSync } from "node:child_process";
@@ -17,7 +17,17 @@ const matrix = [
   "rgb(255 128 0)",
 ];
 for (const input of matrix) {
-  const { modes } = derive(input);
+  const { modes, reports } = derive(input);
+  if (input === "#facc15" || input === "#ffffff") {
+    assert.equal(modes.dark["primary-foreground"], "#111318");
+    assert(Math.abs(parseColor(modes.dark.primary)[0] - gamut(parseColor(input))[0]) <= 0.05);
+  }
+  if (["#7c3aed", "#e11d48", "#1e40af"].includes(input)) assert.equal(modes.dark["primary-foreground"], "#ffffff");
+  for (const report of reports.filter((line) => line.includes("adjusted ΔL=")))
+    assert.match(
+      report,
+      /\((contrast vs (foreground #[a-f0-9]{6}|bg|surface|surface-raised) [\d.]+→[\d.]+|dark-mode derivation|hover derivation|sRGB gamut clamp)\)$/,
+    );
   for (const [mode, roles] of Object.entries(modes)) {
     const fg = toRgb(parseColor(roles["primary-foreground"]));
     for (const role of ["primary", "primary-hover", "primary-top"])

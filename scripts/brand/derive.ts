@@ -24,11 +24,12 @@ export function derive(input: string, exact = false) {
     }
     const white: RGB = [1, 1, 1],
       black = toRgb(parseColor("#111318"));
-    // Dark surfaces get an independently derived, deeper button fill.
-    const fillStart: LCH = dark ? [Math.min(original[0], 0.55), original[1], original[2]] : original;
-    const choices = [white, black].map((fg) => ({ fg, fill: nearest(fillStart, (rgb) => contrast(rgb, fg) >= 4.6) }));
-    choices.sort((a, b) => Math.abs(a.fill[0] - fillStart[0]) - Math.abs(b.fill[0] - fillStart[0]));
-    const { fg, fill } = choices[0];
+    // Choose the label against the input before deriving a deeper dark-mode fill.
+    const choices = [white, black].map((fg) => ({ fg, fill: nearest(original, (rgb) => contrast(rgb, fg) >= 4.6) }));
+    choices.sort((a, b) => Math.abs(a.fill[0] - original[0]) - Math.abs(b.fill[0] - original[0]));
+    const { fg } = choices[0];
+    const fillStart: LCH = dark && fg === white ? [Math.min(original[0], 0.55), original[1], original[2]] : original;
+    const fill = nearest(fillStart, (rgb) => contrast(rgb, fg) >= 4.6);
     const accent = nearest(dark ? [Math.max(original[0], 0.75), original[1], original[2]] : original, (rgb) =>
       surfaces.every((bg) => contrast(rgb, bg) >= 4.6),
     );
@@ -57,10 +58,23 @@ export function derive(input: string, exact = false) {
       const deltaL = value[0] - original[0],
         deltaC = value[1] - original[1];
       const adjusted = Math.abs(deltaL) > 0.00001 || Math.abs(deltaC) > 0.00001;
-      reports.push(
-        `${mode} ${role}: ${css(value)}; ${ratio.toFixed(2)}:1; ${adjusted ? `adjusted ΔL=${deltaL.toFixed(5)} ΔC=${deltaC.toFixed(5)} (contrast, mode/hover derivation or sRGB gamut)` : "unchanged"}`,
-      );
       const target = targets[role];
+      // Report the decisive correction, then intentional derivation, then gamut-only changes.
+      const pair = role.startsWith("primary")
+        ? { name: `foreground ${fg === white ? "#ffffff" : "#111318"}`, rgb: fg }
+        : surfaces
+            .map((rgb, index) => ({ name: ["bg", "surface", "surface-raised"][index], rgb }))
+            .sort((a, b) => contrast(toRgb(gamut(target)), a.rgb) - contrast(toRgb(gamut(target)), b.rgb))[0];
+      const before = contrast(toRgb(gamut(target)), pair.rgb);
+      const after = contrast(toRgb(value), pair.rgb);
+      let reason = "sRGB gamut clamp";
+      if (Math.abs(value[0] - target[0]) > 0.00001)
+        reason = `contrast vs ${pair.name} ${before.toFixed(2)}→${after.toFixed(2)}`;
+      else if (role === "primary-hover" || role === "primary-top") reason = "hover derivation";
+      else if (Math.abs(target[0] - original[0]) > 0.00001) reason = "dark-mode derivation";
+      reports.push(
+        `${mode} ${role}: ${css(value)}; ${ratio.toFixed(2)}:1; ${adjusted ? `adjusted ΔL=${deltaL.toFixed(5)} ΔC=${deltaC.toFixed(5)} (${reason})` : "unchanged"}`,
+      );
       const corrected = Math.abs(value[0] - target[0]) > 0.00001 || Math.abs(value[1] - target[1]) > 0.00001;
       if (exact && corrected)
         throw new Error(
