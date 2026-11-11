@@ -1,0 +1,147 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Geist,Inter,ui-sans-serif,system-ui,-apple-system,sans-serif}
+.panel{border-radius:var(--radius);padding:16px;margin:0 0 14px;font-size:13px;line-height:18px;
+  --bg:#f8f9fb;--surface:#fff;--raised:#f0f2f5;--text:#181c25;--muted:#515b6b;--border:#dbe0e8;--strong:#788397;--primary:#1e40af;--primary-hi:#2b52c9;--on-primary:#fff;
+  background:var(--bg);color:var(--text)}
+.panel.dark{--bg:#111318;--surface:#191d25;--raised:#252b36;--text:#f3f5f9;--muted:#b0bacb;--border:#343c49;--strong:#768398;--primary:#2f5bd8;--primary-hi:#4a72e8;--on-primary:#fff}
+.tag{font:600 11px/14px ui-monospace,monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;display:flex;justify-content:space-between}
+.row{display:flex;gap:7px;align-items:center;flex-wrap:wrap}
+.grid{display:grid;grid-template-columns:1.25fr 1fr;gap:16px;margin-top:12px;align-items:start}
+svg{width:14px;height:14px;flex:none;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.field label{display:block;font-weight:500;margin-bottom:5px}
+.help{font-size:12px;color:var(--muted);margin-top:5px}
+.err{font-size:12px;color:#a81928;margin-top:5px;display:flex;gap:4px;align-items:center}
+.dark .err{color:#ff8f99}
+kbd{font:500 11px/1 ui-monospace,monospace;color:var(--muted);margin-left:auto}
+
+/* ---------- CURRENT (stock shadcn) ---------- */
+.cur .in{height:28px;border:1px solid var(--strong);border-radius:8px;background:transparent;display:flex;align-items:center;gap:6px;padding:0 9px;color:var(--muted);flex:1;min-width:150px}
+.cur .b{height:28px;padding:0 9px;border-radius:8px;border:1px solid var(--border);background:var(--bg);display:inline-flex;align-items:center;gap:5px;font-weight:500;color:var(--text)}
+.cur .p{background:var(--primary);color:var(--on-primary);border-color:transparent}
+.cur.dark .p{background:#a9c2ff;color:#181c25}
+.cur .s{height:28px;border:1px solid var(--strong);border-radius:8px;padding:0 7px 0 9px;display:inline-flex;align-items:center;gap:5px;color:var(--text)}
+.cur .s span{color:var(--muted)}
+.cur .menu{background:var(--surface);border-radius:8px;box-shadow:0 4px 10px rgba(0,0,0,.08),0 0 0 1px rgba(24,28,37,.1);padding:4px;width:180px}
+.cur .mi{padding:5px 6px;border-radius:6px;display:flex;justify-content:space-between}
+.cur .mi.on{background:var(--raised)}
+
+/* ---------- A: Unified hairline (recommended) ---------- */
+.a .ctl{height:28px;border-radius:7px;background:var(--surface);
+  box-shadow:inset 0 0 0 1px color-mix(in oklab,var(--strong) 72%,var(--surface)),0 1px 0 rgba(16,24,40,.04);
+  display:inline-flex;align-items:center;gap:6px;padding:0 10px;color:var(--text);font-weight:500;transition:box-shadow .12s}
+.a.dark .ctl{box-shadow:inset 0 0 0 1px var(--strong),inset 0 1px 0 rgba(255,255,255,.04)}
+.a .ctl.hover{box-shadow:inset 0 0 0 1px var(--muted),0 1px 2px rgba(16,24,40,.08)}
+.a .in{flex:1;min-width:150px;font-weight:400;color:var(--muted)}
+.a .in.focus{box-shadow:inset 0 0 0 1px var(--primary),0 0 0 3px color-mix(in oklab,var(--primary) 22%,transparent);color:var(--text)}
+.a .p{background:linear-gradient(var(--primary-hi),var(--primary));color:var(--on-primary);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 0 0 1px color-mix(in oklab,var(--primary) 85%,black),0 1px 2px rgba(16,24,40,.18)}
+.a .gh,.a.dark .gh{background:transparent;box-shadow:none;color:var(--muted)}
+.a .gh.hover{background:var(--raised);color:var(--text)}
+.a .s{font-weight:400}.a .s span{color:var(--muted)}
+.a .s.active{box-shadow:inset 0 0 0 1px color-mix(in oklab,var(--primary) 55%,var(--surface));background:color-mix(in oklab,var(--primary) 7%,var(--surface));color:var(--primary)}
+.a.dark .s.active{color:#a9c2ff}
+.a .s .x{margin-left:2px;color:inherit;opacity:.7}
+.a .divider{width:1px;height:18px;background:var(--border);margin:0 2px}
+.a .menu{background:var(--surface);border-radius:10px;padding:5px;width:210px;
+  box-shadow:0 0 0 1px var(--border),0 12px 28px -6px rgba(16,24,40,.18),0 4px 8px -4px rgba(16,24,40,.08)}
+.a.dark .menu{background:#1e232c;box-shadow:0 0 0 1px #343c49,0 16px 32px -8px rgba(0,0,0,.6)}
+.a .msearch{display:flex;align-items:center;gap:6px;padding:4px 6px 8px;border-bottom:1px solid var(--border);margin:0 -5px 4px;padding-left:11px;color:var(--muted)}
+.a .grp{font-size:12px;color:var(--muted);padding:6px 7px 3px}
+.a .mi{height:30px;padding:0 7px;border-radius:6px;display:flex;align-items:center;gap:8px}
+.a .mi .ck{width:14px;color:var(--primary)}
+.a.dark .mi .ck{color:#a9c2ff}
+.a .mi.on{background:var(--raised)}
+.a .mi .n{margin-left:auto;color:var(--muted);font-variant-numeric:tabular-nums;font-size:12px}
+.a .in.bad{box-shadow:inset 0 0 0 1px #a81928,0 0 0 3px rgba(168,25,40,.14)}
+.a.dark .in.bad{box-shadow:inset 0 0 0 1px #ff8f99,0 0 0 3px rgba(255,143,153,.16)}
+
+/* ---------- B: Filled quiet ---------- */
+.b .ctl{height:28px;border-radius:7px;background:var(--raised);border:1px solid transparent;display:inline-flex;align-items:center;gap:6px;padding:0 10px;color:var(--text);font-weight:500}
+.b .ctl.bottom{box-shadow:inset 0 -1px 0 var(--strong)}
+.b .in{flex:1;min-width:150px;font-weight:400;color:var(--muted)}
+.b .in.focus{background:var(--surface);border-color:var(--primary);box-shadow:0 0 0 3px color-mix(in oklab,var(--primary) 20%,transparent);color:var(--text)}
+.b .p{background:var(--primary);color:var(--on-primary)}
+.b .gh{background:transparent;color:var(--muted)}
+.b .s span{color:var(--muted)}.b .s{font-weight:400}
+.b .menu{background:var(--surface);border-radius:10px;padding:5px;width:190px;box-shadow:0 0 0 1px var(--border),0 12px 28px -6px rgba(16,24,40,.18)}
+.b .mi{height:30px;padding:0 7px;border-radius:6px;display:flex;align-items:center;gap:8px}
+.b .mi.on{background:color-mix(in oklab,var(--primary) 10%,var(--surface));color:var(--primary)}
+.note{font-size:12px;color:var(--muted);margin-top:12px;line-height:17px}
+</style></head><body>
+
+<!-- CURRENT -->
+<div class="panel cur">
+  <div class="tag"><span>Current · stock shadcn</span><span>light</span></div>
+  <div class="row">
+    <div class="in"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Search users…</div>
+    <div class="b"><svg viewBox="0 0 24 24"><path d="M4 6h16M7 12h10M10 18h4"/></svg>Hide</div>
+    <div class="b">Export</div>
+    <div class="b p">+ Add user</div>
+  </div>
+  <div class="grid">
+    <div><div class="row"><div class="s"><span>Role:</span> All <svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></div><div class="s"><span>Status:</span> All <svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></div></div>
+      <div class="note">Heavy gray borders on fields and selects, but faint borders on buttons, so the two don't look like one set. Each control has a different weight. Keyboard focus draws two rings: a translucent ring plus a solid outline.</div></div>
+    <div class="menu"><div class="mi on">All <span>✓</span></div><div class="mi">Workspace Owner</div><div class="mi">Admin</div><div class="mi">Billing Admin</div></div>
+  </div>
+</div>
+
+<!-- A LIGHT -->
+<div class="panel a">
+  <div class="tag"><span>A · Unified hairline — recommended</span><span>light</span></div>
+  <div class="row">
+    <div class="ctl in focus"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Search users…<kbd>/</kbd></div>
+    <div class="ctl gh hover"><svg viewBox="0 0 24 24"><path d="M4 6h16M7 12h10M10 18h4"/></svg>Hide</div>
+    <div class="ctl gh"><svg viewBox="0 0 24 24"><path d="M12 4v11m-4-4 4 4 4-4M5 20h14"/></svg>Export</div>
+    <div class="ctl p"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>Add user</div>
+  </div>
+  <div class="grid">
+    <div>
+      <div class="row">
+        <div class="ctl s active">Role: Admin <svg class="x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></div>
+        <div class="ctl s"><span>Status</span> <svg viewBox="0 0 24 24"><path d="m7 10 5 5 5-5"/></svg></div>
+        <div class="ctl s"><span>Team</span> <svg viewBox="0 0 24 24"><path d="m7 10 5 5 5-5"/></svg></div>
+      </div>
+      <div class="field" style="margin-top:14px">
+        <label>Work email</label>
+        <div class="ctl in bad" style="display:flex">jordan@</div>
+        <div class="err"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v5m0 3h.01"/></svg>Enter a full email address.</div>
+      </div>
+    </div>
+    <div class="menu">
+      <div class="msearch"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Filter roles…</div>
+      <div class="grp">Role</div>
+      <div class="mi"><span class="ck"></span>Workspace Owner<span class="n">1</span></div>
+      <div class="mi on"><span class="ck"><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg></span>Admin<span class="n">4</span></div>
+      <div class="mi"><span class="ck"></span>Billing Admin<span class="n">2</span></div>
+      <div class="mi"><span class="ck"></span>Contributor<span class="n">11</span></div>
+    </div>
+  </div>
+  <div class="note">One control recipe: white fill, an inset hairline that stays at 3:1 contrast, and a 1px shadow underneath. Toolbar buttons become ghost, so only the primary action stands out. Selects show only their label until set; an active filter turns accent-tinted and gets a clear (×) button. Focus is a single primary ring. Menus get a search box, group labels, the check on the left, counts and a deeper shadow.</div>
+</div>
+
+<!-- A DARK -->
+<div class="panel a dark">
+  <div class="tag"><span>A · Unified hairline</span><span>dark</span></div>
+  <div class="row">
+    <div class="ctl in"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Search users…<kbd>/</kbd></div>
+    <div class="ctl gh">Hide</div><div class="ctl gh">Export</div>
+    <div class="ctl s active">Role: Admin <svg class="x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></div>
+    <div class="ctl p"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>Add user</div>
+  </div>
+  <div class="note">Dark mode: the primary button is saturated blue with white text, not the current washed-out periwinkle with dark text.</div>
+</div>
+
+<!-- B -->
+<div class="panel b">
+  <div class="tag"><span>B · Filled quiet (Linear-like)</span><span>light</span></div>
+  <div class="row">
+    <div class="ctl in bottom"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Search users…</div>
+    <div class="ctl gh">Hide</div><div class="ctl gh">Export</div>
+    <div class="ctl s"><span>Role</span> All <svg viewBox="0 0 24 24"><path d="m7 10 5 5 5-5"/></svg></div>
+    <div class="ctl p">+ Add user</div>
+  </div>
+  <div class="note">Gray-filled controls with no outline when idle; a border appears on focus. It's the calmest option, but the fill alone is about 1.1:1 against the page. A 3:1 underline is needed to keep tenboards' accessible-boundary rule, and that softens the look.</div>
+</div>
+</body></html>
