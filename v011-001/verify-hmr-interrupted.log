@@ -1,0 +1,113 @@
+
+> tenboards@0.10.1 verify:page
+> node --experimental-strip-types scripts/verify-page.ts --all
+
+Reusing http://127.0.0.1:3000
+PASS /dashboard/kit/ light/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/kit/ light/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/kit/ dark/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/kit/ dark/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/assistant light/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/assistant light/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/assistant dark/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/assistant dark/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/home/ light/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/home/ light/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/home/ dark/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/home/ dark/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/ light/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/ light/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/ dark/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/ dark/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/$projectId/overview light/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/$projectId/overview light/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/$projectId/overview dark/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/$projectId/overview dark/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/$projectId/timeline light/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/$projectId/timeline light/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/$projectId/timeline dark/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/$projectId/timeline dark/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/$projectId/files light/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/$projectId/files light/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/$projectId/files dark/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/$projectId/files dark/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/$projectId/board light/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/$projectId/board light/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/$projectId/board dark/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/$projectId/board dark/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/$projectId/list light/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/$projectId/list light/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/$projectId/list dark/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/projects/$projectId/list dark/mobile: 0 axe violations, 0 runtime errors
+PASS /chat light/desktop: 0 axe violations, 0 runtime errors
+PASS /chat light/mobile: 0 axe violations, 0 runtime errors
+PASS /chat dark/desktop: 0 axe violations, 0 runtime errors
+PASS /chat dark/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard light/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard light/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard dark/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard dark/mobile: 0 axe violations, 0 runtime errors
+PASS /mail light/desktop: 0 axe violations, 0 runtime errors
+PASS /mail light/mobile: 0 axe violations, 0 runtime errors
+PASS /mail dark/desktop: 0 axe violations, 0 runtime errors
+PASS /mail dark/mobile: 0 axe violations, 0 runtime errors
+PASS /unauthorized light/desktop: 0 axe violations, 0 runtime errors
+PASS /unauthorized light/mobile: 0 axe violations, 0 runtime errors
+PASS /unauthorized dark/desktop: 0 axe violations, 0 runtime errors
+PASS /unauthorized dark/mobile: 0 axe violations, 0 runtime errors
+PASS / light/desktop: 0 axe violations, 0 runtime errors
+PASS / light/mobile: 0 axe violations, 0 runtime errors
+PASS / dark/desktop: 0 axe violations, 0 runtime errors
+FAIL / dark/mobile: 0 axe violations, 2 runtime errors
+  console: %o
+
+%s
+
+%s
+ Error: Missing PreferencesStoreProvider
+    at usePreferencesStore (http://127.0.0.1:3000/src/stores/preferences/preferences-provider.tsx?t=1794393898812:71:20)
+    at ThemeSwitcher (http://127.0.0.1:3000/src/components/theme-switcher.tsx?t=1794393898812:15:39)
+    at Object.react_stack_bottom_frame (http://127.0.0.1:3000/node_modules/.vite/deps/react-dom_client.js?v=74290a63:14142:12)
+    at renderWithHooks (http://127.0.0.1:3000/node_modules/.vite/deps/react-dom_client.js?v=74290a63:4400:19)
+    at updateFunctionComponent (http://127.0.0.1:3000/node_modules/.vite/deps/react-dom_client.js?v=74290a63:5775:16)
+    at beginWork (http://127.0.0.1:3000/node_modules/.vite/deps/react-dom_client.js?v=74290a63:6391:20)
+    at runWithFiberInDEV (http://127.0.0.1:3000/node_modules/.vite/deps/react-dom_client.js?v=74290a63:944:66)
+    at performUnitOfWork (http://127.0.0.1:3000/node_modules/.vite/deps/react-dom_client.js?v=74290a63:9148:92)
+    at workLoopSync (http://127.0.0.1:3000/node_modules/.vite/deps/react-dom_client.js?v=74290a63:9044:37)
+    at renderRootSync (http://127.0.0.1:3000/node_modules/.vite/deps/react-dom_client.js?v=74290a63:9028:6) The above error occurred in the <ThemeSwitcher> component. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.
+  console: %o
+
+%s
+
+%s
+ Error: Missing PreferencesStoreProvider
+    at usePreferencesStore (http://127.0.0.1:3000/src/stores/preferences/preferences-provider.tsx?t=1794393898812:71:20)
+    at ThemeSwitcher (http://127.0.0.1:3000/src/components/theme-switcher.tsx?t=1794393898812:15:39)
+    at Object.react_stack_bottom_frame (http://127.0.0.1:3000/node_modules/.vite/deps/react-dom_client.js?v=74290a63:14142:12)
+    at renderWithHooks (http://127.0.0.1:3000/node_modules/.vite/deps/react-dom_client.js?v=74290a63:4400:19)
+    at updateFunctionComponent (http://127.0.0.1:3000/node_modules/.vite/deps/react-dom_client.js?v=74290a63:5775:16)
+    at beginWork (http://127.0.0.1:3000/node_modules/.vite/deps/react-dom_client.js?v=74290a63:6391:20)
+    at runWithFiberInDEV (http://127.0.0.1:3000/node_modules/.vite/deps/react-dom_client.js?v=74290a63:944:66)
+    at performUnitOfWork (http://127.0.0.1:3000/node_modules/.vite/deps/react-dom_client.js?v=74290a63:9148:92)
+    at workLoopSync (http://127.0.0.1:3000/node_modules/.vite/deps/react-dom_client.js?v=74290a63:9044:37)
+    at renderRootSync (http://127.0.0.1:3000/node_modules/.vite/deps/react-dom_client.js?v=74290a63:9028:6) The above error occurred in the <ThemeSwitcher> component. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.
+PASS /auth/v2 light/desktop: 0 axe violations, 0 runtime errors
+PASS /auth/v2 light/mobile: 0 axe violations, 0 runtime errors
+PASS /auth/v2 dark/desktop: 0 axe violations, 0 runtime errors
+PASS /auth/v2 dark/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/academy light/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/academy light/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/academy dark/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/academy dark/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/analytics light/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/analytics light/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/analytics dark/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/analytics dark/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/chat light/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/chat light/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/chat dark/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/chat dark/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/coming-soon light/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/coming-soon light/mobile: 0 axe violations, 0 runtime errors
+PASS /dashboard/coming-soon dark/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/coming-soon dark/mobile: 0 axe violations, 0 runtime errors

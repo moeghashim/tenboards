@@ -1,0 +1,2122 @@
+[
+  {
+    "preset": "default",
+    "mode": "light",
+    "minimumRatio": 3.409394790049497,
+    "checks": [
+      {
+        "pair": "text/bg",
+        "ratio": 16.185205530756512,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "text-muted/bg",
+        "ratio": 6.517531425861518,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "action-accent/bg",
+        "ratio": 8.279881915754094,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/bg",
+        "ratio": 6.768555954441135,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/bg",
+        "ratio": 6.503511535344987,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/bg",
+        "ratio": 7.032441410924055,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/bg",
+        "ratio": 8.279881915754094,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "ring/bg",
+        "ratio": 8.279881915754094,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "border-strong/bg",
+        "ratio": 3.629742590033775,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "control-edge/bg",
+        "ratio": 3.629742590033775,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "filter-edge/bg",
+        "ratio": 3.645832618586161,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "text/surface",
+        "ratio": 17.050244522154845,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "text-muted/surface",
+        "ratio": 6.865869221159854,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "action-accent/surface",
+        "ratio": 8.722410784954462,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/surface",
+        "ratio": 7.130310076434003,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/surface",
+        "ratio": 6.8511000196797465,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/surface",
+        "ratio": 7.408299228337219,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/surface",
+        "ratio": 8.722410784954462,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "ring/surface",
+        "ratio": 8.722410784954462,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "border-strong/surface",
+        "ratio": 3.8237388209220224,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "control-edge/surface",
+        "ratio": 3.8237388209220224,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "filter-edge/surface",
+        "ratio": 3.8406888016105785,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "text/surface-raised",
+        "ratio": 15.202663561861034,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "text-muted/surface-raised",
+        "ratio": 6.12187700260843,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "action-accent/surface-raised",
+        "ratio": 7.777241929856625,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/surface-raised",
+        "ratio": 6.357662791458547,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/surface-raised",
+        "ratio": 6.108708206061984,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/surface-raised",
+        "ratio": 6.605528770432645,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/surface-raised",
+        "ratio": 7.777241929856625,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "ring/surface-raised",
+        "ratio": 7.777241929856625,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "border-strong/surface-raised",
+        "ratio": 3.409394790049497,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "control-edge/surface-raised",
+        "ratio": 3.409394790049497,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "filter-edge/surface-raised",
+        "ratio": 3.4245080544635838,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "filter-accent/filter-fill",
+        "ratio": 7.783259424124847,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "filter-edge/filter-fill",
+        "ratio": 3.427157702986167,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "ring/filter-fill",
+        "ratio": 7.783259424124847,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary",
+        "ratio": 8.722410784954462,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/success-surface",
+        "ratio": 6.548381622030511,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/warning-surface",
+        "ratio": 6.4666537672150755,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/danger-surface",
+        "ratio": 6.697882142699773,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/info-surface",
+        "ratio": 7.91430763238414,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary-top",
+        "ratio": 7.906378176170728,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary-hover",
+        "ratio": 9.488405832422044,
+        "minimum": 4.5,
+        "pass": true
+      }
+    ]
+  },
+  {
+    "preset": "default",
+    "mode": "dark",
+    "minimumRatio": 3.606812431409824,
+    "checks": [
+      {
+        "pair": "text/bg",
+        "ratio": 17.02378039296968,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "text-muted/bg",
+        "ratio": 9.495843714212665,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "action-accent/bg",
+        "ratio": 10.483104350561602,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/bg",
+        "ratio": 13.233357544006848,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/bg",
+        "ratio": 14.920066118410336,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/bg",
+        "ratio": 9.826589037165848,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/bg",
+        "ratio": 10.483104350561602,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "ring/bg",
+        "ratio": 10.483104350561602,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "border-strong/bg",
+        "ratio": 4.8401719069470435,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "control-edge/bg",
+        "ratio": 4.8401719069470435,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "filter-edge/bg",
+        "ratio": 4.715209406002046,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "text/surface",
+        "ratio": 15.468636839952296,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "text-muted/surface",
+        "ratio": 8.628386557709579,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "action-accent/surface",
+        "ratio": 9.52545970465693,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/surface",
+        "ratio": 12.024473841663328,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/surface",
+        "ratio": 13.557099485909543,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/surface",
+        "ratio": 8.928917883253954,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/surface",
+        "ratio": 9.52545970465693,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "ring/surface",
+        "ratio": 9.52545970465693,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "border-strong/surface",
+        "ratio": 4.3980161716855,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "control-edge/surface",
+        "ratio": 4.3980161716855,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "filter-edge/surface",
+        "ratio": 4.2844691509233765,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "text/surface-raised",
+        "ratio": 13.022026693617267,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "text-muted/surface-raised",
+        "ratio": 7.26367043456229,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "action-accent/surface-raised",
+        "ratio": 8.018857241683147,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/surface-raised",
+        "ratio": 10.122612675114384,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/surface-raised",
+        "ratio": 11.412829276434381,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/surface-raised",
+        "ratio": 7.5166679665360965,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/surface-raised",
+        "ratio": 8.018857241683147,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "ring/surface-raised",
+        "ratio": 8.018857241683147,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "border-strong/surface-raised",
+        "ratio": 3.702400190734947,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "control-edge/surface-raised",
+        "ratio": 3.702400190734947,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "filter-edge/surface-raised",
+        "ratio": 3.606812431409824,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "filter-accent/filter-fill",
+        "ratio": 8.965551504219526,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "filter-edge/filter-fill",
+        "ratio": 4.032627299033513,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "ring/filter-fill",
+        "ratio": 8.965551504219526,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary",
+        "ratio": 5.260816151644101,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/success-surface",
+        "ratio": 10.592214864729884,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/warning-surface",
+        "ratio": 11.799433976373361,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/danger-surface",
+        "ratio": 8.154615074484635,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/info-surface",
+        "ratio": 8.186373632165955,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary-top",
+        "ratio": 4.898294149382705,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary-hover",
+        "ratio": 6.0162261383198015,
+        "minimum": 4.5,
+        "pass": true
+      }
+    ]
+  },
+  {
+    "preset": "graphite",
+    "mode": "light",
+    "minimumRatio": 3.409394790049497,
+    "checks": [
+      {
+        "pair": "text/bg",
+        "ratio": 16.185205530756512,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "text-muted/bg",
+        "ratio": 6.517531425861518,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "action-accent/bg",
+        "ratio": 11.047128373430745,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/bg",
+        "ratio": 6.768555954441135,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/bg",
+        "ratio": 6.503511535344987,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/bg",
+        "ratio": 7.032441410924055,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/bg",
+        "ratio": 8.279881915754094,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "ring/bg",
+        "ratio": 11.047128373430745,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "border-strong/bg",
+        "ratio": 3.629742590033775,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "control-edge/bg",
+        "ratio": 3.629742590033775,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "filter-edge/bg",
+        "ratio": 4.102098881171018,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "text/surface",
+        "ratio": 17.050244522154845,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "text-muted/surface",
+        "ratio": 6.865869221159854,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "action-accent/surface",
+        "ratio": 11.637556265609247,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/surface",
+        "ratio": 7.130310076434003,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/surface",
+        "ratio": 6.8511000196797465,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/surface",
+        "ratio": 7.408299228337219,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/surface",
+        "ratio": 8.722410784954462,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "ring/surface",
+        "ratio": 11.637556265609247,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "border-strong/surface",
+        "ratio": 3.8237388209220224,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "control-edge/surface",
+        "ratio": 3.8237388209220224,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "filter-edge/surface",
+        "ratio": 4.32134079762622,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "text/surface-raised",
+        "ratio": 15.202663561861034,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "text-muted/surface-raised",
+        "ratio": 6.12187700260843,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "action-accent/surface-raised",
+        "ratio": 10.376499431336338,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/surface-raised",
+        "ratio": 6.357662791458547,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/surface-raised",
+        "ratio": 6.108708206061984,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/surface-raised",
+        "ratio": 6.605528770432645,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/surface-raised",
+        "ratio": 7.777241929856625,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "ring/surface-raised",
+        "ratio": 10.376499431336338,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "border-strong/surface-raised",
+        "ratio": 3.409394790049497,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "control-edge/surface-raised",
+        "ratio": 3.409394790049497,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "filter-edge/surface-raised",
+        "ratio": 3.853076136068977,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "filter-accent/filter-fill",
+        "ratio": 10.310007121259456,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "filter-edge/filter-fill",
+        "ratio": 3.828385734948188,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "ring/filter-fill",
+        "ratio": 10.310007121259456,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary",
+        "ratio": 11.637556265609247,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/success-surface",
+        "ratio": 6.548381622030511,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/warning-surface",
+        "ratio": 6.4666537672150755,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/danger-surface",
+        "ratio": 6.697882142699773,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/info-surface",
+        "ratio": 7.91430763238414,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary-top",
+        "ratio": 10.308408312236105,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary-hover",
+        "ratio": 12.157659338444958,
+        "minimum": 4.5,
+        "pass": true
+      }
+    ]
+  },
+  {
+    "preset": "graphite",
+    "mode": "dark",
+    "minimumRatio": 3.702400190734947,
+    "checks": [
+      {
+        "pair": "text/bg",
+        "ratio": 17.02378039296968,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "text-muted/bg",
+        "ratio": 9.495843714212665,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "action-accent/bg",
+        "ratio": 12.965891420391417,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/bg",
+        "ratio": 13.233357544006848,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/bg",
+        "ratio": 14.920066118410336,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/bg",
+        "ratio": 9.826589037165848,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/bg",
+        "ratio": 10.483104350561602,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "ring/bg",
+        "ratio": 12.965891420391417,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "border-strong/bg",
+        "ratio": 4.8401719069470435,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "control-edge/bg",
+        "ratio": 4.8401719069470435,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "filter-edge/bg",
+        "ratio": 5.5686443935665215,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "text/surface",
+        "ratio": 15.468636839952296,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "text-muted/surface",
+        "ratio": 8.628386557709579,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "action-accent/surface",
+        "ratio": 11.781441081742065,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/surface",
+        "ratio": 12.024473841663328,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/surface",
+        "ratio": 13.557099485909543,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/surface",
+        "ratio": 8.928917883253954,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/surface",
+        "ratio": 9.52545970465693,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "ring/surface",
+        "ratio": 11.781441081742065,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "border-strong/surface",
+        "ratio": 4.3980161716855,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "control-edge/surface",
+        "ratio": 4.3980161716855,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "filter-edge/surface",
+        "ratio": 5.059941788869053,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "text/surface-raised",
+        "ratio": 13.022026693617267,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "text-muted/surface-raised",
+        "ratio": 7.26367043456229,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "action-accent/surface-raised",
+        "ratio": 9.918019399064088,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/surface-raised",
+        "ratio": 10.122612675114384,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/surface-raised",
+        "ratio": 11.412829276434381,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/surface-raised",
+        "ratio": 7.5166679665360965,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/surface-raised",
+        "ratio": 8.018857241683147,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "ring/surface-raised",
+        "ratio": 9.918019399064088,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "border-strong/surface-raised",
+        "ratio": 3.702400190734947,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "control-edge/surface-raised",
+        "ratio": 3.702400190734947,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "filter-edge/surface-raised",
+        "ratio": 4.259631777806059,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "filter-accent/filter-fill",
+        "ratio": 10.039133632433831,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "filter-edge/filter-fill",
+        "ratio": 4.311648417061178,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "ring/filter-fill",
+        "ratio": 10.039133632433831,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary",
+        "ratio": 12.965891420391417,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/success-surface",
+        "ratio": 10.592214864729884,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/warning-surface",
+        "ratio": 11.799433976373361,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/danger-surface",
+        "ratio": 8.154615074484635,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/info-surface",
+        "ratio": 8.186373632165955,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary-top",
+        "ratio": 11.979862452131156,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary-hover",
+        "ratio": 11.06580540063424,
+        "minimum": 4.5,
+        "pass": true
+      }
+    ]
+  },
+  {
+    "preset": "pine",
+    "mode": "light",
+    "minimumRatio": 3.082934717530622,
+    "checks": [
+      {
+        "pair": "text/bg",
+        "ratio": 16.185205530756512,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "text-muted/bg",
+        "ratio": 6.517531425861518,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "action-accent/bg",
+        "ratio": 7.198754910958553,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/bg",
+        "ratio": 6.768555954441135,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/bg",
+        "ratio": 6.503511535344987,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/bg",
+        "ratio": 7.032441410924055,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/bg",
+        "ratio": 8.279881915754094,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "ring/bg",
+        "ratio": 7.198754910958553,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "border-strong/bg",
+        "ratio": 3.629742590033775,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "control-edge/bg",
+        "ratio": 3.629742590033775,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "filter-edge/bg",
+        "ratio": 3.2821835356744313,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "text/surface",
+        "ratio": 17.050244522154845,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "text-muted/surface",
+        "ratio": 6.865869221159854,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "action-accent/surface",
+        "ratio": 7.583501565900062,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/surface",
+        "ratio": 7.130310076434003,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/surface",
+        "ratio": 6.8511000196797465,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/surface",
+        "ratio": 7.408299228337219,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/surface",
+        "ratio": 8.722410784954462,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "ring/surface",
+        "ratio": 7.583501565900062,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "border-strong/surface",
+        "ratio": 3.8237388209220224,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "control-edge/surface",
+        "ratio": 3.8237388209220224,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "filter-edge/surface",
+        "ratio": 3.457604028783938,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "text/surface-raised",
+        "ratio": 15.202663561861034,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "text-muted/surface-raised",
+        "ratio": 6.12187700260843,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "action-accent/surface-raised",
+        "ratio": 6.761746013520189,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/surface-raised",
+        "ratio": 6.357662791458547,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/surface-raised",
+        "ratio": 6.108708206061984,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/surface-raised",
+        "ratio": 6.605528770432645,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/surface-raised",
+        "ratio": 7.777241929856625,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "ring/surface-raised",
+        "ratio": 6.761746013520189,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "border-strong/surface-raised",
+        "ratio": 3.409394790049497,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "control-edge/surface-raised",
+        "ratio": 3.409394790049497,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "filter-edge/surface-raised",
+        "ratio": 3.082934717530622,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "filter-accent/filter-fill",
+        "ratio": 6.814287124090955,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "filter-edge/filter-fill",
+        "ratio": 3.106890189024574,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "ring/filter-fill",
+        "ratio": 6.814287124090955,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary",
+        "ratio": 7.583501565900062,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/success-surface",
+        "ratio": 6.548381622030511,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/warning-surface",
+        "ratio": 6.4666537672150755,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/danger-surface",
+        "ratio": 6.697882142699773,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/info-surface",
+        "ratio": 7.91430763238414,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary-top",
+        "ratio": 6.911585739817982,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary-hover",
+        "ratio": 8.343211738081129,
+        "minimum": 4.5,
+        "pass": true
+      }
+    ]
+  },
+  {
+    "preset": "pine",
+    "mode": "dark",
+    "minimumRatio": 3.702400190734947,
+    "checks": [
+      {
+        "pair": "text/bg",
+        "ratio": 17.02378039296968,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "text-muted/bg",
+        "ratio": 9.495843714212665,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "action-accent/bg",
+        "ratio": 12.560697975588349,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/bg",
+        "ratio": 13.233357544006848,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/bg",
+        "ratio": 14.920066118410336,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/bg",
+        "ratio": 9.826589037165848,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/bg",
+        "ratio": 10.483104350561602,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "ring/bg",
+        "ratio": 12.560697975588349,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "border-strong/bg",
+        "ratio": 4.8401719069470435,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "control-edge/bg",
+        "ratio": 4.8401719069470435,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "filter-edge/bg",
+        "ratio": 5.40938898800181,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "text/surface",
+        "ratio": 15.468636839952296,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "text-muted/surface",
+        "ratio": 8.628386557709579,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "action-accent/surface",
+        "ratio": 11.413262563052038,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/surface",
+        "ratio": 12.024473841663328,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/surface",
+        "ratio": 13.557099485909543,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/surface",
+        "ratio": 8.928917883253954,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/surface",
+        "ratio": 9.52545970465693,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "ring/surface",
+        "ratio": 11.413262563052038,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "border-strong/surface",
+        "ratio": 4.3980161716855,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "control-edge/surface",
+        "ratio": 4.3980161716855,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "filter-edge/surface",
+        "ratio": 4.9152345630582,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "text/surface-raised",
+        "ratio": 13.022026693617267,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "text-muted/surface-raised",
+        "ratio": 7.26367043456229,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "action-accent/surface-raised",
+        "ratio": 9.608074149976916,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/surface-raised",
+        "ratio": 10.122612675114384,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/surface-raised",
+        "ratio": 11.412829276434381,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/surface-raised",
+        "ratio": 7.5166679665360965,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/surface-raised",
+        "ratio": 8.018857241683147,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "ring/surface-raised",
+        "ratio": 9.608074149976916,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "border-strong/surface-raised",
+        "ratio": 3.702400190734947,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "control-edge/surface-raised",
+        "ratio": 3.702400190734947,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "filter-edge/surface-raised",
+        "ratio": 4.137812293855072,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "filter-accent/filter-fill",
+        "ratio": 9.823340804958017,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "filter-edge/filter-fill",
+        "ratio": 4.230519010886392,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "ring/filter-fill",
+        "ratio": 9.823340804958017,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary",
+        "ratio": 12.560697975588349,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/success-surface",
+        "ratio": 10.592214864729884,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/warning-surface",
+        "ratio": 11.799433976373361,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/danger-surface",
+        "ratio": 8.154615074484635,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/info-surface",
+        "ratio": 8.186373632165955,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary-top",
+        "ratio": 11.579506375197536,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary-hover",
+        "ratio": 10.747319507091136,
+        "minimum": 4.5,
+        "pass": true
+      }
+    ]
+  },
+  {
+    "preset": "iris",
+    "mode": "light",
+    "minimumRatio": 3.409394790049497,
+    "checks": [
+      {
+        "pair": "text/bg",
+        "ratio": 16.185205530756512,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "text-muted/bg",
+        "ratio": 6.517531425861518,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "action-accent/bg",
+        "ratio": 8.526875982841268,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/bg",
+        "ratio": 6.768555954441135,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/bg",
+        "ratio": 6.503511535344987,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/bg",
+        "ratio": 7.032441410924055,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/bg",
+        "ratio": 8.279881915754094,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "ring/bg",
+        "ratio": 8.526875982841268,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "border-strong/bg",
+        "ratio": 3.629742590033775,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "control-edge/bg",
+        "ratio": 3.629742590033775,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "filter-edge/bg",
+        "ratio": 3.865680075695247,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "text/surface",
+        "ratio": 17.050244522154845,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "text-muted/surface",
+        "ratio": 6.865869221159854,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "action-accent/surface",
+        "ratio": 8.98260576557149,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/surface",
+        "ratio": 7.130310076434003,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/surface",
+        "ratio": 6.8511000196797465,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/surface",
+        "ratio": 7.408299228337219,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/surface",
+        "ratio": 8.722410784954462,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "ring/surface",
+        "ratio": 8.98260576557149,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "border-strong/surface",
+        "ratio": 3.8237388209220224,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "control-edge/surface",
+        "ratio": 3.8237388209220224,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "filter-edge/surface",
+        "ratio": 4.072286286990714,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "text/surface-raised",
+        "ratio": 15.202663561861034,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "text-muted/surface-raised",
+        "ratio": 6.12187700260843,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "action-accent/surface-raised",
+        "ratio": 8.009241931127324,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/surface-raised",
+        "ratio": 6.357662791458547,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/surface-raised",
+        "ratio": 6.108708206061984,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/surface-raised",
+        "ratio": 6.605528770432645,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/surface-raised",
+        "ratio": 7.777241929856625,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "ring/surface-raised",
+        "ratio": 8.009241931127324,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "border-strong/surface-raised",
+        "ratio": 3.409394790049497,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "control-edge/surface-raised",
+        "ratio": 3.409394790049497,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "filter-edge/surface-raised",
+        "ratio": 3.6310094126952634,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "filter-accent/filter-fill",
+        "ratio": 7.944749343123999,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "filter-edge/filter-fill",
+        "ratio": 3.601771540234569,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "ring/filter-fill",
+        "ratio": 7.944749343123999,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary",
+        "ratio": 8.98260576557149,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/success-surface",
+        "ratio": 6.548381622030511,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/warning-surface",
+        "ratio": 6.4666537672150755,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/danger-surface",
+        "ratio": 6.697882142699773,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/info-surface",
+        "ratio": 7.91430763238414,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary-top",
+        "ratio": 8.231819570640596,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary-hover",
+        "ratio": 9.722506690781177,
+        "minimum": 4.5,
+        "pass": true
+      }
+    ]
+  },
+  {
+    "preset": "iris",
+    "mode": "dark",
+    "minimumRatio": 3.494073705898162,
+    "checks": [
+      {
+        "pair": "text/bg",
+        "ratio": 17.02378039296968,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "text-muted/bg",
+        "ratio": 9.495843714212665,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "action-accent/bg",
+        "ratio": 10.064897297152664,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/bg",
+        "ratio": 13.233357544006848,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/bg",
+        "ratio": 14.920066118410336,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/bg",
+        "ratio": 9.826589037165848,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/bg",
+        "ratio": 10.483104350561602,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "ring/bg",
+        "ratio": 10.064897297152664,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "border-strong/bg",
+        "ratio": 4.8401719069470435,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "control-edge/bg",
+        "ratio": 4.8401719069470435,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "filter-edge/bg",
+        "ratio": 4.5678253351465825,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "text/surface",
+        "ratio": 15.468636839952296,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "text-muted/surface",
+        "ratio": 8.628386557709579,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "action-accent/surface",
+        "ratio": 9.145456386724037,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/surface",
+        "ratio": 12.024473841663328,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/surface",
+        "ratio": 13.557099485909543,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/surface",
+        "ratio": 8.928917883253954,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/surface",
+        "ratio": 9.52545970465693,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "ring/surface",
+        "ratio": 9.145456386724037,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "border-strong/surface",
+        "ratio": 4.3980161716855,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "control-edge/surface",
+        "ratio": 4.3980161716855,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "filter-edge/surface",
+        "ratio": 4.150548798602663,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "text/surface-raised",
+        "ratio": 13.022026693617267,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "text-muted/surface-raised",
+        "ratio": 7.26367043456229,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "action-accent/surface-raised",
+        "ratio": 7.6989574728163435,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/surface-raised",
+        "ratio": 10.122612675114384,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/surface-raised",
+        "ratio": 11.412829276434381,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/surface-raised",
+        "ratio": 7.5166679665360965,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/surface-raised",
+        "ratio": 8.018857241683147,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "ring/surface-raised",
+        "ratio": 7.6989574728163435,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "border-strong/surface-raised",
+        "ratio": 3.702400190734947,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "control-edge/surface-raised",
+        "ratio": 3.702400190734947,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "filter-edge/surface-raised",
+        "ratio": 3.494073705898162,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "filter-accent/filter-fill",
+        "ratio": 7.944782153181695,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "filter-edge/filter-fill",
+        "ratio": 3.605638103410179,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "ring/filter-fill",
+        "ratio": 7.944782153181695,
+        "minimum": 3,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary",
+        "ratio": 10.064897297152664,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "success/success-surface",
+        "ratio": 10.592214864729884,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "warning/warning-surface",
+        "ratio": 11.799433976373361,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "danger/danger-surface",
+        "ratio": 8.154615074484635,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "info/info-surface",
+        "ratio": 8.186373632165955,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary-top",
+        "ratio": 9.380941001189122,
+        "minimum": 4.5,
+        "pass": true
+      },
+      {
+        "pair": "primary-foreground/primary-hover",
+        "ratio": 8.662128836611114,
+        "minimum": 4.5,
+        "pass": true
+      }
+    ]
+  }
+]

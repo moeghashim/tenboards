@@ -1,0 +1,20 @@
+
+> tenboards@0.10.1 brand
+> node --experimental-strip-types scripts/brand.ts #7c3aed
+
+Input: #7c3aed (oklch(0.54133709 0.24658592 293.008968))
+light primary: oklch(0.54133709 0.24658592 293.008968); 5.70:1; unchanged
+light action-accent: oklch(0.54133709 0.24658592 293.008968); 5.08:1; unchanged
+light ring: oklch(0.54133709 0.24658592 293.008968); 5.08:1; unchanged
+light chart-1: oklch(0.54133709 0.24658592 293.008968); 5.08:1; unchanged
+light primary-hover: oklch(0.51633709 0.24658592 293.008968); 6.37:1; adjusted ΔL=-0.02500 ΔC=0.00000 (contrast, mode/hover derivation or sRGB gamut)
+light primary-top: oklch(0.55333709 0.24658592 293.008968); 5.41:1; adjusted ΔL=0.01200 ΔC=0.00000 (contrast, mode/hover derivation or sRGB gamut)
+light primary-foreground: #ffffff
+dark primary: oklch(0.54133709 0.24658592 293.008968); 5.70:1; unchanged
+dark action-accent: oklch(0.75000000 0.14165395 293.008968); 6.13:1; adjusted ΔL=0.20866 ΔC=-0.10493 (contrast, mode/hover derivation or sRGB gamut)
+dark ring: oklch(0.75000000 0.14165395 293.008968); 6.13:1; adjusted ΔL=0.20866 ΔC=-0.10493 (contrast, mode/hover derivation or sRGB gamut)
+dark chart-1: oklch(0.75000000 0.14165395 293.008968); 6.13:1; adjusted ΔL=0.20866 ΔC=-0.10493 (contrast, mode/hover derivation or sRGB gamut)
+dark primary-hover: oklch(0.51633709 0.24658592 293.008968); 6.37:1; adjusted ΔL=-0.02500 ΔC=0.00000 (contrast, mode/hover derivation or sRGB gamut)
+dark primary-top: oklch(0.55333709 0.24658592 293.008968); 5.41:1; adjusted ΔL=0.01200 ΔC=0.00000 (contrast, mode/hover derivation or sRGB gamut)
+dark primary-foreground: #ffffff
+Generated src/styles/brand.css

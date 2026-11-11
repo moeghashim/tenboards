@@ -1,0 +1,541 @@
+{
+  "route": "/",
+  "path": "/",
+  "baseURL": "http://127.0.0.1:3000/",
+  "tags": [
+    "wcag2a",
+    "wcag2aa",
+    "wcag21a",
+    "wcag21aa",
+    "wcag22aa"
+  ],
+  "passed": false,
+  "results": [
+    {
+      "theme": "light",
+      "viewport": "desktop",
+      "screenshot": "light-desktop.png",
+      "finalURL": "http://127.0.0.1:3000/",
+      "passed": true,
+      "errors": [],
+      "warnings": [],
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgGradient",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<a href=\"https://github.com/m...\" class=\"group/button inline-...\" data-tsd-source=\"/src/routes/(externa...\">",
+                      "target": [
+                        ".gap-2.flex.items-center > .control-primary.bg-primary.text-primary-foreground"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined due to a background gradient"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<a href=\"https://github.com/m...\" class=\"group/button inline-...\" data-tsd-source=\"/src/routes/(externa...\">",
+              "target": [
+                ".gap-2.flex.items-center > .control-primary.bg-primary.text-primary-foreground"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgGradient",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<a href=\"https://github.com/m...\" class=\"group/button inline-...\" data-tsd-source=\"/src/routes/(externa...\">",
+                      "target": [
+                        ".space-y-5 > .gap-3.flex-wrap.flex > .control-primary.bg-primary.text-primary-foreground"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined due to a background gradient"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<a href=\"https://github.com/m...\" class=\"group/button inline-...\" data-tsd-source=\"/src/routes/(externa...\">",
+              "target": [
+                ".space-y-5 > .gap-3.flex-wrap.flex > .control-primary.bg-primary.text-primary-foreground"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgGradient",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<a href=\"https://github.com/m...\" class=\"group/button inline-...\" data-tsd-source=\"/src/routes/(externa...\">",
+                      "target": [
+                        "section[aria-labelledby=\"start-title\"] > .gap-3.flex-wrap.flex > .control-primary.bg-primary.text-primary-foreground"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined due to a background gradient"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<a href=\"https://github.com/m...\" class=\"group/button inline-...\" data-tsd-source=\"/src/routes/(externa...\">",
+              "target": [
+                "section[aria-labelledby=\"start-title\"] > .gap-3.flex-wrap.flex > .control-primary.bg-primary.text-primary-foreground"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+            }
+          ]
+        }
+      ],
+      "axeVersion": "4.14.0"
+    },
+    {
+      "theme": "light",
+      "viewport": "mobile",
+      "screenshot": "light-mobile.png",
+      "finalURL": "http://127.0.0.1:3000/",
+      "passed": true,
+      "errors": [],
+      "warnings": [],
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgGradient",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<a href=\"https://github.com/m...\" class=\"group/button inline-...\" data-tsd-source=\"/src/routes/(externa...\">",
+                      "target": [
+                        ".gap-2.flex.items-center > .control-primary.bg-primary.text-primary-foreground"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined due to a background gradient"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<a href=\"https://github.com/m...\" class=\"group/button inline-...\" data-tsd-source=\"/src/routes/(externa...\">",
+              "target": [
+                ".gap-2.flex.items-center > .control-primary.bg-primary.text-primary-foreground"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgGradient",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<a href=\"https://github.com/m...\" class=\"group/button inline-...\" data-tsd-source=\"/src/routes/(externa...\">",
+                      "target": [
+                        ".space-y-5 > .gap-3.flex-wrap.flex > .control-primary.bg-primary.text-primary-foreground"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined due to a background gradient"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<a href=\"https://github.com/m...\" class=\"group/button inline-...\" data-tsd-source=\"/src/routes/(externa...\">",
+              "target": [
+                ".space-y-5 > .gap-3.flex-wrap.flex > .control-primary.bg-primary.text-primary-foreground"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgGradient",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<a href=\"https://github.com/m...\" class=\"group/button inline-...\" data-tsd-source=\"/src/routes/(externa...\">",
+                      "target": [
+                        "section[aria-labelledby=\"start-title\"] > .gap-3.flex-wrap.flex > .control-primary.bg-primary.text-primary-foreground"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined due to a background gradient"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<a href=\"https://github.com/m...\" class=\"group/button inline-...\" data-tsd-source=\"/src/routes/(externa...\">",
+              "target": [
+                "section[aria-labelledby=\"start-title\"] > .gap-3.flex-wrap.flex > .control-primary.bg-primary.text-primary-foreground"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+            }
+          ]
+        }
+      ],
+      "axeVersion": "4.14.0"
+    },
+    {
+      "theme": "dark",
+      "viewport": "desktop",
+      "screenshot": "dark-desktop.png",
+      "finalURL": "http://127.0.0.1:3000/",
+      "passed": true,
+      "errors": [],
+      "warnings": [],
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgGradient",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<a href=\"https://github.com/m...\" class=\"group/button inline-...\" data-tsd-source=\"/src/routes/(externa...\">",
+                      "target": [
+                        ".gap-2.flex.items-center > .control-primary.bg-primary.text-primary-foreground"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined due to a background gradient"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<a href=\"https://github.com/m...\" class=\"group/button inline-...\" data-tsd-source=\"/src/routes/(externa...\">",
+              "target": [
+                ".gap-2.flex.items-center > .control-primary.bg-primary.text-primary-foreground"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgGradient",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<a href=\"https://github.com/m...\" class=\"group/button inline-...\" data-tsd-source=\"/src/routes/(externa...\">",
+                      "target": [
+                        ".space-y-5 > .gap-3.flex-wrap.flex > .control-primary.bg-primary.text-primary-foreground"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined due to a background gradient"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<a href=\"https://github.com/m...\" class=\"group/button inline-...\" data-tsd-source=\"/src/routes/(externa...\">",
+              "target": [
+                ".space-y-5 > .gap-3.flex-wrap.flex > .control-primary.bg-primary.text-primary-foreground"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgGradient",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<a href=\"https://github.com/m...\" class=\"group/button inline-...\" data-tsd-source=\"/src/routes/(externa...\">",
+                      "target": [
+                        "section[aria-labelledby=\"start-title\"] > .gap-3.flex-wrap.flex > .control-primary.bg-primary.text-primary-foreground"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined due to a background gradient"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<a href=\"https://github.com/m...\" class=\"group/button inline-...\" data-tsd-source=\"/src/routes/(externa...\">",
+              "target": [
+                "section[aria-labelledby=\"start-title\"] > .gap-3.flex-wrap.flex > .control-primary.bg-primary.text-primary-foreground"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+            }
+          ]
+        }
+      ],
+      "axeVersion": "4.14.0"
+    },
+    {
+      "theme": "dark",
+      "viewport": "mobile",
+      "screenshot": "dark-mobile.png",
+      "finalURL": "http://127.0.0.1:3000/",
+      "passed": false,
+      "errors": [
+        "console: %o\n\n%s\n\n%s\n Error: Missing PreferencesStoreProvider\n    at usePreferencesStore (http://127.0.0.1:3000/src/stores/preferences/preferences-provider.tsx?t=1794393898812:71:20)\n    at ThemeSwitcher (http://127.0.0.1:3000/src/components/theme-switcher.tsx?t=1794393898812:15:39)\n    at Object.react_stack_bottom_frame (http://127.0.0.1:3000/node_modules/.vite/deps/react-dom_client.js?v=74290a63:14142:12)\n    at renderWithHooks (http://127.0.0.1:3000/node_modules/.vite/deps/react-dom_client.js?v=74290a63:4400:19)\n    at updateFunctionComponent (http://127.0.0.1:3000/node_modules/.vite/deps/react-dom_client.js?v=74290a63:5775:16)\n    at beginWork (http://127.0.0.1:3000/node_modules/.vite/deps/react-dom_client.js?v=74290a63:6391:20)\n    at runWithFiberInDEV (http://127.0.0.1:3000/node_modules/.vite/deps/react-dom_client.js?v=74290a63:944:66)\n    at performUnitOfWork (http://127.0.0.1:3000/node_modules/.vite/deps/react-dom_client.js?v=74290a63:9148:92)\n    at workLoopSync (http://127.0.0.1:3000/node_modules/.vite/deps/react-dom_client.js?v=74290a63:9044:37)\n    at renderRootSync (http://127.0.0.1:3000/node_modules/.vite/deps/react-dom_client.js?v=74290a63:9028:6) The above error occurred in the <ThemeSwitcher> component. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary.",
+        "console: %o\n\n%s\n\n%s\n Error: Missing PreferencesStoreProvider\n    at usePreferencesStore (http://127.0.0.1:3000/src/stores/preferences/preferences-provider.tsx?t=1794393898812:71:20)\n    at ThemeSwitcher (http://127.0.0.1:3000/src/components/theme-switcher.tsx?t=1794393898812:15:39)\n    at Object.react_stack_bottom_frame (http://127.0.0.1:3000/node_modules/.vite/deps/react-dom_client.js?v=74290a63:14142:12)\n    at renderWithHooks (http://127.0.0.1:3000/node_modules/.vite/deps/react-dom_client.js?v=74290a63:4400:19)\n    at updateFunctionComponent (http://127.0.0.1:3000/node_modules/.vite/deps/react-dom_client.js?v=74290a63:5775:16)\n    at beginWork (http://127.0.0.1:3000/node_modules/.vite/deps/react-dom_client.js?v=74290a63:6391:20)\n    at runWithFiberInDEV (http://127.0.0.1:3000/node_modules/.vite/deps/react-dom_client.js?v=74290a63:944:66)\n    at performUnitOfWork (http://127.0.0.1:3000/node_modules/.vite/deps/react-dom_client.js?v=74290a63:9148:92)\n    at workLoopSync (http://127.0.0.1:3000/node_modules/.vite/deps/react-dom_client.js?v=74290a63:9044:37)\n    at renderRootSync (http://127.0.0.1:3000/node_modules/.vite/deps/react-dom_client.js?v=74290a63:9028:6) The above error occurred in the <ThemeSwitcher> component. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundary."
+      ],
+      "warnings": [
+        "Warning: Error in route match: __root__/",
+        "Warning: Error in route match: __root__/"
+      ],
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgGradient",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<a href=\"https://github.com/m...\" class=\"group/button inline-...\" data-tsd-source=\"/src/routes/(externa...\">",
+                      "target": [
+                        ".gap-2.flex.items-center > .control-primary.bg-primary.text-primary-foreground"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined due to a background gradient"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<a href=\"https://github.com/m...\" class=\"group/button inline-...\" data-tsd-source=\"/src/routes/(externa...\">",
+              "target": [
+                ".gap-2.flex.items-center > .control-primary.bg-primary.text-primary-foreground"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgGradient",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<a href=\"https://github.com/m...\" class=\"group/button inline-...\" data-tsd-source=\"/src/routes/(externa...\">",
+                      "target": [
+                        ".space-y-5 > .gap-3.flex-wrap.flex > .control-primary.bg-primary.text-primary-foreground"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined due to a background gradient"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<a href=\"https://github.com/m...\" class=\"group/button inline-...\" data-tsd-source=\"/src/routes/(externa...\">",
+              "target": [
+                ".space-y-5 > .gap-3.flex-wrap.flex > .control-primary.bg-primary.text-primary-foreground"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "9.8pt (13px)",
+                    "fontWeight": "normal",
+                    "messageKey": "bgGradient",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<a href=\"https://github.com/m...\" class=\"group/button inline-...\" data-tsd-source=\"/src/routes/(externa...\">",
+                      "target": [
+                        "section[aria-labelledby=\"start-title\"] > .gap-3.flex-wrap.flex > .control-primary.bg-primary.text-primary-foreground"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined due to a background gradient"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<a href=\"https://github.com/m...\" class=\"group/button inline-...\" data-tsd-source=\"/src/routes/(externa...\">",
+              "target": [
+                "section[aria-labelledby=\"start-title\"] > .gap-3.flex-wrap.flex > .control-primary.bg-primary.text-primary-foreground"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient"
+            }
+          ]
+        }
+      ],
+      "axeVersion": "4.14.0"
+    }
+  ]
+}

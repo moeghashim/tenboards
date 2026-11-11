@@ -1,0 +1,990 @@
+
+> tenboards@0.10.1 verify:page
+> node --experimental-strip-types scripts/verify-page.ts --all
+
+Reusing http://127.0.0.1:3000
+PASS /dashboard/kit/ light/desktop: 0 axe violations, 0 runtime errors
+PASS /dashboard/kit/ light/mobile: 0 axe violations, 0 runtime errors
+FAIL /dashboard/kit/ dark/desktop: 0 axe violations, 112 runtime errors
+  request: http://127.0.0.1:3000/src/routes/(main)/dashboard/projects/$projectId/index.tsx net::ERR_CONNECTION_REFUSED
+  console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+  request: http://127.0.0.1:3000/src/routes/(main)/dashboard/projects/$projectId/board.tsx net::ERR_CONNECTION_REFUSED
+  console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+  request: http://127.0.0.1:3000/src/routes/(main)/dashboard/projects/$projectId/files.tsx net::ERR_CONNECTION_REFUSED
+  console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+  request: http://127.0.0.1:3000/src/routes/(main)/dashboard/projects/$projectId/list.tsx net::ERR_CONNECTION_REFUSED
+  console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+  request: http://127.0.0.1:3000/src/routes/(main)/dashboard/projects/$projectId/overview.tsx net::ERR_CONNECTION_REFUSED
+  console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+  request: http://127.0.0.1:3000/src/routes/(main)/dashboard/projects/$projectId/timeline.tsx net::ERR_CONNECTION_REFUSED
+  console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+  request: http://127.0.0.1:3000/node_modules/@tanstack/router-core/dist/esm/await-signal.js?v=74290a63 net::ERR_CONNECTION_REFUSED
+  console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+  request: http://127.0.0.1:3000/node_modules/@tanstack/router-core/dist/esm/sieve-cache.js?v=74290a63 net::ERR_CONNECTION_REFUSED
+  console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+  request: http://127.0.0.1:3000/node_modules/@tanstack/router-core/dist/esm/new-process-route-tree.js?v=74290a63 net::ERR_CONNECTION_REFUSED
+  console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+  request: http://127.0.0.1:3000/node_modules/.vite/deps/with-selector-Ck5_EVkF.js?v=74290a63 net::ERR_CONNECTION_REFUSED
+  console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+  request: http://127.0.0.1:3000/node_modules/@tanstack/start-client-core/dist/esm/getDefaultSerovalPlugins.js?v=74290a63 net::ERR_CONNECTION_REFUSED
+  console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+  request: http://127.0.0.1:3000/node_modules/@tanstack/start-client-core/dist/esm/client-rpc/frame-decoder.js?v=74290a63 net::ERR_CONNECTION_REFUSED
+  console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+  request: http://127.0.0.1:3000/node_modules/@tanstack/router-core/dist/esm/ssr/serializer/rawStreamCodec.js?v=74290a63 net::ERR_CONNECTION_REFUSED
+  console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+  request: http://127.0.0.1:3000/node_modules/seroval-plugins/dist/dev/web-CDQeyEaf.js?v=74290a63 net::ERR_CONNECTION_REFUSED
+  console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+  request: http://127.0.0.1:3000/node_modules/@tanstack/start-client-core/dist/esm/safeObjectMerge.js?v=74290a63 net::ERR_CONNECTION_REFUSED
+  console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+  request: http://127.0.0.1:3000/node_modules/@tanstack/start-client-core/dist/esm/createServerFn.js?v=74290a63 net::ERR_CONNECTION_REFUSED
+  console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+  request: http://127.0.0.1:3000/node_modules/@tanstack/start-client-core/dist/esm/createMiddleware.js?v=74290a63 net::ERR_CONNECTION_REFUSED
+  console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+  request: http://127.0.0.1:3000/node_modules/@tanstack/start-client-core/dist/esm/createCsrfMiddleware.js?v=74290a63 net::ERR_CONNECTION_REFUSED
+  console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+  request: http://127.0.0.1:3000/node_modules/@tanstack/start-client-core/dist/esm/createStart.js?v=74290a63 net::ERR_CONNECTION_REFUSED
+  console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+  request: http://127.0.0.1:3000/node_modules/@tanstack/start-client-core/dist/esm/getRouterInstance.js?v=74290a63 net::ERR_CONNECTION_REFUSED
+  console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+  request: http://127.0.0.1:3000/node_modules/@tanstack/start-client-core/dist/esm/getGlobalStartContext.js?v=74290a63 net::ERR_CONNECTION_REFUSED
+  console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+  request: http://127.0.0.1:3000/node_modules/@tanstack/start-fn-stubs/dist/esm/index.js?v=74290a63 net::ERR_CONNECTION_REFUSED
+  console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+  request: http://127.0.0.1:3000/node_modules/.vite/deps/@tanstack_react-devtools.js?v=74290a63 net::ERR_CONNECTION_REFUSED
+  console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+  request: http://127.0.0.1:3000/node_modules/@tanstack/react-router-devtools/dist/esm/index.js?v=74290a63 net::ERR_CONNECTION_REFUSED
+  console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+  request: http://127.0.0.1:3000/src/components/navigation/command-palette.tsx net::ERR_CONNECTION_REFUSED
+  console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+  request: http://127.0.0.1:3000/src/components/ui/toast.tsx net::ERR_CONNECTION_REFUSED
+  console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+  request: http://127.0.0.1:3000/src/components/ui/tooltip.tsx net::ERR_CONNECTION_REFUSED
+  console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+  request: http://127.0.0.1:3000/src/config/app-config.ts?t=1794393887118 net::ERR_CONNECTION_REFUSED
+  console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+  request: http://127.0.0.1:3000/src/lib/brand.ts?t=1794393898812 net::ERR_CONNECTION_REFUSED
+  console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+  request: http://127.0.0.1:3000/src/lib/fonts/registry.ts net::ERR_CONNECTION_REFUSED
+  console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+  request: http://127.0.0.1:3000/src/lib/preferences/preferences-config.ts?t=1794394207413 net::ERR_CONNECTION_REFUSED
+  console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+  request: http://127.0.0.1:3000/src/scripts/theme-boot.tsx?t=1794394207413 net::ERR_CONNECTION_REFUSED
+  console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+  request: http://127.0.0.1:3000/src/stores/preferences/preferences-provider.tsx?t=1794394207413 net::ERR_CONNECTION_REFUSED
+  console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+  request: http://127.0.0.1:3000/src/styles/styles.css?url net::ERR_CONNECTION_REFUSED
+  console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+  request: http://127.0.0.1:3000/src/routes/-components/not-found.tsx net::ERR_CONNECTION_REFUSED
+  console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+  request: http://127.0.0.1:3000/src/routes/-components/root-error.tsx net::ERR_CONNECTION_REFUSED
+  console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+  request: http://127.0.0.1:3000/node_modules/@tanstack/react-start/dist/esm/client-rpc.js?v=74290a63 net::ERR_CONNECTION_REFUSED
+  console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+  request: http://127.0.0.1:3000/src/lib/auth/app-route.ts net::ERR_CONNECTION_REFUSED
+  console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+  request: http://127.0.0.1:3000/src/routes/(main)/dashboard/-components/sidebar/shell-sidebar.css net::ERR_CONNECTION_REFUSED
+  console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+  request: http://127.0.0.1:3000/src/server/server-actions.ts net::ERR_CONNECTION_REFUSED
+  console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+  request: http://127.0.0.1:3000/src/routes/(main)/dashboard/projects/-components/workspace-functions.ts net::ERR_CONNECTION_REFUSED
+  console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+  request: http://127.0.0.1:3000/src/routes/(main)/mail/-components/mail-layout-config.ts net::ERR_CONNECTION_REFUSED
+  console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+  request: http://127.0.0.1:3000/src/navigation/landing.ts net::ERR_CONNECTION_REFUSED
+  console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+  request: http://127.0.0.1:3000/src/styles/flag-icons/flags.css net::ERR_CONNECTION_REFUSED
+  console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+  request: http://127.0.0.1:3000/src/lib/assistant/server-functions.ts net::ERR_CONNECTION_REFUSED
+  console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+  request: http://127.0.0.1:3000/src/routes/(main)/dashboard/projects/-components/timeline-search.ts net::ERR_CONNECTION_REFUSED
+  console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+  request: http://127.0.0.1:3000/src/routes/(main)/dashboard/projects/-components/project-search.ts net::ERR_CONNECTION_REFUSED
+  console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+  request: http://127.0.0.1:3000/src/routes/(main)/dashboard/profile/route.tsx?tsr-shared=1 net::ERR_CONNECTION_REFUSED
+  console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+  request: http://127.0.0.1:3000/src/lib/auth/redirect.ts net::ERR_CONNECTION_REFUSED
+  console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+  request: http://127.0.0.1:3000/src/routes/(main)/dashboard/projects/index.tsx net::ERR_CONNECTION_REFUSED
+  console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+  request: http://127.0.0.1:3000/src/routes/(main)/dashboard/kit/index.tsx net::ERR_CONNECTION_REFUSED
+  console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+  request: http://127.0.0.1:3000/src/routes/(main)/dashboard/projects/$projectId/route.tsx net::ERR_CONNECTION_REFUSED
+  console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+  request: http://127.0.0.1:3000/src/routes/(main)/dashboard/home/index.tsx net::ERR_CONNECTION_REFUSED
+  console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+  request: http://127.0.0.1:3000/src/routes/(main)/auth/v2/login/route.tsx net::ERR_CONNECTION_REFUSED
+  console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+  request: http://127.0.0.1:3000/src/routes/(main)/auth/v2/register/route.tsx net::ERR_CONNECTION_REFUSED
+  console: Failed to load resource: net::ERR_CONNECTION_REFUSED
+  page: Failed to fetch dynamically imported module: http://127.0.0.1:3000/node_modules/@tanstack/react-start/dist/plugin/default-entry/client.tsx?t=1794394207413
+  page.waitForFunction: Timeout 30000ms exceeded.
+FAIL /dashboard/kit/ dark/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/kit net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/kit
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/kit", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/assistant light/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/assistant net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/assistant
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/assistant", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/assistant light/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/assistant net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/assistant
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/assistant", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/assistant dark/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/assistant net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/assistant
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/assistant", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/assistant dark/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/assistant net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/assistant
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/assistant", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/home/ light/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/home net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/home
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/home", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/home/ light/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/home net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/home
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/home", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/home/ dark/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/home net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/home
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/home", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/home/ dark/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/home net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/home
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/home", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/projects/ light/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/projects net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/projects
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/projects", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/projects/ light/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/projects net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/projects
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/projects", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/projects/ dark/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/projects net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/projects
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/projects", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/projects/ dark/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/projects net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/projects
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/projects", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/projects/$projectId/overview light/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/projects/sample-operations/overview net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/projects/sample-operations/overview
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/projects/sample-operations/overview", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/projects/$projectId/overview light/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/projects/sample-operations/overview net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/projects/sample-operations/overview
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/projects/sample-operations/overview", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/projects/$projectId/overview dark/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/projects/sample-operations/overview net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/projects/sample-operations/overview
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/projects/sample-operations/overview", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/projects/$projectId/overview dark/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/projects/sample-operations/overview net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/projects/sample-operations/overview
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/projects/sample-operations/overview", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/projects/$projectId/timeline light/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/projects/sample-operations/timeline net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/projects/sample-operations/timeline
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/projects/sample-operations/timeline", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/projects/$projectId/timeline light/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/projects/sample-operations/timeline net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/projects/sample-operations/timeline
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/projects/sample-operations/timeline", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/projects/$projectId/timeline dark/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/projects/sample-operations/timeline net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/projects/sample-operations/timeline
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/projects/sample-operations/timeline", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/projects/$projectId/timeline dark/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/projects/sample-operations/timeline net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/projects/sample-operations/timeline
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/projects/sample-operations/timeline", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/projects/$projectId/files light/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/projects/sample-operations/files net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/projects/sample-operations/files
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/projects/sample-operations/files", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/projects/$projectId/files light/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/projects/sample-operations/files net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/projects/sample-operations/files
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/projects/sample-operations/files", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/projects/$projectId/files dark/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/projects/sample-operations/files net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/projects/sample-operations/files
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/projects/sample-operations/files", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/projects/$projectId/files dark/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/projects/sample-operations/files net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/projects/sample-operations/files
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/projects/sample-operations/files", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/projects/$projectId/board light/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/projects/sample-operations/board net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/projects/sample-operations/board
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/projects/sample-operations/board", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/projects/$projectId/board light/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/projects/sample-operations/board net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/projects/sample-operations/board
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/projects/sample-operations/board", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/projects/$projectId/board dark/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/projects/sample-operations/board net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/projects/sample-operations/board
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/projects/sample-operations/board", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/projects/$projectId/board dark/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/projects/sample-operations/board net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/projects/sample-operations/board
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/projects/sample-operations/board", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/projects/$projectId/list light/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/projects/sample-operations/list net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/projects/sample-operations/list
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/projects/sample-operations/list", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/projects/$projectId/list light/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/projects/sample-operations/list net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/projects/sample-operations/list
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/projects/sample-operations/list", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/projects/$projectId/list dark/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/projects/sample-operations/list net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/projects/sample-operations/list
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/projects/sample-operations/list", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/projects/$projectId/list dark/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/projects/sample-operations/list net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/projects/sample-operations/list
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/projects/sample-operations/list", waiting until "domcontentloaded"[22m
+
+FAIL /chat light/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/chat net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/chat
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/chat", waiting until "domcontentloaded"[22m
+
+FAIL /chat light/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/chat net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/chat
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/chat", waiting until "domcontentloaded"[22m
+
+FAIL /chat dark/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/chat net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/chat
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/chat", waiting until "domcontentloaded"[22m
+
+FAIL /chat dark/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/chat net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/chat
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/chat", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard light/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard light/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard dark/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard dark/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard", waiting until "domcontentloaded"[22m
+
+FAIL /mail light/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/mail net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/mail
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/mail", waiting until "domcontentloaded"[22m
+
+FAIL /mail light/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/mail net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/mail
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/mail", waiting until "domcontentloaded"[22m
+
+FAIL /mail dark/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/mail net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/mail
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/mail", waiting until "domcontentloaded"[22m
+
+FAIL /mail dark/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/mail net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/mail
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/mail", waiting until "domcontentloaded"[22m
+
+FAIL /unauthorized light/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/unauthorized net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/unauthorized
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/unauthorized", waiting until "domcontentloaded"[22m
+
+FAIL /unauthorized light/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/unauthorized net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/unauthorized
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/unauthorized", waiting until "domcontentloaded"[22m
+
+FAIL /unauthorized dark/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/unauthorized net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/unauthorized
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/unauthorized", waiting until "domcontentloaded"[22m
+
+FAIL /unauthorized dark/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/unauthorized net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/unauthorized
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/unauthorized", waiting until "domcontentloaded"[22m
+
+FAIL / light/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/ net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/", waiting until "domcontentloaded"[22m
+
+FAIL / light/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/ net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/", waiting until "domcontentloaded"[22m
+
+FAIL / dark/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/ net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/", waiting until "domcontentloaded"[22m
+
+FAIL / dark/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/ net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/", waiting until "domcontentloaded"[22m
+
+FAIL /auth/v2 light/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/auth/v2 net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/auth/v2
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/auth/v2", waiting until "domcontentloaded"[22m
+
+FAIL /auth/v2 light/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/auth/v2 net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/auth/v2
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/auth/v2", waiting until "domcontentloaded"[22m
+
+FAIL /auth/v2 dark/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/auth/v2 net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/auth/v2
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/auth/v2", waiting until "domcontentloaded"[22m
+
+FAIL /auth/v2 dark/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/auth/v2 net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/auth/v2
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/auth/v2", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/academy light/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/academy net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/academy
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/academy", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/academy light/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/academy net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/academy
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/academy", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/academy dark/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/academy net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/academy
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/academy", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/academy dark/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/academy net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/academy
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/academy", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/analytics light/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/analytics net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/analytics
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/analytics", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/analytics light/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/analytics net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/analytics
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/analytics", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/analytics dark/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/analytics net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/analytics
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/analytics", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/analytics dark/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/analytics net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/analytics
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/analytics", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/chat light/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/chat net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/chat
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/chat", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/chat light/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/chat net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/chat
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/chat", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/chat dark/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/chat net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/chat
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/chat", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/chat dark/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/chat net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/chat
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/chat", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/coming-soon light/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/coming-soon net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/coming-soon
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/coming-soon", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/coming-soon light/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/coming-soon net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/coming-soon
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/coming-soon", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/coming-soon dark/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/coming-soon net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/coming-soon
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/coming-soon", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/coming-soon dark/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/coming-soon net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/coming-soon
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/coming-soon", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/crm light/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/crm net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/crm
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/crm", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/crm light/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/crm net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/crm
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/crm", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/crm dark/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/crm net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/crm
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/crm", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/crm dark/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/crm net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/crm
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/crm", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/default light/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/default net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/default
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/default", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/default light/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/default net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/default
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/default", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/default dark/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/default net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/default
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/default", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/default dark/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/default net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/default
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/default", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/ecommerce light/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/ecommerce net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/ecommerce
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/ecommerce", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/ecommerce light/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/ecommerce net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/ecommerce
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/ecommerce", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/ecommerce dark/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/ecommerce net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/ecommerce
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/ecommerce", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/ecommerce dark/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/ecommerce net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/ecommerce
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/ecommerce", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/finance light/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/finance net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/finance
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/finance", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/finance light/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/finance net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/finance
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/finance", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/finance dark/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/finance net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/finance
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/finance", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/finance dark/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/finance net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/finance
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/finance", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/infrastructure light/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/infrastructure net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/infrastructure
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/infrastructure", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/infrastructure light/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/infrastructure net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/infrastructure
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/infrastructure", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/infrastructure dark/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/infrastructure net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/infrastructure
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/infrastructure", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/infrastructure dark/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/infrastructure net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/infrastructure
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/infrastructure", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/invoice light/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/invoice net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/invoice
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/invoice", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/invoice light/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/invoice net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/invoice
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/invoice", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/invoice dark/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/invoice net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/invoice
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/invoice", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/invoice dark/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/invoice net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/invoice
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/invoice", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/logistics light/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/logistics net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/logistics
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/logistics", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/logistics light/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/logistics net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/logistics
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/logistics", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/logistics dark/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/logistics net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/logistics
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/logistics", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/logistics dark/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/logistics net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/logistics
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/logistics", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/mail light/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/mail net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/mail
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/mail", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/mail light/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/mail net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/mail
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/mail", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/mail dark/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/mail net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/mail
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/mail", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/mail dark/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/mail net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/mail
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/mail", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/patient-monitoring light/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/patient-monitoring net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/patient-monitoring
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/patient-monitoring", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/patient-monitoring light/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/patient-monitoring net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/patient-monitoring
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/patient-monitoring", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/patient-monitoring dark/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/patient-monitoring net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/patient-monitoring
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/patient-monitoring", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/patient-monitoring dark/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/patient-monitoring net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/patient-monitoring
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/patient-monitoring", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/productivity light/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/productivity net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/productivity
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/productivity", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/productivity light/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/productivity net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/productivity
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/productivity", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/productivity dark/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/productivity net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/productivity
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/productivity", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/productivity dark/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/productivity net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/productivity
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/productivity", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/products light/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/products net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/products
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/products", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/products light/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/products net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/products
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/products", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/products dark/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/products net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/products
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/products", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/products dark/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/products net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/products
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/products", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/profile light/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/profile net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/profile
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/profile", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/profile light/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/profile net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/profile
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/profile", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/profile dark/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/profile net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/profile
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/profile", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/profile dark/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/profile net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/profile
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/profile", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/roles light/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/roles net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/roles
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/roles", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/roles light/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/roles net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/roles
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/roles", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/roles dark/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/roles net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/roles
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/roles", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/roles dark/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/roles net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/roles
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/roles", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/users light/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/users net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/users
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/users", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/users light/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/users net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/users
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/users", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/users dark/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/users net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/users
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/users", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/users dark/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/users net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/users
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/users", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/$ light/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/capture-not-found net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/capture-not-found
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/capture-not-found", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/$ light/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/capture-not-found net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/capture-not-found
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/capture-not-found", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/$ dark/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/capture-not-found net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/capture-not-found
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/capture-not-found", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/$ dark/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/capture-not-found net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/capture-not-found
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/capture-not-found", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/ light/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/ net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/ light/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/ net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/ dark/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/ net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/", waiting until "domcontentloaded"[22m
+
+FAIL /dashboard/ dark/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/dashboard/ net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/dashboard/
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/dashboard/", waiting until "domcontentloaded"[22m
+
+FAIL /auth/v2/login light/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/auth/v2/login net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/auth/v2/login
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/auth/v2/login", waiting until "domcontentloaded"[22m
+
+FAIL /auth/v2/login light/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/auth/v2/login net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/auth/v2/login
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/auth/v2/login", waiting until "domcontentloaded"[22m
+
+FAIL /auth/v2/login dark/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/auth/v2/login net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/auth/v2/login
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/auth/v2/login", waiting until "domcontentloaded"[22m
+
+FAIL /auth/v2/login dark/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/auth/v2/login net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/auth/v2/login
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/auth/v2/login", waiting until "domcontentloaded"[22m
+
+FAIL /auth/v2/register light/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/auth/v2/register net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/auth/v2/register
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/auth/v2/register", waiting until "domcontentloaded"[22m
+
+FAIL /auth/v2/register light/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/auth/v2/register net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/auth/v2/register
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/auth/v2/register", waiting until "domcontentloaded"[22m
+
+FAIL /auth/v2/register dark/desktop: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/auth/v2/register net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/auth/v2/register
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/auth/v2/register", waiting until "domcontentloaded"[22m
+
+FAIL /auth/v2/register dark/mobile: 0 axe violations, 2 runtime errors
+  request: http://127.0.0.1:3000/auth/v2/register net::ERR_CONNECTION_REFUSED
+  page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:3000/auth/v2/register
+Call log:
+[2m  - navigating to "http://127.0.0.1:3000/auth/v2/register", waiting until "domcontentloaded"[22m
+

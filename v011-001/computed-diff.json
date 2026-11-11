@@ -1,0 +1,50 @@
+[
+  {
+    "preset": "default",
+    "mode": "light",
+    "tokens": 77,
+    "diff": []
+  },
+  {
+    "preset": "default",
+    "mode": "dark",
+    "tokens": 77,
+    "diff": []
+  },
+  {
+    "preset": "graphite",
+    "mode": "light",
+    "tokens": 77,
+    "diff": []
+  },
+  {
+    "preset": "graphite",
+    "mode": "dark",
+    "tokens": 77,
+    "diff": []
+  },
+  {
+    "preset": "pine",
+    "mode": "light",
+    "tokens": 77,
+    "diff": []
+  },
+  {
+    "preset": "pine",
+    "mode": "dark",
+    "tokens": 77,
+    "diff": []
+  },
+  {
+    "preset": "iris",
+    "mode": "light",
+    "tokens": 77,
+    "diff": []
+  },
+  {
+    "preset": "iris",
+    "mode": "dark",
+    "tokens": 77,
+    "diff": []
+  }
+]
