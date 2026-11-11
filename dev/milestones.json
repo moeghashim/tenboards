@@ -259,6 +259,14 @@
       "taskStatuses": {
         "001-control-recipe": "merged"
       }
+    },
+    {
+      "id": "v0.11-brand-colour",
+      "status": "planned",
+      "tasks": ["001-brand-colour"],
+      "taskStatuses": {
+        "001-brand-colour": "planned"
+      }
     }
   ]
 }
