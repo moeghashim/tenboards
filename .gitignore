@@ -21,3 +21,6 @@ todos.json
 
 # Page verification reports and screenshots belong on pr-assets.
 verify/
+
+# Task worktrees live inside the project; see dev/MAINTAINERS.md.
+/.worktrees/

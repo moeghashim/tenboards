@@ -9,6 +9,7 @@ Inspect affected code for small, behavior-preserving prefactors that make the re
 ## Workflow and authority
 
 - Implement only an approved task. One task per branch and PR: feat/v0.1/NNN-slug; PRs target main. Declare any stack and link its layer compare URL.
+- Create task worktrees inside the project at `.worktrees/<slug>` (e.g. `git worktree add .worktrees/v0.11-002-slug -b feat/v0.11/002-slug main`), never in a sibling or home directory. `.worktrees/` is gitignored and excluded from typecheck. Remove a worktree once its PR merges; before removing one whose commits are not on main, keep them reachable on an `archive/<slug>` branch.
 - GPT-6-Astra implements and never merges. Claude Opus 5.5 reviews every PR and holds user-delegated authority to squash-merge approved PRs and rebase stacks (PLAN Decisions log, 2026-10-23).
 - main is protected. The reviewer redeploys production from main after merges. Implementers use npm run preview:deploy -- --preview-alias pr-NNN, which builds/uploads only the demo-only tenboards-preview Worker with ASSETS and no secrets. Never upload PR versions to tenboards or run npm run deploy. First-use --initialize may create only tenboards-preview. Production binding IDs, secrets and cutover belong to the reviewer.
 - Use Conventional Commits. Every implementation commit ends with a blank line and `Co-Authored-By: GPT-6-Astra <noreply@openai.com>`.
